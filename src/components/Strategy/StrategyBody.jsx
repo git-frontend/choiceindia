@@ -53,10 +53,10 @@ function StrategyBody() {
                             </div>
                         </div>
                         <div className="featuretwo">
-                            <p className="heading">Unlimited Backtests</p>
+                            <p className="heading">Optimise Your Strategies</p>
                             <div className="d-flex imgtextwrap">
                                 <div className="subtext">
-                                    Backtest and optimize your strategies without any capping on number of backtests
+                                    Optimise your strategies without any capping on number of requests.
                                 </div>
                                 <div className="imgwrap">
                                     <LazyLoader src={image2} className={"img-fluid feature-img"} width={'114'} height={'152'} alt={"Unlimited Backtests"} />
@@ -68,7 +68,7 @@ function StrategyBody() {
                     </div>
                     <div className="d-flex mt-5 respflex mt-5-0-mb">
                         <div className="featurethree">
-                            <p className="heading">Timely alerts on your Virtual &amp; Live trades</p>
+                            <p className="heading">Timely alerts on your Live trades</p>
                             <div className="d-flex imgtextwrap">
                                 <div className="subtext">
                                     Get timely alerts as and when your trades are triggered.
@@ -105,7 +105,7 @@ function StrategyBody() {
                 <div className='container'>
                     <div className="row justify-content-center">
                         <div className="wrapper">
-                            <div className="col-md-8">
+                            {/* <div className="col-md-8">
                                 <div className="headingsec">
                                     <h2 className="title">How to start algorithmic strategy?</h2>
                                 </div>
@@ -137,7 +137,7 @@ function StrategyBody() {
 
 
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="col-md-10">
 
                                 <div className="d-flex justify-content-between wrap respflex">
