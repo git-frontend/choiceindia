@@ -118,18 +118,16 @@ const OpenFreeAccountBanner = () => {
                             </h1>
                             {
                                 ischeck ?
-                            <div className="formwrap d-flex justify-content-end ">
-                                {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
+                            <div className="formwrap d-flex justify-content-end">
                                 <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm language="marathi"/>
                                 </GoogleReCaptchaProvider>
                             </div>:
-                            <div className="formwrap d-flex justify-content-end " onMouseOver={()=>setIscheck(true)}>
-                            {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
-                            <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
+                            <div className="formwrap d-flex justify-content-end">
+                                <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
                                 <DematAccountForm language="marathi"/>
-                        </div>
+                            </div>
                         }
                         </div>
 

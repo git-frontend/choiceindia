@@ -62,7 +62,7 @@ function BannerSBrokerHindi() {
                                     <SubBrokerForm language='hindi' />
                                 </GoogleReCaptchaProvider>
                             </div>:
-                             <div className="franchise-form justify-content-end d-flex" id="form-banner" onMouseOver={()=>setIscheck(true)}>
+                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
                                  <SubBrokerForm language='hindi' />
                          </div>
                             }
