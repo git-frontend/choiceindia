@@ -34,7 +34,7 @@ function Banner() {
                                 <DematAccountForm />
                             </GoogleReCaptchaProvider>
                         </div>:
-                            <div className="rightsec d-flex justify-content-end" id="mutualid" onMouseOver={()=>setIscheck(true)}>
+                            <div className="rightsec d-flex justify-content-end" id="mutualid">
                                     <DematAccountForm />
                             </div>
                             }

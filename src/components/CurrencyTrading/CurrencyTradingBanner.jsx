@@ -128,7 +128,7 @@ const CurrencyTradingBanner = () => {
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
                             </div>:
-                             <div className="formwrap d-flex justify-content-end " onMouseOver={()=>setIscheck(true)}>
+                             <div className="formwrap d-flex justify-content-end ">
                              <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
                                 <DematAccountForm />
                             </div>

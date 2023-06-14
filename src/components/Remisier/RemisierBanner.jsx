@@ -66,7 +66,7 @@ function RemisierBanner() {
                                 <SubBrokerForm />
                             </GoogleReCaptchaProvider>
                             </div>:
-                             <div className="franchise-form justify-content-end d-flex" id="form-banner" onMouseOver={()=>setIscheck(true)}>
+                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
                                  <SubBrokerForm />
                              </div>
                            }
