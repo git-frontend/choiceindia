@@ -36,7 +36,7 @@ const img_data = [
 
     {
         "id": "chapter-one-img",
-        "img": `<img src=${image1} class='chapter-images' alt='Meaning of Demat Account' />`
+        "img": `<img src=${image1} class='chapter-images' alt='What is Demat Account' />`
     },
 
     {

@@ -39,19 +39,28 @@ const OpenFreeAccountBanner = () => {
     useEffect(() => {
       window.addEventListener('scroll', getPosition);
   }, []);
+
+
+  const [view,setView]=useState({
+    matches: window.innerWidth < 768 ? false : true ,
+  });
     return (
         <div>
              <section className="banner-sect" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
-                            <span className="banner-title2">All in 1 Account</span>
-                            <h1 className="banner-title" >
-                                <div className="desktop">Open a Brokerage Account <br /> <span className="yellow">Online For Free</span></div>
-                                
-                            </h1>
-                            {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
-                            {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} /> */}
+                        {
+                            view && !view.matches ?
+                            <div></div>
+                            :
+                            <div>
+                                <span className="banner-title2">All in 1 Account</span>
+                                <h1 className="banner-title" >
+                                    <div className="desktop">Open a Brokerage Account <br /> <span className="yellow">Online For Free</span></div>
+                                </h1>
+                            </div>
+                        }
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
@@ -110,14 +119,20 @@ const OpenFreeAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                        <span className="banner-title2 mobile">All in 1 Account</span>
-                        <h1 className="banner-title mbtitle" >
-                        <div className="mobile">Open a Brokerage Account <br /> <span className="yellow">Online For Free</span></div>
-                                
-                            </h1>
-                            {
-                            
-                            ischeck ?
+                        {
+                                view && !view.matches ?
+                                <div>
+                                <span className="banner-title2 mobile">All in 1 Account</span>
+                                <h1 className="banner-title mbtitle" >
+                                    <div className="mobile">Open a Brokerage Account <br /> <span>Online For Free</span></div>
+                                </h1>
+                            </div>
+                            :
+                            <div></div>
+
+                        }
+                        {
+                                ischeck ?
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">

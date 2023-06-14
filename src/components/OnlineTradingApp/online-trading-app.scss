@@ -354,82 +354,93 @@
                 padding-bottom:0rem !important;
             }
         }
-        .content-list {
-            position: relative;
-            padding: 0;
-            margin-top: 0;
-            padding-right: 8rem;
-            .content-list-itm {
-                padding-left: 3.5rem;
-                margin-bottom: 5rem;
+        .app-trade-easy-div{
+            .content-list {
                 position: relative;
-                cursor: pointer;
-
-                &.list-itm-active {
-                    &::before {
-                        content: '';
-                        background: $bgcolor-yellow;
-                        width: 8px;
-                        height: 100%;
-                        border-radius: 8px;
-                        position: absolute;
-                        left: 0;
-                        display: block;
-                        @media (max-width: $sm) {
-                            display: none;
+                padding: 0;
+                margin-top: 0;
+                padding-right: 8rem;
+                .content-list-itm {
+                    padding-left: 3.5rem;
+                    margin-bottom: 5rem;
+                    position: relative;
+                    cursor: pointer;
+                    &.list-itm-active {
+                        &::before {
+                            content: '';
+                            background: $bgcolor-yellow;
+                            width: 8px;
+                            height: 100%;
+                            border-radius: 8px;
+                            position: absolute;
+                            left: 0;
+                            display: block;
+                            @media (max-width: $sm) {
+                                display: none;
+                            }
+                        }
+    
+                        .single-ttl {
+                            color: $primary;
+                        }
+    
+                        .para {
+                            display: block;
                         }
                     }
-
+    
                     .single-ttl {
-                        color: $primary;
+                        font-family: $font-family-poppins-semibold;
+                        font-size: 1.75rem;
+                        color: $darkColorgray;
+                        @media (max-width:$sm) {
+                            color: $primary;
+                        }
                     }
-
+    
                     .para {
-                        display: block;
+                        display: none;
+                        @media (max-width: $sm) {
+                            display: block;
+                        }
                     }
-                }
-
-                .single-ttl {
-                    font-family: $font-family-poppins-semibold;
-                    font-size: 1.75rem;
-                    color: $darkColorgray;
-                }
-
-                .para {
-                    display: none;
+    
+                    &:last-child {
+                    }
                     @media (max-width: $sm) {
-                        display: block;
+                        text-align: center;
+                        padding: 0 2rem;
+                        margin-bottom: 1rem;
+                        width: 95% !important;
                     }
                 }
-
-                &:last-child {
+    
+                &::before {
+                    content: '';
+                    background: $bgcolor-yellow;
+                    width: 5px;
+                    height: 100%;
+                    position: absolute;
+                    left: 3px;
+                    top: 0;
+                    opacity: 0.1;
+                    border-radius: 9px;
+                    @media (max-width: $sm) {
+                        display: none;
+                    }
                 }
-                @media (max-width: $sm) {
-                    margin-bottom: 0;
-                    text-align: center;
-                    padding: 0 2rem;
+                @media (max-width:$md) {
+                    padding-right: 0;
                 }
+                
             }
-
-            &::before {
-                content: '';
-                background: $bgcolor-yellow;
-                width: 5px;
-                height: 100%;
-                position: absolute;
-                left: 3px;
-                top: 0;
-                opacity: 0.1;
-                border-radius: 9px;
-                @media (max-width: $sm) {
-                    display: none;
-                }
+            &.colum-revers{
+                @media (max-width:$sm) {
+                    flex-direction: column-reverse;;
+                } 
             }
-            @media (max-width:$md) {
-                padding-right: 0;
-            }
-            
         }
+        
 
         .trade-easy-images-div {
             display: flex;
@@ -491,7 +502,6 @@
                 display: none;
             }
         }
-
         .content-list {
             padding-left: 6rem;
             display: flex;
@@ -505,7 +515,6 @@
                 margin-bottom: 2.5rem;
                 position: relative;
                 width: 90% !important;
-
                 h4 {
                     font-family: $font-family-poppins-semibold;
                     font-size: 1.5rem;
@@ -558,12 +567,14 @@
                         left: 0;
                         width: 95% !important;
                         margin: 0 auto;
+                        min-height: 13rem;
                     }
                 }
 
                 @media (max-width: $sm) {
-                    width: 100% !important;
-                    margin-bottom: 0;
+                    width: 95% !important;
+                    min-height: 13rem;
+                    margin: 0 auto;
                 }
             }
 
@@ -609,6 +620,23 @@
 
         @media (max-width: $sm) {
             padding:3rem 0;
+        }
+        .slick-dots {
+            @media (max-width:$sm) {
+                position: relative;
+            }
+        }
+        &.online-tr-ap{
+            .app-trade-easy-div{
+                .content-list{
+                    .content-list-itm {
+                        @media (max-width:$sm) {
+                            min-height: 14rem;
+                            width: 95% !important;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -1009,7 +1037,7 @@
         }
         .mn-img1{
             position: absolute;
-            top: 44%;
+            top: 55%;
             left: 14%;
             max-width: 52%;
             z-index: 9;
@@ -1020,7 +1048,7 @@
         }
         .mn-img2{
             position: absolute;
-            top: 30%;
+            top: 20%;
             right: 14%;
             max-width: 52%;
             z-index: 9;

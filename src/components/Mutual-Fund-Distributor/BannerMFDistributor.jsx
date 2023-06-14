@@ -37,8 +37,7 @@ function BannerMFDistributor() {
                             <div className="caption-banner">
                                 <div className="left-sec">
                                     <h1 className="tlt1">
-                                        <span className="tlt2">Become a</span>
-                                        Mutual Fund Distributor
+                                        <span className="tlt2">Become a </span>Mutual Fund Distributor
                                     </h1>
                                 </div>
                                 <div className="right-sec">
