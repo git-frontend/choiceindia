@@ -1340,7 +1340,7 @@ const meta_tags = {
     </script>
     ` },
 
-    "demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'lang':"en",'content':"A Demat account is used to store securities in electronic format. Visit to know about Demat account meaning, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript": `
+    "demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'lang':"en",'content':"A Demat account is used to store securities in electronic format. Visit to know about what is Demat account, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript": `
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
