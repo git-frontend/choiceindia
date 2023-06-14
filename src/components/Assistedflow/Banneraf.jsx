@@ -118,8 +118,6 @@ function Banneraf() {
   let increment;
 
   let isLast = 0;
-  
-  const [firstOrder, setIsFirstOrder] = useState(false);
 
   /**to show client popup */
   useEffect(() => {
@@ -138,6 +136,7 @@ function Banneraf() {
     // console.log('status',userStatus)
     setTrigger(true);
     setUserDetails(() => JSON.parse(details));
+    console.log('details',details)
     if (trigger) {
       setDataNotFound(() => false);
       let payload = {
@@ -320,7 +319,7 @@ function Banneraf() {
         // console.log('Verifyresponse', response);
         // setVerifyLoader(() => false);
         if (response && response.data && response.data.Response) {
-          refCallAPI(BasketData.bucket_type, true);
+          refCallAPI(BasketData.order_type, true);
           // if (BasketData.BucketType && BasketData.BucketType != 'SIP') {
 
           //     // let refNo = parseInt(OrderMetaData.refNo);
@@ -503,7 +502,7 @@ function Banneraf() {
       AMCCode: "",
       AMCName: "",
       Brokerage: "",
-      Firstorderflag: (BasketData.list_fund_data.first_order == "Yes") ? "Y" : "N",
+      Firstorderflag: (BasketData.first_order == "Yes") ? "Y" : "N",
       Freq: "MONTHLY",
       IPAddress: "",
       ISIPMandateId: "",
@@ -611,6 +610,17 @@ function Banneraf() {
             retryPaymentCounter = retryPaymentCounter + 1;
             generatePaymentLink();
           }else{
+                      /**for RM if subId is present in URL */
+                  if (userDetails.subId) {
+                    setLoaders({...loaders, verifyLoader: false});
+                    setPaymentLink(() => null);
+                    setShowPopUp(() => "RMFlow");
+                  } else {
+                    setLoaders({...loaders, verifyLoader: false});
+                    setPaymentLink(() => null
+                    );
+                    // setShowPopUp(() => 'ClientFlow')
+                  }
             UpdateOrderStatus();
           }
         }
@@ -645,7 +655,12 @@ function Banneraf() {
             setShowSecondDiv(false);
             setShowThirdDiv(true);
 
-            if(BasketData.list_fund_data.first_order == "No"){
+            if(BasketData.first_order == "No"){
+              setErrors(() => null);
+              setShowSecondDiv(() => false);
+              setShowFirstButton(() => true);
+              setisModalClose(() => false)
+              setShowThirdDiv(false);
               setShowPopUp(() => "RMFlow");
             }else{
               setTimeout(() => {
@@ -727,7 +742,7 @@ function Banneraf() {
                         {BasketData.bucket_title ? BasketData.bucket_title : "NA"}
                       </p>
                       <p className="profile">
-                        {BasketData.bucket_type ? BasketData.bucket_type : "NA"}
+                        {BasketData.order_type ? BasketData.order_type : "NA"}
                       </p>
                     </>
                     :
@@ -1043,8 +1058,11 @@ function Banneraf() {
                 <div className="order-register">
                   <p className="sucesstext">Order Registered!</p>
 
-                  {
-                    (BasketData.list_fund_data.first_order == "No")? 
+                   {
+                    BasketData ? 
+                    <>
+                    {
+                      (BasketData.first_order == "No")? 
                       <p className="subtext">
                         Keep your mandate authenticated as your 1st order will auto debit.
                       </p> :
@@ -1053,25 +1071,33 @@ function Banneraf() {
                           ? utils.decryptText(userDetails.clientId)
                           : ""}</b> to complete the payment.
                       </p>
-                  }
+                    }
+                    </> : ''
+                   } 
+               
                   
                   <div className="rightbtn">
                     {
-                      (BasketData.list_fund_data.first_order == "No")? 
-                        <Link
-                          className="btn-bg btn-bg-dark copybtn"
-                          to="/"
-                        >Okay</Link> :
-                        <Button
-                          className="btn-bg btn-bg-dark copybtn"
-                          onClick={copyToClipboard}
-                        >
-                          {showToast ? (
-                            <span>Link Copied</span>
-                          ) : (
-                            <span>Copy Link</span>
-                          )}
-                        </Button>
+                      BasketData? 
+                      <>
+                      {
+                          (BasketData.first_order == "No")? 
+                          <Link
+                            className="btn-bg btn-bg-dark copybtn"
+                            to="/"
+                          >Okay</Link> :
+                          <Button
+                            className="btn-bg btn-bg-dark copybtn"
+                            onClick={copyToClipboard}
+                          >
+                            {showToast ? (
+                              <span>Link Copied</span>
+                            ) : (
+                              <span>Copy Link</span>
+                            )}
+                          </Button>
+                      }
+                      </>: ''
                     }
                     
                   </div>
