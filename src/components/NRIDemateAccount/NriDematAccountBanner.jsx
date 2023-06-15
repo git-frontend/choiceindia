@@ -13,6 +13,8 @@ const NriDematAccountBanner = () => {
 
     const[ischeck,setIscheck]=useState(false);
 
+    // this for this
+
     function chapterScroll(id) {
         console.log("check",id);
         var element = document.getElementById(id);
