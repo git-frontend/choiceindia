@@ -1,6 +1,7 @@
 
-import AppImage1 from '../../assets/images/Share Market App/Banner.webp';
-
+import AppImage1 from '../../assets/images/online-trading-app/banner-img-main.webp';
+import AppImage2 from '../../assets/images/online-trading-app/banner_image-popup-1.webp';
+import AppImage3 from '../../assets/images/online-trading-app/banner_image-popup-2.webp';
 import AppImage4 from '../../assets/images/online-trading-app/app-store-white.svg';
 import AppImage5 from '../../assets/images/online-trading-app/g-play-white.svg';
 import AppImage6 from '../../assets/images/online-trading-app/star-icon.svg';
@@ -60,13 +61,15 @@ function SMABannerApp() {
                     </a>
                   </div>
                         <div className="star-line">
-                            <img src={AppImage6} alt="" className="img-responsive" width={"27"} height={"26"} /> <h5> Trusted by <span>5 Lakhs + Users</span> </h5>
+                            <img src={AppImage6} alt="" className="img-responsive" width={"27"} height={"26"} /> <h5> Trusted by <span>7.5 Lakhs + Users</span> </h5>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-5 d-none d-sm-block">
                     <div className="sec1-right">
-                        <LazyLoader src={AppImage1} className={"img-fluid mn-img"} alt={"Loading"} width={"387"} height={"727"}/>
+                        <LazyLoader src={AppImage1} className={"img-fluid mn-img"} alt={"Share Market App"} width={"334"} height={"661"}/>
+                        <LazyLoader src={AppImage2} className={"img-fluid mn-img1"} alt={"Share Market App"} width={"260"} height={"197"}/>
+                        <LazyLoader src={AppImage3} className={"img-fluid mn-img2"} alt={"Share Market App"} width={"260"} height={"87"}/>
                         
                     </div>
                 </div>

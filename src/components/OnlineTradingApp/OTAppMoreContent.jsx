@@ -56,7 +56,7 @@ function OTAppMoreContent() {
                                             <li className="mb-3"><strong>Choice FinX Signal:</strong> Trade with Automated research based engine with multi frame breakout strategies
 </li>
                                           
-                                            <li className="mb-3"><strong>C-Quant:</strong> Based on quantitative and mathematical statistics, the feature generates calls for Weekly positional trades.</li>
+                                
                                             <li className="mb-3"><strong>Company Overview:</strong> An entire stock history, data and performance is available under Company Overview section.</li>
                                             <li className="mb-3"><strong>Advanced Charts:</strong> More than 100+ charts for Technical Analysis on stock market can be viewed.</li>
                                             {/* <li className="mb-3"><strong>Mojo Analysis:</strong> A segment initiated for in-depth fundamental knowledge.</li> */}

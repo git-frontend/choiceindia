@@ -11,6 +11,7 @@ import {
   Link,
   useParams,
   useLocation,
+  Navigate,
 } from "react-router-dom";
 
 import AssistedFlowService from "../../Services/AssistedFlowService";
@@ -86,6 +87,8 @@ function Banneraf() {
 
   const [isModalClose, setisModalClose] = useState(false);
 
+  let retryPaymentCounter = 0;
+
   /**Query Params Data */
   // const userDetails = { uniqueId: new URLSearchParams(search).get('order_unique_id').replaceAll(' ', '+').toString(), bucketId: new URLSearchParams(search).get('bucketId').replaceAll(' ', '+').toString(), clientId: new URLSearchParams(search).get('clientId').replaceAll(' ', '+').toString(), rmId: new URLSearchParams(search).get('rm_id') ? new URLSearchParams(search).get('rm_id').replaceAll(' ', '+').toString() : null, subjectId: new URLSearchParams(search).get('subid') ? new URLSearchParams(search).get('subid').replaceAll(' ', '+').toString() : null, };
 
@@ -133,7 +136,7 @@ function Banneraf() {
     // console.log('status',userStatus)
     setTrigger(true);
     setUserDetails(() => JSON.parse(details));
-    console.log('userdetails', details)
+    console.log('details',details)
     if (trigger) {
       setDataNotFound(() => false);
       let payload = {
@@ -145,11 +148,9 @@ function Banneraf() {
 
       AssistedFlowService.BasketDetails(payload)
         .then((res) => {
-          // console.log('deetails', res);
           if (res && res.data && res.data.Body && res.data.Body.data) {
             setDataNotFound(() => false);
             setBasketData(() => (res.data.Body.data ? res.data.Body.data : {}));
-            console.log('datttttt',BasketData.sip_date)
             refCallAPI();
           } else {
             setDataNotFound(() => true);
@@ -318,7 +319,7 @@ function Banneraf() {
         // console.log('Verifyresponse', response);
         // setVerifyLoader(() => false);
         if (response && response.data && response.data.Response) {
-          refCallAPI(BasketData.bucket_type, true);
+          refCallAPI(BasketData.order_type, true);
           // if (BasketData.BucketType && BasketData.BucketType != 'SIP') {
 
           //     // let refNo = parseInt(OrderMetaData.refNo);
@@ -468,9 +469,10 @@ function Banneraf() {
     if (dd < 10) dd = "0" + dd;
     if (mm < 10) mm = "0" + mm;
 
-    let day = BasketData.sip_date.split(',');
+    // let day = BasketData.sip_date.split(',');
 
-    const formattedToday = (day[day.length -1]).toString() + "/" + mm + "/" + yyyy;
+    // const formattedToday = (day[day.length -1]).toString() + "/" + mm + "/" + yyyy;
+    const formattedToday = BasketData.list_fund_data[isLast].selected_date.toString() + "/" + mm + "/" + yyyy;
 
     // let refNo = parseInt(OrderMetaData.refNo);
     // refNo = refNo + 1;
@@ -500,7 +502,7 @@ function Banneraf() {
       AMCCode: "",
       AMCName: "",
       Brokerage: "",
-      Firstorderflag: "Y",
+      Firstorderflag: (BasketData.first_order == "Yes") ? "Y" : "N",
       Freq: "MONTHLY",
       IPAddress: "",
       ISIPMandateId: "",
@@ -586,9 +588,7 @@ function Banneraf() {
 
     AssistedFlowService.PaymentLink(payload)
       .then((response) => {
-        console.log("paymentlinkresponse", response);
         if (response && response.data && response.data.Response) {
-          console.log("userdetails", userDetails);
           /**for RM if subId is present in URL */
           if (userDetails.subId) {
             setLoaders({...loaders, verifyLoader: false});
@@ -605,6 +605,24 @@ function Banneraf() {
           }
 
           UpdateOrderStatus(response.data.Response);
+        }else{
+          if(retryPaymentCounter < 1){
+            retryPaymentCounter = retryPaymentCounter + 1;
+            generatePaymentLink();
+          }else{
+                      /**for RM if subId is present in URL */
+                  if (userDetails.subId) {
+                    setLoaders({...loaders, verifyLoader: false});
+                    setPaymentLink(() => null);
+                    setShowPopUp(() => "RMFlow");
+                  } else {
+                    setLoaders({...loaders, verifyLoader: false});
+                    setPaymentLink(() => null
+                    );
+                    // setShowPopUp(() => 'ClientFlow')
+                  }
+            UpdateOrderStatus();
+          }
         }
       })
       .catch((error) => {
@@ -625,21 +643,30 @@ function Banneraf() {
       status: "payment_pending",
       order_date: "",
       payment_type: "Cash",
-      link: paymntLink,
+      link: paymntLink? paymntLink : null ,
       action_by: "",
     };
 
     AssistedFlowService.OrderStatus(payload)
       .then((response) => {
-        console.log("order status reponse", response);
         setLoaders({...loaders, verifyLoader: false});
         if (response && response.data && response.data.StatusCode == 200) {
           if (!userDetails.subId) {
             setShowSecondDiv(false);
             setShowThirdDiv(true);
-            setTimeout(() => {
-              window.open(paymntLink, "_self");
-            }, 3000);
+
+            if(BasketData.first_order == "No"){
+              setErrors(() => null);
+              setShowSecondDiv(() => false);
+              setShowFirstButton(() => true);
+              setisModalClose(() => false)
+              setShowThirdDiv(false);
+              setShowPopUp(() => "RMFlow");
+            }else{
+              setTimeout(() => {
+                window.open(paymntLink? paymntLink: "", "_self");
+              }, 3000);
+            }
           }else{
             closesection();
           }
@@ -715,7 +742,7 @@ function Banneraf() {
                         {BasketData.bucket_title ? BasketData.bucket_title : "NA"}
                       </p>
                       <p className="profile">
-                        {BasketData.bucket_type ? BasketData.bucket_type : "NA"}
+                        {BasketData.order_type ? BasketData.order_type : "NA"}
                       </p>
                     </>
                     :
@@ -1016,7 +1043,7 @@ function Banneraf() {
                                 </div>
                             </div> : ''
                     } */}
-
+            {/* Modal for RM flow */}
             <Modal
               className="ordermodal"
               show={showPopUp == "RMFlow"}
@@ -1030,22 +1057,49 @@ function Banneraf() {
               <Modal.Body className="text-center">
                 <div className="order-register">
                   <p className="sucesstext">Order Registered!</p>
-                  <p className="subtext">
-                    Copy &amp; Share link with Client - <b>{userDetails && userDetails.clientId
-                                  ? utils.decryptText(userDetails.clientId)
-                                  : ""}</b> to complete the payment.
-                  </p>
+
+                   {
+                    BasketData ? 
+                    <>
+                    {
+                      (BasketData.first_order == "No")? 
+                      <p className="subtext">
+                        Keep your mandate authenticated as your 1st order will auto debit.
+                      </p> :
+                      <p className="subtext">
+                        Copy &amp; Share link with Client - <b>{userDetails && userDetails.clientId
+                          ? utils.decryptText(userDetails.clientId)
+                          : ""}</b> to complete the payment.
+                      </p>
+                    }
+                    </> : ''
+                   } 
+               
+                  
                   <div className="rightbtn">
-                    <Button
-                      className="btn-bg btn-bg-dark copybtn"
-                      onClick={copyToClipboard}
-                    >
-                      {showToast ? (
-                        <span>Link Copied</span>
-                      ) : (
-                        <span>Copy Link</span>
-                      )}
-                    </Button>
+                    {
+                      BasketData? 
+                      <>
+                      {
+                          (BasketData.first_order == "No")? 
+                          <Link
+                            className="btn-bg btn-bg-dark copybtn"
+                            to="/"
+                          >Okay</Link> :
+                          <Button
+                            className="btn-bg btn-bg-dark copybtn"
+                            onClick={copyToClipboard}
+                          >
+                            {showToast ? (
+                              <span>Link Copied</span>
+                            ) : (
+                              <span>Copy Link</span>
+                            )}
+                          </Button>
+                      }
+                      </>: ''
+                    }
+                    
                   </div>
                 </div>
               </Modal.Body>

@@ -46,13 +46,17 @@
 }
 }
 .App-main {
-    .app-strategies-bottom 
-    {
-    .content-listres{
-        @media (max-width:$md) {
-			margin-left: 0;
-            padding-left: 0;
-		}
+    .app-strategies-bottom {
+        .content-listres{
+            @media (max-width:$md) {
+                margin-left: 0;
+                padding-left: 0;
+            }
+        }
+        .colum-revers{
+            @media (max-width:$sm) {
+                flex-direction: column-reverse;;
+            }
         }
     }
 }

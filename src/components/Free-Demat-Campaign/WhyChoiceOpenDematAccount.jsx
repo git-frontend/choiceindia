@@ -84,25 +84,25 @@ const settings1 = {
                   <Slider {...settings1} className="company-why-list">
                         <div className="why-list-itm">
                             <h3>
-                                <span className="hvr-txt"><span>5L</span></span><small>+</small>
+                                <span className="hvr-txt"><span>750K</span></span><small>+</small>
                             </h3>
                             <h4>Clients</h4>
                         </div>
                         <div className="why-list-itm">
                             <h3>
-                            <span className="hvr-txt"><span>85</span></span><small>+</small>
+                            <span className="hvr-txt"><span>95</span></span><small>+</small>
                             </h3>
                             <h4>Local Offices</h4>
                         </div>
                         <div className="why-list-itm">
                             <h3>
-                            <span className="hvr-txt"><span>29K</span></span><small>+</small>
+                            <span className="hvr-txt"><span>30K</span></span><small>+</small>
                             </h3>
                             <h4>Franchise</h4>
                         </div>
                         <div className="why-list-itm">
                             <h3>
-                            <span className="hvr-txt"><span>1500</span></span><small>+</small>
+                            <span className="hvr-txt"><span>2.6K</span></span><small>+</small>
                             </h3>
                             <h4>Employees</h4>
                         </div>

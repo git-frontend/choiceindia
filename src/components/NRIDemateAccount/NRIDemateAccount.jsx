@@ -111,8 +111,8 @@ function NRIDemateAccount() {
 
                                         <h2 className="font-bold">Documents Required to Open A NRI Demat Account</h2>
                                         Below is the comprehensive list of documents required to open the Demat Account for NRIs:<br />
-                                        <h4 className="font-bold"> 1. Current Residential Status</h4>
-                                        <h4 className="font-bold"> 2. For Indian Passport Holders</h4>
+                                        <h4 className="font-bold mrg-y"> 1. Current Residential Status</h4>
+                                        <h4 className="font-bold mrg-y"> 2. For Indian Passport Holders</h4>
                                         <ul>
                                             <li>Valid Passport</li>
                                             <li>Valid Visa - Work/Student/Employment/Resident Permit</li>
@@ -121,7 +121,7 @@ function NRIDemateAccount() {
                                             
                                            
                                         </ul>
-                                        <h4 className="font-bold"> 3. For Foreign Passport Holders</h4>
+                                        <h4 className="font-bold mrg-y"> 3. For Foreign Passport Holders</h4>
                                         <ul>
                                             <li>Valid Passport</li>
                                             <li>'India’ as a Place of Birth in the Foreign Passport</li>
