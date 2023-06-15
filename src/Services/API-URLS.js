@@ -183,6 +183,9 @@ export class API_URLS {
     OTPOnCallURL = 'otp-on-call';
     verifyOTPURL = 'verify-otp';
     nbfcverifyOTPURL = 'api/verify-otp';
+    // for event calendar
+    eventdetailsURL='cm/ProfileMkt/EventDetails';
+
     
   /** pdf API */
   
@@ -870,5 +873,9 @@ export class API_URLS {
     orderStatusUpdateURL(){
         return this.ConnectBaseURL + 'basket/order/status-update'
         // return "https://apidev.choiceconnect.in/connect/api/basket/order/status-update"
+    }
+    //for event deatils
+    getEventDetails(){
+        return this.performanceURL + this.eventdetailsURL;
     }
 }
