@@ -888,11 +888,7 @@ function Routing() {
                                 < LazyUpcomingAGM />
                             </React.Suspense>
                         } />
-                        <Route exact path='/krishna-prasad' element={
-                            <React.Suspense>
-                               < LazyFuturesOptionsTrading />
-                            </React.Suspense>
-                        } />
+                       
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
