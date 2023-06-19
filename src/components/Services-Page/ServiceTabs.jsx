@@ -17,8 +17,9 @@ import CapitalAdvisory1 from './CapitalAdvisory';
 import ManagementConsultancy1 from './ManagementConsultancy';
 import GovernmentAdvisory1 from './GovernmentAdvisory';
 import TaxAdvisory1 from './TaxAdvisory';
-import React,{useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
+import { useLocation } from 'react-router-dom';
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
@@ -26,7 +27,6 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
 function ServiceTabs() {
-	
 
 	function chapterScroll(id) {
 		var element = document.getElementById(id);
@@ -34,47 +34,57 @@ function ServiceTabs() {
 		var elementPosition = element.getBoundingClientRect().top;
 		var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 		window.scrollTo({
-		  top: offsetPosition,
-		  behavior: "smooth"
+			top: offsetPosition,
+			behavior: "smooth"
 		});
+	}
+
+	const settings = {
+		infinite: false,
+		speed: 1500,
+		arrows: false,
+		slidesToShow: 4,
+		autoplay: false,
+		margin: 15,
+		dots: true,
+		autoplaySpeed: 1000,
+		slidesToScroll: 4,
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3,
+					adaptiveHeight: false,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+		],
+	};
+
+	const location = useLocation();
+
+	useEffect(() => {
+	  if (location.hash) {
+		const element = document.getElementById(location.hash.slice(1));
+		if (element) {
+		  element.scrollIntoView();
+		}
 	  }
-
-const settings = {
-	infinite: false,
-	speed: 1500,
-	arrows: false,
-	slidesToShow: 4,
-	autoplay: false,
-	margin:15,
-	dots:true,
-	autoplaySpeed: 1000,
-	slidesToScroll: 4,
-	responsive: [
-	  {
-		breakpoint: 992,
-		settings: {
-		  slidesToShow: 3,
-		  slidesToScroll: 3,
-		  adaptiveHeight: false,
-		},
-	  },
-	  {
-		breakpoint: 600,
-		settings: {
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		},
-	  },
-	],
-};
-
-    return (
-        <div>
+	}, [location]);
+	return (
+		<div>
 
 
-			<section className="security-privacy same-list-bx services-same-list-bx d-none d-sm-block"> 
-				<div className="container">	
-					
+			<section className="security-privacy same-list-bx services-same-list-bx d-none d-sm-block">
+				<div className="container">
+
 					<div className="row">
 						<div className="col-md-12 ">
 							{/* <div className="same-list-bx-list"> */}
@@ -82,15 +92,15 @@ const settings = {
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('equitybroking') }}>
 										<span className="cont-img">
-										<LazyLoader src={EquityBroking} className={"mn-img"} alt={"Equity Broking"} width={"65"} height={"65"} />
-										{/* <img src={EquityBroking} className="" alt="Equity Broking" width={"65"} height={"65"} /> */}
+											<LazyLoader src={EquityBroking} className={"mn-img"} alt={"Equity Broking"} width={"65"} height={"65"} />
+											{/* <img src={EquityBroking} className="" alt="Equity Broking" width={"65"} height={"65"} /> */}
 										</span>
-										
+
 										<h4 className='title-fourth'>Equity Broking</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
-									<div  className="bx-item-cont" onClick={() => { chapterScroll('wealth') }}>
+									<div className="bx-item-cont" onClick={() => { chapterScroll('wealth') }}>
 										<span className="cont-img">
 											<LazyLoader src={WealthManagement} className={"mn-img"} alt={"Wealth Management"} width={"65"} height={"65"} />
 											{/* <img src={WealthManagement} className="" alt="Wealth Management" width={"65"} height={"65"} /> */}
@@ -109,29 +119,29 @@ const settings = {
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('loan') }}>
-									<span className="cont-img">
-									<LazyLoader src={Loans} className={"mn-img"} alt={"Loans"} width={"65"} height={"65"} />
-										{/* <img src={Loans} className="" alt="Loans" width={"65"} height={"65"} /> */}
-									</span>
-										
+										<span className="cont-img">
+											<LazyLoader src={Loans} className={"mn-img"} alt={"Loans"} width={"65"} height={"65"} />
+											{/* <img src={Loans} className="" alt="Loans" width={"65"} height={"65"} /> */}
+										</span>
+
 										<h4 className='title-fourth'>Loans</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('capital') }}>
-									<span className="cont-img">
-									<LazyLoader src={CapitalAdvisory} className={"mn-img"} alt={"capital advisory"} width={"65"} height={"65"} />
-										{/* <img src={CapitalAdvisory} className="" alt="Capital Advisory" width={"65"} height={"65"} /> */}
-									</span>
-										
+										<span className="cont-img">
+											<LazyLoader src={CapitalAdvisory} className={"mn-img"} alt={"capital advisory"} width={"65"} height={"65"} />
+											{/* <img src={CapitalAdvisory} className="" alt="Capital Advisory" width={"65"} height={"65"} /> */}
+										</span>
+
 										<h4 className='title-fourth'>Capital Advisory</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('management') }}>
 										<span className="cont-img">
-										<LazyLoader src={ManagementConsultancy} className={"mn-img"} alt={"management-consultancy"} width={"65"} height={"65"} />
-										{/* <img src={ManagementConsultancy} className="" alt="Management Consultancy" width={"65"} height={"65"} /> */}
+											<LazyLoader src={ManagementConsultancy} className={"mn-img"} alt={"management-consultancy"} width={"65"} height={"65"} />
+											{/* <img src={ManagementConsultancy} className="" alt="Management Consultancy" width={"65"} height={"65"} /> */}
 										</span>
 										<h4 className='title-fourth'>Management Consultancy</h4>
 									</div>
@@ -161,38 +171,38 @@ const settings = {
 			</section>
 
 			<div id="equitybroking">
-			<EquityBroking1 />
+				<EquityBroking1 />
 			</div>
 
-			<div id="wealth">
-			<WealthManagement1 />
+			<div  id="capital-advisory">
+				<WealthManagement1 />
 			</div>
 			<div id="insurance">
-			<Insurance1/>
+				<Insurance1 />
 			</div>
 			<div id="loan">
-			<Loans1 />
+				<Loans1 />
 			</div>
 			<div id="capital">
-			<CapitalAdvisory1 />
+				<CapitalAdvisory1 />
 			</div>
 			<div id="management">
-			<ManagementConsultancy1 />
+				<ManagementConsultancy1 />
 			</div>
 			<div id="goverment">
-			<GovernmentAdvisory1 />
+				<GovernmentAdvisory1 />
 			</div>
 			<div id="tax">
-			<TaxAdvisory1 />
+				<TaxAdvisory1 />
 			</div>
-			
 
 
 
 
-        </div>
 
-    );
+		</div>
+
+	);
 }
 
 export default ServiceTabs;

@@ -12,6 +12,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Marquee from 'react-fast-marquee';
 function Footer() {
+  const [check, setCheck] = useState(false);
   let toggleModal = (val) => {
     setData1(val)
   }
@@ -35,6 +36,8 @@ function Footer() {
     });
   }
 
+
+
   useEffect(() => {
   }, [data])
 
@@ -46,10 +49,19 @@ function Footer() {
     setData(obj);
 
   }
-  function insuranceLink(){
-    
-     window.open("https://choiceinsurance.in/");   
+  function insuranceLink() {
+
+    window.open("https://choiceinsurance.in/");
   }
+
+
+  const navigate = useNavigate();
+
+  const handleNavLinkClick = (event) => {
+    event.preventDefault();
+    navigate('/services#capital-advisory');
+  };
+
 
   return (
     <>
@@ -77,11 +89,14 @@ function Footer() {
                             <li>
                               <NavLink className="cursor-pointer" to="/equity-broking" >Broking &amp; Distribution</NavLink>
                             </li>
+                            {/* <li>
+                              <NavLink to="/services#wealth" onClick={() => { chapterScroll('wealth') }}    className="cursor-pointer">Wealth Planning</NavLink>
+                              </li> */}
+                            <Link to="/services#capital-advisory" onClick={handleNavLinkClick} className="cursor-pointer">
+                              Capital Advisory
+                            </Link>
                             <li>
-                              <Link to={{ pathname: "/services", hash: "Wealth-Management" }} className="cursor-pointer">Wealth Planning</Link>
-                              </li>
-                            <li>
-                              <NavLink className="cursor-pointer"  onClick={insuranceLink}>Insurance</NavLink>
+                              <NavLink className="cursor-pointer" onClick={insuranceLink}>Insurance</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/loan" >Loans</NavLink>
@@ -95,9 +110,9 @@ function Footer() {
                             <li>
                               <NavLink className="cursor-pointer" to="/government-advisory" >Government Advisory</NavLink>
                             </li>
-                            <li>
-                              <NavLink className="cursor-pointer">Tax Advisory</NavLink>
-                            </li>
+                            <Link to="/services#tax-advisory" onClick={handleNavLinkClick} className="cursor-pointer">
+                              tax Advisory
+                            </Link>
                           </ul>
                           <ul className="reset quicklink2">
                             <li>
@@ -154,7 +169,7 @@ function Footer() {
                               <Link to="/offer-document">Offer Document</Link>
                             </li>
                             <li>
-                            <a href="https://finx.choiceindia.com/auth/login?redirectUrl=https://accounts.choiceindia.com/modification"  target="_blank">Online KYC Updation</a>
+                              <a href="https://finx.choiceindia.com/auth/login?redirectUrl=https://accounts.choiceindia.com/modification" target="_blank">Online KYC Updation</a>
                             </li>
                           </ul>
                         </div>
@@ -199,8 +214,8 @@ function Footer() {
                             </a>
 
                           </div>
-                          
-                            <div className="footer-social-links">
+
+                          <div className="footer-social-links">
                             <a href="https://www.facebook.com/ChoiceHQ/" aria-label="Facebook" target="_blank">
                               <FontAwesomeIcon icon={faFacebookF} />
                             </a>
@@ -220,7 +235,7 @@ function Footer() {
                               <FontAwesomeIcon icon={faTelegramPlane} />
                             </a>
                           </div>
-                          
+
                         </div>
                       </div>
                       <div className="col-md-5">
@@ -259,8 +274,8 @@ function Footer() {
                       | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
                       For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> </p>
-                     
-                      <p>Cautionary Message :
+
+                    <p>Cautionary Message :
                       <ol style={{ marginleft: "-1rem" }} className="ol-p0">
                         <li>Sharing of trading credentials – login id &amp; passwords including OTP’s:- Keep Your Password/Pin and OTP’s private &amp; confidential to avoid any misuse or unauthorised trades. Please ensure that you do not share it with any one.</li>
                         <li>Trading in leveraged products like options without proper understanding, which could lead to losses</li>
@@ -270,21 +285,21 @@ function Footer() {
                       </ol>
                     </p>
 
-                   <p>   Disclaimer: <br />
+                    <p>   Disclaimer: <br />
                       1. *Investments in securities market are subject to market risks, read all the related documents carefully before investing.<br />
                       2. In addition to client based business, we are also doing proprietary trading. <br />
                       3. Brokerage will not exceed the SEBI prescribed limit.</p>
 
                     <p>  <strong>Research Disclaimer and Disclosure inter-alia as required under Securities and Exchange Board of India (Research Analysts) Regulations, 2014</strong></p>
                     <p>  Choice  Equity  Broking  Private  Limited  (“CEBPL”)  is  a  registered  Research  Analyst  Entity  (Reg.  No.  INH000000222  )  (hereinafter    be  referred  as  “CEBPL”).  (CIN.    NO.: U65999MH2010PTC198714).</p>
-                     <p> <strong>Reg. Address:</strong> Sunil Patodia Tower, J B Nagar, Andheri(East), Mumbai 400099. Tel. No. 022-6707 9999 . </p>
-                     <p><strong>Compliance Officer:</strong> Swati Matkar. Tel. 022-6707 9999-Ext. 896. <br/>
-                        Email- Compliance@choiceindia.com</p> 
-                        <p><strong>Grievance officer:</strong> Deepika Singhvi  Tel.022-67079999- Ext-834. <br/>
-Email-  ig@choiceindia.com</p>
-                      <p><strong>Research Disclaimer:</strong> Investment in the securities market is subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.</p>
+                    <p> <strong>Reg. Address:</strong> Sunil Patodia Tower, J B Nagar, Andheri(East), Mumbai 400099. Tel. No. 022-6707 9999 . </p>
+                    <p><strong>Compliance Officer:</strong> Swati Matkar. Tel. 022-6707 9999-Ext. 896. <br />
+                      Email- Compliance@choiceindia.com</p>
+                    <p><strong>Grievance officer:</strong> Deepika Singhvi  Tel.022-67079999- Ext-834. <br />
+                      Email-  ig@choiceindia.com</p>
+                    <p><strong>Research Disclaimer:</strong> Investment in the securities market is subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.</p>
 
-                      <p>&copy; Choice International Limited. All Rights Reserved.</p>
+                    <p>&copy; Choice International Limited. All Rights Reserved.</p>
                   </div>
                   {/* <a className="moreless-button">Read more</a> */}
                 </div>

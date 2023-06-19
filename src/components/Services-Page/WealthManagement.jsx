@@ -4,16 +4,10 @@ import Bannerimage from '../../assets/images/services/wealth-management-services
 import LazyLoader from "../Common-features/LazyLoader";
 import { useEffect, useRef } from "react";
 function WealthManagement() {
-    const scrollRef = useRef(null);
-
-    useEffect(() => {
-      if (window.location.hash === "#Wealth-Management") {
-        scrollRef.current.scrollIntoView({ behavior: "smooth" });
-      }
-    }, []);
+   
     return (
         <div>
-            <section  ref={scrollRef} className="bannersection service-tab-cont bg-rightsection" id="EquityBroking">
+            <section   className="bannersection service-tab-cont bg-rightsection" id="wealth">
                 <div className="container">
                     <div className="row d-flex justify-content-center">
                         <div className="col-md-12">
