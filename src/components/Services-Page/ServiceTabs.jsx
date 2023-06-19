@@ -74,7 +74,14 @@ function ServiceTabs() {
 	  if (location.hash) {
 		const element = document.getElementById(location.hash.slice(1));
 		if (element) {
-		  element.scrollIntoView();
+		//   element.scrollIntoView();
+		  var headerOffset = 140;
+		  var elementPosition = element.getBoundingClientRect().top;
+		  var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+		  window.scrollTo({
+			top: offsetPosition,
+			behavior: "smooth"
+		  });
 		}
 	  }
 	}, [location]);

@@ -60,6 +60,7 @@ function Footer() {
   const handleNavLinkClick = (event) => {
     event.preventDefault();
     navigate('/services#capital-advisory');
+   
   };
 
 
