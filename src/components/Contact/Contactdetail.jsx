@@ -15,6 +15,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Form, ModalFooter, ModalHeader } from "react-bootstrap";
 import Image2 from '../../assets/images/icons/security.svg';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
+import { FaRegFilePdf } from 'react-icons/fa';
 
 function Contactdetail() {
    const [address, setaddress] = useState({});
@@ -105,6 +106,7 @@ function Contactdetail() {
                      <p className="text-center esctext ">For any grievances reach out to our <a variant="primary" onClick={() => { setShow(true); loadEscalation() }} className="cursor-pointer">
                         Escalation Matrix
                      </a></p>
+                     <p className="text-center esctext "><a href="#" target="_blank">KMPs Details <FaRegFilePdf/></a></p>
                   </div>
                </div>
 

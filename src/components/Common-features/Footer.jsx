@@ -344,6 +344,9 @@ Email-  ig@choiceindia.com</p>
               <li>
                 <a href="https://sachet.rbi.org.in/" target="_blank">Sachet Portal</a>
               </li>
+              <li>
+                <a href="#" target="_blank">Branches/Authorized Persons</a>
+              </li>
 
             </ul>
           </div>
