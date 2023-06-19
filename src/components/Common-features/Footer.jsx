@@ -78,8 +78,8 @@ function Footer() {
                               <NavLink className="cursor-pointer" to="/equity-broking" >Broking &amp; Distribution</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer">Wealth Planning</NavLink>
-                            </li>
+                              <Link to={{ pathname: "/services", hash: "Wealth-Management" }} className="cursor-pointer">Wealth Planning</Link>
+                              </li>
                             <li>
                               <NavLink className="cursor-pointer"  onClick={insuranceLink}>Insurance</NavLink>
                             </li>
