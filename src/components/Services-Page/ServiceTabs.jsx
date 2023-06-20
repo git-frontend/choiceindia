@@ -107,7 +107,7 @@ function ServiceTabs() {
 									</div>
 								</div>
 								<div className="same-list-bx-item">
-									<div className="bx-item-cont" onClick={() => { chapterScroll('wealth') }}>
+									<div className="bx-item-cont" onClick={() => { chapterScroll('Wealth-Management') }}>
 										<span className="cont-img">
 											<LazyLoader src={WealthManagement} className={"mn-img"} alt={"Wealth Management"} width={"65"} height={"65"} />
 											{/* <img src={WealthManagement} className="" alt="Wealth Management" width={"65"} height={"65"} /> */}
@@ -135,7 +135,7 @@ function ServiceTabs() {
 									</div>
 								</div>
 								<div className="same-list-bx-item">
-									<div className="bx-item-cont" onClick={() => { chapterScroll('capital') }}>
+									<div className="bx-item-cont" onClick={() => { chapterScroll('Capital-Advisory') }}>
 										<span className="cont-img">
 											<LazyLoader src={CapitalAdvisory} className={"mn-img"} alt={"capital advisory"} width={"65"} height={"65"} />
 											{/* <img src={CapitalAdvisory} className="" alt="Capital Advisory" width={"65"} height={"65"} /> */}
@@ -145,7 +145,7 @@ function ServiceTabs() {
 									</div>
 								</div>
 								<div className="same-list-bx-item">
-									<div className="bx-item-cont" onClick={() => { chapterScroll('management') }}>
+									<div className="bx-item-cont" onClick={() => { chapterScroll('Management-Consultancy') }}>
 										<span className="cont-img">
 											<LazyLoader src={ManagementConsultancy} className={"mn-img"} alt={"management-consultancy"} width={"65"} height={"65"} />
 											{/* <img src={ManagementConsultancy} className="" alt="Management Consultancy" width={"65"} height={"65"} /> */}
@@ -163,7 +163,7 @@ function ServiceTabs() {
 									</div>
 								</div>
 								<div className="same-list-bx-item">
-									<div className="bx-item-cont" onClick={() => { chapterScroll('tax') }}>
+									<div className="bx-item-cont" onClick={() => { chapterScroll('Tax-Advisory)') }}>
 										<span className="cont-img">
 											<LazyLoader src={TaxAdvisory} className={"mn-img"} alt={"Tax Advisory"} width={"65"} height={"65"} />
 											{/* <img src={TaxAdvisory} className="" alt="Tax Advisory" width={"65"} height={"65"} /> */}
@@ -181,7 +181,7 @@ function ServiceTabs() {
 				<EquityBroking1 />
 			</div>
 
-			<div  id="capital-advisory">
+			<div  id="Wealth-Management">
 				<WealthManagement1 />
 			</div>
 			<div id="insurance">
@@ -190,16 +190,16 @@ function ServiceTabs() {
 			<div id="loan">
 				<Loans1 />
 			</div>
-			<div id="capital">
+			<div id="Capital-Advisory">
 				<CapitalAdvisory1 />
 			</div>
-			<div id="management">
+			<div id="Management-Consultancy">
 				<ManagementConsultancy1 />
 			</div>
 			<div id="goverment">
 				<GovernmentAdvisory1 />
 			</div>
-			<div id="tax">
+			<div id="Tax-Advisory">
 				<TaxAdvisory1 />
 			</div>
 

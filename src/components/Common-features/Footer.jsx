@@ -53,17 +53,6 @@ function Footer() {
 
     window.open("https://choiceinsurance.in/");
   }
-
-
-  // const navigate = useNavigate();
-
-  // const handleNavLinkClick = (event) => {
-  //   event.preventDefault();
-  //   navigate('/services#capital-advisory');
-   
-  // };
-
-
   return (
     <>
       <div className="Footer">
@@ -93,9 +82,11 @@ function Footer() {
                             {/* <li>
                               <NavLink to="/services#wealth" onClick={() => { chapterScroll('wealth') }}    className="cursor-pointer">Wealth Planning</NavLink>
                               </li> */}
-                            <NavLink to="/services#capital-advisory"  className="cursor-pointer">
-                              Capital Advisory
-                            </NavLink>
+                            <li>
+                              <NavLink to="/services#Wealth-Management"  className="cursor-pointer">
+                              Wealth Planning
+                              </NavLink>
+                            </li>
                             <li>
                               <NavLink className="cursor-pointer" onClick={insuranceLink}>Insurance</NavLink>
                             </li>
@@ -103,17 +94,19 @@ function Footer() {
                               <NavLink className="cursor-pointer" to="/loan" >Loans</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer">Capital Advisory</NavLink>
+                              <NavLink to="/services#Capital-Advisory" className="cursor-pointer">Capital Advisory</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer">Management Consultancy</NavLink>
+                              <NavLink  to="/services#Management-Consultancy" className="cursor-pointer">Management Consultancy</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/government-advisory" >Government Advisory</NavLink>
                             </li>
-                            <Link to="/services#tax-advisory" className="cursor-pointer">
+                            <li>
+                            <NavLink to="/services#Tax-Advisory" className="cursor-pointer">
                               tax Advisory
-                            </Link>
+                            </NavLink>
+                             </li>
                           </ul>
                           <ul className="reset quicklink2">
                             <li>
