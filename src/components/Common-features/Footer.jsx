@@ -55,13 +55,13 @@ function Footer() {
   }
 
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleNavLinkClick = (event) => {
-    event.preventDefault();
-    navigate('/services#capital-advisory');
+  // const handleNavLinkClick = (event) => {
+  //   event.preventDefault();
+  //   navigate('/services#capital-advisory');
    
-  };
+  // };
 
 
   return (
@@ -93,9 +93,9 @@ function Footer() {
                             {/* <li>
                               <NavLink to="/services#wealth" onClick={() => { chapterScroll('wealth') }}    className="cursor-pointer">Wealth Planning</NavLink>
                               </li> */}
-                            <Link to="/services#capital-advisory" onClick={handleNavLinkClick} className="cursor-pointer">
+                            <NavLink to="/services#capital-advisory"  className="cursor-pointer">
                               Capital Advisory
-                            </Link>
+                            </NavLink>
                             <li>
                               <NavLink className="cursor-pointer" onClick={insuranceLink}>Insurance</NavLink>
                             </li>
@@ -111,7 +111,7 @@ function Footer() {
                             <li>
                               <NavLink className="cursor-pointer" to="/government-advisory" >Government Advisory</NavLink>
                             </li>
-                            <Link to="/services#tax-advisory" onClick={handleNavLinkClick} className="cursor-pointer">
+                            <Link to="/services#tax-advisory" className="cursor-pointer">
                               tax Advisory
                             </Link>
                           </ul>
