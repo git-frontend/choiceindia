@@ -112,6 +112,8 @@ function DematAccountForm(props) {
                 console.log('Success', res);
                 if (consent == "yes") {
                     window.location.href = referLink.current ? referLink.current : null;
+                }else{
+                    setShowConsent(() => false);
                 }
                 // }
             } else {
