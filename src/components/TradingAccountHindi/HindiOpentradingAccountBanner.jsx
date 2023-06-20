@@ -10,6 +10,7 @@ import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const HindiOpenFreeAccountBanner = () => {
+    const[ischeck,setIscheck]=useState(false);
     function chapterScroll(id) {
         console.log("check",id);
         var element = document.getElementById(id);
@@ -39,18 +40,32 @@ const HindiOpenFreeAccountBanner = () => {
       useEffect(() => {
         window.addEventListener('scroll', getPosition);
     }, []);
+
+    const [view,setView]=useState({
+        matches: window.innerWidth < 768 ? false : true ,
+      });
     return (
         <div>
-             <section className="banner-sect" >
+             <section className="banner-sect" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
-                        <span className="banner-title2">ऑल इन वन अकाउंट</span>
-                            <h1 className="banner-title" >
-                                <div className="desktop">ऑनलाइन ट्रेडिंग अकाउंट खोलें</div>
-                                
-                            </h1>
-                            {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
+                        {
+                            view && !view.matches ?
+                            <div>
+                           
+                            </div>
+                            :
+                            <div>
+                                 <span className="banner-title2">ऑल इन वन अकाउंट</span>
+                                <h1 className="banner-title" >
+                                    <div className="desktop">ऑनलाइन ट्रेडिंग अकाउंट खोलें</div>
+                                    
+                                </h1>
+                            </div>
+
+                        }
+                      
                             {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} /> */}
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
@@ -110,18 +125,35 @@ const HindiOpenFreeAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                        <span className="banner-title2 mobile">ऑल इन वन अकाउंट</span>
-                        <h1 className="banner-title mbtitle" >
-                                <div className="mobile">ऑनलाइन ट्रेडिंग अकाउंट खोलें</div>
-                                
+                        {
+                                view && !view.matches ?
+                                <div>
+                                <span className="banner-title2 mobile">ऑल इन वन अकाउंट</span>
+                                <h1 className="banner-title mbtitle" >
+                                        <div className="mobile">ऑनलाइन ट्रेडिंग अकाउंट खोलें</div>
+                                        
                             </h1>
+                            </div>
+                            :
+                            <div>
+                            </div>
+
+                        }
+                        {
+                                ischeck ?
+                       
                             <div className="formwrap d-flex justify-content-end ">
-                                {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
-                                <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
+                                {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm language="hindi"/>
                                 </GoogleReCaptchaProvider>
+                            </div>:
+                             <div className="formwrap d-flex justify-content-end">
+                             {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
+                                 <DematAccountForm language="hindi"/>
                             </div>
+                         }
+                          
 
                         </div>
 

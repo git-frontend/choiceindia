@@ -6,10 +6,10 @@ import SocialConnect from "../SumeetBagadia/SocialConnect";
 import Template2 from '../Common-features/Template2';
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 
 function SumeetBagadia() {
-
+  const [isCheck, setIsCheck] = useState(false);
   const [skeleton, setSkeleton] = useState(() => true);
 
   setTimeout(() => {
@@ -51,7 +51,20 @@ function SumeetBagadia() {
       }
     }
   }, [rendercount])
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
 
+    }
+}
+const myRef1 = useRef(null);
 
   return (
     <div>
@@ -59,8 +72,12 @@ function SumeetBagadia() {
       {
         skeleton ? <Template2 /> :
           <div className="sumeet-bagadia-parent">
-            <BannerTop />
-
+            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+              <BannerTop />
+            </div>
+            {
+                isCheck ?
+            <div> 
             <section className="about-cont">
               <div className="container">
                 <div className="row">
@@ -122,7 +139,10 @@ function SumeetBagadia() {
                 </div>
               </div>
             </section>
-
+            </div>
+            :
+            ""
+            }
           </div>
       }
 

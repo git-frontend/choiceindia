@@ -32,7 +32,7 @@ function WhyChoiceConnect() {
             <div className="col-md-12">
               <div className="connect-work-list">
                 <div className="work-list-itm-cont">
-                  <h2 className="title-first">Why Choice Connect ?</h2>
+                  <h2 className="title-first">Why Choice ?</h2>
                   <div className="itm-cont-box">
                     <h3>{partnerConnect[data].title}</h3>
                     <p>{partnerConnect[data].content}</p>

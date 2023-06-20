@@ -9,9 +9,10 @@ import CommodityFaq from "./CommodityFaq";
 import MoreContent from "./MoreContent";
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 
 function Commodity() {
+  const [isCheck, setIsCheck] = useState(false);
   const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
@@ -36,14 +37,33 @@ function Commodity() {
       }
     }
   }, [rendercount])
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
 
+    }
+}
+const myRef1 = useRef(null);
   
   return (
   
     
      
           <div className="demat-page-parent">
-            <CommodityBanner />
+            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+              <CommodityBanner />
+            </div>
+            {
+                isCheck ?
+            <div> 
+         
             <WhyOpenFreeCommodity />
             <WhyChoiceCommodity />
             <LowBrokerageCommodity />
@@ -189,6 +209,10 @@ function Commodity() {
               </div>
 
             </section> */}
+             </div>
+             :
+             ""
+          }
           </div>
     
   );

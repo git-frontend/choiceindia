@@ -6,7 +6,7 @@ import Faqs from './Faqs';
 import BChargesMoreContent from './BChargesMoreContent';
 import GlossaryCharges from './GlossaryCharges';
 import OpenFreeAccount from './../Pricing/OpenFreeAccount';
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 import meta_tags from "../../Data/MetaTags";
 import "./brokerage.scss";
 import "./../Pricing/pricing.scss";
@@ -14,6 +14,7 @@ import "./../OpenDematAccount/DematPage.scss";
 
 
 function BrokerageCharges() {
+  const [isCheck, setIsCheck] = useState(false);
   const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
@@ -39,21 +40,41 @@ function BrokerageCharges() {
     }
   }, [rendercount])
 
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
 
+    }
+}
+const myRef1 = useRef(null);
   
 
   return (
     <div>
       
       <div className="mainwrapper brokerage-charges-temp">
-         
-         <Banner />
+        <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+          <Banner />
+        </div>
+        {
+          isCheck ?
+        <div>
          <SectionTabs />
          <OpenFreeAccount />
          <GlossaryCharges />
          <Faqs />
          <BChargesMoreContent/>
-         
+         </div>
+         :
+         ""
+        }
        </div> 
       
     

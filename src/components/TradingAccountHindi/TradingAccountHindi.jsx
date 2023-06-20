@@ -8,9 +8,9 @@ import HindiLowBrokerageDematAccount from "./HindiLowBrokerageTradingAccount";
 import HindiWhyChoice from "./HindiTradingWhyChoice";
 import HindiTradingFaq from "./HindiTradingFaq";
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 function TradingAccountHindi() {
-
+    const [isCheck, setIsCheck] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
@@ -35,12 +35,30 @@ function TradingAccountHindi() {
       }
     }
   }, [rendercount])
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
 
+    }
+}
+const myRef1 = useRef(null);
     return (
         <>
             {/* <p>Open Trading Account Hindi</p>
             <DematAccountForm></DematAccountForm> */}
-            <HindiOpenFreeAccountBanner />
+            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+                <HindiOpenFreeAccountBanner />
+            </div>
+            {
+                isCheck ?
+            <div> 
             <HindiWhyOpenFreeDematAccount />
             <HindiWhyChoice />
             <HindiLowBrokerageDematAccount />
@@ -172,7 +190,10 @@ function TradingAccountHindi() {
                 </div>
 
             </section>
-
+            </div>
+            :
+            ""
+            }
         </>
     );
 }

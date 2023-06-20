@@ -43,7 +43,7 @@ function PartnerBenifits() {
                   </div>
                   <div className="list-itm-descr">
                     <h5>No Registration Charges</h5>
-                    <p>Register for free and begin your entrepreneurship journey as a CBA with Choice Connect.</p>
+                    <p>Register for free and begin your entrepreneurship journey as a CBA with Choice.</p>
                   </div>
                 </div>
                 <div className="partnering-list-itm">
@@ -63,7 +63,7 @@ function PartnerBenifits() {
                   </div>
                   <div className="list-itm-descr">
                     <h5>Zero Investment Required</h5>
-                    <p>With Choice Connect, you can earn money without investment; with no limit on how much you earn.</p>
+                    <p>With Choice, you can earn money without investment; with no limit on how much you earn.</p>
                   </div>
                 </div>
                 <div className="partnering-list-itm">

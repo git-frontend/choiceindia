@@ -8,7 +8,7 @@ import EligibleToMFDistributor from './EligibleToMFDistributor';
 import MoreContent from './MoreContent';
 import MFDistributorOffers from './MFDistributorOffers';
 import MFDistributorFaqs from './MFDistributorFaqs';
-import { useState } from "react";
+import { useState,useRef } from "react";
 import Template5 from '../Common-features/Template5';
 import "./mf-distributor.scss";
 import {
@@ -18,7 +18,7 @@ import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
 
 function MutualFundDistributor() {
-
+  const [isCheck, setIsCheck] = useState(false);
   const [skeleton, setSkeleton] = useState(() => true);
   // const myTimeout = setTimeout(myGreeting, 900);
   // function myGreeting() {
@@ -72,6 +72,21 @@ function MutualFundDistributor() {
   // document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
   // // document.body.appendChild(doc.getElementsByTagName('script')[0]);
 
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+  }, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
+  
+    }
+  }
+  const myRef1 = useRef(null);
+
   return (
     <div>
 
@@ -79,8 +94,12 @@ function MutualFundDistributor() {
         skeleton ? <Template5 /> :
 
           <div className="sub-broker-skeleton-parent">
-
-            <BannerMFDistributor />
+          <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+              <BannerMFDistributor />
+          </div>
+        {
+          isCheck ?
+          <div>
             <MFDistributorBenifits />
             <MFDistributorSellMore />
             <WhyMFDistributor />
@@ -88,7 +107,10 @@ function MutualFundDistributor() {
             <MFDistributorOffers />
             <MFDistributorFaqs />
             <MoreContent />
-            
+          </div>
+          :
+          ""
+        }
           </div>
       }
 

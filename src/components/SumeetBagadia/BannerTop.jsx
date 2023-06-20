@@ -3,14 +3,15 @@ import Image1 from '../../assets/images/sumeet-bagadia/sumeet-bagadia.webp';
 import DematAccountForm from '../Common-features/DematAccountForm'
 import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { useState } from 'react';
 
 function BannerTop() {
-
+  const[ischeck,setIscheck]=useState(false);
 
 
   return (
     <div>
-      <section className="bannersec">
+      <section className="bannersec" onMouseOver={()=>setIscheck(true)}>
         <div className="container">
           <div className="row align-items-start">
             <div className="col-xl-8 col-md-6">
@@ -26,9 +27,17 @@ function BannerTop() {
               </div>
             </div>
             <div className="col-xl-4 col-md-6 d-flex justify-content-end">
-            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-              <DematAccountForm />
-            </GoogleReCaptchaProvider>
+            {
+                ischeck ?
+              <div>
+                  <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                    <DematAccountForm />
+                  </GoogleReCaptchaProvider>
+              </div>:
+              <div>
+                    <DematAccountForm />
+              </div>
+              }
             </div>
           </div>
 

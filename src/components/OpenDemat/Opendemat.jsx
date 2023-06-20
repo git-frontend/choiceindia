@@ -20,7 +20,8 @@ function Opendemat(){
   /**to set the skeleton */
   const [skeleton, setSkeleton] =useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
+  const [isCheck, setIsCheck] = useState(false);
+  const[ischeck,setIscheck]=useState(false);
   const location = useLocation();
   const [view, setView] = useState({
     matches: window.innerWidth < 768 ? false : true,
@@ -135,7 +136,20 @@ function Opendemat(){
 
   };
 
- 
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
+
+    }
+}
+const myRef1 = useRef(null);
 
   return (
     <div className="Home" id="root">
@@ -145,8 +159,8 @@ function Opendemat(){
         <Template2 />
          :
             <main>
-
-              <section className="bannersection">
+              <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+              <section className="bannersection" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                   <div className="row  align-items-center">
                     <div className="col-md-7">
@@ -159,17 +173,24 @@ function Opendemat(){
                         <p>In India, any person who wants to invest or trade securities like stocks, mutual funds and bonds must&nbsp;
                            <a href="https://choiceindia.com/open-free-demat-account" className="linking">open a Demat account</a>.
                         </p>
-                        <p> Demat account is necessary to start your investment journey into the stock market.</p>
-                        <p>Let’s get started to understand everything about the Demat account through this guide.</p>
+                        <p>Demat account is necessary to start your investment journey into the stock market.</p>
+                        <p>Get a comprehensive understanding of Demat accounts with our guide. Explore topics like What is a Demat account, How it works, Types of Demat accounts, and more. Start learning now!</p>
                       </div>
                     </div>
                     <div className="col-md-5">
                       <div className="rightsec">
                         <div className="popmd">
-
-                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                          <DematAccountForm />
-                        </GoogleReCaptchaProvider>
+                        {
+                          ischeck ?
+                          <div>
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                              <DematAccountForm />
+                            </GoogleReCaptchaProvider>
+                          </div>:
+                          <div>
+                            <DematAccountForm />
+                          </div>
+                            }
                         </div>
                       </div>
                     </div>
@@ -181,7 +202,10 @@ function Opendemat(){
                     </div>
                 </div>
               </section>
-
+              </div>
+              {
+                isCheck ?
+                <div>
               <section className="tablecontent" id="showForm">
                 <div className="container">
                   <div className="row  align-items-center">
@@ -200,7 +224,7 @@ function Opendemat(){
                             </span>
                             {/* <img src='./images/demat-account-meaning.svg' className="" alt="Meaning of Demat Account" /> */}
                             <h4>Chapter 1</h4>
-                            <p>Meaning of Demat Account</p>
+                            <p>What is Demat Account</p>
                           </div>
                         </a>
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTwo') }}>
@@ -314,7 +338,7 @@ function Opendemat(){
                             </span>
                             {/* <img src='./images/demat-account-meaning.svg' className="" alt="Meaning of Demat Account" /> */}
                             <h4>Chapter 1</h4>
-                            <p>Meaning of Demat Account</p>
+                            <p>What is Demat Account</p>
                           </div>
                         </a>
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTwo') }}>
@@ -431,7 +455,7 @@ function Opendemat(){
                   <div className='row' id="ChapterOne">
                     <div className='col-md-12 col-sm-12 col-lg-8'>
                       <p className='chapter'>Chapter 1</p>
-                      <h2 className="title">Meaning of Demat Account</h2>
+                      <h2 className="title">What is Demat Account?</h2>
                       <div className='row  pb52'>
                         <div className='col-md-6' id="best-demat-img">
                           {/*   <img src='./images/best-demat-account.webp' className="img-fluid" alt="Demat Account Meaning" /> */}
@@ -446,12 +470,13 @@ function Opendemat(){
                       </div>
 
                       <div>
-                        <h3 className="subhead">What is a Demat Account?</h3>
+                        <h3 className="subhead">Meaning of Demat Account</h3>
                         <p className='subheadtxt'>Let's start with the Demat account in full form; Dematerialised Account, yes!
                           That's the <a href='https://choiceindia.com/blog/demat-account-full-form/' className='linking'> full form
-                            of Demat account.</a></p>
+                            of Demat account</a></p>
                         <p className='subheadtxt'>If you are looking to open a Demat account, you first need to understand what a
                           Demat account is? A Demat account allows holding shares and securities in electronic form. </p>
+                          <h3 className="subhead">What is Demat Account?</h3>
                         <p className='subheadtxt'>A Demat account allows the investors to buy and hold shares in it; not only this,
                           a Demat account holds all investments made by an individual in shares, ETFs, government securities and
                           mutual funds in one place.
@@ -668,7 +693,7 @@ function Opendemat(){
 
                           </li>
                           <li>
-                            <p className='listhead'>One storage for all assets</p>
+                            <h4 className='listhead'>One storage for all assets</h4>
                             <p className='subheadtxt'>A Demat account stores all your financial assets, including bonds, debentures,
                               ETFs, unit-linked insurance policies etc. Therefore, the Demat account holds assets under one roof
                               making maintenance and tracking easy.</p>
@@ -1401,7 +1426,10 @@ function Opendemat(){
                 <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
 
               </section>
-
+              </div>
+            :
+            ""
+          }
              
 
             </main>

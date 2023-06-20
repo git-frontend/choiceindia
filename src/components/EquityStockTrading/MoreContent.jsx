@@ -56,16 +56,12 @@ function MoreContent() {
                                     <p className="sml-para-dv">For instance, experienced investors might be comfortable with a feature-rich platform. However, it might be more complex for new investors. Here are other pointers to consider while searching for quality equity trading platforms.</p>
 
                                     <ul className="terms-list sml-para-dv">
-                                        <li><strong className="bold-color">User-friendly  -</strong> The platform must be user-friendly and have easy-to-use tools for trading shares.</li>
-                                        <li><strong className="bold-color">Security  -</strong> The security features must be top-notch to trade equities and store funds.</li>
-                                        <li><strong className="bold-color">Real-time efficiency  -</strong> Tracking and understanding market data in real-time must be simple.</li>
-                                        <li><strong className="bold-color">Fee structure  -</strong> Account opening, registration, and trading charges must be transparent without hidden fees</li>
-                                        <li><strong className="bold-color">Learning resources -</strong> Glossaries, FAQs, and access to the support team will help you get started and understand the platform.</li>
-                                      
-                                       
-                                
+                                        <li className="mt-5"><strong className="bold-color">User-friendly  -</strong> The platform must be user-friendly and have easy-to-use tools for trading shares.</li>
+                                        <li className="mt-5"><strong className="bold-color">Security  -</strong> The security features must be top-notch to trade equities and store funds.</li>
+                                        <li className="mt-5"><strong className="bold-color">Real-time efficiency  -</strong> Tracking and understanding market data in real-time must be simple.</li>
+                                        <li className="mt-5"><strong className="bold-color">Fee structure  -</strong> Account opening, registration, and trading charges must be transparent without hidden fees</li>
+                                        <li className="mt-5"><strong className="bold-color">Learning resources -</strong> Glossaries, FAQs, and access to the support team will help you get started and understand the platform.</li>
                                     </ul>
-                                        
                                     <p className="sml-para-dv">Most importantly, the platform must be reputed and trustworthy. Check online reviews for more insight into this.</p>
                 
                                     <br />

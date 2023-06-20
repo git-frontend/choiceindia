@@ -32,7 +32,19 @@ function AppOTBannerBottom() {
           vertical: false,
           autoplaySpeed: 3000,
         }
-      }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+            autoplay: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            vertical: false,
+            autoplaySpeed: 3000,
+            adaptiveHeight:false,
+            dots:true,
+        },
+      },
       
     ]
    
@@ -52,7 +64,7 @@ function AppOTBannerBottom() {
                     </div>
           <div className='row justify-content-center'>
             <div className='col-md-12'>
-              <div className="app-trade-easy-div row">
+              <div className="app-trade-easy-div row colum-revers">
 
               <div className='col-md-6'>
                   <div className='content-list'>

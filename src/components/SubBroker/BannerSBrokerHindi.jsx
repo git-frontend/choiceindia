@@ -54,11 +54,18 @@ function BannerSBrokerHindi() {
                             </div>
                         </div>
                         <div className="col-md-6 col-lg-4 ">
+                        {
+                            
+                            ischeck ?
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <SubBrokerForm language='hindi' />
                                 </GoogleReCaptchaProvider>
-                            </div>
+                            </div>:
+                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
+                                 <SubBrokerForm language='hindi' />
+                         </div>
+                            }
                         </div>
                         <div className={name}>
                             <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">

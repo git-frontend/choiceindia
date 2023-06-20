@@ -1,5 +1,5 @@
 
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect,useRef} from "react";
 import OTBannerApp from './OTBannerApp';
 import AppOTBannerBottom from './AppOTBannerBottom';
 import AppOTStrategies from './AppOTStrategies';
@@ -18,7 +18,7 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function TradingApp() {
-
+  const [isCheck, setIsCheck] = useState(false);
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
 
@@ -51,12 +51,32 @@ function TradingApp() {
     }
   }, [rendercount])
 
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
+
+    }
+}
+const myRef1 = useRef(null);
   return (
     <div>
     {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
-      <OTBannerApp />
+      <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+        <OTBannerApp />
+      </div>
+      {
+        isCheck ?
+      <div> 
+     
       <AppOTStrategies />
       <AppOTBannerBottom />
       <AppOTradeBenefits />
@@ -65,7 +85,10 @@ function TradingApp() {
       <OTAppFaq/>
       <AppOTDownloadJiffy/>
       <OTAppMoreContent/>
-      
+      </div>
+        :
+        ""
+      }
       </div>
     }
     </div>

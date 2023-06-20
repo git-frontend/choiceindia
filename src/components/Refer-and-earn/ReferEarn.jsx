@@ -5,14 +5,14 @@ import HowChoice from './HowChoice';
 import TermCondition from './TermCondition';
 import EarnUp from './EarnUp';
 import Template3 from '../Common-features/Template3';
-import {useState, useEffect} from 'react';
+import {useState, useEffect,useRef} from 'react';
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 
 function ReferEarn() {
-
+  const [isCheck, setIsCheck] = useState(false);
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
 
@@ -44,18 +44,40 @@ function ReferEarn() {
       }
     }
   }, [rendercount])
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
 
+    }
+}
+const myRef1 = useRef(null);
   return (
     <div>
 
       {
         skeleton ? <Template3 /> :
           <div className="refer-and-earn-parent">
-            <Banner />
+            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+          <Banner />
+        </div>
+        {
+          isCheck ?
+        <div>
             <HowChoice />
             <TermCondition />
             <EarnUp />
           </div>
+          :
+          ""
+        }
+        </div>
       }
 
     </div>

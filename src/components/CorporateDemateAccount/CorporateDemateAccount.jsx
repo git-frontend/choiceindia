@@ -8,14 +8,14 @@ import LowBrokerageCorporateDematAccount from "../CorporateDemateAccount/LowBrok
 import CorporateFaq from "../CorporateDemateAccount/CorporateFaq";
 import WhyChoice from "../CorporateDemateAccount/WhyChoice";
 import { Link } from "react-router-dom";
-import {useState, useEffect} from 'react';
+import {useState, useEffect,useRef} from 'react';
 import {
     useLocation,
   } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
 
 function CorporateDemateAccount() {
-
+    const [isCheck, setIsCheck] = useState(false)
     const [rendercount, setRenderCount] = useState(() => false);
 
     const location = useLocation();
@@ -42,14 +42,32 @@ function CorporateDemateAccount() {
           }
         }
       }, [rendercount])
-      
+      useEffect(() => {
+        window.addEventListener('scroll', getPositionnew);
+    }, []);
+      const getPositionnew = () => {
+        const element = document.getElementById("branch1");
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top.toFixed() < 300) {
+                setIsCheck(true);
+            }
+    
+        }
+    }
+    const myRef1 = useRef(null);
     return (
         <>
             {/* 
-<p>Corporate Demate Account</p>
-<DematAccountForm></DematAccountForm>
-*/}
-            <CorporateDematAccountBanner />
+            <p>Corporate Demate Account</p>
+            <DematAccountForm></DematAccountForm>
+            */}
+             <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+             <CorporateDematAccountBanner />
+             </div>
+             {
+                isCheck ?
+              <div>
             <WhyOpenFreeCorporateAccount />
             <WhyChoice />
             <LowBrokerageCorporateDematAccount />
@@ -137,6 +155,9 @@ function CorporateDemateAccount() {
                     </div>
                 </div>
             </section>
+            </div>
+            :""
+            }
         </>
     );
 }

@@ -8,14 +8,14 @@ import MinorDematOpeningProcess from "./MinorDematOpeningProcess";
 import LowBrokerageMinorDematAccount from "../MinorDemateAccount/LowBrokerageMinorDematAccount";
 import WhyChoice from "../OpenDematAccount/WhyChoice";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import {
     useLocation,
   } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
 import MinorFaq from "./MinorFaq";
 function MinorDemateAccount() {
-
+    const [isCheck, setIsCheck] = useState(false)
 	const [rendercount, setRenderCount] = useState(() => false);
 
     const location = useLocation();
@@ -42,12 +42,30 @@ function MinorDemateAccount() {
           }
         }
       }, [rendercount])
-      
+      useEffect(() => {
+        window.addEventListener('scroll', getPositionnew);
+    }, []);
+      const getPositionnew = () => {
+        const element = document.getElementById("branch1");
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top.toFixed() < 300) {
+                setIsCheck(true);
+            }
+    
+        }
+    }
+    const myRef1 = useRef(null);
     return (
         <>
             {/* <p>Minor Demate Account</p>
             <DematAccountForm></DematAccountForm> */}
-            <MinorDematAccountBanner />
+            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+                <MinorDematAccountBanner />
+            </div>
+            {
+                isCheck ?
+              <div>
             <WhyOpenFreeMinorAccount />
             <WhyChoice />
             <LowBrokerageMinorDematAccount />
@@ -148,6 +166,9 @@ function MinorDemateAccount() {
                 </div>
 
             </section>
+            </div>
+            :""
+            }
         </>
     );
 }

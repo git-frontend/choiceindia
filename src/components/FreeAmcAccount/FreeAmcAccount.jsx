@@ -8,8 +8,9 @@ import LowBrokerageAMCAccount from "./LowBrokerageAMCAccount";
 import WhyChoiceamc from "./WhyChoiceamc";
 import AmcFaq from "./AmcFaq";
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 function FreeAmcAccount() {
+  const [isCheck, setIsCheck] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
@@ -34,18 +35,39 @@ function FreeAmcAccount() {
       }
     }
   }, [rendercount])
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
 
+    }
+}
+const myRef1 = useRef(null);
     return (
         <>
             {/* Open Trading Account
             <DematAccountForm></DematAccountForm> */}
+          <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
             <FreeAmcAccountBanner />
+          </div>
+          {
+                isCheck ?
+                <div>
             <WhyOpenFreeAmcAccount />
             <WhyChoiceamc />
             <LowBrokerageAMCAccount />
             <AmcAccountOpeningProcess />
             <AmcFaq />
-          
+            </div>
+            :
+            ""
+          }
 
         </>
     );

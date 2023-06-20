@@ -15,20 +15,19 @@ function WhyBecomeSubBroker () {
                         <div className="col-xl-10 col-md-12">
                             <div className="counter-list">
                                 <div className="count-item">
-                                    <h3><span className="counter">5</span>L+</h3>
-
+                                    <h3><span className="counter">750K</span>+</h3>
                                     <h6>Clients</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">75+</span></h3>
+                                    <h3><span className="counter">95+</span></h3>
                                     <h6>Local Offices</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">29K</span>+</h3>
+                                    <h3><span className="counter">30K</span>+</h3>
                                     <h6>Franchises</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">1500</span>+</h3>
+                                    <h3><span className="counter">2.6K</span>+</h3>
                                     <h6>Employees</h6>
                                 </div>
                             </div>
