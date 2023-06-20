@@ -88,7 +88,7 @@ function Footer() {
                               </NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" onClick={insuranceLink}>Insurance</NavLink>
+                              <NavLink to="/services#Insurance" className="cursor-pointer" >Insurance</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/loan" >Loans</NavLink>
@@ -104,7 +104,7 @@ function Footer() {
                             </li>
                             <li>
                             <NavLink to="/services#Tax-Advisory" className="cursor-pointer">
-                              tax Advisory
+                              Tax Advisory
                             </NavLink>
                              </li>
                           </ul>

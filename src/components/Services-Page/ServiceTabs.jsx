@@ -116,7 +116,7 @@ function ServiceTabs() {
 									</div>
 								</div>
 								<div className="same-list-bx-item">
-									<div className="bx-item-cont" onClick={() => { chapterScroll('insurance') }}>
+									<div className="bx-item-cont" onClick={() => { chapterScroll('Insurance') }}>
 										<span className="cont-img">
 											<LazyLoader src={Insurance} className={"mn-img"} alt={"Insurance"} width={"65"} height={"65"} />
 											{/* <img src={Insurance} className="" alt="Insurance" width={"65"} height={"65"} /> */}
@@ -184,7 +184,7 @@ function ServiceTabs() {
 			<div  id="Wealth-Management">
 				<WealthManagement1 />
 			</div>
-			<div id="insurance">
+			<div id="Insurance">
 				<Insurance1 />
 			</div>
 			<div id="loan">
