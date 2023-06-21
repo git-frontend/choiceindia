@@ -2,14 +2,12 @@
 import React from "react";
 import Bannerimage from '../../assets/images/services/wealth-management-services.webp';
 import LazyLoader from "../Common-features/LazyLoader";
-
+import { useEffect, useRef } from "react";
 function WealthManagement() {
-
+   
     return (
         <div>
-
-
-            <section className="bannersection service-tab-cont bg-rightsection" id="EquityBroking">
+            <section   className="bannersection service-tab-cont bg-rightsection" id="wealth">
                 <div className="container">
                     <div className="row d-flex justify-content-center">
                         <div className="col-md-12">
