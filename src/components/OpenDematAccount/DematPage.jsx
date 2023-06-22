@@ -18,7 +18,7 @@ function DematPage() {
 
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-  const [isCheck, setIsCheck] = useState(false)
+  // const [isCheck, setIsCheck] = useState(false)
   const location = useLocation();
 
   setTimeout(() => {
@@ -79,34 +79,34 @@ function DematPage() {
       
           }
   }, [rendercount])
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        // console.log("checkmate", rect.top.toFixed())
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-            // console.log('inside name', rect);
-        }
+//   useEffect(() => {
+//     window.addEventListener('scroll', getPositionnew);
+// }, []);
+//   const getPositionnew = () => {
+//     const element = document.getElementById("branch1");
+//     if (element) {
+//         const rect = element.getBoundingClientRect();
+//         // console.log("checkmate", rect.top.toFixed())
+//         if (rect.top.toFixed() < 300) {
+//             setIsCheck(true);
+//             // console.log('inside name', rect);
+//         }
 
-    }
-}
-const myRef1 = useRef(null);
+//     }
+// }
+// const myRef1 = useRef(null);
 
   return (
   
     <div>
       
           <div className="demat-page-parent" >
-            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+            {/* <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}> */}
             <OpenFreeAccountBanner />
-            </div>
+            {/* </div>
             {
                 isCheck ?
-              <div>
+              <div> */}
 
             <WhyOpenFreeDematAccount />
             <WhyChoice />
@@ -258,10 +258,10 @@ const myRef1 = useRef(null);
                   </div>
             </section>
             </div>
-            :""
+            {/* :""
             }
           
-          </div>
+          </div> */}
       
 
     </div>
