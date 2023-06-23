@@ -29,7 +29,6 @@ function BestStockcategory() {
   let tokens="";
   let storefile;
   let checkurl = (window.location.pathname == "/best-stocks-to-buy") ? "all-stock":(window.location.pathname == "/best-intraday-stocks-to-buy") ? "intraday" :(window.location.pathname == "/best-short-term-stocks-to-buy") ? "short-term" :(window.location.pathname == "/best-stocks-for-long-term-investment") ?"long-term":"";
-  const [isCheck, setIsCheck] = useState(false);
   const [toggleState, setToggleState] = useState(1);
   const [list, setlist] = useState();
   const [Data1, setData1] = useState();
@@ -512,28 +511,11 @@ function urlLink(){
     urlLink();
   
   }
-
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-        }
-
-    }
-}
-const myRef1 = useRef(null);
-
   return (
     <div>
       {
         skeleton ? <Template5 /> :
           <div className="sub-broker-skeleton-parent">
-           <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
            <section className="mainhead">
               <div className="container">
                 <div className="row d-flex justify-content-center ">
@@ -824,10 +806,6 @@ const myRef1 = useRef(null);
                 </div>
               </div>
             </section>
-           </div>
-           {
-          isCheck ?
-          <div>
             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                 <OpenDemateAccountStickyFooter />
             </GoogleReCaptchaProvider>
@@ -993,12 +971,6 @@ const myRef1 = useRef(null);
               </div>
             </section>
             </div>
-            :
-            ""
-          }
-          </div>
-
-
       }
     </div>
   );

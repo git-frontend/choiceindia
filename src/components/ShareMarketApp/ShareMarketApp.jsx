@@ -1,5 +1,5 @@
 
-import React,{useState, useEffect,useRef} from "react";
+import React,{useState, useEffect} from "react";
 import SMABannerApp from './SMABannerApp';
 import SMABannerBottom from './SMABannerBottom';
 import SMAStrategies from './SMAStrategies';
@@ -20,10 +20,8 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function ShareMarketApp() {
-  const [isCheck, setIsCheck] = useState(false);
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
   const location = useLocation();
 
   setTimeout(() => {
@@ -52,31 +50,13 @@ function ShareMarketApp() {
       }
     }
   }, [rendercount])
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-        }
-
-    }
-}
-const myRef1 = useRef(null);
+ 
   return (
     <div>
     {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
-      <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
-         <SMABannerApp />
-      </div>
-        {
-          isCheck ?
-      <div> 
+        <SMABannerApp />
         <SMABannerBottom />
         <SMAStrategies />
         <SMATradeBenefits />
@@ -85,10 +65,6 @@ const myRef1 = useRef(null);
         <SMAFaq/>
         <SMADownloadJiffy/>
         <SMAMoreContent/>
-      </div>
-      :
-      ""
-    }
       </div>
     }
     </div>
