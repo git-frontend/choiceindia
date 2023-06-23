@@ -160,6 +160,7 @@ function Banneraf() {
             setBasketData(() => (res.data.Body.data ? res.data.Body.data : {}));
             refCallAPI();
 
+            if(res.data.Body.data.bucket_type != 'Lumpsum'){
             if(res.data.Body.data.first_order == 'Yes'){
               res.data.Body.data.list_fund_data.forEach((item) => {
                 let date = item.selected_date;
@@ -212,7 +213,7 @@ function Banneraf() {
                   }
               })
             }
-
+          }
 
             
           } else {
@@ -855,12 +856,16 @@ function Banneraf() {
                                   </div>
                                   <p className="text">Amount</p>
                                 </div>
-                                <div className="amount">
+                                {
+                                  (BasketData.bucket_type != 'Lumpsum') ? 
+                                  <div className="amount">
                                   <div className="rupee">
                                     {nextSipDate && nextSipDate[index]? nextSipDate[index] : 'NA'}
                                   </div>
                                   <p className="text">Next SIP Payment</p>
-                                </div>
+                                </div> : ''
+                                }
+                                
                               </div>
                             </div>
                           </>
