@@ -1,5 +1,5 @@
 
-import React,{useState,useEffect,useRef} from "react";
+import React,{useState,useEffect} from "react";
 import Banner from './Banner';
 import IPOStocks from './IPOStocks';
 import IPOBenifits from './IPOBenifits';
@@ -7,14 +7,10 @@ import IPOProcess from './IPOProcess';
 import WhyChoiceIPO from './WhyChoiceIPO';
 import IPOFaq from './IPOFaq';
 import meta_tags from "../../Data/MetaTags";
-
 import "./ipo-investments.scss";
 
-
 function EquityBrokingMain() {
-  const [isCheck, setIsCheck] = useState(false);
   const [rendercount, setRenderCount] = useState(() => false);
-
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -38,41 +34,17 @@ function EquityBrokingMain() {
     }
   }, [rendercount])
   
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-        }
-
-    }
-}
-const myRef1 = useRef(null);
-
   return (
     <div>
       
       <div className="mainwrapper brokerage-charges-temp">
-      <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
-          <Banner />
-        </div>
-            {
-                isCheck ?
-          <div> 
-         <IPOStocks />
-         <IPOBenifits />
-         <IPOProcess />
-         <WhyChoiceIPO />
-         <IPOFaq />
-         </div>
-         :
-         ""
-            }
-       </div> 
+        <Banner />
+        <IPOStocks />
+        <IPOBenifits />
+        <IPOProcess />
+        <WhyChoiceIPO />
+        <IPOFaq />
+      </div>
     </div>
   );
 }

@@ -6,12 +6,10 @@ import SocialConnect from "../SumeetBagadia/SocialConnect";
 import Template2 from '../Common-features/Template2';
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect,useRef } from "react";
+import { useState,useEffect} from "react";
 
 function SumeetBagadia() {
-  const [isCheck, setIsCheck] = useState(false);
   const [skeleton, setSkeleton] = useState(() => true);
-
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
@@ -51,33 +49,13 @@ function SumeetBagadia() {
       }
     }
   }, [rendercount])
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-        }
-
-    }
-}
-const myRef1 = useRef(null);
-
   return (
     <div>
 
       {
         skeleton ? <Template2 /> :
           <div className="sumeet-bagadia-parent">
-            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
-              <BannerTop />
-            </div>
-            {
-                isCheck ?
-            <div> 
+            <BannerTop />
             <section className="about-cont">
               <div className="container">
                 <div className="row">
@@ -101,9 +79,7 @@ const myRef1 = useRef(null);
                 </div>
               </div>
             </section>
-
             <Slidersec />
-
             <section className="sumit-bg-acnt">
               <div className="container">
                 <div className="row">
@@ -118,13 +94,8 @@ const myRef1 = useRef(null);
                 </div>
               </div>
             </section>
-
-
             <PrintMedia />
-
-
             <SocialConnect />
-
             <section className="sumit-bg-tips">
               <div className="container">
                 <div className="row">
@@ -140,12 +111,7 @@ const myRef1 = useRef(null);
               </div>
             </section>
             </div>
-            :
-            ""
-            }
-          </div>
       }
-
     </div>
   );
 }

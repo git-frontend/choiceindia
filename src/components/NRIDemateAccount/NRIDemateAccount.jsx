@@ -5,18 +5,14 @@ import WhyOpenFreeNriAccount from "../NRIDemateAccount/WhyOpenFreeNriAccount";
 import DematAccountNriOpeningProcess from "../NRIDemateAccount/DematAccountNriOpeningProcess";
 import LowBrokerageNRIDematAccount from "../NRIDemateAccount/LowBrokerageNRIDematAccount";
 import WhyChoice from "../OpenDematAccount/WhyChoice";
-import { useState, useEffect,useRef } from 'react';
+import { useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import {useLocation, } from 'react-router-dom';
-  import meta_tags from "../../Data/MetaTags";
-
+import meta_tags from "../../Data/MetaTags";
 
 function NRIDemateAccount() {
-
     const [rendercount, setRenderCount] = useState(() => false);
-    const [isCheck, setIsCheck] = useState(false)
     const location = useLocation();
-
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
@@ -39,39 +35,16 @@ function NRIDemateAccount() {
           }
         }
       }, [rendercount])
-      useEffect(() => {
-        window.addEventListener('scroll', getPositionnew);
-    }, []);
-      const getPositionnew = () => {
-        const element = document.getElementById("branch1");
-        if (element) {
-            const rect = element.getBoundingClientRect();
-            // console.log("checkmate", rect.top.toFixed())
-            if (rect.top.toFixed() < 300) {
-                setIsCheck(true);
-                // console.log('inside name', rect);
-            }
-    
-        }
-    }
-    const myRef1 = useRef(null);
+     
     return (
         <>
-            {/* <p>NRI Demate Account</p>
-            <DematAccountForm></DematAccountForm> */}
-            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+           
             <NriDematAccountBanner />
-            </div>
-            {
-                isCheck ?
-              <div>
-          
             <WhyOpenFreeNriAccount />
             <WhyChoice />
             <LowBrokerageNRIDematAccount />
             <DematAccountNriOpeningProcess />
             <section className="readmoresection">
-
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -178,9 +151,6 @@ function NRIDemateAccount() {
                 </div>
 
             </section>
-            </div>
-            :""
-            }
         </>
     );
 }

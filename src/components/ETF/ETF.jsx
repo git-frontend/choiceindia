@@ -12,7 +12,6 @@ import invesrtetf from "../../assets/images/how-to-invest-in-etf-online.webp";
 import Slider from 'react-slick';
 function ETF() {
   // const[ischeck,setIscheck]=useState(false);
-  const [isCheck, setIsCheck] = useState(false);
   function chapterScroll(id) {
     console.log("check",id);
     var element = document.getElementById(id);
@@ -144,21 +143,6 @@ function ETF() {
     window.addEventListener('scroll', getPosition);
 }, []);
 
-useEffect(() => {
-  window.addEventListener('scroll', getPositionnew);
-}, []);
-const getPositionnew = () => {
-  const element = document.getElementById("branch1");
-  if (element) {
-      const rect = element.getBoundingClientRect();
-      if (rect.top.toFixed() < 300) {
-          setIsCheck(true);
-      }
-
-  }
-}
-const myRef1 = useRef(null);
-
   return (
     <div className="Home" id="root">
       <div>
@@ -167,7 +151,7 @@ const myRef1 = useRef(null);
             <Template2 />
             :
         <main>
-          <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+        
             <section className="bannersection etf-banner">
                 <div className="container">
                   <div className="row  align-items-center">
@@ -195,10 +179,6 @@ const myRef1 = useRef(null);
                   </div>
                 </div>
             </section>
-          </div>
-        {
-          isCheck ?
-          <div>
               <section className="tablecontent" id="showForm">
                 <div className="container">
                   <div className="row  align-items-center">
@@ -772,10 +752,6 @@ const myRef1 = useRef(null);
                     <button className="primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
                 </div> 
               </div>
-              </div> 
-                :
-                ""
-                }
             </main>
         }
       </div>

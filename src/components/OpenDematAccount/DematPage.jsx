@@ -7,7 +7,7 @@ import WhyChoice from "./WhyChoice";
 import FeaturesDemat from "./FeaturesDemat";
 import DematFaq from "./DematFaq";
 import Template2 from '../Common-features/Template2';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import {
   useLocation,
@@ -15,10 +15,8 @@ import {
 import meta_tags from "../../Data/MetaTags";
 import "./DematPage.scss"
 function DematPage() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-  // const [isCheck, setIsCheck] = useState(false)
   const location = useLocation();
 
   setTimeout(() => {
@@ -79,43 +77,17 @@ function DematPage() {
       
           }
   }, [rendercount])
-//   useEffect(() => {
-//     window.addEventListener('scroll', getPositionnew);
-// }, []);
-//   const getPositionnew = () => {
-//     const element = document.getElementById("branch1");
-//     if (element) {
-//         const rect = element.getBoundingClientRect();
-//         // console.log("checkmate", rect.top.toFixed())
-//         if (rect.top.toFixed() < 300) {
-//             setIsCheck(true);
-//             // console.log('inside name', rect);
-//         }
-
-//     }
-// }
-// const myRef1 = useRef(null);
-
   return (
-  
     <div>
       
           <div className="demat-page-parent" >
-            {/* <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}> */}
             <OpenFreeAccountBanner />
-            {/* </div>
-            {
-                isCheck ?
-              <div> */}
-
             <WhyOpenFreeDematAccount />
             <WhyChoice />
             <FeaturesDemat />
             <LowBrokerageDematAccount />
             <DematAccountOpeningProcess />
             <DematFaq />
-
-
             <section className="dematcontentseo">
               <div className="container">
                   <div className="row">
@@ -258,12 +230,6 @@ function DematPage() {
                   </div>
             </section>
             </div>
-            {/* :""
-            }
-          
-          </div> */}
-      
-
     </div>
   );
 }
