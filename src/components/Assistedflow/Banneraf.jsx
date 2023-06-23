@@ -13,6 +13,8 @@ import {
   useLocation,
   Navigate,
 } from "react-router-dom";
+import Moment from "react-moment";
+import moment from 'moment';
 
 import AssistedFlowService from "../../Services/AssistedFlowService";
 import Basket from "../Basket/Basket";
@@ -119,6 +121,11 @@ function Banneraf() {
 
   let isLast = 0;
 
+  /**to calculate months */
+  const [nextSipDate, setNextSipDate] = useState([]);
+  let monthFactor = 1;
+  const [orderDates, setOrderDates] = useState([]);;
+
   /**to show client popup */
   useEffect(() => {
     // let status = new URLSearchParams(search).get('status');
@@ -152,6 +159,62 @@ function Banneraf() {
             setDataNotFound(() => false);
             setBasketData(() => (res.data.Body.data ? res.data.Body.data : {}));
             refCallAPI();
+
+            if(res.data.Body.data.first_order == 'Yes'){
+              res.data.Body.data.list_fund_data.forEach((item) => {
+                let date = item.selected_date;
+                // let date = 25;
+                let nextDate;
+                let currentDate = new moment().startOf("day");
+                let assumedNextSipDate = new moment()
+                  .add(monthFactor, "month")
+                  .startOf("day")
+                  .date(date);
+                  let diffInDays = assumedNextSipDate.diff(currentDate, "days");
+                  if (diffInDays < monthFactor * 30) {
+                    assumedNextSipDate = assumedNextSipDate.add(1, "month");
+                  }
+                  nextDate = assumedNextSipDate;
+                  
+                  // orderDates.push(nextDate.format("DD/MM/YYYY"))
+                  setOrderDates(nextOrderDate => [nextDate.format("DD/MM/YYYY"), ...nextOrderDate])
+                  console.log(orderDates[0],'dod')
+                  setNextSipDate(nextSipDate => [nextDate.format('DD') + ' ' + nextDate.format('MMMM').substring(0,3)+ ', ' + nextDate.format('YYYY'), ...nextSipDate]);
+              })
+            }else{
+              res.data.Body.data.list_fund_data.forEach((item) => {
+                let date = item.selected_date;
+                // let date = 25;
+                let nextDate;
+                let currentDate = new moment().startOf("day");
+                let assumedNextSipDate = new moment()
+                  .add(monthFactor, "month")
+                  .startOf("day")
+                  .date(date);
+                  let diffInDays = assumedNextSipDate.diff(currentDate, "days");
+                  if (diffInDays < monthFactor * 30) {
+                    assumedNextSipDate = assumedNextSipDate.add(0, "month");
+                    nextDate = assumedNextSipDate;
+                    // orderDates.push(nextDate.format("DD/MM/YYYY"))
+                    setOrderDates(nextOrderDate => [nextDate.format("DD/MM/YYYY"), ...nextOrderDate])
+                    setNextSipDate(nextSipDate => [nextDate.format('DD') + ' ' + nextDate.format('MMMM').substring(0,3)+ ', ' + nextDate.format('YYYY'), ...nextSipDate]);
+                  }else{
+                    const today = new moment();
+                    // const today = new Date();
+                    // const yyyy = today.getFullYear();
+                    // let mm = today.getMonth() + 1;
+                    // assumedNextSipDate = date.toString() + '/' + mm.toString() + "/" + yyyy.toString();
+                    assumedNextSipDate = date.toString() + ' ' + today.format('MMMM').substring(0,3)+ ', ' + today.format('YYYY')
+                    nextDate = assumedNextSipDate;
+                    // orderDates.push(date.toString() + '/' + today.format('MM')+ '/' + today.format('YYYY'))
+                    setOrderDates(nextOrderDate => [date.toString() + '/' + today.format('MM')+ '/' + today.format('YYYY'), ...nextOrderDate])
+                    setNextSipDate(nextSipDate => [nextDate, ...nextSipDate]);
+                  }
+              })
+            }
+
+
+            
           } else {
             setDataNotFound(() => true);
           }
@@ -160,6 +223,8 @@ function Banneraf() {
           console.log(error);
           setDataNotFound(() => true);
         });
+
+        console.log('TTT',nextSipDate.length)
     }
   }, [trigger]);
 
@@ -176,7 +241,7 @@ function Banneraf() {
             placeOrderMessage: response.data.Response.PlaceOrderMessage,
             serverDownMessage: response.data.Response.ServerDownMessage,
           });
-
+          console.log(orderDates[isLast]);
           increment = parseInt(response.data.Response.RefNumber);
           // setIsRefNo(() => parseInt(response.data.Response.RefNumber))
           // setIsRefNo(RefNo + 1)
@@ -482,7 +547,7 @@ function Banneraf() {
     let clientId = userDetails.clientId
       ? utils.decryptText(userDetails.clientId)
       : "";
-
+    console.log(orderDates[isLast]);
     let payload = {
       TransCode: "NEW",
       TransNo: "",
@@ -509,7 +574,7 @@ function Banneraf() {
       IsInflationAdjusted: "",
       NoOfInstallments: 999,
       RiskProfileID: "",
-      StartDate: formattedToday,
+      StartDate: orderDates[isLast],
       SubscriptionId: "wb" + clientId + new Date().getTime(),
       SubscriptionType: "Basket",
       Id: BasketData.bucket_id ? BasketData.bucket_id : "",
@@ -789,6 +854,12 @@ function Banneraf() {
                                     ₹ {item.FundA ? item.FundA : "NA"}
                                   </div>
                                   <p className="text">Amount</p>
+                                </div>
+                                <div className="amount">
+                                  <div className="rupee">
+                                    {nextSipDate[index]}
+                                  </div>
+                                  <p className="text">Next SIP Payment</p>
                                 </div>
                               </div>
                             </div>
