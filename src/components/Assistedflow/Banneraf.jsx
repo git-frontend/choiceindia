@@ -857,7 +857,7 @@ function Banneraf() {
                                 </div>
                                 <div className="amount">
                                   <div className="rupee">
-                                    {nextSipDate[index]}
+                                    {nextSipDate && nextSipDate[index]? nextSipDate[index] : 'NA'}
                                   </div>
                                   <p className="text">Next SIP Payment</p>
                                 </div>
