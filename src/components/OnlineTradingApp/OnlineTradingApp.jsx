@@ -18,12 +18,9 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function TradingApp() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
   const location = useLocation();
-
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
@@ -50,22 +47,20 @@ function TradingApp() {
       }
     }
   }, [rendercount])
-
   return (
     <div>
     {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
-      <OTBannerApp />
-      <AppOTStrategies />
-      <AppOTBannerBottom />
-      <AppOTradeBenefits />
-       <AppOTMultipleBenefits/> 
-      <AppOTradeTestimonial/>
-      <OTAppFaq/>
-      <AppOTDownloadJiffy/>
-      <OTAppMoreContent/>
-      
+        <OTBannerApp />
+        <AppOTStrategies />
+        <AppOTBannerBottom />
+        <AppOTradeBenefits />
+        <AppOTMultipleBenefits/> 
+        <AppOTradeTestimonial/>
+        <OTAppFaq/>
+        <AppOTDownloadJiffy/>
+        <OTAppMoreContent/>
       </div>
     }
     </div>

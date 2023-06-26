@@ -8,7 +8,7 @@ import EligibleToMFDistributor from './EligibleToMFDistributor';
 import MoreContent from './MoreContent';
 import MFDistributorOffers from './MFDistributorOffers';
 import MFDistributorFaqs from './MFDistributorFaqs';
-import { useState } from "react";
+import { useState} from "react";
 import Template5 from '../Common-features/Template5';
 import "./mf-distributor.scss";
 import {
@@ -18,7 +18,6 @@ import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
 
 function MutualFundDistributor() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   // const myTimeout = setTimeout(myGreeting, 900);
   // function myGreeting() {
@@ -71,7 +70,6 @@ function MutualFundDistributor() {
   // document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
   // document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
   // // document.body.appendChild(doc.getElementsByTagName('script')[0]);
-
   return (
     <div>
 
@@ -79,7 +77,6 @@ function MutualFundDistributor() {
         skeleton ? <Template5 /> :
 
           <div className="sub-broker-skeleton-parent">
-
             <BannerMFDistributor />
             <MFDistributorBenifits />
             <MFDistributorSellMore />
@@ -88,7 +85,6 @@ function MutualFundDistributor() {
             <MFDistributorOffers />
             <MFDistributorFaqs />
             <MoreContent />
-            
           </div>
       }
 

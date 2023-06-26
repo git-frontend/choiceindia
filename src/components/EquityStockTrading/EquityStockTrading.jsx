@@ -12,7 +12,6 @@ import { useState,useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
 
 function EquityStockTrading() {
-
   const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
@@ -37,13 +36,9 @@ function EquityStockTrading() {
       }
     }
   }, [rendercount])
-
-
-  
   return (
   
     
-     
           <div className="demat-page-parent">
             <EquityStockTradingBanner />
             <WhyOpenEquityStockTrading />

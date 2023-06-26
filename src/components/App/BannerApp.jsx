@@ -6,6 +6,7 @@ import LazyLoader from '../Common-features/LazyLoader';
 import appstore from '../../assets/images/icons/app-store.svg';
 import { useState,useEffect } from 'react';
 function BannerCareer() {
+  const [ischeck, setIscheck] = useState(false);
   const  queryParam = window.location.search;
  const utmvalue= new URLSearchParams(queryParam);
  const param1 = utmvalue.get('utm_source');
@@ -46,7 +47,7 @@ function BannerCareer() {
     <div className='App-main'>
 
 
-      <section className="banner-app">
+      <section className="banner-app" onMouseOver={() => setIscheck(true)}>
       <LazyLoader src={AppImage0} className={"img-fluid ban-img"} alt={"Investment App"} width={"1728"} height={"1119"}/>
         {/* <img src={AppImage0} className="ban-img" alt='Loading' width="1728" height="1119" /> */}
         <div className='app-banner-caption'>

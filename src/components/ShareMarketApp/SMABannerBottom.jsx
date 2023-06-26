@@ -32,7 +32,19 @@ function AppOTBannerBottom() {
           vertical: false,
           autoplaySpeed: 3000,
         }
-      }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+            autoplay: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            vertical: false,
+            autoplaySpeed: 3000,
+            adaptiveHeight:false,
+            dots:true,
+        },
+      },
       
     ]
    

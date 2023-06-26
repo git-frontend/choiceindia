@@ -7,17 +7,15 @@ import WhyBecomeSubBrokerGujarati from './WhyBecomeSubBrokerGujarati';
 import WhoEligibleToSubBrokerGujarati from './WhoEligibleToSubBrokerGujarati';
 import MoreContentGujarati from './MoreContent';
 import SubBrokerOffersGujarati from './SubBrokerOffersGujarati';
-import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "./subbroker.scss";
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-import { useEffect } from "react";
+import { useEffect,useState} from "react";
 
 function SubBroker() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   // const myTimeout = setTimeout(myGreeting, 900);
   // function myGreeting() {
@@ -107,9 +105,8 @@ function SubBroker() {
 
       {
         skeleton ? <Template5 /> :
-
+        
           <div className="sub-broker-skeleton-parent">
-
             <BannerSBrokerGujarati />
             <SubBrokerBenifitsGujarati />
             <SubBrokerSellMoreGujarati />
@@ -117,7 +114,6 @@ function SubBroker() {
             <WhoEligibleToSubBrokerGujarati />
             <SubBrokerOffersGujarati />
             {/* <MoreContentGujarati /> */}
-            
           </div>
       }
 

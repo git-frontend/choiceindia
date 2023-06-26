@@ -7,7 +7,7 @@ import { useState,useEffect } from "react";
 import utils from "../../Services/utils";
 import "../SubBroker/subbroker.scss";
 function BannerMFDistributor() {
-    
+    const[ischeck,setIscheck]=useState(false);
     const [name, setName ] = useState('hideform');
     const getPosition = () => {
         const element = document.getElementById("showForm");
@@ -30,15 +30,14 @@ function BannerMFDistributor() {
 
     return (
         <div>
-            <section className="franchise-banner" >
+            <section className="franchise-banner" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                     <div className="row align-items-end">
                         <div className="col-md-6 col-lg-8 ">
                             <div className="caption-banner">
                                 <div className="left-sec">
                                     <h1 className="tlt1">
-                                        <span className="tlt2">Become a</span>
-                                        Mutual Fund Distributor
+                                        <span className="tlt2">Become a </span>Mutual Fund Distributor
                                     </h1>
                                 </div>
                                 <div className="right-sec">
@@ -61,16 +60,23 @@ function BannerMFDistributor() {
                             </div>
                         </div>
                         <div className="col-md-6 col-lg-4 ">
+                            {
+                                ischeck ?
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                            <SubBrokerForm page='mutual-fund-distributor'/>
-                            </GoogleReCaptchaProvider>
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                    <SubBrokerForm page='mutual-fund-distributor'/>
+                                </GoogleReCaptchaProvider>
+                            </div>:
+                            <div className="franchise-form justify-content-end d-flex" id="form-banner" >
+                                <SubBrokerForm page='mutual-fund-distributor'/>
                             </div>
+                            }
+                           
                         </div>
                         <div className={name}>
                             <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
                                 <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{utils.scrollToId('sub-broker-form')}}>Become a MF Distributor
-</button>
+                                </button>
                             </div>
                         </div>
                     </div>

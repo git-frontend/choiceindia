@@ -15,10 +15,8 @@ import {
 import meta_tags from "../../Data/MetaTags";
 import "./DematPage.scss"
 function DematPage() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
   const location = useLocation();
 
   setTimeout(() => {
@@ -51,18 +49,18 @@ function DematPage() {
       sitemap1.hreflang = meta_tags[location.pathname.replace(/\//g, "")].href2||'';
       document.head.appendChild(sitemap1);
 
-      let sitemap2 = document.createElement('link');
-      sitemap2.rel = 'alternate';
-      sitemap2.id = 'link3';
-     sitemap2.href = meta_tags[location.pathname.replace(/\//g, "")].link3||'';
-     sitemap2.hreflang = meta_tags[location.pathname.replace(/\//g, "")].href3||'';
-      document.head.appendChild(sitemap2);
-      let sitemap3 = document.createElement('link');
-      sitemap3.rel = 'alternate';
-      sitemap3.id = 'link4';
-     sitemap3.href = meta_tags[location.pathname.replace(/\//g, "")].link4||'';
-     sitemap3.hreflang = meta_tags[location.pathname.replace(/\//g, "")].href4||'';
-      document.head.appendChild(sitemap3);
+    //   let sitemap2 = document.createElement('link');
+    //   sitemap2.rel = 'alternate';
+    //   sitemap2.id = 'link3';
+    //  sitemap2.href = meta_tags[location.pathname.replace(/\//g, "")].link3||'';
+    //  sitemap2.hreflang = meta_tags[location.pathname.replace(/\//g, "")].href3||'';
+    //   document.head.appendChild(sitemap2);
+    //   let sitemap3 = document.createElement('link');
+    //   sitemap3.rel = 'alternate';
+    //   sitemap3.id = 'link4';
+    //  sitemap3.href = meta_tags[location.pathname.replace(/\//g, "")].link4||'';
+    //  sitemap3.hreflang = meta_tags[location.pathname.replace(/\//g, "")].href4||'';
+    //   document.head.appendChild(sitemap3);
       let sitemap4 = document.createElement('link');
       sitemap4.rel = 'alternate';
       sitemap4.id = 'link5';
@@ -79,13 +77,10 @@ function DematPage() {
       
           }
   }, [rendercount])
-
   return (
-  
     <div>
-      {
-        skeleton ? <Template2 /> :
-          <div className="demat-page-parent">
+      
+          <div className="demat-page-parent" >
             <OpenFreeAccountBanner />
             <WhyOpenFreeDematAccount />
             <WhyChoice />
@@ -93,8 +88,6 @@ function DematPage() {
             <LowBrokerageDematAccount />
             <DematAccountOpeningProcess />
             <DematFaq />
-
-
             <section className="dematcontentseo">
               <div className="container">
                   <div className="row">
@@ -127,9 +120,9 @@ function DematPage() {
 
                                       Now that we've understood how does a <Link to="/blog/difference-between-demat-and-trading-account/">Demat account and a trading account differ</Link> from each other, let's look into the details; <br />
                                       <div className="ml-3">
-                                        <h3 className="font-bold"> 1. Delivery </h3>
+                                        <h3 className="font-bold mrg-y"> 1. Delivery </h3>
                                         A Demat account stores your stocks only when you take the delivery for it, you can further buy or sell in the future whereas your trading account facilitates you for your intraday activities, in intraday trading, you are required to sell off your positions by the end of the day, hence the intraday trades you’ve taken are not delivered to your Demat account.<br />
-                                        <h3 className="font-bold"> 2. Bank Link</h3>
+                                        <h3 className="font-bold mrg-y"> 2. Bank Link</h3>
                                         As mentioned before a trading account helps you with transactions, so it makes sense that your trading account and your bank account are both linked to each other so that you can make transactions seamlessly.<br />
 
                                         When you add money into your trading account you can go ahead and buy stocks that will be stored in your Demat account and if you sell your stocks, your Demat account will get rid of those stocks and the money will be deposited into your trading account and from there it will be transferred to your bank account as per your convenience.
@@ -138,31 +131,31 @@ function DematPage() {
                                       <h2 className="font-bold"><Link to="/blog/benefits-of-a-demat-account/">Benefits of Opening Demat Account </Link></h2>
                                       In the above-mentioned sections we have told you why is a Demat account necessary but told very less on why exactly is a Demat account beneficial for you,<br />
                                       <div className="ml-3">
-                                        <h3 className="font-bold"> 1. Corporate Benefits </h3>
+                                        <h3 className="font-bold mrg-y"> 1. Corporate Benefits </h3>
                                         Stocks as a single entity is not only associated with trading, when you buy into a stock you are exposed or eligible to tons of corporate benefits like stock splits, bonuses, dividend payouts etc<br />
 
                                         Managing all these benefits means your stocks are dynamic, they can change in number when you get a bonus or a stock split. When you are eligible for a dividend payout, the dividends are directly transferred to your bank account.<br />
                                         All these happen seamlessly, but that wouldn’t be the case if it weren't for the Demat account.<br />
-                                        <h3 className="font-bold"> 2. Nomination Facilities</h3>
+                                        <h3 className="font-bold mrg-y"> 2. Nomination Facilities</h3>
                                         When you open a Demat account for yourself you are required to add a nominee for precautionary measures, the transfer of assets between you and your nominee happens without any hassle, requiring you to have little to no paperwork.<br />
-                                        <h3 className="font-bold"> 3. Physical Limitations</h3>
+                                        <h3 className="font-bold mrg-y"> 3. Physical Limitations</h3>
                                         Electronic trading was introduced in 1994, before that we had people trading via physical means using paper certificates. This came with a lot of drawbacks including misplacing stocks, theft, damage to the certificates, etc<br />
                                         With a Demat account, all these problems are tackled altogether, a Demat account provides all the securities that would be required with password authentication.<br />
-                                        <h3 className="font-bold"> 4. Versatile Options</h3>
+                                        <h3 className="font-bold mrg-y"> 4. Versatile Options</h3>
                                         Talking in terms of finance we usually see most of the instruments involved in it are limited to a few folks who check out the rigid structure of authentication and security, but that problem is tackled by Demat accounts without compromising security or authentication. <br /><br />
                                         While opening a Demat account you are provided with plenty options from which you can open your Demat account;<br /><br />
                                         <ul>
-                                          <li className="font-bold">Individual Demat Account </li>
+                                          <li className="font-bold mrg-y">Individual Demat Account </li>
                                           Individual Demat account is a fairly simple one and the name itself is explanatory. It is a Demat account dedicated to an individual who operates it themselves.<br />
-                                          <li className="font-bold">Minor Demat Account </li>
+                                          <li className="font-bold mrg-y">Minor Demat Account </li>
                                           For the most part, usually, minors or people aged below 18 are not allowed to be engaging in a financial agreement, but, we have certain provisions in place which would allow a minor to have a Demat account.<br />
                                           However, this<Link to="/minor-demat-account"> minor Demat account</Link> needs to be operated under the guidance of the minor’s parent or guardian, meaning the minor himself cannot buy or sell shares.<br />
                                           Once the account holder is aged above 18 and wishes to take control of their Demat account, they can do so legally.<br />
-                                          <li className="font-bold"><Link to="/nri-demat-account">NRI Demat Account</Link></li>
+                                          <li className="font-bold mrg-y"><Link to="/nri-demat-account">NRI Demat Account</Link></li>
                                           We understand and we know that any legal Indian can possess equities to buy and sell according to their free will, but, what about NRIs?<br />
                                           NRI’s or Non-Resident Indians, do they have the provisions to enjoy the tremendous growth shown by the Indian markets?<br />
                                           Turns out, they do have the provisions to participate in the Indian markets. NRIs are allowed to have Demat accounts but while abiding by the rules of FEMA (Foreign Exchange Management Act)<br />
-                                          <li className="font-bold">Corporate Demat Account</li>
+                                          <li className="font-bold mrg-y">Corporate Demat Account</li>
                                           Demat accounts are not only limited to personal use, there are provisions for the corporate companies to invest as a single entity. <Link to="/corporate-demat-account">Corporate Demat accounts</Link> are especially special because it reduces the paperwork significantly while you are buying, selling, trading and transferring securities.<br />
                                         </ul>
                                       </div><br />
@@ -200,22 +193,21 @@ function DematPage() {
                                       <h2 className="font-bold">Demat Account Opening Fee and Charges</h2>
                                       This is the most common type and is available for majority of the Indian citizens residing in India.<br />
 
-                                      <h3 className="font-bold">Repatriable Demat Account</h3>
-                                      While opening a Demat account you probably will be associated with various fees and charges, these are namely opening charge, safety charge, annual maintenance charge, transaction charges and Demat charges.<br />
-
+                                      <h3 className="font-bold mrg-y">Repatriable Demat Account</h3>
+                                      While opening a Demat account you probably will be associated with various fees and charges, these are namely opening charge, safety charge, annual maintenance charge, transaction charges and Demat charges.<br /><br />
                                       Before you decide upon a DP to open your Demat account you are advised to check about all this information and only then make a decision to open a Demat account at your prefered DP. <br />
                                       <div className="ml-3">
                                         <ul>
-                                        <li className="font-bold">Demat Charges</li>
+                                        <li className="font-bold mrg-y">Demat Charges</li>
                                         Most of the existing financial institutions and banks don’t usually charge Demat charges anymore but there used to be a time when banks used to charge anywhere in between 600-900 rupees just to open a Demat account.<br />
                                         Now you might find it common that institutions open Demat accounts for you for free or at a very nominal price. <br />
-                                        <li className="font-bold">Safety Charges</li>
+                                        <li className="font-bold mrg-y">Safety Charges</li>
                                         Safety charges are levied in exchange for keeping all your securities safe and maintaining a Demat account.<br />
                                         Safety charges or account custodian charge fees are usually levied on the DP by the depository, these are one-time charges on the DPs. The DPs who charge safety charges on their customers do it on a monthly basis.<br />
-                                        <li className="font-bold">Annual Maintainance Charge (AMC)</li>
+                                        <li className="font-bold mrg-y">Annual Maintainance Charge (AMC)</li>
                                         Annual Maintainance charges are levied on the investor by the DP for the services they provide. <br />
                                         The annual Maintainance charge is also called the folio maintenance charge, these charges range between 200 - 1000 rupees per annum. The style at which <Link to="/blog/what-are-dp-charges/">DPs charge</Link> AMC differs accordingly, some DPs charge their investors quarterly and some even take a lifetime fee, but charging investors annually is the most common way of collecting AMC.<br />
-                                        <li className="font-bold">Transactional Charges</li>
+                                        <li className="font-bold mrg-y">Transactional Charges</li>
                                         The main aim of having a Demat account is participating in the Indian markets and while doing that it is evident that every transaction you make on the Demat account is a move towards your future.<br />
                                         DPs charge <Link to="/blog/dp-transaction-charges/">transactional charges</Link> on both credit and debits, where every time you engaged in a trade a nominal amount is charged on your behalf for facilitating a smooth transaction between your Demat account and the market.<br />
                                       
@@ -237,11 +229,7 @@ function DematPage() {
                       </div>
                   </div>
             </section>
-
-          
-          </div>
-      }
-
+            </div>
     </div>
   );
 }

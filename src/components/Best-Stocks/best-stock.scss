@@ -336,6 +336,7 @@
         justify-content: space-between;
         display: flex;
         padding: 5rem 0rem;
+        align-items: center;
 
         @media (max-width:$md) {
             background-color: $whiteColor;

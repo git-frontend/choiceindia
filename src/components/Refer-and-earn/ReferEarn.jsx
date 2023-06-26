@@ -12,10 +12,8 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function ReferEarn() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
   const location = useLocation();
 
   setTimeout(() => {
@@ -44,10 +42,9 @@ function ReferEarn() {
       }
     }
   }, [rendercount])
-
+ 
   return (
-    <div>
-
+    <>
       {
         skeleton ? <Template3 /> :
           <div className="refer-and-earn-parent">
@@ -57,8 +54,7 @@ function ReferEarn() {
             <EarnUp />
           </div>
       }
-
-    </div>
+    </>
   );
 }
 

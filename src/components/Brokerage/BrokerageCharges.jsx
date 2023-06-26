@@ -6,7 +6,7 @@ import Faqs from './Faqs';
 import BChargesMoreContent from './BChargesMoreContent';
 import GlossaryCharges from './GlossaryCharges';
 import OpenFreeAccount from './../Pricing/OpenFreeAccount';
-import { useState,useEffect } from "react";
+import { useState,useEffect} from "react";
 import meta_tags from "../../Data/MetaTags";
 import "./brokerage.scss";
 import "./../Pricing/pricing.scss";
@@ -15,7 +15,6 @@ import "./../OpenDematAccount/DematPage.scss";
 
 function BrokerageCharges() {
   const [rendercount, setRenderCount] = useState(() => false);
-
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -39,25 +38,17 @@ function BrokerageCharges() {
     }
   }, [rendercount])
 
-
-  
-
   return (
-    <div>
-      
+    <>
       <div className="mainwrapper brokerage-charges-temp">
-         
-         <Banner />
-         <SectionTabs />
-         <OpenFreeAccount />
-         <GlossaryCharges />
-         <Faqs />
-         <BChargesMoreContent/>
-         
+        <Banner />
+        <SectionTabs />
+        <OpenFreeAccount />
+        <GlossaryCharges />
+        <Faqs />
+        <BChargesMoreContent/>
        </div> 
-      
-    
-    </div>
+    </>
   );
 }
 

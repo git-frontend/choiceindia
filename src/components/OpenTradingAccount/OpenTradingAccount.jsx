@@ -7,7 +7,7 @@ import TradingAccountOpeningProcess from "./TradingAccountOpeningProcess";
 import LowBrokerageTradingAccount from "./LowBrokerageTradingAccount";
 import WhyChoice from "./TradingWhyChoice";
 import TradingFaq from "./TradingFaq";
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import {
     useLocation,
   } from 'react-router-dom';
@@ -16,9 +16,7 @@ import {
   
 function OpenTradingAccount() {
     const [rendercount, setRenderCount] = useState(() => false);
-
     const location = useLocation();
-
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
@@ -32,10 +30,9 @@ function OpenTradingAccount() {
           document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
         }
       }, [rendercount])
+
     return (
         <>
-            {/* Open Trading Account
-            <DematAccountForm></DematAccountForm> */}
             <OpentradingAccountBanner />
             <WhyOpenTradingAccount />
             <WhyChoice />
@@ -43,7 +40,6 @@ function OpenTradingAccount() {
             <TradingAccountOpeningProcess />
             <TradingFaq />
             <section className="readmoresection">
-
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -252,7 +248,6 @@ function OpenTradingAccount() {
                 </div>
 
             </section>
-
         </>
     );
 }

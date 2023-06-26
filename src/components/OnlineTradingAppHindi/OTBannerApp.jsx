@@ -9,9 +9,10 @@ import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
+import { useState } from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
 function OTBannerApp() {
-
+    const[ischeck,setIscheck]=useState(false);
   const settings1 = {
     vertical: true,
     autoplay: true,
@@ -25,7 +26,7 @@ function OTBannerApp() {
     <div className='App-main'>
 
 
-<section className="trading-app-sec1">
+<section className="trading-app-sec1" onMouseOver={()=>setIscheck(true)}>
         <div className="container">
             <div className="row">
                 <div className="col-md-7">

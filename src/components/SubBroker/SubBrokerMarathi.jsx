@@ -7,17 +7,15 @@ import WhyBecomeSubBrokerMarathi from './WhyBecomeSubBrokerMarathi';
 import WhoEligibleToSubBrokerMarathi from './WhoEligibleToSubBrokerMarathi';
 import MoreContentMarathi from './MoreContentMarathi';
 import SubBrokerOffersMarathi from './SubBrokerOffersMarathi';
-import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "./subbroker.scss";
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-import { useEffect } from "react";
+import { useEffect,useState} from "react";
 
 function SubBroker() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   // const myTimeout = setTimeout(myGreeting, 900);
   // function myGreeting() {
@@ -110,7 +108,6 @@ function SubBroker() {
         skeleton ? <Template5 /> :
 
           <div className="sub-broker-skeleton-parent">
-
             <BannerSBrokerMarathi />
             <SubBrokerBenifitsMarathi />
             <SubBrokerSellMoreMarathi />
@@ -118,10 +115,8 @@ function SubBroker() {
             <WhoEligibleToSubBrokerMarathi />
             <SubBrokerOffersMarathi />
             {/* <MoreContentMarathi /> */}
-            
           </div>
       }
-
     </div>
   );
 }

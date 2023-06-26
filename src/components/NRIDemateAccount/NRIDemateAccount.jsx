@@ -5,18 +5,14 @@ import WhyOpenFreeNriAccount from "../NRIDemateAccount/WhyOpenFreeNriAccount";
 import DematAccountNriOpeningProcess from "../NRIDemateAccount/DematAccountNriOpeningProcess";
 import LowBrokerageNRIDematAccount from "../NRIDemateAccount/LowBrokerageNRIDematAccount";
 import WhyChoice from "../OpenDematAccount/WhyChoice";
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import {useLocation, } from 'react-router-dom';
-  import meta_tags from "../../Data/MetaTags";
-
+import meta_tags from "../../Data/MetaTags";
 
 function NRIDemateAccount() {
-
     const [rendercount, setRenderCount] = useState(() => false);
-
     const location = useLocation();
-
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
@@ -39,18 +35,16 @@ function NRIDemateAccount() {
           }
         }
       }, [rendercount])
-
+     
     return (
         <>
-            {/* <p>NRI Demate Account</p>
-            <DematAccountForm></DematAccountForm> */}
+           
             <NriDematAccountBanner />
             <WhyOpenFreeNriAccount />
             <WhyChoice />
             <LowBrokerageNRIDematAccount />
             <DematAccountNriOpeningProcess />
             <section className="readmoresection">
-
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -111,8 +105,8 @@ function NRIDemateAccount() {
 
                                         <h2 className="font-bold">Documents Required to Open A NRI Demat Account</h2>
                                         Below is the comprehensive list of documents required to open the Demat Account for NRIs:<br />
-                                        <h4 className="font-bold"> 1. Current Residential Status</h4>
-                                        <h4 className="font-bold"> 2. For Indian Passport Holders</h4>
+                                        <h4 className="font-bold mrg-y"> 1. Current Residential Status</h4>
+                                        <h4 className="font-bold mrg-y"> 2. For Indian Passport Holders</h4>
                                         <ul>
                                             <li>Valid Passport</li>
                                             <li>Valid Visa - Work/Student/Employment/Resident Permit</li>
@@ -121,7 +115,7 @@ function NRIDemateAccount() {
                                             
                                            
                                         </ul>
-                                        <h4 className="font-bold"> 3. For Foreign Passport Holders</h4>
+                                        <h4 className="font-bold mrg-y"> 3. For Foreign Passport Holders</h4>
                                         <ul>
                                             <li>Valid Passport</li>
                                             <li>'India’ as a Place of Birth in the Foreign Passport</li>

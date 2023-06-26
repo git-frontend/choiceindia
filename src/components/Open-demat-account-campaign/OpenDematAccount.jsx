@@ -8,10 +8,8 @@ import "./open-demat-account.scss";
 import { useState,useEffect } from 'react';
 import meta_tags from "../../Data/MetaTags";
 
-
 function MutualFundsSEO() {
   const [rendercount, setRenderCount] = useState(() => false);
-
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -34,25 +32,12 @@ function MutualFundsSEO() {
       }
     }
   }, [rendercount])
-
-  
-
-  
-
   return (
-    <div>
-      
-      <div className="mainwrapper mfi-main">
-         
-         <Banner />
+      <div className="mainwrapper mfi-main"> 
+        <Banner />
          <InvestmentStrategies />
          <TrackRecord />
          <DematBenifits />
-        
-         
-       </div> 
-      
-    
     </div>
   );
 }

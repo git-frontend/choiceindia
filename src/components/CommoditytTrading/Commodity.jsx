@@ -9,7 +9,7 @@ import CommodityFaq from "./CommodityFaq";
 import MoreContent from "./MoreContent";
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect } from "react";
+import { useState,useEffect} from "react";
 
 function Commodity() {
   const [rendercount, setRenderCount] = useState(() => false);
@@ -36,8 +36,6 @@ function Commodity() {
       }
     }
   }, [rendercount])
-
-  
   return (
   
     

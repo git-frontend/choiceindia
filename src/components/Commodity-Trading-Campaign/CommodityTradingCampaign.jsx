@@ -126,7 +126,7 @@ function CommodityTradingCampaign() {
     return (
         <>
             <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
-                <section className="futureoptionbenner" onMouseOver={() => setIsCheck(true)}>
+                <section className="futureoptionbenner" >
                     <div className="container">
                         <div className="row ">
                             <div className="col-md-7 fandoleft">

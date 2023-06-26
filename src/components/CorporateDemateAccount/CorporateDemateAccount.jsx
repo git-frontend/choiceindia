@@ -15,9 +15,7 @@ import {
   import meta_tags from "../../Data/MetaTags";
 
 function CorporateDemateAccount() {
-
     const [rendercount, setRenderCount] = useState(() => false);
-
     const location = useLocation();
 
     useEffect(() => {
@@ -42,13 +40,10 @@ function CorporateDemateAccount() {
           }
         }
       }, [rendercount])
-      
+    
     return (
         <>
-            {/* 
-<p>Corporate Demate Account</p>
-<DematAccountForm></DematAccountForm>
-*/}
+            
             <CorporateDematAccountBanner />
             <WhyOpenFreeCorporateAccount />
             <WhyChoice />

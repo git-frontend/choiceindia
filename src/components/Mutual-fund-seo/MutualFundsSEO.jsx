@@ -10,13 +10,10 @@ import MFPartner from './MFPartner';
 import MFFaq from './MFFaq';
 import MFInvestment from './MFInvestment';
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect } from "react";
+import { useState,useEffect} from "react";
 import "./mf-investment.scss";
 
-
 function MutualFundsSEO() {
-
-  
   const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
@@ -42,26 +39,20 @@ function MutualFundsSEO() {
     }
   }, [rendercount])
 
-  
-
   return (
     <div>
       
       <div className="mainwrapper mfi-main">
-         
-         <Banner />
-         <WhyInvestMF />
-         <MfBenifits />
-         <WhyChoiceInvestment />
-         <ExploreBestMF />
-         <MFTestimonials />
-         <MFPartner />
-         <MFFaq />
-          <MFInvestment />
-          
+        <Banner />
+        <WhyInvestMF />
+        <MfBenifits />
+        <WhyChoiceInvestment />
+        <ExploreBestMF />
+        <MFTestimonials />
+        <MFPartner />
+        <MFFaq />
+        <MFInvestment />
        </div> 
-      
-    
     </div>
   );
 }

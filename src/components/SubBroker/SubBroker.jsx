@@ -7,17 +7,15 @@ import WhyBecomeSubBroker from './WhyBecomeSubBroker';
 import WhoEligibleToSubBroker from './WhoEligibleToSubBroker';
 import MoreContent from './MoreContent';
 import SubBrokerOffers from './SubBrokerOffers';
-import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "./subbroker.scss";
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-import { useEffect } from "react";
+import {useState,useEffect} from "react";
 
 function SubBroker() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   // const myTimeout = setTimeout(myGreeting, 900);
   // function myGreeting() {
@@ -104,11 +102,7 @@ function SubBroker() {
 
   return (
     <div>
-
-      
-
           <div className="sub-broker-skeleton-parent">
-
             <BannerSBroker />
             <SubBrokerBenifits />
             <SubBrokerSellMore />
@@ -116,10 +110,7 @@ function SubBroker() {
             <WhoEligibleToSubBroker />
             <SubBrokerOffers />
             <MoreContent />
-            
           </div>
-      
-
     </div>
   );
 }

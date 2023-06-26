@@ -50,27 +50,27 @@ function Strategy() {
 
       <div>
 
-        <header className="camp-header">
+        {/* <header className="camp-header">
           <div className="container">
             <div className="row">
               <div className="col-md-12">
                 <a href="https://choiceindia.com/" className="camp-logo">
-                  {/* <img src="images/stratezy-page/logo.webp" className="img-fluid" alt="Choice-India" /> */}
+                 
                   <LazyLoader src={"images/stratezy-page/logo.webp"} alt={"Banner Images"} width={"125"} height={"48"} className={"img-fluid"} />
-                  {/* <img src={"images/stratezy-page/logo.webp"} alt={"Banner Images"} width={"125"} height={"48"} className={"img-fluid"} /> */}
+                  
                 </a>
               </div>
             </div>
           </div>
-        </header>
+        </header> */}
         <main>
           <StrategyBanner></StrategyBanner>
           <WhyStrategy></WhyStrategy>
           <StrategyBody></StrategyBody>
 
-          {
+          {/* {
             isFaq? <div className="stratezy-faq-temp"></div>: <FaqAccordion></FaqAccordion> 
-          }
+          } */}
         
 
         </main>

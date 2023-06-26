@@ -14,12 +14,9 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function App() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
   const location = useLocation();
-
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
@@ -52,11 +49,11 @@ function App() {
     {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
-      <BannerApp />
-      <AppBannerBottom />
-      <AppBenefits />
-      <AppStrategies />
-      <AppTradeBenefits />
+        <BannerApp />
+        <AppBannerBottom />
+        <AppBenefits />
+        <AppStrategies />
+        <AppTradeBenefits />
       </div>
     }
     </div>

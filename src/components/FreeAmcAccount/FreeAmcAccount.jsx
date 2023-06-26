@@ -10,8 +10,7 @@ import AmcFaq from "./AmcFaq";
 import meta_tags from "../../Data/MetaTags";
 import { useState,useEffect } from "react";
 function FreeAmcAccount() {
-    const [rendercount, setRenderCount] = useState(() => false);
-
+  const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -34,19 +33,15 @@ function FreeAmcAccount() {
       }
     }
   }, [rendercount])
-
     return (
         <>
-            {/* Open Trading Account
-            <DematAccountForm></DematAccountForm> */}
+          
             <FreeAmcAccountBanner />
             <WhyOpenFreeAmcAccount />
             <WhyChoiceamc />
             <LowBrokerageAMCAccount />
             <AmcAccountOpeningProcess />
             <AmcFaq />
-          
-
         </>
     );
 }

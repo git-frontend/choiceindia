@@ -24,11 +24,11 @@ function WhyMFDistributor () {
                                     <h6>म्यूचुअल फंड योजनाएं	</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3>24K+</h3>
+                                    <h3>30K+</h3>
                                     <h6>फ्रेंचाइजी</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3>54+</h3>
+                                    <h3>95+</h3>
                                     <h6>स्थानीय कार्यालय</h6>
                                 </div>
                             </div>

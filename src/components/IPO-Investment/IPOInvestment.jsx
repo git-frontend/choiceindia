@@ -7,13 +7,10 @@ import IPOProcess from './IPOProcess';
 import WhyChoiceIPO from './WhyChoiceIPO';
 import IPOFaq from './IPOFaq';
 import meta_tags from "../../Data/MetaTags";
-
 import "./ipo-investments.scss";
-
 
 function EquityBrokingMain() {
   const [rendercount, setRenderCount] = useState(() => false);
-
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -37,25 +34,17 @@ function EquityBrokingMain() {
     }
   }, [rendercount])
   
-
-  
-
   return (
     <div>
       
       <div className="mainwrapper brokerage-charges-temp">
-         
-         <Banner />
-         <IPOStocks />
-         <IPOBenifits />
-         <IPOProcess />
-         <WhyChoiceIPO />
-         <IPOFaq />
-        
-         
-       </div> 
-      
-    
+        <Banner />
+        <IPOStocks />
+        <IPOBenifits />
+        <IPOProcess />
+        <WhyChoiceIPO />
+        <IPOFaq />
+      </div>
     </div>
   );
 }

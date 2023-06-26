@@ -9,11 +9,10 @@ import DerivativeTradingFaq from "./DerivativeTradingFaq";
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
 import MoreContent from './MoreContent';
-import { useState,useEffect } from "react";
+import { useState,useEffect} from "react";
 
 function DerivativeTrading() {
   const [rendercount, setRenderCount] = useState(() => false);
-
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -36,14 +35,8 @@ function DerivativeTrading() {
       }
     }
   }, [rendercount])
-
-
-
-  
   return (
   
-    
-     
           <div className="demat-page-parent">
             <DerivativeTradingBanner />
             <WhyOpenDerivativeTrading />

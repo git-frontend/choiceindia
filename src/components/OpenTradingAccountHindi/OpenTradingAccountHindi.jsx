@@ -15,9 +15,7 @@ import {
   import { Link } from "react-router-dom";
 function OpenTradingAccountHindi() {
     const [rendercount, setRenderCount] = useState(() => false);
-
     const location = useLocation();
-
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
@@ -73,11 +71,9 @@ function OpenTradingAccountHindi() {
         }
       }, [rendercount])
 
-
     return (
         <>
-            {/* <p>Open Trading Account Hindi</p>
-            <DematAccountForm></DematAccountForm> */}
+          
             <HindiOpenFreeAccountBanner />
             <HindiWhyOpenFreeDematAccount />
             <HindiWhyChoice />
@@ -85,7 +81,6 @@ function OpenTradingAccountHindi() {
             <HindiDematAccountOpeningProcess />
             <HindiTradingFaq />
             <section className="readmoresection">
-
                 <div className="container">
                     <div className="row">
                         <div className="col-md-11 col-md-offset-1">
@@ -138,20 +133,20 @@ function OpenTradingAccountHindi() {
                                             डीमैट खाता खोलते समय आपको बहुत सारे विकल्प प्रदान किए जाते हैं जिनसे आप अपना डीमैट खाता खोल सकते हैं;
 
                                             <ul>
-                                                <li className="font-bold">इंडिविजुअल डीमैट अकाउंट</li>
+                                                <li className="font-bold mrg-y">इंडिविजुअल डीमैट अकाउंट</li>
                                                 इंडिविजुअल डीमैट खाता काफी सरल है और नाम ही व्याख्यात्मक है। यह एक ऐसे व्यक्ति को समर्पित एक डीमैट खाता है जो इसे स्वयं संचालित करता है।<br />
-                                                <li className="font-bold"> माइनर डीमैट खाता</li>
+                                                <li className="font-bold mrg-y"> माइनर डीमैट खाता</li>
 
                                                 अधिकांश भाग के लिए, आमतौर पर, नाबालिगों या 18 वर्ष से कम आयु के लोगों को वित्तीय समझौते में शामिल होने की अनुमति नहीं है, लेकिन, हमारे पास कुछ प्रावधान हैं जो नाबालिग को डीमैट खाता रखने की अनुमति देंगे।
                                                 <br /><br />
                                                 हालाँकि, इस नाबालिग डीमैट खाते को नाबालिग के माता-पिता या अभिभावक के मार्गदर्शन में संचालित करने की आवश्यकता है, जिसका अर्थ है कि नाबालिग स्वयं शेयर खरीद या बेच नहीं सकता है। <br /><br />
 
                                                 एक बार जब खाताधारक की आयु 18 वर्ष से अधिक हो जाती है और वह अपने डीमैट खाते को नियंत्रित करना चाहता है, तो वे कानूनी रूप से ऐसा कर सकते हैं।<br /><br />
-                                                <li className="font-bold">एनआरआई डीमैट खाता</li>
+                                                <li className="font-bold mrg-y">एनआरआई डीमैट खाता</li>
                                                 हम समझते हैं और हम जानते हैं कि कोई भी कानूनी भारतीय अपनी मर्जी से खरीदने और बेचने के लिए इक्विटी रख सकता है, लेकिन, एनआरआई के बारे में क्या?<br />
                                                 एनआरआई या अनिवासी भारतीय, क्या उनके पास भारतीय बाजारों द्वारा दिखाई गई जबरदस्त वृद्धि का आनंद लेने के प्रावधान हैं?<br />
                                                 पता चला, उनके पास भारतीय बाजारों में भाग लेने के प्रावधान हैं। अनिवासी भारतीयों को डीमैट खाते रखने की अनुमति है लेकिन फेमा (विदेशी मुद्रा प्रबंधन अधिनियम) के नियमों का पालन करते हुए<br />
-                                                <li className="font-bold">कॉर्पोरेट डीमैट खाता</li>
+                                                <li className="font-bold mrg-y">कॉर्पोरेट डीमैट खाता</li>
                                                 डीमैट खाते केवल व्यक्तिगत उपयोग तक ही सीमित नहीं हैं, कॉर्पोरेट कंपनियों के लिए एकल इकाई के रूप में निवेश करने के प्रावधान हैं। कॉर्पोरेट डीमैट खाते विशेष रूप से विशेष होते हैं क्योंकि जब आप शेयरों की खरीद, बिक्री, व्यापार और हस्तांतरण करते हैं तो यह कागजी कार्रवाई को काफी कम कर देता है।
                                                 <br />
                                             </ul>
@@ -212,7 +207,6 @@ function OpenTradingAccountHindi() {
                 </div>
 
             </section>
-
         </>
     );
 }

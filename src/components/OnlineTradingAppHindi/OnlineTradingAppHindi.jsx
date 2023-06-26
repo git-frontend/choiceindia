@@ -1,5 +1,5 @@
 
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect,useRef} from "react";
 import OTBannerApp from './OTBannerApp';
 import AppOTBannerBottom from './AppOTBannerBottom';
 import AppOTStrategies from './AppOTStrategies';
@@ -18,10 +18,8 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function TradingHindiApp() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
   const location = useLocation();
 
   setTimeout(() => {
@@ -50,22 +48,20 @@ function TradingHindiApp() {
       }
     }
   }, [rendercount])
-
   return (
     <div>
     {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
-      <OTBannerApp />
-      <AppOTStrategies />
-      <AppOTBannerBottom />
-      <AppOTradeBenefits />
-       <AppOTMultipleBenefits/> 
-      <AppOTradeTestimonial/>
-      <OTAppFaq/>
-      <AppOTDownloadJiffy/>
-      <OTAppMoreContent/>
-      
+        <OTBannerApp />
+        <AppOTStrategies />
+        <AppOTBannerBottom />
+        <AppOTradeBenefits />
+        <AppOTMultipleBenefits/> 
+        <AppOTradeTestimonial/>
+        <OTAppFaq/>
+        <AppOTDownloadJiffy/>
+        <OTAppMoreContent/>
       </div>
     }
     </div>

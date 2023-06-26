@@ -18,7 +18,7 @@ const OpenFreeAccountBanner = () => {
     const[toggle,settoggle] = useState(false);
     const[check,setcheck] = useState(false);
     const [view,setView]=useState({
-		matches: window.innerWidth < 770 ? false : true ,
+		matches: window.innerWidth < 768 ? false : true ,
 	  });
     const[ischeck,setIscheck]=useState(false);
 
@@ -89,11 +89,24 @@ const OpenFreeAccountBanner = () => {
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
-                            <span className="banner-title2">All in 1 Account</span>
-                            <h1 className="banner-title" >
-                                <div className="desktop"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
-                                
-                            </h1>
+
+                        {
+                                view && !view.matches ?
+                                <div>
+                           
+                            </div>
+                            :
+                            <div>
+                                 <span className="banner-title2">All in 1 Account</span>
+                                <h1 className="banner-title" >
+                                    <div className="desktop">
+                                        <span className="free">Free</span> Demat Account <br />Opening in 5 Minutes
+                                    </div>
+                                    
+                                </h1>
+                            </div>
+
+                        }
 
                              
                          
@@ -158,18 +171,29 @@ const OpenFreeAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
+                        {
+                                view && !view.matches ?
+                                <div>
                             <span className="banner-title2 mobile">All in 1 Account</span>
                             <h1 className="banner-title mbtitle" >
                                 
-                                <div className="mobile"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
+                                <div className="mobile">
+                                <span className="free">Free</span> Demat Account <br />Opening in 5 Minutes
+                                </div>
                                 
                             </h1>
+                            </div>
+                            :
+                            <div>
+                            </div>
+
+                        }
                             {
                                 ischeck ?
                                 <div className="formwrap d-flex justify-content-end ">
                                 {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
-                                <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
+                                {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
@@ -177,10 +201,9 @@ const OpenFreeAccountBanner = () => {
                             <div className="formwrap d-flex justify-content-end " onMouseOver={()=>setIscheck(true)}>
                                 {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
-                                <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
+                                {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
                                 
                                     <DematAccountForm />
-                                
                             </div>
 
                             }

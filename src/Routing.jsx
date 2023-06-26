@@ -170,10 +170,15 @@ const LazyTradingStrategiesHindi = React.lazy(() => import('./components/Trading
 const LazyCommodityTradingCampaign = React.lazy(() => import('./components/Commodity-Trading-Campaign/CommodityTradingCampaign'));
 const LazyCurrencyTradingCampaign = React.lazy(() => import('./components/Currency-Trading-Campaign/CurrencyTradingCampaign'));
 const LazyTechnicalAnalysis = React.lazy(() => import('./components/Technical-Analysis-Campaign/TechnicalAnalysis'));
+
+
 const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Options-Trading/futuresOptionsTradingBanner'))
 // const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
+const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/UpcomingAGM'));
 const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'))
+
+
 function Routing() {
 
     
@@ -855,12 +860,41 @@ function Routing() {
                                 < LazyAfpage />
                             </React.Suspense>
                         } />
-                        <Route exact path='/ipo/:id' element={
+                         <Route exact path='/upcoming-agm' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-board-meeting' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-bonus-shares' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-dividend-paying-stocks' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-stock-splits' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-rights-issue' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                       <Route exact path='/ipo/:id' element={
                             <React.Suspense>
                                 < LazyIPOLanding />
                             </React.Suspense>
                         } />
-
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

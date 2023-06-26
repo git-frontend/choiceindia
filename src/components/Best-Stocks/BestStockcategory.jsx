@@ -29,7 +29,6 @@ function BestStockcategory() {
   let tokens="";
   let storefile;
   let checkurl = (window.location.pathname == "/best-stocks-to-buy") ? "all-stock":(window.location.pathname == "/best-intraday-stocks-to-buy") ? "intraday" :(window.location.pathname == "/best-short-term-stocks-to-buy") ? "short-term" :(window.location.pathname == "/best-stocks-for-long-term-investment") ?"long-term":"";
- 
   const [toggleState, setToggleState] = useState(1);
   const [list, setlist] = useState();
   const [Data1, setData1] = useState();
@@ -512,15 +511,12 @@ function urlLink(){
     urlLink();
   
   }
-
-
-
   return (
     <div>
       {
         skeleton ? <Template5 /> :
           <div className="sub-broker-skeleton-parent">
-            <section className="mainhead">
+           <section className="mainhead">
               <div className="container">
                 <div className="row d-flex justify-content-center ">
                   <div className="col-md-12 ">
@@ -562,8 +558,6 @@ function urlLink(){
                 </div>
               </div>
             </section>
-            
-
             <section className="main-parent">
               <div className="container">
                 <div  className="content-tabs best-stock-tabs-cont active-content">
@@ -813,8 +807,8 @@ function urlLink(){
               </div>
             </section>
             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                    <OpenDemateAccountStickyFooter />
-                                </GoogleReCaptchaProvider>
+                <OpenDemateAccountStickyFooter />
+            </GoogleReCaptchaProvider>
             <section className="readmoresection readmorecontent">
               <div className="container">
                 
@@ -976,10 +970,7 @@ function urlLink(){
                 
               </div>
             </section>
-
-          </div>
-
-
+            </div>
       }
     </div>
   );

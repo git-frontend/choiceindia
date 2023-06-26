@@ -27,7 +27,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
     var source = useRef('');
     var otpSessionID = useRef('');
-    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1)||(window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('nse-holidays') > -1)||(window.location.pathname.indexOf('bse-holidays') > -1)||(window.location.pathname.indexOf('mcx-ncdex-holidays') > -1)||(window.location.pathname.indexOf('stock-market-holidays') > -1) ) ? 'Best-Stock' : "Blog";
+    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1)||(window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('nse-holidays') > -1)||(window.location.pathname.indexOf('bse-holidays') > -1)||(window.location.pathname.indexOf('mcx-ncdex-holidays') > -1)||(window.location.pathname.indexOf('stock-market-holidays') > -1)||(window.location.pathname.indexOf('upcoming-agm') > -1)||(window.location.pathname.indexOf('upcoming-board-meeting') > -1)||(window.location.pathname.indexOf('upcoming-bonus-shares') > -1)||(window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1)||(window.location.pathname.indexOf('upcoming-stock-splits') > -1)||(window.location.pathname.indexOf('upcoming-rights-issue') > -1) ) ? 'Best-Stock' : "Blog";
 
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
@@ -239,7 +239,23 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                     <section className="sendopt  beststockres holidayOTP">
                         <div className="container">
                             <div className="form_main ">
+                                {
+                                  window.location.pathname.indexOf('best-stocks-for-long-term-investment')==1
+                                  ?
+                                  <div className=" demat_text"><span className="form-ttl">Get the Stocks for Achieving<br /> Your Long Term Goals!</span>
+                                  </div>:
+                                   window.location.pathname.indexOf('best-stocks-to-buy')==1
+                                   ?<div className=" demat_text"><span className="form-ttl">Maximize your portfolio's potential<br /> with the best stocks handpicked <br /> by our expert analysts.</span>
+                                   </div> :
+                                    window.location.pathname.indexOf('best-intraday-stocks-to-buy')==1
+                                    ?<div className=" demat_text"><span className="form-ttl">Get Daily Intraday Stocks from<br /> Our Research Experts.</span>
+                                    </div>:
+                                     window.location.pathname.indexOf('best-short-term-stocks-to-buy')==1
+                                     ?<div className=" demat_text"><span className="form-ttl">Accelerate your portfolio's growth<br /> today with our dynamic<br/> short-term stock picks!</span>
+                                     </div>
+                                  :                               
                                 <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
+                                }
                                 <div className="  Mobile_text">
                                     <input type="text"  className="form-textbox" id="mobile_no" name="mobile_no" placeholder='Mobile Number' autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
                                     {/* <label htmlFor="form-email" className="form-label" >Mobile Number</label> */}

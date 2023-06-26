@@ -11,6 +11,7 @@ import etfindeximage from "../../assets/images/index-fund-vs-etf.webp";
 import invesrtetf from "../../assets/images/how-to-invest-in-etf-online.webp";
 import Slider from 'react-slick';
 function ETF() {
+  // const[ischeck,setIscheck]=useState(false);
   function chapterScroll(id) {
     console.log("check",id);
     var element = document.getElementById(id);
@@ -142,7 +143,6 @@ function ETF() {
     window.addEventListener('scroll', getPosition);
 }, []);
 
-
   return (
     <div className="Home" id="root">
       <div>
@@ -150,9 +150,9 @@ function ETF() {
           skeleton ?
             <Template2 />
             :
-            <main>
-
-              <section className="bannersection etf-banner">
+        <main>
+        
+            <section className="bannersection etf-banner">
                 <div className="container">
                   <div className="row  align-items-center">
                     <div className="col-md-7">
@@ -178,8 +178,7 @@ function ETF() {
                     </div>
                   </div>
                 </div>
-              </section>
-
+            </section>
               <section className="tablecontent" id="showForm">
                 <div className="container">
                   <div className="row  align-items-center">
@@ -753,8 +752,6 @@ function ETF() {
                     <button className="primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
                 </div> 
               </div>
-                  
-
             </main>
         }
       </div>

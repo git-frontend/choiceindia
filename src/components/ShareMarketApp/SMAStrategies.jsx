@@ -31,7 +31,19 @@ function SMAStrategies() {
                 vertical: false,
                 autoplaySpeed: 3000,
               }
-            }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    autoplay: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    vertical: false,
+                    autoplaySpeed: 3000,
+                    adaptiveHeight:false,
+                    dots:true,
+                },
+              },
             
           ]
        
@@ -52,7 +64,7 @@ function SMAStrategies() {
                     </div>
                     <div className='row d-flex justify-content-center'>
                         <div className='col-md-11'>
-                            <div className="row app-trade-easy-div d-flex align-items-flex-start">
+                            <div className="row app-trade-easy-div d-flex colum-revers">
 
                                
 

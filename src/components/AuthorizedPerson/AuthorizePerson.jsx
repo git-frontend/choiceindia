@@ -8,7 +8,7 @@ import WhoEligibleToAuthorize from './WhoEligibleToAuthorize';
 import AuthorizeMoreContent from './AuthorizeMoreContent';
 import AuthorizeFaq from './AuthorizeFaq';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import Template5 from '../Common-features/Template5';
 import "../SubBroker/subbroker.scss";
 import "../Remisier/Remisier.scss"
@@ -19,10 +19,8 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function AuthorizePerson() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
   const location = useLocation();
 
   setTimeout(() => {
@@ -59,7 +57,6 @@ function AuthorizePerson() {
         skeleton ? <Template5 /> :
 
           <div className="sub-broker-skeleton-parent">
-
             <AuthorizeBanner />
             <AuthorizeBenifits />
             <AuthorizeSellMore />

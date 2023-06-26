@@ -7,17 +7,15 @@ import WhyBecomeSubBrokerHindi from './WhyBecomeSubBrokerHindi';
 import WhoEligibleToSubBrokerHindi from './WhoEligibleToSubBrokerHindi';
 import MoreContent from './MoreContent';
 import SubBrokerOffersHindi from './SubBrokerOffersHindi';
-import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "./subbroker.scss";
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-import { useEffect } from "react";
+import {useState, useEffect} from "react";
 
 function SubBrokerHindi() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   // const myTimeout = setTimeout(myGreeting, 900);
   // function myGreeting() {
@@ -98,7 +96,6 @@ function SubBrokerHindi() {
         skeleton ? <Template5 /> :
 
           <div className="sub-broker-skeleton-parent">
-
             <BannerSBrokerHindi />
             <SubBrokerBenifitsHindi />
             <SubBrokerSellMoreHindi />
@@ -106,7 +103,6 @@ function SubBrokerHindi() {
             <WhoEligibleToSubBrokerHindi />
             <SubBrokerOffersHindi />
             {/* <MoreContent /> */}
-            
           </div>
       }
 

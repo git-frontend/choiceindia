@@ -20,10 +20,8 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function ShareMarketApp() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
   const location = useLocation();
 
   setTimeout(() => {
@@ -52,23 +50,21 @@ function ShareMarketApp() {
       }
     }
   }, [rendercount])
-
+ 
   return (
     <div>
     {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
-      <SMABannerApp />
-      
-      <SMABannerBottom />
-      <SMAStrategies />
-      <SMATradeBenefits />
-       <SMAMultipleBenefits/> 
-      <SMATestimonial/>
-      <SMAFaq/>
-      <SMADownloadJiffy/>
-      <SMAMoreContent/>
-      
+        <SMABannerApp />
+        <SMABannerBottom />
+        <SMAStrategies />
+        <SMATradeBenefits />
+        <SMAMultipleBenefits/> 
+        <SMATestimonial/>
+        <SMAFaq/>
+        <SMADownloadJiffy/>
+        <SMAMoreContent/>
       </div>
     }
     </div>

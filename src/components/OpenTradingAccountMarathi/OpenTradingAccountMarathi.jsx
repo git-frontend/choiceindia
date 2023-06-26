@@ -13,11 +13,8 @@ import {
   } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
 function OpenTradingAccountMarathi() {
-
     const [rendercount, setRenderCount] = useState(() => false);
-
     const location = useLocation();
-
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
@@ -74,16 +71,12 @@ function OpenTradingAccountMarathi() {
       }, [rendercount])
     return (
         <>
-            {/* <p>Open Trading Account Marathi</p>
-            <DematAccountForm></DematAccountForm> */}
             <MarathiOpenFreeAccountBanner />
             <MarathiWhyOpenFreeDematAccount />
             <MarathiWhyChoice />
             <MarathiLowBrokerageDematAccount />
             <MarathiDematAccountOpeningProcess />
             <MarathiDematFaq />
-           
-
         </>
     );
 }

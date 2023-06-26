@@ -63,7 +63,7 @@ const meta_tags = {
 
     "faq": { 'title': "Frequently Asked Questions | Choice",'lang':"en", 'content': "Find FAQs related to our products, services, investment advisory, account opening, and more. Get answers to all your queries about the stock market at Choice.", "link":"https://choiceindia.com/faq",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
-    "sub-broker-franchise": { 'title': "Sub Broker Franchise with Low Deposit - Become a Choice Sub Broker",'lang':"en", 'content': "Start a sub broker franchise with minimum deposit. Become a stock market sub broker and start your own stock broker franchise business in India with Choice.", 'link': "https://choiceindia.com/sub-broker-franchise",'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en","href2":"hi","href3":"gu","href4":"te","href5":"mr","href6":"x-default"},
+    "sub-broker-franchise": { 'title': "Sub Broker Franchise with Low Deposit - Become a Choice Sub Broker",'lang':"en", 'content': "Start a sub broker franchise with minimum deposit. Become a stock market sub broker and start your own stock broker franchise business in India with Choice.", 'link': "https://choiceindia.com/sub-broker-franchise",'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en-in","href2":"hi-in","href3":"gu-in","href4":"te-in","href5":"mr-in","href6":"x-default"},
 
     "refer-and-earn": { 'title': " Best Refer and Earn Demat Account - Earn upto Rs. 100 Per Referral",'lang':"en",'content': "Join the best refer and earn demat account opening referral program by Choice. Refer your friends to Choice and earn upto Rs.100 incentive per referral. Your friend will get upto Rs 100 after activating their account.", 'link': "https://choiceindia.com/refer-and-earn",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
@@ -82,7 +82,7 @@ const meta_tags = {
     
     "advisory-for-investors":{'title':"Advisory for Investors - Choice",'lang':"en",'content':"Visit Choice International Limited's official website to know the advisory for the investors.",'link':"https://choiceindia.com/advisory-for-investors",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
     
-    "marathi/open-demat-account":{'title':"मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही",'content':"चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.",'link':"https://choiceindia.com/marathi/open-demat-account","lang":'mr','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
+    "marathi/open-demat-account":{'title':"मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही",'content':"चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.",'link':"https://choiceindia.com/marathi/open-demat-account","lang":'mr','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en-in","href2":"hi-in","href3":"","href4":"","href5":"mr-in","href6":"x-default",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -251,7 +251,7 @@ const meta_tags = {
     ` },
 
     "open-free-demat-account": {
-        'title': "Free Demat Account Opening Online with No Annual Charges",'lang':"en", 'content': "Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.", 'link': 'https://choiceindia.com/open-free-demat-account','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
+        'title': "Free Demat Account Opening Online with No Annual Charges",'lang':"en", 'content': "Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.", 'link': 'https://choiceindia.com/open-free-demat-account','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en-in","href2":"hi-in","href3":"","href4":"","href5":"mr-in","href6":"x-default",
         "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -429,7 +429,7 @@ const meta_tags = {
 
     // "contact": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "partner": { 'title': "Become a Stock Market Agent with Choice",'lang':"en", "content": "Become a stock market agent with India’s leading full service broker. Get the highest revenue share, local branch support, and training to start your entrepreneurship journey.","link":"https://dev.choiceindia.com/partner", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+    "partner": { 'title': "Become a Stock Market Agent with Choice",'lang':"en", "content": "Become a stock market agent with India’s leading full service broker. Get the highest revenue share, local branch support, and training to start your entrepreneurship journey.","link":"https://choiceindia.com/partner", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
     "investors": { 'title': "Choice International Limted's Quarterly Results, Corporate Annoucement",'lang':"en", "content": "Stay tuned with us to know more about Choice International Limited's most recent happenings, including its quarterly earnings, corporate announcements, shareholding patterns, and AGM.","link":"https://choiceindia.com/investors", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
 
@@ -528,7 +528,7 @@ const meta_tags = {
 
     "campaign/open-demat-account":{'title':"Open a Free Demat Account Online - Low Brokerage + No AMC For 1st Year",'lang':"en",'content':"Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Free Research with 78% Success Ratio & more.",'link':"https://choiceindia.com/campaign/open-demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
-    "hindi/sub-broker-franchise":{'title':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट",'content':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी सबसे कम डिपॉजिट में और कमाईये जीवनभर ब्रोकेरज शेअर ७५% तक आपसे जुडी हुए ग्राहकोसे, आजही चॉइस सब ब्रोकर बनें|",'link':"https://choiceindia.com/hindi/sub-broker-franchise",'lang':"hi",'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en","href2":"hi","href3":"gu","href4":"te","href5":"mr","href6":"x-default"},
+    "hindi/sub-broker-franchise":{'title':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट",'content':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी सबसे कम डिपॉजिट में और कमाईये जीवनभर ब्रोकेरज शेअर ७५% तक आपसे जुडी हुए ग्राहकोसे, आजही चॉइस सब ब्रोकर बनें|",'link':"https://choiceindia.com/hindi/sub-broker-franchise",'lang':"hi",'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en-in","href2":"hi-in","href3":"gu-in","href4":"te-in","href5":"mr-in","href6":"x-default"},
 
     "campaign/sub-broker-franchise":{'title':"Sub Broker Franchise with Low Deposit - Become a Choice Sub Broker",'lang':"en",'content':"Become a Sub Broker with Choice. Open a sub brokership business or franchise with minimum deposit* & get upto 75% of total brokerage for whole trading life-span of the client.",'link':"https://choiceindia.com/sub-broker-franchise",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
@@ -964,7 +964,7 @@ const meta_tags = {
     ` },
 
     "hindi/open-demat-trading-account": {
-        'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC",'lang':"hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और फ्री एएमसी प्राप्त करें पहले वर्ष के लिए। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।","link":"https://choiceindia.com/hindi/open-demat-trading-account",'link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
+        'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC",'lang':"hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और फ्री एएमसी प्राप्त करें पहले वर्ष के लिए। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।","link":"https://choiceindia.com/hindi/open-demat-trading-account",'link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en-in","href2":"hi-in","href3":"","href4":"","href5":"mr-in","href6":"x-default",
         "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1340,7 +1340,7 @@ const meta_tags = {
     </script>
     ` },
 
-    "demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'lang':"en",'content':"A Demat account is used to store securities in electronic format. Visit to know about Demat account meaning, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript": `
+    "demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'lang':"en",'content':"A Demat account is used to store securities in electronic format. Visit to know about what is Demat account, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript": `
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1457,7 +1457,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     
     `},
 
-    "info/stratezy": { 'title': "CStratezy - A Free Trading Strategy Builder by Choice",'lang':"en", "content": "Stratezy is the free-trading strategy builder for intraday and options trades. Backtest your trading strategies on the past data through virtual trades with Strategy by Choice.","link":"https://choiceindia.com/info/stratezy/", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+    "info/stratezy": { 'title': "Stratezy - A Free Trading Strategy Builder by Choice",'lang':"en", "content": "Stratezy - A Free Trading Strategy Builder by Choice. Stratezy is the free-trading strategy builder for intraday and options trades. Optimise your trading strategies and make it lives with Strategy.","link":"https://choiceindia.com/info/stratezy/", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
     "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice",'lang':"en", "content": "Choice FinX Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.","link":'https://choiceindia.com/baskets/',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
@@ -2024,23 +2024,23 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
 
   "partner-assets/emitra": { 'title': "Basket Investing - चॉइस पार्टनर ई-मित्र की प्रचार सामग्री",'lang':"en", "content": "","link":'https://choiceindia.com/partner-assests/emitra/',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
   "mutual-fund-distributor": { 'title': "Become a Mutual Fund Distributor with Choice", 'lang':"en",
-  "content": " Become a Mutual Fund Distributor with Choice to have the chance to leverage your distribution business by selling mutual funds together with stock market investing, loans, and insurance.",
-  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
+  "content": "Become a Mutual Fund Distributor with Choice to have the chance to leverage your distribution business by selling mutual funds together with stock market investing, loans, and insurance.",
+  "link":'https://choiceindia.com/mutual-fund-distributor',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
 
   "hindi/mutual-fund-distributor": { 'title': "चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें", 
   "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
-  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` ,'lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "link":'https://choiceindia.com/mutual-fund-distributor',"faqscript": `` ,'lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
   "gujarati/sub-broker-franchise": { 'title': "ડિપોઝિટ વિના સબ બ્રોકર ફ્રેન્ચાઇઝ - ચોઇસ સબ બ્રોકર બનો", 
   "content": "ચોઇસ સાથે સબ બ્રોકર બનો. ડિપોઝિટ વિના સબ બ્રોકરશિપ બિઝનેસ અથવા ફ્રેન્ચાઇઝ ખોલો* અને ક્લાયન્ટના સમગ્ર ટ્રેડિંગ આયુષ્ય માટે સર્વોચ્ચ બ્રોકરેજ શેરિંગ મેળવો.",
-  "link":'https://choiceindia.com/gujarati/sub-broker-franchise',"lang":'gu',"faqscript": ``,'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en","href2":"hi","href3":"gu","href4":"te","href5":"mr","href6":"x-default"},
+  "link":'https://choiceindia.com/gujarati/sub-broker-franchise',"lang":'gu',"faqscript": ``,'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en-in","href2":"hi-in","href3":"gu-in","href4":"te-in","href5":"mr-in","href6":"x-default"},
 
   "marathi/sub-broker-franchise": { 'title': "चॉइस सब ब्रोकर बना आणि डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा", 
   "content": "चॉइस सब ब्रोकर बना. डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा, तसेच सर्वाधिक महसूल वाटप आणि आजीवन उत्पन्न स्रोत मिळावा.",
-  "link":'https://choiceindia.com/marathi/sub-broker-franchise',"lang":'mr',"faqscript": ``,'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en","href2":"hi","href3":"gu","href4":"te","href5":"mr","href6":"x-default"},
+  "link":'https://choiceindia.com/marathi/sub-broker-franchise',"lang":'mr',"faqscript": ``,'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en-in","href2":"hi-in","href3":"gu-in","href4":"te-in","href5":"mr-in","href6":"x-default"},
 
   "telugu/sub-broker-franchise": { 'title': "డిపాజిట్ లేకుండా సబ్ బ్రోకర్ ఫ్రాంచైజ్ - ఛాయిస్ సబ్ బ్రోకర్ అవ్వండి", 
-  "content": "ఛాయిస్తో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.","link":'https://choiceindia.com/telugu/sub-broker-franchise',"lang":'te',"faqscript": ``,'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en","href2":"hi","href3":"gu","href4":"te","href5":"mr","href6":"x-default"},
+  "content": "ఛాయిస్తో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.","link":'https://choiceindia.com/telugu/sub-broker-franchise',"lang":'te',"faqscript": ``,'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en-in","href2":"hi-in","href3":"gu-in","href4":"te-in","href5":"mr-in","href6":"x-default"},
 
   "hindi/mutual-funds-investment": { 'title': "म्यूचुअल फंड में ऑनलाइन निवेश करें च्वाइस के साथ", 
   "content": "चॉइस के साथ, आप भारत में ऑनलाइन म्यूचुअल फंड में निवेश करना शुरू कर सकते हैं। चॉइस म्यूचुअल फंड निवेश मंच सभी के लिए म्यूचुअल फंड में निवेश को आसान बनाता है।",
@@ -2199,13 +2199,42 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Visit us to know more about our privacy policy",
     "link":"https://choiceindia.com/loan/privacy-policy"
   },
-  "bajaj-energy-ipo": {
-    "title":"Bajaj Energy IPO - Check Issue Date, Price, Lot Size & Details",
+  "upcoming-agm": {
+    "title":"Upcoming AGM - List of Upcoming AGM Dates & Companies in 2023",
     'lang':"en",
-    'content':"Discover the latest details about the Bajaj Energy IPO, including the issue date, price, lot size, and other information. Stay updated and make informed investment decisions.",
-    "link":"https://choiceindia.com/bajaj-energy-ipo"
+    'content':"Find the list of upcoming AGM/EGM on Choice. Get updated with upcoming Annual General Meeting/Extraordinary General Meeting along with it's dates & companies.",
+    "link":"https://choiceindia.com/upcoming-agm"
   },
-  
+  "upcoming-board-meeting": {
+    "title":"Upcoming Board Meetings - Latest & Forthcoming Board Meetings Dates",
+    'lang':"en",
+    'content':"Find out the list of upcoming board meetings at Choice. Get the updates on forthcoming & latest company board meeting dates of NSE/BSE listed companies.",
+    "link":"https://choiceindia.com/upcoming-board-meeting"
+  },
+  "upcoming-bonus-shares": {
+    "title":"Upcoming Bonus Shares in 2023 - List of Bonus Shares to Buy",
+    'lang':"en",
+    'content':"Check out upcoming bonus shares in 2023 on Choice. Get the list of all upcoming bonus shares companies in India likely to declare/issue bonus shares.",
+    "link":"https://choiceindia.com/upcoming-bonus-shares"
+  },
+  "upcoming-dividend-paying-stocks": {
+    "title":"Upcoming Dividend in 2023 - List of Upcoming Dividend Paying Stocks in India",
+    'lang':"en",
+    'content':"Get the list of upcoming dividend paying stocks in 2023 on Choice. Check out the upcoming dividend dates declared by companies in NSE.",
+    "link":"https://choiceindia.com/upcoming-dividend-paying-stocks"
+  },
+  "upcoming-stock-splits": {
+    "title":"Upcoming Stock Splits in 2023 - List of Recent Share Splits in India",
+    'lang':"en",
+    'content':"Find out upcoming stock splits in 2023 on Choice. View the list recent share splits in India by NSE & BSE listed companies along with it's face value.",
+    "link":"https://choiceindia.com/upcoming-stock-splits"
+  },
+  "upcoming-rights-issue": {
+    "title":"Upcoming Rights Issue in 2023 - List of Upcoming Rights Issue of Shares",
+    'lang':"en",
+    'content':"Find the list of upcoming rights issue in 2023 on Choice. Get the complete list of recently announced rights issue of shares in Indian stock market.",
+    "link":"https://choiceindia.com/upcoming-rights-issue"
+  },
   "campaign/free-demat-account": {
     "title":"Free Demat Account Opening Online with No Annual Charges",
     'lang':"en",

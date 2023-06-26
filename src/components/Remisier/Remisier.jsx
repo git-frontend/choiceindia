@@ -8,7 +8,7 @@ import WhoEligibleToRemisier from './WhoEligibleToRemisier';
 import RemisierOffers from './RemisierOffers';
 import RemisierMoreContent from './RemisierMoreContent';
 import RemisierFaq from './RemisierFaq';
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import Template5 from '../Common-features/Template5';
 import "../SubBroker/subbroker.scss";
 import "./Remisier.scss";
@@ -18,7 +18,6 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function Remisier() {
-
   const [skeleton, setSkeleton] = useState(() => true);
   // const myTimeout = setTimeout(myGreeting, 900);
   // function myGreeting() {
@@ -54,15 +53,13 @@ function Remisier() {
       }
     }
   }, [rendercount])
-
+ 
   return (
     <div>
 
       {
         skeleton ? <Template5 /> :
-
           <div className="sub-broker-skeleton-parent">
-
             <RemisierBanner />
             <RemisierBenifits />
             <RemisierSellMore />

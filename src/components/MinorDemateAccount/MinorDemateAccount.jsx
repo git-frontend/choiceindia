@@ -15,11 +15,8 @@ import {
   import meta_tags from "../../Data/MetaTags";
 import MinorFaq from "./MinorFaq";
 function MinorDemateAccount() {
-
 	const [rendercount, setRenderCount] = useState(() => false);
-
     const location = useLocation();
-
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
@@ -42,11 +39,10 @@ function MinorDemateAccount() {
           }
         }
       }, [rendercount])
-      
+     
     return (
         <>
-            {/* <p>Minor Demate Account</p>
-            <DematAccountForm></DematAccountForm> */}
+           
             <MinorDematAccountBanner />
             <WhyOpenFreeMinorAccount />
             <WhyChoice />
@@ -54,7 +50,6 @@ function MinorDemateAccount() {
             <MinorDematOpeningProcess />
             <MinorFaq />
             <section className="readmoresection">
-
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">

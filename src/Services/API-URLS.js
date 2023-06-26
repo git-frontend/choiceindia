@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -183,6 +183,9 @@ export class API_URLS {
     OTPOnCallURL = 'otp-on-call';
     verifyOTPURL = 'verify-otp';
     nbfcverifyOTPURL = 'api/verify-otp';
+    // for event calendar
+    eventdetailsURL='cm/ProfileMkt/EventDetails';
+
     
   /** pdf API */
   
@@ -221,8 +224,6 @@ export class API_URLS {
     contentUrl ='items/stock_broker_city?limit=1000&sort[]=id'
     /** sub broker city */
     cityUrl = 'items/sub_broker_branch_city?limit=1000&sort[]=id'
-    /** company IPO */
-    companyIpo ='items/Company_ipo?limit=1000&sort[]=id'
 
 
 
@@ -783,6 +784,10 @@ export class API_URLS {
         return this.CMSURL + this.escalation
     }
 
+
+
+
+
     getSubBrokerNewSendOtpUrl() {
         return this.SSOServerURL + this.subBrokerSendOtpURLNew;
     }
@@ -869,10 +874,12 @@ export class API_URLS {
         return this.ConnectBaseURL + 'basket/order/status-update'
         // return "https://apidev.choiceconnect.in/connect/api/basket/order/status-update"
     }
-
-    /** Company ipo */
+    //for event deatils
+    getEventDetails(){
+        return this.performanceURL + this.eventdetailsURL;
+    }
+ /** Company ipo */
     companyIpoURL(){
         return this.CMSURL + this.companyIpo
     }
-
 }

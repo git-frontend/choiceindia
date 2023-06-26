@@ -8,13 +8,11 @@ import WhyCurrencyTrading from "./WhyCurrencyTrading";
 import MoreContent from './MoreContent';
 import CurrencyTradingFaq from "./CurrencyTradingFaq";
 import { Link } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState,useEffect} from "react";
 import meta_tags from "../../Data/MetaTags";
 
 function CurrencyTrading() {
-
   const [rendercount, setRenderCount] = useState(() => false);
-
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -37,14 +35,10 @@ function CurrencyTrading() {
       }
     }
   }, [rendercount])
-
-
-  
   return (
   
-    
-     
           <div className="demat-page-parent">
+            
             <CurrencyTradingBanner />
             <WhyOpenCurrencyTrading />
             <WhyCurrencyTrading />

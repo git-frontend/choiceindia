@@ -10,6 +10,8 @@ import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const MinorDematAccountBanner = () => {
+    const[ischeck,setIscheck]=useState(false);
+    
     function chapterScroll(id) {
         var element = document.getElementById(id);
         var headerOffset = 140;
@@ -38,17 +40,32 @@ const MinorDematAccountBanner = () => {
         window.addEventListener('scroll', getPosition);
     }, []);
 
+    const [view,setView]=useState({
+		matches: window.innerWidth < 768 ? false : true ,
+	  });
+
     return (
         <div>
-             <section className="banner-sect" >
+             <section className="banner-sect" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
-                        <span className="banner-title2">All in 1 Account</span>
-                            <h1 className="banner-title" >
-                                <div className="desktop">Open a Minor Demat Account <br /> <span className="yellow">Online For Free</span></div>
-                                
-                            </h1>
+                        {
+                                view && !view.matches ?
+                                <div>
+                           
+                            </div>
+                            :
+                            <div>
+                                <span className="banner-title2">All in 1 Account</span>
+                                <h1 className="banner-title" >
+                                    <div className="desktop">Open a Minor Demat Account <br /> <span className="yellow">Online For Free</span></div>
+                                    
+                                </h1>
+                            </div>
+
+                        }
+                      
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
                             {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} /> */}
                             <div className="banner-txt">
@@ -109,19 +126,36 @@ const MinorDematAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                        <span className="banner-title2 mobile">All in 1 Account</span>
+                        {
+                                view && !view.matches ?
+                                <div>
+                            <span className="banner-title2 mobile">All in 1 Account</span>
                         <h1 className="banner-title mbtitle">
                                 <div className="mobile">Open a Minor Demat Account <br /> <span className="yellow">Online For Free</span></div>
                                 
                             </h1>
+                            </div>
+                            :
+                            <div>
+                            </div>
+
+                        }
+                        
+                        {
+                                ischeck ?
+                       
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
-                                <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
+                                {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
-                            </div>
-
+                            </div>:
+                                <div className="formwrap d-flex justify-content-end">
+                                {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
+                                    <DematAccountForm />
+                                </div>
+                            }
                         </div>
 
                     </div>

@@ -8,9 +8,8 @@ import HindiLowBrokerageDematAccount from "./HindiLowBrokerageTradingAccount";
 import HindiWhyChoice from "./HindiTradingWhyChoice";
 import HindiTradingFaq from "./HindiTradingFaq";
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect } from "react";
+import { useState,useEffect} from "react";
 function TradingAccountHindi() {
-
     const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
@@ -35,11 +34,9 @@ function TradingAccountHindi() {
       }
     }
   }, [rendercount])
-
+ 
     return (
         <>
-            {/* <p>Open Trading Account Hindi</p>
-            <DematAccountForm></DematAccountForm> */}
             <HindiOpenFreeAccountBanner />
             <HindiWhyOpenFreeDematAccount />
             <HindiWhyChoice />
@@ -47,7 +44,6 @@ function TradingAccountHindi() {
             <HindiDematAccountOpeningProcess />
             <HindiTradingFaq />
             <section className="readmoresection">
-
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -172,7 +168,6 @@ function TradingAccountHindi() {
                 </div>
 
             </section>
-
         </>
     );
 }

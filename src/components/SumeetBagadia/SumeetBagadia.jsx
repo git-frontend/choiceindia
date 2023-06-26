@@ -6,12 +6,10 @@ import SocialConnect from "../SumeetBagadia/SocialConnect";
 import Template2 from '../Common-features/Template2';
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect } from "react";
+import { useState,useEffect} from "react";
 
 function SumeetBagadia() {
-
   const [skeleton, setSkeleton] = useState(() => true);
-
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
@@ -51,8 +49,6 @@ function SumeetBagadia() {
       }
     }
   }, [rendercount])
-
-
   return (
     <div>
 
@@ -60,7 +56,6 @@ function SumeetBagadia() {
         skeleton ? <Template2 /> :
           <div className="sumeet-bagadia-parent">
             <BannerTop />
-
             <section className="about-cont">
               <div className="container">
                 <div className="row">
@@ -84,9 +79,7 @@ function SumeetBagadia() {
                 </div>
               </div>
             </section>
-
             <Slidersec />
-
             <section className="sumit-bg-acnt">
               <div className="container">
                 <div className="row">
@@ -101,13 +94,8 @@ function SumeetBagadia() {
                 </div>
               </div>
             </section>
-
-
             <PrintMedia />
-
-
             <SocialConnect />
-
             <section className="sumit-bg-tips">
               <div className="container">
                 <div className="row">
@@ -122,10 +110,8 @@ function SumeetBagadia() {
                 </div>
               </div>
             </section>
-
-          </div>
+            </div>
       }
-
     </div>
   );
 }

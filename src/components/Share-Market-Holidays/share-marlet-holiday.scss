@@ -13,9 +13,12 @@
     }
 
     .list_group1 {
+        overflow: auto;
+
         .list {
             @media (min-width: $sm-x) and (max-width: $md) {
                 font-size: 1.14rem;
+                white-space: nowrap;
             }
         }
     }
@@ -37,6 +40,33 @@
 
     .holiday-content {
         .holidays-table {
+            &.event-table-prnt{
+                max-height: 536px;
+                overflow: auto;
+                @media (max-width: $sm) {
+                    max-height: 336px;
+                }
+            }
+            .event-table {
+                height: 100%;
+                min-height: 200px;
+                @media (max-width: $sm) {
+                    overflow-x: initial;
+                }
+
+                .event-table-strip {
+                    position: relative;
+
+                    .event-sticky {
+                        position: sticky;
+                        top: 0;
+                        background: #fff;
+                    }
+                    .empty-row{
+                        padding-left: 1.5rem;
+                    }
+                }
+            }
 
             border: 1px solid $lightgray;
             border-radius: 8px;
@@ -261,6 +291,7 @@
                         text-align: left;
                         padding: 1.375rem;
                         box-shadow: inherit;
+                        background: transparent;
                     }
 
                 }
@@ -273,6 +304,7 @@
                     }
                 }
             }
+
         }
 
         .holiday-list {
@@ -372,3 +404,10 @@
     }
 
 }
+
+// //for event calendar
+// .event-table {
+//     height: 100%;
+//     max-height: 500px;
+//     overflow: auto;
+// }
