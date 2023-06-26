@@ -50,7 +50,13 @@ function Fabdetailsbanner(props) {
           document.getElementById('meta-descr').content = descr ;
           document.getElementById('meta-title').content = (props && props.single_data && props.single_data[0]) ? props?.single_data[0].title :"" ;
           document.getElementById('meta-image').content = (props && props.single_data && props.single_data[0])? props?.single_data[0].feature_image:"";
+          document.getElementById('twitter-meta-type').content = "article" ;
+          document.getElementById('twitter-meta-url').content = location.href ;
         
+        document.getElementById('twitter-meta-descr').content = (props && props.single_data && props.single_data[0]) ? props?.single_data[0].twitter_description :"" ;
+        document.getElementById('twitter-meta-title').content = (props && props.single_data && props.single_data[0]) ? props?.single_data[0].twitter_title :"" ;
+        document.getElementById('twitter-meta-image').content = (props && props.single_data && props.single_data[0])? props?.single_data[0].twitter_image:"";
+      
          
         }
       }, [rendercount])

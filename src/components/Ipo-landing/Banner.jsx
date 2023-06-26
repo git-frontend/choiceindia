@@ -85,6 +85,20 @@ function Banner() {
            
           })
           setApiData(AllFilesValue.Body);
+          document.title = AllFilesValue.Body[0].ipo_meta_title ? AllFilesValue.Body[0].ipo_meta_title : ''  ;
+      document.getElementById('meta-tags').content = AllFilesValue.Body[0].ipo_meta_content ? AllFilesValue.Body[0].ipo_meta_content : '';
+      document.getElementById('canonical-link').href = AllFilesValue.Body[0].ipo_canonical_link ? AllFilesValue.Body[0].ipo_canonical_link: '';
+
+      document.getElementById('meta-type').content = AllFilesValue.Body[0].ipo_og_type ? AllFilesValue.Body[0].ipo_og_type : ''; 
+      document.getElementById('meta-url').content = AllFilesValue.Body[0].ipo_og_url ? AllFilesValue.Body[0].ipo_og_url : ''; 
+      document.getElementById('meta-descr').content = AllFilesValue.Body[0].ipo_og_description ? AllFilesValue.Body[0].ipo_og_description : ''; 
+      document.getElementById('meta-title').content = AllFilesValue.Body[0].ipo_og_title ? AllFilesValue.Body[0].ipo_og_title : '';
+      document.getElementById('meta-image').content = AllFilesValue.Body[0].ipo_og_image ? `https://cmsapi.choiceindia.com/assets/${AllFilesValue.Body[0].ipo_og_image}` : '';
+
+      document.getElementById('twitter-meta-url').content = AllFilesValue.Body[0].ipo_twitter_url ? AllFilesValue.Body[0].ipo_twitter_url : ''; 
+      document.getElementById('twitter-meta-descr').content = AllFilesValue.Body[0].ipo_twitter_desc ? AllFilesValue.Body[0].ipo_twitter_desc : ''; 
+      document.getElementById('twitter-meta-title').content = AllFilesValue.Body[0].ipo_twitter_title ? AllFilesValue.Body[0].ipo_twitter_title : '';
+      document.getElementById('twitter-meta-image').content = AllFilesValue.Body[0].ipo_twitter_image ? `https://cmsapi.choiceindia.com/assets/${AllFilesValue.Body[0].ipo_twitter_image}` : '';
         } else {
           setApiData([]);
         }
@@ -187,11 +201,11 @@ function Banner() {
                       <ul>
                         <li>
                           <span className="scr-date">{res.open_date_name}</span>
-                          <span className="date">{utils.formatDate(new Date(res.open_date), "dd MMMM , yyyy") || 'To be announced'}</span>
+                          <span className="date">{res.open_date ? utils.formatDate(new Date(res.open_date), "dd MMMM , yyyy") : 'To be announced'}</span>
                         </li>
                         <li>
                           <span className="scr-date">{res.close_date_name}</span>
-                          <span className="date">{utils.formatDate(new Date(res.close_date), "dd MMMM , yyyy") || 'To be announced'}</span>
+                          <span className="date">{res.close_date ? utils.formatDate(new Date(res.close_date), "dd MMMM , yyyy") : 'To be announced'}</span>
                         </li>
                         <li>
                           <span className="scr-date">{res.Banner_price_band_name}</span>
@@ -404,15 +418,15 @@ function Banner() {
                         <tbody>
                           <tr>
                             <td>{res.open_date_name}</td>
-                            <td className='txt-right'>{utils.formatDate(new Date(res.open_date), "dd MMMM , yyyy") || 'To be announced'}</td>
+                            <td className='txt-right'>{res.open_date ? utils.formatDate(new Date(res.open_date), "dd MMMM , yyyy") : 'To be announced'}</td>
                           </tr>
                           <tr>
                             <td>{res.close_date_name}</td>
-                            <td className='txt-right'>{utils.formatDate(new Date(res.close_date), "dd MMMM , yyyy") || 'To be announced'}</td>
+                            <td className='txt-right'>{res.close_date ? utils.formatDate(new Date(res.close_date), "dd MMMM , yyyy") : 'To be announced'}</td>
                           </tr>
                           <tr>
                             <td>{res.ipo_date_allotment_name}</td>
-                            <td className='txt-right'>{utils.formatDate(new Date(res.ipo_date_allotment), "dd MMMM , yyyy") || 'To be announced'}</td>
+                            <td className='txt-right'>{res.ipo_date_allotment ? utils.formatDate(new Date(res.ipo_date_allotment), "dd MMMM , yyyy") : 'To be announced'}</td>
                           </tr>
                           <tr>
                             <td>{res.ipo_date_initiation_of_refunds}</td>
