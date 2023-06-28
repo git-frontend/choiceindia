@@ -224,6 +224,8 @@ export class API_URLS {
     contentUrl ='items/stock_broker_city?limit=1000&sort[]=id'
     /** sub broker city */
     cityUrl = 'items/sub_broker_branch_city?limit=1000&sort[]=id'
+    /** company IPO */
+    companyIpo ='items/Company_ipo?limit=1000&sort[]=id'
 
 
 
