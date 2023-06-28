@@ -575,7 +575,7 @@ function Banneraf() {
       IsInflationAdjusted: "",
       NoOfInstallments: 999,
       RiskProfileID: "",
-      StartDate: orderDates[isLast],
+      StartDate: orderDates[(orderDates.length -1) -isLast],
       SubscriptionId: "wb" + clientId + new Date().getTime(),
       SubscriptionType: "Basket",
       Id: BasketData.bucket_id ? BasketData.bucket_id : "",
@@ -860,7 +860,7 @@ function Banneraf() {
                                   (BasketData.bucket_type != 'Lumpsum') ? 
                                   <div className="amount">
                                   <div className="rupee">
-                                    {nextSipDate && nextSipDate[index]? nextSipDate[index] : 'NA'}
+                                    {nextSipDate && nextSipDate[(nextSipDate.length-1) -index]? nextSipDate[(nextSipDate.length-1) -index] : 'NA'}
                                   </div>
                                   <p className="text">Next SIP Payment</p>
                                 </div> : ''
