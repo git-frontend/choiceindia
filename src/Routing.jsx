@@ -176,6 +176,7 @@ const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Op
 // const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/UpcomingAGM'));
+const LazyBlogCms =React.lazy(()=> import('./components/Blog-cms/BlogCms'));
 
 function Routing() {
 
@@ -886,6 +887,12 @@ function Routing() {
                          <Route exact path='/upcoming-rights-issue' element={
                             <React.Suspense>
                                 < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                        
+                         <Route exact path='/blog-cms' element={
+                            <React.Suspense>
+                                < LazyBlogCms />
                             </React.Suspense>
                         } />
                        
