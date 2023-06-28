@@ -60,6 +60,7 @@
         .heading {
             padding-bottom: 2.5rem;
             text-align: center;
+            line-height: 1.5;
     
             @media screen and (max-width: $sm) {
                 font-size: 2.5rem;
@@ -677,3 +678,58 @@
 //     }
 // }
 
+.card-sticky-blog{
+    position: sticky;
+    top: 140px;
+    .btn-fixed{
+        .openbtn{
+            display: flex;
+            background: $pricolor;
+            justify-content: space-between;
+            color: $whiteColor;
+            font-size: 1.385rem;
+            align-items: center;
+            padding: 1rem;
+            text-align: left;
+        }
+    }
+    @media screen and (max-width: $sm) {
+        position: inherit;
+        top: inherit;
+    }
+}
+
+
+.modal-cust{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  
+  overflow: auto;
+  z-index: 999999999 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  .close-btn-mdl{
+    color: $whiteColor;
+    text-decoration: none;
+    top: 0;
+    right: 0.8rem;
+    position: absolute;
+    font-size: 2.5rem;
+  }
+  &::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(62, 64, 79, 0.3019607843);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+  }
+}

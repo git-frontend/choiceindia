@@ -177,6 +177,8 @@ const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Op
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/UpcomingAGM'));
 const LazyBlogCms =React.lazy(()=> import('./components/Blog-cms/BlogCms'));
+const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'))
+
 
 function Routing() {
 
@@ -896,6 +898,11 @@ function Routing() {
                             </React.Suspense>
                         } />
                        
+                       <Route exact path='/ipo/:id' element={
+                            <React.Suspense>
+                                < LazyIPOLanding />
+                            </React.Suspense>
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

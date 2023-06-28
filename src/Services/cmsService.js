@@ -39,6 +39,17 @@ const cmsService = {
             return data
 
     })
+},
+
+/** company ipo API */
+
+    companyIpoService: function () {
+    let api = new API_URLS()
+    let url = api.companyIpoURL()
+    return axios.get(url).then((data) => {
+        return data
+
+})
 }
 
 

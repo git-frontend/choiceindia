@@ -191,7 +191,7 @@ export class API_URLS {
   
 //   newsURL='items/news?filter[status][_eq]=published&limit=1000&sort[]=-id';
   newsURL='items/news?filter[status][_eq]=published&sort[]=-news_dates&limit=1000';
-  noticeURL ='items/notices?filter[status][_eq]=published&filter[type][_eq]=description&limit=1000&sort[]=id';
+  noticeURL ='items/notices?filter[status][_eq]=published&filter[type][_eq]=description&limit=1000&sort[]=-id';
   noticeRightURL = 'items/notices?filter[status][_eq]=published&filter[type][_eq]=right_issues&limit=1000&sort[]=id';
   corporateURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=policies&limit=1000&sort[]=id';
   corporatecommiteeURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=committee&limit=1000&sort[]=id';
@@ -224,6 +224,8 @@ export class API_URLS {
     contentUrl ='items/stock_broker_city?limit=1000&sort[]=id'
     /** sub broker city */
     cityUrl = 'items/sub_broker_branch_city?limit=1000&sort[]=id'
+    /** company IPO */
+    companyIpo ='items/Company_ipo?limit=1000&sort[]=id'
 
 
 
@@ -877,5 +879,9 @@ export class API_URLS {
     //for event deatils
     getEventDetails(){
         return this.performanceURL + this.eventdetailsURL;
+    }
+ /** Company ipo */
+    companyIpoURL(){
+        return this.CMSURL + this.companyIpo
     }
 }

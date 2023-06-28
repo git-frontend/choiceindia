@@ -1,0 +1,1000 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.ipo-banner{
+    padding: 8rem 0;
+    @media (max-width:$md) {
+        padding: 4rem 0 8rem;
+    }
+    @media (max-width:$sm) {
+        padding: 5rem 0;
+    }
+    .banner-caption{
+        display: flex;
+        align-items: center;
+        position: relative;
+        .cmp-logo{
+            .img-brder{
+                padding: 1.5rem 0;
+                border: 1px solid $lightgray;
+                align-items: center;
+                display: flex;
+                border-radius: 15px;
+            }
+            @media (max-width:$md) {
+                display: none;
+            }
+        }
+        .heading-sec{
+            padding-left: 2rem;
+            .title-secnd{
+                margin-bottom: 1rem;
+                font-family: $font-family-poppins-bold;
+                @media (max-width:$md) {
+                    font-size: 3rem;
+                }
+            }  
+            p{
+                margin: 0;
+            }
+            @media (max-width:$md) {
+                padding-left: 0;
+            }
+        }
+        @media (max-width:$sm) {
+            display: block;
+            text-align: center;
+         }
+    }
+    .banner-card{
+        background: $whiteColor;
+        box-shadow: 0px 0px 15px 1px $lightgray;
+        border-radius: 20px;
+        position: relative;
+        margin-top: 4.1rem;
+        @media (max-width:$sm) {
+            margin-top: 3rem;
+        }
+        
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li{
+                width: 33.33%;
+                padding: 2rem;
+                @media (max-width:$sm) {
+                    width: 50%;
+                }
+                .scr-date{
+                    display: block;
+                    font-size: 1.5rem;
+                    font-family:$font-family-poppins-regular;
+                    color: $listcolor;
+                    @media (max-width:$sm) {
+                        font-size: 1.25rem;
+                        white-space: nowrap;
+                    }
+                }
+                .date{
+                    display: block;
+                    font-size: 1.5rem;
+                    font-family:$font-family-poppins-semibold;
+                    white-space: nowrap;
+                    @media (max-width:$sm) {
+                        font-size: 1.3rem;
+                    }
+                }
+                &:nth-child(4) {
+                    background: $bg-li;
+                }
+                &:nth-child(5) {
+                    background: $bg-li;
+                    @media (max-width:$sm) {
+                        background: transparent;
+                    }
+                }
+                &:nth-child(6) {
+                    background: $bg-li;
+                    @media (max-width:$sm) {
+                        background: transparent;
+                    }
+                }
+                @media (max-width:$sm) {
+                    &:nth-child(3) {
+                        background: $bg-li;
+                    }
+                }
+            }
+        }
+        .card-bottom{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem;
+            @media (max-width:$sm) {
+                display: block;
+                text-align: center;
+            }
+            .dont-ac{
+                padding-left: 2rem;
+                @media (max-width:$sm) {
+                    padding-left: 0;
+                    padding-top: 2rem;
+                }
+                a{
+                    color: $primary;
+                    font-family: $font-family-poppins-medium;
+                }
+            }
+            .btn-sec{
+                .btn-bg{
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .sticy-card{
+        .sticy-card-sub{
+            position: relative;
+            padding: 3rem 4rem;
+            background: url(../../assets/images/ipo-landing/card-ipo.webp) no-repeat top center;
+            background-size: cover;
+            border-radius: 14px;
+            .title-secnd{
+                color: $whiteColor;
+                padding-bottom: 3rem;
+            }
+           ul{
+                list-style: none;
+                padding: 0;
+                li{
+                    padding: 1rem 0;
+                    .bx-icon{
+                        padding-right: 1rem;
+                    }
+                    .bx-text{
+                        color: $whiteColor;
+                        font-family: $font-family-poppins-medium;
+                        font-size: 1.5rem;
+                        .fw-regular{
+                            font-family: $font-family-poppins-regular;
+                        }
+                    }
+                }
+           }
+           .btn-open{
+            padding-top: 2rem;
+           }
+        }
+        &.visibleform2{
+            display: flex;
+            justify-content: flex-end;
+            width: 33.33%;
+            .sticy-card-sub{
+                width: 340px;
+            }
+        }
+       
+    }
+
+    .hideform{
+        display: none;
+    }
+    .visibleform{
+        @media (max-width: $sm) {
+        display: block;
+        }
+        .btn-fixed {
+            position: fixed;
+            bottom: 0;
+            z-index: 99999999;
+            width: 100%;
+            left: 0;
+            display: none;
+            @media (max-width: $md) {
+                display: block;
+            }
+            .openbtn {
+                border-radius: 0;
+                width: 100%;
+                background-color: $pricolor;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: $whiteColor;
+                text-align: center;
+                vertical-align: middle;
+                user-select: none;
+                border: 1px solid transparent;
+                padding: 1.5rem 1rem;
+                font-family: $font-family-poppins-regular;
+                display: flex;
+                justify-content: space-between;
+                text-decoration: none;
+                align-items: center;
+                @media (max-width: $md) {
+                    font-size: 1.385rem;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+
+}
+.ipo-details{
+    background: $abt-bg;
+    padding: 8rem 0;
+    @media (max-width:$sm) {
+        padding: 5rem 0;
+    }
+    .ipo-text-details{
+        position: relative;
+        .title-first{
+            span{
+                color:$yellowColor;
+            }
+        }
+        .para-sec{
+            padding: 2.769rem 0 4.538rem;
+            p{
+                padding-bottom: 1rem;
+                font-size: 1.538rem;
+                line-height: 1.5;
+                font-family: $font-family-poppins-regular;
+                a{
+                    text-decoration: none;
+                }
+                &.pd-1{
+                    padding-top: 2rem;
+                }
+            }
+            .btn-read{
+                font-style: normal;
+                font-family: $font-family-poppins-semibold;
+                color: $bgcolor-blue;
+                cursor: pointer;
+            }
+        }
+    }
+   .ipo-strength{
+    position: relative;
+        h4{
+            line-height: 1.5;
+            font-size: 2rem;
+            font-family: $font-family-poppins-semibold;
+        }
+        ul {
+            list-style:none ;
+            padding: 0;
+            margin: 2rem 0 3rem;
+            li{
+                display: flex;
+                align-items: baseline;
+                font-size: 1.538rem;
+                line-height: 1.5;
+                font-family: $font-family-poppins-regular;
+                padding-bottom: 1rem;
+                &:before {
+                        content: "+";
+                        padding-right: 0.8rem;
+                        color: $pluscolor;
+                        font-size: 1.8rem;
+                    }
+            }
+        }
+    }
+    .ipo-weekness{
+        position: relative;
+        h4{
+            line-height: 1.5;
+            font-size: 2rem;
+            font-family: $font-family-poppins-semibold;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0 0;
+            li{
+                font-size: 1.538rem;
+                line-height: 1.5;
+                font-family: $font-family-poppins-regular;
+                display: flex;
+                align-items: baseline;
+                padding-bottom: 1rem;
+                &:before {
+                    content: "-";
+                    padding-right: 0.8rem;
+                    color: $redtext;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+.revenue-chart-sec{
+    padding: 8rem 0 0;
+    @media (max-width:$sm) {
+        padding: 5rem 0 0;
+    }
+    .title-first{
+        padding-bottom: 2rem;
+        position: relative;
+        span{
+            color: $yellowColor;
+        }
+    }
+    .chart-card{
+        border: 1px solid $lightgray;
+        padding: 4rem 5rem;
+        border-radius: 8px;
+        position: relative;
+        .chart-header{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-bottom: 2rem;
+            .header-item{
+                display: flex;
+                
+                .item1{
+                    margin-right: 3rem;
+                    display: flex;
+                    align-items: center;
+                    color: $secondary;
+                    font-size: 1.231rem;
+                    .cir-col{
+                        width: 1.8rem;
+                        height: 1.8rem;
+                        display: inline-block;
+                        border-radius: 8px;
+                        margin-right: 1rem;
+                        &.revenue-color {
+                            background: $pricolor;
+                        }
+                        &.profit-color {
+                            background: $pluscolor;
+                        }
+                        &.loss-color{
+                            background: $redbg;
+                        }
+                        @media (max-width:$sm) {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            border-radius: 5px;
+                        }
+                    }
+                   
+                    @media (max-width:$sm) {
+                        margin-right: 0;
+                    }
+                }
+                .value-all{
+                    color: $secondary;
+                    font-size: 1.231rem;
+                    @media (max-width:$sm) {
+                        display: block;
+                        margin-top: 1.5rem;
+                    }
+                }
+                @media (max-width:$sm) {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+            }
+            @media (max-width:$sm) {
+                padding-bottom: 0;
+            }
+        }
+        @media (max-width: $md) {
+            padding: 0rem 0.5rem;
+            border: 0;
+        }
+    }
+}
+.ipo-dates-section{
+    padding: 8rem 0 0;
+    @media (max-width:$sm) {
+        padding: 5rem 0 0;
+    }
+    .title-first{
+        padding-bottom: 2rem;
+        span{
+            color: $yellowColor;
+        }
+    }
+    .ipo-dates-table{
+        border:1px solid $lightgray;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        .table-striped2{
+            margin: 0;
+            tbody{
+                tr{
+                    &:nth-of-type(even) {
+                       background: $lightColor;
+                    }
+                    td{
+                        border: 0;
+                        padding: 1rem 2rem;
+                        font-family: $font-family-poppins-medium;
+                        font-size: 1.3rem;
+                        @media (max-width:$sm) {
+                            padding: 1rem;
+                            font-size: 1.25rem;
+                        }
+                        &.txt-right{
+                            text-align: right;
+                            @media (max-width:$sm) {
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.ipo-lotsize{
+    padding: 8rem 0;
+    @media (max-width:$sm) {
+        padding: 5rem 0;
+    }
+    .title-first{
+        padding-bottom: 2rem;
+        position: relative;
+        span{
+            color: $yellowColor;
+        }
+    }
+    .ipo-dates-table{
+        border:1px solid $lightgray;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        .table-striped2{
+            margin: 0;
+            tbody{
+                tr{
+                    &:nth-of-type(even) {
+                       background: $lightColor;
+                    }
+                    td{
+                        border: 0;
+                        padding: 1rem 2rem;
+                        font-family: $font-family-poppins-medium;
+                        font-size: 1.3rem;
+                        @media (max-width:$sm) {
+                            padding: 1rem;
+                            font-size: 1.25rem;
+                        }
+                        &.txt-right{
+                            text-align: right;
+                            @media (max-width:$sm) {
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.investment-opportunity{
+    padding: 8rem 0 3rem;
+    background: $darkblack;
+    position: relative;
+    @media (max-width:$sm) {
+        padding: 5rem 0;
+    }
+    .left-sec{
+        .title-first{
+            color: $whiteColor;
+            padding-right: 2rem;
+            .yello-txt{
+                color: $yellowColor;
+            }
+        }
+        .btn-open{
+            padding-top: 4rem;
+            @media (max-width:$sm) {
+                padding-top: 2rem;
+                padding-bottom: 3rem;
+            }
+            .btn-bg{
+                @media (max-width:$sm) {
+                    width: 100%;
+                }
+            }
+        }
+        @media (max-width:$sm) {
+            padding: 0 1rem;
+        }
+    }
+    .all-features-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .feature-item{
+            width: 45%;
+            margin-bottom: 3rem;
+            .svg-w{
+                height: 76px;
+                @media (max-width:$md) {
+                    height: 65px;
+                }
+                @media (max-width:$sm) {
+                    height: 56px;
+                }
+            }
+            .feature-ttl{
+                color: $whiteColor;
+                font-size: 1.8rem;
+                margin: 2rem 0 1.5rem;
+                font-family: $font-family-poppins-semibold;
+                line-height: 1.5;
+                span{
+                    display: block;
+                    font-family: $font-family-poppins-regular;
+                }
+                @media (max-width:$sm) {
+                    font-size: 1.538rem;
+                    margin: 2rem 0 0 0.7rem;
+                }
+            }
+            p{
+                color: $whiteColor;
+            }
+            @media (max-width:$sm) {
+                margin:0 10rem;
+            }
+        }
+    }
+    }
+
+.card-sticky{
+    position: sticky;
+    top: 100px;
+    margin-bottom: -586px;
+    .sticy-card-sub{
+        position: relative;
+        // padding: 3rem;
+        // background: url(../../assets/images/ipo-landing/card-ipo.webp) no-repeat top center;
+        // background-size: cover;
+        // border-radius: 14px;
+        margin-top: 100px;
+        width: 40%;
+        transition-duration: 0.6s;
+        .title-secnd{
+            color: $whiteColor;
+            padding-bottom: 1rem;
+            @media (max-width:$md) {
+                font-size: 2rem;
+            }
+        }
+       ul{
+        list-style: none;
+        padding: 0;
+            li{
+                padding: 1rem 0;
+                display: flex;
+                align-items: center;
+                .bx-icon{
+                    padding-right: 1rem;
+                }
+                .bx-text{
+                    color: $whiteColor;
+                    font-family: $font-family-poppins-medium;
+                    font-size: 1.7rem;
+                    white-space: nowrap;
+                    .fw-regular{
+                        font-family: $font-family-poppins-regular;
+                    }
+                }
+                @media (max-width:$md) {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+       }
+       .btn-open{
+        padding-top: 2rem;
+       }
+       @media (max-width:$md) {
+            padding: 2rem;
+            width: 40%;
+       }
+    }
+    &.visibleCard{
+        margin: 0;
+        margin-bottom: 11rem;
+        .sticy-card-sub{
+            width: 31.33%;
+            padding: 0;
+           
+            .title-secnd{
+                font-size: 2.5rem;
+                @media (max-width:$md) {
+                    font-size: 1.7rem;
+                }
+            }
+            ul{
+                li{
+                    .bx-icon{
+                        .svg-fill{
+                            height: 31px;
+                        }
+                    }
+                    .bx-text{
+                        font-size: 1.375rem;
+                        @media (max-width:$md) {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+            .btn-open{
+                @media (max-width:$md) {
+                   padding-top: 1rem;
+                }
+            }
+            @media (max-width:$md) {
+                padding: 2rem 1.5rem 2rem;
+                width: 32%;
+            }
+        }
+    }
+    @media only screen and (max-width: 1399px) {
+        margin-bottom: -513px;
+    }
+    @media (max-width:$md) {
+        top: 230px;
+    }
+    @media (max-width:$md) {
+        display: none;
+    }
+}
+.ipo-breakup{
+    padding: 8rem 0;
+    @media (max-width:$sm) {
+        padding: 5rem 0;
+    }
+    .title-first{
+        padding-bottom: 2rem;
+        span{
+            color: $yellowColor;
+        }
+    }
+    .ipo-dates-table{
+        border:1px solid $lightgray;
+        border-radius: 8px;
+        overflow: hidden;
+        .table-striped2{
+            margin: 0;
+            tbody{
+                tr{
+                    &:nth-of-type(even) {
+                       background: $lightColor;
+                    }
+                    td{
+                        border: 0;
+                        padding: 1rem 2rem;
+                        font-family: $font-family-poppins-medium;
+                        font-size: 1.3rem;
+                        @media (max-width:$sm) {
+                            padding: 1rem;
+                            font-size: 1.25rem;
+                        }
+                        &.txt-right{
+                            text-align: right;
+                            @media (max-width:$sm) {
+                               white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.how-apply-ipo{
+    background: $abt-bg;
+    padding: 8rem 0;
+    @media (max-width:$sm) {
+        padding: 5rem 0;
+    }
+    .title-first{
+        span{
+            color: $yellowColor;
+        }
+    }
+    .steps-sec{
+        padding: 2rem 0;
+        position: relative;
+        h5{
+            font-size: 1.8rem;
+            font-family: $font-family-poppins-bold;
+            line-height: 1.5;
+        }
+        p{
+            font-size: 1.538rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-regular;
+            padding-bottom: 2rem;
+        }
+        
+    }
+    .btn-open{
+        position: relative;
+        .btn-bg{
+            @media (max-width:$sm) {
+                width:100%;
+            }
+        }
+        @media (max-width:$sm) {
+           padding: 0 1rem;
+        }
+    }
+}
+.ipo-faq {
+	padding: 9rem 0;
+	background-color: $whiteColor ;
+	.title-first {
+		margin-bottom: 2rem;
+        span{
+            color: $yellowColor;
+        }
+	}
+
+	.faq-item {
+		border: 1px solid $lightgray !important;
+		border-radius: 20px;
+		background: $whiteColor;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			.accordion-button{
+				font-family: $font-family-poppins-semibold;
+				color: $primary;
+				font-size: 2rem;
+				@media (max-width:$sm) {
+					font-size: 1.75rem;
+				}
+			}
+			
+			
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+	@media (max-width:$xs) {
+		padding: 5rem 0;
+	}
+}
+
+
+// chart css
+.revenue-chart-sec{
+    .chart-custom{
+        padding-left: 2.6rem;
+        @media (max-width: $sm) {
+            padding-left: 0;
+        }
+    }
+    .for-date{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 1.3rem;
+        margin-top: 4.5rem;
+        .sub-l1{
+            width: 18%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 1.077rem;
+            color: $primary;
+            font-family: $font-family-poppins-regular;
+        }
+        @media (max-width: $sm) {
+            padding: 0;
+        }
+    }
+    .q-graph {
+        display: flex;
+        /* fixes layout wonkiness in FF1.5 */
+        position: relative;
+        max-width: 730px;
+        height: 252px;
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        font-size: 11px;
+        caption {
+            caption-side: top;
+            width: 600px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            top: -40px;
+            position: relative;
+            z-index: 10;
+            font-weight: bold;
+          }
+          tr, td, th{
+            position: inherit;
+            bottom: 0;
+            width: 150px;
+            z-index: 2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            width: 15%;
+            @media (max-width: $md) {
+                width: 20.5%;
+            }
+          }
+          thead{
+            tr {
+                left: 100%;
+                top: 50%;
+                bottom: auto;
+                margin: -2.5em 0 0 5em;
+              }
+              th {
+                width: 7.5em;
+                height: auto;
+                padding: 0.5em 1em;
+                &.sent {
+                    top: 0;
+                    left: 0;
+                    line-height: 2;
+                }
+                &.paid {
+                    top: 2.75em;
+                    line-height: 2;
+                    left: 0;
+                }
+              }
+          }
+          tbody {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 0 1.3rem;
+            tr {
+                height: 214px;
+                padding-top: 2px;
+                border-right: 0;
+                color: $trcolor;
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+            }
+            th {
+                bottom: -1.75em;
+                vertical-align: top;
+                font-weight: normal;
+                color: $tcolor;
+            }
+            @media (max-width: $sm) {
+                padding: 0;
+            }
+          }
+          
+          .bar {
+            width: 49.55%;
+            border: 0;
+            border-bottom: none;
+            color: $primary;
+            position: relative;
+            p {
+                margin: 0;
+                padding: 0;
+                opacity: 1;
+                top: -2rem;
+                position: absolute;
+                font-size: 1.231rem;
+                width: 100%;
+                text-align: center;
+                color: $primary;
+                font-family: $font-family-poppins-medium;
+                @media (max-width:$sm) {
+                    top: -1.8rem;
+                    font-size: 0.9rem;
+                }
+              }
+              @media (max-width:$sm) {
+                width: 49%;
+              }
+          }
+          .sent {
+            background-color: $pricolor;
+            border-color: transparent;
+          }
+          .paid {
+           
+            
+            background-color: $pluscolor;
+            border-color: transparent;
+            &.profit{
+                background-color: $pluscolor;
+            }
+            &.loss{
+                background-color: $redbg;
+            }
+          }
+          &.q-graph-loss{
+            tbody {
+                .qtr{
+                    align-items: flex-start;
+                    justify-content: flex-end;
+                }
+                .bar {
+                    p{
+                        top: inherit;
+                        bottom: -31px;
+                    }
+                }
+                .loss{
+                    background: $redbg;
+                }
+            }
+          }
+      }
+      .ticks {
+        position: relative;
+        // top: -251px;
+        left: 0;
+        width: 100%;
+        height: 214px;
+        z-index: 1;
+        margin-top: -252px;
+        font-size: 10px;
+        font-family: "fira-sans-2", Verdana, sans-serif;
+        .tick {
+            position: relative;
+            border-bottom: 1px solid $tickshadow;
+            width: 100%;
+            height: 42px;
+            p {
+                position: absolute;
+                left: -2.5rem;
+                border: 0;
+                margin: 0;
+                bottom: -13px;
+                font-size: 1.077rem;
+                @media (max-width: $sm) {
+                    display: none;
+                }
+              }
+          }
+      }
+}
