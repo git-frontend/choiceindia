@@ -19,7 +19,7 @@ function AppOTradeBenefits() {
               <ul className='cont-sec-list'>
                 <li className='cont-sec-item'>
                   <div className="heading-sec">
-                    <h3 className="title-secnd">5 लाख से अधिक </h3>
+                    <h3 className="title-secnd">7.5+ लाख से अधिक </h3>
                     <p>ऐप डाउनलोड</p>
                   </div>
                 </li>

@@ -68,7 +68,7 @@ function OTBannerApp() {
                     </a>
                   </div>
                         <div className="star-line">
-                            <img src={AppImage6} alt="" className="img-responsive" width="27" height="26" /> <h5><span>5+ लाख उपभोगकर्ताओं का भरोसेमंद</span> </h5>
+                            <img src={AppImage6} alt="" className="img-responsive" width="27" height="26" /> <h5><span> 7.5+ लाख उपभोगकर्ताओं का भरोसेमंद</span> </h5>
                         </div>
                     </div>
                 </div>
