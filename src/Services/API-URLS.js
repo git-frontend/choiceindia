@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true;
+const environment = false;
 
 
 /**URL Config */
@@ -877,5 +877,9 @@ export class API_URLS {
     //for event deatils
     getEventDetails(){
         return this.performanceURL + this.eventdetailsURL;
+    }
+ /** Company ipo */
+    companyIpoURL(){
+        return this.CMSURL + this.companyIpo
     }
 }

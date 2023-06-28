@@ -14,6 +14,7 @@ import SubBrokerForm from '../SubBroker/SubBrokerForm';
 import MutualSubBrokerForm from "../Mutual-Fund-Distributor/SubBrokerForm";
 import utils from "../../Services/utils";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import DematFormCta from "../Common-features/DematFormCta";
 
 function Fabdetailsbanner(props) {
     const [rendercount, setRenderCount] = useState(() => false);
@@ -49,7 +50,13 @@ function Fabdetailsbanner(props) {
           document.getElementById('meta-descr').content = descr ;
           document.getElementById('meta-title').content = (props && props.single_data && props.single_data[0]) ? props?.single_data[0].title :"" ;
           document.getElementById('meta-image').content = (props && props.single_data && props.single_data[0])? props?.single_data[0].feature_image:"";
+          document.getElementById('twitter-meta-type').content = "article" ;
+          document.getElementById('twitter-meta-url').content = location.href ;
         
+        document.getElementById('twitter-meta-descr').content = (props && props.single_data && props.single_data[0]) ? props?.single_data[0].twitter_description :"" ;
+        document.getElementById('twitter-meta-title').content = (props && props.single_data && props.single_data[0]) ? props?.single_data[0].twitter_title :"" ;
+        document.getElementById('twitter-meta-image').content = (props && props.single_data && props.single_data[0])? props?.single_data[0].twitter_image:"";
+      
          
         }
       }, [rendercount])
@@ -93,12 +100,12 @@ function Fabdetailsbanner(props) {
 
             {
                 props.isdetail ?
-                    <section className="detailbanner">
+                    <section className="detailbanner" id="showCard">
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="row ">
-                            <div className="col-md-12">
+                        <div className="row justify-content-center">
+                            <div className="col-xl-9 col-md-12">
                                 <p className="text-center date">Published  {utils.formatDate(new Date(props.single_data[0].published_at), "MMMM dd, yyyy")}</p>
                                 <h1 className="heading title-secnd text-center" id="fablesdetail-title">{props.single_data[0].title || 'Texxt'}</h1>
                                 {/* <h2 className="heading title-secnd text-center">TEST</h2> */}
@@ -214,9 +221,10 @@ function Fabdetailsbanner(props) {
                                 ((props.showForm) ?
                                     (props.formName === 'form-demat' ?
                                      <div className="col-md-4" id="open-account-wrap">
-                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                        {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                             <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
-                                        </GoogleReCaptchaProvider>
+                                        </GoogleReCaptchaProvider> */}
+                                        <DematFormCta />
                                         <div className="stickyform formwrap d-flex justify-content-end ">
                                         
                                         </div>
