@@ -88,6 +88,8 @@ function DematAccountForm(props) {
     var otpLeadID = useRef('');
     var referLink = useRef('');
 
+    const[showRefMsg, setShowRefMsg] = useState();
+
     /**on click no consent */
     function submitConsent(consent) {
 
@@ -251,6 +253,7 @@ function DematAccountForm(props) {
     }else{
         referLink.current = link? link : null;
         otpLeadID.current = leadID? leadID : null;
+        setShowRefMsg(() => msg? msg : '');
         setShowConsent(() => true)
     }
         // closeModal(link);
@@ -890,7 +893,7 @@ function DematAccountForm(props) {
                                 <div className="popup-sub-right">
                                     <div>
                                         <p className="heading">Dear Investor</p>
-                                        <p className="subheading mb-3 mb-sm-0">Your mobile number is already associated with another refercode. To proceed with your onboarding, please select one of the following options:</p>
+                                        <p className="subheading mb-3 mb-sm-0">{showRefMsg ? showRefMsg : 'Your mobile number is already associated with another refercode. To proceed with your onboarding, please select one of the following options:'}</p>
                                     </div>
                                     <div className="btnwrap">
                                         <button className="btn-bg btn-bg-dark sendbtn btn btn-primary referral-btn referral-btn-hover" onClick={() => { consentLoaders.consentNoLoader ? null : submitConsent('no') }} disabled={consentLoaders.consentYesLoader}>
