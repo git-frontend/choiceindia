@@ -124,8 +124,6 @@ function InvestorInfoMenu() {
 
                     </div>
                     <div className="row">
-                        
-                       
                         <div className="col-md-12">
 
                             {
