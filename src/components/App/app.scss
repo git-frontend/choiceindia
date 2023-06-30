@@ -398,6 +398,9 @@
                     font-family: $font-family-poppins-semibold;
                     font-size: 1.75rem;
                     color: $darkColorgray;
+                    @media (max-width:$sm) {
+                        color: $primary;
+                    }
                 }
 
                 .para {
@@ -452,9 +455,14 @@
             }
             @media (max-width:$sm) {
                 padding-top: 2rem;
+                padding-bottom: 4rem;
             }
         }
-
+        .colum-revers{
+           @media (max-width:$sm) {
+            flex-direction: column-reverse;
+           }
+        }
         @media (max-width: $sm-x) {
             padding: 5rem 0 5rem 0;
         }
@@ -571,8 +579,7 @@
 
                 @media (max-width: $sm) {
                     width: 95% !important;
-                }
-                @media (max-width: $sm) {
+                    min-height: 13rem;
                     margin: 0 auto;
                 }
             }
@@ -843,6 +850,11 @@
                     margin: 0;
                 }
             }
+        }
+    }
+    .slick-dots{
+        @media (max-width:$sm) {
+            position: relative;
         }
     }
 }

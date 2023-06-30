@@ -507,14 +507,14 @@ body{
         height: auto;
     }
     .team-item {
-        width: 100% !important;
+        width: 90% !important;
         position: relative;
         overflow: hidden;
         border-radius: 20px;
         background: #ad8b73;
         padding: 0;
         transition: 0.3s all ease-in;
-        margin-bottom: 3rem;
+        margin: 0 auto;
 
         @media (max-width:$sm) {
             
