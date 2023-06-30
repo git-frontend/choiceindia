@@ -25,11 +25,12 @@ function AppStrategies() {
             {
               breakpoint: 768,
               settings: {
-                dots: false,
+                dots: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 vertical: false,
                 autoplaySpeed: 3000,
+                adaptiveHeight:false,
               }
             }
             
