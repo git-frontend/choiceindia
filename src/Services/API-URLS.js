@@ -552,11 +552,13 @@ export class API_URLS {
     }
 
     getOTPOnCallURL() {
-        return this.SSOServerURL + this.OTPOnCallURL;
+        // return this.SSOServerURL + this.OTPOnCallURL;
+        return "https://sso-beta.choiceindia.com/" + this.OTPOnCallURL;
     }
 
     getResendOTPURL() {
-        return this.SSOServerURL + this.resendOTPURL;
+        // return this.SSOServerURL + this.resendOTPURL;
+        return "https://sso-beta.choiceindia.com/" + this.resendOTPURL;
     }
 
     getVerifyOTPURL() {
