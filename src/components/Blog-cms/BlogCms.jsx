@@ -35,7 +35,7 @@ function BlogCms(){
                                     <p>It will also inform the readers about the commodity exchanges and some reputed brokers in India. This article will break down the complex terms related to <a href="/commodity-trading">commodity trading</a> in simple and layman's words.</p>
                                 </div>
                                 <div className="pr-sec">
-                                    <h4><a href="/blog/what-is-commodity-trading/" className="link-sub">What is Commodity Trading?</a></h4>
+                                    <h2><a href="/blog/what-is-commodity-trading/" className="link-sub">What is Commodity Trading?</a></h2>
                                     <p>Stocks are not the only thing people invest in, trade, and earn money from. If done carefully, commodity markets can give some very promising returns. Commodities, being the building blocks of any economy, are widely traded across the globe.</p>
                                     <p>The <a href="/blog/commodity-trading-meaning/">meaning of commodity trading</a> is the buying and selling of various commodities and their derivative products. Let us break this definition and understand every part of it in detail to make it more lucid.
                                     First, the commodities are traded in bulk. Unlike shares, you cannot buy as many units as you want. Instead, you have to buy the commodities in many multiples of that lot. The prices of these commodities are set according to the market forces of demand and supply.</p>
@@ -79,7 +79,7 @@ function BlogCms(){
                                     </table>
                                 </div>
                                 <div className="pr-sec">
-                                    <h4>Commodity Trading Time in India</h4>
+                                    <h2>Commodity Trading Time in India</h2>
                                     <p>In India, the commodity market trading times are different for different types of commodities. The commodity exchange takes place every weekday, from Monday to Friday. Declared holidays by the exchange are notified to the traders in advance.</p>
                                 </div>
                                 <div className="pr-sec high-note">
@@ -87,12 +87,12 @@ function BlogCms(){
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed convallis elit. Cras et convallis felis, sit amet vehicula sapien. Fusce auctor auctor odio id porttitor. Fusce in justo et augu. <a href="#" className="link-sub sublink1">Visit Now</a> </p>
                                 </div>
                                 <div className="pr-sec">
-                                    <h4>Commodity Market Opening Time</h4>
+                                    <h2>Commodity Market Opening Time</h2>
                                     <p>All the commodity markets open at the same time, i.e. 9:00 am. So from 9 am onwards, you can start trading in all commodities.</p>
                                     <img src={sipimg} className="img-fluid radius-img" />
                                 </div>
                                 <div className="pr-sec">
-                                    <h4>Commodity Market Closing Time</h4>
+                                    <h2>Commodity Market Closing Time</h2>
                                     <p>The commodity market has different closing times for different commodities.</p>
                                     <ul>
                                         <li>Non-Agri commodities trades end time is 11:30 pm.</li>
@@ -103,7 +103,7 @@ function BlogCms(){
                                     <p>Traditional banks such as HDFC Securities and ICIC Direct also provide commodity trading facilities.</p>
                                 </div>
                                 <div className="pr-sec">
-                                    <h4>History of Commodity Trading?</h4>
+                                    <h2>History of Commodity Trading?</h2>
                                     <p>Organized commodity trading began in India with the setting up of the Bombay Cotton Trade Association in 1875. However, the foundation of the commodities market was laid way before that—way before any other country. </p>
 
 <p>The Bombay Cotton Exchange was established in 1893, which eventually led to establishing futures markets in edible oilseeds, jute, and other jute products.</p>
@@ -118,7 +118,7 @@ function BlogCms(){
                                     <a href="#" className="btn-bg btn-bg-dark">Download Now</a>
                                 </div>
                                 <div className="pr-sec">
-                                    <h4><a href="/blog/what-are-traded-in-the-commodity-market/" className="link-sub">What is Traded in the Commodity Market?</a></h4>
+                                    <h2><a href="/blog/what-are-traded-in-the-commodity-market/" className="link-sub">What is Traded in the Commodity Market?</a></h2>
                                     <p>The commodities traded in the Indian Commodities Market can be classified as agricultural and non-agricultural commodities. The non-agricultural commodities are sub-classified into three categories: bullion, energy, and base metals. Different commodities that are regularly bought and sold on the exchanges are:</p>
                                     <ul>
                                         <li><strong>Agriculture:</strong> Black pepper, cardamom, castor seed, cotton, palm oil, kapas, wheat, paddy, chana, bajra, barley, sugar, and many more</li>
@@ -130,11 +130,11 @@ function BlogCms(){
                                 </div>
                                 <div className="app-promo-banner">
                                     <img src={logoBanner} alt="" />
-                                    <h4 className="ttlm">Searching Trading App? Check Out Now
-                                    <a href="#" className="link-sub">Our New Super App Choice FinX Is Here!</a></h4>
+                                    <h2 className="ttlm">Searching Trading App? Check Out Now
+                                    <a href="#" className="link-sub">Our New Super App Choice FinX Is Here!</a></h2>
                                 </div>  
                                 <div className="pr-sec">
-                                    <h4>Types of Commodities Markets</h4>
+                                    <h2>Types of Commodities Markets</h2>
                                     <p>There are two <a href="/blog/types-of-commodity-market/">types of commodity market</a> which are as follow -</p>
                                     <ul>
                                         <li><strong>Spot Market:</strong> These are also called physical markets, or cash markets, where traders exchange commodities for instant delivery.</li>
@@ -142,7 +142,7 @@ function BlogCms(){
                                     </ul>
                                 </div>
                                 <div className="pr-sec">
-                                    <h4>Commodity Exchanges in India</h4>
+                                    <h2>Commodity Exchanges in India</h2>
                                     <p>Commodities are exchanged through MCX, NCDEX, etc. MCX and NCDEX are the most commonly used commodity trading platforms in India.</p>
                                     <ul>
                                         <li><strong>Multi Commodity Exchange:</strong> Established in 2003, MCX is widely used for non-agriculture commodities trading.</li>
