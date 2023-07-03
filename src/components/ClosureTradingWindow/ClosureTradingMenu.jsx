@@ -74,7 +74,7 @@ function TransactionMenu() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 menuwrap">
-                            <h2 className="title">Closure Trading Window</h2>
+                            <h2 className="title">Closure Of Trading Window</h2>
                             <Navbar />
                         </div>
                     </div>
