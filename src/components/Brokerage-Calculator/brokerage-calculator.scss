@@ -1,0 +1,159 @@
+
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.banner-section{
+    background: $whiteColor;
+    padding: 4rem 0;
+    .banner-ttle{
+        p{
+            font-size: 1.75rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-regular;
+            padding-top: 2rem;
+        }
+    }
+   
+    .tabs-btn{
+        position: relative;
+        top: 6.5rem;
+        .list_group1 {
+            background-color: $whiteColor;
+            border-radius: 1.231rem;
+            box-shadow: 0 3px 6px $tab-shadow;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 2.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            .list-group-item {
+                    background: $whiteColor;
+                    border: none;
+                    border-radius: 1.375rem;
+                    color: $primary;
+                    cursor: pointer;
+                    font-family: $font-family-poppins-medium;
+                    font-size: 1.385rem;
+                    line-height: 2.077rem;
+                    padding: 0.5rem 1rem;
+                    text-align: center;
+                    text-decoration: none;
+                    width: 100%;
+                    &.active {
+                        background-color: rgba(0,102,178,.1);
+                        color: $bgcolor-blue;
+                    }
+                    
+                    
+                }
+    }
+        
+    }
+    
+    .content-tabs {
+        .content {
+            display: none;
+            &.active-content {
+                display: block;
+            }
+            .form-section{
+                display: flex;
+                justify-content: space-between;
+
+                .left-sec{
+                    width: 56%;
+                    padding-top: 10rem;
+                    @media (max-width:$md) {
+                        width: 48%;
+                    }
+                    .row-sec{
+                        padding-bottom: 2rem;
+                        align-items: center;
+                        justify-content: center;
+                    .frm-label{
+                        font-size: 1.385rem;
+                        font-family: $font-family-poppins-medium;
+                        line-height: 1.5;
+                        margin: 0;
+                    }
+                 }
+                 .search-icon{
+                    background: url(../../assets/images/brokerage-calculator/search.svg) no-repeat center right 13px ;
+               }
+               .input-font{
+                    font-size: 1.385rem;
+                    font-family: $font-family-poppins-regular;
+                    line-height: 1.5;
+                    padding: .775rem 2.25rem .775rem .75rem;
+                    text-transform: uppercase;
+                    color: $listcolor;
+                &:focus{
+                    box-shadow: none;
+                }
+                }
+                .mobile-view{
+                    @media (max-width:$md) {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                    }
+                  
+                    .width-resp{
+                        @media (max-width:$md) {
+                            width: 50%;
+                        }
+                       
+                        .percent{
+                            background: url(../../assets/images/brokerage-calculator/perc.svg) no-repeat center right 13px ;
+                    }
+            }
+        }
+                    
+                }
+                .right-sec{
+                    width: 40%;
+                    @media (max-width:$md) {
+                        width: 48%;
+                    }
+                    .brokerage-card{
+                        background-color: #F3FAFF;
+                        border-radius: 10px;
+                        padding: 2rem;
+                        @media (max-width:$md) {
+                            padding: 1rem;
+                        }
+                        .card-flex {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin: 0;
+                            list-style: none;
+                            padding: .5rem 0;
+                            .flex-items{
+                                span{
+                                    font-size: 16px;
+                                    font-family: $font-family-poppins-regular;
+                                    color: $listcolor;
+                                }
+                                .text-bold{
+                                    font-family: $font-family-poppins-semibold;
+                                }
+                                .font-danger{
+                                    color: $redbg;
+                                    font-family: $font-family-poppins-semibold;
+                                }
+                            }
+                            &.brd-bottom{
+                                border-bottom: 1px solid $border-gray;
+                            }
+                        }
+                       
+                    }
+            }
+        }
+            
+    
+        }
+       
+    }
+}

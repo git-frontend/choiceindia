@@ -177,8 +177,7 @@ const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Op
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/UpcomingAGM'));
 const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'))
-
-
+const LazyBrokerageCalculator =React.lazy(()=> import('./components/Brokerage-Calculator/BrokerageCalculator'))
 function Routing() {
 
     
@@ -893,6 +892,11 @@ function Routing() {
                        <Route exact path='/ipo/:id' element={
                             <React.Suspense>
                                 < LazyIPOLanding />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/brokerage-calculator-new' element={
+                            <React.Suspense>
+                                < LazyBrokerageCalculator />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
