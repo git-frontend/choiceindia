@@ -13,7 +13,7 @@ function Banner() {
         <section className='banner-section'>
             <div className='container'>
                 <div className='row justify-content-center'>
-                    <div className='col-md-8 col-sm-12'>
+                    <div className='col-xl-8 col-md-12'>
                         <div className='banner-ttle text-center'>
                             <h1 className='big-ttl'>Brokerage Calculator</h1>
                             <p>Use the brokerage calculator to calculate exactly how much you will pay in brokerage and your breakeven.</p>

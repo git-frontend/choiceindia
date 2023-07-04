@@ -4,7 +4,7 @@
 
 .banner-section{
     background: $whiteColor;
-    padding: 4rem 0;
+    padding: 4rem 0 6rem;
     .banner-ttle{
         p{
             font-size: 1.75rem;
@@ -47,7 +47,9 @@
                     
                 }
     }
-        
+        @media (max-width:$sm) {
+            top: 2.5rem;
+        }
     }
     
     .content-tabs {
@@ -59,12 +61,15 @@
             .form-section{
                 display: flex;
                 justify-content: space-between;
-
                 .left-sec{
                     width: 56%;
                     padding-top: 10rem;
                     @media (max-width:$md) {
                         width: 48%;
+                    }
+                    @media (max-width:$sm) {
+                        width: 100%;
+                        padding-top: 5rem;
                     }
                     .row-sec{
                         padding-bottom: 2rem;
@@ -75,6 +80,9 @@
                         font-family: $font-family-poppins-medium;
                         line-height: 1.5;
                         margin: 0;
+                    }
+                    @media (max-width:$md) {
+                        padding-bottom: 3rem;
                     }
                  }
                  .search-icon{
@@ -115,6 +123,9 @@
                     @media (max-width:$md) {
                         width: 48%;
                     }
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
                     .brokerage-card{
                         background-color: #F3FAFF;
                         border-radius: 10px;
@@ -149,6 +160,9 @@
                         }
                        
                     }
+            }
+            @media (max-width:$sm) {
+                flex-wrap: wrap;
             }
         }
             
