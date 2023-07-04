@@ -93,6 +93,16 @@ EventDetails: function (postdata) {
       return data
   })
 },
+getSearchData: function (postdata) {
+
+  let api = new API_URLS()
+  let url = api.getSearchURL()
+//  console.log("url",url)
+  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+     console.log("datas",data)
+      return data
+  })
+},
 
 }
 export default rest;

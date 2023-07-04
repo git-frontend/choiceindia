@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import rest from "../../Services/rest";
 function Banner() {
 
 
@@ -8,6 +9,28 @@ function Banner() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
+  const Oninput = (request) => {
+    request = {
+        "strScripName": "tcs",
+        "StartPos": 0,
+        "NoOfRecords": 10,
+      }
+    rest.getSearchData(request)
+      .then((res) => {
+       console.log(res,'kk')
+      })
+      .catch((err) => {
+        
+      })
+      .finally(() => {
+        
+      });
+  };
+  useEffect(() => {
+    Oninput();
+  },[])
+
+
   return (
     <>
         <section className='banner-section'>

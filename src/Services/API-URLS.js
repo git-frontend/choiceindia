@@ -256,6 +256,11 @@ export class API_URLS {
     subBrokerVerifyOtpURLNew = 'verifyotp';
     NbfcAuthF = 'authorization';
 
+
+    //for brokerage calculator
+    searchURL='cm/ScripContract/Search/';
+
+
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -883,5 +888,9 @@ export class API_URLS {
  /** Company ipo */
     companyIpoURL(){
         return this.CMSURL + this.companyIpo
+    }
+    //Get URL for Search Scrips
+    getSearchURL(){
+        return this.performanceURL + this.searchURL
     }
 }
