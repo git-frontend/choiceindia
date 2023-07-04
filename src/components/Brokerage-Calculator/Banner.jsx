@@ -40,50 +40,50 @@ function Banner() {
                                 <div className={toggleState === 1 ? "content active-content" : "content"}>
                                         <div className='form-section'>
                                             <div className='left-sec'>
-                                                <div class="row row-sec">
-                                                    <div class="col-xl-7 col-md-12">
+                                                <div className="row row-sec">
+                                                    <div className="col-xl-7 col-md-12">
                                                         <p className='frm-label'>Search for scrips</p>
                                                     </div>
-                                                    <div class="col-xl-5 col-md-12">
+                                                    <div className="col-xl-5 col-md-12">
                                                         <input className='form-control input-font search-icon' placeholder='TATA CHEMICALS LTD NSE'/>
                                                     </div>
                                                 </div>
                                                 <div className='mobile-view'>
-                                              <div class="row row-sec width-resp">
-                                                    <div class="col-xl-7 col-md-12">
+                                              <div className="row row-sec width-resp">
+                                                    <div className="col-xl-7 col-md-12">
                                                         <p className='frm-label'>Quantity</p>
                                                     </div>
-                                                    <div class="col-xl-5 col-md-12">
+                                                    <div className="col-xl-5 col-md-12">
                                                     <input type="text" className='form-control input-font'placeholder='10'/>
                                                     </div>
                                                 </div>
-                                                <div class="row row-sec width-resp">
-                                                    <div class="col-xl-7 col-md-12">
+                                                <div className="row row-sec width-resp">
+                                                    <div className="col-xl-7 col-md-12">
                                                     <p className='frm-label'>Buy Price</p>
                                                     </div>
-                                                    <div class="col-xl-5 col-md-12">
+                                                    <div className="col-xl-5 col-md-12">
                                                     <input type="text" className='form-control input-font'placeholder='₹ 944.40'/>
                                                     </div>
                                                 </div>
-                                                <div class="row row-sec width-resp">
-                                                    <div class="col-xl-7 col-md-12">
+                                                <div className="row row-sec width-resp">
+                                                    <div className="col-xl-7 col-md-12">
                                                     <p className='frm-label'>Sell Price</p>
                                                     </div>
-                                                    <div class="col-xl-5 col-md-12">
+                                                    <div className="col-xl-5 col-md-12">
                                                     <input type="text" className='form-control input-font'placeholder='₹ 944.40'/>
                                                     </div>
                                                 </div>
-                                                <div class="row row-sec width-resp">
-                                                    <div class="col-xl-7 col-md-12">
+                                                <div className="row row-sec width-resp">
+                                                    <div className="col-xl-7 col-md-12">
                                                     <p className='frm-label'>Brokerage Rate</p>
                                                     </div>
-                                                    <div class="col-xl-5 col-md-12">
+                                                    <div className="col-xl-5 col-md-12">
                                                     <input type="text" className='form-control input-font percent'placeholder='0.03'/>
                                                     </div>
                                                 </div>
                                               </div>
                                               <div className='calculate-btn'>
-                                                <button type="submit" class="btn-bg sendbtn  btn btn-primary">Calculate Brokerage</button>
+                                                <button type="submit" className="btn-bg btn btn-primary">Calculate Brokerage</button>
                                               </div>
                                             </div>
                                             <div className='right-sec'>
