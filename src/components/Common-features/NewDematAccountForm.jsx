@@ -539,6 +539,10 @@ function NewDematAccountForm(props) {
                                     }
                                     {/* <span className="state-code">+91</span> */}
                                 </div>
+                                <div className="sub-formgrp new-sub-formgrp">
+                                    <Form.Control pattern="[a-zA-Z0-9]*" name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                                
+                                </div>
                               
                                 <div key="inline-checkbox" className="sub-formgrp cust-checkbox">
                                     <Form.Check
