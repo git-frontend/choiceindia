@@ -82,6 +82,9 @@ function Banner() {
                                                     </div>
                                                 </div>
                                               </div>
+                                              <div className='calculate-btn'>
+                                                <button type="submit" class="btn-bg sendbtn  btn btn-primary">Calculate Brokerage</button>
+                                              </div>
                                             </div>
                                             <div className='right-sec'>
                                                 <div className='brokerage-card'>

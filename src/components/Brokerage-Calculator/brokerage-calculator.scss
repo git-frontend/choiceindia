@@ -99,6 +99,10 @@
                     box-shadow: none;
                 }
                 }
+                .calculate-btn{
+                    text-align: center;
+                    padding-top: 1rem;
+                }
                 .mobile-view{
                     @media (max-width:$md) {
                         display: flex;
@@ -125,6 +129,7 @@
                     }
                     @media (max-width:$sm) {
                         width: 100%;
+                        margin-top: 4rem;
                     }
                     .brokerage-card{
                         background-color: #F3FAFF;
