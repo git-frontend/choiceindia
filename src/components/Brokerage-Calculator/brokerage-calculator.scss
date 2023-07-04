@@ -5,6 +5,9 @@
 .banner-section{
     background: $whiteColor;
     padding: 4rem 0 10rem;
+    @media (max-width:$md) {
+        padding: 4rem 0 6rem;
+    }
     .banner-ttle{
         p{
             font-size: 1.75rem;
@@ -71,6 +74,7 @@
                     padding-top: 10rem;
                     @media (max-width:$md) {
                         width: 48%;
+                        padding-top: 7rem;
                     }
                     @media (max-width:$sm) {
                         width: 100%;
@@ -85,6 +89,9 @@
                         font-family: $font-family-poppins-medium;
                         line-height: 1.5;
                         margin: 0;
+                        @media (max-width:$md) {
+                            margin-bottom: 1rem;
+                        }
                     }
                     @media (max-width:$md) {
                         padding-bottom: 3rem;
@@ -107,6 +114,9 @@
                 .calculate-btn{
                     text-align: right;
                     padding-top: 1rem;
+                    @media (max-width:$md) {
+                        text-align: center;
+                    }
                     .btn-bg{
                         @media (max-width:$sm) {
                             width: 100%;
@@ -191,6 +201,7 @@
     background: $primary;
     padding: 6rem 0 0;
     position: relative;
+    overflow: hidden;
     &::after{
         content: '';
         background: url(../../assets/images/brokerage-calculator/bg-sec.webp) no-repeat;
@@ -202,6 +213,11 @@
         right: 0;
         z-index: 1;
         bottom: 0;
+        @media (max-width:$sm) {
+            width: 45.08rem;
+            right: -30rem;
+            bottom: -20rem;
+        }
     }
     .columns{
         display: flex;
@@ -209,11 +225,21 @@
         align-items: center;
         justify-content: space-between;
         .left-items{
+            @media (max-width:$md) {
+                width: 50%;
+            }
+            @media (max-width:$sm) {
+                width: 100%;
+                padding: 0 1rem;
+            }
             .benifits{
                 display: flex;
                 align-items: flex-end;
                 .benifits-section{
                     .men{
+                        @media (max-width:$md) {
+                            display: none;
+                        }
                         img{
                             position: relative;
                             left: -4rem;
@@ -224,6 +250,14 @@
                     border-radius: 24px 24px 0px 0px;
                     position: relative;
                     padding: 3.5rem 2.5rem;
+                    @media (max-width:$md) {
+                        padding:3.5rem 2rem;
+                    }
+                    @media (max-width:$sm) {
+                        border-radius: 0px 0px 24px 24px;
+                        padding: 1rem 2rem 3.5rem;
+                        margin-top: -6rem;
+                    }
                     &::before{
                         content: '';
                         background: url(../../assets/images/brokerage-calculator/card-bg-before.webp) no-repeat top;
@@ -236,6 +270,13 @@
                         left: 0;
                         right: 0;
                         margin: 0 auto;
+                        @media (max-width:$sm) {
+                            background: $brd-line;
+                            width: 112px;
+                            height: 4px;
+                            bottom: 2rem;
+                            top: inherit;
+                        }
                     }
                     &::after{
                         content: '';
@@ -247,6 +288,11 @@
                         position: absolute;
                         top: 3rem;
                         right: -2.4rem;
+                        @media (max-width:$sm) {
+                            width: 3.5rem;
+                            height: 3rem;
+                            right: -1.9rem;
+                        }
                     }
                     ul{
                         list-style: none;
@@ -255,11 +301,18 @@
                             align-items: center;
                             display: flex;
                             padding: 1rem 0;
+                            .bx-icon {
+                                min-height: 56px;
+                                min-width: 56px;
+                            }
                             .bx-text{
                                 font-size: 2rem;
                                 font-family: $font-family-poppins-regular;
                                 margin: 0;
                                 padding-left: 1rem;
+                                @media (max-width:$md) {
+                                    font-size: 1.75rem;
+                                }
                                 span{
                                     font-family: $font-family-poppins-semibold;
                                 }
@@ -271,13 +324,36 @@
         }
         }
         .right-items{
+            @media (max-width:$md) {
+                width: 42%;
+            }
+            @media (max-width:$sm) {
+                width: 100%;
+            }
             .free-account-ttl{
                 .title-first{
                     color: $whiteColor;
                     padding-bottom: 3.5rem;
+                    @media (max-width:$md) {
+                        font-size: 2.5rem;
+                    }
                     span{
                         color: $bgcolor-yellow;
                     }
+                    br{
+                        @media (max-width:$md) {
+                            display: none;
+                        }
+                    }
+                }
+                .btn-light{
+                    @media (max-width:$sm) {
+                       width: 100%;
+                    }
+                }
+                @media (max-width:$sm) {
+                    text-align: center;
+                    padding: 5rem 0;
                 }
             }
         }
@@ -288,10 +364,14 @@
 
 .more-content{
     padding: 10rem 0 8rem;
+    @media (max-width:$md) {
+        padding: 6rem 0 4rem;
+    }
     .title-content{
         margin-bottom: 2rem;
     }
     p{
+        font-size: 1.385rem;
         padding-bottom: 2rem;
     }
 }
