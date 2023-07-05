@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import cebplService from '../../Services/CebplService';
+import cmsService from "../../Services/cmsService";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
 
@@ -14,7 +14,7 @@ function CEBPLPoliciesMain() {
     const [isloading, setisloading] = useState(true);
 
     function loadcebplPolicy() {
-        cebplService.CebplPolicy().then(
+        cmsService.CebplPolicy().then(
             res => {
                 if (res) {
                     setisloading(false)

@@ -892,7 +892,7 @@ function Routing() {
                             </React.Suspense>
                         } />
                         
-                         <Route exact path='/blog-cms' element={
+                         <Route exact path='/insights/:id' element={
                             <React.Suspense>
                                 < LazyBlogCms />
                             </React.Suspense>

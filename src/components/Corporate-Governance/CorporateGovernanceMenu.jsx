@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import corporateService from "../../Services/CorporateService";
+import cmsService from "../../Services/cmsService";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Common-features/Navbar';
@@ -15,7 +15,7 @@ function CodeConductMenu() {
     const [isloading, setisloading] = useState(true);
 
     function loadCorporatepdf() {
-        corporateService.Corporate().then(
+        cmsService.Corporate().then(
             res => {
                 if (res) {
                     setisloading(false);
@@ -37,7 +37,7 @@ function CodeConductMenu() {
 
 
     function loadCorporatecommitteepdf() {
-        corporateService.CorporateCommitee().then(
+        cmsService.CorporateCommitee().then(
             res => {
                 if (res) {
                     setisloading(false);

@@ -226,6 +226,8 @@ export class API_URLS {
     cityUrl = 'items/sub_broker_branch_city?limit=1000&sort[]=id'
     /** company IPO */
     companyIpo ='items/Company_ipo?limit=1000&sort[]=id'
+    /** blog owner */
+    insightsURL = 'items/Blog?limit=1000&sort[]=id'
 
 
 
@@ -883,5 +885,10 @@ export class API_URLS {
  /** Company ipo */
     companyIpoURL(){
         return this.CMSURL + this.companyIpo
+    }
+
+    /** Blog cms */
+    getinsightsURL(){
+        return this.CMSURL + this.insightsURL
     }
 }
