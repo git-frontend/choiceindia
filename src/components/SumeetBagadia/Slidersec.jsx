@@ -81,13 +81,13 @@ function Slidersec() {
         }
 
         let request = {
-            "end_date": new Date().toJSON().split('T')[0],
+            "end_date": "",
             "is_expert": 1,
             "research_type": "",
             "limit": 10,
             "offset": 0,
             "segment": "EQ",
-            "start_date": startDate.toJSON().split('T')[0],
+            "start_date": "",
             "status": "target_achieved",
             "subcategory_id": "",
             "search": "",
