@@ -259,7 +259,7 @@ export class API_URLS {
 
     //for brokerage calculator
     searchURL='cm/ScripContract/Search/';
-
+    scripDetURL='cm/ScripContract/ScripDetails/';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -892,5 +892,8 @@ export class API_URLS {
     //Get URL for Search Scrips
     getSearchURL(){
         return this.performanceURL + this.searchURL
+    }
+    getScripDetURL(){
+        return this.performanceURL + this.scripDetURL
     }
 }
