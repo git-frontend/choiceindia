@@ -1,113 +1,144 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import rest from "../../Services/rest";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 function Banner() {
 
-
+    const [searchInput, setSearchInput] = useState('');
     const [toggleState, setToggleState] = useState(1);
-  const [data, setData] = useState(0);
-  const toggleTab = (index) => {
-    setToggleState(index);
-  };
-  const Oninput = (request) => {
-    request = {
-        "strScripName": "tcs",
-        "StartPos": 0,
-        "NoOfRecords": 10,
-      }
-    rest.getSearchData(request)
-      .then((res) => {
-       console.log(res,'kk')
-      })
-      .catch((err) => {
-        
-      })
-      .finally(() => {
-        
-      });
-  };
-  useEffect(() => {
-    Oninput();
-  },[])
+    const [data, setData] = useState(0);
+    const toggleTab = (index) => {
+        setToggleState(index);
+    };
+    const Oninput = (request) => {
+        request = {
+            "strScripName": "tcs",
+            "StartPos": 0,
+            "NoOfRecords": 10,
+        }
+        rest.getSearchData(request)
+            .then((res) => {
+                console.log(res, 'kk')
+            })
+            .catch((err) => {
 
+            })
+            .finally(() => {
 
-  return (
-    <>
-        <section className='banner-section'>
-            <div className='container'>
-                <div className='row justify-content-center'>
-                    <div className='col-xl-8 col-md-12'>
-                        <div className='banner-ttle text-center'>
-                            <h1 className='big-ttl'>Brokerage Calculator</h1>
-                            <p>Use the brokerage calculator to calculate exactly how much you will pay in brokerage and your breakeven.</p>
+            });
+    };
+    useEffect(() => {
+        Oninput();
+    }, [])
+    const onKeyPress = (event) => {
+        setSearchInput(event.target.value);
+        console.log("event.target.value",event.target.value)
+    };
+
+    return (
+        <>
+            <section className='banner-section'>
+                <div className='container'>
+                    <div className='row justify-content-center'>
+                        <div className='col-xl-8 col-md-12'>
+                            <div className='banner-ttle text-center'>
+                                <h1 className='big-ttl'>Brokerage Calculator</h1>
+                                <p>Use the brokerage calculator to calculate exactly how much you will pay in brokerage and your breakeven.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='field-sec'>
-                    <div className='row'>
-                        <div className='col-md-12'>
-                            <div className='tabs-btn'>
-                            <div className='row'>
-                              <div className='col-xl-4 col-md-6'>
-                                <ul className='list_group1'>
-                                        <li  className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}
-                                            onClick={() => { toggleTab(1); setData(0) }}>Intraday</li>
-                                        <li  className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}
-                                            onClick={() => { toggleTab(2); setData(1) }}>Delivery</li>
-                                </ul>
-                              </div>
-                           </div>
-                            </div>
-                          
-                            <div className="content-tabs">
-                                <div className={toggleState === 1 ? "content active-content" : "content"}>
-                                        <div className='form-section'>
+                    <div className='field-sec'>
+                        <div className='row'>
+                            <div className='col-md-12'>
+                                <div className='tabs-btn'>
+                                    <div className='row'>
+                                        <div className='col-xl-4 col-md-6'>
+                                            <ul className='list_group1'>
+                                                <li className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}
+                                                    onClick={() => { toggleTab(1); setData(0) }}>Intraday</li>
+                                                <li className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}
+                                                    onClick={() => { toggleTab(2); setData(1) }}>Delivery</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="content-tabs">
+                                    <div className={toggleState === 1 ? "content active-content" : "content"}>
+                                        <Form className='form-section'>
                                             <div className='left-sec'>
                                                 <div className="row row-sec">
                                                     <div className="col-xl-7 col-md-12">
                                                         <p className='frm-label'>Search for scrips</p>
                                                     </div>
                                                     <div className="col-xl-5 col-md-12">
-                                                        <input className='form-control input-font search-icon' placeholder='TATA CHEMICALS LTD NSE'/>
+                                                        {/* <input className='form-control input-font search-icon' placeholder='TATA CHEMICALS LTD NSE'/> */}
+                                                        <Form.Control
+                                                            type="text"
+                                                            className="form-control input-font search-icon"
+                                                            autoComplete="off"
+                                                            placeholder="TATA CHEMICALS LTD NSE"
+                                                            value={searchInput}
+                                                            onChange={onKeyPress}
+                                                        />
                                                     </div>
                                                 </div>
                                                 <div className='mobile-view'>
-                                              <div className="row row-sec width-resp">
-                                                    <div className="col-xl-7 col-md-12">
-                                                        <p className='frm-label'>Quantity</p>
+                                                    <div className="row row-sec width-resp">
+                                                        <div className="col-xl-7 col-md-12">
+                                                            <p className='frm-label'>Quantity</p>
+                                                        </div>
+                                                        <div className="col-xl-5 col-md-12">
+                                                            <Form.Control
+                                                                type="text"
+                                                                className="form-control input-font"
+                                                                placeholder="10"
+                                                            />
+                                                        </div>
                                                     </div>
-                                                    <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font'placeholder='10'/>
+                                                    <div className="row row-sec width-resp">
+                                                        <div className="col-xl-7 col-md-12">
+                                                            <p className='frm-label'>Buy Price</p>
+                                                        </div>
+                                                        <div className="col-xl-5 col-md-12">
+                                                            <Form.Control
+                                                                type="text"
+                                                                className="form-control input-font"
+                                                                placeholder="₹ 944.40"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div className="row row-sec width-resp">
+                                                        <div className="col-xl-7 col-md-12">
+                                                            <p className='frm-label'>Sell Price</p>
+                                                        </div>
+                                                        <div className="col-xl-5 col-md-12">
+                                                            <Form.Control
+                                                                type="text"
+                                                                className="form-control input-font"
+                                                                placeholder="₹ 944.40"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div className="row row-sec width-resp">
+                                                        <div className="col-xl-7 col-md-12">
+                                                            <p className='frm-label'>Brokerage Rate</p>
+                                                        </div>
+                                                        <div className="col-xl-5 col-md-12">
+                                                            <Form.Control
+                                                                type="text"
+                                                                className="form-control input-font percent"
+                                                                placeholder="0.03"
+                                                            />
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="row row-sec width-resp">
-                                                    <div className="col-xl-7 col-md-12">
-                                                    <p className='frm-label'>Buy Price</p>
-                                                    </div>
-                                                    <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font'placeholder='₹ 944.40'/>
-                                                    </div>
+                                                <div className='calculate-btn'>
+                                                    <Button type="submit" className="btn-bg btn btn-primary">
+                                                        Calculate Brokerage
+                                                    </Button>
                                                 </div>
-                                                <div className="row row-sec width-resp">
-                                                    <div className="col-xl-7 col-md-12">
-                                                    <p className='frm-label'>Sell Price</p>
-                                                    </div>
-                                                    <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font'placeholder='₹ 944.40'/>
-                                                    </div>
-                                                </div>
-                                                <div className="row row-sec width-resp">
-                                                    <div className="col-xl-7 col-md-12">
-                                                    <p className='frm-label'>Brokerage Rate</p>
-                                                    </div>
-                                                    <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font percent'placeholder='0.03'/>
-                                                    </div>
-                                                </div>
-                                              </div>
-                                              <div className='calculate-btn'>
-                                                <button type="submit" className="btn-bg btn btn-primary">Calculate Brokerage</button>
-                                              </div>
                                             </div>
                                             <div className='right-sec'>
                                                 <div className='brokerage-card'>
@@ -217,20 +248,20 @@ function Banner() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                </div>
-                                {/* <div className={toggleState === 2 ? "content  active-content" : "content"}>
+                                        </Form>
+                                    </div>
+                                    {/* <div className={toggleState === 2 ? "content  active-content" : "content"}>
                                     Vehicle Loan
                                 </div> */}
+                                </div>
                             </div>
+
                         </div>
-                      
                     </div>
                 </div>
-            </div>
-        </section>
-    </>
-  )
+            </section>
+        </>
+    )
 }
 
 export default Banner
