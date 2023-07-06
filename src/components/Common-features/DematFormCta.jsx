@@ -43,7 +43,7 @@ useEffect(() => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setDelayPassed(true);
-    }, 1000);
+    }, 15000);
   
     return () => clearTimeout(timeout);
   }, []);
