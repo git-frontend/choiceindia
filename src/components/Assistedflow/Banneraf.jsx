@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+﻿﻿import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import LazyLoader from "../Common-features/LazyLoader";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
@@ -59,7 +59,8 @@ function Banneraf() {
   const [loaders, setLoaders] = useState({
     SendOtpLoader: false,
     reSendOtpLoader: false,
-    verifyLoader: false
+    verifyLoader: false,
+    DirectFlowLoader: false
   });
 
   /**to get URL query params */
@@ -138,6 +139,17 @@ function Banneraf() {
     window.addEventListener("scroll", getPosition);
   }, []);
 
+  /**Arrays for messages */
+  const[messg, setShowMessg] = useState()
+
+  /**to show status popup */
+  const[showStatus, setshowStatus] = useState(false);
+
+  /**show direct flow errors */
+  const[directErrors, setDirectErrors] = useState('');
+
+  const [exm, setExm] = useState('')
+
   /**Basket Listing API call */
   useEffect(() => {
     // console.log('status',userStatus)
@@ -159,6 +171,44 @@ function Banneraf() {
             setDataNotFound(() => false);
             setBasketData(() => (res.data.Body.data ? res.data.Body.data : {}));
             refCallAPI();
+            // let res22 = "payment_pending";
+            // setExm(() => 'payment_pending')
+            if(res.data.Body.data.order_status == 'authentication_pending'){
+              setshowStatus(() => false);
+            }else if(res.data.Body.data.order_status == 'payment_pending'){
+
+              if(res.data.Body.data.payment_url){
+                // setshowStatus(() => true);
+                if (userDetails.subId || (!userDetails.subId && res.data.Body.data.first_order == "No")) {
+                  setPaymentLink(() =>res.data.Body.data.payment_url);
+                  setshowStatus(() => false);
+                  setShowPopUp(() => "RMFlow");
+                } else {
+                  setPaymentLink(() =>res.data.Body.data.payment_url);
+                  setshowStatus(() => true);
+                  setTimeout(() => {
+                    window.open(res.data.Body.data.payment_url, "_self");
+                  },2000)
+                  // setShowPopUp(() => 'ClientFlow')
+                }
+
+              }
+              else{
+                setshowStatus(() => true);
+              }
+            }else if(res.data.Body.data.order_status == 'approved'){
+              setShowMessg(() => "Your Order has already been placed successfully");
+              setshowStatus(() => true);
+            }else if(res.data.Body.data.order_status == 'rejected'){
+              setShowMessg(() => "Your Order was rejected. Kindly contact your RM");
+              setshowStatus(() => true);
+            }else if(res.data.Body.data.order_status == 'failed'){
+              setShowMessg(() => "Your order was failed. Kindly contact your RM")
+              setshowStatus(() => true);
+            }else{
+              setShowMessg(() => "Your order was already placed. Kindly contact your RM to know the order status")
+              setshowStatus(() => true);
+            }
 
             if(res.data.Body.data.bucket_type != 'Lumpsum'){
             if(res.data.Body.data.first_order == 'Yes'){
@@ -756,6 +806,124 @@ function Banneraf() {
       });
   }
 
+  /**api call for generate payment link2 */
+  function generatePaymentLink2() {
+    let payload = {
+      Client: userDetails.clientId
+        ? utils.decryptText(userDetails.clientId).toString()
+        : "",
+      IsDirect: "N",
+      // "LogoutURL": (window.location.origin + window.location.pathname + '?' + 'status=success').toString()
+      LogoutURL: window.location.href + "&" + "status=success",
+    };
+    setLoaders({...loaders, DirectFlowLoader: true});
+    AssistedFlowService.PaymentLink(payload)
+      .then((response) => {
+        if (response && response.data && response.data.Response) {
+          /**for RM if subId is present in URL */
+          if (userDetails.subId) {
+            setLoaders({...loaders, DirectFlowLoader: false});
+            setPaymentLink(() =>
+              response.data.Response ? response.data.Response : ""
+            );
+            setshowStatus(() => false);
+            setShowPopUp(() => "RMFlow");
+          } else {
+             setLoaders({...loaders, DirectFlowLoader: false});
+            setPaymentLink(() =>
+              response.data.Response ? response.data.Response : ""
+            );
+            // setShowPopUp(() => 'ClientFlow')
+          }
+
+          UpdateOrderStatus2(response.data.Response);
+        }else{
+          if(retryPaymentCounter < 1){
+            retryPaymentCounter = retryPaymentCounter + 1;
+            generatePaymentLink2();
+          }else{
+                      /**for RM if subId is present in URL */
+                  if (userDetails.subId) {
+                    setLoaders({...loaders, DirectFlowLoader: false});
+                    setPaymentLink(() => null);
+                    // setShowPopUp(() => "RMFlow");
+                  } else {
+                    setLoaders({...loaders, DirectFlowLoader: false});
+                    setPaymentLink(() => null
+                    );
+                    // setShowPopUp(() => 'ClientFlow')
+                  }
+            UpdateOrderStatus2();
+          }
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoaders({...loaders, DirectFlowLoader: false});
+        setDirectErrors(() => (error.message ? error.message : ""));
+      });
+  }
+
+  /**api call for orderstatus2 */
+  function UpdateOrderStatus2(paymntLink) {
+    let payload = {
+      order_unique_id: userDetails.orderUniqueId
+        ? utils.decryptText(userDetails.orderUniqueId)
+        : "",
+      client_id: userDetails.clientId ? utils.decryptText(userDetails.clientId) : '',
+      bucket_id: BasketData.bucket_id? BasketData.bucket_id : "",
+      status: "payment_pending",
+      order_date: "",
+      payment_type: "Cash",
+      link: paymntLink? paymntLink : null ,
+      action_by: "",
+    };
+
+    AssistedFlowService.OrderStatus(payload)
+      .then((response) => {
+        setLoaders({...loaders, DirectFlowLoader: false});
+        if (response && response.data && response.data.StatusCode == 200) {
+          if (!userDetails.subId) {
+            // setShowSecondDiv(false);
+            // setShowThirdDiv(true);
+
+            if(BasketData.first_order == "No"){
+              setDirectErrors(() => null);
+              // setShowSecondDiv(() => false);
+              // setShowFirstButton(() => true);
+              setisModalClose(() => false)
+              // setShowThirdDiv(false);
+              setshowStatus(() => false);
+              setShowPopUp(() => "RMFlow");
+            }else{
+              setTimeout(() => {
+                window.open(paymntLink? paymntLink: "", "_self");
+              }, 3000);
+            }
+          }else{
+            closesection();
+          }
+        } else {
+          setLoaders({...loaders, verifyLoader: false});
+          setErrors(() =>
+            response.data.Message
+              ? response.data.Message
+              : "Something Went Wrong"
+          );
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoaders({...loaders, verifyLoader: false});
+        setErrors(() =>
+          error.response.data.Message
+            ? error.response.data.Message
+            : "Something Went Wrong"
+        );
+      });
+  }
+
+
   /**handle otp change */
   function handleOTP(event) {
     setOtpValue(() => (event.target.value ? event.target.value : null));
@@ -787,6 +955,7 @@ function Banneraf() {
   
   function closesection(){
     setErrors(() => null);
+    setDirectErrors(() => null);
     setShowSecondDiv(() => false);
     setShowFirstButton(() => true);
     setisModalClose(() => false)
@@ -1220,6 +1389,66 @@ function Banneraf() {
                     <span>Awesome!</span>{" "}
                   </Link>
                 </div>
+              </Modal.Body>
+            </Modal>
+
+            {/* Modal for Remaining actions */}
+            <Modal
+              className="successfulmodal"
+              show={showStatus}
+              onHide={false}
+              size="md"
+              aria-labelledby="contained-modal-title-vcenter"
+              backdrop="static"
+              keyboard={false}
+              centered
+            >
+              <Modal.Body className="text-center">
+                {
+                  (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && BasketData.payment_url ) ? 
+                  <div className="redirectwrap">
+                            <LazyLoader
+                              src={Redirect}
+                              alt={""}
+                              className={"img-fluid redirectimg con-img"}
+                              width={"74"}
+                              height={"74"}
+                            />
+                            <p className="redirecttext sucesstext">
+                              Redirecting to Payment Page
+                            </p>
+                          </div>: 
+                          (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && !BasketData.payment_url) ?
+
+                            <p className="subtext">Re-Fetch Payment Link</p> : 
+                            <p className="subtext">{messg}</p>
+                }
+
+                {
+                  (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && BasketData.payment_url) ? 
+                  "" : 
+                  (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && BasketData.payment_url) ?
+                  <div className="rightbtn">
+                  <Button
+                    className="btn-bg btn-bg-dark awesomebtn"
+                    onClick={generatePaymentLink2}
+                  >
+                    <span>Fetch Payment Link</span>
+
+                  </Button>
+                </div> :
+                      <div className="rightbtn">
+                        <Link
+                          to="/"
+                          className="btn-bg btn-bg-dark awesomebtn"
+                          onClick=""
+                        >
+                          <span>Okay</span>
+
+                        </Link>
+                      </div>
+                }
+ 
               </Modal.Body>
             </Modal>
           </div>
