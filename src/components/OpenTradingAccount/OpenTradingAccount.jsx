@@ -7,7 +7,7 @@ import TradingAccountOpeningProcess from "./TradingAccountOpeningProcess";
 import LowBrokerageTradingAccount from "./LowBrokerageTradingAccount";
 import WhyChoice from "./TradingWhyChoice";
 import TradingFaq from "./TradingFaq";
-import { useState, useEffect,useRef } from 'react';
+import { useState, useEffect} from 'react';
 import {
     useLocation,
   } from 'react-router-dom';
@@ -15,11 +15,8 @@ import {
   import { Link } from "react-router-dom";
   
 function OpenTradingAccount() {
-    const [isCheck, setIsCheck] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
-
     const location = useLocation();
-
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
@@ -34,37 +31,15 @@ function OpenTradingAccount() {
         }
       }, [rendercount])
 
-      useEffect(() => {
-        window.addEventListener('scroll', getPositionnew);
-    }, []);
-      const getPositionnew = () => {
-        const element = document.getElementById("branch1");
-        if (element) {
-            const rect = element.getBoundingClientRect();
-            if (rect.top.toFixed() < 300) {
-                setIsCheck(true);
-            }
-    
-        }
-    }
-    const myRef1 = useRef(null);
     return (
         <>
-            {/* Open Trading Account
-            <DematAccountForm></DematAccountForm> */}
-             <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
-                <OpentradingAccountBanner />
-            </div>
-            {
-              isCheck ?
-            <div> 
+            <OpentradingAccountBanner />
             <WhyOpenTradingAccount />
             <WhyChoice />
             <LowBrokerageTradingAccount />
             <TradingAccountOpeningProcess />
             <TradingFaq />
             <section className="readmoresection">
-
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -273,10 +248,6 @@ function OpenTradingAccount() {
                 </div>
 
             </section>
-            </div>
-             :
-             ""
-           }
         </>
     );
 }

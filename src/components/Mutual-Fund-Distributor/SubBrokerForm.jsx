@@ -535,7 +535,7 @@ function SubBrokerForm(props) {
             "utm_medium":UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
             "utm_term": UTMTerm.current || null,
-            "utm_custom": UTMCustom.current || null,
+            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             "utm_content": UTMContent.current || null,
             "whatsappConsent": true,
             "master_service_name":"CBA", 

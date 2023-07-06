@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://choiceindia.com/blog/fii-dii-data-today/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/nps-withdrawal-rules-explained/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/market-prediction-today/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/share-market-prediction-tomorrow/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://choiceindia.com/blog/indian-stock-market-prediction-for-next-week/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/gold-price-forecast-for-next-week/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/silver-price-prediction-for-next-week/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/copper-price-forecast-for-next-week/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/crude-oil-price-forecast-for-next-week/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/natural-gas-price-prediction-for-next-week/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/indian-stock-market-prediction-for-next-week/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/short-term-capital-gain-tax-on-shares/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/long-term-capital-gain-tax-on-shares/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/how-to-avoid-dp-charges/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/can-nri-invest-in-indian-stock-market/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/10-best-shares-to-buy-today-for-long-term/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/nifty-bank-adjusts-expiry-day-to-fridays/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/tax-planning-for-salaried-employees/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/how-to-validate-your-email-and-mobile-number-with-kra-agency/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/how-to-save-tax-on-salary/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/are-elss-mutual-funds-taxable-after-three-years/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
+<url> <loc>https://choiceindia.com/blog/choice-international-fy-2022-23-results/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/best-investment-options/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/demat-account-kya-hota-hai/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/positive-impact-of-sebi-regulations-on-the-indian-equity-market/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
@@ -58,7 +70,6 @@
 <url> <loc>https://choiceindia.com/blog/what-are-traded-in-the-commodity-market/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/commodity-trading-time-india/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/benefits-of-derivatives/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://choiceindia.com/blog/product-updates/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/release-updates/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/trading-account-kaise-khole/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/can-an-nri-open-a-demat-account-in-india/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
@@ -243,7 +254,6 @@
 <url> <loc>https://choiceindia.com/blog/how-to-apply-for-ipo/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/how-to-apply-for-ipo-online/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/can-i-apply-ipo-without-demat-account/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://choiceindia.com/blog/canslim-method/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/loan-moratorium/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/benjamin-graham-the-mr-perfectionist-of-value-investing/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>
 <url> <loc>https://choiceindia.com/blog/brokerage-account-meaning/</loc> <changefreq>weekly</changefreq> <priority>0.8</priority> </url>

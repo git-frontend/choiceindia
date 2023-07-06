@@ -10,13 +10,10 @@ import MFPartner from './MFPartner';
 import MFFaq from './MFFaq';
 import MFInvestment from './MFInvestment';
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect,useRef } from "react";
+import { useState,useEffect} from "react";
 import "./mf-investment.scss";
 
-
 function MutualFundsSEO() {
-
-  const [isCheck, setIsCheck] = useState(false);
   const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
@@ -41,47 +38,21 @@ function MutualFundsSEO() {
       }
     }
   }, [rendercount])
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-        }
-
-    }
-}
-const myRef1 = useRef(null);
-  
 
   return (
     <div>
       
       <div className="mainwrapper mfi-main">
-        <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
-          <Banner />
-        </div>
-            {
-                isCheck ?
-          <div> 
-         <WhyInvestMF />
-         <MfBenifits />
-         <WhyChoiceInvestment />
-         <ExploreBestMF />
-         <MFTestimonials />
-         <MFPartner />
-         <MFFaq />
-          <MFInvestment />
-          </div> 
-          :
-          ""
-          }
+        <Banner />
+        <WhyInvestMF />
+        <MfBenifits />
+        <WhyChoiceInvestment />
+        <ExploreBestMF />
+        <MFTestimonials />
+        <MFPartner />
+        <MFFaq />
+        <MFInvestment />
        </div> 
-      
-    
     </div>
   );
 }

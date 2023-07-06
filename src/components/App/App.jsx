@@ -1,5 +1,5 @@
 
-import React,{useState, useEffect,useRef} from "react";
+import React,{useState, useEffect} from "react";
 import BannerApp from './BannerApp';
 import AppBannerBottom from './AppBannerBottom';
 import AppStrategies from './AppStrategies';
@@ -14,12 +14,9 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function App() {
-  const [isCheck, setIsCheck] = useState(false);
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
   const location = useLocation();
-
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
@@ -46,39 +43,17 @@ function App() {
       }
     }
   }, [rendercount])
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-        }
 
-    }
-}
-const myRef1 = useRef(null);
   return (
     <div>
     {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
-        <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
         <BannerApp />
-        </div>
-            {
-                isCheck ?
-          <div> 
-      <AppBannerBottom />
-      <AppBenefits />
-      <AppStrategies />
-      <AppTradeBenefits />
-      </div>
-      :
-      ""
-    }
+        <AppBannerBottom />
+        <AppBenefits />
+        <AppStrategies />
+        <AppTradeBenefits />
       </div>
     }
     </div>

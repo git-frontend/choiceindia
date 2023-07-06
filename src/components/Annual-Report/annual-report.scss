@@ -35,6 +35,9 @@
                             .text{
                                 width: calc(100% - 3rem);
                             }
+                            .downloadtext{
+                                cursor: pointer;
+                            }
                         }
                         @media (max-width: $sm) {
                             padding-left: 1rem;
