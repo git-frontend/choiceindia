@@ -1152,6 +1152,7 @@
                 border: 0;
 
                 td {
+                    background: transparent;
                     border: 0;
                     color: $primary;
                     font-family: $font-family-poppins-regular;
@@ -1159,6 +1160,7 @@
                     text-align: center;
                     padding: 1.375rem;
                     box-shadow: inherit;
+                   
                 }
 
             }
