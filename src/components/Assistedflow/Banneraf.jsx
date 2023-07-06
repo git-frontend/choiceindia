@@ -179,7 +179,7 @@ function Banneraf() {
 
               if(res.data.Body.data.payment_url){
                 // setshowStatus(() => true);
-                if (userDetails.subId || (!userDetails.subId && BasketData.first_order == "No")) {
+                if (userDetails.subId || (!userDetails.subId && res.data.Body.data.first_order == "No")) {
                   setPaymentLink(() =>res.data.Body.data.payment_url);
                   setshowStatus(() => false);
                   setShowPopUp(() => "RMFlow");
