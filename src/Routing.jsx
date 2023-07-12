@@ -178,6 +178,8 @@ const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFl
 const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/UpcomingAGM'));
 const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'))
 const LazyBrokerageCalculator =React.lazy(()=> import('./components/Brokerage-Calculator/BrokerageCalculator'))
+const LazyMarginCalculator =React.lazy(()=> import('./components/Margin-Calculator/MarginCalculator'))
+
 function Routing() {
 
     
@@ -894,9 +896,14 @@ function Routing() {
                                 < LazyIPOLanding />
                             </React.Suspense>
                         } />
-                         <Route exact path='/research-report/brokerage-calculator-share-price-target' element={
+                         <Route exact path='/brokerage-calculator' element={
                             <React.Suspense>
                                 < LazyBrokerageCalculator />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/margin-calculator' element={
+                            <React.Suspense>
+                                < LazyMarginCalculator />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
