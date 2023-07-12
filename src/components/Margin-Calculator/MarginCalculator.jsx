@@ -1,5 +1,6 @@
 
 import React from "react";
+import "../../components/Brokerage-Calculator/brokerage-calculator.scss";
 import "./margin-calculator.scss";
 import Banner from "./Banner";
 import { useState,useEffect} from "react";

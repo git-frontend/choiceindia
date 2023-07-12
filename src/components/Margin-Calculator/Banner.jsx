@@ -13,10 +13,10 @@ function Banner() {
         <section className='banner-section'>
             <div className='container'>
                 <div className='row justify-content-center'>
-                    <div className='col-xl-8 col-md-12'>
+                    <div className='col-xl-9 col-md-12'>
                         <div className='banner-ttle text-center'>
-                            <h1 className='big-ttl'>Brokerage Calculator</h1>
-                            <p>Use the brokerage calculator to calculate exactly how much you will pay in brokerage and your breakeven.</p>
+                            <h1 className='big-ttl'>Margin Calculator</h1>
+                            <p>Use Choice FinX Margin Calculator to calculate the margin for Future & Option (F&O), Commodity, and Currency segments.</p>
                         </div>
                     </div>
                 </div>
@@ -24,13 +24,17 @@ function Banner() {
                     <div className='row'>
                         <div className='col-md-12'>
                             <div className='tabs-btn'>
-                            <div className='row'>
-                              <div className='col-xl-4 col-md-6'>
+                            <div className='row justify-content-center'>
+                              <div className='col-xl-6 col-md-12'>
                                 <ul className='list_group1'>
                                         <li  className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}
-                                            onClick={() => { toggleTab(1); setData(0) }}>Intraday</li>
+                                            onClick={() => { toggleTab(1); setData(0) }}>All</li>
                                         <li  className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}
-                                            onClick={() => { toggleTab(2); setData(1) }}>Delivery</li>
+                                            onClick={() => { toggleTab(2); setData(1) }}>F&O</li>
+                                        <li  className={toggleState === 3 ? "list-group-item tabs active" : "list-group-item"}
+                                            onClick={() => { toggleTab(3); setData(2) }}>Commodity</li>
+                                        <li  className={toggleState === 4 ? "list-group-item tabs active" : "list-group-item"}
+                                            onClick={() => { toggleTab(4); setData(3) }}>Forex</li>
                                 </ul>
                               </div>
                            </div>
@@ -40,164 +44,148 @@ function Banner() {
                                 <div className={toggleState === 1 ? "content active-content" : "content"}>
                                         <div className='form-section'>
                                             <div className='left-sec'>
-                                                <div className="row row-sec">
-                                                    <div className="col-xl-7 col-md-12">
-                                                        <p className='frm-label'>Search for scrips</p>
+                                                <div className="row-sec row-flex">
+                                                    <div className="flex-items">
+                                                        <p className='frm-label'>Search</p>
+                                                        <input className='form-control input-font search-icon' placeholder='NIFTY 29JUN23'/>
                                                     </div>
-                                                    <div className="col-xl-5 col-md-12">
-                                                        <input className='form-control input-font search-icon' placeholder='TATA CHEMICALS LTD NSE'/>
-                                                    </div>
-                                                </div>
-                                                <div className='mobile-view'>
-                                              <div className="row row-sec width-resp">
-                                                    <div className="col-xl-7 col-md-12">
+                                                    <div className="flex-items">
                                                         <p className='frm-label'>Quantity</p>
-                                                    </div>
-                                                    <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font'placeholder='10'/>
-                                                    </div>
-                                                </div>
-                                                <div className="row row-sec width-resp">
-                                                    <div className="col-xl-7 col-md-12">
-                                                    <p className='frm-label'>Buy Price</p>
-                                                    </div>
-                                                    <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font'placeholder='₹ 944.40'/>
+                                                        <input type="text" className='form-control input-font'placeholder='50'/>
+                                                        <span className='val-qty'>Lot Size = 50</span>
                                                     </div>
                                                 </div>
-                                                <div className="row row-sec width-resp">
-                                                    <div className="col-xl-7 col-md-12">
-                                                    <p className='frm-label'>Sell Price</p>
+                                                <div className="row-flex radio-section">
+                                                    <div className="flex-items">
+                                                        <div class="custom_radio">
+                                                           <div className='radio-flex'>
+                                                                <input type="radio" id="featured-1" name="featured" checked/>
+                                                                <label for="featured-1">BUY</label>
+                                                           </div>
+                                                           <div className='radio-flex'>
+                                                                <input type="radio" id="featured-2" name="featured"/>
+                                                                <label for="featured-2">SELL</label>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font'placeholder='₹ 944.40'/>
+                                                    <div className="flex-items">
+                                                        <div className='button-sec'>
+                                                            <div>
+                                                                <button type="submit" className="btn-add btn btn-primary">Add</button>
+                                                            </div>
+                                                            <div>
+                                                                <button type="submit" className="btn-reset btn btn-primary">Resset All</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="row row-sec width-resp">
-                                                    <div className="col-xl-7 col-md-12">
-                                                    <p className='frm-label'>Brokerage Rate</p>
-                                                    </div>
-                                                    <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font percent'placeholder='0.03'/>
-                                                    </div>
-                                                </div>
-                                              </div>
-                                              <div className='calculate-btn'>
-                                                <button type="submit" className="btn-bg btn btn-primary">Calculate Brokerage</button>
-                                              </div>
+                                               
                                             </div>
                                             <div className='right-sec'>
                                                 <div className='brokerage-card'>
                                                     <div className='card-flex'>
                                                         <div className='flex-items'>
-                                                            <span>Turnover</span>
+                                                            <span>Span Margin</span>
                                                         </div>
                                                         <div className='flex-items'>
-                                                            <span>1,888.80</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span className='text-bold'>Brokerage</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span className='text-bold'>0.57</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex brd-bottom'>
-                                                        <div className='flex-items'>
-                                                            <span className='font-danger'>Net P&L</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span className='font-danger'>-0.99</span>
+                                                            <span>₹ 86,423.00</span>
                                                         </div>
                                                     </div>
                                                     <div className='card-flex'>
                                                         <div className='flex-items'>
-                                                            <span>Brokerage</span>
+                                                            <span>Exposure Margin</span>
                                                         </div>
                                                         <div className='flex-items'>
-                                                            <span>0.57</span>
+                                                            <span>₹ 18,420.25</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className='card-flex brd'></div>
+                                                    <div className='card-flex'>
+                                                        <div className='flex-items'>
+                                                            <span className='text-bold'>Total Margin</span>
+                                                        </div>
+                                                        <div className='flex-items'>
+                                                            <span className='text-bold'>₹ 104,843.25</span>
                                                         </div>
                                                     </div>
                                                     <div className='card-flex'>
                                                         <div className='flex-items'>
-                                                            <span>STT/CTT</span>
+                                                            <span>Margin Benefit</span>
                                                         </div>
                                                         <div className='flex-items'>
-                                                            <span>0.24</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span>Transaction Charges</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span> 0.06</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span>Clearing Charges</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span>0.01</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span>GST</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span>0.11</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span>State Stamp Duty</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span>0.02</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span>SEBI Turnover Fees</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span> 0.00</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span className='text-bold'>TOTAL TAXES & CHARGES</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span className='text-bold'>0.99</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span className='text-bold'>Net Buy Value</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span className='text-bold'>994.40</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span className='text-bold'>Net Sell Value</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span className='text-bold'>994.40</span>
+                                                            <span className='font-success'>₹ 279,571.00</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className='table-sec'>
+                                        <table class="table table-striped ">
+                                        <thead>
+                                            <tr>
+                                                <th>Contract</th>
+                                                <th>Qty</th>
+                                                <th>Trade</th>
+                                                <th>Strike</th>
+                                                <th>Span Margin</th>
+                                                <th>Exposure Margin</th>
+                                                <th>Total Margin</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>NIFTY 29JUN23</td>
+                                                <td>50</td>
+                                                <td>BUY</td>
+                                                <td>NA</td>
+                                                <td>86,602.00</td>
+                                                <td>18,420.25</td>
+                                                <td>105,022.25</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>NIFTY 29JUN23</td>
+                                                <td>50</td>
+                                                <td>BUY</td>
+                                                <td>NA</td>
+                                                <td>86,602.00</td>
+                                                <td>18,420.25</td>
+                                                <td>105,022.25</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>NIFTY 29JUN23</td>
+                                                <td>50</td>
+                                                <td>BUY</td>
+                                                <td>NA</td>
+                                                <td>86,602.00</td>
+                                                <td>18,420.25</td>
+                                                <td>105,022.25</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>NIFTY 29JUN23</td>
+                                                <td>50</td>
+                                                <td>BUY</td>
+                                                <td>NA</td>
+                                                <td>86,602.00</td>
+                                                <td>18,420.25</td>
+                                                <td>105,022.25</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                        </div>
                                 </div>
                                 {/* <div className={toggleState === 2 ? "content  active-content" : "content"}>
-                                    Vehicle Loan
+                                    2
+                                </div> */}
+                                  {/* <div className={toggleState === 3 ? "content  active-content" : "content"}>
+                                    3
+                                </div> */}
+                                  {/* <div className={toggleState === 4 ? "content  active-content" : "content"}>
+                                   4
                                 </div> */}
                             </div>
                         </div>
