@@ -118,7 +118,7 @@ getScripBrokerageURL: function (postdata) {
   let url = api.getScripBrokerageURL()
 //  console.log("url",url)
   return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-     console.log("datads",data)
+    //  console.log("datads",data)
       return data
   })
 }
