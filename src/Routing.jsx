@@ -896,7 +896,7 @@ function Routing() {
                                 < LazyIPOLanding />
                             </React.Suspense>
                         } />
-                         <Route exact path='/brokerage-calculator' element={
+                         <Route exact path='/brokerage-calculator-new' element={
                             <React.Suspense>
                                 < LazyBrokerageCalculator />
                             </React.Suspense>

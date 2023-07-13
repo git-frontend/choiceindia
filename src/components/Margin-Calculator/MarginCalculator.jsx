@@ -7,6 +7,7 @@ import { useState,useEffect} from "react";
 import meta_tags from "../../Data/MetaTags";
 import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import MoreContent from "./MoreContent";
+import MarginFaq from "./MarginFaq";
 
 function MarginCalculator() {
   const [rendercount, setRenderCount] = useState(() => false);
@@ -35,8 +36,9 @@ function MarginCalculator() {
   return (
     <div>
         <Banner />
-        <OpenFreeDematAccount/>
-        <MoreContent/>
+        {/* <OpenFreeDematAccount/> */}
+        {/* <MoreContent/> */}
+        <MarginFaq/>
     </div>
   );
 }
