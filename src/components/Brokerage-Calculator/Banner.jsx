@@ -176,17 +176,30 @@ function Banner() {
         console.log(lmt, "rr")
         setBrokerageObj(prevState => ({
           ...prevState,
-          buyPrice: (((lmt.BBP || lmt.LTP) / 100).toFixed(2)),
-          sellPrice: (((lmt.BSP || lmt.LTP) / 100).toFixed(2)),
+          buyPrice: (res.Response.lMT[0].BBP || res.Response.lMT[0].LTP) / 100,
+          sellPrice: (res.Response.lMT[0].BSP || res.Response.lMT[0].LTP) / 100,
+          buyPrice: decimalConversion(item.SegmentId, prevState.buyPrice),
+          sellPrice: decimalConversion(item.SegmentId, prevState.sellPrice),
           normalizingFactor: ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1),
-          sellValue: (prevState.quantity * prevState.sellPrice * (lmt.MarketLot || 1)) * prevState.normalizingFactor,
-          buyValue: (prevState.quantity * prevState.buyPrice * (lmt.MarketLot || 1)) * prevState.normalizingFactor,
-          turnOver: prevState.sellValue + prevState.buyValue
+          sellValue: (prevState.quantity * prevState.sellPrice * (res.Response.lMT[0].MarketLot || 1)) * prevState.normalizingFactor,
+          buyValue: (prevState.quantity * prevState.buyPrice * (res.Response.lMT[0].MarketLot || 1)) * prevState.normalizingFactor,
+          turnOver: prevState.sellValue + prevState.buyValue,
+          brokerage: BrokerageCal(item),
+          GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
         }));
         getBrokerage();
       }
     });
   }
+  const decimalConversion = (segmentId, data) => {
+    if (data) {
+      data =
+        segmentId === 13 || segmentId === 14 ? data.toFixed(4) : data.toFixed(2);
+    } else {
+      data = segmentId === 13 || segmentId === 14 ? 0.0 : 0.0;
+    }
+    return data;
+  };
 
 
   function getSessionId() {
