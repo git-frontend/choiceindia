@@ -38,7 +38,7 @@ function MarginCalculator() {
         <Banner />
         {/* <OpenFreeDematAccount/> */}
         {/* <MoreContent/> */}
-        <MarginFaq/>
+        {/* <MarginFaq/> */}
     </div>
   );
 }
