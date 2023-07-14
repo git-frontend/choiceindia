@@ -179,6 +179,7 @@ const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/Upcomin
 const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'))
 const LazyBrokerageCalculator =React.lazy(()=> import('./components/Brokerage-Calculator/BrokerageCalculator'))
 const LazyMarginCalculator =React.lazy(()=> import('./components/Margin-Calculator/MarginCalculator'))
+const LazySIPCalculator =React.lazy(()=> import('./components/SIP-Calculator/SIPCalculator'))
 
 function Routing() {
 
@@ -904,6 +905,11 @@ function Routing() {
                          <Route exact path='/margin-calculator' element={
                             <React.Suspense>
                                 < LazyMarginCalculator />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/sip-calculator' element={
+                            <React.Suspense>
+                                < LazySIPCalculator />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
