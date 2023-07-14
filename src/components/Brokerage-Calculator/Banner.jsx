@@ -6,7 +6,6 @@ import { API_URLS } from "../../Services/API-URLS";
 
 function Banner() {
   const [Data1, setData1] = useState();
-
   const [brokerageObj, setBrokerageObj] = useState({
     searchInput: '',
     startPos: 0,
@@ -36,21 +35,24 @@ function Banner() {
     stateStampDuty: 0
   });
   const [toggleState, setToggleState] = useState(1);
+  const [stateArray, setStateArray] = useState([{ 'name': 'Maharashtra', 'value': 6, 'cashIntraday': 0.002, 'cashDelivery': 0.01, 'fut': 0.002, 'opt': 0.002, 'currency': 0.002, 'commodity': 0.001, 'commodityFut': 0.002, 'commodityOpt': 0.003, 'max': '' }])
   const [scripDetail, setScripDetail] = useState('');
-  const [newBrokerageObj, setNewBrokerageObj] = useState({});
+  const [newBrokerageObj, setNewBrokerageObj] = useState('');
   useEffect(() => {
     getSessionId();
     setBrokerageObj(prevState => ({
       ...prevState,
       brokerageObj: {},
-      newBrokerageObj: {},
     }));
+    setNewBrokerageObj({});
   }, []);
+
+
 
   // For script search
   function onKeyChange(event) {
     const input = event.target.value;
-    console.log("input", input);
+    // console.log("input", input);
 
     setBrokerageObj(prevState => ({
       ...prevState,
@@ -67,7 +69,7 @@ function Banner() {
     rest.getSearchData(request)
       .then(res => {
         if (res.Status === "Success" && res.Response) {
-          console.log("res", res.Response);
+          // console.log("res", res.Response);
           setBrokerageObj(prevState => ({
             ...prevState,
             datalength: res.Response.length,
@@ -103,7 +105,7 @@ function Banner() {
 
       rest.getSearchData(data).then(res => {
         if (res.Status === "Success" && res.Response) {
-          console.log("getSearchData", res);
+          // console.log("getSearchData", res);
           setBrokerageObj(prevState => ({
             ...prevState,
             datalength: res.Response.length,
@@ -120,7 +122,7 @@ function Banner() {
   }
 
   function getScriptDetail(data) {
-    console.log("hg");
+    // console.log("hg");
     let payload = {
       nMarketSegmentId: Number(data.SegmentId),
       nToken: Number(data.Token),
@@ -131,7 +133,7 @@ function Banner() {
       if (res.Status === "Success" && res.Response) {
         onSelectionScrip(data);
         setScripDetail(res.Response);
-        console.log("gfg", res.Response)
+        // console.log("gfg", res.Response)
         closeList();
       } else {
         // Handle error
@@ -155,7 +157,7 @@ function Banner() {
     return rate;
   };
 
-  const onSelectionScrip = item => {
+  function onSelectionScrip(item) {
     setBrokerageObj(prevState => ({
       ...prevState,
       selectedScrip: item,
@@ -171,15 +173,11 @@ function Banner() {
 
     rest.multipleTokensURLData(payload).then(res => {
       if (res.Status === "Success" && res.Response && res.Response.lMT && res.Response.lMT.length) {
-        console.log("res.Response", res.Response)
-        const lmt = res.Response.lMT[0];
-        console.log(lmt, "rr")
+
         setBrokerageObj(prevState => ({
           ...prevState,
           buyPrice: (res.Response.lMT[0].BBP || res.Response.lMT[0].LTP) / 100,
           sellPrice: (res.Response.lMT[0].BSP || res.Response.lMT[0].LTP) / 100,
-          buyPrice: decimalConversion(item.SegmentId, prevState.buyPrice),
-          sellPrice: decimalConversion(item.SegmentId, prevState.sellPrice),
           normalizingFactor: ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1),
           sellValue: (prevState.quantity * prevState.sellPrice * (res.Response.lMT[0].MarketLot || 1)) * prevState.normalizingFactor,
           buyValue: (prevState.quantity * prevState.buyPrice * (res.Response.lMT[0].MarketLot || 1)) * prevState.normalizingFactor,
@@ -191,6 +189,7 @@ function Banner() {
       }
     });
   }
+
   const decimalConversion = (segmentId, data) => {
     if (data) {
       data =
@@ -212,110 +211,231 @@ function Banner() {
         }
       })
       .catch(error => {
-        console.log(error);
+        // console.log(error);
       });
   }
 
   const onQuantityChange = () => {
-   
+    brokerageObj.normalizingFactor =
+      ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) *
+      ((scripDetail.GenNum / scripDetail.GenDen) || 1);
+    brokerageObj.sellValue =
+      (brokerageObj.quantity * brokerageObj.sellPrice * (brokerageObj.selectedScrip?.MarketLot || 1)) *
+      brokerageObj.normalizingFactor;
+    brokerageObj.buyValue =
+      (brokerageObj.quantity * brokerageObj.buyPrice * (brokerageObj.selectedScrip?.MarketLot || 1)) *
+      brokerageObj.normalizingFactor;
+    brokerageObj.turnOver = brokerageObj.sellValue + brokerageObj.buyValue;
+    brokerageObj.brokerage = BrokerageCal(brokerageObj.selectedScrip);
+    brokerageObj.GST =
+      (18 * (brokerageObj.brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
+
+    setBrokerageObj({ ...brokerageObj });
   }
 
-  function BrokerageCal() { }
+  const BrokerageCal = (scrip) => {
+    let brokerage;
+    let turnover = brokerageObj.turnOver;
+    let qty = Math.floor(turnover / 10000000);
+    brokerageObj.sebi = qty * 15;
+    let selectedState = stateArray.filter((obj) => obj.value === brokerageObj.state)[0];
+    let brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / (brokerageObj.selectedScrip.isPrice ? 1 : 100);
+
+    switch (scrip.SegmentId) {
+      case 1: // NSE
+        brokerage = brokerageObj.orderType ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
+        brokerageObj.stt = (brokerageObj.orderType ? (0.1 * turnover) : 0.025 * brokerageObj.sellValue) / 100;
+        brokerageObj.transactionCharge = (0.00325 * turnover) / 100;
+        brokerageObj.clearance = 0.01;
+        brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.cashDelivery * brokerageObj.buyValue) : (selectedState.cashIntraday * brokerageObj.buyValue)) / 100;
+        break;
+      case 3: // BSE
+        brokerage = brokerageObj.orderType ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
+        brokerageObj.stt = (brokerageObj.orderType ? 0.1 * turnover : 0.025 * brokerageObj.sellValue) / 100;
+        brokerageObj.transactionCharge = (0.00325 * turnover) / 100;
+        brokerageObj.clearance = 0.01;
+        brokerageObj.stateStampDuty = (brokerageObj.orderType
+          ? selectedState.cashDelivery * brokerageObj.buyValue
+          : selectedState.cashIntraday * brokerageObj.buyValue) / 100;
+        break;
+      case 2: // NSEFO
+        if (scrip.OptionType === 'XX') {
+          brokerage = brokerageChargeFactor * turnover;
+          brokerageObj.stt = (0.01 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = (0.0019 * turnover) / 100;
+          brokerageObj.clearance = (0.0005 * turnover) / 100;
+          brokerageObj.stateStampDuty = (brokerageObj.orderType ? selectedState.fut * brokerageObj.buyValue : selectedState.fut * brokerageObj.buyValue) / 100;
+        } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
+          brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
+          brokerageObj.stt = (0.05 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = (0.05 * turnover) / 100;
+          brokerageObj.clearance = (0.002 * turnover) / 100;
+          brokerageObj.stateStampDuty = (brokerageObj.orderType ? selectedState.opt * brokerageObj.buyValue : selectedState.opt * brokerageObj.buyValue) / 100;
+        }
+        break;
+      case 5: // MCX
+        if (scrip.OptionType === 'XX') {
+          brokerageObj.stateStampDuty = (selectedState.commodityFut * brokerageObj.buyValue) / 100;
+          brokerage = brokerageChargeFactor * turnover;
+          brokerageObj.stt = (0.01 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = ((0.0026 * brokerageObj.buyValue) + (0.0025 * brokerageObj.sellValue)) / 100;
+          brokerageObj.clearance = (0.0003 * turnover) / 100;
+        } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
+          brokerageObj.stateStampDuty = (selectedState.commodityOpt * brokerageObj.buyValue) / 100;
+          brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
+          brokerageObj.stt = (0.05 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = (0.05 * turnover) / 100;
+          brokerageObj.clearance = (0.02 * turnover) / 100;
+        }
+        break;
+      case 7: // NCDEX
+        if (scrip.OptionType === 'XX') { // FUT
+          brokerageObj.stateStampDuty = (selectedState.commodityFut * brokerageObj.buyValue) / 100;
+          brokerage = brokerageChargeFactor * turnover;
+          brokerageObj.stt = (0.01 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = (0.0040 * turnover) / 100;
+          brokerageObj.clearance = (0.0003 * turnover) / 100;
+        } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') { // Call/PUT
+          brokerageObj.stateStampDuty = (selectedState.commodityOpt * brokerageObj.buyValue) / 100;
+          brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
+          brokerageObj.stt = (0.05 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = (0.05 * turnover) / 100;
+          brokerageObj.clearance = (0.02 * turnover) / 100;
+        }
+        break;
+      case 13: // NSECDS
+        brokerageObj.stateStampDuty = (selectedState.currency * brokerageObj.buyValue) / 100;
+        if (scrip.OptionType === 'XX') {
+          brokerage = brokerageChargeFactor * turnover;
+          brokerageObj.stt = 0;
+          brokerageObj.transactionCharge = (0.0009 * turnover) / 100;
+          brokerageObj.clearance = (0.0005 * turnover) / 100;
+        } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
+          brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
+          brokerageObj.stt = 0;
+          brokerageObj.transactionCharge = (0.035 * turnover) / 100;
+          brokerageObj.clearance = (0.002 * turnover) / 100;
+        }
+        break;
+      default:
+        break;
+    }
+
+    return brokerage;
+  };
 
   const toggleTab = index => {
     setToggleState(index);
   };
 
-  // function getBrokerage() {
-  //   let payload = {
-  //     "segment": brokerageObj.selectedScrip.SegmentId,
-  //     "token": brokerageObj.selectedScrip.Token,
-  //     "symbol": brokerageObj.selectedScrip.SecName,
-  //     "product": brokerageObj.orderType ? 'd' : "m",
-  //     "isFuture": brokerageObj.selectedScrip.OptionType == 'XX',
-  //     "clientId": "guest",
-  //     "isBrokerageCalculator": true
-  //   }
-  //   rest.getScripBrokerageURL(payload).then(res => {
-  //     const newBrokerageObj = JSON.parse(JSON.stringify(brokerageObj));
-  //     // console.log('getScripBrokerageURL', res);
+  function getBrokerage() {
+    let payload = {
+      "segment": brokerageObj.selectedScrip.SegmentId,
+      "token": brokerageObj.selectedScrip.Token,
+      "symbol": brokerageObj.selectedScrip.SecName,
+      "product": brokerageObj.orderType ? 'd' : "m",
+      "isFuture": brokerageObj.selectedScrip.OptionType == 'XX',
+      "clientId": "guest",
+      "isBrokerageCalculator": true
+    }
+    rest.getScripBrokerageURL(payload).then(res => {
+      const newBrokerageObj = JSON.parse(JSON.stringify(brokerageObj));
+      console.log('newBrokerageObj', newBrokerageObj);
 
-  //     if (res.Status === 'Success' && res.Response) {
-  //       let buyBrokerage = res.Response.buyBrokerage;
-  //       let sellBrokerage = res.Response.sellBrokerage;
-  //       console.log("buyBrokerage", buyBrokerage)
-  //       console.log("sellBrokerage", sellBrokerage)
-  //       newBrokerageObj.stt = 0;
-  //       newBrokerageObj.transactionCharge = 0;
-  //       newBrokerageObj.clearance = 0;
-  //       newBrokerageObj.GST = 0;
-  //       newBrokerageObj.sebi = 0;
-  //       newBrokerageObj.stateStampDuty = 0;
+      if (res.Status === 'Success' && res.Response) {
+        let buyBrokerage = res.Response.buyBrokerage;
+        let sellBrokerage = res.Response.sellBrokerage;
+        // console.log("buyBrokerage", buyBrokerage)
+        // console.log("sellBrokerage", sellBrokerage)
+        newBrokerageObj.stt = 0;
+        newBrokerageObj.transactionCharge = 0;
+        newBrokerageObj.clearance = 0;
+        newBrokerageObj.GST = 0;
+        newBrokerageObj.sebi = 0;
+        newBrokerageObj.stateStampDuty = 0;
 
-  //       if (brokerageObj.sellValue) {
-  //         newBrokerageObj.stt = brokerageObj.sellValue * sellBrokerage.stt;
-  //         newBrokerageObj.transactionCharge =
-  //           brokerageObj.sellValue * sellBrokerage.transactionCharges;
-  //         newBrokerageObj.stateStampDuty =
-  //           brokerageObj.sellValue * sellBrokerage.stampDuty;
-  //         newBrokerageObj.sebi =
-  //           brokerageObj.sellValue * sellBrokerage.turnoverFees;
+        if (brokerageObj.sellValue) {
+          newBrokerageObj.stt = brokerageObj.sellValue * sellBrokerage.stt;
+          newBrokerageObj.transactionCharge =
+            brokerageObj.sellValue * sellBrokerage.transactionCharges;
+          newBrokerageObj.stateStampDuty =
+            brokerageObj.sellValue * sellBrokerage.stampDuty;
+          newBrokerageObj.sebi =
+            brokerageObj.sellValue * sellBrokerage.turnoverFees;
 
-  //         if (
-  //           brokerageObj.selectedScrip.SegmentId === 1 ||
-  //           brokerageObj.selectedScrip.SegmentId === 3
-  //         ) {
-  //           newBrokerageObj.clearance = 0.01;
-  //         } else {
-  //           newBrokerageObj.clearance =
-  //             brokerageObj.sellValue * sellBrokerage.clearingCharges;
-  //         }
+          if (
+            brokerageObj.selectedScrip.SegmentId === 1 ||
+            brokerageObj.selectedScrip.SegmentId === 3
+          ) {
+            newBrokerageObj.clearance = 0.01;
+          } else {
+            newBrokerageObj.clearance =
+              brokerageObj.sellValue * sellBrokerage.clearingCharges;
+          }
 
-  //         newBrokerageObj.GST =
-  //           (newBrokerageObj.brokerage +
-  //             newBrokerageObj.transactionCharge +
-  //             newBrokerageObj.clearance) *
-  //           sellBrokerage.gst;
-  //       }
+          newBrokerageObj.GST =
+            (newBrokerageObj.brokerage +
+              newBrokerageObj.transactionCharge +
+              newBrokerageObj.clearance) *
+            sellBrokerage.gst;
+        }
 
-  //       if (brokerageObj.buyValue) {
-  //         newBrokerageObj.stt +=
-  //           brokerageObj.buyValue * buyBrokerage.stt;
-  //         newBrokerageObj.transactionCharge +=
-  //           brokerageObj.buyValue * buyBrokerage.transactionCharges;
-  //         newBrokerageObj.stateStampDuty +=
-  //           brokerageObj.buyValue * buyBrokerage.stampDuty;
-  //         newBrokerageObj.sebi +=
-  //           brokerageObj.buyValue * buyBrokerage.turnoverFees;
+        if (brokerageObj.buyValue) {
+          newBrokerageObj.stt +=
+            brokerageObj.buyValue * buyBrokerage.stt;
+          newBrokerageObj.transactionCharge +=
+            brokerageObj.buyValue * buyBrokerage.transactionCharges;
+          newBrokerageObj.stateStampDuty +=
+            brokerageObj.buyValue * buyBrokerage.stampDuty;
+          newBrokerageObj.sebi +=
+            brokerageObj.buyValue * buyBrokerage.turnoverFees;
 
-  //         if (
-  //           brokerageObj.selectedScrip.SegmentId === 1 ||
-  //           brokerageObj.selectedScrip.SegmentId === 3
-  //         ) {
-  //           newBrokerageObj.clearance += 0.01;
-  //         } else {
-  //           newBrokerageObj.clearance +=
-  //             brokerageObj.buyValue * buyBrokerage.clearingCharges;
-  //         }
+          if (
+            brokerageObj.selectedScrip.SegmentId === 1 ||
+            brokerageObj.selectedScrip.SegmentId === 3
+          ) {
+            newBrokerageObj.clearance += 0.01;
+          } else {
+            newBrokerageObj.clearance +=
+              brokerageObj.buyValue * buyBrokerage.clearingCharges;
+          }
 
-  //         newBrokerageObj.GST =
-  //           (newBrokerageObj.brokerage +
-  //             newBrokerageObj.transactionCharge +
-  //             newBrokerageObj.clearance) *
-  //           buyBrokerage.gst;
-  //       }
+          newBrokerageObj.GST =
+            (newBrokerageObj.brokerage +
+              newBrokerageObj.transactionCharge +
+              newBrokerageObj.clearance) *
+            buyBrokerage.gst;
 
-  //       Object.assign(brokerageObj, newBrokerageObj);
-  //       Object.assign(newBrokerageObj, brokerageObj);
-  //     } else {
+          console.log("brokerageObj.buyValue", brokerageObj.buyValue)
+        }
 
-  //     }
-  //   },
-  //     (err) => {
+        Object.assign(newBrokerageObj, brokerageObj);
+        setNewBrokerageObj(newBrokerageObj);
+      } else {
 
-  //     })
-  // }
+      }
+    },
+      (err) => {
 
+      })
+  }
+  const onOrderTypeChange = (prevState) => {
+    setBrokerageObj({
+      ...prevState,
+      orderType: !prevState.orderType,
+      brokerage: BrokerageCal(prevState.selectedScrip),
+      GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
+    });
+  };
+  const onBrokerageRateChange = () => {
+    setBrokerageObj((prevState) => ({
+      ...prevState,
+      orderType: !prevState.orderType,
+      brokerage: BrokerageCal(prevState.selectedScrip),
+      GST:
+        (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
+    }));
+  }
   return (
     <>
       <section className='banner-section'>
@@ -335,10 +455,16 @@ function Banner() {
                   <div className='row'>
                     <div className='col-xl-4 col-md-6'>
                       <ul className='list_group1'>
-                        <li className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"} onClick={() => toggleTab(1)}>
+                        <li
+                          className={`list-group-item ${brokerageObj.orderType ? '' : 'active'}`}
+                          onClick={onOrderTypeChange}
+                        >
                           Intraday
                         </li>
-                        <li className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"} onClick={() => toggleTab(2)}>
+                        <li
+                          className={`list-group-item ${brokerageObj.orderType ? 'active' : ''}`}
+                          onClick={onOrderTypeChange}
+                        >
                           Delivery
                         </li>
                       </ul>
@@ -347,7 +473,7 @@ function Banner() {
                 </div>
 
                 <div className="content-tabs">
-                  <div className={toggleState === 1 ? "content active-content" : "content"}>
+                  <div className="content active-content content">
                     <Form className='form-section'>
                       <div className='left-sec'>
                         <div className="row row-sec">
@@ -437,13 +563,15 @@ function Banner() {
                                 type="text"
                                 className="form-control input-font percent"
                                 placeholder="0.03"
-                                value=""
+                                value={brokerageObj.brokerageRate}
+                                onChange={(e) => setBrokerageObj({ ...brokerageObj, brokerageRate: e.target.value })}
+                                onInput={onBrokerageRateChange}
                               />
                             </div>
                           </div>
                         </div>
                         <div className='calculate-btn text-center'>
-                          <Button className="btn-bg btn btn-primary">
+                          <Button className="btn-bg btn btn-primary" onClick={getBrokerage}>
                             Calculate Brokerage
                           </Button>
                         </div>
@@ -455,7 +583,7 @@ function Banner() {
                               <span>Turnover</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{newBrokerageObj?.turnOver}</span>
+                              <span>{newBrokerageObj.turnOver}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -463,7 +591,7 @@ function Banner() {
                               <span className='text-bold'>Brokerage</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>0.57</span>
+                              <span className='text-bold'>{newBrokerageObj?.brokerage}</span>
                             </div>
                           </div>
                           <div className='card-flex brd-bottom'>
@@ -471,7 +599,7 @@ function Banner() {
                               <span className='font-danger'>Net P&L</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='font-danger'>-0.99</span>
+                              <span className='font-danger'>{(newBrokerageObj && newBrokerageObj.sellValue) - (newBrokerageObj && newBrokerageObj.buyValue) - ((newBrokerageObj && newBrokerageObj.brokerage) + (newBrokerageObj && newBrokerageObj.stt) + (newBrokerageObj && newBrokerageObj.transactionCharge) + (newBrokerageObj && newBrokerageObj.clearance) + (newBrokerageObj && newBrokerageObj.GST) + (newBrokerageObj && newBrokerageObj.sebi))}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -479,7 +607,7 @@ function Banner() {
                               <span>Brokerage</span>
                             </div>
                             <div className='flex-items'>
-                              <span>0.57</span>
+                              <span>{newBrokerageObj?.brokerage}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -487,7 +615,7 @@ function Banner() {
                               <span>STT/CTT</span>
                             </div>
                             <div className='flex-items'>
-                              <span>0.24</span>
+                              <span>{newBrokerageObj?.stt}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -495,7 +623,7 @@ function Banner() {
                               <span>Transaction Charges</span>
                             </div>
                             <div className='flex-items'>
-                              <span> 0.06</span>
+                              <span>{newBrokerageObj?.transactionCharge}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -503,7 +631,7 @@ function Banner() {
                               <span>Clearing Charges</span>
                             </div>
                             <div className='flex-items'>
-                              <span>0.01</span>
+                              <span>{newBrokerageObj?.clearance}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -511,7 +639,7 @@ function Banner() {
                               <span>GST</span>
                             </div>
                             <div className='flex-items'>
-                              <span>0.11</span>
+                              <span>{newBrokerageObj?.GST}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -519,7 +647,7 @@ function Banner() {
                               <span>State Stamp Duty</span>
                             </div>
                             <div className='flex-items'>
-                              <span>0.02</span>
+                              <span>{newBrokerageObj?.stateStampDuty}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -527,7 +655,7 @@ function Banner() {
                               <span>SEBI Turnover Fees</span>
                             </div>
                             <div className='flex-items'>
-                              <span> 0.00</span>
+                              <span>{newBrokerageObj?.sebi}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -535,7 +663,8 @@ function Banner() {
                               <span className='text-bold'>TOTAL TAXES & CHARGES</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>0.99</span>
+                            <span className='text-bold'>{(newBrokerageObj && newBrokerageObj.brokerage) + (newBrokerageObj && newBrokerageObj.stt) + (newBrokerageObj && newBrokerageObj.transactionCharge) + (newBrokerageObj && newBrokerageObj.clearance) + (newBrokerageObj && newBrokerageObj.GST) + (newBrokerageObj && newBrokerageObj.sebi)}</span>
+                              {/* <span className='text-bold'>{(newBrokerageObj?.brokerage) + (newBrokerageObj?.stt) + (newBrokerageObj?.transactionCharge) + (newBrokerageObj?.clearance) + (newBrokerageObj?.GST) + (newBrokerageObj?.sebi)}</span> */}
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -543,7 +672,7 @@ function Banner() {
                               <span className='text-bold'>Net Buy Value</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>994.40</span>
+                              <span className='text-bold'>{newBrokerageObj?.buyValue}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -551,7 +680,7 @@ function Banner() {
                               <span className='text-bold'>Net Sell Value</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>994.40</span>
+                              <span className='text-bold'>{newBrokerageObj?.sellValue}</span>
                             </div>
                           </div>
                         </div>
