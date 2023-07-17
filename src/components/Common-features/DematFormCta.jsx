@@ -7,9 +7,9 @@ import { useState, useEffect } from "react";
 function DematFormCta() {
 
   const [show, setShow] = useState(false);
-
+  const [delayPassed, setDelayPassed] = useState(false);
   const [name, setName ] = useState('card-sticky-blog');
-
+  const [count, setCount] = useState(0)
   const [view,setView]=useState({
 		matches: window.innerWidth < 767 ? false : true ,
 	  });
@@ -39,7 +39,14 @@ useEffect(() => {
   // this is the cleanup function to remove the listener
   return () => mediaQuery.removeListener(setView);
   }, []);
-  console.log(show,'LLL')  
+  // console.log(show,'LLL')  
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setDelayPassed(true);
+    }, 15000);
+  
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <>
@@ -50,7 +57,7 @@ useEffect(() => {
             view && !view.matches ? 
             <div>
               {
-                show ?
+                 delayPassed ?
 
 //popupformshow
 
@@ -92,7 +99,7 @@ useEffect(() => {
                 <div className="btn-open">
                   <a href="https://choiceindia.com/open-free-demat-account?utm_source=seo_demat_lead_generation&utm_medium=choice_blog&utm_campaign=choice_blog_leads&utm_content=mobile_sticky_cta" className="btn-bg btn-bg-dark">Open Now</a>
                 </div>
-                <span className="close-btn-mdl" onClick={()=>{setShow(false)}}>&times;</span>
+                <span className="close-btn-mdl" onClick={()=>{setDelayPassed(false)}}>&times;</span>
               </div>
             
                     </div>:
@@ -102,7 +109,9 @@ useEffect(() => {
 
 ///sticky footer
                      <div className="btn-fixed">
-                     <a className="openbtn"  onClick={()=>{setShow(true)}} >
+                     {/* <a className="openbtn"  onClick={()=>{setShow(true)}} > */}
+                     <a className="openbtn" href="https://choiceindia.com/open-free-demat-account?utm_source=seo_demat_lead_generation&utm_medium=choice_blog&utm_campaign=choice_blog_leads&utm_content=mobile_sticky_cta">
+
                        <span>Open Free Demat Account in 5 Mins</span>
                        <span>
                          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

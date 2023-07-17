@@ -167,7 +167,7 @@
                             padding: .5rem 0;
                             .flex-items{
                                 span{
-                                    font-size: 16px;
+                                    font-size: 1.231rem;
                                     font-family: $font-family-poppins-regular;
                                     color: $listcolor;
                                 }
@@ -178,6 +178,15 @@
                                     color: $redbg;
                                     font-family: $font-family-poppins-semibold;
                                 }
+                                .font-success{
+                                    color: $pluscolor;
+                                }
+                            }
+                            &.brd{
+                                height: 1px;
+                                background: $border-gray;
+                                padding: 0 !important;
+                                margin: 0.615rem 0 0.5rem !important;
                             }
                             &.brd-bottom{
                                 border-bottom: 1px solid $border-gray;

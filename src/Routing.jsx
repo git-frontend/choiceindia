@@ -177,8 +177,11 @@ const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Op
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/UpcomingAGM'));
 const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'));
-const LazyBrokerageCalculator =React.lazy(()=> import('./components/Brokerage-Calculator/BrokerageCalculator'));
+const LazyBrokerageCalculator =React.lazy(()=> import('./components/Brokerage-Calculator/BrokerageCalculator'))
+const LazyMarginCalculator =React.lazy(()=> import('./components/Margin-Calculator/MarginCalculator'))
+const LazySIPCalculator =React.lazy(()=> import('./components/SIP-Calculator/SIPCalculator'))
 const LazyOISpurts =React.lazy(()=> import('./components/OI-Spurts/OISpurts'))
+
 function Routing() {
 
     
@@ -895,7 +898,7 @@ function Routing() {
                                 < LazyIPOLanding />
                             </React.Suspense>
                         } />
-                         <Route exact path='/research-report/brokerage-calculator-share-price-target' element={
+                         <Route exact path='/brokerage-calculator-new' element={
                             <React.Suspense>
                                 < LazyBrokerageCalculator />
                             </React.Suspense>
@@ -903,6 +906,16 @@ function Routing() {
                          <Route exact path='/market/oi-spurts' element={
                             <React.Suspense>
                                 < LazyOISpurts />
+                                </React.Suspense>
+                        } />
+                         <Route exact path='/margin-calculator' element={
+                            <React.Suspense>
+                                < LazyMarginCalculator />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/sip-calculator' element={
+                            <React.Suspense>
+                                < LazySIPCalculator />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />

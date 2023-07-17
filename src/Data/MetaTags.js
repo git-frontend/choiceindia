@@ -2277,11 +2277,17 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Start trading in Futures and Options (F&O) with Choice. Open a free demat account with No AMC for first year, free expert research, low DP & brokerage charges.",
     "link":"https://choiceindia.com/open-free-demat-account"
   },
-  "research-report/brokerage-calculator-share-price-target": {
+  "brokerage-calculator-new": {
     "title":"Brokerage Calculator Share Price Target & Forecast for 2023, 2024, 2025",
     'lang':"en",
     'content':"Discover the projected Brokerage Calculator share price targets & forecast for the years 2023, 2024, and 2025. Stay updated with the latest market trends and potential growth opportunities for Brokerage Calculator.",
-    "link":"https://choiceindia.com/research-report/brokerage-calculator-share-price-target"
+    "link":"https://choiceindia.com/brokerage-calculator-new"
+  },
+  "margin-calculator": {
+    "title":"Margin Calculator Share Price Target & Forecast for 2023, 2024, 2025",
+    'lang':"en",
+    'content':"Discover the projected Margin Calculator share price targets & forecast for the years 2023, 2024, and 2025. Stay updated with the latest market trends and potential growth opportunities for Margin Calculator.",
+    "link":"https://choiceindia.com/margin-calculator"
   },
 }
 
