@@ -1,0 +1,511 @@
+
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.banner-section2{
+    background: $whiteColor;
+    padding: 4rem 0 10rem;
+    @media (max-width:$md) {
+        padding: 4rem 0 6rem;
+    }
+    .banner-ttle{
+        p{
+            font-size: 1.75rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-regular;
+            padding-top: 2rem;
+        }
+    }
+    .tabs-btn{
+        padding-top: 3.5rem;
+        padding-bottom: 1.5rem;
+    .list_group1 {
+        background-color: $whiteColor;
+        border-radius: 1.231rem;
+        box-shadow: 0 3px 6px $tab-shadow;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2.5rem;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        .list-group-item {
+                background: $whiteColor;
+                border: none;
+                border-radius: 1.375rem;
+                color: $primary;
+                cursor: pointer;
+                font-family: $font-family-poppins-medium;
+                font-size: 1.385rem;
+                line-height: 2.077rem;
+                padding: 0.5rem 1rem;
+                text-align: center;
+                text-decoration: none;
+                width: 100%;
+                &.active {
+                    background-color: rgba(0,102,178,.1);
+                    color: $bgcolor-blue;
+                }
+                
+                
+            }
+}
+    @media (max-width:$sm) {
+        top: 2.5rem;
+    }
+}
+   
+}
+.banner-section{
+    background: $whiteColor;
+    padding: 4rem 0 10rem;
+    .field-sec{
+        // margin-top: -3rem;
+        // @media (max-width:$sm) {
+        //     margin-top: 0;
+        // }
+    
+    .content-tabs {
+        .content {
+            display: none;
+            &.active-content {
+                display: block;
+            }
+           
+            .table-section{
+                .toggle-refresh {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    @media (max-width:$md) {
+                        padding-top: 3rem;
+                    }
+                    .toggle {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        gap: 1.538rem;
+                        input[type="checkbox"] {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            z-index: 10;
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                            opacity: 0;
+                          }
+                          label {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            &:before {
+                                content: '';
+                                width: 2.615rem;
+                                height: 1.077rem;
+                                background: #ccc;
+                                position: relative;
+                                display: inline-block;
+                                border-radius: 46px;
+                                transition: 0.2s ease-in;
+                              }
+                              &:after {
+                                content: '';
+                                position: absolute;
+                                width: 1.538rem;
+                                height:  1.538rem;
+                                border-radius: 50%;
+                                left:  1.538rem;
+                                top: -0.231rem;
+                                z-index: 2;
+                                background: $whiteColor;
+                                box-shadow: 0 0 5px #0002;
+                                transition: 0.2s ease-in;
+                              }
+                          }
+                          input[type="checkbox"]:hover + label:after  {
+                            box-shadow: 0 2px 15px 0 #0002, 0 3px 8px 0 #0001;
+                        }
+                        input[type="checkbox"]:checked + label:before {
+                            background: #82a5de;
+                          }
+                          input[type="checkbox"]:checked + label:after {
+                            background: $pricolor;
+                            left: -0.385rem;
+                          }
+                          span{
+                            font-size: 1.385rem;
+                            font-family: $font-family-poppins-medium;
+                            color: $primary;
+                          }
+                      }
+                     
+                    .refresh-boxs{
+                        .btn-refresh{
+                            border: 1px solid #ccc;
+                            background: #fff;
+                            padding: 1rem;
+                            border-radius: 6px;
+                        }
+                       
+                    }
+                }
+                    .list-drpdwn{
+                        background: $whiteColor;
+                        color: $primary;
+                        border: 1px solid $border-gray;
+                        display: inline-table;
+                        border-radius: 6px;
+                        padding: 7px 0 7px 0px;
+                        @media (max-width:$md) {
+                            width: 100%;
+                        }
+                        .btn-drp{
+                            background: $whiteColor;
+                            color: $primary;
+                            border: 0;
+                            font-size: 1.385rem;
+                            font-family: $font-family-poppins-medium;
+                            line-height: 1.5;
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 85px;
+                            align-items: center;
+                            @media (max-width:$md) {
+                                width: 100%;
+                            }
+                            &::after{
+                                background: url(../../assets/images/brokerage-calculator/close.svg) no-repeat;
+                                width: 1rem;
+                                height: 1rem;
+                                background-size: contain;
+                                vertical-align: inherit;
+                                border-top: inherit;
+                                border-right: initial;
+                                border-left: inherit;
+                                margin-top: 0.5rem;
+                            }
+                        }
+                        .drop-menu{
+                            margin-top: 0.5rem;
+                            padding: 0;
+                            min-width: 18.5rem;
+                            .drop-item{
+                                font-size: 1.385rem;
+                                font-family: $font-family-poppins-medium;
+                                line-height: 1.5;
+                                color: $primary;
+                                padding: 0.5rem 1rem;
+                            }
+                        }
+                        
+                    }
+                    
+                        .table-margin-cal {
+                            background: $whiteColor;
+                            border: 1px solid $lightgray;
+                            border-radius: 8px;
+                            margin-top: 4rem;
+                            padding: 0;
+                            position: relative;
+                            z-index: 9;
+                            max-height: inherit;
+                            @media (max-width:$sm) {
+                                margin-top: 4rem;
+                            }
+                            .pagination-sec{
+                                display: flex;
+                                align-items: center;
+                                justify-content: end;
+                                padding: 1.6rem 1rem;
+                                border: 1px solid $lightColor;
+                                .paginations {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    gap: 2rem;
+                                    .entries{
+                                        span{
+                                            color: $primary;
+                                            font-size: 1.077rem;
+                                            font-family: $font-family-poppins-regular;
+                                        }
+                                    }
+                                    .rows-page{
+                                        display: flex;
+                                        align-items: center;
+                                        .text-rows{
+                                            color: $secondary;
+                                            font-size: 1.077rem;
+                                            font-family: $font-family-poppins-regular;
+                                        }
+                                        .pagination-dropdwn{
+                                            background: $whiteColor;
+                                            border: 0;
+                                            color: $pricolor;
+                                            font-size: 1.077rem;
+                                            font-family: $font-family-poppins-regular;
+                                        }
+                                        .drop-items{
+                                            color: $primary;
+                                            font-size: 1.077rem;
+                                            font-family: $font-family-poppins-regular;
+                                        }
+                                    }
+                                    .arrows{
+                                        .arrow-icons{
+                                            display: flex;
+                                            gap: 20px;
+                                            .arrow-fill{
+                                                cursor: pointer;
+                                                    &:hover{
+                                                        path{
+                                                            fill: $pricolor;
+                                                            fill-opacity:1;
+                                                        }
+                                                       
+                                                    }
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .table-responsive{
+                                height: 100%;
+                                // min-height: 300px;
+                                max-height: 670px;
+                                overflow: auto;
+                                .table-striped{
+                                    margin: 0;
+                                    thead {
+                                        th {
+                                            border: 0;
+                                            color: $primary;
+                                            font-family: $font-family-poppins-semibold;
+                                            font-size: 1.385rem;
+                                            padding: 1.375rem;
+                                            @media (max-width:$md) {
+                                                white-space: nowrap;
+                                            }
+                                        }
+                                    }
+                                    tbody {
+                                        td {
+                                            border: 0;
+                                            color: $primary;
+                                            font-family: $font-family-poppins-regular;
+                                            font-size:1.231rem;
+                                            padding: 1.375rem;
+                                            &.profit{
+                                                color: $pluscolor;
+                                            }
+                                            &.loss{
+                                                color: $redbg;
+                                            }
+                                        }
+                                    }
+                                } 
+                            }
+                          
+                        }
+                    }
+                } 
+    
+        }
+       
+    } 
+}
+.open-free-accont{
+    background: $primary;
+    padding: 6rem 0 0;
+    position: relative;
+    overflow: hidden;
+    &::after{
+        content: '';
+        background: url(../../assets/images/brokerage-calculator/bg-sec.webp) no-repeat;
+        background-size: contain;
+        display: block;
+        width: 58.08rem;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        bottom: 0;
+        @media (max-width:$sm) {
+            width: 45.08rem;
+            right: -30rem;
+            bottom: -20rem;
+        }
+    }
+    .columns{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        .left-items{
+            @media (max-width:$md) {
+                width: 50%;
+            }
+            @media (max-width:$sm) {
+                width: 100%;
+                padding: 0 1rem;
+            }
+            .benifits{
+                display: flex;
+                align-items: flex-end;
+                .benifits-section{
+                    .men{
+                        @media (max-width:$md) {
+                            display: none;
+                        }
+                        img{
+                            position: relative;
+                            left: -4rem;
+                        }
+                    }
+                    .card-bg{
+                    background: #F3FAFF;
+                    border-radius: 24px 24px 0px 0px;
+                    position: relative;
+                    padding: 3.5rem 2.5rem;
+                    @media (max-width:$md) {
+                        padding:3.5rem 2rem;
+                    }
+                    @media (max-width:$sm) {
+                        border-radius: 0px 0px 24px 24px;
+                        padding: 1rem 2rem 3.5rem;
+                        margin-top: -6rem;
+                    }
+                    &::before{
+                        content: '';
+                        background: url(../../assets/images/brokerage-calculator/card-bg-before.webp) no-repeat top;
+                        background-size: contain;
+                        display: block;
+                        width: 15rem;
+                        height: 2rem;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        @media (max-width:$sm) {
+                            background: $brd-line;
+                            width: 112px;
+                            height: 4px;
+                            bottom: 2rem;
+                            top: inherit;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        background: url(../../assets/images/brokerage-calculator/star.webp) no-repeat;
+                        background-size: contain;
+                        display: block;
+                        width: 4.5rem;
+                        height: 4rem;
+                        position: absolute;
+                        top: 3rem;
+                        right: -2.4rem;
+                        @media (max-width:$sm) {
+                            width: 3.5rem;
+                            height: 3rem;
+                            right: -1.9rem;
+                        }
+                    }
+                    ul{
+                        list-style: none;
+                        padding: 0;
+                        li {
+                            align-items: center;
+                            display: flex;
+                            padding: 1rem 0;
+                            .bx-icon {
+                                min-height: 56px;
+                                min-width: 56px;
+                            }
+                            .bx-text{
+                                font-size: 2rem;
+                                font-family: $font-family-poppins-regular;
+                                margin: 0;
+                                padding-left: 1rem;
+                                @media (max-width:$md) {
+                                    font-size: 1.75rem;
+                                }
+                                span{
+                                    font-family: $font-family-poppins-semibold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        }
+        .right-items{
+            @media (max-width:$md) {
+                width: 42%;
+            }
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+            .free-account-ttl{
+                .title-first{
+                    color: $whiteColor;
+                    padding-bottom: 3.5rem;
+                    @media (max-width:$md) {
+                        font-size: 2.5rem;
+                    }
+                    span{
+                        color: $bgcolor-yellow;
+                    }
+                    br{
+                        @media (max-width:$md) {
+                            display: none;
+                        }
+                    }
+                }
+                .btn-light{
+                    @media (max-width:$sm) {
+                       width: 100%;
+                    }
+                }
+                @media (max-width:$sm) {
+                    text-align: center;
+                    padding: 5rem 0;
+                }
+            }
+        }
+    }
+  
+   
+}
+
+.more-content{
+    padding: 10rem 0 8rem;
+    @media (max-width:$md) {
+        padding: 6rem 0 4rem;
+    }
+    .seo-h3 {
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 2.2rem;
+        padding-bottom: 1.231rem;
+    }
+    .title-content{
+        margin-bottom: 2rem;
+    }
+    p{
+        font-size: 1.385rem;
+        padding-bottom: 2rem;
+    }
+    .list-more{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-bottom: 2rem;
+        li{
+            width: 50%;
+        }
+
+    }
+}
