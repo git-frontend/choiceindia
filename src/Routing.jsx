@@ -176,8 +176,9 @@ const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Op
 // const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/UpcomingAGM'));
-const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'))
-const LazyBrokerageCalculator =React.lazy(()=> import('./components/Brokerage-Calculator/BrokerageCalculator'))
+const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'));
+const LazyBrokerageCalculator =React.lazy(()=> import('./components/Brokerage-Calculator/BrokerageCalculator'));
+const LazyOISpurts =React.lazy(()=> import('./components/OI-Spurts/OISpurts'))
 function Routing() {
 
     
@@ -897,6 +898,11 @@ function Routing() {
                          <Route exact path='/research-report/brokerage-calculator-share-price-target' element={
                             <React.Suspense>
                                 < LazyBrokerageCalculator />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/market/oi-spurts' element={
+                            <React.Suspense>
+                                < LazyOISpurts />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
