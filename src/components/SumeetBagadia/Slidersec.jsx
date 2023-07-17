@@ -25,7 +25,7 @@ function Slidersec() {
         centerMode: true,
         Padding: '0 55px 0 30px',
         autoplaySpeed: 7000,
-        dots: true,
+        dots: false,
         responsive: [
             {
                 breakpoint: 992,
