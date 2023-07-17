@@ -29,12 +29,12 @@ function BannerTop() {
             <div className="col-xl-4 col-md-6 d-flex justify-content-end">
             {
                 ischeck ?
-              <div>
+              <div className='formres-width'>
                   <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                     <DematAccountForm />
                   </GoogleReCaptchaProvider>
               </div>:
-              <div>
+              <div className='formres-width'>
                     <DematAccountForm />
               </div>
               }

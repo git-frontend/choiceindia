@@ -107,6 +107,15 @@
                                 @media (max-width:$md) {
                                     margin-bottom: 1rem;
                                 }
+                                .font-success{
+                                    color: $pluscolor;
+                                }
+                            }
+                            &.brd{
+                                height: 1px;
+                                background: $border-gray;
+                                padding: 0 !important;
+                                margin: 0.615rem 0 0.5rem !important;
                             }
 
                             @media (max-width:$md) {
