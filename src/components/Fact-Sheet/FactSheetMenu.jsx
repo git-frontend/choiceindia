@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
-import FactSheetService from "../../Services/FactSheetService";
+import cmsService from "../../Services/cmsService";
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
@@ -12,7 +12,7 @@ function FactSheetMenu() {
     const [isloading,setisloading ] = useState(true);
 
     function loadFactSheetpdf() {
-        FactSheetService.Factsheet().then(
+        cmsService.Factsheet().then(
             res => {
                 if (res) {
                     setisloading(false)

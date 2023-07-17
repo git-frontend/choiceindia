@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import InvestorAwareService from "../../Services/InvestorAwareService";
+import cmsService from "../../Services/cmsService";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import "../CEBPLPolicies/CEBPL-Policies.scss";
 import noDataimg from '../../assets/images/no-data.webp';
@@ -12,7 +12,7 @@ function InvestorAwarenessMain() {
     const [isloading, setisloading] = useState(true);
 
     function loadinvestorAware() {
-        InvestorAwareService.InvestorAware().then(
+        cmsService.InvestorAware().then(
             res => {
                 if (res) {
                     setisloading(false)

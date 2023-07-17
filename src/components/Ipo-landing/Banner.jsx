@@ -7,7 +7,7 @@ import utils from "../../Services/utils";
 import { Accordion } from "react-bootstrap";
 import Slider from 'react-slick';
 import img8 from '../../assets/images/ipo-landing/arrow-right.svg';
-
+import {useNavigate} from 'react-router-dom'
 
 
 function Banner() {
@@ -18,6 +18,7 @@ function Banner() {
   const [show, setshow] = useState(false);
   const [rendercount, setRenderCount] = useState(false);
  const AllFilesValue={}
+ let navigate = useNavigate();
 /**mobile view */
   const [view, setView] = useState({
     matches: window.innerWidth < 767 ? false : true,
@@ -82,9 +83,17 @@ function Banner() {
                 AllFilesValue['Body'].push(ele)
               }
             }
+            
            
           })
-          setApiData(AllFilesValue.Body);
+
+          if(AllFilesValue.Body){
+            setApiData(AllFilesValue.Body);
+           
+          }else{
+            navigate(`/404`, { replace: true });
+          }
+          
           document.title = AllFilesValue.Body[0].ipo_meta_title ? AllFilesValue.Body[0].ipo_meta_title : ''  ;
       document.getElementById('meta-tags').content = AllFilesValue.Body[0].ipo_meta_content ? AllFilesValue.Body[0].ipo_meta_content : '';
       document.getElementById('canonical-link').href = AllFilesValue.Body[0].ipo_canonical_link ? AllFilesValue.Body[0].ipo_canonical_link: '';
@@ -104,9 +113,12 @@ function Banner() {
         }
 
       }
-    ).catch((error) => {
-      setApiData([]);
-    });
+    ),err=>{
+      if(err&&err.message&&(err.message.indexOf('404')>-1)){
+        navigate(`/404`, { replace: true });
+      }
+      console.log("ERROR",err)
+    }
   }
  /** for avoid multiple rendering */
   useEffect(() => {

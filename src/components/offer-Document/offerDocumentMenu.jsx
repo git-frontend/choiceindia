@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Accordion } from "react-bootstrap";
-import offerDocumentService from "../../Services/offerDocumentService";
+import cmsService from "../../Services/cmsService";
 import download from '../../assets/images/file-download/export.webp';
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
@@ -14,7 +14,7 @@ function OfferDocumentMenu() {
     let AllFilesValue = {};
 
     function loadFileDownload() {
-        offerDocumentService.documentList().
+        cmsService.documentList().
             then(
                 res => {
                     if (res && res.data && res.data.data ) {
