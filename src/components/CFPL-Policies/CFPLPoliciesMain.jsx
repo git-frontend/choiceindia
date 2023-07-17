@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import cfplService from '../../Services/CfplService';
+import cmsService from "../../Services/cmsService";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
 
@@ -14,7 +14,7 @@ function CFPLPoliciesMain() {
     const [isloading, setisloading] = useState(true);
 
     function loadcfplPolicy() {
-        cfplService.CfplPolicy().then(
+        cmsService.CfplPolicy().then(
             res => {
                 if (res) {
                     setisloading(false)

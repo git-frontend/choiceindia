@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import newsService from "../../Services/NewsAnnounceService";
+import cmsService from "../../Services/cmsService";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from "../Common-features/Navbar";
@@ -15,7 +15,7 @@ function NewsAnnouncement() {
 
 
     function loadnewspdf() {
-        newsService.NewsAnnounce().then(
+        cmsService.NewsAnnounce().then(
             res => {
                 if(res){
                     setisloading(false)

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Accordion } from "react-bootstrap";
-import fileDownloadService from "../../Services/FileDownloadService";
+import cmsService from "../../Services/cmsService";
 import download from '../../assets/images/file-download/export.webp';
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
@@ -14,7 +14,7 @@ function FileDownloadFaq() {
     let AllFilesValue = {};
 
     function loadFileDownload() {
-        fileDownloadService.MarginDay().
+        cmsService.MarginDay().
             then(
                 res => {
                     if (res && res.data && res.data.response) {

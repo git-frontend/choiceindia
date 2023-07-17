@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 // import pdf1 from "../../assets/pdf/annual-report/Annual Report.pdf";
-import AnnualReportService from "../../Services/AnnualReportService";
 import Navbar from "../Common-features/Navbar";
 import { Accordion, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,6 +11,7 @@ import "../Corporate-Governance/corporate-governance.scss";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 // import download1 from '../../assets/images/file-download/export.webp';
 import viewicon from '../../assets/images/bi_eye-fill.svg';
+import cmsService from "../../Services/cmsService";
 function AnnualReportMenu() {
     const [data, setData] = useState();
     const [list, setList] = useState();
@@ -21,7 +21,7 @@ function AnnualReportMenu() {
 
 
     function loadAnnualReportpdf() {
-        AnnualReportService.AnnualReport().then(
+        cmsService.AnnualReport().then(
             res => {
                 if (res) {
                     setisloading(false)
@@ -54,7 +54,7 @@ function AnnualReportMenu() {
     }
 
     function loadAnnual2Reportpdf() {
-        AnnualReportService.Annual2Report().then(
+        cmsService.Annual2Report().then(
             res => {
                 if (res) {
                     setisloading(false)

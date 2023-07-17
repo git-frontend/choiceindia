@@ -103,6 +103,11 @@ a{text-decoration: none!important;}
             display: none;
         }
     }
+	.formres-width{
+		@media (max-width: $sm) {
+            width: 100%;
+        }
+	}
 }
 @media only screen and (max-width: $md) {
 	.landing-page2-banner {
@@ -282,7 +287,7 @@ a{text-decoration: none!important;}
 .bg-class-right {
     position: relative;
     background: $abt-bg;
-    padding: 2rem 4rem 3rem 4rem;
+    padding: 2rem 4rem 5rem 4rem;
     padding-right: 0;
     border-radius: 1.25rem;
     margin-left: 1.25rem;
@@ -297,7 +302,7 @@ a{text-decoration: none!important;}
 				border-radius: 1.25rem;
 				text-align: center;
 				height: auto;
-				margin: 0 3.4375rem 0 0;
+				margin: 0 4.9375rem 0 0;
 				box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
 				h4 {
 					font-size: 1.75rem;
@@ -364,7 +369,7 @@ a{text-decoration: none!important;}
 		}
 		.slick-arrow {
 			top: inherit !important;
-			bottom: -3rem;
+			bottom: -5rem;
 			z-index: 99;
 			width: 3.5rem;
 			height: 3.5rem;
@@ -372,6 +377,7 @@ a{text-decoration: none!important;}
 			border: 1px solid #ffffff38;
 			border-radius: 50%;
 			background: $whiteColor;
+			right: 46%;
 			&::before {
 				content: '';
 				background: url(../../assets/images/icons/arrow-thin.svg) no-repeat;
@@ -391,8 +397,11 @@ a{text-decoration: none!important;}
 			}
 		}
 		.slick-arrow.slick-prev {
-			left: inherit;
-			right: 6rem;
+			// left: inherit;
+			// right: 6rem;
+			left: 38%;
+    		right: inherit;
+
 			&::before {
 				content: '';
 				background: url(../../assets/images/icons/arrow-thin-left.svg) no-repeat;
@@ -473,7 +482,8 @@ a{text-decoration: none!important;}
 					background-size: contain;
 					height: 0.8125rem;
 				}
-				right: 4rem;
+				// right: 4rem;
+				left: 36%;
 			}
 			.slick-arrow {
 				&::before {
@@ -483,8 +493,9 @@ a{text-decoration: none!important;}
 				}
 				width: 2.75rem;
 				height: 2.75rem;
-				bottom: -2.125rem;
-				right: 5px;
+				bottom: -3.125rem;
+				// right: 5px;
+				right: 42%;
 			}
 		}
 		.sm-slider-thumb {
@@ -508,13 +519,13 @@ a{text-decoration: none!important;}
 			opacity: 0;
 			visibility: hidden;
 		}
-		padding: 2rem;
+		padding: 2rem 2rem 4rem 2rem;
 		margin-left: 0;
 	}
 }
 @media only screen and (max-width: $sm-x) {
 	.bg-class-right {
-		padding: 1.875rem 0;
+		padding: 1.875rem 0 3.975rem 0;
 	}
 }
 

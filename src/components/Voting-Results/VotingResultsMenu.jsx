@@ -5,7 +5,7 @@ import { faEye } from  '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
-import VotingResultService from "../../Services/VotingResultService";
+import cmsService from "../../Services/cmsService";
 import utils from "../../Services/utils";
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
@@ -17,7 +17,7 @@ function VotingResultsMenu() {
     const [isloading,setisloading ] = useState(true);
 
     function loadVotingResultpdf() {
-        VotingResultService.VotingResult().then(
+        cmsService.VotingResult().then(
             res => {
                 if (res) {
                     setisloading(false);
