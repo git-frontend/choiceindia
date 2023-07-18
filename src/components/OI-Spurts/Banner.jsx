@@ -16,7 +16,7 @@ function Banner() {
                 <div className='row justify-content-center'>
                     <div className='col-xl-8 col-md-12'>
                         <div className='banner-ttle text-center'>
-                            <h1 className='big-ttl'>Open Interest <br/>(OI Spurts)</h1>
+                            <h1 className='title-first'>Open Interest <br/>(OI Spurts)</h1>
                             <p>Get Live Open Interest (OI Spurts) Data for Futures & Options</p>
                         </div>
                     </div>
