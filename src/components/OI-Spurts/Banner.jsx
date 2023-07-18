@@ -11,12 +11,12 @@ function Banner() {
 
   return (
     <>
-        <section className='banner-section2'>
+        <section className='tab-section'>
             <div className='container'>
                 <div className='row justify-content-center'>
                     <div className='col-xl-8 col-md-12'>
                         <div className='banner-ttle text-center'>
-                            <h1 className='big-ttl'>Open Interest (OI Spurts)</h1>
+                            <h1 className='big-ttl'>Open Interest <br/>(OI Spurts)</h1>
                             <p>Get Live Open Interest (OI Spurts) Data for Futures & Options</p>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ function Banner() {
         </section>
         <section className='banner-section'>
                 <div className='container'>
-                <div className='field-sec'>
+                <div className='main-sec'>
                     <div className='row'>
                         <div className='col-md-12'>
                            
@@ -91,7 +91,7 @@ function Banner() {
                                                     </div>
                                                 <div className='refresh-boxs'>
                                                     <button className='btn-refresh'>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                                        <svg className='svg-icon' xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                                                             <path d="M25.866 15.8C24.9974 21.5736 20.0156 26 14 26C7.37258 26 2 20.6274 2 14C2 7.37258 7.37258 2 14 2C18.9207 2 23.1498 4.96183 25.0015 9.2" stroke="#004393" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                                             <path d="M20 9.19995H25.28C25.6777 9.19995 26 8.8776 26 8.47995V3.19995" stroke="#004393" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                                             </svg>
@@ -103,7 +103,7 @@ function Banner() {
                                         </div>
                                         <div className='table-margin-cal'>
                                             <div className='table-responsive'>
-                                            <table class="table table-striped ">
+                                            <table className="table table-striped ">
                                             <thead>
                                                 <tr>
                                                     <th className='text-start'>Sec Desc</th>

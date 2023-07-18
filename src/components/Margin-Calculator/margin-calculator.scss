@@ -16,7 +16,7 @@
         }
     }
     @media (max-width:$sm) {
-        background-color: #fff;
+        background-color: $whiteColor;
         box-shadow: 0 3px 6px rgba(0,0,0,.102);
         left: 0;
         position: fixed;
@@ -70,8 +70,8 @@
                         background-color: rgba(0,102,178,.1);
                         color: $bgcolor-blue;
                         @media (max-width:$sm) {
-                            background-color: #fff;
-                            border-bottom: 2px solid #0066b2;
+                            background-color: $whiteColor;
+                            border-bottom: 2px solid $pricolor;
                             border-radius: 0;
                             }
                     }

@@ -2,32 +2,61 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
-.banner-section2{
+.tab-section{
     background: $whiteColor;
-    padding: 4rem 0 10rem;
-    @media (max-width:$md) {
-        padding: 4rem 0 6rem;
-    }
+    padding: 4rem 0 0;
     .banner-ttle{
+        br{
+            display: none;
+            @media (max-width:$sm) {
+                display:block;
+            }
+        }
         p{
             font-size: 1.75rem;
             line-height: 1.5;
             font-family: $font-family-poppins-regular;
             padding-top: 2rem;
+            margin: 0;
+            @media (max-width:$sm) {
+                display: none;
+            }
         }
     }
+    @media (max-width:$sm) {
+        background-color: $whiteColor;
+        box-shadow: 0 3px 6px rgba(0,0,0,.102);
+        left: 0;
+        position: fixed;
+        top: 70px;
+        width: 100%;
+        z-index: 999;
+    }
     .tabs-btn{
-        padding-top: 3.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+        @media (max-width:$sm) {
+            padding-bottom: 0;
+            padding-top: 2rem;
+        }
     .list_group1 {
         background-color: $whiteColor;
         border-radius: 1.231rem;
         box-shadow: 0 3px 6px $tab-shadow;
         display: flex;
         flex-direction: row;
-        margin-bottom: 2.5rem;
-        margin-top: 1rem;
+        margin-bottom: 0;
         padding: 0.5rem;
+        @media (max-width:$sm) {
+            border-radius: 0;
+            box-shadow: none;
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: 0;
+            overflow: scroll;
+            padding: 0;
+            width: 100%;
+        }
         .list-group-item {
                 background: $whiteColor;
                 border: none;
@@ -41,9 +70,18 @@
                 text-align: center;
                 text-decoration: none;
                 width: 100%;
+                @media (max-width:$sm) {
+                    white-space: nowrap;
+                    padding: 0.5rem 2rem;
+                }
                 &.active {
                     background-color: rgba(0,102,178,.1);
                     color: $bgcolor-blue;
+                    @media (max-width:$sm) {
+                        background-color: $whiteColor;
+                        border-bottom: 2px solid $pricolor;
+                        border-radius: 0;
+                        }
                 }
                 
                 
@@ -57,12 +95,15 @@
 }
 .banner-section{
     background: $whiteColor;
-    padding: 4rem 0 10rem;
-    .field-sec{
-        // margin-top: -3rem;
-        // @media (max-width:$sm) {
-        //     margin-top: 0;
-        // }
+    padding: 0 0 10rem;
+    @media (max-width:$md) {
+        padding: 0 0 6rem;
+    }
+    .main-sec{
+       
+        @media (max-width:$sm) {
+            margin-top: 28rem;
+        }
     
     .content-tabs {
         .content {
@@ -78,6 +119,9 @@
                     align-items: center;
                     @media (max-width:$md) {
                         padding-top: 3rem;
+                    }
+                    @media (max-width:$sm) {
+                        padding-top: 0;
                     }
                     .toggle {
                         position: relative;
@@ -102,7 +146,7 @@
                                 content: '';
                                 width: 2.615rem;
                                 height: 1.077rem;
-                                background: #ccc;
+                                background: $border-gray;
                                 position: relative;
                                 display: inline-block;
                                 border-radius: 46px;
@@ -141,10 +185,14 @@
                      
                     .refresh-boxs{
                         .btn-refresh{
-                            border: 1px solid #ccc;
-                            background: #fff;
-                            padding: 1rem;
+                            border: 1px solid $border-gray;
+                            background: $whiteColor;
+                            padding: 0.7rem;
                             border-radius: 6px;
+                            .svg-icon{
+                                height: 1.846rem;
+                                width: 1.846rem;
+                            }
                         }
                        
                     }
@@ -155,9 +203,10 @@
                         border: 1px solid $border-gray;
                         display: inline-table;
                         border-radius: 6px;
-                        padding: 7px 0 7px 0px;
+                        padding: 7px 14px;
                         @media (max-width:$md) {
                             width: 100%;
+                            margin-bottom: 3rem;
                         }
                         .btn-drp{
                             background: $whiteColor;
@@ -168,7 +217,7 @@
                             line-height: 1.5;
                             display: flex;
                             justify-content: space-between;
-                            gap: 85px;
+                            gap: 100px;
                             align-items: center;
                             @media (max-width:$md) {
                                 width: 100%;
@@ -218,6 +267,9 @@
                                 justify-content: end;
                                 padding: 1.6rem 1rem;
                                 border: 1px solid $lightColor;
+                                @media (max-width:$sm) {
+                                    justify-content: center;
+                                }
                                 .paginations {
                                     display: flex;
                                     justify-content: space-between;
@@ -364,7 +416,7 @@
                         }
                     }
                     .card-bg{
-                    background: #F3FAFF;
+                    background: $abt-bg;
                     border-radius: 24px 24px 0px 0px;
                     position: relative;
                     padding: 3.5rem 2.5rem;

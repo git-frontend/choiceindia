@@ -195,7 +195,7 @@
 .rightsec{
     width: 48%;
     .brokerage-card{
-        background-color: #F3FAFF;
+        background-color: $abt-bg;
         border-radius: 10px;
         padding: 2rem;
         @media (max-width:$md) {
