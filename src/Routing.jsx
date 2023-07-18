@@ -913,7 +913,7 @@ function Routing() {
                                 < LazyBrokerageCalculator />
                             </React.Suspense>
                         } />
-                         <Route exact path='/market/oi-spurts' element={
+                         <Route exact path='/oi-spurts' element={
                             <React.Suspense>
                                 < LazyOISpurts />
                                 </React.Suspense>
