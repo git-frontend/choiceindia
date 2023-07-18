@@ -227,7 +227,7 @@ export class API_URLS {
     /** company IPO */
     companyIpo ='items/Company_ipo?limit=1000&sort[]=id'
     /** blog owner */
-    insightsURL = 'items/Blog?limit=1000&sort[]=id'
+    insightsURL = 'items/Blog??filter[status][_eq]=Published&limit=1000&sort[]=id'
 
 
 
@@ -552,18 +552,22 @@ export class API_URLS {
     }
     getSendOTPURL() {
         return this.SSOServerURL + this.sendOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.sendOTPURL;
     }
 
     getOTPOnCallURL() {
         return this.SSOServerURL + this.OTPOnCallURL;
+        // return "https://sso-beta.choiceindia.com/" + this.OTPOnCallURL;
     }
 
     getResendOTPURL() {
         return this.SSOServerURL + this.resendOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.resendOTPURL;
     }
 
     getVerifyOTPURL() {
         return this.SSOServerURL + this.verifyOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.verifyOTPURL;
     }
 
     getSendInvesOTPURL() {

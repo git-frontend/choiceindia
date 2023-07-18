@@ -11,7 +11,7 @@ import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal'
 
 
-function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup}) {
+function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, language, openInfoPopup, showPopup }) {
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -20,22 +20,27 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
     const [OTPErrors, setOTPErrors] = useState('');
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     var otpID = useRef(otpSessionID);
-    const type2= "JF" ; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
-    const [show,setShow] = useState(true);
+    var otpLID = useRef(otpLeadID);
+    const type2 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
+    const [show, setShow] = useState(true);
     // console.log('SSS',show);
-    function handleClose(){
-      //  console.log('Handleclose');
+    function handleClose() {
+        //  console.log('Handleclose');
         setShow(() => false);
     }
-  //  console.log('OOOO',showPopup);
+    //  console.log('OOOO',showPopup);
     /**props object for Thankyou popup */
     const [showlead, setShowLead] = useState({ showModal: false, page: 'no-addlead' });
-   // console.log('OOOO',showlead.showModal)
+    // console.log('OOOO',showlead.showModal)
+
+
+
+    const [redirectURL, setRedirectURL] = useState(() => null);
 
     /**to close the thankyou popup */
     function closeModal() {
         setShowLead(prevState => {
-            return { ...prevState, showModal: false}
+            return { ...prevState, showModal: false }
         });
         window.location.href = showlead.redirectLink;
     }
@@ -81,7 +86,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
 
     useEffect(() => {
         onClose
-    },[show])
+    }, [show])
 
     useEffect(() => {
         checkWebOTP();
@@ -98,7 +103,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             }).then(otp => {
                 setOtp(otp.code);
             }).catch(err => {
-               // console.log(err, "Error web otp");
+                // console.log(err, "Error web otp");
             });
         }
     }
@@ -111,14 +116,14 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             showLoader('verifyLoader');
             let request = {
                 "mobile_number": mobileNumber,
-                 otp: otp,
-                 session_id: otpID.current
+                otp: otp,
+                session_id: otpID.current
             };
 
             openAccountService.verifyOTP(request, type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
-                   //  console.log('HANDLER',res);
+                    //  console.log('HANDLER',res);
                     // if (res.data.Body.isOnboardFlag === 'Y') {
                     //Your Onboarding has been completed
                     // } else if (res.data.Body.isOnboardFlag === 'C') {
@@ -132,16 +137,23 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                         // setShowLead(prevState => {
                         //     return {...prevState, showModal: true, redirectLink: res.data.Body.url, closeOTP: onClose}
                         // });
-
-                        let result = res.data.Body.url.match("respond-issue");
-                        if(result && result.length && result[0] === 'respond-issue'){
-                            openInfoPopup(res.data.Message);
-                            onClose(res.data.Body.url);
-                        }else{
-                           // console.log('Else onboard');
-                            onClose(res.data.Body.url,res.data.Message? res.data.Message:'',res.data.Body.isOnboardFlag? res.data.Body.isOnboardFlag:"");
-                        }
+                        setRedirectURL(() => res.data.Body.url);
                         
+                        let result = res.data.Body.url.match("respond-issue");
+                        if(res.data.Body.actionType && res.data.Body.actionType != 'popup_and_no_update'){
+                            if (result && result.length && result[0] === 'respond-issue') {
+                                openInfoPopup(res.data.Message);
+                                onClose(res.data.Body.url);
+                            } else {
+                                // console.log('Else onboard');
+                                onClose(res.data.Body.url, res.data.Message ? res.data.Message : '', res.data.Body.isOnboardFlag ? res.data.Body.isOnboardFlag : "");
+                            }
+                        }else{
+                            onClose(res.data.Body.url, res.data.Message ? res.data.Message : '', res.data.Body.isOnboardFlag ? res.data.Body.isOnboardFlag : "", res.data.Body.actionType? res.data.Body.actionType : "",res.data.Body.lid ? res.data.Body.lid : '');
+                            // setShowConsent(() => (res.data.Body.action_type && res.data.Body.action_type == 'no_action') ? true: false);
+                        }
+
+
                         // console.log('inside call',showlead.showModal);
                         // window.location.href = res.data.Body.url;
                     } else {
@@ -183,13 +195,13 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
 
     //resend OTP ON SMS
     function resendOTP() {
-       // console.log("check",otpID)
+        // console.log("check",otpID)
         if (!loaders.resendOTPLoader && !loaders.OTPOnCallLoader) {
             showLoader('resendOTPLoader');
             setOtp('');
             setOTPErrors('');
-            
-           
+
+
             let request = {
 
                 "mobile_no": mobileNumber,
@@ -198,12 +210,12 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                 // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
             }
             let requestMF = {
-                
+
                 "old_session_id": otpID.current,
                 // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
             }
 
-            openAccountService.resendOTPAgain((type2=='MF' )? requestMF:request,type2).then((res) => {
+            openAccountService.resendOTPAgain((type2 == 'MF') ? requestMF : request, type2).then((res) => {
                 hideLoader('resendOTPLoader');
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
@@ -232,11 +244,11 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             setOTPErrors('');
             let request = {
                 "mobile_no": mobileNumber,
-                "request_source": ((type2=='MF' )? "MF" : "CHOICEINDIA"),
+                "request_source": ((type2 == 'MF') ? "MF" : "CHOICEINDIA"),
                 "session_id": otpID.current,
                 // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
             }
-            openAccountService.OTPOnCall(request,type2).then((res) => {
+            openAccountService.OTPOnCall(request, type2).then((res) => {
                 hideLoader('OTPOnCallLoader');
                 // setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
@@ -259,12 +271,13 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
     }
 
 
-    function handleOTPResendSuccessToaster(type){
-        setOTPSendSuccessToaster({[type]: true});
-        setTimeout(()=>{
-            setOTPSendSuccessToaster({[type]: false});
-        },5000)
+    function handleOTPResendSuccessToaster(type) {
+        setOTPSendSuccessToaster({ [type]: true });
+        setTimeout(() => {
+            setOTPSendSuccessToaster({ [type]: false });
+        }, 5000)
     }
+
 
     return (
         <>
@@ -388,18 +401,10 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                                     <div className="otp-mdl-input-chk">
 
 
-                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*"  id="openAccountOTP" placeholder="Enter OTP" autoComplete="off" maxLength="6"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
-{/* 
-                                        <div class="userInput w-50 form-control form-control-lg mx-auto text-center digit-otp">
-                                            <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')"/>
-                                            <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')"/>
-                                            <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')"/>
-                                            <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')"/>
-                                            <input type="text" id="fifth" maxlength="1"/>
-                                        </div> */}
-                                        {/* {
+                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*" id="openAccountOTP" placeholder="Enter OTP" autoComplete="off" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                        {
                                             OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
-                                        } */}
+                                        }
                                     </div>
 
                                     <div className="btnwrap">
@@ -436,7 +441,10 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             </Modal>
 
 
-           {/* {
+
+
+
+            {/* {
             showlead.showModal? <Thankyoupopup isShow={showlead}/>:''
            } */}
 
