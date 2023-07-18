@@ -322,6 +322,9 @@
                                 @media (max-width:$md) {
                                     font-size: 1.75rem;
                                 }
+                                @media (max-width:$sm) {
+                                    font-size: 1.538rem;
+                                }
                                 span{
                                     font-family: $font-family-poppins-semibold;
                                 }

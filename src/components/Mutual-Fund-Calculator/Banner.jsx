@@ -137,8 +137,8 @@ function Banner() {
                         <div className='row'>
                             <div className='col-md-12'>
                                 <div className='tabs-btn'>
-                                    <div className='row'>
-                                        <div className='col-xl-4 col-md-6'>
+                                    <div className='row justify-center'>
+                                        <div className='col-xl-4 col-md-8'>
                                             <ul className='list_group1'>
                                                 <li className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}
                                                     onClick={() => { toggleTab(1); setData(0) }}>SIP</li>
@@ -156,10 +156,12 @@ function Banner() {
                                                 <div className='cal-opt mrg-top'>
                                                     {/* <p>Loan Amount</p> */}
                                                     <div className='value-card'>
-                                                        <div><p>Monthly Investment</p></div>
+                                                        <p>Monthly Investment</p>
                                                         <div className="input-sec">
-                                                            <span className="rupees-symble">₹</span>
-                                                            <input type="tel" className="form-ctr input-1" maxLength={7} min="50000" max="5000000" value={loanAmount} onChange={handleLoanAmountChange} />
+                                                            <div className="form-control2">
+                                                                <span className="rupees-symble">₹</span>
+                                                                <input type="tel" className="form-ctr input-1" maxLength={8} min="50000" max="5000000" value={loanAmount} onChange={handleLoanAmountChange} />
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="slidecontainer">
@@ -179,9 +181,11 @@ function Banner() {
                                                     <div className='value-card'>
                                                         <div><p>Expected Return Rate (p.a.)</p></div>
                                                         <div className="input-sec">
-                                                            <input type="number" className="form-ctr input-2" min="10" max="36" value={interestRate}
-                                                                onChange={handleInterestRateChange} />
-                                                            <span className="percent-symble">%</span>
+                                                            <div className="form-control2">
+                                                                <input type="number" className="form-ctr input-2" min="10" max="36" value={interestRate}
+                                                                    onChange={handleInterestRateChange} />
+                                                                <span className="percent-symble">%</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="slidecontainer">
@@ -201,8 +205,10 @@ function Banner() {
                                                     <div className='value-card'>
                                                         <div><p>Investment Period (years)</p></div>
                                                         <div className="input-sec">
-                                                            <input type="tel" className="form-ctr input-3" value={tenure} maxLength={3} min="12" max="120" onChange={handleLoanTenureChange} />
-                                                            <span className="years-symble">Yr</span>
+                                                            <div className="form-control2">
+                                                                <input type="tel" className="form-ctr input-3" value={tenure} maxLength={3} min="12" max="120" onChange={handleLoanTenureChange} />
+                                                                <span className="years-symble">Yr</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="slidecontainer">
@@ -246,7 +252,10 @@ function Banner() {
                                                             </div>
                                                         </div>
                                                         
-                                                        <div className="right-itms"><Doughnut data={datas} onHover={handleHover} /></div>
+                                                        <div className="right-itms">
+                                                            <Doughnut data={datas} onHover={handleHover} />
+                                                            
+                                                            </div>
                                                        
                                                     </div>
                                                     <div className="card-footer">
