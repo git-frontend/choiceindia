@@ -552,18 +552,22 @@ export class API_URLS {
     }
     getSendOTPURL() {
         return this.SSOServerURL + this.sendOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.sendOTPURL;
     }
 
     getOTPOnCallURL() {
         return this.SSOServerURL + this.OTPOnCallURL;
+        // return "https://sso-beta.choiceindia.com/" + this.OTPOnCallURL;
     }
 
     getResendOTPURL() {
         return this.SSOServerURL + this.resendOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.resendOTPURL;
     }
 
     getVerifyOTPURL() {
         return this.SSOServerURL + this.verifyOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.verifyOTPURL;
     }
 
     getSendInvesOTPURL() {
