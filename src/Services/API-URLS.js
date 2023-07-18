@@ -566,8 +566,8 @@ export class API_URLS {
     }
 
     getVerifyOTPURL() {
-        // return this.SSOServerURL + this.verifyOTPURL;
-        return "https://sso-beta.choiceindia.com/" + this.verifyOTPURL;
+        return this.SSOServerURL + this.verifyOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.verifyOTPURL;
     }
 
     getSendInvesOTPURL() {

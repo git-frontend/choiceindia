@@ -140,7 +140,7 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
                         setRedirectURL(() => res.data.Body.url);
                         
                         let result = res.data.Body.url.match("respond-issue");
-                        if(res.data.Body.action_type && res.data.Body.action_type != 'popup_and_no_update'){
+                        if(res.data.Body.actionType && res.data.Body.actionType != 'popup_and_no_update'){
                             if (result && result.length && result[0] === 'respond-issue') {
                                 openInfoPopup(res.data.Message);
                                 onClose(res.data.Body.url);
@@ -149,7 +149,7 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
                                 onClose(res.data.Body.url, res.data.Message ? res.data.Message : '', res.data.Body.isOnboardFlag ? res.data.Body.isOnboardFlag : "");
                             }
                         }else{
-                            onClose(res.data.Body.url, res.data.Message ? res.data.Message : '', res.data.Body.isOnboardFlag ? res.data.Body.isOnboardFlag : "", res.data.Body.action_type? res.data.Body.action_type : "",res.data.Body.lid ? res.data.Body.lid : '');
+                            onClose(res.data.Body.url, res.data.Message ? res.data.Message : '', res.data.Body.isOnboardFlag ? res.data.Body.isOnboardFlag : "", res.data.Body.actionType? res.data.Body.actionType : "",res.data.Body.lid ? res.data.Body.lid : '');
                             // setShowConsent(() => (res.data.Body.action_type && res.data.Body.action_type == 'no_action') ? true: false);
                         }
 
