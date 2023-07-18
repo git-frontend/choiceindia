@@ -227,7 +227,7 @@ export class API_URLS {
     /** company IPO */
     companyIpo ='items/Company_ipo?limit=1000&sort[]=id'
     /** blog owner */
-    insightsURL = 'items/Blog?limit=1000&sort[]=id'
+    insightsURL = 'items/Blog??filter[status][_eq]=Published&limit=1000&sort[]=id'
 
 
 
