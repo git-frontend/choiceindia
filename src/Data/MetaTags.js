@@ -2277,17 +2277,53 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Start trading in Futures and Options (F&O) with Choice. Open a free demat account with No AMC for first year, free expert research, low DP & brokerage charges.",
     "link":"https://choiceindia.com/open-free-demat-account"
   },
-  "brokerage-calculator-new": {
-    "title":"Brokerage Calculator Share Price Target & Forecast for 2023, 2024, 2025",
+  "brokerage-calculator": {
+    "title":"Brokerage Calculator - Calculate Intraday & Delivery Brokerage Charges",
     'lang':"en",
-    'content':"Discover the projected Brokerage Calculator share price targets & forecast for the years 2023, 2024, and 2025. Stay updated with the latest market trends and potential growth opportunities for Brokerage Calculator.",
-    "link":"https://choiceindia.com/brokerage-calculator-new"
+    'content':"Brokerage Calculator - Calculate your intraday & delivery brokerage charges. Know your estimate brokerage fees for Futures & Options, Commodity, Currency at Choice.",
+    "link":"https://choiceindia.com/brokerage-calculator"
+  },
+  "oi-spurts": {
+    "title":"OI Spurts - Live Open Interest Chart Data for Futures & Options",
+    'lang':"en",
+    'content':"Get LIVE OI Spurts on Choice. Find out the LIVE open interest chart data analysis for Futures & Options of NSE/BSE listed stocks & indices.",
+    "link":"https://choiceindia.com/oi-spurts"
+  },
+  "sip-calculator": {
+    "title":"SIP Calculator - Calculate Mutual Fund Returns Online at Choice",
+    'lang':"en",
+    'content':"Calculate the future mutual fund returns online through our SIP Calculator to know the future value of your SIP or lump sum mutual fund investment.",
+    "link":"https://choiceindia.com/sip-calculator"
+  },
+  "mutual-fund-calculator": {
+    "title":"Mutual Fund Calculator - Calculate Your SIP & Lumpsum Return",
+    'lang':"en",
+    'content':"Mutual fund calculator is an online tools which helps you to calculate mutual fund returns. Find out future ROI of your SIP & lumpsum Investment.",
+    "link":"https://choiceindia.com/mutual-fund-calculator"
   },
   "margin-calculator": {
-    "title":"Margin Calculator Share Price Target & Forecast for 2023, 2024, 2025",
+    "title":"Margin Calculator - Calculate Margin for Your Trading",
     'lang':"en",
-    'content':"Discover the projected Margin Calculator share price targets & forecast for the years 2023, 2024, and 2025. Stay updated with the latest market trends and potential growth opportunities for Margin Calculator.",
+    'content':"Margin Calculator - A free tool which helps stock traders to calculate the margin or leverage they needs for trades.",
     "link":"https://choiceindia.com/margin-calculator"
+  },
+  "futures-and-options-margin-calculator": {
+    "title":"F&O Margin Calculator - Calculate Margin for Option & Future Selling",
+    'lang':"en",
+    'content':"Choice F&O Margin Calculator is a free tool for f&o traders to calculate margin for futures and options selling.",
+    "link":"https://choiceindia.com/futures-and-options-margin-calculator"
+  },
+  "commodity-margin-calculatorr": {
+    "title":"MCX Margin Calculator - Calculate Your Commodity Trading Margin",
+    'lang':"en",
+    'content':"Choice MCX margin calculator is an online commodity margin calculator useful for traders in the commodity market.",
+    "link":"https://choiceindia.com/commodity-margin-calculator"
+  },
+  "forex-margin-calculator": {
+    "title":"Forex Margin Calculator - Calculate Margin for Currency Trades",
+    'lang':"en",
+    'content':"Choice Forex margin calculator is a free tool which helps you to calculate the margin needed for your open and hold positions. ",
+    "link":"https://choiceindia.com/forex-margin-calculator"
   },
 }
 

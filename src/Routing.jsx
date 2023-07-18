@@ -321,7 +321,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/brokerage-calculator' element={
+                        <Route exact path='/brokerage-calculator-old' element={
                             <React.Suspense>
                                 < Lazypricing />
                             </React.Suspense>
@@ -908,7 +908,7 @@ function Routing() {
                                 < LazyIPOLanding />
                             </React.Suspense>
                         } />
-                         <Route exact path='/brokerage-calculator-new' element={
+                         <Route exact path='/brokerage-calculator' element={
                             <React.Suspense>
                                 < LazyBrokerageCalculator />
                             </React.Suspense>
