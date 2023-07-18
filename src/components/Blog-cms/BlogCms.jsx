@@ -237,7 +237,7 @@ function BlogCms() {
                                                     <div className="auth-right">
                                                         <p>Written by</p>
                                                         <h4>{res.Written_name}</h4>
-                                                        <p>{res.written_description}Lo</p>
+                                                        <p>{res.written_description}</p>
                                                     </div>
                                                 </div>
 
