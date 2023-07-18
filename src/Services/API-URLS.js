@@ -551,18 +551,18 @@ export class API_URLS {
         return this.jiffyResearchURL + this.addMarketInsiteNewURL;
     }
     getSendOTPURL() {
-        // return this.SSOServerURL + this.sendOTPURL;
-        return "https://sso-beta.choiceindia.com/" + this.sendOTPURL;
+        return this.SSOServerURL + this.sendOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.sendOTPURL;
     }
 
     getOTPOnCallURL() {
-        // return this.SSOServerURL + this.OTPOnCallURL;
-        return "https://sso-beta.choiceindia.com/" + this.OTPOnCallURL;
+        return this.SSOServerURL + this.OTPOnCallURL;
+        // return "https://sso-beta.choiceindia.com/" + this.OTPOnCallURL;
     }
 
     getResendOTPURL() {
-        // return this.SSOServerURL + this.resendOTPURL;
-        return "https://sso-beta.choiceindia.com/" + this.resendOTPURL;
+        return this.SSOServerURL + this.resendOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.resendOTPURL;
     }
 
     getVerifyOTPURL() {
