@@ -128,8 +128,8 @@ function Banner() {
                     <div className='row justify-content-center'>
                         <div className='col-xl-8 col-md-12'>
                             <div className='banner-ttle text-center'>
-                                <h1 className='big-ttl'>SIP Calculator</h1>
-                                <p>Let’s calculate your SIP returns with the help of a SIP calculator. Enter your SIP amount and get your maturity amount for the desired time period.</p>
+                                <h1 className='title-first'>Mutual Fund Calculator</h1>
+                                <p>Let’s calculate your SIP & Lumpsum investment returns with the help of a mutual fund calculator.</p>
                             </div>
                         </div>
                     </div>
