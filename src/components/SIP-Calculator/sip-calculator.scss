@@ -83,6 +83,9 @@
                     font-size: 1.385rem;
                     color: $primary;
                     font-family: $font-family-poppins-regular;
+                    @media (max-width:$sm) {
+                        top:1rem;
+                    }
                 }
                 .years-symble{
                     position: absolute;
@@ -91,6 +94,9 @@
                     font-size: 1.385rem;
                     color: $primary;
                     font-family: $font-family-poppins-regular;
+                    @media (max-width:$sm) {
+                        top:1rem;
+                    }
                 }
                 .form-ctr {
                     background: $whiteColor;
@@ -111,7 +117,7 @@
                         padding-right: 1rem;
                     }
                     &.input-2{
-                        padding-right: 3rem;
+                        padding-right: 1.5rem;
                         @media (max-width:$md) {
                             padding-right: 3rem;
                         }
