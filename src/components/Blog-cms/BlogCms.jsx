@@ -48,16 +48,16 @@ function BlogCms() {
                     document.getElementById('meta-tags').content = AllFilesValue.Body[0].meta_content ? AllFilesValue.Body[0].meta_content : '';
                     document.getElementById('canonical-link').href = AllFilesValue.Body[0].canonical_link ? AllFilesValue.Body[0].canonical_link : '';
 
-                    document.getElementById('meta-type').content = AllFilesValue.Body[0].cms_og_type ? AllFilesValue.Body[0].ipo_og_type : '';
-                    document.getElementById('meta-url').content = AllFilesValue.Body[0].cms_og_url ? AllFilesValue.Body[0].ipo_og_url : '';
-                    document.getElementById('meta-descr').content = AllFilesValue.Body[0].cms_og_description ? AllFilesValue.Body[0].ipo_og_description : '';
-                    document.getElementById('meta-title').content = AllFilesValue.Body[0].cms_og_title ? AllFilesValue.Body[0].ipo_og_title : '';
-                    document.getElementById('meta-image').content = AllFilesValue.Body[0].cms_og_image ? `https://cmsapi.choiceindia.com/assets/${AllFilesValue.Body[0].ipo_og_image}` : '';
+                    document.getElementById('meta-type').content = AllFilesValue.Body[0].cms_og_type ? AllFilesValue.Body[0].cms_og_type : '';
+                    document.getElementById('meta-url').content = AllFilesValue.Body[0].cms_og_url ? AllFilesValue.Body[0].cms_og_url : '';
+                    document.getElementById('meta-descr').content = AllFilesValue.Body[0].cms_og_description ? AllFilesValue.Body[0].cms_og_description : '';
+                    document.getElementById('meta-title').content = AllFilesValue.Body[0].cms_og_title ? AllFilesValue.Body[0].cms_og_title : '';
+                    document.getElementById('meta-image').content = AllFilesValue.Body[0].cms_og_image ? `https://cmsapi.choiceindia.com/assets/${AllFilesValue.Body[0].cms_og_image}` : '';
 
-                    document.getElementById('twitter-meta-url').content = AllFilesValue.Body[0].cms_twitter_url ? AllFilesValue.Body[0].ipo_twitter_url : '';
-                    document.getElementById('twitter-meta-descr').content = AllFilesValue.Body[0].cms_twitter_desc ? AllFilesValue.Body[0].ipo_twitter_desc : '';
-                    document.getElementById('twitter-meta-title').content = AllFilesValue.Body[0].cms_twitter_title ? AllFilesValue.Body[0].ipo_twitter_title : '';
-                    document.getElementById('twitter-meta-image').content = AllFilesValue.Body[0].cms_twitter_image ? `https://cmsapi.choiceindia.com/assets/${AllFilesValue.Body[0].ipo_twitter_image}` : '';
+                    document.getElementById('twitter-meta-url').content = AllFilesValue.Body[0].cms_twitter_url ? AllFilesValue.Body[0].cms_twitter_url : '';
+                    document.getElementById('twitter-meta-descr').content = AllFilesValue.Body[0].cms_twitter_desc ? AllFilesValue.Body[0].cms_twitter_desc : '';
+                    document.getElementById('twitter-meta-title').content = AllFilesValue.Body[0].cms_twitter_title ? AllFilesValue.Body[0].cms_twitter_title : '';
+                    document.getElementById('twitter-meta-image').content = AllFilesValue.Body[0].cms_twitter_image ? `https://cmsapi.choiceindia.com/assets/${AllFilesValue.Body[0].cms_twitter_image}` : '';
 
 
 
