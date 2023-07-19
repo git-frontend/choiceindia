@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import InvestorPresentationService from "../../Services/InvestorPresentationService";
+import cmsService from "../../Services/cmsService";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Common-features/Navbar';
@@ -18,7 +18,7 @@ function InvestorPresentationMenu() {
     const [trigger, setTrigger] = useState(false);
 
     function loadInvestorPresentationpdf() {
-        InvestorPresentationService.InvestorPresentation().then(
+        cmsService.InvestorPresentation().then(
             res => {
                 if (res) {
                     setisloading(false);

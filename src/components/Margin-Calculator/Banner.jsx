@@ -30,22 +30,22 @@ function Banner() {
                     {
                       toggleState==1?
                       <div className='banner-ttle text-center'>
-                            <h1 className='big-ttl'>Margin Calculator</h1>
+                            <h1 className='title-first'>Margin Calculator</h1>
                             <p>Use Choice FinX Margin Calculator to calculate the margin for Future & Option (F&O), Commodity, and Currency segments.</p>
                     </div>:
                     toggleState==2?
                     <div className='banner-ttle text-center'>
-                            <h1 className='big-ttl'>F&O Margin Calculator</h1>
+                            <h1 className='title-first'>F&O Margin Calculator</h1>
                             <p>Calculate the margin for Future & Option (F&O) selling</p>
                     </div>:
                     toggleState==3?
                     <div className='banner-ttle text-center'>
-                        <h1 className='big-ttl'>Commodity Margin Calculator</h1>
+                        <h1 className='title-first'>Commodity Margin Calculator</h1>
                         <p>Calculate the margin for commodity.</p>
                     </div>:
                     toggleState==4?
                     <div className='banner-ttle text-center'>
-                            <h1 className='big-ttl'>Forex Margin Calculator</h1>
+                            <h1 className='title-first'>Forex Margin Calculator</h1>
                             <p>Calculate the margin for Currency</p>
                     </div>:
                     ""

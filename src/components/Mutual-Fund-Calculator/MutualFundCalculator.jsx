@@ -1,14 +1,16 @@
 
 import React from "react";
-import "./oi-spurts.scss";
-import "../../components/Margin-Calculator/margin-calculator.scss";
+import "../../components/Brokerage-Calculator/brokerage-calculator.scss";
+import "../../components/SIP-Calculator/sip-calculator.scss";
+import "./mutual-fund-calculator.scss";
 import Banner from "./Banner";
 import { useState,useEffect} from "react";
 import meta_tags from "../../Data/MetaTags";
 import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import MoreContent from "./MoreContent";
+import MutualFaq from "./MutualFaq";
 
-function OISpurts() {
+function MutualFundCalculator() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
     setRenderCount(true)
@@ -37,8 +39,9 @@ function OISpurts() {
         <Banner />
         <OpenFreeDematAccount/>
         <MoreContent/>
+        <MutualFaq/>
     </div>
   );
 }
 
-export default OISpurts;
+export default MutualFundCalculator;

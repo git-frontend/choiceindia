@@ -29,7 +29,7 @@ function Banner() {
             tenure: ''
         };
 
-        if (loanAmount < 1000 || loanAmount > 50000000) {
+        if (loanAmount < 50000 || loanAmount > 5000000) {
             errors.loanAmount = 'Please Enter Valid Amount';
         }
 
@@ -83,7 +83,7 @@ function Banner() {
         setTenure((event.target.value).replace(/\D/g, ""))
 
     };
-    const fillPercentageloan = (loanAmount / 50000000) * 100;
+    const fillPercentageloan = (loanAmount / 5000000) * 100;
     const fillStyle = {
         background: `linear-gradient(to right, #004393 ${fillPercentageloan}%, #221f201a ${fillPercentageloan}%)`,
     };
@@ -128,8 +128,8 @@ function Banner() {
                     <div className='row justify-content-center'>
                         <div className='col-xl-8 col-md-12'>
                             <div className='banner-ttle text-center'>
-                                <h1 className='title-first'>SIP Calculator</h1>
-                                <p>Let’s calculate your SIP returns with the help of a SIP calculator. Enter your SIP amount and get your maturity amount for the desired time period.</p>
+                                <h1 className='title-first'>Mutual Fund Calculator</h1>
+                                <p>Let’s calculate your SIP & Lumpsum investment returns with the help of a mutual fund calculator.</p>
                             </div>
                         </div>
                     </div>
@@ -156,11 +156,11 @@ function Banner() {
                                                 <div className='cal-opt mrg-top'>
                                                     {/* <p>Loan Amount</p> */}
                                                     <div className='value-card'>
-                                                        <div><p>Monthly Investment</p></div>
+                                                        <p>Monthly Investment</p>
                                                         <div className="input-sec">
                                                             <div className="form-control2">
                                                                 <span className="rupees-symble">₹</span>
-                                                                <input type="tel" className="form-ctr input-1" maxLength={8} min="1000" max="50000000" value={loanAmount} onChange={handleLoanAmountChange} />
+                                                                <input type="tel" className="form-ctr input-1" maxLength={8} min="50000" max="5000000" value={loanAmount} onChange={handleLoanAmountChange} />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -168,7 +168,7 @@ function Banner() {
                                                         <div className="middle">
                                                             <div className="slider-container">
                                                                 {/* <span className="bar"><span style={fillStyle}></span></span> */}
-                                                                <input type="range" className="slider" step="1000" min="1000" max="50000000" value={loanAmount}
+                                                                <input type="range" className="slider" step="1000" min="50000" max="5000000" value={loanAmount}
                                                                     onChange={handleLoanAmountChange} style={fillStyle}
                                                                 />
                                                                 {errorMessages.loanAmount && <span className="text-danger">{errorMessages.loanAmount}</span>}
@@ -181,11 +181,11 @@ function Banner() {
                                                     <div className='value-card'>
                                                         <div><p>Expected Return Rate (p.a.)</p></div>
                                                         <div className="input-sec">
-                                                        <div className="form-control2">
-                                                            <input type="number" className="form-ctr input-2" min="10" max="36" value={interestRate}
-                                                                onChange={handleInterestRateChange} />
-                                                            <span className="percent-symble">%</span>
-                                                        </div>
+                                                            <div className="form-control2">
+                                                                <input type="number" className="form-ctr input-2" min="10" max="36" value={interestRate}
+                                                                    onChange={handleInterestRateChange} />
+                                                                <span className="percent-symble">%</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="slidecontainer">
@@ -205,10 +205,10 @@ function Banner() {
                                                     <div className='value-card'>
                                                         <div><p>Investment Period (years)</p></div>
                                                         <div className="input-sec">
-                                                        <div className="form-control2">
-                                                            <input type="tel" className="form-ctr input-3" value={tenure} maxLength={3} min="12" max="120" onChange={handleLoanTenureChange} />
-                                                            <span className="years-symble">Yr</span>
-                                                        </div>
+                                                            <div className="form-control2">
+                                                                <input type="tel" className="form-ctr input-3" value={tenure} maxLength={3} min="12" max="120" onChange={handleLoanTenureChange} />
+                                                                <span className="years-symble">Yr</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="slidecontainer">
@@ -252,7 +252,10 @@ function Banner() {
                                                             </div>
                                                         </div>
                                                         
-                                                        <div className="right-itms"><Doughnut data={datas} onHover={handleHover} /></div>
+                                                        <div className="right-itms">
+                                                            <Doughnut data={datas} onHover={handleHover} />
+                                                            
+                                                            </div>
                                                        
                                                     </div>
                                                     <div className="card-footer">

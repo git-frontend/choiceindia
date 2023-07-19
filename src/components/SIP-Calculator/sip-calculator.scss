@@ -2,11 +2,22 @@
 @import '../../assets/css/customvariable.scss';
 
 .banner-sip{
+    .justify-center{
+        @media (max-width:$md) {
+            justify-content: center;
+        }
+    }
+.form-section{
+    flex-wrap: wrap;
 .leftsec {
     width: 48%;
     padding-top: 3.5rem;
+    @media (max-width:$md) {
+        width: 100%;
+    }
     @media (max-width:$sm) {
         width: 100%;
+        padding-top: 0;
     }
 
     .heading-sec {
@@ -35,6 +46,9 @@
             font-size: 1.385rem;
             line-height: 1.5;
             color: $primary;
+            @media (max-width:$sm) {
+                font-size: 1.231rem;
+            }
         }
 
         .value-card {
@@ -42,14 +56,18 @@
             justify-content: space-between;
             position: relative;
             align-items: center;
+            @media (max-width:$sm) {
+                gap: 1.5rem;
+            }
             .input-sec{
-                position: relative;
-                background: $whiteColor;
-                border: 2px solid $stockboxshadow;
-                border-radius: 8px;
-                &:focus{
-                    border: 2px solid $pricolor;
-                }
+                .form-control2{
+                    position: relative;
+                    background: $whiteColor;
+                    border: 2px solid $stockboxshadow;
+                    border-radius: 8px;
+                    &:focus{
+                        border: 2px solid $pricolor;
+                    }
                 .rupees-symble{
                     position: absolute;
                     left: 1rem;
@@ -65,6 +83,9 @@
                     font-size: 1.385rem;
                     color: $primary;
                     font-family: $font-family-poppins-regular;
+                    @media (max-width:$sm) {
+                        top:1rem;
+                    }
                 }
                 .years-symble{
                     position: absolute;
@@ -73,23 +94,33 @@
                     font-size: 1.385rem;
                     color: $primary;
                     font-family: $font-family-poppins-regular;
+                    @media (max-width:$sm) {
+                        top:1rem;
+                    }
                 }
                 .form-ctr {
                     background: $whiteColor;
                     border: 0;
                     border-radius: inherit;
-                    padding: 15px 0;
-                    width: 17.538rem;
+                    padding: 1.154rem 0;
+                    width: 14.923rem;
                     font-size: 1.385rem;
                     text-align: right;
                     color: $primary;
                     font-family: $font-family-poppins-regular;
                     padding-right: 2rem;
+                    @media (max-width:$sm) {
+                        width: 16rem;
+                        font-size: 1.231rem;
+                    }
                     &.input-1{
                         padding-right: 1rem;
                     }
                     &.input-2{
                         padding-right: 1.5rem;
+                        @media (max-width:$md) {
+                            padding-right: 3rem;
+                        }
                     }
                     &.input-3{
                         padding-right: 3rem;
@@ -105,7 +136,7 @@
                 }
         }
         }
-
+    }
         .range-figures {
             display: flex;
             justify-content: space-between;
@@ -138,16 +169,16 @@
                         position: absolute;
                         z-index: 1;
                         left: 0;
-                        top: 4px;
+                        top: 0.308rem;
                         width: 100%;
-                        height: 25px;
+                        height: 1.923rem;
                         border-radius: 15px;
                         overflow: hidden;
                         border: 2px solid $border-light;
 
                         @media (max-width:$sm) {
-                            height: 15px;
-                            top: 6px;
+                            height: 1.154rem;
+                            top: 0.462rem;
                         }
 
                         .fill {
@@ -164,7 +195,7 @@
                         // z-index: 2;
                         appearance: none;
                         width: 100%;
-                        height: 4px;
+                        height: 0.308rem;
                         border-radius: 15px;
                         outline: none;
                         background-color: transparent;
@@ -172,8 +203,8 @@
 
                         &::-webkit-slider-thumb {
                             appearance: none;
-                            width: 24px;
-                            height: 24px;
+                            width: 1.846rem;
+                            height: 1.846rem;
                             background-color: $whiteColor;
                             border-radius: 50%;
                             cursor: pointer;
@@ -181,10 +212,10 @@
                             border: 6px solid  $pricolor;
                             opacity: 1;
 
-                            @media (max-width:$sm) {
-                                width: 25px;
-                                height: 25px;
-                            }
+                            // @media (max-width:$sm) {
+                            //     width: 1.923rem;
+                            //     height: 1.923rem;
+                            // }
                         }
                     }
                 }
@@ -194,33 +225,57 @@
 }
 .rightsec{
     width: 48%;
+    @media (max-width:$md) {
+        width: 100%;
+    }
     .brokerage-card{
-        background-color: #F3FAFF;
+        background-color: $abt-bg;
         border-radius: 10px;
-        padding: 2rem;
+        padding: 2.769rem;
         @media (max-width:$md) {
-            padding: 1rem;
+           margin-top: 5rem;
         }
+        @media (max-width:$sm) {
+            padding: 1.769rem;
+         }
         .card-items{
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             .left-itms{
                 width: 35%;
+                @media (max-width:$sm) {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
                 .current-val{
                     display: flex;
                     gap: 16px;
                     align-items: baseline;
                     padding-bottom: 2rem;
+                    @media (max-width:$sm) {
+                        padding-bottom: 0;
+                        gap: 8px;
+                    }
                     &.total-val{
                         padding-top: 4.5rem;
                         padding-bottom: 0;
+                        @media (max-width:$sm) {
+                            padding: 2.538rem 0;
+                            margin: 0 auto;
+                        }
                     }
                     .dots{
                         width: 14px;
                         height: 14px;
                         display: block;
                         border-radius: 100%;
+                        @media (max-width:$sm) {
+                            width: 8px;
+                            height: 8px;
+                        }
                         &.dots-primary{
                             background-color: $pricolor;
                         }
@@ -235,27 +290,41 @@
                             font-family: $font-family-poppins-regular;
                             margin: 0;
                             padding-bottom: 0.5rem;
+                            @media (max-width:$sm) {
+                                font-size: 1.231rem;
+                            }
                         }
                         .scrip-val{
                             font-size: 1.846rem;
                             font-family: $font-family-poppins-semibold;
                             color: $primary;
                             margin: 0;
+                            @media (max-width:$sm) {
+                                font-size: 1.385rem;
+                            }
                         }
                     }
                 }
             }
             .right-itms{
                 width: 60%;
+                @media (max-width:$sm) {
+                    width: 100%;
+                }
             }
         }
         .card-footer{
             padding-top: 4rem;
             text-align: center;
+            .btn-bg{
+                @media (max-width:$sm) {
+                    width: 100%;
+                }
+            }
         }
     }
 }
-
+}
 }
 .more-content{
     .seo-h3 {
@@ -275,3 +344,4 @@
         padding: 0;
     }
 }
+

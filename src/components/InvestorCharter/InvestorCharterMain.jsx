@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import InvestorCharterService from "../../Services/InvestorCharterService";
+import cmsService from "../../Services/cmsService";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import "../CEBPLPolicies/CEBPL-Policies.scss";
 import noDataimg from '../../assets/images/no-data.webp';
@@ -15,7 +15,7 @@ function InvestorCharterMain() {
     let AllFilesValue = {};
 
     function loadcebplStock2() {
-        InvestorCharterService.InvestorCharter().
+        cmsService.InvestorCharter().
             then(
                 res => {
                     if (res && res.data && res.data.data) {
