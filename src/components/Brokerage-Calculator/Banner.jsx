@@ -24,13 +24,13 @@ function Banner() {
                     <div className='row'>
                         <div className='col-md-12'>
                             <div className='tabs-btn'>
-                            <div className='row'>
-                              <div className='col-xl-4 col-md-6'>
+                            <div className='row tabs-list'>
+                              <div className='col-xl-6 col-md-6'>
                                 <ul className='list_group1'>
-                                        <li  className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}
-                                            onClick={() => { toggleTab(1); setData(0) }}>Intraday</li>
-                                        <li  className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}
-                                            onClick={() => { toggleTab(2); setData(1) }}>Delivery</li>
+                                    <li  className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}
+                                        onClick={() => { toggleTab(1); setData(0) }}>Intraday</li>
+                                    <li  className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}
+                                        onClick={() => { toggleTab(2); setData(1) }}>Delivery</li>
                                 </ul>
                               </div>
                            </div>
@@ -41,11 +41,8 @@ function Banner() {
                                         <div className='form-section'>
                                             <div className='left-sec'>
                                                 <div className="row row-sec">
-                                                    <div className="col-xl-7 col-md-12">
-                                                        <p className='frm-label'>Search for scrips</p>
-                                                    </div>
-                                                    <div className="col-xl-5 col-md-12">
-                                                        <input className='form-control input-font search-icon' placeholder='TATA CHEMICALS LTD NSE'/>
+                                                    <div className="col-md-12">
+                                                        <input className='form-control input-font search-icon' placeholder='Search for scrips'/>
                                                     </div>
                                                 </div>
                                                 <div className='mobile-view'>

@@ -6,7 +6,7 @@
     background: $whiteColor;
     padding: 4rem 0 10rem;
     @media (max-width:$md) {
-        padding: 4rem 0 6rem;
+        padding:4rem 0 6rem;
     }
     .banner-ttle{
         p{
@@ -20,39 +20,46 @@
         }
     }
     .field-sec{
-        margin-top: -3rem;
+        // margin-top: -3rem;
         @media (max-width:$sm) {
             margin-top: 0;
         }
     .tabs-btn{
         position: relative;
-        top: 6.5rem;
+        top: 5rem;
+        .tabs-list{
+            justify-content: center;
+            max-width: 58rem;
+            @media (max-width:$md) {
+                justify-content: flex-start;
+            }
+        }
         .list_group1 {
             background-color: $whiteColor;
             border-radius: 1.231rem;
             box-shadow: 0 3px 6px $tab-shadow;
             display: flex;
             flex-direction: row;
-            margin-bottom: 2.5rem;
-            margin-top: 1rem;
+            // margin-bottom: 2.5rem;
+            // margin-top: 1rem;
             padding: 0.5rem;
             .list-group-item {
-                    background: $whiteColor;
-                    border: none;
-                    border-radius: 1.375rem;
-                    color: $primary;
-                    cursor: pointer;
-                    font-family: $font-family-poppins-medium;
-                    font-size: 1.385rem;
-                    line-height: 2.077rem;
-                    padding: 0.5rem 1rem;
-                    text-align: center;
-                    text-decoration: none;
-                    width: 100%;
-                    &.active {
-                        background-color: rgba(0,102,178,.1);
-                        color: $bgcolor-blue;
-                    }
+                background: $whiteColor;
+                border: none;
+                border-radius: 1.375rem;
+                color: $primary;
+                cursor: pointer;
+                font-family: $font-family-poppins-medium;
+                font-size: 1.385rem;
+                line-height: 2.077rem;
+                padding: 0.5rem 1rem;
+                text-align: center;
+                text-decoration: none;
+                width: 100%;
+                &.active {
+                    background-color: rgba(0,102,178,.1);
+                    color: $bgcolor-blue;
+                }
                     
                     
                 }
@@ -74,7 +81,7 @@
                 justify-content: space-between;
                 .left-sec{
                     width: 56%;
-                    padding-top: 10rem;
+                    padding-top: 8rem;
                     @media (max-width:$md) {
                         width: 48%;
                         padding-top: 7rem;
@@ -99,6 +106,9 @@
                     @media (max-width:$md) {
                         padding-bottom: 3rem;
                     }
+                    @media (max-width:$sm) {
+                        padding-bottom: 3rem;
+                    }
                  }
                  .search-icon{
                     background: url(../../assets/images/brokerage-calculator/search.svg) no-repeat center right 13px ;
@@ -115,11 +125,8 @@
                 }
                 }
                 .calculate-btn{
-                    text-align: right;
+                    text-align: center;
                     padding-top: 1rem;
-                    @media (max-width:$md) {
-                        text-align: center;
-                    }
                     .btn-bg{
                         @media (max-width:$sm) {
                             width: 100%;

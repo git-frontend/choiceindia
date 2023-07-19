@@ -83,9 +83,12 @@
 }
 
 .banner-section{
+    @media (max-width:$md) {
+        padding: 0rem 0 6rem;
+    }
     .field-sec{
         @media (max-width:$sm) {
-            margin-top: 12rem;
+            margin-top: 20rem !important;
         }
         .content-tabs{
             .content{
@@ -111,6 +114,9 @@
                             justify-content: space-between !important;
                             flex-wrap: wrap;
                             align-items: flex-start;
+                            @media (max-width:$md) {
+                                padding-bottom: 1rem;
+                            }
                             @media (max-width:$sm) {
                                 padding-bottom: 0;
                             }
