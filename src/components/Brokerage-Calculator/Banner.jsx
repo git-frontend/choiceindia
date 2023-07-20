@@ -38,9 +38,13 @@ function Banner() {
   const [stateArray, setStateArray] = useState([{ 'name': 'Maharashtra', 'value': 6, 'cashIntraday': 0.002, 'cashDelivery': 0.01, 'fut': 0.002, 'opt': 0.002, 'currency': 0.002, 'commodity': 0.001, 'commodityFut': 0.002, 'commodityOpt': 0.003, 'max': '' }])
   const [scripDetail, setScripDetail] = useState('');
   const [newBrokerageObj, setNewBrokerageObj] = useState('');
+  
   useEffect(() => {
-    // getBrokerage();
+    getBrokerage();
     getSessionId();
+    if (brokerageObj.selectedScrip) {
+      getScriptDetail(brokerageObj.selectedScrip);
+    }
     // setBrokerageObj((prevState) => ({
     //   ...prevState,
     //   brokerageObj: {},
