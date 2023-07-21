@@ -106,7 +106,7 @@ function Contactdetail() {
                      <p className="text-center esctext ">For any grievances reach out to our <a variant="primary" onClick={() => { setShow(true); loadEscalation() }} className="cursor-pointer">
                         Escalation Matrix
                      </a></p>
-                     <p className="text-center esctext "><a href="#" target="_blank">Click here</a> for our KMPs Details</p>
+                     <p className="text-center esctext "><a href="https://choiceindia.com/assets/downloads/KMP.pdf" target="_blank">Click here</a> for our KMPs Details</p>
                   </div>
                </div>
 
