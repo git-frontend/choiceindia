@@ -97,7 +97,7 @@ function Banner() {
                                                 </div>
                                                 <div className="row-flex radio-section">
                                                     <div className="flex-items">
-                                                        <div class="custom_radio">
+                                                        <div className="custom_radio">
                                                            <div className='radio-flex'>
                                                                 <input type="radio" id="featured-1" name="featured" checked/>
                                                                 <label for="featured-1">BUY</label>
@@ -161,7 +161,7 @@ function Banner() {
                                         </div>
                                       <div className='table-margin-cal'>
                                       <div className='table-responsive'>
-                                        <table class="table table-striped ">
+                                        <table className="table table-striped ">
                                         <thead>
                                             <tr>
                                                 <th className='text-start'>Contract</th>
@@ -184,11 +184,11 @@ function Banner() {
                                                     <td className='text-end'>18,420.25</td>
                                                     <td className='text-end'>105,022.25</td>
                                                     <td className='text-center'>
-                                                        <div class="tooltip2">
-                                                            <svg class="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                        <div className="tooltip2">
+                                                            <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                             <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                             </svg>
-                                                            <span class="tooltiptext">Delete</span>
+                                                            <span className="tooltiptext">Delete</span>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -201,11 +201,11 @@ function Banner() {
                                                 <td className='text-end'>34,181.86</td>
                                                 <td className='text-end'>173,479.86</td>
                                                 <td className='text-center'>
-                                                    <div class="tooltip2">
-                                                        <svg class="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                    <div clclassNameass="tooltip2">
+                                                        <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                         <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                         </svg>
-                                                        <span class="tooltiptext">Delete</span>
+                                                        <span className="tooltiptext">Delete</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -218,11 +218,11 @@ function Banner() {
                                                 <td className='text-end'>25,855.20</td>
                                                 <td className='text-end'>166,845.20</td>
                                                 <td className='text-center'>
-                                                    <div class="tooltip2">
-                                                        <svg class="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                    <div className="tooltip2">
+                                                        <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                         <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                         </svg>
-                                                        <span class="tooltiptext">Delete</span>
+                                                        <span className="tooltiptext">Delete</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -235,11 +235,11 @@ function Banner() {
                                                 <td className='text-end'>25,855.20</td>
                                                 <td className='text-end'>572,032.77</td>
                                                 <td className='text-center'>
-                                                    <div class="tooltip2">
-                                                        <svg class="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                    <div className="tooltip2">
+                                                        <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                         <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                         </svg>
-                                                        <span class="tooltiptext">Delete</span>
+                                                        <span className="tooltiptext">Delete</span>
                                                     </div>
                                                 </td>
                                             </tr>
