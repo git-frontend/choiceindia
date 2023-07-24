@@ -14,7 +14,7 @@ function Benefits() {
   return (
     <div>
       
-      <section className="get-start">
+      {/* <section className="get-start">
         <div className="container">
             <div className="row">
                 <div className="col-md-12">
@@ -30,7 +30,7 @@ function Benefits() {
         </div>
     </section>
 
-    
+     */}
     <section className="ins-benefits">
         <div className="container">
             <div className="row">
