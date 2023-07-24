@@ -480,7 +480,7 @@ function Banner() {
           console.log("brokerageObj.buyValue", brokerageObj.buyValue)
         }
 
-        Object.assign(newBrokerageObj, brokerageObj);
+        // Object.assign(newBrokerageObj, brokerageObj);
         setNewBrokerageObj(newBrokerageObj);
       } else {
 
