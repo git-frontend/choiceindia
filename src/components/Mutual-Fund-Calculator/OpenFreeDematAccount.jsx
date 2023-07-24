@@ -47,11 +47,9 @@ function OpenFreeDematAccount() {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className='benifits-section'>
                                     <div className='men'>
-                                        <LazyLoader src={Img1} height={374} width={302} class="img-fluid" />
+                                        <LazyLoader src={Img1} height={374} width={302} className="img-fluid" />
                                     </div>
-                                </div>
                                 </div>
                             </div>
                             <div className='right-items'>
