@@ -201,7 +201,7 @@ function Banner() {
                                                 <td className='text-end'>34,181.86</td>
                                                 <td className='text-end'>173,479.86</td>
                                                 <td className='text-center'>
-                                                    <div clclassNameass="tooltip2">
+                                                    <div className="tooltip2">
                                                         <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                         <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                         </svg>
