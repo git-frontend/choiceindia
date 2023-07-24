@@ -88,7 +88,7 @@ function Footer() {
                               </NavLink>
                             </li>
                             <li>
-                              <NavLink to="/choice-insurance" className="cursor-pointer" >Insurance</NavLink>
+                              <NavLink to="/services#Insurance" className="cursor-pointer">Insurance</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/loan" >Loans</NavLink>
@@ -265,7 +265,7 @@ function Footer() {
                     </p>
                     <p>
                       <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024 
-                      | Category : Direct ( Life &amp; General ) - Principal Officer : Vinod Kukreti 022-69092436<br />
+                      | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
                       For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> </p>
 

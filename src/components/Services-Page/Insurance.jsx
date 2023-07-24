@@ -48,7 +48,7 @@ function Insurance() {
                                     <p>Get accidental damage cover, third party car insurance, comprehensive car insurance, as per your needs.</p>
                                 </div>
                             </div>
-                            <a href="/choice-insurance" target="blank" className="btn-bg">Explore</a>
+                            <a href="https://choiceinsurance.in/" target="blank" className="btn-bg">Explore</a>
                         </div>
                     </div>
 
