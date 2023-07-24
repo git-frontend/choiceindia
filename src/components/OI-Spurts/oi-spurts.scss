@@ -244,6 +244,9 @@
                                 line-height: 1.5;
                                 color: $primary;
                                 padding: 0.5rem 1rem;
+                               &:active{
+                                background: $whiteColor;
+                               }
                             }
                         }
                         

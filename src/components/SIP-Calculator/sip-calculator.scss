@@ -63,10 +63,10 @@
                 .form-control2{
                     position: relative;
                     background: $whiteColor;
-                    border: 2px solid $stockboxshadow;
+                    border: 1px solid $stockboxshadow;
                     border-radius: 8px;
                     &:focus{
-                        border: 2px solid $pricolor;
+                        border: 1px solid $pricolor;
                     }
                 .rupees-symble{
                     position: absolute;
