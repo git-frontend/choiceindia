@@ -110,7 +110,7 @@ const LazyTermsConditions = React.lazy(() => import('./components/Terms-Conditio
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
 const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
 const LazyBrokerageCharges = React.lazy(() => import('./components/Brokerage/BrokerageCharges'));
-// const LazyInsurance = React.lazy(() => import('./components/Insurance/Insurance'));
+const LazyInsurance = React.lazy(() => import('./components/Insurance/Insurance'));
 const LazyFileDownload = React.lazy(() => import('./components/FilesDownload/FileDownload'));
 const LazyEquityBroking = React.lazy(() => import('./components/Equity-Broking/EquityBrokingMain'));
 const LazyBoardOfDirectors = React.lazy(() => import('./components/BoardOfDirector/BoardOfInvestor'));
@@ -514,11 +514,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        {/* <Route exact path='/insurance' element={
+                        <Route exact path='/choice-insurance' element={
                             <React.Suspense>
                                 < LazyInsurance />
                             </React.Suspense>
-                        } /> */}
+                        } />
                         <Route exact path='/file-download' element={
                             <React.Suspense>
                                 < LazyFileDownload />
