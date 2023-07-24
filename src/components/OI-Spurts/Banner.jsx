@@ -38,7 +38,7 @@ function Banner() {
            
             </div>
         </section>
-        <section className='banner-section'>
+        <section className='banner-section2'>
                 <div className='container'>
                 <div className='main-sec'>
                     <div className='row'>
