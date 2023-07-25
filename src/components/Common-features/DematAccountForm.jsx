@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import "./demat-form.scss"
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import OpenDemateAccountPopup from './OpenDemateAccountPopup.jsx';
@@ -32,6 +32,8 @@ function DematAccountForm(props) {
     const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     const [referID, setReferID] = useState('');
+
+    const location = useLocation();
 
 
     const webcheck = ((window.location.pathname.indexOf('campaign/commodity-trading') > -1) || (window.location.pathname.indexOf('campaign/forex-trading') > -1))||(window.location.pathname.indexOf('campaign/trading-strategies') > -1)||(window.location.pathname.indexOf('campaign/hindi/trading-strategies') > -1)||(window.location.pathname.indexOf('technical-analysis') > -1)||(window.location.pathname.indexOf('futures-options-trading') > -1)? 'campaign' : " ";
@@ -71,6 +73,64 @@ function DematAccountForm(props) {
 
     const { executeRecaptcha } = useGoogleReCaptcha();
 
+       /**to show consent popup */
+       const [consent, setShowConsent] = useState(false);
+
+    /**variable for loaders */
+    const [consentLoaders, setConsentLoaders] = useState({
+        consentYesLoader: false,
+        consentNoLoader: false
+    });
+
+    /**Error variable for consent */
+    const [consentError, setConsentErrors] = useState();
+
+    var otpLeadID = useRef('');
+    var referLink = useRef('');
+
+    const[showRefMsg, setShowRefMsg] = useState();
+
+    /**on click no consent */
+    function submitConsent(consent) {
+
+        
+        if (consent == 'yes') {
+            setConsentLoaders({ ...consentLoaders, consentYesLoader: true, consentNoLoader: false });
+        } else {
+            setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: true });
+        }
+
+        let request = {
+            "mobile_number": null,
+            otp: null,
+            session_id: null,
+            is_consent: consent ? consent : null,
+            lid: otpLeadID.current ? otpLeadID.current : null
+        };
+
+        openAccountService.verifyOTP(request, "JF").then((res) => {
+            if (res && res.status === 200 && res.data && res.data.Body) {
+                setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+                console.log('Success', res);
+                if (consent == "yes") {
+                    window.location.href = referLink.current ? referLink.current : null;
+                }else{
+                    setShowConsent(() => false);
+                }
+                // }
+            } else {
+                setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+                setConsentErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something Went Wrong');
+            }
+        }).catch((error) => {
+            setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+            if (error && error.response && error.response.data && error.response.data.Message) {
+                setConsentErrors(error.response.data.Message);
+            } else {
+                setConsentErrors('Something Went Wrong.');
+            }
+        });
+    }
 
     // useEffect(() => {
     //     console.log('PRR',props.language)
@@ -90,6 +150,8 @@ function DematAccountForm(props) {
 
     /**function executes to close the ad popup */
     function hideOpenAccountAdPopup(showAdValues) {
+
+        if(showAdValues.actionType != 'popup_and_no_update'){
         if (showAdValues.link) {
             setShowThanku(prevState => {
                 return { ...prevState, showModal: true, redirectionLink: showAdValues?.link, resText: showAdValues?.msg, isOnboarding: showAdValues?.info, closeMd: closeModal }
@@ -97,6 +159,11 @@ function DematAccountForm(props) {
         }
         setShowOpenAccountPopup(false);
         callOpenAccountAdPopupAgain();
+    }else{
+        referLink.current = showAdValues.link? showAdValues.link : null;
+        otpLeadID.current = showAdValues.leadId? showAdValues.leadId : null;
+        setShowConsent(() => true)
+    }
     }
 
     function callOpenAccountAdPopupAgain() {
@@ -155,9 +222,10 @@ function DematAccountForm(props) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link, msg, info) {
+    function handleOTPClose(link, msg, info, actionType, leadID) {
         setShowOTP(false);
 
+        if(actionType != 'popup_and_no_update'){
         if (link) {
 
             let result = link.match("respond-issue");
@@ -182,7 +250,12 @@ function DematAccountForm(props) {
                 return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
             });
         }
-
+    }else{
+        referLink.current = link? link : null;
+        otpLeadID.current = leadID? leadID : null;
+        setShowRefMsg(() => msg? msg : '');
+        setShowConsent(() => true)
+    }
         // closeModal(link);
     }
 
@@ -268,7 +341,7 @@ function DematAccountForm(props) {
             "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
             "utm_source": UTMSource.current || 'blog_leads',
             "utm_term": UTMTerm.current || null,
-            "utm_custom": UTMCustom.current || null,
+            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             "utm_content": UTMContent.current || null
         };
 
@@ -602,7 +675,7 @@ function DematAccountForm(props) {
             {
                 (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></OpenDemateAccountStickyFooter> : ''
             }
-            <div className="demat-account-form" id="dematform">
+            <div className={window.location.pathname.indexOf('open-free-demat-account-app') > -1 ? 'demat-account-form app-dmt-page': 'demat-account-form'} id="dematform">
 
                 <h2 className="form-ttl">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'title')}</h2>
                 <Form>
@@ -808,6 +881,43 @@ function DematAccountForm(props) {
             {
                 showThanku.showModal ? <Thankyoupopup isShow={showThanku} /> : ''
             }
+
+            {/* for referral code */}
+            <Modal className="bt-strap-mdl otp-main-modal Referral-code-model" show={consent} onHide={() => { setShowConsent(false) }} backdrop='static' keyboard={false}>
+                <Modal.Header className="border-0" closeButton>
+                </Modal.Header>
+                <Modal.Body className="border-0">
+                    <div className="exit-intent-sleekbox-overlay sleekbox-popup-active referral-overlay">
+                        <div className="exit-intent-sleekbox-popup">
+                            <div className="popup-sub-row">
+                                <div className="popup-sub-right">
+                                    <div>
+                                        <p className="heading">Dear Investor</p>
+                                        <p className="subheading mb-3 mb-sm-0">{showRefMsg ? showRefMsg : 'Your mobile number is already associated with another refercode. To proceed with your onboarding, please select one of the following options:'}</p>
+                                    </div>
+                                    <div className="btnwrap">
+                                        <button className="btn-bg btn-bg-dark sendbtn btn btn-primary referral-btn referral-btn-hover" onClick={() => { consentLoaders.consentNoLoader ? null : submitConsent('no') }} disabled={consentLoaders.consentYesLoader}>
+                                            {
+                                                consentLoaders.consentNoLoader ?
+                                                    <div className="loaderB mx-auto"></div> : <span>No, Cancel Onboarding and Connect RM</span>
+                                            }
+                                        </button>
+                                        <button className="btn-bg referral-btn" onClick={() => { consentLoaders.consentYesLoader ? null : submitConsent('yes') }} disabled={consentLoaders.consentNoLoader}>
+                                            {
+                                                consentLoaders.consentYesLoader ?
+                                                    <div className="loaderB mx-auto"></div> : <span>Yes, continue with Existing Referral Code</span>
+                                            } </button>
+                                    </div>
+                                    {
+                                        consentError ?
+                                        <span class="text-danger">{consentError}</span> : ''
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
         </>
     );
 }

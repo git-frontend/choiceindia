@@ -60,7 +60,7 @@ function Holidayscategory() {
       checkurl == 'bse-holidays'? setToggleState(2):
 
       checkurl == 'mcx-ncdex-holidays'? setToggleState(3):
-      // console.log(holidaylist)
+      console.log(holidaylist)
       FilterMonth()
       OtherHolidays()
 

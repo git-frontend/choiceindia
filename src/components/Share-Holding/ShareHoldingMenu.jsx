@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import shareHoldingService from "../../Services/ShareHoldingService";
+import cmsService from "../../Services/cmsService";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Common-features/Navbar';
@@ -18,7 +18,7 @@ function ShareHoldingMenu() {
     const [trigger, setTrigger] = useState(false);
     const [isloading, setisloading] = useState(true);
     function loadSharepdf() {
-        shareHoldingService.ShareHolding().then(
+        cmsService.ShareHolding().then(
             res => {
                 if (res) {
                     setisloading(false);

@@ -30,6 +30,8 @@ function AppBannerBottom() {
           slidesToScroll: 1,
           vertical: false,
           autoplaySpeed: 3000,
+          adaptiveHeight: false,
+          dots: true,
         }
       }
       
@@ -44,7 +46,7 @@ function AppBannerBottom() {
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-md-10'>
-              <div className="app-trade-easy-div row align-items-top">
+              <div className="app-trade-easy-div row align-items-top colum-revers">
 
 
 

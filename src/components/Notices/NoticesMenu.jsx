@@ -4,7 +4,7 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
-import noticesService from "../../Services/NoticesService";
+import cmsService from "../../Services/cmsService";
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
@@ -17,7 +17,7 @@ function NoticesMenu() {
 
 
     function loadnewspdf() {
-        noticesService.Notices().then(
+        cmsService.Notices().then(
             res => {
                 if (res) {
                     setisloading(false);
@@ -39,7 +39,7 @@ function NoticesMenu() {
 
 
     function loadnewsRpdf() {
-        noticesService.NoticesRight().then(
+        cmsService.NoticesRight().then(
             res => {
                 if (res) {
                     setList(res.data.data);

@@ -622,7 +622,7 @@ function SubBrokerForm(props) {
             "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog':UTMMedium.current || null,
             "utm_campaign":isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads':UTMCampaign.current || null,
             "utm_term": UTMTerm.current || null,
-            "utm_custom": UTMCustom.current || null,
+            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             "utm_content": UTMContent.current || null,
             "whatsappConsent": true,
             "master_service_name":"CBA", 

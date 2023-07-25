@@ -277,7 +277,7 @@ function NewDematAccountForm(props) {
             "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
             "utm_source": UTMSource.current || 'blog_leads',
             "utm_term": UTMTerm.current || null,
-            "utm_custom": UTMCustom.current || null,
+            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             "utm_content": UTMContent.current || null
         };
 
@@ -321,7 +321,7 @@ function NewDematAccountForm(props) {
             // 'seo_demat_leads'
             "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || null,
             "utm_content": UTMContent.current || null,
-            "utm_custom": UTMCustom.current || null,
+            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             // 'sidebar_seo_leads'
             "utm_medium": isBlog == "yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
@@ -538,6 +538,10 @@ function NewDematAccountForm(props) {
                                         errors.required ? <Form.Control.Feedback type="invalid">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'reqmob')}</Form.Control.Feedback> : ''
                                     }
                                     {/* <span className="state-code">+91</span> */}
+                                </div>
+                                <div className="sub-formgrp new-sub-formgrp">
+                                    <Form.Control pattern="[a-zA-Z0-9]*" name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                                
                                 </div>
                               
                                 <div key="inline-checkbox" className="sub-formgrp cust-checkbox">

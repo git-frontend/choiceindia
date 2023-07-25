@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect}from "react";
+import React,{useState,useRef, useEffect}from "react";
 import "./css/landingpage.scss";
 import img_data from './ImgData.js';
 import DematAccountForm from "../Common-features/DematAccountForm";
@@ -9,9 +9,6 @@ import meta_tags from "../../Data/MetaTags";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Slider from "react-slick";
 function Opendemat(){
-    
-  
-
   var UTMCampaign = useRef('');
   var UTMMedium = useRef('');
   var UTMSource = useRef('');
@@ -20,7 +17,6 @@ function Opendemat(){
   /**to set the skeleton */
   const [skeleton, setSkeleton] =useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-  const [isCheck, setIsCheck] = useState(false);
   const[ischeck,setIscheck]=useState(false);
   const location = useLocation();
   const [view, setView] = useState({
@@ -136,21 +132,6 @@ function Opendemat(){
 
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-        }
-
-    }
-}
-const myRef1 = useRef(null);
-
   return (
     <div className="Home" id="root">
       <div>
@@ -159,7 +140,6 @@ const myRef1 = useRef(null);
         <Template2 />
          :
             <main>
-              <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
               <section className="bannersection" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                   <div className="row  align-items-center">
@@ -202,10 +182,6 @@ const myRef1 = useRef(null);
                     </div>
                 </div>
               </section>
-              </div>
-              {
-                isCheck ?
-                <div>
               <section className="tablecontent" id="showForm">
                 <div className="container">
                   <div className="row  align-items-center">
@@ -449,7 +425,6 @@ const myRef1 = useRef(null);
                   </div>
                 </div>
               </section>
-
               <section className='dematacount'>
                 <div className='container'>
                   <div className='row' id="ChapterOne">
@@ -1421,17 +1396,9 @@ const myRef1 = useRef(null);
                 </div>
 
               </section>
-
               <section className="demat-cam-page-new">
                 <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
-
               </section>
-              </div>
-            :
-            ""
-          }
-             
-
             </main>
         }
       </div>

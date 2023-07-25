@@ -5,7 +5,7 @@ import BrokerageAccountOpeningProcess from "./BrokerageAccountOpeningProcess";
 import LowBrokerageAccount from "./LowBrokerageAccount";
 import BrokerageWhyChoice from "./BrokerageWhyChoice";
 import BrokerageFaq from "./BrokerageFaq";
-import {useState,useEffect,useRef} from 'react';
+import {useState,useEffect} from 'react';
 import {
     useLocation,
   } from 'react-router-dom';
@@ -13,12 +13,8 @@ import {
   import { Link } from 'react-router-dom';
   
 function OpenBrokerageAccount() {
-
-    const [isCheck, setIsCheck] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
-
     const location = useLocation();
-
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
@@ -41,37 +37,16 @@ function OpenBrokerageAccount() {
           }
         }
       }, [rendercount])
-      useEffect(() => {
-        window.addEventListener('scroll', getPositionnew);
-    }, []);
-      const getPositionnew = () => {
-        const element = document.getElementById("branch1");
-        if (element) {
-            const rect = element.getBoundingClientRect();
-            if (rect.top.toFixed() < 300) {
-                setIsCheck(true);
-            }
-    
-        }
-    }
-    const myRef1 = useRef(null);
+     
     return (
         <>
-            {/* Open Brokerage Account
-            <DematAccountForm></DematAccountForm> */}
-            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
             <OpenbrokerageAccountBanner />
-            </div>
-            {
-              isCheck ?
-            <div>   
             <WhyOpenBrokrageAccount />
             <BrokerageWhyChoice />
             <LowBrokerageAccount />
             <BrokerageAccountOpeningProcess />
             <BrokerageFaq />
             <section className="readmoresection">
-
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -166,10 +141,6 @@ function OpenBrokerageAccount() {
                 </div>
 
             </section>
-            </div>   
-            :
-             ""
-           }
         </>
     );
   }

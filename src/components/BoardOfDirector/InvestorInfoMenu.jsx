@@ -28,21 +28,39 @@ function InvestorInfoMenu() {
     const [isloading,setisloading ] = useState(true);
 
     const [view, setView] = useState({
-        matches: window.innerWidth < 767 ? false : true,
+        matches: window.innerWidth < 992 ? false : true,
     });
 
 // console.log(BoardOfDirector)
 
     const settings = {
         infinite: true,
-        speed: 1500,
+        speed: 2000,
         arrows: false,
         slidesToShow: 4,
         autoplay: true,
+        margin: 15,
         dots: true,
-        autoplaySpeed: 3000,
-        slidesToScroll: 1,
-
+        autoplaySpeed: 800,
+        slidesToScroll: 2,
+        responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                adaptiveHeight: true,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+      
+              },
+            },
+          ],
     };
 
     function closesection(){
@@ -106,8 +124,6 @@ function InvestorInfoMenu() {
 
                     </div>
                     <div className="row">
-                        
-                       
                         <div className="col-md-12">
 
                             {
@@ -231,7 +247,7 @@ function InvestorInfoMenu() {
 
                     </div>
 
-                    <div className=" d-flex justify-content-center cursor-pointer btnshow">{show ? <a onClick={() => { setshow(false) }}><span className="btn-bg">View Less</span></a> : <a onClick={() => { setshow(true) }}><span className="btn-bg">View More</span></a>}</div>
+                    {/* <div className=" d-flex justify-content-center cursor-pointer btnshow">{show ? <a onClick={() => { setshow(false) }}><span className="btn-bg">View Less</span></a> : <a onClick={() => { setshow(true) }}><span className="btn-bg">View More</span></a>}</div> */}
                 </div>
 
 

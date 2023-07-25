@@ -191,7 +191,7 @@ export class API_URLS {
   
 //   newsURL='items/news?filter[status][_eq]=published&limit=1000&sort[]=-id';
   newsURL='items/news?filter[status][_eq]=published&sort[]=-news_dates&limit=1000';
-  noticeURL ='items/notices?filter[status][_eq]=published&filter[type][_eq]=description&limit=1000&sort[]=id';
+  noticeURL ='items/notices?filter[status][_eq]=published&filter[type][_eq]=description&limit=1000&sort[]=-id';
   noticeRightURL = 'items/notices?filter[status][_eq]=published&filter[type][_eq]=right_issues&limit=1000&sort[]=id';
   corporateURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=policies&limit=1000&sort[]=id';
   corporatecommiteeURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=committee&limit=1000&sort[]=id';
@@ -224,6 +224,10 @@ export class API_URLS {
     contentUrl ='items/stock_broker_city?limit=1000&sort[]=id'
     /** sub broker city */
     cityUrl = 'items/sub_broker_branch_city?limit=1000&sort[]=id'
+    /** company IPO */
+    companyIpo ='items/Company_ipo?limit=1000&sort[]=id'
+    /** blog owner */
+    insightsURL = 'items/Blog??filter[status][_eq]=Published&limit=1000&sort[]=id'
 
 
 
@@ -548,18 +552,22 @@ export class API_URLS {
     }
     getSendOTPURL() {
         return this.SSOServerURL + this.sendOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.sendOTPURL;
     }
 
     getOTPOnCallURL() {
         return this.SSOServerURL + this.OTPOnCallURL;
+        // return "https://sso-beta.choiceindia.com/" + this.OTPOnCallURL;
     }
 
     getResendOTPURL() {
         return this.SSOServerURL + this.resendOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.resendOTPURL;
     }
 
     getVerifyOTPURL() {
         return this.SSOServerURL + this.verifyOTPURL;
+        // return "https://sso-beta.choiceindia.com/" + this.verifyOTPURL;
     }
 
     getSendInvesOTPURL() {
@@ -877,5 +885,14 @@ export class API_URLS {
     //for event deatils
     getEventDetails(){
         return this.performanceURL + this.eventdetailsURL;
+    }
+ /** Company ipo */
+    companyIpoURL(){
+        return this.CMSURL + this.companyIpo
+    }
+
+    /** Blog cms */
+    getinsightsURL(){
+        return this.CMSURL + this.insightsURL
     }
 }

@@ -7,18 +7,15 @@ import HindiDematAccountOpeningProcess from "./HindiTradingAccountOpeningProcess
 import HindiLowBrokerageDematAccount from "./HindiLowBrokerageTradingAccount";
 import HindiWhyChoice from "./HindiTradingWhyChoice";
 import HindiTradingFaq from "./HindiTradingFaq";
-import { useState, useEffect,useRef } from 'react';
+import { useState, useEffect } from 'react';
 import {
     useLocation,
   } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
   import { Link } from "react-router-dom";
 function OpenTradingAccountHindi() {
-    const [isCheck, setIsCheck] = useState(false)
     const [rendercount, setRenderCount] = useState(() => false);
-
     const location = useLocation();
-
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
@@ -73,38 +70,17 @@ function OpenTradingAccountHindi() {
 
         }
       }, [rendercount])
-      useEffect(() => {
-        window.addEventListener('scroll', getPositionnew);
-    }, []);
-      const getPositionnew = () => {
-        const element = document.getElementById("branch1");
-        if (element) {
-            const rect = element.getBoundingClientRect();
-            if (rect.top.toFixed() < 300) {
-                setIsCheck(true);
-            }
-    
-        }
-    }
-    const myRef1 = useRef(null);
 
     return (
         <>
-            {/* <p>Open Trading Account Hindi</p>
-            <DematAccountForm></DematAccountForm> */}
-            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
-              <HindiOpenFreeAccountBanner />
-            </div>
-            {
-                isCheck ?
-                <div>
+          
+            <HindiOpenFreeAccountBanner />
             <HindiWhyOpenFreeDematAccount />
             <HindiWhyChoice />
             <HindiLowBrokerageDematAccount />
             <HindiDematAccountOpeningProcess />
             <HindiTradingFaq />
             <section className="readmoresection">
-
                 <div className="container">
                     <div className="row">
                         <div className="col-md-11 col-md-offset-1">
@@ -231,9 +207,6 @@ function OpenTradingAccountHindi() {
                 </div>
 
             </section>
-            </div>
-            :""
-            }
         </>
     );
 }

@@ -13,10 +13,9 @@ import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-import { useEffect,useState,useRef } from "react";
+import { useEffect,useState} from "react";
 
 function SubBroker() {
-  const [isCheck, setIsCheck] = useState(false);
   const [skeleton, setSkeleton] = useState(() => true);
   // const myTimeout = setTimeout(myGreeting, 900);
   // function myGreeting() {
@@ -101,20 +100,7 @@ function SubBroker() {
   // document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
   // document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
   // // document.body.appendChild(doc.getElementsByTagName('script')[0]);
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-        }
 
-    }
-}
-const myRef1 = useRef(null);
   return (
     <div>
 
@@ -122,26 +108,15 @@ const myRef1 = useRef(null);
         skeleton ? <Template5 /> :
 
           <div className="sub-broker-skeleton-parent">
-            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
-             <BannerSBrokerMarathi />
-            </div>
-            {
-              isCheck ?
-            <div>
-          
+            <BannerSBrokerMarathi />
             <SubBrokerBenifitsMarathi />
             <SubBrokerSellMoreMarathi />
             <WhyBecomeSubBrokerMarathi />
             <WhoEligibleToSubBrokerMarathi />
             <SubBrokerOffersMarathi />
             {/* <MoreContentMarathi /> */}
-            </div>
-            :
-            ""
-          }
           </div>
       }
-
     </div>
   );
 }

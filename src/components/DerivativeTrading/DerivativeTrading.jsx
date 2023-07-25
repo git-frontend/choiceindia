@@ -9,12 +9,10 @@ import DerivativeTradingFaq from "./DerivativeTradingFaq";
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
 import MoreContent from './MoreContent';
-import { useState,useEffect,useRef } from "react";
+import { useState,useEffect} from "react";
 
 function DerivativeTrading() {
-  const [isCheck, setIsCheck] = useState(false);
   const [rendercount, setRenderCount] = useState(() => false);
-
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -37,34 +35,10 @@ function DerivativeTrading() {
       }
     }
   }, [rendercount])
-
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-        }
-
-    }
-}
-const myRef1 = useRef(null);
-
-  
   return (
   
-    
-     
           <div className="demat-page-parent">
-            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
-              <DerivativeTradingBanner />
-            </div>
-            {
-                isCheck ?
-            <div> 
+            <DerivativeTradingBanner />
             <WhyOpenDerivativeTrading />
             <WhyDerivativeTrading />
             <LowBrokerageDerivativeTrading />
@@ -210,10 +184,6 @@ const myRef1 = useRef(null);
               </div>
 
             </section> */}
-          </div>
-          :
-          ""
-          }
           </div>
     
   );

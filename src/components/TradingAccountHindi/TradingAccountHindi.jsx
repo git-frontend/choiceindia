@@ -8,9 +8,8 @@ import HindiLowBrokerageDematAccount from "./HindiLowBrokerageTradingAccount";
 import HindiWhyChoice from "./HindiTradingWhyChoice";
 import HindiTradingFaq from "./HindiTradingFaq";
 import meta_tags from "../../Data/MetaTags";
-import { useState,useEffect,useRef } from "react";
+import { useState,useEffect} from "react";
 function TradingAccountHindi() {
-    const [isCheck, setIsCheck] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
@@ -35,37 +34,16 @@ function TradingAccountHindi() {
       }
     }
   }, [rendercount])
-  useEffect(() => {
-    window.addEventListener('scroll', getPositionnew);
-}, []);
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top.toFixed() < 300) {
-            setIsCheck(true);
-        }
-
-    }
-}
-const myRef1 = useRef(null);
+ 
     return (
         <>
-            {/* <p>Open Trading Account Hindi</p>
-            <DematAccountForm></DematAccountForm> */}
-            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
-                <HindiOpenFreeAccountBanner />
-            </div>
-            {
-                isCheck ?
-            <div> 
+            <HindiOpenFreeAccountBanner />
             <HindiWhyOpenFreeDematAccount />
             <HindiWhyChoice />
             <HindiLowBrokerageDematAccount />
             <HindiDematAccountOpeningProcess />
             <HindiTradingFaq />
             <section className="readmoresection">
-
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -190,10 +168,6 @@ const myRef1 = useRef(null);
                 </div>
 
             </section>
-            </div>
-            :
-            ""
-            }
         </>
     );
 }

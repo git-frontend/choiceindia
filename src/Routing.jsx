@@ -176,6 +176,9 @@ const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Op
 // const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/UpcomingAGM'));
+const LazyBlogCms =React.lazy(()=> import('./components/Blog-cms/BlogCms'));
+const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'))
+
 
 function Routing() {
 
@@ -506,7 +509,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        {/* <Route exact path='/insurance' element={
+                        {/* <Route exact path='/choice-insurance' element={
                             <React.Suspense>
                                 < LazyInsurance />
                             </React.Suspense>
@@ -888,7 +891,18 @@ function Routing() {
                                 < LazyUpcomingAGM />
                             </React.Suspense>
                         } />
+                        
+                         <Route exact path='/insights/:id' element={
+                            <React.Suspense>
+                                < LazyBlogCms />
+                            </React.Suspense>
+                        } />
                        
+                       <Route exact path='/ipo/:id' element={
+                            <React.Suspense>
+                                < LazyIPOLanding />
+                            </React.Suspense>
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

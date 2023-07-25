@@ -6,7 +6,7 @@ import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import "../Annual-Report/annual-report.scss";
-import transactionService from "../../Services/TransactionService";
+import cmsService from "../../Services/cmsService";
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import { Accordion } from "react-bootstrap";
@@ -20,7 +20,7 @@ function TransactionMenu() {
     const [trigger, setTrigger] = useState(false);
 
     function loadTransactionpdf() {
-        transactionService.Transaction().then(
+        cmsService.Transaction().then(
             res => {
                 if (res) {
                     setisloading(false);

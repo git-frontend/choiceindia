@@ -136,7 +136,11 @@
 		color: #0066B3 !important;
 		font-size: 1.2rem;
 	}
-
+	.new-sub-formgrp{
+		.formcontrol {
+			padding:1.4rem 1rem;
+		}
+	}
 	.sub-fromgrp2 {
 		.formcontrol {
 			border-style: dashed;
