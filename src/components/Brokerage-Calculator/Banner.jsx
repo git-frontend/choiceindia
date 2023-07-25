@@ -40,16 +40,10 @@ function Banner() {
   const [newBrokerageObj, setNewBrokerageObj] = useState('');
   
   useEffect(() => {
-    getBrokerage();
     getSessionId();
     if (brokerageObj.selectedScrip) {
       getScriptDetail(brokerageObj.selectedScrip);
     }
-    // setBrokerageObj((prevState) => ({
-    //   ...prevState,
-    //   brokerageObj: {},
-    // }));
-    // setNewBrokerageObj({});
   }, [])
 
 
@@ -89,56 +83,96 @@ function Banner() {
   }
 
   // For script selected
-  function onUlScroll(event) {
-    const target = event.target;
-    if (
-      target.scrollTop + target.clientHeight >= target.scrollHeight &&
-      brokerageObj.searchInput &&
-      brokerageObj.searchInput.length >= 3 &&
-      brokerageObj.datalength === 10
-    ) {
-      setBrokerageObj(prevState => ({
-        ...prevState,
-        startPos: prevState.startPos + 10,
-      }));
+  // function onUlScroll(event) {
+  //   const target = event.target;
+  //   if (
+  //     target.scrollTop + target.clientHeight >= target.scrollHeight &&
+  //     brokerageObj.searchInput &&
+  //     brokerageObj.searchInput.length >= 3 &&
+  //     brokerageObj.datalength === 10
+  //   ) {
+  //     setBrokerageObj(prevState => ({
+  //       ...prevState,
+  //       startPos: prevState.startPos + 10,
+  //     }));
 
-      let data = {
-        strScripName: brokerageObj.searchInput,
-        StartPos: brokerageObj.startPos + 10,
-        NoOfRecords: 10,
-      };
+  //     let data = {
+  //       strScripName: brokerageObj.searchInput,
+  //       StartPos: brokerageObj.startPos + 10,
+  //       NoOfRecords: 10,
+  //     };
 
-      rest.getSearchData(data).then(res => {
-        if (res.Status === "Success" && res.Response) {
-          // console.log("getSearchData", res);
-          setBrokerageObj(prevState => ({
-            ...prevState,
-            datalength: res.Response.length,
-            tableValue: [...prevState.tableValue, ...res.Response],
-          }));
-        } else {
-          setBrokerageObj(prevState => ({
-            ...prevState,
-            tableValue: [],
-          }));
-        }
-      });
-    }
-  }
+  //     rest.getSearchData(data).then(res => {
+  //       if (res.Status === "Success" && res.Response) {
+  //         // console.log("getSearchData", res);
+  //         setBrokerageObj(prevState => ({
+  //           ...prevState,
+  //           datalength: res.Response.length,
+  //           tableValue: [...prevState.tableValue, ...res.Response],
+  //         }));
+  //       } else {
+  //         setBrokerageObj(prevState => ({
+  //           ...prevState,
+  //           tableValue: [],
+  //         }));
+  //       }
+  //     });
+  //   }
+  // }
+// For script selected
+// function onUlScroll(event) {
+//   const target = event.target;
+//   if (
+//     target.scrollTop + target.clientHeight >= target.scrollHeight &&
+//     brokerageObj.searchInput &&
+//     brokerageObj.searchInput.length >= 3 &&
+//     brokerageObj.datalength === 10
+//   ) {
+//     setBrokerageObj(prevState => ({
+//       ...prevState,
+//       startPos: prevState.startPos + 10,
+//     }));
 
+//     let data = {
+//       strScripName: brokerageObj.searchInput,
+//       StartPos: brokerageObj.startPos + 10,
+//       NoOfRecords: 10,
+//     };
+
+//     rest.getSearchData(data).then(res => {
+//       if (res.Status === "Success" && res.Response) {
+//         // console.log("getSearchData", res);
+//         setBrokerageObj(prevState => ({
+//           ...prevState,
+//           datalength: res.Response.length,
+//           tableValue: [...prevState.tableValue, ...res.Response],
+//         }));
+//       } else {
+//         setBrokerageObj(prevState => ({
+//           ...prevState,
+//           tableValue: [],
+//         }));
+//       }
+//     }).then(() => {
+//       if (data.SegmentId && data.Token) {
+//         getScriptDetail(data);
+//       }
+//     });
+//   }
+// }
+
+ 
   // function getScriptDetail(data) {
-  //   // console.log("hg");
   //   let payload = {
   //     nMarketSegmentId: Number(data.SegmentId),
   //     nToken: Number(data.Token),
   //     UserId: 'guest'
   //   };
-
+  
   //   rest.getScripDetails(payload).then(res => {
   //     if (res.Status === "Success" && res.Response) {
-  //       onSelectionScrip(data);
   //       setScripDetail(res.Response);
-  //       // console.log("gfg", res.Response)
+  //       onSelectionScrip(data);
   //       closeList();
   //     } else {
   //       // Handle error
@@ -146,23 +180,26 @@ function Banner() {
   //   });
   // }
   function getScriptDetail(data) {
-    let payload = {
-      nMarketSegmentId: Number(data.SegmentId),
-      nToken: Number(data.Token),
-      UserId: 'guest'
-    };
+    if (data) {
+      let payload = {
+        nMarketSegmentId: Number(data.SegmentId),
+        nToken: Number(data.Token),
+        UserId: 'guest'
+      };
   
-    rest.getScripDetails(payload).then(res => {
-      if (res.Status === "Success" && res.Response) {
-        setScripDetail(res.Response);
-        onSelectionScrip(data);
-        closeList();
-      } else {
-        // Handle error
-      }
-    });
+      rest.getScripDetails(payload).then(res => {
+        if (res.Status === "Success" && res.Response) {
+          setScripDetail(res.Response);
+          onSelectionScrip(data);
+          closeList();
+          BrokerageCal();
+        } else {
+          // Handle error
+        }
+      });
+    }
   }
-  
+
   function closeList() {
     setBrokerageObj(prevState => ({
       ...prevState,
@@ -180,38 +217,41 @@ function Banner() {
     return rate;
   };
 
+ 
   function onSelectionScrip(item) {
-    setBrokerageObj(prevState => ({
+    setBrokerageObj((prevState) => ({
       ...prevState,
       selectedScrip: item,
       searchInput: ((item.SegmentId === 1 || item.SegmentId === 3) ? item.SecDesc : item.SecName) + ' ' + item.ExchangeSegment,
       brokerageRate: getDefaultBrokerageRate(item)
     }));
-
+  
     let payload = {
       UserId: 'guest',
       SessionId: Data1,
       MultipleTokens: item.SegmentId + '@' + item.Token
     };
-
-    rest.multipleTokensURLData(payload).then(res => {
+  
+    rest.multipleTokensURLData(payload).then((res) => {
       if (res.Status === "Success" && res.Response && res.Response.lMT && res.Response.lMT.length) {
-
-        setBrokerageObj(prevState => ({
+        setBrokerageObj((prevState) => ({
           ...prevState,
-          buyPrice: (res.Response.lMT[0].BBP || res.Response.lMT[0].LTP) / 100,
-          sellPrice: (res.Response.lMT[0].BSP || res.Response.lMT[0].LTP) / 100,
-          normalizingFactor: ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1),
+          buyPrice: decimalConversion(item.SegmentId, (res.Response.lMT[0].BBP || res.Response.lMT[0].LTP) / 100),
+          sellPrice: decimalConversion(item.SegmentId, (res.Response.lMT[0].BSP || res.Response.lMT[0].LTP) / 100),
+          normalizingFactor: ((prevState.PriceNum / prevState.PriceDen) || 1) * ((prevState.GenNum / prevState.GenDen) || 1),
           sellValue: (prevState.quantity * prevState.sellPrice * (res.Response.lMT[0].MarketLot || 1)) * prevState.normalizingFactor,
           buyValue: (prevState.quantity * prevState.buyPrice * (res.Response.lMT[0].MarketLot || 1)) * prevState.normalizingFactor,
           turnOver: prevState.sellValue + prevState.buyValue,
           brokerage: BrokerageCal(item),
-          GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
-        }));
-        getBrokerage();
+          GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100
+        }))
+        getBrokerage()
+        
       }
     });
+    
   }
+  
 
   const decimalConversion = (segmentId, data) => {
     if (data) {
@@ -238,52 +278,7 @@ function Banner() {
       });
   }
 
-  // const onQuantityChange = () => {
-  //   setBrokerageObj((prevState) => ({
-  //     ...prevState,
-  //     normalizingFactor:
-  //       ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) *
-  //       ((scripDetail.GenNum / scripDetail.GenDen) || 1),
-  //     sellValue:
-  //       (prevState.quantity * prevState.sellPrice * (prevState.selectedScrip?.MarketLot || 1)) *
-  //       prevState.normalizingFactor,
-  //     buyValue:
-  //       (prevState.quantity * prevState.buyPrice * (prevState.selectedScrip?.MarketLot || 1)) *
-  //       prevState.normalizingFactor,
-  //     turnOver:
-  //       (prevState.quantity * prevState.sellPrice * (prevState.selectedScrip?.MarketLot || 1)) *
-  //       prevState.normalizingFactor +
-  //       (prevState.quantity * prevState.buyPrice * (prevState.selectedScrip?.MarketLot || 1)) *
-  //       prevState.normalizingFactor,
-  //     brokerage: BrokerageCal(prevState.selectedScrip),
-  //     GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
-  //   }));
-
-  //     setBrokerageObj({ ...brokerageObj });
-  // }
-  // const onQuantityChange = () => {
-  //   setBrokerageObj((prevState) => ({
-  //     ...prevState,
-  //     normalizingFactor:
-  //       ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) *
-  //       ((scripDetail.GenNum / scripDetail.GenDen) || 1),
-  //     sellValue:
-  //       (prevState.quantity * prevState.sellPrice * (prevState.selectedScrip?.MarketLot || 1)) *
-  //       prevState.normalizingFactor,
-  //     buyValue:
-  //       (prevState.quantity * prevState.buyPrice * (prevState.selectedScrip?.MarketLot || 1)) *
-  //       prevState.normalizingFactor,
-  //     turnOver:
-  //       (prevState.quantity * prevState.sellPrice * (prevState.selectedScrip?.MarketLot || 1)) *
-  //       prevState.normalizingFactor +
-  //       (prevState.quantity * prevState.buyPrice * (prevState.selectedScrip?.MarketLot || 1)) *
-  //       prevState.normalizingFactor,
-  //     brokerage: BrokerageCal(prevState.selectedScrip),
-  //     GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
-  //   }));
-
-  //   setNewBrokerageObj((prevState) => ({ ...prevState }));
-  // }
+  
   const onQuantityChange = () => {
     // Calculate and update the necessary state values
     const normalizingFactor = ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1);
@@ -411,7 +406,7 @@ function Banner() {
     }
     rest.getScripBrokerageURL(payload).then(res => {
       const newBrokerageObj = JSON.parse(JSON.stringify(brokerageObj));
-      console.log('newBrokerageObj', newBrokerageObj);
+      // console.log('newBrokerageObj', newBrokerageObj);
 
       if (res.Status === 'Success' && res.Response) {
         let buyBrokerage = res.Response.buyBrokerage;
@@ -477,7 +472,7 @@ function Banner() {
               newBrokerageObj.clearance) *
             buyBrokerage.gst;
 
-          console.log("brokerageObj.buyValue", brokerageObj.buyValue)
+          // console.log("brokerageObj.buyValue", brokerageObj.buyValue)
         }
 
         // Object.assign(newBrokerageObj, brokerageObj);
@@ -490,97 +485,7 @@ function Banner() {
 
       })
   }
-  // function getBrokerage() {
-  //   let payload = {
-  //     "segment": brokerageObj.selectedScrip.SegmentId,
-  //     "token": brokerageObj.selectedScrip.Token,
-  //     "symbol": brokerageObj.selectedScrip.SecName,
-  //     "product": brokerageObj.orderType ? 'd' : "m",
-  //     "isFuture": brokerageObj.selectedScrip.OptionType == 'XX',
-  //     "clientId": "guest",
-  //     "isBrokerageCalculator": true
-  //   }
-  //   rest.getScripBrokerageURL(payload).then(res => {
-  //     const newBrokerageObj = JSON.parse(JSON.stringify(brokerageObj));
-  //     console.log('newBrokerageObj', newBrokerageObj);
-
-  //     if (res.Status === 'Success' && res.Response) {
-  //       let buyBrokerage = res.Response.buyBrokerage;
-  //       let sellBrokerage = res.Response.sellBrokerage;
-  //       // console.log("buyBrokerage", buyBrokerage)
-  //       // console.log("sellBrokerage", sellBrokerage)
-  //       newBrokerageObj.stt = 0;
-  //       newBrokerageObj.transactionCharge = 0;
-  //       newBrokerageObj.clearance = 0;
-  //       newBrokerageObj.GST = 0;
-  //       newBrokerageObj.sebi = 0;
-  //       newBrokerageObj.stateStampDuty = 0;
-
-  //       if (brokerageObj.sellValue) {
-  //         newBrokerageObj.stt = brokerageObj.sellValue * sellBrokerage.stt;
-  //         newBrokerageObj.transactionCharge =
-  //           brokerageObj.sellValue * sellBrokerage.transactionCharges;
-  //         newBrokerageObj.stateStampDuty =
-  //           brokerageObj.sellValue * sellBrokerage.stampDuty;
-  //         newBrokerageObj.sebi =
-  //           brokerageObj.sellValue * sellBrokerage.turnoverFees;
-
-  //         if (
-  //           brokerageObj.selectedScrip.SegmentId === 1 ||
-  //           brokerageObj.selectedScrip.SegmentId === 3
-  //         ) {
-  //           newBrokerageObj.clearance = 0.01;
-  //         } else {
-  //           newBrokerageObj.clearance =
-  //             brokerageObj.sellValue * sellBrokerage.clearingCharges;
-  //         }
-
-  //         newBrokerageObj.GST =
-  //           (newBrokerageObj.brokerage +
-  //             newBrokerageObj.transactionCharge +
-  //             newBrokerageObj.clearance) *
-  //           sellBrokerage.gst;
-  //       }
-
-  //       if (brokerageObj.buyValue) {
-  //         newBrokerageObj.stt +=
-  //           brokerageObj.buyValue * buyBrokerage.stt;
-  //         newBrokerageObj.transactionCharge +=
-  //           brokerageObj.buyValue * buyBrokerage.transactionCharges;
-  //         newBrokerageObj.stateStampDuty +=
-  //           brokerageObj.buyValue * buyBrokerage.stampDuty;
-  //         newBrokerageObj.sebi +=
-  //           brokerageObj.buyValue * buyBrokerage.turnoverFees;
-
-  //         if (
-  //           brokerageObj.selectedScrip.SegmentId === 1 ||
-  //           brokerageObj.selectedScrip.SegmentId === 3
-  //         ) {
-  //           newBrokerageObj.clearance += 0.01;
-  //         } else {
-  //           newBrokerageObj.clearance +=
-  //             brokerageObj.buyValue * buyBrokerage.clearingCharges;
-  //         }
-
-  //         newBrokerageObj.GST =
-  //           (newBrokerageObj.brokerage +
-  //             newBrokerageObj.transactionCharge +
-  //             newBrokerageObj.clearance) *
-  //           buyBrokerage.gst;
-
-  //         console.log("brokerageObj.buyValue", brokerageObj.buyValue)
-  //       }
-
-  //       Object.assign(newBrokerageObj, brokerageObj);
-  //       setNewBrokerageObj(newBrokerageObj);
-  //     } else {
-
-  //     }
-  //   },
-  //     (err) => {
-
-  //     })
-  // }
+  
   function onOrderTypeChange() {
     setBrokerageObj((prevState) => ({
       ...prevState,
@@ -590,31 +495,20 @@ function Banner() {
     }));
   }
 
+  // function onBrokerageRateChange() {
+  //   setBrokerageObj((prevState) => ({
+  //     ...prevState,
+  //     brokerage: BrokerageCal(prevState.selectedScrip),
+  //     GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
+  //   }));
+  // }
   function onBrokerageRateChange() {
     setBrokerageObj((prevState) => ({
       ...prevState,
-      brokerage: BrokerageCal(prevState.selectedScrip),
-      GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
+      brokerageRate: e.target.value,
     }));
   }
-  // const onOrderTypeChange = (prevState) => {
-  //   setBrokerageObj({
-  //     ...prevState,
-  //     orderType: !prevState.orderType,
-  //     brokerage: BrokerageCal(prevState.selectedScrip),
-  //     GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
-  //   });
-  // };
-  // const onBrokerageRateChange = () => {
-  //   setBrokerageObj((prevState) => ({
-  //     ...prevState,
-  //     orderType: !prevState.orderType,
-  //     brokerage: BrokerageCal(prevState.selectedScrip),
-  //     GST:
-  //       (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
-  //   }));
-  // }
-
+  
 
   
   return (
@@ -669,7 +563,7 @@ function Banner() {
                                 onInput={onKeyChange}
                                 onChange={(e) => setBrokerageObj({ ...brokerageObj, searchInput: e.target.value })}
                               />
-                              <ul className="brokerage-search-result" onScroll={onUlScroll}>
+                              <ul className="brokerage-search-result" >
                                 {brokerageObj.tableValue.length === 0 && brokerageObj.searchInput && (brokerageObj.searchInput.length > 0 || brokerageObj.searchInput.length <= 2) && (
                                   <li key="no-record">No Record Found</li>
                                 )}
@@ -772,7 +666,7 @@ function Banner() {
                               <span className='text-bold'>Brokerage</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>{newBrokerageObj?.brokerage}</span>
+                              <span className='text-bold'>{newBrokerageObj.brokerage}</span>
                             </div>
                           </div>
                           <div className='card-flex brd-bottom'>
@@ -788,7 +682,7 @@ function Banner() {
                               <span>Brokerage</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{newBrokerageObj?.brokerage}</span>
+                              <span>{newBrokerageObj.brokerage}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
