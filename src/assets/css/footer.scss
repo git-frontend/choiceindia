@@ -323,6 +323,8 @@
         visibility: hidden;
         opacity: 0;
         display: none;
+        max-height: calc(100vh - 15rem);
+        overflow: auto;
 
         >li{
             padding: 0.6rem 1rem;
@@ -362,3 +364,20 @@
         }
     }
 }	
+
+.links-footer-quick::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.links-footer-quick::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.links-footer-quick::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
