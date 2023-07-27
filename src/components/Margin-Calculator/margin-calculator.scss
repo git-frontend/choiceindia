@@ -58,7 +58,7 @@
                     font-family: $font-family-poppins-medium;
                     font-size: 1.385rem;
                     line-height: 2.077rem;
-                    padding: 0.5rem 1rem;
+                    padding: 0.8rem 1rem;
                     text-align: center;
                     text-decoration: none;
                     width: 100%;
@@ -185,6 +185,10 @@
                                         transition: all .3s ease;
                                         border: 2px solid $secondary;
                                       }
+                                      input[type="radio"]:checked + label::after {
+                                        border: 2px solid $pricolor !important;
+     
+                                      }
                                       input[type="radio"] + label:before {
                                         transition: all .3s ease;
                                         box-shadow: inset 0 0 0 0.2em $whiteColor, inset 0 0 0 1em $whiteColor;
@@ -193,7 +197,7 @@
                                         transition: all .3s ease;
                                         box-shadow: inset 0 0 0 0.2em $whiteColor, inset 0 0 0 1em $pricolor;
                                         border: 2px solid $pricolor !important;
-     
+
                                       }
                                     }
                                  }

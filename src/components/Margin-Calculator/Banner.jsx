@@ -87,12 +87,12 @@ function Banner() {
                                                 <div className="row-sec row-flex">
                                                     <div className="flex-items">
                                                         <p className='frm-label'>Search</p>
-                                                        <input className='form-control input-font search-icon' placeholder='NIFTY 29JUN23'/>
+                                                        <input className='form-control input-font search-icon'/>
                                                     </div>
                                                     <div className="flex-items">
                                                         <p className='frm-label'>Quantity</p>
-                                                        <input type="text" className='form-control input-font'placeholder='50'/>
-                                                        <span className='val-qty'>Lot Size = 50</span>
+                                                        <input type="text" className='form-control input-font'/>
+                                                        <span className='val-qty'>LOT SIZE = 50</span>
                                                     </div>
                                                 </div>
                                                 <div className="row-flex radio-section">
