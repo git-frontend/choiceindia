@@ -51,7 +51,9 @@ function Banner() {
                                                         <p className='frm-label'>Quantity</p>
                                                     </div>
                                                     <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font'placeholder='10'/>
+                                                        <div className='form-control2'>
+                                                            <input type="text" className='form-control input-form input-1'/>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className="row row-sec width-resp">
@@ -59,7 +61,10 @@ function Banner() {
                                                     <p className='frm-label'>Buy Price</p>
                                                     </div>
                                                     <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font'placeholder='₹ 944.40'/>
+                                                    <div className='form-control2'>
+                                                            <span className="rupees-symble">₹</span>
+                                                            <input type="text" className='form-control input-form input-1'/>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className="row row-sec width-resp">
@@ -67,7 +72,10 @@ function Banner() {
                                                     <p className='frm-label'>Sell Price</p>
                                                     </div>
                                                     <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font'placeholder='₹ 944.40'/>
+                                                        <div className='form-control2'>
+                                                            <span className="rupees-symble">₹</span>
+                                                            <input type="text" className='form-control input-form input-1'/>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className="row row-sec width-resp">
@@ -75,7 +83,10 @@ function Banner() {
                                                     <p className='frm-label'>Brokerage Rate</p>
                                                     </div>
                                                     <div className="col-xl-5 col-md-12">
-                                                    <input type="text" className='form-control input-font percent'placeholder='0.03'/>
+                                                    <div className='form-control2'>
+                                                            <input type="text" className='form-control input-form input-3'/>
+                                                            <span className="percent-symble">%</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                               </div>
