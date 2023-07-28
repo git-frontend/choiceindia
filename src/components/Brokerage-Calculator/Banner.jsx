@@ -96,7 +96,8 @@ function Banner() {
       rest.getScripDetails(payload).then(res => {
         if (res.Status === "Success" && res.Response) {
           setScripDetail(res.Response);
-          onSelectionScrip(data);
+          // onSelectionScrip(data);
+          onSelectionScrip(data, res.Response)
         } else {
           // Handle error
         }
@@ -122,12 +123,13 @@ function Banner() {
   };
 
  
-  function onSelectionScrip(item) {
+  function onSelectionScrip(item,scripDetail) {
     setBrokerageObj((prevState) => ({
       ...prevState,
       selectedScrip: item,
       searchInput: ((item.SegmentId === 1 || item.SegmentId === 3) ? item.SecDesc : item.SecName) + ' ' + item.ExchangeSegment,
-      brokerageRate: getDefaultBrokerageRate(item)
+      brokerageRate: getDefaultBrokerageRate(item),
+      // scripDetail: scripDetail
     }));
   
     let payload = {
@@ -145,17 +147,16 @@ function Banner() {
           sellPrice: decimalConversion(item.SegmentId, (res.Response.lMT[0].BSP || res.Response.lMT[0].LTP) / 100),
           
           searchInput:item.SecDesc +' '+ item.ExchangeSegment,
-          normalizingFactor: ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1),
-          // brokerage: BrokerageCal(item)
-        //  GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100
-    
+          normalizingFactor: ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1)
+
         }
-       
+        // data.GST= (18 * (brokerageObj.brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100
+        data.sellValue= (brokerageObj.quantity * Number(data.sellPrice) * (res.Response.lMT[0].ML || 1)) * data.normalizingFactor,
+        data.buyValue= (brokerageObj.quantity * Number(data.buyPrice) * (res.Response.lMT[0].ML || 1)) * data.normalizingFactor,
+        data.turnOver= data.sellValue + data.buyValue
         
-        data.sellValue= (brokerageObj.quantity * Number(data.sellPrice) * (res.Response.lMT[0].MarketLot || 1)) * data.normalizingFactor,
-        data.buyValue= (brokerageObj.quantity * Number(data.buyPrice) * (res.Response.lMT[0].MarketLot || 1)) * data.normalizingFactor,
-        data.turnOver= data.sellValue + data.buyValue,
-        
+        data.brokerage = data.turnOver*getDefaultBrokerageRate(item)/100
+        // console.log(" data.brokerage", data.brokerage)
        data=Object.assign(brokerageObj,data)
         setBrokerageObj(data)
         console.log("setBrokerageObj2",brokerageObj)
@@ -163,7 +164,7 @@ function Banner() {
       getBrokerage()
      }, 1000);
      closeList()
-     BrokerageCal(data)
+    
         
         
       }
@@ -198,7 +199,9 @@ function Banner() {
   }
 
   
-  const onQuantityChange = () => {
+  const onQuantityChange = (e) => {
+    const input2 = e.target.value;
+    console.log("input2",input2)
     // Calculate and update the necessary state values
     const normalizingFactor = ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1);
     const sellValue = brokerageObj.quantity * brokerageObj.sellPrice * (brokerageObj.selectedScrip?.MarketLot || 1) * normalizingFactor;
@@ -314,7 +317,9 @@ function Banner() {
     const BrokerageCal = (scrip) => {
         let brokerage;
         let turnover = brokerageObj.turnOver;
+        console.log("tur",turnover)
         let qty = Math.floor(turnover / 10000000);
+        console.log("qty",qty)
         brokerageObj.sebi = qty * 15;
         // let selectedState = stateArray.filter((obj) => obj.value === brokerageObj.state)[0];
         let brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / (brokerageObj.selectedScrip.isPrice ? 1 : 100);
@@ -513,11 +518,13 @@ function Banner() {
   //     GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
   //   }));
   // }
-  function onBrokerageRateChange() {
+  function onBrokerageRateChange(e) {
     setBrokerageObj((prevState) => ({
       ...prevState,
       brokerageRate: e.target.value,
     }));
+    brokerageObj.brokerage = brokerageObj.turnOver * getDefaultBrokerageRate(brokerageObj)/100
+    brokerageObj.GST = (18 * (brokerageObj.brokerage +brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
   }
   
 
@@ -604,6 +611,7 @@ function Banner() {
                                 onChange={(e) => setBrokerageObj({ ...brokerageObj, quantity: e.target.value })}
                                 onInput={onQuantityChange}
                                 maxLength="6"
+                                
                               />
                             </div>
                           </div>
@@ -669,7 +677,7 @@ function Banner() {
                             <span>Turnover</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{newBrokerageObj.turnOver}</span>
+                              <span>{parseFloat(newBrokerageObj.turnOver).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -677,7 +685,7 @@ function Banner() {
                               <span className='text-bold'>Brokerage</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>{newBrokerageObj.brokerage}</span>
+                              <span className='text-bold'>{parseFloat(newBrokerageObj?.brokerage).toFixed(2) }</span>
                             </div>
                           </div>
                           <div className='card-flex brd-bottom'>
@@ -685,7 +693,7 @@ function Banner() {
                               <span className='font-danger'>Net P&L</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='font-danger'>{(newBrokerageObj && newBrokerageObj.sellValue) - (newBrokerageObj && newBrokerageObj.buyValue) - ((newBrokerageObj && newBrokerageObj.brokerage) + (newBrokerageObj && newBrokerageObj.stt) + (newBrokerageObj && newBrokerageObj.transactionCharge) + (newBrokerageObj && newBrokerageObj.clearance) + (newBrokerageObj && newBrokerageObj.GST) + (newBrokerageObj && newBrokerageObj.sebi))}</span>
+                              <span className='font-danger'>{parseFloat((newBrokerageObj && newBrokerageObj.sellValue) - (newBrokerageObj && newBrokerageObj.buyValue) - ((newBrokerageObj && newBrokerageObj.brokerage) + (newBrokerageObj && newBrokerageObj.stt) + (newBrokerageObj && newBrokerageObj.transactionCharge) + (newBrokerageObj && newBrokerageObj.clearance) + (newBrokerageObj && newBrokerageObj.GST) + (newBrokerageObj && newBrokerageObj.sebi))).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -693,7 +701,7 @@ function Banner() {
                               <span>Brokerage</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{newBrokerageObj.brokerage }</span>
+                              <span>{parseFloat(newBrokerageObj?.brokerage).toFixed(2) }</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -701,7 +709,7 @@ function Banner() {
                               <span>STT/CTT</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{newBrokerageObj?.stt}</span>
+                              <span>{parseFloat(newBrokerageObj?.stt).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -709,7 +717,7 @@ function Banner() {
                               <span>Transaction Charges</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{newBrokerageObj?.transactionCharge}</span>
+                              <span>{parseFloat(newBrokerageObj?.transactionCharge).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -717,7 +725,7 @@ function Banner() {
                               <span>Clearing Charges</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{newBrokerageObj?.clearance}</span>
+                              <span>{parseFloat(newBrokerageObj?.clearance).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -725,7 +733,7 @@ function Banner() {
                               <span>GST</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{newBrokerageObj?.GST}</span>
+                              <span>{parseFloat(newBrokerageObj?.GST).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -733,7 +741,7 @@ function Banner() {
                               <span>State Stamp Duty</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{newBrokerageObj?.stateStampDuty}</span>
+                              <span>{parseFloat(newBrokerageObj?.stateStampDuty).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -741,15 +749,15 @@ function Banner() {
                               <span>SEBI Turnover Fees</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{newBrokerageObj?.sebi}</span>
+                              <span>{parseFloat(newBrokerageObj?.sebi).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
                             <div className='flex-items'>
                               <span className='text-bold'>TOTAL TAXES & CHARGES</span>
                             </div>
-                            <div className='flex-items'>
-                            <span className='text-bold'>{(newBrokerageObj && newBrokerageObj.brokerage) + (newBrokerageObj && newBrokerageObj.stt) + (newBrokerageObj && newBrokerageObj.transactionCharge) + (newBrokerageObj && newBrokerageObj.clearance) + (newBrokerageObj && newBrokerageObj.GST) + (newBrokerageObj && newBrokerageObj.sebi)}</span>
+                            <div className='flex-items'> 
+                            <span className='text-bold'>{parseFloat((newBrokerageObj && newBrokerageObj.brokerage) + (newBrokerageObj && newBrokerageObj.stt) + (newBrokerageObj && newBrokerageObj.transactionCharge) + (newBrokerageObj && newBrokerageObj.clearance) + (newBrokerageObj && newBrokerageObj.GST) + (newBrokerageObj && newBrokerageObj.sebi)).toFixed(2)}</span>
                               {/* <span className='text-bold'>{(newBrokerageObj?.brokerage) + (newBrokerageObj?.stt) + (newBrokerageObj?.transactionCharge) + (newBrokerageObj?.clearance) + (newBrokerageObj?.GST) + (newBrokerageObj?.sebi)}</span> */}
                             </div>
                           </div>
