@@ -325,9 +325,9 @@ function Footer() {
               <li>
                 <Link to="/Investor-charter">Investor Charter</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/Investor-complaints">Investor Complaints</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/file-download">Downloads</Link>
               </li>
