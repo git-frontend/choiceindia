@@ -34,12 +34,11 @@ function Banner() {
     state: 6,
     stateStampDuty: 0
   });
-  const [toggleState, setToggleState] = useState(1);
   const [stateArray, setStateArray] = useState([{ 'name': 'Maharashtra', 'value': 6, 'cashIntraday': 0.002, 'cashDelivery': 0.01, 'fut': 0.002, 'opt': 0.002, 'currency': 0.002, 'commodity': 0.001, 'commodityFut': 0.002, 'commodityOpt': 0.003, 'max': '' }])
   const [scripDetail, setScripDetail] = useState({});
-  console.log("scripDetail",scripDetail)
+  console.log("scripDetail", scripDetail)
   const [newBrokerageObj, setNewBrokerageObj] = useState('');
-  
+
   useEffect(() => {
     getSessionId();
     if (brokerageObj.selectedScrip) {
@@ -52,13 +51,11 @@ function Banner() {
   function onKeyChange(event) {
     const input = event.target.value;
     // console.log("input", input);
-
     setBrokerageObj(prevState => ({
       ...prevState,
       tableValue: [],
       searchInput: input
     }));
-
     const request = {
       strScripName: input,
       StartPos: brokerageObj.startPos,
@@ -83,8 +80,8 @@ function Banner() {
       });
   }
 
-  
-  
+
+
   function getScriptDetail(data) {
     if (data) {
       let payload = {
@@ -92,7 +89,6 @@ function Banner() {
         nToken: Number(data.Token),
         UserId: 'guest'
       };
-  
       rest.getScripDetails(payload).then(res => {
         if (res.Status === "Success" && res.Response) {
           setScripDetail(res.Response);
@@ -112,6 +108,7 @@ function Banner() {
     }));
   }
 
+  //for default brokerage rate 
   const getDefaultBrokerageRate = scrip => {
     let rate = 0;
     if (scrip.isPrice) {
@@ -122,8 +119,8 @@ function Banner() {
     return rate;
   };
 
- 
-  function onSelectionScrip(item,scripDetail) {
+  //On selection Scrip 
+  function onSelectionScrip(item, scripDetail) {
     setBrokerageObj((prevState) => ({
       ...prevState,
       selectedScrip: item,
@@ -131,48 +128,40 @@ function Banner() {
       brokerageRate: getDefaultBrokerageRate(item),
       // scripDetail: scripDetail
     }));
-  
+
     let payload = {
       UserId: 'guest',
       SessionId: Data1,
       MultipleTokens: item.SegmentId + '@' + item.Token
     };
-  
+
     rest.multipleTokensURLData(payload).then((res) => {
       if (res.Status === "Success" && res.Response && res.Response.lMT && res.Response.lMT.length) {
-        console.log(brokerageObj,"setBrokerageObj2 res.Response",res.Response)
+        console.log(brokerageObj, "setBrokerageObj2 res.Response", res.Response)
 
-        let data={
+        let data = {
           buyPrice: decimalConversion(item.SegmentId, (res.Response.lMT[0].BBP || res.Response.lMT[0].LTP) / 100),
           sellPrice: decimalConversion(item.SegmentId, (res.Response.lMT[0].BSP || res.Response.lMT[0].LTP) / 100),
-          
-          searchInput:item.SecDesc +' '+ item.ExchangeSegment,
+
+          searchInput: item.SecDesc + ' ' + item.ExchangeSegment,
           normalizingFactor: ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1)
 
         }
-        // data.GST= (18 * (brokerageObj.brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100
-        data.sellValue= (brokerageObj.quantity * Number(data.sellPrice) * (res.Response.lMT[0].ML || 1)) * data.normalizingFactor,
-        data.buyValue= (brokerageObj.quantity * Number(data.buyPrice) * (res.Response.lMT[0].ML || 1)) * data.normalizingFactor,
-        data.turnOver= data.sellValue + data.buyValue
-        
-        data.brokerage = data.turnOver*getDefaultBrokerageRate(item)/100
+        data.sellValue = (brokerageObj.quantity * Number(data.sellPrice) * (res.Response.lMT[0].ML || 1)) * data.normalizingFactor,
+        data.buyValue = (brokerageObj.quantity * Number(data.buyPrice) * (res.Response.lMT[0].ML || 1)) * data.normalizingFactor,
+        data.turnOver = data.sellValue + data.buyValue
+        data.brokerage = data.turnOver * getDefaultBrokerageRate(item) / 100
         // console.log(" data.brokerage", data.brokerage)
-       data=Object.assign(brokerageObj,data)
+        data = Object.assign(brokerageObj, data)
         setBrokerageObj(data)
-        console.log("setBrokerageObj2",brokerageObj)
-     setTimeout(() => {
-      getBrokerage()
-     }, 1000);
-     closeList()
-    
-        
-        
+        console.log("setBrokerageObj2", brokerageObj)
+        setTimeout(() => {
+          getBrokerage()
+        }, 1000);
+        closeList()
       }
     });
-    
   }
-  
-
   const decimalConversion = (segmentId, data) => {
     if (data) {
       data =
@@ -183,7 +172,7 @@ function Banner() {
     return data;
   };
 
-
+//for session Id
   function getSessionId() {
     let api = new API_URLS();
     fetch(api.getSessionUrl())
@@ -198,217 +187,99 @@ function Banner() {
       });
   }
 
-  
-  const onQuantityChange = (e) => {
-    const input2 = e.target.value;
-    console.log("input2",input2)
-    // Calculate and update the necessary state values
-    const normalizingFactor = ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1);
-    const sellValue = brokerageObj.quantity * brokerageObj.sellPrice * (brokerageObj.selectedScrip?.MarketLot || 1) * normalizingFactor;
-    const buyValue = brokerageObj.quantity * brokerageObj.buyPrice * (brokerageObj.selectedScrip?.MarketLot || 1) * normalizingFactor;
-    const turnOver = sellValue + buyValue;
-    const brokerage = BrokerageCal(brokerageObj.selectedScrip);
-    const GST = (18 * (brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
-  
-    setBrokerageObj(prevState => ({
-      ...prevState,
-      normalizingFactor,
-      sellValue,
-      buyValue,
-      turnOver,
-      brokerage,
-      GST,
-    }));
-  };
-  
-  // const BrokerageCal = (scrip) => {
-  //   let brokerage;
-  //   let someVar=JSON.parse(JSON.stringify(brokerageObj))
-  //   let turnover = someVar.turnOver;
-  //   let qty = Math.floor(turnover / 10000000);
-  //   someVar.sebi = qty * 15;
-  //   let selectedState = stateArray.filter((obj) => obj.value === someVar.state)[0];
-  //   let brokerageChargeFactor = (Number(someVar.brokerageRate) || 0) / (someVar.selectedScrip.isPrice ? 1 : 100);
 
-  //   switch (scrip.SegmentId) {
-  //     case 1: // NSE
-  //       brokerage = someVar.orderType ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
-  //       someVar.stt = (someVar.orderType ? (0.1 * turnover) : 0.025 * someVar.sellValue) / 100;
-  //       someVar.transactionCharge = (0.00325 * turnover) / 100;
-  //       someVar.clearance = 0.01;
-  //       someVar.stateStampDuty = (someVar.orderType ? (selectedState.cashDelivery * someVar.buyValue) : (selectedState.cashIntraday * someVar.buyValue)) / 100;
-  //       break;
-  //     case 3: // BSE
-  //       brokerage = someVar.orderType ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
-  //       someVar.stt = (someVar.orderType ? 0.1 * turnover : 0.025 * someVar.sellValue) / 100;
-  //       someVar.transactionCharge = (0.00325 * turnover) / 100;
-  //       someVar.clearance = 0.01;
-  //       someVar.stateStampDuty = (someVar.orderType
-  //         ? selectedState.cashDelivery * someVar.buyValue
-  //         : selectedState.cashIntraday * someVar.buyValue) / 100;
-  //       break;
-  //     case 2: // NSEFO
-  //       if (scrip.OptionType === 'XX') {
-  //         brokerage = brokerageChargeFactor * turnover;
-  //         someVar.stt = (0.01 * someVar.sellValue) / 100;
-  //         someVar.transactionCharge = (0.0019 * turnover) / 100;
-  //         someVar.clearance = (0.0005 * turnover) / 100;
-  //         someVar.stateStampDuty = (someVar.orderType ? selectedState.fut * someVar.buyValue : selectedState.fut * someVar.buyValue) / 100;
-  //       } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
-  //         brokerage = brokerageChargeFactor * someVar.quantity * (someVar.sellValue && someVar.buyValue ? 2 : 1);
-  //         someVar.stt = (0.05 * someVar.sellValue) / 100;
-  //         someVar.transactionCharge = (0.05 * turnover) / 100;
-  //         someVar.clearance = (0.002 * turnover) / 100;
-  //         someVar.stateStampDuty = (someVar.orderType ? selectedState.opt * someVar.buyValue : selectedState.opt * someVar.buyValue) / 100;
-  //       }
-  //       break;
-  //     case 5: // MCX
-  //       if (scrip.OptionType === 'XX') {
-  //         someVar.stateStampDuty = (selectedState.commodityFut * someVar.buyValue) / 100;
-  //         brokerage = brokerageChargeFactor * turnover;
-  //         someVar.stt = (0.01 * someVar.sellValue) / 100;
-  //         someVar.transactionCharge = ((0.0026 * someVar.buyValue) + (0.0025 * someVar.sellValue)) / 100;
-  //         someVar.clearance = (0.0003 * turnover) / 100;
-  //       } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
-  //         someVar.stateStampDuty = (selectedState.commodityOpt * someVar.buyValue) / 100;
-  //         brokerage = brokerageChargeFactor * someVar.quantity * (someVar.sellValue && someVar.buyValue ? 2 : 1);
-  //         someVar.stt = (0.05 * someVar.sellValue) / 100;
-  //         someVar.transactionCharge = (0.05 * turnover) / 100;
-  //         someVar.clearance = (0.02 * turnover) / 100;
-  //       }
-  //       break;
-  //     case 7: // NCDEX
-  //       if (scrip.OptionType === 'XX') { // FUT
-  //         someVar.stateStampDuty = (selectedState.commodityFut * someVar.buyValue) / 100;
-  //         brokerage = brokerageChargeFactor * turnover;
-  //         someVar.stt = (0.01 * someVar.sellValue) / 100;
-  //         someVar.transactionCharge = (0.0040 * turnover) / 100;
-  //         someVar.clearance = (0.0003 * turnover) / 100;
-  //       } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') { // Call/PUT
-  //         someVar.stateStampDuty = (selectedState.commodityOpt * someVar.buyValue) / 100;
-  //         brokerage = brokerageChargeFactor * someVar.quantity * (someVar.sellValue && someVar.buyValue ? 2 : 1);
-  //         someVar.stt = (0.05 * someVar.sellValue) / 100;
-  //         someVar.transactionCharge = (0.05 * turnover) / 100;
-  //         someVar.clearance = (0.02 * turnover) / 100;
-  //       }
-  //       break;
-  //     case 13: // NSECDS
-  //       someVar.stateStampDuty = (selectedState.currency * someVar.buyValue) / 100;
-  //       if (scrip.OptionType === 'XX') {
-  //         brokerage = brokerageChargeFactor * turnover;
-  //         someVar.stt = 0;
-  //         someVar.transactionCharge = (0.0009 * turnover) / 100;
-  //         someVar.clearance = (0.0005 * turnover) / 100;
-  //       } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
-  //         brokerage = brokerageChargeFactor * someVar.quantity * (someVar.sellValue && someVar.buyValue ? 2 : 1);
-  //         someVar.stt = 0;
-  //         someVar.transactionCharge = (0.035 * turnover) / 100;
-  //         someVar.clearance = (0.002 * turnover) / 100;
-  //       }
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  //   // setBrokerageObj(someVar)
-  //   return brokerage;
-  // };
-
-
-    const BrokerageCal = (scrip) => {
-        let brokerage;
-        let turnover = brokerageObj.turnOver;
-        console.log("tur",turnover)
-        let qty = Math.floor(turnover / 10000000);
-        console.log("qty",qty)
-        brokerageObj.sebi = qty * 15;
-        // let selectedState = stateArray.filter((obj) => obj.value === brokerageObj.state)[0];
-        let brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / (brokerageObj.selectedScrip.isPrice ? 1 : 100);
-        switch (scrip.SegmentId) {
-          case 1: // NSE
-            brokerage = brokerageObj.orderType ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
-            brokerageObj.stt = (brokerageObj.orderType ? (0.1 * turnover) : (0.025 * brokerageObj.sellValue)) / 100;
-            brokerageObj.transactionCharge = (0.00325 * turnover) / 100;
-            brokerageObj.clearance = 0.01;
-            // brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.cashDelivery * brokerageObj.buyValue) : (selectedState.cashIntraday * brokerageObj.buyValue)) / 100;
-            break;
-          case 3: // BSE
-            brokerage = brokerageObj.orderType ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
-            brokerageObj.stt = (brokerageObj.orderType ? (0.1 * turnover) : (0.025 * brokerageObj.sellValue)) / 100;
-            brokerageObj.transactionCharge = (0.00325 * turnover) / 100;
-            brokerageObj.clearance = 0.01;
-            // brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.cashDelivery * brokerageObj.buyValue) : (selectedState.cashIntraday * brokerageObj.buyValue)) / 100;
-            break;
-          case 2: // NSEFO
-            if (scrip.OptionType === 'XX') {
-              brokerage = brokerageChargeFactor * turnover;
-              brokerageObj.stt = (0.01 * brokerageObj.sellValue) / 100;
-              brokerageObj.transactionCharge = (0.0019 * turnover) / 100;
-              brokerageObj.clearance = (0.0005 * turnover) / 100;
-            //   brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.fut * brokerageObj.buyValue) : (selectedState.fut * brokerageObj.buyValue)) / 100;
-            } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
-              brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
-              brokerageObj.stt = (0.05 * brokerageObj.sellValue) / 100;
-              brokerageObj.transactionCharge = (0.05 * turnover) / 100;
-              brokerageObj.clearance = (0.002 * turnover) / 100;
-            //   brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.opt * brokerageObj.buyValue) : (selectedState.opt * brokerageObj.buyValue)) / 100;
-            }
-            break;
-          case 5: // MCX
-            if (scrip.OptionType === 'XX') {
-            //   brokerageObj.stateStampDuty = (selectedState.commodityFut * brokerageObj.buyValue) / 
-            // 100;
-              brokerage = brokerageChargeFactor * turnover;
-              brokerageObj.stt = (0.01 * brokerageObj.sellValue) / 100;
-              brokerageObj.transactionCharge = ((0.0026 * brokerageObj.buyValue) + (0.0025 * brokerageObj.sellValue)) / 100;
-              brokerageObj.clearance = (0.0003 * turnover) / 100;
-            } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
-            //   brokerageObj.stateStampDuty = (selectedState.commodityOpt * brokerageObj.buyValue) / 100;
-              brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
-              brokerageObj.stt = (0.05 * brokerageObj.sellValue) / 100;
-              brokerageObj.transactionCharge = (0.05 * turnover) / 100;
-              brokerageObj.clearance = (0.02 * turnover) / 100;
-            }
-            break;
-          case 7: // NCDEX
-            if (scrip.OptionType === 'XX') { // FUT
-            //   brokerageObj.stateStampDuty = (selectedState.commodityFut * brokerageObj.buyValue) / 100;
-              brokerage = brokerageChargeFactor * turnover;
-              brokerageObj.stt = (0.01 * brokerageObj.sellValue) / 100;
-              brokerageObj.transactionCharge = (0.0040 * turnover) / 100;
-              brokerageObj.clearance = (0.0003 * turnover) / 100;
-            } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') { // Call/PUT
-            //   brokerageObj.stateStampDuty = (selectedState.commodityOpt * brokerageObj.buyValue) / 100;
-              brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
-              brokerageObj.stt = (0.05 * brokerageObj.sellValue) / 100;
-              brokerageObj.transactionCharge = (0.05 * turnover) / 100;
-              brokerageObj.clearance = (0.02 * turnover) / 100;
-            }
-            break;
-          case 13: // NSECDS
-            // brokerageObj.stateStampDuty = (selectedState.currency * brokerageObj.buyValue) / 100;
-            if (scrip.OptionType === 'XX') {
-              brokerage = brokerageChargeFactor * turnover;
-              brokerageObj.stt = 0;
-              brokerageObj.transactionCharge = (0.0009 * turnover) / 100;
-              brokerageObj.clearance = (0.0005 * turnover) / 100;
-            } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
-              brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
-              brokerageObj.stt = 0;
-              brokerageObj.transactionCharge = (0.035 * turnover) / 100;
-              brokerageObj.clearance = (0.002 * turnover) / 100;
-            }
-            break;
-          default:
-            break;
+  
+  const BrokerageCal = (scrip) => {
+    let brokerage;
+    let turnover = brokerageObj.turnOver;
+    console.log("tur", turnover)
+    let qty = Math.floor(turnover / 10000000);
+    console.log("qty", qty)
+    brokerageObj.sebi = qty * 15;
+    // let selectedState = stateArray.filter((obj) => obj.value === brokerageObj.state)[0];
+    let brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / (brokerageObj.selectedScrip.isPrice ? 1 : 100);
+    switch (scrip.SegmentId) {
+      case 1: // NSE
+        brokerage = brokerageObj.orderType ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
+        brokerageObj.stt = (brokerageObj.orderType ? (0.1 * turnover) : (0.025 * brokerageObj.sellValue)) / 100;
+        brokerageObj.transactionCharge = (0.00325 * turnover) / 100;
+        brokerageObj.clearance = 0.01;
+        // brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.cashDelivery * brokerageObj.buyValue) : (selectedState.cashIntraday * brokerageObj.buyValue)) / 100;
+        break;
+      case 3: // BSE
+        brokerage = brokerageObj.orderType ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
+        brokerageObj.stt = (brokerageObj.orderType ? (0.1 * turnover) : (0.025 * brokerageObj.sellValue)) / 100;
+        brokerageObj.transactionCharge = (0.00325 * turnover) / 100;
+        brokerageObj.clearance = 0.01;
+        // brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.cashDelivery * brokerageObj.buyValue) : (selectedState.cashIntraday * brokerageObj.buyValue)) / 100;
+        break;
+      case 2: // NSEFO
+        if (scrip.OptionType === 'XX') {
+          brokerage = brokerageChargeFactor * turnover;
+          brokerageObj.stt = (0.01 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = (0.0019 * turnover) / 100;
+          brokerageObj.clearance = (0.0005 * turnover) / 100;
+          //   brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.fut * brokerageObj.buyValue) : (selectedState.fut * brokerageObj.buyValue)) / 100;
+        } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
+          brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
+          brokerageObj.stt = (0.05 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = (0.05 * turnover) / 100;
+          brokerageObj.clearance = (0.002 * turnover) / 100;
+          //   brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.opt * brokerageObj.buyValue) : (selectedState.opt * brokerageObj.buyValue)) / 100;
         }
-        return brokerage;
-      };
-
-  const toggleTab = index => {
-    setToggleState(index);
+        break;
+      case 5: // MCX
+        if (scrip.OptionType === 'XX') {
+          //   brokerageObj.stateStampDuty = (selectedState.commodityFut * brokerageObj.buyValue) / 
+          // 100;
+          brokerage = brokerageChargeFactor * turnover;
+          brokerageObj.stt = (0.01 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = ((0.0026 * brokerageObj.buyValue) + (0.0025 * brokerageObj.sellValue)) / 100;
+          brokerageObj.clearance = (0.0003 * turnover) / 100;
+        } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
+          //   brokerageObj.stateStampDuty = (selectedState.commodityOpt * brokerageObj.buyValue) / 100;
+          brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
+          brokerageObj.stt = (0.05 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = (0.05 * turnover) / 100;
+          brokerageObj.clearance = (0.02 * turnover) / 100;
+        }
+        break;
+      case 7: // NCDEX
+        if (scrip.OptionType === 'XX') { // FUT
+          //   brokerageObj.stateStampDuty = (selectedState.commodityFut * brokerageObj.buyValue) / 100;
+          brokerage = brokerageChargeFactor * turnover;
+          brokerageObj.stt = (0.01 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = (0.0040 * turnover) / 100;
+          brokerageObj.clearance = (0.0003 * turnover) / 100;
+        } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') { // Call/PUT
+          //   brokerageObj.stateStampDuty = (selectedState.commodityOpt * brokerageObj.buyValue) / 100;
+          brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
+          brokerageObj.stt = (0.05 * brokerageObj.sellValue) / 100;
+          brokerageObj.transactionCharge = (0.05 * turnover) / 100;
+          brokerageObj.clearance = (0.02 * turnover) / 100;
+        }
+        break;
+      case 13: // NSECDS
+        // brokerageObj.stateStampDuty = (selectedState.currency * brokerageObj.buyValue) / 100;
+        if (scrip.OptionType === 'XX') {
+          brokerage = brokerageChargeFactor * turnover;
+          brokerageObj.stt = 0;
+          brokerageObj.transactionCharge = (0.0009 * turnover) / 100;
+          brokerageObj.clearance = (0.0005 * turnover) / 100;
+        } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
+          brokerage = brokerageChargeFactor * brokerageObj.quantity * (brokerageObj.sellValue && brokerageObj.buyValue ? 2 : 1);
+          brokerageObj.stt = 0;
+          brokerageObj.transactionCharge = (0.035 * turnover) / 100;
+          brokerageObj.clearance = (0.002 * turnover) / 100;
+        }
+        break;
+      default:
+        break;
+    }
+    return brokerage;
   };
 
-   function getBrokerage() {
+  function getBrokerage() {
     let payload = {
       "segment": brokerageObj.selectedScrip.SegmentId,
       "token": brokerageObj.selectedScrip.Token,
@@ -421,12 +292,11 @@ function Banner() {
     rest.getScripBrokerageURL(payload).then(res => {
       const newBrokerageObj = JSON.parse(JSON.stringify(brokerageObj));
       // console.log('newBrokerageObj', newBrokerageObj);
-
       if (res.Status === 'Success' && res.Response) {
         let buyBrokerage = res.Response.buyBrokerage;
         let sellBrokerage = res.Response.sellBrokerage;
-         console.log("buyBrokerage", buyBrokerage,newBrokerageObj,brokerageObj)
-         console.log("sellBrokerage", sellBrokerage)
+        console.log("buyBrokerage", buyBrokerage, newBrokerageObj, brokerageObj)
+        console.log("sellBrokerage", sellBrokerage)
         newBrokerageObj.stt = 0;
         newBrokerageObj.transactionCharge = 0;
         newBrokerageObj.clearance = 0;
@@ -489,10 +359,10 @@ function Banner() {
           // console.log("brokerageObj.buyValue", brokerageObj.buyValue)
         }
 
-      //  Object.assign(newBrokerageObj, brokerageObj);
+        //  Object.assign(newBrokerageObj, brokerageObj);
         setNewBrokerageObj(newBrokerageObj);
-        console.log("newBrokerageObj",newBrokerageObj)
-        console.log("brokerageObj",brokerageObj)
+        console.log("newBrokerageObj", newBrokerageObj)
+        console.log("brokerageObj", brokerageObj)
       } else {
 
       }
@@ -500,35 +370,115 @@ function Banner() {
       (err) => {
 
       })
-}
-  
+  }
+
   function onOrderTypeChange() {
     setBrokerageObj((prevState) => ({
       ...prevState,
       orderType: !prevState.orderType,
-     // brokerage: BrokerageCal(prevState.selectedScrip),
+      // brokerage: BrokerageCal(prevState.selectedScrip),
       GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
     }));
   }
 
-  // function onBrokerageRateChange() {
+ // Calculate and update change in brokerage rate
+  // function onBrokerageRateChange(e) {
+    
   //   setBrokerageObj((prevState) => ({
   //     ...prevState,
-  //     brokerage: BrokerageCal(prevState.selectedScrip),
-  //     GST: (18 * (prevState.brokerage + prevState.transactionCharge + prevState.clearance)) / 100,
+  //     brokerageRate: e.target.value,
   //   }));
+  //   brokerageObj.brokerage = brokerageObj.turnOver * e.target.value / 100
+  //   brokerageObj.GST = (18 * (brokerageObj.brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
   // }
   function onBrokerageRateChange(e) {
-    setBrokerageObj((prevState) => ({
-      ...prevState,
-      brokerageRate: e.target.value,
-    }));
-    brokerageObj.brokerage = brokerageObj.turnOver * getDefaultBrokerageRate(brokerageObj)/100
-    brokerageObj.GST = (18 * (brokerageObj.brokerage +brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
+    const inputValue = e.target.value;
+    // Check if the input is a valid number with decimal point using a regular expression
+    const isValidInput = /^-?\d*\.?\d*$/.test(inputValue);
+  
+    // If the input is a valid number with decimal point, update the state
+    if (isValidInput) {
+      setBrokerageObj((prevState) => ({
+        ...prevState,
+        brokerageRate: inputValue,
+      }));
+      brokerageObj.brokerage = brokerageObj.turnOver * parseFloat(inputValue) / 100;
+      brokerageObj.GST = (18 * (brokerageObj.brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
+    }
   }
+ // Calculate and update the necessary state values
+  const onQuantityChange = (e) => {
+    const input = e.target.value;
+    if (/^[0-9]*(\.[0-9]*)?$/.test(input) || input === ''){
+      const normalizingFactor = ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1);
+      const sellValue = input * brokerageObj.sellPrice * (brokerageObj.selectedScrip?.MarketLot || 1) * normalizingFactor;
+      const buyValue = input * brokerageObj.buyPrice * (brokerageObj.selectedScrip?.MarketLot || 1) * normalizingFactor;
+      const turnOver = sellValue + buyValue;
+      const brokerageRate = getDefaultBrokerageRate(brokerageObj.selectedScrip);
+      const brokerage = turnOver * brokerageRate / 100;
+      const GST = (18 * (brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
   
+      setBrokerageObj(prevState => ({
+        ...prevState,
+        quantity: input,
+        normalizingFactor,
+        sellValue,
+        buyValue,
+        turnOver,
+        brokerage,
+        GST,
+      }));
+    }
+    
+  };
 
+
+  const onSellPriceChange = (e) => {
+    const input = e.target.value;
+    // Calculate and update the necessary state values
+    if (/^[0-9]*(\.[0-9]*)?$/.test(input) || input === ''){
+      const normalizingFactor = ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1);
+      const sellValue = brokerageObj.quantity * input * (brokerageObj.selectedScrip?.MarketLot || 1) * normalizingFactor;
+      const turnOver = sellValue + brokerageObj.buyValue;
+      const brokerageRate = getDefaultBrokerageRate(brokerageObj.selectedScrip);
+      const brokerage = turnOver * brokerageRate / 100;
+      const GST = (18 * (brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
   
+      setBrokerageObj(prevState => ({
+        ...prevState,
+        sellPrice: input,
+        normalizingFactor,
+        sellValue,
+        turnOver,
+        brokerage,
+        GST,
+      }));
+    }
+  };
+
+
+  const onBuyPriceChange = (e) => {
+    const input = e.target.value;
+    if (/^[0-9]*(\.[0-9]*)?$/.test(input) || input === '') {
+      const normalizingFactor = ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1);
+      const buyValue = brokerageObj.quantity * input * (brokerageObj.selectedScrip?.MarketLot || 1) * normalizingFactor;
+      const turnOver = buyValue + brokerageObj.sellValue;
+      const brokerageRate = getDefaultBrokerageRate(brokerageObj.selectedScrip);
+      const brokerage = turnOver * brokerageRate / 100;
+      const GST = (18 * (brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
+  
+      setBrokerageObj(prevState => ({
+        ...prevState,
+        buyPrice: input,
+        normalizingFactor,
+        buyValue,
+        turnOver,
+        brokerage,
+        GST,
+      }));
+    }
+  };
+
   return (
     <>
       <section className='banner-section'>
@@ -608,10 +558,8 @@ function Banner() {
                                 className="form-control input-font"
                                 placeholder="10"
                                 value={brokerageObj.quantity}
-                                onChange={(e) => setBrokerageObj({ ...brokerageObj, quantity: e.target.value })}
-                                onInput={onQuantityChange}
+                                onChange={onQuantityChange}
                                 maxLength="6"
-                                
                               />
                             </div>
                           </div>
@@ -626,8 +574,8 @@ function Banner() {
                                 className="form-control input-font"
                                 placeholder="₹ 944.40"
                                 value={brokerageObj.buyPrice}
-                                onInput={onQuantityChange}
-                                onChange={(e) => setBrokerageObj({ ...brokerageObj, buyPrice: e.target.value })}
+                                onChange={onBuyPriceChange}
+                                maxLength={10}
                               />
                             </div>
                           </div>
@@ -641,9 +589,9 @@ function Banner() {
                                 type="text"
                                 className="form-control input-font"
                                 placeholder="₹ 944.40"
-                                value={brokerageObj.sellPrice }
-                                onInput={onQuantityChange}
-                                onChange={(e) => setBrokerageObj({ ...brokerageObj, sellPrice: e.target.value })}
+                                value={brokerageObj.sellPrice}
+                                onChange={onSellPriceChange}
+                                maxLength={10}
                               />
                             </div>
                           </div>
@@ -658,8 +606,9 @@ function Banner() {
                                 className="form-control input-font percent"
                                 placeholder="0.03"
                                 value={brokerageObj.brokerageRate}
-                                onChange={(e) => setBrokerageObj({ ...brokerageObj, brokerageRate: e.target.value })}
-                                onInput={onBrokerageRateChange}
+                                // onChange={(e) => setBrokerageObj({ ...brokerageObj, brokerageRate: e.target.value })}
+                                onChange={onBrokerageRateChange}
+                                maxLength={10}
                               />
                             </div>
                           </div>
@@ -674,7 +623,7 @@ function Banner() {
                         <div className='brokerage-card'>
                           <div className='card-flex'>
                             <div className='flex-items'>
-                            <span>Turnover</span>
+                              <span>Turnover</span>
                             </div>
                             <div className='flex-items'>
                               <span>{parseFloat(newBrokerageObj.turnOver).toFixed(2)}</span>
@@ -685,7 +634,7 @@ function Banner() {
                               <span className='text-bold'>Brokerage</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>{parseFloat(newBrokerageObj?.brokerage).toFixed(2) }</span>
+                              <span className='text-bold'>{parseFloat(newBrokerageObj?.brokerage).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex brd-bottom'>
@@ -701,7 +650,7 @@ function Banner() {
                               <span>Brokerage</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{parseFloat(newBrokerageObj?.brokerage).toFixed(2) }</span>
+                              <span>{parseFloat(newBrokerageObj?.brokerage).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -756,8 +705,8 @@ function Banner() {
                             <div className='flex-items'>
                               <span className='text-bold'>TOTAL TAXES & CHARGES</span>
                             </div>
-                            <div className='flex-items'> 
-                            <span className='text-bold'>{parseFloat((newBrokerageObj && newBrokerageObj.brokerage) + (newBrokerageObj && newBrokerageObj.stt) + (newBrokerageObj && newBrokerageObj.transactionCharge) + (newBrokerageObj && newBrokerageObj.clearance) + (newBrokerageObj && newBrokerageObj.GST) + (newBrokerageObj && newBrokerageObj.sebi)).toFixed(2)}</span>
+                            <div className='flex-items'>
+                              <span className='text-bold'>{parseFloat((newBrokerageObj && newBrokerageObj.brokerage) + (newBrokerageObj && newBrokerageObj.stt) + (newBrokerageObj && newBrokerageObj.transactionCharge) + (newBrokerageObj && newBrokerageObj.clearance) + (newBrokerageObj && newBrokerageObj.GST) + (newBrokerageObj && newBrokerageObj.sebi)).toFixed(2)}</span>
                               {/* <span className='text-bold'>{(newBrokerageObj?.brokerage) + (newBrokerageObj?.stt) + (newBrokerageObj?.transactionCharge) + (newBrokerageObj?.clearance) + (newBrokerageObj?.GST) + (newBrokerageObj?.sebi)}</span> */}
                             </div>
                           </div>
@@ -766,7 +715,7 @@ function Banner() {
                               <span className='text-bold'>Net Buy Value</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>{newBrokerageObj?.buyValue}</span>
+                              <span className='text-bold'>{parseFloat(newBrokerageObj?.buyValue).toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -774,7 +723,7 @@ function Banner() {
                               <span className='text-bold'>Net Sell Value</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>{newBrokerageObj?.sellValue}</span>
+                              <span className='text-bold'>{parseFloat(newBrokerageObj?.sellValue).toFixed(2)}</span>
                             </div>
                           </div>
                         </div>
