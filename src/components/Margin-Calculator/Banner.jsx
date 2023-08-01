@@ -98,7 +98,7 @@ function Banner() {
                     <div className='col-md-12'>
                         <div className='tabs-btn'>
                             <div className='row justify-content-center'>
-                                <div className='col-xl-6 col-md-12'>
+                                <div className='col-xl-8 col-md-12'>
                                     <ul className='list_group1'>
                                             <li  className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}>
                                                 <Link className='urllinks' to="/margin-calculator" onClick={() => All()}>All</Link>
