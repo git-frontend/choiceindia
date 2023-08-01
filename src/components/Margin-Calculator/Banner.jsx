@@ -1,10 +1,11 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import { Accordion } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 function Banner() {
-
-
+    const [rendercount, setRenderCount] = useState(() => false);
+    let checkurl = (window.location.pathname == "/margin-calculator") ? "all":(window.location.pathname == "/futures-and-options-margin-calculator") ? "future-options" :(window.location.pathname == "/commodity-margin-calculator") ? "commodity" :(window.location.pathname == "/forex-margin-calculator") ?"forex":"";
     const [toggleState, setToggleState] = useState(1);
   const [data, setData] = useState(0);
   const toggleTab = (index) => {
@@ -21,6 +22,46 @@ function Banner() {
       behavior: "smooth"
     });
   }
+  function urlLink(){
+    const queryParam = window.location.search;
+    const utmvalue = new URLSearchParams(queryParam);
+    const activeurl = utmvalue.get('active');
+    ((activeurl == "margin-calculator")?All():(activeurl == "futures-and-options-margin-calculator")?FO():(activeurl == "commodity-margin-calculator")?Commodity():(activeurl == "forex-margin-calculator")?Forex():"");
+  }
+  function All(){
+     toggleTab(1);
+    setData(0) 
+  }
+  function FO(){
+    toggleTab(2); 
+    setData(1)
+ }
+ function Commodity(){
+    toggleTab(3);
+   setData(2) 
+ }
+ function Forex(){
+    toggleTab(4);
+   setData(3) 
+ }
+
+ function changeurl(id) {
+    window.history.replaceState(null, null, `/active=${id}`);
+    urlLink();
+  
+  }
+
+
+ useEffect(() => {
+    setRenderCount(true)
+    if (rendercount === true) {
+      checkurl=='all'?All() :
+      checkurl=='future-options'?FO():
+      checkurl == 'commodity'? Commodity():
+      checkurl == 'forex'? Forex() :""; 
+    }
+},[rendercount]);
+
   return (
     <>
     <section className='banner-section2'>
@@ -59,14 +100,17 @@ function Banner() {
                             <div className='row justify-content-center'>
                                 <div className='col-xl-6 col-md-12'>
                                     <ul className='list_group1'>
-                                            <li  className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}
-                                                onClick={() => { toggleTab(1); setData(0) }}>All</li>
-                                            <li  className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}
-                                                onClick={() => { toggleTab(2); setData(1) }}>F&O</li>
-                                            <li  className={toggleState === 3 ? "list-group-item tabs active" : "list-group-item"}
-                                                onClick={() => { toggleTab(3); setData(2) }}>Commodity</li>
-                                            <li  className={toggleState === 4 ? "list-group-item tabs active" : "list-group-item"}
-                                                onClick={() => { toggleTab(4); setData(3) }}>Forex</li>
+                                            <li  className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/margin-calculator" onClick={() => All()}>All</Link>
+                                            </li>
+                                            <li  className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}>
+                                            <Link className='urllinks' to="/futures-and-options-margin-calculator" onClick={() => FO()}>F&O</Link>
+                                            </li>
+                                            <li  className={toggleState === 3 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/commodity-margin-calculator" onClick={() => Commodity()}>Commodity</Link></li>
+                                            <li  className={toggleState === 4 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/forex-margin-calculator" onClick={() => Forex()}>Forex</Link>
+                                            </li>
                                     </ul>
                                 </div>
                             </div>

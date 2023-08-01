@@ -923,6 +923,21 @@ function Routing() {
                                 < LazyMarginCalculator />
                             </React.Suspense>
                         } />
+                         <Route exact path='/futures-and-options-margin-calculator' element={
+                            <React.Suspense>
+                                < LazyMarginCalculator />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/commodity-margin-calculator' element={
+                            <React.Suspense>
+                                < LazyMarginCalculator />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/forex-margin-calculator' element={
+                            <React.Suspense>
+                                < LazyMarginCalculator />
+                            </React.Suspense>
+                        } />
                          <Route exact path='/sip-calculator' element={
                             <React.Suspense>
                                 < LazySIPCalculator />
