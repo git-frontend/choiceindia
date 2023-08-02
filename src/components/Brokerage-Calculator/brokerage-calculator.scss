@@ -436,6 +436,8 @@
                     }
                 }
                 .btn-light{
+                    position: relative;
+                    z-index: 9999 !important;
                     @media (max-width:$sm) {
                        width: 100%;
                     }
