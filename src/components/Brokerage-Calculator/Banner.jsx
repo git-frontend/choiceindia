@@ -532,9 +532,12 @@ function Banner() {
                                 onChange={(e) => setBrokerageObj({ ...brokerageObj, searchInput: e.target.value })}
                               />
                               <ul className="brokerage-search-result" >
-                                {brokerageObj.tableValue.length === 0 && brokerageObj.searchInput && (brokerageObj.searchInput.length > 0 || brokerageObj.searchInput.length <= 2) && (
+                                {brokerageObj.tableValue.length === 0 &&
+                                  brokerageObj.searchInput &&
+                                  brokerageObj.searchInput.length > 0 &&
+                                  brokerageObj.searchInput.length <= 2 ? (
                                   <li key="no-record">No Record Found</li>
-                                )}
+                                ) : null}
                                 {brokerageObj.tableValue.map(item => (
                                   <li className='brokerage-search-list' key={item.id} onClick={() => getScriptDetail(item)}>
                                     <span className="symbol">{item.SecName}</span>
@@ -554,17 +557,17 @@ function Banner() {
                                 brokerageObj.selectedScrip.SegmentId === 13 || brokerageObj.selectedScrip?.MarketLot > 1 ? 'Lot(s)' : 'Quantity'}
                             </div>
                             <div className="col-xl-5 col-md-12">
-                            <div className='form-control2'>
+                              <div className='form-control2'>
                                 <Form.Control
-                                    name="quantity"
-                                    type="text"
-                                    className="form-control input-form input-1"
-                                    placeholder="10"
-                                    value={brokerageObj.quantity}
-                                    onChange={onQuantityChange}
-                                    maxLength="6"
-                                />                       
-                            </div>
+                                  name="quantity"
+                                  type="text"
+                                  className="form-control input-form input-1"
+                                  placeholder="10"
+                                  value={brokerageObj.quantity}
+                                  onChange={onQuantityChange}
+                                  maxLength="6"
+                                />
+                              </div>
                               {brokerageObj.selectedScrip.SegmentId === 2 || brokerageObj.selectedScrip.SegmentId === 5 || brokerageObj.selectedScrip.SegmentId === 7 ||
                                 brokerageObj.selectedScrip.SegmentId === 13 || brokerageObj.selectedScrip?.MarketLot > 1 ? (
                                 <p>1 lot = {brokerageObj.selectedScrip.MarketLot}</p>
@@ -576,19 +579,19 @@ function Banner() {
                               <p className='frm-label'>Buy Price</p>
                             </div>
                             <div className="col-xl-5 col-md-12">
-                                <div className='form-control2'>
-                                    <span className="rupees-symble">₹</span>
-                                    <Form.Control
-                                name="buyPrice"
-                                type="text"
-                                className="form-control input-form input-1"
-                                placeholder="₹ 944.40"
-                                value={brokerageObj.buyPrice}
-                                onChange={onBuyPriceChange}
-                                maxLength={10}
-                              />
-                                </div>
-                          
+                              <div className='form-control2'>
+                                <span className="rupees-symble">₹</span>
+                                <Form.Control
+                                  name="buyPrice"
+                                  type="text"
+                                  className="form-control input-form input-1"
+                                  placeholder="₹ 944.40"
+                                  value={brokerageObj.buyPrice}
+                                  onChange={onBuyPriceChange}
+                                  maxLength={10}
+                                />
+                              </div>
+
                             </div>
                           </div>
                           <div className="row row-sec width-resp">
@@ -596,38 +599,38 @@ function Banner() {
                               <p className='frm-label'>Sell Price</p>
                             </div>
                             <div className="col-xl-5 col-md-12">
-                            <div className='form-control2'>
-                                    <span className="rupees-symble">₹</span>
-                              <Form.Control
-                                name="sellPrice"
-                                type="text"
-                                className="form-control input-form input-1"
-                                placeholder="₹ 944.40"
-                                value={brokerageObj.sellPrice}
-                                onChange={onSellPriceChange}
-                                maxLength={10}
-                              />
+                              <div className='form-control2'>
+                                <span className="rupees-symble">₹</span>
+                                <Form.Control
+                                  name="sellPrice"
+                                  type="text"
+                                  className="form-control input-form input-1"
+                                  placeholder="₹ 944.40"
+                                  value={brokerageObj.sellPrice}
+                                  onChange={onSellPriceChange}
+                                  maxLength={10}
+                                />
+                              </div>
                             </div>
-                             </div>
                           </div>
                           <div className="row row-sec width-resp">
                             <div className="col-xl-7 col-md-12">
                               <p className='frm-label'>Brokerage Rate</p>
                             </div>
                             <div className="col-xl-5 col-md-12">
-                            <div className='form-control2'>
-                              <Form.Control
-                                name="brokerageRate"
-                                type="text"
-                                className="form-control input-form input-3"
-                                placeholder="0.03"
-                                value={brokerageObj.brokerageRate}
-                                // onChange={(e) => setBrokerageObj({ ...brokerageObj, brokerageRate: e.target.value })}
-                                onChange={onBrokerageRateChange}
-                                maxLength={10}
-                              />
-                               <span className="percent-symble">%</span>
-                            </div>
+                              <div className='form-control2'>
+                                <Form.Control
+                                  name="brokerageRate"
+                                  type="text"
+                                  className="form-control input-form input-3"
+                                  placeholder="0.03"
+                                  value={brokerageObj.brokerageRate}
+                                  // onChange={(e) => setBrokerageObj({ ...brokerageObj, brokerageRate: e.target.value })}
+                                  onChange={onBrokerageRateChange}
+                                  maxLength={10}
+                                />
+                                <span className="percent-symble">%</span>
+                              </div>
                             </div>
                           </div>
                         </div>
