@@ -17,6 +17,7 @@ import WhyChoiceOpenDematAccount from "./WhyChoiceOpenDematAccount";
 
 import BChargesMoreContent from "./BChargesMoreContent";
 import Faq from "./Faqs";
+import OpenAccountEasySteps from "./OpenAccountEasySteps";
 
 
 function FreeDematCompaign() {
@@ -64,14 +65,15 @@ function FreeDematCompaign() {
               <WhyOpenFreeDematAccount />
               <OneAccountFinancialNeeds />
               <OpenLowBrokerageDematAccount />
-              <DematAccountOnlineSteps />
+              <OpenAccountEasySteps/>
+              {/* <DematAccountOnlineSteps /> */}
               <DocumentsRequiredDematAccountOpeningOnline />
               <WhyChoiceOpenDematAccount />
             </div>
             : ""}
 
-        {/* <Faq/>
-          <BChargesMoreContent/> */}
+        <Faq/>
+          <BChargesMoreContent/>
       </div>
 
   

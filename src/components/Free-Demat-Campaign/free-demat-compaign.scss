@@ -1375,3 +1375,171 @@
     display: block !important;
     }
 }
+.easy-steps-sec{
+    background: $primary;
+    position: relative;
+    padding: 6rem 0 18rem;
+    .title-secnd{
+        color: $whiteColor;
+        padding-bottom: 24px;
+        span{
+            color: $yellowColor;
+        }
+    }
+    p{
+        color: $text-gray;
+        font-size: 1.846rem;
+        font-family: $font-family-poppins-regular;
+        line-height: 1.5;
+        font-weight: 400;
+        br{
+            @media (max-width:$md) {
+                display: none;
+            }
+        }
+        a{
+            color: $text-gray;
+        }
+    }
+    .main-easy-div{
+    margin-top: 12rem;
+    .easy-steps-bg{
+        position: relative;
+        max-width: 77.077rem;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        .display-flex{
+            @media (max-width:$sm) {
+                display: flex;
+                width: 100%;
+                left: inherit;
+                right: inherit;
+                top: inherit;
+                position: inherit !important;
+                justify-content: start;
+                align-items: center;
+                column-gap: 20px;
+                z-index: 1;
+            }
+        }
+        .steps-line{
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
+        ul{
+            list-style: none;
+            @media (max-width:$sm) {
+                display: flex;
+                flex-wrap: wrap;
+                row-gap: 6rem;
+                &::before{
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    background: url(../../assets/images/free-demat-compaign/line-mobile.webp) no-repeat top left;
+                    background-size: contain;
+                    position: absolute;
+                    left: 15%;
+                    top: 0;
+
+                }
+            }
+           .easy-text{
+            color: $whiteColor;
+            font-size: 1.846rem;
+            font-family: $font-family-poppins-medium;
+            white-space: nowrap;
+            @media (max-width:$md) {
+                font-size: 1.5rem;
+                white-space: inherit;
+            }
+           }
+           .mr-b{
+            margin-bottom: 16px;
+            @media (max-width:$sm) {
+                margin-bottom: 0;
+            }
+           }
+           .number{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #0CBCB7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media (max-width:$md) {
+                width: 60px;
+                height: 60px;
+            }
+            .number-text{
+                font-size: 2.462rem;
+                font-family: $font-family-poppins-semibold;
+                color: $primary;
+                @media (max-width:$md) {
+                    font-size: 1.8rem;
+                }
+            }
+           }
+            .numone{
+                position: absolute;
+                top: -60%;
+                left: -6%;
+                @media (max-width:$sm-x) {
+                    left: -3%;
+                }
+                @media (max-width:$sm) {
+                    flex-direction: row-reverse;
+                }
+            }
+            .numtwo{
+                position: absolute;
+                top:75%;
+                left: 8%;
+            }
+            .numthree{
+                position: absolute;
+                top: -60%;
+                left: 23%;
+                @media (max-width:$sm) {
+                    flex-direction: row-reverse;
+                }
+            }
+            .numfourth{
+                position: absolute;
+                top:75%;
+                left: 37%;
+            }
+            .numfive{
+                position: absolute;
+                top: -60%;
+                left: 52%;
+                @media (max-width:$sm) {
+                    flex-direction: row-reverse;
+                }
+            }
+            .numsix{
+                position: absolute;
+                top:75%;
+                left: 67%;
+            }
+            .numseven{
+                position: absolute;
+                top: -60%;
+                left: 82%;
+                @media (max-width:$sm) {
+                    flex-direction: row-reverse;
+                }
+            }
+            .numeight{
+                position: absolute;
+                top:80%;
+                left: 95%;
+            }
+        }
+}
+}
+}
