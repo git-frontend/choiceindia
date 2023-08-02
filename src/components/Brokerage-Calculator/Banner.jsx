@@ -148,8 +148,8 @@ function Banner() {
 
         }
         data.sellValue = (brokerageObj.quantity * Number(data.sellPrice) * (res.Response.lMT[0].ML || 1)) * data.normalizingFactor,
-        data.buyValue = (brokerageObj.quantity * Number(data.buyPrice) * (res.Response.lMT[0].ML || 1)) * data.normalizingFactor,
-        data.turnOver = data.sellValue + data.buyValue
+          data.buyValue = (brokerageObj.quantity * Number(data.buyPrice) * (res.Response.lMT[0].ML || 1)) * data.normalizingFactor,
+          data.turnOver = data.sellValue + data.buyValue
         data.brokerage = data.turnOver * getDefaultBrokerageRate(item) / 100
         // console.log(" data.brokerage", data.brokerage)
         data = Object.assign(brokerageObj, data)
@@ -172,7 +172,7 @@ function Banner() {
     return data;
   };
 
-//for session Id
+  //for session Id
   function getSessionId() {
     let api = new API_URLS();
     fetch(api.getSessionUrl())
@@ -188,7 +188,7 @@ function Banner() {
   }
 
 
-  
+
   const BrokerageCal = (scrip) => {
     let brokerage;
     let turnover = brokerageObj.turnOver;
@@ -381,9 +381,9 @@ function Banner() {
     }));
   }
 
- // Calculate and update change in brokerage rate
+  // Calculate and update change in brokerage rate
   // function onBrokerageRateChange(e) {
-    
+
   //   setBrokerageObj((prevState) => ({
   //     ...prevState,
   //     brokerageRate: e.target.value,
@@ -395,7 +395,7 @@ function Banner() {
     const inputValue = e.target.value;
     // Check if the input is a valid number with decimal point using a regular expression
     const isValidInput = /^-?\d*\.?\d*$/.test(inputValue);
-  
+
     // If the input is a valid number with decimal point, update the state
     if (isValidInput) {
       setBrokerageObj((prevState) => ({
@@ -406,10 +406,10 @@ function Banner() {
       brokerageObj.GST = (18 * (brokerageObj.brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
     }
   }
- // Calculate and update the necessary state values
+  // Calculate and update the necessary state values
   const onQuantityChange = (e) => {
     const input = e.target.value;
-    if (/^[0-9]*(\.[0-9]*)?$/.test(input) || input === ''){
+    if (/^[0-9]*(\.[0-9]*)?$/.test(input) || input === '') {
       const normalizingFactor = ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1);
       const sellValue = input * brokerageObj.sellPrice * (brokerageObj.selectedScrip?.MarketLot || 1) * normalizingFactor;
       const buyValue = input * brokerageObj.buyPrice * (brokerageObj.selectedScrip?.MarketLot || 1) * normalizingFactor;
@@ -417,7 +417,7 @@ function Banner() {
       const brokerageRate = getDefaultBrokerageRate(brokerageObj.selectedScrip);
       const brokerage = turnOver * brokerageRate / 100;
       const GST = (18 * (brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
-  
+
       setBrokerageObj(prevState => ({
         ...prevState,
         quantity: input,
@@ -429,21 +429,21 @@ function Banner() {
         GST,
       }));
     }
-    
+
   };
 
 
   const onSellPriceChange = (e) => {
     const input = e.target.value;
     // Calculate and update the necessary state values
-    if (/^[0-9]*(\.[0-9]*)?$/.test(input) || input === ''){
+    if (/^[0-9]*(\.[0-9]*)?$/.test(input) || input === '') {
       const normalizingFactor = ((scripDetail.PriceNum / scripDetail.PriceDen) || 1) * ((scripDetail.GenNum / scripDetail.GenDen) || 1);
       const sellValue = brokerageObj.quantity * input * (brokerageObj.selectedScrip?.MarketLot || 1) * normalizingFactor;
       const turnOver = sellValue + brokerageObj.buyValue;
       const brokerageRate = getDefaultBrokerageRate(brokerageObj.selectedScrip);
       const brokerage = turnOver * brokerageRate / 100;
       const GST = (18 * (brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
-  
+
       setBrokerageObj(prevState => ({
         ...prevState,
         sellPrice: input,
@@ -466,7 +466,7 @@ function Banner() {
       const brokerageRate = getDefaultBrokerageRate(brokerageObj.selectedScrip);
       const brokerage = turnOver * brokerageRate / 100;
       const GST = (18 * (brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
-  
+
       setBrokerageObj(prevState => ({
         ...prevState,
         buyPrice: input,
@@ -549,7 +549,9 @@ function Banner() {
                         <div className='mobile-view'>
                           <div className="row row-sec width-resp">
                             <div className="col-xl-7 col-md-12">
-                              <p className='frm-label'>Quantity</p>
+                              {/* <p className='frm-label'>Quantity</p> */}
+                              {brokerageObj.selectedScrip.SegmentId === 2 || brokerageObj.selectedScrip.SegmentId === 5 || brokerageObj.selectedScrip.SegmentId === 7 ||
+                                brokerageObj.selectedScrip.SegmentId === 13 || brokerageObj.selectedScrip?.MarketLot > 1 ? 'Lot(s)' : 'Quantity'}
                             </div>
                             <div className="col-xl-5 col-md-12">
                               <Form.Control
@@ -561,6 +563,10 @@ function Banner() {
                                 onChange={onQuantityChange}
                                 maxLength="6"
                               />
+                              {brokerageObj.selectedScrip.SegmentId === 2 || brokerageObj.selectedScrip.SegmentId === 5 || brokerageObj.selectedScrip.SegmentId === 7 ||
+                                brokerageObj.selectedScrip.SegmentId === 13 || brokerageObj.selectedScrip?.MarketLot > 1 ? (
+                                <p>1 lot = {brokerageObj.selectedScrip.MarketLot}</p>
+                              ) : null}
                             </div>
                           </div>
                           <div className="row row-sec width-resp">
