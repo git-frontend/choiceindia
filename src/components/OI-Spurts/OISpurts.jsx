@@ -1,7 +1,8 @@
 
 import React from "react";
 import "./oi-spurts.scss";
-import "../../components/Margin-Calculator/margin-calculator.scss";
+// import "../../components/Margin-Calculator/margin-calculator.scss";
+import "../../components/Brokerage-Calculator/brokerage-calculator.scss";
 import Banner from "./Banner";
 import { useState,useEffect} from "react";
 import meta_tags from "../../Data/MetaTags";

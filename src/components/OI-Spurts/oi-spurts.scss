@@ -66,7 +66,7 @@
                 font-family: $font-family-poppins-medium;
                 font-size: 1.385rem;
                 line-height: 2.077rem;
-                padding: 0.5rem 1rem;
+                padding: 0.8rem 1rem;
                 text-align: center;
                 text-decoration: none;
                 width: 100%;
@@ -93,7 +93,7 @@
 }
    
 }
-.banner-section{
+.banner-section2{
     background: $whiteColor;
     padding: 0 0 10rem;
     @media (max-width:$md) {
@@ -102,7 +102,7 @@
     .main-sec{
        
         @media (max-width:$sm) {
-            margin-top: 28rem;
+            margin-top: 26rem;
         }
     
     .content-tabs {
@@ -117,12 +117,12 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    @media (max-width:$md) {
-                        padding-top: 3rem;
-                    }
-                    @media (max-width:$sm) {
-                        padding-top: 0;
-                    }
+                    // @media (max-width:$md) {
+                    //     padding-top: 3rem;
+                    // }
+                    // @media (max-width:$sm) {
+                    //     padding-top: 0;
+                    // }
                     .toggle {
                         position: relative;
                         display: flex;
@@ -161,7 +161,7 @@
                                 left:  1.538rem;
                                 top: -0.231rem;
                                 z-index: 2;
-                                background: $whiteColor;
+                                background: $pricolor;
                                 box-shadow: 0 0 5px #0002;
                                 transition: 0.2s ease-in;
                               }
@@ -189,10 +189,10 @@
                             background: $whiteColor;
                             padding: 0.7rem;
                             border-radius: 6px;
-                            .svg-icon{
-                                height: 1.846rem;
-                                width: 1.846rem;
-                            }
+                            // .svg-icon{
+                            //     height: 1.846rem;
+                            //     width: 1.846rem;
+                            // }
                         }
                        
                     }
@@ -203,7 +203,7 @@
                         border: 1px solid $border-gray;
                         display: inline-table;
                         border-radius: 6px;
-                        padding: 7px 14px;
+                        padding: 7px 3px;
                         @media (max-width:$md) {
                             width: 100%;
                             margin-bottom: 3rem;
@@ -235,15 +235,27 @@
                             }
                         }
                         .drop-menu{
-                            margin-top: 0.5rem;
                             padding: 0;
-                            min-width: 18.5rem;
+                            width: 100%;
+                            transform: inherit !important;
+                            top: 100% !important;
+                            border: 0;
+                            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.16);
+                            border-radius: 8px;
+                            overflow: auto;
+                            inset: inherit !important;
+                            left: 0 !important;
+                            z-index: 99;
+                            margin-top: 8px;
                             .drop-item{
                                 font-size: 1.385rem;
                                 font-family: $font-family-poppins-medium;
                                 line-height: 1.5;
                                 color: $primary;
-                                padding: 0.5rem 1rem;
+                                padding: 0.75rem 1rem;
+                               &:active{
+                                background: $whiteColor;
+                               }
                             }
                         }
                         

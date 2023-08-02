@@ -514,7 +514,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        {/* <Route exact path='/insurance' element={
+                        {/* <Route exact path='/choice-insurance' element={
                             <React.Suspense>
                                 < LazyInsurance />
                             </React.Suspense>
@@ -919,6 +919,21 @@ function Routing() {
                                 </React.Suspense>
                         } />
                          <Route exact path='/margin-calculator' element={
+                            <React.Suspense>
+                                < LazyMarginCalculator />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/futures-and-options-margin-calculator' element={
+                            <React.Suspense>
+                                < LazyMarginCalculator />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/commodity-margin-calculator' element={
+                            <React.Suspense>
+                                < LazyMarginCalculator />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/forex-margin-calculator' element={
                             <React.Suspense>
                                 < LazyMarginCalculator />
                             </React.Suspense>

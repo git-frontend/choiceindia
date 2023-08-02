@@ -2313,7 +2313,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Choice F&O Margin Calculator is a free tool for f&o traders to calculate margin for futures and options selling.",
     "link":"https://choiceindia.com/futures-and-options-margin-calculator"
   },
-  "commodity-margin-calculatorr": {
+  "commodity-margin-calculator": {
     "title":"MCX Margin Calculator - Calculate Your Commodity Trading Margin",
     'lang':"en",
     'content':"Choice MCX margin calculator is an online commodity margin calculator useful for traders in the commodity market.",

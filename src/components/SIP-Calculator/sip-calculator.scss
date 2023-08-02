@@ -63,45 +63,33 @@
                 .form-control2{
                     position: relative;
                     background: $whiteColor;
-                    border: 2px solid $stockboxshadow;
-                    border-radius: 8px;
-                    &:focus{
-                        border: 2px solid $pricolor;
+                    display: flex;
+                    align-items: center;
+                    .rupees-symble{
+                        position: absolute;
+                        left: 1rem;
+                        font-size: 1.385rem;
+                        color: $primary;
+                        font-family: $font-family-poppins-regular;
                     }
-                .rupees-symble{
-                    position: absolute;
-                    left: 1rem;
-                    top: 1.125rem;
-                    font-size: 1.385rem;
-                    color: $primary;
-                    font-family: $font-family-poppins-regular;
-                }
-                .percent-symble{
-                    position: absolute;
-                    right: 1rem;
-                    top: 1.125rem;
-                    font-size: 1.385rem;
-                    color: $primary;
-                    font-family: $font-family-poppins-regular;
-                    @media (max-width:$sm) {
-                        top:1rem;
+                    .percent-symble{
+                        position: absolute;
+                        right: 1rem;
+                        font-size: 1.385rem;
+                        color: $primary;
+                        font-family: $font-family-poppins-regular;
                     }
-                }
-                .years-symble{
-                    position: absolute;
-                    right: 1rem;
-                    top: 1.125rem;
-                    font-size: 1.385rem;
-                    color: $primary;
-                    font-family: $font-family-poppins-regular;
-                    @media (max-width:$sm) {
-                        top:1rem;
+                    .years-symble{
+                        position: absolute;
+                        right: 1rem;
+                        font-size: 1.385rem;
+                        color: $primary;
+                        font-family: $font-family-poppins-regular;
                     }
-                }
                 .form-ctr {
                     background: $whiteColor;
-                    border: 0;
-                    border-radius: inherit;
+                    border: 1px solid $stockboxshadow;
+                    border-radius: 8px;
                     padding: 1.154rem 0;
                     width: 14.923rem;
                     font-size: 1.385rem;
@@ -109,6 +97,11 @@
                     color: $primary;
                     font-family: $font-family-poppins-regular;
                     padding-right: 2rem;
+                    &:focus{
+                        box-shadow: none;
+                        outline: 0;
+                        border: 1px solid $pricolor;
+                    }
                     @media (max-width:$sm) {
                         width: 16rem;
                         font-size: 1.231rem;
@@ -127,11 +120,6 @@
                     }
                     &::placeholder {
                         color: $primary;
-                    }
-
-                    &:focus {
-                        outline: none;
-                        border: 0;
                     }
                 }
         }
