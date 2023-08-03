@@ -1379,6 +1379,7 @@
     background: $primary;
     position: relative;
     padding: 6rem 0 8rem;
+    overflow: hidden;
     .title-first{
         color: $whiteColor;
         padding-bottom: 24px;
@@ -1550,7 +1551,22 @@
 }
 }
 
-.readmoresection {
+.more-content {
+    padding: 6rem 0;
+   .moreless-button {
+        color: $blueColortext;
+        cursor: pointer;
+        font-family: $font-family-poppins-bold;
+        font-size: 1.6875rem!important;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2.75rem!important;
+    }
+    .seo-h3{
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 2.2rem;
+    }
     .seo-para {
         color: $primary;
         font-size: 1.625rem;
@@ -1570,5 +1586,12 @@
         font-size: 1.75rem;
         margin-bottom: 0;
         padding: 1rem 0 0;
+    }
+}
+.Dematfaq{
+    .title-first{
+        span{
+            color: $yellowColor;
+        }
     }
 }

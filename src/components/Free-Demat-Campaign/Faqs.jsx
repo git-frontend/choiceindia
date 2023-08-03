@@ -14,7 +14,7 @@ function Faqs() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title-first text-center pb-4">Demat Account Opening Related FAQs</h2>
+                            <h2 className="title-first text-center pb-4">Demat Account Opening <span>Related FAQs</span></h2>
                         </div>
 
                     </div>
@@ -35,11 +35,11 @@ function Faqs() {
                                             <li>PAN Card</li>
                                             <li>Cancelled Cheque (that captures the MICR Code)</li>
                                             <li>Passport Size Photograph</li>
-                                            <li>Aadhaar Card</li>
+                                            <li>Address Proof</li>
                                         </ul>
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item eventKey="2" className='faq-item'>
+                                {/* <Accordion.Item eventKey="2" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>What is the Power of Attorney (PoA) and why is it needed?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         The Power of Attorney is a document that gives us the authorization to debit your shares from your Demat Account whenever you sell them. However, till the time you do not submit a POA, you can avail the eDIS facility to sell your holdings. This will require you to authorise your holdings once daily before doing any holding's sell transactions. It is recommended to send a signed copy of your POA since it enables you to sell your holdings seamlessly without the need to authorise online all the time.
@@ -54,7 +54,7 @@ function Faqs() {
                                         Sunil Patodia Tower,<br />
                                         J B Nagar, Andheri (East), Mumbai 400099.
                                     </Accordion.Body>
-                                </Accordion.Item>
+                                </Accordion.Item> */}
                                 <Accordion.Item eventKey="4" className='faq-item' id="faqid">
                                     <Accordion.Header as="h3" className='faq-header'>Are there any charges for Demat Account opening with Choice? </Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
@@ -143,7 +143,7 @@ function Faqs() {
                                         <Accordion.Item eventKey="15" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>How much Demat Account Opening Fee charged by Choice?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                            It's free. There is no Demat A/c opening fee charged by Choice.
+                                            It's free. There is no Demat account opening fee charged by Choice.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="16" className='faq-item'>
@@ -157,7 +157,7 @@ function Faqs() {
                                                 </li>
                                                 <li>Must be 18 years of age</li>
                                                 <li>Have valid Pan Card</li>
-                                                <li>Valid Address Proof (Aadhar, Voter ID, Passport, Driving License, utility bills (not more than 3 months old))</li>
+                                                <li>Valid Address Proof (Aadhar, Voter ID, Passport, Driving License)</li>
                                             </ul>
                                             You will be required to provide recent photos along with proof of Identity, Address and Income (ITR) to open a Demat account in India.
                                             </Accordion.Body>

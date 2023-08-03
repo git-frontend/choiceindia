@@ -52,14 +52,8 @@ function FreeDematCompaign() {
   return (
     <div>
 
-      <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIscheck(true)}>
-      <Banner/>
-      </div>
-      
+            <Banner/>
         {/* <CreateBacktestStrategies/> */}
-        {
-          ischeck ?
-            <div>
               <GetFreeResearchCall />
               <OurTrackRecordSaysAll />
               <WhyOpenFreeDematAccount />
@@ -69,11 +63,8 @@ function FreeDematCompaign() {
               {/* <DematAccountOnlineSteps /> */}
               <DocumentsRequiredDematAccountOpeningOnline />
               <WhyChoiceOpenDematAccount />
-            </div>
-            : ""}
-
-        <Faq/>
-          <BChargesMoreContent/>
+              <Faq/>
+              <BChargesMoreContent/>
       </div>
 
   
