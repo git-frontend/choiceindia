@@ -6,7 +6,7 @@ import { API_URLS } from "../../Services/API-URLS";
 
 function Banner(props) {
 
-  // console.log('Banner',props.data);
+  console.log('Banner',props.data);
 
   let api = new API_URLS();
 
@@ -16,6 +16,26 @@ function Banner(props) {
     if(props?.data?.report_subtype_slug == 'equity-research-report'){
       setImage(() => true);
     } 
+    //for Company Fundamentals
+    if (props?.data?.report_subtype_uuid == 'f890363a-512e-4797-91fd-4d40732844a3') {
+      document.title = props?.data.scrip_sec_name ? `${props?.data.scrip_sec_name.charAt(0) + props?.data.scrip_sec_name.slice(1).toLowerCase()} Share Price Target & Forecast for 2023, 2024, 2025` : '';
+      document.getElementById('meta-tags').content=`Discover the projected ${props?.data.scrip_sec_name.charAt(0) + props?.data.scrip_sec_name.slice(1).toLowerCase()} share price targets & forecast for the years 2023, 2024, and 2025. Stay updated with the latest market trends and potential growth opportunities for ${props?.data.scrip_sec_name.charAt(0) + props?.data.scrip_sec_name.slice(1).toLowerCase()}.`
+    }
+    //for IPO/NFO Analysis
+    if (props?.data?.report_subtype_uuid == '66292363-0716-44d5-a129-a3fe2767690a') {
+      document.title = props?.data.scrip_name ? `${props?.data.scrip_name.charAt(0) + props?.data.scrip_name.slice(1).toLowerCase()} IPO Review & Recommendations from Choice` : '';
+      document.getElementById('meta-tags').content=`Get insights into ${props?.data.scrip_name.charAt(0) + props?.data.scrip_name.slice(1).toLowerCase()} IPO! Read our expert review & recommendations from Choice Research Team. Don't miss this opportunity!`
+    }
+    //for Industry Analysis
+    if (props?.data?.report_subtype_uuid == '1aa86611-7b88-4069-af82-1e04e80659a4') {
+      document.title = props?.data.tag ? `${props?.data.tag.charAt(0) + props?.data.tag.slice(1).toLowerCase()} Industry Analysis & Overview from Choice` : '';
+      document.getElementById('meta-tags').content=`Understand the latest ${props?.data.tag.charAt(0) + props?.data.tag.slice(1).toLowerCase()} Industry analysis & overview from Choice. Stay informed with expert insights.`
+    }
+    //for Economic Analysis
+    if (props?.data?.report_subtype_uuid == '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad') {
+      document.title = props?.data.title ? `${props?.data.title}` : '';
+      document.getElementById('meta-tags').content=props?.data.title ? `${props?.data.title}` : '';
+    }
   },[props])
 
   function redirectTo(id){

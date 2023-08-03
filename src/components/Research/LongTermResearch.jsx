@@ -398,7 +398,7 @@ function LongTermResearch() {
 
                                 {
                                   (list || []).slice(0, 4).map((res, i) => {
-
+                                    
                                     return (
 
                                       <div className="res-tab-itm" key={res.uuid} >
@@ -407,7 +407,7 @@ function LongTermResearch() {
                                           <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                                         </div>
                                         <div className="tab-itm-des">
-                                          <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name || "" : res.title.split('(NSE)'||'BSE')[0] || ""}</h5>
+                                          <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{ res.title }</h5>
                                           {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
                                           <div className="itm-des-text">
                                             <p dangerouslySetInnerHTML={{ __html: res.description }}></p>
