@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-
+import {useState,useEffect} from 'react';
 function BChargesMoreContent() {
 
     return (
@@ -15,8 +15,11 @@ function BChargesMoreContent() {
                         </div>
                         <div className="col-md-12">
                             <div className="para">
-                                <input type="checkbox" className="read-more-state" id="post-1" />
+                                {/* <input type="checkbox" className="read-more-state" id="post-1" /> */}
                                 <div className="read-more-wrap "> 
+                                <p className="seo-para">A brokerage account is a type of account that allows the purchase and sale of securities like stocks, bonds, and mutual funds. The account can be opened with a variety of regulated brokerage firms. These brokerage companies range from full-service stockbrokers to low-cost internet bargain brokers.
+                                    {!show ? <span onClick={()=>{setshow(true);}}>... <em className="btn-read moreless-button">Read more</em></span>:""}</p>
+                                    {show ?<div>
                                 <p className="seo-para">The stock market is an old establishment that has existed since 1875 when BSE 	was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform
                                 This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;</p>
                                 <h3 className="seo-h3">What is a Demat Account?</h3>
@@ -129,7 +132,8 @@ function BChargesMoreContent() {
                                     <li className="seo-para">Insanely low brokerage charges, Choice platform happens to be very trader friendly where call and trade orders have charges on them and squaring off your positions is also absolutely free. The Brokerage charges are as low as 2 paise.</li>
                                     <li className="seo-para"><a href="/campaign/free-amc-demat-account">Open a Demat account with no amc</a>, Choice opens an account for you, free of cost.</li>
                                   </ul>
-                                    </div></div> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
+                                    </div> <span onClick={()=>{setshow(false);}}>&nbsp;<em className="btn-read moreless-button">Read less</em></span></div>:""}
+                                    </div>
                             </div>
                         </div>
                     </div>
