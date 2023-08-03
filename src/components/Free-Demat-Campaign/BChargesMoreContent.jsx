@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {useState,useEffect} from 'react';
 function BChargesMoreContent() {
-
+  const [show, setshow]=useState(false);
     return (
         <div>
             <section className="readmoresection">
