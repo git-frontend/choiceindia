@@ -10,7 +10,7 @@ function OpenAccountEasySteps() {
                  <div className='row'>
                     <div className="col-md-12">
                         <div className='text-center'>
-                            <h2 className="title-secnd">Open a Demat Account Online <span>in Easy Steps</span></h2>
+                            <h2 className="title-first">Open a Demat Account Online <span>in Easy Steps</span></h2>
                             <p>Know the comprehensive step-by-step account opening procedure by <br/><a href="/">visiting this page.</a></p>
                         </div>
                     </div>
@@ -87,6 +87,11 @@ function OpenAccountEasySteps() {
                                 </li>
                             </ul>
                             </div>
+                        </div>
+                        <div className="d-flex justify-content-center">
+                            <a className='cursor-pointer'>
+                                <span className="btn-bg btn-bg-dark">Open Free Account</span>
+                            </a>
                         </div>
                         </div>
                     </div>

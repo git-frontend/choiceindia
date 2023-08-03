@@ -1378,8 +1378,8 @@
 .easy-steps-sec{
     background: $primary;
     position: relative;
-    padding: 6rem 0 18rem;
-    .title-secnd{
+    padding: 6rem 0 8rem;
+    .title-first{
         color: $whiteColor;
         padding-bottom: 24px;
         span{
@@ -1392,6 +1392,9 @@
         font-family: $font-family-poppins-regular;
         line-height: 1.5;
         font-weight: 400;
+        @media (max-width:$sm) {
+           font-size: 1.231rem;
+        }
         br{
             @media (max-width:$md) {
                 display: none;
@@ -1402,7 +1405,10 @@
         }
     }
     .main-easy-div{
-    margin-top: 12rem;
+    margin: 12rem 0;
+    @media (max-width:$sm) {
+        margin: 4.538rem 0;
+    }
     .easy-steps-bg{
         position: relative;
         max-width: 77.077rem;
@@ -1419,7 +1425,7 @@
                 position: inherit !important;
                 justify-content: start;
                 align-items: center;
-                column-gap: 20px;
+                column-gap: 1.538rem;
                 z-index: 1;
             }
         }
@@ -1433,7 +1439,7 @@
             @media (max-width:$sm) {
                 display: flex;
                 flex-wrap: wrap;
-                row-gap: 6rem;
+                row-gap: 4.538rem;
                 &::before{
                     content: "";
                     width: 100%;
@@ -1537,7 +1543,7 @@
             .numeight{
                 position: absolute;
                 top:80%;
-                left: 95%;
+                left: 96.5%;
             }
         }
 }
