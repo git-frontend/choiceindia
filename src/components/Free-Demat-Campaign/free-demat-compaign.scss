@@ -1429,6 +1429,12 @@
                 column-gap: 1.538rem;
                 z-index: 1;
             }
+            &.steps-active{
+                .circle-big{
+                    display: block;
+                }
+                
+            }
         }
         .steps-line{
             @media (max-width:$sm) {
@@ -1545,6 +1551,30 @@
                 position: absolute;
                 top:80%;
                 left: 96.5%;
+            }
+        }
+        .circle-big{
+            position: absolute;
+            left: -9px;
+            top: 45px;
+            width: 92px;
+            height: 85px;
+            margin: 0;
+            display: none;
+            .progress {
+                fill: none;
+                stroke-width: 2px;
+                stroke: #0CBCB7;
+                stroke-linecap: round;
+                stroke-dasharray: 340.56;
+                stroke-dashoffset: 40;
+                transform: rotate(-90deg);
+                transform-origin: 50% 50%;
+                animation: big 3.5s ease-in-out;
+            }
+            svg {
+                width: 89px;
+                height: 85px;
             }
         }
 }

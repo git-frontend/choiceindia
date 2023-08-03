@@ -21,12 +21,18 @@ function OpenAccountEasySteps() {
                                 <LazyLoader src={EasyStepsLine} className="img-fluid"></LazyLoader>
                                 </div>
                             <ul>
-                                <li className='numone display-flex'>
+                                <li className='numone display-flex steps-active'>
                                     <div className='easy-text mr-b'>
                                         PAN & DOB
                                     </div>
                                     <div className='number'>
                                         <span className='number-text'>01</span>
+                                    </div>
+                                    <div className='circle-big'>
+                                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className='progress' cx="40" cy="40" r="39" stroke="#0CBCB7" stroke-width="2" stroke-miterlimit="2.56141"/>
+                                    </svg>
+
                                     </div>
                                 </li>
                                 <li className='numtwo display-flex'>
