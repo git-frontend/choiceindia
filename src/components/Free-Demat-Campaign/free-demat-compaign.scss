@@ -1549,3 +1549,26 @@
 }
 }
 }
+
+.readmoresection {
+    .seo-para {
+        color: $primary;
+        font-size: 1.625rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+    .seo-h4 {
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 2rem;
+        margin-bottom: 0;
+        padding: 1rem 0 0.5rem;
+    }
+    .seo-h5 {
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 1.75rem;
+        margin-bottom: 0;
+        padding: 1rem 0 0;
+    }
+}
