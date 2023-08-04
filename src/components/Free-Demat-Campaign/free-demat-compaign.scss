@@ -1412,10 +1412,15 @@
     }
     .easy-steps-bg{
         position: relative;
-        max-width: 77.077rem;
+        // max-width: 77.077rem;
         width: 100%;
         height: 100%;
         margin: 0 auto;
+        .steps-line{
+            img{
+                width: 100%;
+            }
+        }
         .display-flex{
             @media (max-width:$sm) {
                 display: flex;
@@ -1464,7 +1469,7 @@
             color: $whiteColor;
             font-size: 1.846rem;
             font-family: $font-family-poppins-medium;
-            white-space: nowrap;
+            // white-space: nowrap;
             @media (max-width:$md) {
                 font-size: 1.5rem;
                 white-space: inherit;
@@ -1499,8 +1504,11 @@
            }
             .numone{
                 position: absolute;
-                top: -60%;
-                left: -6%;
+                top: -45%;
+                left: 0%;
+                @media (max-width:$md) {
+                    top: -70%;
+                }
                 &.steps-active{
                     .circle-big{
                         @media (max-width:1400px) {
@@ -1526,8 +1534,12 @@
             }
             .numtwo{
                 position: absolute;
-                top:75%;
-                left: 8%;
+                top:80%;
+                left: 8.5%;
+                @media (max-width:$md) {
+                    top: 70%;
+                    left: 7%;
+                }
                 &.steps-active{
                     .circle-big{
                         top: -4%;
@@ -1550,8 +1562,11 @@
             }
             .numthree{
                 position: absolute;
-                top: -60%;
+                top: -45%;
                 left: 23%;
+                @media (max-width:$md) {
+                    top: -70%;
+                }
                 &.steps-active{
                     .circle-big{
                         left: -3.5%;
@@ -1575,15 +1590,19 @@
             }
             .numfourth{
                 position: absolute;
-                top:75%;
-                left: 37%;
+                top:80%;
+                left: 38%;
+                @media (max-width:$md) {
+                    top: 70%;
+                    left: 37%;
+                }
                 &.steps-active{
                     .circle-big{
                         top: -4%;
                         left: -4%;
                        @media (max-width:1400px) {
                         top: -4.5%;
-                        left: -4.5%;
+                        left: -5%;
                     }
                     @media (max-width:$md) {
                         top: -5%;
@@ -1599,8 +1618,11 @@
             }
             .numfive{
                 position: absolute;
-                top: -60%;
-                left: 52%;
+                top: -45%;
+                left: 53%;
+                @media (max-width:$md) {
+                    top: -70%;
+                }
                 &.steps-active{
                     .circle-big{
                         left: -2%;
@@ -1624,8 +1646,15 @@
             }
             .numsix{
                 position: absolute;
-                top:75%;
-                left: 67%;
+                top:80%;
+                left: 68%;
+                @media (max-width:1400px) {
+                    left: 67%;
+                }
+                @media (max-width:$md) {
+                    top: 70%;
+                    left: 66%;
+                }
                 &.steps-active{
                     .circle-big{
                         top: -4%;
@@ -1649,8 +1678,11 @@
             }
             .numseven{
                 position: absolute;
-                top: -60%;
+                top: -45%;
                 left: 82%;
+                @media (max-width:$md) {
+                    top: -70%;
+                }
                 &.steps-active{
                     .circle-big{
                         left: -7%;
@@ -1675,16 +1707,24 @@
             .numeight{
                 position: absolute;
                 top:80%;
-                left: 96.5%;
+                left: 97%;
+                // @media (max-width:1400px) {
+                //     left: 96%;
+                // }
+                @media (max-width:$md) {
+                    top: 70%;
+                    left: 96%;
+                }
                 @media (max-width:$sm-x) {
                     left: 94%;
                 }
                 &.steps-active{
                     .circle-big{
-                        top: -4%;
-                        left: -3.5%;
+                        top: -3%;
+                        left: -6.5%;
                        @media (max-width:1400px) {
-                        left: -4%;
+                        top: -3.5%;
+                        left: -6.5%;
                     }
                     @media (max-width:$md) {
                        left: -8%;
