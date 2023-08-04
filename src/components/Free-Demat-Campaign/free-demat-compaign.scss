@@ -1455,7 +1455,7 @@
                     background: url(../../assets/images/free-demat-compaign/line-mobile.webp) no-repeat top left;
                     background-size: contain;
                     position: absolute;
-                    left: 15%;
+                    left: 53px;
                     top: 0;
 
                 }
@@ -1501,6 +1501,22 @@
                 position: absolute;
                 top: -60%;
                 left: -6%;
+                &.steps-active{
+                    .circle-big{
+                        @media (max-width:1400px) {
+                            top: 35.5%;
+                            left: -4.5%;
+                        }
+                        @media (max-width:$md) {
+                            top: 37%;
+                            left: -5%;
+                        }
+                        @media (max-width:$sm) {
+                            top: -4px;
+                            left: 20px;
+                        }
+                    }
+                }
                 @media (max-width:$sm-x) {
                     left: -3%;
                 }
@@ -1512,11 +1528,47 @@
                 position: absolute;
                 top:75%;
                 left: 8%;
+                &.steps-active{
+                    .circle-big{
+                        top: -4%;
+                        left: -3.5%;
+                       @media (max-width:1400px) {
+                            top: -4.5%;
+                            left: -4%;
+                        }
+                        @media (max-width:$md) {
+                            top: -5%;
+                            left: -4.5%;
+                        }
+                        @media (max-width:$sm) {
+                            top: 111px;
+                            left: 20px;
+                        }
+                    }
+                    
+                }
             }
             .numthree{
                 position: absolute;
                 top: -60%;
                 left: 23%;
+                &.steps-active{
+                    .circle-big{
+                        left: -3.5%;
+                        @media (max-width:1400px) {
+                            top: 35.5%;
+                            left: -4%;
+                        }
+                        @media (max-width:$md) {
+                            top: 37%;
+                            left: -4%;
+                        }
+                        @media (max-width:$sm) {
+                            top: 225px;
+                            left: 20px;
+                        }
+                    }
+                }
                 @media (max-width:$sm) {
                     flex-direction: row-reverse;
                 }
@@ -1525,11 +1577,47 @@
                 position: absolute;
                 top:75%;
                 left: 37%;
+                &.steps-active{
+                    .circle-big{
+                        top: -4%;
+                        left: -4%;
+                       @media (max-width:1400px) {
+                        top: -4.5%;
+                        left: -4.5%;
+                    }
+                    @media (max-width:$md) {
+                        top: -5%;
+                        left: -5.5%;
+                    }
+                    @media (max-width:$sm) {
+                        top: 340px;
+                        left: 20px;
+                    }
+                    }
+                    
+                }
             }
             .numfive{
                 position: absolute;
                 top: -60%;
                 left: 52%;
+                &.steps-active{
+                    .circle-big{
+                        left: -2%;
+                        @media (max-width:1400px) {
+                            top: 35.5%;
+                            left: -2.5%;
+                        }
+                        @media (max-width:$md) {
+                            top: 37%;
+                            left: -3%;
+                        }
+                        @media (max-width:$sm) {
+                            top: 454px;
+                            left: 20px;
+                        }
+                    }
+                }
                 @media (max-width:$sm) {
                     flex-direction: row-reverse;
                 }
@@ -1538,11 +1626,48 @@
                 position: absolute;
                 top:75%;
                 left: 67%;
+                &.steps-active{
+                    .circle-big{
+                        top: -4%;
+                        left: -2.5%;
+                       @media (max-width:1400px) {
+                        top: -4.5%;
+                        left: -3%;
+                    }
+                    @media (max-width:$md) {
+                        top: -5%;
+                        left: -3.5%;
+                    }
+                    @media (max-width:$sm) {
+                        top: 569px;
+                        left: 20px;
+                    }
+
+                    }
+                    
+                }
             }
             .numseven{
                 position: absolute;
                 top: -60%;
                 left: 82%;
+                &.steps-active{
+                    .circle-big{
+                        left: -7%;
+                        @media (max-width:1400px) {
+                            top: 35.5%;
+                            left: -6.5%;
+                        }
+                        @media (max-width:$md) {
+                            top: 37%;
+                            left: -9%;
+                        }
+                        @media (max-width:$sm) {
+                            top: 683px;
+                            left: 20px;
+                        }
+                    }
+                }
                 @media (max-width:$sm) {
                     flex-direction: row-reverse;
                 }
@@ -1551,12 +1676,32 @@
                 position: absolute;
                 top:80%;
                 left: 96.5%;
+                @media (max-width:$sm-x) {
+                    left: 94%;
+                }
+                &.steps-active{
+                    .circle-big{
+                        top: -4%;
+                        left: -3.5%;
+                       @media (max-width:1400px) {
+                        left: -4%;
+                    }
+                    @media (max-width:$md) {
+                       left: -8%;
+                    }
+                    @media (max-width:$sm) {
+                        top: 797px;
+                        left: 20px;
+                    }
+                    }
+                    
+                }
             }
         }
         .circle-big{
             position: absolute;
-            left: -9px;
-            top: 45px;
+            left: -4%;
+            top: 39%;
             width: 92px;
             height: 85px;
             margin: 0;
@@ -1573,8 +1718,15 @@
                 animation: big 3.5s ease-in-out;
             }
             svg {
-                width: 89px;
-                height: 85px;
+              
+                @media (max-width:$md) {
+                    width: 70px;
+                    height: 70px;
+                }
+                @media (max-width:$sm) {
+                    width: 68px;
+                    height: 68px;
+                }
             }
         }
 }

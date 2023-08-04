@@ -1,8 +1,24 @@
-import React from 'react'
+import React from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
 import EasyStepsLine from '../../assets/images/free-demat-compaign/easy-steps-bg.webp';
 
 function OpenAccountEasySteps() {
+    function updateActiveStep(index) {
+        const elements = document.querySelectorAll(".display-flex");
+        elements.forEach((element, i) => {
+          if (i === index) {
+            element.classList.add("steps-active");
+          } else {
+            element.classList.remove("steps-active");
+          }
+        });
+      }
+      let currentIndex = 0;
+      function autoUpdateStep() {
+        updateActiveStep(currentIndex);
+        currentIndex = (currentIndex + 1) % document.querySelectorAll(".display-flex").length;
+      }
+      const intervalId = setInterval(autoUpdateStep, 5000);
   return (
     <>
         <section className='easy-steps-sec'>
@@ -42,6 +58,12 @@ function OpenAccountEasySteps() {
                                     <div className='easy-text'>
                                         Basic Details
                                     </div>
+                                    <div className='circle-big'>
+                                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className='progress' cx="40" cy="40" r="39" stroke="#0CBCB7" stroke-width="2" stroke-miterlimit="2.56141"/>
+                                    </svg>
+
+                                    </div>
                                 </li>
                                 <li className='numthree display-flex'>
                                     <div className='easy-text mr-b'>
@@ -49,6 +71,12 @@ function OpenAccountEasySteps() {
                                     </div>
                                     <div className='number'>
                                         <span className='number-text'>03</span>
+                                    </div>
+                                    <div className='circle-big'>
+                                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className='progress' cx="40" cy="40" r="39" stroke="#0CBCB7" stroke-width="2" stroke-miterlimit="2.56141"/>
+                                    </svg>
+
                                     </div>
                                 </li>
                                 <li className='numfourth display-flex'>
@@ -58,6 +86,12 @@ function OpenAccountEasySteps() {
                                     <div className='easy-text'>
                                     IPV Details
                                     </div>
+                                    <div className='circle-big'>
+                                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className='progress' cx="40" cy="40" r="39" stroke="#0CBCB7" stroke-width="2" stroke-miterlimit="2.56141"/>
+                                    </svg>
+
+                                    </div>
                                 </li>
                                 <li className='numfive display-flex'>
                                     <div className='easy-text mr-b'>
@@ -65,6 +99,12 @@ function OpenAccountEasySteps() {
                                     </div>
                                     <div className='number'>
                                     <span className='number-text'>05</span>
+                                    </div>
+                                    <div className='circle-big'>
+                                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className='progress' cx="40" cy="40" r="39" stroke="#0CBCB7" stroke-width="2" stroke-miterlimit="2.56141"/>
+                                    </svg>
+
                                     </div>
                                 </li>
                                 <li className='numsix display-flex'>
@@ -74,6 +114,12 @@ function OpenAccountEasySteps() {
                                     <div className='easy-text'>
                                     Nominee Details
                                     </div>
+                                    <div className='circle-big'>
+                                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className='progress' cx="40" cy="40" r="39" stroke="#0CBCB7" stroke-width="2" stroke-miterlimit="2.56141"/>
+                                    </svg>
+
+                                    </div>
                                 </li>
                                 <li className='numseven display-flex'>
                                     <div className='easy-text mr-b'>
@@ -82,6 +128,12 @@ function OpenAccountEasySteps() {
                                     <div className='number'>
                                     <span className='number-text'>07</span>
                                     </div>
+                                    <div className='circle-big'>
+                                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className='progress' cx="40" cy="40" r="39" stroke="#0CBCB7" stroke-width="2" stroke-miterlimit="2.56141"/>
+                                    </svg>
+
+                                    </div>
                                 </li>
                                 <li className='numeight display-flex'>
                                     <div className='number mr-b'>
@@ -89,6 +141,12 @@ function OpenAccountEasySteps() {
                                     </div>
                                     <div className='easy-text'>
                                     Submit DDPI
+                                    </div>
+                                    <div className='circle-big'>
+                                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className='progress' cx="40" cy="40" r="39" stroke="#0CBCB7" stroke-width="2" stroke-miterlimit="2.56141"/>
+                                    </svg>
+
                                     </div>
                                 </li>
                             </ul>
