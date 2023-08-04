@@ -55,7 +55,7 @@ function LongTermResearch() {
 
   // const [tempid, setTempId] = useState('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
   const [tempid, setTempId] = useState({ 'name': activeurl? activeurl: 'company-fundamentals', 'id': 'f890363a-512e-4797-91fd-4d40732844a3' });
-
+  const [scrptname,setScriptname]=useState()
   const navigate = useNavigate();
 
   function loadResearch(id) {
@@ -69,6 +69,7 @@ function LongTermResearch() {
           setData(false)
           setCheck(false)
           setList(res.response.data);
+          setScriptname(res.response.data.scrip_sec_name)
 
         } else {
           setData(false)
