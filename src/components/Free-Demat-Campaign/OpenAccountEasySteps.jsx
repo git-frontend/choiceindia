@@ -19,6 +19,19 @@ function OpenAccountEasySteps() {
         currentIndex = (currentIndex + 1) % document.querySelectorAll(".display-flex").length;
       }
       const intervalId = setInterval(autoUpdateStep, 5000);
+
+
+      function chapterScroll2(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+
   return (
     <>
         <section className='easy-steps-sec'>
@@ -153,7 +166,7 @@ function OpenAccountEasySteps() {
                             </div>
                         </div>
                         <div className="d-flex justify-content-center">
-                            <a className='cursor-pointer'>
+                            <a className='cursor-pointer' onClick={()=>{chapterScroll2('dematform')}}>
                                 <span className="btn-bg btn-bg-dark">Open Free Account</span>
                             </a>
                         </div>
