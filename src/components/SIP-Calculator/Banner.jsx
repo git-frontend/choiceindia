@@ -12,25 +12,26 @@ function Banner() {
         setToggleState(index);
     };
 
-    const [loanAmount, setLoanAmount] = useState(50000);
+    const [monthlyinvest, setMonthlyinvest] = useState(25000);
     const [interestRate, setInterestRate] = useState(10);
     const [tenure, setTenure] = useState(12);
     const [monthlyEMI, setMonthlyEMI] = useState(0);
-    const [errorMessages, setErrorMessages] = useState({ loanAmount: '', interestRate: '', tenure: '' });
+    const [errorMessages, setErrorMessages] = useState({ monthlyinvest: '', interestRate: '', tenure: '' });
     useEffect(() => {
         calculateEmi();
-    }, [loanAmount, interestRate, tenure])
+    }, [monthlyinvest, interestRate, tenure])
 
     // Calculate EMi 
     const calculateEmi = () => {
         const errors = {
-            loanAmount: '',
+            monthlyinvest: '',
             interestRate: '',
             tenure: ''
         };
 
-        if (loanAmount < 1000 || loanAmount > 50000000) {
-            errors.loanAmount = 'Please Enter Valid Amount';
+        if (monthlyinvest < 500 || monthlyinvest > 500000) {
+            errors.monthlyinvest = 'Please Enter Valid Amount';
+            
         }
 
         if (interestRate < 10 || interestRate > 36) {
@@ -44,29 +45,27 @@ function Banner() {
             errors.tenure = 'Please Enter Valid Tenure In month';
         }
 
-        if (errors.loanAmount || errors.interestRate || errors.tenure) {
+        if (errors.monthlyinvest || errors.interestRate || errors.tenure) {
             setMonthlyEMI(0);
             setErrorMessages(errors);
         } else {
             const r = interestRate / (12 * 100); // monthly interest rate
             const n = tenure; // tenure in months
-            const p = loanAmount; // loan amount
+            const p = monthlyinvest; // loan amount
             const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
             setMonthlyEMI(emiValue);
             setErrorMessages({
-                loanAmount: '',
+                monthlyinvest: '',
                 interestRate: '',
                 tenure: ''
             });
         }
     }
-    // TO handle Loan Amount
-    const handleLoanAmountChange = (event) => {
-
-        setLoanAmount((event.target.value).replace(/\D/g, ""))
-
+    
+    const HandleMonthlyInvest = (event) => {
+        const value = parseInt(event.target.value, 10);
+        setMonthlyinvest(value);
     };
-
     const handleInterestRateChange = (event) => {
         const value = event.target.value;
         const regex = /^[1-9][0-9]?(\.\d{1,2})?$|^0\.\d{1,2}$/;
@@ -83,7 +82,8 @@ function Banner() {
         setTenure((event.target.value).replace(/\D/g, ""))
 
     };
-    const fillPercentageloan = (loanAmount / 50000000) * 100;
+   
+    const fillPercentageloan = ((monthlyinvest - 500) / (500000 - 500)) * 100;
     const fillStyle = {
         background: `linear-gradient(to right, #004393 ${fillPercentageloan}%, #221f201a ${fillPercentageloan}%)`,
     };
@@ -160,7 +160,7 @@ function Banner() {
                                                         <div className="input-sec">
                                                             <div className="form-control2">
                                                                 <span className="rupees-symble">₹</span>
-                                                                <input type="tel" className="form-ctr input-1" maxLength={8} min="1000" max="50000000" value={loanAmount} onChange={handleLoanAmountChange} />
+                                                                <input type="tel" className="form-ctr input-1" maxLength={6} min="500" max="500000" value={monthlyinvest} onChange={HandleMonthlyInvest} />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -168,10 +168,10 @@ function Banner() {
                                                         <div className="middle">
                                                             <div className="slider-container">
                                                                 {/* <span className="bar"><span style={fillStyle}></span></span> */}
-                                                                <input type="range" className="slider" step="1000" min="1000" max="50000000" value={loanAmount}
-                                                                    onChange={handleLoanAmountChange} style={fillStyle}
+                                                                <input type="range" className="slider" step="500" min="500" max="500000" value={monthlyinvest}
+                                                                    onChange={HandleMonthlyInvest} style={fillStyle}
                                                                 />
-                                                                {errorMessages.loanAmount && <span className="text-danger">{errorMessages.loanAmount}</span>}
+                                                                {errorMessages.monthlyinvest && <span className="text-danger">{errorMessages.monthlyinvest}</span>}
                                                             </div>
                                                         </div>
                                                     </div>
