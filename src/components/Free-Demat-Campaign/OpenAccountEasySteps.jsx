@@ -40,7 +40,9 @@ function OpenAccountEasySteps() {
                     <div className="col-md-12">
                         <div className='text-center'>
                             <h2 className="title-first">Open a Demat Account Online <span>in Easy Steps</span></h2>
-                            <p>Know the comprehensive step-by-step account opening procedure by <br/><a href="/">visiting this page.</a></p>
+                             <p>Know the comprehensive step-by-step account opening procedure by <br/>
+                                <a href="https://choiceindia.com/assets/downloads/Guidance-for-Online-Account-Opening.pdf" target="_blank">visiting this page.</a>
+                            </p>
                         </div>
                     </div>
                     <div className='col-md-12'>
