@@ -1,0 +1,105 @@
+
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.banner-section{
+    background: $whiteColor;
+    padding: 4rem 0 0;
+}
+
+.create-own-strategy{
+    background: $primary;
+    padding:10rem 0;
+    @media (max-width:$md) {
+        padding:6rem 0;
+    }
+    .own-strategy-ttl{
+        .title-first{
+            color: $whiteColor;
+            font-family: $font-family-poppins-regular;
+            font-weight: 400;
+            @media (max-width:$md) {
+                font-size: 3rem;
+            }
+            @media (max-width:$sm) {
+                text-align: left;
+            }
+            span{
+                color: $yellowColor;
+                font-family: $font-family-poppins-semibold;
+                font-weight: 700;
+            }
+        }
+    }
+    .own-strategy-benifits{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 3.692rem 0 5.846rem;
+        @media (max-width:$md) {
+            row-gap: 3rem;
+            column-gap: 3rem;
+            justify-content: center;
+        }
+        @media (max-width:$sm) {
+            row-gap: 3rem;
+            column-gap: 0;
+            justify-content: flex-start;
+        }
+        .own-strategy-items{
+            display: flex;
+            align-items: center;
+            column-gap:1.846rem;
+            @media (max-width:$md) {
+                column-gap:1rem;
+            }
+            .bg-gradiunt{
+                background: linear-gradient(#8EF8AA, #00EFD1);
+                width: 5.538rem;
+                height: 5.538rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+            h5{
+                color: $whiteColor;
+                font-size: 1.846rem;
+                font-family: $font-family-poppins-semibold;
+                font-weight: 600;
+                @media (max-width:$md) {
+                    font-size: 1.75rem;
+                }
+            }
+        }
+    }
+    .cursor-pointer{
+        .btn-bg{
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.more-content{
+    padding: 10rem 0 8rem;
+    @media (max-width:$md) {
+        padding: 6rem 0 4rem;
+    }
+    .seo-h3 {
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 2.2rem;
+        padding-bottom: 1.231rem;
+    }
+    .title-content{
+        margin-bottom: 2rem;
+    }
+    p{
+        font-size: 1.385rem;
+        color: $secondary;
+        padding-bottom: 2rem;
+    }
+}

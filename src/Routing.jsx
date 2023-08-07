@@ -183,7 +183,7 @@ const LazySIPCalculator =React.lazy(()=> import('./components/SIP-Calculator/SIP
 const LazyOISpurts =React.lazy(()=> import('./components/OI-Spurts/OISpurts'))
 const LazyBlogCms =React.lazy(()=> import('./components/Blog-cms/BlogCms'));
 const LazyMutualFundCalculator =React.lazy(()=> import('./components/Mutual-Fund-Calculator/MutualFundCalculator'));
-
+const LazyOptionChain =React.lazy(()=> import('./components/Option-Chain/OptionChain'));
 
 function Routing() {
 
@@ -946,6 +946,11 @@ function Routing() {
                          <Route exact path='/mutual-fund-calculator' element={
                             <React.Suspense>
                                 < LazyMutualFundCalculator />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/option-chain' element={
+                            <React.Suspense>
+                                < LazyOptionChain />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
