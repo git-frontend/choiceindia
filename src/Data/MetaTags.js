@@ -2325,6 +2325,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Choice Forex margin calculator is a free tool which helps you to calculate the margin needed for your open and hold positions. ",
     "link":"https://choiceindia.com/forex-margin-calculator"
   },
+  "option-chain": {
+    "title":"Option Chain - Live Call & Put Option Chain Data Analysis",
+    'lang':"en",
+    'content':"Check out option chain LIVE data on Choice. Get Call & Put option chain data with LIVE strike price, analysis, chart, historical data and more.",
+    "link":"https://choiceindia.com/option-chain"
+  },
 }
 
 export default meta_tags;

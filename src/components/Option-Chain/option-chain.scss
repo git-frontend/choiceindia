@@ -103,3 +103,53 @@
         padding-bottom: 2rem;
     }
 }
+.underlying-assets{
+    background: $abt-bg;
+    padding: 10rem 0;
+    .underlying-card{
+        background: $whiteColor;
+        border: 1px solid $border-gray;
+        border-radius: 8px;
+        padding: 2.769rem;
+        margin-top: 2.769rem;
+        .assets-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .left-items{
+                .display-flex{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 0.5rem;
+                    h6{
+                        font-size: 1.846rem;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5;
+                    }
+                    span{
+                        font-size: 1.385rem;
+                        color: $secondary;
+                        line-height: 1.5;
+                    }
+                }
+                p{
+                    font-size: 1.385rem;
+                    color: $secondary;
+                    line-height: 1.5;
+                    margin: 0;
+                }
+            }
+            .right-items {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .values{
+                    text-align: right;
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
