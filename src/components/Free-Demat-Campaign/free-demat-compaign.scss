@@ -1455,13 +1455,15 @@
                 &::before{
                     content: "";
                     width: 100%;
-                    height: 100%;
+                    // height: 100%;
                     display: block;
-                    background: url(../../assets/images/free-demat-compaign/line-mobile.webp) no-repeat top left;
+                    background: url(../../assets/images/free-demat-compaign/border-line.svg) no-repeat top left;
                     background-size: contain;
                     position: absolute;
                     left: 53px;
                     top: 0;
+                    bottom: 0;
+                    margin: 0;
 
                 }
             }
