@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Doughnut,Arc } from 'react-chartjs-2';
-import {Chart, ArcElement} from 'chart.js';
+import { Doughnut, Arc, Tooltip } from 'react-chartjs-2';
+import { Chart, ArcElement } from 'chart.js';
 // import DonutChart from 'react-donut-chart';
 Chart.register(ArcElement)
 function Banner() {
@@ -11,12 +11,15 @@ function Banner() {
     const toggleTab = (index) => {
         setToggleState(index);
     };
-
     const [monthlyinvest, setMonthlyinvest] = useState(25000);
-    const [interestRate, setInterestRate] = useState(10);
-    const [tenure, setTenure] = useState(12);
-    const [monthlyEMI, setMonthlyEMI] = useState(0);
+    const [interestRate, setInterestRate] = useState(15);
+    const [tenure, setTenure] = useState(15);
     const [errorMessages, setErrorMessages] = useState({ monthlyinvest: '', interestRate: '', tenure: '' });
+    const [monthlyEMI, setMonthlyEMI] = useState(0);
+    const [estReturns, setEstReturns] = useState(0);
+    const [totalvalue,setTotalvalue]=useState(0);
+
+
     useEffect(() => {
         calculateEmi();
     }, [monthlyinvest, interestRate, tenure])
@@ -31,29 +34,33 @@ function Banner() {
 
         if (monthlyinvest < 500 || monthlyinvest > 500000) {
             errors.monthlyinvest = 'Please Enter Valid Amount';
-            
+
         }
 
-        if (interestRate < 10 || interestRate > 36) {
+        if (interestRate < 5 || interestRate > 25) {
             errors.interestRate = 'Please Enter Valid Interest Rate';
         }
         // if (!/^\d{1,2}(\.\d)?|3[0-6](\.\d)?$/.test(interestRate)) {
         //     errors.interestRate = 'Please Enter Valid Interest Rate';
         //   }
 
-        if (tenure < 12 || tenure > 120) {
-            errors.tenure = 'Please Enter Valid Tenure In month';
+        if (tenure < 3 || tenure > 40) {
+            errors.tenure = 'Please Enter Valid Tenure In years';
         }
 
         if (errors.monthlyinvest || errors.interestRate || errors.tenure) {
             setMonthlyEMI(0);
             setErrorMessages(errors);
         } else {
-            const r = interestRate / (12 * 100); // monthly interest rate
-            const n = tenure; // tenure in months
-            const p = monthlyinvest; // loan amount
-            const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-            setMonthlyEMI(emiValue);
+            const rate = interestRate / 100;
+            const monthlyRate = rate / 12;
+            const totalMonths = tenure * 12;
+            const futureValue = monthlyinvest * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
+            setTotalvalue(futureValue.toFixed(2));
+            const investamount=monthlyinvest*totalMonths;
+            setMonthlyEMI(investamount)
+            const expectreturn=futureValue-investamount;
+            setEstReturns(expectreturn)
             setErrorMessages({
                 monthlyinvest: '',
                 interestRate: '',
@@ -82,45 +89,52 @@ function Banner() {
         setTenure((event.target.value).replace(/\D/g, ""))
 
     };
-   
+
     const fillPercentageloan = ((monthlyinvest - 500) / (500000 - 500)) * 100;
     const fillStyle = {
         background: `linear-gradient(to right, #004393 ${fillPercentageloan}%, #221f201a ${fillPercentageloan}%)`,
     };
-    const fillPercentageint = ((interestRate - 10) / 26) * 100 + 1; // 100000 is the maximum value of the range input
+
+    const fillPercentageint = ((interestRate - 5) / 20) * 100;
     const fillStyle1 = {
         background: `linear-gradient(to right, #004393 ${fillPercentageint}%, #221f201a ${fillPercentageint}%)`,
     };
-    const fillPercentageteenure = ((tenure - 12) / 108) * 100 + 1; // 100000 is the maximum value of the range input
+    const fillPercentageteenure = ((tenure - 3) / 37) * 100;
     const fillStyle2 = {
         background: `linear-gradient(to right, #004393 ${fillPercentageteenure}%, #221f201a ${fillPercentageteenure}%)`,
     };
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     const handleHover = (event, chartElements) => {
-      if (chartElements.length > 0) {
-        const datasetIndex = chartElements[0].datasetIndex;
-        const index = chartElements[0].index;
-        setHoveredIndex(datasetIndex === 0 ? index : null);
-      } else {
-        setHoveredIndex(null);
-      }
+        if (chartElements.length > 0) {
+            const datasetIndex = chartElements[0].datasetIndex;
+            const index = chartElements[0].index;
+            setHoveredIndex(datasetIndex === 0 ? index : null);
+        } else {
+            setHoveredIndex(null);
+        }
     };
     const datas = {
         labels: ['Value 1', 'Value 2'],
         datasets: [
-          {
-            data: [30, 70], // The values for Value 1 and Value 2 (change as needed)
-            backgroundColor: [
-              hoveredIndex === 0 ? '#FF6384' : '#FFA4B3',
-              hoveredIndex === 1 ? '#36A2EB' : '#9AD8F2',
-            ], // Colors for the two values based on hover state
-            hoverBackgroundColor: ['#FF6384', '#36A2EB'], // Hover colors
-          },
+            {
+                data: [monthlyEMI, estReturns], 
+                backgroundColor: [
+                    hoveredIndex === 0 ? '#FF6384' : '#FFA4B3',
+                    hoveredIndex === 1 ? '#36A2EB' : '#9AD8F2',
+                ], 
+                hoverBackgroundColor: ['#FF6384', '#36A2EB'], // Hover colors
+            },
         ],
-      };
+    };
 
-
+    function formatIndianCurrency(amount) {
+        return new Intl.NumberFormat('en-IN', {
+            style: 'currency',
+            currency: 'INR',
+            maximumFractionDigits: 0,
+        }).format(amount);
+    }
     return (
         <>
             <section className='banner-section banner-sip'>
@@ -181,18 +195,18 @@ function Banner() {
                                                     <div className='value-card'>
                                                         <div><p>Expected Return Rate (p.a.)</p></div>
                                                         <div className="input-sec">
-                                                        <div className="form-control2">
-                                                            <input type="number" className="form-ctr input-2" min="10" max="36" value={interestRate}
-                                                                onChange={handleInterestRateChange} />
-                                                            <span className="percent-symble">%</span>
-                                                        </div>
+                                                            <div className="form-control2">
+                                                                <input type="tel" className="form-ctr input-2" min="5" max="25" value={interestRate}
+                                                                    onChange={handleInterestRateChange} />
+                                                                <span className="percent-symble">%</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="slidecontainer">
                                                         <div className="middle">
                                                             <div className="slider-container">
                                                                 {/* <span className="bar"><span className="" style={{ width: `${interestRate}%` }}></span></span> */}
-                                                                <input type="range" className="slider" id="myRange" min="10" max="36" value={interestRate}
+                                                                <input type="range" className="slider" id="myRange" min="5" max="25" value={interestRate}
                                                                     onChange={handleInterestRateChange} style={fillStyle1}
                                                                 />
                                                                 {errorMessages.interestRate && <span className="text-danger">{errorMessages.interestRate}</span>}
@@ -205,17 +219,17 @@ function Banner() {
                                                     <div className='value-card'>
                                                         <div><p>Investment Period (years)</p></div>
                                                         <div className="input-sec">
-                                                        <div className="form-control2">
-                                                            <input type="tel" className="form-ctr input-3" value={tenure} maxLength={3} min="12" max="120" onChange={handleLoanTenureChange} />
-                                                            <span className="years-symble">Yr</span>
-                                                        </div>
+                                                            <div className="form-control2">
+                                                                <input type="tel" className="form-ctr input-3" value={tenure} maxLength={2} min="3" max="40" onChange={handleLoanTenureChange} />
+                                                                <span className="years-symble">Yr</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="slidecontainer">
                                                         <div className="middle">
                                                             <div className="slider-container">
                                                                 {/* <span className="bar"><span className="" style={{ width: `(${value} - 12) / (120 - 12) * 100` }}></span></span> */}
-                                                                <input type="range" className="slider" id="myRange" min="12" max="120" value={tenure} onChange={handleLoanTenureChange} style={fillStyle2} />
+                                                                <input type="range" className="slider" id="myRange" min="3" max="40" value={tenure} onChange={handleLoanTenureChange} style={fillStyle2} />
                                                                 {errorMessages.tenure && <span className="text-danger">{errorMessages.tenure}</span>}
                                                             </div>
                                                         </div>
@@ -233,34 +247,34 @@ function Banner() {
                                                                 <div className="dots dots-primary"></div>
                                                                 <div className="scrip">
                                                                     <p className="scrip-name">Invested Amount</p>
-                                                                    <p className="scrip-val">₹30,00,000</p>
+                                                                    <p className="scrip-val">{formatIndianCurrency(monthlyEMI)}</p>
                                                                 </div>
                                                             </div>
                                                             <div className="current-val">
                                                                 <div className="dots dots-green"></div>
                                                                 <div className="scrip">
-                                                                    <p className="scrip-name">Est. Returns @15%</p>
-                                                                    <p className="scrip-val">₹28,08,477</p>
+                                                                    <p className="scrip-name">Est. Returns @{interestRate}%</p>
+                                                                    <p className="scrip-val">{formatIndianCurrency(estReturns)}</p>
                                                                 </div>
                                                             </div>
                                                             <div className="current-val total-val">
                                                                 <div className="dots"></div>
                                                                 <div className="scrip">
                                                                     <p className="scrip-name">Total Value</p>
-                                                                    <p className="scrip-val">₹ 58,08,477</p>
+                                                                    <p className="scrip-val">{formatIndianCurrency(totalvalue)}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        
+
                                                         <div className="right-itms"><Doughnut data={datas} onHover={handleHover} /></div>
-                                                       
+
                                                     </div>
                                                     <div className="card-footer">
                                                         <button type="submit" className="btn-bg">Invest Now</button>
                                                     </div>
                                                 </div>
                                             </div>
-                                           
+
                                             {/* <DonutChart
                                                 data={[
                                                     {
