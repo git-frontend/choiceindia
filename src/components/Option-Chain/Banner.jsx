@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Form from 'react-bootstrap/Form';
 function Banner() {
   return (
     <>
@@ -17,11 +17,36 @@ function Banner() {
                         <div className='banner-card'>
                             <div className='first-sec'>
                                 <div className='input-sec'>
-                                    <div className='searchbar'>
-                                        <input type="text" name="" id="" className='input-control search-icon'/>
+                                <div className='brokerage-search'>
+                                        <Form.Control
+                                            type="text"
+                                            className="input-control search-icon"
+                                            autoComplete="off"
+                                            placeholder="Tata consultancy service"
+                                            value=""
+                                        />
+                                        <ul className="brokerage-search-result" >
+                                            <li key="no-record"><span className='no-record'>No Record Found</span></li>
+                                            <li className='brokerage-search-list'>
+                                                <span className="symbol">NIFTY</span>
+                                                <span className="name">NIFTY 50</span>
+                                            </li>
+                                            <li className='brokerage-search-list'>
+                                                <span className="symbol">NIFGS10YRCLN</span>
+                                                <span className="name">NIFTY GS 10YR CLN</span>
+                                            </li>
+                                            <li className='brokerage-search-list'>
+                                                <span className="symbol">NIFTYLMID250</span>
+                                                <span className="name">NIFTY LARGEMID250</span>
+                                            </li>
+                                            <li className='brokerage-search-list'>
+                                                <span className="symbol">NIFTYOIL&GAS</span>
+                                                <span className="name">NIFTY OIL AND GAS</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div className='selectbar'>
-                                        <select name="" id="" className='input-control'>
+                                        <select name="" id="" className='select-control'>
                                             <option value=""><span className='expry'>Expiry:</span> 27 JUL 23</option>
                                             <option value=""><span className='expry'>Expiry:</span> 10 AUG 23</option>
                                         </select>
