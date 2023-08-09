@@ -12,6 +12,28 @@ function Banner() {
                         </div>
                     </div>
                 </div>
+                <div className='row'>
+                    <div className='col-md-12'>
+                        <div className='banner-card'>
+                            <div className='first-sec'>
+                                <div className='input-sec'>
+                                    <div className='searchbar'>
+                                        <input type="text" name="" id="" className='input-control search-icon'/>
+                                    </div>
+                                    <div className='selectbar'>
+                                        <select name="" id="" className='input-control'>
+                                            <option value=""><span className='expry'>Expiry:</span> 27 JUL 23</option>
+                                            <option value=""><span className='expry'>Expiry:</span> 10 AUG 23</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className='tab-sec'>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </>

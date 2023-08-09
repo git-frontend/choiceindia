@@ -5,6 +5,31 @@
 .banner-section{
     background: $whiteColor;
     padding: 4rem 0 0;
+    .banner-card{
+        background: $abt-bg;
+        padding: 1.846rem;
+        .first-sec{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            .input-sec{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                width: 55%;
+                column-gap: 2rem;
+                .searchbar{
+                    .search-icon {
+                        background: url(../../assets/images/option-chain/search.svg) no-repeat center right 13px;
+                    }
+                }
+            }
+            .tab-sec{
+                width: 40%;
+            }
+        }
+    }
 }
 
 .create-own-strategy{
