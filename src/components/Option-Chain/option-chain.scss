@@ -106,16 +106,25 @@
 .underlying-assets{
     background: $abt-bg;
     padding: 10rem 0;
+    @media (max-width:$md) {
+        padding: 6rem 0;
+    }
     .underlying-card{
         background: $whiteColor;
         border: 1px solid $border-gray;
         border-radius: 8px;
         padding: 2.769rem;
         margin-top: 2.769rem;
+        @media (max-width:$sm) {
+            padding: 1.846rem;
+        }
         .assets-items {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            @media (max-width:$sm) {
+                row-gap: 3rem;
+            }
             .left-items{
                 .display-flex{
                     display: flex;
@@ -125,11 +134,17 @@
                         font-size: 1.846rem;
                         font-family: $font-family-poppins-semibold;
                         line-height: 1.5;
+                        @media (max-width:$sm) {
+                            font-size: 1.231rem;
+                        }
                     }
                     span{
                         font-size: 1.385rem;
                         color: $secondary;
                         line-height: 1.5;
+                        @media (max-width:$sm) {
+                            font-size: 1.077rem;
+                        }
                     }
                 }
                 p{
@@ -137,6 +152,9 @@
                     color: $secondary;
                     line-height: 1.5;
                     margin: 0;
+                    @media (max-width:$sm) {
+                        font-size: 1.077rem;
+                    }
                 }
             }
             .right-items {
@@ -144,18 +162,30 @@
                 justify-content: space-between;
                 align-items: center;
                 column-gap: 3rem;
+                @media (max-width:$sm) {
+                   width: 100%;
+                }
                 .values{
                     text-align: right;
+                    @media (max-width:$sm) {
+                        text-align: left;
+                    }
                     h6{
                         font-size: 1.846rem;
                         font-family: $font-family-poppins-semibold;
                         line-height: 1.5; 
+                        @media (max-width:$sm) {
+                            font-size: 1.231rem;
+                        }
                     }
                     p{
                         font-size: 1.385rem;
                         color: $pluscolor;
                         line-height: 1.5;
                         margin: 0;
+                        @media (max-width:$sm) {
+                            font-size: 1.077rem;
+                        }
                     }
                 }
                 .btn-sec{
@@ -171,6 +201,10 @@
                         text-decoration: none;
                         text-transform: uppercase;
                         transition: .5s;
+                        @media (max-width:$sm) {
+                            font-size: 1.538rem;
+                            padding: .7rem 3rem;
+                        }
                     }
                 }
             }
