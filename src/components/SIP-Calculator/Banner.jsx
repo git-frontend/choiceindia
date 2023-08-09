@@ -53,28 +53,29 @@ function Banner() {
         }
 
         if (errors.monthlyinvest || errors.interestRate || errors.tenure) {
-            setMonthlyEMI(0);
+            // setMonthlyEMI(0);
+            // setTotalvalue(0);
+            // setEstReturns(0);
             setErrorMessages(errors);
         } else {
+            if (!isNaN(monthlyinvest)) { // Check if monthlyinvest is a valid number
             const rate = interestRate / 100;
             const monthlyRate = rate / 12;
             const totalMonths = tenure * 12;
             const futureValue = monthlyinvest * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
             setTotalvalue(futureValue.toFixed(2));
             const investamount = monthlyinvest * totalMonths;
-            setMonthlyEMI(investamount)
+            setMonthlyEMI(investamount);
             const expectreturn = futureValue - investamount;
-            setEstReturns(expectreturn)
-            setErrorMessages({
-                monthlyinvest: '',
-                interestRate: '',
-                tenure: ''
-            });
+            setEstReturns(expectreturn);
         }
+    }
     }
     const calculateLumpsumReturns = () => {
         const errors = {
-            // ... (existing errors)
+            monthlyinvest: '',
+            interestRate: '',
+            tenure: ''
         };
 
         if (monthlyinvest < 500 || monthlyinvest > 500000) {
@@ -90,13 +91,15 @@ function Banner() {
         }
 
         if (errors.monthlyinvest || errors.interestRate || errors.tenure) {
-            setEstReturns(0);
+            setLumpsumtotalvalue(0);
+            setLumpsumamount(0);
+            setLumpsumestReturns(0);
             setErrorMessages(errors);
         } else {
             const rate = interestRate / 100;
             const totalYears = tenure;
             const futureValue = monthlyinvest * (Math.pow(1 + rate, totalYears));
-            console.log("ff", futureValue)
+            // console.log("ff", futureValue)
             setLumpsumtotalvalue(futureValue.toFixed(2));
             // const investAmount = monthlyinvest * totalYears;
             setLumpsumamount(monthlyinvest);
@@ -110,9 +113,15 @@ function Banner() {
         }
     };
 
+    // const HandleMonthlyInvest = (event) => {
+    //     const value = parseInt(event.target.value, 10);
+    //     setMonthlyinvest(value);
+    // };
     const HandleMonthlyInvest = (event) => {
-        const value = parseInt(event.target.value, 10);
-        setMonthlyinvest(value);
+        const value = event.target.value;
+        if (value === "" || /^[0-9]+$/.test(value)) {
+            setMonthlyinvest(value);
+        }
     };
     const handleInterestRateChange = (event) => {
         const value = event.target.value;
@@ -144,7 +153,7 @@ function Banner() {
     const fillStyle2 = {
         background: `linear-gradient(to right, #004393 ${fillPercentageteenure}%, #221f201a ${fillPercentageteenure}%)`,
     };
-    
+
     const datas = {
         labels: ['Value 1', 'Value 2'],
         datasets: [
@@ -298,8 +307,8 @@ function Banner() {
                                                             </div>
                                                         </div>
 
-                                                        <div className="right-itms"><Doughnut data={datas}  />
-                                                            
+                                                        <div className="right-itms"><Doughnut data={datas} />
+
                                                         </div>
 
                                                     </div>
