@@ -143,10 +143,34 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                column-gap: 3rem;
                 .values{
                     text-align: right;
+                    h6{
+                        font-size: 1.846rem;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5; 
+                    }
                     p{
+                        font-size: 1.385rem;
+                        color: $pluscolor;
+                        line-height: 1.5;
                         margin: 0;
+                    }
+                }
+                .btn-sec{
+                    .btn-buy{
+                        border: 0;
+                        font-family: $font-family-poppins-semibold;
+                        background: $pluscolor;
+                        border-radius: 12px;
+                        color: $whiteColor;
+                        display: inline-block;
+                        font-size: 1.846rem;
+                        padding: 1.2rem 4rem;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        transition: .5s;
                     }
                 }
             }

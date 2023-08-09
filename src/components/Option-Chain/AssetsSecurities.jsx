@@ -19,13 +19,11 @@ function AssetsSecurities() {
                           </div>
                           <div className='right-items'>
                             <div className='values'>
-                              <p>3,396.90</p>
+                              <h6>3,396.90</h6>
                               <p>+8.60 (+0.25%)</p>
                             </div>
                             <div className='btn-sec'>
-                                <a href="">
-                                  <span className='btn'>BUY</span>
-                                </a>
+                                <button className='btn-buy'>BUY</button>
                             </div>
                           </div>
                         </div>
