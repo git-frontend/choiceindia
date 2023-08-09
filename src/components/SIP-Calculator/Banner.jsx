@@ -17,11 +17,15 @@ function Banner() {
     const [errorMessages, setErrorMessages] = useState({ monthlyinvest: '', interestRate: '', tenure: '' });
     const [monthlyEMI, setMonthlyEMI] = useState(0);
     const [estReturns, setEstReturns] = useState(0);
-    const [totalvalue,setTotalvalue]=useState(0);
+    const [totalvalue, setTotalvalue] = useState(0);
+    const [lumpsumtotalvalue, setLumpsumtotalvalue] = useState(0);
+    const [lumpsumamount, setLumpsumamount] = useState(0);
+    const [lumpsumestReturns, setLumpsumestReturns] = useState(0);
 
 
     useEffect(() => {
         calculateEmi();
+        calculateLumpsumReturns();
     }, [monthlyinvest, interestRate, tenure])
 
     // Calculate EMi 
@@ -57,9 +61,9 @@ function Banner() {
             const totalMonths = tenure * 12;
             const futureValue = monthlyinvest * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
             setTotalvalue(futureValue.toFixed(2));
-            const investamount=monthlyinvest*totalMonths;
+            const investamount = monthlyinvest * totalMonths;
             setMonthlyEMI(investamount)
-            const expectreturn=futureValue-investamount;
+            const expectreturn = futureValue - investamount;
             setEstReturns(expectreturn)
             setErrorMessages({
                 monthlyinvest: '',
@@ -68,7 +72,44 @@ function Banner() {
             });
         }
     }
-    
+    const calculateLumpsumReturns = () => {
+        const errors = {
+            // ... (existing errors)
+        };
+
+        if (monthlyinvest < 500 || monthlyinvest > 500000) {
+            errors.monthlyinvest = 'Please Enter Valid Amount';
+        }
+
+        if (interestRate < 5 || interestRate > 25) {
+            errors.interestRate = 'Please Enter Valid Interest Rate';
+        }
+
+        if (tenure < 1 || tenure > 40) {
+            errors.tenure = 'Please Enter Valid Tenure In years';
+        }
+
+        if (errors.monthlyinvest || errors.interestRate || errors.tenure) {
+            setEstReturns(0);
+            setErrorMessages(errors);
+        } else {
+            const rate = interestRate / 100;
+            const totalYears = tenure;
+            const futureValue = monthlyinvest * (Math.pow(1 + rate, totalYears));
+            console.log("ff", futureValue)
+            setLumpsumtotalvalue(futureValue.toFixed(2));
+            // const investAmount = monthlyinvest * totalYears;
+            setLumpsumamount(monthlyinvest);
+            const expectReturn = futureValue - monthlyinvest;
+            setLumpsumestReturns(expectReturn);
+            setErrorMessages({
+                monthlyinvest: '',
+                interestRate: '',
+                tenure: ''
+            });
+        }
+    };
+
     const HandleMonthlyInvest = (event) => {
         const value = parseInt(event.target.value, 10);
         setMonthlyinvest(value);
@@ -103,27 +144,18 @@ function Banner() {
     const fillStyle2 = {
         background: `linear-gradient(to right, #004393 ${fillPercentageteenure}%, #221f201a ${fillPercentageteenure}%)`,
     };
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-
-    const handleHover = (event, chartElements) => {
-        if (chartElements.length > 0) {
-            const datasetIndex = chartElements[0].datasetIndex;
-            const index = chartElements[0].index;
-            setHoveredIndex(datasetIndex === 0 ? index : null);
-        } else {
-            setHoveredIndex(null);
-        }
-    };
+    
     const datas = {
         labels: ['Value 1', 'Value 2'],
         datasets: [
             {
-                data: [monthlyEMI, estReturns], 
+                data: [monthlyEMI, estReturns],
                 backgroundColor: [
-                    hoveredIndex === 0 ? '#FF6384' : '#FFA4B3',
-                    hoveredIndex === 1 ? '#36A2EB' : '#9AD8F2',
-                ], 
-                hoverBackgroundColor: ['#FF6384', '#36A2EB'], // Hover colors
+                    '#5085c5',
+                    '#50ae8c',
+                ],
+                hoverBackgroundColor: ['#004393', '#00AE6F'], // Hover colors
+
             },
         ],
     };
@@ -157,7 +189,7 @@ function Banner() {
                                                 <li className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}
                                                     onClick={() => { toggleTab(1); setData(0) }}>SIP</li>
                                                 <li className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}
-                                                    onClick={() => { toggleTab(2); setData(1) }}>Lumpsum</li>
+                                                    onClick={() => { toggleTab(2); setData(1); calculateLumpsumReturns() }}>Lumpsum</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -266,7 +298,9 @@ function Banner() {
                                                             </div>
                                                         </div>
 
-                                                        <div className="right-itms"><Doughnut data={datas} onHover={handleHover} /></div>
+                                                        <div className="right-itms"><Doughnut data={datas}  />
+                                                            
+                                                        </div>
 
                                                     </div>
                                                     <div className="card-footer">
@@ -290,9 +324,132 @@ function Banner() {
                                             />; */}
                                         </div>
                                     </div>
-                                    {/* <div className={toggleState === 2 ? "content  active-content" : "content"}>
-                                    Vehicle Loan
-                                </div> */}
+                                    <div className={toggleState === 2 ? "content active-content" : "content"}>
+                                        <div className='form-section'>
+                                            <div className='leftsec'>
+                                                <div className='cal-opt mrg-top'>
+                                                    {/* <p>Loan Amount</p> */}
+                                                    <div className='value-card'>
+                                                        <div><p>Monthly Investment</p></div>
+                                                        <div className="input-sec">
+                                                            <div className="form-control2">
+                                                                <span className="rupees-symble">₹</span>
+                                                                <input type="tel" className="form-ctr input-1" maxLength={6} min="500" max="500000" value={monthlyinvest} onChange={HandleMonthlyInvest} />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="slidecontainer">
+                                                        <div className="middle">
+                                                            <div className="slider-container">
+                                                                {/* <span className="bar"><span style={fillStyle}></span></span> */}
+                                                                <input type="range" className="slider" step="500" min="500" max="500000" value={monthlyinvest}
+                                                                    onChange={HandleMonthlyInvest} style={fillStyle}
+                                                                />
+                                                                {errorMessages.monthlyinvest && <span className="text-danger">{errorMessages.monthlyinvest}</span>}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className='cal-opt'>
+                                                    {/* <p>Interest Rate (per annum)</p> */}
+                                                    <div className='value-card'>
+                                                        <div><p>Expected Return Rate (p.a.)</p></div>
+                                                        <div className="input-sec">
+                                                            <div className="form-control2">
+                                                                <input type="tel" className="form-ctr input-2" min="5" max="25" value={interestRate}
+                                                                    onChange={handleInterestRateChange} />
+                                                                <span className="percent-symble">%</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="slidecontainer">
+                                                        <div className="middle">
+                                                            <div className="slider-container">
+                                                                {/* <span className="bar"><span className="" style={{ width: `${interestRate}%` }}></span></span> */}
+                                                                <input type="range" className="slider" id="myRange" min="5" max="25" value={interestRate}
+                                                                    onChange={handleInterestRateChange} style={fillStyle1}
+                                                                />
+                                                                {errorMessages.interestRate && <span className="text-danger">{errorMessages.interestRate}</span>}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className='cal-opt'>
+                                                    {/* <p>Tenure (in months)</p> */}
+                                                    <div className='value-card'>
+                                                        <div><p>Investment Period (years)</p></div>
+                                                        <div className="input-sec">
+                                                            <div className="form-control2">
+                                                                <input type="tel" className="form-ctr input-3" value={tenure} maxLength={2} min="3" max="40" onChange={handleLoanTenureChange} />
+                                                                <span className="years-symble">Yr</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="slidecontainer">
+                                                        <div className="middle">
+                                                            <div className="slider-container">
+                                                                {/* <span className="bar"><span className="" style={{ width: `(${value} - 12) / (120 - 12) * 100` }}></span></span> */}
+                                                                <input type="range" className="slider" id="myRange" min="3" max="40" value={tenure} onChange={handleLoanTenureChange} style={fillStyle2} />
+                                                                {errorMessages.tenure && <span className="text-danger">{errorMessages.tenure}</span>}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div className='rightsec'>
+                                                <div className='brokerage-card'>
+                                                    <div className="card-items">
+                                                        <div className="left-itms">
+                                                            <div className="current-val">
+                                                                <div className="dots dots-primary"></div>
+                                                                <div className="scrip">
+                                                                    <p className="scrip-name">Invested Amount</p>
+                                                                    <p className="scrip-val">{formatIndianCurrency(lumpsumamount)}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div className="current-val">
+                                                                <div className="dots dots-green"></div>
+                                                                <div className="scrip">
+                                                                    <p className="scrip-name">Est. Returns @{interestRate}%</p>
+                                                                    <p className="scrip-val">{formatIndianCurrency(lumpsumestReturns)}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div className="current-val total-val">
+                                                                <div className="dots"></div>
+                                                                <div className="scrip">
+                                                                    <p className="scrip-name">Total Value</p>
+                                                                    <p className="scrip-val">{formatIndianCurrency(lumpsumtotalvalue)}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="right-itms"><Doughnut data={datas} /></div>
+
+                                                    </div>
+                                                    <div className="card-footer">
+                                                        <button type="submit" className="btn-bg">Invest Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* <DonutChart
+                                                data={[
+                                                    {
+                                                        label: 'Give you up',
+                                                        value: 25,
+                                                    },
+                                                    {
+                                                        label: '',
+                                                        value: 75,
+                                                        isEmpty: true,
+                                                    },
+                                                ]}
+                                            />; */}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
