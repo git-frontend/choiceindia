@@ -135,7 +135,7 @@
                 }
             }
             .tab-sec{
-                width: 40%;
+                // width: 40%;
                 .disply-flex {
                     display: flex;
                     justify-content: end;
@@ -191,6 +191,54 @@
                             padding: .7rem 1rem;
                             background-color: $whiteColor;
                         }
+                    }
+                }
+            }
+        }
+        .secnd-sec{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            .left-sec{
+                width: 40%;
+                    h6{
+                        font-size: 1.846rem;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5; 
+                        @media (max-width:$sm) {
+                            font-size: 1.231rem;
+                        }
+                    }
+                    p{
+                        font-size: 1.385rem;
+                        color: $pluscolor;
+                        line-height: 1.5;
+                        margin: 0;
+                        @media (max-width:$sm) {
+                            font-size: 1.077rem;
+                        }
+                    }
+            }
+            .right-sec{
+                width: 59%;
+                display: flex;
+                justify-content: space-between;
+                .items{
+                    .lable{
+                        margin: 0;
+                        font-size: 1.385rem;
+                        font-family: $font-family-poppins-regular;
+                        font-weight: 400;
+                        color: $secondary;
+                    }
+                    .val{
+                        margin: 0;
+                        font-size: 1.538rem;
+                        font-family: $font-family-poppins-semibold;
+                        color: $primary;
+                        font-weight: 600;
+                        padding-top: 0.923rem;
                     }
                 }
             }

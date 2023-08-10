@@ -46,6 +46,7 @@ function Banner() {
                                         </ul> */}
                                     </div>
                                     <div className='selectbar'>
+                                        <span>Expiry : </span>
                                         <select name="" id="" className='select-control'>
                                             <option value="">27 JUL 23</option>
                                             <option value="">10 AUG 23</option>
@@ -70,6 +71,34 @@ function Banner() {
                                                 </svg>
                                             </button>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="secnd-sec">
+                                <div className='left-sec'>
+                                    <h6>3,396.90</h6>
+                                    <p>+8.60 (+0.25%)</p>
+                                </div>
+                                <div className='right-sec'>
+                                    <div className='items'>
+                                        <p className='lable'>Underlying Value</p>
+                                        <p className='val'>3,388.30</p>
+                                    </div>
+                                    <div className='items'>
+                                        <p className='lable'>1M Futures</p>
+                                        <p className='val'>3,416.55</p>
+                                    </div>
+                                    <div className='items'>
+                                        <p className='lable'>2M Futures</p>
+                                        <p className='val'>3,441.65</p>
+                                    </div>
+                                    <div className='items'>
+                                        <p className='lable'>Spread</p>
+                                        <p className='val'>25.10</p>
+                                    </div>
+                                    <div className='items'>
+                                        <p className='lable'>Put Call Ratio</p>
+                                        <p className='val'>0.66</p>
                                     </div>
                                 </div>
                             </div>
