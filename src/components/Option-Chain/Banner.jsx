@@ -25,7 +25,7 @@ function Banner() {
                                             placeholder="Tata consultancy service"
                                             value=""
                                         />
-                                        <ul className="brokerage-search-result" >
+                                        {/* <ul className="brokerage-search-result" >
                                             <li key="no-record"><span className='no-record'>No Record Found</span></li>
                                             <li className='brokerage-search-list'>
                                                 <span className="symbol">NIFTY</span>
@@ -43,17 +43,34 @@ function Banner() {
                                                 <span className="symbol">NIFTYOIL&GAS</span>
                                                 <span className="name">NIFTY OIL AND GAS</span>
                                             </li>
-                                        </ul>
+                                        </ul> */}
                                     </div>
                                     <div className='selectbar'>
                                         <select name="" id="" className='select-control'>
-                                            <option value=""><span className='expry'>Expiry:</span> 27 JUL 23</option>
-                                            <option value=""><span className='expry'>Expiry:</span> 10 AUG 23</option>
+                                            <option value="">27 JUL 23</option>
+                                            <option value="">10 AUG 23</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div className='tab-sec'>
-
+                                    <div className="disply-flex">
+                                        <div className='no-strike'>
+                                            <span>No. of strike ATM:</span>
+                                        </div>
+                                        <div className='numbers'>
+                                            <ul>
+                                                <li className='active'>10</li>
+                                                <li>20</li>
+                                                <li>ALL</li>
+                                            </ul>
+                                            <button className='btn-refresh'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 26 26" fill="none">
+                                                    <path d="M24.866 14.8C23.9974 20.5736 19.0156 25 13 25C6.37258 25 1 19.6274 1 13C1 6.37258 6.37258 1 13 1C17.9207 1 22.1498 3.96183 24.0015 8.2" stroke="#EF404A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M19 8.19995H24.28C24.6777 8.19995 25 7.8776 25 7.47995V2.19995" stroke="#EF404A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

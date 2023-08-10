@@ -9,6 +9,7 @@
         background: $abt-bg;
         padding: 1.846rem;
         margin: 5.538rem 0 2.462rem;
+        border-radius: 8px;
         .first-sec{
             display: flex;
             justify-content: space-between;
@@ -93,6 +94,14 @@
                 } 
                 .selectbar{
                     width: 30%;
+                    position: relative;
+                    // &:before{
+                    //     content:'expirey:';
+                    //     display: block;
+                    //     position: absolute;
+                    //     top: 0;
+                    //     left: 0;
+                    //    }
                     .select-control{
                         border-radius: 8px;
                         font-size: 1.538rem;
@@ -104,21 +113,86 @@
                         color: $primary;
                         background-color: $whiteColor !important;
                         border: 1px solid $border-gray;
+                      
                         &:focus{
                             border-color: #0066B2;
                             box-shadow: none;
                         }
+                      
                        
+                        
+                       
+
+
+                     
                     }
-                    .expry{
-                        color: $secondary;
-                        font-weight: 400;
-                        font-family: $font-family-poppins-regular;
-                    }
+                    // .expry{
+                    //     color: $secondary;
+                    //     font-weight: 400;
+                    //     font-family: $font-family-poppins-regular;
+                    // }
+                    
                 }
             }
             .tab-sec{
                 width: 40%;
+                .disply-flex {
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    .no-strike{
+                        span{
+                            font-size: 1.385rem;
+                            color: $secondary;
+                            font-weight: 500;
+                            font-family: $font-family-poppins-medium;
+                        }
+                    }
+                    .numbers{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        column-gap: 2rem;
+                        ul{
+                            display: flex;
+                            margin: 0;
+                            padding-left: 1rem;
+                            li{
+                                list-style: none;
+                                cursor: pointer;
+                                padding:1.75rem 1rem;
+                                display: flex;
+                                align-items: center;
+                                line-height: 0;
+                                border: 1px solid $border-gray;
+                                font-size: 1.385rem;
+                                background-color: $whiteColor;
+                                color: $listcolor;
+                                font-weight: 400;
+                                font-family: $font-family-poppins-regular;
+                                &.active{
+                                    background-color: $primary;
+                                    color: $whiteColor;
+                                    font-weight: 600;
+                                    font-family: $font-family-poppins-semibold;
+                                    border-right: 0;
+                                }
+                                &:first-child{
+                                    border-radius: 8px 0 0 8px;
+                                }
+                                &:last-child{
+                                    border-radius: 0 8px 8px 0;
+                                }
+                            }
+                        }
+                        .btn-refresh{
+                            border-radius: 8px;
+                            border: 1px solid $border-gray;
+                            padding: .7rem 1rem;
+                            background-color: $whiteColor;
+                        }
+                    }
+                }
             }
         }
     }
