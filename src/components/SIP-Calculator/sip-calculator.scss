@@ -110,7 +110,7 @@
                         padding-right: 1rem;
                     }
                     &.input-2{
-                        padding-right: 1.5rem;
+                        padding-right: 2.5rem;
                         @media (max-width:$md) {
                             padding-right: 3rem;
                         }
@@ -296,6 +296,10 @@
             }
             .right-itms{
                 width: 60%;
+                canvas{
+                    height: 100% !important;
+                    width:  100% !important;
+                }
                 @media (max-width:$sm) {
                     width: 100%;
                 }
