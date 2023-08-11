@@ -345,7 +345,7 @@ const charteroption={
 
                                                     </div>
                                                     <div className="card-footer">
-                                                        <button type="submit" className="btn-bg">Invest Now</button>
+                                                    <a type="submit" href="https://choiceindia.com/open-free-demat-account" target="" className="btn-bg">Invest Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -460,7 +460,7 @@ const charteroption={
 
                                                     </div>
                                                     <div className="card-footer">
-                                                        <button type="submit" className="btn-bg">Invest Now</button>
+                                                    <a type="submit" href="https://choiceindia.com/open-free-demat-account" target="" className="btn-bg">Invest Now</a>
                                                     </div>
                                                 </div>
                                             </div>

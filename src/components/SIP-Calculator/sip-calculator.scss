@@ -296,6 +296,10 @@
             }
             .right-itms{
                 width: 60%;
+                canvas{
+                    height: 100% !important;
+                    width:  100% !important;
+                }
                 @media (max-width:$sm) {
                     width: 100%;
                 }
