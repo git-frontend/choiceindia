@@ -58,7 +58,7 @@ function MoreContent() {
                                     <p className="sml-para-dv">The benefits of working with Choice are –</p>
                                     <ul className="terms-list sml-para-dv">
                                         <li>Exposure to multiple investment products like insurance, retail loans, mutual funds and currency broking</li>
-                                        <li>Approximately INR 2100 incentive per account</li>
+                                        {/* <li>Approximately INR 2100 incentive per account</li> */}
                                         <li>Marketing assistance and professional training</li>
                                         <li>Cutting-edge software for business management</li>
                                     </ul>
