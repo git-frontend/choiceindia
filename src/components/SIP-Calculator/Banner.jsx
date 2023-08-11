@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut, Arc, Tooltip } from 'react-chartjs-2';
-import { Chart, ArcElement } from 'chart.js';
+import { Chart, ArcElement } from 'chart.js/auto';
 // import DonutChart from 'react-donut-chart';
 Chart.register(ArcElement)
 function Banner() {
@@ -26,6 +26,7 @@ function Banner() {
     useEffect(() => {
         calculateEmi();
         calculateLumpsumReturns();
+
     }, [monthlyinvest, interestRate, tenure])
 
     // Calculate EMi 
@@ -44,32 +45,26 @@ function Banner() {
         if (interestRate < 5 || interestRate > 25) {
             errors.interestRate = 'Please Enter Valid Interest Rate';
         }
-        // if (!/^\d{1,2}(\.\d)?|3[0-6](\.\d)?$/.test(interestRate)) {
-        //     errors.interestRate = 'Please Enter Valid Interest Rate';
-        //   }
-
         if (tenure < 3 || tenure > 40) {
             errors.tenure = 'Please Enter Valid Tenure In years';
         }
 
         if (errors.monthlyinvest || errors.interestRate || errors.tenure) {
-            // setMonthlyEMI(0);
-            // setTotalvalue(0);
-            // setEstReturns(0);
+            
             setErrorMessages(errors);
         } else {
-            if (!isNaN(monthlyinvest)) { // Check if monthlyinvest is a valid number
-            const rate = interestRate / 100;
-            const monthlyRate = rate / 12;
-            const totalMonths = tenure * 12;
-            const futureValue = monthlyinvest * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
-            setTotalvalue(futureValue.toFixed(2));
-            const investamount = monthlyinvest * totalMonths;
-            setMonthlyEMI(investamount);
-            const expectreturn = futureValue - investamount;
-            setEstReturns(expectreturn);
+            if (!isNaN(monthlyinvest)) { 
+                const rate = interestRate / 100;
+                const monthlyRate = rate / 12;
+                const totalMonths = tenure * 12;
+                const futureValue = monthlyinvest * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
+                setTotalvalue(futureValue.toFixed(2));
+                const investamount = monthlyinvest * totalMonths;
+                setMonthlyEMI(investamount);
+                const expectreturn = futureValue - investamount;
+                setEstReturns(expectreturn);
+            }
         }
-    }
     }
     const calculateLumpsumReturns = () => {
         const errors = {
@@ -112,11 +107,6 @@ function Banner() {
             });
         }
     };
-
-    // const HandleMonthlyInvest = (event) => {
-    //     const value = parseInt(event.target.value, 10);
-    //     setMonthlyinvest(value);
-    // };
     const HandleMonthlyInvest = (event) => {
         const value = event.target.value;
         if (value === "" || /^[0-9]+$/.test(value)) {
@@ -139,12 +129,10 @@ function Banner() {
         setTenure((event.target.value).replace(/\D/g, ""))
 
     };
-
     const fillPercentageloan = ((monthlyinvest - 500) / (500000 - 500)) * 100;
     const fillStyle = {
         background: `linear-gradient(to right, #004393 ${fillPercentageloan}%, #221f201a ${fillPercentageloan}%)`,
     };
-
     const fillPercentageint = ((interestRate - 5) / 20) * 100;
     const fillStyle1 = {
         background: `linear-gradient(to right, #004393 ${fillPercentageint}%, #221f201a ${fillPercentageint}%)`,
@@ -155,10 +143,10 @@ function Banner() {
     };
 
     const datas = {
-        labels: ['Value 1', 'Value 2'],
+        labels: ['Invested Amount', `Est. Returns ${interestRate}%`],
         datasets: [
             {
-                data: [monthlyEMI, estReturns],
+                data: [ monthlyEMI, estReturns],
                 backgroundColor: [
                     '#5085c5',
                     '#50ae8c',
@@ -168,7 +156,46 @@ function Banner() {
             },
         ],
     };
+    const ldatas = {
+        labels: ['Invested Amount', `Est. Returns ${interestRate}%`],
+        datasets: [
+            {
+                data: [ lumpsumamount, lumpsumestReturns],
+                backgroundColor: [
+                    '#5085c5',
+                    '#50ae8c',
+                ],
+                hoverBackgroundColor: ['#004393', '#00AE6F'], // Hover colors
 
+            },
+        ],
+    };
+const charteroption={
+    plugins: {
+        legend: {
+            display: false, 
+            position: 'right',
+        },
+        tooltip: {
+            enabled: true, 
+            backgroundColor: 'rgba(255, 255, 255, 0.49)',
+            titleFont: {
+                size: 14, 
+                weight:'normal'
+              },
+              bodyColor:  'rgba(0, 0, 0, 1)',
+              borderColor: 'rgba(255, 255, 255, 0.49)',
+              borderWidth: 1,
+              titleColor: 'rgba(0, 0, 0, 1)',
+              borderColor:'#786c6b',
+              bodyFont: {
+                size: 16, 
+                weight: 'bold', 
+              },                                                          
+        },
+        
+    },
+}
     function formatIndianCurrency(amount) {
         return new Intl.NumberFormat('en-IN', {
             style: 'currency',
@@ -176,6 +203,8 @@ function Banner() {
             maximumFractionDigits: 0,
         }).format(amount);
     }
+
+
     return (
         <>
             <section className='banner-section banner-sip'>
@@ -307,8 +336,11 @@ function Banner() {
                                                             </div>
                                                         </div>
 
-                                                        <div className="right-itms"><Doughnut data={datas} />
-
+                                                        <div className="right-itms">
+                                                            <Doughnut
+                                                                data={datas}
+                                                                options={charteroption}
+                                                            />
                                                         </div>
 
                                                     </div>
@@ -317,20 +349,6 @@ function Banner() {
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            {/* <DonutChart
-                                                data={[
-                                                    {
-                                                        label: 'Give you up',
-                                                        value: 25,
-                                                    },
-                                                    {
-                                                        label: '',
-                                                        value: 75,
-                                                        isEmpty: true,
-                                                    },
-                                                ]}
-                                            />; */}
                                         </div>
                                     </div>
                                     <div className={toggleState === 2 ? "content active-content" : "content"}>
@@ -435,7 +453,10 @@ function Banner() {
                                                             </div>
                                                         </div>
 
-                                                        <div className="right-itms"><Doughnut data={datas} /></div>
+                                                        <div className="right-itms"><Doughnut
+                                                                data={ldatas}
+                                                                options={charteroption}
+                                                            /></div>
 
                                                     </div>
                                                     <div className="card-footer">
@@ -444,19 +465,7 @@ function Banner() {
                                                 </div>
                                             </div>
 
-                                            {/* <DonutChart
-                                                data={[
-                                                    {
-                                                        label: 'Give you up',
-                                                        value: 25,
-                                                    },
-                                                    {
-                                                        label: '',
-                                                        value: 75,
-                                                        isEmpty: true,
-                                                    },
-                                                ]}
-                                            />; */}
+
                                         </div>
                                     </div>
                                 </div>

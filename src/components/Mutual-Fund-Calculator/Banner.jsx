@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut, Arc, Tooltip } from 'react-chartjs-2';
-import { Chart, ArcElement } from 'chart.js';
+import { Chart, ArcElement } from 'chart.js/auto';
 // import DonutChart from 'react-donut-chart';
 Chart.register(ArcElement)
 function Banner() {
@@ -155,10 +155,10 @@ function Banner() {
     };
 
     const datas = {
-        labels: ['Value 1', 'Value 2'],
+        labels: ['Invested Amount', `Est. Returns ${interestRate}%`],
         datasets: [
             {
-                data: [monthlyEMI, estReturns],
+                data: [ monthlyEMI, estReturns],
                 backgroundColor: [
                     '#5085c5',
                     '#50ae8c',
@@ -168,6 +168,46 @@ function Banner() {
             },
         ],
     };
+    const ldatas = {
+        labels: ['Invested Amount', `Est. Returns ${interestRate}%`],
+        datasets: [
+            {
+                data: [ lumpsumamount, lumpsumestReturns],
+                backgroundColor: [
+                    '#5085c5',
+                    '#50ae8c',
+                ],
+                hoverBackgroundColor: ['#004393', '#00AE6F'], // Hover colors
+
+            },
+        ],
+    };
+const charteroption={
+    plugins: {
+        legend: {
+            display: false, 
+            position: 'right',
+        },
+        tooltip: {
+            enabled: true, 
+            backgroundColor: 'rgba(255, 255, 255, 0.49)',
+            titleFont: {
+                size: 14, 
+                weight:'normal'
+              },
+              bodyColor:  'rgba(0, 0, 0, 1)',
+              borderColor: 'rgba(255, 255, 255, 0.49)',
+              borderWidth: 1,
+              titleColor: 'rgba(0, 0, 0, 1)',
+              borderColor:'#786c6b',
+              bodyFont: {
+                size: 16, 
+                weight: 'bold', 
+              },                                                          
+        },
+        
+    },
+}
 
     function formatIndianCurrency(amount) {
         return new Intl.NumberFormat('en-IN', {
@@ -307,13 +347,16 @@ function Banner() {
                                                             </div>
                                                         </div>
 
-                                                        <div className="right-itms"><Doughnut data={datas} />
+                                                        <div className="right-itms"><Doughnut
+                                                                data={datas}
+                                                                options={charteroption}
+                                                            />
 
                                                         </div>
 
                                                     </div>
                                                     <div className="card-footer">
-                                                        <button type="submit" className="btn-bg">Invest Now</button>
+                                                    <a type="submit" href="https://choiceindia.com/open-free-demat-account" target="" className="btn-bg">Invest Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -435,11 +478,14 @@ function Banner() {
                                                             </div>
                                                         </div>
 
-                                                        <div className="right-itms"><Doughnut data={datas} /></div>
+                                                        <div className="right-itms"><Doughnut
+                                                                data={ldatas}
+                                                                options={charteroption}
+                                                            /></div>
 
                                                     </div>
                                                     <div className="card-footer">
-                                                        <button type="submit" className="btn-bg">Invest Now</button>
+                                                    <a type="submit" href="https://choiceindia.com/open-free-demat-account" target="" className="btn-bg">Invest Now</a>
                                                     </div>
                                                 </div>
                                             </div>
