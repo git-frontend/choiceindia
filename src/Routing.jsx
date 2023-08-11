@@ -949,11 +949,11 @@ function Routing() {
                                 < LazyMutualFundCalculator />
                             </React.Suspense>
                         } />
-                         <Route exact path='/option-chain' element={
+                         {/* <Route exact path='/option-chain' element={
                             <React.Suspense>
                                 < LazyOptionChain />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

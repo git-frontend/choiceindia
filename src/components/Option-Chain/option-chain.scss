@@ -8,7 +8,7 @@
     .banner-card{
         background: $abt-bg;
         padding: 1.846rem;
-        margin: 5.538rem 0 2.462rem;
+        margin: 4rem 0 2.462rem;
         border-radius: 8px;
         .first-sec{
             display: flex;
@@ -20,10 +20,13 @@
                 flex-wrap: wrap;
                 align-items: center;
                 width:60%;
-                column-gap: 2rem;
+                column-gap: 4rem;
+                @media (max-width:$md) {
+                    width: 100%;
+                }
                 .brokerage-search{
                     position: relative;
-                    width: 65%;
+                    width: 60%;
                     .input-control{
                         border-radius: 8px;
                         font-size: 1.538rem;
@@ -93,49 +96,41 @@
                     }
                 } 
                 .selectbar{
-                    width: 30%;
-                    position: relative;
-                    // &:before{
-                    //     content:'expirey:';
-                    //     display: block;
-                    //     position: absolute;
-                    //     top: 0;
-                    //     left: 0;
-                    //    }
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1rem;
+                    span{
+                        font-size: 1.385rem;
+                        color: $secondary;
+                        font-weight: 500;
+                        font-family: $font-family-poppins-medium;
+                    }
                     .select-control{
+                        outline: 0;
+                        appearance: none;
                         border-radius: 8px;
                         font-size: 1.538rem;
                         font-family: $font-family-poppins-semibold;
                         font-weight: 600;
                         line-height: 1.5;
-                        padding: 0.775rem 2.25rem 0.775rem 0.75rem;
+                        padding: 0.775rem 3.25rem 0.775rem 0.75rem;
                         text-transform: uppercase;
                         color: $primary;
                         background-color: $whiteColor !important;
                         border: 1px solid $border-gray;
-                      
+                        background: url(../../assets/images/option-chain/arrow-down.svg) no-repeat center right 13px;
                         &:focus{
                             border-color: #0066B2;
                             box-shadow: none;
                         }
-                      
-                       
-                        
-                       
-
-
-                     
                     }
-                    // .expry{
-                    //     color: $secondary;
-                    //     font-weight: 400;
-                    //     font-family: $font-family-poppins-regular;
-                    // }
-                    
                 }
             }
             .tab-sec{
                 // width: 40%;
+                @media (max-width:$md) {
+                    padding: 2rem 0 0;
+                }
                 .disply-flex {
                     display: flex;
                     justify-content: end;
@@ -151,8 +146,7 @@
                     .numbers{
                         display: flex;
                         align-items: center;
-                        justify-content: center;
-                        column-gap: 2rem;
+                        column-gap: 1rem;
                         ul{
                             display: flex;
                             margin: 0;
@@ -199,13 +193,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 1rem;
+            padding-top: 1.5rem;
+            flex-wrap: wrap;
             .left-sec{
                 width: 40%;
+                @media (max-width:$md) {
+                    width: 100%;
+                    padding: 0 0 2rem;
+                }
                     h6{
                         font-size: 1.846rem;
                         font-family: $font-family-poppins-semibold;
-                        line-height: 1.5; 
+                        line-height: 1.5;
+                        margin: 0; 
                         @media (max-width:$sm) {
                             font-size: 1.231rem;
                         }
@@ -215,15 +215,20 @@
                         color: $pluscolor;
                         line-height: 1.5;
                         margin: 0;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
                         @media (max-width:$sm) {
                             font-size: 1.077rem;
                         }
                     }
             }
             .right-sec{
-                width: 59%;
+                width: 60%;
                 display: flex;
                 justify-content: space-between;
+                @media (max-width:$md) {
+                    width: 100%;
+                }
                 .items{
                     .lable{
                         margin: 0;
@@ -373,6 +378,7 @@
                         font-size: 1.846rem;
                         font-family: $font-family-poppins-semibold;
                         line-height: 1.5;
+                        margin: 0;
                         @media (max-width:$sm) {
                             font-size: 1.231rem;
                         }
@@ -413,6 +419,7 @@
                         font-size: 1.846rem;
                         font-family: $font-family-poppins-semibold;
                         line-height: 1.5; 
+                        margin: 0;
                         @media (max-width:$sm) {
                             font-size: 1.231rem;
                         }

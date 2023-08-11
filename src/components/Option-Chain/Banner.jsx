@@ -46,7 +46,7 @@ function Banner() {
                                         </ul> */}
                                     </div>
                                     <div className='selectbar'>
-                                        <span>Expiry : </span>
+                                        <span>Expiry: </span>
                                         <select name="" id="" className='select-control'>
                                             <option value="">27 JUL 23</option>
                                             <option value="">10 AUG 23</option>
