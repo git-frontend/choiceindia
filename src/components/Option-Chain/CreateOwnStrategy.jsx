@@ -1,8 +1,8 @@
 import React from 'react'
 import LazyLoader from '../Common-features/LazyLoader'
-import Unlimited from '../../assets/images/create-own-strategy/unlimited-backtests.svg';
-import ReadyMade from '../../assets/images/create-own-strategy/ready-made.svg';
-import NoCoding from '../../assets/images/create-own-strategy/no-coding-skills.svg';
+import Unlimited from '../../assets/images/option-chain/unlimited-backtests.svg';
+import ReadyMade from '../../assets/images/option-chain/ready-made.svg';
+import NoCoding from '../../assets/images/option-chain/no-coding-skills.svg';
 
 function CreateOwnStrategy() {
   return (

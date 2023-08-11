@@ -343,7 +343,8 @@ function Routing() {
                         } />
                         <Route exact path='/open-free-demat-account' element={
                             <React.Suspense>
-                                < Lazyopendemat />
+                                {/* < Lazyopendemat /> */}
+                                < LazyFreeDematCompaign />
                             </React.Suspense>
                         } />
                         <Route exact path='/hindi/trading-account' element={
@@ -948,11 +949,11 @@ function Routing() {
                                 < LazyMutualFundCalculator />
                             </React.Suspense>
                         } />
-                         <Route exact path='/option-chain' element={
+                         {/* <Route exact path='/option-chain' element={
                             <React.Suspense>
                                 < LazyOptionChain />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

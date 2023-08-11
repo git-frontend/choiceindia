@@ -39,7 +39,7 @@ function BannerSBroker() {
                                     <h1 className="tlt1">
                                         <span className="tlt2">Start Sub Broker</span>
                                         Franchise
-                                        <span className="tlt2">with Low Deposit*</span>
+                                        <span className="tlt2">with Choice</span>
                                     </h1>
                                 </div>
                                 <div className="right-sec">
@@ -52,8 +52,8 @@ function BannerSBroker() {
                                     <li>
                                         <span>Highest</span> Revenue Sharing
                                     </li>
-                                    <li>
-                                        <span>Upto ₹ 2100 Per</span> Account Incentive*
+                                    <li> 
+                                        <span>Local Branch</span> Support
                                     </li>
                                     <li>
                                         <span>Lifetime</span> Income Source

@@ -5,6 +5,250 @@
 .banner-section{
     background: $whiteColor;
     padding: 4rem 0 0;
+    .banner-card{
+        background: $abt-bg;
+        padding: 1.846rem;
+        margin: 4rem 0 2.462rem;
+        border-radius: 8px;
+        .first-sec{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            .input-sec{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                width:60%;
+                column-gap: 4rem;
+                @media (max-width:$md) {
+                    width: 100%;
+                }
+                .brokerage-search{
+                    position: relative;
+                    width: 60%;
+                    .input-control{
+                        border-radius: 8px;
+                        font-size: 1.538rem;
+                        font-family: $font-family-poppins-regular;
+                        line-height: 1.5;
+                        padding: 0.775rem 2.25rem 0.775rem 0.75rem;
+                        text-transform: uppercase;
+                        color: $primary;
+                        background-color: $whiteColor !important;
+                        border: 1px solid $border-gray;
+                        &::placeholder {
+                            color: $primary;
+                            font-family: $font-family-poppins-semibold;
+                            font-weight: 700;
+                          }
+                        &.search-icon {
+                            background: url(../../assets/images/option-chain/search.svg) no-repeat center right 13px;
+                        }
+                        &:focus{
+                            border-color: #0066B2;
+                            box-shadow: none;
+                        }
+                    }
+                   
+                    .brokerage-search-result{
+                        position: absolute;
+                        z-index: 1;
+                        width: 100%;
+                        list-style: none;
+                        padding: .5rem 1.154rem;
+                        margin: 0;
+                        border-radius: 8px;
+                        background: $whiteColor;
+                        box-shadow: 0px 4px 4px 0px $nbfcboxshadow;
+                        @media (max-width:$md) {
+                            max-height: 250px;
+                            overflow: auto;
+                        }
+                        .no-record{
+                            font-size: 1.25rem;
+                            font-family: $font-family-poppins-medium;
+                            color: $primary;
+                        }
+                        .brokerage-search-list {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            border-bottom: 1px solid $border-gray;
+                            cursor: pointer;
+                            padding: 0.75rem 0;
+                            .symbol {
+                                text-align: left;
+                                font-size: 1.231rem;
+                                font-family: $font-family-poppins-medium;
+                            }
+                            .name {
+                                font-size: 1.077rem;
+                                font-family: $font-family-poppins-regular;
+                                color: $textgray;
+                            }
+                            &:last-child{
+                                border-bottom: none;
+                             }
+                        }
+                        
+                    }
+                } 
+                .selectbar{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1rem;
+                    span{
+                        font-size: 1.385rem;
+                        color: $secondary;
+                        font-weight: 500;
+                        font-family: $font-family-poppins-medium;
+                    }
+                    .select-control{
+                        outline: 0;
+                        appearance: none;
+                        border-radius: 8px;
+                        font-size: 1.538rem;
+                        font-family: $font-family-poppins-semibold;
+                        font-weight: 600;
+                        line-height: 1.5;
+                        padding: 0.775rem 3.25rem 0.775rem 0.75rem;
+                        text-transform: uppercase;
+                        color: $primary;
+                        background-color: $whiteColor !important;
+                        border: 1px solid $border-gray;
+                        background: url(../../assets/images/option-chain/arrow-down.svg) no-repeat center right 13px;
+                        &:focus{
+                            border-color: #0066B2;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+            .tab-sec{
+                // width: 40%;
+                @media (max-width:$md) {
+                    padding: 2rem 0 0;
+                }
+                .disply-flex {
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    .no-strike{
+                        span{
+                            font-size: 1.385rem;
+                            color: $secondary;
+                            font-weight: 500;
+                            font-family: $font-family-poppins-medium;
+                        }
+                    }
+                    .numbers{
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1rem;
+                        ul{
+                            display: flex;
+                            margin: 0;
+                            padding-left: 1rem;
+                            li{
+                                list-style: none;
+                                cursor: pointer;
+                                padding:1.75rem 1rem;
+                                display: flex;
+                                align-items: center;
+                                line-height: 0;
+                                border: 1px solid $border-gray;
+                                font-size: 1.385rem;
+                                background-color: $whiteColor;
+                                color: $listcolor;
+                                font-weight: 400;
+                                font-family: $font-family-poppins-regular;
+                                &.active{
+                                    background-color: $primary;
+                                    color: $whiteColor;
+                                    font-weight: 600;
+                                    font-family: $font-family-poppins-semibold;
+                                    border-right: 0;
+                                }
+                                &:first-child{
+                                    border-radius: 8px 0 0 8px;
+                                }
+                                &:last-child{
+                                    border-radius: 0 8px 8px 0;
+                                }
+                            }
+                        }
+                        .btn-refresh{
+                            border-radius: 8px;
+                            border: 1px solid $border-gray;
+                            padding: .7rem 1rem;
+                            background-color: $whiteColor;
+                        }
+                    }
+                }
+            }
+        }
+        .secnd-sec{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            flex-wrap: wrap;
+            .left-sec{
+                width: 40%;
+                @media (max-width:$md) {
+                    width: 100%;
+                    padding: 0 0 2rem;
+                }
+                    h6{
+                        font-size: 1.846rem;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5;
+                        margin: 0; 
+                        @media (max-width:$sm) {
+                            font-size: 1.231rem;
+                        }
+                    }
+                    p{
+                        font-size: 1.385rem;
+                        color: $pluscolor;
+                        line-height: 1.5;
+                        margin: 0;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        @media (max-width:$sm) {
+                            font-size: 1.077rem;
+                        }
+                    }
+            }
+            .right-sec{
+                width: 60%;
+                display: flex;
+                justify-content: space-between;
+                @media (max-width:$md) {
+                    width: 100%;
+                }
+                .items{
+                    .lable{
+                        margin: 0;
+                        font-size: 1.385rem;
+                        font-family: $font-family-poppins-regular;
+                        font-weight: 400;
+                        color: $secondary;
+                    }
+                    .val{
+                        margin: 0;
+                        font-size: 1.538rem;
+                        font-family: $font-family-poppins-semibold;
+                        color: $primary;
+                        font-weight: 600;
+                        padding-top: 0.923rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .create-own-strategy{
@@ -101,5 +345,115 @@
         font-size: 1.385rem;
         color: $secondary;
         padding-bottom: 2rem;
+    }
+}
+.underlying-assets{
+    background: $abt-bg;
+    padding: 10rem 0;
+    @media (max-width:$md) {
+        padding: 6rem 0;
+    }
+    .underlying-card{
+        background: $whiteColor;
+        border: 1px solid $border-gray;
+        border-radius: 8px;
+        padding: 2.769rem;
+        margin-top: 2.769rem;
+        @media (max-width:$sm) {
+            padding: 1.846rem;
+        }
+        .assets-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            @media (max-width:$sm) {
+                row-gap: 3rem;
+            }
+            .left-items{
+                .display-flex{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 0.5rem;
+                    h6{
+                        font-size: 1.846rem;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5;
+                        margin: 0;
+                        @media (max-width:$sm) {
+                            font-size: 1.231rem;
+                        }
+                    }
+                    span{
+                        font-size: 1.385rem;
+                        color: $secondary;
+                        line-height: 1.5;
+                        @media (max-width:$sm) {
+                            font-size: 1.077rem;
+                        }
+                    }
+                }
+                p{
+                    font-size: 1.385rem;
+                    color: $secondary;
+                    line-height: 1.5;
+                    margin: 0;
+                    @media (max-width:$sm) {
+                        font-size: 1.077rem;
+                    }
+                }
+            }
+            .right-items {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                column-gap: 3rem;
+                @media (max-width:$sm) {
+                   width: 100%;
+                }
+                .values{
+                    text-align: right;
+                    @media (max-width:$sm) {
+                        text-align: left;
+                    }
+                    h6{
+                        font-size: 1.846rem;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5; 
+                        margin: 0;
+                        @media (max-width:$sm) {
+                            font-size: 1.231rem;
+                        }
+                    }
+                    p{
+                        font-size: 1.385rem;
+                        color: $pluscolor;
+                        line-height: 1.5;
+                        margin: 0;
+                        @media (max-width:$sm) {
+                            font-size: 1.077rem;
+                        }
+                    }
+                }
+                .btn-sec{
+                    .btn-buy{
+                        border: 0;
+                        font-family: $font-family-poppins-semibold;
+                        background: $pluscolor;
+                        border-radius: 12px;
+                        color: $whiteColor;
+                        display: inline-block;
+                        font-size: 1.846rem;
+                        padding: 1.2rem 4rem;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        transition: .5s;
+                        @media (max-width:$sm) {
+                            font-size: 1.538rem;
+                            padding: .7rem 3rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

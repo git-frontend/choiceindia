@@ -17,6 +17,7 @@ import WhyChoiceOpenDematAccount from "./WhyChoiceOpenDematAccount";
 
 import BChargesMoreContent from "./BChargesMoreContent";
 import Faq from "./Faqs";
+import OpenAccountEasySteps from "./OpenAccountEasySteps";
 
 
 function FreeDematCompaign() {
@@ -51,27 +52,19 @@ function FreeDematCompaign() {
   return (
     <div>
 
-      <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIscheck(true)}>
-      <Banner/>
-      </div>
-      
+            <Banner/>
         {/* <CreateBacktestStrategies/> */}
-        {
-          ischeck ?
-            <div>
               <GetFreeResearchCall />
               <OurTrackRecordSaysAll />
               <WhyOpenFreeDematAccount />
               <OneAccountFinancialNeeds />
               <OpenLowBrokerageDematAccount />
-              <DematAccountOnlineSteps />
+              <OpenAccountEasySteps/>
+              {/* <DematAccountOnlineSteps /> */}
               <DocumentsRequiredDematAccountOpeningOnline />
               <WhyChoiceOpenDematAccount />
-            </div>
-            : ""}
-
-        {/* <Faq/>
-          <BChargesMoreContent/> */}
+              <Faq/>
+              <BChargesMoreContent/>
       </div>
 
   
