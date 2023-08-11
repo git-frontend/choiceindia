@@ -45,7 +45,7 @@ function BannerSBrokerHindi() {
                                         <span>उच्चतम</span> ब्रोकरेज शेयरिंग
                                     </li>
                                     <li>
-                                        <span>कम</span> डिपॉजिट
+                                        <span>लोकल ब्रांच</span> सपोर्ट
                                     </li>
                                     <li>
                                         <span>लाईफटाइम</span> इनकम स्रोत

@@ -53,7 +53,7 @@ function BannerSBroker() {
                                         <span>Highest</span> Revenue Sharing
                                     </li>
                                     <li> 
-                                        <span>Low</span> Deposit
+                                        <span>Local Branch</span> Support
                                     </li>
                                     <li>
                                         <span>Lifetime</span> Income Source
