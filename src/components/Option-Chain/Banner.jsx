@@ -119,11 +119,16 @@ function Banner() {
                                             </thead>
                                         </table>
                                         <div>
-                                            <table>
+                                            <table className='th-ce'>
                                                 <thead>
                                                     <tr>
                                                         <th>Interpretation</th>
-                                                        <th>OI Call OI</th>
+                                                        <th className='flex'>OI  
+                                                            <div className='dis-flex'>
+                                                                Call OI
+                                                                <span className='neg-bg'></span>
+                                                            </div>
+                                                        </th>
                                                         <th>LTP</th>
                                                     </tr>
                                                 </thead>
@@ -149,11 +154,17 @@ function Banner() {
                                             </thead>
                                         </table>
                                         <div>
-                                            <table>
+                                            <table className='th-pe'>
                                                 <thead>
                                                     <tr>
                                                         <th>LTP</th>
-                                                        <th>Put OI OI</th>
+                                                        <th className='flex'>
+                                                            <div className='dis-flex'>
+                                                                <span className='pos-bg'></span>
+                                                                Put OI 
+                                                            </div>
+                                                            OI
+                                                        </th>
                                                         <th>Interpretation</th>
                                                     </tr>
                                                 </thead>
@@ -167,89 +178,130 @@ function Banner() {
                                             <table className='option-chain-ce-table'>
                                                 <tbody className='option-chain-ce-body'>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
+                                                        <div className='btn-wrap'>
+                                                            <a href="" className='btn-buy'>B</a>
+                                                            <a href="" className='btn-sell'>S</a>
+                                                            <a href="">i</a>
+                                                            <a href="">c</a>
+                                                            <a href="">h</a>
+                                                        </div>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>Long BuildUp</td>
-                                                        <td>9,609,150 (-2.31%)</td>
-                                                        <td>43.60 (-45.97%)</td>
+                                                        <td className='txt-danger'>Long BuildUp</td>
+                                                        <td>
+                                                            <div className='highlightneg'>9,609,150 <span className='per-neg-val'>(-2.31%)</span></div>
+                                                        </td>
+                                                        <td>43.60 <span className='txt-danger'>(-45.97%)</span></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -315,89 +367,123 @@ function Banner() {
                                             <table className='option-chain-pe-table'>
                                                 <tbody className='option-chain-pe-body'>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                     <tr className='option-table-row'>
-                                                        <td>65.85 (1.78%)</td>
-                                                        <td>6,941,100 (143.12%)</td>
-                                                        <td>Long Liquidation</td>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr className='option-table-row'>
+                                                        <td>65.85 <span className='txt-success'>(1.78%)</span></td>
+                                                        <td>
+                                                            <div className='highlightpos'>6,941,100 <span>(143.12%)</span></div>
+                                                        </td>
+                                                        <td className='txt-success'>Long Liquidation</td>
                                                     </tr>
                                                 </tbody>
                                             </table>

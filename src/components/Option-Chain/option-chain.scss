@@ -308,30 +308,33 @@
             border-radius: 8px;
             margin: 0 auto;
             overflow: hidden;
+            .txt-danger{
+                color: $redbg;
+            }
+            .txt-success{
+                color: $sucessgreen;
+            }
+            .txt-deco{
+                text-decoration: none;
+            }
             table{
                 background-color: $whiteColor;
                 width: 100%;
                 tr {
-                    background-color: #fff;
-                    font-size: 12px;
-                    font-weight: 500;
-                    line-height: 15px;
-                    text-align: center;
                     width: 100%;
                     td{
-                        width: 188px;
+                        width: 14.462rem;
                         padding: 5px;
                         border-bottom: 1px solid $border-gray;
                     }
                     th {
                         border-bottom: 1px solid $border-gray;
                         color: $primary;
-                        font-size: 1.538rem;
+                        font-size: 1.385rem;
                         font-weight: 400;
                         font-family: $font-family-poppins-regular;
-                        height: 59px;
-                        padding: 7px 8px;
-                        width: 188px;
+                        padding: 1.75rem 1rem;
+                        width: 14.462rem;
                     }
                 }
             }
@@ -339,17 +342,69 @@
                 display: flex;
                 justify-content: center;
                 padding: 0;
+                .th-pe{
+                    text-align: right;
+                    thead{
+                        border-top: 1px solid $border-gray;
+                        border-bottom: 1px solid $border-gray;
+                    }
+                    .flex{
+                        display: flex;
+                       column-gap: 1.25rem;
+                       align-items: center;
+                       justify-content: flex-end;
+                       border: 0;
+                        .dis-flex{
+                            display: flex;
+                            column-gap: 0.5rem;
+                            align-items: center;
+                            .pos-bg{
+                                background:$sucessgreen;
+                                display: block;
+                                height: 1rem;
+                                width: 3.462rem;
+                                border-radius: 18px;
+                            }
+                        }
+                    }
+                }
+                .th-ce{
+                    text-align: left;
+                    thead{
+                        border-top: 1px solid $border-gray;
+                        border-bottom: 1px solid $border-gray;
+                    }
+                    .flex{
+                        display: flex;
+                        column-gap: 1.25rem;
+                        align-items: center;
+                        justify-content: flex-start;
+                        border: 0;
+                        .dis-flex{
+                            display: flex;
+                            column-gap: 0.5rem;
+                            align-items: center;
+                            .neg-bg{
+                                background:$redbg;
+                                display: block;
+                                height: 1rem;
+                                width: 3.462rem;
+                                border-radius: 18px;
+                            }
+                        }
+                    }
+                }
                 .strike-table {
-                    width: 188px;
+                    width: 14.462rem;
                     .strike-b{
                         color: $primary;
-                        font-size: 1.538rem;
+                        font-size: 1.385rem;
                         font-weight: 600;
                         font-family: $font-family-poppins-semibold;
                     }
                     th{
                         color: $primary;
-                        font-size: 1.538rem;
+                        font-size: 1.385rem;
                         font-weight: 400;
                         font-family: $font-family-poppins-regular;
                     }
@@ -361,21 +416,17 @@
                 .secondary-header{
                     background: $abt-bg;
                     border: 0;
+                    text-align: center;
                     th{
                         border: 0;
                     }
                 }
                 .main-section-header {
-                    color: $primary;
-                    font-size: 1.538rem;
+                    font-size: 1.385rem;
                     font-weight: 600;
                     font-family: $font-family-poppins-semibold;
-                    &.txt-danger{
-                        color: $redbg;
-                    }
-                    &.txt-success{
-                        color: $sucessgreen;
-                    }
+                    text-align: center;
+                    border: 0;
                 }
                 .syncscroll {
                     &::-webkit-scrollbar{
@@ -390,7 +441,7 @@
                 }
             }
             .table-container {
-                height: 600px;
+                height: 46.154rem;
                 overflow-y: scroll;
                 position: relative;
                 scrollbar-width: none;
@@ -402,28 +453,70 @@
                     justify-content: center;
                     .option-chain-ce-table{
                         .option-chain-ce-body{
+                            .option-table-row{
+                                &:hover{
+                                    .btn-wrap{
+                                        display: block;
+                                    }
+                                }
+                                .btn-wrap{
+                                    display: none;
+                                }
+                           
                             td{
-                                height: 59px;
-                                width: 188px;
+                                padding: 1rem;
+                                width: 14.462rem;
+                                font-size: 1.231rem;
+                                font-family: $font-family-poppins-regular;
+                                font-weight: 400;
+                                text-align: left;
+                                height: 5.385rem;
+                                .highlightneg{
+                                    background:rgba(239, 64, 74, 0.08);
+                                    border-radius: 0px 18px 18px 0px;
+                                    padding: 0.5rem 0;
+                                    span{
+                                        color: $redbg;
+                                    }
+                                }
                             }
+                        }
                         }
                     }
                     .option-chain-pe-table{
                         .option-chain-pe-body{
                             td{
-                                height: 59px;
-                                width: 188px;
+                                padding: 1rem;
+                                width: 14.462rem;
+                                font-size: 1.231rem;
+                                font-family: $font-family-poppins-regular;
+                                font-weight: 400;
+                                text-align: right;
+                                height: 5.385rem;
+                                .highlightpos{
+                                    border-radius: 18px 0px 0px 18px;
+                                    background: rgba(0, 174, 111, 0.08);
+                                    padding: 0.5rem 0;
+                                    span{
+                                        color: $sucessgreen;
+                                    }
+                                }
                             }
                         }
                     }
                     .option-chain-strike-price{
+                        text-align: center;
                         .option-chain-strike-body{
                             .strike-price-row{
                                 .strike-price-cell{
-                                    height: 59px;
-                                    width: 188px;
+                                    height: 5.385rem;
+                                    padding: 1rem;
+                                    width: 14.462rem;
                                     background: $abt-bg;
                                     border: 0;
+                                    font-size: 1.231rem;
+                                    font-family: $font-family-poppins-regular;
+                                    font-weight: 400;
                                 }
                             }
                         }
