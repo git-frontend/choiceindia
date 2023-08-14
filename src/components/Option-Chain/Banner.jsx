@@ -105,8 +105,312 @@ function Banner() {
                         </div>
                     </div>
                 </div>
+                <div className='row'>
+                    <div className='col-md-12'>
+                        <div className='table-content'>
+                            <div className='option-chain-table'>
+                                <div className='table-header'>
+                                    <div className='syncscroll'>
+                                        <table className='sticy-header'>
+                                            <thead className='secondry-header'>
+                                                <tr>
+                                                    <th className='main-section-header'>CALLS</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <div>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Interpretation</th>
+                                                        <th>OI Call OI</th>
+                                                        <th>LTP</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <table className="strike-table">
+                                        <thead>
+                                            <tr className="secondary-header">
+                                            <th>Strike Price</th>
+                                            </tr>
+                                            <tr>
+                                            <th>Price</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div className='syncscroll'>
+                                        <table className='sticy-header'>
+                                            <thead className='secondry-header'>
+                                                <tr>
+                                                    <th className='main-section-header'>PUTS</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <div>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>LTP</th>
+                                                        <th>Put OI OI</th>
+                                                        <th>Interpretation</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='table-container'>
+                                    <div className='table-wrapper'>
+                                        <div className='syncscroll cetable'>
+                                            <table className='option-chain-ce-table'>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Long BuildUp</td>
+                                                        <td>9,609,150 (-2.31%)</td>
+                                                        <td>43.60 (-45.97%)</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div>
+                                            <table className='option-chain-strike-price'>
+                                                <tbody>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                    <tr className='strike-price-row'>
+                                                        <td className='strike-price--cell'>19,550</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div className='syncscroll cetable'>
+                                            <table className='option-chain-ce-table'>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>65.85 (1.78%)</td>
+                                                        <td>6,941,100 (143.12%)</td>
+                                                        <td>Long Liquidation</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        
     </>
   )
 }
