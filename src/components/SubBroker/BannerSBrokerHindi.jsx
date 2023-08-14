@@ -32,7 +32,7 @@ function BannerSBrokerHindi() {
                                 <div className="left-sec">
                                  <h1 className="tlt1"><span className="tlt2">शूरू करे सब ब्रोकर</span>
                                     फ्रेंचाइजी
-                                    <span className="tlt2">सबसे कम डिपॉजिट में</span></h1>
+                                    <span className="tlt2">चॉइस के साथ</span></h1>
                                 </div>
                                 <div className="right-sec">
                                     <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"400"} height={"391"} />
@@ -45,7 +45,7 @@ function BannerSBrokerHindi() {
                                         <span>उच्चतम</span> ब्रोकरेज शेयरिंग
                                     </li>
                                     <li>
-                                        <span>इंसेन्टीव्ह प्रति खाता</span> रु. 2100 तक*
+                                        <span>लोकल ब्रांच</span> सपोर्ट
                                     </li>
                                     <li>
                                         <span>लाईफटाइम</span> इनकम स्रोत
