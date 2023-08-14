@@ -239,10 +239,12 @@
     z-index: 999;
     position: relative;
     a {
-        &:link {
-            color: $whiteColor;
-            text-decoration: none;
-        }
+             color: $whiteColor;
+            text-decoration: underline;
+        // &:link {
+        //     color: $whiteColor;
+        //     text-decoration: none;
+        // }
         &:hover {
             color: $yellowColor;
             text-decoration: none;
