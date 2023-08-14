@@ -301,6 +301,15 @@
             }
         }
     }
+
+    .table-content{
+        .option-chain-table {
+            border: 1px solid $border-gray;
+            border-radius: 8px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+    }
 }
 
 .create-own-strategy{
