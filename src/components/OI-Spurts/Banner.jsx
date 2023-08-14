@@ -40,16 +40,16 @@ function Banner() {
         fetchOISpurts();
     }
     const onDropDownChange = () => {
-        const selectedSegmentData = dropDownData[selectedConfig.segmentId];
-        if (selectedSegmentData) {
-            const item = selectedSegmentData[selectedConfig.ProductType];
-            if (item) {
-                setSelectedConfig((prevConfig) => ({
-                    ...prevConfig,
-                    DerivativeDataType: item.DerivativeDataType,
-                    DerivativeType: item.DerivativeType,
-                }));
-            }
+        const segmentData = dropDownData[selectedConfig.segmentId];
+        if (segmentData && segmentData.length > 0) {
+            const item = segmentData[selectedConfig.ProductType];
+            setSelectedConfig((prevConfig) => ({
+                ...prevConfig,
+                DerivativeDataType: item.DerivativeDataType,
+                DerivativeType: item.DerivativeType,
+            }));
+        } else {
+            console.error(`Dropdown data for segmentId ${selectedConfig.segmentId} is not defined or empty.`);
         }
     };
 
@@ -113,40 +113,56 @@ function Banner() {
                                                     <div className='row align-items-center'>
                                                         <div className='col-md-6'>
                                                             <div className='list-drpdwn'>
-                                                            <select
-                                                                id="basic2"
-                                                                name="productType"
-                                                                className="btn-drp dropdown-toggle form-control"
-                                                                value={selectedConfig.ProductType}
-                                                                onChange={onDropDownChange}
-                                                                aria-label="product type"
-                                                            >
-                                                                {dropDownData[selectedConfig?.segmentId]?.map((item, index) => (
-                                                                    <option key={index} value={index}>
-                                                                        {item.IndexName}
+                                                                <select className="btn-drp dropdown-toggle form-control">
+                                                                    <option
+                                                                        value={1}
+                                                                        className={selectedConfig.OISpurtsType === 1 ? "active" : ""}
+                                                                        onClick={() => onSpurtsTypeChange(1)}
+                                                                    >
+                                                                        Long Built Up
                                                                     </option>
-                                                                ))}
-                                                            </select>
+                                                                    <option
+                                                                        value={2}
+                                                                        className={selectedConfig.OISpurtsType === 2 ? "active" : ""}
+                                                                        onClick={() => onSpurtsTypeChange(2)}
+                                                                    >
+                                                                        Short Built Up
+                                                                    </option>
+                                                                    <option
+                                                                        value={3}
+                                                                        className={selectedConfig.OISpurtsType === 3 ? "active" : ""}
+                                                                        onClick={() => onSpurtsTypeChange(3)}
+                                                                    >
+                                                                        Short Covering
+                                                                    </option>
+                                                                    <option
+                                                                        value={4}
+                                                                        className={selectedConfig.OISpurtsType === 4 ? "active" : ""}
+                                                                        onClick={() => onSpurtsTypeChange(4)}
+                                                                    >
+                                                                        Long Liquidation
+                                                                    </option>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                         <div className='col-md-6'>
                                                             <div className='list-drpdwn'>
-                                                            <select
-                                                                id="basic2"
-                                                                name="productType"
-                                                                className="btn-drp dropdown-toggle form-control"
-                                                                value={selectedConfig.ProductType}
-                                                                onChange={onDropDownChange}
-                                                                aria-label="product type"
-                                                            >
-                                                                {dropDownData[selectedConfig?.segmentId]?.map((item, index) => (
-                                                                    <option key={index} value={index}>
-                                                                        {item.IndexName}
-                                                                    </option>
-                                                                ))}
-                                                            </select>
+                                                                <select
+                                                                    id="basic2"
+                                                                    name="productType"
+                                                                    className="btn-drp dropdown-toggle form-control"
+                                                                    value={selectedConfig.ProductType}
+                                                                    onChange={onDropDownChange}
+                                                                    aria-label="product type"
+                                                                >
+                                                                    {dropDownData[selectedConfig?.segmentId]?.map((item, index) => (
+                                                                        <option key={index} value={index}>
+                                                                            {item.IndexName}
+                                                                        </option>
+                                                                    ))}
+                                                                </select>
                                                             </div>
-                                                          
+
                                                         </div>
                                                     </div>
                                                 </div>

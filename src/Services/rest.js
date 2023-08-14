@@ -128,7 +128,7 @@ getOISpurtsData: function (postdata) {
   let url = api.getOISpurtsURL()
 //  console.log("url",url)
   return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-     console.log("getOISpurtsURL",data)
+    //  console.log("getOISpurtsURL",data)
       return data
   })
 }
