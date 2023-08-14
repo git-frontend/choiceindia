@@ -112,34 +112,11 @@ function Banner() {
                                                 <div className='col-xl-6 col-md-12'>
                                                     <div className='row align-items-center'>
                                                         <div className='col-md-6'>
-                                                            <Dropdown className='list-drpdwn'>
-                                                                <Dropdown.Toggle variant="success" id="dropdown-basic" className='btn-drp'>
-                                                                    Long Built Up
-                                                                </Dropdown.Toggle>
-                                                                <Dropdown.Menu className='drop-menu'>
-                                                                    <Dropdown.Item href="#" className='drop-item'>Long Built Up</Dropdown.Item>
-                                                                    <Dropdown.Item href="#" className='drop-item'>Short Built Up</Dropdown.Item>
-                                                                    <Dropdown.Item href="#" className='drop-item'>Short Covering</Dropdown.Item>
-                                                                    <Dropdown.Item href="#" className='drop-item'>Long Liquidation</Dropdown.Item>
-                                                                </Dropdown.Menu>
-                                                            </Dropdown>
-                                                        </div>
-                                                        <div className='col-md-6'>
-                                                            {/* <Dropdown className='list-drpdwn'>
-                                                                <Dropdown.Toggle variant="success" id="dropdown-basic" className='btn-drp'>
-                                                                    Stock Options
-                                                                </Dropdown.Toggle>
-                                                                <Dropdown.Menu className='drop-menu'>
-                                                                    <Dropdown.Item href="#" className='drop-item'>Long Built Up</Dropdown.Item>
-                                                                    <Dropdown.Item href="#" className='drop-item'>Short Built Up</Dropdown.Item>
-                                                                    <Dropdown.Item href="#" className='drop-item'>Short Covering</Dropdown.Item>
-                                                                    <Dropdown.Item href="#" className='drop-item'>Long Liquidation</Dropdown.Item>
-                                                                </Dropdown.Menu>
-                                                            </Dropdown> */}
+                                                            <div className='list-drpdwn'>
                                                             <select
                                                                 id="basic2"
                                                                 name="productType"
-                                                                className="btn-drp dropdown-toggle btn btn-success form-control"
+                                                                className="btn-drp dropdown-toggle form-control"
                                                                 value={selectedConfig.ProductType}
                                                                 onChange={onDropDownChange}
                                                                 aria-label="product type"
@@ -150,6 +127,26 @@ function Banner() {
                                                                     </option>
                                                                 ))}
                                                             </select>
+                                                            </div>
+                                                        </div>
+                                                        <div className='col-md-6'>
+                                                            <div className='list-drpdwn'>
+                                                            <select
+                                                                id="basic2"
+                                                                name="productType"
+                                                                className="btn-drp dropdown-toggle form-control"
+                                                                value={selectedConfig.ProductType}
+                                                                onChange={onDropDownChange}
+                                                                aria-label="product type"
+                                                            >
+                                                                {dropDownData[selectedConfig?.segmentId]?.map((item, index) => (
+                                                                    <option key={index} value={index}>
+                                                                        {item.IndexName}
+                                                                    </option>
+                                                                ))}
+                                                            </select>
+                                                            </div>
+                                                          
                                                         </div>
                                                     </div>
                                                 </div>
