@@ -4,7 +4,7 @@
 
 .banner-section{
     background: $whiteColor;
-    padding: 4rem 0 0;
+    padding: 4rem 0 10rem;
     .banner-card{
         background: $abt-bg;
         padding: 1.846rem;
@@ -308,6 +308,128 @@
             border-radius: 8px;
             margin: 0 auto;
             overflow: hidden;
+            table{
+                background-color: $whiteColor;
+                width: 100%;
+                tr {
+                    background-color: #fff;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 15px;
+                    text-align: center;
+                    width: 100%;
+                    td{
+                        width: 188px;
+                        padding: 5px;
+                        border-bottom: 1px solid $border-gray;
+                    }
+                    th {
+                        border-bottom: 1px solid $border-gray;
+                        color: $primary;
+                        font-size: 1.538rem;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        height: 59px;
+                        padding: 7px 8px;
+                        width: 188px;
+                    }
+                }
+            }
+            .table-header{
+                display: flex;
+                justify-content: center;
+                padding: 0;
+                .strike-table {
+                    width: 188px;
+                    .strike-b{
+                        color: $primary;
+                        font-size: 1.538rem;
+                        font-weight: 600;
+                        font-family: $font-family-poppins-semibold;
+                    }
+                    th{
+                        color: $primary;
+                        font-size: 1.538rem;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                    }
+                }
+                .sticky-header {
+                    left: 0;
+                    position: sticky;
+                }
+                .secondary-header{
+                    background: $abt-bg;
+                    border: 0;
+                    th{
+                        border: 0;
+                    }
+                }
+                .main-section-header {
+                    color: $primary;
+                    font-size: 1.538rem;
+                    font-weight: 600;
+                    font-family: $font-family-poppins-semibold;
+                    &.txt-danger{
+                        color: $redbg;
+                    }
+                    &.txt-success{
+                        color: $sucessgreen;
+                    }
+                }
+                .syncscroll {
+                    &::-webkit-scrollbar{
+                        display: none;
+                    }
+                }
+                .table-child-wrapper{
+                    overflow-x: scroll;
+                }
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+            }
+            .table-container {
+                height: 600px;
+                overflow-y: scroll;
+                position: relative;
+                scrollbar-width: none;
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+                .table-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    .option-chain-ce-table{
+                        .option-chain-ce-body{
+                            td{
+                                height: 59px;
+                                width: 188px;
+                            }
+                        }
+                    }
+                    .option-chain-pe-table{
+                        .option-chain-pe-body{
+                            td{
+                                height: 59px;
+                                width: 188px;
+                            }
+                        }
+                    }
+                    .option-chain-strike-price{
+                        .option-chain-strike-body{
+                            .strike-price-row{
+                                .strike-price-cell{
+                                    height: 59px;
+                                    width: 188px;
+                                    background: $abt-bg;
+                                    border: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
