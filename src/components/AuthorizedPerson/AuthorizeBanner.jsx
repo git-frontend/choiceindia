@@ -48,7 +48,7 @@ function AuthorizeBanner() {
                                         <span>Highest</span> Revenue Sharing
                                     </li>
                                     <li>
-                                    <span>Upto ₹ 2100 Per</span> Account Incentive*
+                                    <span>Low</span> Deposit
                                     </li>
                                     <li>
                                         <span>Lifetime</span> Income Source
