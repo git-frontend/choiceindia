@@ -308,6 +308,9 @@
             border-radius: 8px;
             margin: 0 auto;
             overflow: hidden;
+            @media (max-width:$md) {
+                overflow: auto;
+            }
             .txt-danger{
                 color: $redbg;
             }
@@ -319,9 +322,10 @@
             }
             table{
                 background-color: $whiteColor;
-                width: 100%;
+                @media (max-width:$md) {
+                    width: 440px;
+                }
                 tr {
-                    width: 100%;
                     td{
                         width: 14.462rem;
                         padding: 5px;
@@ -340,7 +344,7 @@
             }
             .table-header{
                 display: flex;
-                justify-content: center;
+                // justify-content: center;
                 padding: 0;
                 .th-pe{
                     text-align: right;
@@ -394,24 +398,34 @@
                         }
                     }
                 }
-                .strike-table {
-                    width: 14.462rem;
-                    .strike-b{
-                        color: $primary;
-                        font-size: 1.385rem;
-                        font-weight: 600;
-                        font-family: $font-family-poppins-semibold;
-                    }
-                    th{
-                        color: $primary;
-                        font-size: 1.385rem;
-                        font-weight: 400;
-                        font-family: $font-family-poppins-regular;
+                .strike-table-prnt{
+                    display: flex;
+                    width: 188px;
+                    .strike-table {
+                        width: 188px;
+                        .strike-b{
+                            width: 14.462rem;
+                            color: $primary;
+                            font-size: 1.385rem;
+                            font-weight: 600;
+                            font-family: $font-family-poppins-semibold;
+                        }
+                        th{
+                            width: 14.462rem;
+                            color: $primary;
+                            font-size: 1.385rem;
+                            font-weight: 400;
+                            font-family: $font-family-poppins-regular;
+                        }
                     }
                 }
-                .sticky-header {
-                    left: 0;
-                    position: sticky;
+               
+                .sticy-header {
+                    width: 100%;
+                    text-align: center;
+                    @media (max-width:$md) {
+                        width: 440px;
+                    }
                 }
                 .secondary-header{
                     background: $abt-bg;
@@ -434,7 +448,9 @@
                     }
                 }
                 .table-child-wrapper{
-                    overflow-x: scroll;
+                    @media (max-width:$md) {
+                        width: 440px;
+                    }
                 }
                 &::-webkit-scrollbar{
                     display: none;
@@ -448,20 +464,102 @@
                 &::-webkit-scrollbar{
                     display: none;
                 }
+                @media (max-width:$md) {
+                    overflow-y: initial;
+                }
                 .table-wrapper {
                     display: flex;
-                    justify-content: center;
                     .option-chain-ce-table{
                         .option-chain-ce-body{
                             .option-table-row{
+                                position: relative;
                                 &:hover{
+                                    background: $bgolor-lightwhite;
                                     .btn-wrap{
                                         display: block;
+                                    }
+                                    .highlightneg-bg{
+                                            width: 100% !important;
                                     }
                                 }
                                 .btn-wrap{
                                     display: none;
+                                  .table-btn{
+                                    position: absolute;
+                                    top: 32%;
+                                    left: 2%;
+                                    display: flex;
+                                    column-gap: 0.5rem;
+                                    background: $bgolor-lightwhite;
+                                    z-index: 99;
+                                    .btn-buy {
+                                        text-decoration: none;
+                                        border: 0;
+                                        border-radius: 4px;
+                                        background: $sucessgreen;
+                                        font-size: 1.077rem;
+                                        font-weight: 400;
+                                        font-family: $font-family-poppins-regular;
+                                        color: $whiteColor;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-sell {
+                                        text-decoration: none;
+                                        border: 0;
+                                        border-radius: 4px;
+                                        background: $redbg;
+                                        font-size: 1.077rem;
+                                        font-weight: 400;
+                                        font-family: $font-family-poppins-regular;
+                                        color: $whiteColor;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-info{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-chart{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-watchlist{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
                                 }
+                            }
                            
                             td{
                                 padding: 1rem;
@@ -471,11 +569,20 @@
                                 font-weight: 400;
                                 text-align: left;
                                 height: 5.385rem;
+                                white-space: nowrap;
                                 .highlightneg{
-                                    background:rgba(239, 64, 74, 0.08);
-                                    border-radius: 0px 18px 18px 0px;
-                                    padding: 0.5rem 0;
-                                    span{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: start;
+                                    position: relative;
+                                    .highlightneg-bg{
+                                        background:rgba(239, 64, 74, 0.08);
+                                        border-radius: 0px 18px 18px 0px;
+                                        height: 2.692rem;
+                                        position: absolute;
+                                        left: 0;
+                                    }
+                                    .per-neg-val{
                                         color: $redbg;
                                     }
                                 }
@@ -485,6 +592,95 @@
                     }
                     .option-chain-pe-table{
                         .option-chain-pe-body{
+                            .option-table-row{
+                                position: relative;
+                                &:hover{
+                                    background: $bgolor-lightwhite;
+                                    .btn-wrap{
+                                        display: block;
+                                    }
+                                    .highlightpos-bg{
+                                        width: 100% !important;
+                                    }
+                                }
+                                .btn-wrap{
+                                    display: none;
+                                  .table-btn{
+                                    position: absolute;
+                                    top: 32%;
+                                    right: 2%;
+                                    display: flex;
+                                    column-gap: 0.5rem;
+                                    background: $bgolor-lightwhite;
+                                    z-index: 99;
+                                    .btn-buy {
+                                        text-decoration: none;
+                                        border: 0;
+                                        border-radius: 4px;
+                                        background: $sucessgreen;
+                                        font-size: 1.077rem;
+                                        font-weight: 400;
+                                        font-family: $font-family-poppins-regular;
+                                        color: $whiteColor;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-sell {
+                                        text-decoration: none;
+                                        border: 0;
+                                        border-radius: 4px;
+                                        background: $redbg;
+                                        font-size: 1.077rem;
+                                        font-weight: 400;
+                                        font-family: $font-family-poppins-regular;
+                                        color: $whiteColor;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-info{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-chart{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-watchlist{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                }
+                            }
                             td{
                                 padding: 1rem;
                                 width: 14.462rem;
@@ -493,19 +689,30 @@
                                 font-weight: 400;
                                 text-align: right;
                                 height: 5.385rem;
+                                white-space: nowrap;
                                 .highlightpos{
-                                    border-radius: 18px 0px 0px 18px;
-                                    background: rgba(0, 174, 111, 0.08);
-                                    padding: 0.5rem 0;
-                                    span{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: end;
+                                    position: relative;
+                                    .highlightpos-bg{
+                                        border-radius: 18px 0px 0px 18px;
+                                        background: rgba(0, 174, 111, 0.08);
+                                        height: 2.692rem;
+                                        position: absolute;
+                                        right: 0;
+                                    }
+                                    .per-pos-val{
                                         color: $sucessgreen;
                                     }
                                 }
                             }
                         }
                     }
+                }
                     .option-chain-strike-price{
                         text-align: center;
+                        width: 188px;
                         .option-chain-strike-body{
                             .strike-price-row{
                                 .strike-price-cell{
