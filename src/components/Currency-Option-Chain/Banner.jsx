@@ -8,7 +8,7 @@ function Banner() {
                 <div className='row justify-content-center'>
                     <div className='col-xl-8 col-md-12'>
                         <div className='banner-ttle text-center'>
-                            <h1 className='title-first'>Option Chain</h1>
+                            <h1 className='title-first'>Currency Option Chain</h1>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@ function Banner() {
                                             type="text"
                                             className="input-control search-icon"
                                             autoComplete="off"
-                                            placeholder="NIFTY"
+                                            placeholder="U S Dollar - Indian Rupee"
                                             value=""
                                         />
                                         {/* <ul className="brokerage-search-result" >

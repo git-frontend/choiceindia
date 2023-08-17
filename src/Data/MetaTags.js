@@ -2331,6 +2331,24 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Check out option chain LIVE data on Choice. Get Call & Put option chain data with LIVE strike price, analysis, chart, historical data and more.",
     "link":"https://choiceindia.com/option-chain"
   },
+  "nse-option-chain": {
+    "title":"NSE Option Chain - Live NSE India Option Chain Data, Chart, Analysis",
+    'lang':"en",
+    'content':"Find out NSE option chain data on Choice. Get live NSE India option chain data with real-time chart, analysis, historical data and more.",
+    "link":"https://choiceindia.com/nse-option-chain"
+  },
+  "mcx-option-chain": {
+    "title":"MCX Option Chain - Check Commodity Option Chain Data Live",
+    'lang':"en",
+    'content':"Get live MCX option chain data on Choice. Check out real-time commodity option chain with strike price, analysis, chart, historical data and more.",
+    "link":"https://choiceindia.com/mcx-option-chain"
+  },
+  "currency-option-chain": {
+    "title":"Currency Option Chain - Check Live Forex Option Chain Data",
+    'lang':"en",
+    'content':"Check out LIVE currency option chain on Choice. Get forex option chain data with real time strike price, analysis, chart, historical data and more.",
+    "link":"https://choiceindia.com/currency-option-chain"
+  },
 }
 
 export default meta_tags;

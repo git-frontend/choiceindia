@@ -1,16 +1,13 @@
 
 import React from "react";
-import "./option-chain.scss";
-import "./../OpenDematAccount/DematPage.scss";
+import "../Option-Chain/option-chain.scss";
 import Banner from "./Banner";
 import { useState,useEffect} from "react";
 import meta_tags from "../../Data/MetaTags";
 import CreateOwnStrategy from "./CreateOwnStrategy";
-import MoreContent from "./MoreContent";
 import AssetsSecurities from "./AssetsSecurities";
-import FAQ from "./FAQ";
 
-function OptionChain() {
+function CompanyOptionChain() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
     setRenderCount(true)
@@ -39,10 +36,8 @@ function OptionChain() {
         <Banner />
         <CreateOwnStrategy/>
         <AssetsSecurities/>
-        <MoreContent/>
-        <FAQ/>
     </div>
   );
 }
 
-export default OptionChain;
+export default CompanyOptionChain;

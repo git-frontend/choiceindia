@@ -5,6 +5,9 @@
 .banner-section{
     background: $whiteColor;
     padding: 4rem 0 10rem;
+    @media (max-width:$md) {
+        padding: 4rem 0 6rem;
+    }
     .banner-card{
         background: $abt-bg;
         padding: 1.846rem;
@@ -302,12 +305,10 @@
         }
     }
 
-    .table-content{
         .option-chain-table {
             border: 1px solid $border-gray;
             border-radius: 8px;
-            margin: 0 auto;
-            overflow: hidden;
+            border-top: 0;
             @media (max-width:$md) {
                 overflow: auto;
             }
@@ -344,8 +345,13 @@
             }
             .table-header{
                 display: flex;
-                // justify-content: center;
-                padding: 0;
+                position: sticky;
+                top: 100px;
+                z-index: 999;
+                @media (max-width:$md) {
+                    position: relative;
+                    top: inherit;
+                }
                 .th-pe{
                     text-align: right;
                     thead{
@@ -401,6 +407,7 @@
                 .strike-table-prnt{
                     display: flex;
                     width: 188px;
+                    border-top: 1px solid $border-gray;
                     .strike-table {
                         width: 188px;
                         .strike-b{
@@ -442,9 +449,20 @@
                     text-align: center;
                     border: 0;
                 }
-                .syncscroll {
-                    &::-webkit-scrollbar{
-                        display: none;
+                .syncscroll-left {
+                    border-top: 1px solid $border-gray;
+                    border-radius: 8px 0 0 0;
+                    overflow: hidden;
+                    @media (max-width:$md) {
+                        overflow: inherit;
+                    }
+                }
+                .syncscroll-right {
+                    border-top: 1px solid $border-gray;
+                    border-radius: 0 8px 0 0;
+                    overflow: hidden;
+                    @media (max-width:$md) {
+                        overflow: inherit;
                     }
                 }
                 .table-child-wrapper{
@@ -452,18 +470,10 @@
                         width: 440px;
                     }
                 }
-                &::-webkit-scrollbar{
-                    display: none;
-                }
             }
             .table-container {
-                height: 46.154rem;
-                overflow-y: scroll;
                 position: relative;
                 scrollbar-width: none;
-                &::-webkit-scrollbar{
-                    display: none;
-                }
                 @media (max-width:$md) {
                     overflow-y: initial;
                 }
@@ -731,7 +741,7 @@
                 }
             }
         }
-    }
+   
 }
 
 .create-own-strategy{
@@ -813,21 +823,44 @@
 .more-content{
     padding: 10rem 0 8rem;
     @media (max-width:$md) {
-        padding: 6rem 0 4rem;
+        padding: 6rem 0 6rem;
     }
     .seo-h3 {
         color: $primary;
         font-family: $font-family-poppins-semibold;
         font-size: 2.2rem;
-        padding-bottom: 1.231rem;
+        margin-bottom: 1.231rem;
+        @media (max-width:$sm) {
+            font-size: 2rem;
+        }
+    }
+    .seo-h4 {
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 2rem;
+        margin-bottom: 1.231rem;
+        @media (max-width:$sm) {
+            font-size: 1.75rem;
+        }
     }
     .title-content{
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
+        text-align: center;
     }
     p{
         font-size: 1.385rem;
         color: $secondary;
-        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+    ul,ol{
+        li{
+            font-size: 1.385rem;
+            color: $secondary;
+            font-family: $font-family-poppins-regular;
+        }
+    }
+    .mrg-btm{
+        margin-bottom: 1rem;
     }
 }
 .underlying-assets{
@@ -938,5 +971,10 @@
                 }
             }
         }
+    }
+}
+.Dematfaq{
+    @media (max-width:$md) {
+        padding: 6rem 0;
     }
 }

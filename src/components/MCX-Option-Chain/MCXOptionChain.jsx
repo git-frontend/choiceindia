@@ -1,6 +1,6 @@
 
 import React from "react";
-import "./option-chain.scss";
+import "../Option-Chain/option-chain.scss";
 import "./../OpenDematAccount/DematPage.scss";
 import Banner from "./Banner";
 import { useState,useEffect} from "react";
@@ -10,7 +10,7 @@ import MoreContent from "./MoreContent";
 import AssetsSecurities from "./AssetsSecurities";
 import FAQ from "./FAQ";
 
-function OptionChain() {
+function MCXOptionChain() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
     setRenderCount(true)
@@ -45,4 +45,4 @@ function OptionChain() {
   );
 }
 
-export default OptionChain;
+export default MCXOptionChain;
