@@ -22,7 +22,7 @@ function Banner() {
                                             type="text"
                                             className="input-control search-icon"
                                             autoComplete="off"
-                                            placeholder="U S Dollar - Indian Rupee"
+                                            placeholder="USDINR"
                                             value=""
                                         />
                                         {/* <ul className="brokerage-search-result" >

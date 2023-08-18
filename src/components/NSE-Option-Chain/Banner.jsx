@@ -22,7 +22,7 @@ function Banner() {
                                             type="text"
                                             className="input-control search-icon"
                                             autoComplete="off"
-                                            placeholder=""
+                                            placeholder="NIFTY"
                                             value=""
                                         />
                                         {/* <ul className="brokerage-search-result" >

@@ -12,10 +12,10 @@ function AssetsSecurities() {
                         <div className='assets-items'>
                           <div className='left-items'>
                             <div className='display-flex'>
-                              <h6>TCS</h6>
+                              <h6>NIFTY</h6>
                               <span>NSE (EQ)</span>
                             </div>
-                            <p>TATA CONSULTANCY SERVICE</p>
+                            <p>NIFTY 50</p>
                           </div>
                           <div className='right-items'>
                             <div className='values'>
