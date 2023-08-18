@@ -40,7 +40,7 @@ function MCXOptionChain() {
         <CreateOwnStrategy/>
         <AssetsSecurities/>
         <MoreContent/>
-        <FAQ/>
+        {/* <FAQ/> */}
     </div>
   );
 }

@@ -40,7 +40,7 @@ function CurrencyOptionChain() {
         <CreateOwnStrategy/>
         <AssetsSecurities/>
         <MoreContent/>
-        <FAQ/>
+        {/* <FAQ/> */}
     </div>
   );
 }

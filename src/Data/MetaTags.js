@@ -2329,14 +2329,86 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     "title":"Option Chain - Live Call & Put Option Chain Data Analysis",
     'lang':"en",
     'content':"Check out option chain LIVE data on Choice. Get Call & Put option chain data with LIVE strike price, analysis, chart, historical data and more.",
-    "link":"https://choiceindia.com/option-chain"
-  },
+    "link":"https://choiceindia.com/option-chain",
+    "faqscript": `<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Can I trade options directly from the option chain?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, the option chain primarily serves as a source of information. To trade options, you need a trading account with a broker offering options trading and placing trades through their trading platform."
+        }
+      },{
+        "@type": "Question",
+        "name": "Is option chain data available for all underlying assets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Option chain data is typically available for actively traded stocks, indexes, and some exchange-traded funds (ETFs). Less liquid or thinly traded assets may have limited or no option chain data."
+        }
+      },{
+        "@type": "Question",
+        "name": "How often is option chain data updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Option chain data is updated in real-time as trades occur in the options market. The frequency of updates depends on the specific data provider or platform you are using."
+        }
+      },{
+        "@type": "Question",
+        "name": "What factors should I consider when analyzing the option chain?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When analyzing the option chain, factors include open interest, volume, implied volatility, and strike price selection. These factors provide insights into market sentiment, trading activity, and potential price movements."
+        }
+      },{
+        "@type": "Question",
+        "name": "Can option chain analysis predict future market movements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Option chain analysis is a valuable tool for understanding market sentiment and identifying potential trading opportunities. However, it does not guarantee predicting future market movements, as multiple factors influence price dynamics. Traders should consider it alongside other forms of analysis and risk management strategies."
+        }
+      }]
+    }
+    </script> 
+    `},
+ 
   "nse-option-chain": {
     "title":"NSE Option Chain - Live NSE India Option Chain Data, Chart, Analysis",
     'lang':"en",
     'content':"Find out NSE option chain data on Choice. Get live NSE India option chain data with real-time chart, analysis, historical data and more.",
-    "link":"https://choiceindia.com/nse-option-chain"
-  },
+    "link":"https://choiceindia.com/nse-option-chain",
+    "faqscript": `<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What are ‘calls’ and ‘puts’ in the NSE option chain?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In an NSE option chain, calls provide information about the buying performance pertaining to different options contracts, while puts signify the selling information for the same."
+        }
+      },{
+        "@type": "Question",
+        "name": "How does the option chain work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An option chain is a chart that details all the options contracts in the market and gives an overview of their bidding prices, volatility and an estimate of their future performance. You can use it to decide on purchasing or selling an options contract."
+        }
+      },{
+        "@type": "Question",
+        "name": "What is NSE option chain data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The NSE option chain data consists of information about the essentials of the options contracts available in the market. The data is focused on the performance of each contract to help traders make informed decisions."
+        }
+      }]
+    }
+    
+    </script> 
+    `},
   "mcx-option-chain": {
     "title":"MCX Option Chain - Check Commodity Option Chain Data Live",
     'lang':"en",
