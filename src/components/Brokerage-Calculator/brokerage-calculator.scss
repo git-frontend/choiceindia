@@ -218,7 +218,7 @@
                 z-index: 1;
                 width: 100%;
                 list-style: none;
-                padding: .5rem 1.154rem;
+                padding: 0;
                 margin: 0;
                 border-radius: 8px;
                 background: $whiteColor;
@@ -234,7 +234,8 @@
                     align-items: center;
                     border-bottom: 1px solid $border-gray;
                     cursor: pointer;
-                    padding: 0.75rem 0;
+                    padding: 0.5rem 1.154rem;
+                    
                     .symbol {
                         text-align: left;
                         width: 45%;

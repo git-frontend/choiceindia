@@ -48,16 +48,62 @@ function Banner() {
 
 
   // For script search
-  function onKeyChange(event) {
-    const input = event.target.value;
-    // console.log("input", input);
+  // function onKeyChange(event) {
+  //   const input = event.target.value;
+  //   // console.log("input", input);
+  //   setBrokerageObj(prevState => ({
+  //     ...prevState,
+  //     tableValue: [],
+  //     searchInput: input
+  //   }));
+
+  //   const request = {
+  //     strScripName: input,
+  //     StartPos: brokerageObj.startPos,
+  //     NoOfRecords: brokerageObj.limit,
+  //   };
+
+  //   rest.getSearchData(request)
+  //     .then(res => {
+  //       if (res.Status === "Success" && res.Response) {
+  //         // console.log("res", res.Response);
+  //         setBrokerageObj(prevState => ({
+  //           ...prevState,
+  //           datalength: res.Response.length,
+  //           tableValue: res.Response,
+  //         }));
+  //       } else {
+  //         setBrokerageObj(prevState => ({
+  //           ...prevState,
+  //           tableValue: [],
+  //         }));
+  //       }
+  //     });
+  // }
+
+  const onKeyChange = () => {
+  
     setBrokerageObj(prevState => ({
       ...prevState,
       tableValue: [],
-      searchInput: input
+    
     }));
-    const request = {
-      strScripName: input,
+
+    if (brokerageObj.searchInput.length === 0) {
+      setBrokerageObj(prevState => ({
+        ...prevState,
+        startPos: 0,
+        tableValue: [],
+      }));
+    } else if (brokerageObj.searchInput.length === 1 || brokerageObj.searchInput.length === 2) {
+      setBrokerageObj(prevState => ({
+        ...prevState,
+        startPos: 0,
+        tableValue: [],
+      }));
+    } else if (brokerageObj.searchInput.trim().length >= 3) {
+      const request = {
+      strScripName: brokerageObj.searchInput,
       StartPos: brokerageObj.startPos,
       NoOfRecords: brokerageObj.limit,
     };
@@ -78,9 +124,10 @@ function Banner() {
           }));
         }
       });
-  }
 
 
+    }
+  };
 
   function getScriptDetail(data) {
     if (data) {
@@ -536,7 +583,7 @@ function Banner() {
                                   brokerageObj.searchInput &&
                                   brokerageObj.searchInput.length > 0 &&
                                   brokerageObj.searchInput.length <= 2 ? (
-                                  <li key="no-record">No Record Found</li>
+                                  <li className='brokerage-search-list' key="no-record">No Record Found</li>
                                 ) : null}
                                 {brokerageObj.tableValue.map(item => (
                                   <li className='brokerage-search-list' key={item.id} onClick={() => getScriptDetail(item)}>
