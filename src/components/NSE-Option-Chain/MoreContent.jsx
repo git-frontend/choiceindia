@@ -48,7 +48,7 @@ function MoreContent() {
                             <h4 className='seo-h4'>Last Traded Option (LTP)</h4>
                             <p>The latest price at which an options trade was executed dictates the LTP value in the NSE chain option.</p>
                             <p>The other fields mentioned in the option chain data of NSE are self-explanatory. For instance, the bid price is the last value for purchasing a specific options contract. And bid quantity refers to the number of orders quoted for a contract at a particular strike price.</p>
-                            <h4 className='seo-h4'>Is the NSE Option Chain Beneficial for You?</h4>
+                            <h3 className='seo-h3'>Is the NSE Option Chain Beneficial for You?</h3>
                             <p>As it stands, options contracts are subject to volatility and fluctuations. It can be challenging to keep track of these changes manually. With the option chain, NSE India aims to automate this process by offering a look into the performance of these contracts and making it easier for you to make data-backed purchase decisions.</p>
                             <p>Additionally, here are some benefits you stand to gain with the NSE option chain data:</p>
                             <ul>

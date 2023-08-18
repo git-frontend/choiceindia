@@ -338,7 +338,7 @@
                         font-size: 1.385rem;
                         font-weight: 400;
                         font-family: $font-family-poppins-regular;
-                        padding: 1.75rem 1rem;
+                        padding: 1.121rem 1rem;
                         width: 14.462rem;
                     }
                 }
@@ -346,7 +346,7 @@
             .table-header{
                 display: flex;
                 position: sticky;
-                top: 100px;
+                top: 115px;
                 z-index: 999;
                 @media (max-width:$md) {
                     position: relative;
@@ -496,7 +496,7 @@
                                     display: none;
                                   .table-btn{
                                     position: absolute;
-                                    top: 32%;
+                                    top: 28%;
                                     left: 2%;
                                     display: flex;
                                     column-gap: 0.5rem;
@@ -578,7 +578,7 @@
                                 font-family: $font-family-poppins-regular;
                                 font-weight: 400;
                                 text-align: left;
-                                height: 5.385rem;
+                                height: 4.385rem;
                                 white-space: nowrap;
                                 .highlightneg{
                                     display: flex;
@@ -617,7 +617,7 @@
                                     display: none;
                                   .table-btn{
                                     position: absolute;
-                                    top: 32%;
+                                    top: 28%;
                                     right: 2%;
                                     display: flex;
                                     column-gap: 0.5rem;
@@ -698,7 +698,7 @@
                                 font-family: $font-family-poppins-regular;
                                 font-weight: 400;
                                 text-align: right;
-                                height: 5.385rem;
+                                height: 4.385rem;
                                 white-space: nowrap;
                                 .highlightpos{
                                     display: flex;
@@ -726,7 +726,7 @@
                         .option-chain-strike-body{
                             .strike-price-row{
                                 .strike-price-cell{
-                                    height: 5.385rem;
+                                    height: 4.385rem;
                                     padding: 1rem;
                                     width: 14.462rem;
                                     background: $abt-bg;
@@ -837,10 +837,10 @@
     .seo-h4 {
         color: $primary;
         font-family: $font-family-poppins-semibold;
-        font-size: 2rem;
+        font-size: 1.75rem;
         margin-bottom: 1.231rem;
         @media (max-width:$sm) {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
         }
     }
     .title-content{
