@@ -8,6 +8,9 @@ function Banner() {
     const toggleTab = (index) => {
         setToggleState(index);
     }
+    const [oiSpurtsData, setOiSpurtsData] = useState([]);
+    console.log("oiSpurtsData", oiSpurtsData)
+    const [exchangeToggle, setExchangeToggle] = useState(false);
     const [selectedConfig, setSelectedConfig] = useState({
         filter: 1,
         OISpurtsType: 1,
@@ -24,33 +27,39 @@ function Banner() {
         "13": [{ IndexName: 'Stock Options', Token: 4, DerivativeType: 2, DerivativeDataType: 1 }, { IndexName: 'Stock Futures', Token: 3, DerivativeType: 1, DerivativeDataType: 1 }]
 
     });
-    useEffect(() => {
-        fetchOISpurts();
-    }, []);
+
 
     const activateFilter = (tabIndex) => {
-        setSelectedConfig((prevConfig) => ({
-            ...prevConfig,
-            filter: tabIndex,
-            segmentId: tabIndex === 1 ? 2 : tabIndex === 2 ? (exchangeToggle ? 7 : 5) : 13,
-            ProductType: 0,
-            DerivativeDataType: dropDownData[tabIndex][0].DerivativeDataType,
-            DerivativeType: dropDownData[tabIndex][0].DerivativeType,
-        }));
-        fetchOISpurts();
-    }
-    const onDropDownChange = () => {
-        const segmentData = dropDownData[selectedConfig.segmentId];
+        const segmentId = tabIndex === 1 ? 2 : tabIndex === 2 ? (exchangeToggle ? 7 : 5) : 13;
+        const segmentData = dropDownData[segmentId];
+
         if (segmentData && segmentData.length > 0) {
-            const item = segmentData[selectedConfig.ProductType];
             setSelectedConfig((prevConfig) => ({
                 ...prevConfig,
-                DerivativeDataType: item.DerivativeDataType,
-                DerivativeType: item.DerivativeType,
+                filter: tabIndex,
+                segmentId: segmentId,
+                ProductType: 0,
+                DerivativeDataType: segmentData[0].DerivativeDataType,
+                DerivativeType: segmentData[0].DerivativeType,
             }));
+            fetchOISpurts();
         } else {
-            console.error(`Dropdown data for segmentId ${selectedConfig.segmentId} is not defined or empty.`);
+            console.error(`Dropdown data for segmentId ${segmentId} is not defined or empty.`);
         }
+    }
+    const onDropDownChange = (event) => {
+        const newIndex = parseInt(event.target.value);
+        setSelectedConfig((prevConfig) => ({
+            ...prevConfig,
+            ProductType: newIndex,
+            DerivativeDataType: dropDownData[prevConfig.segmentId][newIndex].DerivativeDataType,
+            DerivativeType: dropDownData[prevConfig.segmentId][newIndex].DerivativeType,
+        }));
+        fetchOISpurts();
+    };
+
+    const onToggleChange = () => {
+        setExchangeToggle(!exchangeToggle);
     };
 
     const fetchOISpurts = () => {
@@ -60,18 +69,59 @@ function Banner() {
             OISpurtsType: selectedConfig.OISpurtsType,
             SegmentId: selectedConfig.segmentId,
         };
+        console.log("Fetching data with request:", request);
         rest.getOISpurtsData(request).then(
             res => {
-                if (res.Status == "Success" && res.Response) {
-                    console.log("d", res.Response.MostActiveList)
+                if (res.Status === 'Success' && res.Response) {
+                    const updatedData = res.Response.MostActiveList.map((element) => {
+                        const LTP = element.LTP;
+                        const percent = element.PerChange;
+                        const change = (LTP * percent) / (100 + percent);
+                        const priceDivisor = element.PriceDivisor;
+                        return {
+                            ...element,
+                            LTP: LTP / priceDivisor,
+                            Change: change / priceDivisor,
+                            percent: percent,
+                            textColor: percent > 0 ? 'profit' : percent === 0 ? '' : 'loss',
+                            oiColor: element.OIPerChange > 0 ? 'profit' : element.OIPerChange < 0 ? 'loss' : '',
+
+                        };
+                    });
+                    setOiSpurtsData(updatedData);
+                    console.log("updatedData", updatedData)
+                } else {
+                    setOiSpurtsData([]);
                 }
             })
-            // )
-            .catch((error) => {
-
+            .catch((err) => {
+                console.error(err);
             });
     }
+    useEffect(() => {
+        // console.log("Updated config after change:", selectedConfig);
+        fetchOISpurts();
+    }, [selectedConfig]);
 
+    const onSpurtsTypeChange = (spurtsType) => {
+        console.log("Selected spurtsType:", spurtsType);
+        setSelectedConfig((prevConfig) => ({
+            ...prevConfig,
+            OISpurtsType: spurtsType,
+        }));
+        // console.log("Updated config after changessss:", selectedConfig);
+    };
+
+    //for convert currency
+    function formatNumber(number) {
+        if (number >= 10000000) {
+            return `${(number / 10000000).toFixed(2)} CR`;
+        } else if (number >= 100000) {
+            return `${(number / 100000).toFixed(2)} L`;
+        } else {
+            return number.toLocaleString();
+        }
+    }
     return (
         <>
             <section className='tab-section'>
@@ -89,8 +139,8 @@ function Banner() {
                             <div className='col-xl-8 col-md-12'>
                                 <ul className='list_group1'>
                                     <li className={selectedConfig?.filter === 1 ? 'list-group-item tabs active' : ' list-group-item '} onClick={() => activateFilter(1)}>Derivatives</li>
-                                    <li className={selectedConfig?.filter === 1 ? 'list-group-item tabs ' : ' list-group-item '} onClick={() => activateFilter(1)}>Commodities</li>
-                                    <li className={selectedConfig?.filter === 1 ? 'list-group-item tabs  ' : ' list-group-item '} onClick={() => activateFilter(1)}>Currencies</li>
+                                    <li className={selectedConfig?.filter === 2 ? 'list-group-item tabs active' : ' list-group-item '} onClick={() => activateFilter(2)}>Commodities</li>
+                                    <li className={selectedConfig?.filter === 3 ? 'list-group-item tabs active' : ' list-group-item '} onClick={() => activateFilter(3)}>Currencies</li>
                                 </ul>
                             </div>
                         </div>
@@ -113,49 +163,33 @@ function Banner() {
                                                     <div className='row align-items-center'>
                                                         <div className='col-md-6'>
                                                             <div className='list-drpdwn'>
-                                                                <select className="btn-drp dropdown-toggle form-control">
-                                                                    <option
-                                                                        value={1}
-                                                                        className={selectedConfig.OISpurtsType === 1 ? "active" : ""}
-                                                                        onClick={() => onSpurtsTypeChange(1)}
-                                                                    >
-                                                                        Long Built Up
-                                                                    </option>
-                                                                    <option
-                                                                        value={2}
-                                                                        className={selectedConfig.OISpurtsType === 2 ? "active" : ""}
-                                                                        onClick={() => onSpurtsTypeChange(2)}
-                                                                    >
-                                                                        Short Built Up
-                                                                    </option>
-                                                                    <option
-                                                                        value={3}
-                                                                        className={selectedConfig.OISpurtsType === 3 ? "active" : ""}
-                                                                        onClick={() => onSpurtsTypeChange(3)}
-                                                                    >
-                                                                        Short Covering
-                                                                    </option>
-                                                                    <option
-                                                                        value={4}
-                                                                        className={selectedConfig.OISpurtsType === 4 ? "active" : ""}
-                                                                        onClick={() => onSpurtsTypeChange(4)}
-                                                                    >
-                                                                        Long Liquidation
-                                                                    </option>
+                                                                <select
+                                                                    id="spurtsType"
+                                                                    name="spurtsType"
+                                                                    className="btn-drp dropdown-toggle form-control"
+                                                                    value={selectedConfig.OISpurtsType}
+                                                                    onChange={(event) => onSpurtsTypeChange(parseInt(event.target.value))}
+                                                                    aria-label="spurts type"
+                                                                >
+                                                                    <option value={1}>Long Built Up</option>
+                                                                    <option value={2}>Short Built Up</option>
+                                                                    <option value={3}>Short Covering</option>
+                                                                    <option value={4}>Long Liquidation</option>
                                                                 </select>
+
                                                             </div>
                                                         </div>
                                                         <div className='col-md-6'>
                                                             <div className='list-drpdwn'>
                                                                 <select
-                                                                    id="basic2"
-                                                                    name="productType"
-                                                                    className="btn-drp dropdown-toggle form-control"
+                                                                    id='basic2'
+                                                                    name='productType'
+                                                                    className='btn-drp dropdown-toggle form-control'
                                                                     value={selectedConfig.ProductType}
                                                                     onChange={onDropDownChange}
-                                                                    aria-label="product type"
+                                                                    aria-label='product type'
                                                                 >
-                                                                    {dropDownData[selectedConfig?.segmentId]?.map((item, index) => (
+                                                                    {dropDownData[selectedConfig.segmentId]?.map((item, index) => (
                                                                         <option key={index} value={index}>
                                                                             {item.IndexName}
                                                                         </option>
@@ -169,12 +203,34 @@ function Banner() {
                                                 <div className='col-xl-6 col-md-12'>
                                                     <div className='toggle-refresh'>
                                                         <div className=''>
-                                                            <div className="toggle">
-                                                                <span>MCX</span>
-                                                                <input type="checkbox" />
-                                                                <label></label>
-                                                                <span>NCDX</span>
-                                                            </div>
+                                                            {selectedConfig?.filter === 2 && (
+                                                                <div className="toggle">
+                                                                    <span className={`${!exchangeToggle ? 'selected' : ''}`}>MCX</span>
+                                                                    <input type="checkbox"
+                                                                        id="exchangeToggle"
+                                                                        name="exchangeToggle"
+                                                                        checked={exchangeToggle}
+                                                                        onChange={onToggleChange} />
+                                                                    <label></label>
+                                                                    <span className={`${exchangeToggle ? 'selected' : ''}`}>NCDX</span>
+                                                                </div>
+                                                            )}
+                                                            {/* {selectedConfig?.filter === 2 && (
+                                                                <div className="toggle">
+                                                                    <label className={`control-label mr-10 ${!exchangeToggle ? 'selected' : ''}`}>MCX</label>
+                                                                    <label className="switch">
+                                                                        <input
+                                                                            type="checkbox"
+                                                                            id="exchangeToggle"
+                                                                            name="exchangeToggle"
+                                                                            checked={exchangeToggle}
+                                                                            onChange={onToggleChange}
+                                                                        />
+                                                                        <div className="slider round"></div>
+                                                                    </label>
+                                                                    <label className={`control-label ml-10 ${exchangeToggle ? 'selected' : ''}`}>NCDEX</label>
+                                                                </div>
+                                                            )} */}
                                                         </div>
                                                         <div className='refresh-boxs'>
                                                             <button className='btn-refresh'>
@@ -190,111 +246,120 @@ function Banner() {
                                             </div>
                                             <div className='table-margin-cal'>
                                                 <div className='table-responsive'>
-                                                    <table className="table table-striped ">
-                                                        <thead>
-                                                            <tr>
-                                                                <th className='text-start'>Sec Desc</th>
-                                                                <th className='text-end'>LTP</th>
-                                                                <th className='text-end'>Change(%)</th>
-                                                                <th className='text-end'>OI</th>
-                                                                <th className='text-end'>OI Change(%)</th>
-                                                                <th className='text-end'>Volume</th>
-                                                                <th className='text-end'>Traded Value</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                <td className='text-end'>9.10</td>
-                                                                <td className='text-end profit'>8.38</td>
-                                                                <td className='text-end'>4,082.00</td>
-                                                                <td className='text-end profit'>37.12</td>
-                                                                <td className='text-end'>8,703.00</td>
-                                                                <td className='text-end'>78,567.91</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                <td className='text-end'>9.10</td>
-                                                                <td className='text-end profit'>8.38</td>
-                                                                <td className='text-end'>4,082.00</td>
-                                                                <td className='text-end profit'>37.12</td>
-                                                                <td className='text-end'>8,703.00</td>
-                                                                <td className='text-end'>78,567.91</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                <td className='text-end'>9.10</td>
-                                                                <td className='text-end profit'>8.38</td>
-                                                                <td className='text-end'>4,082.00</td>
-                                                                <td className='text-end profit'>37.12</td>
-                                                                <td className='text-end'>8,703.00</td>
-                                                                <td className='text-end'>78,567.91</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                <td className='text-end'>9.10</td>
-                                                                <td className='text-end profit'>8.38</td>
-                                                                <td className='text-end'>4,082.00</td>
-                                                                <td className='text-end profit'>37.12</td>
-                                                                <td className='text-end'>8,703.00</td>
-                                                                <td className='text-end'>78,567.91</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                <td className='text-end'>9.10</td>
-                                                                <td className='text-end loss'>-8.38</td>
-                                                                <td className='text-end'>4,082.00</td>
-                                                                <td className='text-end loss'>-37.12</td>
-                                                                <td className='text-end'>8,703.00</td>
-                                                                <td className='text-end'>78,567.91</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                <td className='text-end'>9.10</td>
-                                                                <td className='text-end profit'>8.38</td>
-                                                                <td className='text-end'>4,082.00</td>
-                                                                <td className='text-end profit'>37.12</td>
-                                                                <td className='text-end'>8,703.00</td>
-                                                                <td className='text-end'>78,567.91</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                <td className='text-end'>9.10</td>
-                                                                <td className='text-end profit'>8.38</td>
-                                                                <td className='text-end'>4,082.00</td>
-                                                                <td className='text-end profit'>37.12</td>
-                                                                <td className='text-end'>8,703.00</td>
-                                                                <td className='text-end'>78,567.91</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                <td className='text-end'>9.10</td>
-                                                                <td className='text-end loss'>-8.38</td>
-                                                                <td className='text-end'>4,082.00</td>
-                                                                <td className='text-end loss'>-37.12</td>
-                                                                <td className='text-end'>8,703.00</td>
-                                                                <td className='text-end'>78,567.91</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                <td className='text-end'>9.10</td>
-                                                                <td className='text-end profit'>8.38</td>
-                                                                <td className='text-end'>4,082.00</td>
-                                                                <td className='text-end profit'>37.12</td>
-                                                                <td className='text-end'>8,703.00</td>
-                                                                <td className='text-end'>78,567.91</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                <td className='text-end'>9.10</td>
-                                                                <td className='text-end'>8.38</td>
-                                                                <td className='text-end'>4,082.00</td>
-                                                                <td className='text-end'>37.12</td>
-                                                                <td className='text-end'>8,703.00</td>
-                                                                <td className='text-end'>78,567.91</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    {oiSpurtsData.length > 0 ? (
+                                                        <table className="table table-striped ">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th className='text-start'>{selectedConfig.filter === 3 || selectedConfig.filter === 4 ? 'Name' : 'SecDesc'}</th>
+                                                                    <th className='text-end'>LTP</th>
+                                                                    <th className='text-end'>Change(%)</th>
+                                                                    <th className='text-end'>OI</th>
+                                                                    <th className='text-end'>OI Change(%)</th>
+                                                                    <th className='text-end'>Volume</th>
+                                                                    <th className='text-end'>Traded Value</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {oiSpurtsData.map(row => (
+
+                                                                    <tr key={row.id}>
+                                                                        <td className='text-start'>{row.Name}</td>
+                                                                        <td className='text-end'>{row.LTP}</td>
+                                                                        <td className='text-end '>{Math.abs(row.percent)}</td>
+                                                                        <td className='text-end'>{formatNumber(row.OI)}</td>
+                                                                        <td className='text-end '>{row.OIChange}</td>
+                                                                        <td className='text-end'>{row.Volume}</td>
+                                                                        <td className='text-end'>{row.TurnOver}</td>
+                                                                    </tr>
+                                                                ))}
+                                                                {/* <tr>
+                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
+                                                                    <td className='text-end'>9.10</td>
+                                                                    <td className='text-end profit'>8.38</td>
+                                                                    <td className='text-end'>4,082.00</td>
+                                                                    <td className='text-end profit'>37.12</td>
+                                                                    <td className='text-end'>8,703.00</td>
+                                                                    <td className='text-end'>78,567.91</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
+                                                                    <td className='text-end'>9.10</td>
+                                                                    <td className='text-end profit'>8.38</td>
+                                                                    <td className='text-end'>4,082.00</td>
+                                                                    <td className='text-end profit'>37.12</td>
+                                                                    <td className='text-end'>8,703.00</td>
+                                                                    <td className='text-end'>78,567.91</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
+                                                                    <td className='text-end'>9.10</td>
+                                                                    <td className='text-end profit'>8.38</td>
+                                                                    <td className='text-end'>4,082.00</td>
+                                                                    <td className='text-end profit'>37.12</td>
+                                                                    <td className='text-end'>8,703.00</td>
+                                                                    <td className='text-end'>78,567.91</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
+                                                                    <td className='text-end'>9.10</td>
+                                                                    <td className='text-end loss'>-8.38</td>
+                                                                    <td className='text-end'>4,082.00</td>
+                                                                    <td className='text-end loss'>-37.12</td>
+                                                                    <td className='text-end'>8,703.00</td>
+                                                                    <td className='text-end'>78,567.91</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
+                                                                    <td className='text-end'>9.10</td>
+                                                                    <td className='text-end profit'>8.38</td>
+                                                                    <td className='text-end'>4,082.00</td>
+                                                                    <td className='text-end profit'>37.12</td>
+                                                                    <td className='text-end'>8,703.00</td>
+                                                                    <td className='text-end'>78,567.91</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
+                                                                    <td className='text-end'>9.10</td>
+                                                                    <td className='text-end profit'>8.38</td>
+                                                                    <td className='text-end'>4,082.00</td>
+                                                                    <td className='text-end profit'>37.12</td>
+                                                                    <td className='text-end'>8,703.00</td>
+                                                                    <td className='text-end'>78,567.91</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
+                                                                    <td className='text-end'>9.10</td>
+                                                                    <td className='text-end loss'>-8.38</td>
+                                                                    <td className='text-end'>4,082.00</td>
+                                                                    <td className='text-end loss'>-37.12</td>
+                                                                    <td className='text-end'>8,703.00</td>
+                                                                    <td className='text-end'>78,567.91</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
+                                                                    <td className='text-end'>9.10</td>
+                                                                    <td className='text-end profit'>8.38</td>
+                                                                    <td className='text-end'>4,082.00</td>
+                                                                    <td className='text-end profit'>37.12</td>
+                                                                    <td className='text-end'>8,703.00</td>
+                                                                    <td className='text-end'>78,567.91</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
+                                                                    <td className='text-end'>9.10</td>
+                                                                    <td className='text-end'>8.38</td>
+                                                                    <td className='text-end'>4,082.00</td>
+                                                                    <td className='text-end'>37.12</td>
+                                                                    <td className='text-end'>8,703.00</td>
+                                                                    <td className='text-end'>78,567.91</td>
+                                                                </tr> */}
+                                                            </tbody>
+                                                        </table>
+                                                    ) : (
+                                                        <div className="no-data-section">
+                                                            No Data Available
+                                                        </div>
+                                                    )}
                                                 </div>
                                                 <div className='pagination-sec'>
                                                     <div className='paginations'>
