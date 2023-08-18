@@ -9,7 +9,7 @@ function Banner() {
         setToggleState(index);
     }
     const [oiSpurtsData, setOiSpurtsData] = useState([]);
-    console.log("oiSpurtsData", oiSpurtsData)
+    // console.log("oiSpurtsData", oiSpurtsData)
     const [exchangeToggle, setExchangeToggle] = useState(false);
     const [selectedConfig, setSelectedConfig] = useState({
         filter: 1,
@@ -42,7 +42,7 @@ function Banner() {
                 DerivativeDataType: segmentData[0].DerivativeDataType,
                 DerivativeType: segmentData[0].DerivativeType,
             }));
-            fetchOISpurts();
+            
         } else {
             console.error(`Dropdown data for segmentId ${segmentId} is not defined or empty.`);
         }
@@ -55,12 +55,22 @@ function Banner() {
             DerivativeDataType: dropDownData[prevConfig.segmentId][newIndex].DerivativeDataType,
             DerivativeType: dropDownData[prevConfig.segmentId][newIndex].DerivativeType,
         }));
-        fetchOISpurts();
+        
     };
 
+    // const onToggleChange = () => {
+    //     setExchangeToggle(!exchangeToggle);
+    // };
     const onToggleChange = () => {
-        setExchangeToggle(!exchangeToggle);
-    };
+        setSelectedConfig((prevConfig) => ({
+          ...prevConfig,
+          segmentId: exchangeToggle ? 7 : 5,
+          ProductType: 0,
+          DerivativeDataType: dropDownData[selectedConfig.segmentId][0].DerivativeDataType,
+          DerivativeType: dropDownData[selectedConfig.segmentId][0].DerivativeType,
+        }));
+        
+      };
 
     const fetchOISpurts = () => {
         const request = {
@@ -69,7 +79,7 @@ function Banner() {
             OISpurtsType: selectedConfig.OISpurtsType,
             SegmentId: selectedConfig.segmentId,
         };
-        console.log("Fetching data with request:", request);
+        // console.log("Fetching data with request:", request);
         rest.getOISpurtsData(request).then(
             res => {
                 if (res.Status === 'Success' && res.Response) {
@@ -89,7 +99,7 @@ function Banner() {
                         };
                     });
                     setOiSpurtsData(updatedData);
-                    console.log("updatedData", updatedData)
+                    // console.log("updatedData", updatedData)
                 } else {
                     setOiSpurtsData([]);
                 }
@@ -206,31 +216,17 @@ function Banner() {
                                                             {selectedConfig?.filter === 2 && (
                                                                 <div className="toggle">
                                                                     <span className={`${!exchangeToggle ? 'selected' : ''}`}>MCX</span>
-                                                                    <input type="checkbox"
+                                                                    <input
+                                                                        type="checkbox"
                                                                         id="exchangeToggle"
                                                                         name="exchangeToggle"
                                                                         checked={exchangeToggle}
-                                                                        onChange={onToggleChange} />
+                                                                        onChange={onToggleChange}
+                                                                    />
                                                                     <label></label>
                                                                     <span className={`${exchangeToggle ? 'selected' : ''}`}>NCDX</span>
                                                                 </div>
                                                             )}
-                                                            {/* {selectedConfig?.filter === 2 && (
-                                                                <div className="toggle">
-                                                                    <label className={`control-label mr-10 ${!exchangeToggle ? 'selected' : ''}`}>MCX</label>
-                                                                    <label className="switch">
-                                                                        <input
-                                                                            type="checkbox"
-                                                                            id="exchangeToggle"
-                                                                            name="exchangeToggle"
-                                                                            checked={exchangeToggle}
-                                                                            onChange={onToggleChange}
-                                                                        />
-                                                                        <div className="slider round"></div>
-                                                                    </label>
-                                                                    <label className={`control-label ml-10 ${exchangeToggle ? 'selected' : ''}`}>NCDEX</label>
-                                                                </div>
-                                                            )} */}
                                                         </div>
                                                         <div className='refresh-boxs'>
                                                             <button className='btn-refresh'>
@@ -265,11 +261,11 @@ function Banner() {
                                                                     <tr key={row.id}>
                                                                         <td className='text-start'>{row.Name}</td>
                                                                         <td className='text-end'>{row.LTP}</td>
-                                                                        <td className='text-end '>{Math.abs(row.percent)}</td>
+                                                                        <td className={`text-end ${row.textColor}`}>{Math.abs(row.percent)}</td>
                                                                         <td className='text-end'>{formatNumber(row.OI)}</td>
-                                                                        <td className='text-end '>{row.OIChange}</td>
-                                                                        <td className='text-end'>{row.Volume}</td>
-                                                                        <td className='text-end'>{row.TurnOver}</td>
+                                                                        <td className={`text-end ${row.oiColor}`}>{Math.abs(row.OIPerChange)}</td>
+                                                                        <td className='text-end'>{formatNumber(row.Volume)}</td>
+                                                                        <td className='text-end'>{formatNumber(row.TurnOver)}</td>
                                                                     </tr>
                                                                 ))}
                                                                 {/* <tr>

@@ -158,7 +158,8 @@
                                 width: 1.538rem;
                                 height:  1.538rem;
                                 border-radius: 50%;
-                                left:  1.538rem;
+                                // left:  1.538rem;
+                                // left: 0;
                                 top: -0.231rem;
                                 z-index: 2;
                                 background: $pricolor;
@@ -174,7 +175,7 @@
                           }
                           input[type="checkbox"]:checked + label:after {
                             background: $pricolor;
-                            left: -0.385rem;
+                            right: -0.385rem;
                           }
                           span{
                             font-size: 1.385rem;
