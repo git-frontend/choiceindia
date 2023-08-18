@@ -37,7 +37,7 @@ function FAQ() {
                                     When analyzing the option chain, factors include open interest, volume, implied volatility, and strike price selection. These factors provide insights into market sentiment, trading activity, and potential price movements.
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item eventKey="3" className='faq-item'>
+                                <Accordion.Item eventKey="4" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>Can option chain analysis predict future market movements?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     Option chain analysis is a valuable tool for understanding market sentiment and identifying potential trading opportunities. However, it does not guarantee predicting future market movements, as multiple factors influence price dynamics. Traders should consider it alongside other forms of analysis and risk management strategies.
