@@ -10,6 +10,12 @@ function Banner() {
     }
     const [oiSpurtsData, setOiSpurtsData] = useState([]);
     // console.log("oiSpurtsData", oiSpurtsData)
+    const [currentPage, setCurrentPage] = useState(1);
+    const rowsPerPage = 10
+    const startIndex = (currentPage - 1) * rowsPerPage;
+    const endIndex = startIndex + rowsPerPage;
+    const displayedData = oiSpurtsData.slice(startIndex, endIndex);
+    const totalPages = Math.ceil(oiSpurtsData.length / rowsPerPage);
     const [exchangeToggle, setExchangeToggle] = useState(false);
     const [selectedConfig, setSelectedConfig] = useState({
         filter: 1,
@@ -42,7 +48,7 @@ function Banner() {
                 DerivativeDataType: segmentData[0].DerivativeDataType,
                 DerivativeType: segmentData[0].DerivativeType,
             }));
-            
+
         } else {
             console.error(`Dropdown data for segmentId ${segmentId} is not defined or empty.`);
         }
@@ -55,22 +61,23 @@ function Banner() {
             DerivativeDataType: dropDownData[prevConfig.segmentId][newIndex].DerivativeDataType,
             DerivativeType: dropDownData[prevConfig.segmentId][newIndex].DerivativeType,
         }));
-        
+
     };
 
     // const onToggleChange = () => {
     //     setExchangeToggle(!exchangeToggle);
     // };
     const onToggleChange = () => {
+        setExchangeToggle(!exchangeToggle);
         setSelectedConfig((prevConfig) => ({
-          ...prevConfig,
-          segmentId: exchangeToggle ? 7 : 5,
-          ProductType: 0,
-          DerivativeDataType: dropDownData[selectedConfig.segmentId][0].DerivativeDataType,
-          DerivativeType: dropDownData[selectedConfig.segmentId][0].DerivativeType,
+            ...prevConfig,
+            segmentId: exchangeToggle ? 7 : 5,
+            ProductType: 0,
+            DerivativeDataType: dropDownData[selectedConfig.segmentId][0].DerivativeDataType,
+            DerivativeType: dropDownData[selectedConfig.segmentId][0].DerivativeType,
         }));
-        
-      };
+
+    };
 
     const fetchOISpurts = () => {
         const request = {
@@ -229,7 +236,7 @@ function Banner() {
                                                             )}
                                                         </div>
                                                         <div className='refresh-boxs'>
-                                                            <button className='btn-refresh'>
+                                                            <button className='btn-refresh'  onClick={() => fetchOISpurts}>
                                                                 <svg className='svg-icon' xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                                                                     <path d="M25.866 15.8C24.9974 21.5736 20.0156 26 14 26C7.37258 26 2 20.6274 2 14C2 7.37258 7.37258 2 14 2C18.9207 2 23.1498 4.96183 25.0015 9.2" stroke="#004393" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                                                                     <path d="M20 9.19995H25.28C25.6777 9.19995 26 8.8776 26 8.47995V3.19995" stroke="#004393" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
@@ -256,7 +263,7 @@ function Banner() {
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                {oiSpurtsData.map(row => (
+                                                                {displayedData.map(row => (
 
                                                                     <tr key={row.id}>
                                                                         <td className='text-start'>{row.Name}</td>
@@ -373,16 +380,16 @@ function Banner() {
                                                             </Dropdown>
                                                         </div>
                                                         <div className='entries'>
-                                                            <span>1-10 of 20</span>
+                                                            <span>{`${startIndex + 1}-${endIndex} of ${oiSpurtsData.length}`}</span>
                                                         </div>
                                                         <div className='arrows'>
                                                             <div className='arrow-icons'>
-                                                                <div className='arro-pre'>
+                                                                <div className='arro-pre' onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className='arrow-fill'>
                                                                         <path d="M15.705 7.41L14.295 6L8.29504 12L14.295 18L15.705 16.59L11.125 12L15.705 7.41Z" fill="black" fillOpacity="0.56" />
                                                                     </svg>
                                                                 </div>
-                                                                <div className='arrow-next'>
+                                                                <div className='arrow-next' onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className='arrow-fill'>
                                                                         <path d="M9.70504 6L8.29504 7.41L12.875 12L8.29504 16.59L9.70504 18L15.705 12L9.70504 6Z" fill="black" fillOpacity="0.56" />
                                                                     </svg>
