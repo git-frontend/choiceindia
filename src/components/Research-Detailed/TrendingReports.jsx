@@ -27,18 +27,26 @@ function TrendingReports(props) {
    
     if(props.data1.report_subtype_uuid === "f890363a-512e-4797-91fd-4d40732844a3"){
       navigate({
-        pathname: `/research-report/${id}-share-price-target`,
+        pathname: `/research-report/${id}-share-price-target`
         // search: `?id=${name ? name : 'f890363a-512e-4797-91fd-4d40732844a3'}`
       })
     }
     else if (props.data1.report_subtype_uuid === "66292363-0716-44d5-a129-a3fe2767690a") {
-      navigate(`/research-report/${id}-ipo-review`);
+      navigate({
+        pathname:`/research-report/${id}-ipo-review`
+    });
     } 
     else if (props.data1.report_subtype_uuid === "1aa86611-7b88-4069-af82-1e04e80659a4") {
-      navigate(`/research-report/${id}-industry-analysis`);
+      navigate(
+        {
+          pathname:`/research-report/${id}-industry-analysis`
+        }
+      );
     } 
     else if (props.data1.report_subtype_uuid === "41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad") {
-      navigate(`/research-report/${id}`);
+      navigate({
+        pathname:`/research-report/${id}`
+      });
     } 
     else{
        navigate({
