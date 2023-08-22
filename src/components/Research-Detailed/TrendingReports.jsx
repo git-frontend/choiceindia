@@ -148,7 +148,8 @@ function TrendingReports(props) {
 
 
   useEffect(() => {
-    (props.data == "ipo-nfo-analysis") ? lpoSearch() : (props.data == "industry-analysis") ?loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4'): (props.data == "company-fundamentals") ? loadResearch('f890363a-512e-4797-91fd-4d40732844a3'): loadResearch(name ? name : '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad')
+    // (props.data == "ipo-nfo-analysis") ? lpoSearch() : (props.data == "industry-analysis") ?loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4'): (props.data == "company-fundamentals") ? loadResearch('f890363a-512e-4797-91fd-4d40732844a3'): loadResearch(name ? name : '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad')
+    (props.data== "-ipo-review") ? lpoSearch() : (props.data == "-industry-analysis") ?loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4'): (props.data == "-share-price-target") ? loadResearch('f890363a-512e-4797-91fd-4d40732844a3'): loadResearch(name ? name : '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad')
   }, [])
 
   return (

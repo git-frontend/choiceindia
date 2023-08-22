@@ -82,11 +82,22 @@ function ResearchDetailed() {
 
   }, [])
 
+  function getCatId() {
+    if (window.location.pathname.includes('-share-price-target')) {
+      return '-share-price-target';
+    } else if (window.location.pathname.includes('-ipo-review')) {
+      return '-ipo-review';
+    } else if (window.location.pathname.includes('-industry-analysis')) {
+      return '-industry-analysis';
+    } else {
+      return '';
+    }
+  }
   return (
     <div className="wrapper-rsrch">
 
       <Banner data={list} />
-      <TrendingReports data={catid ? catid : 'fundamental' } data1={list}/>
+      <TrendingReports data={catid ? catid : getCatId() } data1={list}/>
 
     </div>
   );
