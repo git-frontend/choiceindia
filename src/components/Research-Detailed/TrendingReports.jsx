@@ -10,6 +10,7 @@ import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function TrendingReports(props) {
+  console.log("dd",props)
   const [isloading, setisloading] = useState(true);
   const [list, setList] = useState(null);
   const [showData, setShowData] = useState([]);
@@ -17,17 +18,41 @@ function TrendingReports(props) {
   const navigate = useNavigate();
   const search = useLocation().search;
   const name = new URLSearchParams(search).get('id');
+  
   // console.log('BBBBBBBBBBB',props);
   let sliceCount = Math.floor((Math.random() * 5) + 1);
 
   function getSingleDetail(id) {
-    //console.log('IIIII', id);
+    console.log('IIddIII', id);
+   
+    if(props.data1.report_subtype_uuid === "f890363a-512e-4797-91fd-4d40732844a3"){
+      navigate({
+        pathname: `/research-report/${id}-share-price-target`,
+        // search: `?id=${name ? name : 'f890363a-512e-4797-91fd-4d40732844a3'}`
+      })
+    }
+    else if (props.data1.report_subtype_uuid === "66292363-0716-44d5-a129-a3fe2767690a") {
+      navigate(`/research-report/${id}-ipo-review`);
+    } 
+    else if (props.data1.report_subtype_uuid === "1aa86611-7b88-4069-af82-1e04e80659a4") {
+      navigate(`/research-report/${id}-industry-analysis`);
+    } 
+    else if (props.data1.report_subtype_uuid === "41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad") {
+      navigate(`/research-report/${id}`);
+    } 
+    else{
+       navigate({
+      pathname: `/research-report/${id}`,
+      // search: `?id=${name ? name : '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'}`
+    })
+    }
+      
 
     // navigate(`/research-new/${id}/${props.data}`);
-    navigate({
-      pathname: `/research-new/${id}/${props.data}`,
-      search: `?id=${name ? name : '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'}`
-    })
+    // navigate({
+    //   pathname: `/research-report/${id}`,
+    //   // search: `?id=${name ? name : '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'}`
+    // })
   }
 
   function goToScroll() {
@@ -49,12 +74,13 @@ function TrendingReports(props) {
   function loadResearch(id) {
     ResearchService.researchcategory(id).then(
       res => {
-
+        console.log("res.response.data.uuid",id)
         if(res){
           setisloading(false);
         // console.log('YYYYY',res.response.totalCount);
         setList(res.response.data);
         setShowData(res.response.data);
+
 
         } else {
           setisloading(false);
@@ -103,9 +129,11 @@ function TrendingReports(props) {
     * @param {Report} report 
     */
    let goToDetail = (report) => {
+    // console.log("report.redirect_slug",report)
     let api = new API_URLS()
-    let url = api.getFundamentalDetailURL(report.id || report.uuid)
+    let url = api.getFundamentalDetailURL(report.redirect_slug)
     window.open(url)
+   
   }
  
 
@@ -178,7 +206,7 @@ function TrendingReports(props) {
                                           <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                                         </div>
                                         <div className="tab-itm-des">
-                                          <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{res.report_subtype_name == "IPO REPORT" ? res.scrip_name || "" : res.title || ""}</h5>
+                                          <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.redirect_slug) }}>{res.report_subtype_name == "IPO REPORT" ? res.scrip_name || "" : res.title || ""}</h5>
                                           {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
                                           <div className="itm-des-text">
                                             <p dangerouslySetInnerHTML={{ __html: res.description }}></p>
@@ -190,7 +218,7 @@ function TrendingReports(props) {
                                             <span className="date-post">{utils.formatDate(new Date(res.publish_date), "dd MMMM , yyyy")}</span>
                                             {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
                                             
-                                            {(res.report_subtype_name == "IPO REPORT") ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn cursor-pointer" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : (res.report_subtype_name == "EQUITY RESEARCH REPORT" ) ? <a className="btn-sm btn-ptr cursor-pointer" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read cursor-pointer">Read More</a>}
+                                            {(res.report_subtype_name == "IPO REPORT") ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn cursor-pointer" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : (res.report_subtype_name == "EQUITY RESEARCH REPORT" ) ? <a className="btn-sm btn-ptr cursor-pointer" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.redirect_slug) }} className="post-read cursor-pointer">Read More</a>}
                                             
                                           </div>
                                         </div>
@@ -233,7 +261,7 @@ function TrendingReports(props) {
                                       <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                                     </div>
                                     <div className="tab-itm-des">
-                                      <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{res.report_subtype_name == "IPO REPORT" ? res.scrip_name || "" : res.title || ""}</h5>
+                                      <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.redirect_slug) }}>{res.report_subtype_name == "IPO REPORT" ? res.scrip_name || "" : res.title || ""}</h5>
                                       {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
                                       <div className="itm-des-text">
                                         <p dangerouslySetInnerHTML={{ __html: res.description }}></p>
@@ -244,7 +272,7 @@ function TrendingReports(props) {
                                       <div className="itm-des-sub">
                                         <span className="date-post">{utils.formatDate(new Date(res.publish_date), "dd MMMM , yyyy")}</span>
                                         {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                                        {(res.report_subtype_name == "IPO REPORT") ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn cursor-pointer" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : (res.report_subtype_name == "EQUITY RESEARCH REPORT" ) ? <a className="btn-sm btn-ptr cursor-pointer" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read cursor-pointer">Read More</a>}
+                                        {(res.report_subtype_name == "IPO REPORT") ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn cursor-pointer" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : (res.report_subtype_name == "EQUITY RESEARCH REPORT" ) ? <a className="btn-sm btn-ptr cursor-pointer" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.redirect_slug) }} className="post-read cursor-pointer">Read More</a>}
 
                                       </div>
                                     </div>

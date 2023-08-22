@@ -447,11 +447,17 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/research-new/:id/:catid' element={
+                        {/* <Route exact path='/research-new/:id/:catid' element={
+                            <React.Suspense>
+                                < Lazyresearchdetailed />
+                            </React.Suspense>
+                        } /> */}
+                        <Route exact path='/research-report/:id' element={
                             <React.Suspense>
                                 < Lazyresearchdetailed />
                             </React.Suspense>
                         } />
+                        
 
                         <Route exact path='/demat-account' element={
                             <React.Suspense>
