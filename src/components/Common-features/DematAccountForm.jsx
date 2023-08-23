@@ -31,6 +31,7 @@ function DematAccountForm(props) {
     const [showErrorToaster, setShowErrorToaster] = useState(false);
     const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
+    const isMF = (window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'yes' : '';
     const [referID, setReferID] = useState('');
 
     const location = useLocation();
@@ -389,7 +390,7 @@ function DematAccountForm(props) {
             // 'sidebar_seo_leads'
             "utm_medium": isBlog == "yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
+            "utm_source": isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation':isMF == "yes" ? UTMSource.current || 'choice-mf-web' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
