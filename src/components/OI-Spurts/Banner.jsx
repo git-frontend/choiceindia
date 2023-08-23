@@ -71,10 +71,12 @@ function Banner() {
         setExchangeToggle(!exchangeToggle);
         setSelectedConfig((prevConfig) => ({
             ...prevConfig,
-            segmentId: exchangeToggle ? 7 : 5,
+            segmentId: exchangeToggle ? 5 : 7,
             ProductType: 0,
-            DerivativeDataType: dropDownData[selectedConfig.segmentId][0].DerivativeDataType,
-            DerivativeType: dropDownData[selectedConfig.segmentId][0].DerivativeType,
+            // DerivativeDataType: dropDownData[selectedConfig.segmentId][0].DerivativeDataType,
+            // DerivativeType: dropDownData[selectedConfig.segmentId][0].DerivativeType,
+            DerivativeDataType: dropDownData[exchangeToggle ? 5 : 7][0].DerivativeDataType, // Update DerivativeDataType
+        DerivativeType: dropDownData[exchangeToggle ? 5 : 7][0].DerivativeType, // Update DerivativeType
         }));
 
     };
