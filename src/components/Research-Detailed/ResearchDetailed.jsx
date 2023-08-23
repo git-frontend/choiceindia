@@ -1,4 +1,5 @@
-import "./research-detailed.scss"
+import "./research-detailed.scss";
+import { useState, useEffect } from "react";
 import Banner from './Banner';
 import TrendingReports from './TrendingReports';
 import {
@@ -8,7 +9,7 @@ import {
   useLocation
 } from "react-router-dom";
 import ResearchService from "../../Services/ResearchService";
-import { useState, useEffect } from "react";
+
 
 
 function ResearchDetailed() {
@@ -30,6 +31,7 @@ function ResearchDetailed() {
     const hasSharePriceTarget = window.location.pathname.includes('-share-price-target');
     const hasIPOReview = window.location.pathname.includes('-ipo-review');
     const hasINdReview = window.location.pathname.includes('-industry-analysis');
+    const haseco = window.location.pathname.includes('');
     console.log("c",hasINdReview)
     
     let id2;
@@ -45,6 +47,9 @@ function ResearchDetailed() {
     }
     else if (hasINdReview) {
       id2 = id.split('-industry-analysis')[0];
+    }
+    else if(haseco){
+      id2=id;
     }
     else {
       return; 
