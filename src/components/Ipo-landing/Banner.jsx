@@ -36,6 +36,20 @@ function Banner() {
     slidesToScroll: 1,
 
   };
+
+  const [outCome,setOutCome]= useState();
+
+  /**function to generate random probabity number for AB test */
+  function generateRandomNumber(){
+    var random = Math.random();
+
+    if (random < 0.75) {
+      setOutCome(() => 'A'); // Return a random number when the probability is less than 70%
+    } else {
+      setOutCome(() => 'B'); // Return a different number when the probability is greater than or equal to 70%
+    }
+  }
+
 /** for position identifier */
   const getPosition = () => {
     const element = document.getElementById("showCard");
@@ -127,6 +141,7 @@ function Banner() {
       window.addEventListener('scroll', getPosition);
       window.addEventListener('scroll', getPosition2);
       loadCompanyIpo();
+      generateRandomNumber();
     }
   }, [rendercount]);
 
@@ -177,7 +192,9 @@ function Banner() {
                       </li>
                     </ul>
                     <div className="btn-open">
-                      <button className="btn-bg btn-bg-dark" onClick={() => window.open(res.form_submit_desktop_link || '')}>Open Now</button>
+                      <button className="btn-bg btn-bg-dark" id={outCome == 'A'? 'ipo-invest-now' : 'ipo-open-now'} onClick={() => window.open(res.form_submit_desktop_link || '')}>{
+                        outCome == 'A'? 'Invest Now' : 'Open Now'
+                      }</button>
                     </div>
                   </div>
 
