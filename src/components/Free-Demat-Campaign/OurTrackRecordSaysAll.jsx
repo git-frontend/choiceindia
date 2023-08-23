@@ -432,7 +432,7 @@ function OurTrackRecordSaysAll() {
                                   }
                                 </Slider>
                                 : <div className="text-center">
-                                  <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                  <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
                                 </div>}
                           </div>
 

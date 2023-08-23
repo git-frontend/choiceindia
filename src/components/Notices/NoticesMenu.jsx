@@ -250,8 +250,86 @@ function NoticesMenu() {
                     </div>
                     }
                     
+                    <div className="row code-mainwrapper cgmainwrap">
+                        <div className="col-md-12">
+                            <h3 className="head">Annual General Meeting</h3>
+                            <div className="subtext">
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Postal Ballot Final</div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>AGM Notice 2021 - 22</div>
+                                    <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open(pdf2) }} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>AGM Notice 2020 - 21</div>
 
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row code-mainwrapper cgmainwrap">
+                        <div className="col-md-12">
+                            <h3 className="head">Postal Ballot</h3>
+                            <div className="subtext">
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Postal Ballot Final</div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>AGM Notice 2021 - 22</div>
+                                    <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open(pdf2) }} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>AGM Notice 2020 - 21</div>
 
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row code-mainwrapper cgmainwrap">
+                        <div className="col-md-12">
+                            <h3 className="head">Investor Education & Protection Fund</h3>
+                            <div className="subtext">
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Postal Ballot Final</div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>AGM Notice 2021 - 22</div>
+                                    <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open(pdf2) }} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>AGM Notice 2020 - 21</div>
+
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row code-mainwrapper cgmainwrap">
+                        <div className="col-md-12">
+                            <h3 className="head">KYC Documents</h3>
+                            <div className="subtext">
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Postal Ballot Final</div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>AGM Notice 2021 - 22</div>
+                                    <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open(pdf2) }} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>AGM Notice 2020 - 21</div>
+
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

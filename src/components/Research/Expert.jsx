@@ -8,13 +8,13 @@ import image2 from '../../assets/images/about-us/sunder-sanmukhani.webp';
 import image3 from '../../assets/images/about-us/rochan-patnayak.webp';
 function Expert() {
     const settings = {
-        infinite: true,
+        infinite: false,
         speed: 2000,
         arrows: false,
         slidesToShow: 2,
         autoplay: false,
         margin:15,
-        dots:true,
+        dots:false,
         autoplaySpeed: 800,
         slidesToScroll: 1,
         responsive: [
@@ -23,7 +23,7 @@ function Expert() {
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
-              adaptiveHeight: true,
+              adaptiveHeight: false,
             },
           },
           {
@@ -42,7 +42,7 @@ function Expert() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                    <h2 className="heading">Meet Our Experts</h2>
+                    <h2 className="heading">Meet Our expert</h2>
                     </div>
                 </div>
                 <div className="row justify-content-center">
@@ -71,7 +71,7 @@ function Expert() {
                        
                         
                       </div> */}
-                      <div className="expert-item">
+                      {/* <div className="expert-item">
                         <span className="img-itm">
                                           <img src={image3} width="224" height="349" className="img-fluid" alt="loading"/>
                         </span>
@@ -79,7 +79,7 @@ function Expert() {
                             <h5>Mr. Rochan Pattnayak</h5>
                             <p className="designation">Head-Institutional Equities &amp; Markets</p>
                         </div>
-                      </div>
+                      </div> */}
                      
                     </Slider>
                   </div>
