@@ -240,14 +240,14 @@ Notices: function (postdata) {
     })
 },
 
-NoticesRight: function (postdata) {
+// NoticesRight: function (postdata) {
 
-    let api = new API_URLS()
-    let url = api.getNoticesUrlR()
-    return axios.get(url).then((data) => {
-        return data
-    })
-}
+//     let api = new API_URLS()
+//     let url = api.getNoticesUrlR()
+//     return axios.get(url).then((data) => {
+//         return data
+//     })
+// }
 
 
 
