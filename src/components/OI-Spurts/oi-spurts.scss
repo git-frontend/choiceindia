@@ -158,7 +158,8 @@
                                 width: 1.538rem;
                                 height:  1.538rem;
                                 border-radius: 50%;
-                                left:  1.538rem;
+                                // left:  1.538rem;
+                                // left: 0;
                                 top: -0.231rem;
                                 z-index: 2;
                                 background: $pricolor;
@@ -174,7 +175,7 @@
                           }
                           input[type="checkbox"]:checked + label:after {
                             background: $pricolor;
-                            left: -0.385rem;
+                            right: -0.385rem;
                           }
                           span{
                             font-size: 1.385rem;
@@ -201,7 +202,7 @@
                         background: $whiteColor;
                         color: $primary;
                         border: 1px solid $border-gray;
-                        display: inline-table;
+                        display: flex;
                         border-radius: 6px;
                         padding: 7px 3px;
                         @media (max-width:$md) {
@@ -209,29 +210,18 @@
                             margin-bottom: 3rem;
                         }
                         .btn-drp{
-                            background: $whiteColor;
                             color: $primary;
                             border: 0;
                             font-size: 1.385rem;
                             font-family: $font-family-poppins-medium;
                             line-height: 1.5;
-                            display: flex;
-                            justify-content: space-between;
-                            gap: 100px;
-                            align-items: center;
+                            background: url(../../assets/images/brokerage-calculator/close.svg) no-repeat center right 10px;
                             @media (max-width:$md) {
                                 width: 100%;
                             }
-                            &::after{
-                                background: url(../../assets/images/brokerage-calculator/close.svg) no-repeat;
-                                width: 1rem;
-                                height: 1rem;
-                                background-size: contain;
-                                vertical-align: inherit;
-                                border-top: inherit;
-                                border-right: initial;
-                                border-left: inherit;
-                                margin-top: 0.5rem;
+                            &:focus{
+                                outline: 0;
+                                box-shadow: none;
                             }
                         }
                         .drop-menu{

@@ -121,7 +121,18 @@ getScripBrokerageURL: function (postdata) {
     //  console.log("datads",data)
       return data
   })
+},
+getOISpurtsData: function (postdata) {
+
+  let api = new API_URLS()
+  let url = api.getOISpurtsURL()
+//  console.log("url",url)
+  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+    //  console.log("getOISpurtsURL",data)
+      return data
+  })
 }
+
 
 }
 export default rest;

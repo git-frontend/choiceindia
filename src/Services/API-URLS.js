@@ -266,7 +266,8 @@ export class API_URLS {
     searchURL='cm/ScripContract/Search/';
     scripDetURL='cm/ScripContract/ScripDetails/';
     scripBrokerageURL='order-charges';
-
+    //for 
+    OIspurts='md/Data/TopOISpurtsBySegmentDerivatives';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -917,5 +918,9 @@ export class API_URLS {
     /** Blog cms */
     getinsightsURL(){
         return this.CMSURL + this.insightsURL
+    }
+    //OIspurts 
+    getOISpurtsURL(){
+        return this.performanceURL + this.OIspurts
     }
 }
