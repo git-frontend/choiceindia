@@ -101,7 +101,7 @@ function SubBrokerHindi() {
             <SubBrokerSellMoreHindi />
             <WhyBecomeSubBrokerHindi />
             <WhoEligibleToSubBrokerHindi />
-            <SubBrokerOffersHindi />
+            {/* <SubBrokerOffersHindi /> */}
             {/* <MoreContent /> */}
           </div>
       }

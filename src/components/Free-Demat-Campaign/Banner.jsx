@@ -56,19 +56,19 @@ function Banner() {
                                 <div className="campaign-banner-features">
                                     <div className="campaign-features-list">
                                         <span className="campaign-img">
-                                            <LazyLoader src={NoAmc} className={'img-fluid'} height={"93"} width={"106"} alt={"Free Demat Account with No Annual Charges"} />
+                                            <LazyLoader src={NoAmc} className={'img-fluid mob-i'} height={"93"} width={"106"} alt={"Free Demat Account with No Annual Charges"} />
                                         </span>
                                         <h3>No AMC for <br />First Year</h3>
                                     </div>
                                     <div className="campaign-features-list">
                                         <span className="campaign-img">
-                                            <LazyLoader src={ResearchCalls} className={'img-fluid'} height={"90"} width={"102"} alt={"Free Demat Account with Expert Research Calls"} />
+                                            <LazyLoader src={ResearchCalls} className={'img-fluid mob-i'} height={"90"} width={"102"} alt={"Free Demat Account with Expert Research Calls"} />
                                         </span>
                                         <h3>Expert <br />Research Calls</h3>
                                     </div>
                                     <div className="campaign-features-list">
                                         <span className="campaign-img">
-                                            <LazyLoader src={ResearchTools} className={'img-fluid'} height={"93"} width={"106"} alt={"Open Demat Account with Free Research Tools"} />
+                                            <LazyLoader src={ResearchTools} className={'img-fluid mob-i'} height={"93"} width={"106"} alt={"Open Demat Account with Free Research Tools"} />
                                         </span>
                                         <h3>Free <br />Research Tools</h3>
                                     </div>

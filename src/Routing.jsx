@@ -338,7 +338,8 @@ function Routing() {
                         } />
                         <Route exact path='/open-free-demat-account' element={
                             <React.Suspense>
-                                < Lazyopendemat />
+                                {/* < Lazyopendemat /> */}
+                                < LazyFreeDematCompaign />
                             </React.Suspense>
                         } />
                         <Route exact path='/hindi/trading-account' element={
