@@ -266,8 +266,10 @@ export class API_URLS {
     searchURL='cm/ScripContract/Search/';
     scripDetURL='cm/ScripContract/ScripDetails/';
     scripBrokerageURL='order-charges';
-    //for 
+    //for  OI spurts
     OIspurts='md/Data/TopOISpurtsBySegmentDerivatives';
+    //for margin calculator
+    marginCalculatorUrl='margin/GetMargin/';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -922,5 +924,8 @@ export class API_URLS {
     //OIspurts 
     getOISpurtsURL(){
         return this.performanceURL + this.OIspurts
+    }
+    getMarginCalculatorURL(segmentId,token_qty){
+        return this.performanceURL+this.marginCalculatorUrl +segmentId + "/" + token_qty;
     }
 }
