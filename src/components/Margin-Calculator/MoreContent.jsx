@@ -18,7 +18,7 @@ function MoreContent() {
                             <p>Let us go ahead and cover what a  margin calculator is, its types, workings, benefits, and how it has become an indispensable tool in trading.</p>
                             <h3 className='seo-h3'>What is a Margin Calculator?</h3>
                             <p>The margin needed for trading or investing can be calculated using a helpful tool called a margin calculator. To determine the amount of money one needs to borrow from a stockbroker to afford an asset, the calculator takes into account many aspects, including:</p>
-                            <ul>
+                            <ul className='mrg-3'>
                                 <li>Leverage</li>
                                 <li>Asset Price</li>
                                 <li>Desired Margin Level </li>
@@ -30,20 +30,20 @@ function MoreContent() {
                             <h3 className='seo-h3'>Types of Margins</h3>    
                             <p>When we talk about margins in the stock market, we talk about both the cash and F&O markets.</p>
                             <p>Within the cash market, the types of margins are:</p>
-                            <ul>
+                            <ul className='mrg-3'>
                                 <li>Value at risk margin</li>
                                 <li>Extreme loss margin</li>
                                 <li>Mark to-market margin</li>
                             </ul>
                             <p>Within the F&O market, the types of margins are:</p>
-                            <ul>
+                            <ul className='mrg-3'>
                                 <li>Initial margin</li>
                                 <li>Exposure margin</li>
                             </ul>
                             <h3 className='seo-h3'>How Does the Margin Calculator Work?</h3>    
                             <p>An online margin calculator is a web-based tool that helps stock traders calculate the margin they need.</p>
                             <p>The calculator requires the trader to enter details based on which it will calculate and give accurate results, such as:</p>
-                            <ul>
+                            <ul className='mrg-3'>
                                 <li>Trading instrument</li>
                                 <li>Lot size</li>
                                 <li>Leverage</li>
@@ -56,7 +56,7 @@ function MoreContent() {
                             <p>Standard Portfolio Analysis of Risk + Exposure Margin</p>
                             <h3 className='seo-h3'>How to Use an Online Margin Calculator?</h3>
                             <p>Follow these steps to use a margin calculator:</p>
-                            <ol>
+                            <ol className='mrg-3'>
                                 <li>Choose any online stock margin calculator.</li>
                                 <li>Once you have chosen your online margin calculator, enter the necessary details such as trade type, size, leverage used, and account currency.</li>
                                 <li>Calculate the required margin for your trade.</li>

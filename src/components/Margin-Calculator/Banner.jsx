@@ -328,7 +328,7 @@ function Banner() {
                                 <p>Let us go ahead and cover what a  margin calculator is, its types, workings, benefits, and how it has become an indispensable tool in trading.</p>
                                 <h3 className='seo-h3'>What is a Margin Calculator?</h3>
                                 <p>The margin needed for trading or investing can be calculated using a helpful tool called a margin calculator. To determine the amount of money one needs to borrow from a stockbroker to afford an asset, the calculator takes into account many aspects, including:</p>
-                                <ul>
+                                <ul className='mrg-3'>
                                     <li>Leverage</li>
                                     <li>Asset Price</li>
                                     <li>Desired Margin Level </li>
@@ -340,20 +340,20 @@ function Banner() {
                                 <h3 className='seo-h3'>Types of Margins</h3>    
                                 <p>When we talk about margins in the stock market, we talk about both the cash and F&O markets.</p>
                                 <p>Within the cash market, the types of margins are:</p>
-                                <ul>
+                                <ul className='mrg-3'>
                                     <li>Value at risk margin</li>
                                     <li>Extreme loss margin</li>
                                     <li>Mark to-market margin</li>
                                 </ul>
                                 <p>Within the F&O market, the types of margins are:</p>
-                                <ul>
+                                <ul className='mrg-3'>
                                     <li>Initial margin</li>
                                     <li>Exposure margin</li>
                                 </ul>
                                 <h3 className='seo-h3'>How Does the Margin Calculator Work?</h3>    
                                 <p>An online margin calculator is a web-based tool that helps stock traders calculate the margin they need.</p>
                                 <p>The calculator requires the trader to enter details based on which it will calculate and give accurate results, such as:</p>
-                                <ul>
+                                <ul className='mrg-3'>
                                     <li>Trading instrument</li>
                                     <li>Lot size</li>
                                     <li>Leverage</li>
@@ -366,7 +366,7 @@ function Banner() {
                                 <p>Standard Portfolio Analysis of Risk + Exposure Margin</p>
                                 <h3 className='seo-h3'>How to Use an Online Margin Calculator?</h3>
                                 <p>Follow these steps to use a margin calculator:</p>
-                                <ol>
+                                <ol className='mrg-3'>
                                     <li>Choose any online stock margin calculator.</li>
                                     <li>Once you have chosen your online margin calculator, enter the necessary details such as trade type, size, leverage used, and account currency.</li>
                                     <li>Calculate the required margin for your trade.</li>
@@ -400,18 +400,18 @@ function Banner() {
                                 <h3 className='seo-h3'>How Does a Future & Option Margin Calculator Work?</h3>
                                 <p>A future & options margin calculator considers certain inputs related to the specific futures or options contracts. Furthermore, it calculates the margin based on the predefined formulas.</p>
                                 <p>Let’s discuss in depth the working of this margin calculator for option selling and future contracts:</p>
-                                <h5 className='seo-h5'>Contract Specifications</h5>    
+                                <h4 className='seo-h4'>Contract Specifications</h4>    
                                 <p>The F&O margin calculator uses the specific details of a contract to define the terms under it. It includes information like the expiration date of the contracts, contract size, and the strike price for options.</p>
                                 <p>You can quickly get the margin amount with an online option selling margin calculator with the Choice F&O calculator.</p>
-                                <h5 className='seo-h5'>Market Data</h5>    
+                                <h4 className='seo-h4'>Market Data</h4>    
                                 <p>This F&O margin calculator considers real-time data or historical market data to provide accurate results. You can also get the margin amount with the online future margin calculator.</p>
-                                <h5 className='seo-h5'>Calculation Models</h5>    
+                                <h4 className='seo-h4'>Calculation Models</h4>    
                                 <p>The future & option calculator applies mathematical algorithms to determine the margin for traders. Additionally, it considers price volatility and risk factors.</p>
-                                <h5 className='seo-h5'>Risk Parameters</h5>
+                                <h4 className='seo-h4'>Risk Parameters</h4>
                                 <p>By inputting different variables into this calculator, you can make informed decisions about trading. Additionally, the future & option calculator includes risk management parameters that allow you to evaluate the risk-reward ratio of the trade.</p>
                                 <h3 className='seo-h3'>How to Use an F&O Margin Calculator?</h3>    
                                 <p>The calculation process for future & options contracts is simple. Follow the steps below to use an F&O margin calculator.</p>
-                                <ol>
+                                <ol className='mrg-3'>
                                     <li>Choose a future & option margin calculator online.</li>
                                     <li>Next, select an exchange. You can select either of these options- MCX, NFO, CDX, or NCDX.</li>
                                     <li>Now you will have to select the product type.</li>
@@ -440,18 +440,18 @@ function Banner() {
                                 <p>Apart from these two, there are additional margins, special margins, delivery, and extreme loss margin. These play a crucial role in managing the risks in commodity trading by helping you make informed decisions when buying or selling a commodity. You can use the MCX commodity calculator to determine the margin and manage your funds effectively.</p>
                                 <h3 className='seo-h3'>How Does the MCX Commodity Margin Calculator Work?</h3>
                                 <p>With the online commodity margin calculator, you no longer need to remember complicated calculations. Here is an overview of how the MCX margin calculator typically works:</p>
-                                <h5 className='seo-h5'>Contract Details</h5>
+                                <h4 className='seo-h4'>Contract Details</h4>
                                 <p>To determine the margin, the commodity margin calculator considers the contract details like the commodity name, lot size, and expiry date.</p>
                                 <p>You can also choose a commodity options contract for trading. Unlike the futures contract, an options contract gives you the right, but not the obligation, to buy or sell the commodity on the specified day.</p>
-                                <h5 className='seo-h5'>Price Data</h5>
+                                <h4 className='seo-h4'>Price Data</h4>
                                 <p>The MCX margin calculator uses each commodity's current price and lot size to provide accurate calculations. You can find multiple margin calculators for trading in the commodity market online from brokerages.</p>
-                                <h5 className='seo-h5'>Calculation Methodology </h5>
+                                <h4 className='seo-h4'>Calculation Methodology </h4>
                                 <p>With this online commodity margin calculator, you can get instant results of the margin required to start trading. It uses a set of formulas and algorithms specific to the brokerage and considers factors you enter into the calculator, such as commodity type.</p>
-                                <h5 className='seo-h5'>Margin</h5>    
+                                <h4 className='seo-h4'>Margin</h4>    
                                 <p>The calculator generates your margin amount once all the necessary details are accurately entered. Refer to the margin requirements of the chosen brokerage or exchange you’re trading with to access the latest regulations for margin calculations.</p>
                                 <h3 className='seo-h3'>How to Use a Commodity Margin Calculator</h3>
                                 <p>Using a commodity margin calculator does not require much effort. Follow these short steps to get accurate margin results: </p>
-                                <ol>
+                                <ol className='mrg-3'>
                                     <li>Find a reliable online commodity margin calculator. Use calculators from brokerages, financial websites, or dedicated margin calculators.</li>
                                     <li>Select the exchange you want from the list given on the calculator. The Multi Commodity Exchange (MCX) is one of the most trusted exchanges among traders today.</li>
                                     <li>Enter details like the commodity, expiry date in case of the futures contract, and quantity.</li>
@@ -484,7 +484,7 @@ function Banner() {
                                 <p>The forex margin calculator uses an in-built formula to calculate the margin levels for your trades. It takes relevant inputs and calculates the margin amount depending on the currency pair chosen.</p>
                                 <p>The calculations are done using a simple formula:</p>
                                 <p>Margin Requirement = &#40;&#91;&#123;Base Currency&#125; &#47; &#123;Account Currency &#125; X Units&#93;&#41;&nbsp;&#47; Leverage</p>
-                                <ul>
+                                <ul className='mrg-3'>
                                     <li>Base currency is the currency you wish to purchase</li>
                                     <li>Account currency is the currency you use to purchase units in the forex market</li>
                                     <li>Units are the value of the currency you plan to purchase</li>
@@ -499,7 +499,7 @@ function Banner() {
                                 <p>These basic inputs will fetch you the margin size required to open a position for your currency pair. Along with the margin, some calculators also display additional information like the profit or loss potential and the margin level of your account.</p>
                                 <h3 className='seo-h3'>Benefits of a Forex Margin Calculator</h3>
                                 <p>Maintaining a position in the forex exchange market can be challenging without an accurate or approximate margin value. Calculating the value using manual formulas can be time-consuming, and a Forex margin calculator is the best alternative.</p>
-                                <ul>
+                                <ul className='mrg-3'>
                                     <li>Provides insights into potential losses to help you commit to a stop-loss strategy and minimise risks</li>
                                     <li>Powers informed decisions by giving an accurate value of the margin needed for a particular position</li>
                                     <li>Simple, accessible and easy-to-use tool that offers immediate value and ensures maximum transparency</li>

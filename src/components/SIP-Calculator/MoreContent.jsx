@@ -18,7 +18,7 @@ function MoreContent() {
                             <p>The SIP calculator uses a simple formula to calculate the future value of an investment. The formula is based on the compound interest principle, which means that the interest earned on an investment is added to the principal amount, and the interest is then calculated on the new total.</p>
                             <p>The formula used by the SIP calculator is as follows:</p>
                             <p>FV= P × [(1 + r)^n - 1]/r</p>
-                            <ul className='list-styl-none'>
+                            <ul className='list-styl-none mrg-3'>
                                 <li>where,</li>
                                 <li>FV = Future Value of the investment</li>
                                 <li>P = Monthly Investment Amount</li>
@@ -28,7 +28,7 @@ function MoreContent() {
                             <p>The SIP calculator takes input values from the user such as the invested amount, investment period, and expected rate of return, and then calculates the potential returns on the investment based on the above formula.</p>
                            <h3 className='seo-h3'>How to Use a SIP Calculator?</h3>
                            <p>To use a SIP calculator, follow these simple steps:</p>
-                           <ul className='list-styl-none'>
+                           <ul className='list-styl-none mrg-3'>
                             <li>Visit a SIP calculator website or app.</li>
                             <li>Enter the invested amount.</li>
                             <li>Enter the investment period in years or months.</li>
@@ -38,7 +38,7 @@ function MoreContent() {
                            </ul>
                            <h3 className='seo-h3'>How to start SIP Investment?</h3>
                            <p>To start a SIP investment, follow these steps:</p>
-                           <ol>
+                           <ol className='mrg-3'>
                             <li>Choose a reliable mutual fund house or brokerage firm.</li>
                             <li>Choose a suitable mutual fund scheme.</li>
                             <li>Submit the required documents such as KYC (Know Your Customer) details and bank account details.</li>

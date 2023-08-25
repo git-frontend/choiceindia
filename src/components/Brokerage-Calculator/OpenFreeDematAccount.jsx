@@ -48,7 +48,7 @@ function OpenFreeDematAccount() {
                                     </div>
                                 </div>
                                     <div className='men'>
-                                        <LazyLoader src={Img1} height={374} width={302} className="img-fluid" />
+                                        <LazyLoader src={Img1} height={374} width={302} className="img-fluid" alt={"Brokerage Calculator"}/>
                                     </div>
                                 </div>
                             </div>

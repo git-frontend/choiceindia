@@ -328,12 +328,16 @@
     .seo-h4 {
         color: $primary;
         font-family: $font-family-poppins-semibold;
-        font-size: 2rem;
+        font-size: 1.75rem;
         padding-bottom: 1.231rem;
     }
     .list-styl-none{
         list-style: none;
         padding: 0;
+    }
+    .mrg-3{
+        padding-bottom: 2rem;
+        margin-bottom: 0;
     }
 }
 

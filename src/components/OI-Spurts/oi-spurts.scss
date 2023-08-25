@@ -359,6 +359,19 @@
                                         }
                                     }
                                 } 
+                                .no-data-section{
+                                    text-align: center;
+                                    margin: 8rem 0;
+                                    p{
+                                        color: $primary;
+                                        text-align: center;
+                                        font-family: $font-family-poppins-semibold;
+                                        font-size: 1.385rem;
+                                        font-weight: 600;
+                                        line-height: 1.5;
+                                        padding-top: 2.769rem;
+                                    }
+                                }
                             }
                           
                         }
