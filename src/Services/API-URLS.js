@@ -686,7 +686,7 @@ export class API_URLS {
 
     getresearchDetailURL(uuid,report_category) {
 
-        return this.researchURL + `api/${report_category}/${uuid}`;
+        return this.researchURL + `api/${report_category}/v2/${uuid}`;
     }
 
     getchoiceIndiaNewLeadURL() {
