@@ -177,17 +177,17 @@ const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Op
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/UpcomingAGM'));
 const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'));
-// const LazyBrokerageCalculator =React.lazy(()=> import('./components/Brokerage-Calculator/BrokerageCalculator'))
-// const LazyMarginCalculator =React.lazy(()=> import('./components/Margin-Calculator/MarginCalculator'))
+const LazyBrokerageCalculator =React.lazy(()=> import('./components/Brokerage-Calculator/BrokerageCalculator'))
+const LazyMarginCalculator =React.lazy(()=> import('./components/Margin-Calculator/MarginCalculator'))
 const LazySIPCalculator =React.lazy(()=> import('./components/SIP-Calculator/SIPCalculator'))
-// const LazyOISpurts =React.lazy(()=> import('./components/OI-Spurts/OISpurts'))
+const LazyOISpurts =React.lazy(()=> import('./components/OI-Spurts/OISpurts'))
 const LazyBlogCms =React.lazy(()=> import('./components/Blog-cms/BlogCms'));
 const LazyMutualFundCalculator =React.lazy(()=> import('./components/Mutual-Fund-Calculator/MutualFundCalculator'));
-// const LazyOptionChain =React.lazy(()=> import('./components/Option-Chain/OptionChain'));
-// const LazyCompanyOptionChain =React.lazy(()=> import('./components/Company-Option-Chain/CompanyOptionChain'));
-// const LazyNSEOptionChain =React.lazy(()=> import('./components/NSE-Option-Chain/NSEOptionChain'));
-// const LazyMCXOptionChain =React.lazy(()=> import('./components/MCX-Option-Chain/MCXOptionChain'));
-// const LazyCurrencyOptionChain =React.lazy(()=> import('./components/Currency-Option-Chain/CurrencyOptionChain'));
+const LazyOptionChain =React.lazy(()=> import('./components/Option-Chain/OptionChain'));
+const LazyCompanyOptionChain =React.lazy(()=> import('./components/Company-Option-Chain/CompanyOptionChain'));
+const LazyNSEOptionChain =React.lazy(()=> import('./components/NSE-Option-Chain/NSEOptionChain'));
+const LazyMCXOptionChain =React.lazy(()=> import('./components/MCX-Option-Chain/MCXOptionChain'));
+const LazyCurrencyOptionChain =React.lazy(()=> import('./components/Currency-Option-Chain/CurrencyOptionChain'));
 
 function Routing() {
 
@@ -919,7 +919,7 @@ function Routing() {
                                 < LazyIPOLanding />
                             </React.Suspense>
                         } />
-                         {/* <Route exact path='/brokerage-calculator' element={
+                         <Route exact path='/brokerage-calculator' element={
                             <React.Suspense>
                                 < LazyBrokerageCalculator />
                             </React.Suspense>
@@ -948,7 +948,7 @@ function Routing() {
                             <React.Suspense>
                                 < LazyMarginCalculator />
                             </React.Suspense>
-                        } /> */}
+                        } />
                          <Route exact path='/sip-calculator' element={
                             <React.Suspense>
                                 < LazySIPCalculator />
@@ -959,7 +959,7 @@ function Routing() {
                                 < LazyMutualFundCalculator />
                             </React.Suspense>
                         } />
-                         {/* <Route exact path='/option-chain' element={
+                         <Route exact path='/option-chain' element={
                             <React.Suspense>
                                 < LazyOptionChain />
                             </React.Suspense>
@@ -983,7 +983,7 @@ function Routing() {
                             <React.Suspense>
                                 < LazyCurrencyOptionChain />
                             </React.Suspense>
-                        } /> */}
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

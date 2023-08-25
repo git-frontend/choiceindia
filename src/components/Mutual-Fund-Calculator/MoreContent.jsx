@@ -32,7 +32,7 @@ function MoreContent() {
                             <li>Total investments made over a while</li>
                            </ul>
                            <p>Simply enter the values of your monthly investment, time duration and goal amount. You can then reduce or increase the sum to cater to your goals while diversifying the remaining income in other avenues.</p>
-                           <h3 className='seo-h4'>How Does a Mutual Fund Calculator Work?</h3>
+                           <h3 className='seo-h3'>How Does a Mutual Fund Calculator Work?</h3>
                            <p>Without a mutual fund calculator, you will need to rely on manual calculations to calculate the time period of your investment goals. While it is a more complex method involving a specific formula, it will give you the required answer if done correctly.</p>
                            <p>The formula differs according to the type of investment you make.</p>
                            <h4 className='seo-h4'>Mutual Fund Lumpsum Calculator</h4>
