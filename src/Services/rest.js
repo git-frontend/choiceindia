@@ -93,6 +93,46 @@ EventDetails: function (postdata) {
       return data
   })
 },
+getSearchData: function (postdata) {
+
+  let api = new API_URLS()
+  let url = api.getSearchURL()
+//  console.log("url",url)
+  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      return data
+  })
+},
+getScripDetails: function (postdata) {
+
+  let api = new API_URLS()
+  let url = api.getScripDetURL()
+//  console.log("url",url)
+  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+    //  console.log("datads",data)
+      return data
+  })
+},
+getScripBrokerageURL: function (postdata) {
+
+  let api = new API_URLS()
+  let url = api.getScripBrokerageURL()
+//  console.log("url",url)
+  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+    //  console.log("datads",data)
+      return data
+  })
+},
+getOISpurtsData: function (postdata) {
+
+  let api = new API_URLS()
+  let url = api.getOISpurtsURL()
+//  console.log("url",url)
+  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+    //  console.log("getOISpurtsURL",data)
+      return data
+  })
+}
+
 
 }
 export default rest;

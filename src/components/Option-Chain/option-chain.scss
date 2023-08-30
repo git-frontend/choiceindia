@@ -1,0 +1,980 @@
+
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.banner-section{
+    background: $whiteColor;
+    padding: 4rem 0 10rem;
+    @media (max-width:$md) {
+        padding: 4rem 0 6rem;
+    }
+    .banner-card{
+        background: $abt-bg;
+        padding: 1.846rem;
+        margin: 4rem 0 2.462rem;
+        border-radius: 8px;
+        @media (max-width:$sm) {
+            padding: 1.5rem;
+            margin: 2rem 0 2.462rem;
+        }
+        .first-sec{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            .input-sec{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                width:60%;
+                column-gap: 4rem;
+                @media (max-width:$md) {
+                    width: 100%;
+                }
+                .brokerage-search{
+                    position: relative;
+                    width: 60%;
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
+                    .input-control{
+                        border-radius: 8px;
+                        font-size: 1.538rem;
+                        font-family: $font-family-poppins-regular;
+                        line-height: 1.5;
+                        padding: 0.775rem 2.25rem 0.775rem 0.75rem;
+                        text-transform: uppercase;
+                        color: $primary;
+                        background-color: $whiteColor !important;
+                        border: 1px solid $border-gray;
+                        @media (max-width:$sm) {
+                            font-size: 1.231rem;
+                        }
+                        &::placeholder {
+                            color: $primary;
+                            font-family: $font-family-poppins-semibold;
+                            font-weight: 700;
+                          }
+                        &.search-icon {
+                            background: url(../../assets/images/option-chain/search.svg) no-repeat center right 13px;
+                        }
+                        &:focus{
+                            border-color: #0066B2;
+                            box-shadow: none;
+                        }
+                    }
+                   
+                    .brokerage-search-result{
+                        position: absolute;
+                        z-index: 1;
+                        width: 100%;
+                        list-style: none;
+                        padding: .5rem 1.154rem;
+                        margin: 0;
+                        border-radius: 8px;
+                        background: $whiteColor;
+                        box-shadow: 0px 4px 4px 0px $nbfcboxshadow;
+                        @media (max-width:$md) {
+                            max-height: 250px;
+                            overflow: auto;
+                        }
+                        .no-record{
+                            font-size: 1.25rem;
+                            font-family: $font-family-poppins-medium;
+                            color: $primary;
+                        }
+                        .brokerage-search-list {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            border-bottom: 1px solid $border-gray;
+                            cursor: pointer;
+                            padding: 0.75rem 0;
+                            .symbol {
+                                text-align: left;
+                                font-size: 1.231rem;
+                                font-family: $font-family-poppins-medium;
+                            }
+                            .name {
+                                font-size: 1.077rem;
+                                font-family: $font-family-poppins-regular;
+                                color: $textgray;
+                            }
+                            &:last-child{
+                                border-bottom: none;
+                             }
+                        }
+                        
+                    }
+                } 
+                .selectbar{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1rem;
+                    @media (max-width:$sm) {
+                        flex-wrap: wrap;
+                        width: 100%;
+                        padding-top: 2rem;
+                    }
+                    span{
+                        font-size: 1.385rem;
+                        color: $secondary;
+                        font-weight: 500;
+                        font-family: $font-family-poppins-medium;
+                        @media (max-width:$sm) {
+                            font-size: 1.077rem;
+                            font-weight: 400;
+                            font-family: $font-family-poppins-regular;
+                        }
+                    }
+                    .select-control{
+                        outline: 0;
+                        appearance: none;
+                        border-radius: 8px;
+                        font-size: 1.538rem;
+                        font-family: $font-family-poppins-semibold;
+                        font-weight: 600;
+                        line-height: 1.5;
+                        padding: 0.775rem 3.25rem 0.775rem 0.75rem;
+                        text-transform: uppercase;
+                        color: $primary;
+                        background-color: $whiteColor !important;
+                        border: 1px solid $border-gray;
+                        background: url(../../assets/images/option-chain/arrow-down.svg) no-repeat center right 13px;
+                        @media (max-width:$sm) {
+                            width: 100%;
+                            margin-top: .5rem;
+                            font-size: 1.231rem;
+                        }
+                        &:focus{
+                            border-color: #0066B2;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+            .tab-sec{
+                // width: 40%;
+                @media (max-width:$md) {
+                    padding: 2rem 0 0;
+                }
+                @media (max-width:$sm) {
+                    width: 100%;
+                }
+                .disply-flex {
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    @media (max-width:$sm) {
+                        justify-content: start;
+                        flex-wrap: wrap;
+                    }
+                    .no-strike{
+                        span{
+                            font-size: 1.385rem;
+                            color: $secondary;
+                            font-weight: 500;
+                            font-family: $font-family-poppins-medium;
+                            @media (max-width:$sm) {
+                                font-size: 1.077rem;
+                                font-weight: 400;
+                                font-family: $font-family-poppins-regular;
+                            }
+                        }
+                    }
+                    .numbers{
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1rem;
+                        @media (max-width:$sm) {
+                            width: 100%;
+                            justify-content: space-between;
+                            margin: .5rem 0 0 0;
+                        }
+                        ul{
+                            display: flex;
+                            margin: 0;
+                            padding-left: 1rem;
+                            @media (max-width:$sm) {
+                                width: 100%;
+                                padding: 0;
+                            }
+                            li{
+                                list-style: none;
+                                cursor: pointer;
+                                padding:1.75rem 1rem;
+                                display: flex;
+                                align-items: center;
+                                line-height: 0;
+                                border: 1px solid $border-gray;
+                                font-size: 1.385rem;
+                                background-color: $whiteColor;
+                                color: $listcolor;
+                                font-weight: 400;
+                                font-family: $font-family-poppins-regular;
+                                @media (max-width:$sm) {
+                                    font-size: 1.231rem;
+                                }
+                                &.active{
+                                    background-color: $primary;
+                                    color: $whiteColor;
+                                    font-weight: 600;
+                                    font-family: $font-family-poppins-semibold;
+                                    border-right: 0;
+                                }
+                                &:first-child{
+                                    border-radius: 8px 0 0 8px;
+                                }
+                                &:last-child{
+                                    border-radius: 0 8px 8px 0;
+                                }
+                            }
+                        }
+                        .btn-refresh{
+                            border-radius: 8px;
+                            border: 1px solid $border-gray;
+                            padding: .7rem 1rem;
+                            background-color: $whiteColor;
+                        }
+                    }
+                }
+            }
+        }
+        .secnd-sec{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            flex-wrap: wrap;
+            @media (max-width:$sm) {
+                display: none;
+            }
+            .left-sec{
+                width: 40%;
+                @media (max-width:$md) {
+                    width: 100%;
+                    padding: 0 0 2rem;
+                }
+                    h6{
+                        font-size: 1.846rem;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5;
+                        margin: 0; 
+                        @media (max-width:$sm) {
+                            font-size: 1.231rem;
+                        }
+                    }
+                    p{
+                        font-size: 1.385rem;
+                        color: $pluscolor;
+                        line-height: 1.5;
+                        margin: 0;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        @media (max-width:$sm) {
+                            font-size: 1.077rem;
+                        }
+                    }
+            }
+            .right-sec{
+                width: 60%;
+                display: flex;
+                justify-content: space-between;
+                @media (max-width:$md) {
+                    width: 100%;
+                }
+                .items{
+                    .lable{
+                        margin: 0;
+                        font-size: 1.385rem;
+                        font-family: $font-family-poppins-regular;
+                        font-weight: 400;
+                        color: $secondary;
+                    }
+                    .val{
+                        margin: 0;
+                        font-size: 1.538rem;
+                        font-family: $font-family-poppins-semibold;
+                        color: $primary;
+                        font-weight: 600;
+                        padding-top: 0.923rem;
+                    }
+                }
+            }
+        }
+    }
+
+        .option-chain-table {
+            border: 1px solid $border-gray;
+            border-radius: 8px;
+            border-top: 0;
+            @media (max-width:$md) {
+                overflow: auto;
+            }
+            .txt-danger{
+                color: $redbg;
+            }
+            .txt-success{
+                color: $sucessgreen;
+            }
+            .txt-deco{
+                text-decoration: none;
+            }
+            table{
+                background-color: $whiteColor;
+                @media (max-width:$md) {
+                    width: 440px;
+                }
+                tr {
+                    td{
+                        width: 14.462rem;
+                        padding: 5px;
+                        border-bottom: 1px solid $border-gray;
+                    }
+                    th {
+                        border-bottom: 1px solid $border-gray;
+                        color: $primary;
+                        font-size: 1.385rem;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        padding: 1.121rem 1rem;
+                        width: 14.462rem;
+                    }
+                }
+            }
+            .table-header{
+                display: flex;
+                position: sticky;
+                top: 115px;
+                z-index: 999;
+                @media (max-width:$md) {
+                    position: relative;
+                    top: inherit;
+                }
+                .th-pe{
+                    text-align: right;
+                    thead{
+                        border-top: 1px solid $border-gray;
+                        border-bottom: 1px solid $border-gray;
+                    }
+                    .flex{
+                        display: flex;
+                       column-gap: 1.25rem;
+                       align-items: center;
+                       justify-content: flex-end;
+                       border: 0;
+                        .dis-flex{
+                            display: flex;
+                            column-gap: 0.5rem;
+                            align-items: center;
+                            .pos-bg{
+                                background:$sucessgreen;
+                                display: block;
+                                height: 1rem;
+                                width: 3.462rem;
+                                border-radius: 18px;
+                            }
+                        }
+                    }
+                }
+                .th-ce{
+                    text-align: left;
+                    thead{
+                        border-top: 1px solid $border-gray;
+                        border-bottom: 1px solid $border-gray;
+                    }
+                    .flex{
+                        display: flex;
+                        column-gap: 1.25rem;
+                        align-items: center;
+                        justify-content: flex-start;
+                        border: 0;
+                        .dis-flex{
+                            display: flex;
+                            column-gap: 0.5rem;
+                            align-items: center;
+                            .neg-bg{
+                                background:$redbg;
+                                display: block;
+                                height: 1rem;
+                                width: 3.462rem;
+                                border-radius: 18px;
+                            }
+                        }
+                    }
+                }
+                .strike-table-prnt{
+                    display: flex;
+                    width: 188px;
+                    border-top: 1px solid $border-gray;
+                    .strike-table {
+                        width: 188px;
+                        .strike-b{
+                            width: 14.462rem;
+                            color: $primary;
+                            font-size: 1.385rem;
+                            font-weight: 600;
+                            font-family: $font-family-poppins-semibold;
+                        }
+                        th{
+                            width: 14.462rem;
+                            color: $primary;
+                            font-size: 1.385rem;
+                            font-weight: 400;
+                            font-family: $font-family-poppins-regular;
+                        }
+                    }
+                }
+               
+                .sticy-header {
+                    width: 100%;
+                    text-align: center;
+                    @media (max-width:$md) {
+                        width: 440px;
+                    }
+                }
+                .secondary-header{
+                    background: $abt-bg;
+                    border: 0;
+                    text-align: center;
+                    th{
+                        border: 0;
+                    }
+                }
+                .main-section-header {
+                    font-size: 1.385rem;
+                    font-weight: 600;
+                    font-family: $font-family-poppins-semibold;
+                    text-align: center;
+                    border: 0;
+                }
+                .syncscroll-left {
+                    border-top: 1px solid $border-gray;
+                    border-radius: 8px 0 0 0;
+                    overflow: hidden;
+                    @media (max-width:$md) {
+                        overflow: inherit;
+                    }
+                }
+                .syncscroll-right {
+                    border-top: 1px solid $border-gray;
+                    border-radius: 0 8px 0 0;
+                    overflow: hidden;
+                    @media (max-width:$md) {
+                        overflow: inherit;
+                    }
+                }
+                .table-child-wrapper{
+                    @media (max-width:$md) {
+                        width: 440px;
+                    }
+                }
+            }
+            .table-container {
+                position: relative;
+                scrollbar-width: none;
+                @media (max-width:$md) {
+                    overflow-y: initial;
+                }
+                .table-wrapper {
+                    display: flex;
+                    .option-chain-ce-table{
+                        .option-chain-ce-body{
+                            .option-table-row{
+                                position: relative;
+                                &:hover{
+                                    background: $bgolor-lightwhite;
+                                    .btn-wrap{
+                                        display: block;
+                                    }
+                                    .highlightneg-bg{
+                                            width: 100% !important;
+                                    }
+                                }
+                                .btn-wrap{
+                                    display: none;
+                                  .table-btn{
+                                    position: absolute;
+                                    top: 28%;
+                                    left: 2%;
+                                    display: flex;
+                                    column-gap: 0.5rem;
+                                    background: $bgolor-lightwhite;
+                                    z-index: 99;
+                                    .btn-buy {
+                                        text-decoration: none;
+                                        border: 0;
+                                        border-radius: 4px;
+                                        background: $sucessgreen;
+                                        font-size: 1.077rem;
+                                        font-weight: 400;
+                                        font-family: $font-family-poppins-regular;
+                                        color: $whiteColor;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-sell {
+                                        text-decoration: none;
+                                        border: 0;
+                                        border-radius: 4px;
+                                        background: $redbg;
+                                        font-size: 1.077rem;
+                                        font-weight: 400;
+                                        font-family: $font-family-poppins-regular;
+                                        color: $whiteColor;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-info{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-chart{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-watchlist{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                }
+                            }
+                           
+                            td{
+                                padding: 1rem;
+                                width: 14.462rem;
+                                font-size: 1.231rem;
+                                font-family: $font-family-poppins-regular;
+                                font-weight: 400;
+                                text-align: left;
+                                height: 4.385rem;
+                                white-space: nowrap;
+                                .highlightneg{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: start;
+                                    position: relative;
+                                    .highlightneg-bg{
+                                        background:rgba(239, 64, 74, 0.08);
+                                        border-radius: 0px 18px 18px 0px;
+                                        height: 2.692rem;
+                                        position: absolute;
+                                        left: 0;
+                                    }
+                                    .per-neg-val{
+                                        color: $redbg;
+                                    }
+                                }
+                            }
+                        }
+                        }
+                    }
+                    .option-chain-pe-table{
+                        .option-chain-pe-body{
+                            .option-table-row{
+                                position: relative;
+                                &:hover{
+                                    background: $bgolor-lightwhite;
+                                    .btn-wrap{
+                                        display: block;
+                                    }
+                                    .highlightpos-bg{
+                                        width: 100% !important;
+                                    }
+                                }
+                                .btn-wrap{
+                                    display: none;
+                                  .table-btn{
+                                    position: absolute;
+                                    top: 28%;
+                                    right: 2%;
+                                    display: flex;
+                                    column-gap: 0.5rem;
+                                    background: $bgolor-lightwhite;
+                                    z-index: 99;
+                                    .btn-buy {
+                                        text-decoration: none;
+                                        border: 0;
+                                        border-radius: 4px;
+                                        background: $sucessgreen;
+                                        font-size: 1.077rem;
+                                        font-weight: 400;
+                                        font-family: $font-family-poppins-regular;
+                                        color: $whiteColor;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-sell {
+                                        text-decoration: none;
+                                        border: 0;
+                                        border-radius: 4px;
+                                        background: $redbg;
+                                        font-size: 1.077rem;
+                                        font-weight: 400;
+                                        font-family: $font-family-poppins-regular;
+                                        color: $whiteColor;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                    }
+                                    .btn-info{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.9rem;
+                                        height: 1.88rem;
+                                    }
+                                    .btn-chart{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.9rem;
+                                        height: 1.88rem;
+                                    }
+                                    .btn-watchlist{
+                                        text-decoration: none;
+                                        border: 1px solid $border-gray;
+                                        border-radius: 4px;
+                                        background: $whiteColor;
+                                        font-size: 1.077rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 1.9rem;
+                                        height: 1.88rem;
+                                    }
+                                }
+                            }
+                            td{
+                                padding: 1rem;
+                                width: 14.462rem;
+                                font-size: 1.231rem;
+                                font-family: $font-family-poppins-regular;
+                                font-weight: 400;
+                                text-align: right;
+                                height: 4.385rem;
+                                white-space: nowrap;
+                                .highlightpos{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: end;
+                                    position: relative;
+                                    .highlightpos-bg{
+                                        border-radius: 18px 0px 0px 18px;
+                                        background: rgba(0, 174, 111, 0.08);
+                                        height: 2.692rem;
+                                        position: absolute;
+                                        right: 0;
+                                    }
+                                    .per-pos-val{
+                                        color: $sucessgreen;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                    .option-chain-strike-price{
+                        text-align: center;
+                        width: 188px;
+                        .option-chain-strike-body{
+                            .strike-price-row{
+                                .strike-price-cell{
+                                    height: 4.385rem;
+                                    padding: 1rem;
+                                    width: 14.462rem;
+                                    background: $abt-bg;
+                                    border: 0;
+                                    font-size: 1.231rem;
+                                    font-family: $font-family-poppins-regular;
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   
+}
+
+.create-own-strategy{
+    background: $primary;
+    padding:10rem 0;
+    @media (max-width:$md) {
+        padding:6rem 0;
+    }
+    .own-strategy-ttl{
+        .title-first{
+            color: $whiteColor;
+            font-family: $font-family-poppins-regular;
+            font-weight: 400;
+            @media (max-width:$md) {
+                font-size: 3rem;
+            }
+            // @media (max-width:$sm) {
+            //     text-align: left;
+            // }
+            span{
+                color: $yellowColor;
+                font-family: $font-family-poppins-semibold;
+                font-weight: 700;
+            }
+        }
+    }
+    .own-strategy-benifits{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 3.692rem 0 5.846rem;
+        @media (max-width:$md) {
+            row-gap: 3rem;
+            column-gap: 3rem;
+            justify-content: center;
+        }
+        @media (max-width:$sm) {
+            row-gap: 3rem;
+            column-gap: 0;
+            justify-content: flex-start;
+        }
+        .own-strategy-items{
+            display: flex;
+            align-items: center;
+            column-gap:1.846rem;
+            @media (max-width:$md) {
+                column-gap:1rem;
+            }
+            .bg-gradiunt{
+                background: linear-gradient(#8EF8AA, #00EFD1);
+                width: 5.538rem;
+                height: 5.538rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+            h5{
+                color: $whiteColor;
+                font-size: 1.846rem;
+                font-family: $font-family-poppins-semibold;
+                font-weight: 600;
+                @media (max-width:$md) {
+                    font-size: 1.75rem;
+                }
+            }
+        }
+    }
+    .cursor-pointer{
+        .btn-bg{
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.more-content{
+    padding: 10rem 0 8rem;
+    @media (max-width:$md) {
+        padding: 6rem 0 6rem;
+    }
+    .seo-h3 {
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 2.2rem;
+        margin-bottom: 1.231rem;
+        @media (max-width:$sm) {
+            font-size: 2rem;
+        }
+    }
+    .seo-h4 {
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 1.75rem;
+        margin-bottom: 1.231rem;
+        @media (max-width:$sm) {
+            font-size: 1.5rem;
+        }
+    }
+    .title-content{
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    p{
+        font-size: 1.385rem;
+        color: $secondary;
+        margin-bottom: 2rem;
+    }
+    ul,ol{
+        li{
+            font-size: 1.385rem;
+            color: $secondary;
+            font-family: $font-family-poppins-regular;
+        }
+    }
+    .mrg-btm{
+        margin-bottom: 1rem;
+    }
+}
+.underlying-assets{
+    background: $abt-bg;
+    padding: 10rem 0;
+    @media (max-width:$md) {
+        padding: 6rem 0;
+    }
+    .underlying-card{
+        background: $whiteColor;
+        border: 1px solid $border-gray;
+        border-radius: 8px;
+        padding: 2.769rem;
+        margin-top: 2.769rem;
+        @media (max-width:$sm) {
+            padding: 1.846rem;
+        }
+        .assets-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            @media (max-width:$sm) {
+                row-gap: 3rem;
+            }
+            .left-items{
+                .display-flex{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 0.5rem;
+                    h6{
+                        font-size: 1.846rem;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5;
+                        margin: 0;
+                        @media (max-width:$sm) {
+                            font-size: 1.231rem;
+                        }
+                    }
+                    span{
+                        font-size: 1.385rem;
+                        color: $secondary;
+                        line-height: 1.5;
+                        @media (max-width:$sm) {
+                            font-size: 1.077rem;
+                        }
+                    }
+                }
+                p{
+                    font-size: 1.385rem;
+                    color: $secondary;
+                    line-height: 1.5;
+                    margin: 0;
+                    @media (max-width:$sm) {
+                        font-size: 1.077rem;
+                    }
+                }
+            }
+            .right-items {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                column-gap: 3rem;
+                @media (max-width:$sm) {
+                   width: 100%;
+                }
+                .values{
+                    text-align: right;
+                    @media (max-width:$sm) {
+                        text-align: left;
+                    }
+                    h6{
+                        font-size: 1.846rem;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5; 
+                        margin: 0;
+                        @media (max-width:$sm) {
+                            font-size: 1.231rem;
+                        }
+                    }
+                    p{
+                        font-size: 1.385rem;
+                        color: $pluscolor;
+                        line-height: 1.5;
+                        margin: 0;
+                        @media (max-width:$sm) {
+                            font-size: 1.077rem;
+                        }
+                    }
+                }
+                .btn-sec{
+                    .btn-buy{
+                        border: 0;
+                        font-family: $font-family-poppins-semibold;
+                        background: $pluscolor;
+                        border-radius: 12px;
+                        color: $whiteColor;
+                        display: inline-block;
+                        font-size: 1.846rem;
+                        padding: 1.2rem 4rem;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        transition: .5s;
+                        @media (max-width:$sm) {
+                            font-size: 1.538rem;
+                            padding: .7rem 3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.Dematfaq{
+    @media (max-width:$md) {
+        padding: 6rem 0;
+    }
+}

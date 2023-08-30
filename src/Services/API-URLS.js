@@ -50,8 +50,10 @@ const config = {
     UATMFBaseURL: "https://dev.investica.com/api/mf/",
 
     liveConnectBaseURL: "https://api.choiceconnect.in/connect/api/",
-    UATConnectBaseURL: "https://apidev.choiceconnect.in/connect/api/"
+    UATConnectBaseURL: "https://apidev.choiceconnect.in/connect/api/",
 
+    liveMiddlewareGoURL: "https://api.choiceindia.com/middleware-go/",
+    UATMiddlewareGoURL: "https://api.choiceindia.com/middleware-go/",
 }
 
 export class API_URLS {
@@ -71,7 +73,8 @@ export class API_URLS {
 
     /**connect base URL */
     ConnectBaseURL = '';
-
+// 
+    MiddlewareGoURL=''
     /**Server URL */
     serverURL = "https://choiceindia.com/fables/ghost/api/v3/";
     /**Server URL */
@@ -258,6 +261,13 @@ export class API_URLS {
     subBrokerVerifyOtpURLNew = 'verifyotp';
     NbfcAuthF = 'authorization';
 
+
+    //for brokerage calculator
+    searchURL='cm/ScripContract/Search/';
+    scripDetURL='cm/ScripContract/ScripDetails/';
+    scripBrokerageURL='order-charges';
+    //for 
+    OIspurts='md/Data/TopOISpurtsBySegmentDerivatives';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -296,11 +306,15 @@ export class API_URLS {
         this.setNbfcAuthURL(config[configKey + 'NbfcAuthURL']);
         this.setMFBaseURL(config[configKey + 'MFBaseURL']);
         this.setConnectBaseURL(config[configKey + 'ConnectBaseURL']);
+        this.setMiddlewareGoURL(config[configKey + 'MiddlewareGoURL']);
     }
 
     /**set Connect base URL */
     setConnectBaseURL = (url) => {
         this.ConnectBaseURL = url;
+    }
+    setMiddlewareGoURL = (url) => {
+        this.MiddlewareGoURL = url;
     }
 
     /**set MF base URL */
@@ -890,9 +904,23 @@ export class API_URLS {
     companyIpoURL(){
         return this.CMSURL + this.companyIpo
     }
+    //Get URL for Search Scrips
+    getSearchURL(){
+        return this.performanceURL + this.searchURL
+    }
+    getScripDetURL(){
+        return this.performanceURL + this.scripDetURL
+    }
+    getScripBrokerageURL() {
+        return this.MiddlewareGoURL + this.scripBrokerageURL;
+      }
 
     /** Blog cms */
     getinsightsURL(){
         return this.CMSURL + this.insightsURL
+    }
+    //OIspurts 
+    getOISpurtsURL(){
+        return this.performanceURL + this.OIspurts
     }
 }
