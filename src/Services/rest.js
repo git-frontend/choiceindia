@@ -136,10 +136,9 @@ const rest = {
     const api = new API_URLS();
     const url = api.getMarginCalculatorURL(segmentId, token_qty);
     const headers = {
-      'x-api-key': this.getCryptoNACHKey(),
-      'Content-Type': 'application/json;charset=UTF-8',
-      'Accept': '*/*',
-      'ip': ipAddress,
+      'x-api-key':'B62664943BAA286B21C66BA9A614D',
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
     };
 
     return axios.get(url, { headers }) 

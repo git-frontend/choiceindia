@@ -1,66 +1,473 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import rest from "../../Services/rest";
 import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import { Accordion } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 function Banner() {
     const [rendercount, setRenderCount] = useState(() => false);
-    let checkurl = (window.location.pathname == "/margin-calculator") ? "all" : (window.location.pathname == "/futures-and-options-margin-calculator") ? "future-options" : (window.location.pathname == "/commodity-margin-calculator") ? "commodity" : (window.location.pathname == "/forex-margin-calculator") ? "forex" : "";
     const [toggleState, setToggleState] = useState(1);
-    const [data, setData] = useState(0);
     const toggleTab = (index) => {
         setToggleState(index);
     };
-
-    function chapterScroll(id) {
-        var element = document.getElementById(id);
-        var headerOffset = 140;
-        var elementPosition = element.getBoundingClientRect().top;
-        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
-    }
-    function urlLink() {
-        const queryParam = window.location.search;
-        const utmvalue = new URLSearchParams(queryParam);
-        const activeurl = utmvalue.get('active');
-        ((activeurl == "margin-calculator") ? All() : (activeurl == "futures-and-options-margin-calculator") ? FO() : (activeurl == "commodity-margin-calculator") ? Commodity() : (activeurl == "forex-margin-calculator") ? Forex() : "");
-    }
-    function All() {
-        toggleTab(1);
-        setData(0)
-    }
-    function FO() {
-        toggleTab(2);
-        setData(1)
-    }
-    function Commodity() {
-        toggleTab(3);
-        setData(2)
-    }
-    function Forex() {
-        toggleTab(4);
-        setData(3)
-    }
-
-    function changeurl(id) {
-        window.history.replaceState(null, null, `/active=${id}`);
-        urlLink();
-
-    }
-
-
+    const [searchSubscription, setSearchSubscription] = useState(null)
+    const lastSelectedScrip = useRef(null);
+    const searchUI = useRef(null)
+    const [marginConfig, setMarginConfig] = useState({
+        contracts: [], action: false, searchInput: "", startPos: 0, limit: 10, searchedData: [], exchangeVisible: false,
+        exchange: "FO", activeTab: 1, data: { 1: [], 2: [], 3: [], 4: [] }, searchFocus: false, qty: 0, loader: false, contractData: {}, totalSpan: 0, totalExposure: 0, totalMargin: 0, marginBenefit: 0, premium: 0, tempMarginData: [], marketLot: 0, isOptionScrip: false, apiCount: 0, segmentArr: [1, 3, 6, 14, 8], spanLoader: false, tableLoader: false, isShowNA: false
+    });
+    
     useEffect(() => {
-        setRenderCount(true)
+        setRenderCount(true);
         if (rendercount === true) {
-            checkurl == 'all' ? All() :
-                checkurl == 'future-options' ? FO() :
-                    checkurl == 'commodity' ? Commodity() :
-                        checkurl == 'forex' ? Forex() : "";
+            let checkurl = "";
+            if (window.location.pathname === "/margin-calculator") {
+                checkurl = "all";
+                // activateTab(1, 'FO');
+                toggleTab(1)
+            } else if (window.location.pathname === "/futures-and-options-margin-calculator") {
+                checkurl = "future-options";
+                // activateTab(2, 'FO');
+                toggleTab(2)
+            } else if (window.location.pathname === "/commodity-margin-calculator") {
+                checkurl = "commodity";
+                // activateTab(3, 'COM');
+                toggleTab(3)
+            } else if (window.location.pathname === "/forex-margin-calculator") {
+                checkurl = "forex";
+                // activateTab(4, 'CD');
+                toggleTab(4)
+            }
         }
+        getSearchData(false, true)
+       
     }, [rendercount]);
+
+    
+    
+    const activateTab = (tabIndex, exchange) => {
+        setMarginConfig(prevMarginConfig => ({
+            ...prevMarginConfig,
+            activeTab: Number(tabIndex),
+            exchange: exchange,
+        }));
+        
+        if (marginConfig.data[tabIndex] && marginConfig.data[tabIndex].length) {
+            setMarginConfig(prevMarginConfig => ({
+                ...prevMarginConfig,
+                searchedData: marginConfig.data[tabIndex],
+                exchange: exchange, 
+            }));
+        } else {
+            
+            setMarginConfig(prevMarginConfig => ({
+                ...prevMarginConfig,
+                exchange: exchange,
+            }));
+            onInputPress();
+        }
+    };
+    
+    const onInputPress = () => {
+        setMarginConfig(prevState => ({ ...prevState, startPos: 0 }));
+        if ((marginConfig.searchInput || "").trim().length < 3) {
+            setMarginConfig(prevState => ({ ...prevState, searchedData: [] }));
+        } else {
+            setMarginConfig(prevState => ({ ...prevState, searchedData: [] }));
+            getSearchData(false);
+        }
+    };
+    const getSearchData = (isFromScroll, isFromOnPageLoad) => {
+        if (searchSubscription) {
+            searchSubscription.unsubscribe();
+            setSearchSubscription(null);
+        }
+        if (!isFromScroll || !isFromOnPageLoad) {
+            setMarginConfig(prevState => ({ ...prevState, loader: true }));
+        }
+        const data = {
+            "strScripName": isFromOnPageLoad ? 'nifty' : marginConfig.searchInput,
+            "StartPos": isFromOnPageLoad ? 0 : marginConfig.startPos,
+            "NoOfRecords": isFromOnPageLoad ? 1 : marginConfig.limit,
+            "strSegment": isFromOnPageLoad ? '' : marginConfig.exchange
+        };
+        console.log("data",data)
+
+        rest.getSearchData(data).then(
+            res => {
+                if (!isFromScroll || !isFromOnPageLoad) {
+                    setMarginConfig(prevState => ({ ...prevState, loader: false }));
+                }
+                if (res.Status === "Success" && res.Response && res.Response.length) {
+                    if (isFromOnPageLoad) {
+                        const searchInput = (marginConfig.segmentArr.indexOf(res.Response[0].SegmentId) > -1)
+                            ? res.Response[0].Symbol
+                            : (res.Response[0].SecName).replace('|', ' ');
+                        lastSelectedScrip.current = searchInput;
+                        const qty = res.Response[0].MarketLot;
+                        const marketLot = qty;
+                        const contractData = {
+                            symbol: (marginConfig.segmentArr.indexOf(res.Response[0].SegmentId) > -1)
+                                ? res.Response[0].Symbol
+                                : (res.Response[0].SecName).replace('|', ' '),
+                            secDesc: res.Response[0].SecDesc,
+                            qty: qty,
+                            action: false,
+                            Token: res.Response[0].Token,
+                            SegmentId: res.Response[0].SegmentId,
+                            IM: 0,
+                            exposure: 0,
+                            total: 0,
+                            strike: (["CE", "PE"].indexOf(res.Response[0].OptionType) > -1)
+                                ? ((res.Response[0].StrikePrice / res.Response[0].PriceDivisor) >= 0
+                                    ? (res.Response[0].StrikePrice / res.Response[0].PriceDivisor)
+                                    : 0)
+                                : 'NA',
+                            optionType: res.Response[0].OptionType,
+                            marketLot: marketLot
+                        };
+                        setMarginConfig(prevState => ({
+                            ...prevState,
+                            searchInput,
+                            lastSelectedScrip: searchInput,
+                            qty,
+                            marketLot,
+                            contractData
+                        }));
+                        return;
+                    }
+                    let searchedData = [...marginConfig.searchedData];
+                    if (isFromScroll) {
+                        res.Response.forEach(element => {
+                            searchedData.push(element);
+                        });
+                    } else {
+                        searchedData = res.Response;
+                    }
+                    setMarginConfig(prevState => ({
+                        ...prevState,
+                        datalength: res.Response.length,
+                        searchedData,
+                        data: { ...prevState.data, [marginConfig.activeTab]: searchedData }
+                    }));
+                } else {
+                    setMarginConfig(prevState => ({
+                        ...prevState,
+                        searchedData: [],
+                        searchFocus: true
+                    }));
+                }
+            },
+            err => {
+                if (!isFromScroll) {
+                    setMarginConfig(prevState => ({ ...prevState, loader: false }));
+                }
+                setMarginConfig(prevState => ({
+                    ...prevState,
+                    searchedData: [],
+                    searchFocus: true
+                }));
+            }
+        )
+    };
+    const getScrip = (scripData) => {
+        let updatedContractData = {};
+      
+        const searchInput = marginConfig.segmentArr.indexOf(scripData.SegmentId) > -1
+          ? scripData.Symbol
+          : scripData.SecName.replace('|', ' ');
+      
+        const lastSelectedScrip = marginConfig.segmentArr.indexOf(scripData.SegmentId) > -1
+          ? scripData.Symbol
+          : scripData.SecName.replace('|', ' ');
+      
+        const qty = scripData.MarketLot;
+        const marketLot = qty;
+      
+        updatedContractData = {
+          symbol: marginConfig.segmentArr.indexOf(scripData.SegmentId) > -1
+            ? scripData.Symbol
+            : scripData.SecName.replace('|', ' '),
+          secDesc: scripData.SecDesc,
+          qty: qty,
+          action: marginConfig.action,
+          Token: scripData.Token,
+          SegmentId: scripData.SegmentId,
+          IM: 0,
+          exposure: 0,
+          total: 0,
+          strike: ["CE", "PE"].indexOf(scripData.OptionType) > -1
+            ? (scripData.StrikePrice / scripData.PriceDivisor >= 0
+              ? scripData.StrikePrice / scripData.PriceDivisor
+              : 0)
+            : 'NA',
+          optionType: scripData.OptionType,
+          marketLot: marketLot
+        };
+      
+        setMarginConfig((prevState) => ({
+          ...prevState,
+          searchInput,
+          lastSelectedScrip,
+          qty,
+          marketLot,
+          contractData: updatedContractData,
+          searchFocus: false,
+          searchedData: []
+        }));
+      };
+      
+   
+    // const getScrip = (scripData) => {
+    //     const updatedContractData = {
+    //         symbol: marginConfig.segmentArr.includes(scripData.SegmentId) ? scripData.Symbol : scripData.SecName.replace('|', ' '),
+    //         secDesc: scripData.SecDesc,
+    //         qty: scripData.MarketLot,
+    //         action: marginConfig.action,
+    //         Token: scripData.Token,
+    //         SegmentId: scripData.SegmentId,
+    //         IM: 0,
+    //         exposure: 0,
+    //         total: 0,
+    //         strike: ["CE", "PE"].includes(scripData.OptionType) ? (scripData.StrikePrice / scripData.PriceDivisor >= 0 ? scripData.StrikePrice / scripData.PriceDivisor : 0) : 'NA',
+    //         optionType: scripData.OptionType,
+    //         marketLot: marginConfig.marketLot,
+    //     };
+    //     console.log("ff", updatedContractData)
+    //     setMarginConfig((prevState) => ({
+    //         ...prevState,
+    //         contractData: updatedContractData,
+    //         searchInput: marginConfig.segmentArr.includes(scripData.SegmentId)
+    //             ? scripData.Symbol
+    //             : scripData.SecName.replace('|', ' '),
+    //         searchFocus: false,
+    //         qty: scripData.MarketLot,
+    //         marketLot: scripData.MarketLot,
+    //         searchedData: []
+    //     }));
+
+    // };
+    // const allowOnlyDigits = (value) => {
+    //     const pattern = /^[0-9]*$/;
+    //     return pattern.test(value);
+    // }
+    // const addResetContract = (isAdd) => {
+    //     if (!marginConfig.qty || marginConfig.qty === '0') return;
+
+    //     if (isAdd) {
+    //         let isCheck;
+    //         marginConfig.isOptionScrip =
+    //             ['PE', 'CE'].indexOf(marginConfig.contractData.optionType) > -1 &&
+    //             marginConfig.contractData.action;
+
+    //         if (marginConfig.searchInput) {
+    //             isCheck = marginConfig.contracts.find(
+    //                 (element) => element.Token === marginConfig.contractData.Token
+    //             );
+    //         }
+
+    //         if (
+    //             isCheck &&
+    //             (marginConfig.contractData.qty !== marginConfig.qty ||
+    //                 marginConfig.contractData.action !== marginConfig.action)
+    //         ) {
+    //             marginConfig.contractData.qty = marginConfig.qty.toString().replace(/^0+/, '');
+    //             marginConfig.contractData.action = marginConfig.action;
+    //             marginConfig.contracts = marginConfig.contracts.map((element) => {
+    //                 if (element.Token === marginConfig.contractData.Token) {
+    //                     element.qty = marginConfig.qty.toString().replace(/^0+/, '');
+    //                     element.action = marginConfig.action;
+    //                 }
+    //                 return element;
+    //             });
+    //             calculateQty();
+    //             callMargin();
+    //             return;
+    //         } else if (
+    //             !marginConfig.contractData.symbol ||
+    //             isCheck ||
+    //             !marginConfig.searchInput
+    //         ) {
+    //             // utils.error(
+    //             //     'Error',
+    //             //     isCheck
+    //             //         ? 'You have already added this contract. Please select a different scrip.'
+    //             //         : 'Please select a scrip.'
+    //             // );
+    //             return;
+    //         }
+
+    //         marginConfig.contractData.qty = marginConfig.qty.toString().replace(/^0+/, '');
+    //         marginConfig.contractData.action = marginConfig.action;
+    //         marginConfig.contracts = [...marginConfig.contracts, marginConfig.contractData];
+    //         calculateQty();
+    //         callMargin();
+    //         // utils.trackMoeEvent('addScripInMarginTable', marginConfig.contractData);
+    //     } else {
+    //         setMarginConfig((prevState) => ({
+    //             ...prevState,
+    //             contracts: [],
+    //             isOptionScrip: false,
+    //             totalSpan: 0,
+    //             totalExposure: 0,
+    //             totalMargin: 0,
+    //             marginBenefit: 0,
+    //             premium: 0,
+    //             qty: marginConfig.marketLot,
+    //             isShowNA: false,
+    //         }));
+    //         document.documentElement.scrollTop = 0;
+    //     }
+
+    //     // if (marginConfig.contracts.length && utils.isMobileDevice()) {
+    //     //     document.getElementById('content').scrollIntoView();
+    //     // }
+    // };
+    // const calculateQty = () => {
+    //     let result = parseInt(marginConfig.qty) / marginConfig.marketLot;
+      
+    //     if (Number.isInteger(result)) {
+    //       return;
+    //     } else {
+    //       result = Math.trunc(result) + 1;
+    //       const newQty = result * marginConfig.marketLot;
+      
+    //       setMarginConfig(prevState => ({
+    //         ...prevState,
+    //         qty: newQty,
+    //         contractData: {
+    //           ...prevState.contractData,
+    //           qty: newQty.toString().replace(/^0+/, ''),
+    //         },
+    //       }));
+    //     }
+    //   };
+    //   const callMargin = (isFromDelete) => {
+    //     setMarginConfig(prevState => ({
+    //       ...prevState,
+    //       apiCount: 0,
+    //     }));
+      
+    //     const numOfSeg = [...new Set(marginConfig.contracts.map(item => item.SegmentId))];
+        
+    //     for (let i = 0; i < numOfSeg.length; i++) {
+    //       const scripArray = marginConfig.contracts.filter(item => item.SegmentId === numOfSeg[i]);
+    //     //   getMarginData(scripArray, i, numOfSeg.length, isFromDelete);
+    //     }
+    //   };
+    //   const getMarginData = (scripArray, index, numOfSegLen, isFromDelete) => {
+    //     const request = {
+    //       segmentId: scripArray[0].SegmentId,
+    //       token_qty: createTokenQtyString(scripArray),
+    //     };
+      
+    //     if (!marginConfig.apiCount && !isFromDelete) {
+    //       setMarginConfig(prevState => ({
+    //         ...prevState,
+    //         spanLoader: true,
+    //         tableLoader: true,
+    //       }));
+    //     }
+      
+    //     
+    //     rest.getMarginCalculatorData(request.segmentId, request.token_qty)
+    //       .then(res => {
+    //         if (!marginConfig.apiCount) {
+    //           setMarginConfig(prevState => ({
+    //             ...prevState,
+    //             totalSpan: 0,
+    //             totalExposure: 0,
+    //             totalMargin: 0,
+    //             marginBenefit: 0,
+    //             premium: 0,
+    //           }));
+    //         }
+      
+    //         setMarginConfig(prevState => ({
+    //           ...prevState,
+    //           apiCount: prevState.apiCount + 1,
+    //         }));
+      
+    //         if (res.Status === 'Success' && res.Response && res.Response.margins && res.Response.margins.length) {
+    //           setData(res.Response.margins);
+              
+    //           setMarginConfig(prevState => ({
+    //             ...prevState,
+    //             totalSpan: prevState.totalSpan + res.Response.Span_Summary.Span,
+    //             totalExposure: prevState.totalExposure + res.Response.Span_Summary.ExpMgn,
+    //             marginBenefit: prevState.marginBenefit + res.Response.Span_Summary.MgnBenefit,
+    //             premium: prevState.premium + res.Response.Span_Summary.OptionPremium,
+    //             totalMargin: prevState.totalMargin + res.Response.Span_Summary.TotalMgn,
+    //           }));
+              
+    //           if (!marginConfig.contracts.length) {
+    //             setMarginConfig(prevState => ({
+    //               ...prevState,
+    //               totalSpan: 0,
+    //               totalExposure: 0,
+    //               totalMargin: 0,
+    //               marginBenefit: 0,
+    //               premium: 0,
+    //             }));
+    //           }
+    //         } else {
+    //           // Handle the case when the API call is not successful
+    //           console.error('Error: Something Went Wrong');
+    //           setMarginConfig(prevState => ({
+    //             ...prevState,
+    //             tableLoader: false,
+    //           }));
+    //         }
+    //       })
+    //       .catch(err => {
+    //         setMarginConfig(prevState => ({
+    //           ...prevState,
+    //           tableLoader: false,
+    //         }));
+    //         console.error('Error: Something Went Wrong', err);
+    //       })
+    //       .finally(() => {
+    //         if (numOfSegLen === marginConfig.apiCount) {
+    //           setMarginConfig(prevState => ({
+    //             ...prevState,
+    //             spanLoader: false,
+    //           }));
+      
+    //           if (marginConfig.isOptionScrip && !marginConfig.premium) {
+    //             subscribeMultitouchline(getSellableOptionScrip());
+    //             if (!isSocketConnected()) {
+    //               getMultitouchline();
+    //             }
+    //           }
+      
+    //           if (!marginConfig.totalMargin) {
+    //             setMarginConfig(prevState => ({
+    //               ...prevState,
+    //               totalMargin: prevState.totalSpan + prevState.totalExposure,
+    //             }));
+    //           }
+      
+    //           setMarginConfig(prevState => ({
+    //             ...prevState,
+    //             isShowNA: !(prevState.totalMargin || prevState.totalSpan || prevState.totalExposure),
+    //           }));
+    //         }
+      
+    //         if (marginConfig.contracts.length && isMobileDevice()) {
+    //           document.getElementById("content").scrollIntoView();
+    //         }
+    //       });
+    //   };
+      const createTokenQtyString = (scripArray) => {
+        let tokenQty = "";
+        scripArray.forEach((element, index) => {
+          tokenQty += `${element.Token}%7C${element.action ? '-' : ''}${element.qty}${index < scripArray.length - 1 ? '~' : ''}`;
+        });
+        return tokenQty;
+      };
 
     return (
         <>
@@ -101,15 +508,15 @@ function Banner() {
                                     <div className='col-xl-8 col-md-12'>
                                         <ul className='list_group1'>
                                             <li className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/margin-calculator" onClick={() => All()}>All</Link>
+                                                <Link className='urllinks' to="/margin-calculator" onClick={() => { activateTab(1, 'FO'); setToggleState(1) }}>All</Link>
                                             </li>
                                             <li className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/futures-and-options-margin-calculator" onClick={() => FO()}>F&O</Link>
+                                                <Link className='urllinks' to="/futures-and-options-margin-calculator" onClick={() => { activateTab(2, 'FO'); setToggleState(2) }}>F&O</Link>
                                             </li>
                                             <li className={toggleState === 3 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/commodity-margin-calculator" onClick={() => Commodity()}>Commodity</Link></li>
+                                                <Link className='urllinks' to="/commodity-margin-calculator" onClick={() => { activateTab(3, 'COM'); setToggleState(3) }}>Commodity</Link></li>
                                             <li className={toggleState === 4 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/forex-margin-calculator" onClick={() => Forex()}>Forex</Link>
+                                                <Link className='urllinks' to="/forex-margin-calculator" onClick={() => { activateTab(4, 'CD'); setToggleState(4) }}>Forex</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -126,83 +533,166 @@ function Banner() {
                             <div className='col-md-12'>
                                 <div className="content-tabs">
                                     <div className="content active-content content">
-                                        <div className='form-section'>
-                                            <div className='left-sec'>
-                                                <div className="row-sec row-flex">
-                                                    <div className="flex-items">
-                                                        <p className='frm-label'>Search</p>
-                                                        <input className='form-control input-font search-icon' />
-                                                    </div>
-                                                    <div className="flex-items">
-                                                        <p className='frm-label'>Quantity</p>
-                                                        <input type="text" className='form-control input-font' />
-                                                        <span className='val-qty'>LOT SIZE = 50</span>
-                                                    </div>
-                                                </div>
-                                                <div className="row-flex radio-section">
-                                                    <div className="flex-items">
-                                                        <div className="custom_radio">
-                                                            <div className='radio-flex'>
-                                                                <input type="radio" id="featured-1" name="featured"  />
-                                                                <label htmlFor="featured-1">BUY</label>
-                                                            </div>
-                                                            <div className='radio-flex'>
-                                                                <input type="radio" id="featured-2" name="featured" />
-                                                                <label htmlFor="featured-2">SELL</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex-items">
-                                                        <div className='button-sec'>
-                                                            <div className='btn-items'>
-                                                                <button type="submit" className="btn-add btn btn-primary">Add</button>
-                                                            </div>
-                                                            <div className='btn-items'>
-                                                                <button type="submit" className="btn-reset btn btn-primary">Resset All</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <Form>
+                                            <div className='form-section'>
+                                                <div className='left-sec'>
+                                                    <div className="row-sec row-flex">
+                                                        <div className="flex-items">
+                                                            <p className='frm-label'>Search</p>
+                                                            <Form.Control className='form-control input-font search-icon' autoComplete="off" onInput={onInputPress} value={marginConfig.searchInput} onChange={(e) => setMarginConfig({ ...marginConfig, searchInput: e.target.value })} ref={searchUI} id="searchUI" />
+                                                            <ul
+                                                                className="brokerage-search-result margin-brokerage"
+                                                                // style={{ display: marginConfig.exchangeVisible ? 'block' : 'none' }}
+                                                                id="searchUI"
+                                                                ref={searchUI}
+                                                            >
+                                                                {(!marginConfig.loader && !marginConfig.searchedData?.length && marginConfig.searchInput?.length >= 3 && marginConfig.searchFocus) ||
+                                                                    (!marginConfig.loader && marginConfig.searchInput && marginConfig.searchInput?.length > 0 && marginConfig.searchInput?.length <= 2) ? (
+                                                                    <li className="text-left d-flex">
+                                                                        <span>No Record Found</span>
+                                                                    </li>
+                                                                ) : (
+                                                                    marginConfig.searchedData.map((item, index) => (
+                                                                        <li key={index} onClick={() => getScrip(item)}>
+                                                                            <span className="symbol">
+                                                                                {marginConfig.segmentArr.indexOf(item?.SegmentId) > -1
+                                                                                    ? item?.Symbol
+                                                                                    : item?.SecName.replace('|', ' ')}
+                                                                            </span>
+                                                                            <span className="exchange">{item?.ExchangeSegment}</span>
+                                                                        </li>
+                                                                    ))
+                                                                )}
 
-                                            </div>
-                                            <div className='right-sec'>
-                                                <div className='brokerage-card'>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span>Span Margin</span>
+                                                            </ul>
                                                         </div>
-                                                        <div className='flex-items'>
-                                                            <span>₹ 86,423.00</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span>Exposure Margin</span>
-                                                        </div>
-                                                        <div className='flex-items'>
-                                                            <span>₹ 18,420.25</span>
+                                                        <div className="flex-items">
+                                                            <p className='frm-label'>Quantity</p>
+                                                            <Form.Control type="text" className='form-control input-font' maxLength="7" value={marginConfig.qty} onChange={(e) => {
+                                                                if (allowOnlyDigits(e.target.value)) {
+                                                                    setMarginConfig({ ...marginConfig, qty: e.target.value });
+                                                                }
+                                                            }} required />
+                                                            {/* <span className='val-qty'>LOT SIZE = 50</span> */}
+                                                            {marginConfig.marketLot && <p className="val-qty">Lot Size = {marginConfig.marketLot}</p>}
+                                                            {(marginConfig.qty.errors?.required && marginConfig.qty.dirty) || marginConfig.qty < 1 && <p className="animate error val-qty">Please enter a valid quantity.</p>}
                                                         </div>
                                                     </div>
-                                                    <div className='card-flex brd'></div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span className='text-bold'>Total Margin</span>
+                                                    <div className="row-flex radio-section">
+                                                        <div className="flex-items">
+                                                            <div className="custom_radio">
+                                                                <div className='radio-flex'>
+                                                                    <input
+                                                                        type="radio"
+                                                                        id="featured-1"
+                                                                        name="featured"
+                                                                        checked={!marginConfig.action}
+                                                                        onChange={() => setMarginConfig(prevState => ({ ...prevState, action: false }))}
+                                                                    />
+                                                                    <label htmlFor="featured-1">BUY</label>
+                                                                </div>
+                                                                <div className='radio-flex'>
+                                                                    <input
+                                                                        type="radio"
+                                                                        id="featured-2"
+                                                                        name="featured"
+                                                                        checked={marginConfig.action}
+                                                                        onChange={() => setMarginConfig(prevState => ({ ...prevState, action: true }))}
+                                                                    />
+                                                                    <label htmlFor="featured-2">SELL</label>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div className='flex-items'>
-                                                            <span className='text-bold'>₹ 104,843.25</span>
+                                                        <div className="flex-items">
+                                                            <div className='button-sec'>
+                                                                <div className='btn-items'>
+                                                                    <Button type="submit" className="btn-add btn btn-primary" 
+                                                                        // disabled={!marginCalForm.current ||
+                                                                        //     !marginCalForm.current.form ||
+                                                                        //     !marginCalForm.current.form.valid ||
+                                                                        //     marginConfig.marketLot < 1 ||
+                                                                        //     marginConfig.qty < 1}
+                                                                            >Add</Button>
+                                                                </div>
+                                                                <div className='btn-items'>
+                                                                    <Button type="submit" className="btn-reset btn btn-primary">Resset All</Button>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div className='card-flex'>
-                                                        <div className='flex-items'>
-                                                            <span>Margin Benefit</span>
+
+                                                </div>
+                                                <div className='right-sec'>
+                                                    <div className='brokerage-card'>
+                                                        <div className='card-flex'>
+                                                            <div className='flex-items'>
+                                                                <span>Span Margin</span>
+                                                            </div>
+                                                            <div className='flex-items'>
+                                                                {/* <span>₹ 86,423.00</span> */}
+                                                                <span>
+                                                                    {!marginConfig.isShowNA && <span>₹</span>}
+                                                                    {marginConfig.spanLoader
+                                                                        ? 'Calculating...'
+                                                                        : !marginConfig.isShowNA
+                                                                            ? (marginConfig.totalSpan >= 0 ? marginConfig.totalSpan : 0.00).toFixed(2)
+                                                                            : 'NA'}
+                                                                </span>
+                                                            </div>
                                                         </div>
-                                                        <div className='flex-items'>
-                                                            <span className='font-success'>₹ 279,571.00</span>
+                                                        <div className='card-flex'>
+                                                            <div className='flex-items'>
+                                                                <span>Exposure Margin</span>
+                                                            </div>
+                                                            <div className='flex-items'>
+                                                                {/* <span>₹ 18,420.25</span> */}
+                                                                <span>
+                                                                    {!marginConfig.isShowNA && <span>₹</span>}
+                                                                    {marginConfig.spanLoader
+                                                                        ? 'Calculating...'
+                                                                        : !marginConfig.isShowNA
+                                                                            ? (marginConfig.totalExposure >= 0 ? marginConfig.totalExposure : 0.00).toFixed(2)
+                                                                            : 'NA'}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div className='card-flex brd'></div>
+                                                        <div className='card-flex'>
+                                                            <div className='flex-items'>
+                                                                <span className='text-bold'>Total Margin</span>
+                                                            </div>
+                                                            <div className='flex-items'>
+                                                                {/* <span className='text-bold'>₹ 104,843.25</span> */}
+                                                                <span>
+                                                                    {!marginConfig.isShowNA && <span>₹</span>}
+                                                                    {marginConfig.spanLoader
+                                                                        ? 'Calculating...'
+                                                                        : !marginConfig.isShowNA
+                                                                            ? (marginConfig.totalMargin >= 0 ? marginConfig.totalMargin : 0.00).toFixed(2)
+                                                                            : 'NA'}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div className='card-flex'>
+                                                            <div className='flex-items'>
+                                                                <span>Margin Benefit</span>
+                                                            </div>
+                                                            <div className='flex-items'>
+                                                                {/* <span className='font-success'>₹ 279,571.00</span> */}
+                                                                <span>
+                                                                    {!marginConfig.isShowNA && <span>₹</span>}
+                                                                    {marginConfig.spanLoader
+                                                                        ? 'Calculating...'
+                                                                        : !marginConfig.isShowNA
+                                                                            ? (marginConfig.marginBenefit >= 0 ? marginConfig.marginBenefit : 0.00).toFixed(2)
+                                                                            : 'NA'}
+                                                                </span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Form>
                                         <div className='table-margin-cal'>
                                             <div className='table-responsive'>
                                                 <table className="table table-striped ">
