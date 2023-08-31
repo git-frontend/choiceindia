@@ -12,14 +12,12 @@ function Banner() {
     const toggleTab = (index) => {
         setToggleState(index);
     };
-    const [searchSubscription, setSearchSubscription] = useState(null)
-    const lastSelectedScrip = useRef(null);
-    const searchUI = useRef(null)
+    // const lastSelectedScrip = useRef(null);
     const [marginConfig, setMarginConfig] = useState({
         contracts: [], action: false, searchInput: "", startPos: 0, limit: 10, searchedData: [], exchangeVisible: false,
         exchange: "FO", activeTab: 1, data: { 1: [], 2: [], 3: [], 4: [] }, searchFocus: false, qty: 0, loader: false, contractData: {}, totalSpan: 0, totalExposure: 0, totalMargin: 0, marginBenefit: 0, premium: 0, tempMarginData: [], marketLot: 0, isOptionScrip: false, apiCount: 0, segmentArr: [1, 3, 6, 14, 8], spanLoader: false, tableLoader: false, isShowNA: false
     });
-    
+
     useEffect(() => {
         setRenderCount(true);
         if (rendercount === true) {
@@ -41,112 +39,100 @@ function Banner() {
                 // activateTab(4, 'CD');
                 toggleTab(4)
             }
+            toggleTab(1)
+            getSearchData()
         }
-        getSearchData(false, true)
-       
+
+
     }, [rendercount]);
 
-    
-    
+
+
     const activateTab = (tabIndex, exchange) => {
         setMarginConfig(prevMarginConfig => ({
             ...prevMarginConfig,
             activeTab: Number(tabIndex),
             exchange: exchange,
         }));
-        
+
         if (marginConfig.data[tabIndex] && marginConfig.data[tabIndex].length) {
             setMarginConfig(prevMarginConfig => ({
                 ...prevMarginConfig,
                 searchedData: marginConfig.data[tabIndex],
-                exchange: exchange, 
+                exchange: exchange,
             }));
         } else {
-            
+
             setMarginConfig(prevMarginConfig => ({
                 ...prevMarginConfig,
                 exchange: exchange,
             }));
-            onInputPress();
         }
+        // getSearchData()
     };
-    
+
     const onInputPress = () => {
         setMarginConfig(prevState => ({ ...prevState, startPos: 0 }));
         if ((marginConfig.searchInput || "").trim().length < 3) {
             setMarginConfig(prevState => ({ ...prevState, searchedData: [] }));
         } else {
             setMarginConfig(prevState => ({ ...prevState, searchedData: [] }));
-            getSearchData(false);
+            getSearchData();
         }
     };
-    const getSearchData = (isFromScroll, isFromOnPageLoad) => {
-        if (searchSubscription) {
-            searchSubscription.unsubscribe();
-            setSearchSubscription(null);
-        }
-        if (!isFromScroll || !isFromOnPageLoad) {
-            setMarginConfig(prevState => ({ ...prevState, loader: true }));
-        }
+    const getSearchData = () => {
+        setMarginConfig(prevState => ({ ...prevState, loader: true }));
         const data = {
-            "strScripName": isFromOnPageLoad ? 'nifty' : marginConfig.searchInput,
-            "StartPos": isFromOnPageLoad ? 0 : marginConfig.startPos,
-            "NoOfRecords": isFromOnPageLoad ? 1 : marginConfig.limit,
-            "strSegment": isFromOnPageLoad ? '' : marginConfig.exchange
+            "strScripName": marginConfig.searchInput = 'nifty',
+            "StartPos": marginConfig.startPos,
+            "NoOfRecords": marginConfig.limit,
+            "strSegment": marginConfig.exchange
         };
-        console.log("data",data)
 
         rest.getSearchData(data).then(
             res => {
-                if (!isFromScroll || !isFromOnPageLoad) {
-                    setMarginConfig(prevState => ({ ...prevState, loader: false }));
-                }
                 if (res.Status === "Success" && res.Response && res.Response.length) {
-                    if (isFromOnPageLoad) {
-                        const searchInput = (marginConfig.segmentArr.indexOf(res.Response[0].SegmentId) > -1)
+
+                    const searchInput = (marginConfig.segmentArr.indexOf(res.Response[0].SegmentId) > -1)
+                        ? res.Response[0].Symbol
+                        : (res.Response[0].SecName).replace('|', ' ');
+                    // lastSelectedScrip.current = searchInput;
+                    const qty = res.Response[0].MarketLot;
+                    const marketLot = qty;
+                    const contractData = {
+                        symbol: (marginConfig.segmentArr.indexOf(res.Response[0].SegmentId) > -1)
                             ? res.Response[0].Symbol
-                            : (res.Response[0].SecName).replace('|', ' ');
-                        lastSelectedScrip.current = searchInput;
-                        const qty = res.Response[0].MarketLot;
-                        const marketLot = qty;
-                        const contractData = {
-                            symbol: (marginConfig.segmentArr.indexOf(res.Response[0].SegmentId) > -1)
-                                ? res.Response[0].Symbol
-                                : (res.Response[0].SecName).replace('|', ' '),
-                            secDesc: res.Response[0].SecDesc,
-                            qty: qty,
-                            action: false,
-                            Token: res.Response[0].Token,
-                            SegmentId: res.Response[0].SegmentId,
-                            IM: 0,
-                            exposure: 0,
-                            total: 0,
-                            strike: (["CE", "PE"].indexOf(res.Response[0].OptionType) > -1)
-                                ? ((res.Response[0].StrikePrice / res.Response[0].PriceDivisor) >= 0
-                                    ? (res.Response[0].StrikePrice / res.Response[0].PriceDivisor)
-                                    : 0)
-                                : 'NA',
-                            optionType: res.Response[0].OptionType,
-                            marketLot: marketLot
-                        };
-                        setMarginConfig(prevState => ({
-                            ...prevState,
-                            searchInput,
-                            lastSelectedScrip: searchInput,
-                            qty,
-                            marketLot,
-                            contractData
-                        }));
-                        return;
-                    }
+                            : (res.Response[0].SecName).replace('|', ' '),
+                        secDesc: res.Response[0].SecDesc,
+                        qty: qty,
+                        action: false,
+                        Token: res.Response[0].Token,
+                        SegmentId: res.Response[0].SegmentId,
+                        IM: 0,
+                        exposure: 0,
+                        total: 0,
+                        strike: (["CE", "PE"].indexOf(res.Response[0].OptionType) > -1)
+                            ? ((res.Response[0].StrikePrice / res.Response[0].PriceDivisor) >= 0
+                                ? (res.Response[0].StrikePrice / res.Response[0].PriceDivisor)
+                                : 0)
+                            : 'NA',
+                        optionType: res.Response[0].OptionType,
+                        marketLot: marketLot
+                    };
+                    setMarginConfig(prevState => ({
+                        ...prevState,
+                        searchInput,
+                        lastSelectedScrip: searchInput,
+                        qty,
+                        marketLot,
+                        contractData
+                    }));
+
+
                     let searchedData = [...marginConfig.searchedData];
-                    if (isFromScroll) {
-                        res.Response.forEach(element => {
-                            searchedData.push(element);
-                        });
-                    } else {
-                        searchedData = res.Response;
-                    }
+
+                    searchedData = res.Response;
+
                     setMarginConfig(prevState => ({
                         ...prevState,
                         datalength: res.Response.length,
@@ -162,9 +148,7 @@ function Banner() {
                 }
             },
             err => {
-                if (!isFromScroll) {
-                    setMarginConfig(prevState => ({ ...prevState, loader: false }));
-                }
+
                 setMarginConfig(prevState => ({
                     ...prevState,
                     searchedData: [],
@@ -175,299 +159,288 @@ function Banner() {
     };
     const getScrip = (scripData) => {
         let updatedContractData = {};
-      
+
         const searchInput = marginConfig.segmentArr.indexOf(scripData.SegmentId) > -1
-          ? scripData.Symbol
-          : scripData.SecName.replace('|', ' ');
-      
+            ? scripData.Symbol
+            : scripData.SecName.replace('|', ' ');
+
         const lastSelectedScrip = marginConfig.segmentArr.indexOf(scripData.SegmentId) > -1
-          ? scripData.Symbol
-          : scripData.SecName.replace('|', ' ');
-      
+            ? scripData.Symbol
+            : scripData.SecName.replace('|', ' ');
+
         const qty = scripData.MarketLot;
         const marketLot = qty;
-      
+
         updatedContractData = {
-          symbol: marginConfig.segmentArr.indexOf(scripData.SegmentId) > -1
-            ? scripData.Symbol
-            : scripData.SecName.replace('|', ' '),
-          secDesc: scripData.SecDesc,
-          qty: qty,
-          action: marginConfig.action,
-          Token: scripData.Token,
-          SegmentId: scripData.SegmentId,
-          IM: 0,
-          exposure: 0,
-          total: 0,
-          strike: ["CE", "PE"].indexOf(scripData.OptionType) > -1
-            ? (scripData.StrikePrice / scripData.PriceDivisor >= 0
-              ? scripData.StrikePrice / scripData.PriceDivisor
-              : 0)
-            : 'NA',
-          optionType: scripData.OptionType,
-          marketLot: marketLot
+            symbol: marginConfig.segmentArr.indexOf(scripData.SegmentId) > -1
+                ? scripData.Symbol
+                : scripData.SecName.replace('|', ' '),
+            secDesc: scripData.SecDesc,
+            qty: qty,
+            action: marginConfig.action,
+            Token: scripData.Token,
+            SegmentId: scripData.SegmentId,
+            IM: 0,
+            exposure: 0,
+            total: 0,
+            strike: ["CE", "PE"].indexOf(scripData.OptionType) > -1
+                ? (scripData.StrikePrice / scripData.PriceDivisor >= 0
+                    ? scripData.StrikePrice / scripData.PriceDivisor
+                    : 0)
+                : 'NA',
+            optionType: scripData.OptionType,
+            marketLot: marketLot
         };
-      
+
         setMarginConfig((prevState) => ({
-          ...prevState,
-          searchInput,
-          lastSelectedScrip,
-          qty,
-          marketLot,
-          contractData: updatedContractData,
-          searchFocus: false,
-          searchedData: []
+            ...prevState,
+            searchInput,
+            lastSelectedScrip,
+            qty,
+            marketLot,
+            contractData: updatedContractData,
+            searchFocus: false,
+            searchedData: []
         }));
+    };
+
+
+
+    const allowOnlyDigits = (value) => {
+        const pattern = /^[0-9]*$/;
+        return pattern.test(value);
+    }
+
+    const addResetContract = (isAdd) => {
+        console.log("ff",marginConfig.qty)
+        if (!marginConfig.qty || marginConfig.qty === '0') return;
+    
+        if (isAdd) {
+            let isCheck;
+            marginConfig.isOptionScrip =
+                ['PE', 'CE'].indexOf(marginConfig.contractData.optionType) > -1 &&
+                marginConfig.contractData.action;
+    
+            if (marginConfig.searchInput) {
+                isCheck = marginConfig.contracts.find(
+                    (element) => element.Token === marginConfig.contractData.Token
+                );
+            }
+    
+            if (
+                isCheck &&
+                (marginConfig.contractData.qty !== marginConfig.qty ||
+                    marginConfig.contractData.action !== marginConfig.action)
+            ) {
+                marginConfig.contractData.qty = marginConfig.qty.toString().replace(/^0+/, '');
+                marginConfig.contractData.action = marginConfig.action;
+                marginConfig.contracts = marginConfig.contracts.map((element) => {
+                    if (element.Token === marginConfig.contractData.Token) {
+                        element.qty = marginConfig.qty.toString().replace(/^0+/, '');
+                        element.action = marginConfig.action;
+                    }
+                    return element;
+                });
+                calculateQty();
+                callMargin();
+                return;
+            } else if (
+                !marginConfig.contractData.symbol ||
+                isCheck ||
+                !marginConfig.searchInput
+            ) {
+                
+                return;
+            }
+    
+            marginConfig.contractData.qty = marginConfig.qty.toString().replace(/^0+/, '');
+            marginConfig.contractData.action = marginConfig.action;
+            marginConfig.contracts = [...marginConfig.contracts, marginConfig.contractData];
+            calculateQty();
+            callMargin();
+            
+        } else {
+            setMarginConfig((prevState) => ({
+                ...prevState,
+                contracts: [],
+                isOptionScrip: false,
+                totalSpan: 0,
+                totalExposure: 0,
+                totalMargin: 0,
+                marginBenefit: 0,
+                premium: 0,
+                qty: marginConfig.marketLot,
+                isShowNA: false,
+            }));
+            document.documentElement.scrollTop = 0;
+        }
+    };
+    
+    
+    const calculateQty = () => {
+        let result = parseInt(marginConfig.qty) / marginConfig.marketLot;
+
+        if (Number.isInteger(result)) {
+          return;
+        } else {
+          result = Math.trunc(result) + 1;
+          const newQty = result * marginConfig.marketLot;
+
+          setMarginConfig(prevState => ({
+            ...prevState,
+            qty: newQty,
+            contractData: {
+              ...prevState.contractData,
+              qty: newQty.toString().replace(/^0+/, ''),
+            },
+          }));
+        }
       };
+      const callMargin = () => {
+        setMarginConfig(prevState => ({
+          ...prevState,
+          apiCount: 0,
+        }));
       
-   
-    // const getScrip = (scripData) => {
-    //     const updatedContractData = {
-    //         symbol: marginConfig.segmentArr.includes(scripData.SegmentId) ? scripData.Symbol : scripData.SecName.replace('|', ' '),
-    //         secDesc: scripData.SecDesc,
-    //         qty: scripData.MarketLot,
-    //         action: marginConfig.action,
-    //         Token: scripData.Token,
-    //         SegmentId: scripData.SegmentId,
-    //         IM: 0,
-    //         exposure: 0,
-    //         total: 0,
-    //         strike: ["CE", "PE"].includes(scripData.OptionType) ? (scripData.StrikePrice / scripData.PriceDivisor >= 0 ? scripData.StrikePrice / scripData.PriceDivisor : 0) : 'NA',
-    //         optionType: scripData.OptionType,
-    //         marketLot: marginConfig.marketLot,
-    //     };
-    //     console.log("ff", updatedContractData)
-    //     setMarginConfig((prevState) => ({
-    //         ...prevState,
-    //         contractData: updatedContractData,
-    //         searchInput: marginConfig.segmentArr.includes(scripData.SegmentId)
-    //             ? scripData.Symbol
-    //             : scripData.SecName.replace('|', ' '),
-    //         searchFocus: false,
-    //         qty: scripData.MarketLot,
-    //         marketLot: scripData.MarketLot,
-    //         searchedData: []
-    //     }));
-
-    // };
-    // const allowOnlyDigits = (value) => {
-    //     const pattern = /^[0-9]*$/;
-    //     return pattern.test(value);
-    // }
-    // const addResetContract = (isAdd) => {
-    //     if (!marginConfig.qty || marginConfig.qty === '0') return;
-
-    //     if (isAdd) {
-    //         let isCheck;
-    //         marginConfig.isOptionScrip =
-    //             ['PE', 'CE'].indexOf(marginConfig.contractData.optionType) > -1 &&
-    //             marginConfig.contractData.action;
-
-    //         if (marginConfig.searchInput) {
-    //             isCheck = marginConfig.contracts.find(
-    //                 (element) => element.Token === marginConfig.contractData.Token
-    //             );
-    //         }
-
-    //         if (
-    //             isCheck &&
-    //             (marginConfig.contractData.qty !== marginConfig.qty ||
-    //                 marginConfig.contractData.action !== marginConfig.action)
-    //         ) {
-    //             marginConfig.contractData.qty = marginConfig.qty.toString().replace(/^0+/, '');
-    //             marginConfig.contractData.action = marginConfig.action;
-    //             marginConfig.contracts = marginConfig.contracts.map((element) => {
-    //                 if (element.Token === marginConfig.contractData.Token) {
-    //                     element.qty = marginConfig.qty.toString().replace(/^0+/, '');
-    //                     element.action = marginConfig.action;
-    //                 }
-    //                 return element;
-    //             });
-    //             calculateQty();
-    //             callMargin();
-    //             return;
-    //         } else if (
-    //             !marginConfig.contractData.symbol ||
-    //             isCheck ||
-    //             !marginConfig.searchInput
-    //         ) {
-    //             // utils.error(
-    //             //     'Error',
-    //             //     isCheck
-    //             //         ? 'You have already added this contract. Please select a different scrip.'
-    //             //         : 'Please select a scrip.'
-    //             // );
-    //             return;
-    //         }
-
-    //         marginConfig.contractData.qty = marginConfig.qty.toString().replace(/^0+/, '');
-    //         marginConfig.contractData.action = marginConfig.action;
-    //         marginConfig.contracts = [...marginConfig.contracts, marginConfig.contractData];
-    //         calculateQty();
-    //         callMargin();
-    //         // utils.trackMoeEvent('addScripInMarginTable', marginConfig.contractData);
-    //     } else {
-    //         setMarginConfig((prevState) => ({
-    //             ...prevState,
-    //             contracts: [],
-    //             isOptionScrip: false,
-    //             totalSpan: 0,
-    //             totalExposure: 0,
-    //             totalMargin: 0,
-    //             marginBenefit: 0,
-    //             premium: 0,
-    //             qty: marginConfig.marketLot,
-    //             isShowNA: false,
-    //         }));
-    //         document.documentElement.scrollTop = 0;
-    //     }
-
-    //     // if (marginConfig.contracts.length && utils.isMobileDevice()) {
-    //     //     document.getElementById('content').scrollIntoView();
-    //     // }
-    // };
-    // const calculateQty = () => {
-    //     let result = parseInt(marginConfig.qty) / marginConfig.marketLot;
-      
-    //     if (Number.isInteger(result)) {
-    //       return;
-    //     } else {
-    //       result = Math.trunc(result) + 1;
-    //       const newQty = result * marginConfig.marketLot;
-      
-    //       setMarginConfig(prevState => ({
-    //         ...prevState,
-    //         qty: newQty,
-    //         contractData: {
-    //           ...prevState.contractData,
-    //           qty: newQty.toString().replace(/^0+/, ''),
-    //         },
-    //       }));
-    //     }
-    //   };
-    //   const callMargin = (isFromDelete) => {
-    //     setMarginConfig(prevState => ({
-    //       ...prevState,
-    //       apiCount: 0,
-    //     }));
-      
-    //     const numOfSeg = [...new Set(marginConfig.contracts.map(item => item.SegmentId))];
+        const numOfSeg = [...new Set(marginConfig.contracts.map(item => item.SegmentId))];
         
-    //     for (let i = 0; i < numOfSeg.length; i++) {
-    //       const scripArray = marginConfig.contracts.filter(item => item.SegmentId === numOfSeg[i]);
-    //     //   getMarginData(scripArray, i, numOfSeg.length, isFromDelete);
-    //     }
-    //   };
-    //   const getMarginData = (scripArray, index, numOfSegLen, isFromDelete) => {
-    //     const request = {
-    //       segmentId: scripArray[0].SegmentId,
-    //       token_qty: createTokenQtyString(scripArray),
-    //     };
-      
-    //     if (!marginConfig.apiCount && !isFromDelete) {
-    //       setMarginConfig(prevState => ({
-    //         ...prevState,
-    //         spanLoader: true,
-    //         tableLoader: true,
-    //       }));
-    //     }
-      
-    //     
-    //     rest.getMarginCalculatorData(request.segmentId, request.token_qty)
-    //       .then(res => {
-    //         if (!marginConfig.apiCount) {
-    //           setMarginConfig(prevState => ({
-    //             ...prevState,
-    //             totalSpan: 0,
-    //             totalExposure: 0,
-    //             totalMargin: 0,
-    //             marginBenefit: 0,
-    //             premium: 0,
-    //           }));
-    //         }
-      
-    //         setMarginConfig(prevState => ({
-    //           ...prevState,
-    //           apiCount: prevState.apiCount + 1,
-    //         }));
-      
-    //         if (res.Status === 'Success' && res.Response && res.Response.margins && res.Response.margins.length) {
-    //           setData(res.Response.margins);
-              
-    //           setMarginConfig(prevState => ({
-    //             ...prevState,
-    //             totalSpan: prevState.totalSpan + res.Response.Span_Summary.Span,
-    //             totalExposure: prevState.totalExposure + res.Response.Span_Summary.ExpMgn,
-    //             marginBenefit: prevState.marginBenefit + res.Response.Span_Summary.MgnBenefit,
-    //             premium: prevState.premium + res.Response.Span_Summary.OptionPremium,
-    //             totalMargin: prevState.totalMargin + res.Response.Span_Summary.TotalMgn,
-    //           }));
-              
-    //           if (!marginConfig.contracts.length) {
-    //             setMarginConfig(prevState => ({
-    //               ...prevState,
-    //               totalSpan: 0,
-    //               totalExposure: 0,
-    //               totalMargin: 0,
-    //               marginBenefit: 0,
-    //               premium: 0,
-    //             }));
-    //           }
-    //         } else {
-    //           // Handle the case when the API call is not successful
-    //           console.error('Error: Something Went Wrong');
-    //           setMarginConfig(prevState => ({
-    //             ...prevState,
-    //             tableLoader: false,
-    //           }));
-    //         }
-    //       })
-    //       .catch(err => {
-    //         setMarginConfig(prevState => ({
-    //           ...prevState,
-    //           tableLoader: false,
-    //         }));
-    //         console.error('Error: Something Went Wrong', err);
-    //       })
-    //       .finally(() => {
-    //         if (numOfSegLen === marginConfig.apiCount) {
-    //           setMarginConfig(prevState => ({
-    //             ...prevState,
-    //             spanLoader: false,
-    //           }));
-      
-    //           if (marginConfig.isOptionScrip && !marginConfig.premium) {
-    //             subscribeMultitouchline(getSellableOptionScrip());
-    //             if (!isSocketConnected()) {
-    //               getMultitouchline();
-    //             }
-    //           }
-      
-    //           if (!marginConfig.totalMargin) {
-    //             setMarginConfig(prevState => ({
-    //               ...prevState,
-    //               totalMargin: prevState.totalSpan + prevState.totalExposure,
-    //             }));
-    //           }
-      
-    //           setMarginConfig(prevState => ({
-    //             ...prevState,
-    //             isShowNA: !(prevState.totalMargin || prevState.totalSpan || prevState.totalExposure),
-    //           }));
-    //         }
-      
-    //         if (marginConfig.contracts.length && isMobileDevice()) {
-    //           document.getElementById("content").scrollIntoView();
-    //         }
-    //       });
-    //   };
-      const createTokenQtyString = (scripArray) => {
+        for (let i = 0; i < numOfSeg.length; i++) {
+          const scripArray = marginConfig.contracts.filter(item => item.SegmentId === numOfSeg[i]);
+          getMarginData(scripArray, i, numOfSeg.length);
+        }
+      };
+    
+      const getMarginData = (scripArray, index, numOfSegLen) => {
+        const request = {
+          segmentId: scripArray[0].SegmentId,
+          token_qty: createTokenQtyString(scripArray),
+        };
+
+        if (!marginConfig.apiCount ) {
+          setMarginConfig(prevState => ({
+            ...prevState,
+            spanLoader: true,
+            tableLoader: true,
+          }));
+        }
+
+        
+        rest.getMarginCalculatorData(request.segmentId, request.token_qty)
+          .then(res => {
+            if (!marginConfig.apiCount) {
+              setMarginConfig(prevState => ({
+                ...prevState,
+                totalSpan: 0,
+                totalExposure: 0,
+                totalMargin: 0,
+                marginBenefit: 0,
+                premium: 0,
+              }));
+            }
+
+            setMarginConfig(prevState => ({
+              ...prevState,
+              apiCount: prevState.apiCount + 1,
+            }));
+
+            if (res.Status === 'Success' && res.Response && res.Response.margins && res.Response.margins.length) {
+              setData(res.Response.margins);
+
+              setMarginConfig(prevState => ({
+                ...prevState,
+                totalSpan: prevState.totalSpan + res.Response.Span_Summary.Span,
+                totalExposure: prevState.totalExposure + res.Response.Span_Summary.ExpMgn,
+                marginBenefit: prevState.marginBenefit + res.Response.Span_Summary.MgnBenefit,
+                premium: prevState.premium + res.Response.Span_Summary.OptionPremium,
+                totalMargin: prevState.totalMargin + res.Response.Span_Summary.TotalMgn,
+              }));
+
+              if (!marginConfig.contracts.length) {
+                setMarginConfig(prevState => ({
+                  ...prevState,
+                  totalSpan: 0,
+                  totalExposure: 0,
+                  totalMargin: 0,
+                  marginBenefit: 0,
+                  premium: 0,
+                }));
+              }
+            } else {
+              // Handle the case when the API call is not successful
+              console.error('Error: Something Went Wrong');
+              setMarginConfig(prevState => ({
+                ...prevState,
+                tableLoader: false,
+              }));
+            }
+          })
+          .catch(err => {
+            setMarginConfig(prevState => ({
+              ...prevState,
+              tableLoader: false,
+            }));
+            console.error('Error: Something Went Wrong', err);
+          })
+          .finally(() => {
+            // if (numOfSegLen === marginConfig.apiCount) {
+            //   setMarginConfig(prevState => ({
+            //     ...prevState,
+            //     spanLoader: false,
+            //   }));
+
+            //   if (marginConfig.isOptionScrip && !marginConfig.premium) {
+            //     subscribeMultitouchline(getSellableOptionScrip());
+            //     if (!isSocketConnected()) {
+            //       getMultitouchline();
+            //     }
+            //   }
+
+            //   if (!marginConfig.totalMargin) {
+            //     setMarginConfig(prevState => ({
+            //       ...prevState,
+            //       totalMargin: prevState.totalSpan + prevState.totalExposure,
+            //     }));
+            //   }
+
+            //   setMarginConfig(prevState => ({
+            //     ...prevState,
+            //     isShowNA: !(prevState.totalMargin || prevState.totalSpan || prevState.totalExposure),
+            //   }));
+            // }
+
+            // if (marginConfig.contracts.length && isMobileDevice()) {
+            //   document.getElementById("content").scrollIntoView();
+            // }
+          });
+      };
+
+      // o set span margin, exposure margin, total
+const setData = (contractData) => {
+    const updatedContracts = marginConfig.contracts.map((element) => {
+      const scrip = contractData.filter((data) => element.Token === data.Token);
+  
+      if (scrip.length) {
+        element.IM = scrip[0].InitialMargin;
+        element.exposure = scrip[0].ExpMgn;
+        element.total = element.IM + element.exposure;
+        element.qty = element.qty.toString().replace(/^0+/, '');
+      }
+      return element;
+    });
+    setMarginConfig((prevState) => ({
+      ...prevState,
+      contracts: updatedContracts,
+      tableLoader: false,
+    }));
+  };
+  
+    const createTokenQtyString = (scripArray) => {
         let tokenQty = "";
         scripArray.forEach((element, index) => {
-          tokenQty += `${element.Token}%7C${element.action ? '-' : ''}${element.qty}${index < scripArray.length - 1 ? '~' : ''}`;
+            tokenQty += `${element.Token}%7C${element.action ? '-' : ''}${element.qty}${index < scripArray.length - 1 ? '~' : ''}`;
         });
         return tokenQty;
-      };
+    };
 
     return (
         <>
@@ -539,12 +512,11 @@ function Banner() {
                                                     <div className="row-sec row-flex">
                                                         <div className="flex-items">
                                                             <p className='frm-label'>Search</p>
-                                                            <Form.Control className='form-control input-font search-icon' autoComplete="off" onInput={onInputPress} value={marginConfig.searchInput} onChange={(e) => setMarginConfig({ ...marginConfig, searchInput: e.target.value })} ref={searchUI} id="searchUI" />
+                                                            <Form.Control className='form-control input-font search-icon' autoComplete="off" onInput={onInputPress} value={marginConfig.searchInput} onChange={(e) => setMarginConfig({ ...marginConfig, searchInput: e.target.value })} />
                                                             <ul
                                                                 className="brokerage-search-result margin-brokerage"
-                                                                // style={{ display: marginConfig.exchangeVisible ? 'block' : 'none' }}
-                                                                id="searchUI"
-                                                                ref={searchUI}
+                                                            // style={{ display: marginConfig.exchangeVisible ? 'block' : 'none' }}
+
                                                             >
                                                                 {(!marginConfig.loader && !marginConfig.searchedData?.length && marginConfig.searchInput?.length >= 3 && marginConfig.searchFocus) ||
                                                                     (!marginConfig.loader && marginConfig.searchInput && marginConfig.searchInput?.length > 0 && marginConfig.searchInput?.length <= 2) ? (
@@ -606,13 +578,13 @@ function Banner() {
                                                         <div className="flex-items">
                                                             <div className='button-sec'>
                                                                 <div className='btn-items'>
-                                                                    <Button type="submit" className="btn-add btn btn-primary" 
-                                                                        // disabled={!marginCalForm.current ||
-                                                                        //     !marginCalForm.current.form ||
-                                                                        //     !marginCalForm.current.form.valid ||
-                                                                        //     marginConfig.marketLot < 1 ||
-                                                                        //     marginConfig.qty < 1}
-                                                                            >Add</Button>
+                                                                    <Button className="btn-add btn btn-primary" onClick={addResetContract}
+                                                                    // disabled={!marginCalForm.current ||
+                                                                    //     !marginCalForm.current.form ||
+                                                                    //     !marginCalForm.current.form.valid ||
+                                                                    //     marginConfig.marketLot < 1 ||
+                                                                    //     marginConfig.qty < 1}
+                                                                    >Add</Button>
                                                                 </div>
                                                                 <div className='btn-items'>
                                                                     <Button type="submit" className="btn-reset btn btn-primary">Resset All</Button>
@@ -631,12 +603,13 @@ function Banner() {
                                                             <div className='flex-items'>
                                                                 {/* <span>₹ 86,423.00</span> */}
                                                                 <span>
-                                                                    {!marginConfig.isShowNA && <span>₹</span>}
+                                                                    {/* {!marginConfig.isShowNA && <span>₹</span>}
                                                                     {marginConfig.spanLoader
                                                                         ? 'Calculating...'
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.totalSpan >= 0 ? marginConfig.totalSpan : 0.00).toFixed(2)
-                                                                            : 'NA'}
+                                                                            : 'NA'} */}
+                                                                            {marginConfig.totalSpan}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -647,12 +620,13 @@ function Banner() {
                                                             <div className='flex-items'>
                                                                 {/* <span>₹ 18,420.25</span> */}
                                                                 <span>
-                                                                    {!marginConfig.isShowNA && <span>₹</span>}
+                                                                    {/* {!marginConfig.isShowNA && <span>₹</span>}
                                                                     {marginConfig.spanLoader
                                                                         ? 'Calculating...'
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.totalExposure >= 0 ? marginConfig.totalExposure : 0.00).toFixed(2)
-                                                                            : 'NA'}
+                                                                            : 'NA'} */}
+                                                                            {marginConfig.totalExposure}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -665,11 +639,12 @@ function Banner() {
                                                                 {/* <span className='text-bold'>₹ 104,843.25</span> */}
                                                                 <span>
                                                                     {!marginConfig.isShowNA && <span>₹</span>}
-                                                                    {marginConfig.spanLoader
+                                                                    {/* {marginConfig.spanLoader
                                                                         ? 'Calculating...'
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.totalMargin >= 0 ? marginConfig.totalMargin : 0.00).toFixed(2)
-                                                                            : 'NA'}
+                                                                            : 'NA'} */}
+                                                                            {marginConfig.totalMargin}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -681,11 +656,12 @@ function Banner() {
                                                                 {/* <span className='font-success'>₹ 279,571.00</span> */}
                                                                 <span>
                                                                     {!marginConfig.isShowNA && <span>₹</span>}
-                                                                    {marginConfig.spanLoader
+                                                                    {/* {marginConfig.spanLoader
                                                                         ? 'Calculating...'
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.marginBenefit >= 0 ? marginConfig.marginBenefit : 0.00).toFixed(2)
-                                                                            : 'NA'}
+                                                                            : 'NA'} */}
+                                                                            {marginConfig.marginBenefit}
                                                                 </span>
                                                             </div>
                                                         </div>
