@@ -1,4 +1,5 @@
-import "./research-detailed.scss"
+import "./research-detailed.scss";
+import { useState, useEffect } from "react";
 import Banner from './Banner';
 import TrendingReports from './TrendingReports';
 import {
@@ -8,13 +9,13 @@ import {
   useLocation
 } from "react-router-dom";
 import ResearchService from "../../Services/ResearchService";
-import { useState, useEffect } from "react";
+
 
 
 function ResearchDetailed() {
 
   const [list, setList] = useState(null);
-  
+
   /**report id */
   const { id } = useParams();
 
@@ -22,24 +23,44 @@ function ResearchDetailed() {
   const { catid } = useParams();
   const search = useLocation().search;
 
-  // console.log('www',window.location.href.search('ipo-nfo-analysis'));
   const [checkIPO, setCheckIPO] = useState('');
   /**report category id */
-  const name = new URLSearchParams(search).get('id');
-    // console.log('NNNNN',new URLSearchParams(search).get('id'));
-  // let query = useQuery();
+  // const name = new  (search).get('id');
 
-  // console.log('EEEEEEE',id);
-  // console.log('WWWWWWW',catid);
-
-  function getSingleResearchDetail(id){
+  function getSingleResearchDetail(id) {
+    const hasSharePriceTarget = window.location.pathname.includes('-share-price-target');
+    const hasIPOReview = window.location.pathname.includes('-ipo-review');
+    const hasINdReview = window.location.pathname.includes('-industry-analysis');
+    const haseco = window.location.pathname.includes('');
+    console.log("c",hasINdReview)
     
-    //console.log('SingleResearch',id);
-    // console.log('III',checkIPO)
-    ResearchService.getSingleResearchDetail(id,checkIPO).then(
+    let id2;
+
+    // let id2 = id.split('-share-price-target')[0]
+    // console.log(id2,"iddddddddddddddddd");
+
+    
+    if (hasSharePriceTarget) {
+      id2 = id.split('-share-price-target')[0];
+    } else if (hasIPOReview) {
+      id2 = id.split('-ipo-review')[0];
+    }
+    else if (hasINdReview) {
+      id2 = id.split('-industry-analysis')[0];
+    }
+    else if(haseco){
+      id2=id;
+    }
+    else {
+      return; 
+    }
+    console.log("id",id2)
+
+    ResearchService.getSingleResearchDetail(id2, checkIPO).then(
       res => {
-        if(res){
-          if(res.response.data){
+        console.log("checkIPO",checkIPO)
+        if (res) {
+          if (res.response.data) {
             setList(res.response.data);
           }
         }
@@ -50,30 +71,41 @@ function ResearchDetailed() {
   }
 
   useEffect(() => {
-    if(window.location.href.search('ipo-nfo-analysis') != -1){
+    if (window.location.href.search('-ipo-review') != -1) {
       setCheckIPO('ipo');
-    }else{
+    } else {
       setCheckIPO('fundamental');
     }
     // console.log('Called',checkIPO)
-    if(id && checkIPO){
-      getSingleResearchDetail(id? id: '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
+    if (id && checkIPO) {
+      getSingleResearchDetail(id ? id : '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
     }
-    
-  },[checkIPO,id])
+
+  }, [checkIPO, id])
 
   useEffect(() => {
 
-  },[])
+  }, [])
 
+  function getCatId() {
+    if (window.location.pathname.includes('-share-price-target')) {
+      return '-share-price-target';
+    } else if (window.location.pathname.includes('-ipo-review')) {
+      return '-ipo-review';
+    } else if (window.location.pathname.includes('-industry-analysis')) {
+      return '-industry-analysis';
+    } else {
+      return '';
+    }
+  }
   return (
     <div className="wrapper-rsrch">
 
-        <Banner data={list}/>
-        <TrendingReports data={catid? catid: 'fundamental'} />
+      <Banner data={list} />
+      <TrendingReports data={catid ? catid : getCatId() } data1={list}/>
 
     </div>
   );
 }
 
-export default  ResearchDetailed;
+export default ResearchDetailed;

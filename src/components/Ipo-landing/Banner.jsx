@@ -595,7 +595,7 @@ function Banner() {
                 <div className='row'>
                   <div className='col-xl-8'>
                     <div>
-                      <h2 className='title-first'>{res.banner_title}<span>Subscription Breakup</span></h2>
+                      <h2 className='title-first'>{res.banner_title} <span>Subscription Breakup</span></h2>
                     </div>
                     <div className="ipo-dates-table">
                       <table className='table table-striped2'>
@@ -658,7 +658,7 @@ function Banner() {
 
                 <div className="row">
                   <div className="col-xl-8">
-                    <h2 className="title-first">{res.ipo_detail_title}<span>IPO FAQs</span></h2>
+                    <h2 className="title-first">{res.ipo_detail_title} <span>IPO FAQs</span></h2>
                   </div>
                 </div>
                 <div className="row">

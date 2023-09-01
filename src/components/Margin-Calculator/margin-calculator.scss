@@ -1,0 +1,450 @@
+
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.banner-section2{
+    padding: 4rem 0 0;
+    .banner-ttle{
+        p{
+            font-size: 1.75rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-regular;
+            padding-top: 2rem;
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
+    }
+    @media (max-width:$sm) {
+        background-color: $whiteColor;
+        box-shadow: 0 3px 6px rgba(0,0,0,.102);
+        left: 0;
+        position: fixed;
+        top: 70px;
+        width: 100%;
+        z-index: 999;
+    }
+    .tabs-btn{
+        position: relative;
+        margin-top: 3rem;
+        @media (max-width:$sm) {
+            margin-top: 0;
+        }
+        .list_group1 {
+            background-color: $whiteColor;
+            border-radius: 1.231rem;
+            box-shadow: 0 3px 6px $tab-shadow;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 2.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            @media (max-width:$sm) {
+                border-radius: 0;
+                box-shadow: none;
+                display: flex;
+                flex-wrap: nowrap;
+                margin-bottom: 0;
+                overflow: scroll;
+                padding: 0;
+                width: 100%;
+            }
+            .list-group-item {
+                    background: $whiteColor;
+                    border: none;
+                    border-radius: 1.375rem;
+                    color: $primary;
+                    cursor: pointer;
+                    font-family: $font-family-poppins-medium;
+                    font-size: 1.385rem;
+                    line-height: 2.077rem;
+                    padding: 0.8rem 1rem;
+                    text-align: center;
+                    text-decoration: none;
+                    width: 100%;
+                    @media (max-width:$sm) {
+                        white-space: nowrap;
+                        padding: 0.5rem 2rem;
+                    }
+                    &.active {
+                        background-color: rgba(0,102,178,.1);
+                        color: $bgcolor-blue;
+                        @media (max-width:$sm) {
+                            background-color: $whiteColor;
+                            border-bottom: 2px solid $pricolor;
+                            border-radius: 0;
+                            }
+                    }
+                    .urllinks{
+                        text-decoration: none;
+                        color: inherit;
+                    }
+                }
+    }
+    }
+    
+}
+
+.banner-section{
+    @media (max-width:$md) {
+        padding: 0rem 0 6rem;
+    }
+    .field-sec{
+        @media (max-width:$sm) {
+            margin-top: 23rem !important;
+        }
+        .content-tabs{
+            .content{
+                .note{
+                    padding: 24px 0 0;
+                    p{
+                        font-size: 1.231rem;
+                        font-family: $font-family-poppins-regular;
+                        color: $secondary;
+                    }
+                }
+                .form-section{
+                    @media (max-width:$md) {
+                        flex-wrap: wrap;
+                    }
+                    .left-sec{
+                        @media (max-width:$md) {
+                            width: 100%;
+                        }
+                        padding-top: 0;
+                        .row-flex {
+                            display: flex;
+                            justify-content: space-between !important;
+                            flex-wrap: wrap;
+                            align-items: flex-start;
+                            @media (max-width:$md) {
+                                padding-bottom: 1rem;
+                            }
+                            @media (max-width:$sm) {
+                                padding-bottom: 0;
+                            }
+                            .flex-items {
+                                width: 47%;
+                                @media (max-width:$sm) {
+                                    width: 100%;
+                                    padding-bottom: 3rem;
+                                }
+                                .frm-label{
+                                    margin-bottom: 1.231rem;
+                                }
+                                .val-qty{
+                                    color: $val-clr;
+                                    font-size:  1.231rem;
+                                    font-family: $font-family-poppins-regular;
+                                }
+                            }
+                            &.radio-section {
+                                align-items: center !important;
+                                padding-top: 2rem;
+                                @media (max-width:$sm) {
+                                    padding-top: 0;
+                                }
+                                .custom_radio{
+                                    display: flex;
+                                    align-items: center;
+                                    .radio-flex{
+                                        width: 40%;
+                                    input[type="radio"]{
+                                        display: none;
+                                      }
+                                      input[type="radio"] + label{
+                                        position: relative;
+                                        display: inline-block;
+                                        padding-left: 2.5rem;
+                                        cursor: pointer;
+                                        transition: all 0.3s ease-in-out;
+                                        font-size: 1.385rem;
+                                      }
+                                      input[type="radio"] + label:before{
+                                        content: '';
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                        text-align: center;
+                                        color:$whiteColor;
+                                        font-family: Times;
+                                        border-radius: 50%;
+                                        transition: all .3s ease;
+                                        border: 2px solid $secondary;
+                                      }
+                                      input[type="radio"] + label:after{
+                                        content: '';
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 1.846rem;
+                                        height: 1.846rem;
+                                        text-align: center;
+                                        color:$whiteColor;
+                                        font-family: Times;
+                                        border-radius: 50%;
+                                        transition: all .3s ease;
+                                        border: 2px solid $secondary;
+                                      }
+                                      input[type="radio"]:checked + label::after {
+                                        border: 2px solid $pricolor !important;
+     
+                                      }
+                                      input[type="radio"] + label:before {
+                                        transition: all .3s ease;
+                                        box-shadow: inset 0 0 0 0.2em $whiteColor, inset 0 0 0 1em $whiteColor;
+                                      }
+                                      input[type="radio"]:checked + label:before {
+                                        transition: all .3s ease;
+                                        box-shadow: inset 0 0 0 0.2em $whiteColor, inset 0 0 0 1em $pricolor;
+                                        border: 2px solid $pricolor !important;
+
+                                      }
+                                    }
+                                 }
+                                 .button-sec{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    @media (max-width:$sm) {
+                                       flex-wrap: wrap;
+                                    }
+                                    .btn-items{
+                                        @media (max-width:$sm) {
+                                            width: 100%;
+                                        }
+                                        .btn-add{
+                                            font-family: $font-family-poppins-regular;
+                                            color: $whiteColor !important;
+                                            background: $primary !important;
+                                            padding: 1rem 1.8rem !important;
+                                            display: inline-block;
+                                            border-radius: 8px !important;
+                                            min-width: 12rem;
+                                            font-size: 1.3rem !important;
+                                            text-align: center;
+                                            text-decoration: none;
+                                            border: 1px solid $primary;
+                                            outline: none !important;
+                                            transition: 0.5s;
+                                            @media (max-width:$sm) {
+                                                width: 100%;
+                                                margin-bottom: 2rem;
+                                            }
+                                         }
+                                         .btn-reset{
+                                            font-family: $font-family-poppins-regular;
+                                            color: $primary !important;
+                                            background: $whiteColor !important;
+                                            padding: 1rem 1.8rem !important;
+                                            display: inline-block;
+                                            border-radius: 8px !important;
+                                            min-width: 12rem;
+                                            font-size: 1.3rem !important;
+                                            text-align: center;
+                                            text-decoration: none;
+                                            border: 1px solid $listcolor;
+                                            outline: none !important;
+                                            transition: 0.5s;
+                                            @media (max-width:$sm) {
+                                                width: 100%;
+                                            }
+                                         }
+                                    }
+                                  
+                                 }
+                               
+                            }
+                        }
+                    }
+                    .right-sec{
+                        @media (max-width:$md) {
+                            width: 100%;
+                        }
+                        @media (max-width:$sm) {
+                            margin-top: 1rem;
+                        }
+                        .brokerage-card{
+                            @media (max-width:$md) {
+                               margin-top: 5rem;
+                            }
+                            @media (max-width:$sm) {
+                                margin-top: 0;
+                             }
+                        }
+                    }
+                }
+                .table-margin-cal {
+                    background: $whiteColor;
+                    border: 1px solid $lightgray;
+                    border-radius: 8px;
+                    margin-top: 5.5rem;
+                    padding: 0;
+                    position: relative;
+                    z-index: 9;
+                    max-height: 536px;
+                    overflow: auto;
+                    @media (max-width:$sm) {
+                        margin-top: 4rem;
+                    }
+                    .table-responsive{
+                        height: 100%;
+                        min-height: 200px;
+                        .table-striped{
+                            margin: 0;
+                            thead {
+                                th {
+                                    border: 0;
+                                    color: $primary;
+                                    font-family: $font-family-poppins-semibold;
+                                    font-size: 1.385rem;
+                                    padding: 1.375rem;
+                                    @media (max-width:$md) {
+                                        white-space: nowrap;
+                                    }
+                                }
+                            }
+                            tbody {
+                                td {
+                                    border: 0;
+                                    color: $primary;
+                                    font-family: $font-family-poppins-regular;
+                                    font-size:1.231rem;
+                                    padding: 1.375rem;
+                                    .tooltip2 {
+                                        position: relative;
+                                        display: inline-block;
+                                        .delete-icon{
+                                            &:hover{
+                                                path{
+                                                    stroke: $redbg;
+                                                }
+                                                
+                                            }
+                                        }
+                                        .tooltiptext {
+                                            visibility: hidden;
+                                            background-color: $border-gray;
+                                            color: $listcolor;
+                                            text-align: center;
+                                            border-radius: 2px;
+                                            padding: 5px 0;
+                                            position: absolute;
+                                            z-index: 1;
+                                            bottom: 100%;
+                                            left: 50%;
+                                            right: 0;
+                                            opacity: 0;
+                                            transition: opacity 0.3s;
+                                            font-size: 0.923rem;
+                                            font-family: $font-family-poppins-regular;
+                                            height: 20px;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            width: 49px;
+                                            transform: translate(-50%,0);
+                                            &::after {
+                                                content: "";
+                                                position: absolute;
+                                                top: 100%;
+                                                left: 50%;
+                                                margin-left: -5px;
+                                                border-width: 5px;
+                                                border-style: solid;
+                                                border-color: $border-gray transparent transparent transparent;
+                                              }
+                                          }
+                                          &:hover{
+                                            .tooltiptext{
+                                                visibility: visible;
+                                                opacity: 1;
+                                            }
+                                          }
+                                      }
+                                }
+                            }
+                        } 
+                    }
+                  
+                }
+            }
+           
+        }
+    }
+}
+
+.more-content{
+    .seo-h3 {
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 2.2rem;
+        padding-bottom: 1.231rem;
+    }
+    .seo-h4{
+        color: $primary;
+        font-size: 1.75rem;
+        font-family: $font-family-poppins-semibold;
+        padding-bottom: 1.231rem;
+    }
+    .mrg-3{
+        margin-bottom: 0;
+        padding-bottom: 2rem;
+    }
+}
+
+.margin-faq {
+	padding: 9rem 0;
+	background-color: $abt-bg ;
+	.title-first {
+		margin-bottom: 2rem;
+	}
+
+	.faq-item {
+		border: 1px solid $lightgray !important;
+		border-radius: 20px;
+		background: $whiteColor;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			.accordion-button{
+				font-family: $font-family-poppins-semibold;
+				color: $primary;
+				font-size: 2rem;
+				@media (max-width:$sm) {
+					font-size: 1.75rem;
+				}
+			}
+			
+			
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+	@media (max-width:$xs) {
+		padding: 5rem 0;
+	}
+}
