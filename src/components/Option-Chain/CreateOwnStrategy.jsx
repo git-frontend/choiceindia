@@ -37,7 +37,7 @@ function CreateOwnStrategy() {
                             </div>
                         </div>
                         <div className="text-center">
-                          <a className="cursor-pointer"><span className="btn-bg btn-bg-dark">Create Now</span></a>
+                          <a href='https://choiceindia.com/open-free-demat-account' className="cursor-pointer"><span className="btn-bg btn-bg-dark">Create Now</span></a>
                           </div>
                     </div>
                 </div>
