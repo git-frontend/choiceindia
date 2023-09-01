@@ -26,6 +26,18 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     const [searchParams, setSearchParams] = useSearchParams();
     // const [otpparam, setOtpparam] = useState('');
 
+    const [outCome,setOutCome]= useState();
+
+    /**function to generate random probabity number for AB test */
+    function generateRandomNumber(){
+      var random = Math.random();
+  
+      if (random < 0.75) {
+        setOutCome(() => 'A'); // Return a random number when the probability is less than 70%
+      } else {
+        setOutCome(() => 'B'); // Return a different number when the probability is greater than or equal to 70%
+      }
+    }
 
     const handleButtonClick = () => {
         onButtonClick(); 
@@ -84,6 +96,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
     useEffect(() => {
         // setShow(() => true);
+        generateRandomNumber();
         setCount(30);
     }, []);
 
@@ -453,7 +466,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                     <div className="btnwrap">
-                                        <button className="btn-bg btn-bg-dark" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpverifybtn')}</button>
+                                        <button className={"btn-bg btn-bg-dark"}  id={(outCome == 'A')? 'otp-proceed-test' : 'otp-verify-test'} disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', (outCome == 'A')? 'otpverifybtnNew' : 'otpverifybtn')}</button>
                                     </div>
                                     </div>
                                    
