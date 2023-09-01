@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 function Banner() {
     const [rendercount, setRenderCount] = useState(() => false);
-    const [toggleState, setToggleState] = useState(1);
+    const [toggleState, setToggleState] = useState(0);
     const toggleTab = (index) => {
         setToggleState(index);
     };
@@ -17,34 +17,20 @@ function Banner() {
         contracts: [], action: false, searchInput: "", startPos: 0, limit: 10, searchedData: [], exchangeVisible: false,
         exchange: "FO", activeTab: 1, data: { 1: [], 2: [], 3: [], 4: [] }, searchFocus: false, qty: 0, loader: false, contractData: {}, totalSpan: 0, totalExposure: 0, totalMargin: 0, marginBenefit: 0, premium: 0, tempMarginData: [], marketLot: 0, isOptionScrip: false, apiCount: 0, segmentArr: [1, 3, 6, 14, 8], spanLoader: false, tableLoader: false, isShowNA: false
     });
-
+    let checkurl = (window.location.pathname == "/margin-calculator") ? "all" : (window.location.pathname == "/futures-and-options-margin-calculator") ? "future-options" : (window.location.pathname == "/commodity-margin-calculator") ? "commodity" : (window.location.pathname == "/forex-margin-calculator") ? "forex" : "";
     useEffect(() => {
-        setRenderCount(true);
+        setRenderCount(true)
         if (rendercount === true) {
-            let checkurl = "";
-            if (window.location.pathname === "/margin-calculator") {
-                checkurl = "all";
-                // activateTab(1, 'FO');
-                toggleTab(1)
-            } else if (window.location.pathname === "/futures-and-options-margin-calculator") {
-                checkurl = "future-options";
-                // activateTab(2, 'FO');
-                toggleTab(2)
-            } else if (window.location.pathname === "/commodity-margin-calculator") {
-                checkurl = "commodity";
-                // activateTab(3, 'COM');
-                toggleTab(3)
-            } else if (window.location.pathname === "/forex-margin-calculator") {
-                checkurl = "forex";
-                // activateTab(4, 'CD');
-                toggleTab(4)
-            }
-            toggleTab(1)
-            getSearchData()
+            checkurl == 'all' ? setToggleState(1) :
+
+                checkurl == 'future-options' ? setToggleState(2) :
+
+                    checkurl == 'commodity' ? setToggleState(3) :
+
+                        checkurl == 'forex' ? setToggleState(4) : getSearchData()
         }
-
-
-    }, [rendercount]);
+        // getSearchData()
+    }, [rendercount])
 
 
 
@@ -54,6 +40,7 @@ function Banner() {
             activeTab: Number(tabIndex),
             exchange: exchange,
         }));
+        getSearchData();
 
         if (marginConfig.data[tabIndex] && marginConfig.data[tabIndex].length) {
             setMarginConfig(prevMarginConfig => ({
@@ -83,7 +70,7 @@ function Banner() {
     const getSearchData = () => {
         setMarginConfig(prevState => ({ ...prevState, loader: true }));
         const data = {
-            "strScripName": marginConfig.searchInput = 'nifty',
+            "strScripName": marginConfig.searchInput,
             "StartPos": marginConfig.startPos,
             "NoOfRecords": marginConfig.limit,
             "strSegment": marginConfig.exchange
@@ -212,21 +199,21 @@ function Banner() {
     }
 
     const addResetContract = (isAdd) => {
-        console.log("ff",marginConfig.qty)
+        console.log("ff", marginConfig.qty)
         if (!marginConfig.qty || marginConfig.qty === '0') return;
-    
+
         if (isAdd) {
             let isCheck;
             marginConfig.isOptionScrip =
                 ['PE', 'CE'].indexOf(marginConfig.contractData.optionType) > -1 &&
                 marginConfig.contractData.action;
-    
+
             if (marginConfig.searchInput) {
                 isCheck = marginConfig.contracts.find(
                     (element) => element.Token === marginConfig.contractData.Token
                 );
             }
-    
+
             if (
                 isCheck &&
                 (marginConfig.contractData.qty !== marginConfig.qty ||
@@ -249,16 +236,16 @@ function Banner() {
                 isCheck ||
                 !marginConfig.searchInput
             ) {
-                
+
                 return;
             }
-    
+
             marginConfig.contractData.qty = marginConfig.qty.toString().replace(/^0+/, '');
             marginConfig.contractData.action = marginConfig.action;
             marginConfig.contracts = [...marginConfig.contracts, marginConfig.contractData];
             calculateQty();
             callMargin();
-            
+
         } else {
             setMarginConfig((prevState) => ({
                 ...prevState,
@@ -275,165 +262,165 @@ function Banner() {
             document.documentElement.scrollTop = 0;
         }
     };
-    
-    
+
+
     const calculateQty = () => {
         let result = parseInt(marginConfig.qty) / marginConfig.marketLot;
 
         if (Number.isInteger(result)) {
-          return;
+            return;
         } else {
-          result = Math.trunc(result) + 1;
-          const newQty = result * marginConfig.marketLot;
+            result = Math.trunc(result) + 1;
+            const newQty = result * marginConfig.marketLot;
 
-          setMarginConfig(prevState => ({
-            ...prevState,
-            qty: newQty,
-            contractData: {
-              ...prevState.contractData,
-              qty: newQty.toString().replace(/^0+/, ''),
-            },
-          }));
+            setMarginConfig(prevState => ({
+                ...prevState,
+                qty: newQty,
+                contractData: {
+                    ...prevState.contractData,
+                    qty: newQty.toString().replace(/^0+/, ''),
+                },
+            }));
         }
-      };
-      const callMargin = () => {
+    };
+    const callMargin = () => {
         setMarginConfig(prevState => ({
-          ...prevState,
-          apiCount: 0,
+            ...prevState,
+            apiCount: 0,
         }));
-      
+
         const numOfSeg = [...new Set(marginConfig.contracts.map(item => item.SegmentId))];
-        
+
         for (let i = 0; i < numOfSeg.length; i++) {
-          const scripArray = marginConfig.contracts.filter(item => item.SegmentId === numOfSeg[i]);
-          getMarginData(scripArray, i, numOfSeg.length);
+            const scripArray = marginConfig.contracts.filter(item => item.SegmentId === numOfSeg[i]);
+            getMarginData(scripArray, i, numOfSeg.length);
         }
-      };
-    
-      const getMarginData = (scripArray, index, numOfSegLen) => {
+    };
+
+    const getMarginData = (scripArray, index, numOfSegLen) => {
         const request = {
-          segmentId: scripArray[0].SegmentId,
-          token_qty: createTokenQtyString(scripArray),
+            segmentId: scripArray[0].SegmentId,
+            token_qty: createTokenQtyString(scripArray),
         };
 
-        if (!marginConfig.apiCount ) {
-          setMarginConfig(prevState => ({
-            ...prevState,
-            spanLoader: true,
-            tableLoader: true,
-          }));
+        if (!marginConfig.apiCount) {
+            setMarginConfig(prevState => ({
+                ...prevState,
+                spanLoader: true,
+                tableLoader: true,
+            }));
         }
 
-        
+
         rest.getMarginCalculatorData(request.segmentId, request.token_qty)
-          .then(res => {
-            if (!marginConfig.apiCount) {
-              setMarginConfig(prevState => ({
-                ...prevState,
-                totalSpan: 0,
-                totalExposure: 0,
-                totalMargin: 0,
-                marginBenefit: 0,
-                premium: 0,
-              }));
-            }
+            .then(res => {
+                if (!marginConfig.apiCount) {
+                    setMarginConfig(prevState => ({
+                        ...prevState,
+                        totalSpan: 0,
+                        totalExposure: 0,
+                        totalMargin: 0,
+                        marginBenefit: 0,
+                        premium: 0,
+                    }));
+                }
 
-            setMarginConfig(prevState => ({
-              ...prevState,
-              apiCount: prevState.apiCount + 1,
-            }));
-
-            if (res.Status === 'Success' && res.Response && res.Response.margins && res.Response.margins.length) {
-              setData(res.Response.margins);
-
-              setMarginConfig(prevState => ({
-                ...prevState,
-                totalSpan: prevState.totalSpan + res.Response.Span_Summary.Span,
-                totalExposure: prevState.totalExposure + res.Response.Span_Summary.ExpMgn,
-                marginBenefit: prevState.marginBenefit + res.Response.Span_Summary.MgnBenefit,
-                premium: prevState.premium + res.Response.Span_Summary.OptionPremium,
-                totalMargin: prevState.totalMargin + res.Response.Span_Summary.TotalMgn,
-              }));
-
-              if (!marginConfig.contracts.length) {
                 setMarginConfig(prevState => ({
-                  ...prevState,
-                  totalSpan: 0,
-                  totalExposure: 0,
-                  totalMargin: 0,
-                  marginBenefit: 0,
-                  premium: 0,
+                    ...prevState,
+                    apiCount: prevState.apiCount + 1,
                 }));
-              }
-            } else {
-              // Handle the case when the API call is not successful
-              console.error('Error: Something Went Wrong');
-              setMarginConfig(prevState => ({
-                ...prevState,
-                tableLoader: false,
-              }));
+
+                if (res.Status === 'Success' && res.Response && res.Response.margins && res.Response.margins.length) {
+                    setData(res.Response.margins);
+
+                    setMarginConfig(prevState => ({
+                        ...prevState,
+                        totalSpan: prevState.totalSpan + res.Response.Span_Summary.Span,
+                        totalExposure: prevState.totalExposure + res.Response.Span_Summary.ExpMgn,
+                        marginBenefit: prevState.marginBenefit + res.Response.Span_Summary.MgnBenefit,
+                        premium: prevState.premium + res.Response.Span_Summary.OptionPremium,
+                        totalMargin: prevState.totalMargin + res.Response.Span_Summary.TotalMgn,
+                    }));
+
+                    if (!marginConfig.contracts.length) {
+                        setMarginConfig(prevState => ({
+                            ...prevState,
+                            totalSpan: 0,
+                            totalExposure: 0,
+                            totalMargin: 0,
+                            marginBenefit: 0,
+                            premium: 0,
+                        }));
+                    }
+                } else {
+                    // Handle the case when the API call is not successful
+                    console.error('Error: Something Went Wrong');
+                    setMarginConfig(prevState => ({
+                        ...prevState,
+                        tableLoader: false,
+                    }));
+                }
+            })
+            .catch(err => {
+                setMarginConfig(prevState => ({
+                    ...prevState,
+                    tableLoader: false,
+                }));
+                console.error('Error: Something Went Wrong', err);
+            })
+            .finally(() => {
+                // if (numOfSegLen === marginConfig.apiCount) {
+                //   setMarginConfig(prevState => ({
+                //     ...prevState,
+                //     spanLoader: false,
+                //   }));
+
+                //   if (marginConfig.isOptionScrip && !marginConfig.premium) {
+                //     subscribeMultitouchline(getSellableOptionScrip());
+                //     if (!isSocketConnected()) {
+                //       getMultitouchline();
+                //     }
+                //   }
+
+                //   if (!marginConfig.totalMargin) {
+                //     setMarginConfig(prevState => ({
+                //       ...prevState,
+                //       totalMargin: prevState.totalSpan + prevState.totalExposure,
+                //     }));
+                //   }
+
+                //   setMarginConfig(prevState => ({
+                //     ...prevState,
+                //     isShowNA: !(prevState.totalMargin || prevState.totalSpan || prevState.totalExposure),
+                //   }));
+                // }
+
+                // if (marginConfig.contracts.length && isMobileDevice()) {
+                //   document.getElementById("content").scrollIntoView();
+                // }
+            });
+    };
+
+    // o set span margin, exposure margin, total
+    const setData = (contractData) => {
+        const updatedContracts = marginConfig.contracts.map((element) => {
+            const scrip = contractData.filter((data) => element.Token === data.Token);
+
+            if (scrip.length) {
+                element.IM = scrip[0].InitialMargin;
+                element.exposure = scrip[0].ExpMgn;
+                element.total = element.IM + element.exposure;
+                element.qty = element.qty.toString().replace(/^0+/, '');
             }
-          })
-          .catch(err => {
-            setMarginConfig(prevState => ({
-              ...prevState,
-              tableLoader: false,
-            }));
-            console.error('Error: Something Went Wrong', err);
-          })
-          .finally(() => {
-            // if (numOfSegLen === marginConfig.apiCount) {
-            //   setMarginConfig(prevState => ({
-            //     ...prevState,
-            //     spanLoader: false,
-            //   }));
+            return element;
+        });
+        setMarginConfig((prevState) => ({
+            ...prevState,
+            contracts: updatedContracts,
+            tableLoader: false,
+        }));
+    };
 
-            //   if (marginConfig.isOptionScrip && !marginConfig.premium) {
-            //     subscribeMultitouchline(getSellableOptionScrip());
-            //     if (!isSocketConnected()) {
-            //       getMultitouchline();
-            //     }
-            //   }
-
-            //   if (!marginConfig.totalMargin) {
-            //     setMarginConfig(prevState => ({
-            //       ...prevState,
-            //       totalMargin: prevState.totalSpan + prevState.totalExposure,
-            //     }));
-            //   }
-
-            //   setMarginConfig(prevState => ({
-            //     ...prevState,
-            //     isShowNA: !(prevState.totalMargin || prevState.totalSpan || prevState.totalExposure),
-            //   }));
-            // }
-
-            // if (marginConfig.contracts.length && isMobileDevice()) {
-            //   document.getElementById("content").scrollIntoView();
-            // }
-          });
-      };
-
-      // o set span margin, exposure margin, total
-const setData = (contractData) => {
-    const updatedContracts = marginConfig.contracts.map((element) => {
-      const scrip = contractData.filter((data) => element.Token === data.Token);
-  
-      if (scrip.length) {
-        element.IM = scrip[0].InitialMargin;
-        element.exposure = scrip[0].ExpMgn;
-        element.total = element.IM + element.exposure;
-        element.qty = element.qty.toString().replace(/^0+/, '');
-      }
-      return element;
-    });
-    setMarginConfig((prevState) => ({
-      ...prevState,
-      contracts: updatedContracts,
-      tableLoader: false,
-    }));
-  };
-  
     const createTokenQtyString = (scripArray) => {
         let tokenQty = "";
         scripArray.forEach((element, index) => {
@@ -609,7 +596,7 @@ const setData = (contractData) => {
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.totalSpan >= 0 ? marginConfig.totalSpan : 0.00).toFixed(2)
                                                                             : 'NA'} */}
-                                                                            {marginConfig.totalSpan}
+                                                                    {marginConfig.totalSpan}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -626,7 +613,7 @@ const setData = (contractData) => {
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.totalExposure >= 0 ? marginConfig.totalExposure : 0.00).toFixed(2)
                                                                             : 'NA'} */}
-                                                                            {marginConfig.totalExposure}
+                                                                    {marginConfig.totalExposure}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -644,7 +631,7 @@ const setData = (contractData) => {
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.totalMargin >= 0 ? marginConfig.totalMargin : 0.00).toFixed(2)
                                                                             : 'NA'} */}
-                                                                            {marginConfig.totalMargin}
+                                                                    {marginConfig.totalMargin}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -661,7 +648,7 @@ const setData = (contractData) => {
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.marginBenefit >= 0 ? marginConfig.marginBenefit : 0.00).toFixed(2)
                                                                             : 'NA'} */}
-                                                                            {marginConfig.marginBenefit}
+                                                                    {marginConfig.marginBenefit}
                                                                 </span>
                                                             </div>
                                                         </div>
