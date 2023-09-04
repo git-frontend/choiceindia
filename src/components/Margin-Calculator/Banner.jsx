@@ -12,50 +12,80 @@ function Banner() {
     const toggleTab = (index) => {
         setToggleState(index);
     };
-    // const lastSelectedScrip = useRef(null);
+    const lastSelectedScrip = useRef(null);
+    const marginCalForm = useRef(null);
     const [marginConfig, setMarginConfig] = useState({
-        contracts: [], action: false, searchInput: "", startPos: 0, limit: 10, searchedData: [], exchangeVisible: false,
-        exchange: "FO", activeTab: 1, data: { 1: [], 2: [], 3: [], 4: [] }, searchFocus: false, qty: 0, loader: false, contractData: {}, totalSpan: 0, totalExposure: 0, totalMargin: 0, marginBenefit: 0, premium: 0, tempMarginData: [], marketLot: 0, isOptionScrip: false, apiCount: 0, segmentArr: [1, 3, 6, 14, 8], spanLoader: false, tableLoader: false, isShowNA: false
+        contracts: [], action: false, searchInput: "nifty", startPos: 0, limit: 10, searchedData: [], exchangeVisible: false,
+        exchange: "FO", activeTab: 1, data: { 1: [], 2: [], 3: [], 4: [] }, searchFocus: false, qty: 0, loader: false, contractData: {}, totalSpan: 0, totalExposure: 0, totalMargin: 0, marginBenefit: 0, premium: 0,  marketLot: 0, isOptionScrip: false, apiCount: 0, segmentArr: [1, 3, 6, 14, 8], spanLoader: false, tableLoader: false, isShowNA: false
     });
     let checkurl = (window.location.pathname == "/margin-calculator") ? "all" : (window.location.pathname == "/futures-and-options-margin-calculator") ? "future-options" : (window.location.pathname == "/commodity-margin-calculator") ? "commodity" : (window.location.pathname == "/forex-margin-calculator") ? "forex" : "";
+
     useEffect(() => {
-        setRenderCount(true)
+        setRenderCount(true);
         if (rendercount === true) {
-            checkurl == 'all' ? setToggleState(1) :
-
-                checkurl == 'future-options' ? setToggleState(2) :
-
-                    checkurl == 'commodity' ? setToggleState(3) :
-
-                        checkurl == 'forex' ? setToggleState(4) : getSearchData()
+            let checkurl = "";
+            if (window.location.pathname === "/margin-calculator") {
+                checkurl = "all";
+                activateTab(1, 'FO');
+                toggleTab(1)
+            } else if (window.location.pathname === "/futures-and-options-margin-calculator") {
+                checkurl = "future-options";
+                activateTab(2, 'FO');
+                toggleTab(2)
+            } else if (window.location.pathname === "/commodity-margin-calculator") {
+                checkurl = "commodity";
+                activateTab(3, 'COM');
+                toggleTab(3)
+            } else if (window.location.pathname === "/forex-margin-calculator") {
+                checkurl = "forex";
+                activateTab(4, 'CD');
+                toggleTab(4)
+            }
         }
-        // getSearchData()
-    }, [rendercount])
+        // getSearchData(false, true)
+
+    }, [rendercount]);
 
 
 
+    // const activateTab = (tabIndex, exchange) => {
+    //     setMarginConfig(prevState => ({
+    //         ...prevState,
+    //         activeTab: Number(tabIndex),
+    //         exchange: exchange,
+    //     }));
+    //     // getSearchData();
+
+    //     if (marginConfig.data[tabIndex] && marginConfig.data[tabIndex].length) {
+    //         setMarginConfig(prevState => ({
+    //             ...prevState,
+    //             searchedData: marginConfig.data[tabIndex],
+    //             exchange: exchange,
+    //         }));
+    //     } else {
+
+    //         setMarginConfig(prevState => ({
+    //             ...prevState,
+    //             exchange: exchange,
+    //         }));
+    //     }
+    //     // getSearchData()
+    // };
     const activateTab = (tabIndex, exchange) => {
-        setMarginConfig(prevMarginConfig => ({
+        setMarginConfig((prevMarginConfig) => ({
             ...prevMarginConfig,
             activeTab: Number(tabIndex),
             exchange: exchange,
         }));
-        getSearchData();
 
         if (marginConfig.data[tabIndex] && marginConfig.data[tabIndex].length) {
-            setMarginConfig(prevMarginConfig => ({
+            setMarginConfig((prevMarginConfig) => ({
                 ...prevMarginConfig,
                 searchedData: marginConfig.data[tabIndex],
-                exchange: exchange,
             }));
         } else {
-
-            setMarginConfig(prevMarginConfig => ({
-                ...prevMarginConfig,
-                exchange: exchange,
-            }));
+            onInputPress(); 
         }
-        // getSearchData()
     };
 
     const onInputPress = () => {
@@ -83,7 +113,7 @@ function Banner() {
                     const searchInput = (marginConfig.segmentArr.indexOf(res.Response[0].SegmentId) > -1)
                         ? res.Response[0].Symbol
                         : (res.Response[0].SecName).replace('|', ' ');
-                    // lastSelectedScrip.current = searchInput;
+                    lastSelectedScrip.current = searchInput;
                     const qty = res.Response[0].MarketLot;
                     const marketLot = qty;
                     const contractData = {
@@ -134,9 +164,9 @@ function Banner() {
                     }));
                 }
             },
-            err => {
-
-                setMarginConfig(prevState => ({
+            (err) => {
+                console.log("err", err)
+                setMarginConfig((prevState) => ({
                     ...prevState,
                     searchedData: [],
                     searchFocus: true
@@ -297,7 +327,7 @@ function Banner() {
         }
     };
 
-    const getMarginData = (scripArray, index, numOfSegLen) => {
+    const getMarginData = (scripArray, numOfSegLen) => {
         const request = {
             segmentId: scripArray[0].SegmentId,
             token_qty: createTokenQtyString(scripArray),
@@ -369,31 +399,31 @@ function Banner() {
                 console.error('Error: Something Went Wrong', err);
             })
             .finally(() => {
-                // if (numOfSegLen === marginConfig.apiCount) {
-                //   setMarginConfig(prevState => ({
-                //     ...prevState,
-                //     spanLoader: false,
-                //   }));
+                if (numOfSegLen === marginConfig.apiCount) {
+                    setMarginConfig(prevState => ({
+                        ...prevState,
+                        spanLoader: false,
+                    }));
 
-                //   if (marginConfig.isOptionScrip && !marginConfig.premium) {
-                //     subscribeMultitouchline(getSellableOptionScrip());
-                //     if (!isSocketConnected()) {
-                //       getMultitouchline();
-                //     }
-                //   }
+                    //   if (marginConfig.isOptionScrip && !marginConfig.premium) {
+                    //     subscribeMultitouchline(getSellableOptionScrip());
+                    //     if (!isSocketConnected()) {
+                    //       getMultitouchline();
+                    //     }
+                    //   }
 
-                //   if (!marginConfig.totalMargin) {
-                //     setMarginConfig(prevState => ({
-                //       ...prevState,
-                //       totalMargin: prevState.totalSpan + prevState.totalExposure,
-                //     }));
-                //   }
+                    if (!marginConfig.totalMargin) {
+                        setMarginConfig(prevState => ({
+                            ...prevState,
+                            totalMargin: prevState.totalSpan + prevState.totalExposure,
+                        }));
+                    }
 
-                //   setMarginConfig(prevState => ({
-                //     ...prevState,
-                //     isShowNA: !(prevState.totalMargin || prevState.totalSpan || prevState.totalExposure),
-                //   }));
-                // }
+                    setMarginConfig(prevState => ({
+                        ...prevState,
+                        isShowNA: !(prevState.totalMargin || prevState.totalSpan || prevState.totalExposure),
+                    }));
+                }
 
                 // if (marginConfig.contracts.length && isMobileDevice()) {
                 //   document.getElementById("content").scrollIntoView();
@@ -493,13 +523,19 @@ function Banner() {
                             <div className='col-md-12'>
                                 <div className="content-tabs">
                                     <div className="content active-content content">
-                                        <Form>
+                                        <Form name="marginCalForm">
                                             <div className='form-section'>
                                                 <div className='left-sec'>
                                                     <div className="row-sec row-flex">
                                                         <div className="flex-items">
                                                             <p className='frm-label'>Search</p>
-                                                            <Form.Control className='form-control input-font search-icon' autoComplete="off" onInput={onInputPress} value={marginConfig.searchInput} onChange={(e) => setMarginConfig({ ...marginConfig, searchInput: e.target.value })} />
+                                                            <Form.Control
+                                                                className="form-control input-font search-icon"
+                                                                autoComplete="off"
+                                                                onInput={onInputPress}
+                                                                value={marginConfig.searchInput}
+                                                                onChange={(e) => setMarginConfig({ ...marginConfig, searchInput: e.target.value })}
+                                                            />
                                                             <ul
                                                                 className="brokerage-search-result margin-brokerage"
                                                             // style={{ display: marginConfig.exchangeVisible ? 'block' : 'none' }}
@@ -507,31 +543,39 @@ function Banner() {
                                                             >
                                                                 {(!marginConfig.loader && !marginConfig.searchedData?.length && marginConfig.searchInput?.length >= 3 && marginConfig.searchFocus) ||
                                                                     (!marginConfig.loader && marginConfig.searchInput && marginConfig.searchInput?.length > 0 && marginConfig.searchInput?.length <= 2) ? (
-                                                                    <li className="text-left d-flex">
+                                                                    <li className="text-left d-flex brokerage-search-list">
                                                                         <span>No Record Found</span>
                                                                     </li>
                                                                 ) : (
                                                                     marginConfig.searchedData.map((item, index) => (
-                                                                        <li key={index} onClick={() => getScrip(item)}>
-                                                                            <span className="symbol">
-                                                                                {marginConfig.segmentArr.indexOf(item?.SegmentId) > -1
-                                                                                    ? item?.Symbol
-                                                                                    : item?.SecName.replace('|', ' ')}
-                                                                            </span>
-                                                                            <span className="exchange">{item?.ExchangeSegment}</span>
+                                                                        <li className="brokerage-search-list" key={index} onClick={() => getScrip(item)}>
+
+                                                                            <span className="symbol">{marginConfig.segmentArr.indexOf(item?.SegmentId) > -1
+                                                                                ? item?.Symbol
+                                                                                : item?.SecName.replace('|', ' ')}</span>
+                                                                            {/* <span className="name">{item.SecDesc}</span> */}
+                                                                            <span className="exchange">{item.ExchangeSegment}</span>
                                                                         </li>
                                                                     ))
                                                                 )}
+
 
                                                             </ul>
                                                         </div>
                                                         <div className="flex-items">
                                                             <p className='frm-label'>Quantity</p>
-                                                            <Form.Control type="text" className='form-control input-font' maxLength="7" value={marginConfig.qty} onChange={(e) => {
-                                                                if (allowOnlyDigits(e.target.value)) {
-                                                                    setMarginConfig({ ...marginConfig, qty: e.target.value });
-                                                                }
-                                                            }} required />
+                                                            <Form.Control
+                                                                type="text"
+                                                                className="form-control input-font"
+                                                                maxLength="7"
+                                                                value={marginConfig.qty}
+                                                                onChange={(e) => {
+                                                                    if (allowOnlyDigits(e.target.value)) {
+                                                                        setMarginConfig({ ...marginConfig, qty: e.target.value });
+                                                                    }
+                                                                }}
+                                                                required
+                                                            />
                                                             {/* <span className='val-qty'>LOT SIZE = 50</span> */}
                                                             {marginConfig.marketLot && <p className="val-qty">Lot Size = {marginConfig.marketLot}</p>}
                                                             {(marginConfig.qty.errors?.required && marginConfig.qty.dirty) || marginConfig.qty < 1 && <p className="animate error val-qty">Please enter a valid quantity.</p>}
@@ -574,7 +618,7 @@ function Banner() {
                                                                     >Add</Button>
                                                                 </div>
                                                                 <div className='btn-items'>
-                                                                    <Button type="submit" className="btn-reset btn btn-primary">Resset All</Button>
+                                                                    <Button type="submit" className="btn-reset btn btn-primary">Reset All</Button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -590,8 +634,8 @@ function Banner() {
                                                             <div className='flex-items'>
                                                                 {/* <span>₹ 86,423.00</span> */}
                                                                 <span>
-                                                                    {/* {!marginConfig.isShowNA && <span>₹</span>}
-                                                                    {marginConfig.spanLoader
+                                                                    {/* {!marginConfig.isShowNA && <span>₹</span>}*/}
+                                                                    {/* {marginConfig.spanLoader
                                                                         ? 'Calculating...'
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.totalSpan >= 0 ? marginConfig.totalSpan : 0.00).toFixed(2)
@@ -672,24 +716,34 @@ function Banner() {
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td className='text-start'>NIFTY 29JUN23</td>
-                                                            <td className='text-end'>50</td>
-                                                            <td className='text-end'>BUY</td>
-                                                            <td className='text-end'>NA</td>
-                                                            <td className='text-end'>86,602.00</td>
-                                                            <td className='text-end'>18,420.25</td>
-                                                            <td className='text-end'>105,022.25</td>
-                                                            <td className='text-center'>
-                                                                <div className="tooltip2">
-                                                                    <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                                                        <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                                    </svg>
-                                                                    <span className="tooltiptext">Delete</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
+                                                        {!marginConfig.contracts.length && (
+                                                            <tr>
+                                                                <td colSpan="8" className="no-data">Search and Add contracts to calculate margin.</td>
+                                                            </tr>
+                                                        )}
+                                                        {marginConfig.contracts.map((item, index) => (
+                                                            <tr key={index}>
+                                                                <td className='text-start'>{item.symbol}</td>
+                                                                <td className='text-end'>{item.qty}</td>
+                                                                <td className='text-end'>{item.action ? 'SELL' : 'BUY'}</td>
+                                                                <td className='text-end'>{item.strike || 0}</td>
+                                                                <td className='text-end'>{(marginConfig.tableLoader ? 'Calculating...' : (item.IM >= 0 ? item.IM : 0.00).toFixed(2))}</td>
+                                                                <td className='text-end'>{(marginConfig.tableLoader ? 'Calculating...' : (item.exposure >= 0 ? item.exposure : 0.00).toFixed(2))}</td>
+                                                                <td className='text-end'>{(marginConfig.tableLoader ? 'Calculating...' : (item.total >= 0 ? item.total : 0.00).toFixed(2))}</td>
+                                                                <td className='text-center'>
+                                                                    <div className="tooltip2">
+                                                                        <button onClick={() => deleteContract(index)}>
+                                                                            <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                                                <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                                            </svg>
+                                                                        </button>
+
+                                                                        <span className="tooltiptext">Delete</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        ))}
+                                                        {/* <tr>
                                                             <td className='text-start'>MRF 27JUL23</td>
                                                             <td className='text-end'>10</td>
                                                             <td className='text-end'>SELL</td>
@@ -739,7 +793,7 @@ function Banner() {
                                                                     <span className="tooltiptext">Delete</span>
                                                                 </div>
                                                             </td>
-                                                        </tr>
+                                                        </tr> */}
                                                     </tbody>
                                                 </table>
                                             </div>
