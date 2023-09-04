@@ -14,7 +14,7 @@ function DevelopYourOwnStrategy() {
     focusOnSelect: true,
     touchMove: true,
     arrows: false,
-    slidesToShow: 5,
+    slidesToShow: 4,
     autoplay: true,
     dots: false,
     autoplaySpeed: 2000,
@@ -83,7 +83,7 @@ function DevelopYourOwnStrategy() {
                 </div>
                 <div className='col-md-6'>
                     <div className="video-height">
-                          <iframe src="https://www.youtube.com/embed/8PTpITpHSMw" allow="fullscreen;"  allowFullScreen={true} className="video-width"></iframe>
+                          <iframe src="https://www.youtube.com/embed/p3VXmJJuvu4?si=F8UqyJAOhVtGKW7i" allow="fullscreen;"  allowFullScreen={true} className="video-width"></iframe>
                     </div>
                 </div>
               </div>
