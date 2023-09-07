@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import rest from "../../Services/rest";
 import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import { Accordion } from "react-bootstrap";
@@ -8,85 +7,73 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 function Banner() {
     const [rendercount, setRenderCount] = useState(() => false);
-    const [toggleState, setToggleState] = useState(0);
+    const [toggleState, setToggleState] = useState(1);
     const toggleTab = (index) => {
         setToggleState(index);
     };
     const lastSelectedScrip = useRef(null);
     const marginCalForm = useRef(null);
     const [marginConfig, setMarginConfig] = useState({
-        contracts: [], action: false, searchInput: "nifty", startPos: 0, limit: 10, searchedData: [], exchangeVisible: false,
-        exchange: "FO", activeTab: 1, data: { 1: [], 2: [], 3: [], 4: [] }, searchFocus: false, qty: 0, loader: false, contractData: {}, totalSpan: 0, totalExposure: 0, totalMargin: 0, marginBenefit: 0, premium: 0,  marketLot: 0, isOptionScrip: false, apiCount: 0, segmentArr: [1, 3, 6, 14, 8], spanLoader: false, tableLoader: false, isShowNA: false
+        contracts: [],
+        action: false,
+        searchInput: '',
+        startPos: 0,
+        limit: 10,
+        searchedData: [],
+        exchangeVisible: false,
+        exchange: '',
+        activeTab: 1,
+        data: { 1: [], 2: [], 3: [], 4: [] },
+        searchFocus: false,
+        qty: 0,
+        loader: false,
+        contractData: {},
+        totalSpan: 0,
+        totalExposure: 0,
+        totalMargin: 0,
+        marginBenefit: 0,
+        premium: 0,
+        marketLot: 0,
+        isOptionScrip: false,
+        apiCount: 0,
+        segmentArr: [1, 3, 6, 14, 8],
+        spanLoader: false,
+        tableLoader: false,
+        isShowNA: false,
     });
-    let checkurl = (window.location.pathname == "/margin-calculator") ? "all" : (window.location.pathname == "/futures-and-options-margin-calculator") ? "future-options" : (window.location.pathname == "/commodity-margin-calculator") ? "commodity" : (window.location.pathname == "/forex-margin-calculator") ? "forex" : "";
 
     useEffect(() => {
-        setRenderCount(true);
-        if (rendercount === true) {
-            let checkurl = "";
-            if (window.location.pathname === "/margin-calculator") {
-                checkurl = "all";
-                activateTab(1, 'FO');
-                toggleTab(1)
-            } else if (window.location.pathname === "/futures-and-options-margin-calculator") {
-                checkurl = "future-options";
-                activateTab(2, 'FO');
-                toggleTab(2)
-            } else if (window.location.pathname === "/commodity-margin-calculator") {
-                checkurl = "commodity";
-                activateTab(3, 'COM');
-                toggleTab(3)
-            } else if (window.location.pathname === "/forex-margin-calculator") {
-                checkurl = "forex";
-                activateTab(4, 'CD');
-                toggleTab(4)
-            }
-        }
-        // getSearchData(false, true)
+        const pathToTabIndexMap = {
+            "/margin-calculator": 1,
+            "/futures-and-options-margin-calculator": 2,
+            "/commodity-margin-calculator": 3,
+            "/forex-margin-calculator": 4,
+        };
+        const tabIndex = pathToTabIndexMap[window.location.pathname] || 1;
 
-    }, [rendercount]);
+        activateTab(tabIndex);
+        // setRenderCount(true);
+    }, [marginConfig.exchange]);
 
 
-
-    // const activateTab = (tabIndex, exchange) => {
-    //     setMarginConfig(prevState => ({
-    //         ...prevState,
-    //         activeTab: Number(tabIndex),
-    //         exchange: exchange,
-    //     }));
-    //     // getSearchData();
-
-    //     if (marginConfig.data[tabIndex] && marginConfig.data[tabIndex].length) {
-    //         setMarginConfig(prevState => ({
-    //             ...prevState,
-    //             searchedData: marginConfig.data[tabIndex],
-    //             exchange: exchange,
-    //         }));
-    //     } else {
-
-    //         setMarginConfig(prevState => ({
-    //             ...prevState,
-    //             exchange: exchange,
-    //         }));
-    //     }
-    //     // getSearchData()
-    // };
     const activateTab = (tabIndex, exchange) => {
-        setMarginConfig((prevMarginConfig) => ({
-            ...prevMarginConfig,
+        setMarginConfig(prevState => ({
+            ...prevState,
             activeTab: Number(tabIndex),
             exchange: exchange,
+            searchInput: 'nifty'
         }));
-
-        if (marginConfig.data[tabIndex] && marginConfig.data[tabIndex].length) {
-            setMarginConfig((prevMarginConfig) => ({
-                ...prevMarginConfig,
-                searchedData: marginConfig.data[tabIndex],
-            }));
-        } else {
-            onInputPress(); 
-        }
+        // if (tabIndex === 1) {
+        //     getSearchData('');
+        // } else if (tabIndex === 2) {
+        //     getSearchData('FO');
+        // } else if (tabIndex === 3) {
+        //     getSearchData('COM');
+        // } else if (tabIndex === 4) {
+        //     getSearchData('CD');
+        // }
     };
+
 
     const onInputPress = () => {
         setMarginConfig(prevState => ({ ...prevState, startPos: 0 }));
@@ -97,8 +84,12 @@ function Banner() {
             getSearchData();
         }
     };
-    const getSearchData = () => {
+    const getSearchData = (exchange) => {
         setMarginConfig(prevState => ({ ...prevState, loader: true }));
+        setMarginConfig((prevMarginConfig) => ({
+            ...prevMarginConfig,
+            exchange: exchange,
+        }));
         const data = {
             "strScripName": marginConfig.searchInput,
             "StartPos": marginConfig.startPos,
@@ -109,7 +100,6 @@ function Banner() {
         rest.getSearchData(data).then(
             res => {
                 if (res.Status === "Success" && res.Response && res.Response.length) {
-
                     const searchInput = (marginConfig.segmentArr.indexOf(res.Response[0].SegmentId) > -1)
                         ? res.Response[0].Symbol
                         : (res.Response[0].SecName).replace('|', ' ');
@@ -144,12 +134,8 @@ function Banner() {
                         marketLot,
                         contractData
                     }));
-
-
                     let searchedData = [...marginConfig.searchedData];
-
                     searchedData = res.Response;
-
                     setMarginConfig(prevState => ({
                         ...prevState,
                         datalength: res.Response.length,
@@ -266,7 +252,7 @@ function Banner() {
                 isCheck ||
                 !marginConfig.searchInput
             ) {
-
+                console.log('You have already added this contract. Please select different scrip" : "Please select scrip"')
                 return;
             }
 
@@ -498,7 +484,7 @@ function Banner() {
                                     <div className='col-xl-8 col-md-12'>
                                         <ul className='list_group1'>
                                             <li className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/margin-calculator" onClick={() => { activateTab(1, 'FO'); setToggleState(1) }}>All</Link>
+                                                <Link className='urllinks' to="/margin-calculator" onClick={() => { activateTab(1, ''); setToggleState(1) }}>All</Link>
                                             </li>
                                             <li className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}>
                                                 <Link className='urllinks' to="/futures-and-options-margin-calculator" onClick={() => { activateTab(2, 'FO'); setToggleState(2) }}>F&O</Link>
@@ -534,13 +520,9 @@ function Banner() {
                                                                 autoComplete="off"
                                                                 onInput={onInputPress}
                                                                 value={marginConfig.searchInput}
-                                                                onChange={(e) => setMarginConfig({ ...marginConfig, searchInput: e.target.value })}
+                                                                onChange={(e) => setMarginConfig(prevState => ({ ...prevState, searchInput: e.target.value }))}
                                                             />
-                                                            <ul
-                                                                className="brokerage-search-result margin-brokerage"
-                                                            // style={{ display: marginConfig.exchangeVisible ? 'block' : 'none' }}
-
-                                                            >
+                                                            <ul className="brokerage-search-result margin-brokerage">
                                                                 {(!marginConfig.loader && !marginConfig.searchedData?.length && marginConfig.searchInput?.length >= 3 && marginConfig.searchFocus) ||
                                                                     (!marginConfig.loader && marginConfig.searchInput && marginConfig.searchInput?.length > 0 && marginConfig.searchInput?.length <= 2) ? (
                                                                     <li className="text-left d-flex brokerage-search-list">
@@ -549,17 +531,13 @@ function Banner() {
                                                                 ) : (
                                                                     marginConfig.searchedData.map((item, index) => (
                                                                         <li className="brokerage-search-list" key={index} onClick={() => getScrip(item)}>
-
                                                                             <span className="symbol">{marginConfig.segmentArr.indexOf(item?.SegmentId) > -1
                                                                                 ? item?.Symbol
                                                                                 : item?.SecName.replace('|', ' ')}</span>
-                                                                            {/* <span className="name">{item.SecDesc}</span> */}
                                                                             <span className="exchange">{item.ExchangeSegment}</span>
                                                                         </li>
                                                                     ))
                                                                 )}
-
-
                                                             </ul>
                                                         </div>
                                                         <div className="flex-items">
@@ -576,7 +554,6 @@ function Banner() {
                                                                 }}
                                                                 required
                                                             />
-                                                            {/* <span className='val-qty'>LOT SIZE = 50</span> */}
                                                             {marginConfig.marketLot && <p className="val-qty">Lot Size = {marginConfig.marketLot}</p>}
                                                             {(marginConfig.qty.errors?.required && marginConfig.qty.dirty) || marginConfig.qty < 1 && <p className="animate error val-qty">Please enter a valid quantity.</p>}
                                                         </div>
@@ -610,11 +587,7 @@ function Banner() {
                                                             <div className='button-sec'>
                                                                 <div className='btn-items'>
                                                                     <Button className="btn-add btn btn-primary" onClick={addResetContract}
-                                                                    // disabled={!marginCalForm.current ||
-                                                                    //     !marginCalForm.current.form ||
-                                                                    //     !marginCalForm.current.form.valid ||
-                                                                    //     marginConfig.marketLot < 1 ||
-                                                                    //     marginConfig.qty < 1}
+                                                                        disabled={marginConfig.marketLot < 1 || marginConfig.qty < 1}
                                                                     >Add</Button>
                                                                 </div>
                                                                 <div className='btn-items'>
@@ -623,7 +596,6 @@ function Banner() {
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
                                                 <div className='right-sec'>
                                                     <div className='brokerage-card'>
@@ -632,15 +604,13 @@ function Banner() {
                                                                 <span>Span Margin</span>
                                                             </div>
                                                             <div className='flex-items'>
-                                                                {/* <span>₹ 86,423.00</span> */}
                                                                 <span>
-                                                                    {/* {!marginConfig.isShowNA && <span>₹</span>}*/}
-                                                                    {/* {marginConfig.spanLoader
+                                                                    {!marginConfig.isShowNA && <span>₹</span>}
+                                                                    {marginConfig.spanLoader
                                                                         ? 'Calculating...'
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.totalSpan >= 0 ? marginConfig.totalSpan : 0.00).toFixed(2)
-                                                                            : 'NA'} */}
-                                                                    {marginConfig.totalSpan}
+                                                                            : 'NA'}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -649,15 +619,13 @@ function Banner() {
                                                                 <span>Exposure Margin</span>
                                                             </div>
                                                             <div className='flex-items'>
-                                                                {/* <span>₹ 18,420.25</span> */}
                                                                 <span>
-                                                                    {/* {!marginConfig.isShowNA && <span>₹</span>}
+                                                                    {!marginConfig.isShowNA && <span>₹</span>}
                                                                     {marginConfig.spanLoader
                                                                         ? 'Calculating...'
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.totalExposure >= 0 ? marginConfig.totalExposure : 0.00).toFixed(2)
-                                                                            : 'NA'} */}
-                                                                    {marginConfig.totalExposure}
+                                                                            : 'NA'}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -667,15 +635,13 @@ function Banner() {
                                                                 <span className='text-bold'>Total Margin</span>
                                                             </div>
                                                             <div className='flex-items'>
-                                                                {/* <span className='text-bold'>₹ 104,843.25</span> */}
                                                                 <span>
                                                                     {!marginConfig.isShowNA && <span>₹</span>}
-                                                                    {/* {marginConfig.spanLoader
+                                                                    {marginConfig.spanLoader
                                                                         ? 'Calculating...'
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.totalMargin >= 0 ? marginConfig.totalMargin : 0.00).toFixed(2)
-                                                                            : 'NA'} */}
-                                                                    {marginConfig.totalMargin}
+                                                                            : 'NA'}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -684,15 +650,13 @@ function Banner() {
                                                                 <span>Margin Benefit</span>
                                                             </div>
                                                             <div className='flex-items'>
-                                                                {/* <span className='font-success'>₹ 279,571.00</span> */}
                                                                 <span>
                                                                     {!marginConfig.isShowNA && <span>₹</span>}
-                                                                    {/* {marginConfig.spanLoader
+                                                                    {marginConfig.spanLoader
                                                                         ? 'Calculating...'
                                                                         : !marginConfig.isShowNA
                                                                             ? (marginConfig.marginBenefit >= 0 ? marginConfig.marginBenefit : 0.00).toFixed(2)
-                                                                            : 'NA'} */}
-                                                                    {marginConfig.marginBenefit}
+                                                                            : 'NA'}
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -732,7 +696,7 @@ function Banner() {
                                                                 <td className='text-end'>{(marginConfig.tableLoader ? 'Calculating...' : (item.total >= 0 ? item.total : 0.00).toFixed(2))}</td>
                                                                 <td className='text-center'>
                                                                     <div className="tooltip2">
-                                                                        <button onClick={() => deleteContract(index)}>
+                                                                        <button style={{ border: 'none' }} onClick={() => deleteContract(index)}>
                                                                             <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                                                 <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                                                             </svg>
