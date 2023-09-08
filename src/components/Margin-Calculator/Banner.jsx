@@ -16,7 +16,7 @@ function Banner() {
     const [marginConfig, setMarginConfig] = useState({
         contracts: [],
         action: false,
-        searchInput: '',
+        searchInput: 'nifty',
         startPos: 0,
         limit: 10,
         searchedData: [],
@@ -60,20 +60,44 @@ function Banner() {
         setMarginConfig(prevState => ({
             ...prevState,
             activeTab: Number(tabIndex),
-            exchange: exchange,
-            searchInput: 'nifty'
+            exchange: exchange
         }));
-        // if (tabIndex === 1) {
-        //     getSearchData('');
-        // } else if (tabIndex === 2) {
-        //     getSearchData('FO');
-        // } else if (tabIndex === 3) {
-        //     getSearchData('COM');
-        // } else if (tabIndex === 4) {
-        //     getSearchData('CD');
-        // }
+        if (tabIndex === 1) {
+            getSearchData('');
+        } else if (tabIndex === 2) {
+            getSearchData('FO');
+        } else if (tabIndex === 3) {
+            getSearchData('COM');
+        } else if (tabIndex === 4) {
+            getSearchData('CD');
+        }
     };
+    const handleSearchInputChange = (e) => {
+        const updatedSearchInput = e.target.value;
+        setMarginConfig(prevState => ({ ...prevState, searchInput: updatedSearchInput }));
+        setMarginConfig(prevState => ({
+            ...prevState,
+            searchedData: [],
 
+        }));
+
+        if (marginConfig.searchInput.length === 0) {
+            setMarginConfig(prevState => ({
+                ...prevState,
+                startPos: 0,
+                searchedData: [],
+            }));
+        } else if (marginConfig.searchInput.length === 1 || marginConfig.searchInput.length === 2) {
+            setMarginConfig(prevState => ({
+                ...prevState,
+                startPos: 0,
+                searchedData: [],
+            }));
+        } else if (marginConfig.searchInput.trim().length >= 3) {
+            getSearchData(updatedSearchInput);
+        }
+
+    };
 
     const onInputPress = () => {
         setMarginConfig(prevState => ({ ...prevState, startPos: 0 }));
@@ -84,8 +108,9 @@ function Banner() {
             getSearchData();
         }
     };
+
     const getSearchData = (exchange) => {
-        setMarginConfig(prevState => ({ ...prevState, loader: true }));
+        setMarginConfig((prevState) => ({ ...prevState, loader: true }));
         setMarginConfig((prevMarginConfig) => ({
             ...prevMarginConfig,
             exchange: exchange,
@@ -94,87 +119,47 @@ function Banner() {
             "strScripName": marginConfig.searchInput,
             "StartPos": marginConfig.startPos,
             "NoOfRecords": marginConfig.limit,
-            "strSegment": marginConfig.exchange
+            "strSegment": marginConfig.exchange,
         };
 
-        rest.getSearchData(data).then(
-            res => {
+        rest.getSearchData(data)
+            .then((res) => {
                 if (res.Status === "Success" && res.Response && res.Response.length) {
-                    const searchInput = (marginConfig.segmentArr.indexOf(res.Response[0].SegmentId) > -1)
-                        ? res.Response[0].Symbol
-                        : (res.Response[0].SecName).replace('|', ' ');
-                    lastSelectedScrip.current = searchInput;
-                    const qty = res.Response[0].MarketLot;
-                    const marketLot = qty;
-                    const contractData = {
-                        symbol: (marginConfig.segmentArr.indexOf(res.Response[0].SegmentId) > -1)
-                            ? res.Response[0].Symbol
-                            : (res.Response[0].SecName).replace('|', ' '),
-                        secDesc: res.Response[0].SecDesc,
-                        qty: qty,
-                        action: false,
-                        Token: res.Response[0].Token,
-                        SegmentId: res.Response[0].SegmentId,
-                        IM: 0,
-                        exposure: 0,
-                        total: 0,
-                        strike: (["CE", "PE"].indexOf(res.Response[0].OptionType) > -1)
-                            ? ((res.Response[0].StrikePrice / res.Response[0].PriceDivisor) >= 0
-                                ? (res.Response[0].StrikePrice / res.Response[0].PriceDivisor)
-                                : 0)
-                            : 'NA',
-                        optionType: res.Response[0].OptionType,
-                        marketLot: marketLot
-                    };
-                    setMarginConfig(prevState => ({
-                        ...prevState,
-                        searchInput,
-                        lastSelectedScrip: searchInput,
-                        qty,
-                        marketLot,
-                        contractData
-                    }));
                     let searchedData = [...marginConfig.searchedData];
                     searchedData = res.Response;
-                    setMarginConfig(prevState => ({
+                    setMarginConfig((prevState) => ({
                         ...prevState,
                         datalength: res.Response.length,
                         searchedData,
-                        data: { ...prevState.data, [marginConfig.activeTab]: searchedData }
+                        data: { ...prevState.data, [marginConfig.activeTab]: searchedData },
                     }));
                 } else {
-                    setMarginConfig(prevState => ({
+                    setMarginConfig((prevState) => ({
                         ...prevState,
                         searchedData: [],
-                        searchFocus: true
+                        searchFocus: true,
                     }));
                 }
-            },
-            (err) => {
-                console.log("err", err)
+            })
+            .catch((err) => {
+                console.log("err", err);
                 setMarginConfig((prevState) => ({
                     ...prevState,
                     searchedData: [],
-                    searchFocus: true
+                    searchFocus: true,
                 }));
-            }
-        )
+            })
+            .finally(() => {
+                setMarginConfig((prevState) => ({ ...prevState, loader: false }));
+            });
     };
     const getScrip = (scripData) => {
-        let updatedContractData = {};
-
         const searchInput = marginConfig.segmentArr.indexOf(scripData.SegmentId) > -1
             ? scripData.Symbol
             : scripData.SecName.replace('|', ' ');
-
-        const lastSelectedScrip = marginConfig.segmentArr.indexOf(scripData.SegmentId) > -1
-            ? scripData.Symbol
-            : scripData.SecName.replace('|', ' ');
-
         const qty = scripData.MarketLot;
         const marketLot = qty;
-
-        updatedContractData = {
+        const updatedContractData = {
             symbol: marginConfig.segmentArr.indexOf(scripData.SegmentId) > -1
                 ? scripData.Symbol
                 : scripData.SecName.replace('|', ' '),
@@ -198,7 +183,6 @@ function Banner() {
         setMarginConfig((prevState) => ({
             ...prevState,
             searchInput,
-            lastSelectedScrip,
             qty,
             marketLot,
             contractData: updatedContractData,
@@ -206,6 +190,7 @@ function Banner() {
             searchedData: []
         }));
     };
+
 
 
 
@@ -515,12 +500,12 @@ function Banner() {
                                                     <div className="row-sec row-flex">
                                                         <div className="flex-items">
                                                             <p className='frm-label'>Search</p>
+
                                                             <Form.Control
                                                                 className="form-control input-font search-icon"
                                                                 autoComplete="off"
-                                                                onInput={onInputPress}
+                                                                onChange={handleSearchInputChange}
                                                                 value={marginConfig.searchInput}
-                                                                onChange={(e) => setMarginConfig(prevState => ({ ...prevState, searchInput: e.target.value }))}
                                                             />
                                                             <ul className="brokerage-search-result margin-brokerage">
                                                                 {(!marginConfig.loader && !marginConfig.searchedData?.length && marginConfig.searchInput?.length >= 3 && marginConfig.searchFocus) ||
@@ -539,6 +524,12 @@ function Banner() {
                                                                     ))
                                                                 )}
                                                             </ul>
+
+
+
+
+
+
                                                         </div>
                                                         <div className="flex-items">
                                                             <p className='frm-label'>Quantity</p>
@@ -587,7 +578,7 @@ function Banner() {
                                                             <div className='button-sec'>
                                                                 <div className='btn-items'>
                                                                     <Button className="btn-add btn btn-primary" onClick={addResetContract}
-                                                                        disabled={marginConfig.marketLot < 1 || marginConfig.qty < 1}
+
                                                                     >Add</Button>
                                                                 </div>
                                                                 <div className='btn-items'>
