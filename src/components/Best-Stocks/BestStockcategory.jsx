@@ -42,13 +42,10 @@ function BestStockcategory() {
     setToggleState(index);
   };
   function chapterScroll(id) {
-    console.log("called",id)
     var element = document.getElementById(id);
     var headerOffset = 200;
     var elementPosition = element.getBoundingClientRect().top;
-    console.log("elementPosition",elementPosition)
     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-    console.log("offsetPosition",offsetPosition)
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth"
