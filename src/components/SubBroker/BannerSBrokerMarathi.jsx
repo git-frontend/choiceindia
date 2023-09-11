@@ -47,7 +47,7 @@ function BannerSBroker() {
                                         <span>सर्वोच्च </span> ब्रोकरेज शेअरिंग
                                     </li>
                                     <li>
-                                    <span className="d-inline">रु १0००</span> पर्यंत प्रति अकाउंट इन्सेंटिव्ह
+                                    <span className="d-inline">रु १0००</span> पर्यंत प्रति अकाउंट इन्सेंटिव्ह*
                                     </li>
                                     <li>
                                         <span>लाईफटाईम</span>  इनकम स्रोत

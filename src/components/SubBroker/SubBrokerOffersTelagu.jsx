@@ -55,7 +55,7 @@ function SubBrokerOffers() {
                                     <table class="table table-hover table-striped ">
                                         <thead>
                                             <tr>
-                                                <th width="25%"> <span></span> </th>
+                                                <th width="25%"> ఖాతాల సంఖ్య </th>
                                                 <th>రూ.1000 కనీస పెట్టుబడి &amp; ఈక్విటీలో 2 లావాదేవీలు </th>
                                                 {/* <th>రూ.5000 కనీస పెట్టుబడి &amp; ఈక్విటీలో 2 లావాదేవీలు  </th> */}
                                                 <th>రూ.25000 కనీస పెట్టుబడి &amp; ఈక్విటీలో 2 లావాదేవీలు </th>

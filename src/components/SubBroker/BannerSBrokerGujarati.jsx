@@ -47,7 +47,7 @@ function BannerSBroker() {
                                         <span>સૌથી વધુ </span> રેવન્યુ શેરિંગ
                                     </li>
                                     <li>
-                                    <span className="d-inline">₹ 1000</span> સુધી પ્રતિ એકાઉન્ટ ઇન્સેન્ટિવ
+                                    <span className="d-inline">₹ 1000</span> સુધી પ્રતિ એકાઉન્ટ ઇન્સેન્ટિવ*
                                     </li>
                                     <li>
                                         <span>જીવનભર </span> કમાઓ
