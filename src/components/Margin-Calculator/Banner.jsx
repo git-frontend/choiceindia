@@ -6,13 +6,11 @@ import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 function Banner() {
-    const [rendercount, setRenderCount] = useState(() => false);
     const [toggleState, setToggleState] = useState(1);
     const toggleTab = (index) => {
         setToggleState(index);
     };
-    const lastSelectedScrip = useRef(null);
-    const marginCalForm = useRef(null);
+    const [errorMessages, setErrorMessages] = useState();
     const [marginConfig, setMarginConfig] = useState({
         contracts: [],
         action: false,
@@ -97,16 +95,6 @@ function Banner() {
             getSearchData(updatedSearchInput);
         }
 
-    };
-
-    const onInputPress = () => {
-        setMarginConfig(prevState => ({ ...prevState, startPos: 0 }));
-        if ((marginConfig.searchInput || "").trim().length < 3) {
-            setMarginConfig(prevState => ({ ...prevState, searchedData: [] }));
-        } else {
-            setMarginConfig(prevState => ({ ...prevState, searchedData: [] }));
-            getSearchData();
-        }
     };
 
     const getSearchData = (exchange) => {
@@ -208,6 +196,11 @@ function Banner() {
             marginConfig.isOptionScrip =
                 ['PE', 'CE'].indexOf(marginConfig.contractData.optionType) > -1 &&
                 marginConfig.contractData.action;
+            // marginConfig.isOptionScrip =
+            //     ['PE', 'CE'].indexOf(marginConfig.contractData.optionType) > -1 &&
+            //         marginConfig.contractData.action
+            //         ? true
+            //         : marginConfig.isOptionScrip;
 
             if (marginConfig.searchInput) {
                 isCheck = marginConfig.contracts.find(
@@ -238,7 +231,7 @@ function Banner() {
                 !marginConfig.searchInput
             ) {
                 console.log('You have already added this contract. Please select different scrip" : "Please select scrip"')
-                return;
+                return false;
             }
 
             marginConfig.contractData.qty = marginConfig.qty.toString().replace(/^0+/, '');
@@ -260,10 +253,12 @@ function Banner() {
                 qty: marginConfig.marketLot,
                 isShowNA: false,
             }));
-            document.documentElement.scrollTop = 0;
+          
         }
     };
-
+ 
+   
+    
 
     const calculateQty = () => {
         let result = parseInt(marginConfig.qty) / marginConfig.marketLot;
@@ -429,6 +424,50 @@ function Banner() {
         });
         return tokenQty;
     };
+    const getSellableOptionScrip = () => {
+        const optionScrip = marginConfig.contracts.filter((item) => {
+            return ['PE', 'CE'].indexOf(item.optionType) > -1 && item.action;
+        });
+        return optionScrip;
+    };
+
+    const deleteContract = (index) => {
+        let isDeletedDataOption = false;
+        if (marginConfig.contracts.length < 2) {
+            setMarginConfig((prevState) => ({
+                ...prevState,
+                totalSpan: 0,
+                totalExposure: 0,
+                totalMargin: 0,
+                marginBenefit: 0,
+                premium: 0,
+                contracts: [],
+                isOptionScrip: false,
+                isShowNA: false,
+            }));
+        } else {
+            isDeletedDataOption =
+                ['PE', 'CE'].indexOf(marginConfig.contracts[index].optionType) > -1 &&
+                marginConfig.contracts[index].action;
+
+            const updatedContracts = [...marginConfig.contracts];
+            updatedContracts.splice(index, 1);
+
+            setMarginConfig((prevState) => ({
+                ...prevState,
+                contracts: updatedContracts,
+            }));
+
+            if (isDeletedDataOption) {
+                const hasSellableOptionScrip = getSellableOptionScrip(updatedContracts).length > 0;
+                setMarginConfig((prevState) => ({
+                    ...prevState,
+                    isOptionScrip: hasSellableOptionScrip,
+                }));
+            }
+        }
+    };
+
 
     return (
         <>
@@ -577,12 +616,12 @@ function Banner() {
                                                         <div className="flex-items">
                                                             <div className='button-sec'>
                                                                 <div className='btn-items'>
-                                                                    <Button className="btn-add btn btn-primary" onClick={addResetContract}
+                                                                    <Button className="btn-add btn btn-primary" onClick={() => addResetContract(true)}
 
                                                                     >Add</Button>
                                                                 </div>
                                                                 <div className='btn-items'>
-                                                                    <Button type="submit" className="btn-reset btn btn-primary">Reset All</Button>
+                                                                    <Button className="btn-reset btn btn-primary" onClick={() => addResetContract(false)}>Reset All</Button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -638,16 +677,19 @@ function Banner() {
                                                         </div>
                                                         <div className='card-flex'>
                                                             <div className='flex-items'>
+
                                                                 <span>Margin Benefit</span>
+
                                                             </div>
                                                             <div className='flex-items'>
                                                                 <span>
-                                                                    {!marginConfig.isShowNA && <span>₹</span>}
+                                                                    {!marginConfig.isShowNA ? '₹' : ''}
+                                                                    &nbsp;
                                                                     {marginConfig.spanLoader
                                                                         ? 'Calculating...'
-                                                                        : !marginConfig.isShowNA
-                                                                            ? (marginConfig.marginBenefit >= 0 ? marginConfig.marginBenefit : 0.00).toFixed(2)
-                                                                            : 'NA'}
+                                                                        : (!marginConfig.isShowNA
+                                                                            ? (marginConfig.marginBenefit >= 0 ? marginConfig.marginBenefit.toFixed(2) : '0.00')
+                                                                            : 'NA')}
                                                                 </span>
                                                             </div>
                                                         </div>
