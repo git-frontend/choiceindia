@@ -190,6 +190,9 @@
                             background: $whiteColor;
                             padding: 0.7rem;
                             border-radius: 6px;
+                            &:active{
+                                box-shadow: inset 0 3px 5px $border-light;
+                            }
                             // .svg-icon{
                             //     height: 1.846rem;
                             //     width: 1.846rem;
@@ -359,6 +362,19 @@
                                         }
                                     }
                                 } 
+                                .no-data-section{
+                                    text-align: center;
+                                    margin: 8rem 0;
+                                    p{
+                                        color: $primary;
+                                        text-align: center;
+                                        font-family: $font-family-poppins-semibold;
+                                        font-size: 1.385rem;
+                                        font-weight: 600;
+                                        line-height: 1.5;
+                                        padding-top: 2.769rem;
+                                    }
+                                }
                             }
                           
                         }

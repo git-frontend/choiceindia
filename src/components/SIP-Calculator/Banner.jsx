@@ -357,7 +357,7 @@ const charteroption={
                                                 <div className='cal-opt mrg-top'>
                                                     {/* <p>Loan Amount</p> */}
                                                     <div className='value-card'>
-                                                        <div><p>Monthly Investment</p></div>
+                                                        <div><p>Lumpsum Investment</p></div>
                                                         <div className="input-sec">
                                                             <div className="form-control2">
                                                                 <span className="rupees-symble">₹</span>

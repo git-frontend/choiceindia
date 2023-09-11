@@ -16,7 +16,7 @@ function MoreContent() {
                             <h3 className='seo-h3'>What is a Mutual Fund Calculator?</h3>
                             <p>A mutual fund calculator is a free online tool on several websites. It offers a one-stop solution to determine your returns and display the future value of your investment. Additionally, a calculator tells you how long it might take for you to achieve your goals.</p>
                             <p>Most online calculators have three or four primary inputs to be filled in by the user.</p>
-                            <ul className='list-styl-none'>
+                            <ul className='mrg-3'>
                                 <li>The amount you plan to invest monthly</li>
                                 <li>The duration for which you plan to commit to a regular investing schedule</li>
                                 <li>Expected rate of return</li>
@@ -26,19 +26,19 @@ function MoreContent() {
                            <p>Mutual funds do not guarantee a consistent return, so you might often second guess if your investment plan is ideal for your long-term goals. Here’s where a calculator proves valuable.</p>
                             <p>For illustration, consider that you plan to buy a car in 5 years. Assume the car is priced at INR 10,00,000, and you can spare a monthly sum of INR 20,000.</p>
                            <p>In this hypothetical scenario, you can use a mutual fund calculator to track the following:</p>
-                           <ol>
+                           <ul className='mrg-3'>
                             <li>The ideal amount of investment to reach your goals</li>
                             <li>An estimated value of the returns</li>
                             <li>Total investments made over a while</li>
-                           </ol>
+                           </ul>
                            <p>Simply enter the values of your monthly investment, time duration and goal amount. You can then reduce or increase the sum to cater to your goals while diversifying the remaining income in other avenues.</p>
-                           <h3 className='seo-h4'>How Does a Mutual Fund Calculator Work?</h3>
+                           <h3 className='seo-h3'>How Does a Mutual Fund Calculator Work?</h3>
                            <p>Without a mutual fund calculator, you will need to rely on manual calculations to calculate the time period of your investment goals. While it is a more complex method involving a specific formula, it will give you the required answer if done correctly.</p>
                            <p>The formula differs according to the type of investment you make.</p>
                            <h4 className='seo-h4'>Mutual Fund Lumpsum Calculator</h4>
                            <p>If you happen across a bonus or a large sum and are looking to invest it all in a single go, your investment is termed a lumpsum investment. With such investments, the goal is to let the money appreciate in nature by investing it together, albeit in different mutual fund schemes.</p>
                             <p>For lumpsum investments, the returns can be calculated using the formula given below:</p>
-                            <ul>
+                            <ul className='mrg-3'>
                                 <li>M = P (1+R/100) / n</li>
                                 <li>M = Maturity amount, which is the total value of your initial investment after the end of the specified duration</li>
                                 <li>P = Principal amount, which is the initial lump sum amount you invested</li>
@@ -48,7 +48,7 @@ function MoreContent() {
                             <h4 className='seo-h4'>Mutual Fund SIP Calculator</h4>
                             <p>Systemic investment plans, or SIPs, are a way of investment where you deposit a fixed amount after a set, pre-determined amount of time. Provided that SIPs are monthly or fortnightly, the sum invested in each SIP is significantly lower than lumpsum investments.</p>
                             <p>Due to the nature of SIPs, they are calculated using a different formula, as given below:</p>
-                            <ul>
+                            <ul className='mrg-3'>
                                 <li>M = A [ (1 + i) n – 1] x (1 + i) / i</li>
                                 <li>M = Maturity amount</li>
                                 <li>A = SIP contribution for every pre-fixed period (alter the number accordingly for daily or weekly investments)</li>
@@ -59,8 +59,7 @@ function MoreContent() {
                             <p>Provided every investment has an end goal, staying aware of the time to achieve these goals is vital. Hence, a mutual fund calculator is the perfect way to be more conscious of your financial goals.</p>
                             <p>Some of the advantages offered by such calculators are as follows:</p>
                             <p>Mutual fund calculators provide a simple and user-friendly interface to enable quick calculations of future returns.</p>
-                            <p>Provide help on computing returns for surplus as well as monthly investments.</p>
-                            <p>It saves surplus time on complex calculations and simplifies understanding Facilitates targeted investments with a clear goal in mind to enable long-term wealth building</p>
+                            <p>Provide help on computing returns for surplus as well as monthly investments.It saves surplus time on complex calculations and simplifies understanding Facilitates targeted investments with a clear goal in mind to enable long-term wealth building.</p>
                         </div>
                     </div>
                 </div>

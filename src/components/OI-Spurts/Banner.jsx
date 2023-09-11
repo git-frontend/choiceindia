@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import rest from "../../Services/rest";
 import Dropdown from 'react-bootstrap/Dropdown';
+import NoData from "../../assets/images/brokerage-calculator/no-data.webp";
+import LazyLoader from '../Common-features/LazyLoader';
 function Banner() {
     const [toggleState, setToggleState] = useState(1);
     const [data, setData] = useState(0);
@@ -370,7 +372,8 @@ function Banner() {
                                                         </table>
                                                     ) : (
                                                         <div className="no-data-section">
-                                                            No Data Available
+                                                            <LazyLoader src={NoData} alt ="No Data Availble" height={200} width={260} className="img-fluid"></LazyLoader>
+                                                            <p>No Data Available</p>
                                                         </div>
                                                     )}
                                                 </div>

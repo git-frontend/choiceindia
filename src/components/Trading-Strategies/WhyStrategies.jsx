@@ -104,7 +104,7 @@ function WhyStrategies() {
                         </div>
                         <div className="app-list-item">
                             <img src={Image3} alt="Timely Alerts on Your Virtual & Live Trades" className="img-fluid"  width={"100"} height={"100"}/>
-                            <h3>Timely alerts on your Virtual & Live trades</h3>
+                            <h3>Timely alerts on your Live trades</h3>
                             <p>Get timely alerts as and when your trades are triggered.</p>
                         </div>
                         <div className="app-list-item">

@@ -48,14 +48,14 @@ function OpenFreeDematAccount() {
                                     </div>
                                 </div>
                                     <div className='men'>
-                                        <LazyLoader src={Img1} height={374} width={302} className="img-fluid" />
+                                        <LazyLoader src={Img1} height={374} width={302} className="img-fluid" alt={"Open Interest (OI Spurts)"} />
                                     </div>
                                 </div>
                             </div>
                             <div className='right-items'>
                                 <div className='free-account-ttl'>
                                     <h2 className='title-first'>Open a <span>FREE</span> Demat <br/>Account in <span>5 Mins.</span></h2>
-                                    <a className='btn-bg btn-light' href='/'>Open Now</a>
+                                    <a className='btn-bg btn-light' href='https://choiceindia.com/open-free-demat-account'>Open Now</a>
                                 </div>
                             </div>
                         </div>

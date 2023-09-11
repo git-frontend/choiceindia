@@ -183,11 +183,11 @@ const LazySIPCalculator =React.lazy(()=> import('./components/SIP-Calculator/SIP
 const LazyOISpurts =React.lazy(()=> import('./components/OI-Spurts/OISpurts'))
 const LazyBlogCms =React.lazy(()=> import('./components/Blog-cms/BlogCms'));
 const LazyMutualFundCalculator =React.lazy(()=> import('./components/Mutual-Fund-Calculator/MutualFundCalculator'));
-const LazyOptionChain =React.lazy(()=> import('./components/Option-Chain/OptionChain'));
-const LazyCompanyOptionChain =React.lazy(()=> import('./components/Company-Option-Chain/CompanyOptionChain'));
-const LazyNSEOptionChain =React.lazy(()=> import('./components/NSE-Option-Chain/NSEOptionChain'));
-const LazyMCXOptionChain =React.lazy(()=> import('./components/MCX-Option-Chain/MCXOptionChain'));
-const LazyCurrencyOptionChain =React.lazy(()=> import('./components/Currency-Option-Chain/CurrencyOptionChain'));
+// const LazyOptionChain =React.lazy(()=> import('./components/Option-Chain/OptionChain'));
+// const LazyCompanyOptionChain =React.lazy(()=> import('./components/Company-Option-Chain/CompanyOptionChain'));
+// const LazyNSEOptionChain =React.lazy(()=> import('./components/NSE-Option-Chain/NSEOptionChain'));
+// const LazyMCXOptionChain =React.lazy(()=> import('./components/MCX-Option-Chain/MCXOptionChain'));
+// const LazyCurrencyOptionChain =React.lazy(()=> import('./components/Currency-Option-Chain/CurrencyOptionChain'));
 
 function Routing() {
 
@@ -457,11 +457,17 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/research-new/:id/:catid' element={
+                        {/* <Route exact path='/research-new/:id/:catid' element={
+                            <React.Suspense>
+                                < Lazyresearchdetailed />
+                            </React.Suspense>
+                        } /> */}
+                        <Route exact path='/research-report/:id' element={
                             <React.Suspense>
                                 < Lazyresearchdetailed />
                             </React.Suspense>
                         } />
+                        
 
                         <Route exact path='/demat-account' element={
                             <React.Suspense>
@@ -953,7 +959,7 @@ function Routing() {
                                 < LazyMutualFundCalculator />
                             </React.Suspense>
                         } />
-                         <Route exact path='/option-chain' element={
+                         {/* <Route exact path='/option-chain' element={
                             <React.Suspense>
                                 < LazyOptionChain />
                             </React.Suspense>
@@ -977,7 +983,7 @@ function Routing() {
                             <React.Suspense>
                                 < LazyCurrencyOptionChain />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
