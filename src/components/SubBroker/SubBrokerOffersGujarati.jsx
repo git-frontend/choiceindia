@@ -55,42 +55,32 @@ function SubBrokerOffers() {
                                     <table class="table table-hover table-striped ">
                                         <thead>
                                             <tr>
-                                                <th width="25%"> <span></span> </th>
-                                                <th>લઘુત્તમ રૂ.1,000 ખાતું. રોકાણ અને 2 ટ્રાન્ઝેક્શન</th>
-                                                <th>લઘુત્તમ રૂ.5,000 ખાતું. રોકાણ અને 2 ટ્રાન્ઝેક્શન</th>
-                                                <th>લઘુત્તમ રૂ.25,000 ખાતું. રોકાણ અને 2 ટ્રાન્ઝેક્શન</th>
+                                                <th width="25%"> ખાતાઓની સંખ્યા </th>
+                                                <th>ખાતાં ની સાથે Equity મા ઓછા મા ઓછુ ₹1,000 નું રોકાણ અને 2 સોદા</th>
+                                                {/* <th>લઘુત્તમ રૂ.5,000 ખાતું. રોકાણ અને 2 ટ્રાન્ઝેક્શન</th> */}
+                                                <th>ખાતાં ની સાથે Equity મા ઓછા મા ઓછુ ₹25,000 નું રોકાણ અને 2 સોદા</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="charges-heads">4-49</td>
+                                                <td className="charges-heads">10-99</td>
                                                 <td>100</td>
                                                 <td>200</td>
-                                                <td>500</td>
                                             </tr>
-                                            <tr class="grey-back">
-                                                <td class="charges-heads">50-99</td>
+                                            <tr className="grey-back">
+                                                <td className="charges-heads">100-299</td>
                                                 <td>150</td>
+                                                <td>400</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="charges-heads">300-1999</td>
                                                 <td>250</td>
-                                                <td>600</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="charges-heads">100-299</td>
-                                                <td>200</td>
-                                                <td>400</td>
-                                                <td>700</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="charges-heads">300-1999</td>
-                                                <td>300</td>
                                                 <td>500</td>
-                                                <td>1000</td>
                                             </tr>
                                             <tr>
-                                                <td class="charges-heads">2000+</td>
+                                                <td className="charges-heads">2000+</td>
                                                 <td>400</td>
-                                                <td>700</td>
-                                                <td>2100</td>
+                                                <td>1000</td>
                                             </tr>
                                         </tbody>
                                     </table>

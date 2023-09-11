@@ -45,7 +45,8 @@ function BannerSBrokerHindi() {
                                         <span>उच्चतम</span> ब्रोकरेज शेयरिंग
                                     </li>
                                     <li>
-                                        <span>लोकल ब्रांच</span> सपोर्ट
+                                       
+                                        <span className="d-inline">₹ १०००</span> प्रति खाता इन्सेंटिव इन्सेंटिव्ह
                                     </li>
                                     <li>
                                         <span>लाईफटाइम</span> इनकम स्रोत

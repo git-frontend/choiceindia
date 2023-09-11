@@ -112,7 +112,7 @@ function SubBroker() {
             <SubBrokerSellMoreGujarati />
             <WhyBecomeSubBrokerGujarati />
             <WhoEligibleToSubBrokerGujarati />
-            {/* <SubBrokerOffersGujarati /> */}
+            <SubBrokerOffersGujarati />
             {/* <MoreContentGujarati /> */}
           </div>
       }
