@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import rest from "../../Services/rest";
 import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import { Accordion } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 function Banner() {
@@ -10,6 +10,8 @@ function Banner() {
     const toggleTab = (index) => {
         setToggleState(index);
     };
+    const location = useLocation();
+    const [activeTab, setActiveTab] = useState(1);
     const [errorMessages, setErrorMessages] = useState();
     const [marginConfig, setMarginConfig] = useState({
         contracts: [],
@@ -39,37 +41,62 @@ function Banner() {
         tableLoader: false,
         isShowNA: false,
     });
-
     useEffect(() => {
+        // Extract the tabIndex from the URL pathname
         const pathToTabIndexMap = {
             "/margin-calculator": 1,
             "/futures-and-options-margin-calculator": 2,
             "/commodity-margin-calculator": 3,
             "/forex-margin-calculator": 4,
         };
-        const tabIndex = pathToTabIndexMap[window.location.pathname] || 1;
-
-        activateTab(tabIndex);
-        // setRenderCount(true);
-    }, [marginConfig.exchange]);
+        const tabIndex = pathToTabIndexMap[location.pathname] || 1;
 
 
-    const activateTab = (tabIndex, exchange) => {
-        setMarginConfig(prevState => ({
+        setActiveTab(tabIndex);
+        updateMarginConfig(tabIndex);
+    }, [location.pathname, marginConfig.exchange]);
+
+    const handleTabChange = (tabIndex) => {
+        setActiveTab(tabIndex);
+       
+    };
+    const updateMarginConfig = (tabIndex) => {
+        let exchange = '';
+
+        switch (tabIndex) {
+            case 1:
+                exchange = '';
+                break;
+            case 2:
+                exchange = 'FO';
+                break;
+            case 3:
+                exchange = 'COM';
+                break;
+            case 4:
+                exchange = 'CD';
+                break;
+            default:
+                exchange = '';
+                break;
+        }
+
+        setMarginConfig((prevState) => ({
             ...prevState,
-            activeTab: Number(tabIndex),
-            exchange: exchange
+            activeTab: tabIndex,
+            exchange: exchange,
         }));
+
+        // Call getSearchData based on the selected tab and exchange
         if (tabIndex === 1) {
             getSearchData('');
-        } else if (tabIndex === 2) {
-            getSearchData('FO');
-        } else if (tabIndex === 3) {
-            getSearchData('COM');
-        } else if (tabIndex === 4) {
-            getSearchData('CD');
+        } else {
+            getSearchData(exchange);
         }
     };
+
+
+   
     const handleSearchInputChange = (e) => {
         const updatedSearchInput = e.target.value;
         setMarginConfig(prevState => ({ ...prevState, searchInput: updatedSearchInput }));
@@ -118,7 +145,7 @@ function Banner() {
                     // searchedData = res.Response;
                     if (marginConfig.activeTab === 1) {
                         searchedData = res.Response.filter(item => item.SegmentId !== 1 && item.SegmentId !== 3);
-                        console.log("searchedData",searchedData)
+                        console.log("searchedData", searchedData)
                     } else {
                         searchedData = res.Response;
                     }
@@ -203,11 +230,6 @@ function Banner() {
             marginConfig.isOptionScrip =
                 ['PE', 'CE'].indexOf(marginConfig.contractData.optionType) > -1 &&
                 marginConfig.contractData.action;
-            // marginConfig.isOptionScrip =
-            //     ['PE', 'CE'].indexOf(marginConfig.contractData.optionType) > -1 &&
-            //         marginConfig.contractData.action
-            //         ? true
-            //         : marginConfig.isOptionScrip;
 
             if (marginConfig.searchInput) {
                 isCheck = marginConfig.contracts.find(
@@ -260,12 +282,12 @@ function Banner() {
                 qty: marginConfig.marketLot,
                 isShowNA: false,
             }));
-          
+
         }
     };
- 
-   
-    
+
+
+
 
     const calculateQty = () => {
         let result = parseInt(marginConfig.qty) / marginConfig.marketLot;
@@ -483,22 +505,22 @@ function Banner() {
                     <div className='row justify-content-center'>
                         <div className='col-xl-9 col-md-12'>
                             {
-                                toggleState == 1 ?
+                                activeTab == 1 ?
                                     <div className='banner-ttle text-center'>
                                         <h1 className='title-first'>Margin Calculator</h1>
                                         <p>Use Choice FinX Margin Calculator to calculate the margin for Future & Option (F&O), Commodity, and Currency segments.</p>
                                     </div> :
-                                    toggleState == 2 ?
+                                    activeTab == 2 ?
                                         <div className='banner-ttle text-center'>
                                             <h1 className='title-first'>F&O Margin Calculator</h1>
                                             <p>Calculate the margin for Future & Option (F&O) selling</p>
                                         </div> :
-                                        toggleState == 3 ?
+                                        activeTab == 3 ?
                                             <div className='banner-ttle text-center'>
                                                 <h1 className='title-first'>Commodity Margin Calculator</h1>
                                                 <p>Calculate the margin for commodity.</p>
                                             </div> :
-                                            toggleState == 4 ?
+                                            activeTab == 4 ?
                                                 <div className='banner-ttle text-center'>
                                                     <h1 className='title-first'>Forex Margin Calculator</h1>
                                                     <p>Calculate the margin for Currency</p>
@@ -513,7 +535,7 @@ function Banner() {
                             <div className='tabs-btn'>
                                 <div className='row justify-content-center'>
                                     <div className='col-xl-8 col-md-12'>
-                                        <ul className='list_group1'>
+                                        {/* <ul className='list_group1'>
                                             <li className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}>
                                                 <Link className='urllinks' to="/margin-calculator" onClick={() => { activateTab(1, ''); setToggleState(1) }}>All</Link>
                                             </li>
@@ -525,7 +547,36 @@ function Banner() {
                                             <li className={toggleState === 4 ? "list-group-item tabs active" : "list-group-item"}>
                                                 <Link className='urllinks' to="/forex-margin-calculator" onClick={() => { activateTab(4, 'CD'); setToggleState(4) }}>Forex</Link>
                                             </li>
+                                        </ul> */}
+                                        {/* <ul className='list_group1'>
+                                            <li className={activeTab === 1 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/margin-calculator" onClick={() => handleTabChange(1)}>All</Link>
+                                            </li>
+                                            <li className={activeTab === 2 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/futures-and-options-margin-calculator" onClick={() => handleTabChange(2)}>F&O</Link>
+                                            </li>
+                                            <li className={activeTab === 3 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/commodity-margin-calculator" onClick={() => handleTabChange(3)}>Commodity</Link>
+                                            </li>
+                                            <li className={activeTab === 4 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/forex-margin-calculator" onClick={() => handleTabChange(4)}>Forex</Link>
+                                            </li>
+                                        </ul> */}
+                                        <ul className='list_group1'>
+                                            <li className={activeTab === 1 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/margin-calculator">All</Link>
+                                            </li>
+                                            <li className={activeTab === 2 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/futures-and-options-margin-calculator">F&O</Link>
+                                            </li>
+                                            <li className={activeTab === 3 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/commodity-margin-calculator">Commodity</Link>
+                                            </li>
+                                            <li className={activeTab === 4 ? "list-group-item tabs active" : "list-group-item"}>
+                                                <Link className='urllinks' to="/forex-margin-calculator">Forex</Link>
+                                            </li>
                                         </ul>
+
                                     </div>
                                 </div>
                             </div>
@@ -826,7 +877,7 @@ function Banner() {
             <section className='more-content'>
                 <div className='container'>
                     {
-                        toggleState == 1 ?
+                        activeTab == 1 ?
                             <div className="row">
                                 <div className='col-md-12'>
                                     <div className='title-content'>
@@ -894,7 +945,7 @@ function Banner() {
                                     </div>
                                 </div>
                             </div> :
-                            toggleState == 2 ?
+                            activeTab == 2 ?
 
                                 <div className="row">
                                     <div className='col-md-12'>
@@ -935,7 +986,7 @@ function Banner() {
                                         </div>
                                     </div>
                                 </div> :
-                                toggleState == 3 ?
+                                activeTab == 3 ?
                                     <div className="row">
                                         <div className='col-md-12'>
                                             <div className='title-content'>
@@ -975,7 +1026,7 @@ function Banner() {
                                             </div>
                                         </div>
                                     </div> :
-                                    toggleState == 4 ?
+                                    activeTab == 4 ?
                                         <div className="row">
                                             <div className='col-md-12'>
                                                 <div className='title-content'>
@@ -1038,7 +1089,7 @@ function Banner() {
                     <div className='container'>
 
                         {
-                            toggleState == 1 ?
+                            activeTab == 1 ?
                                 <div className="row">
                                     <div className="col-md-12">
                                         <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
@@ -1064,7 +1115,7 @@ function Banner() {
                                     </div>
                                 </div> :
 
-                                toggleState == 2 ?
+                                activeTab == 2 ?
                                     <div className='row'>
                                         <div className="col-md-12">
                                             <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
@@ -1095,7 +1146,7 @@ function Banner() {
                                             </Accordion>
                                         </div>
                                     </div> :
-                                    toggleState == 3 ?
+                                    activeTab == 3 ?
                                         <div className='row'>
                                             <div className="col-md-12">
                                                 <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
@@ -1144,7 +1195,7 @@ function Banner() {
                                                 </Accordion>
                                             </div>
                                         </div> :
-                                        toggleState == 4 ?
+                                        activeTab == 4 ?
                                             <div className='row'>
                                                 <div className="col-md-12">
                                                     <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
