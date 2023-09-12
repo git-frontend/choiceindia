@@ -46,7 +46,7 @@ function BannerSBrokerHindi() {
                                     </li>
                                     <li>
                                        
-                                        <span className="d-inline">₹ १०००</span> प्रति खाता इन्सेंटिव्ह*
+                                        <span className="d-inline">₹ १०००</span> तक प्रति खाता इन्सेंटिव्ह*
                                     </li>
                                     <li>
                                         <span>लाईफटाइम</span> इनकम स्रोत
