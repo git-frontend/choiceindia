@@ -108,13 +108,20 @@ function Banner() {
             "StartPos": marginConfig.startPos,
             "NoOfRecords": marginConfig.limit,
             "strSegment": marginConfig.exchange,
+            // "strSegment":marginConfig.activeTab === 1 ? 'FO|COM|CD' : exchange
         };
 
         rest.getSearchData(data)
             .then((res) => {
                 if (res.Status === "Success" && res.Response && res.Response.length) {
                     let searchedData = [...marginConfig.searchedData];
-                    searchedData = res.Response;
+                    // searchedData = res.Response;
+                    if (marginConfig.activeTab === 1) {
+                        searchedData = res.Response.filter(item => item.SegmentId !== 1 && item.SegmentId !== 3);
+                        console.log("searchedData",searchedData)
+                    } else {
+                        searchedData = res.Response;
+                    }
                     setMarginConfig((prevState) => ({
                         ...prevState,
                         datalength: res.Response.length,
