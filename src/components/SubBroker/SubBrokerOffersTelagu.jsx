@@ -55,44 +55,33 @@ function SubBrokerOffers() {
                                     <table class="table table-hover table-striped ">
                                         <thead>
                                             <tr>
-                                                <th width="25%"> <span></span> </th>
+                                                <th width="25%"> ఖాతాల సంఖ్య </th>
                                                 <th>రూ.1000 కనీస పెట్టుబడి &amp; ఈక్విటీలో 2 లావాదేవీలు </th>
-                                                <th>రూ.5000 కనీస పెట్టుబడి &amp; ఈక్విటీలో 2 లావాదేవీలు  </th>
+                                                {/* <th>రూ.5000 కనీస పెట్టుబడి &amp; ఈక్విటీలో 2 లావాదేవీలు  </th> */}
                                                 <th>రూ.25000 కనీస పెట్టుబడి &amp; ఈక్విటీలో 2 లావాదేవీలు </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td className="charges-heads">4-49</td>
+                                                <td className="charges-heads">10-99</td>
                                                 <td>100</td>
                                                 <td>200</td>
-                                                <td>500</td>
                                             </tr>
                                             <tr className="grey-back">
-                                                <td className="charges-heads">50-99</td>
-                                                <td>150</td>
-                                                <td>250</td>
-                                                <td>600</td>
-                                            </tr>
-                                            <tr>
                                                 <td className="charges-heads">100-299</td>
-                                                <td>200</td>
+                                                <td>150</td>
                                                 <td>400</td>
-                                                <td>700</td>
                                             </tr>
                                             <tr>
                                                 <td className="charges-heads">300-1999</td>
-                                                <td>300</td>
+                                                <td>250</td>
                                                 <td>500</td>
-                                                <td>1000</td>
                                             </tr>
                                             <tr>
                                                 <td className="charges-heads">2000+</td>
                                                 <td>400</td>
-                                                <td>700</td>
-                                                <td>2100</td>
+                                                <td>1000</td>
                                             </tr>
-                                        
                                         </tbody>
                                     </table>
                                 </div>

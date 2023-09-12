@@ -7,6 +7,7 @@ import WhyBecomeAuthorize from './WhyBecomeAuthorize';
 import WhoEligibleToAuthorize from './WhoEligibleToAuthorize';
 import AuthorizeMoreContent from './AuthorizeMoreContent';
 import AuthorizeFaq from './AuthorizeFaq';
+import AuthorizeOffers from'./AuthorizeOffers';
 
 import { useState, useEffect} from "react";
 import Template5 from '../Common-features/Template5';
@@ -62,9 +63,10 @@ function AuthorizePerson() {
             <AuthorizeSellMore />
             <WhyBecomeAuthorize />
             <WhoEligibleToAuthorize />
+            <AuthorizeOffers />
             <AuthorizeFaq />
             <AuthorizeMoreContent />
-            {/* <AuthorizeOffers /> */}
+           
           </div>
       }
 

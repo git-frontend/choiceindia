@@ -307,7 +307,7 @@ function OurTrackRecordSaysAll() {
             <div className="row d-flex justify-content-center ">
               <div className="col-md-12 ">
                 <div>
-                  <h1 className="title-first">Our Track Record Says It All</h1>
+                  <h2 className="title-first">Our Track Record Says It All</h2>
                 </div>
               </div>
               <div className="col-xl-4 col-md-6">
