@@ -464,74 +464,96 @@ function Banner() {
         });
         return optionScrip;
     };
-
-    const deleteContract = (index) => {
-        const updatedContracts = [...marginConfig.contracts];
-        updatedContracts.splice(index, 1);
-    
-        setMarginConfig(prevState => ({
-            ...prevState,
-            contracts: updatedContracts,
-        }));
-    
-        if (updatedContracts.length === 0) {
-            setMarginConfig(prevState => ({
-                ...prevState,
-                totalSpan: 0,
-                totalExposure: 0,
-                totalMargin: 0,
-                marginBenefit: 0,
-                premium: 0,
-                isOptionScrip: false,
-                isShowNA: false,
-            }));
-        } else {
-            const hasSellableOptionScrip = getSellableOptionScrip(updatedContracts).length > 0;
-            setMarginConfig(prevState => ({
-                ...prevState,
-                isOptionScrip: hasSellableOptionScrip,
-            }));
-        }
-    };
-    
+// fina one 
     // const deleteContract = (index) => {
-    //     let isDeletedDataOption = false;
-    //     if (marginConfig.contracts.length < 2) {
-    //         setMarginConfig((prevState) => ({
+    //     const updatedContracts = [...marginConfig.contracts];
+    //     updatedContracts.splice(index, 1);
+    
+    //     setMarginConfig(prevState => ({
+    //         ...prevState,
+    //         contracts: updatedContracts,
+    //     }));
+    
+    //     if (updatedContracts.length === 0) {
+    //         setMarginConfig(prevState => ({
     //             ...prevState,
     //             totalSpan: 0,
     //             totalExposure: 0,
     //             totalMargin: 0,
     //             marginBenefit: 0,
     //             premium: 0,
-    //             contracts: [],
     //             isOptionScrip: false,
     //             isShowNA: false,
     //         }));
     //     } else {
-    //         isDeletedDataOption =
-    //             ['PE', 'CE'].indexOf(marginConfig.contracts[index].optionType) > -1 &&
-    //             marginConfig.contracts[index].action;
-
-    //         const updatedContracts = [...marginConfig.contracts];
-    //         updatedContracts.splice(index, 1);
-
-    //         setMarginConfig((prevState) => ({
+    //         const hasSellableOptionScrip = getSellableOptionScrip(updatedContracts).length > 0;
+    //         setMarginConfig(prevState => ({
     //             ...prevState,
-    //             contracts: updatedContracts,
+    //             isOptionScrip: hasSellableOptionScrip,
     //         }));
-
-    //         if (isDeletedDataOption) {
-    //             const hasSellableOptionScrip = getSellableOptionScrip(updatedContracts).length > 0;
-    //             setMarginConfig((prevState) => ({
-    //                 ...prevState,
-    //                 isOptionScrip: hasSellableOptionScrip,
-    //             }));
-    //         }
-    //         // callMargin(true);
     //     }
     // };
-
+    const deleteContract = (index) => {
+        let isDeletedDataOption = false;
+        if (marginConfig.contracts.length < 2) {
+            setMarginConfig((prevState) => ({
+                ...prevState,
+                totalSpan: 0,
+                totalExposure: 0,
+                totalMargin: 0,
+                marginBenefit: 0,
+                premium: 0,
+                contracts: [],
+                isOptionScrip: false,
+                isShowNA: false,
+            }));
+        } else {
+            isDeletedDataOption =
+                ['PE', 'CE'].indexOf(marginConfig.contracts[index].optionType) > -1 &&
+                marginConfig.contracts[index].action;
+    
+            const updatedContracts = [...marginConfig.contracts];
+            updatedContracts.splice(index, 1);
+    
+            const newTotalExposure = updatedContracts.reduce(
+                (total, contract) => total + contract.exposure,
+                0
+            );
+            const newTotalMargin = updatedContracts.reduce(
+                (total, contract) => total + contract.total,
+                0
+            );
+            const newTotalSpan = updatedContracts.reduce(
+                (total, contract) => total + (contract.IM >= 0 ? contract.IM : 0),
+                0
+            );
+            const newMarginBenefit = updatedContracts.reduce(
+                (total, contract) => total + contract.marginBenefit,
+                0
+            );
+    
+            setMarginConfig((prevState) => ({
+                ...prevState,
+                contracts: updatedContracts,
+                totalExposure: newTotalExposure,
+                totalMargin: newTotalMargin,
+                totalSpan: newTotalSpan,
+                marginBenefit: newMarginBenefit,
+            }));
+    
+            if (isDeletedDataOption) {
+                const hasSellableOptionScrip =
+                    getSellableOptionScrip(updatedContracts).length > 0;
+                setMarginConfig((prevState) => ({
+                    ...prevState,
+                    isOptionScrip: hasSellableOptionScrip,
+                }));
+            }
+            // callMargin(true);
+        }
+    };
+    
+   
 
     return (
         <>
