@@ -1,0 +1,28 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+.track-records-banner{
+    .track-record-tabs{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        .trackbtn{
+            width: 24.33%;
+            text-align: center;
+            padding: 2.375rem 1.5rem;
+            color: #000000;
+            font-size: 2rem;
+            line-height: 3.75rem;
+            font-weight: 400;
+            font-family: "PoppinsRegular", sans-serif;
+            border: 0;
+            border-right: 1px solid #C2C2C2;
+            outline: none;
+            box-shadow: inherit;
+            background: #ffffff;
+            position: relative;
+            cursor: pointer; 
+        }
+    }
+}
