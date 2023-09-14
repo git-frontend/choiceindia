@@ -308,7 +308,7 @@ function Banner() {
             }));
         }
     };
-    const callMargin = () => {
+    const callMargin = (isFromDelete) => {
         setMarginConfig(prevState => ({
             ...prevState,
             apiCount: 0,
@@ -318,17 +318,17 @@ function Banner() {
 
         for (let i = 0; i < numOfSeg.length; i++) {
             const scripArray = marginConfig.contracts.filter(item => item.SegmentId === numOfSeg[i]);
-            getMarginData(scripArray, i, numOfSeg.length);
+            getMarginData(scripArray, i, numOfSeg.length,isFromDelete);
         }
     };
 
-    const getMarginData = (scripArray, numOfSegLen) => {
+    const getMarginData = (scripArray, numOfSegLen,isFromDelete) => {
         const request = {
             segmentId: scripArray[0].SegmentId,
             token_qty: createTokenQtyString(scripArray),
         };
 
-        if (!marginConfig.apiCount) {
+        if (!marginConfig.apiCount && !isFromDelete) {
             setMarginConfig(prevState => ({
                 ...prevState,
                 spanLoader: true,
@@ -360,11 +360,16 @@ function Banner() {
 
                     setMarginConfig(prevState => ({
                         ...prevState,
-                        totalSpan: prevState.totalSpan + res.Response.Span_Summary.Span,
-                        totalExposure: prevState.totalExposure + res.Response.Span_Summary.ExpMgn,
-                        marginBenefit: prevState.marginBenefit + res.Response.Span_Summary.MgnBenefit,
-                        premium: prevState.premium + res.Response.Span_Summary.OptionPremium,
-                        totalMargin: prevState.totalMargin + res.Response.Span_Summary.TotalMgn,
+                        // totalSpan: prevState.totalSpan + res.Response.Span_Summary.Span,
+                        // totalExposure: prevState.totalExposure + res.Response.Span_Summary.ExpMgn,
+                        // marginBenefit: prevState.marginBenefit + res.Response.Span_Summary.MgnBenefit,
+                        // premium: prevState.premium + res.Response.Span_Summary.OptionPremium,
+                        // totalMargin: prevState.totalMargin + res.Response.Span_Summary.TotalMgn,
+                        totalSpan: res.Response.Span_Summary.Span,
+                        totalExposure: res.Response.Span_Summary.ExpMgn,
+                        marginBenefit:  res.Response.Span_Summary.MgnBenefit,
+                        premium:res.Response.Span_Summary.OptionPremium,
+                        totalMargin: res.Response.Span_Summary.TotalMgn,
                     }));
 
                     if (!marginConfig.contracts.length) {
@@ -400,12 +405,6 @@ function Banner() {
                         spanLoader: false,
                     }));
 
-                    //   if (marginConfig.isOptionScrip && !marginConfig.premium) {
-                    //     subscribeMultitouchline(getSellableOptionScrip());
-                    //     if (!isSocketConnected()) {
-                    //       getMultitouchline();
-                    //     }
-                    //   }
 
                     if (!marginConfig.totalMargin) {
                         setMarginConfig(prevState => ({
@@ -420,9 +419,6 @@ function Banner() {
                     }));
                 }
 
-                // if (marginConfig.contracts.length && isMobileDevice()) {
-                //   document.getElementById("content").scrollIntoView();
-                // }
             });
     };
 
@@ -446,13 +442,22 @@ function Banner() {
         }));
     };
 
+    // const createTokenQtyString = (scripArray) => {
+    //     let tokenQty = "";
+    //     scripArray.forEach((element, index) => {
+    //         tokenQty += `${element.Token}%7C${element.action ? '-' : ''}${element.qty}${index < scripArray.length - 1 ? '~' : ''}`;
+    //     });
+    //     return tokenQty;
+    // };
     const createTokenQtyString = (scripArray) => {
-        let tokenQty = "";
+        let tokenQty = '';
         scripArray.forEach((element, index) => {
-            tokenQty += `${element.Token}%7C${element.action ? '-' : ''}${element.qty}${index < scripArray.length - 1 ? '~' : ''}`;
+            const action = element.action ? '-' : ''; // Add '-' for 'SELL' action
+            tokenQty += `${element.Token}%7C${action}${element.qty}${index < scripArray.length - 1 ? '~' : ''}`;
         });
         return tokenQty;
     };
+    
     const getSellableOptionScrip = () => {
         const optionScrip = marginConfig.contracts.filter((item) => {
             return ['PE', 'CE'].indexOf(item.optionType) > -1 && item.action;
@@ -461,41 +466,71 @@ function Banner() {
     };
 
     const deleteContract = (index) => {
-        let isDeletedDataOption = false;
-        if (marginConfig.contracts.length < 2) {
-            setMarginConfig((prevState) => ({
+        const updatedContracts = [...marginConfig.contracts];
+        updatedContracts.splice(index, 1);
+    
+        setMarginConfig(prevState => ({
+            ...prevState,
+            contracts: updatedContracts,
+        }));
+    
+        if (updatedContracts.length === 0) {
+            setMarginConfig(prevState => ({
                 ...prevState,
                 totalSpan: 0,
                 totalExposure: 0,
                 totalMargin: 0,
                 marginBenefit: 0,
                 premium: 0,
-                contracts: [],
                 isOptionScrip: false,
                 isShowNA: false,
             }));
         } else {
-            isDeletedDataOption =
-                ['PE', 'CE'].indexOf(marginConfig.contracts[index].optionType) > -1 &&
-                marginConfig.contracts[index].action;
-
-            const updatedContracts = [...marginConfig.contracts];
-            updatedContracts.splice(index, 1);
-
-            setMarginConfig((prevState) => ({
+            const hasSellableOptionScrip = getSellableOptionScrip(updatedContracts).length > 0;
+            setMarginConfig(prevState => ({
                 ...prevState,
-                contracts: updatedContracts,
+                isOptionScrip: hasSellableOptionScrip,
             }));
-
-            if (isDeletedDataOption) {
-                const hasSellableOptionScrip = getSellableOptionScrip(updatedContracts).length > 0;
-                setMarginConfig((prevState) => ({
-                    ...prevState,
-                    isOptionScrip: hasSellableOptionScrip,
-                }));
-            }
         }
     };
+    
+    // const deleteContract = (index) => {
+    //     let isDeletedDataOption = false;
+    //     if (marginConfig.contracts.length < 2) {
+    //         setMarginConfig((prevState) => ({
+    //             ...prevState,
+    //             totalSpan: 0,
+    //             totalExposure: 0,
+    //             totalMargin: 0,
+    //             marginBenefit: 0,
+    //             premium: 0,
+    //             contracts: [],
+    //             isOptionScrip: false,
+    //             isShowNA: false,
+    //         }));
+    //     } else {
+    //         isDeletedDataOption =
+    //             ['PE', 'CE'].indexOf(marginConfig.contracts[index].optionType) > -1 &&
+    //             marginConfig.contracts[index].action;
+
+    //         const updatedContracts = [...marginConfig.contracts];
+    //         updatedContracts.splice(index, 1);
+
+    //         setMarginConfig((prevState) => ({
+    //             ...prevState,
+    //             contracts: updatedContracts,
+    //         }));
+
+    //         if (isDeletedDataOption) {
+    //             const hasSellableOptionScrip = getSellableOptionScrip(updatedContracts).length > 0;
+    //             setMarginConfig((prevState) => ({
+    //                 ...prevState,
+    //                 isOptionScrip: hasSellableOptionScrip,
+    //             }));
+    //         }
+    //         // callMargin(true);
+    //     }
+    // };
 
 
     return (
