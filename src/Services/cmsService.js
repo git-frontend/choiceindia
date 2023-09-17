@@ -248,7 +248,14 @@ Notices: function (postdata) {
 //         return data
 //     })
 // }
+trackdocumentList: function () {
 
+    let api = new API_URLS()
+    let url = api.gettrackDocumnetURL()
+    return axios.get(url).then((data) => {
+        return data
+    })
+},
 
 
 }

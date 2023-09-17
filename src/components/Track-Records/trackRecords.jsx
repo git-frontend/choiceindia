@@ -1,19 +1,28 @@
 import "../FilesDownload/Filedownload.scss";
 import Template2 from '../Common-features/Template2';
-
+import cmsService from "../../Services/cmsService";
+import noDataimg from '../../assets/images/no-data.webp';
 import { useState, useEffect } from 'react';
 
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
+import './trackRecords.scss';
 
 
 function trackRecords() {
+  const [datalist, setDatalist] = useState([]);
+  const [trigger, setTrigger] = useState(false);
+  const [isloading, setisloading] = useState(true);
+  let values;
+  let AllFilesValue = {};
   const [toggleState, setToggleState] = useState(1);
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
+  const toggleTab = (index) => {
+    setToggleState(index);
+  };
   const location = useLocation();
 
   setTimeout(() => {
@@ -48,6 +57,47 @@ function trackRecords() {
     }, 600)
   })
 
+  function loadFileDownload() {
+    cmsService.trackdocumentList().
+      then(
+        res => {
+          if (res && res.data && res.data.data) {
+            setisloading(false)
+            console.log("dddee", res.data.data)
+            values = res.data.data;
+            console.log("ddd", values)
+            values.forEach(ele => {
+
+              if (!AllFilesValue[ele.title]) {
+                AllFilesValue[ele.title] = [];
+                AllFilesValue[ele.title].push(ele)
+              } else {
+                AllFilesValue[ele.title].push(ele)
+
+              }
+            })
+            setDatalist(AllFilesValue);
+            console.log("check", AllFilesValue)
+          } else {
+            setisloading(false)
+            setDatalist([]);
+
+          }
+
+        }
+      ).catch((error) => {
+        setisloading(false)
+        setDatalist([]);
+      });
+  }
+  useEffect(() => {
+    setTrigger(true)
+
+    if (trigger === true) {
+      loadFileDownload()
+    }
+
+  }, [trigger])
   return (
 
     <div>
@@ -57,7 +107,7 @@ function trackRecords() {
             <div className="container">
               <div className="row">
                 <div className="col-md-12">
-                  <h1 className='text-center mt-5 mb-5 title-first'>Track Record</h1>
+                  <h1 className='text-center mt-5 mb-5 big-ttl'>Track Record</h1>
                 </div>
                 <div className="d-flex align-items-center" >
                   <div className="track-record-tabs">
@@ -69,7 +119,7 @@ function trackRecords() {
                     </button>
                     <button
                       className={toggleState === 2 ? "trackbtn tabs active" : "trackbtn"}
-                      onClick={() => { toggleTab(2)}}
+                      onClick={() => { toggleTab(2) }}
                     >
                       SME IPO
                     </button>
@@ -83,11 +133,70 @@ function trackRecords() {
 
           </section>
 
+
+
       }
+      <section className="tracktabcontent" >
+        <div className="container">
+          <div className="row ">
+            <div className="col-md-12">
+              {
+                toggleState == 1 ?
+                  <div>
+                    <h2 className="title-first text-center mb-5">Mainboard IPO</h2>
+                    <p className="mainboard-txt">Click on the following links to download :</p>
+                    <div className="text">ff</div>
+                    {
+                      datalist.length > 0 ? (
+                        <ul>
+                          {datalist.map((res, index) => {
+                            console.log("rees", datalist);
+                            return (
+                              <li key={index}>
+                                <div className="text">{res.sub_title}</div>
+                                {res.track_file || res.link ? (
+                                  <div
+                                    className="cursor-pointer"
+                                    onClick={() => {
+                                      window.open(`https://cmsapi.choiceindia.com/assets/${res.track_file}`)
+                                    }}
+                                  >
+                                    <img
+                                      src={download}
+                                      className={"img-fluid"}
+                                      alt={"Loading"}
+                                      width={""}
+                                      height={""}
+                                    />
+                                    <span className="downloadtext">Download</span>
+                                  </div>
+                                ) : (
+                                  <div></div>
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      ) : (
+                        <div className="text-center">
+                          <img
+                            src={noDataimg}
+                            className="img-fluid"
+                            alt="No Data Found"
+                            height={250}
+                            width={250}
+                          />
+                        </div>
+                      )
+                    }
 
-
-
-
+                  </div> :
+                  toggleState == 2 ?
+                    <div>hello 2</div> : ""}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

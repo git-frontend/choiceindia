@@ -7,6 +7,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
+        justify-content: center;
         .trackbtn{
             width: 24.33%;
             text-align: center;
@@ -17,12 +18,38 @@
             font-weight: 400;
             font-family: "PoppinsRegular", sans-serif;
             border: 0;
-            border-right: 1px solid #C2C2C2;
             outline: none;
             box-shadow: inherit;
             background: #ffffff;
             position: relative;
             cursor: pointer; 
+
+            &.active {
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 8px;
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background: $yellowColor;
+    
+                    @media (max-width:$sm) {
+                        height: 6px;
+                    }
+                }
+            }
         }
+    
+    }
+}
+.tracktabcontent{
+    padding: 7rem 0 4rem 0;
+    .mainboard-txt{
+        color: #000;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 2.625rem;
     }
 }

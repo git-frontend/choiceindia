@@ -268,6 +268,7 @@ export class API_URLS {
     scripBrokerageURL='order-charges';
     //for 
     OIspurts='md/Data/TopOISpurtsBySegmentDerivatives';
+    trackrecordUrl='items/Track_record';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -922,5 +923,8 @@ export class API_URLS {
     //OIspurts 
     getOISpurtsURL(){
         return this.performanceURL + this.OIspurts
+    }
+    gettrackDocumnetURL(){
+        return this.CMSURL + this.trackrecordUrl
     }
 }
