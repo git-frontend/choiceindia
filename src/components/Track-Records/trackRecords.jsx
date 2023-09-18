@@ -3,6 +3,7 @@ import Template2 from '../Common-features/Template2';
 import cmsService from "../../Services/cmsService";
 import noDataimg from '../../assets/images/no-data.webp';
 import { useState, useEffect } from 'react';
+import download from '../../assets/images/file-download/export.webp';
 
 import {
   useLocation,
@@ -66,18 +67,18 @@ function trackRecords() {
             console.log("dddee", res.data.data)
             values = res.data.data;
             console.log("ddd", values)
-            values.forEach(ele => {
+            // values.forEach(ele => {
 
-              if (!AllFilesValue[ele.title]) {
-                AllFilesValue[ele.title] = [];
-                AllFilesValue[ele.title].push(ele)
-              } else {
-                AllFilesValue[ele.title].push(ele)
+            //   if (!AllFilesValue[ele.title]) {
+            //     AllFilesValue[ele.title] = [];
+            //     AllFilesValue[ele.title].push(ele)
+            //   } else {
+            //     AllFilesValue[ele.title].push(ele)
 
-              }
-            })
-            setDatalist(AllFilesValue);
-            console.log("check", AllFilesValue)
+            //   }
+            // })
+            setDatalist(values);
+            console.log("check", values)
           } else {
             setisloading(false)
             setDatalist([]);
@@ -136,7 +137,7 @@ function trackRecords() {
 
 
       }
-      <section className="tracktabcontent" >
+      <section className="tracktabcontent filedownloadfaq" >
         <div className="container">
           <div className="row ">
             <div className="col-md-12">
@@ -145,51 +146,53 @@ function trackRecords() {
                   <div>
                     <h2 className="title-first text-center mb-5">Mainboard IPO</h2>
                     <p className="mainboard-txt">Click on the following links to download :</p>
-                    <div className="text">ff</div>
-                    {
-                      datalist.length > 0 ? (
-                        <ul>
-                          {datalist.map((res, index) => {
-                            console.log("rees", datalist);
-                            return (
-                              <li key={index}>
-                                <div className="text">{res.sub_title}</div>
-                                {res.track_file || res.link ? (
-                                  <div
-                                    className="cursor-pointer"
-                                    onClick={() => {
-                                      window.open(`https://cmsapi.choiceindia.com/assets/${res.track_file}`)
-                                    }}
-                                  >
-                                    <img
-                                      src={download}
-                                      className={"img-fluid"}
-                                      alt={"Loading"}
-                                      width={""}
-                                      height={""}
-                                    />
-                                    <span className="downloadtext">Download</span>
-                                  </div>
-                                ) : (
-                                  <div></div>
-                                )}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      ) : (
-                        <div className="text-center">
-                          <img
-                            src={noDataimg}
-                            className="img-fluid"
-                            alt="No Data Found"
-                            height={250}
-                            width={250}
-                          />
-                        </div>
-                      )
-                    }
+                    <div className="listing">
+                      {
+                        datalist.length > 0 ? (
+                          <ul>
+                            {datalist.map((res, index) => {
 
+                              return (
+                                <li key={index}>
+                                  <div className="text">{res.title}</div>
+                                  {res.track_file ? (
+                                    <div
+                                      className="cursor-pointer"
+                                      onClick={() => {
+                                        window.open(`https://cmsapi.choiceindia.com/assets/${res.track_file}`)
+                                      }}
+                                    >
+                                      <img
+                                        src={download}
+                                        className={"img-fluid"}
+                                        alt={"Loading"}
+                                        width={""}
+
+
+                                        height={""}
+                                      />
+                                      <span className="downloadtext">Download</span>
+                                    </div>
+                                  ) : (
+                                    <div></div>
+                                  )}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        ) : (
+                          <div className="text-center">
+                            <img
+                              src={noDataimg}
+                              className="img-fluid"
+                              alt="No Data Found"
+                              height={250}
+                              width={250}
+                            />
+                          </div>
+                        )
+                      }
+                    </div>
                   </div> :
                   toggleState == 2 ?
                     <div>hello 2</div> : ""}
