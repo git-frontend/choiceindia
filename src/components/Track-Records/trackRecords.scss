@@ -73,3 +73,15 @@
         }
     }
 }
+
+.subtext{
+    color: #707070;
+    font-size: 1.75rem;
+    line-height: 2.625rem;
+    font-family: "PoppinsRegular", sans-serif, sans-serif;
+    width: 80%;
+    margin: 0 auto 3rem;
+    @media  (max-width:$sm) {
+        width: 100%;
+       }
+}
