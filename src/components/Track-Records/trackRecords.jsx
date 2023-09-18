@@ -195,7 +195,15 @@ function trackRecords() {
                     </div>
                   </div> :
                   toggleState == 2 ?
-                    <div>hello 2</div> : ""}
+                  <div className="text-center">
+                  <img
+                    src={noDataimg}
+                    className="img-fluid"
+                    alt="No Data Found"
+                    height={250}
+                    width={250}
+                  />
+                </div> : ""}
             </div>
           </div>
         </div>
