@@ -108,10 +108,11 @@ function trackRecords() {
             <div className="container">
               <div className="row">
                 <div className="col-md-12">
-                  <h1 className='text-center mt-5 mb-5 big-ttl'>Track Record</h1>
+                  <h1 className='text-center mt-5 mb-4 big-ttl'>Track Record</h1>
                 </div>
-                <div className="d-flex align-items-center" >
-                  <div className="track-record-tabs">
+                
+                <div className="col-xl-4 col-md-6 mx-auto" >
+                  <div className="track-record-tabs  text-center">
                     <button
                       className={toggleState === 1 ? "trackbtn tabs active" : "trackbtn"}
                       onClick={() => { toggleTab(1); }}
@@ -144,7 +145,9 @@ function trackRecords() {
               {
                 toggleState == 1 ?
                   <div>
-                    <h2 className="title-first text-center mb-5">Mainboard IPO</h2>
+                    <h2 className="title text-center">Mainboard IPO</h2>
+                    <div className="quicklinkswrap">
+
                     <p className="mainboard-txt">Click on the following links to download :</p>
                     <div className="listing">
                       {
@@ -153,7 +156,7 @@ function trackRecords() {
                             {datalist.map((res, index) => {
 
                               return (
-                                <li key={index}>
+                                <li key={index} className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                   <div className="text">{res.title}</div>
                                   {res.track_file ? (
                                     <div
@@ -192,6 +195,7 @@ function trackRecords() {
                           </div>
                         )
                       }
+                    </div>
                     </div>
                   </div> :
                   toggleState == 2 ?
