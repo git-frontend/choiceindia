@@ -1,28 +1,25 @@
-﻿﻿import { useState, useEffect } from "react";
+﻿import { useState, useEffect, useCallback, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import LazyLoader from "../Common-features/LazyLoader";
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import Redirect from "../../assets/images/aof/redirect-arrow.gif";
 import ThumbUp from "../../assets/images/aof/thumb-up.gif";
-import {faClose} from '@fortawesome/free-solid-svg-icons';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   BrowserRouter as Router,
   Link,
-  useParams,
   useLocation,
-  Navigate,
 } from "react-router-dom";
 import Moment from "react-moment";
 import moment from 'moment';
-
 import AssistedFlowService from "../../Services/AssistedFlowService";
 import Basket from "../Basket/Basket";
 import loaderimg2 from "../../assets/vedio/loader2.mp4";
 import utils from "../../Services/utils";
 import Modal from "react-bootstrap/Modal";
 import noDataimg from "../../assets/images/no-data.webp";
-import IntraChargesBenifits from "../Intraday-Charges/IntraChargesBenifits";
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useTransition } from "react";
 
 function Banneraf() {
   const [showFirstButton, setShowFirstButton] = useState(true);
@@ -89,34 +86,63 @@ function Banneraf() {
   const [showToast, setShowToast] = useState(false);
 
   const [isModalClose, setisModalClose] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState('');
+
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   let retryPaymentCounter = 0;
 
   /**Query Params Data */
   // const userDetails = { uniqueId: new URLSearchParams(search).get('order_unique_id').replaceAll(' ', '+').toString(), bucketId: new URLSearchParams(search).get('bucketId').replaceAll(' ', '+').toString(), clientId: new URLSearchParams(search).get('clientId').replaceAll(' ', '+').toString(), rmId: new URLSearchParams(search).get('rm_id') ? new URLSearchParams(search).get('rm_id').replaceAll(' ', '+').toString() : null, subjectId: new URLSearchParams(search).get('subid') ? new URLSearchParams(search).get('subid').replaceAll(' ', '+').toString() : null, };
+  // "mavamqy25Fjjpt2au4MwtZJlk8LfNSC3GZvT9OTPMeUzCLGX5AOV8KUll/7yQy6A&exp=MTY5NTA0NTg0MA=="
+  // const detail2 = new URLSearchParams(search).get("oid");
+  // const details = new URLSearchParams(search).get("oid")
+  //   ? JSON.parse(
+  //     JSON.stringify(
+  //       utils.decryptText(
+  //         new URLSearchParams(search).get("eid").replaceAll(" ", "+")
+  //       )
+  //     )
+  //   )
+  //   : {};
 
-  const details = new URLSearchParams(search).get("eid")
-    ? JSON.parse(
-        JSON.stringify(
-          utils.decryptText(
-            new URLSearchParams(search).get("eid").replaceAll(" ", "+")
-          )
-        )
-      )
-    : {};
+  // const details = new URLSearchParams(search).get("oid")? setUrlOid(URLSearchParams(search).get("oid")): {};
   const [userDetails, setUserDetails] = useState(null);
 
+  /**to check callback status from bse */
   const [userStatus, setUserStatus] = useState(
     new URLSearchParams(search).get("status")
   );
 
-//   const [verifyLoader, setVerifyLoader] = useState(false);
+  const uniID = new URLSearchParams(search).get("oid").replaceAll(" ", "+");
+  const subId = new URLSearchParams(search).get("sid").replaceAll(" ", "+");
+  const expId = new URLSearchParams(search).get("exp").replaceAll(" ", "+");
+
+  let client_id;
+  const captchaCount = useRef(0);
+
+  // Create an event handler so you can call the verification on button click event or form submit
+  const handleReCaptchaVerify = useCallback(async () => {
+
+    if (!executeRecaptcha) {
+      return;
+    }
+    const token = await executeRecaptcha('sendOtp');
+    // Do whatever you want with the token
+    if (token) {
+      captchaCount.current++;
+      setCaptchaToken(token);
+    }
+    // hideLoader('sendOTPLoader');
+  }, [executeRecaptcha]);
+
+  useEffect(() => {
+    if (captchaToken && captchaCount.current > 1) {
+      sendOtp();
+    }
+  }, [captchaToken])
 
   const [dataNotFound, setDataNotFound] = useState(false);
-
-  // const [isLast , setIsLast] = useState(0);
-
-  // const [RefNo, setIsRefNo] = useState(() => null);
 
   let increment;
 
@@ -125,11 +151,10 @@ function Banneraf() {
   /**to calculate months */
   const [nextSipDate, setNextSipDate] = useState([]);
   let monthFactor = 1;
-  const [orderDates, setOrderDates] = useState([]);;
+  const [orderDates, setOrderDates] = useState([]);
 
   /**to show client popup */
   useEffect(() => {
-    // let status = new URLSearchParams(search).get('status');
     if (userStatus && userStatus == "success") {
       setShowPopUp(() => "ClientFlow");
     }
@@ -140,132 +165,280 @@ function Banneraf() {
   }, []);
 
   /**Arrays for messages */
-  const[messg, setShowMessg] = useState()
+  const [messg, setShowMessg] = useState()
 
   /**to show status popup */
-  const[showStatus, setshowStatus] = useState(false);
+  const [showStatus, setshowStatus] = useState(false);
 
   /**show direct flow errors */
-  const[directErrors, setDirectErrors] = useState('');
+  const [directErrors, setDirectErrors] = useState('');
 
-  const [exm, setExm] = useState('')
+  const [sessionId, setSessionId] = useState(() => "");
+
+  const [OrderPayload, setOrderPayload] = useState(() => { });
 
   /**Basket Listing API call */
   useEffect(() => {
-    // console.log('status',userStatus)
-    setTrigger(true);
-    setUserDetails(() => JSON.parse(details));
-    console.log('details',details)
-    if (trigger) {
-      setDataNotFound(() => false);
+    handleReCaptchaVerify();
+  }, [handleReCaptchaVerify]);
+
+  useEffect(() => {
+    console.log(OrderPayload, 'oRRRPP')
+  }, [OrderPayload])
+
+  useEffect(() => {
+    if (captchaToken && (captchaCount.current == 1)) {
       let payload = {
-        order_unique_id: userDetails.orderUniqueId
-          ? userDetails.orderUniqueId
+        order_unique_id: uniID
+          ? uniID
           : "",
-        client_id: userDetails.clientId ? userDetails.clientId : "",
+        captcha: captchaToken ? captchaToken : ""
+        // client_id: userDetails.clientId ? userDetails.clientId : "",
       };
 
       AssistedFlowService.BasketDetails(payload)
         .then((res) => {
-          if (res && res.data && res.data.Body && res.data.Body.data) {
+          if (res && res.data && res.data.Body) {
             setDataNotFound(() => false);
-            setBasketData(() => (res.data.Body.data ? res.data.Body.data : {}));
-            refCallAPI();
-            // let res22 = "payment_pending";
-            // setExm(() => 'payment_pending')
-            if(res.data.Body.data.order_status == 'authentication_pending'){
+            setBasketData(() => (res.data.Body ? res.data.Body : {}));
+            client_id = res.data.Body.client_id;
+            // refCallAPI();
+            if (res.data.Body.scheme_data[0].order_status == 'authentication_pending') {
               setshowStatus(() => false);
-            }else if(res.data.Body.data.order_status == 'payment_pending'){
+            } else if (res.data.Body.order_status == 'payment_pending') {
 
-              if(res.data.Body.data.payment_url){
+              if (res.data.Body.payment_url) {
                 // setshowStatus(() => true);
-                if (userDetails.subId || (!userDetails.subId && res.data.Body.data.first_order == "No")) {
-                  setPaymentLink(() =>res.data.Body.data.payment_url);
+                if (subId || (!subId && res.data.Body.is_first_order == "No")) {
+                  setPaymentLink(() => res.data.Body.payment_url);
                   setshowStatus(() => false);
                   setShowPopUp(() => "RMFlow");
                 } else {
-                  setPaymentLink(() =>res.data.Body.data.payment_url);
+                  setPaymentLink(() => res.data.Body.payment_url);
                   setshowStatus(() => true);
                   setTimeout(() => {
-                    window.open(res.data.Body.data.payment_url, "_self");
-                  },2000)
+                    window.open(res.data.Body.payment_url, "_self");
+                  }, 2000)
                   // setShowPopUp(() => 'ClientFlow')
                 }
 
               }
-              else{
+              else {
                 setshowStatus(() => true);
               }
-            }else if(res.data.Body.data.order_status == 'approved'){
+            } else if (res.data.Body.order_status == 'approved') {
               setShowMessg(() => "Your Order has already been placed successfully");
               setshowStatus(() => true);
-            }else if(res.data.Body.data.order_status == 'rejected'){
+            } else if (res.data.Body.order_status == 'rejected') {
               setShowMessg(() => "Your Order was rejected. Kindly contact your RM");
               setshowStatus(() => true);
-            }else if(res.data.Body.data.order_status == 'failed'){
+            } else if (res.data.Body.order_status == 'failed') {
               setShowMessg(() => "Your order was failed. Kindly contact your RM")
               setshowStatus(() => true);
-            }else{
+            } else {
               setShowMessg(() => "Your order was already placed. Kindly contact your RM to know the order status")
               setshowStatus(() => true);
             }
 
-            if(res.data.Body.data.bucket_type != 'Lumpsum'){
-            if(res.data.Body.data.first_order == 'Yes'){
-              res.data.Body.data.list_fund_data.forEach((item) => {
-                let date = item.selected_date;
-                // let date = 25;
-                let nextDate;
-                let currentDate = new moment().startOf("day");
-                let assumedNextSipDate = new moment()
-                  .add(monthFactor, "month")
-                  .startOf("day")
-                  .date(date);
+            /**store the sip and lumpsum order payloads */
+            if (res.data.Body.order_type != 'Lumpsum') {
+              /**here if order type is SIP */
+              if (res.data.Body.is_first_order == 'Yes') {
+                /**here if first order yes */
+                let tempObj = { Orders: [], Source: "connect", Client: res.data.Body.client_id };
+                /**loop through each schemes in list */
+                res.Body.scheme_data.forEach((item, indexNo) => {
+                  let date = item.scheme_selected_date;
+                  let nextDate;
+                  let currentDate = new moment().startOf("day");
+                  let assumedNextSipDate = new moment()
+                    .add(monthFactor, "month")
+                    .startOf("day")
+                    .date(date);
                   let diffInDays = assumedNextSipDate.diff(currentDate, "days");
                   if (diffInDays < monthFactor * 30) {
                     assumedNextSipDate = assumedNextSipDate.add(1, "month");
                   }
                   nextDate = assumedNextSipDate;
-                  
-                  // orderDates.push(nextDate.format("DD/MM/YYYY"))
                   setOrderDates(nextOrderDate => [nextDate.format("DD/MM/YYYY"), ...nextOrderDate])
-                  console.log(orderDates[0],'dod')
-                  setNextSipDate(nextSipDate => [nextDate.format('DD') + ' ' + nextDate.format('MMMM').substring(0,3)+ ', ' + nextDate.format('YYYY'), ...nextSipDate]);
-              })
-            }else{
-              res.data.Body.data.list_fund_data.forEach((item) => {
-                let date = item.selected_date;
-                // let date = 25;
-                let nextDate;
-                let currentDate = new moment().startOf("day");
-                let assumedNextSipDate = new moment()
-                  .add(monthFactor, "month")
-                  .startOf("day")
-                  .date(date);
+                  setNextSipDate(nextSipDate => [nextDate.format('DD') + ' ' + nextDate.format('MMMM').substring(0, 3) + ', ' + nextDate.format('YYYY'), ...nextSipDate]);
+
+                  let obj = {
+                    "AllRedeem": "N",
+                    "AMCCode": "",
+                    "AMCName": "",
+                    "Amt": parseInt(item.amount),
+                    "BS": "P",
+                    "BSType": item.scheme_code ? "ADDITIONAL" : "FRESH",
+                    "Brokerage": "",
+                    "Client": res.data.Body.client_id,
+                    "DPTxn": "P",
+                    "Firstorderflag": (res.data.Body.is_first_order == "Yes") ? "Y" : "N",
+                    "FolioNo": item.scheme_code,
+                    "Freq": "Monthly",
+                    "IPAddress": "",
+                    "ISIPMandateId": "",
+                    "IsInflationAdjusted": "",
+                    "Name": res.data.Body.basket_name ? res.data.Body.basket_name : "",
+                    "NoOfInstallments": "999",
+                    "OrderId": "",
+                    "Qty": "0",
+                    "Remarks": "",
+                    "RiskProfileID": "",
+                    "SchemeCD": item.scheme_code,
+                    "SchemeType": "",
+                    "Source": "connect",
+                    "StartDate": nextDate.format("DD/MM/YYYY"),
+                    "SubscriptionID": "",
+                    "SubscriptionType": "Basket",
+                    "ID": "",
+                    "TransCode": "NEW",
+                    "TransMode": "P",
+                    "XSIPMandateId": res.data.Body.mandate_id ? res.data.Body.mandate_id : ""
+                  }
+
+                  tempObj['Orders'].push(obj);
+                })
+
+                /**after looping through schemedata store processed data in order payload */
+                setOrderPayload(tempObj);
+
+              } else {
+                /**here if first order is NO */
+                let tempObj = { Orders: [], Source: "connect", Client: res.data.Body.client_id };
+                res.data.Body.scheme_data.forEach((item, indexNo) => {
+                  let date = item.scheme_selected_date;
+                  let nextDate;
+                  let currentDate = new moment().startOf("day");
+                  let assumedNextSipDate = new moment()
+                    .add(monthFactor, "month")
+                    .startOf("day")
+                    .date(date);
                   let diffInDays = assumedNextSipDate.diff(currentDate, "days");
                   if (diffInDays < monthFactor * 30) {
                     assumedNextSipDate = assumedNextSipDate.add(0, "month");
                     nextDate = assumedNextSipDate;
-                    // orderDates.push(nextDate.format("DD/MM/YYYY"))
                     setOrderDates(nextOrderDate => [nextDate.format("DD/MM/YYYY"), ...nextOrderDate])
-                    setNextSipDate(nextSipDate => [nextDate.format('DD') + ' ' + nextDate.format('MMMM').substring(0,3)+ ', ' + nextDate.format('YYYY'), ...nextSipDate]);
-                  }else{
+                    setNextSipDate(nextSipDate => [nextDate.format('DD') + ' ' + nextDate.format('MMMM').substring(0, 3) + ', ' + nextDate.format('YYYY'), ...nextSipDate]);
+
+                    let obj = {
+                      "AllRedeem": "N",
+                      "AMCCode": "",
+                      "AMCName": "",
+                      "Amt": parseInt(item.amount),
+                      "BS": "P",
+                      "BSType": item.scheme_code ? "ADDITIONAL" : "FRESH",
+                      "Brokerage": "",
+                      "Client": res.data.Body.client_id,
+                      "DPTxn": "P",
+                      "Firstorderflag": (res.data.Body.is_first_order == "Yes") ? "Y" : "N",
+                      "FolioNo": item.scheme_code,
+                      "Freq": "Monthly",
+                      "IPAddress": "",
+                      "ISIPMandateId": "",
+                      "IsInflationAdjusted": "",
+                      "Name": res.data.Body.basket_name ? res.data.Body.basket_name : "",
+                      "NoOfInstallments": "999",
+                      "OrderId": "",
+                      "Qty": "0",
+                      "Remarks": "",
+                      "RiskProfileID": "",
+                      "SchemeCD": item.scheme_code,
+                      "SchemeType": "",
+                      "Source": "connect",
+                      "StartDate": nextDate.format("DD/MM/YYYY"),
+                      "SubscriptionID": "",
+                      "SubscriptionType": "Basket",
+                      "ID": "",
+                      "TransCode": "NEW",
+                      "TransMode": "P",
+                      "XSIPMandateId": res.data.Body.mandate_id ? res.data.Body.mandate_id : ""
+                    }
+                    tempObj['Orders'].push(obj)
+                  } else {
                     const today = new moment();
                     // const today = new Date();
                     // const yyyy = today.getFullYear();
                     // let mm = today.getMonth() + 1;
                     // assumedNextSipDate = date.toString() + '/' + mm.toString() + "/" + yyyy.toString();
-                    assumedNextSipDate = date.toString() + ' ' + today.format('MMMM').substring(0,3)+ ', ' + today.format('YYYY')
+                    assumedNextSipDate = date.toString() + ' ' + today.format('MMMM').substring(0, 3) + ', ' + today.format('YYYY')
                     nextDate = assumedNextSipDate;
                     // orderDates.push(date.toString() + '/' + today.format('MM')+ '/' + today.format('YYYY'))
-                    setOrderDates(nextOrderDate => [date.toString() + '/' + today.format('MM')+ '/' + today.format('YYYY'), ...nextOrderDate])
+                    setOrderDates(nextOrderDate => [date.toString() + '/' + today.format('MM') + '/' + today.format('YYYY'), ...nextOrderDate])
                     setNextSipDate(nextSipDate => [nextDate, ...nextSipDate]);
-                  }
-              })
-            }
-          }
+                    let obj = {
+                      "AllRedeem": "N",
+                      "AMCCode": "",
+                      "AMCName": "",
+                      "Amt": parseInt(item.amount),
+                      "BS": "P",
+                      "BSType": item.scheme_code ? "ADDITIONAL" : "FRESH",
+                      "Brokerage": "",
+                      "Client": res.data.Body.client_id,
+                      "DPTxn": "P",
+                      "Firstorderflag": (item.is_first_order == "Yes") ? "Y" : "N",
+                      "FolioNo": item.scheme_code,
+                      "Freq": "Monthly",
+                      "IPAddress": "",
+                      "ISIPMandateId": "",
+                      "IsInflationAdjusted": "",
+                      "Name": item.basket_name ? item.basket_name : "",
+                      "NoOfInstallments": "999",
+                      "OrderId": "",
+                      "Qty": "0",
+                      "Remarks": "",
+                      "RiskProfileID": "",
+                      "SchemeCD": item.scheme_code,
+                      "SchemeType": "",
+                      "Source": "connect",
+                      "StartDate": nextDate.format("DD/MM/YYYY"),
+                      "SubscriptionID": "",
+                      "SubscriptionType": "Basket",
+                      "ID": "",
+                      "TransCode": "NEW",
+                      "TransMode": "P",
+                      "XSIPMandateId": res.data.Body.mandate_id ? res.data.Body.mandate_id : ""
+                    }
 
-            
+                    tempObj['Orders'].push(obj);
+                  }
+                })
+
+                /**set order payload into orderPayload for is first order no */
+                setOrderPayload(tempObj);
+              }
+            } else {
+              /** here if order type is lumpsum */
+              let tempObj = { Orders: [], Source: "connect", Client: res.data.Body.client_id };
+              res.data.Body.scheme_data.forEach((item) => {
+                let obj = {
+                  "AllRedeem": "N",
+                  "AMCCode": "",
+                  "AMCName": "",
+                  "Amt": parseInt(item.amount),
+                  "BS": "P",
+                  "BSType": item.scheme_code ? "ADDITIONAL" : "FRESH",
+                  "Client": res.data.Body.client_id,
+                  "DPTxn": "P",
+                  "FolioNo": item.scheme_code,
+                  "IPAddress": "",
+                  "ID": "",
+                  "Name": res.data.Body.basket_name ? res.data.Body.basket_name : "",
+                  "OrderId": "",
+                  "Qty": "0",
+                  "Remarks": "",
+                  "SchemeCD": item.scheme_code,
+                  "SchemeType": "",
+                  "SubscriptionID": "",
+                  "SubscriptionType": "Basket",
+                  "TransCode": "NEW"
+                }
+
+                tempObj['Orders'].push(obj);
+              })
+
+              setOrderPayload(tempObj);
+            }
           } else {
             setDataNotFound(() => true);
           }
@@ -274,15 +447,14 @@ function Banneraf() {
           console.log(error);
           setDataNotFound(() => true);
         });
-
-        console.log('TTT',nextSipDate.length)
     }
-  }, [trigger]);
+
+  }, [captchaToken])
 
   function refCallAPI(bucketType, isOrder) {
     //Reference Number API Call
     AssistedFlowService.RefNo(
-      utils.decryptText(userDetails.clientId).toString()
+      client_id
     )
       .then((response) => {
         if (response && response.data && response.data.Response) {
@@ -292,7 +464,6 @@ function Banneraf() {
             placeOrderMessage: response.data.Response.PlaceOrderMessage,
             serverDownMessage: response.data.Response.ServerDownMessage,
           });
-          console.log(orderDates[isLast]);
           increment = parseInt(response.data.Response.RefNumber);
           // setIsRefNo(() => parseInt(response.data.Response.RefNumber))
           // setIsRefNo(RefNo + 1)
@@ -332,9 +503,11 @@ function Banneraf() {
     } else {
       setLoaders({ ...loaders, SendOtpLoader: false });
     }
-
-    sendOtp(isResend ? isResend : false);
+    // sendOtp(isResend)
+    handleReCaptchaVerify(isResend ? isResend : false);
   }
+
+  const [otpResponse, setOtpResponse] = useState(() => { })
 
   /**function for send otp */
   function sendOtp(isResend) {
@@ -346,34 +519,36 @@ function Banneraf() {
     }
 
     let payload = {
-      ClientID: userDetails.clientId
-        ? utils.decryptText(userDetails.clientId)
-        : "",
+      // ClientID: userDetails.clientId
+      //   ? utils.decryptText(userDetails.clientId)
+      //   : "",
       Source: "connect",
-      DeviceOs: "Web",
-      AppSignature: "",
-      BasketId: userDetails.bucketId
-        ? utils.decryptText(userDetails.bucketId)
-        : "",
-      SubID: "", // investica subscriptionId
-      SubType: "Basket",
-      Token: token ? token : new Date().getTime(),
-      IsResend: isResend ? isResend : false,
-      SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
-      OrderUniqueID: userDetails.orderUniqueId
-        ? utils.decryptText(userDetails.orderUniqueId)
-        : "",
+      // DeviceOs: "Web",
+      // AppSignature: "",
+      // BasketId: userDetails.bucketId
+      //   ? utils.decryptText(userDetails.bucketId)
+      //   : "",
+      // SubID: "", // investica subscriptionId
+      // SubType: "Basket",
+      // Token: token ? token : new Date().getTime(),
+      is_resend: isResend ? "Y" : "N",
+      subject_id: subId,
+      order_unique_id: uniID,
+      captcha: captchaToken
     };
 
+    console.log('ORDER',OrderPayload);
     AssistedFlowService.SendOTP(payload)
       .then((response) => {
-        if (response && response.data && response.data.Response) {
-            setLoaders({...loaders, verifyLoader: false});
+        if (response && response.data.Body && response.data.Body.otp_session_id) {
+          setOtpResponse(response.data)
+          setLoaders({ ...loaders, verifyLoader: false });
           if (isResend) {
             setLoaders({ ...loaders, reSendOtpLoader: false });
           } else {
             setLoaders({ ...loaders, SendOtpLoader: false });
           }
+          setSessionId(response.data.Body.otp_session_id)
           setShowFirstButton(false);
           setShowSecondDiv(true);
           setCount(30);
@@ -383,16 +558,16 @@ function Banneraf() {
         let emailId2;
         let pattern = /[0-9]{8,10}/i;
         let pattern2 = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/i;
-        let index ; 
-        mobileNo = response.data.Response.toString();
-        mobileNo = (mobileNo.match(pattern) && mobileNo.match(pattern).length > 0) ? mobileNo.match(pattern)[0].toString() : '';
-        emailId =  (response.data.Response.match(pattern2) && response.data.Response.match(pattern2).length > 0) ? response.data.Response.match(pattern2)[0].toString() : '';
-        index = emailId.indexOf('@');
-        mobileNo = (mobileNo.length > 0) ? (mobileNo.charAt(0) + mobileNo.charAt(1) + '******' + mobileNo.charAt(8) + mobileNo.charAt(9)) : '';
+        let index;
+        // mobileNo = response.data.Response.toString();
+        // mobileNo = (mobileNo.match(pattern) && mobileNo.match(pattern).length > 0) ? mobileNo.match(pattern)[0].toString() : '';
+        // emailId = (response.data.Response.match(pattern2) && response.data.Response.match(pattern2).length > 0) ? response.data.Response.match(pattern2)[0].toString() : '';
+        // index = emailId.indexOf('@');
+        // mobileNo = (mobileNo.length > 0) ? (mobileNo.charAt(0) + mobileNo.charAt(1) + '******' + mobileNo.charAt(8) + mobileNo.charAt(9)) : '';
 
-        emailId2 = (emailId && emailId.length > 0) ? (emailId.charAt(0) + emailId.charAt(1)+ '*****' + emailId.charAt(index-2) + emailId.charAt(index-1) + emailId.substring(index)) : '';
-        setMobileNumber(() => (mobileNo ? mobileNo : null));
-        setEmail(() => emailId2? emailId2 : null);
+        // emailId2 = (emailId && emailId.length > 0) ? (emailId.charAt(0) + emailId.charAt(1) + '*****' + emailId.charAt(index - 2) + emailId.charAt(index - 1) + emailId.substring(index)) : '';
+        setMobileNumber(() => (response.data.Message));
+        // setEmail(() => emailId2 ? emailId2 : null);
       })
       .catch((error) => {
         if (isResend) {
@@ -409,33 +584,40 @@ function Banneraf() {
   /**Verify OTP */
   const submitOTP = () => {
     setErrors(() => null);
-    setLoaders({...loaders, verifyLoader: true, SendOtpLoader: false, reSendOtpLoader: false});
+    setLoaders({ ...loaders, verifyLoader: true, SendOtpLoader: false, reSendOtpLoader: false });
     setCount(0);
     let payload = {
-      ClientId: userDetails.clientId
-        ? utils.decryptText(userDetails.clientId)
-        : "",
+      // ClientId: BasketData.client_id
+      //   ? BasketData.client_id
+      //   : "",
       OTP: OtpValue ? OtpValue : "",
-      Source: "connect",
-      DeviceOs: "Web",
-      BasketId: userDetails.bucketId
-        ? utils.decryptText(userDetails.bucketId)
-        : "",
-      SubID: "",
-      SubType: "Basket",
-      Token: token ? token : new Date().getTime(),
-      SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
-      OrderUniqueID: userDetails.orderUniqueId
-        ? utils.decryptText(userDetails.orderUniqueId)
-        : "",
+      // Source: "connect",
+      // DeviceOs: "Web",
+      // BasketId: userDetails.bucketId
+      //   ? utils.decryptText(userDetails.bucketId)
+      //   : "",
+      // SubID: "",
+      // SubType: "Basket",
+      // Token: token ? token : new Date().getTime(),
+      // SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
+      // OrderUniqueID: userDetails.orderUniqueId
+      //   ? utils.decryptText(userDetails.orderUniqueId)
+      //   : "",
+      session_id: otpResponse.Body.otp_session_id
     };
 
     AssistedFlowService.VerifyOTP(payload)
       .then((response) => {
         // console.log('Verifyresponse', response);
         // setVerifyLoader(() => false);
-        if (response && response.data && response.data.Response) {
-          refCallAPI(BasketData.order_type, true);
+        if (response && response.data && (response.data.StatusCode == 200)) {
+          // refCallAPI(BasketData.order_type, true);
+
+          if (BasketData.order_type != "SIP") {
+            placeLumpSumOrder(increment);
+          } else {
+            placeSIPOrder(increment);
+          }
           // if (BasketData.BucketType && BasketData.BucketType != 'SIP') {
 
           //     // let refNo = parseInt(OrderMetaData.refNo);
@@ -466,14 +648,14 @@ function Banneraf() {
           //     // })
           // }
         } else {
-          setLoaders({...loaders, verifyLoader: false});
+          setLoaders({ ...loaders, verifyLoader: false });
           setErrors(() =>
             response.data.Reason ? response.data.Reason : "Something Went Wrong"
           );
         }
       })
       .catch((error) => {
-        setLoaders({...loaders, verifyLoader: false});
+        setLoaders({ ...loaders, verifyLoader: false });
         setErrors(() =>
           error.message ? error.message : "Something Went Wrong"
         );
@@ -484,83 +666,75 @@ function Banneraf() {
   /**to place LumpSumOrder */
   function placeLumpSumOrder(refNo) {
     // console.log('funddata', fundData);
-    increment = ("0000" + (parseInt(refNo) + 1)).slice(-5);
+    // increment = ("0000" + (parseInt(refNo) + 1)).slice(-5);
     // increment = parseInt(refNo + 1);
-    let clientId = userDetails.clientId
-      ? utils.decryptText(userDetails.clientId)
-      : "";
-    let payload = {
-      TransCode: "NEW",
-      TransNo: "",
-      OrderId: "",
-      Client: clientId,
-      SchemeCD: BasketData.list_fund_data[isLast].BSESchemeCode,
-      SchemeName: "",
-      BS: "P",
-      BSType: BasketData.list_fund_data[isLast].folioNo ? "ADDITIONAL" : "FRESH",
-      DPTxn: "P",
-      Amt: parseInt(BasketData.list_fund_data[isLast].FundA),
-      Qty: "",
-      AllRedeem: "N",
-      FolioNo: BasketData.list_fund_data[isLast].folioNo ? BasketData.list_fund_data[isLast].folioNo : "",
-      RefNo: increment,
-      Remarks: "Web|" + BasketData.bucket_title,
-      OrderStatus: "",
-      Reason: "",
-      TimeStamp: "",
-      FinalStatus: "",
-      ActualOrderId: "",
-      SchemePlanCode: BasketData.list_fund_data[isLast].FundPlanCode,
-      SubscriptionId: "wb" + clientId + new Date().getTime(),
-      SubscriptionType: "Basket",
-      Id: BasketData.bucket_id ? BasketData.bucket_id : "",
-      Name: BasketData.bucket_title ? BasketData.bucket_title : "",
-      OTP: OtpValue ? OtpValue : "",
-      Token: token ? token : new Date().getTime(),
-      RmBasketId: BasketData.bucket_id ? BasketData.bucket_id : "",
-      RmBasketName: BasketData.bucket_title ? BasketData.bucket_title : "",
-      SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
-      Source: "connect",
-      OrderUniqueID: userDetails.orderUniqueId
-        ? utils.decryptText(userDetails.orderUniqueId)
-        : "",
-    };
+    // let clientId = BasketData.client_id
+    //   ? BasketData.client_id
+    //   : "";
+    // let payload = {
+    //   // TransCode: "NEW",
+    //   // TransNo: "",
+    //   // OrderId: "",
+    //   // Client: clientId,
+    //   // Source: "connect",
+    //   // Orders:
+    //   // SchemeCD: BasketData.scheme_data[isLast].BSESchemeCode,
+    //   // SchemeName: "",
+    //   // BS: "P",
+    //   // BSType: BasketData.scheme_data[isLast].folioNo ? "ADDITIONAL" : "FRESH",
+    //   // DPTxn: "P",
+    //   // Amt: parseInt(BasketData.scheme_data[isLast].FundA),
+    //   // Qty: "",
+    //   // AllRedeem: "N",
+    //   // FolioNo: BasketData.scheme_data[isLast].folioNo ? BasketData.scheme_data[isLast].folioNo : "",
+    //   // RefNo: increment,
+    //   // Remarks: "Web|" + BasketData.bucket_title,
+    //   // OrderStatus: "",
+    //   // Reason: "",
+    //   // TimeStamp: "",
+    //   // FinalStatus: "",
+    //   // ActualOrderId: "",
+    //   // SchemePlanCode: BasketData.scheme_data[isLast].FundPlanCode,
+    //   // SubscriptionId: "wb" + clientId + new Date().getTime(),
+    //   // SubscriptionType: "Basket",
+    //   // Id: BasketData.basket_id ? BasketData.basket_id : "",
+    //   // Name: BasketData.bucket_title ? BasketData.bucket_title : "",
+    //   // OTP: OtpValue ? OtpValue : "",
+    //   // Token: token ? token : new Date().getTime(),
+    //   // RmBasketId: BasketData.basket_id ? BasketData.basket_id : "",
+    //   // RmBasketName: BasketData.bucket_title ? BasketData.bucket_title : "",
+    //   // SubjectId: urlSid ? urlSid : "",
+    //   // Source: "connect",
+    //   // OrderUniqueID: urlOid ? urlOid : "",
+    // };
 
-    AssistedFlowService.Lumpsum(payload)
+
+    AssistedFlowService.Lumpsum(OrderPayload)
       .then((response) => {
-        // console.log('Lumpsum', response)
-
         if (
           response &&
           response.data &&
           response.data.OrderStatus &&
-          response.data.OrderStatus == "SUCCESS" &&
-          isLast < BasketData.list_fund_data.length - 1
+          response.data.OrderStatus == "SUCCESS"
         ) {
-          isLast = isLast + 1;
+          // isLast = isLast + 1;
           // setIsLast(() => isLast + 1);
-          placeLumpSumOrder(increment);
+          // placeLumpSumOrder(increment);
+          generatePaymentLink();
         }
-        // else {
-        //   setVerifyLoader(() => false);
-        //   setErrors(() =>
-        //     response && response.data && response.data.Reason
-        //       ? response.data.Reason
-        //       : "Something Went Wrong"
-        //   );
-        // }
 
         /**api call for generate payment link */
-        else if (
-          response &&
-          response.data &&
-          response.data.OrderStatus &&
-          response.data.OrderStatus == "SUCCESS" &&
-          isLast >= BasketData.list_fund_data.length - 1
-        ) {
-          generatePaymentLink();
-        } else {
-          setLoaders({...loaders, verifyLoader: false});
+        // else if (
+        //   response &&
+        //   response.data &&
+        //   response.data.OrderStatus &&
+        //   response.data.OrderStatus == "SUCCESS" &&
+        //   isLast >= BasketData.scheme_data.length - 1
+        // ) {
+        //   generatePaymentLink();
+        // }
+        else {
+          setLoaders({ ...loaders, verifyLoader: false });
           setErrors(() =>
             response && response.data && response.data.Reason
               ? response.data.Reason
@@ -570,7 +744,7 @@ function Banneraf() {
       })
       .catch((error) => {
         console.log(error);
-        setLoaders({...loaders, verifyLoader: false});
+        setLoaders({ ...loaders, verifyLoader: false });
         setErrors(() => (error.message ? error.message : ""));
       });
   }
@@ -588,74 +762,74 @@ function Banneraf() {
     // let day = BasketData.sip_date.split(',');
 
     // const formattedToday = (day[day.length -1]).toString() + "/" + mm + "/" + yyyy;
-    const formattedToday = BasketData.list_fund_data[isLast].selected_date.toString() + "/" + mm + "/" + yyyy;
+    const formattedToday = BasketData.scheme_data[isLast].scheme_selected_date.toString() + "/" + mm + "/" + yyyy;
 
     // let refNo = parseInt(OrderMetaData.refNo);
     // refNo = refNo + 1;
     //  setIsRefNo(RefNo + 1);
-    increment = ("0000" + (parseInt(refNo) + 1)).slice(-5);
+    // increment = ("0000" + (parseInt(refNo) + 1)).slice(-5);
     // increment = parseInt(refNo + 1);
-    let clientId = userDetails.clientId
-      ? utils.decryptText(userDetails.clientId)
+    let clientId = BasketData.client_id
+      ? BasketData.client_id
       : "";
-    console.log(orderDates[isLast]);
-    let payload = {
-      TransCode: "NEW",
-      TransNo: "",
-      OrderId: "",
-      Client: clientId,
-      SchemeCD: BasketData.list_fund_data[isLast].BSESchemeCode, // "SchemeCD": fundData.BSESchemeCode ? fundData.BSESchemeCode
-      BS: "P",
-      BSType: BasketData.list_fund_data[isLast].folioNo ? "ADDITIONAL" : "FRESH",
-      DPTxn: "P",
-      Amt: BasketData.list_fund_data[isLast].FundA, //fundData.FundA ? parseInt(fundData.FundA): '',
-      Qty: "",
-      AllRedeem: "N",
-      FolioNo: BasketData.list_fund_data[isLast].folioNo ? BasketData.list_fund_data[isLast].folioNo : "",
-      RefNo: increment,
-      Remarks: "Web|" + BasketData.bucket_title,
-      SchemeType: null,
-      AMCCode: "",
-      AMCName: "",
-      Brokerage: "",
-      Firstorderflag: (BasketData.first_order == "Yes") ? "Y" : "N",
-      Freq: "MONTHLY",
-      IPAddress: "",
-      ISIPMandateId: "",
-      IsInflationAdjusted: "",
-      NoOfInstallments: 999,
-      RiskProfileID: "",
-      StartDate: orderDates[(orderDates.length -1) -isLast],
-      SubscriptionId: "wb" + clientId + new Date().getTime(),
-      SubscriptionType: "Basket",
-      Id: BasketData.bucket_id ? BasketData.bucket_id : "",
-      Name: BasketData.bucket_title ? BasketData.bucket_title : "",
-      TransMode: "P",
-      XSIPMandateId: BasketData.mandate_id ? BasketData.mandate_id : "",
-      Source: "connect",
-      OTP: OtpValue ? OtpValue : "",
-      Token: token ? token : new Date().getTime(),
-      RmBasketId: BasketData.bucket_id ? BasketData.bucket_id : "",
-      RmBasketName: BasketData.bucket_title ? BasketData.bucket_title : "",
-      SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
-      OrderUniqueID: userDetails.orderUniqueId
-        ? utils.decryptText(userDetails.orderUniqueId)
-        : "",
-    };
+    // let payload = {
+    //   TransCode: "NEW",
+    //   TransNo: "",
+    //   OrderId: "",
+    //   Client: clientId,
+    //   SchemeCD: BasketData.scheme_data[isLast].BSESchemeCode, // "SchemeCD": fundData.BSESchemeCode ? fundData.BSESchemeCode
+    //   BS: "P",
+    //   BSType: BasketData.scheme_data[isLast].folioNo ? "ADDITIONAL" : "FRESH",
+    //   DPTxn: "P",
+    //   Amt: BasketData.scheme_data[isLast].FundA, //fundData.FundA ? parseInt(fundData.FundA): '',
+    //   Qty: "",
+    //   AllRedeem: "N",
+    //   FolioNo: BasketData.scheme_data[isLast].folioNo ? BasketData.scheme_data[isLast].folioNo : "",
+    //   RefNo: increment,
+    //   Remarks: "Web|" + BasketData.bucket_title,
+    //   SchemeType: null,
+    //   AMCCode: "",
+    //   AMCName: "",
+    //   Brokerage: "",
+    //   Firstorderflag: (BasketData.is_first_order == "Yes") ? "Y" : "N",
+    //   Freq: "MONTHLY",
+    //   IPAddress: "",
+    //   ISIPMandateId: "",
+    //   IsInflationAdjusted: "",
+    //   NoOfInstallments: 999,
+    //   RiskProfileID: "",
+    //   StartDate: orderDates[(orderDates.length - 1) - isLast],
+    //   SubscriptionId: "wb" + clientId + new Date().getTime(),
+    //   SubscriptionType: "Basket",
+    //   Id: BasketData.basket_id ? BasketData.basket_id : "",
+    //   Name: BasketData.bucket_title ? BasketData.bucket_title : "",
+    //   TransMode: "P",
+    //   XSIPMandateId: BasketData.mandate_id ? BasketData.mandate_id : "",
+    //   Source: "connect",
+    //   OTP: OtpValue ? OtpValue : "",
+    //   Token: token ? token : new Date().getTime(),
+    //   RmBasketId: BasketData.basket_id ? BasketData.basket_id : "",
+    //   RmBasketName: BasketData.bucket_title ? BasketData.bucket_title : "",
+    //   SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
+    //   OrderUniqueID: userDetails.orderUniqueId
+    //     ? utils.decryptText(userDetails.orderUniqueId)
+    //     : "",
+    // };
 
-    AssistedFlowService.XSIP(payload)
+    AssistedFlowService.XSIP(OrderPayload)
       .then((response) => {
         // console.log("XSIP respone", response);
         if (
           response &&
           response.data &&
           response.data.OrderStatus &&
-          response.data.OrderStatus == "SUCCESS" &&
-          isLast < BasketData.list_fund_data.length - 1
+          response.data.OrderStatus == "SUCCESS"
+          // isLast < BasketData.scheme_data.length - 1
         ) {
-          isLast = isLast + 1;
+          // isLast = isLast + 1;
           // setIsLast(() => isLast + 1);
-          placeSIPOrder(increment);
+          // placeSIPOrder(increment);
+          generatePaymentLink();
         }
         // else {
         //   setVerifyLoader(() => false);
@@ -667,16 +841,17 @@ function Banneraf() {
         // }
 
         /**api call for generate payment link */
-        else if (
-          response &&
-          response.data &&
-          response.data.OrderStatus &&
-          response.data.OrderStatus == "SUCCESS" &&
-          isLast >= BasketData.list_fund_data.length - 1
-        ) {
-          generatePaymentLink();
-        } else {
-            setLoaders({...loaders, verifyLoader: false});
+        // else if (
+        //   response &&
+        //   response.data &&
+        //   response.data.OrderStatus &&
+        //   response.data.OrderStatus == "SUCCESS" &&
+        //   isLast >= BasketData.scheme_data.length - 1
+        // ) {
+        //   generatePaymentLink();
+        // } 
+        else {
+          setLoaders({ ...loaders, verifyLoader: false });
           setErrors(() =>
             response && response.data && response.data.Reason
               ? response.data.Reason
@@ -686,7 +861,7 @@ function Banneraf() {
       })
       .catch((error) => {
         console.log(error);
-        setLoaders({...loaders, verifyLoader: false});
+        setLoaders({ ...loaders, verifyLoader: false });
         setErrors(() => (error.message ? error.message : ""));
       });
   }
@@ -694,8 +869,8 @@ function Banneraf() {
   /**api call for generate payment link */
   function generatePaymentLink() {
     let payload = {
-      Client: userDetails.clientId
-        ? utils.decryptText(userDetails.clientId).toString()
+      Client: BasketData.client_id
+        ? (BasketData.client_id)
         : "",
       IsDirect: "N",
       // "LogoutURL": (window.location.origin + window.location.pathname + '?' + 'status=success').toString()
@@ -706,44 +881,41 @@ function Banneraf() {
       .then((response) => {
         if (response && response.data && response.data.Response) {
           /**for RM if subId is present in URL */
-          if (userDetails.subId) {
-            setLoaders({...loaders, verifyLoader: false});
+          if (subId) {
+            setLoaders({ ...loaders, verifyLoader: false });
             setPaymentLink(() =>
               response.data.Response ? response.data.Response : ""
             );
             setShowPopUp(() => "RMFlow");
           } else {
-             setLoaders({...loaders, verifyLoader: false});
+            setLoaders({ ...loaders, verifyLoader: false });
             setPaymentLink(() =>
               response.data.Response ? response.data.Response : ""
             );
-            // setShowPopUp(() => 'ClientFlow')
           }
 
           UpdateOrderStatus(response.data.Response);
-        }else{
-          if(retryPaymentCounter < 1){
+        } else {
+          if (retryPaymentCounter < 1) {
             retryPaymentCounter = retryPaymentCounter + 1;
             generatePaymentLink();
-          }else{
-                      /**for RM if subId is present in URL */
-                  if (userDetails.subId) {
-                    setLoaders({...loaders, verifyLoader: false});
-                    setPaymentLink(() => null);
-                    setShowPopUp(() => "RMFlow");
-                  } else {
-                    setLoaders({...loaders, verifyLoader: false});
-                    setPaymentLink(() => null
-                    );
-                    // setShowPopUp(() => 'ClientFlow')
-                  }
+          } else {
+            /**for RM if subId is present in URL */
+            if (subId) {
+              setLoaders({ ...loaders, verifyLoader: false });
+              setPaymentLink(() => null);
+              setShowPopUp(() => "RMFlow");
+            } else {
+              setLoaders({ ...loaders, verifyLoader: false });
+              setPaymentLink(() => null
+              );
+            }
             UpdateOrderStatus();
           }
         }
       })
       .catch((error) => {
-        console.log(error);
-        setLoaders({...loaders, verifyLoader: false});
+        setLoaders({ ...loaders, verifyLoader: false });
         setErrors(() => (error.message ? error.message : ""));
       });
   }
@@ -751,43 +923,43 @@ function Banneraf() {
   /**api call for order status update */
   function UpdateOrderStatus(paymntLink) {
     let payload = {
-      order_unique_id: userDetails.orderUniqueId
-        ? utils.decryptText(userDetails.orderUniqueId)
+      order_unique_id: uniID
+        ? uniID
         : "",
-      client_id: userDetails.clientId ? utils.decryptText(userDetails.clientId) : '',
-      bucket_id: BasketData.bucket_id? BasketData.bucket_id : "",
+      client_id: BasketData.client_id ? BasketData.client_id : '',
+      bucket_id: BasketData.basket_id ? BasketData.basket_id : "",
       status: "payment_pending",
       order_date: "",
       payment_type: "Cash",
-      link: paymntLink? paymntLink : null ,
+      link: paymntLink ? paymntLink : null,
       action_by: "",
     };
 
     AssistedFlowService.OrderStatus(payload)
       .then((response) => {
-        setLoaders({...loaders, verifyLoader: false});
+        setLoaders({ ...loaders, verifyLoader: false });
         if (response && response.data && response.data.StatusCode == 200) {
-          if (!userDetails.subId) {
+          if (!subId) {
             setShowSecondDiv(false);
             setShowThirdDiv(true);
 
-            if(BasketData.first_order == "No"){
+            if (BasketData.is_first_order == "No") {
               setErrors(() => null);
               setShowSecondDiv(() => false);
               setShowFirstButton(() => true);
               setisModalClose(() => false)
               setShowThirdDiv(false);
               setShowPopUp(() => "RMFlow");
-            }else{
+            } else {
               setTimeout(() => {
-                window.open(paymntLink? paymntLink: "", "_self");
+                window.open(paymntLink ? paymntLink : "", "_self");
               }, 3000);
             }
-          }else{
+          } else {
             closesection();
           }
         } else {
-          setLoaders({...loaders, verifyLoader: false});
+          setLoaders({ ...loaders, verifyLoader: false });
           setErrors(() =>
             response.data.Message
               ? response.data.Message
@@ -797,7 +969,7 @@ function Banneraf() {
       })
       .catch((error) => {
         console.log(error);
-        setLoaders({...loaders, verifyLoader: false});
+        setLoaders({ ...loaders, verifyLoader: false });
         setErrors(() =>
           error.response.data.Message
             ? error.response.data.Message
@@ -816,20 +988,20 @@ function Banneraf() {
       // "LogoutURL": (window.location.origin + window.location.pathname + '?' + 'status=success').toString()
       LogoutURL: window.location.href + "&" + "status=success",
     };
-    setLoaders({...loaders, DirectFlowLoader: true});
+    setLoaders({ ...loaders, DirectFlowLoader: true });
     AssistedFlowService.PaymentLink(payload)
       .then((response) => {
         if (response && response.data && response.data.Response) {
           /**for RM if subId is present in URL */
-          if (userDetails.subId) {
-            setLoaders({...loaders, DirectFlowLoader: false});
+          if (subId) {
+            setLoaders({ ...loaders, DirectFlowLoader: false });
             setPaymentLink(() =>
               response.data.Response ? response.data.Response : ""
             );
             setshowStatus(() => false);
             setShowPopUp(() => "RMFlow");
           } else {
-             setLoaders({...loaders, DirectFlowLoader: false});
+            setLoaders({ ...loaders, DirectFlowLoader: false });
             setPaymentLink(() =>
               response.data.Response ? response.data.Response : ""
             );
@@ -837,29 +1009,29 @@ function Banneraf() {
           }
 
           UpdateOrderStatus2(response.data.Response);
-        }else{
-          if(retryPaymentCounter < 1){
+        } else {
+          if (retryPaymentCounter < 1) {
             retryPaymentCounter = retryPaymentCounter + 1;
             generatePaymentLink2();
-          }else{
-                      /**for RM if subId is present in URL */
-                  if (userDetails.subId) {
-                    setLoaders({...loaders, DirectFlowLoader: false});
-                    setPaymentLink(() => null);
-                    // setShowPopUp(() => "RMFlow");
-                  } else {
-                    setLoaders({...loaders, DirectFlowLoader: false});
-                    setPaymentLink(() => null
-                    );
-                    // setShowPopUp(() => 'ClientFlow')
-                  }
+          } else {
+            /**for RM if subId is present in URL */
+            if (subId) {
+              setLoaders({ ...loaders, DirectFlowLoader: false });
+              setPaymentLink(() => null);
+              // setShowPopUp(() => "RMFlow");
+            } else {
+              setLoaders({ ...loaders, DirectFlowLoader: false });
+              setPaymentLink(() => null
+              );
+              // setShowPopUp(() => 'ClientFlow')
+            }
             UpdateOrderStatus2();
           }
         }
       })
       .catch((error) => {
         console.log(error);
-        setLoaders({...loaders, DirectFlowLoader: false});
+        setLoaders({ ...loaders, DirectFlowLoader: false });
         setDirectErrors(() => (error.message ? error.message : ""));
       });
   }
@@ -867,27 +1039,27 @@ function Banneraf() {
   /**api call for orderstatus2 */
   function UpdateOrderStatus2(paymntLink) {
     let payload = {
-      order_unique_id: userDetails.orderUniqueId
-        ? utils.decryptText(userDetails.orderUniqueId)
+      order_unique_id: urlOid
+        ? urlOid
         : "",
-      client_id: userDetails.clientId ? utils.decryptText(userDetails.clientId) : '',
-      bucket_id: BasketData.bucket_id? BasketData.bucket_id : "",
+      client_id: BasketData.client_id ? BasketData.client_id : '',
+      bucket_id: BasketData.basket_id ? BasketData.basket_id : "",
       status: "payment_pending",
       order_date: "",
       payment_type: "Cash",
-      link: paymntLink? paymntLink : null ,
+      link: paymntLink ? paymntLink : null,
       action_by: "",
     };
 
     AssistedFlowService.OrderStatus(payload)
       .then((response) => {
-        setLoaders({...loaders, DirectFlowLoader: false});
+        setLoaders({ ...loaders, DirectFlowLoader: false });
         if (response && response.data && response.data.StatusCode == 200) {
-          if (!userDetails.subId) {
+          if (!subId) {
             // setShowSecondDiv(false);
             // setShowThirdDiv(true);
 
-            if(BasketData.first_order == "No"){
+            if (BasketData.is_first_order == "No") {
               setDirectErrors(() => null);
               // setShowSecondDiv(() => false);
               // setShowFirstButton(() => true);
@@ -895,16 +1067,16 @@ function Banneraf() {
               // setShowThirdDiv(false);
               setshowStatus(() => false);
               setShowPopUp(() => "RMFlow");
-            }else{
+            } else {
               setTimeout(() => {
-                window.open(paymntLink? paymntLink: "", "_self");
+                window.open(paymntLink ? paymntLink : "", "_self");
               }, 3000);
             }
-          }else{
+          } else {
             closesection();
           }
         } else {
-          setLoaders({...loaders, verifyLoader: false});
+          setLoaders({ ...loaders, verifyLoader: false });
           setErrors(() =>
             response.data.Message
               ? response.data.Message
@@ -914,7 +1086,7 @@ function Banneraf() {
       })
       .catch((error) => {
         console.log(error);
-        setLoaders({...loaders, verifyLoader: false});
+        setLoaders({ ...loaders, verifyLoader: false });
         setErrors(() =>
           error.response.data.Message
             ? error.response.data.Message
@@ -932,7 +1104,7 @@ function Banneraf() {
   /**copy payment link to clipboard */
   function copyToClipboard() {
     let msg = "Find a curated customized Mutual Fund basket that perfectly aligns with your investment goals."
-    let msg2 = "\nTo complete your investment, please initiate payment by clicking on the following link:\n" 
+    let msg2 = "\nTo complete your investment, please initiate payment by clicking on the following link:\n"
     let msg3 = "\nThe payment process is fast and simple. if you require any assistance, I am available to guide you through the process"
 
     const selBox = document.createElement("textarea");
@@ -940,7 +1112,7 @@ function Banneraf() {
     selBox.style.left = "0";
     selBox.style.top = "0";
     selBox.style.opacity = "0";
-    selBox.value = msg + msg2 + paymentLink.toString() + msg3 ;
+    selBox.value = msg + msg2 + paymentLink.toString() + msg3;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
@@ -952,8 +1124,7 @@ function Banneraf() {
       setShowToast(() => false);
     }, 2000);
   }
-  
-  function closesection(){
+  function closesection() {
     setErrors(() => null);
     setDirectErrors(() => null);
     setShowSecondDiv(() => false);
@@ -971,10 +1142,10 @@ function Banneraf() {
                 <h1 className="title-secnd pt-5">Investments for you!</h1>
                 {/* <p className='subhead'>Funds for Children's Education</p> */}
                 {
-                  (name == 'visibleform') ? 
-                  <>
+                  (name == 'visibleform') ?
+                    <>
                       <p className="subhead">
-                        {BasketData.bucket_title ? BasketData.bucket_title : "NA"}
+                        {BasketData.basket_name ? BasketData.basket_name : "NA"}
                       </p>
                       <p className="profile">
                         {BasketData.order_type ? BasketData.order_type : "NA"}
@@ -983,11 +1154,11 @@ function Banneraf() {
                     :
                     <>
                       <p className="subhead">
-                        {BasketData.bucket_title ? BasketData.bucket_title : "NA"}
+                        {BasketData.basket_name ? BasketData.basket_name : "NA"}
                       </p>
                       <p className="profile">
-                        {userDetails.clientId
-                          ? utils.decryptText(userDetails.clientId)
+                        {BasketData.client_id
+                          ? BasketData.client_id
                           : "NA"} | {BasketData.client_name
                             ? BasketData.client_name
                             : "NA"}
@@ -1005,36 +1176,36 @@ function Banneraf() {
                 <div className="row">
                   <div className="left-sec">
                     <div className="table-sec">
-                      {BasketData.list_fund_data.map((item, index) => {
+                      {BasketData.scheme_data.map((item, index) => {
                         return (
                           <>
                             <div className="rowwrap" key={index}>
                               <div className="name">
-                                {item.FundName ? item.FundName : "NA"}
+                                {item.scheme_name ? item.scheme_name : "NA"}
                               </div>
                               <div className="textwrap">
                                 <div className="numberwrap">
                                   <div className="number">
-                                    {item.ThreeYrNavper ? parseInt(item.ThreeYrNavper).toFixed(2) : "NA"}
+                                    {item.three_year_return_per ? parseInt(item.three_year_return_per).toFixed(2) : "NA"}
                                   </div>
                                   <p className="percent">3 yrs Returns %</p>
                                 </div>
                                 <div className="amount">
                                   <div className="rupee">
-                                    ₹ {item.FundA ? item.FundA : "NA"}
+                                    ₹ {item.amount ? item.amount : "NA"}
                                   </div>
                                   <p className="text">Amount</p>
                                 </div>
                                 {
-                                  (BasketData.bucket_type != 'Lumpsum') ? 
-                                  <div className="amount">
-                                  <div className="rupee">
-                                    {nextSipDate && nextSipDate[(nextSipDate.length-1) -index]? nextSipDate[(nextSipDate.length-1) -index] : 'NA'}
-                                  </div>
-                                  <p className="text">Next SIP Payment</p>
-                                </div> : ''
+                                  (BasketData.order_type != 'Lumpsum') ?
+                                    <div className="amount">
+                                      <div className="rupee">
+                                        {nextSipDate && nextSipDate[(nextSipDate.length - 1) - index] ? nextSipDate[(nextSipDate.length - 1) - index] : 'NA'}
+                                      </div>
+                                      <p className="text">Next SIP Payment</p>
+                                    </div> : ''
                                 }
-                                
+
                               </div>
                             </div>
                           </>
@@ -1042,13 +1213,13 @@ function Banneraf() {
                       })}
                     </div>
                     {OrderMetaData.placeOrderMessage ||
-                    OrderMetaData.serverDownMessage ? (
+                      OrderMetaData.serverDownMessage ? (
                       <div className="text-center order-message">
                         {OrderMetaData.placeOrderMessage
                           ? OrderMetaData.placeOrderMessage
                           : OrderMetaData.serverDownMessage
-                          ? OrderMetaData.serverDownMessage
-                          : ""}
+                            ? OrderMetaData.serverDownMessage
+                            : ""}
                       </div>
                     ) : (
                       ""
@@ -1066,8 +1237,8 @@ function Banneraf() {
                                   : "NA"}
                               </p>
                               <p>
-                                {userDetails.clientId
-                                  ? utils.decryptText(userDetails.clientId)
+                                {BasketData.client_id
+                                  ? BasketData.client_id
                                   : "NA"}
                               </p>
                             </div>
@@ -1077,8 +1248,8 @@ function Banneraf() {
                               </p>
                               <p className="amountrs">
                                 ₹{" "}
-                                {BasketData.bucket_min_amt
-                                  ? BasketData.bucket_min_amt
+                                {BasketData.basket_min_amt
+                                  ? BasketData.basket_min_amt
                                   : "NA"}
                               </p>
                             </div>
@@ -1089,7 +1260,7 @@ function Banneraf() {
                                   ? ""
                                   : handleFirstButtonClick(false);
                               }}
-                               disabled={paymentLink}
+                              disabled={paymentLink}
                             >
                               {loaders.SendOtpLoader ? (
                                 <div className="loaderB mx-auto"></div>
@@ -1111,46 +1282,48 @@ function Banneraf() {
                         <>
                           <div className="otpsec">
                             <div className="resdiv">
-                            <Button className="closebtn cursor-pointer" onClick={closesection} ><FontAwesomeIcon icon={faClose} /></Button>
+                              <Button className="closebtn cursor-pointer" onClick={closesection} ><FontAwesomeIcon icon={faClose} /></Button>
 
                               <div className="otpmodal">
                                 <p className="otptext">
                                   Enter One Time
                                   <br /> Authentication Code
                                 </p>
-                                    {
-                                        userDetails.subId ? 
-                                          <p className="subtext">
-                                            Code sent to client’s registered
-                                            {
-                                              mobileNumber?<><span> mobile number +91 <span className="temp-text"> {mobileNumber} </span></span></> : ''
-                                            }
+                                {
+                                  subId ?
+                                    <p className="subtext">
+                                      {/* Code sent to client’s registered
+                                      {
+                                        mobileNumber ? <><span> mobile number +91 <span className="temp-text"> {mobileNumber} </span></span></> : ''
+                                      }
 
-                                            {
-                                              (email && !mobileNumber)?<><span>Email ID</span> <span className="temp-text">{email}</span></> : ''
-                                            }
+                                      {
+                                        (email && !mobileNumber) ? <><span>Email ID</span> <span className="temp-text">{email}</span></> : ''
+                                      }
 
-                                            {
-                                              (email && mobileNumber)?<><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
-                                            }
-                                          </p>
-                                          :
-                                          <p className="subtext">
-                                            Code sent to your registered
-                                            {
-                                              mobileNumber?<><span> mobile number +91 <span className="temp-text"> {mobileNumber} </span></span></> : ''
-                                            }
-                                            {
-                                              (email && !mobileNumber)?<><span>Email ID</span> <span className="temp-text">{email}</span></> : ''
-                                            }
+                                      {
+                                        (email && mobileNumber) ? <><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
+                                      } */}
+                                      {mobileNumber ? mobileNumber : "NA"}
+                                    </p>
+                                    :
+                                    <p className="subtext">
+                                      {/* Code sent to your registered
+                                      {
+                                        mobileNumber ? <><span> mobile number +91 <span className="temp-text"> {mobileNumber} </span></span></> : ''
+                                      }
+                                      {
+                                        (email && !mobileNumber) ? <><span>Email ID</span> <span className="temp-text">{email}</span></> : ''
+                                      }
 
-                                            {
-                                              (email && mobileNumber)?<><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
-                                            }
-                                          </p> 
-                                    }                      
+                                      {
+                                        (email && mobileNumber) ? <><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
+                                      } */}
+                                      {mobileNumber ? mobileNumber : "NA"}
+                                    </p>
+                                }
 
-      
+
                               </div>
 
                               <div id="divOuter">
@@ -1303,48 +1476,48 @@ function Banneraf() {
                 <div className="order-register">
                   <p className="sucesstext">Order Registered!</p>
 
-                   {
-                    BasketData ? 
-                    <>
-                    {
-                      (BasketData.first_order == "No")? 
-                      <p className="subtext">
-                        Keep your mandate authenticated as your 1st order will auto debit.
-                      </p> :
-                      <p className="subtext">
-                        Copy &amp; Share link with Client - <b>{userDetails && userDetails.clientId
-                          ? utils.decryptText(userDetails.clientId)
-                          : ""}</b> to complete the payment.
-                      </p>
-                    }
-                    </> : ''
-                   } 
-               
-                  
+                  {
+                    BasketData ?
+                      <>
+                        {
+                          (BasketData.is_first_order == "No") ?
+                            <p className="subtext">
+                              Keep your mandate authenticated as your 1st order will auto debit.
+                            </p> :
+                            <p className="subtext">
+                              Copy &amp; Share link with Client - <b>{BasketData.client_id
+                                ? BasketData.client_id
+                                : ""}</b> to complete the payment.
+                            </p>
+                        }
+                      </> : ''
+                  }
+
+
                   <div className="rightbtn">
                     {
-                      BasketData? 
-                      <>
-                      {
-                          (BasketData.first_order == "No")? 
-                          <Link
-                            className="btn-bg btn-bg-dark copybtn"
-                            to="/"
-                          >Okay</Link> :
-                          <Button
-                            className="btn-bg btn-bg-dark copybtn"
-                            onClick={copyToClipboard}
-                          >
-                            {showToast ? (
-                              <span>Link Copied</span>
-                            ) : (
-                              <span>Copy Link</span>
-                            )}
-                          </Button>
-                      }
-                      </>: ''
+                      BasketData ?
+                        <>
+                          {
+                            (BasketData.is_first_order == "No") ?
+                              <Link
+                                className="btn-bg btn-bg-dark copybtn"
+                                to="/"
+                              >Okay</Link> :
+                              <Button
+                                className="btn-bg btn-bg-dark copybtn"
+                                onClick={copyToClipboard}
+                              >
+                                {showToast ? (
+                                  <span>Link Copied</span>
+                                ) : (
+                                  <span>Copy Link</span>
+                                )}
+                              </Button>
+                          }
+                        </> : ''
                     }
-                    
+
                   </div>
                 </div>
               </Modal.Body>
@@ -1405,38 +1578,38 @@ function Banneraf() {
             >
               <Modal.Body className="text-center">
                 {
-                  (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && BasketData.payment_url ) ? 
-                  <div className="redirectwrap">
-                            <LazyLoader
-                              src={Redirect}
-                              alt={""}
-                              className={"img-fluid redirectimg con-img"}
-                              width={"74"}
-                              height={"74"}
-                            />
-                            <p className="redirecttext sucesstext">
-                              Redirecting to Payment Page
-                            </p>
-                          </div>: 
-                          (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && !BasketData.payment_url) ?
+                  (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && BasketData.payment_url) ?
+                    <div className="redirectwrap">
+                      <LazyLoader
+                        src={Redirect}
+                        alt={""}
+                        className={"img-fluid redirectimg con-img"}
+                        width={"74"}
+                        height={"74"}
+                      />
+                      <p className="redirecttext sucesstext">
+                        Redirecting to Payment Page
+                      </p>
+                    </div> :
+                    (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && !BasketData.payment_url) ?
 
-                            <p className="subtext">Re-Fetch Payment Link</p> : 
-                            <p className="subtext">{messg}</p>
+                      <p className="subtext">Re-Fetch Payment Link</p> :
+                      <p className="subtext">{messg}</p>
                 }
 
                 {
-                  (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && BasketData.payment_url) ? 
-                  "" : 
                   (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && BasketData.payment_url) ?
-                  <div className="rightbtn">
-                  <Button
-                    className="btn-bg btn-bg-dark awesomebtn"
-                    onClick={generatePaymentLink2}
-                  >
-                    <span>Fetch Payment Link</span>
+                    "" :
+                    (BasketData && BasketData.order_status && BasketData.order_status == "payment_pending" && BasketData.payment_url) ?
+                      <div className="rightbtn">
+                        <Button
+                          className="btn-bg btn-bg-dark awesomebtn"
+                          onClick={generatePaymentLink2}
+                        >
+                          <span>Fetch Payment Link</span>
 
-                  </Button>
-                </div> :
+                        </Button>
+                      </div> :
                       <div className="rightbtn">
                         <Link
                           to="/"
@@ -1448,7 +1621,7 @@ function Banneraf() {
                         </Link>
                       </div>
                 }
- 
+
               </Modal.Body>
             </Modal>
           </div>
