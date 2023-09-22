@@ -114,9 +114,9 @@ function Banneraf() {
     new URLSearchParams(search).get("status")
   );
 
-  const uniID = new URLSearchParams(search).get("oid").replaceAll(" ", "+");
-  const subId = new URLSearchParams(search).get("sid").replaceAll(" ", "+");
-  const expId = new URLSearchParams(search).get("exp").replaceAll(" ", "+");
+  const uniID = new URLSearchParams(search).get("oid") ? new URLSearchParams(search).get("oid").replaceAll(" ", "+") : "";
+  const subId = new URLSearchParams(search).get("sid") ? new URLSearchParams(search).get("sid").replaceAll(" ", "+") : "";
+  const expId = new URLSearchParams(search).get("exp") ? new URLSearchParams(search).get("exp").replaceAll(" ", "+") : "";
 
   let client_id;
   const captchaCount = useRef(0);
@@ -198,6 +198,7 @@ function Banneraf() {
 
       AssistedFlowService.BasketDetails(payload)
         .then((res) => {
+          console.log("DETT",res);
           if (res && res.data && res.data.Body) {
             setDataNotFound(() => false);
             setBasketData(() => (res.data.Body ? res.data.Body : {}));
@@ -275,24 +276,26 @@ function Banneraf() {
                     "DPTxn": "P",
                     "Firstorderflag": (res.data.Body.is_first_order == "Yes") ? "Y" : "N",
                     "FolioNo": item.scheme_code,
-                    "Freq": "Monthly",
+                    "Freq": "MONTHLY",
                     "IPAddress": "",
                     "ISIPMandateId": "",
                     "IsInflationAdjusted": "",
                     "Name": res.data.Body.basket_name ? res.data.Body.basket_name : "",
-                    "NoOfInstallments": "999",
+                    "NoOfInstallments": 999,
                     "OrderId": "",
                     "Qty": "0",
+                    "RefNo": "",
                     "Remarks": "",
                     "RiskProfileID": "",
-                    "SchemeCD": item.scheme_code,
+                    "SchemeCD": item.bse_scheme_code,
                     "SchemeType": "",
                     "Source": "connect",
-                    "StartDate": nextDate.format("DD/MM/YYYY"),
-                    "SubscriptionID": "",
+                    "StartDate": new moment(nextDate).format("DD/MM/YYYY"),
+                    "SubscriptionID": "wb" + res.data.Body.client_id + new Date().getTime(),
                     "SubscriptionType": "Basket",
-                    "ID": "",
+                    "ID": res.data.Body.id,
                     "TransCode": "NEW",
+                    "TransNo": "",
                     "TransMode": "P",
                     "XSIPMandateId": res.data.Body.mandate_id ? res.data.Body.mandate_id : ""
                   }
@@ -333,25 +336,27 @@ function Banneraf() {
                       "DPTxn": "P",
                       "Firstorderflag": (res.data.Body.is_first_order == "Yes") ? "Y" : "N",
                       "FolioNo": item.scheme_code,
-                      "Freq": "Monthly",
+                      "Freq": "MONTHLY",
                       "IPAddress": "",
                       "ISIPMandateId": "",
                       "IsInflationAdjusted": "",
                       "Name": res.data.Body.basket_name ? res.data.Body.basket_name : "",
-                      "NoOfInstallments": "999",
+                      "NoOfInstallments": 999,
                       "OrderId": "",
                       "Qty": "0",
                       "Remarks": "",
+                      "RefNo": "",
                       "RiskProfileID": "",
-                      "SchemeCD": item.scheme_code,
+                      "SchemeCD": item.bse_scheme_code,
                       "SchemeType": "",
                       "Source": "connect",
-                      "StartDate": nextDate.format("DD/MM/YYYY"),
-                      "SubscriptionID": "",
+                      "StartDate": new moment(nextDate).format("DD/MM/YYYY"),
+                      "SubscriptionID": "wb" + res.data.Body.client_id + new Date().getTime(),
                       "SubscriptionType": "Basket",
-                      "ID": "",
+                      "ID": res.data.Body.id,
                       "TransCode": "NEW",
                       "TransMode": "P",
+                      "TransNo": "",
                       "XSIPMandateId": res.data.Body.mandate_id ? res.data.Body.mandate_id : ""
                     }
                     tempObj['Orders'].push(obj)
@@ -378,25 +383,27 @@ function Banneraf() {
                       "DPTxn": "P",
                       "Firstorderflag": (item.is_first_order == "Yes") ? "Y" : "N",
                       "FolioNo": item.scheme_code,
-                      "Freq": "Monthly",
+                      "Freq": "MONTHLY",
                       "IPAddress": "",
                       "ISIPMandateId": "",
                       "IsInflationAdjusted": "",
                       "Name": item.basket_name ? item.basket_name : "",
-                      "NoOfInstallments": "999",
+                      "NoOfInstallments": 999,
                       "OrderId": "",
                       "Qty": "0",
                       "Remarks": "",
+                      "RefNo": "",
                       "RiskProfileID": "",
-                      "SchemeCD": item.scheme_code,
+                      "SchemeCD": item.bse_scheme_code,
                       "SchemeType": "",
                       "Source": "connect",
-                      "StartDate": nextDate.format("DD/MM/YYYY"),
-                      "SubscriptionID": "",
+                      "StartDate":  new moment(nextDate).format("DD/MM/YYYY"),
+                      "SubscriptionID": "wb" + res.data.Body.client_id + new Date().getTime(),
                       "SubscriptionType": "Basket",
-                      "ID": "",
+                      "ID": res.data.Body.id,
                       "TransCode": "NEW",
                       "TransMode": "P",
+                      "TransNo": "",
                       "XSIPMandateId": res.data.Body.mandate_id ? res.data.Body.mandate_id : ""
                     }
 
@@ -427,9 +434,10 @@ function Banneraf() {
                   "OrderId": "",
                   "Qty": "0",
                   "Remarks": "",
-                  "SchemeCD": item.scheme_code,
+                  "RefNo":"",
+                  "SchemeCD": item.bse_scheme_code,
                   "SchemeType": "",
-                  "SubscriptionID": "",
+                  "SubscriptionID": "wb" + res.data.Body.client_id + new Date().getTime(),
                   "SubscriptionType": "Basket",
                   "TransCode": "NEW"
                 }
@@ -671,51 +679,51 @@ function Banneraf() {
     // let clientId = BasketData.client_id
     //   ? BasketData.client_id
     //   : "";
-    // let payload = {
-    //   // TransCode: "NEW",
-    //   // TransNo: "",
-    //   // OrderId: "",
-    //   // Client: clientId,
-    //   // Source: "connect",
-    //   // Orders:
-    //   // SchemeCD: BasketData.scheme_data[isLast].BSESchemeCode,
-    //   // SchemeName: "",
-    //   // BS: "P",
-    //   // BSType: BasketData.scheme_data[isLast].folioNo ? "ADDITIONAL" : "FRESH",
-    //   // DPTxn: "P",
-    //   // Amt: parseInt(BasketData.scheme_data[isLast].FundA),
-    //   // Qty: "",
-    //   // AllRedeem: "N",
-    //   // FolioNo: BasketData.scheme_data[isLast].folioNo ? BasketData.scheme_data[isLast].folioNo : "",
-    //   // RefNo: increment,
-    //   // Remarks: "Web|" + BasketData.bucket_title,
-    //   // OrderStatus: "",
-    //   // Reason: "",
-    //   // TimeStamp: "",
-    //   // FinalStatus: "",
-    //   // ActualOrderId: "",
-    //   // SchemePlanCode: BasketData.scheme_data[isLast].FundPlanCode,
-    //   // SubscriptionId: "wb" + clientId + new Date().getTime(),
-    //   // SubscriptionType: "Basket",
-    //   // Id: BasketData.basket_id ? BasketData.basket_id : "",
-    //   // Name: BasketData.bucket_title ? BasketData.bucket_title : "",
-    //   // OTP: OtpValue ? OtpValue : "",
-    //   // Token: token ? token : new Date().getTime(),
-    //   // RmBasketId: BasketData.basket_id ? BasketData.basket_id : "",
-    //   // RmBasketName: BasketData.bucket_title ? BasketData.bucket_title : "",
-    //   // SubjectId: urlSid ? urlSid : "",
-    //   // Source: "connect",
-    //   // OrderUniqueID: urlOid ? urlOid : "",
-    // };
+    let payload = {
+      // TransCode: "NEW",
+      // TransNo: "",
+      // OrderId: "",
+      // Client: clientId,
+      // Source: "connect",
+      // Orders:
+      // SchemeCD: BasketData.scheme_data[isLast].BSESchemeCode,
+      // SchemeName: "",
+      // BS: "P",
+      // BSType: BasketData.scheme_data[isLast].folioNo ? "ADDITIONAL" : "FRESH",
+      // DPTxn: "P",
+      // Amt: parseInt(BasketData.scheme_data[isLast].FundA),
+      // Qty: "",
+      // AllRedeem: "N",
+      // FolioNo: BasketData.scheme_data[isLast].folioNo ? BasketData.scheme_data[isLast].folioNo : "",
+      // RefNo: increment,
+      // Remarks: "Web|" + BasketData.bucket_title,
+      // OrderStatus: "",
+      // Reason: "",
+      // TimeStamp: "",
+      // FinalStatus: "",
+      // ActualOrderId: "",
+      // SchemePlanCode: BasketData.scheme_data[isLast].FundPlanCode,
+      // SubscriptionId: "wb" + clientId + new Date().getTime(),
+      // SubscriptionType: "Basket",
+      // Id: BasketData.basket_id ? BasketData.basket_id : "",
+      // Name: BasketData.bucket_title ? BasketData.bucket_title : "",
+      // OTP: OtpValue ? OtpValue : "",
+      // Token: token ? token : new Date().getTime(),
+      // RmBasketId: BasketData.basket_id ? BasketData.basket_id : "",
+      // RmBasketName: BasketData.bucket_title ? BasketData.bucket_title : "",
+      // SubjectId: urlSid ? urlSid : "",
+      // Source: "connect",
+      // OrderUniqueID: urlOid ? urlOid : "",
+    };
 
 
-    AssistedFlowService.Lumpsum(OrderPayload)
+    AssistedFlowService.Lumpsum(OrderPayload,otpResponse.Body.otp_session_id)
       .then((response) => {
         if (
           response &&
           response.data &&
-          response.data.OrderStatus &&
-          response.data.OrderStatus == "SUCCESS"
+          response.data.Status &&
+          response.data.Status == "Success"
         ) {
           // isLast = isLast + 1;
           // setIsLast(() => isLast + 1);
@@ -773,63 +781,76 @@ function Banneraf() {
       ? BasketData.client_id
       : "";
     // let payload = {
-    //   TransCode: "NEW",
-    //   TransNo: "",
-    //   OrderId: "",
-    //   Client: clientId,
-    //   SchemeCD: BasketData.scheme_data[isLast].BSESchemeCode, // "SchemeCD": fundData.BSESchemeCode ? fundData.BSESchemeCode
-    //   BS: "P",
-    //   BSType: BasketData.scheme_data[isLast].folioNo ? "ADDITIONAL" : "FRESH",
-    //   DPTxn: "P",
-    //   Amt: BasketData.scheme_data[isLast].FundA, //fundData.FundA ? parseInt(fundData.FundA): '',
-    //   Qty: "",
-    //   AllRedeem: "N",
-    //   FolioNo: BasketData.scheme_data[isLast].folioNo ? BasketData.scheme_data[isLast].folioNo : "",
-    //   RefNo: increment,
-    //   Remarks: "Web|" + BasketData.bucket_title,
-    //   SchemeType: null,
-    //   AMCCode: "",
-    //   AMCName: "",
-    //   Brokerage: "",
-    //   Firstorderflag: (BasketData.is_first_order == "Yes") ? "Y" : "N",
-    //   Freq: "MONTHLY",
-    //   IPAddress: "",
-    //   ISIPMandateId: "",
-    //   IsInflationAdjusted: "",
-    //   NoOfInstallments: 999,
-    //   RiskProfileID: "",
-    //   StartDate: orderDates[(orderDates.length - 1) - isLast],
-    //   SubscriptionId: "wb" + clientId + new Date().getTime(),
-    //   SubscriptionType: "Basket",
-    //   Id: BasketData.basket_id ? BasketData.basket_id : "",
-    //   Name: BasketData.bucket_title ? BasketData.bucket_title : "",
-    //   TransMode: "P",
-    //   XSIPMandateId: BasketData.mandate_id ? BasketData.mandate_id : "",
-    //   Source: "connect",
-    //   OTP: OtpValue ? OtpValue : "",
-    //   Token: token ? token : new Date().getTime(),
-    //   RmBasketId: BasketData.basket_id ? BasketData.basket_id : "",
-    //   RmBasketName: BasketData.bucket_title ? BasketData.bucket_title : "",
-    //   SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
-    //   OrderUniqueID: userDetails.orderUniqueId
-    //     ? utils.decryptText(userDetails.orderUniqueId)
-    //     : "",
+      // TransCode: "NEW",
+      // TransNo: "",
+      // OrderId: "",
+      // Client: clientId,
+      // SchemeCD: BasketData.scheme_data[isLast].BSESchemeCode, // "SchemeCD": fundData.BSESchemeCode ? fundData.BSESchemeCode
+      // BS: "P",
+      // BSType: BasketData.scheme_data[isLast].folioNo ? "ADDITIONAL" : "FRESH",
+      // DPTxn: "P",
+      // Amt: BasketData.scheme_data[isLast].FundA, //fundData.FundA ? parseInt(fundData.FundA): '',
+      // Qty: "",
+      // AllRedeem: "N",
+      // FolioNo: BasketData.scheme_data[isLast].folioNo ? BasketData.scheme_data[isLast].folioNo : "",
+      // RefNo: increment,
+      // Remarks: "Web|" + BasketData.bucket_title,
+      // SchemeType: null,
+      // AMCCode: "",
+      // AMCName: "",
+      // Brokerage: "",
+      // Firstorderflag: (BasketData.is_first_order == "Yes") ? "Y" : "N",
+      // Freq: "MONTHLY",
+      // IPAddress: "",
+      // ISIPMandateId: "",
+      // IsInflationAdjusted: "",
+      // NoOfInstallments: 999,
+      // RiskProfileID: "",
+      // StartDate: orderDates[(orderDates.length - 1) - isLast],
+      // SubscriptionId: "wb" + clientId + new Date().getTime(),
+      // SubscriptionType: "Basket",
+      // Id: BasketData.basket_id ? BasketData.basket_id : "",
+      // Name: BasketData.bucket_title ? BasketData.bucket_title : "",
+      // TransMode: "P",
+      // XSIPMandateId: BasketData.mandate_id ? BasketData.mandate_id : "",
+      // Source: "connect",
+      // OTP: OtpValue ? OtpValue : "",
+      // Token: token ? token : new Date().getTime(),
+      // RmBasketId: BasketData.basket_id ? BasketData.basket_id : "",
+      // RmBasketName: BasketData.bucket_title ? BasketData.bucket_title : "",
+      // SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
+      // OrderUniqueID: userDetails.orderUniqueId
+      //   ? utils.decryptText(userDetails.orderUniqueId)
+      //   : "",
     // };
 
-    AssistedFlowService.XSIP(OrderPayload)
+    AssistedFlowService.XSIP(OrderPayload,otpResponse.Body.otp_session_id)
       .then((response) => {
         // console.log("XSIP respone", response);
         if (
           response &&
           response.data &&
-          response.data.OrderStatus &&
-          response.data.OrderStatus == "SUCCESS"
+          response.data.Status &&
+          response.data.Status == "Success"
           // isLast < BasketData.scheme_data.length - 1
         ) {
           // isLast = isLast + 1;
           // setIsLast(() => isLast + 1);
           // placeSIPOrder(increment);
-          generatePaymentLink();
+          // generatePaymentLink();
+                    /**for RM if subId is present in URL */
+                    if (subId) {
+                      setLoaders({ ...loaders, verifyLoader: false });
+                      setPaymentLink(() =>
+                        response.data.Response ? response.data.Response : ""
+                      );
+                      setShowPopUp(() => "RMFlow");
+                    } else {
+                      setLoaders({ ...loaders, verifyLoader: false });
+                      setPaymentLink(() =>
+                        response.data.Response ? response.data.Response : ""
+                      );
+                    }
         }
         // else {
         //   setVerifyLoader(() => false);
@@ -1248,8 +1269,8 @@ function Banneraf() {
                               </p>
                               <p className="amountrs">
                                 ₹{" "}
-                                {BasketData.basket_min_amt
-                                  ? BasketData.basket_min_amt
+                                {BasketData.order_amount
+                                  ? BasketData.order_amount
                                   : "NA"}
                               </p>
                             </div>

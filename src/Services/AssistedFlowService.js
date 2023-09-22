@@ -13,6 +13,11 @@ const OTPHeaders = {
     "dLg2EpslEv1c": "e6k4MEBgzPjZ9OutfecY/PX+6s1Yck2WQmHYlD2nCWQ="
 }
 
+const OrderHeaders = {
+    'Content-Type': 'application/json',
+    "Authorization": ""
+}
+
 const AssistedFlowService  = {
 
     BasketDetails: function(payload){
@@ -43,20 +48,24 @@ const AssistedFlowService  = {
         })
     },
 
-    Lumpsum: function(payload){
+    Lumpsum: function(payload,sessionId){
 
         let api = new API_URLS()
         let url = api.getLumpsumOrderURL()
-        return axios.post(url,payload,{headers: OTPHeaders}).then((response) => {
+        let headers = OrderHeaders;
+        headers['Authorization'] = "bearer " + sessionId
+        return axios.post(url,payload,{headers: headers}).then((response) => {
             return response
         })
     },
 
-    XSIP: function(payload){
+    XSIP: function(payload,sessionId){
 
         let api = new API_URLS()
         let url = api.getSIPOrderURL()
-        return axios.post(url,payload,{headers: OTPHeaders}).then((response) => {
+        let headers = OrderHeaders;
+        headers['Authorization'] = "bearer " + sessionId
+        return axios.post(url,payload,{headers: headers}).then((response) => {
             return response
         })
     },
