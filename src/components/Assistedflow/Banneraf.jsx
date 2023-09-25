@@ -728,7 +728,19 @@ function Banneraf() {
           // isLast = isLast + 1;
           // setIsLast(() => isLast + 1);
           // placeLumpSumOrder(increment);
-          generatePaymentLink();
+          // generatePaymentLink();
+          if (subId) {
+            setLoaders({ ...loaders, verifyLoader: false });
+            setPaymentLink(() =>
+              response.data.PaymentLink ? response.data.PaymentLink : ""
+            );
+            setShowPopUp(() => "RMFlow");
+          } else {
+            setLoaders({ ...loaders, verifyLoader: false });
+            setPaymentLink(() =>
+              response.data.PaymentLink ? response.data.PaymentLink : ""
+            );
+          }
         }
 
         /**api call for generate payment link */
@@ -842,13 +854,13 @@ function Banneraf() {
                     if (subId) {
                       setLoaders({ ...loaders, verifyLoader: false });
                       setPaymentLink(() =>
-                        response.data.Response ? response.data.Response : ""
+                        response.data.PaymentLink ? response.data.PaymentLink : ""
                       );
                       setShowPopUp(() => "RMFlow");
                     } else {
                       setLoaders({ ...loaders, verifyLoader: false });
                       setPaymentLink(() =>
-                        response.data.Response ? response.data.Response : ""
+                        response.data.PaymentLink ? response.data.PaymentLink : ""
                       );
                     }
         }
