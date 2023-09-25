@@ -42,9 +42,8 @@ function BestStockcategory() {
     setToggleState(index);
   };
   function chapterScroll(id) {
-    console.log("called",id)
     var element = document.getElementById(id);
-    var headerOffset = 140;
+    var headerOffset = 200;
     var elementPosition = element.getBoundingClientRect().top;
     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
     window.scrollTo({
@@ -607,7 +606,7 @@ function urlLink(){
                                               </div>  
                                               
                                                 
-                                                <div className="top-right"><button className={"btn-buy " + ((response.call_type=="SELL")?" sellbtn":" buybtn")} > <a className="links1" href={checkdevice?checkdevice:[]} target="_blank">{response?.call_type}</a></button></div>
+                                                <div className="top-right"><button className={"btn-buy " + ((response.call_type=="SELL")?" sellbtn":" buybtn")} onClick={()=>{chapterScroll('dematformsticky')}}> {response?.call_type}</button></div>
                                                 {/* <div className="top-right"><button className="btn-buy" > <a className="links1" href={checkdevice?checkdevice:[]} target="_blank">{response.call_type}</a></button></div> */}
                                               
                                               
@@ -806,8 +805,10 @@ function urlLink(){
                 </div>
               </div>
             </section>
-            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                <OpenDemateAccountStickyFooter />
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
+              <div id="dematformsticky">
+                <OpenDemateAccountStickyFooter  />
+                </div>
             </GoogleReCaptchaProvider>
             <section className="readmoresection readmorecontent">
               <div className="container">

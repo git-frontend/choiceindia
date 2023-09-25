@@ -1,7 +1,7 @@
 import React from 'react';
 import ContestModalHindi from './ContestModalHindi';
 
-function SubBrokerOffersHindi(){
+function SubBrokerOffersHindi() {
     return (
         <div>
             <section className="franchise-offers">
@@ -16,61 +16,50 @@ function SubBrokerOffersHindi(){
                         <div className="col-md-12">
                             <div className="offers-table-sec">
                                 <div className="table-responsive wow fadeInUp">
-                                <table className="table table-hover table-striped ">
-                               <thead>
-                                  <tr>
-                                     <th width="25%"> <span></span> </th>
-                                     <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 1,000 और <span> 2 लेनदेन </span></th>
-                                     <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 5,000 और  <span>2 लेनदेन</span></th>
-                                     <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 25,000 और <span>2 लेनदेन </span></th>	
-                                  </tr>
-                               </thead>
-                               <tbody>
-                                  <tr>
-                                     <td className="charges-heads">4-49</td>
-                                     <td>100</td>
-                                     <td>200</td>
-                                     <td>500</td>
-                                  </tr>
-                                  <tr className="grey-back">
-                                     <td className="charges-heads">50-99</td>
-                                     <td>150</td>
-                                     <td>250</td>
-                                     <td>600</td>
-                                  </tr>
-                                  <tr>
-                                     <td className="charges-heads">100-299</td>
-                                     <td>200</td>
-                                     <td>400</td>
-                                     <td>700</td>
-                                  </tr>
-                                  <tr>
-                                     <td className="charges-heads">300-1999</td>
-                                     <td>300</td>
-                                     <td>500</td>
-                                     <td>1000</td>
-                                  </tr>
-                                  <tr>
-                                     <td className="charges-heads">2000+</td>
-                                     <td>400</td>
-                                     <td>700</td>
-                                     <td>2100</td>
-                                  </tr>
-                                
-                               </tbody>
-                            </table>
-                                </div>                                
+                                    <table className="table table-hover table-striped ">
+                                        <thead>
+                                            <tr>
+                                                <th width="25%"> खातों की संख्या</th>
+                                                <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 1,000 और <span> 2 लेनदेन </span></th>
+                                                {/* <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 5,000 और  <span>2 लेनदेन</span></th> */}
+                                                <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 25,000 और <span>2 लेनदेन </span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td className="charges-heads">10-99</td>
+                                                <td>100</td>
+                                                <td>200</td>
+                                            </tr>
+                                            <tr className="grey-back">
+                                                <td className="charges-heads">100-299</td>
+                                                <td>150</td>
+                                                <td>400</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="charges-heads">300-1999</td>
+                                                <td>250</td>
+                                                <td>500</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="charges-heads">2000+</td>
+                                                <td>400</td>
+                                                <td>1000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div className='d-flex justify-content-end'>
                                 <ContestModalHindi />
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
             </section>
 
-            
+
 
         </div>
 

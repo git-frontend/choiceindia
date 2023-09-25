@@ -65,9 +65,10 @@ function Remisier() {
             <RemisierSellMore />
             <WhyBecomeRemisier />
             <WhoEligibleToRemisier />
+            <RemisierOffers />
             <RemisierFaq />
             <RemisierMoreContent />
-            {/* <RemisierOffers /> */}
+           
           </div>
       }
 

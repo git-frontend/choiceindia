@@ -44,13 +44,13 @@ function BannerSBroker() {
                             <div className="caption-blue-bar">
                                 <ul>
                                     <li>
-                                       "అత్యధిక రాబడి వాటా"
+                                       అత్యధిక రాబడి వాటా
                                     </li>
                                     <li>
-                                    తక్కువ డిపాజిట్
+                                    ఒక్కో అకౌంట్‌కి <span className="d-inline">రూ.1000</span> వరకూ ప్రోత్సాహకం*
                                     </li>
                                     <li>
-                                    "జీవితకాలఆదాయ వనరు"
+                                    జీవితకాలఆదాయ వనరు
                                     </li>
                                 </ul>
                             </div>
