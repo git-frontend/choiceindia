@@ -163,6 +163,9 @@ function Footer() {
                               <Link to="/offer-document">Offer Document</Link>
                             </li>
                             <li>
+                              <Link to="/track-record-page">Track Record</Link>
+                            </li>
+                            <li>
                               <a href="https://finx.choiceindia.com/auth/login?redirectUrl=https://accounts.choiceindia.com/modification" target="_blank">Online KYC Updation</a>
                             </li>
                           </ul>

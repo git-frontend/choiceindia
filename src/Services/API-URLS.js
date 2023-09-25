@@ -270,6 +270,7 @@ export class API_URLS {
     OIspurts='md/Data/TopOISpurtsBySegmentDerivatives';
     //for margin calculator
     marginCalculatorUrl='margin/GetMargin/';
+    trackrecordUrl='items/Track_record';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -927,5 +928,8 @@ export class API_URLS {
     }
     getMarginCalculatorURL(segmentId,token_qty){
         return this.performanceURL+this.marginCalculatorUrl +segmentId + "/" + token_qty;
+    }
+    gettrackDocumnetURL(){
+        return this.CMSURL + this.trackrecordUrl
     }
 }
