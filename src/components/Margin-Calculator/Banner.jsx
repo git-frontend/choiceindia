@@ -145,7 +145,7 @@ function Banner() {
                     // searchedData = res.Response;
                     if (marginConfig.activeTab === 1) {
                         searchedData = res.Response.filter(item => item.SegmentId !== 1 && item.SegmentId !== 3);
-                        console.log("searchedData", searchedData)
+                        // console.log("searchedData", searchedData)
                     } else {
                         searchedData = res.Response;
                     }
