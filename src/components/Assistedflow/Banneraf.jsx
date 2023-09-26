@@ -198,7 +198,7 @@ function Banneraf() {
 
       AssistedFlowService.BasketDetails(payload)
         .then((res) => {
-          console.log("DETT",res);
+          console.log("DETT", res);
           if (res && res.data && res.data.Body) {
             setDataNotFound(() => false);
             setBasketData(() => (res.data.Body ? res.data.Body : {}));
@@ -397,7 +397,7 @@ function Banneraf() {
                       "SchemeCD": item.bse_scheme_code,
                       "SchemeType": "",
                       "Source": "connect",
-                      "StartDate":  new moment(nextDate).format("DD/MM/YYYY"),
+                      "StartDate": new moment(nextDate).format("DD/MM/YYYY"),
                       "SubscriptionID": "wb" + res.data.Body.client_id + new Date().getTime(),
                       "SubscriptionType": "Basket",
                       "ID": res.data.Body.id,
@@ -434,7 +434,7 @@ function Banneraf() {
                   "OrderId": "",
                   "Qty": "0",
                   "Remarks": "",
-                  "RefNo":"",
+                  "RefNo": "",
                   "SchemeCD": item.bse_scheme_code,
                   "SchemeType": "",
                   "SubscriptionID": "wb" + res.data.Body.client_id + new Date().getTime(),
@@ -545,7 +545,7 @@ function Banneraf() {
       captcha: captchaToken
     };
 
-    console.log('ORDER',OrderPayload);
+    console.log('ORDER', OrderPayload);
     AssistedFlowService.SendOTP(payload)
       .then((response) => {
         if (response && response.data.Body && response.data.Body.otp_session_id) {
@@ -717,7 +717,7 @@ function Banneraf() {
     };
 
 
-    AssistedFlowService.Lumpsum(OrderPayload,otpResponse.Body.otp_session_id)
+    AssistedFlowService.Lumpsum(OrderPayload, otpResponse.Body.otp_session_id)
       .then((response) => {
         if (
           response &&
@@ -732,13 +732,13 @@ function Banneraf() {
           if (subId) {
             setLoaders({ ...loaders, verifyLoader: false });
             setPaymentLink(() =>
-              response.data.PaymentLink ? response.data.PaymentLink : ""
+              response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
             );
             setShowPopUp(() => "RMFlow");
           } else {
             setLoaders({ ...loaders, verifyLoader: false });
             setPaymentLink(() =>
-              response.data.PaymentLink ? response.data.PaymentLink : ""
+              response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
             );
           }
         }
@@ -793,50 +793,50 @@ function Banneraf() {
       ? BasketData.client_id
       : "";
     // let payload = {
-      // TransCode: "NEW",
-      // TransNo: "",
-      // OrderId: "",
-      // Client: clientId,
-      // SchemeCD: BasketData.scheme_data[isLast].BSESchemeCode, // "SchemeCD": fundData.BSESchemeCode ? fundData.BSESchemeCode
-      // BS: "P",
-      // BSType: BasketData.scheme_data[isLast].folioNo ? "ADDITIONAL" : "FRESH",
-      // DPTxn: "P",
-      // Amt: BasketData.scheme_data[isLast].FundA, //fundData.FundA ? parseInt(fundData.FundA): '',
-      // Qty: "",
-      // AllRedeem: "N",
-      // FolioNo: BasketData.scheme_data[isLast].folioNo ? BasketData.scheme_data[isLast].folioNo : "",
-      // RefNo: increment,
-      // Remarks: "Web|" + BasketData.bucket_title,
-      // SchemeType: null,
-      // AMCCode: "",
-      // AMCName: "",
-      // Brokerage: "",
-      // Firstorderflag: (BasketData.is_first_order == "Yes") ? "Y" : "N",
-      // Freq: "MONTHLY",
-      // IPAddress: "",
-      // ISIPMandateId: "",
-      // IsInflationAdjusted: "",
-      // NoOfInstallments: 999,
-      // RiskProfileID: "",
-      // StartDate: orderDates[(orderDates.length - 1) - isLast],
-      // SubscriptionId: "wb" + clientId + new Date().getTime(),
-      // SubscriptionType: "Basket",
-      // Id: BasketData.basket_id ? BasketData.basket_id : "",
-      // Name: BasketData.bucket_title ? BasketData.bucket_title : "",
-      // TransMode: "P",
-      // XSIPMandateId: BasketData.mandate_id ? BasketData.mandate_id : "",
-      // Source: "connect",
-      // OTP: OtpValue ? OtpValue : "",
-      // Token: token ? token : new Date().getTime(),
-      // RmBasketId: BasketData.basket_id ? BasketData.basket_id : "",
-      // RmBasketName: BasketData.bucket_title ? BasketData.bucket_title : "",
-      // SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
-      // OrderUniqueID: userDetails.orderUniqueId
-      //   ? utils.decryptText(userDetails.orderUniqueId)
-      //   : "",
+    // TransCode: "NEW",
+    // TransNo: "",
+    // OrderId: "",
+    // Client: clientId,
+    // SchemeCD: BasketData.scheme_data[isLast].BSESchemeCode, // "SchemeCD": fundData.BSESchemeCode ? fundData.BSESchemeCode
+    // BS: "P",
+    // BSType: BasketData.scheme_data[isLast].folioNo ? "ADDITIONAL" : "FRESH",
+    // DPTxn: "P",
+    // Amt: BasketData.scheme_data[isLast].FundA, //fundData.FundA ? parseInt(fundData.FundA): '',
+    // Qty: "",
+    // AllRedeem: "N",
+    // FolioNo: BasketData.scheme_data[isLast].folioNo ? BasketData.scheme_data[isLast].folioNo : "",
+    // RefNo: increment,
+    // Remarks: "Web|" + BasketData.bucket_title,
+    // SchemeType: null,
+    // AMCCode: "",
+    // AMCName: "",
+    // Brokerage: "",
+    // Firstorderflag: (BasketData.is_first_order == "Yes") ? "Y" : "N",
+    // Freq: "MONTHLY",
+    // IPAddress: "",
+    // ISIPMandateId: "",
+    // IsInflationAdjusted: "",
+    // NoOfInstallments: 999,
+    // RiskProfileID: "",
+    // StartDate: orderDates[(orderDates.length - 1) - isLast],
+    // SubscriptionId: "wb" + clientId + new Date().getTime(),
+    // SubscriptionType: "Basket",
+    // Id: BasketData.basket_id ? BasketData.basket_id : "",
+    // Name: BasketData.bucket_title ? BasketData.bucket_title : "",
+    // TransMode: "P",
+    // XSIPMandateId: BasketData.mandate_id ? BasketData.mandate_id : "",
+    // Source: "connect",
+    // OTP: OtpValue ? OtpValue : "",
+    // Token: token ? token : new Date().getTime(),
+    // RmBasketId: BasketData.basket_id ? BasketData.basket_id : "",
+    // RmBasketName: BasketData.bucket_title ? BasketData.bucket_title : "",
+    // SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
+    // OrderUniqueID: userDetails.orderUniqueId
+    //   ? utils.decryptText(userDetails.orderUniqueId)
+    //   : "",
     // };
 
-    AssistedFlowService.XSIP(OrderPayload,otpResponse.Body.otp_session_id)
+    AssistedFlowService.XSIP(OrderPayload, otpResponse.Body.otp_session_id)
       .then((response) => {
         // console.log("XSIP respone", response);
         if (
@@ -850,19 +850,28 @@ function Banneraf() {
           // setIsLast(() => isLast + 1);
           // placeSIPOrder(increment);
           // generatePaymentLink();
-                    /**for RM if subId is present in URL */
-                    if (subId) {
-                      setLoaders({ ...loaders, verifyLoader: false });
-                      setPaymentLink(() =>
-                        response.data.PaymentLink ? response.data.PaymentLink : ""
-                      );
-                      setShowPopUp(() => "RMFlow");
-                    } else {
-                      setLoaders({ ...loaders, verifyLoader: false });
-                      setPaymentLink(() =>
-                        response.data.PaymentLink ? response.data.PaymentLink : ""
-                      );
-                    }
+          /**for RM if subId is present in URL */
+          if (subId) {
+            setLoaders({ ...loaders, verifyLoader: false });
+            setPaymentLink(() =>
+              response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
+            );
+            setErrors(() => null);
+            setShowSecondDiv(() => false);
+            setShowFirstButton(() => true);
+            setisModalClose(() => false)
+            setShowThirdDiv(false);
+            setShowPopUp(() => "RMFlow");
+          } else {
+            setLoaders({ ...loaders, verifyLoader: false });
+            setPaymentLink(() =>
+              response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
+            );
+
+            setTimeout(() => {
+              window.open(response.data.Response.PaymentLink ? response.data.Response.PaymentLink : "", "_self");
+            }, 3000);
+          }
         }
         // else {
         //   setVerifyLoader(() => false);
@@ -921,6 +930,9 @@ function Banneraf() {
             );
             setShowPopUp(() => "RMFlow");
           } else {
+            setShowSecondDiv(false);
+            setShowThirdDiv(true);
+
             setLoaders({ ...loaders, verifyLoader: false });
             setPaymentLink(() =>
               response.data.Response ? response.data.Response : ""
