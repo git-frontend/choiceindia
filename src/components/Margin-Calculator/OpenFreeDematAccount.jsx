@@ -42,7 +42,7 @@ function OpenFreeDematAccount() {
                                                 <span className='bx-icon'>
                                                     <LazyLoader src={FreeResearch} alt={"Free Research Advisory"} className={"img-fluid"} width={"56"} height={"56"} />
                                                 </span>
-                                                <p className="bx-text"><span>Free Research</span> Advisory</p>
+                                                <p className="bx-text"><span>Free Research</span> Calls</p>
                                             </li>
                                         </ul>
                                     </div>
