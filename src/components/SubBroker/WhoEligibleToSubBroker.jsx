@@ -58,8 +58,8 @@ function WhoEligibleToSubBroker() {
                     <div className="row align-items-center">
                         <div className="col-md-6">
                             <div className="eligb-left-sec">
-                                <h2 className="titl3">Who is Eligible to Become a Choice Sub Broker?</h2>
-                                <p className="sml-para-dv">Anyone who wishes to create a passive source of income.</p>
+                                <h2 className="titl3">Choice Sub Broking Franchise Eligibility</h2>
+                                <p className="sml-para-dv">Anyone seeking to create a passive income source is welcome.</p>
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -68,12 +68,12 @@ function WhoEligibleToSubBroker() {
                                     <div className="">
                                         <LazyLoader src={ImageSub13} alt={"Individual must be 18+ years old to become a sub broker"} className={"img-fluid"} width={"74"} height={"74"} />
                                         {/* <img src={ImageSub13} alt="Individual must be 18+ years of age" className="img-fluid" width="74" height="74" /> */}
-                                        <h4>Individual must be 18+ years of age</h4>
+                                        <h4>You must be 18+ years of age</h4>
                                     </div>
                                     <div className="">
                                         <LazyLoader src={ImageSub14} alt={"Become a stock market sub broker & earn high commission "} className={"img-fluid"} width={"74"} height={"74"} />
                                         {/* <img src={ImageSub14} alt="A knack to sell products effortlessly" className="img-fluid" width="74" height="74" /> */}
-                                        <h4>A knack to sell products effortlessly</h4>
+                                        <h4>Have a knack for selling financial products</h4>
                                     </div>
                                     <div className="">
                                         <LazyLoader src={ImageSub15} alt={"Start stock broker franchise business & be your own boss"} className={"img-fluid"} width={"74"} height={"74"} />
@@ -96,7 +96,7 @@ function WhoEligibleToSubBroker() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
-                                <h4>Growth is certain when you partner with us.</h4>
+                                <h4>Growth is for certain when you partner with us.</h4>
                                 <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </Link>
                             </div>
                         </div>

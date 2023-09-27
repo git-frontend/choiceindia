@@ -37,9 +37,9 @@ function BannerSBroker() {
                             <div className="caption-banner">
                                 <div className="left-sec">
                                     <h1 className="tlt1">
-                                        <span className="tlt2">Start Sub Broker</span>
+                                        <span className="tlt2">Start Sub Broker </span>
                                         Franchise
-                                        <span className="tlt2">with Choice</span>
+                                        <span className="tlt2"> with Choice</span>
                                     </h1>
                                 </div>
                                 <div className="right-sec">

@@ -28,9 +28,9 @@ const SubBrokerSellMore = () => {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="sell-left-sec">
-                                        <h2 className="title-secnd">Sell More. Earn More!</h2>
-                                        <p className="sml-para-dv">Choice has an extensive portfolio of product offerings backed by more than 25 years of experience. Sub Broker have the option to offer the entire range of financial products.</p>
-                                        <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
+                                        <h2 className="title-secnd">Unlock Your Earning Potential</h2>
+                                        <p className="sml-para-dv">Choice offers an extensive portfolio of financial products backed by 25+ years of experience. As a sub broker, you can offer a wide range of financial products, including:</p>
+                                        <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Find out more</span> </Link>
                                         {/* <Link to="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </Link> */}
                                     </div>
                                 </div>
@@ -43,14 +43,14 @@ const SubBrokerSellMore = () => {
                                         <LazyLoader src={Commodity} alt={"Become a sub broker & earn through Equity and Commodity Broking"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/* <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
-                                    <h3 className="itm-ttl">Equity, Commodity &amp; Currency Broking</h3>
+                                    <h3 className="itm-ttl">Stock Market</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
                                         <LazyLoader src={MF} alt={"Become a sub broker & earn through Mutual Funds"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/*<img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />*/}
                                     </span>
-                                    <h3 className="itm-ttl">Mutual Funds Distribution</h3>
+                                    <h3 className="itm-ttl">Mutual Funds</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
@@ -65,6 +65,20 @@ const SubBrokerSellMore = () => {
                                         {/* <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
                                     <h3 className="itm-ttl">Retail Loans</h3>
+                                </div>
+                                <div className="more-list-item wow fadeInRight">
+                                    <span>
+                                        <LazyLoader src={Retail} alt={"Become a sub broker & earn through retail loans"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        {/* <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
+                                    </span>
+                                    <h3 className="itm-ttl">Bonds</h3>
+                                </div>
+                                <div className="more-list-item wow fadeInRight">
+                                    <span>
+                                        <LazyLoader src={Retail} alt={"Become a sub broker & earn through retail loans"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        {/* <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
+                                    </span>
+                                    <h3 className="itm-ttl">Corporate FDs</h3>
                                 </div>
                             </div>
 
