@@ -58,7 +58,7 @@ function Banner() {
 
     const handleTabChange = (tabIndex) => {
         setActiveTab(tabIndex);
-       
+
     };
     const updateMarginConfig = (tabIndex) => {
         let exchange = '';
@@ -96,7 +96,7 @@ function Banner() {
     };
 
 
-   
+
     const handleSearchInputChange = (e) => {
         const updatedSearchInput = e.target.value;
         setMarginConfig(prevState => ({ ...prevState, searchInput: updatedSearchInput }));
@@ -318,11 +318,11 @@ function Banner() {
 
         for (let i = 0; i < numOfSeg.length; i++) {
             const scripArray = marginConfig.contracts.filter(item => item.SegmentId === numOfSeg[i]);
-            getMarginData(scripArray, i, numOfSeg.length,isFromDelete);
+            getMarginData(scripArray, i, numOfSeg.length, isFromDelete);
         }
     };
 
-    const getMarginData = (scripArray, numOfSegLen,isFromDelete) => {
+    const getMarginData = (scripArray, numOfSegLen, isFromDelete) => {
         const request = {
             segmentId: scripArray[0].SegmentId,
             token_qty: createTokenQtyString(scripArray),
@@ -367,8 +367,8 @@ function Banner() {
                         // totalMargin: prevState.totalMargin + res.Response.Span_Summary.TotalMgn,
                         totalSpan: res.Response.Span_Summary.Span,
                         totalExposure: res.Response.Span_Summary.ExpMgn,
-                        marginBenefit:  res.Response.Span_Summary.MgnBenefit,
-                        premium:res.Response.Span_Summary.OptionPremium,
+                        marginBenefit: res.Response.Span_Summary.MgnBenefit,
+                        premium: res.Response.Span_Summary.OptionPremium,
                         totalMargin: res.Response.Span_Summary.TotalMgn,
                     }));
 
@@ -457,23 +457,23 @@ function Banner() {
         });
         return tokenQty;
     };
-    
+
     const getSellableOptionScrip = () => {
         const optionScrip = marginConfig.contracts.filter((item) => {
             return ['PE', 'CE'].indexOf(item.optionType) > -1 && item.action;
         });
         return optionScrip;
     };
-// fina one 
+    // fina one 
     // const deleteContract = (index) => {
     //     const updatedContracts = [...marginConfig.contracts];
     //     updatedContracts.splice(index, 1);
-    
+
     //     setMarginConfig(prevState => ({
     //         ...prevState,
     //         contracts: updatedContracts,
     //     }));
-    
+
     //     if (updatedContracts.length === 0) {
     //         setMarginConfig(prevState => ({
     //             ...prevState,
@@ -511,10 +511,10 @@ function Banner() {
             isDeletedDataOption =
                 ['PE', 'CE'].indexOf(marginConfig.contracts[index].optionType) > -1 &&
                 marginConfig.contracts[index].action;
-    
+
             const updatedContracts = [...marginConfig.contracts];
             updatedContracts.splice(index, 1);
-    
+
             const newTotalExposure = updatedContracts.reduce(
                 (total, contract) => total + contract.exposure,
                 0
@@ -531,7 +531,7 @@ function Banner() {
                 (total, contract) => total + contract.marginBenefit,
                 0
             );
-    
+
             setMarginConfig((prevState) => ({
                 ...prevState,
                 contracts: updatedContracts,
@@ -540,7 +540,7 @@ function Banner() {
                 totalSpan: newTotalSpan,
                 marginBenefit: newMarginBenefit,
             }));
-    
+
             if (isDeletedDataOption) {
                 const hasSellableOptionScrip =
                     getSellableOptionScrip(updatedContracts).length > 0;
@@ -552,8 +552,8 @@ function Banner() {
             // callMargin(true);
         }
     };
-    
-   
+
+
 
     return (
         <>
@@ -699,8 +699,15 @@ function Banner() {
                                                                 }}
                                                                 required
                                                             />
-                                                            {marginConfig.marketLot && <p className="val-qty">Lot Size = {marginConfig.marketLot}</p>}
-                                                            {(marginConfig.qty.errors?.required && marginConfig.qty.dirty) || marginConfig.qty < 1 && <p className="animate error val-qty">Please enter a valid quantity.</p>}
+                                                            
+
+                                                            {(!marginConfig.qty || marginConfig.qty < 1) ? (
+                                                                <p className="animate error marginpara">
+                                                                    Please enter a valid quantity.
+                                                                </p>
+                                                            ) : (
+                                                                <p className="marginpara">Lot Size = {marginConfig.marketLot}</p>
+                                                            )}
                                                         </div>
                                                     </div>
                                                     <div className="row-flex radio-section">
@@ -732,7 +739,7 @@ function Banner() {
                                                             <div className='button-sec'>
                                                                 <div className='btn-items'>
                                                                     <Button className="btn-add btn btn-primary" onClick={() => addResetContract(true)}
-
+                                                                    disabled={marginConfig.marketLot < 1 || marginConfig.qty < 1}
                                                                     >Add</Button>
                                                                 </div>
                                                                 <div className='btn-items'>
