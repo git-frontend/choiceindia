@@ -787,7 +787,7 @@ function Banner() {
                                                                 <span className='text-bold'>Total Margin</span>
                                                             </div>
                                                             <div className='flex-items'>
-                                                                <span>
+                                                                <span className='text-bold'>
                                                                     {!marginConfig.isShowNA && <span>₹</span>}
                                                                     {marginConfig.spanLoader
                                                                         ? 'Calculating...'
@@ -804,7 +804,7 @@ function Banner() {
 
                                                             </div>
                                                             <div className='flex-items'>
-                                                                <span>
+                                                                <span className='txt-success'>
                                                                     {!marginConfig.isShowNA ? '₹' : ''}
                                                                     &nbsp;
                                                                     {marginConfig.spanLoader
@@ -945,7 +945,7 @@ function Banner() {
                             <div className="row">
                                 <div className='col-md-12'>
                                     <div className='title-content'>
-                                        <h2 className='title-secnd'>Margin Calculator - <br /> Calculate Your Trading Margin</h2>
+                                        <h2 className='title-secnd'>Calculate Your Trading Margin</h2>
                                     </div>
                                     <div>
                                         <p>Understanding margins is vital whether you're a business owner, an investor, or someone interested in financial trading. But what does this margin refer to?</p>
@@ -972,7 +972,7 @@ function Banner() {
                                             <li>Mark to-market margin</li>
                                         </ul>
                                         <p>Within the F&O market, the types of margins are:</p>
-                                        <ul>
+                                        <ul className='mrg-3'>
                                             <li>Initial margin</li>
                                             <li>Exposure margin</li>
                                         </ul>
@@ -992,7 +992,7 @@ function Banner() {
                                         <p>Standard Portfolio Analysis of Risk + Exposure Margin</p>
                                         <h3 className='seo-h3'>How to Use an Online Margin Calculator?</h3>
                                         <p>Follow these steps to use a margin calculator:</p>
-                                        <ol>
+                                        <ol className='mrg-3'>
                                             <li>Choose any online stock margin calculator.</li>
                                             <li>Once you have chosen your online margin calculator, enter the necessary details such as trade type, size, leverage used, and account currency.</li>
                                             <li>Calculate the required margin for your trade.</li>
