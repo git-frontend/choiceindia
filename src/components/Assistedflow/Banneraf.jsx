@@ -20,6 +20,7 @@ import Modal from "react-bootstrap/Modal";
 import noDataimg from "../../assets/images/no-data.webp";
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useTransition } from "react";
+import { filter } from "rxjs";
 
 function Banneraf() {
   const [showFirstButton, setShowFirstButton] = useState(true);
@@ -62,6 +63,15 @@ function Banneraf() {
 
   /**to get URL query params */
   const search = useLocation().search;
+
+  /**Order Scheme Details*/
+  const [schemeDetails, setSchemeDetails] = useState({})
+
+  /**failed order details */
+  const [confirmedOrders, setConfirmedOrders] = useState({});
+
+  /**show cancel order*/
+  const [showCancelOrder, setShowCancelOrder] = useState(() => false);
 
   /**to store errors */
   const [errors, setErrors] = useState(null);
@@ -270,12 +280,12 @@ function Banneraf() {
                     "AMCName": "",
                     "Amt": parseInt(item.amount),
                     "BS": "P",
-                    "BSType": item.scheme_code ? "ADDITIONAL" : "FRESH",
+                    "BSType": item.folio_no ? "ADDITIONAL" : "FRESH",
                     "Brokerage": "",
                     "Client": res.data.Body.client_id,
                     "DPTxn": "P",
                     "Firstorderflag": (res.data.Body.is_first_order == "Yes") ? "Y" : "N",
-                    "FolioNo": item.scheme_code,
+                    "FolioNo": item.folio_no,
                     "Freq": "MONTHLY",
                     "IPAddress": "",
                     "ISIPMandateId": "",
@@ -330,12 +340,12 @@ function Banneraf() {
                       "AMCName": "",
                       "Amt": parseInt(item.amount),
                       "BS": "P",
-                      "BSType": item.scheme_code ? "ADDITIONAL" : "FRESH",
+                      "BSType": item.folio_no ? "ADDITIONAL" : "FRESH",
                       "Brokerage": "",
                       "Client": res.data.Body.client_id,
                       "DPTxn": "P",
                       "Firstorderflag": (res.data.Body.is_first_order == "Yes") ? "Y" : "N",
-                      "FolioNo": item.scheme_code,
+                      "FolioNo": item.folio_no,
                       "Freq": "MONTHLY",
                       "IPAddress": "",
                       "ISIPMandateId": "",
@@ -377,12 +387,12 @@ function Banneraf() {
                       "AMCName": "",
                       "Amt": parseInt(item.amount),
                       "BS": "P",
-                      "BSType": item.scheme_code ? "ADDITIONAL" : "FRESH",
+                      "BSType": item.folio_no ? "ADDITIONAL" : "FRESH",
                       "Brokerage": "",
                       "Client": res.data.Body.client_id,
                       "DPTxn": "P",
                       "Firstorderflag": (item.is_first_order == "Yes") ? "Y" : "N",
-                      "FolioNo": item.scheme_code,
+                      "FolioNo": item.folio_no,
                       "Freq": "MONTHLY",
                       "IPAddress": "",
                       "ISIPMandateId": "",
@@ -424,10 +434,10 @@ function Banneraf() {
                   "AMCName": "",
                   "Amt": parseInt(item.amount),
                   "BS": "P",
-                  "BSType": item.scheme_code ? "ADDITIONAL" : "FRESH",
+                  "BSType": item.folio_no ? "ADDITIONAL" : "FRESH",
                   "Client": res.data.Body.client_id,
                   "DPTxn": "P",
-                  "FolioNo": item.scheme_code,
+                  "FolioNo": item.folio_no,
                   "IPAddress": "",
                   "ID": "",
                   "Name": res.data.Body.basket_name ? res.data.Body.basket_name : "",
@@ -729,12 +739,34 @@ function Banneraf() {
           // setIsLast(() => isLast + 1);
           // placeLumpSumOrder(increment);
           // generatePaymentLink();
+          let flag;
+          let filteredData = response.data.Response.Orders.filter((item) => item.FinalStatus == "CONFIRMED")
+          /**store all confirmed orders from response */
+          setConfirmedOrders(filteredData);
+
+          response.data.Response.Orders.every((item) => {
+            if (item.FinalStatus == "CONFIRMED") {
+              flag = true;
+              return true;
+            } else {
+              flag = false;
+              return false;
+            }
+          })
+
+          /**store entire response or lumpsum order placed */
+          setSchemeDetails(response.data.Response);
           if (subId) {
             setLoaders({ ...loaders, verifyLoader: false });
             setPaymentLink(() =>
               response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
             );
-            setShowPopUp(() => "RMFlow");
+            if (flag) {
+              setShowPopUp(() => "RMFlow");
+            } else {
+              setShowCancelOrder(true);
+            }
+
           } else {
             setLoaders({ ...loaders, verifyLoader: false });
             setPaymentLink(() =>
@@ -851,6 +883,24 @@ function Banneraf() {
           // placeSIPOrder(increment);
           // generatePaymentLink();
           /**for RM if subId is present in URL */
+          setSchemeDetails(response.data.Response);
+          let flag;
+          let filteredData = response.data.Response.Orders.filter((item) => item.FinalStatus == "CONFIRMED")
+          /**store all confirmed orders from response */
+          setConfirmedOrders(filteredData)
+
+          response.data.Response.Orders.every((item) => {
+            if (item.FinalStatus == "CONFIRMED") {
+              flag = true;
+              return true;
+            } else {
+              flag = false;
+              return false;
+            }
+          })
+
+          /**store entire response or SIP order placed */
+          setSchemeDetails(response.data.Response);
           if (subId) {
             setLoaders({ ...loaders, verifyLoader: false });
             setPaymentLink(() =>
@@ -861,7 +911,11 @@ function Banneraf() {
             setShowFirstButton(() => true);
             setisModalClose(() => false)
             setShowThirdDiv(false);
-            setShowPopUp(() => "RMFlow");
+            if (flag) {
+              setShowPopUp(() => "RMFlow");
+            } else {
+              setShowCancelOrder(true);
+            }
           } else {
             setLoaders({ ...loaders, verifyLoader: false });
             setPaymentLink(() =>
@@ -906,6 +960,55 @@ function Banneraf() {
         setLoaders({ ...loaders, verifyLoader: false });
         setErrors(() => (error.message ? error.message : ""));
       });
+  }
+
+  let confirmCounter = 0;
+  /**for cancel order */
+  function cancelOrder() {
+
+    let payload = {
+      "AllRedeem": "N",
+      "Amt": "",
+      "BS": "P",
+      "BSType": "FRESH",
+      "Brokerage": "",
+      "Client": schemeDetails.Client ? schemeDetails.Client : "",
+      "DPTxn": "P",
+      "Firstorderflag": "",
+      "FolioNo": confirmedOrders[confirmCounter].FolioNo ? confirmedOrders[confirmCounter].FolioNo : "",
+      "Freq": "",
+      "IPAddress": "",
+      "ISIPMandateId": "",
+      "NoOfInstallments": "",
+      "OrderId": confirmedOrders[confirmCounter].OrderId,
+      "Qty": "",
+      "RefNo": "",
+      "Remarks": "",
+      "SchemeCD": confirmedOrders[confirmCounter].SchemeCD,
+      "Source": "connect",
+      "StartDate": "",
+      "TransCode": "CXL",
+      "TransMode": "P",
+      "TransNo": "",
+      "XSIPMandateId": confirmedOrders[confirmCounter].XSIPMandateId
+    };
+
+    if (BasketData.order_type == "Lumpsum") {
+      if (confirmCounter <= confirmedOrders.length)
+        AssistedFlowService.Lumpsum(payload, otpResponse.Body.otp_session_id).then((response) => {
+          if (response) {
+            console.log('cancel respone', response);
+          }
+        })
+
+    } else {
+      if (confirmCounter <= confirmedOrders.length)
+        AssistedFlowService.XSIP(payload, otpResponse.Body.otp_session_id).then((response) => {
+          if (response) {
+            console.log('cancel respone', response);
+          }
+        })
+    }
   }
 
   /**api call for generate payment link */
@@ -1080,6 +1183,10 @@ function Banneraf() {
         setDirectErrors(() => (error.message ? error.message : ""));
       });
   }
+
+  useEffect(() => {
+    console.log('SCHEHEHE', schemeDetails);
+  }, [schemeDetails])
 
   /**api call for orderstatus2 */
   function UpdateOrderStatus2(paymntLink) {
@@ -1669,6 +1776,66 @@ function Banneraf() {
 
               </Modal.Body>
             </Modal>
+
+            {/* Modal for cancel order action */}
+            <Modal
+              className="successfulmodal"
+              // true for testing else "showCancelOrder" to show
+              show={true}
+              onHide={false}
+              size="md"
+              aria-labelledby="contained-modal-title-vcenter"
+              backdrop="static"
+              keyboard={false}
+              centered
+            >
+              <Modal.Body className="text-center">
+                <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col">Scheme</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>HDFC FUND GROWTH</td>
+                      <td>Failed</td>
+                      {/* {
+                      (schemeDetails && schemeDetails.Orders.length)?
+                      schemeDetails.Orders.map((item) => {
+                        return(
+                          <>
+                            <td>{item.SchemeCD}</td>
+                            <td>{item.FinalStatus}</td>
+                          </>
+                        )
+                      }): <></>
+                    } */}
+                    </tr>
+                    <tr>
+                      <td>DSP OVERNIGHT FUND GROWTH</td>
+                      <td>Confirmed</td>
+                    </tr>
+                    <tr>
+                      <td>QUANT TAX SAVER</td>
+                      <td>Confirmed</td>
+                    </tr>
+                    <tr>
+                      <td>NIPPON GROWTH</td>
+                      <td title="show here the reason of failed order on tooltip">Failed</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </Modal.Body>
+              <Modal.Footer>
+                <div>
+                  <Button>Continue</Button>
+                  <Button className="btn btn-danger" onClick={cancelOrder}>Cancel</Button>
+                </div>
+              </Modal.Footer>
+            </Modal>
+
           </div>
         </section>
       </div>
