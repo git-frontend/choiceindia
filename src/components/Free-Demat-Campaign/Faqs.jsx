@@ -58,14 +58,14 @@ function Faqs() {
                                 <Accordion.Item eventKey="4" className='faq-item' id="faqid">
                                     <Accordion.Header as="h3" className='faq-header'>Are there any charges for Demat Account opening with Choice? </Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                    You can open a low brokerage Demat Account with Choice at zero account opening charges
+                                    You can open a low brokerage Demat Account with Choice at zero account opening charges.
                                     </Accordion.Body>
                                 </Accordion.Item>
 
                                 <Accordion.Item eventKey="5" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header' > How do I open a Trading Account Online without opening a Demat Account?</Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header' > How do I open a Trading Account without opening a Demat Account?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                                NSE/BSE mandates a Demat with your Trading Account for securities. Currency and Commodities do not require a Demat Account, so if your trading requirements are restricted to that; a Trading Account can be opted for. This will have to be specified in the documentation process with the broker. For more information regarding the same, you can contact our customer care team at care@choiceindia.com
+                                            NSE/BSE mandates a Demat with your Trading Account for securities. Currency and Commodities do not require a Demat Account, so if your trading requirements are restricted to that; a Trading Account can be opted for. This will have to be specified in the documentation process with the broker. For more information regarding the same, you can contact our customer care team at care@choiceindia.com
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="6" className='faq-item'>
@@ -135,7 +135,7 @@ function Faqs() {
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="14" className='faq-item'>
-                                        <Accordion.Header as="h3" className='faq-header'>Can I use the same Demat or Trading Account for Equity trading, Currency trading, Derivatives and Commodity Trading?</Accordion.Header>
+                                        <Accordion.Header as="h3" className='faq-header'>Can I use the same Demat Account for Equity trading, Currency trading, Derivatives and Commodity Trading?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             Yes you can use the same Demat or Trading Account for <a href="https://choiceindia.com/equity-stock-trading">Equity Trading</a>, <a href="https://choiceindia.com/currency-forex-trading">Currency Trading</a>, <a href="https://choiceindia.com/derivatives-trading">Derivative Trading</a> and <a href="https://choiceindia.com/commodity-trading">Commodity Trading</a>. 
                                             </Accordion.Body>

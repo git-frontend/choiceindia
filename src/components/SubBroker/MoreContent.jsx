@@ -10,102 +10,61 @@ function MoreContent() {
               <div className="container">
                   <div className="row">
                       <div className="col-md-12 text-center">
-                          <h2 className="title-secnd">How To Become a Sub Broker</h2>
+                          <h2 className="title-secnd">Sub Broker Franchise</h2>
                      </div>
                           <div className="col-md-12">
                               <div className="terms-cont" id="style-1">
-                                    <p className="sml-para-dv">As many working professionals are interested in starting stock investment, being a sub broker can be a great career option. You can help these customers get into the stock market and begin investing.</p>
-                                    <p className="sml-para-dv">For this, you have to work with established stock brokers to help expand their business.</p>
-                                    <p className="sml-para-dv">Whether you want to be a sub broker or require their services, this article will walk you through all the details. Let’s begin exactly who is the sub broker?</p>
+                                    <p className="sml-para-dv">In a world where more and more professionals are expressing interest in stock investments, a sub broker franchise emerges as a promising and rewarding business option. Sub brokers play a pivotal role in guiding clients into the intricate world of the stock market, helping them make informed investment decisions that can shape their financial future.</p>
+                                    <p className="sml-para-dv">Let’s delve into the world of sub broking franchises to learn more about their meaning, business model, eligibility criteria, and much more. And fast-track your journey to becoming a part of this dynamic industry.</p>
+                                    <p className="sml-para-dv">Whether you're a seasoned investor or someone with a budding interest in financial markets, understanding the dynamics of sub brokers and their role is key to realising the full potential of your financial aspirations.</p>
 
-                                    <h3>What is a Sub Broker?</h3>
-                                        <p className="sml-para-dv">To understand <a href="https://choiceindia.com/blog/sub-broker-meaning/">what is a sub broker</a>, it’s essential to know how they work.</p>
-                                        <p className="sml-para-dv">A sub broker is not a trading member of a stock exchange. Instead, these professionals will work on behalf of a stock broker. They will promote and sell the services of this stock broker to interested customers and clients.</p>
-                                        <p className="sml-para-dv">So, sub brokers will not have unique services but will connect customers to the stock broker. They will help customers with paperwork, payment and making smarter investment decisions.</p>
-                                        <p className="sml-para-dv">According to the number of clients the stock broker receives, they will pay the sub brokers a fixed commission. The agreement document between the sub broker and the broker will specify the earnings and associated formalities.</p>
+                                    <h2><a href="https://choiceindia.com/blog/sub-broker-meaning/">Sub Broker Meaning</a></h2>
+                                        <p className="sml-para-dv">To understand what a sub broker is, it's essential to grasp their role. Sub brokers are not direct trading members of a stock exchange; instead, they act on behalf of a stockbroker. Their primary function is to promote and sell their associated stockbroker's services to potential clients.</p>
+                                        <p className="sml-para-dv">Sub brokers facilitate client onboarding, assist with paperwork, and offer guidance on investment decisions. Their earnings are typically based on the number of clients they bring to the stockbroker, as outlined in their agreement.</p>
                                       
 
-                                    <h3>How to Start Sub Broker Franchise?</h3>
-                                    <p className="sml-para-dv">To start a sub broker franchise, you must partner with a well-known stock brokerage company. Your objective will be to sell products on behalf of this company to your customers.</p>
-                                    <p className="sml-para-dv">You need to be a SEBI registered sub broker and have cleared the associated exams to begin this franchise. Then, you have to submit the required documents like identity proof and educational certificates.</p>
-                                    <p className="sml-para-dv">The franchise will be functional after you make the required initial payments.</p>
+                                    <h2>Sub Broker Franchise Business Model</h2>
+                                    <p className="sml-para-dv">The <a href="https://choiceindia.com/blog/sub-broker-business-model/">sub broker business model</a> involves collaboration between the stock brokerage firm and the sub broker. Brokers provide training, support, and guidance to sub brokers, who, in turn, attract clients to the broker's services and products. Sub brokers earn commissions based on client transactions.</p>
+                                    <p className="sml-para-dv">The specific terms of the partnership are defined in an agreement, with the stockbroker typically having the final say. Additionally, brokerage firms offer <a href="https://choiceindia.com/authorised-person">Authorized Persons</a> (requiring SEBI registration) and <a href="https://choiceindia.com/remisier">Remisiers</a> (no SEBI registration or initial deposit required) as alternative partnership options.</p>
+                                    <h2>How to Open a Sub Broker Franchise in India?</h2>
+                                    <p className="sml-para-dv">To establish your sub broker franchise in India, you must partner with a reputable stock brokerage company. Your role involves promoting and selling the company's financial products to clients.</p>
+                                    <p className="sml-para-dv">To begin this venture, you must be a SEBI-registered sub broker and have completed the necessary examinations. Required documentation includes address proof, identity proof, educational certificates, and any mandatory initial payments such as initial deposits, registration fees, and security amounts which are refundable.</p>
                                     
-                                    <h3>Sub Broker Business Model</h3>
-                                    <p className="sml-para-dv">The <a href="https://choiceindia.com/blog/sub-broker-business-model/">sub broker business model</a> has two primary members - the stock brokerage firm and the sub broker professional.</p>
-                                    <p className="sml-para-dv">The broker provides training, support and assistance to the sub broker to deal with clients. In return, the sub broker brings customers to the broker for them to purchase the broker's services and products.</p>
-                                    <p className="sml-para-dv">With every product purchase and financial transaction, the broker will pay a certain amount to the sub broker.</p>
-                                    <p className="sml-para-dv">All the partnership terms will be discussed before the sub broker and broker join forces. In general, the stockbroker decides the terms of the partnership.</p>
-                                    <p className="sml-para-dv">In addition to the sub broker business model, brokerage firms also provide <a href="https://choiceindia.com/authorised-person">Authorised Person</a>, for whom SEBI registration is required, and <a href="https://choiceindia.com/remisier">Remisier</a> , who can function in the same capacity but does not need to register with SEBI and does not require an initial deposit. However, Remisier will get less brokerage sharing than a sub broker or an Authorised Person.</p>
-
-                                    <h3>How Does A Sub Broker Franchise Work?</h3>
-                                    <p className="sml-para-dv">In any sub broker franchise, the sub broker acquires clients, or the broker provides them with their customers. Then, the franchise offers complete support to improve the customer's investments.</p>
-                                    <p className="sml-para-dv">If the customer has queries, they will ask the sub broker, who might direct those to the stock broker for clarification.</p>
-
-                                    <h3>Sub Broker Franchise Cost</h3>
-                                    <p className="sml-para-dv">The <a href="https://choiceindia.com/blog/sub-broker-franchise-cost/">sub broker franchise cost</a> can range anywhere between INR 50,000 and 3,00,000. Interested franchisees may need to pay a security deposit to the franchisor. A portion of the initial deposit might be refundable, but it will purely depend upon the franchisor or broker.</p>
-                                    <p className="sml-para-dv">However, the payment terms might vary according to the stock broker.</p>
-
-                                    <h3><a href="https://choiceindia.com/blog/how-much-does-a-sub-broker-earns-in-india/">How Much a Sub Broker Earns in India</a>?</h3>
-                                    <p className="sml-para-dv">A sub broker earns through a fixed commission rate decided beforehand with the stock broker. This amount will depend upon the customer's purchase and associated financial transactions. In short, the better the trade, the more the earnings will be for the sub broker.</p>
-                              
-                                    <h3>Sub Broker Commission</h3>
-                                    <p className="sml-para-dv">The sub broker commission might be between 40% and 80% of the total business transaction amount. Moreover, the commission rate can be high if the stock broker is reputed and has a flourishing business.</p>
-                                    <p className="sml-para-dv">If the broker follows a lump sum payment model, the sub broker will receive a fixed amount on every construction. On the other hand, if the broker chooses a percentage-based model, then the sub broker gets a pre-decided percentage of the transaction as a commission.</p>
-                              
-                                    <h3>Start a Sub Brokership with Minimum Deposit with Choice</h3>
-                                    <p className="sml-para-dv">It is possible to be a sub broker without paying the initial deposit. However, you need to identify a stock broker who allows this. So, if you want to begin sub brokership with minimum deposit, Choice will be the best platform.</p>
-                                    <p className="sml-para-dv">Choice has developed an impressive portfolio by walking in the investment sector for more than 25 years. So, you can expect a high revenue-sharing rate by partnering with them.</p>
-                                    <p className="sml-para-dv">The benefits of working with Choice are –</p>
+                                    <h2>Who Can Become a Sub Broker?</h2>
+                                    <p className="sml-para-dv">Sub broker opportunities are open to various individuals, including students, working professionals, retirees, and homemakers. Understanding how the stock market operates and different investment options is essential.</p>
+                                    <p className="sml-para-dv">To become a sub broker, you must meet specific <a href="https://choiceindia.com/blog/sub-broker-eligibility/">sub broker eligibility</a> criteria:</p>
                                     <ul className="terms-list sml-para-dv">
-                                        <li>Exposure to multiple investment products like insurance, retail loans, mutual funds and currency broking</li>
+                                       <li>Completion of senior school education</li>
+                                       <li>Minimum age of 21</li>
+                                       <li>SEBI-authorized registration form</li>
+                                       <li>Education documents</li>
+                                       <li>National Institute of Securities Markets (NISM) Certification</li>
+                                       <li>Professional stock market experience certificate (if applicable)</li>
+                                    </ul>
+
+                                    <h2>How Does a Sub Broker Franchise Work?</h2>
+                                    <p className="sml-para-dv">In a sub broker franchise, sub brokers acquire clients either independently or through the brokerage firm. They provide ongoing support to enhance client investments. Clients with queries often turn to sub brokers, who may redirect them to the stockbroker for clarification.</p>
+                                    <h2>Sub Broker Franchise Cost</h2>
+                                    <p className="sml-para-dv"><a href="https://choiceindia.com/blog/sub-broker-franchise-cost/">Sub broker franchise costs</a> can vary, ranging from INR 50,000 to 3,00,000. Some franchisees may need to pay a refundable security deposit. Payment terms vary based on the chosen stockbroker.</p>
+                              
+                                    <h2><a href="https://choiceindia.com/blog/how-much-does-a-sub-broker-earns-in-india/">How Much Can a Sub Broker Franchise Earn in India?</a></h2>
+                                    <p className="sml-para-dv">Sub brokers earn a fixed commission rate determined by the stockbroker, based on client transactions. A higher volume of quality trades leads to higher earnings. <a href="https://choiceindia.com/blog/sub-broker-commission/">Sub broker commission</a> rates typically range from 20% to 80%.</p>
+                              
+                                    <h2>Role of a Sub Broker</h2>
+                                    <p className="sml-para-dv">A sub broker’s primary role is to help investors achieve favourable returns by introducing them to various investment products and the broker’s investment opportunities. Sub-brokers operate based on the agreement between them and the broker.</p>
+                                    <ul className="terms-list sml-para-dv">
+                                        <li>A sub-broker works on behalf of a stockbroker and connects clients to the stockbroker's services. They assist clients with paperwork, payments, and investment decisions.</li>
                                         {/* <li>Approximately INR 2100 incentive per account</li> */}
-                                        <li>Marketing assistance and professional training</li>
-                                        <li>Cutting-edge software for business management</li>
+                                        <li>Operates under the registration of the stockbroker they are affiliated with.</li>
+                                        <li>Acts as a bridge between clients and the stockbroker, assisting clients and directing queries to the stockbroker when necessary.</li>
                                     </ul>
 
-                                    <h3>Become a Sub Broker in Stock Market</h3>
-                                    <p className="sml-para-dv">If you wish to dip your toes into the stock market and set up a business, being a sub broker is an excellent option. You can guide investors in selecting the best stock options and learn about the broker's investment products.</p>
-                                    <h3>Who Can Become a Sub Broker?</h3>
-                                    <p className="sml-para-dv">Anybody interested in launching a business in the investment domain or needing passive income can become a sub broker. It includes students, working professionals, retired executives and homemakers.</p>
-                                    <p className="sml-para-dv">However, knowing how the stock market works and the various investment options is crucial.</p>
-                              
-                                    <h3>Sub Broker Eligibility</h3>
-                                    <p className="sml-para-dv">You must have completed senior school education to become a sub broker. The <a href="https://choiceindia.com/blog/sub-broker-eligibility/">sub broker eligibility</a> also includes the following criteria –</p>
-                                    <ul className="terms-list sml-para-dv">
-                                        <li>The minimum age for the profession is 21 or above</li>
-                                        <li>You must have a registration form authorized by SEBI</li>
-                                        <li>Must have school and college education documents</li>
-                                        <li>Completion of the National Institute of Securities Markets (NISM) certification is mandatory</li>
-                                        <li>Professional stock market experience certificate submission (if applicable)</li>
-                                    </ul>
-
-                                    <h3>Steps to Become a Sub Broker in India</h3>
-                                    <p className="sml-para-dv">To be a sub broker in India, you have to first select a stock brokerage company to join. This firm will guide you through the steps required to work with them.</p>
-                                    <p className="sml-para-dv">However, the fundamental steps of becoming a sub broker remain the same –</p>
-                                    <ul className="terms-list sml-para-dv">
-                                        <li>Choose a broker and pay their initial deposit, registration and security amount</li>
-                                        <li>Submit address proof like an Aadhar card, PAN card or electricity bill</li>
-                                        <li>Submit educational qualification proof like your 12th pass certificate or graduation/post-graduate certificate</li>
-                                        <li>Submission of identity proof like your Passport, Aadhar card or Voter ID card is also necessary</li>
-                                    </ul>
-
-                                    <h3>Role of a Sub Broker</h3>
-                                    <p className="sml-para-dv">The responsibility of a sub broker is to help investors obtain excellent returns. They introduce customers to various insurance products and opportunities the stock broker provides. These professionals will work according to the agreement between them and the broker.</p>
-                                    <p className="sml-para-dv">So, sub brokers act as representatives of the brokerage organization to serve investors.</p>
-                              
-                                    <h3>Difference between Stock Broker and Sub Broker</h3>
-                                    <p className="sml-para-dv">Let's now focus on the <a href="https://choiceindia.com/blog/difference-between-stock-broker-and-sub-broker/">difference between stock broker and sub broker</a>.</p>
-                                    <p className="sml-para-dv">The primary <a href="https://choiceindia.com/blog/role-of-broker-and-sub-broker-in-capital-market/">role of broker and sub broker in capital market</a> is to guide their clients to better investment earnings. However, they differ in their method of working and earning.</p>
-                              
-                                    <h4>Responsibilities of Brokers</h4>
-                                    <p className="sml-para-dv">Brokers handle multiple investment deals, including mutual funds, securities and commodities. They offer investment advice and assistance to their clients.</p>
-                                    <p className="sml-para-dv">Moreover, they may have an online platform where customers can invest conveniently, factoring in the advice. They are a part of the stock exchange and charge a brokerage fee to offer services. Also, they can collaborate with sub brokers to improve their business.</p>
-                              
-                                    <h4>Responsibilities of Sub Brokers</h4>
-                                    <p className="sml-para-dv">Sub brokers are not directly a part of the stock exchange but work with brokers to run their businesses. They bring customers to the stock brokers and earn a commission for each trade.</p>
-                                    <p className="sml-para-dv">They help clients submit the correct documents and invest in the appropriate stocks and investment avenues. In addition, they handle many formalities and transaction details. All this allows brokers to keep customers satisfied and loyal to their brand.</p>
-                                    <p className="sml-para-dv">Before starting your sub broker business, talk to the broker about all the associated details. Focus on the payment terms, payment cycle and business opportunities the broker offers.</p>
-                                    <p className="sml-para-dv">Conduct thorough research about your preferred broker before finalizing them to maximize your earnings. Always choose an established stock broker to access a vast customer base and boost your brand.</p>
+                                    
+                                    <p className="sml-para-dv">Partnering with an established stockbroker gives you access to a broader customer base and elevates your brand.</p>
+                                    
+                                    <p className="sml-para-dv">With this comprehensive guide, you now have a clear understanding of the sub-broker role, its potential, and how to embark on this promising career. For further assistance and to explore sub-broker opportunities, contact Choice, your trusted partner in the financial industry.</p>
+                                    <p className="sml-para-dv">We are committed to helping you make informed choices and achieve financial success. Your journey toward financial prosperity begins with us.</p>
+                                    <p className="sml-para-dv">Start your stock market sub broker journey with Choice. Contact us today. Your financial well-being is our top priority</p>
                               </div>
                           </div>
                       </div>

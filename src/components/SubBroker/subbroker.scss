@@ -2126,7 +2126,7 @@
 
 .ref-sec-terms {
     padding: 7rem 0 10rem 0;
-    background: $abt-bg;
+    background: $whiteColor;
     .title-secnd{
         font-size: 2.688rem;
         line-height: 1.5;
@@ -2139,8 +2139,13 @@
     }
     .terms-cont {
         margin-top: 5.5rem;
-        height: 380px;
-        overflow-y: scroll;
+        // height: 380px;
+        // overflow-y: scroll;
+        h2{
+            margin-bottom: 2rem;
+            margin-top: 3rem;
+            font-family: $font-family-poppins-semibold;
+        }
         @media (max-width: $sm) {
             margin-top: 3rem;
         }
@@ -2164,13 +2169,13 @@
                 color: $secondary;
                 margin-bottom: 2rem;
                 list-style: none;
-                padding-right:8rem;
+                padding-right:0;
                 margin: 0;
                 margin-bottom: 1.5rem;
                 position: relative;
                 @media (max-width: $sm) {
                     font-size: 1.4rem;
-                    padding-right: 2rem;
+                    padding-right: 0;
                 }
         }
         .terms-list {
@@ -2305,4 +2310,62 @@
     @media (max-width: $sm) {
     display: block !important;
     }
+}
+
+
+// faq
+
+.sub-broker-faq {
+	padding:9rem 0 9rem 0;
+	background-color: $abt-bg ;
+    .head-ttln{
+        display: block;
+        text-align: center;
+    }
+	.title-first {
+		margin-bottom: 0;
+	}
+
+	.faq-item {
+		border: 1px solid $lightgray !important;
+		border-radius: 20px;
+		background: $whiteColor;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			.accordion-button{
+				font-family: $font-family-poppins-semibold;
+				color: $primary;
+				font-size: 2rem;
+				@media (max-width:$sm) {
+					font-size: 1.75rem;
+				}
+			}
+			
+			
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
 }
