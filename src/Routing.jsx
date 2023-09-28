@@ -189,6 +189,7 @@ const LazyMutualFundCalculator =React.lazy(()=> import('./components/Mutual-Fund
 // const LazyMCXOptionChain =React.lazy(()=> import('./components/MCX-Option-Chain/MCXOptionChain'));
 // const LazyCurrencyOptionChain =React.lazy(()=> import('./components/Currency-Option-Chain/CurrencyOptionChain'));
 const Lazytrackrecords =React.lazy(()=> import('./components/Track-Records/trackRecords'))
+const LazyMFTopFunds =React.lazy(()=> import('./components/Mf-Top-Funds/MFTopFunds'))
 
 function Routing() {
 
@@ -988,6 +989,11 @@ function Routing() {
                         <Route exact path='/track-record-page' element={
                             <React.Suspense>
                                 < Lazytrackrecords />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/mf/top-funds' element={
+                            <React.Suspense>
+                                < LazyMFTopFunds />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
