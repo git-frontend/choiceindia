@@ -8,6 +8,8 @@ import Channels from '../../assets/images/sub-broker/dedicated-whatsapp-and-tele
 import Training from '../../assets/images/sub-broker/sub-broker-training-through-webinars-and-conferences.svg';
 import Trading from '../../assets/images/sub-broker/cutting-edge-trading-platforms-app-web.svg';
 import Transport from '../../assets/images/sub-broker/transparent-and-growth-oriented-business-model.svg';
+import Payouts from '../../assets/images/sub-broker/sub-broking-franchise-with-timely-payouts.svg';
+
 import { useState ,useEffect} from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from 'react-router-dom';
@@ -97,7 +99,7 @@ function SubBrokerBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                         {/* <LazyLoader src={Software} alt={"Advanced software to manage stock broker franchise business"} className={"img-fluid"} width={"74"} height={"73"} /> */}
-                                            <img src={Software} alt="Sub Broking Franchise with Timely Payouts" className="img-fluid" width="74" height="73" />
+                                            <img src={Payouts} alt="Sub Broking Franchise with Timely Payouts" className="img-fluid" width="60" height="73" />
                                         </span>
                                         <h4>Timely Payouts</h4>
                                     </div>
@@ -164,7 +166,7 @@ function SubBrokerBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                         {/* <LazyLoader src={Software} alt={"Advanced software to manage stock broker franchise business"} className={"img-fluid"} width={"74"} height={"73"} /> */}
-                                            <img src={Software} alt="Sub Broking Franchise with Timely Payouts" className="img-fluid" width="74" height="73" />
+                                            <img src={Payouts} alt="Sub Broking Franchise with Timely Payouts" className="img-fluid" width="60" height="73" />
                                         </span>
                                         <h4>Timely Payouts</h4>
                                     </div>

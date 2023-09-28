@@ -61,7 +61,7 @@ function MoreContent() {
 
                                     
                                     <p className="sml-para-dv">Partnering with an established stockbroker gives you access to a broader customer base and elevates your brand.</p>
-                                    <h2>Who Can Become a Sub Broker?</h2>
+                                    
                                     <p className="sml-para-dv">With this comprehensive guide, you now have a clear understanding of the sub-broker role, its potential, and how to embark on this promising career. For further assistance and to explore sub-broker opportunities, contact Choice, your trusted partner in the financial industry.</p>
                                     <p className="sml-para-dv">We are committed to helping you make informed choices and achieve financial success. Your journey toward financial prosperity begins with us.</p>
                                     <p className="sml-para-dv">Start your stock market sub broker journey with Choice. Contact us today. Your financial well-being is our top priority</p>

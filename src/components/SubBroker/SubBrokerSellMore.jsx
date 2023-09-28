@@ -4,6 +4,8 @@ import Commodity from '../../assets/images/sub-broker/equity-commodity-currency-
 import MF from '../../assets/images/sub-broker/mutual-funds-distribution.svg';
 import Insurance from '../../assets/images/sub-broker/insurance.svg';
 import Retail from '../../assets/images/sub-broker/retail-loans.svg';
+import Bonds from '../../assets/images/sub-broker/sub-broker-earn-through-bonds.svg';
+import CorporatePd from '../../assets/images/sub-broker/sub-broker-earn-through-corporate-fd.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 
@@ -68,14 +70,14 @@ const SubBrokerSellMore = () => {
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <LazyLoader src={Retail} alt={"Become a sub broker & earn through retail loans"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        <LazyLoader src={Bonds} alt={"Become a sub broker & earn through Bonds"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/* <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
                                     <h3 className="itm-ttl">Bonds</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <LazyLoader src={Retail} alt={"Become a sub broker & earn through retail loans"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        <LazyLoader src={CorporatePd} alt={"Become a sub broker & earn through Corporate FDs"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/* <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
                                     <h3 className="itm-ttl">Corporate FDs</h3>
