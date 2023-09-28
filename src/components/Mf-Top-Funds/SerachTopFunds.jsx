@@ -16,11 +16,13 @@ function SerachTopFunds() {
                     <div className='search-items-sec'>
                         <div className='search-items'>
                             <div className='circle'>
-
+                                <a href="/">
+                                    
+                                </a>
                             </div>
-                            <div className='text-center'>
-xxxxxx
-                            </div>
+                            <h4 className='mf-com-name'>
+                                <a href="/">HDFC Mutual Fund</a>
+                            </h4>
                         </div>
                         <div className='search-items'>
                             <div className='circle'>
