@@ -19,6 +19,7 @@ import utils from "../../Services/utils";
 import Modal from "react-bootstrap/Modal";
 import noDataimg from "../../assets/images/no-data.webp";
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useNavigate } from "react-router-dom";
 import { useTransition } from "react";
 import { filter } from "rxjs";
 
@@ -27,6 +28,7 @@ function Banneraf() {
   const [showSecondDiv, setShowSecondDiv] = useState(false);
   const [showThirdDiv, setShowThirdDiv] = useState(false);
   const [name, setName] = useState("hideform");
+  const navigate = useNavigate();
   const getPosition = () => {
     const element = document.getElementById("showForm");
     if (element) {
@@ -52,6 +54,8 @@ function Banneraf() {
 
   /**variable for timer */
   const [count, setCount] = useState(0);
+
+  const [orderCancelledPopup, setOrderCancelledPopup] = useState(false);
 
   /**variable for loaders */
   const [loaders, setLoaders] = useState({
@@ -744,36 +748,32 @@ function Banneraf() {
           /**store all confirmed orders from response */
           setConfirmedOrders(filteredData);
 
-          response.data.Response.Orders.every((item) => {
-            if (item.FinalStatus == "CONFIRMED") {
-              flag = true;
+          flag = response.data.Response.Orders.every((item) => {
+            if (item.FinalStatus === "CONFIRMED") {
               return true;
-            } else {
-              flag = false;
+            } else if(item.FinalStatus === "FAILED") {
               return false;
-            }
+            } else if(item.OrderStatus === "CONFIRMED") {
+              return true;
+            } else return false;
           })
 
           /**store entire response or lumpsum order placed */
           setSchemeDetails(response.data.Response);
-          if (subId) {
-            setLoaders({ ...loaders, verifyLoader: false });
-            setPaymentLink(() =>
-              response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
-            );
-            if (flag) {
-              setShowPopUp(() => "RMFlow");
+          setLoaders({ ...loaders, verifyLoader: false });
+          setPaymentLink(() =>
+            response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
+          );
+          if (flag) {
+              if (subId) {
+                setShowPopUp("RMFlow");
+              } else {
+                setShowPopUp("ClientFlow")
+              }
             } else {
               setShowCancelOrder(true);
             }
-
-          } else {
-            setLoaders({ ...loaders, verifyLoader: false });
-            setPaymentLink(() =>
-              response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
-            );
           }
-        }
 
         /**api call for generate payment link */
         // else if (
@@ -889,42 +889,49 @@ function Banneraf() {
           /**store all confirmed orders from response */
           setConfirmedOrders(filteredData)
 
-          response.data.Response.Orders.every((item) => {
-            if (item.FinalStatus == "CONFIRMED") {
-              flag = true;
+          flag = response.data.Response.Orders.every((item) => {
+            if (item.FinalStatus === "CONFIRMED") {
               return true;
-            } else {
-              flag = false;
+            } else if(item.FinalStatus === "FAILED") {
               return false;
-            }
+            } else if(item.OrderStatus === "CONFIRMED") {
+              return true;
+            } else return false;
           })
 
           /**store entire response or SIP order placed */
           setSchemeDetails(response.data.Response);
+          setLoaders({ ...loaders, verifyLoader: false });
+          setPaymentLink(() =>
+            response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
+          );
           if (subId) {
-            setLoaders({ ...loaders, verifyLoader: false });
-            setPaymentLink(() =>
-              response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
-            );
             setErrors(() => null);
             setShowSecondDiv(() => false);
             setShowFirstButton(() => true);
             setisModalClose(() => false)
             setShowThirdDiv(false);
             if (flag) {
-              setShowPopUp(() => "RMFlow");
+              if (subId) {
+                setShowPopUp("RMFlow");
+              } else {
+                setShowPopUp("ClientFlow")
+              }
             } else {
               setShowCancelOrder(true);
             }
           } else {
-            setLoaders({ ...loaders, verifyLoader: false });
             setPaymentLink(() =>
               response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
             );
 
-            setTimeout(() => {
-              window.open(response.data.Response.PaymentLink ? response.data.Response.PaymentLink : "", "_self");
-            }, 3000);
+            if(flag) {
+              setTimeout(() => {
+                window.open(response.data.Response.PaymentLink ? response.data.Response.PaymentLink : "", "_blank");
+              }, 3000);
+            } else {
+              setShowCancelOrder(true);              
+            }
           }
         }
         // else {
@@ -962,52 +969,62 @@ function Banneraf() {
       });
   }
 
-  let confirmCounter = 0;
   /**for cancel order */
   function cancelOrder() {
-
-    let payload = {
-      "AllRedeem": "N",
-      "Amt": "",
-      "BS": "P",
-      "BSType": "FRESH",
-      "Brokerage": "",
-      "Client": schemeDetails.Client ? schemeDetails.Client : "",
-      "DPTxn": "P",
-      "Firstorderflag": "",
-      "FolioNo": confirmedOrders[confirmCounter].FolioNo ? confirmedOrders[confirmCounter].FolioNo : "",
-      "Freq": "",
-      "IPAddress": "",
-      "ISIPMandateId": "",
-      "NoOfInstallments": "",
-      "OrderId": confirmedOrders[confirmCounter].OrderId,
-      "Qty": "",
-      "RefNo": "",
-      "Remarks": "",
-      "SchemeCD": confirmedOrders[confirmCounter].SchemeCD,
-      "Source": "connect",
-      "StartDate": "",
-      "TransCode": "CXL",
-      "TransMode": "P",
-      "TransNo": "",
-      "XSIPMandateId": confirmedOrders[confirmCounter].XSIPMandateId
+    const payload = {
+      Orders: confirmedOrders.map((order, index) => {
+        return {
+          "AllRedeem": order?.AllRedeem ?? "N",
+          "Amt": order?.Amt ?? "",
+          "BS": order?.BS ?? "P",
+          "BSType": order?.BSType ?? "FRESH",
+          "Brokerage": "",
+          "Client": schemeDetails?.Client ?? "",
+          "DPTxn": order?.DPTxn ?? "P",
+          "Firstorderflag": "",
+          "FolioNo": order?.FolioNo ?? "",
+          "Freq": "",
+          "IPAddress": order?.IPAddress ?? "",
+          "ISIPMandateId": "",
+          "NoOfInstallments": "",
+          "OrderId": order?.OrderId ?? "",
+          "Qty": order?.Qty ?? "",
+          "RefNo": "",
+          "Remarks": order?.Remarks ?? "",
+          "SchemeCD": order?.SchemeCD ?? "",
+          "Source": "connect",
+          "StartDate": "",
+          "TransCode": "CXL",
+          "TransMode": "P",
+          "TransNo": "",
+          "XSIPMandateId": confirmedOrders?.[index]?.XSIPMandateId ?? ""
+        }
+      },
+      ),
+      Client: (schemeDetails?.Client && schemeDetails?.Client?.toUpperCase()) ?? "",
+      Source: "connect"
     };
 
     if (BasketData.order_type == "Lumpsum") {
-      if (confirmCounter <= confirmedOrders.length)
         AssistedFlowService.Lumpsum(payload, otpResponse.Body.otp_session_id).then((response) => {
-          if (response) {
-            console.log('cancel respone', response);
+          setOrderCancelledPopup(true);
+          if (response.status === 200) {
+            setShowCancelOrder(false);
+            setTimeout(() => {
+              navigate("/");
+            }, 3000)
           }
-        })
-
+        });
     } else {
-      if (confirmCounter <= confirmedOrders.length)
         AssistedFlowService.XSIP(payload, otpResponse.Body.otp_session_id).then((response) => {
-          if (response) {
-            console.log('cancel respone', response);
+          setOrderCancelledPopup(true);
+          if (response.status === 200) {
+            setShowCancelOrder(false);
+            setTimeout(() => {
+              navigate("/");
+            }, 3000)
           }
-        })
+        });
     }
   }
 
@@ -1781,7 +1798,7 @@ function Banneraf() {
             <Modal
               className="successfulmodal"
               // true for testing else "showCancelOrder" to show
-              show={true}
+              show={showCancelOrder}
               onHide={false}
               size="md"
               aria-labelledby="contained-modal-title-vcenter"
@@ -1789,7 +1806,7 @@ function Banneraf() {
               keyboard={false}
               centered
             >
-              <Modal.Body className="text-center">
+              <Modal.Body>
                 <table class="table table-borderless">
                   <thead>
                     <tr>
@@ -1798,44 +1815,33 @@ function Banneraf() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>HDFC FUND GROWTH</td>
-                      <td>Failed</td>
-                      {/* {
-                      (schemeDetails && schemeDetails.Orders.length)?
-                      schemeDetails.Orders.map((item) => {
-                        return(
-                          <>
-                            <td>{item.SchemeCD}</td>
-                            <td>{item.FinalStatus}</td>
-                          </>
-                        )
-                      }): <></>
-                    } */}
-                    </tr>
-                    <tr>
-                      <td>DSP OVERNIGHT FUND GROWTH</td>
-                      <td>Confirmed</td>
-                    </tr>
-                    <tr>
-                      <td>QUANT TAX SAVER</td>
-                      <td>Confirmed</td>
-                    </tr>
-                    <tr>
-                      <td>NIPPON GROWTH</td>
-                      <td title="show here the reason of failed order on tooltip">Failed</td>
-                    </tr>
+                    {
+                      schemeDetails.Orders && schemeDetails.Orders.map((order) => (
+                        <tr>
+                          <td>{order.SchemeName || ""}</td>
+                          <td>{order.FinalStatus || order.OrderStatus}</td>
+                        </tr>  
+                      ))
+                    }
                   </tbody>
                 </table>
+                <div className="c-note">Note: Click "Continue" to proceed with Confirmed Schemes or "Cancle" your complete order</div>
               </Modal.Body>
               <Modal.Footer>
-                <div>
-                  <Button>Continue</Button>
-                  <Button className="btn btn-danger" onClick={cancelOrder}>Cancel</Button>
+                <div className="d-flex-gap">
+                  {!!confirmedOrders.length && <Button onClick={() => {window.open(paymentLink,'_blank')}}>Continue</Button>}
+                  <Button className="btn btn-danger" onClick={confirmedOrders.length ? cancelOrder : () => {setShowCancelOrder(false)}}>Cancel</Button>
                 </div>
               </Modal.Footer>
             </Modal>
 
+            <Modal className="bt-strap-mdl otp-main-modal Referral-code-model" show={orderCancelledPopup} backdrop='static' keyboard={false}>
+                <Modal.Body className="border-0">
+                    <div className="exit-intent-sleekbox-overlay sleekbox-popup-active referral-overlay">
+                      Your order is cancelled. Please contact your RM to invest again                        
+                    </div>
+                </Modal.Body>
+            </Modal>
           </div>
         </section>
       </div>
