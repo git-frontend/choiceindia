@@ -1,5 +1,6 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
+
 .funds-bannersection{
     background: radial-gradient(30.99% 188.85% at 77.4% 49.94%, rgba(255, 238, 227, 0.32) 0%, #FFEEE3 100%) ;
     padding: 7rem 0 6rem 0;
@@ -52,7 +53,10 @@
     }
 }
 .search-funds-sec{
-    padding: 10rem 0;
+    padding: 10rem 0 7rem;
+    @media (max-width:$md) {
+        padding: 6rem 0;
+    }
     .search-bar{
         .input-control{
             font-size: 1.429rem;
@@ -82,26 +86,66 @@
         display: flex;
         justify-content: space-between;
         padding-top: 10rem;
+        flex-wrap: wrap;
+        @media (max-width:$md) {
+            padding-top: 6rem;
+        }
         .search-items{
             width: 18%;
             text-align: center;
+            padding-bottom: 3rem;
+            @media (max-width:$sm) {
+                width: 30%;
+            }
             .circle {
                 border-radius: 50%;
                 width: 14rem;
+                height: 14rem;
                 background-color: $whiteColor;
                 box-shadow:0px 3px 7px $border-light ;
                 margin: 0 auto;
                 overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 padding: 1rem;
+                @media (max-width:$sm) {
+                    width: 9rem;
+                    height: 9rem;
+                }
             }
             .mf-com-name{
                 font-size: 1.714rem;
                 margin-top: 1.5rem;
+                font-family: $font-family-poppins-semibold;
+                font-weight: 600;
+                color: $primary;
+                line-height: 1.5;
+                @media (max-width:$sm) {
+                    font-size: 1.275rem;
+                }
                 a{
                     text-decoration: none;
                     color: $primary;
                 }
             }
         }
+    }
+}
+.more-content-sec{
+    padding: 6rem 0;
+    background: $abt-bg;
+    .title-first{
+        text-align: center;
+        span{
+            color: $yellowColor;
+        }
+    }
+    .seo-para{
+        text-align: center;
+        font-family: $font-family-poppins-medium;
+        font-weight: 500;
+        margin: 0;
+        color: $primary;
     }
 }
