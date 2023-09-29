@@ -6,12 +6,12 @@ import failureimg from '../../assets/images/failure.svg';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function Thankyoupopup({ isShow,isBlog }) {
+function Thankyoupopup({ isShow, isBlog }) {
 
 
 
- 
-//  console.log('TRTR', isShow);
+
+  //  console.log('TRTR', isShow);
 
   // useEffect(() => {
   //   if(isShow.closeOTP){
@@ -20,7 +20,7 @@ function Thankyoupopup({ isShow,isBlog }) {
   // },[isShow])
   // const [show, setShow] = useState(isShow);
   // const show = useRef(null);
-    //  const [check, setCheck] = useState(true);
+  //  const [check, setCheck] = useState(true);
   // useEffect(() => {
   //   // setShow(() => isShow)
   //   show.current = isShow.showModal;
@@ -36,8 +36,8 @@ function Thankyoupopup({ isShow,isBlog }) {
   // const [display, setDisplay] = useState(true);
 
   useEffect(() => {
-  //  console.log('Inside thanku',isShow)
-    if(isShow.page != 'add-lead' && !isShow.redirectionLink){
+    //  console.log('Inside thanku',isShow)
+    if (isShow.page != 'add-lead' && !isShow.redirectionLink) {
       setTimeout(() => {
         if (isShow.redirectionLink === null) {
           isShow.closeMd();
@@ -52,7 +52,7 @@ function Thankyoupopup({ isShow,isBlog }) {
         } else {
           isShow.closeMd(isShow.redirectionLink);
         }
-      }, 2000)
+      }, 15000)
     }
   }, [])
 
@@ -119,12 +119,13 @@ function Thankyoupopup({ isShow,isBlog }) {
                       <div className="close">
                         {/* <Link to="" className="closebtn" onClick={()=>isShow.closeMd(isShow.redirectionLink)} >&times;</Link> */}
                       </div>
-                      <div  className={((window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) || (isBlog=='blog')) ? "thanku sub-broker-success" :((!isShow.isOnboarding) && (window.location.pathname.indexOf('mutual-fund-distributor') > -1))? 'thanku mf-distributor-leads': ((isShow.isNewLead) && ((window.location.pathname.indexOf('sub-broker-franchise') == -1) && (window.location.pathname.indexOf('authorised-person') == -1) && (window.location.pathname.indexOf('remisier') == -1)) && (window.location.pathname.indexOf("/nri-demat-account") == -1) && (window.location.pathname.indexOf("/minor-demat-account") == -1) && (window.location.pathname.indexOf("/corporate-demat-account") == -1))?'thanku campaign-success': ((isShow.isNewLead) && (window.location.pathname.indexOf("/minor-demat-account") > -1))? 'thanku minor-dl-success': ((isShow.isNewLead) && (window.location.pathname.indexOf("/nri-demat-account") > -1))? 'thanku nri-dl-success': ((isShow.isNewLead) && (window.location.pathname.indexOf("/corporate-demat-account") > -1)) ? 'thanku corporate-dl-success': "thanku "}>
+                      <div className={((window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) || (isBlog === 'blog')) ? "thanku sub-broker-success" : ((!isShow.isOnboarding) && (window.location.pathname.indexOf('mutual-fund-distributor') > -1)) ? 'thanku mf-distributor-leads' : (((window.location.pathname.indexOf('sub-broker-franchise') === -1) && (window.location.pathname.indexOf('authorised-person') === -1) && (window.location.pathname.indexOf('remisier') === -1)) && (window.location.pathname.indexOf("nri-demat-account") === -1) && (window.location.pathname.indexOf("/minor-demat-account") === -1) && (window.location.pathname.indexOf("/corporate-demat-account") === -1)) ? 'thanku campaign-success' : (((window.location.pathname.indexOf("/minor-demat-account") > -1)) ? 'thanku minor-dl-success' : (((window.location.pathname.indexOf("nri-demat-account") > -1)) ? 'thanku nri-dl-success' : (((window.location.pathname.indexOf("/corporate-demat-account") > -1)) ? 'thanku corporate-dl-success' : 'thanku ')))}>
                         <h1>Thank You !</h1>
                       </div>
+
                       <div className="body-content">
                         {/* <p className="heading">Thank You For Your Registration!</p> */}
-                        <p className="subheading">{isShow.resText? isShow.resText: "You are being redirected to onboarding page!"}</p>
+                        <p className="subheading">{isShow.resText ? isShow.resText : "You are being redirected to onboarding page!"}</p>
                         {/* <button className="btn-yellow" onClick={() => isShow.closeMd(isShow.redirectionLink)}>OK</button> */}
                         <div>
                         </div>

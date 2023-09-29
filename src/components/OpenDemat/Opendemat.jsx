@@ -1397,7 +1397,9 @@ function Opendemat(){
 
               </section>
               <section className="demat-cam-page-new">
+              <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
                 <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
+                </GoogleReCaptchaProvider>
               </section>
             </main>
         }
