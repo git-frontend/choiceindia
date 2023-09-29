@@ -992,7 +992,7 @@ function Routing() {
                                 < Lazytrackrecords />
                             </React.Suspense>
                         } />
-                         <Route exact path='/mf/top-funds' element={
+                         <Route exact path='/mf/top-funds-amc' element={
                             <React.Suspense>
                                 < LazyTopFundsAMC />
                             </React.Suspense>

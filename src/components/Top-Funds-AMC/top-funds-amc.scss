@@ -55,7 +55,7 @@
 .search-funds-sec{
     padding: 10rem 0 7rem;
     @media (max-width:$md) {
-        padding: 6rem 0;
+        padding: 6rem 0 3rem;
     }
     .search-bar{
         .input-control{
@@ -84,18 +84,21 @@
     }
     .search-items-sec{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         padding-top: 10rem;
         flex-wrap: wrap;
         @media (max-width:$md) {
             padding-top: 6rem;
         }
         .search-items{
-            width: 18%;
+            width: 20%;
             text-align: center;
             padding-bottom: 3rem;
+            @media (max-width:$md) {
+                width: 25%;
+            }
             @media (max-width:$sm) {
-                width: 30%;
+                width: 33.33%;
             }
             .circle {
                 border-radius: 50%;
@@ -109,6 +112,10 @@
                 justify-content: center;
                 align-items: center;
                 padding: 1rem;
+                @media (max-width:$md) {
+                    width: 12rem;
+                    height: 12rem;
+                }
                 @media (max-width:$sm) {
                     width: 9rem;
                     height: 9rem;
@@ -121,8 +128,13 @@
                 font-weight: 600;
                 color: $primary;
                 line-height: 1.5;
+                padding: 0 1rem;
+                @media (max-width:$md) {
+                    font-size: 1.5rem;
+                }
                 @media (max-width:$sm) {
                     font-size: 1.275rem;
+                    padding: 0;
                 }
                 a{
                     text-decoration: none;
