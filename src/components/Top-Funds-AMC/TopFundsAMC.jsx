@@ -1,16 +1,16 @@
 import React from 'react'
-import "./mf-top-funds.scss";
+import "./top-funds-amc.scss";
 import Banner from './Banner';
-import SerachTopFunds from './SerachTopFunds';
+import SerachTopFundsAMC from './SerachTopFundsAMC';
 import MoreContent from './MoreContent';
-function MFTopFunds() {
+function TopFundsAMC() {
   return (
     <div>
         <Banner/>
-        <SerachTopFunds/>
+        <SerachTopFundsAMC/>
         <MoreContent/>
     </div>
   )
 }
 
-export default MFTopFunds
+export default TopFundsAMC
