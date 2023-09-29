@@ -188,8 +188,9 @@ const LazyMutualFundCalculator =React.lazy(()=> import('./components/Mutual-Fund
 // const LazyNSEOptionChain =React.lazy(()=> import('./components/NSE-Option-Chain/NSEOptionChain'));
 // const LazyMCXOptionChain =React.lazy(()=> import('./components/MCX-Option-Chain/MCXOptionChain'));
 // const LazyCurrencyOptionChain =React.lazy(()=> import('./components/Currency-Option-Chain/CurrencyOptionChain'));
-const Lazytrackrecords =React.lazy(()=> import('./components/Track-Records/trackRecords'))
-const LazyMFTopFunds =React.lazy(()=> import('./components/Mf-Top-Funds/MFTopFunds'))
+const Lazytrackrecords =React.lazy(()=> import('./components/Track-Records/trackRecords'));
+const LazyMFTopFunds =React.lazy(()=> import('./components/Mf-Top-Funds/MFTopFunds'));
+const LazyMFDetails =React.lazy(()=> import('./components/Mf-Details/MFDetails'));
 
 function Routing() {
 
@@ -994,6 +995,12 @@ function Routing() {
                          <Route exact path='/mf/top-funds' element={
                             <React.Suspense>
                                 < LazyMFTopFunds />
+                            </React.Suspense>
+                        } />
+                        
+                         <Route exact path='/mf-details' element={
+                            <React.Suspense>
+                                < LazyMFDetails />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
