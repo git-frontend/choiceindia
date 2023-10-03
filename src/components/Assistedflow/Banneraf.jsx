@@ -127,10 +127,23 @@ function Banneraf() {
   const [userStatus, setUserStatus] = useState(
     new URLSearchParams(search).get("status")
   );
+  const [showExpired, setShowExpired] = useState(false);
 
   const uniID = new URLSearchParams(search).get("oid") ? new URLSearchParams(search).get("oid").replaceAll(" ", "+") : "";
   const subId = new URLSearchParams(search).get("sid") ? new URLSearchParams(search).get("sid").replaceAll(" ", "+") : "";
-  const expId = new URLSearchParams(search).get("exp") ? new URLSearchParams(search).get("exp").replaceAll(" ", "+") : "";
+  const expId = new URLSearchParams(search).get("exp") ? window.atob(new URLSearchParams(search).get("exp").replaceAll(" ", "+")) : "";
+
+  useEffect(() => {
+    /**variable for link expired */
+    let currentDate = new Date();
+    let expiryDate = new Date(expId * 1000);
+
+    if( (Math.floor(currentDate /8.64e7)) <= (Math.floor(expiryDate /8.64e7))){
+        setShowExpired(false)
+      } else {
+        setShowExpired(true)
+      }
+  }, [expId])
 
   let client_id;
   const captchaCount = useRef(0);
@@ -751,9 +764,9 @@ function Banneraf() {
           flag = response.data.Response.Orders.every((item) => {
             if (item.FinalStatus === "CONFIRMED") {
               return true;
-            } else if(item.FinalStatus === "FAILED") {
+            } else if (item.FinalStatus === "FAILED") {
               return false;
-            } else if(item.OrderStatus === "CONFIRMED") {
+            } else if (item.OrderStatus === "CONFIRMED") {
               return true;
             } else return false;
           })
@@ -765,15 +778,15 @@ function Banneraf() {
             response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
           );
           if (flag) {
-              if (subId) {
-                setShowPopUp("RMFlow");
-              } else {
-                setShowPopUp("ClientFlow")
-              }
+            if (subId) {
+              setShowPopUp("RMFlow");
             } else {
-              setShowCancelOrder(true);
+              setShowPopUp("ClientFlow")
             }
+          } else {
+            setShowCancelOrder(true);
           }
+        }
 
         /**api call for generate payment link */
         // else if (
@@ -892,9 +905,9 @@ function Banneraf() {
           flag = response.data.Response.Orders.every((item) => {
             if (item.FinalStatus === "CONFIRMED") {
               return true;
-            } else if(item.FinalStatus === "FAILED") {
+            } else if (item.FinalStatus === "FAILED") {
               return false;
-            } else if(item.OrderStatus === "CONFIRMED") {
+            } else if (item.OrderStatus === "CONFIRMED") {
               return true;
             } else return false;
           })
@@ -925,12 +938,12 @@ function Banneraf() {
               response.data.Response.PaymentLink ? response.data.Response.PaymentLink : ""
             );
 
-            if(flag) {
+            if (flag) {
               setTimeout(() => {
                 window.open(response.data.Response.PaymentLink ? response.data.Response.PaymentLink : "", "_blank");
               }, 3000);
             } else {
-              setShowCancelOrder(true);              
+              setShowCancelOrder(true);
             }
           }
         }
@@ -1006,25 +1019,25 @@ function Banneraf() {
     };
 
     if (BasketData.order_type == "Lumpsum") {
-        AssistedFlowService.Lumpsum(payload, otpResponse.Body.otp_session_id).then((response) => {
-          setOrderCancelledPopup(true);
-          if (response.status === 200) {
-            setShowCancelOrder(false);
-            setTimeout(() => {
-              navigate("/");
-            }, 3000)
-          }
-        });
+      AssistedFlowService.Lumpsum(payload, otpResponse.Body.otp_session_id).then((response) => {
+        setOrderCancelledPopup(true);
+        if (response.status === 200) {
+          setShowCancelOrder(false);
+          setTimeout(() => {
+            navigate("/");
+          }, 3000)
+        }
+      });
     } else {
-        AssistedFlowService.XSIP(payload, otpResponse.Body.otp_session_id).then((response) => {
-          setOrderCancelledPopup(true);
-          if (response.status === 200) {
-            setShowCancelOrder(false);
-            setTimeout(() => {
-              navigate("/");
-            }, 3000)
-          }
-        });
+      AssistedFlowService.XSIP(payload, otpResponse.Body.otp_session_id).then((response) => {
+        setOrderCancelledPopup(true);
+        if (response.status === 200) {
+          setShowCancelOrder(false);
+          setTimeout(() => {
+            navigate("/");
+          }, 3000)
+        }
+      });
     }
   }
 
@@ -1820,29 +1833,55 @@ function Banneraf() {
                         <tr>
                           <td>{order.SchemeName || ""}</td>
                           <td>{order.FinalStatus || order.OrderStatus}</td>
-                        </tr>  
+                        </tr>
                       ))
                     }
                   </tbody>
                 </table>
-                <div className="c-note">Note: Click "Continue" to proceed with Confirmed Schemes or "Cancle" your complete order</div>
+                <div className="c-note">Note: Click "Continue" to proceed with Confirmed Schemes or "Cancel" your complete order</div>
               </Modal.Body>
               <Modal.Footer>
                 <div className="d-flex-gap">
-                  {!!confirmedOrders.length && <Button onClick={() => {window.open(paymentLink,'_blank')}}>Continue</Button>}
-                  <Button className="btn btn-danger" onClick={confirmedOrders.length ? cancelOrder : () => {setShowCancelOrder(false)}}>Cancel</Button>
+                  {!!confirmedOrders.length && <Button onClick={() => { window.open(paymentLink, '_blank') }}>Continue</Button>}
+                  <Button className="btn btn-danger" onClick={confirmedOrders.length ? cancelOrder : () => { setShowCancelOrder(false) }}>Cancel</Button>
                 </div>
               </Modal.Footer>
             </Modal>
 
             <Modal className="bt-strap-mdl otp-main-modal Referral-code-model" show={orderCancelledPopup} backdrop='static' keyboard={false}>
-                <Modal.Body className="border-0">
-                    <div className="exit-intent-sleekbox-overlay sleekbox-popup-active referral-overlay">
-                      Your order is cancelled. Please contact your RM to invest again                        
-                    </div>
-                </Modal.Body>
+              <Modal.Body className="border-0">
+                <div className="exit-intent-sleekbox-overlay sleekbox-popup-active referral-overlay">
+                  Your order is cancelled. Please contact your RM to invest again
+                </div>
+              </Modal.Body>
             </Modal>
           </div>
+
+          {/* Modal For Link expired */}
+          <Modal
+            className="successfulmodal"
+            show={showExpired}
+            onHide={false}
+            size="md"
+            aria-labelledby="contained-modal-title-vcenter"
+            backdrop="static"
+            keyboard={false}
+            centered
+          >
+            <Modal.Body className="text-center">
+              <p>Your Link has been expired, please contact your RM.</p>
+              <div className="rightbtn">
+                <Link
+                  to="/"
+                  className="btn-bg btn-bg-dark awesomebtn"
+                  onClick=""
+                >
+                  <span>Okay</span>
+
+                </Link>
+              </div>
+            </Modal.Body>
+          </Modal>
         </section>
       </div>
     </>
