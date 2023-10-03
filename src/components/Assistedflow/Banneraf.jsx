@@ -22,6 +22,7 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useNavigate } from "react-router-dom";
 import { useTransition } from "react";
 import { filter } from "rxjs";
+import OtpInput from "../Common-features/OtpInput";
 
 function Banneraf() {
   const [showFirstButton, setShowFirstButton] = useState(true);
@@ -45,7 +46,7 @@ function Banneraf() {
   const [BasketData, setBasketData] = useState(null);
 
   /**variable for otp */
-  const [OtpValue, setOtpValue] = useState(null);
+  const [OtpValue, setOtpValue] = useState("");
 
   /**variable for mobile number */
   const [mobileNumber, setMobileNumber] = useState(null);
@@ -516,11 +517,10 @@ function Banneraf() {
 
   /**Invest Now Button Click Function */
   function handleFirstButtonClick(isResend) {
-    setOtpValue(() => null);
+    setOtpValue("");
     setisModalClose(() => true)
 
     if (isResend) {
-      document.getElementById("partitioned").value = "";
       setLoaders({ ...loaders, reSendOtpLoader: false });
     } else {
       setLoaders({ ...loaders, SendOtpLoader: false });
@@ -1264,12 +1264,6 @@ function Banneraf() {
       });
   }
 
-
-  /**handle otp change */
-  function handleOTP(event) {
-    setOtpValue(() => (event.target.value ? event.target.value : null));
-  }
-
   /**copy payment link to clipboard */
   function copyToClipboard() {
     let msg = "Find a curated customized Mutual Fund basket that perfectly aligns with your investment goals."
@@ -1495,19 +1489,14 @@ function Banneraf() {
 
                               </div>
 
-                              <div id="divOuter">
+                              <div id="divOuter width-unset">
                                 <div id="divInner">
-                                  <input
-                                    type="tel"
-                                    formcontrolname="otpValue"
-                                    id="partitioned"
-                                    maxLength="6"
-                                    onKeyPress={(event) => {
-                                      if (!/[0-9]/.test(event.key)) {
-                                        event.preventDefault();
-                                      }
+                                  <OtpInput
+                                    value={OtpValue}
+                                    onChange={(e) => {
+                                      setOtpValue(e ?? "");
                                     }}
-                                    onChange={(e) => handleOTP(e)}
+                                    className="common-otp"
                                   />
                                   <i className="bar"></i>
                                 </div>
