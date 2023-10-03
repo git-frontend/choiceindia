@@ -18,7 +18,7 @@ function SerachTopFunds() {
     <section className='search-funds-sec'>
         <div className='container'>
             <div className='row justify-content-end'>
-                <div className='col-md-4 col-sm-12'>
+                <div className='col-xl-5 col-md-6 col-sm-12'>
                     <div className='search-bar'>
                         <input type="text" className="input-control search-icon"  placeholder="Search"/>
                     </div>
