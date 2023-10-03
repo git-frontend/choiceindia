@@ -1616,3 +1616,17 @@
         width: 100% !important;
     }
 }
+
+.common-otp {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 2px solid #fff;
+    width: 2.46rem;
+    outline-width: 0;
+    text-align: center;
+}
+
+.width-unset {
+    width: unset !important;
+}
