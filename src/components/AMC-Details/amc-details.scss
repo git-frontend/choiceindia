@@ -126,6 +126,9 @@
         top: 50%;
         width: 17rem;
         z-index: -9;
+        @media (max-width:$sm) {
+            display: none;
+        }
     }
     &::after{
         content: '';
@@ -138,6 +141,9 @@
         top: 5%;
         width: 17rem;
         z-index: -9;
+        @media (max-width:$sm) {
+            display: none;
+        }
     }
     .bg-before{
         &::after{
@@ -151,6 +157,9 @@
             bottom: 13%;
             width: 17rem;
             z-index: -9;
+        }
+        @media (max-width:$sm) {
+            display: none;
         }
     }
     .wrapper {
