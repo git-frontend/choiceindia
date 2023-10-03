@@ -192,6 +192,7 @@ const Lazytrackrecords =React.lazy(()=> import('./components/Track-Records/track
 const LazyTopFundsAMC =React.lazy(()=> import('./components/Top-Funds-AMC/TopFundsAMC'));
 const LazyTopFundsIndia =React.lazy(()=> import('./components/Top-Funds-India/TopFundsIndia'));
 const LazyMFDetails =React.lazy(()=> import('./components/Mf-Details/MFDetails'));
+const LazyAMCDetails =React.lazy(()=> import('./components/AMC-Details/AMCDetails'));
 
 function Routing() {
 
@@ -1006,6 +1007,11 @@ function Routing() {
                          <Route exact path='/mf-details' element={
                             <React.Suspense>
                                 < LazyMFDetails />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/mf/amc-details' element={
+                            <React.Suspense>
+                                < LazyAMCDetails />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
