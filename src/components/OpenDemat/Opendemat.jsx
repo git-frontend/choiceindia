@@ -163,9 +163,9 @@ function Opendemat(){
                         {
                           ischeck ?
                           <div>
-                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz"> */}
                               <DematAccountForm />
-                            </GoogleReCaptchaProvider>
+                            {/* </GoogleReCaptchaProvider> */}
                           </div>:
                           <div>
                             <DematAccountForm />
