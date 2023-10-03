@@ -108,14 +108,21 @@ function MFTopFunds() {
                       </div>
 
                       <div className='card-mn box-shadow analysis-portfolio'>
-                          <div className='row'>
+                          <div className='row align-items-center'>
                               <div className='col-md-6'>
                                   <h3 className='title-secnd'>Scheme's Portfolio <span>Analysis</span></h3>
                               </div>
                               <div className='col-md-6'>
-                                  <div className=''>
+                                  <div className='order-wise-sec'>
                                       <p>As on: 2023-07-31</p>
                                       <p>View allocation % by</p>
+                                      <div className='drop-items'>
+                                      <select className='form-select'>
+                                            <option value="" selected>Sector</option>
+                                            <option value="">Company</option>
+                                            <option value="">Market Cap</option>
+                                      </select>
+                                    </div>
                                   </div>
                               </div>
                           </div>
@@ -514,6 +521,231 @@ function MFTopFunds() {
                               </div>
                           </div>
                       </div>
+
+                      <div className='card-mn fund-mang-details'>
+                          <h3>Fund Manager Details</h3>
+                          <h4>Ankit Pande</h4>
+                          <p>Mr. Ankit Pande holds CFA, MBA. He began his career in core banking software with Infosys Finacle. Began his career in equity research in 2011, picking up the (U.S. based) CFA charter in 2015 and MBA from The Chinese University of Hong Kong in 2017. He won the Thomson Reuters StarMine Award for best stock picker in the IT sector in 2014 and is a lifetime member of the Beta Gamma Sigma honour society.</p>
+                      </div>  
+
+
+                      <div className='card-mn box-shadow fund-comparison-details'>
+                          <h3 className='title-secnd'><span>Peer</span> Scheme Comparison</h3>
+                          <div className='scheme-list'>
+                              <div className='scheme-list-itm active-itm'>
+                                  <div className='list-itm-lft'>
+                                    <h4>Quant Tax Plan Growth</h4>
+                                    <h5><span>AUM</span> 4,433 Cr</h5>
+                                    <div className='rating-det'>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                  </div>
+                                  </div>
+                                  <div className='list-itm-rght'>
+                                      <ul className='reset'>
+                                          <li>
+                                              <h4>74.84%</h4>
+                                              <h5>1 Year</h5>
+                                          </li>
+                                          <li>
+                                              <h4>149.47%</h4>
+                                              <h5>3 Year</h5>
+                                          </li>
+                                          <li>
+                                              <h4>1.67</h4>
+                                              <h5>Expense Ratio</h5>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div className='scheme-list-itm'>
+                                  <div className='list-itm-lft'>
+                                    <h4>Quant Tax Plan Growth</h4>
+                                    <h5><span>AUM</span> 4,433 Cr</h5>
+                                    <div className='rating-det'>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                  </div>
+                                  </div>
+                                  <div className='list-itm-rght'>
+                                      <ul className='reset'>
+                                          <li>
+                                              <h4>74.84%</h4>
+                                              <h5>1 Year</h5>
+                                          </li>
+                                          <li>
+                                              <h4>149.47%</h4>
+                                              <h5>3 Year</h5>
+                                          </li>
+                                          <li>
+                                              <h4>1.67</h4>
+                                              <h5>Expense Ratio</h5>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div className='scheme-list-itm'>
+                                  <div className='list-itm-lft'>
+                                    <h4>Quant Tax Plan Growth</h4>
+                                    <h5><span>AUM</span> 4,433 Cr</h5>
+                                    <div className='rating-det'>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                  </div>
+                                  </div>
+                                  <div className='list-itm-rght'>
+                                      <ul className='reset'>
+                                          <li>
+                                              <h4>74.84%</h4>
+                                              <h5>1 Year</h5>
+                                          </li>
+                                          <li>
+                                              <h4>149.47%</h4>
+                                              <h5>3 Year</h5>
+                                          </li>
+                                          <li>
+                                              <h4>1.67</h4>
+                                              <h5>Expense Ratio</h5>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div className='scheme-list-itm'>
+                                  <div className='list-itm-lft'>
+                                    <h4>Quant Tax Plan Growth</h4>
+                                    <h5><span>AUM</span> 4,433 Cr</h5>
+                                    <div className='rating-det'>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                  </div>
+                                  </div>
+                                  <div className='list-itm-rght'>
+                                      <ul className='reset'>
+                                          <li>
+                                              <h4>74.84%</h4>
+                                              <h5>1 Year</h5>
+                                          </li>
+                                          <li>
+                                              <h4>149.47%</h4>
+                                              <h5>3 Year</h5>
+                                          </li>
+                                          <li>
+                                              <h4>1.67</h4>
+                                              <h5>Expense Ratio</h5>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div className='scheme-list-itm'>
+                                  <div className='list-itm-lft'>
+                                    <h4>Quant Tax Plan Growth</h4>
+                                    <h5><span>AUM</span> 4,433 Cr</h5>
+                                    <div className='rating-det'>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                      <FontAwesomeIcon icon={faStar} className='fill'/>
+                                  </div>
+                                  </div>
+                                  <div className='list-itm-rght'>
+                                      <ul className='reset'>
+                                          <li>
+                                              <h4>74.84%</h4>
+                                              <h5>1 Year</h5>
+                                          </li>
+                                          <li>
+                                              <h4>149.47%</h4>
+                                              <h5>3 Year</h5>
+                                          </li>
+                                          <li>
+                                              <h4>1.67</h4>
+                                              <h5>Expense Ratio</h5>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>  
+
+                      <div className='card-mn box-shadow performance-hist-details'>
+                        <h3 className='title-secnd'>Scheme's <span>Performance</span> (Historical)</h3>
+                        <div className='table-responsive'>
+                            <table className='table'>
+                                <thead>
+                                  <tr>
+                                    <th>
+                                    Calendar
+                                    </th>
+                                    <th>
+                                    Fund Return(%)
+                                    </th>
+                                    <th>
+                                    Category Average(%)
+                                    </th>
+                                    <th>
+                                    Category Best(%)
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1 m</td>
+                                    <td>5.12</td>
+                                    <td>0.68</td>
+                                    <td>5.12</td>
+                                  </tr>
+                                  <tr>
+                                    <td>1 m</td>
+                                    <td>20.02</td>
+                                    <td>5.13</td>
+                                    <td>22.21</td>
+                                  </tr>
+                                  <tr>
+                                    <td>1 m</td>
+                                    <td>13.84</td>
+                                    <td>6.60</td>
+                                    <td>25.28</td>
+                                  </tr>
+                                  <tr>
+                                    <td>1 m</td>
+                                    <td>149.47</td>
+                                    <td>16.89</td>
+                                    <td>149.47</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                      </div>
+
+                      <div className='card-mn card-calculator'>
+                          <div className='row'>
+                              <div className='col-md-6'>
+                                  <h3>Lumpsum & SIP Calculator</h3>
+                              </div>
+                              <div className='col-md-6'>
+                                <div className="toggle">
+                                  <span className="">Lumpsum</span>
+                                  <input type="checkbox" id="exchangeToggle" name="exchangeToggle" />
+                                  <label></label>
+                                  <span className="selected">SIP</span>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+
                   </div>
               </div>
           </div>
