@@ -1,6 +1,9 @@
 import React from 'react'
 import LazyLoader from '../Common-features/LazyLoader';
-import HDFC from '../../assets/images/mf-top-funds/hdfc-mutual-fund.svg';
+import PreSingleArrow from '../../assets/images/amc-details/pre-arrow-single.svg';
+import PreDobbleArrow from '../../assets/images/amc-details/pre-arrow-dobble.svg';
+import NextSingleArrow from '../../assets/images/amc-details/next-arrow-single.svg';
+import NextDobbleArrow from '../../assets/images/amc-details/next-arrow-dobble.svg';
 
 
 function SerachTopFunds() {
@@ -9,7 +12,7 @@ function SerachTopFunds() {
     <section className='search-amc-sec'>
         <div className='container'>
             <div className='row justify-content-between'>
-                <div className='col-md-4 col-sm-12'>
+                <div className='col-xl-4 col-md-5 col-sm-12'>
                     <div className='drop-sec'>
                         <div className='drop-items'>
                            <select className='form-select'>
@@ -28,7 +31,7 @@ function SerachTopFunds() {
                         </div>
                     </div>
                 </div>
-                <div className='col-md-5 col-sm-12'>
+                <div className='col-xl-5 col-md-7 col-sm-12'>
                     <div className='serch-drp-sec'>
                         <div className='search-bar-items'>
                             <input type="text" className="input-control search-icon"  placeholder="Search"/>
@@ -65,7 +68,7 @@ function SerachTopFunds() {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-md-5 left'>
+                            <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
                                     <li className='fundlist'>
                                         <h5 className='time-period'>1M</h5>
@@ -81,7 +84,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='right col-md-5'>
+                            <div className='right col-xl-5 col-md-6'>
                             <ul className='fundlist-flex border-left'>
                                     <li className='fundlist text-center'>
                                         <h5 className='time-period'>1Y</h5>
@@ -97,7 +100,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='col-md-2'>
+                            <div className='col-xl-2 col-md-12'>
                                 <button type='button' className='btn-bg'>View Details</button>
                             </div>
                         </div>
@@ -116,7 +119,7 @@ function SerachTopFunds() {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-md-5 left'>
+                            <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
                                     <li className='fundlist'>
                                         <h5 className='time-period'>1M</h5>
@@ -132,7 +135,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='right col-md-5'>
+                            <div className='right col-xl-5 col-md-6'>
                             <ul className='fundlist-flex border-left'>
                                     <li className='fundlist text-center'>
                                         <h5 className='time-period'>1Y</h5>
@@ -148,7 +151,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='col-md-2'>
+                            <div className='col-xl-2 col-md-12'>
                                 <button type='button' className='btn-bg'>View Details</button>
                             </div>
                         </div>
@@ -167,7 +170,7 @@ function SerachTopFunds() {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-md-5 left'>
+                            <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
                                     <li className='fundlist'>
                                         <h5 className='time-period'>1M</h5>
@@ -183,7 +186,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='right col-md-5'>
+                            <div className='right col-xl-5 col-md-6'>
                             <ul className='fundlist-flex border-left'>
                                     <li className='fundlist text-center'>
                                         <h5 className='time-period'>1Y</h5>
@@ -199,7 +202,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='col-md-2'>
+                            <div className='col-xl-2 col-md-12'>
                                 <button type='button' className='btn-bg'>View Details</button>
                             </div>
                         </div>
@@ -218,7 +221,7 @@ function SerachTopFunds() {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-md-5 left'>
+                            <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
                                     <li className='fundlist'>
                                         <h5 className='time-period'>1M</h5>
@@ -234,7 +237,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='right col-md-5'>
+                            <div className='right col-xl-5 col-md-6'>
                             <ul className='fundlist-flex border-left'>
                                     <li className='fundlist text-center'>
                                         <h5 className='time-period'>1Y</h5>
@@ -250,7 +253,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='col-md-2'>
+                            <div className='col-xl-2 col-md-12'>
                                 <button type='button' className='btn-bg'>View Details</button>
                             </div>
                         </div>
@@ -269,7 +272,7 @@ function SerachTopFunds() {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-md-5 left'>
+                            <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
                                     <li className='fundlist'>
                                         <h5 className='time-period'>1M</h5>
@@ -285,7 +288,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='right col-md-5'>
+                            <div className='right col-xl-5 col-md-6'>
                             <ul className='fundlist-flex border-left'>
                                     <li className='fundlist text-center'>
                                         <h5 className='time-period'>1Y</h5>
@@ -301,7 +304,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='col-md-2'>
+                            <div className='col-xl-2 col-md-12'>
                                 <button type='button' className='btn-bg'>View Details</button>
                             </div>
                         </div>
@@ -320,7 +323,7 @@ function SerachTopFunds() {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-md-5 left'>
+                            <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
                                     <li className='fundlist'>
                                         <h5 className='time-period'>1M</h5>
@@ -336,7 +339,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='right col-md-5'>
+                            <div className='right col-xl-5 col-md-6'>
                             <ul className='fundlist-flex border-left'>
                                     <li className='fundlist text-center'>
                                         <h5 className='time-period'>1Y</h5>
@@ -352,7 +355,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='col-md-2'>
+                            <div className='col-xl-2 col-md-12'>
                                 <button type='button' className='btn-bg'>View Details</button>
                             </div>
                         </div>
@@ -371,7 +374,7 @@ function SerachTopFunds() {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-md-5 left'>
+                            <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
                                     <li className='fundlist'>
                                         <h5 className='time-period'>1M</h5>
@@ -387,7 +390,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='right col-md-5'>
+                            <div className='right col-xl-5 col-md-6'>
                             <ul className='fundlist-flex border-left'>
                                     <li className='fundlist text-center'>
                                         <h5 className='time-period'>1Y</h5>
@@ -403,7 +406,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='col-md-2'>
+                            <div className='col-xl-2 col-md-12'>
                                 <button type='button' className='btn-bg'>View Details</button>
                             </div>
                         </div>
@@ -422,7 +425,7 @@ function SerachTopFunds() {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-md-5 left'>
+                            <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
                                     <li className='fundlist'>
                                         <h5 className='time-period'>1M</h5>
@@ -438,7 +441,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='right col-md-5'>
+                            <div className='right col-xl-5 col-md-6'>
                             <ul className='fundlist-flex border-left'>
                                     <li className='fundlist text-center'>
                                         <h5 className='time-period'>1Y</h5>
@@ -454,7 +457,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='col-md-2'>
+                            <div className='col-xl-2 col-md-12'>
                                 <button type='button' className='btn-bg'>View Details</button>
                             </div>
                         </div>
@@ -473,7 +476,7 @@ function SerachTopFunds() {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-md-5 left'>
+                            <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
                                     <li className='fundlist'>
                                         <h5 className='time-period'>1M</h5>
@@ -489,7 +492,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='right col-md-5'>
+                            <div className='right col-xl-5 col-md-6'>
                             <ul className='fundlist-flex border-left'>
                                     <li className='fundlist text-center'>
                                         <h5 className='time-period'>1Y</h5>
@@ -505,7 +508,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='col-md-2'>
+                            <div className='col-xl-2 col-md-12'>
                                 <button type='button' className='btn-bg'>View Details</button>
                             </div>
                         </div>
@@ -524,7 +527,7 @@ function SerachTopFunds() {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-md-5 left'>
+                            <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
                                     <li className='fundlist'>
                                         <h5 className='time-period'>1M</h5>
@@ -540,7 +543,7 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='right col-md-5'>
+                            <div className='right col-xl-5 col-md-6'>
                             <ul className='fundlist-flex border-left'>
                                     <li className='fundlist text-center'>
                                         <h5 className='time-period'>1Y</h5>
@@ -556,10 +559,45 @@ function SerachTopFunds() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='col-md-2'>
+                            <div className='col-xl-2 col-md-12'>
                                 <button type='button' className='btn-bg'>View Details</button>
                             </div>
                         </div>
+                    </div>
+                    <span className='bg-before'></span>
+                    <div className='wrapper'>
+                        <ul className='pagination-sec'>
+                            <li>
+                                <a class="" href="#">
+                                    <LazyLoader src={PreSingleArrow} className="img-fluid" width={20} height={29}></LazyLoader>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="" href="#">
+                                    <LazyLoader src={PreDobbleArrow} className="img-fluid" width={25} height={29}></LazyLoader>
+                                </a>
+                            </li>
+                            <li>
+                                <ul className="pagination">
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#" class="active">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                </ul> 
+                            </li>
+                            <li>
+                                <a class="" href="#">
+                                    <LazyLoader src={NextDobbleArrow} className="img-fluid" width={25} height={29}></LazyLoader>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="" href="#">
+                                    <LazyLoader src={NextSingleArrow} className="img-fluid" width={20} height={29}></LazyLoader>
+                                </a>
+                            </li>
+                        </ul>
+                       
                     </div>
                 </div>
             </div>
