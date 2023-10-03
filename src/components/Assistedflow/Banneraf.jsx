@@ -679,7 +679,7 @@ function Banneraf() {
       .catch((error) => {
         setLoaders({ ...loaders, verifyLoader: false });
         setErrors(() =>
-          error.message ? error.message : "Something Went Wrong"
+          error.response.data.Message ? error.response.data.Message : "Something Went Wrong"
         );
         console.log(error);
       });
