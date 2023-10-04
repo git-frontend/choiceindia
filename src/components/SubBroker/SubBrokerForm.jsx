@@ -65,7 +65,7 @@ function SubBrokerForm(props) {
     const [showOTP, setShowOTP] = useState(false);
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
-    const isBlog=(window.location.pathname.indexOf('blog') > -1)|| (window.location.pathname.indexOf('campaign/sub-broker-franchise') > -1) ? 'yes':'';
+    const isBlog=(window.location.pathname.indexOf('blog') > -1)? 'yes':'';
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
     const noDataLabel ="City not found. Select 'Other'";
