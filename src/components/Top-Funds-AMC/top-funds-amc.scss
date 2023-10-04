@@ -17,14 +17,6 @@
             color: $primary;
             font-size: 1.75rem;
             line-height: 1.5;
-            &.p-yl{
-                font-family: $font-family-poppins-semibold;
-                color: $yellowColor;
-                margin-top: 5rem;
-                @media (max-width: $sm) {
-                    margin-top: 2.5rem;
-                }
-            }
             @media (max-width: $sm) {
                 br{
                     display: none;
@@ -38,22 +30,6 @@
     @media (max-width: $sm) {
         text-align: center;
         padding: 5rem 0 5rem 0;
-    }
-    .home-banner-ved{
-        position: relative;
-        overflow: hidden;
-        &::before{
-            content: "";
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: absolute;
-            background: transparent;
-        }
-        .banner-ved{
-            position: relative;
-            right: -1px;
-        }
     }
 }
 .search-funds-sec{
@@ -152,6 +128,7 @@
     background: $abt-bg;
     .title-first{
         text-align: center;
+        margin-bottom: 2rem;
         span{
             color: $yellowColor;
         }

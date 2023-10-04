@@ -1,0 +1,121 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.funds-bannersection{
+    padding: 7rem 0 6rem 0;
+    background: url(../../assets/images/amc-details/banner-elss.webp) no-repeat center;
+    background-size: cover;
+}
+.more-content-sec{
+    padding: 6rem 0;
+    background: $abt-bg;
+    .title-first{
+        text-align: left;
+        margin-bottom: 2rem;
+        span{
+            color: $yellowColor;
+        }
+    }
+    .seo-para{
+        font-family: $font-family-poppins-medium;
+        font-weight: 500;
+        color: $primary;
+    }
+    .table-sec{
+        background-color: $bg-sky;
+        padding: 2rem 5rem;
+        overflow-x: auto;
+        margin-bottom: 2rem;
+        @media (max-width:$sm) {
+            padding: 2rem 0;
+        }
+        .table-sub-heading{
+            font-family: $font-family-poppins-medium;
+            font-weight: 500;
+            color: $primary;
+            padding-left: 2rem;
+        }
+        .table{
+            >:not(caption)>*>* {
+                padding: 1rem 2rem;
+                border-right-width: 2px;
+                border-bottom-width: inherit;
+                &:last-child{
+                    border-right-width: 0;
+                }
+            }
+            tbody{
+                td{
+                    border-color: $primary;
+                    font-family: $font-family-poppins-medium;
+                    font-weight: 500;
+                    color: $primary;
+                    &:first-child {
+                        @media (max-width:$sm) {
+                            position: sticky;
+                            left: 0;
+                            background-color: $bg-sky;
+                        }
+                      }
+                }
+            }
+        }
+    }
+}
+
+.Dematfaq {
+	padding: 9rem 0;
+	background-color: $whiteColor ;
+	.title-first {
+		margin-bottom: 2rem;
+        span{
+            color: $yellowColor;
+        }
+	}
+
+	.faq-item {
+		border: 1px solid $lightgray !important;
+		border-radius: 20px;
+		background: $whiteColor;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			.accordion-button{
+				font-family: $font-family-poppins-semibold;
+				color: $primary;
+				font-size: 2rem;
+				@media (max-width:$sm) {
+					font-size: 1.75rem;
+				}
+			}
+			
+			
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+	@media (max-width:$xs) {
+		padding: 5rem 0;
+	}
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import {
@@ -591,7 +592,9 @@ function Holidayscategory() {
                 </div>
               </div>
             </section>
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
             <OpenDemateAccountStickyFooter />
+            </GoogleReCaptchaProvider>
             <section className="readmoresection holiday-readmore">
               <div className="container">
 
