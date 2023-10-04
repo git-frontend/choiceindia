@@ -151,6 +151,7 @@ function ETF() {
           skeleton ?
             <Template2 />
             :
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
         <main>
         
             <section className="bannersection etf-banner">
@@ -745,9 +746,9 @@ function ETF() {
               </section>
 
               <section className="stickybottom">
-              <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
+              
                 <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
-                </GoogleReCaptchaProvider>
+                
 
               </section>
               <div className={name}>
@@ -756,6 +757,7 @@ function ETF() {
                 </div> 
               </div>
             </main>
+            </GoogleReCaptchaProvider>
         }
       </div>
 
