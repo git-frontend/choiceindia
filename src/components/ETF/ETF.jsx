@@ -3,6 +3,7 @@ import "./css/landingpage.scss";
 import img_data from './ImgData.js';
 import DematAccountForm from "../Common-features/DematAccountForm";
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Template2 from "../Common-features/Template2";
 import { useLocation } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
@@ -150,6 +151,7 @@ function ETF() {
           skeleton ?
             <Template2 />
             :
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
         <main>
         
             <section className="bannersection etf-banner">
@@ -744,7 +746,9 @@ function ETF() {
               </section>
 
               <section className="stickybottom">
+              
                 <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
+                
 
               </section>
               <div className={name}>
@@ -753,6 +757,7 @@ function ETF() {
                 </div> 
               </div>
             </main>
+            </GoogleReCaptchaProvider>
         }
       </div>
 
