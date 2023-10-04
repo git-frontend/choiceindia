@@ -5,6 +5,7 @@ import Banner from './Banner';
 import SerachELSSDetails from './SerachELSSDetails';
 import MoreContent from './MoreContent';
 import Faq from './Faqs';
+import FixedSection from './FixedForm';
 function ELSSDetails() {
   return (
     <div>
@@ -12,6 +13,7 @@ function ELSSDetails() {
         <SerachELSSDetails/>
         <MoreContent/>
         <Faq/>
+        {/* <FixedSection/> */}
     </div>
   )
 }
