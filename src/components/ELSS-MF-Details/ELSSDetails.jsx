@@ -4,12 +4,14 @@ import "./elss-details.scss";
 import Banner from './Banner';
 import SerachELSSDetails from './SerachELSSDetails';
 import MoreContent from './MoreContent';
+import Faq from './Faqs';
 function ELSSDetails() {
   return (
     <div>
         <Banner/>
         <SerachELSSDetails/>
         <MoreContent/>
+        <Faq/>
     </div>
   )
 }

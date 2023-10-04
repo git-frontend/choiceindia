@@ -42,12 +42,8 @@ function MoreContent() {
                         <h2 className='title-first'><span>Comparison</span> between ELSS Funds and Other Tax-Saving Options</h2>
                         <p className='seo-para'>We will start with the comparison of the lock-in periods of other tax-saving instruments,</p>
                         <div className='table-sec'>
+                          <p className='table-sub-heading'>Tax Saving Investment Instruments</p>
                           <table className='table'> 
-                            <thead>
-                              <tr>
-                                <td colSpan={4}>Tax Saving Investment Instruments</td>
-                              </tr>
-                            </thead>
                             <tbody>
                               <tr>
                                 <td>Instrument</td>
@@ -94,6 +90,17 @@ function MoreContent() {
                             </tbody>
                           </table>
                         </div>
+                        <h2 className='title-first'><span>Benefits</span> compared with other tax-saving options,</h2>
+                        <p className='seo-para'>Lowest Lock-in</p>
+                        <p className='seo-para'>Short Lock-in period of 3 years <br/>Great 2X Returns!</p>
+                        <p className='seo-para'>High ROI (Return on Investment) due to exposure to equity markets.<br/>Multiple Tax Benefits</p>
+                        <p className='seo-para'>Tax benefits over investments of Rs.1,50,000 under Section 80C of Income Tax Act<br/>Financial Discipline</p>
+                        <p className='seo-para'>Inculcates financial discipline via SIP investments. Flexibility for Lumpsum investments too.<br/>Beat Inflation</p>
+                        <p className='seo-para'>Protection against Inflation since exposure to equity markets<br/>Power of Compounding</p>
+                        <p className='seo-para'>Can keep investing for more than 3 years also, this in fact can lead to higher returns due to power of <br/>compounding<br/>Less Volatility</p>
+                        <p className='seo-para'>ELSS investments have historically shown to be less volatile</p>
+                        <h2 className='title-first'>Why Invest in ELSS Mutual funds with <span>Choice</span></h2>
+                        <p className='seo-para'>Choice is a ‘Complete Mutual Fund’ investment app. We offer you both options of Regular or Direct investment plan for no fees. You get our research as well. The convenience of investing through Choice Finx has been experienced by many users and we are committed to making your investment journey fruitful. Please have a look at the features and you will see why Choice makes investing, ‘A Joy of Earning’.</p>
                 </div>
             </div>
         </div>
