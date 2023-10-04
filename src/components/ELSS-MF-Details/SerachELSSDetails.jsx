@@ -56,7 +56,7 @@ function SerachTopFunds() {
                 <div className='col-md-12'>
                     <div className='card'>
                         <div className='row d-flex justify-content-between'>
-                           <h3>Axis Long Term Equity Fund - Direct Plan Growth</h3>
+                           <h3>Quant Tax Plan Growth</h3>
                            <div className='start-rating'></div>
                         </div>
                         <div className='row'>
@@ -107,7 +107,7 @@ function SerachTopFunds() {
                     </div>
                     <div className='card'>
                         <div className='row d-flex justify-content-between'>
-                           <h3>Aditya Birla Sun Life ELSS Tax Relief 96 - Direct Plan Growth</h3>
+                           <h3>Bandhan Tax Advantage (ELSS) Fund Growth</h3>
                            <div className='start-rating'></div>
                         </div>
                         <div className='row'>
@@ -158,7 +158,7 @@ function SerachTopFunds() {
                     </div>
                     <div className='card'>
                         <div className='row d-flex justify-content-between'>
-                           <h3>Kotak Flexicap Fund - Direct Plan Growth</h3>
+                           <h3>SBI Long Term Equity Fund Growth</h3>
                            <div className='start-rating'></div>
                         </div>
                         <div className='row'>
@@ -209,7 +209,7 @@ function SerachTopFunds() {
                     </div>
                     <div className='card'>
                         <div className='row d-flex justify-content-between'>
-                           <h3>Mirae Asset Large Cap Fund - Direct Plan Growth</h3>
+                           <h3>Kotak Tax Saver Fund - Growth</h3>
                            <div className='start-rating'></div>
                         </div>
                         <div className='row'>
@@ -260,7 +260,7 @@ function SerachTopFunds() {
                     </div>
                     <div className='card'>
                         <div className='row d-flex justify-content-between'>
-                           <h3>Bandhan Core Equity Fund - Direct Plan Growth</h3>
+                           <h3>Canara Robeco Equity Tax Saver Growth</h3>
                            <div className='start-rating'></div>
                         </div>
                         <div className='row'>
@@ -311,7 +311,7 @@ function SerachTopFunds() {
                     </div>
                     <div className='card'>
                         <div className='row d-flex justify-content-between'>
-                           <h3>Mirae Asset Emerging Bluechip Fund - Direct Plan Growth</h3>
+                           <h3>HDFC TaxSaver - Growth</h3>
                            <div className='start-rating'></div>
                         </div>
                         <div className='row'>
@@ -362,7 +362,7 @@ function SerachTopFunds() {
                     </div>
                     <div className='card'>
                         <div className='row d-flex justify-content-between'>
-                           <h3>ICICI Prudential Bluechip Fund - Direct Plan Growth</h3>
+                           <h3>Motilal Oswal Long Term Equity Fund Growth</h3>
                            <div className='start-rating'></div>
                         </div>
                         <div className='row'>
@@ -413,7 +413,7 @@ function SerachTopFunds() {
                     </div>
                     <div className='card'>
                         <div className='row d-flex justify-content-between'>
-                           <h3>Nippon India Large Cap Fund - Direct Plan Growth</h3>
+                           <h3>Mirae Asset Tax Saver Fund Growth</h3>
                            <div className='start-rating'></div>
                         </div>
                         <div className='row'>
@@ -464,7 +464,7 @@ function SerachTopFunds() {
                     </div>
                     <div className='card'>
                         <div className='row d-flex justify-content-between'>
-                           <h3>HDFC Mid-Cap Opportunities Fund - Direct Plan Growth</h3>
+                           <h3>Parag Parikh Tax Saver Fund Growth</h3>
                            <div className='start-rating'></div>
                         </div>
                         <div className='row'>
@@ -515,7 +515,7 @@ function SerachTopFunds() {
                     </div>
                     <div className='card'>
                         <div className='row d-flex justify-content-between'>
-                           <h3>HSBC Midcap Fund - Direct Plan Growth</h3>
+                           <h3>DSP Tax Saver Fund Growth</h3>
                            <div className='start-rating'></div>
                         </div>
                         <div className='row'>

@@ -193,6 +193,7 @@ const LazyTopFundsAMC =React.lazy(()=> import('./components/Top-Funds-AMC/TopFun
 const LazyTopFundsIndia =React.lazy(()=> import('./components/Top-Funds-India/TopFundsIndia'));
 const LazyMFDetails =React.lazy(()=> import('./components/Mf-Details/MFDetails'));
 const LazyAMCDetails =React.lazy(()=> import('./components/AMC-Details/AMCDetails'));
+const LazyELSSDetails =React.lazy(()=> import('./components/ELSS-MF-Details/ELSSDetails'));
 
 function Routing() {
 
@@ -1012,6 +1013,11 @@ function Routing() {
                          <Route exact path='/mf/amc-details' element={
                             <React.Suspense>
                                 < LazyAMCDetails />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/mf/elss-mutual-funds' element={
+                            <React.Suspense>
+                                < LazyELSSDetails />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />

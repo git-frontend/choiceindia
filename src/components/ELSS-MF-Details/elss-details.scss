@@ -1,0 +1,46 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.funds-bannersection{
+    padding: 7rem 0 6rem 0;
+    background: url(../../assets/images/amc-details/banner-elss.webp) no-repeat center;
+    background-size: cover;
+}
+.more-content-sec{
+    padding: 6rem 0;
+    background: $abt-bg;
+    .title-first{
+        text-align: left;
+        margin-bottom: 2rem;
+        span{
+            color: $yellowColor;
+        }
+    }
+    .seo-para{
+        font-family: $font-family-poppins-medium;
+        font-weight: 500;
+        color: $primary;
+    }
+    .table-sec{
+        background-color: $bg-sky;
+        padding: 2rem 5rem;
+        .table{
+            >:not(caption)>*>* {
+                padding: 0.5rem 2rem;
+                border-right-width: 2px;
+                border-bottom-width: inherit;
+                &:last-child{
+                    border-right-width: 0;
+                }
+            }
+            thead, tbody{
+                td{
+                    border-color: $primary;
+                    font-family: $font-family-poppins-medium;
+                    font-weight: 500;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
