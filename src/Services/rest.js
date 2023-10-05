@@ -19,40 +19,40 @@ const rest = {
     }
   },
 
-expertReportData: function (postdata) {
+  expertReportData: function (postdata) {
 
     let api = new API_URLS()
     let url = api.fetchResearchReportURL()
-   // console.log("url",url)
+    // console.log("url",url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-       // console.log("datas",data)
-        return data
+      // console.log("datas",data)
+      return data
     })
-},
+  },
 
 
-signalReportData: function (postdata) {
+  signalReportData: function (postdata) {
 
     let api = new API_URLS()
     let url = api.fetchSignalReportURL()
-  //  console.log("url",url)
+    //  console.log("url",url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-     //   console.log("datas",data)
-        return data
+      //   console.log("datas",data)
+      return data
     })
-},
-multipleTokensURLData: function (postdata) {
+  },
+  multipleTokensURLData: function (postdata) {
 
     let api = new API_URLS()
     let url = api.getMultipletokens()
-  //  console.log("url",url)
+    //  console.log("url",url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-    //    console.log("datas",data)
-        return data
+      //    console.log("datas",data)
+      return data
     })
-},
+  },
 
- getUserId() {
+  getUserId() {
     let userId = this.storage.retrieve('userId');
     if (userId) {
       userId = this.decryptText(userId)
@@ -64,10 +64,10 @@ multipleTokensURLData: function (postdata) {
   IpAddress: function () {
     let api = new API_URLS()
     let url = api.getIpaddressURL()
-    return axios.get(url).then(({data})=>{
+    return axios.get(url).then(({ data }) => {
       return data
     })
-    },
+  },
 
   NACHCancellation: function (request) {
     let api = new API_URLS()
@@ -75,63 +75,81 @@ multipleTokensURLData: function (postdata) {
     let ipAddress = request.ip
     return axios.post(url, request, {
       headers: {
-        'x-api-key': this.getCryptoNACHKey(),
+        'x-api-key': 'B62664943BAA286B21C66BA9A614D',
         'Content-Type': 'application/json;charset=UTF-8',
-        'Accept': '*/*',
-        'ip':ipAddress
+        'Accept':'application/json',
+        'ip': ipAddress
 
       }
     });
-},
-EventDetails: function (postdata) {
+  },
+  EventDetails: function (postdata) {
 
-  let api = new API_URLS()
-  let url = api.getEventDetails()
- // console.log("url",url)
-  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-    //  console.log("event details",data)
+    let api = new API_URLS()
+    let url = api.getEventDetails()
+    // console.log("url",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("event details",data)
       return data
-  })
-},
-getSearchData: function (postdata) {
+    })
+  },
+  getSearchData: function (postdata) {
 
-  let api = new API_URLS()
-  let url = api.getSearchURL()
-//  console.log("url",url)
-  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+    let api = new API_URLS()
+    let url = api.getSearchURL()
+    //  console.log("url",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       return data
-  })
-},
-getScripDetails: function (postdata) {
+    })
+  },
+  getScripDetails: function (postdata) {
 
-  let api = new API_URLS()
-  let url = api.getScripDetURL()
-//  console.log("url",url)
-  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-    //  console.log("datads",data)
+    let api = new API_URLS()
+    let url = api.getScripDetURL()
+    //  console.log("url",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
       return data
-  })
-},
-getScripBrokerageURL: function (postdata) {
+    })
+  },
+  getScripBrokerageURL: function (postdata) {
 
-  let api = new API_URLS()
-  let url = api.getScripBrokerageURL()
-//  console.log("url",url)
-  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-    //  console.log("datads",data)
+    let api = new API_URLS()
+    let url = api.getScripBrokerageURL()
+    //  console.log("url",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
       return data
-  })
-},
-getOISpurtsData: function (postdata) {
+    })
+  },
+  getOISpurtsData: function (postdata) {
 
-  let api = new API_URLS()
-  let url = api.getOISpurtsURL()
-//  console.log("url",url)
-  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-    //  console.log("getOISpurtsURL",data)
+    let api = new API_URLS()
+    let url = api.getOISpurtsURL()
+    //  console.log("url",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("getOISpurtsURL",data)
       return data
-  })
-}
+    })
+  },
+  getMarginCalculatorData: function (segmentId, token_qty) {
+    const api = new API_URLS();
+    const url = api.getMarginCalculatorURL(segmentId, token_qty);
+    const headers = {
+      'x-api-key':'B62664943BAA286B21C66BA9A614D',
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    };
+
+    return axios.get(url, { headers }) 
+      .then(({ data }) => {
+        return data;
+      })
+      .catch((error) => {
+        console.error('Error fetching margin calculator data:', error);
+        throw error;
+      });
+  },
 
 
 }

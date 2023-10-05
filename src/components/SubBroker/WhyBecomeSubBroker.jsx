@@ -7,8 +7,8 @@ function WhyBecomeSubBroker () {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-10 col-md-12">
-                            <h2 className="ttl-wht">Why Become a Choice Sub Broker?</h2>
-                            <p className="sml-para-dv">As a SEBI Sub Broker, you can be a part of the well-known and respected Choice group. Register with any Stock Exchange (NSE/BSE) and be a Sub Broker in the Stock Market with a reputed brand.</p>
+                            <h2 className="ttl-wht">Why Be a Choice Sub Broker?</h2>
+                            <p className="sml-para-dv">Team up with a respected brand in the financial industry. As a SEBI sub broker, you'll be a part of the esteemed Choice group. We are proud to have:</p>
                         </div>
                     </div>
                     <div className="row justify-content-center">

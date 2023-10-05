@@ -8,6 +8,8 @@ import Channels from '../../assets/images/sub-broker/dedicated-whatsapp-and-tele
 import Training from '../../assets/images/sub-broker/sub-broker-training-through-webinars-and-conferences.svg';
 import Trading from '../../assets/images/sub-broker/cutting-edge-trading-platforms-app-web.svg';
 import Transport from '../../assets/images/sub-broker/transparent-and-growth-oriented-business-model.svg';
+import Payouts from '../../assets/images/sub-broker/sub-broking-franchise-with-timely-payouts.svg';
+
 import { useState ,useEffect} from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from 'react-router-dom';
@@ -75,7 +77,7 @@ function SubBrokerBenifits() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="titl3">Sub Broker Benefits</h2>
+                            <h2 className="titl3">Sub Broker Franchise Benefits</h2>
                         </div>
                     </div>
                     <div className="row relative">
@@ -88,18 +90,18 @@ function SubBrokerBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                             {/* <LazyLoader src={Manager} alt={"Sub broker franchise with local RM assistance"} className={"img-fluid franchise-img"} width={"74"} height={"73"} /> */}
-                                            <img src={Manager} alt="Sub broker franchise with local RM assistance" className="img-fluid" width="74" height="73" />
+                                            <img src={Manager} alt="Sub Broker Franchise with Dedicated Support" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Local Relationship Manager Assistance</h4>
+                                        <h4>Dedicated Franchise Support</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
                                         {/* <LazyLoader src={Software} alt={"Advanced software to manage stock broker franchise business"} className={"img-fluid"} width={"74"} height={"73"} /> */}
-                                            <img src={Software} alt="Advanced software to manage stock broker franchise business" className="img-fluid" width="74" height="73" />
+                                            <img src={Payouts} alt="Sub Broking Franchise with Timely Payouts" className="img-fluid" width="60" height="73" />
                                         </span>
-                                        <h4>Advanced Software to Manage Business</h4>
+                                        <h4>Timely Payouts</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -108,7 +110,7 @@ function SubBrokerBenifits() {
                                         {/* <LazyLoader src={Sales} alt={"Become a sub broker with marketing & sales support"} className={"img-fluid"} width={"74"} height={"73"} /> */}
                                             <img src={Sales} alt="Become a sub broker with marketing &amp; sales support" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Marketing &amp; Sales Support</h4>
+                                        <h4>Advanced Software</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -117,7 +119,7 @@ function SubBrokerBenifits() {
                                         {/* <LazyLoader src={Channels} alt={"Become a sub broker with dedicated whatsapp & telegram channels"} className={"img-fluid"} width={"74"} height={"73"} /> */}
                                             <img src={Channels} alt="Become a sub broker with dedicated whatsapp &amp; telegram channels" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Dedicated WhatsApp &amp; Telegram Channels</h4>
+                                        <h4>Marketing &amp; Sales Support</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -126,7 +128,7 @@ function SubBrokerBenifits() {
                                             {/* <LazyLoader src={Training} alt={"Sub broker training through webinars and conferences"} className={"img-fluid"} width={"74"} height={"73"} /> */}
                                             <img src={Training} alt="Sub broker training through webinars and conferences" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Training through Webinars &amp; Conferences</h4>
+                                        <h4>Local Relationship Manager</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -135,7 +137,7 @@ function SubBrokerBenifits() {
                                             {/* <LazyLoader src={Trading} alt={"Sub broker franchise with cutting-edge trading platforms"} className={"img-fluid"} width={"74"} height={"73"} /> */}
                                             <img src={Trading} alt="Sub broker franchise with cutting-edge trading platforms" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Cutting-edge Trading Platforms (App &amp; Web)</h4>
+                                        <h4>Training Support</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -144,7 +146,7 @@ function SubBrokerBenifits() {
                                             {/* <LazyLoader src={Transport} alt={"Sub brokership with transparent & growth-oriented business model"} className={"img-fluid"} width={"74"} height={"73"} /> */}
                                             <img src={Transport} alt="Sub brokership with transparent &amp; growth-oriented business model" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Transparent &amp; Growth-oriented Business Model</h4>
+                                        <h4>Cutting-edge Trading Platforms</h4>
                                     </div>
                                 </div>
                             </Slider>
@@ -155,9 +157,18 @@ function SubBrokerBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                             {/* <LazyLoader src={Manager} alt={"Sub broker franchise with local RM assistance"} className={"img-fluid"} width={"74"} height={"73"} /> */}
-                                            <img src={Manager} alt="Sub broker franchise with local RM assistance" className="img-fluid" width="74" height="73" />
+                                            <img src={Manager} alt="Sub Broker Franchise with Dedicated Support" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Local Relationship Manager Assistance</h4>
+                                        <h4>Dedicated Franchise Support</h4>
+                                    </div>
+                                </div>
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
+                                    <div className="benifits-item">
+                                        <span>
+                                        {/* <LazyLoader src={Software} alt={"Advanced software to manage stock broker franchise business"} className={"img-fluid"} width={"74"} height={"73"} /> */}
+                                            <img src={Payouts} alt="Sub Broking Franchise with Timely Payouts" className="img-fluid" width="60" height="73" />
+                                        </span>
+                                        <h4>Timely Payouts</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -166,7 +177,7 @@ function SubBrokerBenifits() {
                                         {/* <LazyLoader src={Software} alt={"Advanced software to manage stock broker franchise business"} className={"img-fluid"} width={"74"} height={"73"} /> */}
                                             <img src={Software} alt="Advanced software to manage stock broker franchise business" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Advanced Software to Manage Business</h4>
+                                        <h4>Advanced Software</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -184,7 +195,7 @@ function SubBrokerBenifits() {
                                         {/* <LazyLoader src={Channels} alt={"Become a sub broker with dedicated whatsapp & telegram channels"} className={"img-fluid"} width={"74"} height={"73"} /> */}
                                             <img src={Channels} alt="Become a sub broker with dedicated whatsapp &amp; telegram channels" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Dedicated WhatsApp &amp; Telegram Channels</h4>
+                                        <h4>Local Relationship Manager</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -193,7 +204,7 @@ function SubBrokerBenifits() {
                                             {/* <LazyLoader src={Training} alt={"Sub broker training through webinars and conferences"} className={"img-fluid"} width={"74"} height={"73"} /> */}
                                             <img src={Training} alt="Sub broker training through webinars and conferences" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Training through Webinars &amp; Conferences</h4>
+                                        <h4>Training Support</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -202,7 +213,7 @@ function SubBrokerBenifits() {
                                             {/* <LazyLoader src={Trading} alt={"Sub broker franchise with cutting-edge trading platforms"} className={"img-fluid"} width={"74"} height={"73"} /> */}
                                             <img src={Trading} alt="Sub broker franchise with cutting-edge trading platforms" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Cutting-edge Trading Platforms (App &amp; Web)</h4>
+                                        <h4>Cutting-edge Trading Platforms</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -211,7 +222,7 @@ function SubBrokerBenifits() {
                                             {/* <LazyLoader src={Transport} alt={"Sub brokership with transparent & growth-oriented business model"} className={"img-fluid"} width={"74"} height={"73"} /> */}
                                             <img src={Transport} alt="Sub brokership with transparent &amp; growth-oriented business model" className="img-fluid" width="74" height="73" />
                                         </span>
-                                        <h4>Transparent &amp; Growth-oriented Business Model</h4>
+                                        <h4>Become a Choice Sub Broker</h4>
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +231,7 @@ function SubBrokerBenifits() {
                              </div>
                             <div className="item-next1">  
                                 <h3>Become a Choice Sub Broker</h3>
-                                <p>Start Sub Broker franchise with a trustworthy partner that can help you to grow up.</p>
+                                <p>Get your sub broking franchise with a partner that puts your best interest at heart.</p>
                                 <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </Link>
                             </div>
                         </div>

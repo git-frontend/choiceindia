@@ -8,6 +8,7 @@ import WhoEligibleToSubBroker from './WhoEligibleToSubBroker';
 import MoreContent from './MoreContent';
 import SubBrokerOffersC from './SubBrokerOffersC';
 import SubBrokerOffers from './SubBrokerOffers';
+import SubBrokerFaqs from './SubBrokerFaqs';
 import Template5 from '../Common-features/Template5';
 import "./subbroker.scss";
 import {
@@ -109,8 +110,10 @@ function SubBroker() {
             <SubBrokerSellMore />
             <WhyBecomeSubBroker />
             <WhoEligibleToSubBroker />
+            
             {/* <SubBrokerOffers /> */}
             <SubBrokerOffersC />
+            <SubBrokerFaqs />
             <MoreContent />
           </div>
     </div>

@@ -36,7 +36,7 @@ function MoreContent() {
                                 <li>Mark to-market margin</li>
                             </ul>
                             <p>Within the F&O market, the types of margins are:</p>
-                            <ul className='mrg-3'>
+                            <ul className='mrg-3 mb-2'>
                                 <li>Initial margin</li>
                                 <li>Exposure margin</li>
                             </ul>
