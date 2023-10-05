@@ -321,6 +321,8 @@ Select{
 	border-radius: 12px;
 }
 
-.sub-term{
-    z-index: 999999999999 !important;
+.modal{
+    &.sub-term{
+        z-index: 999999999999 !important;
+    }
 }
