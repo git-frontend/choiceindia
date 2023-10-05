@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Form from 'react-bootstrap/Form';
 
@@ -17,6 +17,15 @@ function MfCalculator() {
     const onToggleChange = () => {
         setExchangeToggle(!exchangeToggle);
     };
+
+
+    const [value,onChange]=useState(0);
+    useEffect(()=>{
+        const ele = document.querySelector('.buble');
+    //   if (ele) {
+    //     ele.style.left = `${Number(value / 4)}px`;
+    //   }
+    })
 
   return (
     <>
@@ -53,7 +62,7 @@ function MfCalculator() {
                                     <div className='invst-amt-hirizon'>
                                         <div className='form-lft'>
                                             <Form autoComplete="off">
-                                                <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
+                                                <Form.Group className="formgrp" controlId="formBasicEmail">
                                                 <Form.Label className="formlabel">Enter Amount you Want to Invest </Form.Label>
                                                 <div className='amt-enter'>
                                                     <Form.Control type="text" name="firstName" value='500'  className="formcontrol" />
@@ -63,6 +72,30 @@ function MfCalculator() {
                                             </Form>
                                         </div>
                                         <div className='horizon-slider'>
+                                            <div className='row align-items-center'>
+                                                <div className='col-md-8'>
+                                                <div class="slidecontainer">
+                                                    <h6>Investment Horizon</h6>
+                                                    <div class="middle">
+                                                        <div class="slider-container">
+                                                            <span class="bar">
+                                                                <span class="fill" style={{width : `${value}%`}}></span>
+                                                            </span>
+                                                            <input type="range" className="slider" id="myRange" min="0" max="100" value={value}
+                                                                onChange={({ target: { value: radius } }) => {
+                                                                    onChange(radius);
+                                                                }}/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div className='col-md-4'>
+                                                    <div className='float-right'>
+                                                            <span>4Yr</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
                                             
                                         </div>
                                     </div>
