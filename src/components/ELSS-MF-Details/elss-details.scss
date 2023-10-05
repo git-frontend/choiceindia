@@ -27,7 +27,6 @@
     .table-sec{
         background-color: $bg-sky;
         padding: 2rem 5rem;
-        overflow-x: auto;
         margin-bottom: 2rem;
         @media (max-width:$md) {
             padding: 2rem 1rem;
@@ -41,6 +40,10 @@
             color: $primary;
             padding-left: 2rem;
         }
+        .table-scrollble{
+            @media (max-width:$sm) {
+                overflow-x: scroll;
+            }
         .table{
             >:not(caption)>*>* {
                 padding: 1rem 2rem;
@@ -56,17 +59,23 @@
                     font-family: $font-family-poppins-medium;
                     font-weight: 500;
                     color: $primary;
+                    @media (max-width:$sm) {
+                        white-space: nowrap;
+                    }
                     &:first-child {
                         @media (max-width:$sm) {
                             position: sticky;
                             left: 0;
                             background-color: $bg-sky;
+                            min-width: 18rem;
+                            white-space: inherit;
                         }
                       }
                 }
             }
         }
     }
+}
 }
 
 .Dematfaq {

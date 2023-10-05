@@ -43,52 +43,54 @@ function MoreContent() {
                         <p className='seo-para'>We will start with the comparison of the lock-in periods of other tax-saving instruments,</p>
                         <div className='table-sec'>
                           <p className='table-sub-heading'>Tax Saving Investment Instruments</p>
+                         <div className='table-scrollble'>
                           <table className='table'> 
-                            <tbody>
-                              <tr>
-                                <td>Instrument</td>
-                                <td>Lock-in Period</td>
-                                <td>Returns</td>
-                                <td>Tax on Returns</td>
-                              </tr>
-                              <tr>
-                                <td>ELSS Mutual Funds</td>
-                                <td>3 years</td>
-                                <td>15 - 18%</td>
-                                <td>Partially Taxable</td>
-                              </tr>
-                              <tr>
-                                <td>Endowment Plans or ULIPs</td>
-                                <td>5 years</td>
-                                <td>7 - 10%</td>
-                                <td>No</td>
-                              </tr>
-                              <tr>
-                                <td>Fixed Deposits</td>
-                                <td>5 years</td>
-                                <td>6 - 7%</td>
-                                <td>Yes</td>
-                              </tr>
-                              <tr>
-                                <td>PPF</td>
-                                <td>15 years</td>
-                                <td>7 - 8%</td>
-                                <td>No</td>
-                              </tr>
-                              <tr>
-                                <td>National Savings Certificate (NSC)</td>
-                                <td>5 years</td>
-                                <td>7 - 8%</td>
-                                <td>Yes</td>
-                              </tr>
-                              <tr>
-                                <td>National Pension System (NPS)</td>
-                                <td>Until Retirement</td>
-                                <td>8 - 10%</td>
-                                <td>Partially Taxable</td>
-                              </tr>
-                            </tbody>
-                          </table>
+                              <tbody>
+                                <tr>
+                                  <td>Instrument</td>
+                                  <td>Lock-in Period</td>
+                                  <td>Returns</td>
+                                  <td>Tax on Returns</td>
+                                </tr>
+                                <tr>
+                                  <td>ELSS Mutual Funds</td>
+                                  <td>3 years</td>
+                                  <td>15 - 18%</td>
+                                  <td>Partially Taxable</td>
+                                </tr>
+                                <tr>
+                                  <td>Endowment Plans or ULIPs</td>
+                                  <td>5 years</td>
+                                  <td>7 - 10%</td>
+                                  <td>No</td>
+                                </tr>
+                                <tr>
+                                  <td>Fixed Deposits</td>
+                                  <td>5 years</td>
+                                  <td>6 - 7%</td>
+                                  <td>Yes</td>
+                                </tr>
+                                <tr>
+                                  <td>PPF</td>
+                                  <td>15 years</td>
+                                  <td>7 - 8%</td>
+                                  <td>No</td>
+                                </tr>
+                                <tr>
+                                  <td>National Savings Certificate (NSC)</td>
+                                  <td>5 years</td>
+                                  <td>7 - 8%</td>
+                                  <td>Yes</td>
+                                </tr>
+                                <tr>
+                                  <td>National Pension System (NPS)</td>
+                                  <td>Until Retirement</td>
+                                  <td>8 - 10%</td>
+                                  <td>Partially Taxable</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                         </div>
                         </div>
                         <h2 className='title-first'><span>Benefits</span> compared with other tax-saving options,</h2>
                         <p className='seo-para'>Lowest Lock-in</p>
