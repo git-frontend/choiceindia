@@ -9,12 +9,15 @@ function FixedForm() {
             <div className='col-md-12'>
                 <div className='form-section'>
                   <div className='form-items'>
-                    <div className='bg-yellow'>
-                        <p>Enjoy Zero Brokerage on Mutual Funds</p>
+                    <div className='shape-yellow'>
+                      <div className='cross-border'></div>
+                        <h6>Enjoy Zero Brokerage on <br/> Mutual Funds</h6>
                     </div>
                   </div>
                   <div className='form-items'>
-                    <input type="text" className='form-control' />
+                    <div className='form-grp'>
+                      <input type="text" className='form-control' placeholder='Enter Mobile Number'/>
+                    </div>
                   </div>
                   <div className='form-items'>
                     <a href="" className='btn-bg'>GET FREE DEMAT ACCOUNT</a>

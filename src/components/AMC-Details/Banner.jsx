@@ -7,7 +7,7 @@ function Banner() {
     <>
      <section className="funds-bannersection">
         <div className="container">
-            <div className="row gx-5 align-items-center">
+            <div className="row align-items-center">
                 <div className="col-xl-7 col-md-6 lft-sec">
                     <h1 className="big-ttl">HDFC Mutual Fund AMC</h1>
                     <p className="para">Experience ‘The Joy of Earning’ by investing in HDFC Mutual Fund Online and see your Wealth Grow over time!</p>

@@ -13,7 +13,7 @@ function ELSSDetails() {
         <SerachELSSDetails/>
         <MoreContent/>
         <Faq/>
-        {/* <FixedSection/> */}
+        <FixedSection/>
     </div>
   )
 }

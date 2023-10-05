@@ -7,7 +7,7 @@ function Banner() {
     <>
      <section className="funds-bannersection">
         <div className="container">
-            <div className="row gx-5 align-items-center">
+            <div className="row align-items-center">
                 <div className="col-xl-7 col-md-6 lft-sec">
                     <h1 className="big-ttl">Best ELSS Mutual Funds</h1>
                     <p className="para">With Choice, not only can you save tax, but also grow your wealth. Check our recommended Best ELSS mutual funds to invest in 2021.</p>

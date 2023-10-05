@@ -7,7 +7,7 @@ function Banner() {
     <>
      <section className="funds-bannersection banner-funds-india">
         <div className="container">
-            <div className="row gx-5 align-items-center">
+            <div className="row align-items-center">
                 <div className="col-xl-7 col-md-6 lft-sec">
                     <h1 className="big-ttl">Top Mutual Funds In India</h1>
                     <p className="para">Brought exclusively by Team Choice, here are the Best Mutual Funds across both, Equity and Debt Categories! They have been handpicked by our team by performing a Thorough Research, Robust Analysis and Curated Selection.</p>
