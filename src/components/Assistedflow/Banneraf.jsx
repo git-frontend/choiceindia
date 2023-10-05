@@ -231,7 +231,7 @@ function Banneraf() {
             setBasketData(() => (res.data.Body ? res.data.Body : {}));
             client_id = res.data.Body.client_id;
             // refCallAPI();
-            if (res.data.Body.scheme_data.order_status == 'authentication_pending') {
+            if (res.data.Body.order_status == 'authentication_pending') {
               setshowStatus(() => false);
             } else if (res.data.Body.order_status == 'payment_pending') {
 
