@@ -19,7 +19,7 @@ function Faqs() {
 
                     </div>
                     <div className="row justify-content-center">
-                        <div className="col-md-10">
+                        <div className="col-xl-10 col-md-12">
                             <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                                 <Accordion.Item eventKey="0" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>How do ELSS Funds help you save taxes?</Accordion.Header>

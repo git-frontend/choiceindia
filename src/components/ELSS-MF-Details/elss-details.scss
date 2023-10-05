@@ -72,6 +72,9 @@
 .Dematfaq {
 	padding: 9rem 0;
 	background-color: $whiteColor ;
+    @media (max-width:$md) {
+        padding: 6rem 0;
+    }
 	.title-first {
 		margin-bottom: 2rem;
         span{

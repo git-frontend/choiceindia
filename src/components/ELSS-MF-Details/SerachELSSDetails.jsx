@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faArrowUp} from '@fortawesome/free-solid-svg-icons';
 import LazyLoader from '../Common-features/LazyLoader';
 import PreSingleArrow from '../../assets/images/amc-details/pre-arrow-single.svg';
 import PreDobbleArrow from '../../assets/images/amc-details/pre-arrow-dobble.svg';
@@ -55,67 +57,22 @@ function SerachTopFunds() {
             <div className='row'>
                 <div className='col-md-12'>
                     <div className='card'>
-                        <div className='row d-flex justify-content-between'>
-                           <h3>Quant Tax Plan Growth</h3>
-                           <div className='start-rating'></div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-md-12'>
+                        <div className="display-flex">
+                           <div className='flex-i'>
+                                <h3>Quant Tax Plan Growth</h3>
                                 <p className='category'>
                                     <span>Category : Equity - ELSS</span>
                                     <span className='brder-left'>NAV : ₹79.91</span>
                                 </p>
                             </div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className='row d-flex justify-content-between'>
-                           <h3>Bandhan Tax Advantage (ELSS) Fund Growth</h3>
-                           <div className='start-rating'></div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-md-12'>
-                                <p className='category'>
-                                    <span>Category : Equity - ELSS</span>
-                                    <span className='brder-left'>NAV : ₹49.58</span>
-                                </p>
+                            <div className='flex-i'>
+                                <div className='rating-det'>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                </div>
                             </div>
                         </div>
                         <div className='row'>
@@ -157,16 +114,79 @@ function SerachTopFunds() {
                         </div>
                     </div>
                     <div className='card'>
-                        <div className='row d-flex justify-content-between'>
-                           <h3>SBI Long Term Equity Fund Growth</h3>
-                           <div className='start-rating'></div>
-                        </div>
+                        <div className="display-flex">
+                            <div className='flex-i'>
+                                    <h3>Bandhan Tax Advantage (ELSS) Fund Growth</h3>
+                                    <p className='category'>
+                                        <span>Category : Equity - ELSS</span>
+                                        <span className='brder-left'>NAV : ₹49.58</span>
+                                    </p>
+                                </div>
+                                <div className='flex-i'>
+                                    <div className='rating-det'>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    </div>
+                                </div>
+                            </div>
                         <div className='row'>
-                            <div className='col-md-12'>
-                                <p className='category'>
-                                    <span>Category : Equity - ELSS</span>
-                                    <span className='brder-left'>NAV : ₹49.58</span>
-                                </p>
+                            <div className='col-xl-5 col-md-6 left'>
+                                <ul className='fundlist-flex'>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>1M</h5>
+                                        <h5>0.63%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>3M</h5>
+                                        <h5>4.37%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>6M</h5>
+                                        <h5>15.55%</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='right col-xl-5 col-md-6'>
+                            <ul className='fundlist-flex border-left'>
+                                    <li className='fundlist text-center'>
+                                        <h5 className='time-period'>1Y</h5>
+                                        <h5>5.21%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>3Y</h5>
+                                        <h5>56.28%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>5Y</h5>
+                                        <h5>63.98%</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='col-xl-2 col-md-12'>
+                                <button type='button' className='btn-bg'>View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='card'>
+                        <div className="display-flex">
+                            <div className='flex-i'>
+                                <h3>SBI Long Term Equity Fund Growth</h3>
+                                    <p className='category'>
+                                        <span>Category : Equity - ELSS</span>
+                                        <span className='brder-left'>NAV : ₹49.58</span>
+                                    </p>
+                                </div>
+                                <div className='flex-i'>
+                                    <div className='rating-det'>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    </div>
                             </div>
                         </div>
                         <div className='row'>
@@ -208,16 +228,22 @@ function SerachTopFunds() {
                         </div>
                     </div>
                     <div className='card'>
-                        <div className='row d-flex justify-content-between'>
-                           <h3>Kotak Tax Saver Fund - Growth</h3>
-                           <div className='start-rating'></div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-md-12'>
+                        <div className="display-flex">
+                            <div className='flex-i'>
+                                <h3>Kotak Tax Saver Fund - Growth</h3>
                                 <p className='category'>
                                     <span>Category : Equity - ELSS</span>
                                     <span className='brder-left'>NAV : ₹49.58</span>
                                 </p>
+                            </div>
+                            <div className='flex-i'>
+                                <div className='rating-det'>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                </div>
                             </div>
                         </div>
                         <div className='row'>
@@ -259,16 +285,136 @@ function SerachTopFunds() {
                         </div>
                     </div>
                     <div className='card'>
-                        <div className='row d-flex justify-content-between'>
-                           <h3>Canara Robeco Equity Tax Saver Growth</h3>
-                           <div className='start-rating'></div>
-                        </div>
+                        <div className="display-flex">
+                                <div className='flex-i'>
+                                <h3>Canara Robeco Equity Tax Saver Growth</h3>
+                                    <p className='category'>
+                                        <span>Category : Equity - ELSS</span>
+                                        <span className='brder-left'>NAV : ₹49.58</span>
+                                    </p>
+                                </div>
+                                <div className='flex-i'>
+                                    <div className='rating-det'>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
+                                    </div>
+                                </div>
+                            </div>
                         <div className='row'>
-                            <div className='col-md-12'>
+                            <div className='col-xl-5 col-md-6 left'>
+                                <ul className='fundlist-flex'>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>1M</h5>
+                                        <h5>0.63%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>3M</h5>
+                                        <h5>4.37%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>6M</h5>
+                                        <h5>15.55%</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='right col-xl-5 col-md-6'>
+                            <ul className='fundlist-flex border-left'>
+                                    <li className='fundlist text-center'>
+                                        <h5 className='time-period'>1Y</h5>
+                                        <h5>5.21%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>3Y</h5>
+                                        <h5>56.28%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>5Y</h5>
+                                        <h5>63.98%</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='col-xl-2 col-md-12'>
+                                <button type='button' className='btn-bg'>View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='card'>
+                        <div className="display-flex">
+                                <div className='flex-i'>
+                                <h3>HDFC TaxSaver - Growth</h3>
+                                    <p className='category'>
+                                        <span>Category : Equity - ELSS</span>
+                                        <span className='brder-left'>NAV : ₹49.58</span>
+                                    </p>
+                                </div>
+                                <div className='flex-i'>
+                                    <div className='rating-det'>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
+                                    </div>
+                                </div>
+                            </div>
+                        <div className='row'>
+                            <div className='col-xl-5 col-md-6 left'>
+                                <ul className='fundlist-flex'>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>1M</h5>
+                                        <h5>0.63%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>3M</h5>
+                                        <h5>4.37%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>6M</h5>
+                                        <h5>15.55%</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='right col-xl-5 col-md-6'>
+                            <ul className='fundlist-flex border-left'>
+                                    <li className='fundlist text-center'>
+                                        <h5 className='time-period'>1Y</h5>
+                                        <h5>5.21%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>3Y</h5>
+                                        <h5>56.28%</h5>
+                                    </li>
+                                    <li className='fundlist'>
+                                        <h5 className='time-period'>5Y</h5>
+                                        <h5>63.98%</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='col-xl-2 col-md-12'>
+                                <button type='button' className='btn-bg'>View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='card'>
+                        <div className="display-flex">
+                            <div className='flex-i'>
+                            <h3>Motilal Oswal Long Term Equity Fund Growth</h3>
                                 <p className='category'>
                                     <span>Category : Equity - ELSS</span>
                                     <span className='brder-left'>NAV : ₹49.58</span>
                                 </p>
+                            </div>
+                            <div className='flex-i'>
+                                <div className='rating-det'>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='unfill'/>
+                                </div>
                             </div>
                         </div>
                         <div className='row'>
@@ -310,16 +456,22 @@ function SerachTopFunds() {
                         </div>
                     </div>
                     <div className='card'>
-                        <div className='row d-flex justify-content-between'>
-                           <h3>HDFC TaxSaver - Growth</h3>
-                           <div className='start-rating'></div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-md-12'>
+                    <div className="display-flex">
+                            <div className='flex-i'>
+                            <h3>Mirae Asset Tax Saver Fund Growth</h3>
                                 <p className='category'>
                                     <span>Category : Equity - ELSS</span>
                                     <span className='brder-left'>NAV : ₹49.58</span>
                                 </p>
+                            </div>
+                            <div className='flex-i'>
+                                <div className='rating-det'>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='fill'/>
+                                    <FontAwesomeIcon icon={faStar} className='unfill'/>
+                                </div>
                             </div>
                         </div>
                         <div className='row'>
@@ -361,69 +513,24 @@ function SerachTopFunds() {
                         </div>
                     </div>
                     <div className='card'>
-                        <div className='row d-flex justify-content-between'>
-                           <h3>Motilal Oswal Long Term Equity Fund Growth</h3>
-                           <div className='start-rating'></div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-md-12'>
-                                <p className='category'>
-                                    <span>Category : Equity - ELSS</span>
-                                    <span className='brder-left'>NAV : ₹49.58</span>
-                                </p>
+                        <div className="display-flex">
+                                <div className='flex-i'>
+                                <h3>Parag Parikh Tax Saver Fund Growth</h3>
+                                    <p className='category'>
+                                        <span>Category : Equity - ELSS</span>
+                                        <span className='brder-left'>NAV : ₹49.58</span>
+                                    </p>
+                                </div>
+                                <div className='flex-i'>
+                                    <div className='rating-det'>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
+                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
+                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className='row d-flex justify-content-between'>
-                           <h3>Mirae Asset Tax Saver Fund Growth</h3>
-                           <div className='start-rating'></div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-md-12'>
-                                <p className='category'>
-                                    <span>Category : Equity - ELSS</span>
-                                    <span className='brder-left'>NAV : ₹49.58</span>
-                                </p>
-                            </div>
-                        </div>
                         <div className='row'>
                             <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>
@@ -463,69 +570,24 @@ function SerachTopFunds() {
                         </div>
                     </div>
                     <div className='card'>
-                        <div className='row d-flex justify-content-between'>
-                           <h3>Parag Parikh Tax Saver Fund Growth</h3>
-                           <div className='start-rating'></div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-md-12'>
-                                <p className='category'>
-                                    <span>Category : Equity - ELSS</span>
-                                    <span className='brder-left'>NAV : ₹49.58</span>
-                                </p>
+                        <div className="display-flex">
+                                <div className='flex-i'>
+                                <h3>DSP Tax Saver Fund Growth</h3>
+                                    <p className='category'>
+                                        <span>Category : Equity - ELSS</span>
+                                        <span className='brder-left'>NAV : ₹49.58</span>
+                                    </p>
+                                </div>
+                                <div className='flex-i'>
+                                    <div className='rating-det'>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='fill'/>
+                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className='row d-flex justify-content-between'>
-                           <h3>DSP Tax Saver Fund Growth</h3>
-                           <div className='start-rating'></div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-md-12'>
-                                <p className='category'>
-                                    <span>Category : Equity - ELSS</span>
-                                    <span className='brder-left'>NAV : ₹49.58</span>
-                                </p>
-                            </div>
-                        </div>
                         <div className='row'>
                             <div className='col-xl-5 col-md-6 left'>
                                 <ul className='fundlist-flex'>

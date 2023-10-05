@@ -207,6 +207,49 @@
         box-shadow: $border-light 0px 3px 7px;
         padding: 2rem;
         margin-bottom: 5rem;
+        .display-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+            @media (max-width:$sm) {
+                margin-bottom: 2rem;
+            }
+            .flex-i{
+                width: 50%;
+                @media (max-width:$md) {
+                    width: 100%;
+                }
+                .border-left{
+                    border-left: 1px solid $primary;
+                    @media (max-width:$sm) {
+                        border-left:inherit;
+                    }
+                }
+                .rating-det{
+                    padding:0.8rem 0 1rem 0;
+                    float: right;
+                    @media (max-width:$md) {
+                        float: left;
+                    }
+                    .fa-star{
+                        font-size: 1.5rem;
+                        padding: 0 0.1rem;
+                        path{
+                            fill: $yellowColor;
+                        }
+                        &.unfill{
+                            path{
+                                fill: $secondary;
+                                opacity: 0.6;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+       
         .left{
             @media (max-width:$sm) {
                 display: none;
@@ -241,9 +284,18 @@
             font-family: $font-family-poppins-medium;
             font-weight: 500;
             color: $primary;
-            margin-bottom: 4rem;
+            margin: 0;
             @media (max-width:$sm) {
                 font-size: 1.2rem;
+                display: flex;
+                flex-wrap: wrap;
+                > span{
+                    &:nth-child(3n){
+                        border-left: 0;
+                        padding-left: 0;
+                        margin-left: 0;
+                    }
+                }
             }
             .brder-left{
                 border-left: 1px solid $primary;
