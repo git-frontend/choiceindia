@@ -19,6 +19,9 @@
                 display: block;
             }
     }
+    &.dont-show{
+        display: none;
+    }
 	.exit-intent-sleekbox-popup{
 		box-sizing: border-box;
         background: $whiteColor;
@@ -323,6 +326,6 @@ Select{
 
 .modal{
     &.sub-term{
-        z-index: 999999999999 !important;
+        z-index: 999999999999999 !important;
     }
 }
