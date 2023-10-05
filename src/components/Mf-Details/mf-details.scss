@@ -516,10 +516,10 @@
                 .invst-amt-hirizon{
                     display: flex;
                     flex-wrap: wrap;
-                    align-items: center;
+                    align-items: flex-start;
                     justify-content: space-between;
                     .form-lft{
-                        width: 56%;
+                        width: 50%;
                         @media (max-width:$sm) {
                             width: 100%;
                         }
@@ -551,10 +551,14 @@
                         }
                     }
                     .horizon-slider{
-                        width: 42%;
+                        width: 48%;
+                        border-left: 1px solid $lightgray;
+                        padding-left: 2rem;
                         @media (max-width:$sm) {
                             width: 100%;
                             margin-top: 2rem;
+                            border-left: 0;
+                            padding-left: 0;
                         }
                         .slidecontainer {
                             h6{
