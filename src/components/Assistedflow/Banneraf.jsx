@@ -210,9 +210,9 @@ function Banneraf() {
     handleReCaptchaVerify();
   }, [handleReCaptchaVerify]);
 
-  useEffect(() => {
-    console.log(OrderPayload, 'oRRRPP')
-  }, [OrderPayload])
+  // useEffect(() => {
+  //   console.log(OrderPayload, 'oRRRPP')
+  // }, [OrderPayload])
 
   useEffect(() => {
     if (captchaToken && (captchaCount.current == 1)) {
@@ -226,7 +226,6 @@ function Banneraf() {
 
       AssistedFlowService.BasketDetails(payload)
         .then((res) => {
-          console.log("DETT", res);
           if (res && res.data && res.data.Body) {
             setDataNotFound(() => false);
             setBasketData(() => (res.data.Body ? res.data.Body : {}));
@@ -480,7 +479,6 @@ function Banneraf() {
           }
         })
         .catch((error) => {
-          console.log(error);
           setDataNotFound(() => true);
         });
     }
@@ -571,8 +569,6 @@ function Banneraf() {
       order_unique_id: uniID,
       captcha: captchaToken
     };
-
-    console.log('ORDER', OrderPayload);
     AssistedFlowService.SendOTP(payload)
       .then((response) => {
         if (response && response.data.Body && response.data.Body.otp_session_id) {
@@ -1214,9 +1210,9 @@ function Banneraf() {
       });
   }
 
-  useEffect(() => {
-    console.log('SCHEHEHE', schemeDetails);
-  }, [schemeDetails])
+  // useEffect(() => {
+  //   console.log('SCHEHEHE', schemeDetails);
+  // }, [schemeDetails])
 
   /**api call for orderstatus2 */
   function UpdateOrderStatus2(paymntLink) {
@@ -1267,7 +1263,7 @@ function Banneraf() {
         }
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         setLoaders({ ...loaders, verifyLoader: false });
         setErrors(() =>
           error.response.data.Message
