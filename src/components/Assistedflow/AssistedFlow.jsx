@@ -1,4 +1,3 @@
-
 import React from "react";
 import Banneraf from './Banneraf';
 
@@ -10,6 +9,7 @@ import {
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function AssistedFlow() {
 
@@ -30,14 +30,14 @@ function AssistedFlow() {
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
-      if(!(document.getElementById('link1')==null)){
+      if (!(document.getElementById('link1') == null)) {
         document.getElementById('link1').remove();
-      document.getElementById('link2').remove();
-      document.getElementById('link3').remove();
-      document.getElementById('link4').remove();
-      document.getElementById('link5').remove();
-      document.getElementById('link6').remove();
-      
+        document.getElementById('link2').remove();
+        document.getElementById('link3').remove();
+        document.getElementById('link4').remove();
+        document.getElementById('link5').remove();
+        document.getElementById('link6').remove();
+
       }
     }
   }, [rendercount])
@@ -49,12 +49,10 @@ function AssistedFlow() {
 
       {
         skeleton ? <Template5 /> :
-
           <div className="af-wrapper">
-
-            <Banneraf />
-            
-            
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+              <Banneraf />
+            </GoogleReCaptchaProvider>
           </div>
       }
 
