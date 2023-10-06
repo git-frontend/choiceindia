@@ -11,14 +11,15 @@
     }
 }
 .more-content-sec{
-    padding: 6rem 0;
+    padding: 6rem 0 10rem;
     background: $abt-bg;
-    .title-first{
+    @media (max-width:$md) {
+        padding: 2rem 0 6rem;
+    }
+    .title-secnd{
         text-align: left;
         margin-bottom: 2rem;
-        @media (max-width:$md) {
-            font-size: 2.5rem;
-        }
+        margin-top: 4rem;
         span{
             color: $yellowColor;
         }

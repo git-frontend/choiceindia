@@ -7,7 +7,7 @@ function MoreContent() {
         <div className='container'>
           <div className='row'>
                 <div className='col-md-12'>
-                    <h2 className='title-first'>Invest Online in the <span>Best Mutual Funds</span> in India</h2>
+                    <h2 className='title-secnd'>Invest Online in the <span>Best Mutual Funds</span> in India</h2>
                 </div>
             </div>
             <div className='row justify-content-center'>

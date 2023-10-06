@@ -15,7 +15,7 @@ import Motilal from '../../assets/images/mf-top-funds/motilal-oswal-mutual-fund.
 function SerachTopFunds() {
   return (
     <>
-    <section className='search-funds-sec'>
+    <section className='search-funds-sec' id='showForm'>
         <div className='container'>
             <div className='row justify-content-end'>
                 <div className='col-xl-5 col-md-6 col-sm-12'>

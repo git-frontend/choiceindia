@@ -14,7 +14,7 @@ import focusedFund from '../../assets/images/top-fund-india/best-focused-mutual-
 function SerachTopFunds() {
   return (
     <>
-    <section className='search-funds-sec'>
+    <section className='search-funds-sec' id='showForm'>
         <div className='container'>
             <div className='row justify-content-end'>
                 <div className='col-xl-5 col-md-6 col-sm-12'>
