@@ -780,3 +780,19 @@
     }
 }
 
+.hideform{
+    @media (max-width: $sm) {
+    display: none !important;
+    }
+}
+.visibleform{
+    @media (max-width: $sm) {
+    display: block !important;
+    }
+}
+.hideform2{
+    display: none !important;
+}
+.visibleform2{
+    display: block !important;
+}

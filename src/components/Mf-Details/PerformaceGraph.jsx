@@ -17,7 +17,7 @@ function PerformaceGraph() {
 
   return (
     <>
-        <div className='card-mn box-shadow graph-show'>
+        <div className='card-mn box-shadow graph-show' id='showForm'>
             <div className='row'>
                 <div className='col-xl-5 col-md-12'>
                     <div className='mn-graph'>

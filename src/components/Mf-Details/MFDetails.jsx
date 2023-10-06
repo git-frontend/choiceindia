@@ -45,6 +45,26 @@ function MFTopFunds() {
     }, []);
 
 
+    const [name2, setName2] = useState('hideform2');
+  const getPosition2 = () => {
+      const element = document.getElementById("showForm");
+      if (element) {
+          const rect = element.getBoundingClientRect();
+
+          if (rect.top.toFixed() < 259) {
+              setName2('visibleform2');
+          } else {
+              setName2('hideform2');
+          }
+      }
+  };
+
+  useEffect(() => {
+      window.addEventListener('scroll', getPosition2);
+  }, []);
+
+
+
 
   return (
     <div>
@@ -81,7 +101,10 @@ function MFTopFunds() {
                 </div>
             </div>
       </section>
-      <FixedForm/>
+      <div className={name2}>
+        <FixedForm/>
+        </div>
+      
     </div>
   )
 }
