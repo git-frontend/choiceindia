@@ -20,7 +20,7 @@ function FixedForm() {
                     </div>
                   </div>
                   <div className='form-items'>
-                    <a href="" className='btn-bg'>GET FREE DEMAT ACCOUNT</a>
+                    <a href="" className='btn-bg'>Get Free Demat Account</a>
                   </div>
                 </div>
             </div>
