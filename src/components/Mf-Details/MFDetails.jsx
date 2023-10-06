@@ -10,6 +10,7 @@ import SchemeComparison from './SchemeComparison';
 import SchemePerformance from './SchemePerformance';
 import MfCalculator from './MfCalculator';
 import DematAccountForm from '../Common-features/DematAccountForm';
+import FixedForm from './FixedForm';
 
 
 function MFTopFunds() {
@@ -80,6 +81,7 @@ function MFTopFunds() {
                 </div>
             </div>
       </section>
+      <FixedForm/>
     </div>
   )
 }

@@ -74,12 +74,12 @@ function MfCalculator() {
                                         <div className='horizon-slider'>
                                             <div className='row align-items-center'>
                                                 <div className='col-md-8'>
-                                                <div class="slidecontainer">
+                                                <div className="slidecontainer">
                                                     <h6>Investment Horizon</h6>
-                                                    <div class="middle">
-                                                        <div class="slider-container">
-                                                            <span class="bar">
-                                                                <span class="fill" style={{width : `${value}%`}}></span>
+                                                    <div className="middle">
+                                                        <div className="slider-container">
+                                                            <span className="bar">
+                                                                <span className="fill" style={{width : `${value}%`}}></span>
                                                             </span>
                                                             <input type="range" className="slider" id="myRange" min="0" max="100" value={value}
                                                                 onChange={({ target: { value: radius } }) => {

@@ -678,7 +678,88 @@
         }
         
 }
+.fixed-form{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: $whiteColor;
+    z-index: 99999;
+    right: 0;
+    box-shadow: 0px 4px 10px 0px $nbfcboxshadow;
+    padding: 1rem 0;
+    // @media (max-width:$md) {
+    //     display: none;
+    // }
 
+.form-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width:$md) {
+        display: none;
+    }
+    .form-items{
+        .shape-yellow{
+            background: $yellowColor;
+            position: relative;
+            z-index: 1;
+            border-radius: 5px 0 0 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            padding: 1rem 3rem;
+            .cross-border{
+                border-right: 60px solid transparent;
+                border-left: 0px solid transparent;
+                border-bottom: 60px solid $yellowColor;
+                height: 0;
+                width: 0;
+                bottom: 0;
+                right: -59px;
+                position: absolute;
+            }
+            h6{
+                margin: 0;
+                color: $primary;
+                text-align: center;
+                font-family: $font-family-poppins-semibold;
+                font-size: 1.143rem;
+                font-weight: 700;
+                line-height: 1.5;
+            }
+        }
+        .form-grp {
+            position: relative;
+			&:before {
+				content: '+91';
+				position: absolute;
+				display: block;
+				left: 10px;
+				top: 1.175rem;
+                font-size: 1.143rem;
+				color: $secondary;
+				z-index: 9999;
+                font-family: $font-family-poppins-regular;
+                font-weight: 400;
+			}
+			.form-control {
+				padding: 1rem 3.3rem;
+                border-radius: 4px;
+                border: 2px solid $border-gray;
+                color: $secondary;
+                font-size: 1.143rem;
+                font-family: $font-family-poppins-regular;
+                font-weight: 400;
+                &:focus{
+                    outline: 0;
+                    box-shadow: inherit;
+                }
+			}
+		}
+    }
+}
+}
 .details-more-cont{
     padding:6rem 0;
     background: $abt-bg;
