@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./mf-details.scss";
 import ScemeName from './ScemeName';
 import PerformaceGraph from './PerformaceGraph';
@@ -9,7 +9,7 @@ import FundManager from './FundManager';
 import SchemeComparison from './SchemeComparison';
 import SchemePerformance from './SchemePerformance';
 import MfCalculator from './MfCalculator';
-
+import DematAccountForm from '../Common-features/DematAccountForm';
 
 
 function MFTopFunds() {
@@ -25,6 +25,25 @@ function MFTopFunds() {
     const onToggleChange = () => {
         setExchangeToggle(!exchangeToggle);
     };
+    const [name, setName] = useState('hideform');
+    const getPosition = () => {
+        const element = document.getElementById("showForm");
+        if (element) {
+            const rect = element.getBoundingClientRect();
+
+            if (rect.top.toFixed() < 259) {
+                setName('visibleform');
+            } else {
+                setName('hideform');
+            }
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
+
+
 
   return (
     <div>
@@ -41,6 +60,11 @@ function MFTopFunds() {
                       <MfCalculator />
                     </div>
               </div>
+              <div className={name}>
+                <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                    <a className="primary-orange-btn scroll-top-account openbtn" href='/open-free-demat-account'>Open Free Account</a>
+                </div>
+            </div>
           </div>
       </section>
 

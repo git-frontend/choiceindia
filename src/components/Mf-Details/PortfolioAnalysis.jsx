@@ -3,6 +3,7 @@ import React from 'react'
 import { useState } from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Image1 from '../../assets/images/mf-investica/pie-chart.png';
+import Image2 from '../../assets/images/mf-investica/donuts-chart.webp';
 
 function PortfolioAnalysis() {
 
@@ -399,16 +400,34 @@ function PortfolioAnalysis() {
                         <div
                             className={toggleState === 2 ? "content  active-content" : "content"}
                         >
-                            <div className="banner-tab-cont">
-                                <div className="tab-cont-left">
-                                    <div className="heading-sec">
-                                        <h3 className="title-secnd">Become a Mutual Fund Advisort</h3>
-                                        <p>Help people to achieve financial freedom by selling mutual funds through us.</p>
+                             <div className="equity-tab-cont">
+                                    <div className='lft-chart'>
+                                        <img src={Image2} className="img-fluid" alt="" />
                                     </div>
-                                    <a href="/" ><span className="btn-bg">Register</span></a>
-                                </div>
-                                <div className="tab-cont-right">
+                                    <div className="right-cont-details">
+                                    <Accordion defaultActiveKey="0">
+                                        <Accordion.Item eventKey="0" >
+                                            <Accordion.Header as="h3" className='faq-header'>
+                                                <span className='cirl' style={{background: "#7C160E"}}>
 
+                                                </span>
+                                                <div className='header-flx'>
+                                                    <h4>Others</h4>
+                                                    <h3 style={{color: "#7C160E"}}>1.46%</h3>
+                                                </div>
+                                            </Accordion.Header>
+                                            <Accordion.Body>
+                                                <div className='acd-list'>
+                                                    <h4>1. Clearing Corporation Of India Ltd</h4>
+                                                    <h4>0.92%</h4>
+                                                </div>
+                                                <div className='acd-list'>
+                                                    <h4>2. Net Receivables / (Payables)</h4>
+                                                    <h4>0.54%</h4>
+                                                </div>
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                    </Accordion>
                                 </div>
                             </div>
                         </div>
@@ -416,16 +435,34 @@ function PortfolioAnalysis() {
                         <div
                             className={toggleState === 3 ? "content  active-content" : "content"}
                         >
-                            <div className="banner-tab-cont">
-                                <div className="tab-cont-left">
-                                    <div className="heading-sec">
-                                        <h3 className="title-secnd">Become an Insurance Agent</h3>
-                                        <p>Assist customers to buy the best insurance which suits all their needs. </p>
+                            <div className="equity-tab-cont">
+                                    <div className='lft-chart'>
+                                        <img src={Image2} className="img-fluid" alt="" />
                                     </div>
-                                    <a href="/" ><span className="btn-bg">Register</span></a>
-                                </div>
-                                <div className="tab-cont-right">
+                                    <div className="right-cont-details">
+                                    <Accordion defaultActiveKey="0">
+                                        <Accordion.Item eventKey="0" >
+                                            <Accordion.Header as="h3" className='faq-header'>
+                                                <span className='cirl' style={{background: "#7C160E"}}>
 
+                                                </span>
+                                                <div className='header-flx'>
+                                                    <h4>Others</h4>
+                                                    <h3 style={{color: "#7C160E"}}>1.46%</h3>
+                                                </div>
+                                            </Accordion.Header>
+                                            <Accordion.Body>
+                                                <div className='acd-list'>
+                                                    <h4>1. Clearing Corporation Of India Ltd</h4>
+                                                    <h4>0.92%</h4>
+                                                </div>
+                                                <div className='acd-list'>
+                                                    <h4>2. Net Receivables / (Payables)</h4>
+                                                    <h4>0.54%</h4>
+                                                </div>
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                    </Accordion>
                                 </div>
                             </div>
                         </div>

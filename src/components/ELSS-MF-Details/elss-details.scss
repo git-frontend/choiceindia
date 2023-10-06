@@ -5,6 +5,10 @@
     padding: 7rem 0 6rem 0;
     background: url(../../assets/images/amc-details/banner-elss.webp) no-repeat center;
     background-size: cover;
+    .scroll-top-account{
+        display: block;
+        text-decoration: none;
+    }
 }
 .more-content-sec{
     padding: 6rem 0;
@@ -20,8 +24,8 @@
         }
     }
     .seo-para{
-        font-family: $font-family-poppins-medium;
-        font-weight: 500;
+        font-family: $font-family-poppins-regular;
+        font-weight: 400;
         color: $primary;
     }
     .table-sec{
@@ -146,14 +150,17 @@
     right: 0;
     box-shadow: 0px 4px 10px 0px $nbfcboxshadow;
     padding: 1rem 0;
-    @media (max-width:$md) {
-        display: none;
-    }
+    // @media (max-width:$md) {
+    //     display: none;
+    // }
 
 .form-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width:$md) {
+        display: none;
+    }
     .form-items{
         .shape-yellow{
             background: $yellowColor;

@@ -44,7 +44,7 @@ function ScemeName() {
                         <p>3 Year Return (%)</p>
                     </div>
                     <div className='inv-btn'>
-                        <a href='#' className='btn-bg'>Invest Now</a>
+                        <a href='/open-free-demat-account' className='btn-bg'>Invest Now</a>
                     </div>
                 </div>
                 </div>
