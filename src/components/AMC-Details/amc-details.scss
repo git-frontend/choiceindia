@@ -154,7 +154,6 @@
     .wrapper {
         display: flex;
         place-content: end;
-        margin-bottom: 2rem;
         @media (max-width:$sm) {
            justify-content: center;
         }
