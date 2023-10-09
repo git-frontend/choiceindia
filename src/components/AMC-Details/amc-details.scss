@@ -67,6 +67,9 @@
         }
         .left-sec{
             width: 70%;
+            @media (max-width:$sm) {
+                width: 50%;
+            }
             &.search-bar-items{
                 .input-control{
                     font-size: 1.429rem;
@@ -94,6 +97,9 @@
         }
         .right-sec{
             width: 30%;
+            @media (max-width:$sm) {
+                width: 50%;
+            }
         }
        
   }
@@ -346,5 +352,15 @@
         font-family: $font-family-poppins-regular;
         font-weight: 400;
         color: $primary;
+    }
+}
+.hideform{
+    @media (max-width: $sm) {
+    display: none !important;
+    }
+}
+.visibleform{
+    @media (max-width: $sm) {
+    display: block !important;
     }
 }

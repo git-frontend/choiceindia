@@ -51,7 +51,7 @@ function MfCalculator() {
             </div>
             <div className='row'>
                 <div className='col-md-12'>
-                    <p className='midl-txt'>SIP of ₹500 for 48 Months would have gained 83.16% & its value would have been ₹43,957</p>
+                    <p className='midl-txt'>SIP of <strong>₹500</strong> for <strong>48 Months</strong> would have gained <strong>83.16%</strong> & its value would have been <strong>₹43,957</strong></p>
 
                     <div className='accordian-sec'>
                         <Accordion defaultActiveKey="0">

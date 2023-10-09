@@ -11,7 +11,7 @@ import NextDobbleArrow from '../../assets/images/amc-details/next-arrow-dobble.s
 function SerachTopFunds() {
   return (
     <>
-    <section className='search-amc-sec'>
+    <section className='search-amc-sec' id='showForm'>
         <div className='container'>
             <div className='row justify-content-between'>
                 <div className='col-xl-4 col-md-5 col-sm-12'>

@@ -23,7 +23,7 @@ function ScemeName() {
         <div className='card-mn box-shadow card-top-details'>
             <div className='row'>
                 <div className='col-md-7'>
-                    <h3 className='title-secnd'>Quant Tax Plan Growth</h3>
+                    <h1 className='title-secnd'>Quant Tax Plan Growth</h1>
                     <div className='rating-det'>
                         <FontAwesomeIcon icon={faStar} className='fill'/>
                         <FontAwesomeIcon icon={faStar} className='fill'/>

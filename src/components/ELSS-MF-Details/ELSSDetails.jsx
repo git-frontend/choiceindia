@@ -8,44 +8,44 @@ import Faq from './Faqs';
 import FixedSection from './FixedForm';
 function ELSSDetails() {
 
-  const [name, setName] = useState('hideform2');
-  const getPosition = () => {
-      const element = document.getElementById("showForm");
-      if (element) {
-          const rect = element.getBoundingClientRect();
+//   const [name, setName] = useState('hideform2');
+//   const getPosition = () => {
+//       const element = document.getElementById("showForm");
+//       if (element) {
+//           const rect = element.getBoundingClientRect();
 
-          if (rect.top.toFixed() < 259) {
-              setName('visibleform2');
-          } else {
-              setName('hideform2');
-          }
-      }
-  };
+//           if (rect.top.toFixed() < 259) {
+//               setName('visibleform2');
+//           } else {
+//               setName('hideform2');
+//           }
+//       }
+//   };
 
-  useEffect(() => {
-      window.addEventListener('scroll', getPosition);
-  }, []);
+//   useEffect(() => {
+//       window.addEventListener('scroll', getPosition);
+//   }, []);
 
 
-  function chapterScroll2(id) {
-      var element = document.getElementById(id);
-      var headerOffset = 140;
-      var elementPosition = element.getBoundingClientRect().top;
-      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-      });
-  }
+//   function chapterScroll2(id) {
+//       var element = document.getElementById(id);
+//       var headerOffset = 140;
+//       var elementPosition = element.getBoundingClientRect().top;
+//       var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+//       window.scrollTo({
+//           top: offsetPosition,
+//           behavior: "smooth"
+//       });
+//   }
   return (
     <div>
         <Banner/>
         <SerachELSSDetails/>
         <MoreContent/>
         <Faq/>
-        <div className={name}>
+        {/* <div className={name}>
         <FixedSection/>
-        </div>
+        </div> */}
        
     </div>
   )

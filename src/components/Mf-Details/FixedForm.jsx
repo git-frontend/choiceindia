@@ -11,7 +11,7 @@ function FixedForm() {
                   <div className='form-items'>
                     <div className='shape-yellow'>
                       <div className='cross-border'></div>
-                        <h6>Open a Free Demat Account with <br/> Free 1st Year AMC - Open Free Account</h6>
+                        <h6>Open a Free Demat Account with <br/> Free 1st Year AMC</h6>
                     </div>
                   </div>
                   <div className='form-items'>
@@ -20,7 +20,7 @@ function FixedForm() {
                     </div>
                   </div>
                   <div className='form-items'>
-                    <a href="" className='btn-bg'>Get Free Demat Account</a>
+                    <a href="" className='btn-bg'>Open Free Account</a>
                   </div>
                 </div>
             </div>
