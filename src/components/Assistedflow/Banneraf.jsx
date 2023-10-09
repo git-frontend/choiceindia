@@ -231,7 +231,7 @@ function Banneraf() {
             setBasketData(() => (res.data.Body ? res.data.Body : {}));
             client_id = res.data.Body.client_id;
             // refCallAPI();
-            if (res.data.Body.scheme_data[0].order_status == 'authentication_pending') {
+            if (res.data.Body.order_status == 'authentication_pending') {
               setshowStatus(() => false);
             } else if (res.data.Body.order_status == 'payment_pending') {
 
@@ -456,7 +456,7 @@ function Banneraf() {
                   "DPTxn": "P",
                   "FolioNo": item.folio_no,
                   "IPAddress": "",
-                  "ID": "",
+                  "ID": res.data.Body.id,
                   "Name": res.data.Body.basket_name ? res.data.Body.basket_name : "",
                   "OrderId": "",
                   "Qty": "0",
@@ -892,7 +892,7 @@ function Banneraf() {
           // placeSIPOrder(increment);
           // generatePaymentLink();
           /**for RM if subId is present in URL */
-          setSchemeDetails(response.data.Response);
+          setSchemeDetails(response.data.Response.Orders);
           let flag;
           let filteredData = response.data.Response.Orders.filter((item) => item.FinalStatus == "CONFIRMED")
           /**store all confirmed orders from response */
@@ -1814,7 +1814,7 @@ function Banneraf() {
                   </thead>
                   <tbody>
                     {
-                      schemeDetails.Orders && schemeDetails.Orders.map((order) => (
+                      schemeDetails && schemeDetails.length && schemeDetails.map((order) => (
                         <tr>
                           <td>{order.SchemeName || ""}</td>
                           <td>{order.FinalStatus || order.OrderStatus}</td>
