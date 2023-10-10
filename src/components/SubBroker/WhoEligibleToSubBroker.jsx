@@ -91,13 +91,13 @@ function WhoEligibleToSubBroker() {
                 </div>
             </section>
 
-            <section className="box-mid-blue">
+            <section className="box-mid-blue box-mid-dark">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
                                 <h4>Growth is for certain when you partner with us.</h4>
-                                <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </Link>
+                                <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </Link>
                             </div>
                         </div>
                     </div>
