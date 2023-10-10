@@ -19,6 +19,9 @@
                 display: block;
             }
     }
+    &.dont-show{
+        display: none;
+    }
 	.exit-intent-sleekbox-popup{
 		box-sizing: border-box;
         background: $whiteColor;
@@ -321,6 +324,8 @@ Select{
 	border-radius: 12px;
 }
 
-.sub-term{
-    z-index: 999999999999;
+.modal{
+    &.sub-term{
+        z-index: 999999999999999 !important;
+    }
 }

@@ -2222,7 +2222,8 @@
             }
         }
         @media (max-width: $sm) {
-            height: 430px;
+            // height: 430px;
+            height: auto;
         }
     }
 }

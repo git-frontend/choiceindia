@@ -139,6 +139,7 @@ function Opendemat(){
           skeleton ?
         <Template2 />
          :
+         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
             <main>
               <section className="bannersection" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
@@ -163,9 +164,7 @@ function Opendemat(){
                         {
                           ischeck ?
                           <div>
-                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                               <DematAccountForm />
-                            </GoogleReCaptchaProvider>
                           </div>:
                           <div>
                             <DematAccountForm />
@@ -1400,6 +1399,7 @@ function Opendemat(){
                 <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
               </section>
             </main>
+            </GoogleReCaptchaProvider>
         }
       </div>
 

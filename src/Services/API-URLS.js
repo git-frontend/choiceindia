@@ -49,6 +49,9 @@ const config = {
     liveMFBaseURL: "https://mf.choiceindia.com/api/mf/",
     UATMFBaseURL: "https://dev.investica.com/api/mf/",
 
+    liveMFBaseURLV2: "https://mf.choiceindia.com/api/mfv2/",
+    UATMFBaseURLV2: "https://dev.investica.com/api/mfv2/",
+
     liveConnectBaseURL: "https://api.choiceconnect.in/connect/api/",
     UATConnectBaseURL: "https://apidev.choiceconnect.in/connect/api/",
 
@@ -70,6 +73,9 @@ export class API_URLS {
 
     /**MF base URL */
     MFBaseURL = '';
+
+    /**MF V2 base URL */
+    MFBaseURLV2 = ''; 
 
     /**connect base URL */
     ConnectBaseURL = '';
@@ -308,6 +314,7 @@ export class API_URLS {
         this.setNACHBaseURL(config[configKey + 'NachBaseURL']);
         this.setNbfcAuthURL(config[configKey + 'NbfcAuthURL']);
         this.setMFBaseURL(config[configKey + 'MFBaseURL']);
+        this.setMFBaseURLV2(config[configKey + 'MFBaseURLV2']);
         this.setConnectBaseURL(config[configKey + 'ConnectBaseURL']);
         this.setMiddlewareGoURL(config[configKey + 'MiddlewareGoURL']);
     }
@@ -324,6 +331,12 @@ export class API_URLS {
     setMFBaseURL = (url) => {
         this.MFBaseURL = url;
     }
+
+        /**set MF base URL */
+        setMFBaseURLV2 = (url) => {
+            this.MFBaseURLV2 = url;
+        }
+    
 
     setJiffyBaseURL = (url) => {
         this.JiffyBaseURL = url;
@@ -853,32 +866,32 @@ export class API_URLS {
     /**Assited Order Flow api's */
     
     getBasketDetailsURL(){
-        return this.ConnectBaseURL + 'basket/order/details';
+        return this.MFBaseURLV2 + 'orders/basket/order/details';
         // return "https://apidev.choiceconnect.in/connect/api/basket/order/details";
     }
 
     /**send otp api url */
     getMFAssistedSendOtpURL(){
 
-        return this.MFBaseURL + 'sms/SendOTP';
+        return this.MFBaseURLV2 + 'orders/send-otp';
         // return "https://dev.investica.com//api/mf/sms/SendOTP";
     }
 
     /**verify otp api url */
     getMFAssistedVerifyOTPURL(){
-        return this.MFBaseURL + 'sms/VerifyOTP';
+        return this.MFBaseURLV2 + 'orders/verify-otp';
         // return "https://dev.investica.com//api/mf/sms/VerifyOTP";
     }
 
     /**place lumpsum order */
     getLumpsumOrderURL(){
-        return this.MFBaseURL + 'MFOrders/V3/LumpSum';
+        return this.MFBaseURL + 'MFOrders/V4/LumpSum';
         // return "https://dev.investica.com/api/mf/MFOrders/V3/LumpSum"
     }
 
     /**place SIP order */
     getSIPOrderURL(){
-        return this.MFBaseURL + 'MFOrders/V2/XSIP';
+        return this.MFBaseURL + 'MFOrders/V3/XSIP';
         // return "https://dev.investica.com/api/mf/MFOrders/V2/XSIP"
     }
 
