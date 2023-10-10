@@ -22,14 +22,9 @@ function FixedForm() {
                       <div className='form-grp2'>
                         <input type="text" className='form-control' placeholder='Referral Code (Optional)'/>
                       </div>
-                      <div key="inline-checkbox" className="sub-formgrp cust-checkbox">
-                          <Form.Check
-                              inline
-                              name="terms_and_conditions"
-                              type="checkbox"
-                              id="terms_and_conditions"
-                          >
-                            <Form.Check.Input type="checkbox" checked readOnly />
+                      <div className="cust-checkbox">
+                          <Form.Check inline name="terms_and_conditions"type="checkbox">
+                            <Form.Check.Input type="checkbox" checked/>
                               <Form.Check.Label>I agree &amp; <br/> accept <a><span className="link-tc">T&C</span></a></Form.Check.Label>
                           </Form.Check>
                       </div>
