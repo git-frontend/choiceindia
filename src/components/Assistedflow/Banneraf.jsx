@@ -275,7 +275,7 @@ function Banneraf() {
                 /**here if first order yes */
                 let tempObj = { Orders: [], Source: "connect", Client: res.data.Body.client_id };
                 /**loop through each schemes in list */
-                res.Body.scheme_data.forEach((item, indexNo) => {
+                res.data.Body.scheme_data.forEach((item, indexNo) => {
                   let date = item.scheme_selected_date;
                   let nextDate;
                   let currentDate = new moment().startOf("day");
