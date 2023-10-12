@@ -49,9 +49,9 @@ const CurrencyTradingBanner = () => {
         <div>
              <section className="banner-sect" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
-                    <div className="row colreverse">
+                    <div className="row">
                         <div className="col-md-7 col-sm-6">
-                        {
+                        {/* {
                                 view && !view.matches ?
                                 <div>
                            
@@ -64,7 +64,13 @@ const CurrencyTradingBanner = () => {
                             </h1>
                             </div>
 
-                        }
+                        } */}
+                        <div>
+                            <span className="banner-title2">All in 1 Account</span>
+                            <h1 className="banner-title" >
+                            <div className="desktop">Open a  Currency Trading <br />  Account <span className="yellow">Online For Free</span></div>
+                            </h1>
+                        </div>
                        
                             {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} alt="zigzagline" /> */}
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
@@ -129,7 +135,7 @@ const CurrencyTradingBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                        {
+                        {/* {
                                 view && !view.matches ?
                                 <div>
                              <span className="banner-title2 mobile">All in 1 Account</span>
@@ -141,7 +147,7 @@ const CurrencyTradingBanner = () => {
                             <div>
                             </div>
 
-                        }
+                        } */}
                       
                       
                       {

@@ -16,8 +16,7 @@ function BChargesMoreContent() {
                             <div className="para">
                                 {/* <input type="checkbox" className="read-more-state" id="post-1" /> */}
                                 <div className="read-more-wrap "> 
-                                <p className="seo-para">The stock market is an old establishment that has existed since 1875 when BSE 	was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform
-                                   This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;</p>
+                                <p className="seo-para">The stock market is an old establishment that has existed since 1875 when BSE was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;</p>
                                    <h3 className="seo-h3">What is a Demat Account?</h3>
                                 <p className="seo-para">If we put it into simple terms we can say that the <Link to="/demat-account">Demat account</Link> is a depository where you can safely store your investments in different forms. A Demat account can not only hold your stocks but can also hold your mutual funds, bonds and ETFs.</p>
                                 {/* {!show ? <span onClick={()=>{setshow(true);}}><em className="btn-read moreless-button">Read more</em></span>:""}
@@ -91,7 +90,7 @@ function BChargesMoreContent() {
                                     <li className="seo-para">Once your account is opened, your DP will be providing you with a unique client ID, this client ID will allow you to access your Demat account online.</li>
                                   </ul>
                                   <p className="seo-para">After you’ve gained access to your Demat account make sure your DP provides you with Beneficiary ID and POA number or Power of Attorney number along with your client ID, this information will help you apply for IPOs.</p>
-                                  <h3 className="seo-h3">Opening a Demat Account Online</h3>
+                                  <h3 className="seo-h3">How to Open a Demat Account Online</h3>
                                     <p className="seo-para">Opening a Demat account online is relatively easier than opening an account while actually having to be at the physical location of your preferred DP. You opening a Demat account online will obviously allow you to open an account at the convenience of your house.</p>
                                     <p className="seo-para">Although the requirements of opening a Demat account online will require you to have pretty much the same documents you’d usually want while opening a Demat account physically, there are some extra requirements that you need to know to be prepared;</p>
                                   <div className="ml-3">
