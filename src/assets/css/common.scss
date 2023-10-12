@@ -339,7 +339,8 @@ body{
         display: block;
         
         @media (max-width:$sm) {
-            display: none;
+            text-align: center;
+            margin-bottom: 1rem;
         }
         &.mf-ttl{
             color: $blueColortext;
@@ -348,12 +349,12 @@ body{
         }
         &.mobile{
             display: none;
-            @media (max-width:$sm) {
-                display: block !important;
-                text-align: center;
-                margin-bottom: 1.2rem;
-                font-size: 1.7rem;
-            }
+            // @media (max-width:$sm) {
+            //     display: block !important;
+            //     text-align: center;
+            //     margin-bottom: 1.2rem;
+            //     font-size: 1.7rem;
+            // }
         }
     }
 

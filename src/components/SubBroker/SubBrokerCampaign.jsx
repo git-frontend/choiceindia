@@ -7,6 +7,7 @@ import WhyBecomeSubBrokerC from './WhyBecomeSubBrokerC';
 import WhoEligibleToSubBroker from './WhoEligibleToSubBroker';
 import MoreContent from './MoreContent';
 import SubBrokerOffersC from './SubBrokerOffersC';
+import StepsToSubBroker from './StepsToSubBroker';
 import Template5 from '../Common-features/Template5';
 import "./subbroker.scss";
 import {
@@ -70,6 +71,7 @@ function SubBrokerCampaign() {
             <SubBrokerSellMore />
             <WhyBecomeSubBrokerC />
             <WhoEligibleToSubBroker />
+            <StepsToSubBroker />
             <SubBrokerOffersC />
             {/* <MoreContent /> */}
           </div>
