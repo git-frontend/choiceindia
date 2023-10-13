@@ -47,7 +47,7 @@ function WhoEligibleToRemisier() {
                     <div className="row align-items-center">
                         <div className="col-md-6">
                             <div className="eligb-left-sec">
-                                <h2 className="titl3">How To Become an Choice Authorised Person</h2>
+                                <h2 className="titl3">How to Become a Choice Authorised Person?</h2>
                                 <p className="sml-para-dv">Anyone who wishes to create a passive source of income.</p>
                             </div>
                         </div>

@@ -1232,7 +1232,7 @@ const meta_tags = {
     "research": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India",'lang':"en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` ,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
     "authorised-person": {
-        'title': "Become an Authorised Person in the Stock Market with Choice",'lang':"en", "content": "Become an authorised person in the stock market with Choice and get the highest revenue sharing, with no registration fees and no deposit required.",
+        'title': "Become an Authorised Person (AP) in Stock Market with Choice",'lang':"en", "content": "Become an Authorised Person (AP) in stock market with Choice. Earn upto ₹ 1000 per account incentive, highest revenue sharing, timely payouts & more.",
         'link': 'https://choiceindia.com/authorised-person','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
         {
@@ -1271,7 +1271,7 @@ const meta_tags = {
     ` },
 
     "remisier": {
-        'title': "Become a Remisier with Choice & Earn a High Commission",'lang':"en", "content": "Become a Remisier without a deposit or security amount with Choice. Open a free remisier account with us and enjoy the highest revenue sharing, incentives, and more.",
+        'title': "Become a Remisier in Stock Market with Choice & Earn Big",'lang':"en", "content": "Become a Remisier in stock market with Choice. Start your own Share Market Remisier business with highest revenue sharing, upto ₹ 1000 per account incentive & more.",
         "link": 'https://choiceindia.com/remisier','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
