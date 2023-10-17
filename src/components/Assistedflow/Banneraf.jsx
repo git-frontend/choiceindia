@@ -4,6 +4,7 @@ import LazyLoader from "../Common-features/LazyLoader";
 import Redirect from "../../assets/images/aof/redirect-arrow.gif";
 import ThumbUp from "../../assets/images/aof/thumb-up.gif";
 import { faClose } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   BrowserRouter as Router,
@@ -1805,6 +1806,11 @@ function Banneraf() {
               centered
             >
               <Modal.Body>
+                {
+                  (!confirmedOrders.length)?
+                  <h3 className="text-center text-danger">Your order got failed.</h3>: <></>
+                }
+                
                 <table class="table table-borderless">
                   <thead>
                     <tr>
@@ -1814,21 +1820,44 @@ function Banneraf() {
                   </thead>
                   <tbody>
                     {
-                      schemeDetails && schemeDetails.length && schemeDetails.map((order) => (
+                      schemeDetails && schemeDetails.Orders && schemeDetails.Orders.length && schemeDetails.Orders.map((order) => (
                         <tr>
                           <td>{order.SchemeName || ""}</td>
-                          <td>{order.FinalStatus || order.OrderStatus}</td>
+                          <td>{order.FinalStatus || order.OrderStatus}
+                          {
+                            ((order.FinalStatus || order.OrderStatus) === "FAILED") ?
+                            <span className="status-txt" data-bs-toggle="tooltip" data-bs-placement="top" title={order.Reason || ""}>
+                            <FontAwesomeIcon icon={faCircleInfo} />
+                            </span> : ""
+                          }
+                          </td>
                         </tr>
                       ))
                     }
                   </tbody>
                 </table>
-                <div className="c-note">Note: Click "Continue" to proceed with Confirmed Schemes or "Cancel" your complete order</div>
+                {
+                  (!confirmedOrders.length) ?
+                  <></>:
+                  <div className="c-note">Note: Click "Continue" to proceed with Confirmed Schemes or "Cancel" your complete order</div>
+                }
+                
               </Modal.Body>
               <Modal.Footer>
                 <div className="d-flex-gap">
-                  {!!confirmedOrders.length && <Button onClick={() => { window.open(paymentLink, '_blank') }}>Continue</Button>}
-                  <Button className="btn btn-danger" onClick={confirmedOrders.length ? cancelOrder : () => { setShowCancelOrder(false) }}>Cancel</Button>
+                  {
+                    (confirmedOrders.length) ?
+                      <>
+                        <Button onClick={() => { window.open(paymentLink, '_blank') }}>Continue</Button>
+                        <Button className="btn btn-danger" onClick={confirmedOrders.length ? cancelOrder : () => { setShowCancelOrder(false) }}>Cancel</Button>
+                      </>
+                      :
+                      <>
+                      {(subId)? <span className="text-secondary">Note: Kindly contact your RM</span> : <></>}
+                      <Button onClick={() => { window.open('/', '_self') }}>Okay</Button>
+                      </>
+                      
+                  }
                 </div>
               </Modal.Footer>
             </Modal>
