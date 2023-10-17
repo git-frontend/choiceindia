@@ -13,7 +13,7 @@ function DematFaq() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title-first text-center pb-4">FAQ's</h2>
+                            <h2 className="title-first text-center pb-4">FAQs about Remisier</h2>
                         </div>
 
                     </div>

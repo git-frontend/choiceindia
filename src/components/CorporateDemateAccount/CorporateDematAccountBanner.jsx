@@ -49,9 +49,9 @@ const CorporateDematAccountBanner = () => {
         <div>
              <section className="banner-sect" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
-                    <div className="row colreverse">
+                    <div className="row">
                         <div className="col-md-7 col-sm-6">
-                        {
+                        {/* {
                                 view && !view.matches ?
                                 <div>
                            
@@ -65,7 +65,15 @@ const CorporateDematAccountBanner = () => {
                             </h1>
                             </div>
 
-                        }
+                        } */}
+
+                            <div>
+                                <span className="banner-title2">All in 1 Account</span>
+                                <h1 className="banner-title" >
+                                    <div className="desktop">Open Corporate Demat Account</div>
+                                    
+                                </h1>
+                            </div>
                       
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
                             {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} /> */}
@@ -75,11 +83,11 @@ const CorporateDematAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image2} width={"30"} height={"30"} alt="Open Corporate Demat Account with Low DP Charges" className="img-fluid " />
+                                                    <img src={Image5} width={"30"} height={"30"} alt="Zero AMC for First Year" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                            <p><span className="fontbold" >One</span> Account for Everything
+                                            <p>Zero AMC for First Year
                                                 </p>
                                             </div>
                                         </div>
@@ -88,11 +96,11 @@ const CorporateDematAccountBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image3} width={"28"} height={"28"} alt="Open Low Brokerage Corporate Demat Account" className="img-fluid " />
+                                                    <img src={Image4} width={"28"} height={"28"} alt="Free Research Calls" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Low </span> Brokerage Charges</p>
+                                                <p>Free Research Calls</p>
                                             </div>
                                         </div>
                                     </div>
@@ -102,11 +110,11 @@ const CorporateDematAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt="Free Corporate Demat Account Opening with Expert Research Advisory" className="img-fluid " />
+                                                    <img src={Image2} width={"24"} height={"24"} alt="No Account Opening Fee" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Free </span>  Research Advisory</p>
+                                                <p>No Account Opening Fee</p>
                                             </div>
                                         </div>
                                     </div>
@@ -114,11 +122,11 @@ const CorporateDematAccountBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image5} width={"32"} height={"20"} alt="Free Corpoprate Demat Account with No Annual Charges" className="img-fluid   " />
+                                                    <img src={Image3} width={"32"} height={"20"} alt="Low DP Charges" className="img-fluid   " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Free </span> AMC for First Year</p>
+                                                <p>Low DP Charges</p>
                                             </div>
                                         </div>
                                     </div>
@@ -128,7 +136,7 @@ const CorporateDematAccountBanner = () => {
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
 
-                        {
+                        {/* {
                                 view && !view.matches ?
                                 <div>
                              <span className="banner-title2 mobile">All in 1 Account</span>
@@ -141,7 +149,7 @@ const CorporateDematAccountBanner = () => {
                             <div>
                             </div>
 
-                        }
+                        } */}
                         
                         {
                                 ischeck ?

@@ -24,13 +24,13 @@ function Faqs() {
                                 <Accordion.Item eventKey="0" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>How long will it take for the Demat Account to be activated?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        Your account will be activated within 4 hours of document submission. If there is any gap in the documentation, the Choice support team will reach out to you. Once your account is activated you will receive an email from Choice informing you about the same.
+                                    Your account will be activated within 4 hours of document submission. If there is any gap in the documentation, the Choice support team will reach out to you. Once your account is activated you will receive an email from Choice informing you about the same.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'> What are the documents required to open a Demat Account?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        The following documents will be required to open an account for a resident individual with Choice :
+                                    The following documents will be required to open an account for a resident individual with Choice :
                                         <ul>
                                             <li>PAN Card</li>
                                             <li>Cancelled Cheque (that captures the MICR Code)</li>
@@ -56,7 +56,7 @@ function Faqs() {
                                     </Accordion.Body>
                                 </Accordion.Item> */}
                                 <Accordion.Item eventKey="4" className='faq-item' id="faqid">
-                                    <Accordion.Header as="h3" className='faq-header'>Are there any charges for Demat Account opening with Choice? </Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>Are there any charges for Demat Account opening with Choice?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     You can open a low brokerage Demat Account with Choice at zero account opening charges.
                                     </Accordion.Body>
@@ -96,7 +96,8 @@ function Faqs() {
                                             <Accordion.Header as="h3" className='faq-header'>Can I use my previous Demat Account with Choice?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             There are 2 options, either you open a new Demat account with Choice and transfer all shares from the old Demat, or merge the old Demat into the new one.<br />
-                                            You can opt for manual or online transfer of shares.<br />
+You can opt for manual or online transfer of shares.
+<br /><br />
                                             <strong>Manual Transfer</strong>
                                             <ul>
                                                 <li>Ascertain which DP (Depository Participant) is holding the shares, there are 2 depositories in India, National Securities Depository Limited (NSDL) and Central Depository Services Limited (CDSL)</li>
@@ -108,12 +109,12 @@ function Faqs() {
                                                 <li>Shares will be transferred to new account in 3-5 working days</li>
                                             </ul>
                                             <strong>Online Transfer</strong>
-                                            <ul>
-                                                <li>This option is much simpler, just visit the CDSL website and register with all required details</li>
-                                                <li>You will be required to fill a form and use the 'Print Form' option; this notifies CDSL to start the verification process</li>
-                                                <li>After verification is completed, Login details to your account will be sent on your email id</li>
-                                                <li>Login to your account from CDSL website and start transferring shares to the new account</li>
-                                            </ul>
+                                                <ul>
+                                                    <li>This option is much simpler, just visit the CDSL website and register with all required details</li>
+                                                    <li>You will be required to fill a form and use the 'Print Form' option; this notifies CDSL to start the verification process</li>
+                                                    <li>After verification is completed, Login details to your account will be sent on your email id</li>
+                                                    <li>Login to your account from CDSL website and start transferring shares to the new account</li>
+                                                </ul>
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="11" className='faq-item'>
@@ -141,16 +142,29 @@ function Faqs() {
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="15" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header'>How much Demat Account Opening Fee charged by Choice?</Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header'>How much Demat Account Opening Fee charged by Choice?
+
+                                            </Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             It's free. There is no Demat account opening fee charged by Choice.
+                                            <br/><br/>
+                                            What are the eligibility criteria for opening an online Demat & Trading Account?
+As far as age is concerned, there is no minimum age criterion i.e., under 18 can also have Demat & Trading accounts opened. The parents or guardians will be in-charge of the account until the minor comes of age.<br/>
+Below are the common requirements,<br/><br/>
+<ul>
+    <li>Must be Indian Citizen residing in India</li>
+    <li>Must be 18 years of age</li>
+    <li>Have valid Pan Card</li>
+    <li>Valid Address Proof (Aadhar, Voter ID, Passport, Driving License)</li>
+</ul>
+You will be required to provide recent photos along with proof of Identity, Address and Income (ITR) to open a Demat account in India.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="16" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>What are the eligibility criteria for opening an online Demat &amp; Trading Account? </Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             As far as age is concerned, there is no minimum age criterion i.e., under 18 can also have Demat &amp; Trading accounts opened. The parents or guardians will be in-charge of the account until the minor comes of age.<br />
-                                            <strong>Below are the common requirements,</strong>
+                                            Below are the common requirements,<br /><br />
                                             <ul>
                                                 <li>
                                                 Must be Indian Citizen residing in India
@@ -162,26 +176,20 @@ function Faqs() {
                                             You will be required to provide recent photos along with proof of Identity, Address and Income (ITR) to open a Demat account in India.
                                             </Accordion.Body>
                                         </Accordion.Item>
-                                        <Accordion.Item eventKey="17" className='faq-item'>
+                                        {/* <Accordion.Item eventKey="17" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>How long will it take for the Demat account to be activated?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             If the documents are in order, the Demat account will be activated in 24 – 48 working hours.
                                             </Accordion.Body>
-                                        </Accordion.Item>
+                                        </Accordion.Item> */}
                                         <Accordion.Item eventKey="18" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>What is Paperless Demat account opening?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                            In this option for Demat account opening, there is no physical submission of any document involved. All documents are submitted online and take only 10 minutes to complete!
+                                            In this option for Demat account opening, there is no physical submission of any document involved. All documents are submitted online and take only 5 minutes to complete!
                                             </Accordion.Body>
                                         </Accordion.Item>
-
-                           
-                                        </Accordion>
-
-                                    
-                                   
-                            
-                        </div>
+                                    </Accordion>
+                                </div>
                     </div>
                 </div>
             </section>
