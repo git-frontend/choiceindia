@@ -49,9 +49,9 @@ const FreeAmcAccountBanner = () => {
         <div>
              <section className="banner-sect" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
-                    <div className="row colreverse">
+                    <div className="row">
                         <div className="col-md-7 col-sm-6">
-                        {
+                        {/* {
                                 view && !view.matches ?
                                 <div>
                            
@@ -65,7 +65,15 @@ const FreeAmcAccountBanner = () => {
                             </h1>
                             </div>
 
-                        }
+                        } */}
+
+                            <div>
+                               <span className="banner-title2">All in 1 Account</span>
+                                <h1 className="banner-title" >
+                                    <div className="desktop">Open a Zero AMC Demat <br /> <span className="yellow">Account Online For Free</span></div>
+                                    
+                                </h1>
+                            </div>
                       
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
                             {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} /> */}
@@ -127,7 +135,7 @@ const FreeAmcAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                        {
+                        {/* {
                                 view && !view.matches ?
                                 <div>
                                 <span className="banner-title2 mobile">All in 1 Account</span>
@@ -139,7 +147,7 @@ const FreeAmcAccountBanner = () => {
                             <div>
                             </div>
 
-                        }
+                        } */}
                        
                        {
                                 ischeck ?

@@ -51,7 +51,7 @@ function WhyOpenFreeDematAccount() {
                               <LazyLoader src={ZeroAutoSquare} className={'img-fluid'} width={"63"} height={"64"} alt={"Demat Account with Free Research"}/>
                             </div>
                             <div className="benefit-item">
-                              <h3 className="title-cam">Free Research Advisory</h3>
+                              <h3 className="title-cam">Free Research Calls</h3>
                             </div>
                         </div>
                       </div>

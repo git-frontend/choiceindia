@@ -52,7 +52,7 @@ function FreeDematCompaign() {
   return (
     <div>
 
-            <Banner/>
+              <Banner/>
         {/* <CreateBacktestStrategies/> */}
               <GetFreeResearchCall />
               <OurTrackRecordSaysAll />

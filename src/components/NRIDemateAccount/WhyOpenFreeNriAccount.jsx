@@ -52,7 +52,7 @@ function WhyOpenFreeNriAccount() {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="sectext">
-                              <h2>Why Open A NRI Demat Account Online With Us?</h2>
+                              <h2>Why Open NRI Demat Account with Choice</h2>
                             </div>
                         </div>
                         <div className="col-md-8">

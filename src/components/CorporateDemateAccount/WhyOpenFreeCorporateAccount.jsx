@@ -53,7 +53,7 @@ function WhyOpenFreeCorporateAccount() {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="sectext">
-                              <h2>Why Open A Free Corporate Demat Account Online With Us?</h2>
+                              <h2>Why Open Corporate Demat Account With Choice?</h2>
                             </div>
                         </div>
                         <div className="col-md-8">

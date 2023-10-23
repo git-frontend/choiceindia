@@ -48,7 +48,7 @@ function AuthorizeBanner() {
                                         <span>Highest</span> Revenue Sharing
                                     </li>
                                     <li>
-                                    Upto <span className="d-inline">₹ 1000 </span> Per Account Incentive*
+                                    <span className="d-inline">Earn Rs 1000 </span> Per Account Incentive*
                                     </li>
                                     <li>
                                         <span>Lifetime</span> Income Source
