@@ -1,8 +1,9 @@
 const meta_tags = {
 
-    "services": { 'title': "Get Financial Services in India - Choice",'lang':"en", 'content': 'Choice is the leading financial service provider in India that offers the best financial services such as stock market investing, wealth management, loans, insurance & tax advisory services etc.',"link":"https://choiceindia.com/services",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
+  "services": { 'title': "Get Financial Services in India - Choice", 'lang': "en", 'content': 'Choice is the leading financial service provider in India that offers the best financial services such as stock market investing, wealth management, loans, insurance & tax advisory services etc.', "link": "https://choiceindia.com/services", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "https://choiceindia.com/": { 'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India','lang':"en", 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.`,'link': "https://choiceindia.com/",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript":`<script type="application/ld+json">
+  "https://choiceindia.com/": {
+    'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India', 'lang': "en", 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.`, 'link': "https://choiceindia.com/", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "", "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -28,61 +29,62 @@ const meta_tags = {
     </script>
     `},
 
-    "career": {
-        'title': `Career At Choice | Work With India's Leading FinTech Company`,'lang':"en", 'content': ` Work with Choice India's leading Fintech company. Visit us to know the current job openings.`,"link":"https://choiceindia.com/career",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""
-       },
+  "career": {
+    'title': `Career At Choice | Work With India's Leading FinTech Company`, 'lang': "en", 'content': ` Work with Choice India's leading Fintech company. Visit us to know the current job openings.`, "link": "https://choiceindia.com/career", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": ""
+  },
 
-       "news-announcement":{'title':"News & Annoucement - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/news-announcement",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-    
-
-       "insurance":{'title':"Best Insurance Broker in India - Get a Best Insurance Policy Online",'lang':"en",'content':"Get best insurance quotes online from the leading insurance broker in India. Choice helps you with choosing right insurance policy comparing with various insurance companies such as life insurance, car insurance, health insurance & travel insurance etc.",'link':"https://choiceindia.com/insurance",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""}, 
-
-       "equity-broking":{'title':"Equity Broking Services - Invest in Stocks, Dervivatives, Commodities and Currencies",'lang':"en",'content':"",'link':"https://choiceindia.com/equity-broking",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-
-       "investor-awareness":{'title':"Investor Awareness - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/investor-awareness",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-
-       "Investor-charter":{'title':"Investor Charter - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/Investor-charter",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-
-       "Investor-complaints":{'title':"Investor Complaints - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/Investor-complaints",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-
-       "terms-conditions":{'title':"Terms and Conditions - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/terms-conditions",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-
-       "privacy-policy":{'title':"Privacy Policy - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/privacy-policy",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-
-       "disclaimer":{'title':"Disclaimer - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/disclaimer",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-
-       "cebpl-policies":{'title':"CEBPL Policies - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/cebpl-policies",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-
-       "file-download":{'title':"Download Demat Account Opening Form",'lang':"en",'content':"",'link':"https://choiceindia.com/file-download",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "news-announcement": { 'title': "News & Annoucement - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/news-announcement", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
 
+  "insurance": { 'title': "Best Insurance Broker in India - Get a Best Insurance Policy Online", 'lang': "en", 'content': "Get best insurance quotes online from the leading insurance broker in India. Choice helps you with choosing right insurance policy comparing with various insurance companies such as life insurance, car insurance, health insurance & travel insurance etc.", 'link': "https://choiceindia.com/insurance", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "contact-us": { 'title': "Get In Touch with Choice’s Customer Support Team",'lang':"en", 'content': "Get in touch with our Choice customer care team @ +91 88 2424 2424 or drop us a mail at care@choiceindia.com. Contact us or visit any of our branch offices across India.","link":"https://choiceindia.com/contact-us",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "equity-broking": { 'title': "Equity Broking Services - Invest in Stocks, Dervivatives, Commodities and Currencies", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/equity-broking", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "blog": { 'title': "Choice Blog - Stay Updated with Stock Market Information",'lang':"en", 'content': "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice.",'link':'https://choiceindia.com/blog/','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "investor-awareness": { 'title': "Investor Awareness - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/investor-awareness", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "faq": { 'title': "Frequently Asked Questions | Choice",'lang':"en", 'content': "Find FAQs related to our products, services, investment advisory, account opening, and more. Get answers to all your queries about the stock market at Choice.", "link":"https://choiceindia.com/faq",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "Investor-charter": { 'title': "Investor Charter - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/Investor-charter", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "sub-broker-franchise": { 'title': "Sub Broker Franchise with Low Deposit - Become a Choice Sub Broker",'lang':"en", 'content': "Start a sub broker franchise with minimum deposit. Become a stock market sub broker & start your own stock broking franchise business in India with Choice.", 'link': "https://choiceindia.com/sub-broker-franchise",'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en-in","href2":"hi-in","href3":"gu-in","href4":"te-in","href5":"mr-in","href6":"x-default"},
+  "Investor-complaints": { 'title': "Investor Complaints - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/Investor-complaints", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "refer-and-earn": { 'title': " Best Refer and Earn Demat Account - Earn upto Rs. 100 Per Referral",'lang':"en",'content': "Join the best refer and earn demat account opening referral program by Choice. Refer your friends to Choice and earn upto Rs.100 incentive per referral. Your friend will get upto Rs 100 after activating their account.", 'link': "https://choiceindia.com/refer-and-earn",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "terms-conditions": { 'title': "Terms and Conditions - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/terms-conditions", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "sumeet-bagadia": { 'title': "Sumeet Bagadia - Get Trading Tips, Daily Investment Calls & More",'lang':"en", 'content': "Sumeet Bagadia is an Executive Director & Head of Technical Research at Choice Broking. Be connected for trading tips, daily intraday & investment calls, weekly market updates & more.", 'link': 'https://choiceindia.com/sumeet-bagadia','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "privacy-policy": { 'title': "Privacy Policy - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/privacy-policy", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "ipo-investment-account": { 'title': "IPO Investment: Invest In IPO Online With Choice",'lang':"en", "content":"IPO Investment - Now investing in IPO is smooth and simple with Choice. Open a Demat account and avail benefits such as listing gains, & short-term profit.", 'link': 'https://choiceindia.com/ipo-investment-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "disclaimer": { 'title': "Disclaimer - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/disclaimer", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "mutual-funds-investment":{'title':"Invest in Mutual Funds Online in India with Choice",'lang':"en",'content':"With Choice, you may begin investing in mutual funds online in India. The choice mutual funds investment platform simplifies investing in mutual funds for everyone.",'link':"https://choiceindia.com/mutual-funds-investment",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-    
-    
-    "investment-app":{'title':"Best Investment App for Stocks, Mutual Funds, ETF and IPO",'lang':"en",'content':"Start your investment journey with the top investment app in India. The Choice app allows you to invest in several types of securities, including bonds, ETFs, mutual funds, and derivatives.",'link':"https://choiceindia.com/investment-app",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-    
-    
-    "research-listing":{'title':"Best Stocks to Invest in India Right Now",'lang':"en",'content':"From the Choice's fundamental and technical analysis reports, select the best stocks to invest in in India right now. Visit our site to find out about the top stocks to buy today now.",'link':"https://choiceindia.com/research-listing",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-    "fact-sheet":{'title':"Fact Sheet - Choice International Limited",'lang':"en",'content':"Visit to Know the CIN number of Choice International Limited.",'link':"https://choiceindia.com/fact-sheet",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-    
-    "advisory-for-investors":{'title':"Advisory for Investors - Choice",'lang':"en",'content':"Visit Choice International Limited's official website to know the advisory for the investors.",'link':"https://choiceindia.com/advisory-for-investors",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-    
-    "marathi/open-demat-account":{'title':"मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही",'content':"चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.",'link':"https://choiceindia.com/marathi/open-demat-account","lang":'mr','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en-in","href2":"hi-in","href3":"","href4":"","href5":"mr-in","href6":"x-default",
+  "cebpl-policies": { 'title': "CEBPL Policies - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/cebpl-policies", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+  "file-download": { 'title': "Download Demat Account Opening Form", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/file-download", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+
+
+  "contact-us": { 'title': "Get In Touch with Choice’s Customer Support Team", 'lang': "en", 'content': "Get in touch with our Choice customer care team @ +91 88 2424 2424 or drop us a mail at care@choiceindia.com. Contact us or visit any of our branch offices across India.", "link": "https://choiceindia.com/contact-us", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+  "blog": { 'title': "Choice Blog - Stay Updated with Stock Market Information", 'lang': "en", 'content': "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice.", 'link': 'https://choiceindia.com/blog/', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+  "faq": { 'title': "Frequently Asked Questions | Choice", 'lang': "en", 'content': "Find FAQs related to our products, services, investment advisory, account opening, and more. Get answers to all your queries about the stock market at Choice.", "link": "https://choiceindia.com/faq", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+  "sub-broker-franchise": { 'title': "Sub Broker Franchise with Low Deposit - Become a Choice Sub Broker", 'lang': "en", 'content': "Start a sub broker franchise with minimum deposit. Become a stock market sub broker & start your own stock broking franchise business in India with Choice.", 'link': "https://choiceindia.com/sub-broker-franchise", 'link1': "https://choiceindia.com/sub-broker-franchise", 'link2': "https://choiceindia.com/hindi/sub-broker-franchise", 'link3': "https://choiceindia.com/gujarati/sub-broker-franchise", "link4": "https://choiceindia.com/telugu/sub-broker-franchise", "link5": "https://choiceindia.com/marathi/sub-broker-franchise", "link6": "https://choiceindia.com/sub-broker-franchise", "href1": "en-in", "href2": "hi-in", "href3": "gu-in", "href4": "te-in", "href5": "mr-in", "href6": "x-default" },
+
+  "refer-and-earn": { 'title': " Best Refer and Earn Demat Account - Earn upto Rs. 100 Per Referral", 'lang': "en", 'content': "Join the best refer and earn demat account opening referral program by Choice. Refer your friends to Choice and earn upto Rs.100 incentive per referral. Your friend will get upto Rs 100 after activating their account.", 'link': "https://choiceindia.com/refer-and-earn", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+  "sumeet-bagadia": { 'title': "Sumeet Bagadia - Get Trading Tips, Daily Investment Calls & More", 'lang': "en", 'content': "Sumeet Bagadia is an Executive Director & Head of Technical Research at Choice Broking. Be connected for trading tips, daily intraday & investment calls, weekly market updates & more.", 'link': 'https://choiceindia.com/sumeet-bagadia', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+  "ipo-investment-account": { 'title': "IPO Investment: Invest In IPO Online With Choice", 'lang': "en", "content": "IPO Investment - Now investing in IPO is smooth and simple with Choice. Open a Demat account and avail benefits such as listing gains, & short-term profit.", 'link': 'https://choiceindia.com/ipo-investment-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+  "mutual-funds-investment": { 'title': "Invest in Mutual Funds Online in India with Choice", 'lang': "en", 'content': "With Choice, you may begin investing in mutual funds online in India. The choice mutual funds investment platform simplifies investing in mutual funds for everyone.", 'link': "https://choiceindia.com/mutual-funds-investment", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+
+  "investment-app": { 'title': "Best Investment App for Stocks, Mutual Funds, ETF and IPO", 'lang': "en", 'content': "Start your investment journey with the top investment app in India. The Choice app allows you to invest in several types of securities, including bonds, ETFs, mutual funds, and derivatives.", 'link': "https://choiceindia.com/investment-app", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+
+  "research-listing": { 'title': "Best Stocks to Invest in India Right Now", 'lang': "en", 'content': "From the Choice's fundamental and technical analysis reports, select the best stocks to invest in in India right now. Visit our site to find out about the top stocks to buy today now.", 'link': "https://choiceindia.com/research-listing", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "fact-sheet": { 'title': "Fact Sheet - Choice International Limited", 'lang': "en", 'content': "Visit to Know the CIN number of Choice International Limited.", 'link': "https://choiceindia.com/fact-sheet", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+  "advisory-for-investors": { 'title': "Advisory for Investors - Choice", 'lang': "en", 'content': "Visit Choice International Limited's official website to know the advisory for the investors.", 'link': "https://choiceindia.com/advisory-for-investors", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+  "marathi/open-demat-account": {
+    'title': "मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही", 'content': "चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.", 'link': "https://choiceindia.com/marathi/open-demat-account", "lang": 'mr', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "", "link4": "", "link5": "https://choiceindia.com/marathi/open-demat-account", "link6": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "", "href4": "", "href5": "mr-in", "href6": "x-default",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -250,9 +252,9 @@ const meta_tags = {
     
     ` },
 
-    "open-free-demat-account": {
-        'title': "Free Demat Account Opening Online with No Annual Charges",'lang':"en", 'content': "Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.", 'link': 'https://choiceindia.com/open-free-demat-account','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en-in","href2":"hi-in","href3":"","href4":"","href5":"mr-in","href6":"x-default",
-        "faqscript": `<script type="application/ld+json">
+  "open-free-demat-account": {
+    'title': "Free Demat Account Opening Online with No Annual Charges", 'lang': "en", 'content': "Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "", "link4": "", "link5": "https://choiceindia.com/marathi/open-demat-account", "link6": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "", "href4": "", "href5": "mr-in", "href6": "x-default",
+    "faqscript": `<script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -392,33 +394,34 @@ const meta_tags = {
         </script> 
     ` },
 
-    "about-us": { 'title': "Best Stock Broking Company in India - Choice Broking",'lang':"en", "content": "Choice is one of the best stock broking companies in India. Start trading in stocks, derivatives, currency, commodity & investing in mutual funds with India's leading share broking company. Open a free trading account with us.","link":'https://choiceindia.com/about-us', "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
+  "about-us": { 'title': "Best Stock Broking Company in India - Choice Broking", 'lang': "en", "content": "Choice is one of the best stock broking companies in India. Start trading in stocks, derivatives, currency, commodity & investing in mutual funds with India's leading share broking company. Open a free trading account with us.", "link": 'https://choiceindia.com/about-us', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    // "fables": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
+  // "fables": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    // "contact": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
+  // "contact": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "partner": { 'title': "Become a Stock Market Agent with Choice",'lang':"en", "content": "Become a stock market agent with India’s leading full service broker. Get the highest revenue share, local branch support, and training to start your entrepreneurship journey.","link":"https://choiceindia.com/partner", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "partner": { 'title': "Become a Stock Market Agent with Choice", 'lang': "en", "content": "Become a stock market agent with India’s leading full service broker. Get the highest revenue share, local branch support, and training to start your entrepreneurship journey.", "link": "https://choiceindia.com/partner", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "investors": { 'title': "Choice International Limted's Quarterly Results, Corporate Annoucement",'lang':"en", "content": "Stay tuned with us to know more about Choice International Limited's most recent happenings, including its quarterly earnings, corporate announcements, shareholding patterns, and AGM.","link":"https://choiceindia.com/investors", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
+  "investors": { 'title': "Choice International Limted's Quarterly Results, Corporate Annoucement", 'lang': "en", "content": "Stay tuned with us to know more about Choice International Limited's most recent happenings, including its quarterly earnings, corporate announcements, shareholding patterns, and AGM.", "link": "https://choiceindia.com/investors", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "client-details-update":{'title':"Update Client Details - Change Your Email and Phone Number",'lang':"en",'content':"",'link':"https://choiceindia.com/client-details-update",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "client-details-update": { 'title': "Update Client Details - Change Your Email and Phone Number", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/client-details-update", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "annual-report":{'title':"Annual Report - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/annual-report",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "annual-report": { 'title': "Annual Report - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/annual-report", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "financial-info":{'title':"Financial Information - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/financial-info",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "financial-info": { 'title': "Financial Information - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/financial-info", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "news-media":{'title':"News and Media - Choice",'lang':"en",'content':"",'link':"https://choiceindia.com/news-media",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "news-media": { 'title': "News and Media - Choice", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/news-media", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "board-of-directors":{'title':"Board Of Directors",'lang':"en",'content':"",'link':"https://choiceindia.com/board-of-directors",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "board-of-directors": { 'title': "Board Of Directors", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/board-of-directors", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "voting-results":{'title':"Voting Results - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/voting-results",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-    
-    "notices":{'title':"Notices - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/notices"},
+  "voting-results": { 'title': "Voting Results - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/voting-results", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "code-conduct": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India",'lang':"en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "notices": { 'title': "Notices - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/notices" },
 
-    "commodity-trading":{'title':"Open Commodity Trading Account Online for Free at Choice",'lang':"en",'content':"Open a free online commodity trading account at Choice. Start trading commodities with Choice and benefit from low brokerage fees, low dp charges, free research assistance, and more.",'link':"https://choiceindia.com/commodity-trading",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript":`<script type="application/ld+json">
+  "code-conduct": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", 'lang': "en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
+  "commodity-trading": {
+    'title': "Open Commodity Trading Account Online for Free at Choice", 'lang': "en", 'content': "Open a free online commodity trading account at Choice. Start trading commodities with Choice and benefit from low brokerage fees, low dp charges, free research assistance, and more.", 'link': "https://choiceindia.com/commodity-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "", "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -489,27 +492,27 @@ const meta_tags = {
     </script>
     `},
 
-    "derivatives-trading":{"title":"Open Derivatives Trading Account Online for Free with Choice",'lang':"en","content":"Open a free online derivatives trading account to trade futures and options contracts while taking advantage of free research and advisory services and cheap brokerage and dp charges.","link":"https://choiceindia.com/derivatives-trading",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
-   
-    "equity-stock-trading":{'title':"Open Equity Trading Account Online for Free with No AMC Charges",'lang':"en",'content':"Open a free stock trading account online at Choice without paying AMC fees and take advantage of the minimal brokerage and dp fees, free research, and advice services.",'link':"https://choiceindia.com/equity-stock-trading",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "derivatives-trading": { "title": "Open Derivatives Trading Account Online for Free with Choice", 'lang': "en", "content": "Open a free online derivatives trading account to trade futures and options contracts while taking advantage of free research and advisory services and cheap brokerage and dp charges.", "link": "https://choiceindia.com/derivatives-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "currency-forex-trading":{'title':"Open Currency / Forex Trading Account Online for Free at Choice",'lang':"en",'content':"Open a free currency or forex trading account online to take advantage of minimal brokerage fees, free research, and advisory services, as well as the first year being free of annual fees.",'link':"https://choiceindia.com/currency-forex-trading",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "equity-stock-trading": { 'title': "Open Equity Trading Account Online for Free with No AMC Charges", 'lang': "en", 'content': "Open a free stock trading account online at Choice without paying AMC fees and take advantage of the minimal brokerage and dp fees, free research, and advice services.", 'link': "https://choiceindia.com/equity-stock-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "campaign/open-demat-account":{'title':"Open a Free Demat Account Online - Low Brokerage + No AMC For 1st Year",'lang':"en",'content':"Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Free Research with 78% Success Ratio & more.",'link':"https://choiceindia.com/campaign/open-demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "currency-forex-trading": { 'title': "Open Currency / Forex Trading Account Online for Free at Choice", 'lang': "en", 'content': "Open a free currency or forex trading account online to take advantage of minimal brokerage fees, free research, and advisory services, as well as the first year being free of annual fees.", 'link': "https://choiceindia.com/currency-forex-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "hindi/sub-broker-franchise":{'title':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट",'content':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी सबसे कम डिपॉजिट में और कमाईये जीवनभर ब्रोकेरज शेअर ७५% तक आपसे जुडी हुए ग्राहकोसे, आजही चॉइस सब ब्रोकर बनें|",'link':"https://choiceindia.com/hindi/sub-broker-franchise",'lang':"hi",'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en-in","href2":"hi-in","href3":"gu-in","href4":"te-in","href5":"mr-in","href6":"x-default"},
+  "campaign/open-demat-account": { 'title': "Open a Free Demat Account Online - Low Brokerage + No AMC For 1st Year", 'lang': "en", 'content': "Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Free Research with 78% Success Ratio & more.", 'link': "https://choiceindia.com/campaign/open-demat-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "campaign/sub-broker-franchise":{'title':"Sub Broker Franchise with Low Deposit - Become a Choice Sub Broker",'lang':"en",'content':"Become a Sub Broker with Choice. Open a sub brokership business or franchise with minimum deposit* & get upto 75% of total brokerage for whole trading life-span of the client.",'link':"https://choiceindia.com/sub-broker-franchise",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "hindi/sub-broker-franchise": { 'title': "चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी सबसे कम डिपॉजिट में", 'content': "सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी सबसे कम डिपॉजिट में चॉइस के साथ | पाईये उच्चतम ब्रोकरेज शेयरिंग, ₹ १००० तक प्रति खाता इन्सेंटिव्ह और बहोत कुछ| आजही चॉइस सब ब्रोकर बनें|", 'link': "https://choiceindia.com/hindi/sub-broker-franchise", 'lang': "hi", 'link1': "https://choiceindia.com/sub-broker-franchise", 'link2': "https://choiceindia.com/hindi/sub-broker-franchise", 'link3': "https://choiceindia.com/gujarati/sub-broker-franchise", "link4": "https://choiceindia.com/telugu/sub-broker-franchise", "link5": "https://choiceindia.com/marathi/sub-broker-franchise", "link6": "https://choiceindia.com/sub-broker-franchise", "href1": "en-in", "href2": "hi-in", "href3": "gu-in", "href4": "te-in", "href5": "mr-in", "href6": "x-default" },
 
-    "corporate-governance":{'title':"Corporate Goveranc - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/corporate-governance",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "campaign/sub-broker-franchise": { 'title': "Sub Broker Franchise with Low Deposit - Become a Choice Sub Broker", 'lang': "en", 'content': "Become a Sub Broker with Choice. Open a sub brokership business or franchise with minimum deposit* & get upto 75% of total brokerage for whole trading life-span of the client.", 'link': "https://choiceindia.com/sub-broker-franchise", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "share-holding-pattern":{'title':"Share Holding Pattern - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/share-holding-pattern",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "corporate-governance": { 'title': "Corporate Goveranc - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/corporate-governance", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    
+  "share-holding-pattern": { 'title': "Share Holding Pattern - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/share-holding-pattern", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "brokerage-charges": {
-        'title': "Brokerage Charges: Lowest Brokerage Charges In India | Choice",'lang':"en", "content": "Brokerage Charges:  Get the lowest brokerage charges in India for delivery, intraday, derivatives, commodities, and currencies with Choice.","link":"https://choiceindia.com/brokerage-charges",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqscript": `<script type="application/ld+json">
+
+
+  "brokerage-charges": {
+    'title': "Brokerage Charges: Lowest Brokerage Charges In India | Choice", 'lang': "en", "content": "Brokerage Charges:  Get the lowest brokerage charges in India for delivery, intraday, derivatives, commodities, and currencies with Choice.", "link": "https://choiceindia.com/brokerage-charges", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -553,10 +556,10 @@ const meta_tags = {
     </script>
     ` },
 
-    "open-trading-account": {
-        'title': "Open Trading Account Online for Free without AMC Charges - Choice",'lang':"en", "content": "Open a trading account online for free without AMC charges at Choice. Enjoy low DP charges, the lowest intraday charges, and a zero account opening fee.",
-        "link": "https://choiceindia.com/open-trading-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqscript": `<script type="application/ld+json">
+  "open-trading-account": {
+    'title': "Open Trading Account Online for Free without AMC Charges - Choice", 'lang': "en", "content": "Open a trading account online for free without AMC charges at Choice. Enjoy low DP charges, the lowest intraday charges, and a zero account opening fee.",
+    "link": "https://choiceindia.com/open-trading-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -638,10 +641,10 @@ const meta_tags = {
     </script>
     ` },
 
-    "open-brokerage-account": {
-        'title': "Open Brokerage Account Online for Free with Choice",'lang':"en","content": "Open a free brokerage account online with Choice. Get a brokerage account with free AMC for the first year, low DP charges, free research advisory, and more.",
-        "link": 'https://choiceindia.com/open-brokerage-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqscript": `<script type="application/ld+json">
+  "open-brokerage-account": {
+    'title': "Open Brokerage Account Online for Free with Choice", 'lang': "en", "content": "Open a free brokerage account online with Choice. Get a brokerage account with free AMC for the first year, low DP charges, free research advisory, and more.",
+    "link": 'https://choiceindia.com/open-brokerage-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -739,12 +742,12 @@ const meta_tags = {
     </script>
     ` },
 
-    "nri-demat-account": { 'title': "Open NRI Demat Account Online in India at Choice",'lang':"en", "content": "Open NRI Demat Account Online in India at Choice with Free Research with Highest Success Ratio, Lowest Brokerage Charges & Lowest Account Opening Fee.","link":"https://choiceindia.com/nri-demat-account", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "nri-demat-account": { 'title': "Open NRI Demat Account Online in India at Choice", 'lang': "en", "content": "Open NRI Demat Account Online in India at Choice with Free Research with Highest Success Ratio, Lowest Brokerage Charges & Lowest Account Opening Fee.", "link": "https://choiceindia.com/nri-demat-account", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "corporate-demat-account": {
-        'title': "Open a Corporate Demat Account Online with Choice",'lang':"en", "content": "Open a Corporate Demat account online with Choice.  Get an advanced trading platform, the lowest dp charges and dedicated relationship manager, free call for trade facility and more.",
-        "link": 'https://choiceindia.com/corporate-demat-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqscript": `<script type="application/ld+json">
+  "corporate-demat-account": {
+    'title': "Open a Corporate Demat Account Online with Choice", 'lang': "en", "content": "Open a Corporate Demat account online with Choice.  Get an advanced trading platform, the lowest dp charges and dedicated relationship manager, free call for trade facility and more.",
+    "link": 'https://choiceindia.com/corporate-demat-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
      {
       "@context": "https://schema.org",
        "@type": "FAQPage",
@@ -804,10 +807,10 @@ const meta_tags = {
      </script>
      ` },
 
-    "minor-demat-account": {
-        'title': "Minor Demat Account Opening Online for Free with Choice",'lang':"en", "content": "Open a free minor Demat account online with Choice within a few minutes and start investing in the stock market for your children’s future.",
-        "link": 'https://choiceindia.com/minor-demat-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqscript": `<script type="application/ld+json">
+  "minor-demat-account": {
+    'title': "Minor Demat Account Opening Online for Free with Choice", 'lang': "en", "content": "Open a free minor Demat account online with Choice within a few minutes and start investing in the stock market for your children’s future.",
+    "link": 'https://choiceindia.com/minor-demat-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -932,9 +935,9 @@ const meta_tags = {
     </script>
     ` },
 
-    "hindi/open-demat-trading-account": {
-        'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC",'lang':"hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और फ्री एएमसी प्राप्त करें पहले वर्ष के लिए। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।","link":"https://choiceindia.com/hindi/open-demat-trading-account",'link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en-in","href2":"hi-in","href3":"","href4":"","href5":"mr-in","href6":"x-default",
-        "faqscript": `<script type="application/ld+json">
+  "hindi/open-demat-trading-account": {
+    'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC", 'lang': "hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और फ्री एएमसी प्राप्त करें पहले वर्ष के लिए। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।", "link": "https://choiceindia.com/hindi/open-demat-trading-account", 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "", "link4": "", "link5": "https://choiceindia.com/marathi/open-demat-account", "link6": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "", "href4": "", "href5": "mr-in", "href6": "x-default",
+    "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -1061,9 +1064,9 @@ const meta_tags = {
     </script>
     ` },
 
-    "open-trading-account-marathi": {
-        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "lang":'mr',"faqscript": `<script type="application/ld+json">
+  "open-trading-account-marathi": {
+    'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "lang": 'mr', "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -1229,12 +1232,12 @@ const meta_tags = {
     </script>
     `},
 
-    "research": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India",'lang':"en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` ,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "research": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", 'lang': "en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "authorised-person": {
-        'title': "Become an Authorised Person (AP) in Stock Market with Choice",'lang':"en", "content": "Become an Authorised Person (AP) in stock market with Choice. Earn upto ₹ 1000 per account incentive, highest revenue sharing, timely payouts & more.",
-        'link': 'https://choiceindia.com/authorised-person','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqscript": `<script type="application/ld+json">
+  "authorised-person": {
+    'title': "Become an Authorised Person (AP) in Stock Market with Choice", 'lang': "en", "content": "Become an Authorised Person (AP) in stock market with Choice. Earn upto ₹ 1000 per account incentive, highest revenue sharing, timely payouts & more.",
+    'link': 'https://choiceindia.com/authorised-person', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -1270,10 +1273,10 @@ const meta_tags = {
         </script>
     ` },
 
-    "remisier": {
-        'title': "Become a Remisier in Stock Market with Choice & Earn Big",'lang':"en", "content": "Become a Remisier in stock market with Choice. Start your own Share Market Remisier business with highest revenue sharing, upto ₹ 1000 per account incentive & more.",
-        "link": 'https://choiceindia.com/remisier','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqscript": `<script type="application/ld+json">
+  "remisier": {
+    'title': "Become a Remisier in Stock Market with Choice & Earn Big", 'lang': "en", "content": "Become a Remisier in stock market with Choice. Start your own Share Market Remisier business with highest revenue sharing, upto ₹ 1000 per account incentive & more.",
+    "link": 'https://choiceindia.com/remisier', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -1309,7 +1312,8 @@ const meta_tags = {
     </script>
     ` },
 
-    "demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'lang':"en",'content':"A Demat account is used to store securities in electronic format. Visit to know about what is Demat account, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript": `
+  "demat-account": {
+    'title': "What is Demat Account? Meaning, Opening Process, Types & Benefits", 'lang': "en", 'content': "A Demat account is used to store securities in electronic format. Visit to know about what is Demat account, its types, benefits, and online account opening process at Choice.", 'link': "https://choiceindia.com/demat-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "", "faqscript": `
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1426,13 +1430,13 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     
     `},
 
-    "info/stratezy": { 'title': "Stratezy - A Free Trading Strategy Builder by Choice",'lang':"en", "content": "Stratezy - A Free Trading Strategy Builder by Choice. Stratezy is the free-trading strategy builder for intraday and options trades. Optimise your trading strategies and make it lives with Strategy.","link":"https://choiceindia.com/info/stratezy/", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "info/stratezy": { 'title': "Stratezy - A Free Trading Strategy Builder by Choice", 'lang': "en", "content": "Stratezy - A Free Trading Strategy Builder by Choice. Stratezy is the free-trading strategy builder for intraday and options trades. Optimise your trading strategies and make it lives with Strategy.", "link": "https://choiceindia.com/info/stratezy/", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice",'lang':"en", "content": "Choice FinX Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.","link":'https://choiceindia.com/baskets/',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice", 'lang': "en", "content": "Choice FinX Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.", "link": 'https://choiceindia.com/baskets/', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-    "share-market-app": {
-        'title': "Best Share Market App in India - Download Choice FinX Trading App",'lang':"en", "content": "Choice FinX is the best share market in India to invest in stocks, commodities, derivatives, currencies, and IPOs.Download Choice FinX Stock Market App now.","link":"https://choiceindia.com/share-market-app",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqcript": `<script type="application/ld+json">
+  "share-market-app": {
+    'title': "Best Share Market App in India - Download Choice FinX Trading App", 'lang': "en", "content": "Choice FinX is the best share market in India to invest in stocks, commodities, derivatives, currencies, and IPOs.Download Choice FinX Stock Market App now.", "link": "https://choiceindia.com/share-market-app", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqcript": `<script type="application/ld+json">
      {
       "@context": "https://schema.org",
        "@type": "FAQPage",
@@ -1495,9 +1499,9 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
      </script>
      `},
 
-    "sovereign-gold-bonds": {
-        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India",'lang':"en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqcript": `<script type="application/ld+json">
+  "sovereign-gold-bonds": {
+    'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", 'lang': "en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqcript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -1576,10 +1580,10 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     </script>
     `},
 
-    "hindi/trading-account": {
-        'title': "मुफ़्त ट्रेडिंग अकाउंट खोलें + प्रथम वर्ष के लिए निःशुल्क AMC", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन ट्रेडिंग अकाउंट खोलें और प्रथम वर्ष के लिए फ्री एएमसी प्राप्त करें। चॉइस के साथ अपने ट्रेडिंग खाते पर कम ब्रोकरेज और डीपी शुल्क प्राप्त करें।",
-        "link": 'https://choiceindia.com/hindi/trading-account','lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqscript": `<script type="application/ld+json">
+  "hindi/trading-account": {
+    'title': "मुफ़्त ट्रेडिंग अकाउंट खोलें + प्रथम वर्ष के लिए निःशुल्क AMC", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन ट्रेडिंग अकाउंट खोलें और प्रथम वर्ष के लिए फ्री एएमसी प्राप्त करें। चॉइस के साथ अपने ट्रेडिंग खाते पर कम ब्रोकरेज और डीपी शुल्क प्राप्त करें।",
+    "link": 'https://choiceindia.com/hindi/trading-account', 'lang': "hi", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -1661,9 +1665,9 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     </script>
     `},
 
-    "online-trading-app": {
-        'title': "Choice FinX Trading App - Best Indian Online Stock Trading App (Android & iOS)",'lang':"en", "content": "Choice FinX is the best Indian trading app to trade in stocks, commodities, currencies, futures & options. Choice FinX online mobile trading app is available for Android & iPhone devices.",'link':"https://choiceindia.com/online-trading-app",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-        "faqscript": `<script type="application/ld+json">
+  "online-trading-app": {
+    'title': "Choice FinX Trading App - Best Indian Online Stock Trading App (Android & iOS)", 'lang': "en", "content": "Choice FinX is the best Indian trading app to trade in stocks, commodities, currencies, futures & options. Choice FinX online mobile trading app is available for Android & iPhone devices.", 'link': "https://choiceindia.com/online-trading-app", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -1741,9 +1745,9 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     </script>
     `},
 
-    "campaign/free-amc-demat-account": {
-      'title': "Open a Free AMC Demat Account + Zero Account Opening Fee",'lang':"en", "content": "Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Up to 25X Margin Available, Free Research with 78% Success Ratio & more.",
-      "link": "https://choiceindia.com/campaign/free-amc-demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript": `<script type="application/ld+json">
+  "campaign/free-amc-demat-account": {
+    'title': "Open a Free AMC Demat Account + Zero Account Opening Fee", 'lang': "en", "content": "Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Up to 25X Margin Available, Free Research with 78% Success Ratio & more.",
+    "link": "https://choiceindia.com/campaign/free-amc-demat-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "", "faqscript": `<script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -1911,16 +1915,16 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
       }
       </script>
       `
-    },
+  },
 
 
 
-    // "app": {'title': "", "content": "", "faqscript": ``},
+  // "app": {'title': "", "content": "", "faqscript": ``},
 
-    "hindi/online-trading-app": {
-      'title': "फिनएक्स ट्रेडिंग ऐप - भारत का श्रेष्ठ ऑनलाइन मोबाइल ट्रेडिंग ऐप",
-      "content":"फिनएक्स ट्रेडिंग ऐप भारत का श्रेष्ठ मोबाइल ट्रेडिंग ऐप है। ऑनलाइन ट्रेडिंग ऐप -  फिनएक्स (एंड्रॉइड और आईओएस) डाउनलोड करें और शेयर बाज़ार में तेजी निवेश करें।","link":"https://choiceindia.com/hindi/online-trading-app",'lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
-      "faqscript": `<script type="application/ld+json">
+  "hindi/online-trading-app": {
+    'title': "फिनएक्स ट्रेडिंग ऐप - भारत का श्रेष्ठ ऑनलाइन मोबाइल ट्रेडिंग ऐप",
+    "content": "फिनएक्स ट्रेडिंग ऐप भारत का श्रेष्ठ मोबाइल ट्रेडिंग ऐप है। ऑनलाइन ट्रेडिंग ऐप -  फिनएक्स (एंड्रॉइड और आईओएस) डाउनलोड करें और शेयर बाज़ार में तेजी निवेश करें।", "link": "https://choiceindia.com/hindi/online-trading-app", 'lang': "hi", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -1991,314 +1995,415 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
       
   ` },
 
-  "partner-assets/emitra": { 'title': "Basket Investing - चॉइस पार्टनर ई-मित्र की प्रचार सामग्री",'lang':"en", "content": "","link":'https://choiceindia.com/partner-assests/emitra/',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
-  "mutual-fund-distributor": { 'title': "Become a Mutual Fund Distributor with Choice", 'lang':"en",
-  "content": "Become a Mutual Fund Distributor with Choice to have the chance to leverage your distribution business by selling mutual funds together with stock market investing, loans, and insurance.",
-  "link":'https://choiceindia.com/mutual-fund-distributor',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
+  "partner-assets/emitra": { 'title': "Basket Investing - चॉइस पार्टनर ई-मित्र की प्रचार सामग्री", 'lang': "en", "content": "", "link": 'https://choiceindia.com/partner-assests/emitra/', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "mutual-fund-distributor": {
+    'title': "Become a Mutual Fund Distributor with Choice", 'lang': "en",
+    "content": "Become a Mutual Fund Distributor online in a few steps. Uncover how to become a MF distributor and empanel with Choice to start your mutual fund agent business today!",
+    "link": 'https://choiceindia.com/mutual-fund-distributor', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "faqscript": `<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Is it necessary to clear the NISM exam to become a mutual fund distributor in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To become a mutual fund distributor, one must gain knowledge about the products and intricacies of mutual funds. Hence, obtaining an AMFI certification is necessary."
+      }
+    },{
+      "@type": "Question",
+      "name": "What are the career prospects of being a mutual fund distributor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The future prospects of mutual funds in India are promising due to the growing MF industry and investors, the increase in demand for mutual funds, and the number of available mutual fund distributors in India. Opting for this career has many advantages such as being your own boss, earning passive income, etc. Also, one has the flexibility to earn income as per his/her goals as the payment is subjective to selling maximum schemes."
+      }
+    },{
+      "@type": "Question",
+      "name": "What is the process for senior citizens to become a mutual fund distributor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mutual Funds provide senior citizens with the opportunity to channel their energies into creating a source of income. For this, senior citizens are individuals who qualify under the criteria stipulated by SEBI vide its Circular No. CIR/ MFD/DF/5/2010 dated June 24, 2010, i.e., a person who has attained the age of 50 years as of May 31, 2010, OR a person who has at least 10 years experience in the securities market as of May 31, 2010."
+      }
+    },{
+      "@type": "Question",
+      "name": "How to become a mutual fund distributor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anyone holding an AMFI certificate is eligible to become a Mutual Fund distributor. In order to become a mutual fund distributor with Choice, one can fill in the registration details. An expert team shall assist them via customercare@investica.com or +91 8080808875, once the details have been verified and approved. Note: Investica is a part of Choice Wealth Pvt Ltd. and registered under the ARN Code: 78908"
+      }
+    },{
+      "@type": "Question",
+      "name": "In what form do mutual fund distributors earn revenue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mutual fund distributors earn revenue in the form of commissions. These commissions are a percentage of the investment made by the clients they bring in. The more clients they have and the more those clients invest, the higher their earnings."
+      }
+    },{
+      "@type": "Question",
+      "name": "Is the mutual fund distribution business profitable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the mutual fund distribution business can be highly profitable. The profitability depends on the individual's ability to sell and the number of clients they can acquire. The more you sell, the more you earn."
+      }
+    },{
+      "@type": "Question",
+      "name": "With which agency are mutual fund distributors registered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mutual fund distributors are registered with the Association of Mutual Funds in India (AMFI) and must hold a valid ARN (AMFI Registration Number) issued by the National Institute of Securities Markets (NISM)."
+      }
+    },{
+      "@type": "Question",
+      "name": "How much does a mutual fund distributor earn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The earning potential of a mutual fund distributor is not capped and depends entirely on the individual's ability to sell. The more mutual fund units you sell, the higher your earnings."
+      }
+    },{
+      "@type": "Question",
+      "name": "When will I get the commission on the investment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Commissions are released on a monthly basis at Choice. You can track the status of your clients' payments with the CRM access provided to you once you are registered with Choice."
+      }
+    },{
+      "@type": "Question",
+      "name": "What is the minimum and maximum age to apply for ARN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The minimum age to apply for an ARN and become a Mutual Fund distributor is 18 years. There is no maximum age limit."
+      }
+    },{
+      "@type": "Question",
+      "name": "Why is the ARN Code Necessary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ARN Code is mandated by regulators for every mutual fund distributor. It ensures that all distributors are qualified and authorized to sell mutual fund units."
+      }
+    }]
+  }
+  </script>`
 
-  "hindi/mutual-fund-distributor": { 'title': "चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें", 
-  "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
-  "link":'https://choiceindia.com/mutual-fund-distributor',"faqscript": `` ,'lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  },
 
-  "gujarati/sub-broker-franchise": { 'title': "ડિપોઝિટ વિના સબ બ્રોકર ફ્રેન્ચાઇઝ - ચોઇસ સબ બ્રોકર બનો", 
-  "content": "ચોઇસ સાથે સબ બ્રોકર બનો. ડિપોઝિટ વિના સબ બ્રોકરશિપ બિઝનેસ અથવા ફ્રેન્ચાઇઝ ખોલો* અને ક્લાયન્ટના સમગ્ર ટ્રેડિંગ આયુષ્ય માટે સર્વોચ્ચ બ્રોકરેજ શેરિંગ મેળવો.",
-  "link":'https://choiceindia.com/gujarati/sub-broker-franchise',"lang":'gu',"faqscript": ``,'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en-in","href2":"hi-in","href3":"gu-in","href4":"te-in","href5":"mr-in","href6":"x-default"},
+  "hindi/mutual-fund-distributor": {
+    'title': "चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें",
+    "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
+    "link": 'https://choiceindia.com/mutual-fund-distributor', "faqscript": ``, 'lang': "hi", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": ""
+  },
 
-  "marathi/sub-broker-franchise": { 'title': "चॉइस सब ब्रोकर बना आणि डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा", 
-  "content": "चॉइस सब ब्रोकर बना. डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा, तसेच सर्वाधिक महसूल वाटप आणि आजीवन उत्पन्न स्रोत मिळावा.",
-  "link":'https://choiceindia.com/marathi/sub-broker-franchise',"lang":'mr',"faqscript": ``,'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en-in","href2":"hi-in","href3":"gu-in","href4":"te-in","href5":"mr-in","href6":"x-default"},
+  "gujarati/sub-broker-franchise": {
+    'title': "ડિપોઝિટ વિના સબ બ્રોકર ફ્રેન્ચાઇઝ - ચોઇસ સબ બ્રોકર બનો",
+    "content": "ચોઇસ સાથે સબ બ્રોકર બનો. ડિપોઝિટ વિના સબ બ્રોકરશિપ બિઝનેસ અથવા ફ્રેન્ચાઇઝ ખોલો* અને ક્લાયન્ટના સમગ્ર ટ્રેડિંગ આયુષ્ય માટે સર્વોચ્ચ બ્રોકરેજ શેરિંગ મેળવો.",
+    "link": 'https://choiceindia.com/gujarati/sub-broker-franchise', "lang": 'gu', "faqscript": ``, 'link1': "https://choiceindia.com/sub-broker-franchise", 'link2': "https://choiceindia.com/hindi/sub-broker-franchise", 'link3': "https://choiceindia.com/gujarati/sub-broker-franchise", "link4": "https://choiceindia.com/telugu/sub-broker-franchise", "link5": "https://choiceindia.com/marathi/sub-broker-franchise", "link6": "https://choiceindia.com/sub-broker-franchise", "href1": "en-in", "href2": "hi-in", "href3": "gu-in", "href4": "te-in", "href5": "mr-in", "href6": "x-default"
+  },
 
-  "telugu/sub-broker-franchise": { 'title': "డిపాజిట్ లేకుండా సబ్ బ్రోకర్ ఫ్రాంచైజ్ - ఛాయిస్ సబ్ బ్రోకర్ అవ్వండి", 
-  "content": "ఛాయిస్తో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.","link":'https://choiceindia.com/telugu/sub-broker-franchise',"lang":'te',"faqscript": ``,'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en-in","href2":"hi-in","href3":"gu-in","href4":"te-in","href5":"mr-in","href6":"x-default"},
+  "marathi/sub-broker-franchise": {
+    'title': "चॉइस सब ब्रोकर बना आणि डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा",
+    "content": "चॉइस सब ब्रोकर बना. डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा, तसेच सर्वाधिक महसूल वाटप आणि आजीवन उत्पन्न स्रोत मिळावा.",
+    "link": 'https://choiceindia.com/marathi/sub-broker-franchise', "lang": 'mr', "faqscript": ``, 'link1': "https://choiceindia.com/sub-broker-franchise", 'link2': "https://choiceindia.com/hindi/sub-broker-franchise", 'link3': "https://choiceindia.com/gujarati/sub-broker-franchise", "link4": "https://choiceindia.com/telugu/sub-broker-franchise", "link5": "https://choiceindia.com/marathi/sub-broker-franchise", "link6": "https://choiceindia.com/sub-broker-franchise", "href1": "en-in", "href2": "hi-in", "href3": "gu-in", "href4": "te-in", "href5": "mr-in", "href6": "x-default"
+  },
 
-  "hindi/mutual-funds-investment": { 'title': "म्यूचुअल फंड में ऑनलाइन निवेश करें च्वाइस के साथ", 
-  "content": "चॉइस के साथ, आप भारत में ऑनलाइन म्यूचुअल फंड में निवेश करना शुरू कर सकते हैं। चॉइस म्यूचुअल फंड निवेश मंच सभी के लिए म्यूचुअल फंड में निवेश को आसान बनाता है।",
-  "link":'https://choiceindia.com/hindi/mutual-funds-investment',"lang":'hi',"faqscript": `` ,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
- "etf-exchange-traded-funds":{'title': "What is ETF? Meaning and How to Invest in ETF?", 
-  "content": "Do you wish to learn more about exchange-traded funds? Visit to learn more about ETF meaning, investing in ETF, ETF vs. Mutual Funds, ETF vs. Stocks, etc.",
-  "link":'https://choiceindia.com/etf-exchange-traded-funds',"lang":'en',"faqscript": `` },
+  "telugu/sub-broker-franchise": {
+    'title': "డిపాజిట్ లేకుండా సబ్ బ్రోకర్ ఫ్రాంచైజ్ - ఛాయిస్ సబ్ బ్రోకర్ అవ్వండి",
+    "content": "ఛాయిస్తో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.", "link": 'https://choiceindia.com/telugu/sub-broker-franchise', "lang": 'te', "faqscript": ``, 'link1': "https://choiceindia.com/sub-broker-franchise", 'link2': "https://choiceindia.com/hindi/sub-broker-franchise", 'link3': "https://choiceindia.com/gujarati/sub-broker-franchise", "link4": "https://choiceindia.com/telugu/sub-broker-franchise", "link5": "https://choiceindia.com/marathi/sub-broker-franchise", "link6": "https://choiceindia.com/sub-broker-franchise", "href1": "en-in", "href2": "hi-in", "href3": "gu-in", "href4": "te-in", "href5": "mr-in", "href6": "x-default"
+  },
 
-  "intraday-charges":{'title': "Save Intraday Charges on Trades with Choice", 
-  "content": "Pay no additional brokerage fees on intraday charges. Start intraday trading with Choice and save up to 33% on brokerage. Save money right now!",
-  "link":'https://choiceindia.com/intraday-charges',"lang":'en',"faqscript": `` },
+  "hindi/mutual-funds-investment": {
+    'title': "म्यूचुअल फंड में ऑनलाइन निवेश करें च्वाइस के साथ",
+    "content": "चॉइस के साथ, आप भारत में ऑनलाइन म्यूचुअल फंड में निवेश करना शुरू कर सकते हैं। चॉइस म्यूचुअल फंड निवेश मंच सभी के लिए म्यूचुअल फंड में निवेश को आसान बनाता है।",
+    "link": 'https://choiceindia.com/hindi/mutual-funds-investment', "lang": 'hi', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": ""
+  },
+  "etf-exchange-traded-funds": {
+    'title': "What is ETF? Meaning and How to Invest in ETF?",
+    "content": "Do you wish to learn more about exchange-traded funds? Visit to learn more about ETF meaning, investing in ETF, ETF vs. Mutual Funds, ETF vs. Stocks, etc.",
+    "link": 'https://choiceindia.com/etf-exchange-traded-funds', "lang": 'en', "faqscript": ``
+  },
+
+  "intraday-charges": {
+    'title': "Save Intraday Charges on Trades with Choice",
+    "content": "Pay no additional brokerage fees on intraday charges. Start intraday trading with Choice and save up to 33% on brokerage. Save money right now!",
+    "link": 'https://choiceindia.com/intraday-charges', "lang": 'en', "faqscript": ``
+  },
 
   "best-stocks-to-buy": {
-    'title': "Best Stocks to Buy Today in India - Choice",'lang':"en", "content": "Looking for the best stocks to buy today in India? Visit us to learn about the best stocks to invest in the Indian stock market across a diverse range of sectors.",
+    'title': "Best Stocks to Buy Today in India - Choice", 'lang': "en", "content": "Looking for the best stocks to buy today in India? Visit us to learn about the best stocks to invest in the Indian stock market across a diverse range of sectors.",
     "link": "https://choiceindia.com/best-stocks-to-buy"
   },
   "best-intraday-stocks-to-buy": {
-    'title': "Best Intraday Stocks to Buy Today - Choice",'lang':"en", "content": "Visit Choice to find today's best intraday stocks. The best intraday stocks to buy today were suggested by our team of experienced analysts. To find out the top intraday stocks right now, visit our website.",
+    'title': "Best Intraday Stocks to Buy Today - Choice", 'lang': "en", "content": "Visit Choice to find today's best intraday stocks. The best intraday stocks to buy today were suggested by our team of experienced analysts. To find out the top intraday stocks right now, visit our website.",
     "link": "https://choiceindia.com/best-intraday-stocks-to-buy"
   },
   "best-short-term-stocks-to-buy": {
-    'title': "Best Short Term Stocks to Buy Today - Choice",'lang':"en", "content": "Are you looking for the best share  to buy for short term period? The top short-term stocks to buy today  can be recommended at Choice, according to our analysts. To obtain it right away, go to our website.",
+    'title': "Best Short Term Stocks to Buy Today - Choice", 'lang': "en", "content": "Are you looking for the best share  to buy for short term period? The top short-term stocks to buy today  can be recommended at Choice, according to our analysts. To obtain it right away, go to our website.",
     "link": "https://choiceindia.com/best-short-term-stocks-to-buy"
   },
   "best-stocks-for-long-term-investment": {
-    'title': "Best Stocks to Buy for Long Term Investment - Choice",'lang':"en", "content": "Selecting the best stocks for long-term investments is a challenging task. The best stocks to purchase for long-term investing horizons are available at Choice. To begin purchasing long-term stocks, go to our website.",
+    'title': "Best Stocks to Buy for Long Term Investment - Choice", 'lang': "en", "content": "Selecting the best stocks for long-term investments is a challenging task. The best stocks to purchase for long-term investing horizons are available at Choice. To begin purchasing long-term stocks, go to our website.",
     "link": "https://choiceindia.com/best-stocks-for-long-term-investment"
   },
-  
+
   "loan": {
-    'title': "Apply for Loan Online & Get Instant Loan within Few Hours",'lang':"en", "content": "Apply for loan online at Choice FinServ. Get a instant loan for your business, buying a commercial vehicle, flexi credit, invoice financing and channel financing at attractive interest rates.",
+    'title': "Apply for Loan Online & Get Instant Loan within Few Hours", 'lang': "en", "content": "Apply for loan online at Choice FinServ. Get a instant loan for your business, buying a commercial vehicle, flexi credit, invoice financing and channel financing at attractive interest rates.",
     "link": "https://choiceindia.com/loan"
   },
   "business-loan": {
-    'title': "Apply for Business Loan & Get Instant Business Loan Online",'lang':"en", "content": "Apply for business loan online at Choice FinServ. Get a instant business loan upto 25 Lakhs at attractive interest rates, low processing fees. Visit to apply now.",
+    'title': "Apply for Business Loan & Get Instant Business Loan Online", 'lang': "en", "content": "Apply for business loan online at Choice FinServ. Get a instant business loan upto 25 Lakhs at attractive interest rates, low processing fees. Visit to apply now.",
     "link": "https://choiceindia.com/business-loan"
   },
   "term-business-loan": {
-    'title': "Apply for Term Business Loan Online at Choice FinServ",'lang':"en", "content": "Apply online at Choice FinServ for a term business loan. Get a fast business loan with low processing costs and attractive interest rates. Visit now to apply.",
+    'title': "Apply for Term Business Loan Online at Choice FinServ", 'lang': "en", "content": "Apply online at Choice FinServ for a term business loan. Get a fast business loan with low processing costs and attractive interest rates. Visit now to apply.",
     "link": "https://choiceindia.com/term-business-loan"
   },
   "flexi-credit-loan": {
-    'title': "Apply Flexi Credit Loan for Business Online at Choice FinServ",'lang':"en", "content": "Visit Choice FinServ to apply for a Flexi Credit Loan online. Get a flexible credit loan quickly into your bank account with low processing costs and competitive interest rates. Visit to apply instantly.",
+    'title': "Apply Flexi Credit Loan for Business Online at Choice FinServ", 'lang': "en", "content": "Visit Choice FinServ to apply for a Flexi Credit Loan online. Get a flexible credit loan quickly into your bank account with low processing costs and competitive interest rates. Visit to apply instantly.",
     "link": "https://choiceindia.com/flexi-credit-loan"
   },
 
-  "cfpl-policies":{
-    'title': "CFPL Policies - Choice International Limited",'lang':"en", "content": "Read the latest CFPL policies at Choice International Limited's official website.",
+  "cfpl-policies": {
+    'title': "CFPL Policies - Choice International Limited", 'lang': "en", "content": "Read the latest CFPL policies at Choice International Limited's official website.",
     "link": "https://choiceindia.com/cfpl-policies"
 
   },
   "invoice-financing": {
-    'title': "Apply for Invoice Financing & Get Funds within 48 Hours",'lang':"en", "content": "Apply online at Choice FinServ for invoice financing. Get quick invoice financing within just as 48 hours with low processing fees and appealing interest rates. To apply, go to the website right now.",
+    'title': "Apply for Invoice Financing & Get Funds within 48 Hours", 'lang': "en", "content": "Apply online at Choice FinServ for invoice financing. Get quick invoice financing within just as 48 hours with low processing fees and appealing interest rates. To apply, go to the website right now.",
     "link": "https://choiceindia.com/invoice-financing"
   },
   "channel-financing": {
-    'title': "Get Channel Financing for SME's Online within 48 Hours",'lang':"en", "content": "Apply for channel financing online at Choice FinServ. Get quick supply chain financing within just as 48 hours at competitive interest rates. Visit the website right now to apply.",
+    'title': "Get Channel Financing for SME's Online within 48 Hours", 'lang': "en", "content": "Apply for channel financing online at Choice FinServ. Get quick supply chain financing within just as 48 hours at competitive interest rates. Visit the website right now to apply.",
     "link": "https://choiceindia.com/channel-financing"
   },
   "commercial-vehicle-loan": {
-    'title': "Get Commercial Vehicle Loan Online at Choice FinServ",'lang':"en", "content": "Apply a commercial vehicle loan online at Choice FinServ. Get a quick commercial car loan with minimal processing fees and attractive interest rates. Visit instantly to apply.",
+    'title': "Get Commercial Vehicle Loan Online at Choice FinServ", 'lang': "en", "content": "Apply a commercial vehicle loan online at Choice FinServ. Get a quick commercial car loan with minimal processing fees and attractive interest rates. Visit instantly to apply.",
     "link": "https://choiceindia.com/commercial-vehicle-loan"
   },
   "solar-financing": {
-    'title': "Solar Financing - Get Solar Panels on Loan for Businesses",'lang':"en", "content": "Apply for solar financing at Choice FinServ at best rates. Get a loan for purchasing solar panels for MSME and small businesses upto 25 Lakhs within 2 days.",
+    'title': "Solar Financing - Get Solar Panels on Loan for Businesses", 'lang': "en", "content": "Apply for solar financing at Choice FinServ at best rates. Get a loan for purchasing solar panels for MSME and small businesses upto 25 Lakhs within 2 days.",
     "link": "https://choiceindia.com/solar-financing"
   },
   "offer-document": {
-    "title":"Public Issue Offer Document of Equity and Debt - Choice",
-    'lang':"en",
-    'content':"Check out the latest public issue document of equity and debt at Choice's official website.",
-    "link":"https://choiceindia.com/offer-document"
+    "title": "Public Issue Offer Document of Equity and Debt - Choice",
+    'lang': "en",
+    'content': "Check out the latest public issue document of equity and debt at Choice's official website.",
+    "link": "https://choiceindia.com/offer-document"
   },
   "stock-broker-in-mumbai": {
-    "title":"Choice - Stock Broker in Mumbai | Official Branch",
-    'lang':"en",
-    'content':"Stock Broker in Mumbai. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +022 67079999.",
-    "link":"https://choiceindia.com/stock-broker-in-mumbai"
+    "title": "Choice - Stock Broker in Mumbai | Official Branch",
+    'lang': "en",
+    'content': "Stock Broker in Mumbai. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +022 67079999.",
+    "link": "https://choiceindia.com/stock-broker-in-mumbai"
   },
-  "individual-loan":{
-    "title":"Get Individual Loan Online at Choice FinServ",
-    'lang':"en",
-    'content':"Individual loans are available through Choice FinServ. Get a quick individual loan with low processing fees and low interest rates. Visit instantly to apply.",
-    "link":"https://choiceindia.com/individual-loan"
+  "individual-loan": {
+    "title": "Get Individual Loan Online at Choice FinServ",
+    'lang': "en",
+    'content': "Individual loans are available through Choice FinServ. Get a quick individual loan with low processing fees and low interest rates. Visit instantly to apply.",
+    "link": "https://choiceindia.com/individual-loan"
 
   },
 
   "stock-broker-in-bangalore": {
-    "title":"Choice - Stock Broker in Bangalore | Official Branch",
-    'lang':"en",
-    'content':"Stock Broker in Bangalore. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9886062043.",
-    "link":"https://choiceindia.com/stock-broker-in-bangalore"
+    "title": "Choice - Stock Broker in Bangalore | Official Branch",
+    'lang': "en",
+    'content': "Stock Broker in Bangalore. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9886062043.",
+    "link": "https://choiceindia.com/stock-broker-in-bangalore"
   },
 
   "stock-broker-in-chennai": {
-    "title":"Choice - Stock Broker in Chennai | Official Branch",
-    'lang':"en",
-    'content':"Stock Broker in Chennai. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9884580688.",
-    "link":"https://choiceindia.com/stock-broker-in-chennai"
+    "title": "Choice - Stock Broker in Chennai | Official Branch",
+    'lang': "en",
+    'content': "Stock Broker in Chennai. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9884580688.",
+    "link": "https://choiceindia.com/stock-broker-in-chennai"
   },
 
   "stock-broker-in-hyderabad": {
-    "title":"Choice - Stock Broker in Hyderabad | Official Branch",
-    'lang':"en",
-    'content':"Stock Broker in Hyderabad. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +02267079999.",
-    "link":"https://choiceindia.com/stock-broker-in-hyderabad"
+    "title": "Choice - Stock Broker in Hyderabad | Official Branch",
+    'lang': "en",
+    'content': "Stock Broker in Hyderabad. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +02267079999.",
+    "link": "https://choiceindia.com/stock-broker-in-hyderabad"
   },
 
   "stock-broker-in-delhi": {
-    "title":"Choice - Stock Broker in Delhi | Official Branch",
-    'lang':"en",
-    'content':"Stock Broker in Delhi. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9322512424.",
-    "link":"https://choiceindia.com/stock-broker-in-delhi"
+    "title": "Choice - Stock Broker in Delhi | Official Branch",
+    'lang': "en",
+    'content': "Stock Broker in Delhi. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9322512424.",
+    "link": "https://choiceindia.com/stock-broker-in-delhi"
   },
   "digital-lending-partners": {
-    "title":"Lending Partners with Choice Finserv",
-    'lang':"en",
-    'content':"In our portfolio, we're working with lending institutions. Visit to view a complete list of our partners for lending.",
-    "link":"https://choiceindia.com/lending-partners"
+    "title": "Lending Partners with Choice Finserv",
+    'lang': "en",
+    'content': "In our portfolio, we're working with lending institutions. Visit to view a complete list of our partners for lending.",
+    "link": "https://choiceindia.com/lending-partners"
   },
   "stock-market-holidays": {
-    "title":"Stock Market Holidays 2023 - List of Indian Share Market Holidays",
-    'lang':"en",
-    'content':"Check out the stock market holidays in 2023 on Choice. Stay updated with Indian share market holidays in 2023 & plan your investment accordingly.",
-    "link":"https://choiceindia.com/stock-market-holidays"
+    "title": "Stock Market Holidays 2023 - List of Indian Share Market Holidays",
+    'lang': "en",
+    'content': "Check out the stock market holidays in 2023 on Choice. Stay updated with Indian share market holidays in 2023 & plan your investment accordingly.",
+    "link": "https://choiceindia.com/stock-market-holidays"
   },
   "nse-holidays": {
-    "title":"NSE Holidays 2023 List - Check NSE Trading Holidays of 2023",
-    'lang':"en",
-    'content':"Find a comprehensive list of NSE holidays in 2023 on Choice. Visit to download a PDF of the 2023 NSE trading holidays.",
-    "link":"https://choiceindia.com/nse-holidays"
+    "title": "NSE Holidays 2023 List - Check NSE Trading Holidays of 2023",
+    'lang': "en",
+    'content': "Find a comprehensive list of NSE holidays in 2023 on Choice. Visit to download a PDF of the 2023 NSE trading holidays.",
+    "link": "https://choiceindia.com/nse-holidays"
   },
   "bse-holidays": {
-    "title":"BSE Holidays 2023 List - Check BSE Trading Holidays of 2023",
-    'lang':"en",
-    'content':"Check out the complete list of BSE holidays for 2023 on Choice. To download a PDF of the 2023 BSE trading holidays, visit Choice India.",
-    "link":"https://choiceindia.com/bse-holidays"
+    "title": "BSE Holidays 2023 List - Check BSE Trading Holidays of 2023",
+    'lang': "en",
+    'content': "Check out the complete list of BSE holidays for 2023 on Choice. To download a PDF of the 2023 BSE trading holidays, visit Choice India.",
+    "link": "https://choiceindia.com/bse-holidays"
   },
   "mcx-ncdex-holidays": {
-    "title":"MCX Holidays 2023 List - Check MCX & NCDEX Trading Holidays in 2023",
-    'lang':"en",
-    'content':"Check the list of MCX and NCDEX holidays for 2023. Visit Choice India to download the complete trading holidays of MCX and NCDEX in pdf format.",
-    "link":"https://choiceindia.com/mcx-ncdex-holidays"
+    "title": "MCX Holidays 2023 List - Check MCX & NCDEX Trading Holidays in 2023",
+    'lang': "en",
+    'content': "Check the list of MCX and NCDEX holidays for 2023. Visit Choice India to download the complete trading holidays of MCX and NCDEX in pdf format.",
+    "link": "https://choiceindia.com/mcx-ncdex-holidays"
   },
 
 
   "about-choice-finserv": {
-    "title":" About Choice Finserv",
-    'lang':"en",
-    'content':"A part of the Choice Group, Choice Finserv aims to support the capital needs of India's MSME sector by offering a variety of loans.",
-    "link":"https://choiceindia.com/about-choice-finserv"
+    "title": " About Choice Finserv",
+    'lang': "en",
+    'content': "A part of the Choice Group, Choice Finserv aims to support the capital needs of India's MSME sector by offering a variety of loans.",
+    "link": "https://choiceindia.com/about-choice-finserv"
   },
   "loan/privacy-policy": {
-    "title":" Privacy Policy - Choice Finserv",
-    'lang':"en",
-    'content':"Visit us to know more about our privacy policy",
-    "link":"https://choiceindia.com/loan/privacy-policy"
+    "title": " Privacy Policy - Choice Finserv",
+    'lang': "en",
+    'content': "Visit us to know more about our privacy policy",
+    "link": "https://choiceindia.com/loan/privacy-policy"
   },
   "upcoming-agm": {
-    "title":"Upcoming AGM - List of Upcoming AGM Dates & Companies in 2023",
-    'lang':"en",
-    'content':"Find the list of upcoming AGM/EGM on Choice. Get updated with upcoming Annual General Meeting/Extraordinary General Meeting along with it's dates & companies.",
-    "link":"https://choiceindia.com/upcoming-agm"
+    "title": "Upcoming AGM - List of Upcoming AGM Dates & Companies in 2023",
+    'lang': "en",
+    'content': "Find the list of upcoming AGM/EGM on Choice. Get updated with upcoming Annual General Meeting/Extraordinary General Meeting along with it's dates & companies.",
+    "link": "https://choiceindia.com/upcoming-agm"
   },
   "upcoming-board-meeting": {
-    "title":"Upcoming Board Meetings - Latest & Forthcoming Board Meetings Dates",
-    'lang':"en",
-    'content':"Find out the list of upcoming board meetings at Choice. Get the updates on forthcoming & latest company board meeting dates of NSE/BSE listed companies.",
-    "link":"https://choiceindia.com/upcoming-board-meeting"
+    "title": "Upcoming Board Meetings - Latest & Forthcoming Board Meetings Dates",
+    'lang': "en",
+    'content': "Find out the list of upcoming board meetings at Choice. Get the updates on forthcoming & latest company board meeting dates of NSE/BSE listed companies.",
+    "link": "https://choiceindia.com/upcoming-board-meeting"
   },
   "upcoming-bonus-shares": {
-    "title":"Upcoming Bonus Shares in 2023 - List of Bonus Shares to Buy",
-    'lang':"en",
-    'content':"Check out upcoming bonus shares in 2023 on Choice. Get the list of all upcoming bonus shares companies in India likely to declare/issue bonus shares.",
-    "link":"https://choiceindia.com/upcoming-bonus-shares"
+    "title": "Upcoming Bonus Shares in 2023 - List of Bonus Shares to Buy",
+    'lang': "en",
+    'content': "Check out upcoming bonus shares in 2023 on Choice. Get the list of all upcoming bonus shares companies in India likely to declare/issue bonus shares.",
+    "link": "https://choiceindia.com/upcoming-bonus-shares"
   },
   "upcoming-dividend-paying-stocks": {
-    "title":"Upcoming Dividend in 2023 - List of Upcoming Dividend Paying Stocks in India",
-    'lang':"en",
-    'content':"Get the list of upcoming dividend paying stocks in 2023 on Choice. Check out the upcoming dividend dates declared by companies in NSE.",
-    "link":"https://choiceindia.com/upcoming-dividend-paying-stocks"
+    "title": "Upcoming Dividend in 2023 - List of Upcoming Dividend Paying Stocks in India",
+    'lang': "en",
+    'content': "Get the list of upcoming dividend paying stocks in 2023 on Choice. Check out the upcoming dividend dates declared by companies in NSE.",
+    "link": "https://choiceindia.com/upcoming-dividend-paying-stocks"
   },
   "upcoming-stock-splits": {
-    "title":"Upcoming Stock Splits in 2023 - List of Recent Share Splits in India",
-    'lang':"en",
-    'content':"Find out upcoming stock splits in 2023 on Choice. View the list recent share splits in India by NSE & BSE listed companies along with it's face value.",
-    "link":"https://choiceindia.com/upcoming-stock-splits"
+    "title": "Upcoming Stock Splits in 2023 - List of Recent Share Splits in India",
+    'lang': "en",
+    'content': "Find out upcoming stock splits in 2023 on Choice. View the list recent share splits in India by NSE & BSE listed companies along with it's face value.",
+    "link": "https://choiceindia.com/upcoming-stock-splits"
   },
   "upcoming-rights-issue": {
-    "title":"Upcoming Rights Issue in 2023 - List of Upcoming Rights Issue of Shares",
-    'lang':"en",
-    'content':"Find the list of upcoming rights issue in 2023 on Choice. Get the complete list of recently announced rights issue of shares in Indian stock market.",
-    "link":"https://choiceindia.com/upcoming-rights-issue"
+    "title": "Upcoming Rights Issue in 2023 - List of Upcoming Rights Issue of Shares",
+    'lang': "en",
+    'content': "Find the list of upcoming rights issue in 2023 on Choice. Get the complete list of recently announced rights issue of shares in Indian stock market.",
+    "link": "https://choiceindia.com/upcoming-rights-issue"
   },
   "campaign/free-demat-account": {
-    "title":"Free Demat Account Opening Online with No Annual Charges",
-    'lang':"en",
-    'content':"Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.",
-    "link":"https://choiceindia.com/campaign/free-demat-account"
+    "title": "Free Demat Account Opening Online with No Annual Charges",
+    'lang': "en",
+    'content': "Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.",
+    "link": "https://choiceindia.com/campaign/free-demat-account"
   },
   "campaign/trading-strategies": {
-    "title":"Trading Strategies - Best Intraday & Options Trading Strategies",
-    'lang':"en",
-    'content':"Create your own trading strategies with Strategy by Choice. Stratezy is one of the best intraday & options trading strategy builder for Indian market.",
-    "link":"https://choiceindia.com/campaign/trading-strategies"
+    "title": "Trading Strategies - Best Intraday & Options Trading Strategies",
+    'lang': "en",
+    'content': "Create your own trading strategies with Strategy by Choice. Stratezy is one of the best intraday & options trading strategy builder for Indian market.",
+    "link": "https://choiceindia.com/campaign/trading-strategies"
   },
   "campaign/hindi/trading-strategies": {
-    "title":"ट्रेडिंग रणनीतियाँ - सर्वश्रेष्ठ इंट्राडे और ऑप्शंस ट्रेडिंग रणनीतियाँ",
-    'lang':"hi",
-    'content':"चॉइस द्वारा Stratezy के साथ अपनी खुद की ट्रेडिंग रणनीतियां बनाएं। Stratezy भारतीय बाजार के लिए सर्वश्रेष्ठ इंट्राडे और ऑप्शंस ट्रेडिंग रणनीति बिल्डरों में से एक है।",
-    "link":"https://choiceindia.com/campaign/hindi/trading-strategies"
+    "title": "ट्रेडिंग रणनीतियाँ - सर्वश्रेष्ठ इंट्राडे और ऑप्शंस ट्रेडिंग रणनीतियाँ",
+    'lang': "hi",
+    'content': "चॉइस द्वारा Stratezy के साथ अपनी खुद की ट्रेडिंग रणनीतियां बनाएं। Stratezy भारतीय बाजार के लिए सर्वश्रेष्ठ इंट्राडे और ऑप्शंस ट्रेडिंग रणनीति बिल्डरों में से एक है।",
+    "link": "https://choiceindia.com/campaign/hindi/trading-strategies"
   },
   "campaign/commodity-trading": {
-    "title":"Commodity Trading - Don't Miss Commodity Trading Opportunities",
-    'lang':"en",
-    'content':"Start trading in commodity market with Choice. Open a free demat account with zero AMC for first year, free expert research, low DP & brokerage charges.",
-    "link":"https://choiceindia.com/open-free-demat-account"
+    "title": "Commodity Trading - Don't Miss Commodity Trading Opportunities",
+    'lang': "en",
+    'content': "Start trading in commodity market with Choice. Open a free demat account with zero AMC for first year, free expert research, low DP & brokerage charges.",
+    "link": "https://choiceindia.com/open-free-demat-account"
   },
   "campaign/forex-trading": {
-    "title":"Forex Trading - Don't Miss Trading Opportunities in Currency Market",
-    'lang':"en",
-    'content':"Start trading in forex (currency market) with Choice. Open free demat account with zero AMC for first year, free expert research, low DP & brokerage charges.",
-    "link":"https://choiceindia.com/open-free-demat-account"
+    "title": "Forex Trading - Don't Miss Trading Opportunities in Currency Market",
+    'lang': "en",
+    'content': "Start trading in forex (currency market) with Choice. Open free demat account with zero AMC for first year, free expert research, low DP & brokerage charges.",
+    "link": "https://choiceindia.com/open-free-demat-account"
   },
   "campaign/technical-analysis": {
-    "title":"Your Technical Analysis Skills Don’t Pay Off - Explore Stratezy",
-    'lang':"en",
-    'content':"Don't have time for daily chart analysis? Trade with daily stock recommendation from the expert at Choice. Start creating your own strategy now!",
-    "link":"https://choiceindia.com/open-free-demat-account"
+    "title": "Your Technical Analysis Skills Don’t Pay Off - Explore Stratezy",
+    'lang': "en",
+    'content': "Don't have time for daily chart analysis? Trade with daily stock recommendation from the expert at Choice. Start creating your own strategy now!",
+    "link": "https://choiceindia.com/open-free-demat-account"
   },
   "campaign/futures-options-trading": {
-    "title":"F&O Trading - Don't Miss Futures & Options Trading Opportunities",
-    'lang':"en",
-    'content':"Start trading in Futures and Options (F&O) with Choice. Open a free demat account with No AMC for first year, free expert research, low DP & brokerage charges.",
-    "link":"https://choiceindia.com/open-free-demat-account"
+    "title": "F&O Trading - Don't Miss Futures & Options Trading Opportunities",
+    'lang': "en",
+    'content': "Start trading in Futures and Options (F&O) with Choice. Open a free demat account with No AMC for first year, free expert research, low DP & brokerage charges.",
+    "link": "https://choiceindia.com/open-free-demat-account"
   },
   "brokerage-calculator": {
-    "title":"Brokerage Calculator - Calculate Intraday & Delivery Brokerage Charges",
-    'lang':"en",
-    'content':"Brokerage Calculator - Calculate your intraday & delivery brokerage charges. Know your estimate brokerage fees for Futures & Options, Commodity, Currency at Choice.",
-    "link":"https://choiceindia.com/brokerage-calculator"
+    "title": "Brokerage Calculator - Calculate Intraday & Delivery Brokerage Charges",
+    'lang': "en",
+    'content': "Brokerage Calculator - Calculate your intraday & delivery brokerage charges. Know your estimate brokerage fees for Futures & Options, Commodity, Currency at Choice.",
+    "link": "https://choiceindia.com/brokerage-calculator"
   },
   "oi-spurts": {
-    "title":"OI Spurts - Live Open Interest Chart Data for Futures & Options",
-    'lang':"en",
-    'content':"Get LIVE OI Spurts on Choice. Find out the LIVE open interest chart data analysis for Futures & Options of NSE/BSE listed stocks & indices.",
-    "link":"https://choiceindia.com/oi-spurts"
+    "title": "OI Spurts - Live Open Interest Chart Data for Futures & Options",
+    'lang': "en",
+    'content': "Get LIVE OI Spurts on Choice. Find out the LIVE open interest chart data analysis for Futures & Options of NSE/BSE listed stocks & indices.",
+    "link": "https://choiceindia.com/oi-spurts"
   },
   "sip-calculator": {
-    "title":"SIP Calculator - Calculate Mutual Fund Returns Online at Choice",
-    'lang':"en",
-    'content':"Calculate the future mutual fund returns online through our SIP Calculator to know the future value of your SIP or lump sum mutual fund investment.",
-    "link":"https://choiceindia.com/sip-calculator"
+    "title": "SIP Calculator - Calculate Mutual Fund Returns Online at Choice",
+    'lang': "en",
+    'content': "Calculate the future mutual fund returns online through our SIP Calculator to know the future value of your SIP or lump sum mutual fund investment.",
+    "link": "https://choiceindia.com/sip-calculator"
   },
   "mutual-fund-calculator": {
-    "title":"Mutual Fund Calculator - Calculate Your SIP & Lumpsum Return",
-    'lang':"en",
-    'content':"Mutual fund calculator is an online tools which helps you to calculate mutual fund returns. Find out future ROI of your SIP & lumpsum Investment.",
-    "link":"https://choiceindia.com/mutual-fund-calculator"
+    "title": "Mutual Fund Calculator - Calculate Your SIP & Lumpsum Return",
+    'lang': "en",
+    'content': "Mutual fund calculator is an online tools which helps you to calculate mutual fund returns. Find out future ROI of your SIP & lumpsum Investment.",
+    "link": "https://choiceindia.com/mutual-fund-calculator"
   },
   "margin-calculator": {
-    "title":"Margin Calculator - Calculate Margin for Your Trading",
-    'lang':"en",
-    'content':"Margin Calculator - A free tool which helps stock traders to calculate the margin or leverage they needs for trades.",
-    "link":"https://choiceindia.com/margin-calculator"
+    "title": "Margin Calculator - Calculate Margin for Your Trading",
+    'lang': "en",
+    'content': "Margin Calculator - A free tool which helps stock traders to calculate the margin or leverage they needs for trades.",
+    "link": "https://choiceindia.com/margin-calculator"
   },
   "futures-and-options-margin-calculator": {
-    "title":"F&O Margin Calculator - Calculate Margin for Option & Future Selling",
-    'lang':"en",
-    'content':"Choice F&O Margin Calculator is a free tool for f&o traders to calculate margin for futures and options selling.",
-    "link":"https://choiceindia.com/futures-and-options-margin-calculator"
+    "title": "F&O Margin Calculator - Calculate Margin for Option & Future Selling",
+    'lang': "en",
+    'content': "Choice F&O Margin Calculator is a free tool for f&o traders to calculate margin for futures and options selling.",
+    "link": "https://choiceindia.com/futures-and-options-margin-calculator"
   },
   "commodity-margin-calculator": {
-    "title":"MCX Margin Calculator - Calculate Your Commodity Trading Margin",
-    'lang':"en",
-    'content':"Choice MCX margin calculator is an online commodity margin calculator useful for traders in the commodity market.",
-    "link":"https://choiceindia.com/commodity-margin-calculator"
+    "title": "MCX Margin Calculator - Calculate Your Commodity Trading Margin",
+    'lang': "en",
+    'content': "Choice MCX margin calculator is an online commodity margin calculator useful for traders in the commodity market.",
+    "link": "https://choiceindia.com/commodity-margin-calculator"
   },
   "forex-margin-calculator": {
-    "title":"Forex Margin Calculator - Calculate Margin for Currency Trades",
-    'lang':"en",
-    'content':"Choice Forex margin calculator is a free tool which helps you to calculate the margin needed for your open and hold positions. ",
-    "link":"https://choiceindia.com/forex-margin-calculator"
+    "title": "Forex Margin Calculator - Calculate Margin for Currency Trades",
+    'lang': "en",
+    'content': "Choice Forex margin calculator is a free tool which helps you to calculate the margin needed for your open and hold positions. ",
+    "link": "https://choiceindia.com/forex-margin-calculator"
   },
   "option-chain": {
-    "title":"Option Chain - Live Call & Put Option Chain Data Analysis",
-    'lang':"en",
-    'content':"Check out option chain LIVE data on Choice. Get Call & Put option chain data with LIVE strike price, analysis, chart, historical data and more.",
-    "link":"https://choiceindia.com/option-chain",
+    "title": "Option Chain - Live Call & Put Option Chain Data Analysis",
+    'lang': "en",
+    'content': "Check out option chain LIVE data on Choice. Get Call & Put option chain data with LIVE strike price, analysis, chart, historical data and more.",
+    "link": "https://choiceindia.com/option-chain",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -2342,12 +2447,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     }
     </script> 
     `},
- 
+
   "nse-option-chain": {
-    "title":"NSE Option Chain - Live NSE India Option Chain Data, Chart, Analysis",
-    'lang':"en",
-    'content':"Find out NSE option chain data on Choice. Get live NSE India option chain data with real-time chart, analysis, historical data and more.",
-    "link":"https://choiceindia.com/nse-option-chain",
+    "title": "NSE Option Chain - Live NSE India Option Chain Data, Chart, Analysis",
+    'lang': "en",
+    'content': "Find out NSE option chain data on Choice. Get live NSE India option chain data with real-time chart, analysis, historical data and more.",
+    "link": "https://choiceindia.com/nse-option-chain",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -2379,16 +2484,16 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     </script> 
     `},
   "mcx-option-chain": {
-    "title":"MCX Option Chain - Check Commodity Option Chain Data Live",
-    'lang':"en",
-    'content':"Get live MCX option chain data on Choice. Check out real-time commodity option chain with strike price, analysis, chart, historical data and more.",
-    "link":"https://choiceindia.com/mcx-option-chain"
+    "title": "MCX Option Chain - Check Commodity Option Chain Data Live",
+    'lang': "en",
+    'content': "Get live MCX option chain data on Choice. Check out real-time commodity option chain with strike price, analysis, chart, historical data and more.",
+    "link": "https://choiceindia.com/mcx-option-chain"
   },
   "currency-option-chain": {
-    "title":"Currency Option Chain - Check Live Forex Option Chain Data",
-    'lang':"en",
-    'content':"Check out LIVE currency option chain on Choice. Get forex option chain data with real time strike price, analysis, chart, historical data and more.",
-    "link":"https://choiceindia.com/currency-option-chain"
+    "title": "Currency Option Chain - Check Live Forex Option Chain Data",
+    'lang': "en",
+    'content': "Check out LIVE currency option chain on Choice. Get forex option chain data with real time strike price, analysis, chart, historical data and more.",
+    "link": "https://choiceindia.com/currency-option-chain"
   },
 }
 

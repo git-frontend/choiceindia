@@ -1,5 +1,5 @@
-@import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
 
 
 .sub-broker-skeleton-parent{
@@ -2484,5 +2484,45 @@
 .hide-mob{
     @media (max-width: $sm) {
         display: none;
+    }
+}
+.more-content {
+    padding: 10rem 0;
+    @media (max-width:$md) {
+        padding: 6rem 0;
+    }
+   .moreless-button {
+        color: $blueColortext;
+        cursor: pointer;
+        font-family: $font-family-poppins-bold;
+        font-size: 1.6875rem!important;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2.75rem!important;
+    }
+    .seo-h3{
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 2.2rem;
+    }
+    .seo-para {
+        color: $primary;
+        font-size: 1.625rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+    .seo-h4 {
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 2rem;
+        margin-bottom: 0;
+        padding: 1rem 0 0.5rem;
+    }
+    .seo-h5 {
+        color: $primary;
+        font-family: $font-family-poppins-semibold;
+        font-size: 1.75rem;
+        margin-bottom: 0;
+        padding: 1rem 0 0;
     }
 }
