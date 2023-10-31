@@ -7,6 +7,7 @@ import WhyMFDistributor from './WhyMFDistributor';
 import EligibleToMFDistributor from './EligibleToMFDistributor';
 import MoreContent from './MoreContent';
 import MFDistributorOffers from './MFDistributorOffers';
+import MfTestimonials from './MfTestimonials';
 import MFDistributorFaqs from './MFDistributorFaqs';
 import { useState} from "react";
 import Template5 from '../Common-features/Template5';
@@ -83,6 +84,7 @@ function MutualFundDistributor() {
             <WhyMFDistributor />
             <EligibleToMFDistributor />
             <MFDistributorOffers />
+            <MfTestimonials/>
             <MFDistributorFaqs />
             <MoreContent />
           </div>
