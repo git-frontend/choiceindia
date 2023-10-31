@@ -9,6 +9,7 @@ import MoreContent from './MoreContent';
 import MFDistributorOffers from './MFDistributorOffers';
 import MfTestimonials from './MfTestimonials';
 import MFDistributorFaqs from './MFDistributorFaqs';
+import MFDistributorSteps from './MFDistributorSteps';
 import { useState} from "react";
 import Template5 from '../Common-features/Template5';
 import "./mf-distributor.scss";
@@ -84,6 +85,7 @@ function MutualFundDistributor() {
             <WhyMFDistributor />
             <EligibleToMFDistributor />
             <MFDistributorOffers />
+            <MFDistributorSteps/>
             <MfTestimonials/>
             <MFDistributorFaqs />
             <MoreContent />

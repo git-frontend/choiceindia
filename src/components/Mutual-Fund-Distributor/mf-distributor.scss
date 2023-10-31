@@ -2632,12 +2632,15 @@
     background: $abt-bg;
     padding: 9rem 0;
     position: relative;
+
     .title-first {
         text-align: center;
     }
+
     .testimonial-slider {
         position: relative;
         margin-top: 4rem;
+
         .imgsub22 {
             position: absolute;
             left: 135px;
@@ -2684,6 +2687,7 @@
                 display: none;
             }
         }
+
         // border: 2px solid red;
         .slider-item {
             display: flex !important;
@@ -2728,7 +2732,8 @@
                         color: #0C71B9;
                         font-size: 2.4rem;
                     }
-                    .tag-letter{
+
+                    .tag-letter {
                         display: block;
                         width: 2rem;
                         height: 2rem;
@@ -2739,6 +2744,7 @@
                         font-size: 1.5rem;
                         font-family: $font-family-RedHat-Bold;
                     }
+
                     h4 {
                         font-family: $font-family-RedHat-Bold;
                         padding-left: 1.5rem;
@@ -2751,12 +2757,15 @@
                         padding-left: 2.5rem;
                         font-family: $font-family-poppins-regular, sans-serif;
                         padding-left: 3rem;
+
                         @media (max-width: $sm) {
-                            
+
                             padding-top: 0.5rem;
                         }
-                        &.rght-txt{
+
+                        &.rght-txt {
                             padding-left: 1rem;
+
                             @media (max-width: $xs) {
                                 width: 100%;
                                 padding: 0;
@@ -2938,4 +2947,141 @@
             display: none;
         }
     }
+}
+
+.MF-Distributor-Steps {
+    padding: 9rem 0 !important;
+    background: $whiteColor;
+
+    .mf-step-title {
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 2.8rem;
+        font-weight: 600;
+        font-family: $font-family-poppins-semibold;
+    }
+
+    .mf-Distributor-Become-steps {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .above-mf-Distributor-Become-steps {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            flex-direction: row;
+            padding-left: 0;
+            margin-top: 9rem;
+            margin-bottom: 0;
+            @media (max-width: $md) {
+                margin-top: 3rem;
+                padding-left: 2rem;
+            }
+
+            .all-step {
+                width: 24%;
+                @media (max-width: $md) {
+                    width: 100%;
+                }
+                &.hide-dsk{
+                    display: none;
+                    @media (max-width: $md) {
+                        display: block;
+                    }
+                }
+                .number {
+                    .number-text {
+                        font-size: 2.5rem;
+                        font-family: $font-family-poppins-semibold;
+                        // color: $textblue;
+                        display: block;
+
+                    }
+                }
+
+                .step-text {
+                    font-size: 1.625rem;
+                    font-family: $font-family-poppins-semibold;
+                    color: $primary;
+                }
+
+                .step-para {
+                    font-size: 1.125rem;
+                    font-family: $font-family-poppins-regular;
+                    color: $tcolor;
+                }
+
+                &:first-child {
+                    .number {
+                        .number-text {
+                            color: $textblue;
+                        }
+                    }
+                }
+
+                &:nth-child(2n) {
+                    .number {
+                        .number-text {
+                            color: $bgcolor-yellow;
+                        }
+                    }
+                }
+
+                &:nth-child(3n) {
+                    .number {
+                        .number-text {
+                            color: $textgreen;
+                        }
+                    }
+                }
+            }
+
+
+
+            &.Become-steps2 {
+                position: relative;
+                left: 19%;
+                width: calc(100% - 33%);
+
+                margin-top: 2rem;
+                @media (max-width: $md) {
+                    display: none;
+                }
+                .all-step {
+                    width: 44%;
+                    @media (max-width: $md) {
+                        width: 100%;
+                    }
+
+                    &:first-child {
+                        .number {
+                            .number-text {
+                                color: $textskycolor;
+                            }
+                        }
+                    }
+                    &:nth-child(2n) {
+                        .number {
+                            .number-text {
+                                color: $textorange;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        .step-img {
+            width: 79%;
+
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+    }
+
 }
