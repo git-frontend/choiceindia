@@ -2632,6 +2632,21 @@
     background: $abt-bg;
     padding: 9rem 0;
     position: relative;
+    &::before {
+        content: '';
+        width: 27rem;
+        height: 34rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -212px;
+        background: url(../../assets/images/mutual-fund-distributor/testimonial-btm.png) no-repeat top left;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
 
     .title-first {
         text-align: center;
@@ -3020,8 +3035,15 @@
                         }
                     }
                 }
-
                 &:nth-child(2n) {
+                    .number {
+                        .number-text {
+                            color: $textskycolor;
+                        }
+                    }
+                }
+
+                &:nth-child(3n) {
                     .number {
                         .number-text {
                             color: $bgcolor-yellow;
@@ -3029,7 +3051,14 @@
                     }
                 }
 
-                &:nth-child(3n) {
+                &:nth-child(4n) {
+                    .number {
+                        .number-text {
+                            color: $textorange;
+                        }
+                    }
+                }
+                &:nth-child(5n) {
                     .number {
                         .number-text {
                             color: $textgreen;

@@ -7,7 +7,7 @@ function WhyMFDistributor () {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-10 col-md-12">
-                            <h2 className="ttl-wht">Why Become a Mutual Fund Distributor with Us?</h2>
+                            <h2 className="ttl-wht">Why Become a Mutual Fund Distributor with Choice??</h2>
                             <p className="sml-para-dv">Choice is one of the respected financial service providers that has been serving its clients for more than 25 years and introduced its mutual fund arm in the year 2017. Being a mutual fund distributor allows you to grow multifold times.</p>
                         </div>
                     </div>

@@ -48,7 +48,7 @@ function BannerMFDistributor() {
                             <div className="caption-blue-bar">
                                 <ul>
                                     <li>
-                                        <span>High</span> Commision
+                                        <span>Highest</span> Commission
                                     </li>
                                     <li>
                                         <span>Multiple</span> Sources of Earnings
