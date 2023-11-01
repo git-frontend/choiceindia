@@ -150,6 +150,16 @@ const rest = {
         throw error;
       });
   },
+  getCategoriesList: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getCategoriesList()
+     console.log("getCategoriesList",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
 
 
 }

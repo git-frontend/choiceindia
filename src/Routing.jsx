@@ -1000,7 +1000,7 @@ function Routing() {
                                 < LazyTopFundsAMC />
                             </React.Suspense>
                         } />
-                         <Route exact path='/mf/top-funds-india' element={
+                         <Route exact path='/top-funds' element={
                             <React.Suspense>
                                 < LazyTopFundsIndia />
                             </React.Suspense>

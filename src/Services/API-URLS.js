@@ -194,7 +194,7 @@ export class API_URLS {
     nbfcverifyOTPURL = 'api/verify-otp';
     // for event calendar
     eventdetailsURL='cm/ProfileMkt/EventDetails';
-
+    
     
   /** pdf API */
   
@@ -277,6 +277,8 @@ export class API_URLS {
     //for margin calculator
     marginCalculatorUrl='margin/GetMargin/';
     trackrecordUrl='items/Track_record';
+    //for MF pages 
+    categoryListUrl='static/CategoryList';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -944,5 +946,9 @@ export class API_URLS {
     }
     gettrackDocumnetURL(){
         return this.CMSURL + this.trackrecordUrl
+    }
+    //for mf pages 
+    getCategoriesList(){
+        return this.MFBaseURL +this.categoryListUrl
     }
 }
