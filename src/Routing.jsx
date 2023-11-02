@@ -1020,6 +1020,11 @@ function Routing() {
                                 < LazyELSSDetails />
                             </React.Suspense>
                         } />
+                        <Route exact path='/top-funds/:id' element={
+                            <React.Suspense>
+                                 < LazyELSSDetails />
+                            </React.Suspense>
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

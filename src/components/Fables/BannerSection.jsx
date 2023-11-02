@@ -67,7 +67,7 @@ function BannerSection() {
 													<Link to={`/blog/${response.slug}`} className="trending-itm">
 														{/**<a href="/" className="trending-itm">*/}
 														<div className="trending-itm-img">
-															<LazyLoader src={response.feature_image} className={"img-blog"} alt={"Loading"} width={"138"} height={"100"} />
+															<img src={response.feature_image} className={"img-blog"} alt={"Loading"} width={"138"} height={"100"} />
 															{/* <img src={response.feature_image} alt="loading" className="img-blog"/> */}
 														</div>
 														<div className="trending-itm-des">
