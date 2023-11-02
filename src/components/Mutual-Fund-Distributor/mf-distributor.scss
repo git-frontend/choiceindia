@@ -958,7 +958,7 @@
 .franchise-abt {
 
     background: $primary;
-    padding: 8rem 0;
+    padding: 10rem 0;
     position: relative;
 
     .ttl-wht {
@@ -1017,7 +1017,7 @@
 }
 
 .franchise-eligb {
-    padding: 10rem 0 7rem 0;
+    padding: 10rem 0;
 
     .eligb-left-sec {
 
@@ -1168,7 +1168,7 @@
 }
 
 .franchise-offers {
-    padding: 10rem 0 15rem 0;
+    padding: 10rem 0;
     background: $whiteColor;
     position: relative;
 
@@ -2342,7 +2342,7 @@
         @media (max-width: $sm) {
             margin-top: 3rem;
         }
-
+        
         h3 {
             font-size: 2rem;
             line-height: 1.5;
@@ -2513,7 +2513,7 @@
 }
 
 .Dematfaq {
-    padding: 9rem 0;
+    padding: 10rem 0;
 
     background-color: $whiteColor ;
 
@@ -2581,12 +2581,15 @@
 }
 
 .more-content {
-    padding: 10rem 0;
+    padding: 0rem 0 10rem 0;;
 
     @media (max-width:$md) {
         padding: 6rem 0;
     }
-
+    .headspace{
+        margin-top: 3rem !important;
+        margin-bottom: 2rem !important;
+    }
     .moreless-button {
         color: $blueColortext;
         cursor: pointer;
@@ -2630,7 +2633,7 @@
 
 .mf-testimonial {
     background: $abt-bg;
-    padding: 9rem 0;
+    padding: 10rem 0;
     position: relative;
     &::before {
         content: '';
@@ -2780,6 +2783,7 @@
 
                         &.rght-txt {
                             padding-left: 1rem;
+                            margin-bottom: 0 !important;
 
                             @media (max-width: $xs) {
                                 width: 100%;
@@ -2965,7 +2969,7 @@
 }
 
 .MF-Distributor-Steps {
-    padding: 9rem 0 !important;
+    padding: 10rem 0 !important;
     background: $whiteColor;
 
     .mf-step-title {

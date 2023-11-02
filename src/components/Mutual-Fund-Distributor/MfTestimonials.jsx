@@ -112,7 +112,7 @@ function MfTestimonials() {
                                         <LazyLoader src={dataObj[0].img} threshold={[0, 0.5, 1]} className={"img-fluid main-img-slide"} width={"397"} height={"393"} alt={""} />
                                     </div>
                                     <div className="slider-item-des">
-                                        <div className="item-des-name-value d-flex align-items-start justify-content-between">
+                                        <div className="item-des-name-value d-flex justify-content-between">
                                             <div className='d-flex flex-wrap w-75 align-items-center'>
                                                 <span className='tag-letter'><LazyLoader src={ImagePlay} className={'img-fluid'} width={"36"} height={"41"} alt={""} /></span>
                                                 <h4>{dataObj[0].name}</h4>
