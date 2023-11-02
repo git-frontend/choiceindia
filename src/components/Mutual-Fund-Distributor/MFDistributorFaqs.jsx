@@ -118,7 +118,7 @@ function MFDistributorFaqs() {
                                         <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {
                                             setView(false);
                                             setActiveKey('Faqid'); 
-                                        }}>&nbsp;View less</button>
+                                            chapterScroll('Faqid')}}>&nbsp;View less</button>
 
                                     </Accordion>
 
