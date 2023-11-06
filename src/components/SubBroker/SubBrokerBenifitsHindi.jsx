@@ -148,7 +148,7 @@ function SubBrokerBenifitsHindi() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Software} alt={"Advanced Software to Manage Business"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <LazyLoader src={Software} alt={"Advanced software to manage stock broking franchise business"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Software} alt="Advanced Software to Manage Business" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>व्यवसाय को प्रबंधित करने के लिए उन्नत सॉफ़्टवेयर</h4>
