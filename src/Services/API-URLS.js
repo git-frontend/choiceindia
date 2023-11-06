@@ -279,6 +279,7 @@ export class API_URLS {
     trackrecordUrl='items/Track_record';
     //for MF pages 
     categoryListUrl='static/CategoryList';
+    categoryListDetails='Scheme/CategoryDetails';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -951,4 +952,10 @@ export class API_URLS {
     getCategoriesList(){
         return this.MFBaseURL +this.categoryListUrl
     }
+    getCategoryData(){
+        return this.MFBaseURL +this.categoryListDetails
+    }
+
+
+    
 }

@@ -154,12 +154,23 @@ const rest = {
 
     let api = new API_URLS()
     let url = api.getCategoriesList()
-     console.log("getCategoriesList",url)
+    //  console.log("getCategoriesList",url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       //  console.log("datads",data)
       return data
     })
   },
+  getCategoryData: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getCategoryData()
+     console.log("getCategoryData",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+
 
 
 }

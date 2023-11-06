@@ -40,7 +40,7 @@ function ELSSDetails() {
   return (
     <div>
         <Banner/>
-        <SerachELSSDetails/>
+        {/* <SerachELSSDetails/> */}
         <MoreContent/>
         <Faq/>
         {/* <div className={name}>
