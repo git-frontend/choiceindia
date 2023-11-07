@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import DematAccountForm from '../Common-features/DematAccountForm';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import rest from "../../Services/rest";
+import noDataimg from '../../assets/images/no-data.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 import PreSingleArrow from '../../assets/images/amc-details/pre-arrow-single.svg';
 import PreDobbleArrow from '../../assets/images/amc-details/pre-arrow-dobble.svg';
@@ -12,9 +13,12 @@ import { faStar, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 function Banner() {
     const [name, setName] = useState('hideform');
     const [apiData, setApiData] = useState([]);
-    const [categoryData, setCategoryData] = useState(null);
+    const [categoryData, setCategoryData] = useState([]);
+    const [filteredCategoryData, setFilteredCategoryData] = useState([])
     const [rendercount, setRenderCount] = useState(false);
-   
+    const [currentPage, setCurrentPage] = useState(1);
+    const [searchTerm, setSearchTerm] = useState("");
+    const itemsPerPage = 10;
     const getPosition = () => {
         const element = document.getElementById("showForm");
         if (element) {
@@ -46,9 +50,10 @@ function Banner() {
     const getCategoryData = (urlIdentity) => {
         rest.getCategoryData(urlIdentity).then(
             res => {
-                if (res.Response) {
+                if (res && res.Response && res.Response.lstSchemeFundExplorer) {
                     setApiData([res.Response]);
                     setCategoryData(res.Response.lstSchemeFundExplorer)
+                    setFilteredCategoryData(res.Response.lstSchemeFundExplorer)
                 } else {
                     navigate(`/404`, { replace: true });
                 }
@@ -71,6 +76,22 @@ function Banner() {
     }, [rendercount]);
     const schemeReturnsToFixed = (value) => {
         return parseFloat(value).toFixed(2);
+    };
+
+
+    const totalPages = Math.ceil(categoryData.length / itemsPerPage);
+
+    // Calculate the starting and ending indexes for the current page
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, categoryData.length);
+
+    const CategorySearch = (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        setSearchTerm(searchTerm); 
+        const filteredResults = categoryData?.filter((res) =>
+          res?.Response?.lstSchemeFundExplorer.toLowerCase().includes(searchTerm)
+        );
+        setFilteredCategoryData(filteredResults || []); 
       };
     return (
         <>
@@ -128,7 +149,7 @@ function Banner() {
                         <div className='col-xl-5 col-md-7 col-sm-12'>
                             <div className='serch-drp-sec'>
                                 <div className='search-bar-items left-sec'>
-                                    <input type="text" className="input-control search-icon" placeholder="Search" />
+                                    <input type="text" className="input-control search-icon" placeholder="Search" onChange={CategorySearch} />
                                 </div>
                                 <div className='search-bar-items right-sec'>
                                     <select className='form-select'>
@@ -148,14 +169,14 @@ function Banner() {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            {categoryData?.map((fund, i) => (
+                            {filteredCategoryData.slice(startIndex, endIndex).map((fund, i) => (
                                 <div className='card' key={fund.SchemeCode}>
                                     <div className="display-flex">
                                         <div className='flex-i'>
                                             <h3>{fund.SchemeName}</h3>
                                             <p className='category'>
-                                                <span>Category : {fund.Category} - ELSS</span>
-                                                <span className='brder-left'>NAV : {(parseFloat(fund.SchemeReturns.NetAsset).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'Cr.')}</span>
+                                                <span>Expense Ratio : {fund.ExpenseRatio}%</span>
+                                                <span className='brder-left'>AUM : {(parseFloat(fund.SchemeReturns.NetAsset).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'Cr.')}</span>
                                             </p>
                                         </div>
                                         <div className='flex-i'>
@@ -167,11 +188,7 @@ function Banner() {
                                                         className={`${fund?.CMSStarRatings >= rating ? 'fill' : 'unfill'}`}
                                                     />
                                                 ))}
-                                                {/* <FontAwesomeIcon icon={faStar} className='fill' />
-                                                <FontAwesomeIcon icon={faStar} className='fill' />
-                                                <FontAwesomeIcon icon={faStar} className='fill' />
-                                                <FontAwesomeIcon icon={faStar} className='fill' />
-                                                <FontAwesomeIcon icon={faStar} className='fill' /> */}
+
                                             </div>
                                         </div>
                                     </div>
@@ -216,553 +233,36 @@ function Banner() {
                             )
                             )
                             }
-                            {/* <div className='card'>
-                        <div className="display-flex">
-                            <div className='flex-i'>
-                                    <h3>Bandhan Tax Advantage (ELSS) Fund Growth</h3>
-                                    <p className='category'>
-                                        <span>Category : Equity - ELSS</span>
-                                        <span className='brder-left'>NAV : ₹49.58</span>
-                                    </p>
-                                </div>
-                                <div className='flex-i'>
-                                    <div className='rating-det'>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    </div>
-                                </div>
+                            {filteredCategoryData.length === 0 && (
+                                <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                             </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className="display-flex">
-                            <div className='flex-i'>
-                                <h3>SBI Long Term Equity Fund Growth</h3>
-                                    <p className='category'>
-                                        <span>Category : Equity - ELSS</span>
-                                        <span className='brder-left'>NAV : ₹49.58</span>
-                                    </p>
-                                </div>
-                                <div className='flex-i'>
-                                    <div className='rating-det'>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    </div>
-                            </div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className="display-flex">
-                            <div className='flex-i'>
-                                <h3>Kotak Tax Saver Fund - Growth</h3>
-                                <p className='category'>
-                                    <span>Category : Equity - ELSS</span>
-                                    <span className='brder-left'>NAV : ₹49.58</span>
-                                </p>
-                            </div>
-                            <div className='flex-i'>
-                                <div className='rating-det'>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className="display-flex">
-                                <div className='flex-i'>
-                                <h3>Canara Robeco Equity Tax Saver Growth</h3>
-                                    <p className='category'>
-                                        <span>Category : Equity - ELSS</span>
-                                        <span className='brder-left'>NAV : ₹49.58</span>
-                                    </p>
-                                </div>
-                                <div className='flex-i'>
-                                    <div className='rating-det'>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
-                                    </div>
-                                </div>
-                            </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className="display-flex">
-                                <div className='flex-i'>
-                                <h3>HDFC TaxSaver - Growth</h3>
-                                    <p className='category'>
-                                        <span>Category : Equity - ELSS</span>
-                                        <span className='brder-left'>NAV : ₹49.58</span>
-                                    </p>
-                                </div>
-                                <div className='flex-i'>
-                                    <div className='rating-det'>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
-                                    </div>
-                                </div>
-                            </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className="display-flex">
-                            <div className='flex-i'>
-                            <h3>Motilal Oswal Long Term Equity Fund Growth</h3>
-                                <p className='category'>
-                                    <span>Category : Equity - ELSS</span>
-                                    <span className='brder-left'>NAV : ₹49.58</span>
-                                </p>
-                            </div>
-                            <div className='flex-i'>
-                                <div className='rating-det'>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='unfill'/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                    <div className="display-flex">
-                            <div className='flex-i'>
-                            <h3>Mirae Asset Tax Saver Fund Growth</h3>
-                                <p className='category'>
-                                    <span>Category : Equity - ELSS</span>
-                                    <span className='brder-left'>NAV : ₹49.58</span>
-                                </p>
-                            </div>
-                            <div className='flex-i'>
-                                <div className='rating-det'>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='fill'/>
-                                    <FontAwesomeIcon icon={faStar} className='unfill'/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className="display-flex">
-                                <div className='flex-i'>
-                                <h3>Parag Parikh Tax Saver Fund Growth</h3>
-                                    <p className='category'>
-                                        <span>Category : Equity - ELSS</span>
-                                        <span className='brder-left'>NAV : ₹49.58</span>
-                                    </p>
-                                </div>
-                                <div className='flex-i'>
-                                    <div className='rating-det'>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
-                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
-                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
-                                    </div>
-                                </div>
-                            </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className="display-flex">
-                                <div className='flex-i'>
-                                <h3>DSP Tax Saver Fund Growth</h3>
-                                    <p className='category'>
-                                        <span>Category : Equity - ELSS</span>
-                                        <span className='brder-left'>NAV : ₹49.58</span>
-                                    </p>
-                                </div>
-                                <div className='flex-i'>
-                                    <div className='rating-det'>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='fill'/>
-                                        <FontAwesomeIcon icon={faStar} className='unfill'/>
-                                    </div>
-                                </div>
-                            </div>
-                        <div className='row'>
-                            <div className='col-xl-5 col-md-6 left'>
-                                <ul className='fundlist-flex'>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>1M</h5>
-                                        <h5>0.63%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3M</h5>
-                                        <h5>4.37%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>6M</h5>
-                                        <h5>15.55%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='right col-xl-5 col-md-6'>
-                            <ul className='fundlist-flex border-left'>
-                                    <li className='fundlist text-center'>
-                                        <h5 className='time-period'>1Y</h5>
-                                        <h5>5.21%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>3Y</h5>
-                                        <h5>56.28%</h5>
-                                    </li>
-                                    <li className='fundlist'>
-                                        <h5 className='time-period'>5Y</h5>
-                                        <h5>63.98%</h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='col-xl-2 col-md-12'>
-                                <button type='button' className='btn-bg'>View Details</button>
-                            </div>
-                        </div>
-                    </div> */}
+                            )}
                             <span className='bg-before'></span>
                             <div className='wrapper'>
                                 <ul className='pagination-sec'>
-                                    <li>
-                                        <a className="" href="#">
-                                            <LazyLoader src={PreSingleArrow} className="img-fluid" width={20} height={29}></LazyLoader>
-                                        </a>
+                                    <li onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+                                        <LazyLoader src={PreSingleArrow} className="img-fluid" width={20} height={29} />
                                     </li>
-                                    <li>
-                                        <a className="" href="#">
-                                            <LazyLoader src={PreDobbleArrow} className="img-fluid" width={25} height={29}></LazyLoader>
-                                        </a>
+                                    <li onClick={() => setCurrentPage(currentPage - 2)} disabled={currentPage <= 2}>
+                                        <LazyLoader src={PreDobbleArrow} className="img-fluid" width={25} height={29} />
                                     </li>
                                     <li>
                                         <ul className="pagination">
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#" className="active">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
+                                            {Array.from({ length: totalPages }, (_, index) => (
+                                                <li key={index} className={currentPage === index + 1 ? "active" : ""} onClick={() => setCurrentPage(index + 1)}>
+                                                    {index + 1}
+                                                </li>
+                                            ))}
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a className="" href="#">
-                                            <LazyLoader src={NextDobbleArrow} className="img-fluid" width={25} height={29}></LazyLoader>
-                                        </a>
+                                    <li onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
+                                        <LazyLoader src={NextDobbleArrow} className="img-fluid" width={25} height={29} />
                                     </li>
-                                    <li>
-                                        <a className="" href="#">
-                                            <LazyLoader src={NextSingleArrow} className="img-fluid" width={20} height={29}></LazyLoader>
-                                        </a>
+                                    <li onClick={() => setCurrentPage(currentPage + 2)} disabled={currentPage >= totalPages - 1}>
+                                        <LazyLoader src={NextSingleArrow} className="img-fluid" width={20} height={29} />
                                     </li>
                                 </ul>
-
                             </div>
                         </div>
                     </div>

@@ -177,27 +177,38 @@
             li {
                 display: inline;
                 border-right: 4px solid #E1E1E1;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+                display: inline-block;
+                text-decoration: none;
+                padding: 0 0.6rem;
+                color: $primary;
+                font-size: 1.714rem;
+                font-weight: 400;
+                font-family: $font-family-poppins-regular;
+                margin: 0 0.5rem;
+                cursor: pointer;
                 &:last-child{
                     border-right: 0;
                 }
-                a {
-                    border-radius: 5px;
-                    transition: background-color 0.3s;
-                    display: inline-block;
-                    text-decoration: none;
-                    padding: 0 0.4rem;
-                    color: $primary;
-                    font-size: 1.714rem;
-                    font-weight: 400;
-                    font-family: $font-family-poppins-regular;
-                    margin: 0 0.5rem;
+                // a {
+                //     border-radius: 5px;
+                //     transition: background-color 0.3s;
+                //     display: inline-block;
+                //     text-decoration: none;
+                //     padding: 0 0.4rem;
+                //     color: $primary;
+                //     font-size: 1.714rem;
+                //     font-weight: 400;
+                //     font-family: $font-family-poppins-regular;
+                //     margin: 0 0.5rem;
                     &.active {
                         color: $yellowColor;
                         border-bottom: 4px solid $yellowColor;
                         font-weight: 600;
                         font-family: $font-family-poppins-semibold;
                         border-radius: 0;
-                    }
+                    // }
                     //  &:hover:not(.active) {
                     //     background-color: #ddd;
                     //   } 
