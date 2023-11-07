@@ -17,8 +17,8 @@ function Banner() {
     const [filteredCategoryData, setFilteredCategoryData] = useState([])
     const [rendercount, setRenderCount] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [searchTerm, setSearchTerm] = useState("");
     const itemsPerPage = 10;
+    const [searchTerm, setSearchTerm] = useState('');
     const getPosition = () => {
         const element = document.getElementById("showForm");
         if (element) {
@@ -80,19 +80,23 @@ function Banner() {
 
 
     const totalPages = Math.ceil(categoryData.length / itemsPerPage);
-
-    // Calculate the starting and ending indexes for the current page
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = Math.min(startIndex + itemsPerPage, categoryData.length);
 
+
     const CategorySearch = (e) => {
         const searchTerm = e.target.value.toLowerCase();
-        setSearchTerm(searchTerm); 
-        const filteredResults = categoryData?.filter((res) =>
-          res?.Response?.lstSchemeFundExplorer.toLowerCase().includes(searchTerm)
-        );
-        setFilteredCategoryData(filteredResults || []); 
-      };
+        setSearchTerm(searchTerm);
+        const filteredResults = categoryData.filter((fund) => {
+            return (
+                fund.SchemeName.toLowerCase().includes(searchTerm) ||
+                fund.ExpenseRatio.toString().includes(searchTerm) ||
+                fund.AUM.toLowerCase().includes(searchTerm) ||
+                fund.CMSStarRatings.toString().includes(searchTerm)
+            );
+        });
+        setFilteredCategoryData(filteredResults);
+    }
     return (
         <>
             <section className="funds-bannersection">
@@ -233,11 +237,7 @@ function Banner() {
                             )
                             )
                             }
-                            {filteredCategoryData.length === 0 && (
-                                <div className="text-center">
-                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                            </div>
-                            )}
+
                             <span className='bg-before'></span>
                             <div className='wrapper'>
                                 <ul className='pagination-sec'>
