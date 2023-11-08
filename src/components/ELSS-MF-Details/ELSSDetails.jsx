@@ -41,8 +41,8 @@ function ELSSDetails() {
     <div>
         <Banner/>
         {/* <SerachELSSDetails/> */}
-        <MoreContent/>
-        <Faq/>
+        {/* <MoreContent/> */}
+        {/* <Faq/> */}
         {/* <div className={name}>
         <FixedSection/>
         </div> */}

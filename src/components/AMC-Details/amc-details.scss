@@ -107,6 +107,7 @@
 .listing-details{
     position: relative;
     padding-bottom: 10rem;
+
     @media (max-width:$md) {
         padding-bottom: 6rem;
     }
@@ -223,6 +224,9 @@
         box-shadow: $border-light 0px 3px 7px;
         padding: 2rem;
         margin-bottom: 5rem;
+        a{
+            text-decoration: none !important;
+       
         .display-flex {
             display: flex;
             justify-content: space-between;
@@ -335,18 +339,20 @@
                     border-right: 0;
                 }
                 .time-period{
-                    color: $yellowColor;
+                    color: $yellowColor !important;
                 }
                 h5{
                     font-size: 1.714rem;
                     font-weight: 600;
                     font-family: $font-family-poppins-semibold;
+                    color: $bgcolordark !important;
                     @media (max-width:$sm) {
                         font-size: 1.325rem;
                     }
                 }
             }
         }
+    }
     }
 }
 .more-content-sec{

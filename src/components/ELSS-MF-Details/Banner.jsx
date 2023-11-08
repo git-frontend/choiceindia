@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Accordion } from "react-bootstrap";
 import DematAccountForm from '../Common-features/DematAccountForm';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import rest from "../../Services/rest";
@@ -10,6 +11,7 @@ import NextSingleArrow from '../../assets/images/amc-details/next-arrow-single.s
 import NextDobbleArrow from '../../assets/images/amc-details/next-arrow-dobble.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 function Banner() {
     const [name, setName] = useState('hideform');
     const [apiData, setApiData] = useState([]);
@@ -23,7 +25,6 @@ function Banner() {
         const element = document.getElementById("showForm");
         if (element) {
             const rect = element.getBoundingClientRect();
-
             if (rect.top.toFixed() < 259) {
                 setName('visibleform');
             } else {
@@ -77,13 +78,11 @@ function Banner() {
     const schemeReturnsToFixed = (value) => {
         return parseFloat(value).toFixed(2);
     };
-
-
+    //for pagenation 
     const totalPages = Math.ceil(categoryData.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = Math.min(startIndex + itemsPerPage, categoryData.length);
-
-
+    //for search category name 
     const CategorySearch = (e) => {
         const searchTerm = e.target.value.toLowerCase();
         setSearchTerm(searchTerm);
@@ -97,6 +96,20 @@ function Banner() {
         });
         setFilteredCategoryData(filteredResults);
     }
+    // for filter as per ratings
+    const FilterByStars = (e) => {
+        const selectedStars = e.target.value;
+        let filteredResults = categoryData;
+        if (selectedStars) {
+            filteredResults = categoryData.filter((fund) => fund.CMSStarRatings.toString() === selectedStars);
+        }
+        setFilteredCategoryData(filteredResults);
+    };
+    function addClassNameToTable(htmlContent, classNameToAdd) {
+        // Use a regular expression to add the class to the table element
+        return htmlContent.replace(/<table/, `<table class="${classNameToAdd}"`);
+    }
+
     return (
         <>
             <section className="funds-bannersection">
@@ -141,11 +154,13 @@ function Banner() {
                                     </select>
                                 </div>
                                 <div className='drop-items'>
-                                    <select className='form-select'>
-                                        <option value="" defaultValue>Stars</option>
-                                        <option value="">5 Star</option>
-                                        <option value="">3 Star</option>
-                                        <option value="">4 Star</option>
+                                    <select className='form-select' onChange={FilterByStars}>
+                                        <option value="" defaultValue>All</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
                             </div>
@@ -174,65 +189,67 @@ function Banner() {
                     <div className='row'>
                         <div className='col-md-12'>
                             {filteredCategoryData.slice(startIndex, endIndex).map((fund, i) => (
-                                <div className='card' key={fund.SchemeCode}>
-                                    <div className="display-flex">
-                                        <div className='flex-i'>
-                                            <h3>{fund.SchemeName}</h3>
-                                            <p className='category'>
-                                                <span>Expense Ratio : {fund.ExpenseRatio}%</span>
-                                                <span className='brder-left'>AUM : {(parseFloat(fund.SchemeReturns.NetAsset).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'Cr.')}</span>
-                                            </p>
-                                        </div>
-                                        <div className='flex-i'>
-                                            <div className='rating-det'>
-                                                {[1, 2, 3, 4, 5].map((rating) => (
-                                                    <FontAwesomeIcon
-                                                        key={rating}
-                                                        icon={faStar}
-                                                        className={`${fund?.CMSStarRatings >= rating ? 'fill' : 'unfill'}`}
-                                                    />
-                                                ))}
+                                <div className='card' key={fund.SchemeName}>
+                                    <Link to={`/scheme/${fund.SchemeName.toLowerCase().replace(/ /g, '-')}-${fund.SchemeCode}-${fund.SchemePlanCode}`} >
+                                        <div className="display-flex">
+                                            <div className='flex-i'>
+                                                <h3>{fund.SchemeName}</h3>
+                                                <p className='category'>
+                                                    <span>Expense Ratio : {fund.ExpenseRatio}%</span>
+                                                    <span className='brder-left'>AUM : {(parseFloat(fund.SchemeReturns.NetAsset).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'Cr.')}</span>
+                                                </p>
+                                            </div>
+                                            <div className='flex-i'>
+                                                <div className='rating-det'>
+                                                    {[1, 2, 3, 4, 5].map((rating) => (
+                                                        <FontAwesomeIcon
+                                                            key={rating}
+                                                            icon={faStar}
+                                                            className={`${fund?.CMSStarRatings >= rating ? 'fill' : 'unfill'}`}
+                                                        />
+                                                    ))}
 
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className='row'>
-                                        <div className='col-xl-5 col-md-6 left'>
-                                            <ul className='fundlist-flex'>
-                                                <li className='fundlist'>
-                                                    <h5 className='time-period'>1M</h5>
-                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.OneMonthReturn)}%</h5>
-                                                </li>
-                                                <li className='fundlist'>
-                                                    <h5 className='time-period'>3M</h5>
-                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.ThreeMonthsReturn)}%</h5>
-                                                </li>
-                                                <li className='fundlist'>
-                                                    <h5 className='time-period'>6M</h5>
-                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.SixMonthsReturn)}%</h5>
-                                                </li>
-                                            </ul>
+                                        <div className='row'>
+                                            <div className='col-xl-5 col-md-6 left'>
+                                                <ul className='fundlist-flex'>
+                                                    <li className='fundlist'>
+                                                        <h5 className='time-period'>1M</h5>
+                                                        <h5>{schemeReturnsToFixed(fund.SchemeReturns.OneMonthReturn)}%</h5>
+                                                    </li>
+                                                    <li className='fundlist'>
+                                                        <h5 className='time-period'>3M</h5>
+                                                        <h5>{schemeReturnsToFixed(fund.SchemeReturns.ThreeMonthsReturn)}%</h5>
+                                                    </li>
+                                                    <li className='fundlist'>
+                                                        <h5 className='time-period'>6M</h5>
+                                                        <h5>{schemeReturnsToFixed(fund.SchemeReturns.SixMonthsReturn)}%</h5>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className='right col-xl-5 col-md-6'>
+                                                <ul className='fundlist-flex border-left'>
+                                                    <li className='fundlist text-center'>
+                                                        <h5 className='time-period'>1Y</h5>
+                                                        <h5>{schemeReturnsToFixed(fund.SchemeReturns.OneYearReturn)}%</h5>
+                                                    </li>
+                                                    <li className='fundlist'>
+                                                        <h5 className='time-period'>3Y</h5>
+                                                        <h5>{schemeReturnsToFixed(fund.SchemeReturns.ThreeYearReturn)}%</h5>
+                                                    </li>
+                                                    <li className='fundlist'>
+                                                        <h5 className='time-period'>5Y</h5>
+                                                        <h5>{schemeReturnsToFixed(fund.SchemeReturns.FiveYearReturn)}%</h5>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className='col-xl-2 col-md-12'>
+                                                <button type='button' className='btn-bg'>View Details</button>
+                                            </div>
                                         </div>
-                                        <div className='right col-xl-5 col-md-6'>
-                                            <ul className='fundlist-flex border-left'>
-                                                <li className='fundlist text-center'>
-                                                    <h5 className='time-period'>1Y</h5>
-                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.OneYearReturn)}%</h5>
-                                                </li>
-                                                <li className='fundlist'>
-                                                    <h5 className='time-period'>3Y</h5>
-                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.ThreeYearReturn)}%</h5>
-                                                </li>
-                                                <li className='fundlist'>
-                                                    <h5 className='time-period'>5Y</h5>
-                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.FiveYearReturn)}%</h5>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className='col-xl-2 col-md-12'>
-                                            <button type='button' className='btn-bg'>View Details</button>
-                                        </div>
-                                    </div>
+                                    </Link>
                                 </div>
                             )
                             )
@@ -268,6 +285,114 @@ function Banner() {
                     </div>
                 </div>
             </section>
+            <section className='more-content-sec'>
+                <div className='container'>
+                    <div className='row'>
+                        {
+                            apiData.length ?
+                                <div className='col-md-12'>
+                                    {
+                                        apiData.map((fund, i) => {
+                                            const modifiedHtmlContent = addClassNameToTable(fund.CategoryDescriptionWeb, 'table');
+                                            return (
+                                                <div key={fund.SchemeName}>
+                                                    <h2 className='title-secnd'>{fund.CategoryFooter}</h2>
+                                                    <div className="more-contentseo" dangerouslySetInnerHTML={{ __html: modifiedHtmlContent }} />
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+
+                                :
+                                <div className="text-center">
+                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                </div>
+                        }
+                    </div>
+                </div>
+            </section>
+
+
+            {apiData.map((fund, i) => {
+                return (
+                    <div key={fund.SchemeName}>
+                        {fund.H1Tag === "Best ELSS Mutual Funds" ?
+                            <section className="Dematfaq">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-md-12">
+                                            <h2 className="title-first text-center pb-4">Frequently Asked <span>Questions</span></h2>
+                                        </div>
+
+                                    </div>
+                                    <div className="row justify-content-center">
+                                        <div className="col-xl-10 col-md-12">
+                                            <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
+                                                <Accordion.Item eventKey="0" className='faq-item'>
+                                                    <Accordion.Header as="h3" className='faq-header'>How do ELSS Funds help you save taxes?</Accordion.Header>
+                                                    <Accordion.Body className='open-demat-faq-body'>
+                                                        You can claim a tax benefit of up to 1,50,000 under Section 80C of the Income Tax Act. ELSS fund is a popular and fast growing Tax Saving Investment instrument.
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                                <Accordion.Item eventKey="1" className='faq-item'>
+                                                    <Accordion.Header as="h3" className='faq-header'>Is Investment in ELSS funds risky?</Accordion.Header>
+                                                    <Accordion.Body className='open-demat-faq-body'>
+                                                        The following documents will be required to open an account for a resident individual with Choice :
+                                                        <ul>
+                                                            <li>PAN Card</li>
+                                                            <li>Cancelled Cheque (that captures the MICR Code)</li>
+                                                            <li>Passport Size Photograph</li>
+                                                            <li>Address Proof</li>
+                                                        </ul>
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                                <Accordion.Item eventKey="2" className='faq-item'>
+                                                    <Accordion.Header as="h3" className='faq-header'>What is the investment limit in ELSS Mutual Funds?</Accordion.Header>
+                                                    <Accordion.Body className='open-demat-faq-body'>
+                                                        The Power of Attorney is a document that gives us the authorization to debit your shares from your Demat Account whenever you sell them. However, till the time you do not submit a POA, you can avail the eDIS facility to sell your holdings. This will require you to authorise your holdings once daily before doing any holding's sell transactions. It is recommended to send a signed copy of your POA since it enables you to sell your holdings seamlessly without the need to authorise online all the time.
+                                                        A copy of the POA gets emailed to you on your registered email ID, which needs to be physically signed and couriered to us. You can send us the signed POA to our head-office address mentioned on our website - <a href="https://choiceindia.com">https://choiceindia.com</a>
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                                <Accordion.Item eventKey="3" className='faq-item'>
+                                                    <Accordion.Header as="h3" className='faq-header'>How long should you stay invested into Tax Saving Funds?</Accordion.Header>
+                                                    <Accordion.Body className='open-demat-faq-body'>
+                                                        You can courier the signed copy of the POA to our Head Office address mentioned below.<br />
+                                                        Choice International Limited,<br />
+                                                        Sunil Patodia Tower,<br />
+                                                        J B Nagar, Andheri (East), Mumbai 400099.
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                                <Accordion.Item eventKey="4" className='faq-item' id="faqid">
+                                                    <Accordion.Header as="h3" className='faq-header'>Can I withdraw my investments from ELSS Fund before 3 years?</Accordion.Header>
+                                                    <Accordion.Body className='open-demat-faq-body'>
+                                                        You can open a low brokerage Demat Account with Choice at zero account opening charges.
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+
+                                                <Accordion.Item eventKey="5" className='faq-item'>
+                                                    <Accordion.Header as="h3" className='faq-header' >How much maximum tax you can save under ELSS Funds?</Accordion.Header>
+                                                    <Accordion.Body className='open-demat-faq-body'>
+                                                        NSE/BSE mandates a Demat with your Trading Account for securities. Currency and Commodities do not require a Demat Account, so if your trading requirements are restricted to that; a Trading Account can be opted for. This will have to be specified in the documentation process with the broker. For more information regarding the same, you can contact our customer care team at care@choiceindia.com
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                                <Accordion.Item eventKey="6" className='faq-item'>
+                                                    <Accordion.Header as="h3" className='faq-header' >An I make Lumpsum investments in Tax Saving Mutual Funds?</Accordion.Header>
+                                                    <Accordion.Body className='open-demat-faq-body'>
+                                                        You will be required to provide us with the CML (Client Master List) Copy of your earlier DP and open a new Demat Account with us.
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                            </Accordion>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            : ""}
+                    </div>
+                );
+            })}
+
+
         </>
     )
 }

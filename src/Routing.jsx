@@ -1005,7 +1005,7 @@ function Routing() {
                                 < LazyTopFundsIndia />
                             </React.Suspense>
                         } />
-                         <Route exact path='/mf-details' element={
+                         <Route exact path='scheme/:id' element={
                             <React.Suspense>
                                 < LazyMFDetails />
                             </React.Suspense>
@@ -1015,11 +1015,11 @@ function Routing() {
                                 < LazyAMCDetails />
                             </React.Suspense>
                         } />
-                         <Route exact path='/mf/elss-mutual-funds' element={
+                         {/* <Route exact path='/mf/elss-mutual-funds' element={
                             <React.Suspense>
                                 < LazyELSSDetails />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route exact path='/top-funds/:id' element={
                             <React.Suspense>
                                  < LazyELSSDetails />
