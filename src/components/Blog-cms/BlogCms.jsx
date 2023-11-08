@@ -206,8 +206,15 @@ function BlogCms() {
                                             <div dangerouslySetInnerHTML={{ __html: res.history_commodity_trading_paragraph }}>
 
                                             </div>
-
                                         </div>
+                                        {
+                                            res.history_commodity_trading_image ?
+                                                <div>
+                                                    <img src={`https://cmsapi.choiceindia.com/assets/${res.history_commodity_trading_image}`} alt="" className="img-fluid" />
+                                                </div> :
+                                                ""
+                                        }
+
                                         {/* <div className="pr-sec img-bl">
                                     <img src={appimg} className="img-fluid" />
                                 </div>

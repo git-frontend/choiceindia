@@ -222,7 +222,7 @@ function Banner() {
                         </span>
                       </div>
                       <div className="heading-sec">
-                        <h3 className="title-secnd">{res.banner_title}</h3>
+                        <h1 className="title-secnd">{res.banner_title}</h1>
                         <p>{res.banner_subtitle}</p>
                       </div>
                     </div>

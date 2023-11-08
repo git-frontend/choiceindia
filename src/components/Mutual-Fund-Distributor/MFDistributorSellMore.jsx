@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Insurance from '../../assets/images/mutual-fund-distributor/sell-insurance.svg';
-import Retail from '../../assets/images/mutual-fund-distributor/sell-retail-loans.svg';
+import Retail from '../../assets/images/sub-broker/retail-loans.svg';
 import Commodity from '../../assets/images/mutual-fund-distributor/open-stock-market-account.svg';
 import MF from '../../assets/images/mutual-fund-distributor/sell-bonds-fds-nps.svg';
+import Bonds from '../../assets/images/sub-broker/sub-broker-earn-through-bonds.svg';
+import CorporatePd from '../../assets/images/sub-broker/sub-broker-earn-through-corporate-fd.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 
@@ -30,7 +32,7 @@ const MFDistributorSellMore = () => {
                                     <div className="sell-left-sec">
                                         <h2 className="title-secnd">Sell More. Earn More!</h2>
                                         <p className="sml-para-dv">With Choice, one can increase his prospects by offering clients a variety of financial instruments in addition to mutual funds, increasing revenue.</p>
-                                        <div className="btn-bg btn-bg-dark hide-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </div>
+                                        <div className="btn-bg btn-bg-dark hide-mob cursor-pointer" onClick={() => scrollToId('sub-broker-form')}><span>Start Now</span> </div>
                                         {/* <Link to="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </Link> */}
                                     </div>
                                 </div>
@@ -38,7 +40,20 @@ const MFDistributorSellMore = () => {
                         </div>
                         <div className="col-md-12 col-lg-8">
                             <div className="sell-more-list">
-                                
+                                <div className="more-list-item">
+                                    <span>
+                                        <LazyLoader src={Commodity} alt={"Open Stock Market Account"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        {/* <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
+                                    </span>
+                                    <h3 className="itm-ttl">Stock Market</h3>
+                                </div>
+                                <div className="more-list-item">
+                                    <span>
+                                        <LazyLoader src={MF} alt={"Become a sub broker & earn through Mutual Funds"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        {/* <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
+                                    </span>
+                                    <h3 className="itm-ttl">Mutual Funds</h3>
+                                </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
                                         <LazyLoader src={Insurance} alt={"Sell Insurance"} className={'img-fluid'} width={"60"} height={"60"} />
@@ -48,30 +63,32 @@ const MFDistributorSellMore = () => {
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <LazyLoader src={Retail} alt={"Sell Retail Loans"} className={'img-fluid'} width={"60"} height={"60"} />
+                                    <LazyLoader src={Retail} alt={"Become a sub broker & earn through retail loans"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/* <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
                                     <h3 className="itm-ttl">Retail Loans</h3>
                                 </div>
-                                <div className="more-list-item">
-                                    <span>
-                                        <LazyLoader src={Commodity} alt={"Open Stock Market Account"} className={'img-fluid'} width={"60"} height={"60"} />
-                                        {/* <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
-                                    </span>
-                                    <h3 className="itm-ttl">Stock Market</h3>
-                                </div>
+
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <LazyLoader src={MF} alt={"Sell Bonds, FDS & NPS"} className={'img-fluid'} width={"60"} height={"60"} />
+                                    <LazyLoader src={Bonds} alt={"Become a sub broker & earn through Bonds"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/*<img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />*/}
                                     </span>
-                                    <h3 className="itm-ttl">Bonds, FD &amp; NPS</h3>
+                                    <h3 className="itm-ttl">Bonds</h3>
+                                </div>
+                                
+                                <div className="more-list-item wow fadeInRight">
+                                    <span>
+                                        <LazyLoader src={CorporatePd} alt={"Become a sub broker & earn through Corporate FDs"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        {/*<img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />*/}
+                                    </span>
+                                    <h3 className="itm-ttl">Corporate FDs</h3>
                                 </div>
                             </div>
                             <div className='d-flex justify-content-center'>
-                                <div className="btn-bg btn-bg-dark show-mob" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </div>
+                                <div className="btn-bg btn-bg-dark show-mob" onClick={() => scrollToId('sub-broker-form')}><span>Start Now</span> </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
