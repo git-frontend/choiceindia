@@ -1,10 +1,8 @@
 
 import React,{useState, useEffect} from "react";
 import BannerApp from './BannerApp';
-import AppBannerBottom from './AppBannerBottom';
 import AppNeed from './AppNeed';
 import AppBenefits from './AppBenefits';
-import AppTradeBenefits from './AppTradeBenefits';
 import "./mf-app.scss";
 import Template3  from '../Common-features/Template3';
 // import AppHeader from './AppHeader.jsx';
@@ -13,6 +11,7 @@ import {
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import TrackInvest from "./TrackInvest";
+import WhyChoose from "./WhyChoose";
 
 function MFApp() {
   const [skeleton, setSkeleton] = useState(() => true);
@@ -53,10 +52,8 @@ function MFApp() {
         <BannerApp />
         <AppNeed />
         <TrackInvest/>
-        {/* <AppBannerBottom /> */}
+        <WhyChoose/>
         <AppBenefits />
-       
-        <AppTradeBenefits />
       </div>
     }
     </div>

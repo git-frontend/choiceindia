@@ -14,32 +14,34 @@ function AppBenefits() {
 			<section className="app-benefits-section ">
 				<div className="container">
 					<div className="row">
+						<div className="col-lg-8 d-flex">
+								<div className="benifit-value-list">
+
+									<div className="benifit-value-item">
+										<h4>4,25000</h4>
+										<h6>Users</h6>
+									</div>
+									<div className="benifit-value-item">
+										<h4>30,000</h4>
+										<h6>Investors</h6>
+									</div>
+									<div className="benifit-value-item">
+										<h4>55+</h4>
+										<h6>Offices</h6>
+									</div>
+									<div className="benifit-value-item">
+										<h4>3000</h4>
+										<h6>Partners</h6>
+									</div>
+
+								</div>
+							</div>
 						<div className="col-lg-4">
 							<div className="heading-sec">
-								<h2 className="title-secnd text-white">App with <br />Multiple Benefits</h2>
-								<p>Discover why Lakhs of customers choose to invest with CHOICE</p>
-								<Link to='/open-free-demat-account'><span  className="btn-bg btn-bg-dark">Sign Up</span></Link>
+								<h2 className="title-secnd">We value trust <br />above everything</h2>
+								<p>Discover why Lakhs of customers choose to invest with CHOICE.</p>
 							</div>
 						</div>
-						<div className="col-lg-8 d-flex justify-content-end">
-							<div className="benifit-value-list">
-
-								<div className="benifit-value-item">
-									<h4>Equity <br />Broking</h4>
-								</div>
-								<div className="benifit-value-item">
-									<h4>Wealth <br /> Management</h4>
-								</div>
-								<div className="benifit-value-item">
-									<h4>Insurance <br /> Intellimart</h4>
-								</div>
-								<div className="benifit-value-item">
-									<h4>Swift <br />Loans</h4>
-								</div>
-
-							</div>
-						</div>
-
 					</div>
 				</div>
 			</section>
