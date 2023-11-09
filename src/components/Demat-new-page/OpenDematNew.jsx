@@ -38,22 +38,9 @@ import NewDematAccountForm from '../Common-features/NewDematAccountForm';
 
 function OpenDematNew() {
 
-    var tabLink = document.querySelectorAll(".acher")
-    console.log("tabLink",tabLink)
-    tabLink.forEach(function (item) {
-       console.log("item")
-        
-          
-            tabLink.forEach(function (item) {
-              item.classList.remove("active");
-            });
-            item.classList.add("active");
-          
-            
-     
-          
-      });
-    const [isActive, setIsActive] = useState(false);
+
+    const [isActive, setIsActive] = useState();
+    const [isActive4, setIsActive4] = useState('id');
 
     const [isActive2, setIsActive2] = useState(false);
     
@@ -95,6 +82,7 @@ function OpenDematNew() {
 
 
     function chapterScroll2(id) {
+        setIsActive4(id)
         var element = document.getElementById(id);
         var headerOffset = 150;
         var elementPosition = element.getBoundingClientRect().top;
@@ -108,7 +96,7 @@ function OpenDematNew() {
     return (
         <div>
 
-            <section className="demat-cms-banner">
+            <section className="demat-cms-banner" onMouseOver={() => setIsCheck(true)}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -136,26 +124,26 @@ function OpenDematNew() {
                                 </div>
                                 <div className={isActive2 ? 'list-hide' : 'list-show'}>
                                     <ul className="list-links" id="style-sroll">
-                                        <li><a className="acher " onClick={()=>{chapterScroll2('id') }}>What is a Demat Account?</a></li>
-                                        <li><a className="acher " onClick={()=>{ chapterScroll2('id1'); }}>How Does a Demat Account Work?</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id2')}}>Types of Demat Accounts in India</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id3')}}>How to Choose the Right DP and Brokerage Firm?</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id4')}}>Benefits of a Demat Account</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id5')}}>Key Features of a Demat Account</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id6')}}>How to Open a Demat Account?</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id7')}}>Documents Required for Demat Account Opening</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id8')}}>Demat Account Charges</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id9')}}>Trading Account vs. Demat Account</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id10')}}>Utilizing Your Demat Account</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id11')}}>How to Buy and Sell Shares Using a Demat Account?</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id12')}}>How to Monitor Your Demat Account?</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id13')}}>How to Transfer Shares from One Demat Account to Another?</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id14')}}>How to Pledge Shares in a Demat Account?</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id15')}}>How to Add Nominee to Demat Account?</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id16')}}>How to Close Demat Account?</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id17')}}>Demat Account FAQs</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id18')}}>Legal and Regulatory Information</a></li>
-                                        <li><a onClick={()=>{chapterScroll2('id19')}}>Glossary</a></li>
+                                        <li><a className={isActive4=='id' ? " active": " " } onClick={()=>{chapterScroll2('id') }}>What is a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id1' ? " active": " " } onClick={()=>{ chapterScroll2('id1'); }}>How Does a Demat Account Work?</a></li>
+                                        <li><a className={isActive4=='id2' ? " active": " " } onClick={()=>{chapterScroll2('id2')}}>Types of Demat Accounts in India</a></li>
+                                        <li><a className={isActive4=='id3' ? " active": " " } onClick={()=>{chapterScroll2('id3')}}>How to Choose the Right DP and Brokerage Firm?</a></li>
+                                        <li><a className={isActive4=='id4' ? " active": " " } onClick={()=>{chapterScroll2('id4')}}>Benefits of a Demat Account</a></li>
+                                        <li><a className={isActive4=='id5' ? " active": " " } onClick={()=>{chapterScroll2('id5')}}>Key Features of a Demat Account</a></li>
+                                        <li><a className={isActive4=='id6' ? " active": " " } onClick={()=>{chapterScroll2('id6')}}>How to Open a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id7' ? " active": " " } onClick={()=>{chapterScroll2('id7')}}>Documents Required for Demat Account Opening</a></li>
+                                        <li><a className={isActive4=='id8' ? " active": " " } onClick={()=>{chapterScroll2('id8')}}>Demat Account Charges</a></li>
+                                        <li><a className={isActive4=='id9' ? " active": " " } onClick={()=>{chapterScroll2('id9')}}>Trading Account vs. Demat Account</a></li>
+                                        <li><a className={isActive4=='id10' ? " active": " " } onClick={()=>{chapterScroll2('id10')}}>Utilizing Your Demat Account</a></li>
+                                        <li><a className={isActive4=='id11' ? " active": " " } onClick={()=>{chapterScroll2('id11')}}>How to Buy and Sell Shares Using a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id12' ? " active": " " } onClick={()=>{chapterScroll2('id12')}}>How to Monitor Your Demat Account?</a></li>
+                                        <li><a className={isActive4=='id13' ? " active": " " } onClick={()=>{chapterScroll2('id13')}}>How to Transfer Shares from One Demat Account to Another?</a></li>
+                                        <li><a className={isActive4=='id14' ? " active": " " } onClick={()=>{chapterScroll2('id14')}}>How to Pledge Shares in a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id15' ? " active": " " } onClick={()=>{chapterScroll2('id15')}}>How to Add Nominee to Demat Account?</a></li>
+                                        <li><a className={isActive4=='id16' ? " active": " " } onClick={()=>{chapterScroll2('id16')}}>How to Close Demat Account?</a></li>
+                                        <li><a className={isActive4=='id17' ? " active": " " } onClick={()=>{chapterScroll2('id17')}}>Demat Account FAQs</a></li>
+                                        <li><a className={isActive4=='id18' ? " active": " " } onClick={()=>{chapterScroll2('id18')}}>Legal and Regulatory Information</a></li>
+                                        <li><a className={isActive4=='id19' ? " active": " " } onClick={()=>{chapterScroll2('id19')}}>Glossary</a></li>
                                     </ul>
                                 </div>
                                
@@ -185,26 +173,26 @@ function OpenDematNew() {
                                 </div>
                                 <div className={isActive2 ? 'list-hide' : 'list-show'}>
                                     <ul className="list-links" id="style-sroll">
-                                        <li className="active"><a href="#id">What is a Demat Account?</a></li>
-                                        <li><a href="#id1">How Does a Demat Account Work?</a></li>
-                                        <li><a href="#id2">Types of Demat Accounts in India</a></li>
-                                        <li><a href="#id3">How to Choose the Right DP and Brokerage Firm?</a></li>
-                                        <li><a href="#id4">Benefits of a Demat Account</a></li>
-                                        <li><a href="#id5">Key Features of a Demat Account</a></li>
-                                        <li><a href="#id6">How to Open a Demat Account?</a></li>
-                                        <li><a href="#id7">Documents Required for Demat Account Opening</a></li>
-                                        <li><a href="#id8">Demat Account Charges</a></li>
-                                        <li><a href="#id9">Trading Account vs. Demat Account</a></li>
-                                        <li><a href="#id10">Utilizing Your Demat Account</a></li>
-                                        <li><a href="#id11">How to Buy and Sell Shares Using a Demat Account?</a></li>
-                                        <li><a href="#id12">How to Monitor Your Demat Account?</a></li>
-                                        <li><a href="#id13">How to Transfer Shares from One Demat Account to Another?</a></li>
-                                        <li><a href="#id14">How to Pledge Shares in a Demat Account?</a></li>
-                                        <li><a href="#id15">How to Add Nominee to Demat Account?</a></li>
-                                        <li><a href="#id16">How to Close Demat Account?</a></li>
-                                        <li><a href="#id17">Demat Account FAQs</a></li>
-                                        <li><a href="#id18">Legal and Regulatory Information</a></li>
-                                        <li><a href="#id19">Glossary</a></li>
+                                    <li><a className={isActive4=='id' ? " active": " " } onClick={()=>{chapterScroll2('id') }}>What is a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id1' ? " active": " " } onClick={()=>{ chapterScroll2('id1'); }}>How Does a Demat Account Work?</a></li>
+                                        <li><a className={isActive4=='id2' ? " active": " " } onClick={()=>{chapterScroll2('id2')}}>Types of Demat Accounts in India</a></li>
+                                        <li><a className={isActive4=='id3' ? " active": " " } onClick={()=>{chapterScroll2('id3')}}>How to Choose the Right DP and Brokerage Firm?</a></li>
+                                        <li><a className={isActive4=='id4' ? " active": " " } onClick={()=>{chapterScroll2('id4')}}>Benefits of a Demat Account</a></li>
+                                        <li><a className={isActive4=='id5' ? " active": " " } onClick={()=>{chapterScroll2('id5')}}>Key Features of a Demat Account</a></li>
+                                        <li><a className={isActive4=='id6' ? " active": " " } onClick={()=>{chapterScroll2('id6')}}>How to Open a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id7' ? " active": " " } onClick={()=>{chapterScroll2('id7')}}>Documents Required for Demat Account Opening</a></li>
+                                        <li><a className={isActive4=='id8' ? " active": " " } onClick={()=>{chapterScroll2('id8')}}>Demat Account Charges</a></li>
+                                        <li><a className={isActive4=='id9' ? " active": " " } onClick={()=>{chapterScroll2('id9')}}>Trading Account vs. Demat Account</a></li>
+                                        <li><a className={isActive4=='id10' ? " active": " " } onClick={()=>{chapterScroll2('id10')}}>Utilizing Your Demat Account</a></li>
+                                        <li><a className={isActive4=='id11' ? " active": " " } onClick={()=>{chapterScroll2('id11')}}>How to Buy and Sell Shares Using a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id12' ? " active": " " } onClick={()=>{chapterScroll2('id12')}}>How to Monitor Your Demat Account?</a></li>
+                                        <li><a className={isActive4=='id13' ? " active": " " } onClick={()=>{chapterScroll2('id13')}}>How to Transfer Shares from One Demat Account to Another?</a></li>
+                                        <li><a className={isActive4=='id14' ? " active": " " } onClick={()=>{chapterScroll2('id14')}}>How to Pledge Shares in a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id15' ? " active": " " } onClick={()=>{chapterScroll2('id15')}}>How to Add Nominee to Demat Account?</a></li>
+                                        <li><a className={isActive4=='id16' ? " active": " " } onClick={()=>{chapterScroll2('id16')}}>How to Close Demat Account?</a></li>
+                                        <li><a className={isActive4=='id17' ? " active": " " } onClick={()=>{chapterScroll2('id17')}}>Demat Account FAQs</a></li>
+                                        <li><a className={isActive4=='id18' ? " active": " " } onClick={()=>{chapterScroll2('id18')}}>Legal and Regulatory Information</a></li>
+                                        <li><a className={isActive4=='id19' ? " active": " " } onClick={()=>{chapterScroll2('id19')}}>Glossary</a></li>
                                     </ul>
                                 </div>                                
                             </div>
@@ -429,7 +417,7 @@ Upon activation of your Demat account, submit your physical securities through a
                             <div className="pr-sec" id="id7">
                                 <h2>Documents Required for Demat Account Opening</h2>
                                 <p>Proper documentation is crucial when opening a Demat account. Here's a list of the essential documents:</p>
-                                <ol>
+                                <ol className="none-para">
                                     <li><strong>Proof of Identity:</strong> You can submit any one of the following:
                                         <ol>
                                             <li>Aadhar Card</li>
@@ -944,10 +932,10 @@ Upon activation of your Demat account, submit your physical securities through a
                                 isCheck ?
                                     <div className="">
                                         <div className="d-flex justify-content-end" id="campaignForm">
-                                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                {/* <DematAccountForm /> */}
-                                                <NewDematAccountForm />
-                                            </GoogleReCaptchaProvider>
+                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                            {/* <DematAccountForm /> */}
+                                            <NewDematAccountForm />
+                                        </GoogleReCaptchaProvider>
                                         </div>
                                     </div> :
                                     <div className="">
