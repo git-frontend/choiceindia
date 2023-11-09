@@ -18,6 +18,9 @@
             font-family: $font-family-poppins-bold;
             margin: 2rem 0;
         }
+        h4{
+            font-family: $font-family-poppins-medium;
+        }
         h2{
             font-family: $font-family-poppins-medium;
             color: $blueColortext;
@@ -187,6 +190,7 @@
             .pr-sec{
                 img{
                     max-width: 100%;
+                    width: 100%;
                 }
                 a{
                     text-decoration: none;
@@ -222,6 +226,7 @@
                     font-family: $font-family-poppins-semibold;
                     margin-bottom: 1.5rem;
                     line-height: 1.5;
+                    font-size: 1.75rem;
                 }
                 h5{
                     font-size: 1.5rem;
@@ -274,6 +279,14 @@
                         margin-bottom: 0.5rem;
                         &::marker{
                             color: #0066B3;
+                        }
+                    }
+                }
+                .drk-bld{
+                    >li{
+                        &::marker{
+                            font-family: $font-family-poppins-semibold;
+                            // display: none;
                         }
                     }
                 }

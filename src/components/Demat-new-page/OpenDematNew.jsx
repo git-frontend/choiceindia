@@ -101,7 +101,7 @@ function OpenDematNew() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="ban-caption text-center">
-                                <h1 className="title-secnd">Commodity Trading Time</h1>
+                                <h1 className="title-secnd">Demat Account</h1>
                                 <h4>A Comprehensive Guide for Beginners</h4>
                             </div>
                         </div>
@@ -159,8 +159,8 @@ function OpenDematNew() {
                         </div>
                         <div className="sub-description">
                             <div className="pr-sec">
-                                <p>The following article will discuss the commodities market and how it started in India. It will highlight the types of commodities markets and the various commodities trading by classifying them into different categories.<br/><br/>
-                                It will also inform the readers about the commodity exchanges and some reputed brokers in India. This article will break down the complex terms related to commodity trading in simple and layman's words.</p>
+                                <p>Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.<br/><br/>
+                                Explore topics related to Demat accounts, how they work, the different types available, and more. Gain insight into their significance and how they play a pivotal role in your investment journey.</p>
                             </div>
                             <div className="hide-fr-desk">
                                 <h3>Table of Contents</h3>
@@ -224,7 +224,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                 <h2>Types of Demat Accounts in India</h2>
                                 <img src={HowChoose} className="img-fluid" /><br/><br/>
                                 <p>In India, there are several types of Demat accounts to cater to various investor profiles. Here is a quick look:</p>
-                                <ol>
+                                <ol className="drk-bld">
                                     <li>
                                         <h3>Regular Demat Account</h3>
                                         <img src={Regular} className="img-fluid" /><br/><br/>
@@ -303,7 +303,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                 <h2><a href="/blog/benefits-of-a-demat-account/">Benefits of a Demat Account</a></h2>
                                 <img src={benefits} className="img-fluid" /><br/><br/>
                                 <p>The introduction of Dematerialization has revolutionized the stock market and unlocked numerous benefits for investors:</p>
-                                <ol>
+                                <ol className="drk-bld">
                                     <li>
                                         <h3>Safety and Security</h3>
                                         <p>Demat accounts offer unparalleled safety for your financial assets, significantly reducing the risk of loss or theft.</p>
@@ -335,7 +335,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                 <h2>Key Features of Demat Accoun</h2>
                                 <img src={features} className="img-fluid" /><br/><br/>
                                 <p>Demat accounts come packed with features to simplify your investment journey. Here are some of the key highlights:</p>
-                                <ol>
+                                <ol className="drk-bld">
                                     <li>
                                         <h3>Online Access</h3>
                                         <p>With internet connectivity, you can access your Demat account 24/7 to monitor holdings and execute transactions from anywhere.</p>
@@ -417,7 +417,7 @@ Upon activation of your Demat account, submit your physical securities through a
                             <div className="pr-sec" id="id7">
                                 <h2>Documents Required for Demat Account Opening</h2>
                                 <p>Proper documentation is crucial when opening a Demat account. Here's a list of the essential documents:</p>
-                                <ol className="none-para">
+                                <ol className="none-para drk-bld">
                                     <li><strong>Proof of Identity:</strong> You can submit any one of the following:
                                         <ol>
                                             <li>Aadhar Card</li>
@@ -448,7 +448,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                 <h2><a href="/blog/demat-account-charges/">Demat Account Charges</a></h2>
                                 <p>While opening a Demat account is often free or comes at a nominal charge, there are various fees and charges associated with maintaining and using it. Some common Demat account charges include</p>
                                 <img src={charges} className="img-fluid" /><br/><br/>
-                                <ol>
+                                <ol className="drk-bld">
                                     <li>
                                         <h3>Account Opening Fee</h3>
                                         <p>This is a one-time charge for opening a Demat account. It varies from one Depository Participant (DP)/brokerage company to another.</p>
@@ -650,7 +650,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                 <p>Once your Demat account is linked to your trading account, you can start buying and selling shares. Here's a step-by-step guide for both processes:</p>
                                 <img src={buysell} className="img-fluid" /><br/><br/>
                                 <h3>Buying Shares</h3>
-                                <ol>
+                                <ol className="none-para">
                                     <li><strong>Login:</strong> Access your trading account using the provided login credentials.</li>
                                     <li><strong>Fund Your Account:</strong> Ensure you have sufficient funds in your trading account to make the purchase.</li>
                                     <li><strong>Place an Order:</strong> Choose the stock you want to buy, enter the quantity, and specify the price (either market or limit order). Confirm the order.</li>
