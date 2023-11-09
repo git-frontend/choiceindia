@@ -1,4 +1,4 @@
-import AppImage0 from '../../assets/images/mf-app/mf-app-banner.webp';
+import AppImage0 from '../../assets/images/mf-app/choice-finx-mutual-fund-app.webp';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
@@ -47,21 +47,12 @@ function BannerCareer() {
   return (
     <>
       <section className="banner-app" onMouseOver={() => setIscheck(true)}>
-      <LazyLoader src={AppImage0} className={"img-fluid ban-img"} alt={"Investment App"} width={"1728"} height={"1119"}/>
-        {/* <img src={AppImage0} className="ban-img" alt='Loading' width="1728" height="1119" /> */}
+      <LazyLoader src={AppImage0} className={"img-fluid ban-img"} alt={"Choice FinX - Mutual Fund App"} width={"1728"} height={"1119"}/>
         <div className='app-banner-caption'>
           <div className='container'>
             <div className='row'>
               <div className='col-md-12'>
                 <div className='caption-cont'>
-                  {
-                    (param1=='alphabee')?
-                    <p>Alphabee is now merged with Choice FinX</p>
-                    :
-                    ""
-
-                  }
-                
                   <h1 className='big-ttl'>Choice FinX <br /> Mutual Fund App</h1>
                   <p>Mutual Fund App that builds wealth. Invest with India’s most preferred App for systematic mutual fund investments and achieve your financial goals!</p>
                   <div className="wrap-app-links">
@@ -76,7 +67,7 @@ function BannerCareer() {
                       <span className='blackcolor'>App Store</span>
                     </a>
                   </div>
-                  <p>Trusted by <span className='strng'>30k + Investors</span> </p>
+                  <p>Trusted by <span className='strng'>7.5+ Lakh Users</span> </p>
                 </div>
               </div>
             </div>

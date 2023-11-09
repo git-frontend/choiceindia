@@ -2495,6 +2495,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content': "Check out LIVE currency option chain on Choice. Get forex option chain data with real time strike price, analysis, chart, historical data and more.",
     "link": "https://choiceindia.com/currency-option-chain"
   },
+  "mutual-fund-app": {
+    "title": "Choice FinX Mutual Fund App - India's Best App for Mutual Fund Investment",
+    'lang': "en",
+    'content': "Choice FinX Mutual Fund App is the best mutual fund app in India to invest, manage & track your mutual fund investments. Download our top-rated mutual fund app (Android & iOS) now!",
+    "link": "https://choiceindia.com/mutual-fund-app"
+  },
 }
 
 export default meta_tags;

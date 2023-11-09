@@ -46,7 +46,7 @@ function AppNeed() {
                     <div className='row'>
                         <div className='col-md-12'>
                             <div className="heading-sec">
-                                <h2 className="title-secnd"><span>Only</span> Mutual Fund App You Will Ever Need</h2>
+                                <h2 className="title-secnd"><span>Mutual Fund App</span> You Will Ever Need</h2>
                                 <p>Invest with Innovative Convenience</p>
                             </div>
                         </div>
