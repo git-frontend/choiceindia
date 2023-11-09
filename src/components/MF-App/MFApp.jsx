@@ -2,7 +2,7 @@
 import React,{useState, useEffect} from "react";
 import BannerApp from './BannerApp';
 import AppNeed from './AppNeed';
-import AppBenefits from './AppBenefits';
+import ValueTrust from './ValueTrust';
 import "./mf-app.scss";
 import "./../OpenDematAccount/DematPage.scss";
 import Template3  from '../Common-features/Template3';
@@ -57,7 +57,7 @@ function MFApp() {
         <AppNeed />
         <TrackInvest/>
         <WhyChoose/>
-        <AppBenefits />
+        <ValueTrust />
         <MfTestimonials/>
         <Faqs/>
         <Download/>

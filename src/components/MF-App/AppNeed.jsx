@@ -40,8 +40,8 @@ function AppNeed() {
 
 
     return (
-        <div className='App-main'>
-            <div className='app-need-bottom'>
+        <>
+            <section className='app-need-bottom'>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-12'>
@@ -106,8 +106,8 @@ function AppNeed() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </>
     );
 }
 

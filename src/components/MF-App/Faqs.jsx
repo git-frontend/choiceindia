@@ -8,8 +8,7 @@ function Faqs() {
     const [view, setview] = useState(false);
     const [show, setshow] = useState(false);
     return (
-        <div>
-
+        <>
             <section className="Dematfaq mf-faq">
                 <div className="container">
                     <div className="row">
@@ -75,7 +74,7 @@ function Faqs() {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
 
     )
 }

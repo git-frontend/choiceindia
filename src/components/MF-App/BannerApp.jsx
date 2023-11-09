@@ -45,9 +45,7 @@ function BannerCareer() {
     // }, [rendercount])
     
   return (
-    <div className='App-main'>
-
-
+    <>
       <section className="banner-app" onMouseOver={() => setIscheck(true)}>
       <LazyLoader src={AppImage0} className={"img-fluid ban-img"} alt={"Investment App"} width={"1728"} height={"1119"}/>
         {/* <img src={AppImage0} className="ban-img" alt='Loading' width="1728" height="1119" /> */}
@@ -85,9 +83,7 @@ function BannerCareer() {
           </div>
         </div>
       </section>
-
-
-    </div>
+    </>
   );
 }
 

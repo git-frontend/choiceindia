@@ -40,8 +40,8 @@ function TrackInvest() {
 
 
     return (
-        <div className='App-main'>
-            <div className='app-track-invest'>
+        <>
+            <section className='app-track-invest'>
                 <div className='container'>
                     <div className='row d-flex justify-content-center'>
                         <div className='col-xl-9'>
@@ -101,8 +101,8 @@ function TrackInvest() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </>
     );
 }
 

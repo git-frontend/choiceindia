@@ -3,15 +3,11 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import { Link } from "react-router-dom";
 
-function AppBenefits() {
+function ValueTrust() {
 
 	return (
-		<div className='App-main'>
-
-
-
-
-			<section className="app-benefits-section ">
+		<>
+			<section className="app-benefits-section">
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-8 d-flex">
@@ -45,13 +41,8 @@ function AppBenefits() {
 					</div>
 				</div>
 			</section>
-
-
-
-
-
-		</div>
+		</>
 	);
 }
 
-export default AppBenefits;
+export default ValueTrust;

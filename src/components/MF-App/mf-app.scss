@@ -6,8 +6,6 @@
 .app-skeleton-parent{
     animation: hideMe 4s forwards;
 }
-
-.App-main {
     .banner-app {
         position: relative;
         // overflow: hidden;
@@ -538,7 +536,7 @@
             padding: 5rem 0;
         }
     }
-}
+
 
 .content-list{
     .slick-track{
@@ -621,7 +619,7 @@
 }
 .mf-testimonial {
     background: $whiteColor;
-    padding: 10rem 0;
+    padding: 0 0 10rem;
     position: relative;
     // &::before {
     //     content: '';
@@ -969,6 +967,7 @@
 .Dematfaq{
     &.mf-faq{
         background-color: $whiteColor;
+        padding-top: 0;
         @media (max-width:$md) {
             padding: 6rem 0;
         }
