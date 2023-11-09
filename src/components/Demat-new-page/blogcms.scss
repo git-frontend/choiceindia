@@ -76,6 +76,7 @@
                 font-family: $font-family-poppins-semibold;
                 margin-bottom: 1.25rem;
             }
+            
             .list-links{
                 padding: 0;
                 margin: 0;
@@ -130,7 +131,7 @@
         }
         .sub-description{
             width: 56%;
-            padding: 5rem 0;
+            padding:0 0 5rem 0;
             .radius-img{
                 border-radius: 16px;
             }
@@ -139,11 +140,30 @@
                 text-decoration: none;
             }
             .pr-sec{
+                a{
+                    text-decoration: none;
+                }
+                h4{
+                    font-family: $font-family-poppins-semibold;
+                }
                 margin-bottom: 4rem;
+                .bl-box{
+                    display: block;
+                    padding: 1.5rem;
+                    background: #cfe2f3;
+                    margin-bottom: 2rem
+                }
+                .none-para{
+                    >li{
+                        font-size: 1.4rem;
+                        line-height: 2.3rem;
+                        margin-bottom: 1rem;
+                    }
+                }
                 p{
                     margin-bottom: 2rem;
-                    font-size: 1.5rem;
-                    line-height: 2.5rem;
+                    font-size: 1.4rem;
+                    line-height: 2.3rem;
                 }
                 h2{
                     font-family: $font-family-poppins-bold;
