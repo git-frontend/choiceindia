@@ -1,6 +1,15 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
+.flex-image{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    img{
+        width: 49%;
+    }
+}
+
 .demat-cms-banner{
     background: #ffce0266;
     padding: 3.5rem 0;
