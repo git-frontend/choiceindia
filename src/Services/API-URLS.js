@@ -9,7 +9,7 @@ const config = {
     liveCMSURL: "https://cmsapi.choiceindia.com/",
     UATCMSURL: "https://cmsapi.choiceindia.com/",
     liveFileURL: "https://cms.jiffy.in/",
-    UATFileURL:"https://cms.jiffy.in/",
+    UATFileURL: "https://cms.jiffy.in/",
 
     UATJiffyServerURL: "https://finx.choiceindia.com/",
     liveJiffyServerURL: "https://finx.choiceindia.com/",
@@ -38,13 +38,13 @@ const config = {
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
     UATnbfcBaseURL: "https://api-uat.synofin.tech/od/od-application-creation/",
-    livenbfcBaseURL:" https://api-prod.synofin.tech/od/od-application-creation/",
+    livenbfcBaseURL: " https://api-prod.synofin.tech/od/od-application-creation/",
     // UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
-    UATNachBaseURL:"https://dev-api.choicetechlab.com/",
+    UATNachBaseURL: "https://dev-api.choicetechlab.com/",
     // liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
-    liveNachBaseURL:"https://go.choiceindia.com/",
-    UATNbfcAuthURL:"https://api-uat.synofin.tech/oauth/",
-    liveNbfcAuthURL:"https://api-prod.synofin.tech/oauth/",
+    liveNachBaseURL: "https://go.choiceindia.com/",
+    UATNbfcAuthURL: "https://api-uat.synofin.tech/oauth/",
+    liveNbfcAuthURL: "https://api-prod.synofin.tech/oauth/",
 
     liveMFBaseURL: "https://mf.choiceindia.com/api/mf/",
     UATMFBaseURL: "https://dev.investica.com/api/mf/",
@@ -60,7 +60,7 @@ const config = {
 }
 
 export class API_URLS {
-    NbfcAuthURL='';
+    NbfcAuthURL = '';
     newResearchReportURL = 'https://finx.choiceindia.com/api/researchreport/v2/api';
     JiffyBaseURL = '';
     LMSBaseURL = '';
@@ -69,18 +69,18 @@ export class API_URLS {
     /** SSO Base URL */
     SSOServerURL = '';
     /**File Download Base URL*/
-    FileURL='';
+    FileURL = '';
 
     /**MF base URL */
     MFBaseURL = '';
 
     /**MF V2 base URL */
-    MFBaseURLV2 = ''; 
+    MFBaseURLV2 = '';
 
     /**connect base URL */
     ConnectBaseURL = '';
-// 
-    MiddlewareGoURL=''
+    // 
+    MiddlewareGoURL = ''
     /**Server URL */
     serverURL = "https://choiceindia.com/fables/ghost/api/v3/";
     /**Server URL */
@@ -172,7 +172,7 @@ export class API_URLS {
 
     // multiple tokens url
 
-    multipletokensURL='cm/ProfileMkt/MultipleTouchlineV2';
+    multipletokensURL = 'cm/ProfileMkt/MultipleTouchlineV2';
     /** performance Success ratio */
 
     successURL = 'api/success-ratio';
@@ -182,10 +182,10 @@ export class API_URLS {
     sendNewLeadURL = 'add-new-lead-v2';
 
     /** Open Account APIs */
-    sendInvesOTPURL='investica-signup';
-    verifyInvesOTPURL='investica-verifyotp';
-    OTPInvesOnCallURL='call-for-otp';
-    resendInvesOTPURL='investica-resendotp'
+    sendInvesOTPURL = 'investica-signup';
+    verifyInvesOTPURL = 'investica-verifyotp';
+    OTPInvesOnCallURL = 'call-for-otp';
+    resendInvesOTPURL = 'investica-resendotp'
     sendOTPURL = 'sign-up';
     resendOTPURL = 'resend-otp';
     nbfcResendOTPURL = 'api/resend-otp';
@@ -193,48 +193,48 @@ export class API_URLS {
     verifyOTPURL = 'verify-otp';
     nbfcverifyOTPURL = 'api/verify-otp';
     // for event calendar
-    eventdetailsURL='cm/ProfileMkt/EventDetails';
-    
-    
-  /** pdf API */
-  
-//   newsURL='items/news?filter[status][_eq]=published&limit=1000&sort[]=-id';
-  newsURL='items/news?filter[status][_eq]=published&sort[]=-news_dates&limit=1000';
-  noticeURL ='items/notices?limit=1000&sort[]=id';
-//   noticeRightURL = 'items/notices?filter[status][_eq]=published&filter[type][_eq]=right_issues&limit=1000&sort[]=id';
-  corporateURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=policies&limit=1000&sort[]=id';
-  corporatecommiteeURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=committee&limit=1000&sort[]=id';
-  shareholdingURL='items/share_holding_pattern?filter[status][_eq]=published&limit=1000&sort[]=id';
-  transactionURL='items/related_party_transaction?filter[status][_eq]=Published&limit=1000&sort[]=id';
-  closureURL='items/closure_trading_window?filter[status][_eq]=Published&limit=1000&sort[]=id';
-  investorURL='items/investor_presentation?filter[status][_eq]=Published&limit=1000&sort[]=id';
-  votingresultURL='items/voting_Results?filter[status][_eq]=published&limit=1000&sort[]=id';
-  financeURL='items/financial_info?filter[status][_eq]=published&limit=1000&sort[]=id';
-  annualURL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_1&limit=1000&sort[]=id';
-  annual2URL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_2&limit=1000&sort[]=id';
-  factsheetURL='items/fact_sheet?filter[status][_eq]=published&limit=1000&sort[]=id';
-  investorawareURL ='items/investor_awareness?limit=1000&sort[]=id';
-  cebplURL='items/cebpl_policies?limit=1000&sort[]=id';
-  filedownloadURL ='api/get-download-listing?limit=1000&sort[]=id';
-  investorStockURL ='items/investor_charter?limit=1000&sort[]=id';
-  boardOfDirector = 'items/board_of_directors?limit=1000&sort[]=id'
-/** contact us city detail */
-    contactCityURL='items/branch_details?filter[status][_eq]=published&limit=1000';
-    cfplURL='items/NBFC?limit=100&sort[]=id';
+    eventdetailsURL = 'cm/ProfileMkt/EventDetails';
+
+
+    /** pdf API */
+
+    //   newsURL='items/news?filter[status][_eq]=published&limit=1000&sort[]=-id';
+    newsURL = 'items/news?filter[status][_eq]=published&sort[]=-news_dates&limit=1000';
+    noticeURL = 'items/notices?limit=1000&sort[]=id';
+    //   noticeRightURL = 'items/notices?filter[status][_eq]=published&filter[type][_eq]=right_issues&limit=1000&sort[]=id';
+    corporateURL = 'items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=policies&limit=1000&sort[]=id';
+    corporatecommiteeURL = 'items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=committee&limit=1000&sort[]=id';
+    shareholdingURL = 'items/share_holding_pattern?filter[status][_eq]=published&limit=1000&sort[]=id';
+    transactionURL = 'items/related_party_transaction?filter[status][_eq]=Published&limit=1000&sort[]=id';
+    closureURL = 'items/closure_trading_window?filter[status][_eq]=Published&limit=1000&sort[]=id';
+    investorURL = 'items/investor_presentation?filter[status][_eq]=Published&limit=1000&sort[]=id';
+    votingresultURL = 'items/voting_Results?filter[status][_eq]=published&limit=1000&sort[]=id';
+    financeURL = 'items/financial_info?filter[status][_eq]=published&limit=1000&sort[]=id';
+    annualURL = 'items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_1&limit=1000&sort[]=id';
+    annual2URL = 'items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_2&limit=1000&sort[]=id';
+    factsheetURL = 'items/fact_sheet?filter[status][_eq]=published&limit=1000&sort[]=id';
+    investorawareURL = 'items/investor_awareness?limit=1000&sort[]=id';
+    cebplURL = 'items/cebpl_policies?limit=1000&sort[]=id';
+    filedownloadURL = 'api/get-download-listing?limit=1000&sort[]=id';
+    investorStockURL = 'items/investor_charter?limit=1000&sort[]=id';
+    boardOfDirector = 'items/board_of_directors?limit=1000&sort[]=id'
+    /** contact us city detail */
+    contactCityURL = 'items/branch_details?filter[status][_eq]=published&limit=1000';
+    cfplURL = 'items/NBFC?limit=100&sort[]=id';
     /** Department */
-    departmentURL='items/department';
+    departmentURL = 'items/department';
     /** Sub Department  */
     subdepartmentURL = 'items/sub_department?filter[department_id][_eq]=1'
     /** Offer Document */
-    offerUrl='items/OfferDocument'
+    offerUrl = 'items/OfferDocument'
     /** escalation matrix */
-    escalation ='items/investor_grievance?filter[status][_eq]=active&limit=1000&sort[]=id'
+    escalation = 'items/investor_grievance?filter[status][_eq]=active&limit=1000&sort[]=id'
     /** stock broker content */
-    contentUrl ='items/stock_broker_city?limit=1000&sort[]=id'
+    contentUrl = 'items/stock_broker_city?limit=1000&sort[]=id'
     /** sub broker city */
     cityUrl = 'items/sub_broker_branch_city?limit=1000&sort[]=id'
     /** company IPO */
-    companyIpo ='items/Company_ipo?limit=1000&sort[]=id'
+    companyIpo = 'items/Company_ipo?limit=1000&sort[]=id'
     /** blog owner */
     insightsURL = 'items/Blog??filter[status][_eq]=Published&limit=1000&sort[]=id'
 
@@ -255,8 +255,8 @@ export class API_URLS {
     getExpertResearchURL = 'api/research-report-new';
     subBrokerSendOtpURL = 'https://neuron.choicebroking.in/api/jiffy/generate-otp';
     subBrokerVerifyOtpURL = 'https://neuron.choicebroking.in/api/jiffy/verify-otp';
-    nbfcRegister='api/register';
-    nbfcLogin ='api/login';
+    nbfcRegister = 'api/register';
+    nbfcLogin = 'api/login';
     /** NACH URL */
     nachCancellationUATURL = 'sendMailNBFCv2';
     nachCancellationliveURL = 'sendMailNBFC';
@@ -269,17 +269,18 @@ export class API_URLS {
 
 
     //for brokerage calculator
-    searchURL='cm/ScripContract/Search/';
-    scripDetURL='cm/ScripContract/ScripDetails/';
-    scripBrokerageURL='order-charges';
+    searchURL = 'cm/ScripContract/Search/';
+    scripDetURL = 'cm/ScripContract/ScripDetails/';
+    scripBrokerageURL = 'order-charges';
     //for  OI spurts
-    OIspurts='md/Data/TopOISpurtsBySegmentDerivatives';
+    OIspurts = 'md/Data/TopOISpurtsBySegmentDerivatives';
     //for margin calculator
-    marginCalculatorUrl='margin/GetMargin/';
-    trackrecordUrl='items/Track_record';
+    marginCalculatorUrl = 'margin/GetMargin/';
+    trackrecordUrl = 'items/Track_record';
     //for MF pages 
-    categoryListUrl='static/CategoryList';
-    categoryListDetails='Scheme/CategoryDetails';
+    categoryListUrl = 'static/CategoryList';
+    categoryListDetails = 'Scheme/CategoryDetails';
+    schemeDataUrl = 'MFAnalysis/SchemeData';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -335,11 +336,11 @@ export class API_URLS {
         this.MFBaseURL = url;
     }
 
-        /**set MF base URL */
-        setMFBaseURLV2 = (url) => {
-            this.MFBaseURLV2 = url;
-        }
-    
+    /**set MF base URL */
+    setMFBaseURLV2 = (url) => {
+        this.MFBaseURLV2 = url;
+    }
+
 
     setJiffyBaseURL = (url) => {
         this.JiffyBaseURL = url;
@@ -349,7 +350,7 @@ export class API_URLS {
         this.LMSBaseURL = url;
     }
 
-   
+
 
     setOnbServerURL = (url) => {
         this.OnbBaseURL = url;
@@ -368,10 +369,10 @@ export class API_URLS {
         this.newResearchReportURL = url;
     }
 
-    setFileURL =(url)=> {
+    setFileURL = (url) => {
         this.FileURL = url;
     }
-    
+
     /**
      * Set Server URL 
      * @param {*} url 
@@ -402,22 +403,22 @@ export class API_URLS {
     setJiffyURL = (url) => {
         this.jiffyURL = url;
     }
-   
+
 
     /**
      * Set NBFC URL 
      * @param {*} url 
      */
-     setnbfcBaseURL = (url) => {
+    setnbfcBaseURL = (url) => {
 
         this.nbfcBaseURL = url;
     }
 
-     /**
-     * Set Banner URL 
-     * @param {*} url 
-     */
-      setBannerURL = (url) => {
+    /**
+    * Set Banner URL 
+    * @param {*} url 
+    */
+    setBannerURL = (url) => {
 
         this.CMSURL = url;
     }
@@ -616,13 +617,13 @@ export class API_URLS {
     getResendInvestOTPURL() {
         return this.SSOServerURL + this.resendInvesOTPURL;
     }
-    
+
     getNbfcResendOTPURL() {
         return this.SSOServerURL + this.nbfcResendOTPURL;
     }
 
 
-    
+
 
     /**Logon Request */
     getLogonRequestURL() {
@@ -694,7 +695,7 @@ export class API_URLS {
 
         return this.performanceURL + this.performancefontURL;
     }
-    getMultipletokens(){
+    getMultipletokens() {
         return this.performanceURL + this.multipletokensURL;
     }
 
@@ -703,7 +704,7 @@ export class API_URLS {
         return this.JiffyBaseURL + this.successURL;
     }
 
-    getresearchDetailURL(uuid,report_category) {
+    getresearchDetailURL(uuid, report_category) {
 
         return this.researchURL + `api/${report_category}/v2/${uuid}`;
     }
@@ -721,107 +722,107 @@ export class API_URLS {
         return this.subBrokerVerifyOtpURL;
     }
 
-    getNewsUrl(){
+    getNewsUrl() {
         return this.CMSURL + this.newsURL
     }
 
-    getNoticesUrl(){
+    getNoticesUrl() {
         return this.CMSURL + this.noticeURL
     }
 
-    getNoticesUrlR(){
+    getNoticesUrlR() {
         return this.CMSURL + this.noticeRightURL
     }
-    getcorporateURL(){
+    getcorporateURL() {
         return this.CMSURL + this.corporateURL
     }
-    getcorporatecommiteeURL(){
+    getcorporatecommiteeURL() {
         return this.CMSURL + this.corporatecommiteeURL
 
     }
-    getShareholdingURL(){
+    getShareholdingURL() {
         return this.CMSURL + this.shareholdingURL
     }
 
-    getTransactionURL(){
+    getTransactionURL() {
         return this.CMSURL + this.transactionURL
     }
-    getClosureTradingURL(){
+    getClosureTradingURL() {
         return this.CMSURL + this.closureURL
     }
-    getInvestorURL(){
+    getInvestorURL() {
         return this.CMSURL + this.investorURL
     }
 
-    getVotingResultURL(){
+    getVotingResultURL() {
         return this.CMSURL + this.votingresultURL
     }
 
-    getFinancialURL(){
+    getFinancialURL() {
         return this.CMSURL + this.financeURL
     }
-    getAnnualReportURL(){
+    getAnnualReportURL() {
         return this.CMSURL + this.annualURL
     }
 
-    getAnnualReport2URL(){
+    getAnnualReport2URL() {
         return this.CMSURL + this.annual2URL
 
     }
 
-    getFactSheetURL(){
+    getFactSheetURL() {
         return this.CMSURL + this.factsheetURL
     }
 
-    getMarginURL(){
+    getMarginURL() {
         return this.FileURL + this.filedownloadURL
     }
-    getInvestorAwareURL(){
+    getInvestorAwareURL() {
         return this.CMSURL + this.investorawareURL
     }
-    getCebplPolicyURL(){
+    getCebplPolicyURL() {
         return this.CMSURL + this.cebplURL
     }
 
-    getInvestorStockURL(id){
-        return this.CMSURL + this.investorStockURL 
+    getInvestorStockURL(id) {
+        return this.CMSURL + this.investorStockURL
     }
 
-    getcontactCityURL(){
+    getcontactCityURL() {
         return this.CMSURL + this.contactCityURL
     }
-    getCfplPolicyURL(){
+    getCfplPolicyURL() {
         return this.CMSURL + this.cfplURL
     }
 
     getNbfcMobile(id) {
         return this.SSOServerURL + `api/is-mobile-unique?mobile_number=${id}`;
     }
-    
+
     getNbfcRegister() {
         return this.SSOServerURL + this.nbfcRegister;
     }
     getNbfcLogin() {
         return this.SSOServerURL + this.nbfcLogin;
     }
-     getNbfcVerifyOTP() {
+    getNbfcVerifyOTP() {
         return this.SSOServerURL + this.nbfcverifyOTPURL;
     }
 
-    getNbfcLead(subProduct){
-        return  this.nbfcBaseURL + `v1/lead/source/${subProduct}/choicewebsite`;
+    getNbfcLead(subProduct) {
+        return this.nbfcBaseURL + `v1/lead/source/${subProduct}/choicewebsite`;
     }
-    getDepartmentURL(){
+    getDepartmentURL() {
         return this.CMSURL + this.departmentURL
     }
-    getSubDepartmentURL(id){
+    getSubDepartmentURL(id) {
         return this.CMSURL + `items/sub_department?filter[department_id][_eq]=${id}`
     }
-    getOfferDocumnetURL(){
+    getOfferDocumnetURL() {
         return this.CMSURL + this.offerUrl
     }
 
-    getEscalationURL(){
+    getEscalationURL() {
         return this.CMSURL + this.escalation
     }
 
@@ -840,18 +841,18 @@ export class API_URLS {
     getSubBrokerNewVerifyOtpURL() {
         return this.SSOServerURL + this.subBrokerVerifyOtpURLNew;
     }
-    getSubBrokerURL(location){
+    getSubBrokerURL(location) {
         return this.CMSURL + `items/stock_broker_city?filter[city][_eq]=${location}&limit=1000&sort[]=id`
     }
 
-    getSubBrokerCityURL(){
+    getSubBrokerCityURL() {
         return this.CMSURL + this.cityUrl
     }
     getNACHCancellationURL() {
         return this.nachBaseURL + this.nachCancellationURL
     }
 
-    getIpaddressURL(){
+    getIpaddressURL() {
         return "https://geolocation-db.com/json/"
     }
 
@@ -860,102 +861,104 @@ export class API_URLS {
         return this.NbfcAuthURL + this.NbfcAuthF
     }
 
-    getBoardOfDirector(){
+    getBoardOfDirector() {
 
         return this.CMSURL + this.boardOfDirector
     }
-    
+
 
     /**Assited Order Flow api's */
-    
-    getBasketDetailsURL(){
+
+    getBasketDetailsURL() {
         return this.MFBaseURLV2 + 'orders/basket/order/details';
         // return "https://apidev.choiceconnect.in/connect/api/basket/order/details";
     }
 
     /**send otp api url */
-    getMFAssistedSendOtpURL(){
+    getMFAssistedSendOtpURL() {
 
         return this.MFBaseURLV2 + 'orders/send-otp';
         // return "https://dev.investica.com//api/mf/sms/SendOTP";
     }
 
     /**verify otp api url */
-    getMFAssistedVerifyOTPURL(){
+    getMFAssistedVerifyOTPURL() {
         return this.MFBaseURLV2 + 'orders/verify-otp';
         // return "https://dev.investica.com//api/mf/sms/VerifyOTP";
     }
 
     /**place lumpsum order */
-    getLumpsumOrderURL(){
+    getLumpsumOrderURL() {
         return this.MFBaseURL + 'MFOrders/V4/LumpSum';
         // return "https://dev.investica.com/api/mf/MFOrders/V3/LumpSum"
     }
 
     /**place SIP order */
-    getSIPOrderURL(){
+    getSIPOrderURL() {
         return this.MFBaseURL + 'MFOrders/V3/XSIP';
         // return "https://dev.investica.com/api/mf/MFOrders/V2/XSIP"
     }
 
     /**ref number api url */
-    getRefNoURL(){
+    getRefNoURL() {
         return this.MFBaseURL + 'MFOrders/OrderMetaData';
         // return "https://dev.investica.com/api/mf/MFOrders/OrderMetaData"
     }
 
     /**payment link api url */
-    getPaymentLinkURL(){
+    getPaymentLinkURL() {
         return this.MFBaseURL + 'mforders/payment';
         // return "https://dev.investica.com/api/mf/mforders/payment"
     }
 
     /**order status update api url */
-    orderStatusUpdateURL(){
+    orderStatusUpdateURL() {
         return this.ConnectBaseURL + 'basket/order/status-update'
         // return "https://apidev.choiceconnect.in/connect/api/basket/order/status-update"
     }
     //for event deatils
-    getEventDetails(){
+    getEventDetails() {
         return this.performanceURL + this.eventdetailsURL;
     }
- /** Company ipo */
-    companyIpoURL(){
+    /** Company ipo */
+    companyIpoURL() {
         return this.CMSURL + this.companyIpo
     }
     //Get URL for Search Scrips
-    getSearchURL(){
+    getSearchURL() {
         return this.performanceURL + this.searchURL
     }
-    getScripDetURL(){
+    getScripDetURL() {
         return this.performanceURL + this.scripDetURL
     }
     getScripBrokerageURL() {
         return this.MiddlewareGoURL + this.scripBrokerageURL;
-      }
+    }
 
     /** Blog cms */
-    getinsightsURL(){
+    getinsightsURL() {
         return this.CMSURL + this.insightsURL
     }
     //OIspurts 
-    getOISpurtsURL(){
+    getOISpurtsURL() {
         return this.performanceURL + this.OIspurts
     }
-    getMarginCalculatorURL(segmentId,token_qty){
-        return this.performanceURL+this.marginCalculatorUrl +segmentId + "/" + token_qty;
+    getMarginCalculatorURL(segmentId, token_qty) {
+        return this.performanceURL + this.marginCalculatorUrl + segmentId + "/" + token_qty;
     }
-    gettrackDocumnetURL(){
+    gettrackDocumnetURL() {
         return this.CMSURL + this.trackrecordUrl
     }
     //for mf pages 
-    getCategoriesList(){
-        return this.MFBaseURL +this.categoryListUrl
+    getCategoriesList() {
+        return this.MFBaseURL + this.categoryListUrl
     }
-    getCategoryData(){
-        return this.MFBaseURL +this.categoryListDetails
+    getCategoryData() {
+        return this.MFBaseURL + this.categoryListDetails
+    }
+    getSchemeData(){
+        return this.MFBaseURL + this.schemeDataUrl
     }
 
 
-    
 }
