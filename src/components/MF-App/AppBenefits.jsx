@@ -18,19 +18,19 @@ function AppBenefits() {
 								<div className="benifit-value-list">
 
 									<div className="benifit-value-item">
-										<h4>4,25000</h4>
-										<h6>Users</h6>
+										<h4>850K+</h4>
+										<h6>Clients</h6>
 									</div>
 									<div className="benifit-value-item">
-										<h4>30,000</h4>
-										<h6>Investors</h6>
+										<h4>3.4K+</h4>
+										<h6>Employees</h6>
 									</div>
 									<div className="benifit-value-item">
-										<h4>55+</h4>
+										<h4>104+</h4>
 										<h6>Offices</h6>
 									</div>
 									<div className="benifit-value-item">
-										<h4>3000</h4>
+										<h4>32K+</h4>
 										<h6>Partners</h6>
 									</div>
 

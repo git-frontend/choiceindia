@@ -4,6 +4,7 @@ import BannerApp from './BannerApp';
 import AppNeed from './AppNeed';
 import AppBenefits from './AppBenefits';
 import "./mf-app.scss";
+import "./../OpenDematAccount/DematPage.scss";
 import Template3  from '../Common-features/Template3';
 // import AppHeader from './AppHeader.jsx';
 import {
@@ -12,6 +13,9 @@ import {
 import meta_tags from "../../Data/MetaTags";
 import TrackInvest from "./TrackInvest";
 import WhyChoose from "./WhyChoose";
+import MfTestimonials from "./MfTestimonials";
+import Faqs from "./Faqs";
+import Download from "./Download";
 
 function MFApp() {
   const [skeleton, setSkeleton] = useState(() => true);
@@ -54,6 +58,9 @@ function MFApp() {
         <TrackInvest/>
         <WhyChoose/>
         <AppBenefits />
+        <MfTestimonials/>
+        <Faqs/>
+        <Download/>
       </div>
     }
     </div>
