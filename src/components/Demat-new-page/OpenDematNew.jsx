@@ -4,7 +4,7 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import yutb from '../../assets/images/demat-images/you-banner.webp';
 import evolution from '../../assets/images/demat-images/new-demat/evolution-of-share-ownership.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter, faWhatsapp, faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 import "./blogcms.scss";
 import NewDematAccountForm from '../Common-features/NewDematAccountForm';
@@ -12,6 +12,34 @@ import NewDematAccountForm from '../Common-features/NewDematAccountForm';
 
 
 function OpenDematNew() {
+
+    var tabLink = document.querySelectorAll(".acher")
+    console.log("tabLink",tabLink)
+    tabLink.forEach(function (item) {
+       console.log("item")
+        
+          
+            tabLink.forEach(function (item) {
+              item.classList.remove("active");
+            });
+            item.classList.add("active");
+          
+            
+     
+          
+      });
+    const [isActive, setIsActive] = useState(false);
+
+    const [isActive2, setIsActive2] = useState(false);
+    
+
+    const handleClick = (event) => {
+        setIsActive(current => !current);
+    };
+
+    const handleClick2 = (event) => {
+        setIsActive2(current => !current);
+    };
 
     const [name, setName] = useState('hideform');
     const [isCheck, setIsCheck] = useState(false)
@@ -21,12 +49,20 @@ function OpenDematNew() {
             const rect = element.getBoundingClientRect();
 
             if (rect.top.toFixed() < 259) {
+                
                 setName('visibleform');
             } else {
                 setName('hideform');
             }
         }
     };
+
+
+    const [isActive1, setActive1] = useState(false);
+    const toggleClass = () => {
+      setActive1(!isActive1);
+    };
+    
 
     useEffect(() => {
         window.addEventListener('scroll', getPosition);
@@ -35,7 +71,7 @@ function OpenDematNew() {
 
     function chapterScroll2(id) {
         var element = document.getElementById(id);
-        var headerOffset = 240;
+        var headerOffset = 150;
         var elementPosition = element.getBoundingClientRect().top;
         var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         window.scrollTo({
@@ -43,7 +79,7 @@ function OpenDematNew() {
             behavior: "smooth"
         });
     }
-
+    
     return (
         <div>
 
@@ -66,34 +102,44 @@ function OpenDematNew() {
                         <div className="lft-navigation">
                             <div className="">
                                 <h3>Table of Contents</h3>
-                                <ul className="list-links" id="style-sroll">
-                                    <li className="active"><a href="#id">What is a Demat Account?</a></li>
-                                    <li><a href="#id1">How Does a Demat Account Work?</a></li>
-                                    <li><a href="#id2">Types of Demat Accounts in India</a></li>
-                                    <li><a href="#id3">How to Choose the Right DP and Brokerage Firm?</a></li>
-                                    <li><a href="#id4">Benefits of a Demat Account</a></li>
-                                    <li><a href="#id5">Key Features of a Demat Account</a></li>
-                                    <li><a href="#id6">How to Open a Demat Account?</a></li>
-                                    <li><a href="#id7">Documents Required for Demat Account Opening</a></li>
-                                    <li><a href="#id8">Demat Account Charges</a></li>
-                                    <li><a href="#id9">Trading Account vs. Demat Account</a></li>
-                                    <li><a href="#id10">Utilizing Your Demat Account</a></li>
-                                    <li><a href="#id11">How to Buy and Sell Shares Using a Demat Account?</a></li>
-                                    <li><a href="#id12">How to Monitor Your Demat Account?</a></li>
-                                    <li><a href="#id13">How to Transfer Shares from One Demat Account to Another?</a></li>
-                                    <li><a href="#id14">How to Pledge Shares in a Demat Account?</a></li>
-                                    <li><a href="#id15">How to Add Nominee to Demat Account?</a></li>
-                                    <li><a href="#id16">How to Close Demat Account?</a></li>
-                                    <li><a href="#id17">Demat Account FAQs</a></li>
-                                    <li><a href="#id18">Legal and Regulatory Information</a></li>
-                                    <li><a href="#id19">Glossary</a></li>
-                                </ul>
+                                <div className="arrow-sh" onClick={handleClick2}>
+                                    <button className={isActive2 ? 'ar-up' : 'ar-down'}>
+                                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 7L7 1L1 7" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div className={isActive2 ? 'list-hide' : 'list-show'}>
+                                    <ul className="list-links" id="style-sroll">
+                                        <li><a className="acher " onClick={()=>{chapterScroll2('id') }}>What is a Demat Account?</a></li>
+                                        <li><a className="acher " onClick={()=>{ chapterScroll2('id1'); }}>How Does a Demat Account Work?</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id2')}}>Types of Demat Accounts in India</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id3')}}>How to Choose the Right DP and Brokerage Firm?</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id4')}}>Benefits of a Demat Account</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id5')}}>Key Features of a Demat Account</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id6')}}>How to Open a Demat Account?</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id7')}}>Documents Required for Demat Account Opening</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id8')}}>Demat Account Charges</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id9')}}>Trading Account vs. Demat Account</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id10')}}>Utilizing Your Demat Account</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id11')}}>How to Buy and Sell Shares Using a Demat Account?</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id12')}}>How to Monitor Your Demat Account?</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id13')}}>How to Transfer Shares from One Demat Account to Another?</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id14')}}>How to Pledge Shares in a Demat Account?</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id15')}}>How to Add Nominee to Demat Account?</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id16')}}>How to Close Demat Account?</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id17')}}>Demat Account FAQs</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id18')}}>Legal and Regulatory Information</a></li>
+                                        <li><a onClick={()=>{chapterScroll2('id19')}}>Glossary</a></li>
+                                    </ul>
+                                </div>
+                               
 
-                                <h3>Share this article</h3>
+                                <h3 className="mrgn-top">Share this article</h3>
                                 <ul className="socials">
-                                    <li><a href="#" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a></li>
-                                    <li><a href="#" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a></li>
-                                    <li><a href="#" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a></li>
+                                    <li><a href="#" target="_blank"><FontAwesomeIcon icon={faWhatsapp} /></a></li>
+                                    <li><a href="#" target="_blank"><FontAwesomeIcon icon={faFacebookF} /></a></li>
+                                    <li><a href="#" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} /></a></li>
                                     <li><a href="#" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a></li>
                                 </ul>
                             </div>
@@ -105,28 +151,37 @@ function OpenDematNew() {
                             </div>
                             <div className="hide-fr-desk">
                                 <h3>Table of Contents</h3>
-                                <ul className="list-links" id="style-sroll">
-                                    <li className="active"><a href="#id">What is a Demat Account?</a></li>
-                                    <li><a href="#id1">How Does a Demat Account Work?</a></li>
-                                    <li><a href="#id2">Types of Demat Accounts in India</a></li>
-                                    <li><a href="#id3">How to Choose the Right DP and Brokerage Firm?</a></li>
-                                    <li><a href="#id4">Benefits of a Demat Account</a></li>
-                                    <li><a href="#id5">Key Features of a Demat Account</a></li>
-                                    <li><a href="#id6">How to Open a Demat Account?</a></li>
-                                    <li><a href="#id7">Documents Required for Demat Account Opening</a></li>
-                                    <li><a href="#id8">Demat Account Charges</a></li>
-                                    <li><a href="#id9">Trading Account vs. Demat Account</a></li>
-                                    <li><a href="#id10">Utilizing Your Demat Account</a></li>
-                                    <li><a href="#id11">How to Buy and Sell Shares Using a Demat Account?</a></li>
-                                    <li><a href="#id12">How to Monitor Your Demat Account?</a></li>
-                                    <li><a href="#id13">How to Transfer Shares from One Demat Account to Another?</a></li>
-                                    <li><a href="#id14">How to Pledge Shares in a Demat Account?</a></li>
-                                    <li><a href="#id15">How to Add Nominee to Demat Account?</a></li>
-                                    <li><a href="#id16">How to Close Demat Account?</a></li>
-                                    <li><a href="#id17">Demat Account FAQs</a></li>
-                                    <li><a href="#id18">Legal and Regulatory Information</a></li>
-                                    <li><a href="#id19">Glossary</a></li>
-                                </ul>
+                                <div className="arrow-sh" onClick={handleClick2}>
+                                    <button className={isActive2 ? 'ar-up' : 'ar-down'}>
+                                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 7L7 1L1 7" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div className={isActive2 ? 'list-hide' : 'list-show'}>
+                                    <ul className="list-links" id="style-sroll">
+                                        <li className="active"><a href="#id">What is a Demat Account?</a></li>
+                                        <li><a href="#id1">How Does a Demat Account Work?</a></li>
+                                        <li><a href="#id2">Types of Demat Accounts in India</a></li>
+                                        <li><a href="#id3">How to Choose the Right DP and Brokerage Firm?</a></li>
+                                        <li><a href="#id4">Benefits of a Demat Account</a></li>
+                                        <li><a href="#id5">Key Features of a Demat Account</a></li>
+                                        <li><a href="#id6">How to Open a Demat Account?</a></li>
+                                        <li><a href="#id7">Documents Required for Demat Account Opening</a></li>
+                                        <li><a href="#id8">Demat Account Charges</a></li>
+                                        <li><a href="#id9">Trading Account vs. Demat Account</a></li>
+                                        <li><a href="#id10">Utilizing Your Demat Account</a></li>
+                                        <li><a href="#id11">How to Buy and Sell Shares Using a Demat Account?</a></li>
+                                        <li><a href="#id12">How to Monitor Your Demat Account?</a></li>
+                                        <li><a href="#id13">How to Transfer Shares from One Demat Account to Another?</a></li>
+                                        <li><a href="#id14">How to Pledge Shares in a Demat Account?</a></li>
+                                        <li><a href="#id15">How to Add Nominee to Demat Account?</a></li>
+                                        <li><a href="#id16">How to Close Demat Account?</a></li>
+                                        <li><a href="#id17">Demat Account FAQs</a></li>
+                                        <li><a href="#id18">Legal and Regulatory Information</a></li>
+                                        <li><a href="#id19">Glossary</a></li>
+                                    </ul>
+                                </div>                                
                             </div>
                             <div className="pr-sec" id="id">
                                 <h2>What is a Demat Account?</h2>
@@ -849,27 +904,34 @@ Upon activation of your Demat account, submit your physical securities through a
                                 <p>Thank you for choosing our comprehensive guide to learn about Demat accounts.</p>
                             </div>
                         </div>
-                        <div className="right-form-main">
-                        {
-                            isCheck ?
-                                <div className="">
-                                    <div className="d-flex justify-content-end" id="campaignForm">
-                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                        <div className={"right-form-main " + (isActive ? 'shadow' : 'none-shadow')}>
+                        <div className={"form-mobile " + (isActive ? 'p-hide' : 'p-show')}>
+                            <button className="close-arrow-mb" onClick={handleClick}>
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.3164 1.82026e-06C4.63799 -0.00329398 0.0319564 4.46942 0.0285663 9.99011C0.0251763 15.5108 4.62569 19.9889 10.3041 19.9922C13.0322 19.9965 15.6496 18.944 17.5774 17.0674C19.506 15.194 20.5903 12.6526 20.592 10.0021C20.5953 4.48139 15.9948 0.00329772 10.3164 1.82026e-06ZM10.3167 18.9922C5.20633 18.9955 1.06078 14.9706 1.05726 10.0022C1.05381 5.03382 5.19377 1.00336 10.3041 1C12.7594 0.995729 15.1152 1.94287 16.8502 3.63184C18.5859 5.31769 19.5619 7.60468 19.5635 9.98999C19.567 14.9584 15.4271 18.9888 10.3167 18.9922ZM11.0313 9.9961L14.3038 6.81446C14.4998 6.62006 14.4998 6.30896 14.3038 6.11456C14.1051 5.91736 13.7795 5.91419 13.5767 6.10742L10.3041 9.28906L7.03157 6.10748C6.83161 5.91699 6.51163 5.91699 6.31168 6.10748C6.10884 6.30072 6.10558 6.61725 6.30433 6.81446L9.57688 9.9961L6.30433 13.1777C6.2079 13.2715 6.15379 13.3986 6.15373 13.5312C6.15373 13.8073 6.38394 14.0312 6.66795 14.0313C6.80437 14.0314 6.93526 13.9787 7.03157 13.8848L10.3041 10.7031L13.5767 13.8848C13.673 13.9787 13.8039 14.0314 13.9403 14.0313C14.0766 14.0312 14.2073 13.9786 14.3038 13.8849C14.5047 13.6896 14.5047 13.373 14.3038 13.1777L11.0313 9.9961Z" fill="#676767"/>
+                                </svg>
+                            </button>
+                            {
+                                isCheck ?
+                                    <div className="">
+                                        <div className="d-flex justify-content-end" id="campaignForm">
+                                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                                {/* <DematAccountForm /> */}
+                                                <NewDematAccountForm />
+                                            </GoogleReCaptchaProvider>
+                                        </div>
+                                    </div> :
+                                    <div className="">
+                                        <div className="d-flex justify-content-end" id="campaignForm">
                                             {/* <DematAccountForm /> */}
                                             <NewDematAccountForm />
-                                        </GoogleReCaptchaProvider>
+                                        </div>
                                     </div>
-                                </div> :
-                                <div className="">
-                                    <div className="d-flex justify-content-end" id="campaignForm">
-                                        {/* <DematAccountForm /> */}
-                                        <NewDematAccountForm />
-                                    </div>
-                                </div>
-                        }
+                            }
+                        </div>
                         <div className={name}>
                             <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={() => { chapterScroll2('dematform') }}>Open Free Account</button>
+                                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={handleClick}>Open Account Now</button>
                             </div>
                         </div>
                         </div>
