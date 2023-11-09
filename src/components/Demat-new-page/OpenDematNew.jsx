@@ -99,9 +99,34 @@ function OpenDematNew() {
                             </div>
                         </div>
                         <div className="sub-description">
-                            <div className="">
+                            <div className="pr-sec">
                                 <p>The following article will discuss the commodities market and how it started in India. It will highlight the types of commodities markets and the various commodities trading by classifying them into different categories.<br/><br/>
                                 It will also inform the readers about the commodity exchanges and some reputed brokers in India. This article will break down the complex terms related to commodity trading in simple and layman's words.</p>
+                            </div>
+                            <div className="hide-fr-desk">
+                                <h3>Table of Contents</h3>
+                                <ul className="list-links" id="style-sroll">
+                                    <li className="active"><a href="#id">What is a Demat Account?</a></li>
+                                    <li><a href="#id1">How Does a Demat Account Work?</a></li>
+                                    <li><a href="#id2">Types of Demat Accounts in India</a></li>
+                                    <li><a href="#id3">How to Choose the Right DP and Brokerage Firm?</a></li>
+                                    <li><a href="#id4">Benefits of a Demat Account</a></li>
+                                    <li><a href="#id5">Key Features of a Demat Account</a></li>
+                                    <li><a href="#id6">How to Open a Demat Account?</a></li>
+                                    <li><a href="#id7">Documents Required for Demat Account Opening</a></li>
+                                    <li><a href="#id8">Demat Account Charges</a></li>
+                                    <li><a href="#id9">Trading Account vs. Demat Account</a></li>
+                                    <li><a href="#id10">Utilizing Your Demat Account</a></li>
+                                    <li><a href="#id11">How to Buy and Sell Shares Using a Demat Account?</a></li>
+                                    <li><a href="#id12">How to Monitor Your Demat Account?</a></li>
+                                    <li><a href="#id13">How to Transfer Shares from One Demat Account to Another?</a></li>
+                                    <li><a href="#id14">How to Pledge Shares in a Demat Account?</a></li>
+                                    <li><a href="#id15">How to Add Nominee to Demat Account?</a></li>
+                                    <li><a href="#id16">How to Close Demat Account?</a></li>
+                                    <li><a href="#id17">Demat Account FAQs</a></li>
+                                    <li><a href="#id18">Legal and Regulatory Information</a></li>
+                                    <li><a href="#id19">Glossary</a></li>
+                                </ul>
                             </div>
                             <div className="pr-sec" id="id">
                                 <h2>What is a Demat Account?</h2>
@@ -842,6 +867,11 @@ Upon activation of your Demat account, submit your physical securities through a
                                     </div>
                                 </div>
                         }
+                        <div className={name}>
+                            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={() => { chapterScroll2('dematform') }}>Open Free Account</button>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     

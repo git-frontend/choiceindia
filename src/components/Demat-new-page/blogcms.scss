@@ -67,6 +67,9 @@
             width: 14%;
             // position: sticky;
             // top: 200px;
+            @media (max-width: $md) {
+                display: none;
+            }
             >div{
                 position: sticky;
                 top: 145px;
@@ -355,7 +358,7 @@
                 }
             }
             @media (max-width: $md) {
-                width: 96%;
+                width: 100%;
             }
             .table-responsive{
                 border: 1px solid #C2C2C2;
@@ -457,5 +460,38 @@
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color:$yellowColor ;
+    }
+}
+
+.hide-fr-desk{
+    // display: none;
+    background: #F3F3F3;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 4rem;
+    h3{
+        font-family: $font-family-poppins-semibold;
+        color: $primary;
+    }
+    >ul{
+        padding: 0;
+        margin: 0;
+        margin-top: 2rem;
+        >li{
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            margin-bottom: 1.5rem;
+            list-style: none;
+            a{
+                text-decoration: none;
+                color: $primary;
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    @media (max-width: $md) {
+        display: block;
     }
 }
