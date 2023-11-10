@@ -15,11 +15,11 @@ function MfTestimonials() {
     const [valRight, setValRight] = useState(() => 0);
     const [dataObj, setdataObj] = useState(() => [
         {
-            "img": ImageTesti1, "name": "Sunita Reddyboina", "id":"@SunitaReddyboina",  "date": "26 OCt 2023", "alt": "Sunita Reddyboina", "letter": "U",
+            "img": ImageTesti1, "name": "Sunita Reddyboina", "id":"@SunitaReddyboina",  "date": "26 OCt 2023", "alt": "Sunita Reddyboina, Rajasthan", "letter": "U",
             "des": "App for Mutual funds launched by choice India we can easily invest on that can anybody have the interest to invest in sip mutual funds, this is the best platform to invest, you can easily find the stocks details & this is a paperless investment. Choice FinX I loved it"
         },
         {
-            "img": ImageTesti2, "name": "Jayaprakash Reddy", "id":"@JayaprakashReddy",  "date": "21 OCt 2023", "alt": "Jayaprakash Reddy", "letter": "M",
+            "img": ImageTesti2, "name": "Jayaprakash Reddy", "id":"@JayaprakashReddy",  "date": "21 OCt 2023", "alt": "Jayaprakash Reddy, Hyderabad", "letter": "M",
             "des": "This is the best mutual fund App I found, The app is very simple so that even a beginner can invest and learn by investing a small amount like 500rs, sip calculator and portfolio manger features are impressive. Highly recommended for all types of investors"
         },
         {
@@ -27,7 +27,7 @@ function MfTestimonials() {
             "des": "A well designed app. Helped me identifying and understanding the go to market and past analysis of the mutual funds. Optimo is at its best providing the financial report and recommendations on the investment. Thank you team."
         },
         {
-            "img": ImageTesti4, "name": "Dr. Amitesh Tiwari", "id":"@AmiteshTiwari", "date": "19 OCt 2023", "alt": "Rajesh, Kolkata", "letter": "S",
+            "img": ImageTesti4, "name": "Dr. Amitesh Tiwari", "id":"@AmiteshTiwari", "date": "19 OCt 2023", "alt": "Dr. Amitesh Tiwari, Kolkata", "letter": "S",
             "des": "Best app i had seen for investment. I Recommend this app for investment. Option Optimo is like, you hired a CA"
         }, 
     ])

@@ -1,9 +1,9 @@
 import React from 'react'
 import LazyLoader from '../Common-features/LazyLoader';
-import img1 from '../../assets/images/mf-app/trust-based.svg';
-import img2 from '../../assets/images/mf-app/market-expert.svg';
-import img3 from '../../assets/images/mf-app/technological-thrust.svg';
-import img4 from '../../assets/images/mf-app/top-recommended.svg';
+import img1 from '../../assets/images/mf-app/trust-based-mutual-fund-investment-app.svg';
+import img2 from '../../assets/images/mf-app/mutual-fund-app-with-market-experts.svg';
+import img3 from '../../assets/images/mf-app/mutual-fund-app-with-technological-thrust.svg';
+import img4 from '../../assets/images/mf-app/mutual-fund-app-with-top-schemes-recommendation.svg';
 
 function WhyChoose() {
   return (
@@ -22,28 +22,28 @@ function WhyChoose() {
                     <div className='card-sec'>
                         <div className='card-items'>
                             <span className='cfx-img'>
-                                <LazyLoader src={img1} alt="" width={77} height={77}/>
+                                <LazyLoader src={img1} alt={"Trust Based Mutual Fund Investment App"} width={77} height={77}/>
                             </span>
                             <h5 className='choice-ttl'>Trust Based Investing</h5>
                             <p>Experience of more than 25 years</p>
                         </div>
                         <div className='card-items'>
                             <span className='cfx-img'>
-                                <LazyLoader src={img2} alt="" width={77} height={77}/>
+                                <LazyLoader src={img2} alt={"Mutual Fund App with Market Experts"} width={77} height={77}/>
                             </span>
                             <h5 className='choice-ttl'>Accomplished Market Experts</h5>
                             <p>Great Team of Analysts and Mutual Fund Experts</p>
                         </div>
                         <div className='card-items'>
                             <span className='cfx-img'>
-                                <LazyLoader src={img3} alt="" width={77} height={77}/>
+                                <LazyLoader src={img3} alt={"Mutual Fund App with Technological Thrust"} width={77} height={77}/>
                             </span>
                             <h5 className='choice-ttl'>Technological Thrust</h5>
                             <p>Bringing latest technology for our patrons</p>
                         </div>
                         <div className='card-items'>
                             <span className='cfx-img'>
-                                <LazyLoader src={img4} alt="" width={77} height={77}/>
+                                <LazyLoader src={img4} alt={"Mutual Fund App with Top Schemes Recommendation"} width={77} height={77}/>
                             </span>
                             <h5 className='choice-ttl'>Top Recommended Schemes</h5>
                             <p>Rated & Analyzed by Experts</p>

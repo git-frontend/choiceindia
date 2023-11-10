@@ -61,9 +61,13 @@
 
             p {
                 color: $whiteColor;
-
                 .strng {
                     font-family: $font-family-poppins-semibold;
+                }
+                &.banner-para{
+                    @media (max-width:$sm) {
+                        display: none;
+                    }
                 }
             }
 
@@ -76,11 +80,14 @@
                 }
                 @media (max-width: $sm-x) {
                     margin: 2rem 0;
-                    flex-direction: column;
+                    // flex-direction: column;
+                }
+                @media (max-width: $sm) {
+                    margin: 1rem 0;
                 }
                 .link-nrl{
-                    @media (max-width: $xs) {
-                        width: 55%;
+                    @media (max-width: $sm) {
+                        width:80%;
                     }
                 }
             }
@@ -88,6 +95,9 @@
                 width: 40%;
                 @media (max-width:$md) {
                     width: 60%;
+                }
+                @media (max-width:$sm) {
+                    width: 65%;
                 }
             }
         }
@@ -107,7 +117,7 @@
             display: block;
             position: absolute;
             left: 2rem;
-            top: 6rem;
+            top: 5rem;
             background: url(../../assets/images/mf-app/column-before.svg) no-repeat bottom left;
             background-size: contain;
 
@@ -152,6 +162,9 @@
             position: relative;
             // flex-direction: row-reverse;
             z-index: 1;
+            @media (max-width:$sm) {
+                gap:1rem
+            }
             .benifit-value-item {
                 border: 0;
                 /*@extend .light-box-shadow;*/
@@ -164,15 +177,18 @@
                 background: $whiteColor;
                 border: 2px solid #E0EFE4;
                 box-shadow: 0px 0px 8px 0px #F0F0F0;
-
                 h4 {
                     font-size: 4rem;
                     line-height: 1.5;
                     font-family: $font-family-poppins-semibold;
                     color: $primary;
                     margin: 0;
-                    @media (max-width: $sm-x) {
-                        font-size: 1.4rem;
+                    @media (max-width: $md) {
+                        font-size: 3rem;
+                        line-height: 1.3;
+                    }
+                    @media (max-width: $sm) {
+                        font-size: 2rem;
                         line-height: 1.3;
                     }
                 }
@@ -182,6 +198,10 @@
                     font-family: $font-family-poppins-semibold;
                     color: $primary;
                     margin: 0;
+                    @media (max-width: $sm) {
+                        font-size: 1.5rem;
+                        line-height: 1.3;
+                    }
                 }
                 &:nth-child(3) {
                     margin-left: 6%;
@@ -189,6 +209,10 @@
 
                     @media (max-width: $sm-x) {
                         margin-right: 2%;
+                    }
+                    @media (max-width:$sm) {
+                        margin-left:0 !important;
+                        margin-right:0 !important;
                     }
                 }
 
@@ -199,17 +223,24 @@
                     @media (max-width: $sm-x) {
                         margin-right: 2%;
                     }
+                    @media (max-width:$sm) {
+                        margin-left:0 !important;
+                        margin-right:0 !important;
+                    }
                 }
                 @media (max-width: $sm-x) {
-                    margin: 2%;
-                    width: 46%;
-                    padding: 1rem;
+                    width: 40%;
+                }
+                @media (max-width:$sm) {
+                    width: 48% !important;
+                    margin-right: 0 !important;
                 }
             }
 
             @media (max-width: $md) {
                 width: 100%;
                 margin-top: 8rem;
+                justify-content: center;
             }
 
             @media (max-width: $sm-x) {
@@ -298,6 +329,9 @@
                 color: $primary;
                 font-size: 2rem;
                 margin: 0;
+                @media (max-width: $sm) {
+                    font-size: 1.5rem;
+                }
             }
         }
         .content-list {
@@ -441,6 +475,9 @@
                 font-size: 2.2rem;
                 font-family: $font-family-poppins-semibold;
             }
+            @media (max-width:$sm) {
+                text-align: center;
+            }
         }
         .content-list {
             padding-right: 6rem;
@@ -450,7 +487,9 @@
             @media (max-width:$md) {
                 padding-left: 0rem;
             }
-
+            @media (max-width:$sm) {
+                padding-right: 0;
+            }
             .content-list-itm {
                 border: 2px solid $bgolor-lightwhite;
                 border-radius: 20px;
@@ -555,6 +594,12 @@
         @media (max-width: $sm) {
             padding: 5rem 0;
         }
+        .app-trade-easy-div{
+            @media (max-width:$sm) {
+                flex-direction: column-reverse;
+            }
+        }
+
     }
 
 
@@ -580,6 +625,9 @@
     background: $abt-bg;
     padding: 8rem 0 10rem;
     position: relative;
+    @media (max-width:$sm) {
+        padding: 6rem 0;
+    }
     &:after {
         content: '';
         width: 20rem;
@@ -597,6 +645,9 @@
     .heading-sec{
         text-align: center;
         margin-bottom: 10rem;
+        @media (max-width:$sm) {
+            margin-bottom: 6rem;
+        }
         .title-secnd{
             margin-bottom: 0;
             span{
@@ -619,7 +670,13 @@
             text-align: center;
             border-radius: 20px;
             width: 46%;
-
+            margin: 0 auto;
+            @media (max-width:$md) {
+                padding: 3rem 2rem;
+            }
+            @media (max-width:$sm) {
+                width: 95%;
+            }
             .cfx-img{
                 display: inline-block;
                 min-height: 8rem;
@@ -630,6 +687,14 @@
                 color: $primary;
                 margin: 0;
                 min-height: 6rem;
+                @media (max-width:$md) {
+                    font-size: 1.7rem;
+                }
+                @media (max-width:$sm) {
+                    font-size: 1.5rem;
+                    min-height: inherit;
+                    margin-bottom: 1rem;
+                }
             }
             p{
                 color: $primary;
@@ -637,6 +702,12 @@
                 font-size: 1.714rem;
                 line-height: 1.5;
                 margin-bottom: 0;
+                @media (max-width:$md) {
+                    font-size: 1.5rem;
+                }
+                @media (max-width:$sm) {
+                    font-size: 1.3rem;
+                }
             }
         }
     }
@@ -1005,7 +1076,13 @@
 .download-sec{
     background: $abt-bg;
     padding: 8rem 0 3rem;
+    @media (max-width:$sm) {
+        padding: 6rem 0 3rem;
+    }
     .caption-cont{
+        @media (max-width:$sm) {
+            text-align: center;
+        }
         .title-secnd{
             margin-bottom: 2rem;
         }
@@ -1016,11 +1093,18 @@
 
             @media (max-width: $sm-x) {
                 margin: 2rem 0;
-                flex-direction: column;
+                // flex-direction: column;
+            }
+            @media (max-width:$sm) {
+                justify-content: space-between;
             }
             .link-nrl{
                 @media (max-width: $xs) {
                     width: 55%;
+                }
+                @media (max-width:$sm) {
+                    width: 48%;
+                    margin-right: 0;
                 }
                 &.dark{
                     background-color: $primary;

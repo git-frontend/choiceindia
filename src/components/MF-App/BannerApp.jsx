@@ -54,7 +54,7 @@ function BannerCareer() {
               <div className='col-md-12'>
                 <div className='caption-cont'>
                   <h1 className='big-ttl'>Choice FinX <br /> Mutual Fund App</h1>
-                  <p>Mutual Fund App that builds wealth. Invest with India’s most preferred App for systematic mutual fund investments and achieve your financial goals!</p>
+                  <p className='banner-para'>Mutual Fund App that builds wealth. Invest with India’s most preferred App for systematic mutual fund investments and achieve your financial goals!</p>
                   <div className="wrap-app-links">
                     <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>
                     <LazyLoader src={googleplay} className={"img-fluid"} alt={"App Store"} width={"27"} height={"24"}/>
@@ -67,7 +67,7 @@ function BannerCareer() {
                       <span className='blackcolor'>App Store</span>
                     </a>
                   </div>
-                  <p>Trusted by <span className='strng'>7.5+ Lakh Users</span> </p>
+                  <p className='trust-para'>Trusted by <span className='strng'>7.5+ Lakh Users</span> </p>
                 </div>
               </div>
             </div>
