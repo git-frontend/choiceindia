@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
+import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import yutb from '../../assets/images/demat-images/you-banner.webp';
 import evolution from '../../assets/images/demat-images/new-demat/evolution-of-share-ownership.webp';
@@ -92,6 +93,7 @@ function OpenDematNew() {
             behavior: "smooth"
         });
     }
+
     
     return (
         <div>
@@ -173,7 +175,7 @@ function OpenDematNew() {
                                 </div>
                                 <div className={isActive2 ? 'list-hide' : 'list-show'}>
                                     <ul className="list-links" id="style-sroll">
-                                    <li><a className={isActive4=='id' ? " active": " " } onClick={()=>{chapterScroll2('id') }}>What is a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id' ? " active": " " } onClick={()=>{chapterScroll2('id') }}>What is a Demat Account?</a></li>
                                         <li><a className={isActive4=='id1' ? " active": " " } onClick={()=>{ chapterScroll2('id1'); }}>How Does a Demat Account Work?</a></li>
                                         <li><a className={isActive4=='id2' ? " active": " " } onClick={()=>{chapterScroll2('id2')}}>Types of Demat Accounts in India</a></li>
                                         <li><a className={isActive4=='id3' ? " active": " " } onClick={()=>{chapterScroll2('id3')}}>How to Choose the Right DP and Brokerage Firm?</a></li>
@@ -203,7 +205,7 @@ function OpenDematNew() {
                                 This transformation to digital holdings has streamlined the investment process and enhanced governance under the Securities and Exchange Board of India (SEBI). Gone are the days of cumbersome, manual account openings.<br/><br/>
 
                                 In today's digital age, you can <a href="/open-free-demat-account">open a Demat account</a> within minutes. The COVID-19 pandemic accelerated the shift towards online share trading, making it more accessible than ever before.</p>
-                                <img src={evolution} /><br/><br/>
+                                <img src={evolution} alt="Evolution of Share Ownership in India" /><br/><br/>
                                 <h3>What is Dematerialization?</h3>
                                 <p><a href="/blog/dematerialisation/">Dematerialization</a> refers to the process of <a href="/blog/physical-shares-to-demat/">converting physical share certificates</a> into electronic form. This transformation enables easy access to your shares from anywhere in the world.<br/><br/>
 
@@ -214,7 +216,7 @@ Upon activation of your Demat account, submit your physical securities through a
                             <div className="pr-sec" id="id1">
                                 <h2><a href="/blog/how-demat-account-works/">How Does a Demat Account Work?</a></h2>
                                 <p>A Demat account functions as the digital vault for your securities. It allows you to buy, hold, and sell shares with ease, regardless of your location. However, it doesn't operate in isolation. Here's how it collaborates with other elements to offer seamless transactions:</p>
-                                <img src={HowDoes} className="img-fluid" /><br/><br/>
+                                <img src={HowDoes} className="img-fluid" alt="How a Demat Account Works" /><br/><br/>
                                 <p>Every stockbroker charges an opening fee for a Demat account, as they are responsible for maintaining your account. For your Demat account to operate seamlessly, you need to link it with a trading account. Your Depository Participant (DP) forwards your buy orders to the stock exchange when you make purchases via a trading platform. <br/><br/>
                                 Once your buy order matches with a corresponding sell order, the stock exchange sends it to a clearinghouse for settlement. At the end of the trading day, the shares you've bought are credited to your Demat account. Similarly, the seller's Demat account is debited for the sold shares.<br/><br/>
                                 Remember, without a trading account, you cannot utilize your Demat account for investments. A trading account handles the monetary transactions associated with buying and selling shares.
@@ -222,12 +224,12 @@ Upon activation of your Demat account, submit your physical securities through a
                             </div>
                             <div className="pr-sec" id="id2">
                                 <h2>Types of Demat Accounts in India</h2>
-                                <img src={HowChoose} className="img-fluid" /><br/><br/>
+                                <img src={HowChoose} className="img-fluid" alt="How to Choose Best Demat Account" /><br/><br/>
                                 <p>In India, there are several types of Demat accounts to cater to various investor profiles. Here is a quick look:</p>
                                 <ol className="drk-bld">
                                     <li>
                                         <h3>Regular Demat Account</h3>
-                                        <img src={Regular} className="img-fluid" /><br/><br/>
+                                        <img src={Regular} className="img-fluid" alt="Regular Demat Account" /><br/><br/>
                                         <p>Ideal for Indian residents, this account is managed by depository participants, and regulated by two depositories. It offers swift transactions, allowing you to buy or sell shares within minutes. Regular Demat accounts may include: <br/><br/>
                                        <a href="/minor-demat-account">Minor Demat Account:</a> Specifically designed for minors, this account allows parents or guardians to manage investments on behalf of their children until they reach the legal age of 18. It offers a secure way to build a financial foundation for the younger generation.<br/><br/>
                                         <a href="/corporate-demat-account">Corporate Demat Account:</a> This type of Demat account is tailored for corporate entities and organizations. It enables businesses to hold and manage their securities electronically, facilitating smoother transactions and enhanced financial control. Corporate Demat accounts are instrumental in corporate actions and shareholder meetings.
@@ -235,19 +237,19 @@ Upon activation of your Demat account, submit your physical securities through a
                                     </li>
                                     <li>
                                         <h3>Repatriable Demat Account (<a href="/nri-demat-account">NRI Demat Account</a>)</h3>
-                                        <img src={Repatriable} className="img-fluid" /><br/><br/>
+                                        <img src={Repatriable} className="img-fluid" alt="Repatriable Demat Account" /><br/><br/>
                                         <p>NRIs can leverage this account to transfer funds abroad. It requires an NRE bank account for operation.</p>
                                     </li>
                                     <li>
                                         <h3>Non-Repatriable Demat Account</h3>
-                                        <img src={Nro} className="img-fluid" /><br/><br/>
+                                        <img src={Nro} className="img-fluid" alt="NRO Demat Account" /><br/><br/>
                                         <p>Unlike the Repatriable account, funds cannot be transferred abroad with this type. It necessitates an NRO bank account association.</p>
                                     </li>
                                     <li>
                                         <h3>Basic Services Demat Account</h3>
-                                        <img src={bsda} className="img-fluid" /><br/><br/>
+                                        <img src={bsda} className="img-fluid" alt="BSDA Demat Account" /><br/><br/>
                                         <p>Designed to promote financial inclusion, the Basic Services Demat Account caters to individuals from economically disadvantaged backgrounds. Offering a simplified and cost-effective way to participate in the Indian securities market. This type of account is subject to certain restrictions and limitations, making it an accessible entry point for new investors with limited resources.</p>
-                                        <img src={different} className="img-fluid" /><br/><br/>
+                                        <img src={different} className="img-fluid" alt="Different Types of Demat Account" /><br/><br/>
                                         <p>Choosing the right Demat account type depends on your residency status and investment goals.</p>
                                     </li>
                                 </ol>
@@ -256,7 +258,7 @@ Upon activation of your Demat account, submit your physical securities through a
                             <div className="pr-sec" id="id3">
                                 <h2>How to Choose the Right DP and Brokerage Firm?</h2>
                                 <p>Selecting the right Depository Participant (DP) and brokerage firm is a crucial decision for your investment journey. Always choose one that is trustworthy and reliable, and aligns with your trading and investment needs.</p>
-                                <img src={choosing} className="img-fluid" /><br/><br/>
+                                <img src={choosing} className="img-fluid" alt="Choosing a DP or Broker" /><br/><br/>
                                 <p>Here are some factors to consider when choosing:</p>
                                 <ol className="list-pr">
                                     <li>
@@ -301,7 +303,7 @@ Upon activation of your Demat account, submit your physical securities through a
                             </div>
                             <div className="pr-sec" id="id4">
                                 <h2><a href="/blog/benefits-of-a-demat-account/">Benefits of a Demat Account</a></h2>
-                                <img src={benefits} className="img-fluid" /><br/><br/>
+                                <img src={benefits} className="img-fluid" alt="Benefits of Demat Account" /><br/><br/>
                                 <p>The introduction of Dematerialization has revolutionized the stock market and unlocked numerous benefits for investors:</p>
                                 <ol className="drk-bld">
                                     <li>
@@ -333,7 +335,7 @@ Upon activation of your Demat account, submit your physical securities through a
                             </div>
                             <div className="pr-sec" id="id5">
                                 <h2>Key Features of Demat Accoun</h2>
-                                <img src={features} className="img-fluid" /><br/><br/>
+                                <img src={features} className="img-fluid" alt="Features of Demat Account" /><br/><br/>
                                 <p>Demat accounts come packed with features to simplify your investment journey. Here are some of the key highlights:</p>
                                 <ol className="drk-bld">
                                     <li>
@@ -393,7 +395,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                     <li>Enter your Aadhar details (ensure your phone number is linked to your Aadhar card) and receive an OTP</li>
                                     <li>After successful verification, your Demat account will be opened and activated</li>
                                 </ol>
-                                <img src={openingprocess} className="img-fluid" /><br/><br/>
+                                <img src={openingprocess} className="img-fluid" alt="Demat Account Opening Process" /><br/><br/>
                                 <span className="bl-box">Choice completes the verification process in under 4 hours. Our team will assist you if you encounter any issues during the Demat account opening process.</span>
                                 <h3>Offline Demat Account Opening</h3>
                                 <p>If you prefer a more traditional approach, visit the nearest branch office of your chosen Depository Participant (DP) or brokerage firm to open an account. The process includes:</p>
@@ -404,7 +406,8 @@ Upon activation of your Demat account, submit your physical securities through a
                                     <li>Completing the in-person verification process</li>
                                     <li>Waiting for account activation</li>
                                 </ol>
-                                <span className="bl-box">Ensure you have the following documents ready for the Demat account opening:
+                                <span className="bl-box">
+                                Ensure you have the following documents ready for the Demat account opening:
                                 <ol>
                                     <li>PAN Card</li>
                                     <li>Proof of identity (Aadhar card, passport, voter ID, etc.)</li>
@@ -440,14 +443,14 @@ Upon activation of your Demat account, submit your physical securities through a
                                     <li><strong>PAN Card:</strong> It is mandatory for all Demat account holders.</li>
                                     <li><strong>Passport-Size Photographs:</strong> Typically, you need 2-3 recent passport-sized photographs if you opt for the offline process. For the online process, it will be e-KYC authentication.</li>
                                 </ol>
-                                <img src={checklist} className="img-fluid" /><br/><br/>
+                                <img src={checklist} className="img-fluid" alt="Documents Required to Open Demat Account" /><br/><br/>
                                 <p>Ensure that all documents are self-attested copies, and keep the original documents handy for verification purposes during the demat account opening process.</p>
                                 <span className="bl-box">For certain segments, such as derivatives, income proofs may be necessary.</span>
                             </div>
                             <div className="pr-sec" id="id8">
                                 <h2><a href="/blog/demat-account-charges/">Demat Account Charges</a></h2>
                                 <p>While opening a Demat account is often free or comes at a nominal charge, there are various fees and charges associated with maintaining and using it. Some common Demat account charges include</p>
-                                <img src={charges} className="img-fluid" /><br/><br/>
+                                <img src={charges} className="img-fluid" alt="Demat Account Charges" /><br/><br/>
                                 <ol className="drk-bld">
                                     <li>
                                         <h3>Account Opening Fee</h3>
@@ -500,16 +503,16 @@ Upon activation of your Demat account, submit your physical securities through a
                                 </ol>
                                 <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat accounts</a>, making it cost-effective for investors.</p>
                                 <div className="flex-image">
-                                    <img src={openingcharges} className="img-fluid" />
-                                    <img src={amccharges} className="img-fluid" />
+                                    <img src={openingcharges} className="img-fluid" alt="Choice Demat Account Opening Charges" />
+                                    <img src={amccharges} className="img-fluid" alt="Choice AMC Charges" />
                                 </div>
                             </div>
                             <div className="pr-sec" id="id9">
                                 <h2><a href="/blog/difference-between-demat-and-trading-account/">Trading Account vs Demat Account</a></h2>
                                 <p>While the Demat account holds your securities, the trading account facilitates buying and selling. A combination of both is essential for participating in the stock market. Here’s a breakdown of their differences:</p>
-                                <img src={tradingaccount} className="img-fluid" /><br/><br/>
+                                <img src={tradingaccount} className="img-fluid" alt="Difference Between Demat and Trading Account" /><br/><br/>
                                 <h3>Trading Account</h3>
-                                <ul>
+                                <ul className="drk-bld">
                                     <li>
                                         <h3>Role</h3>
                                         <p>The Trading account is your gateway to the stock market. It assists you to buy and sell securities.</p>
@@ -528,7 +531,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                     </li>
                                 </ul>
                                 <h3>Demat Account</h3>
-                                <ul>
+                                <ul className="drk-bld">
                                     <li>
                                         <h3>Role</h3>
                                         <p>A Demat account acts as a digital repository for your securities. It holds shares, bonds, mutual funds, and other financial instruments in electronic form.</p>
@@ -547,7 +550,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                     </li>
                                 </ul>
                                 <h3>The Symbiotic Relationship</h3>
-                                <ul>
+                                <ul className="drk-bld">
                                     <li>
                                         <h3>Dependence</h3>
                                         <p>To trade in the stock market, you need both accounts. A Demat account holds your securities, while a Trading account facilitates buying and selling.</p>
@@ -562,7 +565,7 @@ Upon activation of your Demat account, submit your physical securities through a
                             <div className="pr-sec" id="id10">
                                 <h2>Utilizing Your Demat Account</h2>
                                 <p>To make the most of your Demat account, stay informed about market trends, conduct thorough research, and diversify your portfolio. Whether you are a long-term investor or a day trader, your Demat account is a valuable tool for wealth creation.</p>
-                                <img src={diversification} className="img-fluid" /><br/><br/>
+                                <img src={diversification} className="img-fluid" alt="portfolio-diversification" /><br/><br/>
                                 <p>Let’s delve deeper into how to make the most of your Demat account for effective investing and trading:</p>
                                 <h3>Managing Your Portfolio</h3>
                                 <p>Your Demat account is your digital portfolio manager. Here is how to manage it effectively:</p>
@@ -648,7 +651,7 @@ Upon activation of your Demat account, submit your physical securities through a
                             <div className="pr-sec" id="id11">
                                 <h2>How to Buy and Sell Shares Using a Demat Account?</h2>
                                 <p>Once your Demat account is linked to your trading account, you can start buying and selling shares. Here's a step-by-step guide for both processes:</p>
-                                <img src={buysell} className="img-fluid" /><br/><br/>
+                                <img src={buysell} className="img-fluid" alt="How to Buy and Sell Shares Using Demat Account" /><br/><br/>
                                 <h3>Buying Shares</h3>
                                 <ol className="none-para">
                                     <li><strong>Login:</strong> Access your trading account using the provided login credentials.</li>
@@ -687,7 +690,7 @@ Upon activation of your Demat account, submit your physical securities through a
                             <div className="pr-sec" id="id13">
                                 <h2>How to Transfer Shares from One Demat Account to Another?</h2>
                                 <p>If you need to transfer shares from one Demat account to another, you can do so through a process called "off-market transfer." Here's how to transfer shares:</p>
-                                <img src={transfershares} className="img-fluid" /><br/><br/>
+                                <img src={transfershares} className="img-fluid" alt="How to Transfer Shares from One Demat Account to Another" /><br/><br/>
                                 <ol className="none-para">
                                     <li><strong>Initiate the Transfer:</strong> The account from which you want to transfer shares (the sender) initiates the process. You will need to fill out a Delivery Instruction Slip (DIS) or a similar form provided by your Depository Participant (DP).</li>
                                     <li><strong>Provide Details:</strong> In the DIS, provide the recipient's Demat account details, including their DP ID and client ID. Ensure the details are accurate to prevent any issues.</li>
@@ -717,12 +720,12 @@ Upon activation of your Demat account, submit your physical securities through a
                                     <li><strong>Maintain Margin:</strong> Ensure that you maintain the required collateral margin to avoid margin calls.</li>
                                     <li><strong>Release of Pledge:</strong> When you repay the loan or meet the margin requirements, you can request the release of the pledge. The shares will be unblocked and available for trading or other transactions.</li>
                                 </ol>
-                                <img src={pledgeshares} className="img-fluid" /><br/><br/>
+                                <img src={pledgeshares} className="img-fluid" alt="How to Pledge Shares in a Demat Account" /><br/><br/>
                                 <p>Always check with your broker or DP for the specific procedures and requirements for pledging shares in your Demat account.</p>
                             </div>
                             <div className="pr-sec" id="id15">
                                 <h2>How to Add Nominee to Demat Account?</h2>
-                                <img src={addnominee} className="img-fluid" /><br/><br/>
+                                <img src={addnominee} className="img-fluid" alt="How to Add Nominee to Demat Account" /><br/><br/>
                                 <h3>Nomination Process</h3>
                                 <ol className="none-para">
                                     <li><strong>Obtain Nomination Form:</strong> Contact your Depository Participant (DP) or broker and request a nomination form.</li>
@@ -742,7 +745,7 @@ Upon activation of your Demat account, submit your physical securities through a
                             <div className="pr-sec" id="id16">
                                 <h2><a href="/blog/how-to-close-a-demat-account/">How to Close a Demat Account?</a></h2>
                                 <p>Closing a dormant Demat account is a necessary step to avoid maintenance charges and keep your financial house in order. Here is how to go about closing it: </p>
-                                <img src={closedemat} className="img-fluid" /><br/><br/>
+                                <img src={closedemat} className="img-fluid" alt="How to Close Demat Account" /><br/><br/>
                                 <ol>
                                     <li>
                                         <h3>Determine Account Activity</h3>
@@ -777,7 +780,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                         <p>Once the account closure is complete, your DP will provide confirmation. Ensure you receive all necessary documents and statements.</p>
                                     </li>
                                 </ol>
-                                <img src={closureDemat} className="img-fluid" /><br/><br/>
+                                <img src={closureDemat} className="img-fluid" alt="Demat Aaccount Closing Process" /><br/><br/>
                                 <p>Remember, closing a Demat account should be done thoughtfully. Ensure you have explored all options and considered the implications before making this decision.</p>
                             </div>
                             <div className="pr-sec" id="id17">
@@ -837,31 +840,40 @@ Upon activation of your Demat account, submit your physical securities through a
                             <div className="pr-sec" id="id18">
                                 <h2>Legal and Regulatory Information</h2>
                                 <p>As an investor, it's crucial to be aware of the legal and regulatory aspects governing your Demat account. Here are some key points to keep in mind:</p>
-                                <h3>SEBI Regulations</h3>
-                                <p>The Securities and Exchange Board of India (SEBI) is the regulatory authority that oversees the functioning of Demat accounts and the securities market in India. Familiarize yourself with SEBI's guidelines and regulations.</p>
-
-                                <h3>Income Tax Implications</h3>
-                                <p>Understand the tax implications of your investments held in a Demat account. Income generated from securities, such as dividends and capital gains, may be subject to taxation.</p>
-
-                                <h3>Nomination</h3>
-                                <p>You have the option to nominate a beneficiary for your Demat account holdings. This simplifies the transfer of assets in the event of your demise.</p>
-
-                                <h3>Legal Rights</h3>
-                                <p>As a Demat account holder, you have legal rights and responsibilities. It's important to be aware of these rights, including the right to information, privacy, and grievance redressal.</p>
-
-                                <h3>Dispute Resolution</h3>
-                                <p>In case of disputes or grievances related to your Demat account, you can approach the Depository Participant (DP) or utilize the services of SEBI's Investor Education and Protection Fund (IEPF) and Investor Grievance Redressal Mechanism.</p>
-
-                                <h3>Documentation</h3>
-                                <p>Keep all documents related to your Demat account, including <a href="/blog/demat-account-opening-form/">demat account opening forms</a>, transaction statements, and KYC documents, in a safe and accessible place.</p>
-
-                                <h3>Stay Informed</h3>
-                                <p>
-                                Regulations and tax laws can change over time. Stay informed about any updates or amendments that may impact your Demat account and investments.<br/><br/>
-                                By being aware of the legal and regulatory aspects, you can ensure that your investments are in compliance with the law and that your rights as an investor are protected.<br/><br/>
-                                Your Demat account is a valuable tool in your financial journey, and understanding how to use it effectively is essential. If you have any questions or need further assistance, feel free to contact us. 
-
-                                </p>
+                                <ul className="reset-list">
+                                    <li>
+                                    <h3>SEBI Regulations</h3>
+                                    <p>The Securities and Exchange Board of India (SEBI) is the regulatory authority that oversees the functioning of Demat accounts and the securities market in India. Familiarize yourself with SEBI's guidelines and regulations.</p>
+                                    </li>
+                                    <li>
+                                        <h3>Income Tax Implications</h3>
+                                        <p>Understand the tax implications of your investments held in a Demat account. Income generated from securities, such as dividends and capital gains, may be subject to taxation.</p>
+                                    </li>
+                                    <li>
+                                        <h3>Nomination</h3>
+                                        <p>You have the option to nominate a beneficiary for your Demat account holdings. This simplifies the transfer of assets in the event of your demise.</p>
+                                    </li>
+                                    <li>
+                                        <h3>Legal Rights</h3>
+                                        <p>As a Demat account holder, you have legal rights and responsibilities. It's important to be aware of these rights, including the right to information, privacy, and grievance redressal.</p>
+                                    </li>
+                                    <li>
+                                        <h3>Dispute Resolution</h3>
+                                        <p>In case of disputes or grievances related to your Demat account, you can approach the Depository Participant (DP) or utilize the services of SEBI's Investor Education and Protection Fund (IEPF) and Investor Grievance Redressal Mechanism.</p>
+                                    </li>
+                                    <li>
+                                        <h3>Documentation</h3>
+                                        <p>Keep all documents related to your Demat account, including <a href="/blog/demat-account-opening-form/">demat account opening forms</a>, transaction statements, and KYC documents, in a safe and accessible place.</p>
+                                    </li>
+                                    <li>
+                                        <h3>Stay Informed</h3>
+                                        <p>
+                                        Regulations and tax laws can change over time. Stay informed about any updates or amendments that may impact your Demat account and investments.<br/><br/>
+                                        By being aware of the legal and regulatory aspects, you can ensure that your investments are in compliance with the law and that your rights as an investor are protected.<br/><br/>
+                                        Your Demat account is a valuable tool in your financial journey, and understanding how to use it effectively is essential. If you have any questions or need further assistance, feel free to contact us.</p>
+                                    </li>
+                                
+                                </ul>
                             </div>
                             <div className="pr-sec" id="id19">
                                 <h2>Demat Glossary</h2>
