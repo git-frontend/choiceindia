@@ -324,10 +324,11 @@ console.log(isActive4)
                                         <p><strong>User Reviews:</strong> Read reviews and testimonials from existing customers to gauge their experiences with the broker.</p>
                                     </li>
                                 </ol>
-                            </InView>
-                            <InView as="div" className="pr-sec" id="id4">
+                                <p>Take your time to research and compare different DPs and brokerage firms before making a decision. Your choice can significantly impact your overall investment experience.</p>
+                            </div>
+                            <div className="pr-sec" id="id4">
                                 <h2><a href="/blog/benefits-of-a-demat-account/">Benefits of a Demat Account</a></h2>
-                                <img src={benefits} className="img-fluid" alt="Benefits of Demat Account" /><br/><br/>
+                                <LazyLoader src={benefits} className="img-fluid" alt={"Benefits of Demat Account"} /><br/><br/>
                                 <p>The introduction of Dematerialization has revolutionized the stock market and unlocked numerous benefits for investors:</p>
                                 <ol className="drk-bld">
                                     <li>
