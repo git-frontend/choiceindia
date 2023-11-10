@@ -18,7 +18,7 @@ function WhyChoose() {
                 </div>
             </div>
             <div className='row justify-content-center'>
-                <div className='col-md-8'>
+                <div className='col-lg-8 col-md-12'>
                     <div className='card-sec'>
                         <div className='card-items'>
                             <span className='cfx-img'>

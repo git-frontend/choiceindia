@@ -9,8 +9,8 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import LazyLoader from '../Common-features/LazyLoader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
-import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 function MfTestimonials() {
     const [valRight, setValRight] = useState(() => 0);
     const [dataObj, setdataObj] = useState(() => [

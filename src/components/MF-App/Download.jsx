@@ -9,9 +9,8 @@ function Download() {
     <>
         <section className='download-sec'>
             <div className='container'>
-                <div className='row'>
-                    <div className='col-md-12'>
-                        <div className='flex-col'>
+                <div className='row justify-content-between'>
+                        <div className='col-md-8'>
                             <div className='caption-cont'>
                                 <h2 className='title-secnd'>Download Now</h2>
                                 <p>Stay on top of your Mutual fund <br/> Investments with Choice FinX.</p>
@@ -27,12 +26,11 @@ function Download() {
                                     </a>
                                 </div>
                             </div>
-                            <div>
+                            </div>
+                            <div className='col-md-4'>
                                 <LazyLoader src={download} height={559} width ={473} className={"img-fluid"} alt={"Download Choice FinX Mutual Fund App"}/>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
         </section>
     </>

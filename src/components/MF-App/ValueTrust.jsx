@@ -9,7 +9,7 @@ function ValueTrust() {
 		<>
 			<section className="app-benefits-section">
 				<div className="container">
-					<div className="row">
+					<div className="row col-revers">
 						<div className="col-lg-8 d-flex">
 								<div className="benifit-value-list">
 
@@ -32,7 +32,7 @@ function ValueTrust() {
 
 								</div>
 							</div>
-						<div className="col-lg-4">
+						<div className="col-lg-4 col-md-12">
 							<div className="heading-sec">
 								<h2 className="title-secnd">We value trust <br />above everything</h2>
 								<p>Discover why Lakhs of customers choose to invest with CHOICE.</p>

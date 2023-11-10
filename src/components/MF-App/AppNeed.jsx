@@ -53,21 +53,12 @@ function AppNeed() {
                     </div>
                     <div className='row d-flex justify-content-center'>
                         <div className='col-xl-9'>
-                            <div className="row app-trade-easy-div d-flex align-items-top">
-
+                            <div className="row app-trade-easy-div d-flex align-items-center">
                                 <div className='col-md-4'>
-
                                     <div className="trade-easy-images-div">
                                         <LazyLoader src={imageDataapp[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"312"} height={"632"}/>
-                                        {/* <img src={imageData[isShown3].image}
-
-                                            className="single-trade-easy-images" alt='Loading'></img> */}
                                     </div>
-
-
-
                                 </div>
-
                                 <div className='col-md-8'>
                                     <div className='content-list'>
                                         <Slider {...settings1}
@@ -96,12 +87,8 @@ function AppNeed() {
                                                 })
                                             }
                                         </Slider>
-
                                     </div>
-
-
                                 </div>
-
                             </div>
                         </div>
                     </div>

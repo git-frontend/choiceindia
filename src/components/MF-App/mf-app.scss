@@ -13,7 +13,7 @@
         &:before {
             content: "";
             width: 15rem;
-            height: 23rem;
+            height: 30rem;
             display: block;
             position: absolute;
             left: 0;
@@ -21,7 +21,9 @@
             background: url(../../assets/images/mf-app/banner-before.svg) no-repeat bottom left;
             background-size: contain;
             z-index: 1;
-
+            @media (max-width:$md) {
+                display: none;
+            }
             @media (max-width:$sm-x) {
                 display: none;
             }
@@ -69,7 +71,9 @@
                 margin: 4rem 0;
                 display: flex;
                 flex-wrap: wrap;
-
+                @media (max-width:992px) {
+                    margin: 2rem 0;
+                }
                 @media (max-width: $sm-x) {
                     margin: 2rem 0;
                     flex-direction: column;
@@ -82,6 +86,9 @@
             }
             .caption-cont{
                 width: 40%;
+                @media (max-width:$md) {
+                    width: 60%;
+                }
             }
         }
     }
@@ -90,7 +97,9 @@
         padding: 20rem 0;
         position: relative;
         background-color: $whiteColor;
-
+        @media (max-width:$md) {
+            padding: 5rem 0;
+        }
         &:after {
             content: '';
             width: 53em;
@@ -102,24 +111,33 @@
             background: url(../../assets/images/mf-app/column-before.svg) no-repeat bottom left;
             background-size: contain;
 
-            @media (max-width:$sm) {
+            @media (max-width:$md) {
                 display: none;
             }
         }
-
+        .col-revers{
+            @media (max-width:$md) {
+                flex-direction: column-reverse;
+            }
+        }
         .heading-sec {
-            .title-first {
-                font-size: 3rem;
-
-
-                @media (max-width: $sm-x) {
-                    font-size: 2rem;
+            @media (max-width:$md) {
+                text-align: center;
+            }
+            .title-secnd {
+               br{
+                @media (max-width:$md) {
+                    display: none;
                 }
+               }
             }
 
             p {
                 margin: 2rem 0 3rem 0;
                 color: $primary;
+                @media (max-width:$md) {
+                    margin: 2rem 0 0 0;
+                }
             }
 
             @media (max-width: $sm-x) {
@@ -235,14 +253,16 @@
         &::after {
             content: '';
             width: 15rem;
-            height: 23rem;
+            height: 30rem;
             display: block;
             position: absolute;
             right: 0;
-            bottom:-5rem;
+            bottom:-8rem;
             background: url(../../assets/images/mf-app/banner-after.svg) no-repeat bottom right;
             background-size: contain;
-
+            @media (max-width:$md) {
+                display: none;
+            }
             @media (max-width:$sm) {
                 display: none;
             }
@@ -406,11 +426,11 @@
             display: block;
             position: absolute;
             left: 0;
-            top: 0;
+            top: -3rem;
             background: url(../../assets/images/mf-app/app-bgrealtimeafter-left.png) no-repeat bottom left;
             background-size: contain;
 
-            @media (max-width:$sm) {
+            @media (max-width:$md) {
                 display: none;
             }
         }
@@ -558,19 +578,19 @@
 
 .why-choose-sec{
     background: $abt-bg;
-    padding: 8rem 0;
+    padding: 8rem 0 10rem;
     position: relative;
     &:after {
         content: '';
-        width: 25em;
-        height: 32rem;
+        width: 20rem;
+        height: 55rem;
         display: block;
         position: absolute;
         right: 0;
-        top: -18rem;
+        top: -30rem;
         background: url(../../assets/images/mf-app/app-bgrealtime-right.png) no-repeat bottom right;
         background-size: contain;
-        @media (max-width:$sm) {
+        @media (max-width:$md) {
             display: none;
         }
     }
@@ -589,6 +609,9 @@
         justify-content: space-between;
         gap: 5rem;
         flex-wrap: wrap;
+        @media (max-width:$md) {
+            gap: 4rem;
+        }
         .card-items{
             background: $whiteColor;
             box-shadow: 0px 4px 10px 0px $nbfcboxshadow;
@@ -596,6 +619,7 @@
             text-align: center;
             border-radius: 20px;
             width: 46%;
+
             .cfx-img{
                 display: inline-block;
                 min-height: 8rem;
@@ -981,11 +1005,10 @@
 .download-sec{
     background: $abt-bg;
     padding: 8rem 0 3rem;
-    .flex-col{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
     .caption-cont{
+        .title-secnd{
+            margin-bottom: 2rem;
+        }
         .wrap-app-links {
             margin: 4rem 0;
             display: flex;
@@ -1004,9 +1027,13 @@
                     &:hover{
                         background-color: $yellowColor;
                     }
+                    .whitecolor{
+                        @media (max-width:$md) {
+                            font-size: 1.4rem;
+                        }
+                    }
                 }
             }
         }
     }
-}
 }
