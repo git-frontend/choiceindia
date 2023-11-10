@@ -13,7 +13,7 @@ function Faqs() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title-first text-center pb-4">Frequently Asked <span>Questions</span></h2>
+                            <h2 className="title-secnd text-center pb-4">Frequently Asked <span>Questions</span></h2>
                         </div>
 
                     </div>
