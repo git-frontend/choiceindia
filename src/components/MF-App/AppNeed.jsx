@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import imageDataapp from '../../Data/images';
+import Image1 from '../../assets/images/mf-app/mutual-fund-app-innovative-convenience.webp';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -56,7 +57,7 @@ function AppNeed() {
                             <div className="row app-trade-easy-div d-flex align-items-center">
                                 <div className='col-md-4'>
                                     <div className="trade-easy-images-div">
-                                        <LazyLoader src={imageDataapp[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"312"} height={"632"}/>
+                                        <LazyLoader src={Image1} className={"img-fluid single-trade-easy-images"} alt={"Mutual Fund App with Innovative Convenience"} width={"312"} height={"632"}/>
                                     </div>
                                 </div>
                                 <div className='col-md-8'>

@@ -9,7 +9,7 @@ function Download() {
     <>
         <section className='download-sec'>
             <div className='container'>
-                <div className='row justify-content-between'>
+                <div className='row justify-content-between align-items-center'>
                         <div className='col-md-8'>
                             <div className='caption-cont'>
                                 <h2 className='title-secnd'>Download Now</h2>

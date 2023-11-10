@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import imageDataapp from '../../Data/TrackInvestData';
+import  Image1  from '../../assets/images/mf-app/mutual-fund-app-manage-track-investment.webp';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -46,12 +47,10 @@ function TrackInvest() {
                     <div className='row d-flex justify-content-center'>
                         <div className='col-xl-9'>
                             <div className="row app-trade-easy-div d-flex align-items-top">
-
                                 <div className='col-md-8'>
                                     <div className='ttle-3'>
                                         <h3>Manage & Track Your Investment</h3>
                                     </div>
-                                    
                                 <div className='content-list'>
                                         <Slider {...settings1}
                                             afterChange={(ev) => {
@@ -79,24 +78,13 @@ function TrackInvest() {
                                                 })
                                             }
                                         </Slider>
-
                                     </div>
-
-
                                 </div>
-
                                 <div className='col-md-4'>
                                 <div className="trade-easy-images-div">
-                                        <LazyLoader src={imageDataapp[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"312"} height={"632"}/>
-                                        {/* <img src={imageData[isShown3].image}
-
-                                            className="single-trade-easy-images" alt='Loading'></img> */}
+                                        <LazyLoader src={Image1} className={"img-fluid single-trade-easy-images"} alt={"Mutual Fund App to Manage & Track Your Investment"} width={"312"} height={"632"}/>
                                     </div>
-                                 
-
-
                                 </div>
-
                             </div>
                         </div>
                     </div>
