@@ -343,7 +343,7 @@ function NewDematAccountForm(props) {
                 setShowThanku(prevState => {
                     return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.data.Body.new_lead ? res.data.Body.new_lead : false }
                 });
-             
+                fetchQueryParams();
                 // resetOTPPopup();
                 handleOTPShow();
 
