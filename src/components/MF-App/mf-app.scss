@@ -36,6 +36,9 @@
                 height: 350px;
                 object-fit: cover;
             }
+            @media (max-width: $xs) {
+                object-position: -150px 0;
+            }
         }
 
         .app-banner-caption {
@@ -144,7 +147,7 @@
 
             p {
                 margin: 2rem 0 3rem 0;
-                color: $primary;
+                color: $secondary;
                 @media (max-width:$md) {
                     margin: 2rem 0 0 0;
                 }
@@ -277,12 +280,12 @@
         }
     }
     .app-need-bottom {
-        padding-bottom: 10rem;
-        padding-top: 10rem;
+        padding: 8rem 0;
+        // padding-top: 10rem;
         position: relative;
-        overflow: hidden;
+        // overflow: hidden;
         background: $abt-bg;
-        &::after {
+        &::before {
             content: '';
             width: 15rem;
             height: 30rem;
@@ -292,6 +295,7 @@
             bottom:-8rem;
             background: url(../../assets/images/mf-app/banner-after.svg) no-repeat bottom right;
             background-size: contain;
+            z-index: 9;
             @media (max-width:$md) {
                 display: none;
             }
@@ -1108,7 +1112,7 @@
                     margin-right: 0;
                 }
                 &.dark{
-                    background-color: $primary;
+                    background-color: $darkblack;
                     &:hover{
                         background-color: $yellowColor;
                     }
