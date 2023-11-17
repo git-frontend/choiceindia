@@ -36,7 +36,8 @@ function NewDematAccountForm(props) {
     const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     const [referID, setReferID] = useState('');
-
+    const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1) ? 'demat-web' : " ")
+ 
 
 
 
@@ -342,7 +343,7 @@ function NewDematAccountForm(props) {
                 setShowThanku(prevState => {
                     return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.data.Body.new_lead ? res.data.Body.new_lead : false }
                 });
-             
+                fetchQueryParams();
                 // resetOTPPopup();
                 handleOTPShow();
 
@@ -539,10 +540,15 @@ function NewDematAccountForm(props) {
                                     }
                                     {/* <span className="state-code">+91</span> */}
                                 </div>
+                                {
+                            webcheck == "demat-web" ?
+                                ""
+                                :
                                 <div className="sub-formgrp new-sub-formgrp">
                                     <Form.Control pattern="[a-zA-Z0-9]*" name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
                                 
                                 </div>
+                                }
                               
                                 <div key="inline-checkbox" className="sub-formgrp cust-checkbox">
                                     <Form.Check

@@ -97,7 +97,8 @@ const Lazyonlinetradingapp = React.lazy(() => import('./components/OnlineTrading
 const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
 const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 
-const LazyOpenDemat = React.lazy(() => import('./components/OpenDemat/Opendemat'));
+// const LazyOpenDemat = React.lazy(() => import('./components/OpenDemat/Opendemat'));
+const LazyOpenDemat = React.lazy(() => import('./components/Demat-new-page/OpenDematNew'));
 const LazyETF = React.lazy(() => import('./components/ETF/ETF'));
 const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
