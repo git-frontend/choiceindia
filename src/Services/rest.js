@@ -173,7 +173,27 @@ const rest = {
 
     let api = new API_URLS()
     let url = api.getSchemeData()
-     console.log("getSchemeData",url)
+    //  console.log("getSchemeData",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getFundManagerData: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getFundManagerData()
+    //  console.log("getFundManagerData",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getPerformancePeerComparisonData: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getPerformancePeerComparisonData()
+     console.log("getPerformancePeerComparisonData",url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       //  console.log("datads",data)
       return data

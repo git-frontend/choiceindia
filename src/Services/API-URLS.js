@@ -281,6 +281,8 @@ export class API_URLS {
     categoryListUrl = 'static/CategoryList';
     categoryListDetails = 'Scheme/CategoryDetails';
     schemeDataUrl = 'MFAnalysis/SchemeData';
+    fundsManagerUrl='Scheme/fundmanager';
+    performancePeerUrl='MFAnalysis/Analysis';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -959,6 +961,14 @@ export class API_URLS {
     getSchemeData(){
         return this.MFBaseURL + this.schemeDataUrl
     }
-
+    getSchemeData(){
+        return this.MFBaseURL + this.schemeDataUrl
+    }
+    getFundManagerData(){
+        return this.MFBaseURL + this.fundsManagerUrl
+    }
+    getPerformancePeerComparisonData(){
+        return this.MFBaseURL + this.performancePeerUrl
+    }
 
 }
