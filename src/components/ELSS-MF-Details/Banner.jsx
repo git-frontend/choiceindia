@@ -21,6 +21,8 @@ function Banner() {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
     const [searchTerm, setSearchTerm] = useState('');
+    const [returnsFilter, setReturnsFilter] = useState('');
+    const [sortFilter, setSortFilter] = useState('');
     const getPosition = () => {
         const element = document.getElementById("showForm");
         if (element) {
@@ -106,9 +108,90 @@ function Banner() {
         setFilteredCategoryData(filteredResults);
     };
     function addClassNameToTable(htmlContent, classNameToAdd) {
-        // Use a regular expression to add the class to the table element
         return htmlContent.replace(/<table/, `<table class="${classNameToAdd}"`);
     }
+    const FilterByReturns = (e) => {
+        const selectedReturns = e.target.value;
+        console.log("selectedReturns", selectedReturns)
+        setReturnsFilter(selectedReturns);
+        let filteredResults = filteredCategoryData;
+        if (selectedReturns) {
+            filteredResults = filteredCategoryData.filter((fund) => {
+                console.log('fund', fund);
+                switch (selectedReturns) {
+                    case '1 Month':
+                        return fund.SchemeReturns.OneMonthReturn !== null;
+                    case '3 Months':
+                        return fund.SchemeReturns.ThreeMonthsReturn !== null;
+                    case '6 Months':
+                        return fund.SchemeReturns.SixMonthsReturn !== null;
+                    case '1 Year':
+                        return fund.SchemeReturns.OneYearReturn !== null;
+                    case '3 Years':
+                        return fund.SchemeReturns.ThreeYearReturn !== null;
+                    case '5 Years':
+                        return fund.SchemeReturns.FiveYearReturn !== null;
+                    default:
+                        return true;
+                }
+            });
+        }
+        console.log('filteredResults', filteredResults);
+        setFilteredCategoryData(filteredResults);
+    };
+
+
+    const handleSortChange = (e) => {
+        const selectedSort = e.target.value;
+        setSortFilter(selectedSort);
+        let sortedResults = [...filteredCategoryData];
+
+        switch (selectedSort) {
+            case 'Returns- Low to High':
+                sortedResults.sort((a, b) => {
+                    const aValue = getReturnForSort(a, returnsFilter);
+                    const bValue = getReturnForSort(b, returnsFilter);
+                    return aValue - bValue;
+                });
+                break;
+            case 'Returns- High to Low':
+                sortedResults.sort((a, b) => {
+                    const aValue = getReturnForSort(a, returnsFilter);
+                    const bValue = getReturnForSort(b, returnsFilter);
+                    return bValue - aValue;
+                });
+                break;
+            case 'Rating- Low to High':
+                sortedResults.sort((a, b) => a.CMSStarRatings - b.CMSStarRatings);
+                break;
+            case 'Rating- High to Low':
+                sortedResults.sort((a, b) => b.CMSStarRatings - a.CMSStarRatings);
+                break;
+            default:
+                break;
+        }
+
+        setFilteredCategoryData(sortedResults);
+    };
+
+    const getReturnForSort = (fund, selectedReturns) => {
+        switch (selectedReturns) {
+            case '1 Month':
+                return parseFloat(fund.SchemeReturns.OneMonthReturn) || 0;
+            case '3 Months':
+                return parseFloat(fund.SchemeReturns.ThreeMonthsReturn) || 0;
+            case '6 Months':
+                return parseFloat(fund.SchemeReturns.SixMonthsReturn) || 0;
+            case '1 Year':
+                return parseFloat(fund.SchemeReturns.OneYearReturn) || 0;
+            case '3 Years':
+                return parseFloat(fund.SchemeReturns.ThreeYearReturn) || 0;
+            case '5 Years':
+                return parseFloat(fund.SchemeReturns.FiveYearReturn) || 0;
+            default:
+                return 0;
+        }
+    };
 
     return (
         <>
@@ -147,10 +230,15 @@ function Banner() {
                         <div className='col-xl-4 col-md-5 col-sm-12'>
                             <div className='drop-sec'>
                                 <div className='drop-items'>
-                                    <select className='form-select'>
-                                        <option value="" defaultValue>Returns</option>
-                                        <option value="">High Returns</option>
-                                        <option value="">Low Returns</option>
+                                    <select className='form-select' onChange={FilterByReturns} value={returnsFilter || ''}>
+                                        <option value="" disabled hidden defaultValue>Returns</option>
+                                        <option value="All">All</option>
+                                        <option value="1 Month">1 Month</option>
+                                        <option value="3 Months">3 Months</option>
+                                        <option value="6 Months">6 Months</option>
+                                        <option value="1 Year">1 Year</option>
+                                        <option value="3 Years">3 Years</option>
+                                        <option value="5 Years">5 Years</option>
                                     </select>
                                 </div>
                                 <div className='drop-items'>
@@ -171,11 +259,13 @@ function Banner() {
                                     <input type="text" className="input-control search-icon" placeholder="Search" onChange={CategorySearch} />
                                 </div>
                                 <div className='search-bar-items right-sec'>
-                                    <select className='form-select'>
-                                        <option value="" defaultValue>Sort</option>
-                                        <option value="">10</option>
-                                        <option value="">20</option>
-                                        <option value="">50</option>
+                                    <select className='form-select' onChange={handleSortChange} value={sortFilter ||''}>
+                                        <option value="" disabled hidden defaultValue>Sort</option>
+                                        <option value="" defaultValue>All</option>
+                                        <option value="Returns- Low to High">Returns- Low to High</option>
+                                        <option value="Returns- High to Low">Returns- High to Low</option>
+                                        <option value="Rating- Low to High">Rating- Low to High</option>
+                                        <option value="Rating- High to Low">Rating- High to Low</option>
                                     </select>
                                 </div>
                             </div>
