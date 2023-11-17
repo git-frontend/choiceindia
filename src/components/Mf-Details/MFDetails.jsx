@@ -66,7 +66,7 @@ function MFTopFunds() {
         let arr = urlIdentity.split('-').slice(-2)
         let SchemeCode = arr[0]
         let SchemePlanCode = arr[1]
-       
+
         let request = {
             "SchemeCode": arr[0],
             "SchemePlanCode": arr[1]
@@ -87,7 +87,7 @@ function MFTopFunds() {
                             disableLumpsum = false;
                         }
                         if (res.Response.SchemeBasic.SIPAllowed == "Y") {
-                           disableSIP = false;
+                            disableSIP = false;
                         }
                     }
                     else {
@@ -139,15 +139,20 @@ function MFTopFunds() {
                                                                     ))}
                                                                 </div>
                                                                 <div className='detaisl-amt-des'>
-                                                                    <p className='mar-0'>{res.SchemeBasic.Category} | Inception Date : {utils.formatDate(new Date(res?.SchemeBasic.LaunchDate), "MMMM dd,yyyy")}</p>
+                                                                    <p className='mar-0'>{res.SchemeBasic.Category} | Inception Date : {utils.formatDate(
+                                                                        new Date(res.SchemeBasic.LaunchDate.split('/')[2], (res.SchemeBasic.LaunchDate.split('/')[1] - 1), res.SchemeBasic.LaunchDate.split('/')[0]), "MMM dd,yyyy"
+                                                                    )}
+                                                                    </p>
                                                                     <p>Min. {(!disableLumpsum ? 'Lumpsum' : (!disableSIP) ? 'SIP' : '')} Investment  <strong>₹ {res?.SchemeBasic?.MinInvestment}</strong></p>
-                                                                    <p>Nav <strong>₹ 280.71</strong> | <strong>Sep 13, 2023</strong></p>
+                                                                    <p>Nav <strong>₹ {res?.SchemePerformance?.CurrentNav}</strong> | <strong>{utils.formatDate(
+                                                                        new Date(res.SchemePerformance.NAVDate.split('-')[0], (res.SchemePerformance.NAVDate.split('-')[1] - 1), res.SchemePerformance.NAVDate.split('-')[2]), "MMM dd,yyyy"
+                                                                    )}</strong></p>
                                                                 </div>
                                                             </div>
                                                             <div className='col-md-5 '>
                                                                 <div className='holding-value-cont'>
                                                                     <div className='holding-value'>
-                                                                        <h4>149.47 &nbsp;<FontAwesomeIcon icon={faArrowUp} className='fill' /></h4>
+                                                                        <h4>{parseFloat(res.SchemePerformance.ThreeYrNavper).toFixed(2)} &nbsp;<FontAwesomeIcon icon={faArrowUp} className='fill' /></h4>
                                                                         <p>3 Year Return (%)</p>
                                                                     </div>
                                                                     <div className='inv-btn'>
@@ -168,9 +173,96 @@ function MFTopFunds() {
                                 }
 
                             </div>
-                            <PerformaceGraph />
+                            <div className='card-mn box-shadow graph-show' id='showForm'>
+                                {
+                                    schemedata.length ?
+                                        <div>
+                                            {
+                                                schemedata.map((res, i) => {
+                                                    return (
+                                                        <div className='row' key={res.SchemeCode}>
+                                                            <div className='col-xl-5 col-md-12'>
+                                                                <div className='mn-graph'>
+                                                                    {/* <img  src={res.SchemeBasic.AMCURL} className="img-fluid" alt='' height={400} /> */}
+                                                                </div>
+                                                                <p className='per-ttl'>Showing Funds Performance since Sep 07, 2020</p>
+                                                            </div>
+                                                            <div className='col-xl-7 col-md-12'>
+                                                                <div className='holding-details'>
+                                                                    <div className="row holding-details-row">
+                                                                        <div className="col-lg-4 col-sm-4 col-6 border-right">
+                                                                            <div className="holdings-value">
+                                                                                <div className="holdings-figure">{parseFloat(res.SchemePerformance.StandardDeviation).toFixed(2)}</div>
+                                                                                <div className="details-title">Standard Deviation</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-lg-4 col-sm-4 col-6 border-right">
+                                                                            <div className="holdings-value">
+                                                                                <div className="rupee">₹ <span className="holdings-figure">{(parseFloat(res.SchemePerformance.NetAssets).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' Cr')}</span>
+                                                                                </div>
+                                                                                <div className="details-title">AUM</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-lg-4 col-sm-4 col-6 border-right">
+                                                                            <div className="holdings-value">
+                                                                                <div className="rupee">
+                                                                                    <span className="holdings-figure">{parseFloat((res?.SchemeBasic?.CAGR && res?.SchemeBasic?.CAGR != 0.00 && rest?.SchemeBasic?.CAGR != 'NA') ? res?.SchemeBasic?.CAGR + '%'
+                                                                                        : 'N/A').toFixed(2)}</span>
+                                                                                </div>
+                                                                                <div className="details-title">CAGR {(res?.SchemeBasic?.CAGRYears && res?.SchemeBasic?.CAGRYears
+                                                                                    != '') ? '-' + res?.SchemeBasic?.CAGRYears : ''}</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-lg-4 col-sm-4 col-6 border-right">
+                                                                            <div className="holdings-value">
+                                                                                <div className="holdings-figure">{(res?.SchemeBasic?.LockInPeriod != '' && res?.SchemeBasic?.LockInPeriod
+                                                                                    != 'nil') ? res?.SchemeBasic?.LockInPeriod : 'N/A'}</div>
+                                                                                <div className="details-title">Lock In Period</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-lg-4 col-sm-4  col-6 border-right">
+                                                                            <div className="holdings-value">
+                                                                                <div className="holdings-figure">{(res?.SchemeBasic?.ExpenseRatio) ? res?.SchemeBasic?.ExpenseRatio
+                                                                                    : 'N/A'}</div>
+                                                                                <div className="details-title">Expense Ratio</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-lg-4 col-sm-4  col-6 border-right">
+                                                                            <div className="holdings-value">
+                                                                                <div className="holdings-figure">{(res?.SchemeBasic?.Benchmark) ? res?.SchemeBasic?.Benchmark
+                                                                                    : 'N/A'}</div>
+                                                                                <div className="details-title">BenchMark</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className='row'>
+                                                                        <div className='col-md-12'>
+                                                                            <div className='val-exiload'>
+                                                                                <h4>Exit Load</h4>
+                                                                                <h5>{res.SchemeBasic.ExitLoad}</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </div>
+                                        :
+                                        <div className="text-center">
+                                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                        </div>
+                                }
+                            </div>
+
                             <PortfolioAnalysis />
-                            <FundManager />
+                            <div className='card-mn fund-mang-details'>
+                                <h3>Fund Manager Details</h3>
+                                <h4>Ankit Pande</h4>
+                                <p>Mr. Ankit Pande holds CFA, MBA. He began his career in core banking software with Infosys Finacle. Began his career in equity research in 2011, picking up the (U.S. based) CFA charter in 2015 and MBA from The Chinese University of Hong Kong in 2017. He won the Thomson Reuters StarMine Award for best stock picker in the IT sector in 2014 and is a lifetime member of the Beta Gamma Sigma honour society.</p>
+                            </div>
                             <SchemeComparison />
                             <SchemePerformance />
                             <MfCalculator />
