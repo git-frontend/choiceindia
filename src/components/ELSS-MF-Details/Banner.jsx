@@ -243,6 +243,7 @@ function Banner() {
                                 </div>
                                 <div className='drop-items'>
                                     <select className='form-select' onChange={FilterByStars}>
+                                        <option value="" disabled hidden defaultValue>Stars</option>
                                         <option value="" defaultValue>All</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
