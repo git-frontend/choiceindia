@@ -199,6 +199,15 @@ const rest = {
       return data
     })
   },
+  getAMCList: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getAMCList()
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
 
 
 }

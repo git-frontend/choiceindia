@@ -13,6 +13,31 @@ import Motilal from '../../assets/images/mf-top-funds/motilal-oswal-mutual-fund.
 
 
 function SerachTopFunds() {
+    const [data, setData] = useState([]);
+    const [trigger, setTrigger] = useState();
+    const [filteredData, setFilteredData] = useState([]);
+    const getAMCList = () => {
+        rest.getAMCList().then(
+            res => {
+                setData(res.Response);
+                setFilteredData(res.Response)
+                console.log("res", res.Response)
+            }
+        )
+    }
+    useEffect(() => {
+
+        setTrigger(true)
+        if (trigger === true) {
+            getAMCList()
+        }
+
+    }, [trigger])
+    const fundhandleSearch = (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const filteredResults = data.filter((res) => res.name.toLowerCase().includes(searchTerm));
+        setFilteredData(filteredResults);
+    }
   return (
     <>
     <section className='search-funds-sec' id='showForm'>
@@ -20,7 +45,7 @@ function SerachTopFunds() {
             <div className='row justify-content-end'>
                 <div className='col-xl-5 col-md-6 col-sm-12'>
                     <div className='search-bar'>
-                        <input type="text" className="input-control search-icon"  placeholder="Search"/>
+                        <input type="text" className="input-control search-icon"  placeholder="Search" onChange={fundhandleSearch}/>
                     </div>
                 </div>
             </div>
