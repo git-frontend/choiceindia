@@ -1011,7 +1011,7 @@ function Routing() {
                                 < LazyMFDetails />
                             </React.Suspense>
                         } />
-                         <Route exact path='/amc/id' element={
+                         <Route exact path='/amc/:id' element={
                             <React.Suspense>
                                 < LazyAMCDetails />
                             </React.Suspense>

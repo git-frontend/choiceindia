@@ -7,8 +7,8 @@ function AMCDetails() {
   return (
     <div>
         <Banner/>
-        <SerachAMCDetails/>
-        <MoreContent/>
+        {/* <SerachAMCDetails/> */}
+        {/* <MoreContent/> */}
     </div>
   )
 }

@@ -284,6 +284,7 @@ export class API_URLS {
     fundsManagerUrl='Scheme/fundmanager';
     performancePeerUrl='MFAnalysis/Analysis';
     AMCListUrl='static/FUNDMASTERIMG';
+    AMCListDetails='Scheme/AMCwise';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -973,6 +974,9 @@ export class API_URLS {
     }
     getAMCList(){
         return this.MFBaseURL + this.AMCListUrl
+    }
+    AMCListData(){
+        return this.MFBaseURL + this.AMCListDetails
     }
 
 }

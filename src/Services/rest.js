@@ -208,6 +208,16 @@ const rest = {
       return data
     })
   },
+  AMCListDetails: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.AMCListData()
+    console.log("url",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
 
 
 }
