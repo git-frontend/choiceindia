@@ -3,15 +3,16 @@ import rest from "../../Services/rest";
 import LazyLoader from '../Common-features/LazyLoader';
 import noDataimg from '../../assets/images/no-data.webp';
 import { Link } from "react-router-dom";
-
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function SerachTopFunds() {
     const [data, setData] = useState([]);
     const [trigger, setTrigger] = useState();
     const [filteredData, setFilteredData] = useState([]);
-   
+    const [isloading, setisloading] = useState(true);
     const getAMCList = () => {
         rest.getAMCList().then(
             (res) => {
+                setisloading(false);
                 setData(res.Response);
                 console.log("res", res.Response);
                 const amcArray = [];
@@ -59,34 +60,43 @@ function SerachTopFunds() {
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-md-12'>
-                            {
-                                filteredData.length ?
-                                    <div className='search-items-sec'>
-                                        {
-                                            filteredData.map((res, i) => {
-                                                return (
-                                                    <div className='search-items' key={i}>
-                                                        <Link to={`/amc/${res.param}`} className="circle">
-                                                            <LazyLoader src={res.image} className={'img-fluid'} height={"93"} width={"144"} alt={res.ImageAltTag} />
-                                                        </Link>
-                                                        <h4 className='mf-com-name'>
-                                                            <Link to={`/amc/${res.param}`}>
-                                                                {res.name}
-                                                            </Link>
-                                                        </h4>
-                                                    </div>
+                        {
+                            isloading ?
+                                <div className="text-center">
+                                    <div>
+                                        <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                    </div>
+                                </div>
+                                :
+                                <div className='col-md-12'>
+                                    {
+                                        filteredData.length ?
+                                            <div className='search-items-sec'>
+                                                {
+                                                    filteredData.map((res, i) => {
+                                                        return (
+                                                            <div className='search-items' key={i}>
+                                                                <Link to={`/amc/${res.param}`} className="circle">
+                                                                    <LazyLoader src={res.image} className={'img-fluid'} height={"93"} width={"144"} alt={res.ImageAltTag} />
+                                                                </Link>
+                                                                <h4 className='mf-com-name'>
+                                                                    <Link to={`/amc/${res.param}`}>
+                                                                        {res.name}
+                                                                    </Link>
+                                                                </h4>
+                                                            </div>
 
-                                                )
-                                            })
-                                        }
-                                    </div>
-                                    :
-                                    <div className="text-center">
-                                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                                    </div>
-                            }
-                        </div>
+                                                        )
+                                                    })
+                                                }
+                                            </div>
+                                            :
+                                            <div className="text-center">
+                                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                            </div>
+                                    }
+                                </div>
+                        }
                     </div>
                 </div>
             </section>
