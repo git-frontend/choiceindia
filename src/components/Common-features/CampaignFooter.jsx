@@ -77,7 +77,7 @@ function Footer() {
                     <p>  <strong>Research Disclaimer and Disclosure inter-alia as required under Securities and Exchange Board of India (Research Analysts) Regulations, 2014</strong></p>
                     <p>  Choice  Equity  Broking  Private  Limited  (“CEBPL”)  is  a  registered  Research  Analyst  Entity  (Reg.  No.  INH000000222  )  (hereinafter    be  referred  as  “CEBPL”).  (CIN.    NO.: U65999MH2010PTC198714).</p>
                     <p> <strong>Reg. Address:</strong> Sunil Patodia Tower, J B Nagar, Andheri(East), Mumbai 400099. Tel. No. 022-6707 9999 . </p>
-                    <p><strong>Compliance Officer:</strong> Swati Matkar. Tel. 022-6707 9999-Ext. 896. <br />
+                    <p><strong>Compliance Officer:</strong> Mr. Prashant Salian. Tel.  022-67072310<br />
                       Email- Compliance@choiceindia.com</p>
                     <p><strong>Grievance officer:</strong> Deepika Singhvi  Tel.022-67079999- Ext-834. <br />
                       Email-  ig@choiceindia.com</p>

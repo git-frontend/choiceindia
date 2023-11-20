@@ -119,10 +119,9 @@ function Contactdetail() {
                               </tr>
                               <tr>
                                  <td>Compliance Officer</td>
-                                 <td>Swati Matkar</td>
+                                 <td>Prashant Salian</td>
                                  <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
-                                 <td className="text-left">022-6707 9999
-                                    -Ext. 896</td>
+                                 <td className="text-left">022-67072310</td>
                                  <td className="text-left">Compliance@choiceindia.com</td>
                               </tr>
                               <tr>
