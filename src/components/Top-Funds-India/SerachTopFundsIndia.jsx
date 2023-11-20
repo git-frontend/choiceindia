@@ -3,28 +3,38 @@ import rest from "../../Services/rest";
 import LazyLoader from '../Common-features/LazyLoader';
 import noDataimg from '../../assets/images/no-data.webp';
 import { Link } from "react-router-dom";
-
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function SerachTopFunds() {
     const [data, setData] = useState([]);
     const [trigger, setTrigger] = useState();
     const [filteredData, setFilteredData] = useState([]);
+    const [isloading, setisloading] = useState(true);
+    //for listing top funds
     const goToTopFundsDetail = () => {
         rest.getCategoriesList().then(
             res => {
-                setData(res.Response);
-                setFilteredData(res.Response)
-                console.log("res", res.Response)
+                if (res) {
+                    setisloading(false);
+                    setData(res.Response);
+                    setFilteredData(res.Response)
+                    // console.log("res", res.Response)
+                }
+                else {
+                    setisloading(false);
+                    setData([]);
+                    setFilteredData([])
+                }
             }
         )
     }
     useEffect(() => {
-
         setTrigger(true)
         if (trigger === true) {
             goToTopFundsDetail()
         }
 
     }, [trigger])
+    //for search filter key 
     const fundhandleSearch = (e) => {
         const searchTerm = e.target.value.toLowerCase();
         const filteredResults = data.filter((res) => res.name.toLowerCase().includes(searchTerm));
@@ -43,36 +53,42 @@ function SerachTopFunds() {
                     </div>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <div >
-                                {
-                                    filteredData.length ?
-                                        <div className='search-items-sec' >
-                                            {
-                                                filteredData.map((res, i) => {
-                                                    return (
-                                                        <div key={res.id} className='search-items'>
-                                                            {/* <div className='circle'> */}
-                                                            <Link to={`/top-funds/${res.CategoryURL}`} className="circle">
-                                                                <LazyLoader src={`https://d3vjsh1bzzv98d.cloudfront.net/static/${res.icon_url}`} className={'img-fluid'} height={"130"} width={"130"} alt={res.ImageAltTag} />
-                                                                {/* </div> */}
-
-                                                            </Link>
-                                                            <h4 className='mf-com-name'>
-                                                                <Link to={`/top-funds/${res.CategoryURL}`}>
-                                                                    {res.name}
-                                                                </Link>
-                                                            </h4>
-                                                        </div>
-
-                                                    )
-                                                })
-                                            }
-                                        </div> :
-                                        <div className="text-center">
-                                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                            {
+                                isloading ?
+                                    <div className="text-center">
+                                        <div>
+                                            <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                         </div>
-                                }
-                            </div>
+                                    </div>
+                                    :
+                                    <div >
+                                        {
+                                            filteredData.length ?
+                                                <div className='search-items-sec' >
+                                                    {
+                                                        filteredData.map((res, i) => {
+                                                            return (
+                                                                <div key={res.id} className='search-items'>
+                                                                    <Link to={`/top-funds/${res.CategoryURL}`} className="circle">
+                                                                        <LazyLoader src={`https://d3vjsh1bzzv98d.cloudfront.net/static/${res.icon_url}`} className={'img-fluid'} height={"130"} width={"130"} alt={res.ImageAltTag} />
+                                                                    </Link>
+                                                                    <h4 className='mf-com-name'>
+                                                                        <Link to={`/top-funds/${res.CategoryURL}`}>
+                                                                            {res.name}
+                                                                        </Link>
+                                                                    </h4>
+                                                                </div>
+
+                                                            )
+                                                        })
+                                                    }
+                                                </div> :
+                                                <div className="text-center">
+                                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                                </div>
+                                        }
+                                    </div>
+                            }
                         </div>
                     </div>
                 </div>
