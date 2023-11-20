@@ -493,6 +493,17 @@
         font-weight: 400;
         color: $primary;
     }
+
+    .more-contentamc {
+        p {
+            font-family: $font-family-poppins-regular !important;
+            font-weight: 400 !important;
+            color: $primary !important;
+            font-size: 1.625rem !important;
+            line-height: 1.6 !important;
+        }
+    }
+
 }
 
 .hideform {

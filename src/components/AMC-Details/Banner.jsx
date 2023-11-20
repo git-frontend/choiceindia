@@ -16,7 +16,10 @@ function Banner() {
     const [categoryData, setCategoryData] = useState([]);
     const [filteredCategoryData, setFilteredCategoryData] = useState([])
     const [rendercount, setRenderCount] = useState(false);
+    const [returnsFilter, setReturnsFilter] = useState('');
+    const [sortFilter, setSortFilter] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchTerm, setSearchTerm] = useState('');
     const itemsPerPage = 10;
     const getPosition = () => {
         const element = document.getElementById("showForm");
@@ -95,6 +98,105 @@ function Banner() {
     const schemeReturnsToFixed = (value) => {
         return parseFloat(value).toFixed(2);
     };
+    const FilterByReturns = (e) => {
+        const selectedReturns = e.target.value;
+        console.log("selectedReturns", selectedReturns)
+        setReturnsFilter(selectedReturns);
+        let filteredResults = filteredCategoryData;
+        if (selectedReturns) {
+            filteredResults = filteredCategoryData.filter((amc) => {
+                console.log('amc', amc);
+                switch (selectedReturns) {
+                    case '1 Month':
+                        return amc.Returns.OneMonthReturn !== null;
+                    case '3 Months':
+                        return amc.Returns.ThreeMonthsReturn !== null;
+                    case '6 Months':
+                        return amc.Returns.SixMonthsReturn !== null;
+                    case '1 Year':
+                        return amc.Returns.OneYearReturn !== null;
+                    case '3 Years':
+                        return amc.Returns.ThreeYearReturn !== null;
+                    case '5 Years':
+                        return amc.Returns.FiveYearReturn !== null;
+                    default:
+                        return true;
+                }
+            });
+        }
+        console.log('filteredResults', filteredResults);
+        setFilteredCategoryData(filteredResults);
+    };
+    const handleSortChange = (e) => {
+        const selectedSort = e.target.value;
+        setSortFilter(selectedSort);
+        let sortedResults = [...filteredCategoryData];
+
+        switch (selectedSort) {
+            case 'Returns- Low to High':
+                sortedResults.sort((a, b) => {
+                    const aValue = getReturnForSort(a, returnsFilter);
+                    const bValue = getReturnForSort(b, returnsFilter);
+                    return aValue - bValue;
+                });
+                break;
+            case 'Returns- High to Low':
+                sortedResults.sort((a, b) => {
+                    const aValue = getReturnForSort(a, returnsFilter);
+                    const bValue = getReturnForSort(b, returnsFilter);
+                    return bValue - aValue;
+                });
+                break;
+            case 'Rating- Low to High':
+                sortedResults.sort((a, b) => a.Ratings - b.Ratings);
+                break;
+            case 'Rating- High to Low':
+                sortedResults.sort((a, b) => b.Ratings - a.Ratings);
+                break;
+            default:
+                break;
+        }
+
+        setFilteredCategoryData(sortedResults);
+    };
+
+    const getReturnForSort = (amc, selectedReturns) => {
+        switch (selectedReturns) {
+            case '1 Month':
+                return parseFloat(amc.Returns.OneMonthReturn) || 0;
+            case '3 Months':
+                return parseFloat(amc.Returns.ThreeMonthsReturn) || 0;
+            case '6 Months':
+                return parseFloat(amc.Returns.SixMonthsReturn) || 0;
+            case '1 Year':
+                return parseFloat(amc.Returns.OneYearReturn) || 0;
+            case '3 Years':
+                return parseFloat(amc.Returns.ThreeYearReturn) || 0;
+            case '5 Years':
+                return parseFloat(amc.Returns.FiveYearReturn) || 0;
+            default:
+                return 0;
+        }
+    };
+    const FilterByStars = (e) => {
+        const selectedStars = e.target.value;
+        let filteredResults = categoryData;
+        if (selectedStars) {
+            filteredResults = categoryData.filter((amc) => amc.Ratings.toString() === selectedStars);
+        }
+        setFilteredCategoryData(filteredResults);
+    };
+    const AMISearch = (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        setSearchTerm(searchTerm);
+        const filteredResults = categoryData.filter((amc) => {
+            return (
+                amc.SchemeName.toLowerCase().includes(searchTerm)  
+            );
+        });
+        setFilteredCategoryData(filteredResults);
+        console.log("filteredResults",filteredResults)
+    }
     return (
         <>
             <section className="funds-bannersection">
@@ -131,18 +233,26 @@ function Banner() {
                         <div className='col-xl-4 col-md-5 col-sm-12'>
                             <div className='drop-sec'>
                                 <div className='drop-items'>
-                                    <select className='form-select'>
-                                        <option value="" defaultValue>Returns</option>
-                                        <option value="">High Returns</option>
-                                        <option value="">Low Returns</option>
+                                    <select className='form-select' onChange={FilterByReturns} value={returnsFilter || ''}>
+                                    <option value="" disabled hidden defaultValue>Returns</option>
+                                        <option value="All">All</option>
+                                        <option value="1 Month">1 Month</option>
+                                        <option value="3 Months">3 Months</option>
+                                        <option value="6 Months">6 Months</option>
+                                        <option value="1 Year">1 Year</option>
+                                        <option value="3 Years">3 Years</option>
+                                        <option value="5 Years">5 Years</option>
                                     </select>
                                 </div>
                                 <div className='drop-items'>
-                                    <select className='form-select'>
-                                        <option value="" defaultValue>Stars</option>
-                                        <option value="">5 Star</option>
-                                        <option value="">3 Star</option>
-                                        <option value="">4 Star</option>
+                                <select className='form-select' onChange={FilterByStars}>
+                                        <option value="" disabled hidden defaultValue>Stars</option>
+                                        <option value="" defaultValue>All</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
                             </div>
@@ -150,14 +260,16 @@ function Banner() {
                         <div className='col-xl-5 col-md-7 col-sm-12'>
                             <div className='serch-drp-sec'>
                                 <div className='search-bar-items left-sec'>
-                                    <input type="text" className="input-control search-icon" placeholder="Search" />
+                                    <input type="text" className="input-control search-icon" placeholder="Search" onChange={AMISearch} />
                                 </div>
                                 <div className='search-bar-items right-sec'>
-                                    <select className='form-select'>
-                                        <option value="" defaultValue>Sort</option>
-                                        <option value="">10</option>
-                                        <option value="">20</option>
-                                        <option value="">50</option>
+                                <select className='form-select' onChange={handleSortChange} value={sortFilter ||''}>
+                                        <option value="" disabled hidden defaultValue>Sort</option>
+                                        <option value="" defaultValue>All</option>
+                                        <option value="Returns- Low to High">Returns- Low to High</option>
+                                        <option value="Returns- High to Low">Returns- High to Low</option>
+                                        <option value="Rating- Low to High">Rating- Low to High</option>
+                                        <option value="Rating- High to Low">Rating- High to Low</option>
                                     </select>
                                 </div>
                             </div>
@@ -178,8 +290,8 @@ function Banner() {
                                                 <h3>{amc.SchemeName}</h3>
                                                 <p className='category'>
                                                     <span>Category : {amc.CategoryName}</span>
-                                                    <span className='brder-left'>NAV : ₹{parseFloat(amc.Returns.CurrentNav).toFixed(2)}</span>
-                                                    <span className='brder-left'>AUM: ₹{(parseFloat(amc.Returns.NetAsset).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'Cr.')}</span>
+                                                    <span className='brder-left'>NAV : ₹{parseFloat(amc?.Returns?.CurrentNav).toFixed(2)}</span>
+                                                    <span className='brder-left'>AUM: ₹{(parseFloat(amc?.Returns?.NetAsset).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'Cr.')}</span>
                                                 </p>
                                             </div>
                                             <div className='flex-i'>
@@ -266,12 +378,16 @@ function Banner() {
             <section className='more-content-sec'>
                 <div className='container'>
                     <div className='row'>
-                        <div className='col-md-12'>
-                            <h2 className='title-first'><span>Invest</span> in HDFC Mutual Fund Schemes Online</h2>
-                            <p className='seo-para'>HDFC Mutual Fund often referred to as HDFC MF is among the largest Asset Management Companies in India. The HDFC Mutual Fund manages an AUM of over Rs. 3,35,515 Crores spread in 100+ Schemes as of December 31, 2018.</p>
-                            <p className='seo-para'>HDFC AMC’s central business is Mutual Fund schemes across various asset classes, portfolio management and advisory services. The AMC has more than 140+ HDFC Mutual Fund Investor Services and 36+ branches as Points of Acceptance for transactions of its schemes.</p>
-                            <p className='seo-para'>You can view the entire HDFC Mutual Fund Online and begin your investment journey in one of the leading fond houses. Browse through all HDFC Mutual Fund Schemes and see the latest HDFC Mutual Fund NAV and its current AUM as well as check the historical HDFC Mutual Fund Returns displayed for the past 1-month, 3-months, 6-months, 1-year, 3-years and 5 years. For each HDFC Scheme, we share the details of its Holdings segregated into Market Cap, Sectors and Companies. Rated by our in-house experts, start your HDFC SIP transactions or make a Lump sum Investments to create wealth.</p>
-                        </div>
+                        {
+                            amcWiseData?.map((res) => {
+                                return (
+                                    <div className='col-md-12'>
+                                        <h2 className='title-first'><span>Invest</span> in {res.AMCName ? res.AMCName + ' Schemes' : 'Mutual Fund Houses'} Online</h2>
+                                        <div className="more-contentamc" dangerouslySetInnerHTML={{ __html: res.AMCDescription }} />
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </section>
