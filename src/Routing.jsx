@@ -1011,16 +1011,11 @@ function Routing() {
                                 < LazyMFDetails />
                             </React.Suspense>
                         } />
-                         <Route exact path='/mf/amc-details' element={
+                         <Route exact path='/amc/id' element={
                             <React.Suspense>
                                 < LazyAMCDetails />
                             </React.Suspense>
                         } />
-                         {/* <Route exact path='/mf/elss-mutual-funds' element={
-                            <React.Suspense>
-                                < LazyELSSDetails />
-                            </React.Suspense>
-                        } /> */}
                         <Route exact path='/top-funds/:id' element={
                             <React.Suspense>
                                  < LazyELSSDetails />
