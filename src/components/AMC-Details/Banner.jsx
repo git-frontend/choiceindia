@@ -76,25 +76,7 @@ function Banner() {
             }
         );
     };
-    const renderPageNumbers = () => {
-        const pageNumbers = [];
-        const maxPagesToShow = 5;
-
-        for (let i = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2)); i <= Math.min(totalPages, currentPage + Math.floor(maxPagesToShow / 2)); i++) {
-            pageNumbers.push(
-                <button
-                    key={i}
-                    onClick={() => setCurrentPage(i)}
-                    className={currentPage === i ? "pagenum active" : " pagenum"}
-                    disabled={currentPage === i}
-                >
-                    {i}
-                </button>
-            );
-        }
-
-        return pageNumbers;
-    };
+   
     const schemeReturnsToFixed = (value) => {
         return parseFloat(value).toFixed(2);
     };
@@ -191,12 +173,39 @@ function Banner() {
         setSearchTerm(searchTerm);
         const filteredResults = categoryData.filter((amc) => {
             return (
-                amc.SchemeName.toLowerCase().includes(searchTerm)  
+                amc.SchemeName.toLowerCase().includes(searchTerm)
             );
         });
         setFilteredCategoryData(filteredResults);
-        console.log("filteredResults",filteredResults)
+        console.log("filteredResults", filteredResults)
     }
+    const renderPageNumbers = () => {
+        const displayRange = 3; 
+        const totalPages = Math.ceil(filteredCategoryData.length / itemsPerPage);
+
+        let startPage = Math.max(1, currentPage - displayRange);
+        let endPage = Math.min(totalPages, currentPage + displayRange);
+
+        const difference = displayRange * 2 + 1 - (endPage - startPage + 1);
+        if (difference > 0) {
+            startPage = Math.max(1, startPage - difference);
+            endPage = Math.min(totalPages, endPage + difference);
+        }
+
+        return (
+            <ul className="pagination">
+                {Array.from({ length: endPage - startPage + 1 }, (_, index) => (
+                    <li
+                        key={startPage + index}
+                        className={currentPage === startPage + index ? "active" : ""}
+                        onClick={() => setCurrentPage(startPage + index)}
+                    >
+                        {startPage + index}
+                    </li>
+                ))}
+            </ul>
+        );
+    };
     return (
         <>
             <section className="funds-bannersection">
@@ -234,7 +243,7 @@ function Banner() {
                             <div className='drop-sec'>
                                 <div className='drop-items'>
                                     <select className='form-select' onChange={FilterByReturns} value={returnsFilter || ''}>
-                                    <option value="" disabled hidden defaultValue>Returns</option>
+                                        <option value="" disabled hidden defaultValue>Returns</option>
                                         <option value="All">All</option>
                                         <option value="1 Month">1 Month</option>
                                         <option value="3 Months">3 Months</option>
@@ -245,7 +254,7 @@ function Banner() {
                                     </select>
                                 </div>
                                 <div className='drop-items'>
-                                <select className='form-select' onChange={FilterByStars}>
+                                    <select className='form-select' onChange={FilterByStars}>
                                         <option value="" disabled hidden defaultValue>Stars</option>
                                         <option value="" defaultValue>All</option>
                                         <option value="1">1</option>
@@ -263,7 +272,7 @@ function Banner() {
                                     <input type="text" className="input-control search-icon" placeholder="Search" onChange={AMISearch} />
                                 </div>
                                 <div className='search-bar-items right-sec'>
-                                <select className='form-select' onChange={handleSortChange} value={sortFilter ||''}>
+                                    <select className='form-select' onChange={handleSortChange} value={sortFilter || ''}>
                                         <option value="" disabled hidden defaultValue>Sort</option>
                                         <option value="" defaultValue>All</option>
                                         <option value="Returns- Low to High">Returns- Low to High</option>
@@ -311,15 +320,15 @@ function Banner() {
                                                 <ul className='fundlist-flex'>
                                                     <li className='fundlist'>
                                                         <h5 className='time-period'>1M</h5>
-                                                        <h5>{schemeReturnsToFixed(amc.Returns.OneMonthReturn)}%</h5>
+                                                        <h5>{schemeReturnsToFixed(amc?.Returns?.OneMonthReturn)}%</h5>
                                                     </li>
                                                     <li className='fundlist'>
                                                         <h5 className='time-period'>3M</h5>
-                                                        <h5>{schemeReturnsToFixed(amc.Returns.ThreeMonthsReturn)}%</h5>
+                                                        <h5>{schemeReturnsToFixed(amc?.Returns?.ThreeMonthsReturn)}%</h5>
                                                     </li>
                                                     <li className='fundlist'>
                                                         <h5 className='time-period'>6M</h5>
-                                                        <h5>{schemeReturnsToFixed(amc.Returns.SixMonthsReturn)}%</h5>
+                                                        <h5>{schemeReturnsToFixed(amc?.Returns?.SixMonthsReturn)}%</h5>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -327,15 +336,15 @@ function Banner() {
                                                 <ul className='fundlist-flex border-left'>
                                                     <li className='fundlist text-center'>
                                                         <h5 className='time-period'>1Y</h5>
-                                                        <h5>{schemeReturnsToFixed(amc.Returns.OneYearReturn)}%</h5>
+                                                        <h5>{schemeReturnsToFixed(amc?.Returns?.OneYearReturn)}%</h5>
                                                     </li>
                                                     <li className='fundlist'>
                                                         <h5 className='time-period'>3Y</h5>
-                                                        <h5>{schemeReturnsToFixed(amc.Returns.ThreeYearReturn)}%</h5>
+                                                        <h5>{schemeReturnsToFixed(amc?.Returns?.ThreeYearReturn)}%</h5>
                                                     </li>
                                                     <li className='fundlist'>
                                                         <h5 className='time-period'>5Y</h5>
-                                                        <h5>{schemeReturnsToFixed(amc.Returns.FiveYearReturn)}%</h5>
+                                                        <h5>{schemeReturnsToFixed(amc?.Returns?.FiveYearReturn)}%</h5>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -351,25 +360,23 @@ function Banner() {
 
                             <span className='bg-before'></span>
                             <div className='wrapper'>
-                                <ul className='pagination-sec'>
-                                    <li onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
+                                <div className='pagination-sec'>
+                                    <button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
                                         <LazyLoader src={PreSingleArrow} className="img-fluid" width={20} height={29} />
-                                    </li>
-                                    <li onClick={() => setCurrentPage(currentPage - 2)} disabled={currentPage <= 2}>
+                                    </button>
+                                    <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage <= 2}>
                                         <LazyLoader src={PreDobbleArrow} className="img-fluid" width={25} height={29} />
-                                    </li>
-                                    <li>
-                                        <div className="pagination">
-                                            {renderPageNumbers()}
-                                        </div>
-                                    </li>
-                                    <li onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
+                                    </button>
+                                    <div className="pagenum">
+                                        {renderPageNumbers()}
+                                    </div>
+                                    <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
                                         <LazyLoader src={NextDobbleArrow} className="img-fluid" width={25} height={29} />
-                                    </li>
-                                    <li onClick={() => setCurrentPage(currentPage + 2)} disabled={currentPage >= totalPages - 1}>
+                                    </button>
+                                    <button onClick={() => setCurrentPage(currentPage + 2)} disabled={currentPage >= totalPages - 1}>
                                         <LazyLoader src={NextSingleArrow} className="img-fluid" width={20} height={29} />
-                                    </li>
-                                </ul>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
