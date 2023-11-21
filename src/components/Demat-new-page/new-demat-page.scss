@@ -123,20 +123,34 @@
                     margin-top: 2rem;
                 }
             }
-            
+            .list-show{
+                height: 385px;
+                overflow: auto;
+            }
             .list-links{
                 padding: 0;
                 margin: 0;
                 direction: rtl;
-                height: 400px;
-                overflow: auto;
-                padding-left: 0.8rem;
+                
+                position: relative;
+                &::before{
+                    content: '';
+                    width: 5px;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: #fff4c480;
+                    border-radius: 10px;
+                }
                 >li{
                     list-style: none;
                     direction: ltr;
                     margin-bottom: 1.25rem;
                     text-align: left;
                     cursor: pointer;
+                    position: relative;
                     a{
                         text-decoration: none;
                         direction: ltr;
@@ -144,17 +158,31 @@
                         font-size: 1.175rem;
                         line-height: 1.5;
                         display: block;
+                        padding-left: 1rem;
                         font-family: $font-family-poppins-regular;
                         &.active{
                             color: $primary;
                             font-family: $font-family-poppins-semibold;
+                            &::before{
+                                content: '';
+                                width: 5px;
+                                height: 100%;
+                                display: block;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                border-radius: 10px;
+                                background: $yellowColor;
+                            }
                         }
                     }
                     &.active{
                         a{
                             color: $primary;
                             font-family: $font-family-poppins-semibold;
+                            
                         }
+                      
                     }
                 }
             }
@@ -525,7 +553,7 @@
     &::-webkit-scrollbar-track {
         
         border-radius: 10px;
-        background-color: #fff4c480;
+        background-color: $whiteColor;
     }
 
     &::-webkit-scrollbar {
@@ -535,7 +563,7 @@
 
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        background-color:$yellowColor ;
+        background-color:$whiteColor ;
     }
 }
 
