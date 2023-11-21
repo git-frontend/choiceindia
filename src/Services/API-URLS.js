@@ -285,6 +285,7 @@ export class API_URLS {
     performancePeerUrl='MFAnalysis/Analysis';
     AMCListUrl='static/FUNDMASTERIMG';
     AMCListDetails='Scheme/AMCwise';
+    sipLumpsumCalcUrl='Scheme/sipcalculator';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -977,6 +978,9 @@ export class API_URLS {
     }
     AMCListData(){
         return this.MFBaseURL + this.AMCListDetails
+    }
+    calculatesipLump(){
+        return this.MFBaseURL + this.sipLumpsumCalcUrl
     }
 
 }

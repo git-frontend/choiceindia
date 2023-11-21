@@ -14,7 +14,7 @@ import Form from 'react-bootstrap/Form';
 
 function MFTopFunds() {
     const [name, setName] = useState('hideform');
-    const [value,onChange]=useState(0);
+    const [value, onChange] = useState(0);
     const [name2, setName2] = useState('hideform2');
     const [rendercount, setRenderCount] = useState(false);
     const [schemedata, setSchemedata] = useState([]);
@@ -23,6 +23,13 @@ function MFTopFunds() {
     const [peerComparisonResponseObject, setPeerComparisonResponseObject] = useState([]);
     const disableLumpsum = false;
     const disableSIP = false;
+    const [typeOfCalc, setTypeOfCalc] = useState(true);
+    const [noOfMonths, setNoOfMonths] = useState(6);
+    const [minInvested, setMinInvested] = useState("500");
+    const [sipLumpsumdta, setSipLumpsumdta] = useState([]);
+    const [errorMsg, setErrorMsg] = useState('');
+    const [monthsLabel, setMonthsLabel] = useState('');
+    const [someRange, setSomeRange] = useState(0.5);
     const getPosition = () => {
         const element = document.getElementById("showForm");
         if (element) {
@@ -43,6 +50,7 @@ function MFTopFunds() {
             initializeschemeData()
             FundManagerDetails();
             getPerformancePeerComparisonData()
+            sipLumpsumCalc()
         }
     }, [rendercount]);
     const getPosition2 = () => {
@@ -127,75 +135,7 @@ function MFTopFunds() {
 
             });
     }
-    // const getPerformancePeerComparisonData = () => {
-    //     const urlIdentity = window.location.pathname.split('/scheme/')[1];
-    //     const arr = urlIdentity.split('-').slice(-2)
-    //     const request = {
-    //         "AnalysisType": "6",
-    //         "SchemeCode": arr[0],
-    //         "SchemePlanCode": arr[1],
-    //         "SchemeDuration": "Monthly",
-    //         "Count": 5
-    //     }
-    //     rest.getPerformancePeerComparisonData(request).then(
-    //         res => {
-    //             if (res.Response != null && res.Response.PeerComparison) {
-    //                 let performanceResponseObject = [];
-    //                 let list = [
-    //                     { label: "1m", key: "OneMonthReturn" },
-    //                     { label: "6m", key: "SixMonthsReturn" },
-    //                     { label: "1y", key: "OneYearReturn" },
-    //                     { label: "3y", key: "ThreeYearReturn" }
-    //                 ];
 
-    //                 let a = res.Response.Performance;
-    //                 console.log("a",a)
-    //                 let updatedPerformanceResponseObject = list.map((obj) => {
-    //                     let result = { label: obj.label };
-
-    //                     if (a[0]) {
-    //                         result["FundReturn"] = Number(a[0][obj.key]);
-    //                         result["CategoryAvg"] = (a[1]) ? Number(a[1][obj.key]) : 0;
-    //                         result["CategoryBest"] = (a[2]) ? Number(a[2][obj.key]) : 0;
-    //                         performanceResponseObject.push(result);
-    //                     }
-    //                     return null;
-    //                 });
-
-    //                 setPerformanceResponseObject(updatedPerformanceResponseObject);
-
-    //                 let peerComparisonResponseObjectCopy = [...res.Response.PeerComparison.lstListPeers];
-    //                 peerComparisonResponseObjectCopy.forEach((e, i) => {
-    //                     let paramSplit = e["Scheme"].split("-");
-    //                     e["SchemeCode"] = paramSplit[0];
-    //                     e["SchemePlanCode"] = paramSplit[1];
-    //                     e["OneYearReturn"] = (e["OneYearReturn"] && Number(e["OneYearReturn"] != 0)) ?
-    //                         parseFloat(e["OneYearReturn"]).toFixed(2) + '%' : "N/A";
-    //                     e["ThreeYearReturn"] = (e["OneYearReturn"] && Number(e["ThreeYearReturn"] != 0)) ?
-    //                         parseFloat(e["ThreeYearReturn"]).toFixed(2) + '%' : "N/A";
-    //                     e["Size"] = Math.floor(e["Size"]);
-    //                     e["Size"] = (e["Size"]) ? e["Size"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : e["Size"];
-    //                 });
-
-    //                 let positiveK = []; let negativeK = [], zeroK = [];
-    //                 peerComparisonResponseObjectCopy.forEach((e, i) => {
-    //                     if (e.nDistance < 0) negativeK.push(e);
-    //                     else if (e.nDistance > 0) positiveK.push(e);
-    //                     else zeroK = [e];
-    //                 });
-
-    //                 positiveK.sort((a, b) => a.nDistance <= b.nDistance);
-    //                 negativeK.sort((a, b) => a.nDistance <= b.nDistance);
-
-    //                 let finalR = [];
-    //                 finalR = finalR.concat(positiveK).concat(zeroK).concat(negativeK);
-    //                 setPeerComparisonResponseObject(finalR);
-    //             }
-    //             //   sipLumpsumCalc()
-    //         }).catch((error) => {
-
-    //         });
-    // }
     const optimezeString = (data) => {
         return data.toLowerCase().replace(/\&|[\-|\s]+/g, '-');
     }
@@ -213,7 +153,7 @@ function MFTopFunds() {
         rest.getPerformancePeerComparisonData(request).then(
             res => {
                 if (res.Response != null && res.Response.PeerComparison) {
-                    console.log("API Response:", res.Response);
+                    // console.log("API Response:", res.Response);
 
                     // Check if Performance data is present
                     if (res.Response.Performance && res.Response.Performance.length > 0) {
@@ -286,7 +226,57 @@ function MFTopFunds() {
             });
     }
 
+    const sipLumpsumCalc = (event, switchChange) => {
+        let tempstore;
+        const urlIdentity = window.location.pathname.split('/scheme/')[1];
+        const arr = urlIdentity.split('-').slice(-2);
 
+        if (switchChange) {
+            setTypeOfCalc(true);
+        } else {
+            setTypeOfCalc(false);
+        }
+
+        if (minInvested < 1) {
+            setErrorMsg('Enter a valid amount');
+            return false;
+        } else {
+            setErrorMsg('');
+        }
+
+        if (noOfMonths <= 6) {
+            tempstore = noOfMonths;
+            setMonthsLabel(`${tempstore} Month${tempstore > 1 ? 's' : ''}`);
+        } else {
+            tempstore = noOfMonths / 12;
+            setMonthsLabel(`${tempstore} Year${tempstore > 1 ? 's' : ''}`);
+        }
+
+        let request = {
+            SchemeCode: arr[0],
+            SchemePlanCode: arr[1],
+            NoOfMonths: noOfMonths.toString(),
+            AmtInvested: minInvested,
+            TypeOfCalc: typeOfCalc ? 'SIP' : 'Lumpsum',
+        };
+
+        rest.sipLumpsumCalc(request)
+            .then((res) => {
+                if (res.Response) {
+                    setSipLumpsumdta([res.Response]);
+                } else {
+                    setSipLumpsumdta([]);
+                }
+                console.log('sipLumpsumCalc res', res);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });      
+    }
+    const fillPercentageloan = ((noOfMonths - 6) / (60 - 6)) * 100;
+    const fillStyle = {
+        background: `linear-gradient(to right, #D9D9D9 ${fillPercentageloan}%, #D9D9D9 ${fillPercentageloan}%)`,
+    };
     return (
         <div>
             <section className="fund-listing-details">
@@ -529,7 +519,7 @@ function MFTopFunds() {
                                                 <tbody >
                                                     {
                                                         performanceResponseObject.map((res, i) => {
-                                                            console.log("performanceResponseObject", res)
+                                                            // console.log("performanceResponseObject", res)
                                                             return (
                                                                 <tr key={i}>
                                                                     <td>{res.label}</td>
@@ -555,69 +545,98 @@ function MFTopFunds() {
                                     <div className='col-md-6'>
                                         <h3 className='title-secnd'>Lumpsum & SIP Calculator</h3>
                                     </div>
-                                    {/* <div className='col-md-6'>
+                                    <div className='col-md-6'>
                                         <div className="toggle">
-                                            <span className={`${!exchangeToggle ? 'selected' : ''}`}>MCX</span>
+                                            <span className={`${typeOfCalc ? 'selected' : ''}`}>Lumpsum</span>
                                             <input
                                                 type="checkbox"
                                                 id="exchangeToggle"
                                                 name="exchangeToggle"
-                                                checked={exchangeToggle}
-                                                onChange={onToggleChange}
+                                                checked={typeOfCalc}
+                                                onChange={(e) => setTypeOfCalc(e.target.checked)}
                                             />
                                             <label></label>
-                                            <span className={`${exchangeToggle ? 'selected' : ''}`}>NCDX</span>
+                                            <span className={`${!typeOfCalc ? 'selected' : ''}`}>SIP</span>
                                         </div>
-                                    </div> */}
+                                    </div>
                                 </div>
                                 <div className='row'>
                                     <div className='col-md-12'>
-                                        <p className='midl-txt'>SIP of <strong>₹500</strong> for <strong>48 Months</strong> would have gained <strong>83.16%</strong> & its value would have been <strong>₹43,957</strong></p>
+                                        <div>
 
+                                            {
+                                                sipLumpsumdta && sipLumpsumdta.map((res, i) => {
+                                                    return (
+                                                        <div key={i}>
+                                                            <p className='midl-txt'>SIP of <strong>₹{minInvested}</strong> for <strong>{noOfMonths} Months</strong> would have gained <strong>{(res.AbsoluteProfit).toFixed(2)}%</strong> & its value would have been <strong>₹{Math.floor(res.CurrentValue)}</strong></p>
+                                                        </div>
+
+                                                    )
+                                                })
+                                            }
+                                        </div>
                                         <div className='accordian-sec'>
-                                            <Accordion defaultActiveKey="0">
-                                                <Accordion.Item eventKey="0" >
-                                                    <Accordion.Header as="h3" className='faq-header'>
-                                                    </Accordion.Header>
+                                            <Accordion defaultActiveKey='0'>
+                                                <Accordion.Item eventKey='0'>
+                                                    <Accordion.Header as='h3' className='faq-header'></Accordion.Header>
                                                     <Accordion.Body>
                                                         <div className='invst-amt-hirizon'>
                                                             <div className='form-lft'>
-                                                                <Form autoComplete="off">
-                                                                    <Form.Group className="formgrp" controlId="formBasicEmail">
-                                                                        <Form.Label className="formlabel">Enter Amount you Want to Invest </Form.Label>
+                                                                <Form autoComplete='off'>
+                                                                    <Form.Group className='formgrp' controlId='formBasicEmail'>
+                                                                        <Form.Label className='formlabel'>
+                                                                            Enter Amount you Want to Invest{' '}
+                                                                        </Form.Label>
                                                                         <div className='amt-enter'>
-                                                                            <Form.Control type="text" name="firstName" value='500' className="formcontrol" />
+                                                                            <Form.Control
+                                                                                type='text'
+                                                                                name='firstName'
+                                                                                value={minInvested}
+                                                                                maxLength='12'
+                                                                                className='formcontrol'
+                                                                                onChange={(e) => setMinInvested(e.target.value)}
+                                                                            />
                                                                         </div>
-                                                                        <span className="text-danger"> </span>
+                                                                        <span className='text-danger'>{errorMsg} </span>
                                                                     </Form.Group>
                                                                 </Form>
                                                             </div>
                                                             <div className='horizon-slider'>
                                                                 <div className='row align-items-center'>
                                                                     <div className='col-md-8'>
-                                                                        <div className="slidecontainer">
+                                                                        <div className='slidecontainer'>
                                                                             <h6>Investment Horizon</h6>
-                                                                            <div className="middle">
-                                                                                <div className="slider-container">
-                                                                                    <span className="bar">
-                                                                                        <span className="fill" style={{ width: `${value}%` }}></span>
+                                                                            <div className='middle'>
+                                                                                <div className='slider-container'>
+                                                                                    <span className='bar'>
+                                                                                        <span
+                                                                                            className='fill'
+                                                                                            style={fillStyle}
+                                                                                        ></span>
                                                                                     </span>
-                                                                                    <input type="range" className="slider" id="myRange" min="0" max="100" value={value}
-                                                                                        onChange={({ target: { value: radius } }) => {
-                                                                                            onChange(radius);
-                                                                                        }} />
+                                                                                    <input
+                                                                                        type='range'
+                                                                                        className='slider'
+                                                                                        id='myRange'
+                                                                                        min='6'
+                                                                                        max='60'
+                                                                                        step='6'
+                                                                                        value={noOfMonths}
+                                                                                        onChange={(e) => {
+                                                                                            setNoOfMonths(e.target.value);
+                                                                                            sipLumpsumCalc(e, true);
+                                                                                        }}
+                                                                                    />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div className='col-md-4'>
                                                                         <div className='float-right'>
-                                                                            <span>4Yr</span>
+                                                                            <span>{monthsLabel}</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
-
                                                             </div>
                                                         </div>
                                                     </Accordion.Body>

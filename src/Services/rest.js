@@ -212,6 +212,16 @@ const rest = {
 
     let api = new API_URLS()
     let url = api.AMCListData()
+    // console.log("url",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  sipLumpsumCalc: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.calculatesipLump()
     console.log("url",url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       //  console.log("datads",data)
