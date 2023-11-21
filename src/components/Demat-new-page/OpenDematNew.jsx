@@ -163,8 +163,8 @@ function OpenDematNew() {
                                         </svg>
                                     </button>
                                 </div>
-                                <div className={isActive2 ? 'list-hide' : 'list-show'} id="style-sroll">
-                                    <ul className="list-links" >
+                                <div className={isActive2 ? 'list-hide' : 'list-show'} >
+                                    <ul className="list-links" id="style-sroll">
                                         <li><a className={isActive4=='id0' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id0') }}>What is a Demat Account?</a></li>
                                         <li><a className={isActive4=='id1' ? " active": " " } onClick={()=>{ scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id1'); }}>How Does a Demat Account Work?</a></li>
                                         <li><a className={isActive4=='id2' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id2')}}>Types of Demat Accounts in India</a></li>
