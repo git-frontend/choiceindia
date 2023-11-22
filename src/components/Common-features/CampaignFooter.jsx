@@ -47,14 +47,14 @@ function Footer() {
             <div className="container">
               <div className="row">
                 <div className="col-md-12">
-                <div className="article">
+                  <div className="article">
                     <p><strong>Choiceinternational. CIN - L67190MH1993PLC071117</strong><br />
                       <strong>Choice Equity Broking Private Limited</strong>: SEBI Reg No. Broking - INZ000160131 ( BSE - 3299 )  | ( NSE - 13773 ) | ( MSEI - 73200 ) | ( MCX - 40585 ) | ( NCDEX - 01006 ). <br /> Depository Participant SEBI Reg. No. - IN - DP - 84 - 2015 , DP ID CDSL - 12066900 , NSDL ID - IN301895. Research Analyst - INH000000222<br />
                       <strong>Choice Wealth Private Limited</strong>: AMFI - Registered Mutual Fund Distributor. Association of Mutual Funds in India Registration Number - ARN - 78908. <br /> Pension Fund Regulatory and Development Authority (PFRDA) - POPSE52022022 | Affiliated with POP HDFC Pension Management Company.<br />
                       <strong>Choice Finserv Private Limited</strong>: NBFC Registration Number : N - 13.02216 <br />
                     </p>
                     <p>
-                      <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024 
+                      <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024
                       | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
                       For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> | Online Dispute Resolution Link: <a href="https://smartodr.in/login" target="_blank">https://smartodr.in/login</a></p>
@@ -77,7 +77,8 @@ function Footer() {
                     <p>  <strong>Research Disclaimer and Disclosure inter-alia as required under Securities and Exchange Board of India (Research Analysts) Regulations, 2014</strong></p>
                     <p>  Choice  Equity  Broking  Private  Limited  (“CEBPL”)  is  a  registered  Research  Analyst  Entity  (Reg.  No.  INH000000222  )  (hereinafter    be  referred  as  “CEBPL”).  (CIN.    NO.: U65999MH2010PTC198714).</p>
                     <p> <strong>Reg. Address:</strong> Sunil Patodia Tower, J B Nagar, Andheri(East), Mumbai 400099. Tel. No. 022-6707 9999 . </p>
-                    <p><strong>Compliance Officer:</strong> Mr. Prashant Salian. Tel.  022-67072310<br />
+                    <p><strong>Compliance Officer:</strong> Mr. Prashant Salian. Tel.  022-67079999
+                      - Ext-2310<br />
                       Email- Compliance@choiceindia.com</p>
                     <p><strong>Grievance officer:</strong> Deepika Singhvi  Tel.022-67079999- Ext-834. <br />
                       Email-  ig@choiceindia.com</p>
