@@ -286,6 +286,7 @@ export class API_URLS {
     AMCListUrl='static/FUNDMASTERIMG';
     AMCListDetails='Scheme/AMCwise';
     sipLumpsumCalcUrl='Scheme/sipcalculator';
+    schemeDisributionUrl='Scheme/distribution';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -981,6 +982,9 @@ export class API_URLS {
     }
     calculatesipLump(){
         return this.MFBaseURL + this.sipLumpsumCalcUrl
+    }
+    getSchemeDistributionurl(){
+        return this.MFBaseURL + this.schemeDisributionUrl
     }
 
 }

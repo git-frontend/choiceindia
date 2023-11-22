@@ -77,7 +77,7 @@ const rest = {
       headers: {
         'x-api-key': 'B62664943BAA286B21C66BA9A614D',
         'Content-Type': 'application/json;charset=UTF-8',
-        'Accept':'application/json',
+        'Accept': 'application/json',
         'ip': ipAddress
 
       }
@@ -136,12 +136,12 @@ const rest = {
     const api = new API_URLS();
     const url = api.getMarginCalculatorURL(segmentId, token_qty);
     const headers = {
-      'x-api-key':'B62664943BAA286B21C66BA9A614D',
+      'x-api-key': 'B62664943BAA286B21C66BA9A614D',
       'Content-Type': 'application/json',
       'Accept': 'application/json',
     };
 
-    return axios.get(url, { headers }) 
+    return axios.get(url, { headers })
       .then(({ data }) => {
         return data;
       })
@@ -193,7 +193,7 @@ const rest = {
 
     let api = new API_URLS()
     let url = api.getPerformancePeerComparisonData()
-     console.log("getPerformancePeerComparisonData",url)
+    console.log("getPerformancePeerComparisonData", url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       //  console.log("datads",data)
       return data
@@ -222,7 +222,16 @@ const rest = {
 
     let api = new API_URLS()
     let url = api.calculatesipLump()
-    console.log("url",url)
+    // console.log("url", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getSchemeDistributionData: function (postdata) {
+    let api = new API_URLS()
+    let url = api.getSchemeDistributionurl()
+    // console.log("url", url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       //  console.log("datads",data)
       return data
