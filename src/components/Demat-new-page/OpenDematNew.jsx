@@ -111,10 +111,10 @@ function OpenDematNew() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-          // let parser = new DOMParser();
-          // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-          // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
-          document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
+            document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
+            document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
           // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
           document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
@@ -157,11 +157,11 @@ function OpenDematNew() {
                             <div className="">
                                 <h3>Table of Contents</h3>
                                 <div className="arrow-sh" onClick={handleClick2}>
-                                    <button className={isActive2 ? 'ar-up' : 'ar-down'}>
+                                    <span className={isActive2 ? 'ar-up' : 'ar-down'}>
                                         <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M13 7L7 1L1 7" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                    </button>
+                                    </span>
                                 </div>
                                 <div className={isActive2 ? 'list-hide' : 'list-show'} >
                                     <ul className="list-links" id="style-sroll">
@@ -206,11 +206,11 @@ function OpenDematNew() {
                             <div className="hide-fr-desk">
                                 <h3>Table of Contents</h3>
                                 <div className="arrow-sh" onClick={handleClick2}>
-                                    <button className={isActive2 ? 'ar-up' : 'ar-down'}>
+                                    <span className={isActive2 ? 'ar-up' : 'ar-down'}>
                                         <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M13 7L7 1L1 7" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                    </button>
+                                    </span>
                                 </div>
                                 <div className={isActive2 ? 'list-hide' : 'list-show'}>
                                     <ul className="list-links" id="style-sroll">
@@ -542,8 +542,8 @@ Upon activation of your Demat account, submit your physical securities through a
                                 </ol>
                                 <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat accounts</a>, making it cost-effective for investors.</p>
                                 <div className="flex-image">
-                                    <img src={openingcharges} className="img-fluid" alt={"Choice Demat Account Opening Charges"} width={"670"} height={"882"} />
-                                    <img src={amccharges} className="img-fluid" alt={"Choice AMC Charges"}  width={"670"} height={"882"}/>
+                                    <img src={openingcharges} className="img-fluid" alt={"Choice Demat Account Opening Charges"} width={"356"} height={"485"} />
+                                    <img src={amccharges} className="img-fluid" alt={"Choice AMC Charges"}  width={"356"} height={"485"}/>
                                 </div>
                             </InView>
                             <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id9')} id="id9">
