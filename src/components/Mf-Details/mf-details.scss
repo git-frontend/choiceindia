@@ -3,781 +3,981 @@
 @import "../../assets/css/fonts.scss";
 
 
-.fund-listing-details{
+.fund-listing-details {
     padding: 2rem 0;
+
     @media (max-width:$sm) {
         overflow: hidden;
-        .title-secnd{
+
+        .title-secnd {
             text-align: center !important;
         }
     }
-    .scroll-top-account{
+
+    .scroll-top-account {
         display: block;
         text-decoration: none;
     }
-    .card-mn{
+
+    .card-mn {
         padding: 3rem 2rem;
         margin: 5rem 0;
         border-radius: 12px;
+
         @media (max-width:$md) {
-           padding: 2rem 2rem;
-           margin: 2.5rem 0;
+            padding: 2rem 2rem;
+            margin: 2.5rem 0;
         }
-        &.card-top-details{
-            .detaisl-amt-des{
-                .mar-0{
+
+        &.card-top-details {
+            .detaisl-amt-des {
+                .mar-0 {
                     margin-bottom: 0;
                 }
-                p{
-                    strong{
+
+                p {
+                    strong {
                         font-family: $font-family-poppins-medium;
                         font-weight: 500;
                     }
                 }
             }
-            .holding-value-cont{
+
+            .holding-value-cont {
                 text-align: center;
                 float: right;
                 width: 16rem;
+
                 @media (max-width:$sm-x) {
                     width: 100%;
                     float: none;
                     margin-top: 2rem;
                 }
-                    .holding-value{
-                        text-align: center;
-                        display: inline-block;
-                        padding: 0.5rem 1rem;
-                        border: 3px solid $bgcolor-yellow;
-                        border-radius: 6px;
-                        h4{
-                            font-family: $font-family-poppins-semibold;
-                            font-weight: 600;
-                            display: inline-block;
-                            position: relative;
-                        }
-                        p{
-                            margin: 0;
-                        }
-                        @media (max-width:$sm) {
-                            width: 100%;
-                        }
-                    }
-                    .inv-btn{
-                        margin-top: 3rem;
-                        @media (max-width:$sm) {
-                            .btn-bg{
-                                width: 100%;
-                            }
-                        }
-                    }
-                }
-                .title-secnd{
-                    font-size: 2.2rem;
-                }
-                .rating-det{
-                    padding:0.8rem 0 1rem 0;
-                    .fa-star{
-                        font-size: 1.5rem;
-                        padding: 0 0.1rem;
-                        path{
-                            fill: $yellowColor;
-                        }
-                        &.unfill{
-                            path{
-                                fill: $secondary;
-                                opacity: 0.6;
-                            }
-                        }
-                    }
-                }
-            }
-            &.graph-show{
-                .mn-graph{
-                    width: 100%;
-                    height: 400px;
-                    background: linear-gradient(to right,#4055b2 0,#1daaf1 100%);
-                    border-radius: 12px;
-                    color: $whiteColor;
-                    .top-mn-graph{
-                        .mn-graph-btn{
-                            background:none;
-                            border: 0;
-                            color: $whiteColor;
-                            .graph-topsection{
-                            background-color: #72a8df;
-                            border-radius: 50px;
-                            padding: 5px 10px;
-                            opacity: .8;
-                            font-weight: 400;
-                            color: $whiteColor;
-                            font-size: 11px;
-                            text-transform: uppercase;
-                            
-                            }
-                        }
-                        .toggle {
-                            position: relative;
-                            display: flex;
-                            align-items: center;
-                            gap: 1.538rem;
-                            float: right;
-                            @media (max-width:$sm) {
-                                float: none;
-                                justify-content: center;
-                                margin-top: 1.5rem;
-                            }
-                            input[type="checkbox"] {
-                                position: absolute;
-                                left: 0;
-                                top: 0;
-                                z-index: 10;
-                                width: 100%;
-                                height: 100%;
-                                cursor: pointer;
-                                opacity: 0;
-                              }
-                              label {
-                                position: relative;
-                                display: flex;
-                                align-items: center;
-                                &:before {
-                                    content: '';
-                                    width: 3.615rem;
-                                    height: 1.077rem;
-                                    background: $border-gray;
-                                    position: relative;
-                                    display: inline-block;
-                                    border-radius: 46px;
-                                    transition: 0.2s ease-in;
-                                  }
-                                  &:after {
-                                    content: '';
-                                    position: absolute;
-                                    width: 1.538rem;
-                                    height:  1.538rem;
-                                    border-radius: 50%;
-                                  
-                                    top: -0.231rem;
-                                    z-index: 2;
-                                    background: $yellowColor;
-                                    box-shadow: 0 0 5px #0002;
-                                    transition: 0.2s ease-in;
-                                  }
-                              }
-                              input[type="checkbox"]:hover + label:after  {
-                                box-shadow: 0 2px 15px 0 #0002, 0 3px 8px 0 #0001;
-                            }
-                            
-                              input[type="checkbox"]:checked + label:after {
-                                background: $yellowColor;
-                                right: -0.385rem;
-                              }
-                              span{
-                                font-size: 1.385rem;
-                                font-family: $font-family-poppins-medium;
-                                color: $primary;
-                                &.selected{
-                                    // color: $secondary;
-                                }
-                              }
-                          }
-                    }
-                }
-                .per-ttl{
+
+                .holding-value {
                     text-align: center;
-                    margin-top: 2rem;
-                }
-                .val-exiload{
-                    text-align: left;
-                    padding-left: 2rem;
-                    padding-top: 4rem;
-                    h4{
-                        color: $secondary;
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    border: 3px solid $bgcolor-yellow;
+                    border-radius: 6px;
+
+                    h4 {
                         font-family: $font-family-poppins-semibold;
+                        font-weight: 600;
+                        display: inline-block;
+                        position: relative;
                     }
-                }
-                .holding-details{
-                    .holding-details-row{
-                        .border-right{
-                            border-right: 1px solid #70707066;
-                            &:last-child{
-                                border: 0;
-                            }
-                            &:nth-child(3n){
-                                border: 0;
-                            }
-                            &:nth-child(odd){
-                                @media (max-width:$sm) {
-                                    border-right: 1px solid #70707066;
-                                }
-                            }
-                            &:nth-child(even){
-                                @media (max-width:$sm) {
-                                    border-right: 0;
-                                }
-                            }
-                            
-                        }
+
+                    p {
+                        margin: 0;
                     }
-                   
-                    .holdings-value{
-                        text-align: center;
-                        padding: 2rem 0;
-                        .holdings-figure{
-                            font-size: 1.75rem;
-                            font-family: $font-family-poppins-semibold;
-                        }
-                        .details-title{
-                            font-size: 1.375rem;
-                            color: $secondary;
-                        }
-                    }
-                }
-        
-            }
-            &.analysis-portfolio{
-                .title-secnd{
-                    span{
-                        color: $yellowColor;
-                    }
-                }
-                .order-wise-sec{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
+
                     @media (max-width:$sm) {
-                        flex-wrap: wrap;
-                        .firt-par{
-                            width: 100%;
-                            padding-bottom: 2rem;
-                        }
-                    }
-                    p{
-                        margin-bottom: 0;
-                        @media (max-width:$sm) {
-                            width: 100%;
-                        }
-                    }
-                    .drop-items{
-                        @media (max-width:$sm) {
-                            width: 100%;
-                            padding-top: 1rem;
-                        }
-                    }
-                    .form-select{
-                        font-size: 1.3rem;
-                        font-family: $font-family-poppins-regular;
-                        color: $secondary;
-                        border: 1px solid $bgcolor-blue;
-                        border-radius: 6px;
-                        box-shadow: none;
-                        padding:1rem 4rem 1rem .75rem;
-                        &:focus{
-                            outline: 0;
-                        }
-                    }
-                }
-                
-                .cont-all-details{
-                    margin-top: 3rem;
-                    .list-tabs-number{
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 3.5rem;
-                        .tabs{
-                            font-family: $font-family-poppins-semibold;
-                            color: $primary;
-                            background: #EBE8E8;
-                            padding: 1.1rem 3rem;
-                            display: inline-block;
-                            border-radius: 16px;
-                            font-size: 1.5rem;
-                            text-align: center;
-                            text-decoration: none;
-                            border: 0;
-                            outline: none;
-                            transition: 0.5s;
-                            -webkit-transition: 0.5s;
-                            -moz-transition: 0.5s;
-                            -ms-transition: 0.5s;
-                            -o-transition: 0.5s;
-                            margin-right:1rem;
-                            &.active-tabs{
-                                background: $yellowColor;
-                            }
-                            @media (max-width:$sm) {
-                                padding: 1.2rem;
-                                border-radius: 10px;
-                                font-size: 1.1rem;
-                                margin-right: 0.5rem;
-                            }
-                        }
-                    }
-                    .content-tabs-details{
-                        .content{
-                            display: none;
-                            &.active-content{
-                                display: block;
-                            }
-                        }
-                        .equity-tab-cont{
-                            display: flex;
-                            flex-wrap: wrap;
-                            justify-content: space-between;
-                            .lft-chart{
-                                width: 40%;
-                                @media (max-width:$sm) {
-                                    width: 100%;
-                                }
-                            }
-                            .right-cont-details{
-                                width: 55%;
-                                @media (max-width:$sm) {
-                                    width: 100%;
-                                    padding-top: 2rem;
-                                }
-                                .accordion-item{
-                                    border: 0;
-                                    outline: none;
-                                    box-shadow: none;
-                                    border-bottom: 1px solid #D0D0D0;
-                                    border-radius: 0;
-                                    padding-right: 2rem;
-                                }
-                                .accordion-button{
-                                    background: transparent !important;
-                                    box-shadow: none;
-                                    position: relative;
-                                    padding: 1.5rem 0;
-                                    padding-left: 4rem;
-                                    &::after{
-                                        position: relative;
-                                        right: -2rem;
-                                        opacity: 0.4;
-                                    }
-                                    .cirl{
-                                        display: block;
-                                        width: 1rem;
-                                        height: 1rem;
-                                        border-radius: 50%;
-                                        position: absolute;
-                                        left: 1.4rem;
-                                        top: 2rem;
-                                    }
-                                }
-                                .header-flx{
-                                    display: flex;
-                                    width: 100%;
-                                    justify-content: space-between;
-                                    color: $primary;
-                                    h3{
-                                        font-family: $font-family-poppins-semibold;
-                                        font-size: 1.5rem;
-                                        margin: 0;
-                                    }
-                                    h4{
-                                        margin: 0;
-                                    }
-                                }
-                                .accordion-body{
-                                    padding: 0;
-                                    .acd-list{
-                                        display: flex;
-                                        justify-content: space-between;
-                                        padding: 0.6rem 1rem;
-                                        border-bottom: 1px solid #D0D0D0;
-                                        &:last-child{
-                                            border-bottom: 0;
-                                        }
-                                        h4{
-                                            margin: 0;
-                                            font-size: 1.375rem;
-                                            font-family: $font-family-poppins-medium;
-                                            @media (max-width:$sm) {
-                                                font-size: 1.15rem;
-                                            }
-                                        }
-                                    }
-                                }
-                               
-                            }
-                        }
-                    }
-                }
-            }
-            &.fund-mang-details{
-                background: $darkblack;
-                h3{
-                    color: $whiteColor;
-                    font-family: $font-family-poppins-bold;
-                }
-                h4{
-                    color: $whiteColor;
-                   font-family: $font-family-poppins-semibold;
-                   margin: 1.3rem 0 1.5rem;
-                }
-                p{
-                    color: $whiteColor;
-                    br{
-                        display: none !important;
-                    }
-                }
-            }
-            &.fund-comparison-details{
-                .title-secnd{
-                    span{
-                        color: $yellowColor;
-                    }
-                }
-                .scheme-list{
-                    .scheme-list-itm{
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                        border-bottom: 1px solid $lightgray;
-                        padding: 3rem 0;
-                        .list-itm-lft{
-                            width: 40%;
-                            @media (max-width:$md) {
-                                width: 100%;
-                                margin-bottom: 1.5rem;
-                            }
-                            h4{
-                                font-family: $font-family-poppins-semibold;
-                                a{
-                                    text-decoration: none;
-                                    color: $darkblack !important;
-                                }
-                            }
-                            h5{
-                                font-family: $font-family-poppins-semibold;
-                                span{
-                                    color: $secondary;
-                                }
-                            }
-                            .rating-det{
-                                margin-top: 1rem;
-                                .fa-star{
-                                    padding: 0 0.1rem;
-                                    font-size: 1.6rem;
-                                    @media (max-width:$sm) {
-                                        font-size: 1.2rem;
-                                    }
-                                    path{
-                                        fill: $yellowColor;
-                                    }
-                                    &.unfill{
-                                        path{
-                                            fill: $secondary;
-                                            opacity: 0.6;
-                                        }
-                                    }
-                                }
-                            }
-                            
-                        }
-                        .list-itm-rght{
-                            width: 40%;
-                            @media (max-width:$md) {
-                                width: 100%;
-                            }
-                            .reset{
-                                list-style: none;
-                                padding: 0;
-                                margin: 0;
-                                display: flex;
-                                flex-wrap: wrap;
-                                background: #efefef99;
-                                border-radius: 15px;
-                                >li{
-                                    width: 33.33%;
-                                    text-align: center;
-                                    padding: 1.5rem 0;
-                                    border-right: 2px solid;
-                                    border-color: #D9D8D8;
-                                    &:last-child{
-                                        border-right: 0;
-                                    }
-                                    h4{
-                                        font-family: $font-family-poppins-semibold;
-                                    }
-                                    h5{
-                                        margin: 0;
-                                        @media (max-width:$sm) {
-                                            font-size: 1rem;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        // &:last-child{
-                        //     border: 0;
-                        //     padding-bottom: 0;
-                        // }
-                        &.active-itm{
-                            .list-itm-rght{
-                                .reset{
-                                    background: $yellowColor;
-                                    >li{
-                                        border-color: $primary;
-                                    }
-                                }
-                            }
-                        }
-                        &:hover{
-                            .list-itm-rght{
-                                .reset{
-                                    background: $yellowColor;
-                                    >li{
-                                        border-color: $primary;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    &:last-child{
-                        .scheme-list-itm{
-                            border: 0;
-                            padding-bottom: 0;
-                        } 
+                        width: 100%;
                     }
                 }
 
-                
-            }
-            &.performance-hist-details{
-                .title-secnd{
-                    span{
-                        color: $yellowColor;
+                .inv-btn {
+                    margin-top: 3rem;
+
+                    @media (max-width:$sm) {
+                        .btn-bg {
+                            width: 100%;
+                        }
                     }
                 }
-                .table-responsive{
-                    .table{
-                        th{
-                            padding: 2.5rem 0.5rem;
-                            text-align: center;
+            }
+
+            .title-secnd {
+                font-size: 2.2rem;
+            }
+
+            .rating-det {
+                padding: 0.8rem 0 1rem 0;
+
+                .fa-star {
+                    font-size: 1.5rem;
+                    padding: 0 0.1rem;
+
+                    path {
+                        fill: $yellowColor;
+                    }
+
+                    &.unfill {
+                        path {
+                            fill: $secondary;
+                            opacity: 0.6;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.graph-show {
+            .mn-graph {
+                width: 100%;
+                height: 400px;
+                background: $darkblack;
+                border-radius: 12px;
+                color: $whiteColor;
+                position: relative;
+
+                .top-mn-graph {
+                    padding: 1.5rem 1.5rem;
+
+                    @media (max-width:$sm) {
+                        padding: 0.7rem 0.2rem;
+                    }
+
+                    .mn-graph-btn {
+                        background: none;
+                        border: 0;
+                        color: $whiteColor;
+
+                        .graph-topsection {
+                            padding: 5px 10px;
+                            font-weight: 400;
+                            color: $whiteColor;
+                            font-size: 1rem;
+                            text-transform: uppercase;
+
+                            @media (max-width:$sm) {
+                                font-size: 0.9rem;
+                            }
+                        }
+
+                        h6 {
+                            font-size: 1.25rem;
+
+                            @media (max-width:$sm) {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+
+                    .toggle {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        gap: 1.538rem;
+                        float: right;
+
+                        @media (max-width:$sm) {
+                            float: none;
+                            justify-content: center;
+
+                        }
+
+                        input[type="checkbox"] {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            z-index: 10;
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                            opacity: 0;
+                        }
+
+                        label {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+
+                            &:before {
+                                content: '';
+                                width: 3.615rem;
+                                height: 1.077rem;
+                                background: $border-gray;
+                                position: relative;
+                                display: inline-block;
+                                border-radius: 46px;
+                                box-shadow: 0 0 5px #0002;
+                                transition: 0.2s ease-in;
+                            }
+
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                width: 1.538rem;
+                                height: 1.538rem;
+                                border-radius: 50%;
+
+                                top: -0.231rem;
+                                z-index: 2;
+                                background: $yellowColor;
+
+                                transition: 0.2s ease-in;
+                                left: 31px;
+                            }
+                        }
+
+                        input[type="checkbox"]:hover+label:after {
+                            box-shadow: 0 2px 15px 0 #0002, 0 3px 8px 0 #0001;
+                        }
+
+                        input[type="checkbox"]:checked+label:after {
+                            background: $yellowColor;
+                            left: -0.385rem;
+                        }
+
+                        span {
+                            font-size: 1.385rem;
                             font-family: $font-family-poppins-medium;
-                            font-weight: 500;
-                            &:first-child{
-                                text-align: left;
+                            color: $primary;
+
+                            &.selected {
+                                // color: $secondary;
                             }
                         }
-                        td{
-                            padding: 2.5rem 0.5rem;
-                            text-align: center;
-                            &:first-child{
-                                text-align: left;
+                    }
+                }
+
+                .mn-graph-footer {
+                    text-align: center !important;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .fund {
+                        background-color: $whiteColor;
+                        display: inline-block;
+                        margin-left: 1px;
+                        border: 1px solid $darkblack;
+                        border-radius: 8px;
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 0.3rem;
+                    }
+                }
+                .duration{
+                    position: absolute;
+                    bottom: 0;
+                    left: 25%;
+                    display: block;
+                    @media (max-width:$sm) {
+                        left: 14%;
+                    }
+                    .dur-button{
+                      color:$whiteColor;
+                      font-size: 1.25rem;
+                      font-family: $font-family-poppins-regular;
+                      background-color: $darkblack;
+                      border: none;
+                      padding: 0.5rem 1rem;
+                      &.active {
+                        background-color: #B8C7E5;
+                        color:#0068B3 ;
+                      }
+                    }
+
+                    
+                }
+            }
+
+            .per-ttl {
+                text-align: center;
+                margin-top: 2rem;
+            }
+
+            .val-exiload {
+                text-align: left;
+                padding-left: 2rem;
+                padding-top: 4rem;
+
+                h4 {
+                    color: $secondary;
+                    font-family: $font-family-poppins-semibold;
+                }
+            }
+
+            .holding-details {
+                .holding-details-row {
+                    .border-right {
+                        border-right: 1px solid #70707066;
+
+                        &:last-child {
+                            border: 0;
+                        }
+
+                        &:nth-child(3n) {
+                            border: 0;
+                        }
+
+                        &:nth-child(odd) {
+                            @media (max-width:$sm) {
+                                border-right: 1px solid #70707066;
                             }
                         }
-                        tbody{
-                            tr{
-                                &:last-child{
-                                    td{
+
+                        &:nth-child(even) {
+                            @media (max-width:$sm) {
+                                border-right: 0;
+                            }
+                        }
+
+                    }
+                }
+
+                .holdings-value {
+                    text-align: center;
+                    padding: 2rem 0;
+
+                    .holdings-figure {
+                        font-size: 1.75rem;
+                        font-family: $font-family-poppins-semibold;
+                    }
+
+                    .details-title {
+                        font-size: 1.375rem;
+                        color: $secondary;
+                    }
+                }
+            }
+
+        }
+
+        &.analysis-portfolio {
+            .title-secnd {
+                span {
+                    color: $yellowColor;
+                }
+            }
+
+            .order-wise-sec {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                @media (max-width:$sm) {
+                    flex-wrap: wrap;
+
+                    .firt-par {
+                        width: 100%;
+                        padding-bottom: 2rem;
+                    }
+                }
+
+                p {
+                    margin-bottom: 0;
+
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
+                }
+
+                .drop-items {
+                    @media (max-width:$sm) {
+                        width: 100%;
+                        padding-top: 1rem;
+                    }
+                }
+
+                .form-select {
+                    font-size: 1.3rem;
+                    font-family: $font-family-poppins-regular;
+                    color: $secondary;
+                    border: 1px solid $bgcolor-blue;
+                    border-radius: 6px;
+                    box-shadow: none;
+                    padding: 1rem 4rem 1rem .75rem;
+
+                    &:focus {
+                        outline: 0;
+                    }
+                }
+            }
+
+            .cont-all-details {
+                margin-top: 3rem;
+
+                .list-tabs-number {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 3.5rem;
+
+                    .tabs {
+                        font-family: $font-family-poppins-semibold;
+                        color: $primary;
+                        background: #EBE8E8;
+                        padding: 1.1rem 3rem;
+                        display: inline-block;
+                        border-radius: 16px;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        text-decoration: none;
+                        border: 0;
+                        outline: none;
+                        transition: 0.5s;
+                        -webkit-transition: 0.5s;
+                        -moz-transition: 0.5s;
+                        -ms-transition: 0.5s;
+                        -o-transition: 0.5s;
+                        margin-right: 1rem;
+
+                        &.active-tabs {
+                            background: $yellowColor;
+                        }
+
+                        @media (max-width:$sm) {
+                            padding: 1.2rem;
+                            border-radius: 10px;
+                            font-size: 1.1rem;
+                            margin-right: 0.5rem;
+                        }
+                    }
+                }
+
+                .content-tabs-details {
+                    .content {
+                        display: none;
+
+                        &.active-content {
+                            display: block;
+                        }
+                    }
+
+                    .equity-tab-cont {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+
+                        .lft-chart {
+                            width: 40%;
+
+                            @media (max-width:$sm) {
+                                width: 100%;
+                            }
+                        }
+
+                        .right-cont-details {
+                            width: 55%;
+
+                            @media (max-width:$sm) {
+                                width: 100%;
+                                padding-top: 2rem;
+                            }
+
+                            .accordion-item {
+                                border: 0;
+                                outline: none;
+                                box-shadow: none;
+                                border-bottom: 1px solid #D0D0D0;
+                                border-radius: 0;
+                                padding-right: 2rem;
+                            }
+
+                            .accordion-button {
+                                background: transparent !important;
+                                box-shadow: none;
+                                position: relative;
+                                padding: 1.5rem 0;
+                                padding-left: 4rem;
+
+                                &::after {
+                                    position: relative;
+                                    right: -2rem;
+                                    opacity: 0.4;
+                                }
+
+                                .cirl {
+                                    display: block;
+                                    width: 1rem;
+                                    height: 1rem;
+                                    border-radius: 50%;
+                                    position: absolute;
+                                    left: 1.4rem;
+                                    top: 2rem;
+                                }
+                            }
+
+                            .header-flx {
+                                display: flex;
+                                width: 100%;
+                                justify-content: space-between;
+                                color: $primary;
+
+                                h3 {
+                                    font-family: $font-family-poppins-semibold;
+                                    font-size: 1.5rem;
+                                    margin: 0;
+                                }
+
+                                h4 {
+                                    margin: 0;
+                                }
+                            }
+
+                            .accordion-body {
+                                padding: 0;
+
+                                .acd-list {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 0.6rem 1rem;
+                                    border-bottom: 1px solid #D0D0D0;
+
+                                    &:last-child {
                                         border-bottom: 0;
-                                        padding-bottom: 0;
+                                    }
+
+                                    h4 {
+                                        margin: 0;
+                                        font-size: 1.375rem;
+                                        font-family: $font-family-poppins-medium;
+
+                                        @media (max-width:$sm) {
+                                            font-size: 1.15rem;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        &.fund-mang-details {
+            background: $darkblack;
+
+            h3 {
+                color: $whiteColor;
+                font-family: $font-family-poppins-bold;
+            }
+
+            h4 {
+                color: $whiteColor;
+                font-family: $font-family-poppins-semibold;
+                margin: 1.3rem 0 1.5rem;
+            }
+
+            p {
+                color: $whiteColor;
+
+                br {
+                    display: none !important;
+                }
+            }
+        }
+
+        &.fund-comparison-details {
+            .title-secnd {
+                span {
+                    color: $yellowColor;
+                }
+            }
+
+            .scheme-list {
+                .scheme-list-itm {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    border-bottom: 1px solid $lightgray;
+                    padding: 3rem 0;
+
+                    .list-itm-lft {
+                        width: 40%;
+
+                        @media (max-width:$md) {
+                            width: 100%;
+                            margin-bottom: 1.5rem;
+                        }
+
+                        h4 {
+                            font-family: $font-family-poppins-semibold;
+
+                            a {
+                                text-decoration: none;
+                                color: $darkblack !important;
+                            }
+                        }
+
+                        h5 {
+                            font-family: $font-family-poppins-semibold;
+
+                            span {
+                                color: $secondary;
+                            }
+                        }
+
+                        .rating-det {
+                            margin-top: 1rem;
+
+                            .fa-star {
+                                padding: 0 0.1rem;
+                                font-size: 1.6rem;
+
+                                @media (max-width:$sm) {
+                                    font-size: 1.2rem;
+                                }
+
+                                path {
+                                    fill: $yellowColor;
+                                }
+
+                                &.unfill {
+                                    path {
+                                        fill: $secondary;
+                                        opacity: 0.6;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    .list-itm-rght {
+                        width: 40%;
+
+                        @media (max-width:$md) {
+                            width: 100%;
+                        }
+
+                        .reset {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                            display: flex;
+                            flex-wrap: wrap;
+                            background: #efefef99;
+                            border-radius: 15px;
+
+                            >li {
+                                width: 33.33%;
+                                text-align: center;
+                                padding: 1.5rem 0;
+                                border-right: 2px solid;
+                                border-color: #D9D8D8;
+
+                                &:last-child {
+                                    border-right: 0;
+                                }
+
+                                h4 {
+                                    font-family: $font-family-poppins-semibold;
+                                }
+
+                                h5 {
+                                    margin: 0;
+
+                                    @media (max-width:$sm) {
+                                        font-size: 1rem;
                                     }
                                 }
                             }
                         }
                     }
+
+                    // &:last-child{
+                    //     border: 0;
+                    //     padding-bottom: 0;
+                    // }
+                    &.active-itm {
+                        .list-itm-rght {
+                            .reset {
+                                background: $yellowColor;
+
+                                >li {
+                                    border-color: $primary;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .list-itm-rght {
+                            .reset {
+                                background: $yellowColor;
+
+                                >li {
+                                    border-color: $primary;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    .scheme-list-itm {
+                        border: 0;
+                        padding-bottom: 0;
+                    }
                 }
             }
-            &.card-calculator{
-                .accordian-sec{
-                    .accordion-item{
-                        border: 0;
+
+
+        }
+
+        &.performance-hist-details {
+            .title-secnd {
+                span {
+                    color: $yellowColor;
+                }
+            }
+
+            .table-responsive {
+                .table {
+                    th {
+                        padding: 2.5rem 0.5rem;
+                        text-align: center;
+                        font-family: $font-family-poppins-medium;
+                        font-weight: 500;
+
+                        &:first-child {
+                            text-align: left;
+                        }
                     }
-                    .accordion-button{
-                        background: transparent;
-                        border: 0;
-                        box-shadow: none;
-                        &::after{
-                            left: 0;
-                            right: 0;
-                            margin: 0 auto;
-                            width: 3rem;
-                            height: 3rem;
-                            background-size: contain;
+
+                    td {
+                        padding: 2.5rem 0.5rem;
+                        text-align: center;
+
+                        &:first-child {
+                            text-align: left;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            &:last-child {
+                                td {
+                                    border-bottom: 0;
+                                    padding-bottom: 0;
+                                }
+                            }
                         }
                     }
                 }
-                .invst-amt-hirizon{
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: flex-start;
-                    justify-content: space-between;
-                    .form-lft{
-                        width: 50%;
-                        @media (max-width:$sm) {
-                            width: 100%;
+            }
+        }
+
+        &.card-calculator {
+            .accordian-sec {
+                .accordion-item {
+                    border: 0;
+                }
+
+                .accordion-button {
+                    background: transparent;
+                    border: 0;
+                    box-shadow: none;
+
+                    &::after {
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        width: 3rem;
+                        height: 3rem;
+                        background-size: contain;
+                    }
+                }
+            }
+
+            .invst-amt-hirizon {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: space-between;
+
+                .form-lft {
+                    width: 50%;
+
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
+
+                    .amt-enter {
+                        position: relative;
+                        padding-left: 2rem;
+
+                        &::before {
+                            content: '₹';
+                            font-size: 2rem;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            font-family: $font-family-poppins-semibold;
+                            color: $primary;
                         }
-                        .amt-enter{
-                            position: relative;
-                            padding-left: 2rem;
-                            &::before{
-                                content: '₹';
+
+                        .formcontrol {
+                            font-size: 2rem;
+                            font-family: $font-family-poppins-semibold;
+                            outline: none;
+                            box-shadow: none;
+                            border: 0;
+                            padding: 0;
+
+                            &::placeholder {
                                 font-size: 2rem;
-                                position: absolute;
-                                left: 0;
-                                top: 0;
                                 font-family: $font-family-poppins-semibold;
                                 color: $primary;
                             }
-                            .formcontrol{
-                                font-size: 2rem;
-                                font-family: $font-family-poppins-semibold;
-                                outline: none;
-                                box-shadow: none;
-                                border: 0;
-                                padding: 0;
-                                &::placeholder{
-                                    font-size: 2rem;
-                                    font-family: $font-family-poppins-semibold;
-                                    color: $primary;
-                                }
-                            }
                         }
                     }
-                    .horizon-slider{
-                        width: 48%;
-                        border-left: 1px solid $lightgray;
-                        padding-left: 2rem;
-                        @media (max-width:$sm) {
-                            width: 100%;
-                            margin-top: 2rem;
-                            border-left: 0;
-                            padding-left: 0;
-                        }
-                        .slidecontainer {
-                            h6{
-                                font-size: 1.45rem;
-                                margin-bottom: 1rem;
-                            }
-                            .slider {
-                                width: 100%;
-                                height: 0.75rem;
-                                appearance: none;
-                                margin: 0;
-                                border-radius: 25px;
-                                background: $border-gray;
-                                outline: none;
-                                &:focus {
-                                    outline: none;
-                                  }
-                                &::-webkit-slider-runnable-track {
-                                    width: 100%;
-                                    height: 8px;
-                                    cursor: pointer;
-                                    transition: all 0.2s ease;
-                                    background: $border-gray;
-                                    border: none;
-                                    border-radius: 4px;
-                                }
-                                &::-webkit-slider-thumb {
-                                    height: 2rem;
-                                    width: 2rem;
-                                    border-radius: 50%;
-                                    background:  $yellowColor;
-                                    cursor: pointer;
-                                    appearance: none;
-                                    margin-top: -10px;
-                                  }
-                              }
-                          }
-                          .float-right{
-                            @media (max-width:$sm) {
-                                float: left;
-                                padding-top: 1rem;
-                            }
-                            span{
-                                font-weight: 700;
-                                font-family: $font-family-poppins-semibold;
-                                font-size: 2rem;
-                            }
-                          }
-                    }
-                    
                 }
-                .toggle {
+
+                .horizon-slider {
+                    width: 48%;
+                    border-left: 1px solid $lightgray;
+                    padding-left: 2rem;
+
+                    @media (max-width:$sm) {
+                        width: 100%;
+                        margin-top: 2rem;
+                        border-left: 0;
+                        padding-left: 0;
+                    }
+
+                    .slidecontainer {
+                        h6 {
+                            font-size: 1.45rem;
+                            margin-bottom: 1rem;
+                        }
+
+                        .slider {
+                            width: 100%;
+                            height: 0.75rem;
+                            appearance: none;
+                            margin: 0;
+                            border-radius: 25px;
+                            background: $border-gray;
+                            outline: none;
+
+                            &:focus {
+                                outline: none;
+                            }
+
+                            &::-webkit-slider-runnable-track {
+                                width: 100%;
+                                height: 8px;
+                                cursor: pointer;
+                                transition: all 0.2s ease;
+                                background: $border-gray;
+                                border: none;
+                                border-radius: 4px;
+                            }
+
+                            &::-webkit-slider-thumb {
+                                height: 2rem;
+                                width: 2rem;
+                                border-radius: 50%;
+                                background: $yellowColor;
+                                cursor: pointer;
+                                appearance: none;
+                                margin-top: -10px;
+                            }
+                        }
+                    }
+
+                    .float-right {
+                        @media (max-width:$sm) {
+                            float: left;
+                            padding-top: 1rem;
+                        }
+
+                        span {
+                            font-weight: 700;
+                            font-family: $font-family-poppins-semibold;
+                            font-size: 2rem;
+                        }
+                    }
+                }
+
+            }
+
+            .toggle {
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: 1.538rem;
+                float: right;
+
+                @media (max-width:$sm) {
+                    float: none;
+                    justify-content: center;
+                    margin-top: 1.5rem;
+                }
+
+                input[type="checkbox"] {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: 10;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    opacity: 0;
+                }
+
+                label {
                     position: relative;
                     display: flex;
                     align-items: center;
-                    gap: 1.538rem;
-                    float: right;
-                    @media (max-width:$sm) {
-                        float: none;
-                        justify-content: center;
-                        margin-top: 1.5rem;
-                    }
-                    input[type="checkbox"] {
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        z-index: 10;
-                        width: 100%;
-                        height: 100%;
-                        cursor: pointer;
-                        opacity: 0;
-                      }
-                      label {
+
+                    &:before {
+                        content: '';
+                        width: 3.615rem;
+                        height: 1.077rem;
+                        background: $border-gray;
                         position: relative;
-                        display: flex;
-                        align-items: center;
-                        &:before {
-                            content: '';
-                            width: 3.615rem;
-                            height: 1.077rem;
-                            background: $border-gray;
-                            position: relative;
-                            display: inline-block;
-                            border-radius: 46px;
-                            transition: 0.2s ease-in;
-                          }
-                          &:after {
-                            content: '';
-                            position: absolute;
-                            width: 1.538rem;
-                            height:  1.538rem;
-                            border-radius: 50%;
-                            // left:  1.538rem;
-                            // left: 0;
-                            top: -0.231rem;
-                            z-index: 2;
-                            background: $yellowColor;
-                            box-shadow: 0 0 5px #0002;
-                            transition: 0.2s ease-in;
-                          }
-                      }
-                      input[type="checkbox"]:hover + label:after  {
-                        box-shadow: 0 2px 15px 0 #0002, 0 3px 8px 0 #0001;
+                        display: inline-block;
+                        border-radius: 46px;
+                        transition: 0.2s ease-in;
                     }
-                    // input[type="checkbox"]:checked + label:before {
-                    //     // background: #82a5de;
-                    //   }
-                      input[type="checkbox"]:checked + label:after {
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        width: 1.538rem;
+                        height: 1.538rem;
+                        border-radius: 50%;
+                        // left:  1.538rem;
+                        // left: 0;
+                        top: -0.231rem;
+                        z-index: 2;
                         background: $yellowColor;
-                        right: -0.385rem;
-                      }
-                      span{
-                        font-size: 1.385rem;
-                        font-family: $font-family-poppins-medium;
-                        color: $primary;
-                        &.selected{
-                            color: $secondary;
-                        }
-                      }
-                  }
-                  .midl-txt{
-                    text-align: center;
-                    padding-top: 4rem;
-                  }
+                        box-shadow: 0 0 5px #0002;
+                        transition: 0.2s ease-in;
+                    }
+                }
+
+                input[type="checkbox"]:hover+label:after {
+                    box-shadow: 0 2px 15px 0 #0002, 0 3px 8px 0 #0001;
+                }
+
+                // input[type="checkbox"]:checked + label:before {
+                //     // background: #82a5de;
+                //   }
+                input[type="checkbox"]:checked+label:after {
+                    background: $yellowColor;
+                    right: -0.385rem;
+                }
+
+                span {
+                    font-size: 1.385rem;
+                    font-family: $font-family-poppins-medium;
+                    color: $primary;
+
+                    &.selected {
+                        color: $secondary;
+                    }
+                }
             }
-        
+
+            .midl-txt {
+                text-align: center;
+                padding-top: 4rem;
+            }
         }
-        
+
+    }
+
 }
-.fixed-form{
+
+.fixed-form {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -790,142 +990,164 @@
     //     display: none;
     // }
 
-.form-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @media (max-width:$md) {
-        display: none;
-    }
-    .form-items{
-        &.check-text-box{
-            display: flex;
-            align-items: center;
-            column-gap: 1rem;
-            width: 48%;
-            justify-content: flex-end;
-            .form-grp2{
+    .form-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width:$md) {
+            display: none;
+        }
+
+        .form-items {
+            &.check-text-box {
+                display: flex;
+                align-items: center;
+                column-gap: 1rem;
+                width: 48%;
+                justify-content: flex-end;
+
+                .form-grp2 {
+                    .form-control {
+                        padding: 1rem .75rem;
+                        border-radius: 4px;
+                        border: 2px solid $border-gray;
+                        color: $secondary;
+                        font-size: 1.143rem;
+                        font-family: $font-family-poppins-regular;
+                        font-weight: 400;
+
+                        &:focus {
+                            outline: 0;
+                            box-shadow: inherit;
+                        }
+                    }
+                }
+
+                .cust-checkbox {
+                    .form-check {
+                        margin: 0;
+
+                        .form-check-label {
+                            font-size: 1.143rem;
+                        }
+                    }
+                }
+            }
+
+            .shape-yellow {
+                background: $yellowColor;
+                position: relative;
+                z-index: 1;
+                border-radius: 5px 0 0 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 60px;
+                padding: 1rem 2rem;
+
+                .cross-border {
+                    border-right: 60px solid transparent;
+                    border-left: 0px solid transparent;
+                    border-bottom: 60px solid $yellowColor;
+                    height: 0;
+                    width: 0;
+                    bottom: 0;
+                    right: -59px;
+                    position: absolute;
+                }
+
+                h6 {
+                    margin: 0;
+                    color: $primary;
+                    text-align: center;
+                    font-family: $font-family-poppins-semibold;
+                    font-size: 1.143rem;
+                    font-weight: 700;
+                    line-height: 1.5;
+                }
+            }
+
+            .form-grp {
+                position: relative;
+
+                &:before {
+                    content: '+91';
+                    position: absolute;
+                    display: block;
+                    left: 10px;
+                    top: 1.175rem;
+                    font-size: 1.143rem;
+                    color: $secondary;
+                    z-index: 9999;
+                    font-family: $font-family-poppins-regular;
+                    font-weight: 400;
+                }
+
                 .form-control {
-                    padding: 1rem .75rem;
+                    padding: 1rem 0.75rem 1rem 3.3rem;
                     border-radius: 4px;
                     border: 2px solid $border-gray;
                     color: $secondary;
                     font-size: 1.143rem;
                     font-family: $font-family-poppins-regular;
                     font-weight: 400;
-                    &:focus{
+                    width: 90% !important;
+
+                    &:focus {
                         outline: 0;
                         box-shadow: inherit;
                     }
                 }
             }
-            .cust-checkbox{
-                .form-check{
-                    margin: 0;
-                    .form-check-label{
-                        font-size: 1.143rem;
-                    }
-                }
-            }
         }
-        .shape-yellow{
-            background: $yellowColor;
-            position: relative;
-            z-index: 1;
-            border-radius: 5px 0 0 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 60px;
-            padding: 1rem 2rem;
-            .cross-border{
-                border-right: 60px solid transparent;
-                border-left: 0px solid transparent;
-                border-bottom: 60px solid $yellowColor;
-                height: 0;
-                width: 0;
-                bottom: 0;
-                right: -59px;
-                position: absolute;
-            }
-            h6{
-                margin: 0;
-                color: $primary;
-                text-align: center;
-                font-family: $font-family-poppins-semibold;
-                font-size: 1.143rem;
-                font-weight: 700;
-                line-height: 1.5;
-            }
-        }
-        .form-grp {
-            position: relative;
-			&:before {
-				content: '+91';
-				position: absolute;
-				display: block;
-				left: 10px;
-				top: 1.175rem;
-                font-size: 1.143rem;
-				color: $secondary;
-				z-index: 9999;
-                font-family: $font-family-poppins-regular;
-                font-weight: 400;
-			}
-			.form-control {
-				padding: 1rem 0.75rem 1rem 3.3rem;
-                border-radius: 4px;
-                border: 2px solid $border-gray;
-                color: $secondary;
-                font-size: 1.143rem;
-                font-family: $font-family-poppins-regular;
-                font-weight: 400;
-                width: 90% !important;
-                &:focus{
-                    outline: 0;
-                    box-shadow: inherit;
-                }
-			}
-		}
     }
 }
-}
-.details-more-cont{
-    padding:10rem 0;
+
+.details-more-cont {
+    padding: 10rem 0;
     background: $abt-bg;
+
     @media (max-width:$md) {
         padding: 6rem 0;
     }
+
     @media (max-width:$sm) {
         overflow: hidden;
     }
-    .more-cont-dcr{
-        .title-secnd{
+
+    .more-cont-dcr {
+        .title-secnd {
             text-align: center;
             margin-bottom: 2.5rem;
-            span{
+
+            span {
                 color: $yellowColor;
             }
         }
-        p{
+
+        p {
             font-family: $font-family-poppins-regular;
         }
     }
 }
 
-.hideform{
+.hideform {
     @media (max-width: $sm) {
-    display: none !important;
+        display: none !important;
     }
 }
-.visibleform{
+
+.visibleform {
     @media (max-width: $sm) {
-    display: block !important;
+        display: block !important;
     }
 }
-.hideform2{
+
+.hideform2 {
     display: none !important;
 }
-.visibleform2{
+
+.visibleform2 {
     display: block !important;
 }

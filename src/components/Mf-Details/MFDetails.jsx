@@ -24,6 +24,7 @@ function MFTopFunds() {
     const [peerComparisonResponseObject, setPeerComparisonResponseObject] = useState([]);
     const disableLumpsum = false;
     const disableSIP = false;
+    const [typeOfReturn, setTypeOfReturn] = useState(true);
     const [typeOfCalc, setTypeOfCalc] = useState(true);
     const [noOfMonths, setNoOfMonths] = useState(6);
     const [minInvested, setMinInvested] = useState("500");
@@ -345,44 +346,59 @@ function MFTopFunds() {
 
                             </div>
                             <div className='card-mn box-shadow graph-show' id='showForm'>
-                                {
-                                    schemedata.length ?
-                                        <div>
-                                            {
-                                                schemedata.map((res, i) => {
-                                                    return (
-                                                        <div className='row' key={res.SchemeCode}>
-                                                            <div className='col-xl-5 col-md-12'>
-                                                                <div className='mn-graph'>
-                                                                    <div className='top-mn-graph d-flex justify-content-between align-items-center'>
-                                                                        <button className='mn-graph-btn'>
-                                                                            <span className="graph-topsection">This Fund</span>
-                                                                            <h6 className="mt-2">45.99%p.a.</h6>
-                                                                        </button>
-                                                                        <p>VS</p>
-                                                                        <div className="toggle">
-                                                                            <button className='mn-graph-btn'>
-                                                                                <span className={`${typeOfCalc ? ' graph-topsection selected' : ''}`}>SENSEX</span>
-                                                                                <h6 className="mt-2">45.99%p.a.</h6>
-                                                                            </button>
-                                                                            <input
-                                                                                type="checkbox"
-                                                                                id="exchangeToggle"
-                                                                                name="exchangeToggle"
-                                                                                checked={typeOfCalc}
-                                                                                onChange={(e) => setTypeOfCalc(e.target.checked)}
-                                                                            />
-                                                                            <label></label>
-                                                                            <button className='mn-graph-btn'>
-                                                                                <span className={`${!typeOfCalc ? 'graph-topsection selected' : ''}`}>BANKED</span>
-                                                                                <h6 className="mt-2">45.99%p.a.</h6>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <p className='per-ttl'>Showing Funds Performance since Sep 07, 2020</p>
-                                                            </div>
-                                                            <div className='col-xl-7 col-md-12'>
+                                <div className='row'>
+                                    <div className='col-xl-5 col-md-12'>
+                                        <div className='mn-graph'>
+                                            <div className='top-mn-graph d-flex justify-content-between align-items-center'>
+                                                <button className='mn-graph-btn'>
+                                                    <span className="graph-topsection">This Fund</span>
+                                                    <h6 className="mt-2">45.99%p.a.</h6>
+                                                </button>
+                                                <p>VS</p>
+                                                <div className="toggle">
+                                                    <button className='mn-graph-btn'>
+                                                        <span className={`graph-topsection ${typeOfReturn ? ' selected' : ''}`}>SENSEX</span>
+                                                        <h6 className="mt-2">45.99%p.a.</h6>
+                                                    </button>
+                                                    <input
+                                                        type="checkbox"
+                                                        id="exchangeToggle"
+                                                        name="exchangeToggle"
+                                                        checked={typeOfReturn}
+                                                        onChange={(e) => setTypeOfReturn(e.target.checked)}
+                                                    />
+                                                    <label></label>
+                                                    <button className='mn-graph-btn'>
+                                                        <span className={`graph-topsection ${!typeOfReturn ? 'selected' : ''}`}>BANKED</span>
+                                                        <h6 className="mt-2">45.99%p.a.</h6>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="mn-graph-footer text-center">
+                                                <span className="fund"></span><span>This Fund</span>
+                                                <span className="fund" style={{ backgroundColor: !typeOfReturn ? 'green' : '#FFFF00' }}></span>{' '}
+                                                <span>{(typeOfReturn) ? 'Sensex' : 'Bank FD'}</span>
+                                            </div>
+                                            <div className="duration">
+                                                <button className="dur-button active">1M</button>
+                                                <button className="dur-button">3M</button>
+                                                <button className="dur-button">6M</button>
+                                                <button className="dur-button">1Y</button>
+                                                <button className="dur-button">3Y</button>
+                                                <button className="dur-button">5Y</button>
+                                               
+                                            </div>
+                                        </div>
+                                        <p className='per-ttl'>Showing Funds Performance since Sep 07, 2020</p>
+                                    </div>
+                                    {
+                                        schemedata.length ?
+                                            <div className='col-xl-7 col-md-12'>
+                                                {
+                                                    schemedata.map((res, i) => {
+                                                        return (
+                                                            <div key={res.SchemeCode}>
                                                                 <div className='holding-details'>
                                                                     <div className="row holding-details-row">
                                                                         <div className="col-lg-4 col-sm-4 col-6 border-right">
@@ -440,468 +456,468 @@ function MFTopFunds() {
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    )
-                                                })
-                                            }
-                                        </div>
-                                        :
-                                        <div className="text-center">
-                                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                                        </div>
-                                }
+                                                        )
+                                                    })
+                                                }
+                                            </div>
+                                            :
+                                            <div className="text-center">
+                                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                            </div>
+                                    }
+                                </div>
                             </div>
 
                             <div className='card-mn box-shadow analysis-portfolio'>
-            <div className='row align-items-center'>
-                <div className='col-md-6'>
-                    <h3 className='title-secnd'>Scheme's Portfolio <span>Analysis</span></h3>
-                </div>
-                <div className='col-md-6'>
-                    <div className='order-wise-sec'>
-                        <p className='firt-par'>As on: 2023-07-31</p>
-                        <p className='view-lc'>View allocation % by</p>
-                        <div className='drop-items'>
-                        <select className='form-select'>
-                            <option value="" selected>Sector</option>
-                            <option value="">Company</option>
-                            <option value="">Market Cap</option>
-                        </select>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div className='row'>
-                <div className='col-md-12'>
-                <div className='cont-all-details'>
-                    <div className='list-tabs-number'>
-                        <button
-                            className={toggleState === 1 ? "tabs  active-tabs" : "tabs"}
-                            onClick={() => toggleTab(1)}
-                        >
-                            Equity: 98.23%
-
-                        </button>
-                        <button
-                            className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-                            onClick={() => toggleTab(2)}
-                        >
-                            Debt: 1.76%
-
-                        </button>
-                        <button
-                            className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                            onClick={() => toggleTab(3)}
-                        >
-
-                            Others
-
-                        </button>
-                    </div>
-                    <div className="content-tabs-details">
-                            <div
-                            className={toggleState === 1 ? "content  active-content" : "content"}
-                        >
-                            <div className="equity-tab-cont">
-                                    <div className='lft-chart'>
-                                        <img src={Image1} className="img-fluid" alt="" />
+                                <div className='row align-items-center'>
+                                    <div className='col-md-6'>
+                                        <h3 className='title-secnd'>Scheme's Portfolio <span>Analysis</span></h3>
                                     </div>
-                                    <div className="right-cont-details">
-                                    <Accordion defaultActiveKey="0">
-                                        <Accordion.Item eventKey="0" >
-                                            <Accordion.Header as="h3" className='faq-header'>
-                                                <span className='cirl' style={{background: "#7C160E"}}>
+                                    <div className='col-md-6'>
+                                        <div className='order-wise-sec'>
+                                            <p className='firt-par'>As on: 2023-07-31</p>
+                                            <p className='view-lc'>View allocation % by</p>
+                                            <div className='drop-items'>
+                                                <select className='form-select'>
+                                                    <option value="" selected>Sector</option>
+                                                    <option value="">Company</option>
+                                                    <option value="">Market Cap</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='row'>
+                                    <div className='col-md-12'>
+                                        <div className='cont-all-details'>
+                                            <div className='list-tabs-number'>
+                                                <button
+                                                    className={toggleState === 1 ? "tabs  active-tabs" : "tabs"}
+                                                    onClick={() => toggleTab(1)}
+                                                >
+                                                    Equity: 98.23%
 
-                                                </span>
-                                                <div className='header-flx'>
-                                                    <h4>BFSI</h4>
-                                                    <h3 style={{color: "#7C160E"}}>23.33%</h3>
-                                                </div>
-                                            </Accordion.Header>
-                                            <Accordion.Body>
-                                                <div className='acd-list'>
-                                                    <h4>1. HDFC Bank Limited</h4>
-                                                    <h4>9.19%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>2. State Bank Of India</h4>
-                                                    <h4>5.67%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>3. Capri Global Capital Limited</h4>
-                                                    <h4>2.77%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>4. Punjab National Bank</h4>
-                                                    <h4>2.32%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>5. Bandhan Bank Ltd</h4>
-                                                    <h4>0.95%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>6. Jio Financial Services </h4>
-                                                    <h4>0.92%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>7. Piramal Enterprises Limited</h4>
-                                                    <h4>0.91%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>8. Sundaram Finance Ltd</h4>
-                                                    <h4>0.60%</h4>
-                                                </div>
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                        <Accordion.Item eventKey="1">
-                                        <Accordion.Header as="h3" className='faq-header'>
-                                                <span className='cirl' style={{background: "#AEA096"}}>
+                                                </button>
+                                                <button
+                                                    className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+                                                    onClick={() => toggleTab(2)}
+                                                >
+                                                    Debt: 1.76%
 
-                                                </span>
-                                                <div className='header-flx'>
-                                                    <h4>Pharmaceuticals</h4>
-                                                    <h3 style={{color: "#AEA096"}}>23.33%</h3>
-                                                </div>
-                                            </Accordion.Header>
-                                            <Accordion.Body>
-                                                <div className='acd-list'>
-                                                    <h4>1. HDFC Bank Limited</h4>
-                                                    <h4>9.19%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>2. State Bank Of India</h4>
-                                                    <h4>5.67%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>3. Capri Global Capital Limited</h4>
-                                                    <h4>2.77%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>4. Punjab National Bank</h4>
-                                                    <h4>2.32%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>5. Bandhan Bank Ltd</h4>
-                                                    <h4>0.95%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>6. Jio Financial Services </h4>
-                                                    <h4>0.92%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>7. Piramal Enterprises Limited</h4>
-                                                    <h4>0.91%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>8. Sundaram Finance Ltd</h4>
-                                                    <h4>0.60%</h4>
-                                                </div>
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                        <Accordion.Item eventKey="2" >
-                                        <Accordion.Header as="h3" className='faq-header'>
-                                                <span className='cirl' style={{background: "#BE7111"}}>
+                                                </button>
+                                                <button
+                                                    className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+                                                    onClick={() => toggleTab(3)}
+                                                >
 
-                                                </span>
-                                                <div className='header-flx'>
-                                                    <h4>Oil & Gas</h4>
-                                                    <h3 style={{color: "#BE7111"}}>9.99%</h3>
-                                                </div>
-                                            </Accordion.Header>
-                                            <Accordion.Body>
-                                                <div className='acd-list'>
-                                                    <h4>1. HDFC Bank Limited</h4>
-                                                    <h4>9.19%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>2. State Bank Of India</h4>
-                                                    <h4>5.67%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>3. Capri Global Capital Limited</h4>
-                                                    <h4>2.77%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>4. Punjab National Bank</h4>
-                                                    <h4>2.32%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>5. Bandhan Bank Ltd</h4>
-                                                    <h4>0.95%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>6. Jio Financial Services </h4>
-                                                    <h4>0.92%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>7. Piramal Enterprises Limited</h4>
-                                                    <h4>0.91%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>8. Sundaram Finance Ltd</h4>
-                                                    <h4>0.60%</h4>
-                                                </div>
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                        <Accordion.Item eventKey="3" >
-                                        <Accordion.Header as="h3" className='faq-header'>
-                                                <span className='cirl' style={{background: "#8018BA"}}>
+                                                    Others
 
-                                                </span>
-                                                <div className='header-flx'>
-                                                    <h4>Metal & Mining</h4>
-                                                    <h3 style={{color: "#8018BA"}}>8.41%</h3>
-                                                </div>
-                                            </Accordion.Header>
-                                            <Accordion.Body>
-                                                <div className='acd-list'>
-                                                    <h4>1. HDFC Bank Limited</h4>
-                                                    <h4>9.19%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>2. State Bank Of India</h4>
-                                                    <h4>5.67%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>3. Capri Global Capital Limited</h4>
-                                                    <h4>2.77%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>4. Punjab National Bank</h4>
-                                                    <h4>2.32%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>5. Bandhan Bank Ltd</h4>
-                                                    <h4>0.95%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>6. Jio Financial Services </h4>
-                                                    <h4>0.92%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>7. Piramal Enterprises Limited</h4>
-                                                    <h4>0.91%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>8. Sundaram Finance Ltd</h4>
-                                                    <h4>0.60%</h4>
-                                                </div>
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                        <Accordion.Item eventKey="4" >
-                                        <Accordion.Header as="h3" className='faq-header'>
-                                                <span className='cirl' style={{background: "#B8A970"}}>
+                                                </button>
+                                            </div>
+                                            <div className="content-tabs-details">
+                                                <div
+                                                    className={toggleState === 1 ? "content  active-content" : "content"}
+                                                >
+                                                    <div className="equity-tab-cont">
+                                                        <div className='lft-chart'>
+                                                            <img src={Image1} className="img-fluid" alt="" />
+                                                        </div>
+                                                        <div className="right-cont-details">
+                                                            <Accordion defaultActiveKey="0">
+                                                                <Accordion.Item eventKey="0" >
+                                                                    <Accordion.Header as="h3" className='faq-header'>
+                                                                        <span className='cirl' style={{ background: "#7C160E" }}>
 
-                                                </span>
-                                                <div className='header-flx'>
-                                                    <h4>Infrastructure</h4>
-                                                    <h3 style={{color: "#B8A970"}}>8.23%</h3>
-                                                </div>
-                                            </Accordion.Header>
-                                            <Accordion.Body>
-                                                <div className='acd-list'>
-                                                    <h4>1. HDFC Bank Limited</h4>
-                                                    <h4>9.19%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>2. State Bank Of India</h4>
-                                                    <h4>5.67%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>3. Capri Global Capital Limited</h4>
-                                                    <h4>2.77%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>4. Punjab National Bank</h4>
-                                                    <h4>2.32%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>5. Bandhan Bank Ltd</h4>
-                                                    <h4>0.95%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>6. Jio Financial Services </h4>
-                                                    <h4>0.92%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>7. Piramal Enterprises Limited</h4>
-                                                    <h4>0.91%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>8. Sundaram Finance Ltd</h4>
-                                                    <h4>0.60%</h4>
-                                                </div>
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                        <Accordion.Item eventKey="5" >
-                                        <Accordion.Header as="h3" className='faq-header'>
-                                                <span className='cirl' style={{background: "#CD4BA8"}}>
+                                                                        </span>
+                                                                        <div className='header-flx'>
+                                                                            <h4>BFSI</h4>
+                                                                            <h3 style={{ color: "#7C160E" }}>23.33%</h3>
+                                                                        </div>
+                                                                    </Accordion.Header>
+                                                                    <Accordion.Body>
+                                                                        <div className='acd-list'>
+                                                                            <h4>1. HDFC Bank Limited</h4>
+                                                                            <h4>9.19%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>2. State Bank Of India</h4>
+                                                                            <h4>5.67%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>3. Capri Global Capital Limited</h4>
+                                                                            <h4>2.77%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>4. Punjab National Bank</h4>
+                                                                            <h4>2.32%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>5. Bandhan Bank Ltd</h4>
+                                                                            <h4>0.95%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>6. Jio Financial Services </h4>
+                                                                            <h4>0.92%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>7. Piramal Enterprises Limited</h4>
+                                                                            <h4>0.91%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>8. Sundaram Finance Ltd</h4>
+                                                                            <h4>0.60%</h4>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                                <Accordion.Item eventKey="1">
+                                                                    <Accordion.Header as="h3" className='faq-header'>
+                                                                        <span className='cirl' style={{ background: "#AEA096" }}>
 
-                                                </span>
-                                                <div className='header-flx'>
-                                                    <h4>Power</h4>
-                                                    <h3 style={{color: "#CD4BA8"}}>6.62%</h3>
-                                                </div>
-                                            </Accordion.Header>
-                                            <Accordion.Body>
-                                                <div className='acd-list'>
-                                                    <h4>1. HDFC Bank Limited</h4>
-                                                    <h4>9.19%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>2. State Bank Of India</h4>
-                                                    <h4>5.67%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>3. Capri Global Capital Limited</h4>
-                                                    <h4>2.77%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>4. Punjab National Bank</h4>
-                                                    <h4>2.32%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>5. Bandhan Bank Ltd</h4>
-                                                    <h4>0.95%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>6. Jio Financial Services </h4>
-                                                    <h4>0.92%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>7. Piramal Enterprises Limited</h4>
-                                                    <h4>0.91%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>8. Sundaram Finance Ltd</h4>
-                                                    <h4>0.60%</h4>
-                                                </div>
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                        <Accordion.Item eventKey="6" >
-                                        <Accordion.Header as="h3" className='faq-header'>
-                                                <span className='cirl' style={{background: "#45BF60"}}>
+                                                                        </span>
+                                                                        <div className='header-flx'>
+                                                                            <h4>Pharmaceuticals</h4>
+                                                                            <h3 style={{ color: "#AEA096" }}>23.33%</h3>
+                                                                        </div>
+                                                                    </Accordion.Header>
+                                                                    <Accordion.Body>
+                                                                        <div className='acd-list'>
+                                                                            <h4>1. HDFC Bank Limited</h4>
+                                                                            <h4>9.19%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>2. State Bank Of India</h4>
+                                                                            <h4>5.67%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>3. Capri Global Capital Limited</h4>
+                                                                            <h4>2.77%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>4. Punjab National Bank</h4>
+                                                                            <h4>2.32%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>5. Bandhan Bank Ltd</h4>
+                                                                            <h4>0.95%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>6. Jio Financial Services </h4>
+                                                                            <h4>0.92%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>7. Piramal Enterprises Limited</h4>
+                                                                            <h4>0.91%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>8. Sundaram Finance Ltd</h4>
+                                                                            <h4>0.60%</h4>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                                <Accordion.Item eventKey="2" >
+                                                                    <Accordion.Header as="h3" className='faq-header'>
+                                                                        <span className='cirl' style={{ background: "#BE7111" }}>
 
-                                                </span>
-                                                <div className='header-flx'>
-                                                    <h4>IT Consulting & Software</h4>
-                                                    <h3 style={{color: "#45BF60"}}>4.89%</h3>
+                                                                        </span>
+                                                                        <div className='header-flx'>
+                                                                            <h4>Oil & Gas</h4>
+                                                                            <h3 style={{ color: "#BE7111" }}>9.99%</h3>
+                                                                        </div>
+                                                                    </Accordion.Header>
+                                                                    <Accordion.Body>
+                                                                        <div className='acd-list'>
+                                                                            <h4>1. HDFC Bank Limited</h4>
+                                                                            <h4>9.19%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>2. State Bank Of India</h4>
+                                                                            <h4>5.67%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>3. Capri Global Capital Limited</h4>
+                                                                            <h4>2.77%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>4. Punjab National Bank</h4>
+                                                                            <h4>2.32%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>5. Bandhan Bank Ltd</h4>
+                                                                            <h4>0.95%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>6. Jio Financial Services </h4>
+                                                                            <h4>0.92%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>7. Piramal Enterprises Limited</h4>
+                                                                            <h4>0.91%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>8. Sundaram Finance Ltd</h4>
+                                                                            <h4>0.60%</h4>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                                <Accordion.Item eventKey="3" >
+                                                                    <Accordion.Header as="h3" className='faq-header'>
+                                                                        <span className='cirl' style={{ background: "#8018BA" }}>
+
+                                                                        </span>
+                                                                        <div className='header-flx'>
+                                                                            <h4>Metal & Mining</h4>
+                                                                            <h3 style={{ color: "#8018BA" }}>8.41%</h3>
+                                                                        </div>
+                                                                    </Accordion.Header>
+                                                                    <Accordion.Body>
+                                                                        <div className='acd-list'>
+                                                                            <h4>1. HDFC Bank Limited</h4>
+                                                                            <h4>9.19%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>2. State Bank Of India</h4>
+                                                                            <h4>5.67%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>3. Capri Global Capital Limited</h4>
+                                                                            <h4>2.77%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>4. Punjab National Bank</h4>
+                                                                            <h4>2.32%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>5. Bandhan Bank Ltd</h4>
+                                                                            <h4>0.95%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>6. Jio Financial Services </h4>
+                                                                            <h4>0.92%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>7. Piramal Enterprises Limited</h4>
+                                                                            <h4>0.91%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>8. Sundaram Finance Ltd</h4>
+                                                                            <h4>0.60%</h4>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                                <Accordion.Item eventKey="4" >
+                                                                    <Accordion.Header as="h3" className='faq-header'>
+                                                                        <span className='cirl' style={{ background: "#B8A970" }}>
+
+                                                                        </span>
+                                                                        <div className='header-flx'>
+                                                                            <h4>Infrastructure</h4>
+                                                                            <h3 style={{ color: "#B8A970" }}>8.23%</h3>
+                                                                        </div>
+                                                                    </Accordion.Header>
+                                                                    <Accordion.Body>
+                                                                        <div className='acd-list'>
+                                                                            <h4>1. HDFC Bank Limited</h4>
+                                                                            <h4>9.19%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>2. State Bank Of India</h4>
+                                                                            <h4>5.67%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>3. Capri Global Capital Limited</h4>
+                                                                            <h4>2.77%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>4. Punjab National Bank</h4>
+                                                                            <h4>2.32%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>5. Bandhan Bank Ltd</h4>
+                                                                            <h4>0.95%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>6. Jio Financial Services </h4>
+                                                                            <h4>0.92%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>7. Piramal Enterprises Limited</h4>
+                                                                            <h4>0.91%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>8. Sundaram Finance Ltd</h4>
+                                                                            <h4>0.60%</h4>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                                <Accordion.Item eventKey="5" >
+                                                                    <Accordion.Header as="h3" className='faq-header'>
+                                                                        <span className='cirl' style={{ background: "#CD4BA8" }}>
+
+                                                                        </span>
+                                                                        <div className='header-flx'>
+                                                                            <h4>Power</h4>
+                                                                            <h3 style={{ color: "#CD4BA8" }}>6.62%</h3>
+                                                                        </div>
+                                                                    </Accordion.Header>
+                                                                    <Accordion.Body>
+                                                                        <div className='acd-list'>
+                                                                            <h4>1. HDFC Bank Limited</h4>
+                                                                            <h4>9.19%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>2. State Bank Of India</h4>
+                                                                            <h4>5.67%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>3. Capri Global Capital Limited</h4>
+                                                                            <h4>2.77%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>4. Punjab National Bank</h4>
+                                                                            <h4>2.32%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>5. Bandhan Bank Ltd</h4>
+                                                                            <h4>0.95%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>6. Jio Financial Services </h4>
+                                                                            <h4>0.92%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>7. Piramal Enterprises Limited</h4>
+                                                                            <h4>0.91%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>8. Sundaram Finance Ltd</h4>
+                                                                            <h4>0.60%</h4>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                                <Accordion.Item eventKey="6" >
+                                                                    <Accordion.Header as="h3" className='faq-header'>
+                                                                        <span className='cirl' style={{ background: "#45BF60" }}>
+
+                                                                        </span>
+                                                                        <div className='header-flx'>
+                                                                            <h4>IT Consulting & Software</h4>
+                                                                            <h3 style={{ color: "#45BF60" }}>4.89%</h3>
+                                                                        </div>
+                                                                    </Accordion.Header>
+                                                                    <Accordion.Body>
+                                                                        <div className='acd-list'>
+                                                                            <h4>1. HDFC Bank Limited</h4>
+                                                                            <h4>9.19%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>2. State Bank Of India</h4>
+                                                                            <h4>5.67%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>3. Capri Global Capital Limited</h4>
+                                                                            <h4>2.77%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>4. Punjab National Bank</h4>
+                                                                            <h4>2.32%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>5. Bandhan Bank Ltd</h4>
+                                                                            <h4>0.95%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>6. Jio Financial Services </h4>
+                                                                            <h4>0.92%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>7. Piramal Enterprises Limited</h4>
+                                                                            <h4>0.91%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>8. Sundaram Finance Ltd</h4>
+                                                                            <h4>0.60%</h4>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                            </Accordion>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </Accordion.Header>
-                                            <Accordion.Body>
-                                                <div className='acd-list'>
-                                                    <h4>1. HDFC Bank Limited</h4>
-                                                    <h4>9.19%</h4>
+
+                                                <div
+                                                    className={toggleState === 2 ? "content  active-content" : "content"}
+                                                >
+                                                    <div className="equity-tab-cont">
+                                                        <div className='lft-chart'>
+                                                            <img src={Image2} className="img-fluid" alt="" />
+                                                        </div>
+                                                        <div className="right-cont-details">
+                                                            <Accordion defaultActiveKey="0">
+                                                                <Accordion.Item eventKey="0" >
+                                                                    <Accordion.Header as="h3" className='faq-header'>
+                                                                        <span className='cirl' style={{ background: "#7C160E" }}>
+
+                                                                        </span>
+                                                                        <div className='header-flx'>
+                                                                            <h4>Others</h4>
+                                                                            <h3 style={{ color: "#7C160E" }}>1.46%</h3>
+                                                                        </div>
+                                                                    </Accordion.Header>
+                                                                    <Accordion.Body>
+                                                                        <div className='acd-list'>
+                                                                            <h4>1. Clearing Corporation Of India Ltd</h4>
+                                                                            <h4>0.92%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>2. Net Receivables / (Payables)</h4>
+                                                                            <h4>0.54%</h4>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                            </Accordion>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className='acd-list'>
-                                                    <h4>2. State Bank Of India</h4>
-                                                    <h4>5.67%</h4>
+
+                                                <div
+                                                    className={toggleState === 3 ? "content  active-content" : "content"}
+                                                >
+                                                    <div className="equity-tab-cont">
+                                                        <div className='lft-chart'>
+                                                            <img src={Image2} className="img-fluid" alt="" />
+                                                        </div>
+                                                        <div className="right-cont-details">
+                                                            <Accordion defaultActiveKey="0">
+                                                                <Accordion.Item eventKey="0" >
+                                                                    <Accordion.Header as="h3" className='faq-header'>
+                                                                        <span className='cirl' style={{ background: "#7C160E" }}>
+
+                                                                        </span>
+                                                                        <div className='header-flx'>
+                                                                            <h4>Others</h4>
+                                                                            <h3 style={{ color: "#7C160E" }}>1.46%</h3>
+                                                                        </div>
+                                                                    </Accordion.Header>
+                                                                    <Accordion.Body>
+                                                                        <div className='acd-list'>
+                                                                            <h4>1. Clearing Corporation Of India Ltd</h4>
+                                                                            <h4>0.92%</h4>
+                                                                        </div>
+                                                                        <div className='acd-list'>
+                                                                            <h4>2. Net Receivables / (Payables)</h4>
+                                                                            <h4>0.54%</h4>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                            </Accordion>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className='acd-list'>
-                                                    <h4>3. Capri Global Capital Limited</h4>
-                                                    <h4>2.77%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>4. Punjab National Bank</h4>
-                                                    <h4>2.32%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>5. Bandhan Bank Ltd</h4>
-                                                    <h4>0.95%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>6. Jio Financial Services </h4>
-                                                    <h4>0.92%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>7. Piramal Enterprises Limited</h4>
-                                                    <h4>0.91%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>8. Sundaram Finance Ltd</h4>
-                                                    <h4>0.60%</h4>
-                                                </div>
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                    </Accordion>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div
-                            className={toggleState === 2 ? "content  active-content" : "content"}
-                        >
-                             <div className="equity-tab-cont">
-                                    <div className='lft-chart'>
-                                        <img src={Image2} className="img-fluid" alt="" />
-                                    </div>
-                                    <div className="right-cont-details">
-                                    <Accordion defaultActiveKey="0">
-                                        <Accordion.Item eventKey="0" >
-                                            <Accordion.Header as="h3" className='faq-header'>
-                                                <span className='cirl' style={{background: "#7C160E"}}>
-
-                                                </span>
-                                                <div className='header-flx'>
-                                                    <h4>Others</h4>
-                                                    <h3 style={{color: "#7C160E"}}>1.46%</h3>
-                                                </div>
-                                            </Accordion.Header>
-                                            <Accordion.Body>
-                                                <div className='acd-list'>
-                                                    <h4>1. Clearing Corporation Of India Ltd</h4>
-                                                    <h4>0.92%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>2. Net Receivables / (Payables)</h4>
-                                                    <h4>0.54%</h4>
-                                                </div>
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                    </Accordion>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            className={toggleState === 3 ? "content  active-content" : "content"}
-                        >
-                            <div className="equity-tab-cont">
-                                    <div className='lft-chart'>
-                                        <img src={Image2} className="img-fluid" alt="" />
-                                    </div>
-                                    <div className="right-cont-details">
-                                    <Accordion defaultActiveKey="0">
-                                        <Accordion.Item eventKey="0" >
-                                            <Accordion.Header as="h3" className='faq-header'>
-                                                <span className='cirl' style={{background: "#7C160E"}}>
-
-                                                </span>
-                                                <div className='header-flx'>
-                                                    <h4>Others</h4>
-                                                    <h3 style={{color: "#7C160E"}}>1.46%</h3>
-                                                </div>
-                                            </Accordion.Header>
-                                            <Accordion.Body>
-                                                <div className='acd-list'>
-                                                    <h4>1. Clearing Corporation Of India Ltd</h4>
-                                                    <h4>0.92%</h4>
-                                                </div>
-                                                <div className='acd-list'>
-                                                    <h4>2. Net Receivables / (Payables)</h4>
-                                                    <h4>0.54%</h4>
-                                                </div>
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                    </Accordion>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
 
                             <div className='card-mn fund-mang-details'>
                                 {
@@ -1026,7 +1042,7 @@ function MFTopFunds() {
                                     </div>
                                     <div className='col-md-6'>
                                         <div className="toggle">
-                                            <span className={`${typeOfCalc ? 'selected' : ''}`}>Lumpsum</span>
+                                            <span className={`${!typeOfCalc ? 'selected' : ''}`}>Lumpsum</span>
                                             <input
                                                 type="checkbox"
                                                 id="exchangeToggle"
@@ -1035,7 +1051,7 @@ function MFTopFunds() {
                                                 onChange={(e) => setTypeOfCalc(e.target.checked)}
                                             />
                                             <label></label>
-                                            <span className={`${!typeOfCalc ? 'selected' : ''}`}>SIP</span>
+                                            <span className={`${typeOfCalc ? 'selected' : ''}`}>SIP</span>
                                         </div>
                                     </div>
                                 </div>
