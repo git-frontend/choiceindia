@@ -15,3 +15,55 @@
 
     }
 }
+
+.new-404{
+  padding: 5rem 0;
+  @media (max-width:$md) {
+    padding-top: 0;
+  }
+  .left-error{
+    text-align: center;
+    p{
+      margin-bottom: 3.5rem;
+      font-size: 1.75rem;
+      @media (max-width:$sm) {
+        font-size: 1.575rem;
+      }
+    }
+  }
+  .right-error{
+    width: 400px;
+    @media (max-width:$md) {
+      width: 100%;
+      margin-top: 4rem;
+    }
+    .cust-lnk{
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      border: 0;
+      font-size: 1.675rem;
+      color: $primary;
+      background: $abt-bg;
+      padding:1.75rem 2rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      transition: 0.5s;
+      &:hover{
+        background: $whiteColor;
+        box-shadow: 0 0 10px #d6edeb;
+      }
+      @media (max-width:$sm) {
+        font-size: 1.375rem;
+      }
+      svg{
+        width: 40px;
+      }
+      span{
+        display: inline-block;
+        font-family: $font-family-poppins-medium;
+        margin-left: 2.5rem;
+      }
+    }
+  }
+}
