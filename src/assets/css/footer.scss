@@ -280,18 +280,11 @@
     background: $bgcolordark;
     padding: 1rem;
     position: relative;
+    color: $whiteColor !important;
+    font-size: 1.1rem;
     .overlay{
         display: none;
-    }
-    .marquee{
-        p{
-            color: $whiteColor;
-            margin: 0;
-            padding: 0;
-            font-size: 1.2rem;
-        }
-    }
-   
+    } 
 }
 
 .quick-links-footer{

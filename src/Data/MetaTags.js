@@ -255,143 +255,148 @@ const meta_tags = {
   "open-free-demat-account": {
     'title': "Free Demat Account Opening Online with No Annual Charges", 'lang': "en", 'content': "Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "", "link4": "", "link5": "https://choiceindia.com/marathi/open-demat-account", "link6": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "", "href4": "", "href5": "mr-in", "href6": "x-default",
     "faqscript": `<script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [{
-            "@type": "Question",
-            "name": "How long will it take for the Demat Account to be activated?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Your account will be activated within 4 hours of document submission. If there is any gap in the documentation, the Choice support team will reach out to you. Once your account is activated you will receive an email from Choice informing you about the same."
-            }
-          },{
-            "@type": "Question",
-            "name": "What are the documents required to open a Demat Account?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The following documents will be required to open an account for a resident individual with Choice :
-        * PAN Card
-        * Cancelled Cheque (that captures the MICR Code)
-        * Passport Size Photograph
-        * Address Proof"
-            }
-          },{
-            "@type": "Question",
-            "name": "Are there any charges for Demat Account opening with Choice?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can open a low brokerage Demat Account with Choice at zero account opening charges."
-            }
-          },{
-            "@type": "Question",
-            "name": "How do I open a Trading Account without opening a Demat Account?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "NSE/BSE mandates a Demat with your Trading Account for securities. Currency and Commodities do not require a Demat Account, so if your trading requirements are restricted to that; a Trading Account can be opted for. This will have to be specified in the documentation process with the broker. For more information regarding the same, you can contact our customer care team at care@choiceindia.com"
-            }
-          },{
-            "@type": "Question",
-            "name": "How do I switch my Demat from another broker to Choice?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You will be required to provide us with the CML (Client Master List) Copy of your earlier DP and open a new Demat Account with us."
-            }
-          },{
-            "@type": "Question",
-            "name": "Can I map multiple Demat Accounts to my Trading Account?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, you can link multiple Demat Accounts to your Trading Account, even with different DP's, but they should all be in your name. However, an important thing to note is that from all the linked Demat Accounts you can give shares for Pay In/Pledge, etc; but the payout from the Trading Account will only get credited to the primary Demat Account."
-            }
-          },{
-            "@type": "Question",
-            "name": "How can I transfer shares from another Demat Account to my Choice Demat Account?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You will be required to provide the Off Market Delivery Instruction Slip (DIS) to your previous DP, mentioning the target DP ID of the Demat Account you are holding in Choice Equity Broking Private Limited."
-            }
-          },{
-            "@type": "Question",
-            "name": "Is opening a Demat account necessary for stock market investment?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Demat account is mandatory if you are going to trade/invest in equities. Demat accounts hold your shares in electronic form. If you are going to simply trade in futures and options then Demat is not required."
-            }
-          },{
-            "@type": "Question",
-            "name": "Can I use my previous Demat Account with Choice?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "There are 2 options, either you open a new Demat account with Choice and transfer all shares from the old Demat, or merge the old Demat into the new one.
-        You can opt for manual or online transfer of shares.
-        Manual Transfer
-        * Ascertain which DP (Depository Participant) is holding the shares, there are 2 depositories in India, National Securities Depository Limited (NSDL) and Central Depository Services Limited (CDSL)
-        * If your new Demat is with the same DP then it will be an inter-depository transfer, and if it's different; it will be an intra-depository transfer
-        * Next, fill the Delivery Instruction slip (DIS) provided by the DP of your old account. In the 'Mode of Transfer' field, please select whether the transfer is inter-depository or intra-depository. This is crucial
-        * Fill all required details like names of shares, quantity and their ISIN numbers
-        * Enter the 16-character ID of the new account
-        * Submit the signed DIS to old broker and take acknowledgement slip
-        * Shares will be transferred to new account in 3-5 working days
-        Online Transfer
-        * This option is much simpler, just visit the CDSL website and register with all required details
-        * You will be required to fill a form and use the 'Print Form' option; this notifies CDSL to start the verification process
-        * After verification is completed, Login details to your account will be sent on your email id
-        * Login to your account from CDSL website and start transferring shares to the new account"
-            }
-          },{
-            "@type": "Question",
-            "name": "Can I hold money in a Demat Account?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely, you can keep money in the Demat/Trading account. It is, however, advisable to hold only the amount that will be required for trading/investing."
-            }
-          },{
-            "@type": "Question",
-            "name": "Is Opening a Demat Account Online Safe?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "It's absolutely safe to open a Demat account online but choosing the right broker is essential for this."
-            }
-          },{
-            "@type": "Question",
-            "name": "Is there a limit for Deposit and Withdrawal Money from a Trading Account?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "There is no limit as such for depositing or withdrawing money, however, it will need multiple transactions. For MPS/NEFT/RTGS/ the maximum amount allowed in a single transaction is decided by the bank. UPI transfers have a limit of 1 lakh per transaction. In the case of most brokers, there is no withdrawal limit but do check once with your broker."
-            }
-          },{
-            "@type": "Question",
-            "name": "Can I use the same Demat Account for Equity trading, Currency trading, Derivatives and Commodity Trading?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, you can use the same Demat or Trading Account for Equity Trading, Currency Trading, Derivative Trading and Commodity Trading."
-            }
-          },{
-            "@type": "Question",
-            "name": "How much Demat Account Opening Fee charged by Choice?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "It's free. There is no Demat account opening fee charged by Choice.
-        What are the eligibility criteria for opening an online Demat & Trading Account?
-        As far as age is concerned, there is no minimum age criterion i.e., under 18 can also have Demat & Trading accounts opened. The parents or guardians will be in-charge of the account until the minor comes of age.
-        Below are the common requirements,
-        * Must be Indian Citizen residing in India
-        * Must be 18 years of age
-        * Have valid Pan Card
-        * Valid Address Proof (Aadhar, Voter ID, Passport, Driving License)
-        You will be required to provide recent photos along with proof of Identity, Address and Income (ITR) to open a Demat account in India."
-            }
-          },{
-            "@type": "Question",
-            "name": "What is Paperless Demat account opening?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "In this option for Demat account opening, there is no physical submission of any document involved. All documents are submitted online and take only 5 minutes to complete!"
-            }
-          }]
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How long will it take for the Demat Account to be activated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your account will be activated within 4 hours of document submission. If there is any gap in the documentation, the Choice support team will reach out to you. Once your account is activated you will receive an email from Choice informing you about the same."
         }
-        </script> 
+      },{
+        "@type": "Question",
+        "name": "What are the documents required to open a Demat Account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The following documents will be required to open an account for a resident individual with Choice :
+    * PAN Card
+    * Cancelled Cheque (that captures the MICR Code)
+    * Passport Size Photograph
+    * Address Proof"
+        }
+      },{
+        "@type": "Question",
+        "name": "Are there any charges for Demat Account opening with Choice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can open a low brokerage Demat Account with Choice at zero account opening charges."
+        }
+      },{
+        "@type": "Question",
+        "name": "How do I open a Trading Account without opening a Demat Account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NSE/BSE mandates a Demat with your Trading Account for securities. Currency and Commodities do not require a Demat Account, so if your trading requirements are restricted to that; a Trading Account can be opted for. This will have to be specified in the documentation process with the broker. For more information regarding the same, you can contact our customer care team at care@choiceindia.com"
+        }
+      },{
+        "@type": "Question",
+        "name": "How do I switch my Demat from another broker to Choice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You will be required to provide us with the CML (Client Master List) Copy of your earlier DP and open a new Demat Account with us."
+        }
+      },{
+        "@type": "Question",
+        "name": "Can I map multiple Demat Accounts to my Trading Account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can link multiple Demat Accounts to your Trading Account, even with different DP's, but they should all be in your name. However, an important thing to note is that from all the linked Demat Accounts you can give shares for Pay In/Pledge, etc; but the payout from the Trading Account will only get credited to the primary Demat Account."
+        }
+      },{
+        "@type": "Question",
+        "name": "How can I transfer shares from another Demat Account to my Choice Demat Account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You will be required to provide the Off Market Delivery Instruction Slip (DIS) to your previous DP, mentioning the target DP ID of the Demat Account you are holding in Choice Equity Broking Private Limited."
+        }
+      },{
+        "@type": "Question",
+        "name": "Is opening a Demat account necessary for stock market investment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Demat account is mandatory if you are going to trade/invest in equities. Demat accounts hold your shares in electronic form. If you are going to simply trade in futures and options then Demat is not required."
+        }
+      },{
+        "@type": "Question",
+        "name": "Can I use my previous Demat Account with Choice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are 2 options, either you open a new Demat account with Choice and transfer all shares from the old Demat, or merge the old Demat into the new one.
+    You can opt for manual or online transfer of shares.
+    Manual Transfer
+    * Ascertain which DP (Depository Participant) is holding the shares, there are 2 depositories in India, National Securities Depository Limited (NSDL) and Central Depository Services Limited (CDSL)
+    * If your new Demat is with the same DP then it will be an inter-depository transfer, and if it's different; it will be an intra-depository transfer
+    * Next, fill the Delivery Instruction slip (DIS) provided by the DP of your old account. In the 'Mode of Transfer' field, please select whether the transfer is inter-depository or intra-depository. This is crucial
+    * Fill all required details like names of shares, quantity and their ISIN numbers
+    * Enter the 16-character ID of the new account
+    * Submit the signed DIS to old broker and take acknowledgement slip
+    * Shares will be transferred to new account in 3-5 working days
+    Online Transfer
+    * This option is much simpler, just visit the CDSL website and register with all required details
+    * You will be required to fill a form and use the 'Print Form' option; this notifies CDSL to start the verification process
+    * After verification is completed, Login details to your account will be sent on your email id
+    * Login to your account from CDSL website and start transferring shares to the new account"
+        }
+      },{
+        "@type": "Question",
+        "name": "Can I hold money in a Demat Account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely, you can keep money in the Demat/Trading account. It is, however, advisable to hold only the amount that will be required for trading/investing."
+        }
+      },{
+        "@type": "Question",
+        "name": "Is Opening a Demat Account Online Safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's absolutely safe to open a Demat account online but choosing the right broker is essential for this."
+        }
+      },{
+        "@type": "Question",
+        "name": "Is there a limit for Deposit and Withdrawal Money from a Trading Account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no limit as such for depositing or withdrawing money, however, it will need multiple transactions. For MPS/NEFT/RTGS/ the maximum amount allowed in a single transaction is decided by the bank. UPI transfers have a limit of 1 lakh per transaction. In the case of most brokers, there is no withdrawal limit but do check once with your broker."
+        }
+      },{
+        "@type": "Question",
+        "name": "Can I use the same Demat Account for Equity trading, Currency trading, Derivatives and Commodity Trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can use the same Demat or Trading Account for Equity Trading, Currency Trading, Derivative Trading and Commodity Trading."
+        }
+      },{
+        "@type": "Question",
+        "name": "How much Demat Account Opening Fee charged by Choice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's free. There is no Demat account opening fee charged by Choice."
+        }
+      },{
+        "@type":"Question",
+    "name":"What are the eligibility criteria for opening an online Demat & Trading Account?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+    "text": "As far as age is concerned, there is no minimum age criterion i.e., under 18 can also have Demat & Trading accounts opened. The parents or guardians will be in-charge of the account until the minor comes of age.
+    Below are the common requirements,
+    * Must be Indian Citizen residing in India
+    * Must be 18 years of age
+    * Have valid Pan Card
+    * Valid Address Proof (Aadhar, Voter ID, Passport, Driving License)
+    You will be required to provide recent photos along with proof of Identity, Address and Income (ITR) to open a Demat account in India."
+        }
+      },{
+        "@type": "Question",
+        "name": "What is Paperless Demat account opening?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In this option for Demat account opening, there is no physical submission of any document involved. All documents are submitted online and take only 5 minutes to complete!"
+        }
+      }]
+    }
+    </script> 
     ` },
 
   "about-us": { 'title': "Best Stock Broking Company in India - Choice Broking", 'lang': "en", "content": "Choice is one of the best stock broking companies in India. Start trading in stocks, derivatives, currency, commodity & investing in mutual funds with India's leading share broking company. Open a free trading account with us.", "link": 'https://choiceindia.com/about-us', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
@@ -1313,115 +1318,95 @@ const meta_tags = {
     ` },
 
   "demat-account": {
-    'title': "What is Demat Account? Meaning, Opening Process, Types & Benefits", 'lang': "en", 'content': "A Demat account is used to store securities in electronic format. Visit to know about what is Demat account, its types, benefits, and online account opening process at Choice.", 'link': "https://choiceindia.com/demat-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "", "faqscript": `
-    <script type="application/ld+json">
+    'title': "What is Demat Account? Meaning, Opening Process, Types & Benefits", 'lang': "en", 'content': "What is a Demat account? Learn about its meaning, types, charges, opening process, required documents, benefits, and more at Choice.", 'link': "https://choiceindia.com/demat-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+     "faqscript": `
+     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [{
     "@type": "Question",
-    "name": "Who Can Open A Demat Account?",
+    "name": "Who can open a Demat account?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "SEBI has laid out certain guidelines as to who is eligible to open a Demat account in India. Anyone who falls under the following criteria can open a Demat account. Let us quickly have a look at the same.
-
-Anyone who is a resident of India.
-
-The member of any HUF family
-
-NRIs can also open an NRI Demat account in India.
-
-Even if you are a minor (below the age of 18), you can open a Demat account for minors. There is no age limit for Demat account.
-
-A company that is taxed under the taxation policy of India is also eligible to open a Demat account.
-
-Now that we have talked about the criteria of opening a Demat account, let us have a look at how you can complete the entire process."
+      "text": "A Demat account can be opened by Indian residents, non-resident Indians (NRIs), and foreign investors through registered depository participants (DPs)."
     }
   },{
     "@type": "Question",
-    "name": "How many Demat accounts can one have?",
+    "name": "How secure is my Demat account?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Any individual investor can have 4 Demat accounts, but each has to be with a different Depository Participant. SEBI has set no limits, yet you should know that holding Demat accounts are not free."
+      "text": "Demat accounts are highly secure, using encryption and authentication measures. Your DP and depository maintain stringent security standards."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I have multiple Demat accounts?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, you can have multiple Demat accounts, but there are regulatory restrictions. Each account must have a different purpose or ownership structure."
     }
   },{
     "@type": "Question",
     "name": "How to check my Demat account?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "To check your Demat account, you will have to visit the CDSL website and log in. Then Enter your 10 digit PAN card number and 16 digits Demat account number. After that, enter your DOB, complete the captcha process, and generate OTP; once it's all done, you can check your Demat account through CDSL."
+      "text": "You can check your Demat account balance and transaction history through the online portal provided by your DP."
     }
   },{
     "@type": "Question",
-    "name": "How can I transfer shares from one Demat account to another?",
+    "name": "What happens if I forget my Demat account password?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The investor will have to fill the DIS and submit it to the current broker; then, the broker will forward the DIS request to the depository. The. The depository will share the existing holdings with your preferred Demat account."
+      "text": "Contact your DP for password reset assistance. They will guide you through the process."
     }
   },{
     "@type": "Question",
-    "name": "How can I find the Demat account number from PAN?",
+    "name": "How do I update my personal information in my Demat account?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The simplest way to find your Demat account number from your PAN card is to search your mailbox. Search the PAN card number in your mailbox, and you will find mails from CDSL & NSDL; there, you will see the Demat account number."
+      "text": "Submit the necessary documents and updates to your DP for any changes in personal information."
     }
   },{
     "@type": "Question",
-    "name": "When is the iex bonus share credited to the Demat account?",
+    "name": "Can I trade in commodities using my Demat account?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "It generally takes 15 business days to reflect bonus shares in your account, but it depends on the RTA."
+      "text": "No, commodities trading requires a separate commodity trading account."
     }
   },{
     "@type": "Question",
-    "name": "How to log in to a Demat account?",
+    "name": "What is the procedure for transferring shares from one Demat account to another?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Login depends on your trading platform; every stockbroker has a different app with a different user interface. So, it depends on which app or stockbroker you are using."
+      "text": "You can initiate the transfer through a delivery instruction slip (DIS) or by submitting an off-market transfer request."
     }
   },{
     "@type": "Question",
-    "name": "How to change the nominee into a Demat account?",
+    "name": "Are there any restrictions on the number of shares I can hold in my Demat account?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Firstly, you need to download the nominee modification form from the DP's website, fill out the form, update the nominee's information, and get it signed. Later, send the nominee modification form and the hard copy of your Demat account information to your stockbrokers' headquarter."
+      "text": "There are no specific restrictions on the number of shares you can hold, but DPs may have their limits for operational efficiency."
     }
   },{
     "@type": "Question",
-    "name": "Who can open a Demat Account?",
+    "name": "When does the IEX bonus share get credited to the Demat account?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Any resident of India who has a PAN card is eligible to open a Demat account."
+      "text": "Bonus shares are credited after the company's board approves the bonus issue, and the record date is announced."
     }
   },{
     "@type": "Question",
-    "name": "What is the Age limit for Demat Account?",
+    "name": "How to change the nominee in the Demat account?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "There is no age restriction for Demat account holders; even a minor can open a Demat account."
+      "text": "Fill out the nomination change form provided by your DP and submit the necessary documents."
     }
   },{
     "@type": "Question",
-    "name": "How much time is required for Demat account activation?",
+    "name": "Can I open a Demat account without an Aadhar Card?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Presently, opening a Demat account does not take more than 5 minutes. However, Demat account activation time may take up to 4 hours if you open a Demat account with Choice India."
-    }
-  },{
-    "@type": "Question",
-    "name": "Can I Open a Demat Account Without an Aadhar Card?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A Demat account with an Aadhar card is possible!
-
-Currently, the Government is planning to revisit the e-KYC process and linking Aadhaar to Demat, trading, or bank accounts is not mandatory. Therefore, opening a Demat account without an Aadhar card is possible."
-    }
-  },{
-    "@type": "Question",
-    "name": "Can I Open a Demat Account Without a PAN Card?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Unfortunately, a Demat account without a PAN card is not possible. SEBI has mandated a PAN card for opening a Demat account. The investor/trader needs to show the original PAN Card while opening the Demat account."
+      "text": "Yes, you can open a Demat account without an Aadhar card by providing other government-issued identity documents."
     }
   }]
 }
@@ -2340,10 +2325,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     "link": "https://choiceindia.com/open-free-demat-account"
   },
   "campaign/technical-analysis": {
-    "title": "Your Technical Analysis Skills Don’t Pay Off - Explore Stratezy",
-    'lang': "en",
-    'content': "Don't have time for daily chart analysis? Trade with daily stock recommendation from the expert at Choice. Start creating your own strategy now!",
-    "link": "https://choiceindia.com/open-free-demat-account"
+    "title":"Your Technical Analysis Skills Don’t Pay Off - Explore Stratezy",
+    'lang':"en",
+    'content':"Don't have time for daily chart analysis? Trade with daily stock recommendation from the expert at Choice. Start creating your own strategy now!",
+  },
+    "campaign/futures-options-trading": {
+    "link":"https://choiceindia.com/open-free-demat-account"
   },
   "campaign/futures-options-trading": {
     "title": "F&O Trading - Don't Miss Futures & Options Trading Opportunities",
@@ -2351,6 +2338,13 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content': "Start trading in Futures and Options (F&O) with Choice. Open a free demat account with No AMC for first year, free expert research, low DP & brokerage charges.",
     "link": "https://choiceindia.com/open-free-demat-account"
   },
+  "bajaj-energy-ipo": {
+    "title":"Bajaj Energy IPO - Check Issue Date, Price, Lot Size & Details",
+    'lang':"en",
+    'content':"Discover the latest details about the Bajaj Energy IPO, including the issue date, price, lot size, and other information. Stay updated and make informed investment decisions.",
+    "link":"https://choiceindia.com/bajaj-energy-ipo"
+  },
+  
   "brokerage-calculator": {
     "title": "Brokerage Calculator - Calculate Intraday & Delivery Brokerage Charges",
     'lang': "en",
