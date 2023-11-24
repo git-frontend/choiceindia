@@ -281,12 +281,15 @@ export class API_URLS {
     categoryListUrl = 'static/CategoryList';
     categoryListDetails = 'Scheme/CategoryDetails';
     schemeDataUrl = 'MFAnalysis/SchemeData';
-    fundsManagerUrl='Scheme/fundmanager';
-    performancePeerUrl='MFAnalysis/Analysis';
-    AMCListUrl='static/FUNDMASTERIMG';
-    AMCListDetails='Scheme/AMCwise';
-    sipLumpsumCalcUrl='Scheme/sipcalculator';
-    schemeDisributionUrl='Scheme/distribution';
+    fundsManagerUrl = 'Scheme/fundmanager';
+    performancePeerUrl = 'MFAnalysis/Analysis';
+    AMCListUrl = 'static/FUNDMASTERIMG';
+    AMCListDetails = 'Scheme/AMCwise';
+    sipLumpsumCalcUrl = 'Scheme/sipcalculator';
+    schemeDisributionUrl = 'Scheme/distribution';
+    sensexReturnGraphUrl = 'Scheme/SensexReturnData';
+    bankFDReturnGraphUrl='Scheme/BankFDReturn';
+    navReturnGraphUrl = 'Scheme/navreturngraph';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -962,29 +965,38 @@ export class API_URLS {
     getCategoryData() {
         return this.MFBaseURL + this.categoryListDetails
     }
-    getSchemeData(){
+    getSchemeData() {
         return this.MFBaseURL + this.schemeDataUrl
     }
-    getSchemeData(){
+    getSchemeData() {
         return this.MFBaseURL + this.schemeDataUrl
     }
-    getFundManagerData(){
+    getFundManagerData() {
         return this.MFBaseURL + this.fundsManagerUrl
     }
-    getPerformancePeerComparisonData(){
+    getPerformancePeerComparisonData() {
         return this.MFBaseURL + this.performancePeerUrl
     }
-    getAMCList(){
+    getAMCList() {
         return this.MFBaseURL + this.AMCListUrl
     }
-    AMCListData(){
+    AMCListData() {
         return this.MFBaseURL + this.AMCListDetails
     }
-    calculatesipLump(){
+    calculatesipLump() {
         return this.MFBaseURL + this.sipLumpsumCalcUrl
     }
-    getSchemeDistributionurl(){
+    getSchemeDistributionurl() {
         return this.MFBaseURL + this.schemeDisributionUrl
+    }
+    sensexReturnGraphdata() {
+        return this.MFBaseURL + this.sensexReturnGraphUrl
+    }
+    bankFDReturnGraphdata() {
+        return this.MFBaseURL + this.bankFDReturnGraphUrl
+    }
+    getNavReturnGraph() {
+        return this.MFBaseURL + this.navReturnGraphUrl
     }
 
 }

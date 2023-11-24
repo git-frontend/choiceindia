@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import NVD3Chart from 'react-nvd3';
+import 'nvd3/build/nv.d3.css';
+import * as d3 from 'd3';
 import Accordion from 'react-bootstrap/Accordion';
 import { useState, useEffect } from "react";
 import "./mf-details.scss";
@@ -13,6 +16,7 @@ import utils from "../../Services/utils";
 import Form from 'react-bootstrap/Form';
 import Image1 from '../../assets/images/mf-investica/pie-chart.png';
 import Image2 from '../../assets/images/mf-investica/donuts-chart.webp';
+
 function MFTopFunds() {
     const [name, setName] = useState('hideform');
     const [value, onChange] = useState(0);
@@ -284,6 +288,68 @@ function MFTopFunds() {
     const fillStyle = {
         background: `linear-gradient(to right, #D9D9D9 ${fillPercentageloan}%, #D9D9D9 ${fillPercentageloan}%)`,
     };
+    const chartData = [
+        {
+            key: 'Example', margin: {
+                top: 20,
+                right: 30,
+                bottom: 40,
+                left: 55
+            }, values: [{ x: 1, y: 10 }, { x: 2, y: 15 }, { x: 3, y: 7 }]
+        },
+    ];
+    // const chartOptions = {
+    //     chart: {
+    //         type: 'lineChart',
+    //         height: window.innerWidth < 400 ? 150 : 250,
+    //         margin: {
+    //             top: 20,
+    //             right: 30,
+    //             bottom: 40,
+    //             left: 55
+    //         },
+    //         showLegend: true,
+    //         visible: true,
+    //         x: (d) => d[0],
+    //         y: (d) => d[1],
+    //         useInteractiveGuideline: true,
+    //         xAxis: {
+    //             tickFormat: (d) => null,
+    //             tickPadding: 20
+    //         },
+    //         yAxis: {
+    //             showMaxMin: false,
+    //             tickFormat: (d) => d3.format('.02f')(d),
+    //             axisLabelDistance: -10
+    //         }
+    //     }
+    // };
+    const chartOptions = {
+        chart: {
+            type: 'lineChart',
+            height: window.innerWidth < 400 ? 150 : 250,
+            margin: {
+                top: 20,
+                right: 30,
+                bottom: 40,
+                left: 55
+            },
+            showLegend: true,
+            visible: true,
+            x: (d) => d[0],
+            y: (d) => d[1],
+            useInteractiveGuideline: true,
+            xAxis: {
+                tickFormat: (d) => null,
+                tickPadding: 20
+            },
+            yAxis: {
+                showMaxMin: false,
+                tickFormat: (d) => d3.format('.02f')(d),  // Use d3.format here
+                axisLabelDistance: -10
+            }
+        }
+    };
     return (
         <div>
             <section className="fund-listing-details">
@@ -374,12 +440,25 @@ function MFTopFunds() {
                                                     </button>
                                                 </div>
                                             </div>
-                                            
+
                                             <div className="mn-graph-footer text-center">
                                                 <span className="fund"></span><span>This Fund</span>
                                                 <span className="fund" style={{ backgroundColor: !typeOfReturn ? 'green' : '#FFFF00' }}></span>{' '}
                                                 <span>{(typeOfReturn) ? 'Sensex' : 'Bank FD'}</span>
                                             </div>
+                                            {/* <NVD3Chart
+                                                type="lineChart"
+                                                datum={chartData}
+                                                x="x"
+                                                y="y"
+                                            /> */}
+                                            <NVD3Chart
+                                                type="lineChart"
+                                                datum={chartData}
+                                                x="x"
+                                                y="y"
+                                                options={chartOptions}
+                                            />
                                             <div className="duration">
                                                 <button className="dur-button active">1M</button>
                                                 <button className="dur-button">3M</button>
@@ -387,7 +466,7 @@ function MFTopFunds() {
                                                 <button className="dur-button">1Y</button>
                                                 <button className="dur-button">3Y</button>
                                                 <button className="dur-button">5Y</button>
-                                               
+
                                             </div>
                                         </div>
                                         <p className='per-ttl'>Showing Funds Performance since Sep 07, 2020</p>

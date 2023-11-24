@@ -237,6 +237,33 @@ const rest = {
       return data
     })
   },
+  sensexReturnGraphdata: function (postdata) {
+    let api = new API_URLS()
+    let url = api.sensexReturnGraphdata()
+    console.log("sensexReturnGraphdata", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  bankFDReturnGraphdata: function (postdata) {
+    let api = new API_URLS()
+    let url = api.bankFDReturnGraphdata()
+    console.log("bankFDReturnGraphdata", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getNavReturnGraph: function (postdata) {
+    let api = new API_URLS()
+    let url = api.getNavReturnGraph()
+    console.log("ReturnGraph", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
 
 
 }
