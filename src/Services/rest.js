@@ -193,7 +193,7 @@ const rest = {
 
     let api = new API_URLS()
     let url = api.getPerformancePeerComparisonData()
-    console.log("getPerformancePeerComparisonData", url)
+    // console.log("getPerformancePeerComparisonData", url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       //  console.log("datads",data)
       return data
@@ -237,19 +237,19 @@ const rest = {
       return data
     })
   },
-  sensexReturnGraphdata: function (postdata) {
+  getsensexReturnGraphdata: function (postdata) {
     let api = new API_URLS()
     let url = api.sensexReturnGraphdata()
-    console.log("sensexReturnGraphdata", url)
+    // console.log("sensexReturnGraphdata", url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       //  console.log("datads",data)
       return data
     })
   },
-  bankFDReturnGraphdata: function (postdata) {
+  getbankFDReturnGraphdata: function (postdata) {
     let api = new API_URLS()
     let url = api.bankFDReturnGraphdata()
-    console.log("bankFDReturnGraphdata", url)
+    // console.log("bankFDReturnGraphdata", url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       //  console.log("datads",data)
       return data
@@ -258,7 +258,7 @@ const rest = {
   getNavReturnGraph: function (postdata) {
     let api = new API_URLS()
     let url = api.getNavReturnGraph()
-    console.log("ReturnGraph", url)
+    // console.log("ReturnGraph", url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       //  console.log("datads",data)
       return data

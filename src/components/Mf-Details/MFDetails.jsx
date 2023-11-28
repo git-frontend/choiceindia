@@ -37,6 +37,22 @@ function MFTopFunds() {
     const [monthsLabel, setMonthsLabel] = useState('');
     const [someRange, setSomeRange] = useState(0.5);
     const [toggleState, setToggleState] = useState(1);
+    const [duration, setDuration] = useState('Monthly');
+    const [sensexOrBankFD, setSensexOrBankFD] = useState('Sensex');
+    const [returnsGraphData, setReturnsGraphData] = useState({});
+    const [chartData, setChartData] = useState([{ values: [] }, { values: [] }]);
+    console.log("chartData", chartData)
+    const [bankFDReturnsData, setBankFDReturnsData] = useState({});
+    const [sensexReturnsData, setSensexReturnsData] = useState({});
+    const [graphDate, setGraphDate] = useState('');
+    const [clicked, setClicked] = useState(false);
+    const [loadBankFD, setLoadBankFD] = useState(false);
+
+
+
+
+
+
 
     const toggleTab = (index) => {
         setToggleState(index);
@@ -79,7 +95,12 @@ function MFTopFunds() {
 
     useEffect(() => {
         window.addEventListener('scroll', getPosition2);
+        reloadGraphData('Sensex', duration, false, true)
+        // loadGraph('Sensex')
     }, []);
+    // useEffect(() => {
+    //     loadGraph();
+    //   }, [duration, clicked, loadBankFD]);
 
     const initializeschemeData = () => {
         const urlIdentity = window.location.pathname.split('/scheme/')[1];
@@ -94,7 +115,7 @@ function MFTopFunds() {
         rest.getSchemeData(request).then(
             res => {
                 if (res && res.Response) {
-                    console.log("res.Responsec", res.Response)
+                    // console.log("res.Responsec", res.Response)
                     setSchemedata([res.Response])
                     if (SchemePlanCode != 2066) {
                         if (res.Response.SchemeBasic.DRLumpSumAllowed == "N") {
@@ -177,7 +198,7 @@ function MFTopFunds() {
                         ];
 
                         let a = res.Response.Performance;
-                        console.log("Performance Data:", a);
+                        // console.log("Performance Data:", a);
 
                         list.forEach((obj) => {
                             let result = { label: obj.label };
@@ -195,7 +216,7 @@ function MFTopFunds() {
                             performanceResponseObject.push(result);
                         });
 
-                        console.log("Updated Performance Response:", performanceResponseObject);
+                        // console.log("Updated Performance Response:", performanceResponseObject);
 
                         setPerformanceResponseObject([...performanceResponseObject]);
                     }
@@ -278,17 +299,17 @@ function MFTopFunds() {
                 } else {
                     setSipLumpsumdta([]);
                 }
-                console.log('sipLumpsumCalc res', res);
+                // console.log('sipLumpsumCalc res', res);
             })
             .catch((error) => {
-                console.error('Error:', error);
+                // console.error('Error:', error);
             });
     }
     const fillPercentageloan = ((noOfMonths - 6) / (60 - 6)) * 100;
     const fillStyle = {
         background: `linear-gradient(to right, #D9D9D9 ${fillPercentageloan}%, #D9D9D9 ${fillPercentageloan}%)`,
     };
-    const chartData = [
+    const chartData1 = [
         {
             key: 'Example', margin: {
                 top: 20,
@@ -298,32 +319,7 @@ function MFTopFunds() {
             }, values: [{ x: 1, y: 10 }, { x: 2, y: 15 }, { x: 3, y: 7 }]
         },
     ];
-    // const chartOptions = {
-    //     chart: {
-    //         type: 'lineChart',
-    //         height: window.innerWidth < 400 ? 150 : 250,
-    //         margin: {
-    //             top: 20,
-    //             right: 30,
-    //             bottom: 40,
-    //             left: 55
-    //         },
-    //         showLegend: true,
-    //         visible: true,
-    //         x: (d) => d[0],
-    //         y: (d) => d[1],
-    //         useInteractiveGuideline: true,
-    //         xAxis: {
-    //             tickFormat: (d) => null,
-    //             tickPadding: 20
-    //         },
-    //         yAxis: {
-    //             showMaxMin: false,
-    //             tickFormat: (d) => d3.format('.02f')(d),
-    //             axisLabelDistance: -10
-    //         }
-    //     }
-    // };
+
     const chartOptions = {
         chart: {
             type: 'lineChart',
@@ -336,8 +332,8 @@ function MFTopFunds() {
             },
             showLegend: true,
             visible: true,
-            x: (d) => d[0],
-            y: (d) => d[1],
+            x:(d) => d.x,
+            y:(d) => d.y,
             useInteractiveGuideline: true,
             xAxis: {
                 tickFormat: (d) => null,
@@ -350,6 +346,212 @@ function MFTopFunds() {
             }
         }
     };
+    
+
+    //for graph purpose
+    const reloadGraphData = (type, duration, clicked, loadBankFD = false) => {
+        if (typeOfReturn) {
+            type = "Sensex";
+        } else {
+            type = "Bank FD";
+        }
+        setSensexOrBankFD(type);
+        setDuration(duration);
+        console.log("dhgjhdgfj", type, duration)
+        if (!returnsGraphData[duration]) {
+            getReturnsData(duration, (count) => {
+                if (count === 3) {
+                    loadGraph(type, duration, clicked, loadBankFD);
+                }
+            });
+        } else {
+            loadGraph(type, duration, clicked, loadBankFD);
+        }
+    };
+    const getGraphDataFromString = (stringData) => {
+        let result = [];
+        let data = stringData.split('|');
+        for (let i = 0; i < data.length; i++) {
+            if (data[i] !== '' && data[i] !== null) {
+                let c = data[i].split('@');
+                c[0] = new Date(c[0]).getTime();
+                c['val'] = parseFloat(c[1]);
+                c[1] = parseFloat(parseFloat(c[1]).toFixed(2));
+                result.push(c);
+            }
+        }
+        return result;
+    };
+    const getReturnsData = (duration, callback) => {
+        const urlIdentity = window.location.pathname.split('/scheme/')[1];
+        const arr = urlIdentity.split('-').slice(-2)
+        let count = 0;
+        const payload = {
+            SchemeCode: arr[0],
+            SchemePlanCode: arr[1],
+            Duration: duration,
+        };
+        rest.getNavReturnGraph(payload).then((res) => {
+            if (res.Response && res.Status === 'Success') {
+                const returnData = getGraphDataFromString(res.Response.GraphData);
+                if (returnData) {
+                    setReturnsGraphData((prevReturnsGraphData) => ({
+                        ...prevReturnsGraphData,
+                        [duration]: {
+                            values: returnData,
+                            lossGainPercent: returnData[returnData.length - 1] ? returnData[returnData.length - 1][1] : 0,
+                            startDate: returnData && returnData.length > 0
+                                ? returnData[0][0]
+                                : '',
+                        },
+                    }));
+                    // setGraphDate(localStorage.getItem('graphDate'));
+                    // setGraphDate(utils.formatDate(graphDate));
+                    // console.log("graphDate",graphDate)
+                    callback(++count);
+
+                    if (returnsGraphData['FiveYearly']) {
+                        setReturnsGraphData((prevReturnsGraphData) => ({
+                            ...prevReturnsGraphData,
+                            FiveYearly: {
+                                ...prevReturnsGraphData['FiveYearly'],
+                                lossGainPercent: prevReturnsGraphData[duration]['lossGainPercent']
+                                    ? (Number(prevReturnsGraphData[duration]['lossGainPercent']) / 5).toFixed(2)
+                                    : prevReturnsGraphData[duration]['lossGainPercent'],
+                            },
+                        }));
+                    }
+
+                    rest.getbankFDReturnGraphdata(duration).then((res) => {
+                        if (res.Response && res.Status === 'Success') {
+                            console.log("getbankFDReturnGraphdata", res.Response)
+                            let BankData = parseFloat(res.Response).toFixed(2);
+                            BankData = duration === 'FiveYearly'
+                                ? (Number(BankData) / 5).toFixed(2)
+                                : duration === 'ThreeYearly'
+                                    ? (Number(BankData) / 3).toFixed(2)
+                                    : BankData.toString();
+
+                            setBankFDReturnsData((prevBankFDReturnsData) => ({
+                                ...prevBankFDReturnsData,
+                                [duration]: {
+                                    values: [
+                                        [returnData[0][0], 0],
+                                        [returnData[returnData.length - 1][0], BankData],
+                                    ],
+                                    lossGainPercent: BankData,
+                                },
+                            }));
+                            callback(++count);
+                        }
+                    });
+                    rest.getsensexReturnGraphdata(duration).then((res) => {
+                        if (res.Response && res.Status === 'Success') {
+                            console.log("getsensexReturnGraphdata", res.Response)
+                            let sensexData = getGraphDataFromString(res.Response);
+                            console.log("sensexData", sensexData)
+                            setSensexReturnsData((prevSensexReturnsData) => ({
+                                ...prevSensexReturnsData,
+                                [duration]: {
+                                    values: sensexData,
+                                    lossGainPercent: duration === 'FiveYearly'
+                                        ? (Number(sensexData[sensexData.length - 1][1]) / 5).toFixed(2)
+                                        : duration === 'ThreeYearly'
+                                            ? (Number(sensexData[sensexData.length - 1][1]) / 5).toFixed(2)
+                                            : sensexData[sensexData.length - 1][1],
+                                },
+                            }), console.log("prevSensexReturnsData", duration));
+                            callback(++count);
+                        }
+                    });
+                }
+            }
+        });
+    };
+
+    const loadGraph = (type, duration, clicked, loadBankFD) => {
+        let updatedChartData = [];
+
+        if (type === 'Sensex') {
+            updatedChartData = [
+                { key: 'This Fund', values: returnsGraphData[duration] ? returnsGraphData[duration].values : [], color: '#ffffff' },
+                { key: 'Sensex', values: sensexReturnsData[duration] ? sensexReturnsData[duration].values : [], color: 'yellow' }
+            ];
+
+            if (duration === 'ThreeYearly' && !clicked && sensexReturnsData[duration]) {
+                if (sensexReturnsData[duration]["lossGainPercent"]) {
+                    sensexReturnsData[duration]["lossGainPercent"] = formatLossGainPercent(sensexReturnsData[duration]["lossGainPercent"]).toString().replace('%', '').replace('p.a.', '');
+                    sensexReturnsData[duration]["lossGainPercent"] = (Number(sensexReturnsData[duration]["lossGainPercent"]) / 3).toFixed(2);
+                    returnsGraphData[duration]["lossGainPercent"] = (Number(returnsGraphData[duration]["lossGainPercent"]) / 3).toFixed(2);
+                }
+            }
+
+            if (duration === 'FiveYearly' && !clicked && !sensexReturnsData[duration]) {
+                if (sensexReturnsData[duration]["lossGainPercent"]) {
+                    sensexReturnsData[duration]["lossGainPercent"] = formatLossGainPercent(sensexReturnsData[duration]["lossGainPercent"]).toString().replace('%', '').replace('p.a.', '');
+                    sensexReturnsData[duration]["lossGainPercent"] = (Number(sensexReturnsData[duration]["lossGainPercent"]) / 5).toFixed(2);
+                }
+            }
+
+            if (sensexReturnsData[duration] && sensexReturnsData[duration]["lossGainPercent"]) {
+                sensexReturnsData[duration]["lossGainPercent"] = formatLossGainPercent(sensexReturnsData[duration]["lossGainPercent"]).toString().replace('%', '').replace('p.a.', '');
+                sensexReturnsData[duration]["lossGainPercent"] = (duration === "Monthly" || duration === "Quarterly" || duration === "HalfYearly")
+                    ? sensexReturnsData[duration].lossGainPercent + '%'
+                    : sensexReturnsData[duration].lossGainPercent + '%p.a.';
+            }
+        }
+
+        if (type === 'Bank FD' || loadBankFD) {
+            if (!loadBankFD) {
+                updatedChartData = [
+                    { key: 'This Fund', values: returnsGraphData[duration] ? returnsGraphData[duration].values : [], color: '#ffffff' },
+                    { key: 'Bank FD', values: bankFDReturnsData[duration] ? bankFDReturnsData[duration].values : [], color: 'green' }
+                ];
+            }
+
+            if (loadBankFD) {
+                clicked = false;
+            }
+
+            if (duration === 'ThreeYearly' && !clicked && loadBankFD[duration]) {
+                if (loadBankFD[duration]["lossGainPercent"]) {
+                    loadBankFD[duration]["lossGainPercent"] = formatLossGainPercent(loadBankFD[duration]["lossGainPercent"]).toString().replace('%', '').replace('p.a.', '');
+                    loadBankFD[duration]["lossGainPercent"] = (Number(loadBankFD[duration]["lossGainPercent"]) / 3).toFixed(2);
+                    loadBankFD[duration]["lossGainPercent"] = (Number(loadBankFD[duration]["lossGainPercent"]) / 3).toFixed(2);
+                }
+            }
+
+            if (duration === 'FiveYearly' && !clicked && !loadBankFD[duration]) {
+                if (loadBankFD[duration]["lossGainPercent"]) {
+                    loadBankFD[duration]["lossGainPercent"] = formatLossGainPercent(loadBankFD[duration]["lossGainPercent"]).toString().replace('%', '').replace('p.a.', '');
+                    loadBankFD[duration]["lossGainPercent"] = (Number(loadBankFD[duration]["lossGainPercent"]) / 5).toFixed(2);
+                }
+            }
+
+            if (bankFDReturnsData[duration] && bankFDReturnsData[duration]["lossGainPercent"]) {
+                bankFDReturnsData[duration]["lossGainPercent"] = formatLossGainPercent(bankFDReturnsData[duration]["lossGainPercent"]).toString().replace('%', '').replace('p.a.', '');
+                bankFDReturnsData[duration]["lossGainPercent"] = (duration === "Monthly" || duration === "Quarterly" || duration === "HalfYearly")
+                    ? bankFDReturnsData[duration].lossGainPercent + '%'
+                    : bankFDReturnsData[duration].lossGainPercent + '%p.a.';
+            }
+        }
+
+        if (returnsGraphData[duration] && returnsGraphData[duration]["lossGainPercent"]) {
+            returnsGraphData[duration]["lossGainPercent"] = formatLossGainPercent(returnsGraphData[duration]["lossGainPercent"]).toString().replace('%', '').replace('p.a.', '');
+            returnsGraphData[duration]["lossGainPercent"] = (duration === "Monthly" || duration === "Quarterly" || duration === "HalfYearly")
+                ? returnsGraphData[duration].lossGainPercent + '%'
+                : returnsGraphData[duration].lossGainPercent + '%p.a.';
+        }
+
+        setChartData(updatedChartData);
+    };
+
+    const formatLossGainPercent = (value, factor = 1) => {
+        value = value ? value.toString().replace('%', '').replace('p.a.', '') : value;
+        return value ? (Number(value) / factor).toFixed(2) : value;
+    };
+
+
     return (
         <div>
             <section className="fund-listing-details">
@@ -418,13 +620,13 @@ function MFTopFunds() {
                                             <div className='top-mn-graph d-flex justify-content-between align-items-center'>
                                                 <button className='mn-graph-btn'>
                                                     <span className="graph-topsection">This Fund</span>
-                                                    <h6 className="mt-2">45.99%p.a.</h6>
+                                                    <h6 className="mt-2">{returnsGraphData[duration]?.lossGainPercent || ''}</h6>
                                                 </button>
                                                 <p>VS</p>
                                                 <div className="toggle">
                                                     <button className='mn-graph-btn'>
                                                         <span className={`graph-topsection ${typeOfReturn ? ' selected' : ''}`}>SENSEX</span>
-                                                        <h6 className="mt-2">45.99%p.a.</h6>
+                                                        <h6 className="mt-2">{sensexReturnsData[duration]?.lossGainPercent|| ''}</h6>
                                                     </button>
                                                     <input
                                                         type="checkbox"
@@ -436,22 +638,10 @@ function MFTopFunds() {
                                                     <label></label>
                                                     <button className='mn-graph-btn'>
                                                         <span className={`graph-topsection ${!typeOfReturn ? 'selected' : ''}`}>BANKED</span>
-                                                        <h6 className="mt-2">45.99%p.a.</h6>
+                                                        <h6 className="mt-2">{bankFDReturnsData[duration]?.lossGainPercent|| ''}</h6>
                                                     </button>
                                                 </div>
                                             </div>
-
-                                            <div className="mn-graph-footer text-center">
-                                                <span className="fund"></span><span>This Fund</span>
-                                                <span className="fund" style={{ backgroundColor: !typeOfReturn ? 'green' : '#FFFF00' }}></span>{' '}
-                                                <span>{(typeOfReturn) ? 'Sensex' : 'Bank FD'}</span>
-                                            </div>
-                                            {/* <NVD3Chart
-                                                type="lineChart"
-                                                datum={chartData}
-                                                x="x"
-                                                y="y"
-                                            /> */}
                                             <NVD3Chart
                                                 type="lineChart"
                                                 datum={chartData}
@@ -459,13 +649,18 @@ function MFTopFunds() {
                                                 y="y"
                                                 options={chartOptions}
                                             />
+                                            <div className="mn-graph-footer text-center">
+                                                <span className="fund"></span><span>This Fund</span>
+                                                <span className="fund" style={{ backgroundColor: !typeOfReturn ? 'green' : '#FFFF00' }}></span>{' '}
+                                                <span>{(typeOfReturn) ? 'Sensex' : 'Bank FD'}</span>
+                                            </div>
                                             <div className="duration">
-                                                <button className="dur-button active">1M</button>
-                                                <button className="dur-button">3M</button>
-                                                <button className="dur-button">6M</button>
-                                                <button className="dur-button">1Y</button>
-                                                <button className="dur-button">3Y</button>
-                                                <button className="dur-button">5Y</button>
+                                                <button className={`dur-button ${duration === 'Monthly' ? 'active' : ''}`} onClick={() => reloadGraphData(sensexOrBankFD, 'Monthly', true)}>1M</button>
+                                                <button className={`dur-button ${duration === 'Quarterly' ? 'active' : ''}`} onClick={() => reloadGraphData(sensexOrBankFD, 'Quarterly', true)}>3M</button>
+                                                <button className={`dur-button ${duration === 'HalfYearly' ? 'active' : ''}`} onClick={() => reloadGraphData(sensexOrBankFD, 'HalfYearly', true)}>6M</button>
+                                                <button className={`dur-button ${duration === 'Yearly' ? 'active' : ''}`} onClick={() => reloadGraphData(sensexOrBankFD, 'Yearly', true)}>1Y</button>
+                                                <button className={`dur-button ${duration === 'ThreeYearly' ? 'active' : ''}`} onClick={() => reloadGraphData(sensexOrBankFD, 'ThreeYearly', true)}>3Y</button>
+                                                <button className={`dur-button ${duration === 'FiveYearly' ? 'active' : ''}`} onClick={() => reloadGraphData(sensexOrBankFD, 'FiveYearly', true)}>5Y</button>
 
                                             </div>
                                         </div>
