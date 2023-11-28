@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './ErrorPage.scss';
 
 // import errorImage from '../../assets/images/error.webp'
-import errorImage from '../../assets/images/404-new.webp'
+import errorImage from '../../assets/images/error/error-img.svg'
 function ErrorPage() {
   const styles = {
     middlebox: {
