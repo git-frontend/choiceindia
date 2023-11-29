@@ -78,6 +78,8 @@ function MFTopFunds() {
             FundManagerDetails();
             getPerformancePeerComparisonData()
             sipLumpsumCalc()
+            reloadGraphData('Sensex', duration, false, true)
+
         }
     }, [rendercount]);
     const getPosition2 = () => {
@@ -95,7 +97,7 @@ function MFTopFunds() {
 
     useEffect(() => {
         window.addEventListener('scroll', getPosition2);
-        reloadGraphData('Sensex', duration, false, true)
+        // reloadGraphData('Sensex', duration, false, true)
         // loadGraph('Sensex')
     }, []);
     // useEffect(() => {
@@ -311,13 +313,15 @@ function MFTopFunds() {
     };
     const chartData1 = [
         {
-            key: 'Example', margin: {
-                top: 20,
-                right: 30,
-                bottom: 40,
-                left: 55
-            }, values: [{ x: 1, y: 10 }, { x: 2, y: 15 }, { x: 3, y: 7 }]
+            key: 'This Fund',
+            values: returnsGraphData[duration] ? returnsGraphData[duration].values.map(d => ({ x: d[0], y: d[1] })) : [],
+            color: '#ffffff'
         },
+        {
+            key: 'Sensex',
+            values: sensexReturnsData[duration] ? sensexReturnsData[duration].values.map(d => ({ x: d[0], y: d[1] })) : [],
+            color: 'yellow'
+        }
     ];
 
     const chartOptions = {
@@ -332,8 +336,8 @@ function MFTopFunds() {
             },
             showLegend: true,
             visible: true,
-            x:(d) => d.x,
-            y:(d) => d.y,
+            x: (d) => { return d.x },
+            y: (d) => { return d.y },
             useInteractiveGuideline: true,
             xAxis: {
                 tickFormat: (d) => null,
@@ -341,12 +345,12 @@ function MFTopFunds() {
             },
             yAxis: {
                 showMaxMin: false,
-                tickFormat: (d) => d3.format('.02f')(d),  // Use d3.format here
+                tickFormat: (d) => d3.format('.02f')(d),
                 axisLabelDistance: -10
             }
         }
     };
-    
+
 
     //for graph purpose
     const reloadGraphData = (type, duration, clicked, loadBankFD = false) => {
@@ -626,7 +630,7 @@ function MFTopFunds() {
                                                 <div className="toggle">
                                                     <button className='mn-graph-btn'>
                                                         <span className={`graph-topsection ${typeOfReturn ? ' selected' : ''}`}>SENSEX</span>
-                                                        <h6 className="mt-2">{sensexReturnsData[duration]?.lossGainPercent|| ''}</h6>
+                                                        <h6 className="mt-2">{sensexReturnsData[duration]?.lossGainPercent || ''}</h6>
                                                     </button>
                                                     <input
                                                         type="checkbox"
@@ -638,13 +642,13 @@ function MFTopFunds() {
                                                     <label></label>
                                                     <button className='mn-graph-btn'>
                                                         <span className={`graph-topsection ${!typeOfReturn ? 'selected' : ''}`}>BANKED</span>
-                                                        <h6 className="mt-2">{bankFDReturnsData[duration]?.lossGainPercent|| ''}</h6>
+                                                        <h6 className="mt-2">{bankFDReturnsData[duration]?.lossGainPercent || ''}</h6>
                                                     </button>
                                                 </div>
                                             </div>
                                             <NVD3Chart
                                                 type="lineChart"
-                                                datum={chartData}
+                                                datum={chartData1}
                                                 x="x"
                                                 y="y"
                                                 options={chartOptions}
