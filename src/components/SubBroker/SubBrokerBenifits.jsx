@@ -175,7 +175,7 @@ function SubBrokerBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                         {/* <LazyLoader src={Software} alt={"Advanced software to manage stock broker franchise business"} className={"img-fluid"} width={"74"} height={"73"} /> */}
-                                            <img src={Software} alt="Advanced software to manage stock broker franchise business" className="img-fluid" width="74" height="73" />
+                                            <img src={Software} alt="Advanced software to manage stock broking franchise business" className="img-fluid" width="74" height="73" />
                                         </span>
                                         <h4>Advanced Software</h4>
                                     </div>

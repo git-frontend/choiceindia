@@ -10,6 +10,8 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import LazyLoader from "../Common-features/LazyLoader";
 import topPicks from "../../assets/images/research/pdf/CHOICE TOP PICKS FEB 2023.pdf"
+import Fundamental from "../../assets/images/research/pdf/Fundamental Choice Diwali Picks 2023.pdf"
+import Technical from "../../assets/images/research/pdf/Diwali Picks 2023.pdf"
 
 function Banner() {
 
@@ -43,10 +45,14 @@ function Banner() {
                 <div className="slider-caption">
                     <div className="">
                         <div className="slider-caption-sub">
-                          <h2 className="big-ttl"><span>Monthly Picks</span> Feb’23</h2>
+                          <h2 className="big-ttl"><span>Diwali  Picks</span> Nov’23</h2>
                           <p>The report highlights investment opportunities  identified by our research team during the month.</p>
-                          <a onClick={() => { window.open(topPicks) }}  target="_blank" className="cursor-pointer"><span className="btn-bg btn-bg-dark">Explore All Recommendations</span></a>
+                          <div className="research-Picks">
+                          <a onClick={() => { window.open(Fundamental) }}  target="_blank" className="cursor-pointer "><span className="btn-bg btn-bg-dark">Fundamental Pick</span></a>
+                          <a onClick={() => { window.open(Technical) }}  target="_blank" className="cursor-pointer"><span className="btn-bg btn-bg-dark">Technical Pick</span></a>
+                          </div>
                         </div>
+                        
                     </div>
                 </div>   
             </div>

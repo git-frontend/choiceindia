@@ -1774,6 +1774,14 @@
         @media (max-width: $md) {
           padding:3rem 2rem;
         }
+        .research-Picks{
+          display: flex;
+          column-gap: 2rem;
+          @media (max-width: $sm) {
+            flex-direction: column;
+            row-gap: 2rem;
+          }
+        }
         
       }
       // &::before{
@@ -1787,7 +1795,7 @@
        
       // }
       @media (max-width: $md) {
-        width: 52%;
+        width: 57%;
       }
       @media (max-width: $sm) {
         width: auto;
