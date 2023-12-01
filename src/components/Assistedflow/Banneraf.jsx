@@ -1808,7 +1808,7 @@ function Banneraf() {
               <Modal.Body>
                 {
                   (!confirmedOrders.length)?
-                  <h3 className="text-center text-danger">Your order got failed.</h3>: <></>
+                  <h3 className="text-center text-danger">Your order got failed</h3>: <></>
                 }
                 
                 <table class="table table-borderless">
@@ -1822,14 +1822,22 @@ function Banneraf() {
                     {
                       schemeDetails && schemeDetails.Orders && schemeDetails.Orders.length && schemeDetails.Orders.map((order) => (
                         <tr>
-                          <td>{order.SchemeName || ""}</td>
+                          <td>{order.SchemeName || ""} 
+                            {
+                             ((order.FinalStatus || order.OrderStatus) === "FAILED") ? 
+                             <>
+                             <br/><span className="reason">Reason:</span><span className="reason-desc">{order.Reason || ""}</span>
+                             </>
+                             : ""
+                            }
+                          </td>
                           <td>{order.FinalStatus || order.OrderStatus}
-                          {
+                          {/* {
                             ((order.FinalStatus || order.OrderStatus) === "FAILED") ?
                             <span className="status-txt" data-bs-toggle="tooltip" data-bs-placement="top" title={order.Reason || ""}>
                             <FontAwesomeIcon icon={faCircleInfo} />
                             </span> : ""
-                          }
+                          } */}
                           </td>
                         </tr>
                       ))
