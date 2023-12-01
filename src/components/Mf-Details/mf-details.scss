@@ -232,6 +232,55 @@
                         }
                     }
                 }
+                .nv-chart{
+                    margin-top: 2rem;
+                    .nvd3-svg{
+                        height: 188px;
+                        .nvd3{
+                           .nv-legendWrap{
+                            .nv-legend{
+                                .nv-series{
+                                    display: none;
+                                }
+                            }
+                           }
+                           .nv-focus{
+                            .nv-axis{
+                                line{
+                                    opacity: 0;
+                                }
+                            }
+                            .nv-y{
+                                .tick{
+                                    text{
+                                        fill:$whiteColor;
+                                    }
+                                }
+                                .nv-axisMin-y{
+                                    text{
+                                        fill:$whiteColor;
+                                    }
+                                }
+                                .nv-axisMax-y{
+                                    text{
+                                        fill:$whiteColor ;
+                                    }
+                                }
+                            }
+                            .nv-x{
+                                .nvd3 {
+                                    .tick{
+                                        text{
+                                            display: none;
+                                        }  
+                                    }
+                                }
+                            }
+                           }
+                           
+                        }
+                    }
+                }
 
                 .mn-graph-footer {
                     text-align: center !important;
@@ -273,6 +322,7 @@
 
                     
                 }
+                
             }
 
             .per-ttl {

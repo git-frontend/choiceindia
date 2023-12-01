@@ -41,19 +41,8 @@ function MFTopFunds() {
     const [sensexOrBankFD, setSensexOrBankFD] = useState('Sensex');
     const [returnsGraphData, setReturnsGraphData] = useState({});
     const [chartData, setChartData] = useState([{ values: [] }, { values: [] }]);
-    console.log("chartData", chartData)
     const [bankFDReturnsData, setBankFDReturnsData] = useState({});
     const [sensexReturnsData, setSensexReturnsData] = useState({});
-    const [graphDate, setGraphDate] = useState('');
-    const [clicked, setClicked] = useState(false);
-    const [loadBankFD, setLoadBankFD] = useState(false);
-
-
-
-
-
-
-
     const toggleTab = (index) => {
         setToggleState(index);
     };
@@ -94,15 +83,6 @@ function MFTopFunds() {
             }
         }
     };
-
-    useEffect(() => {
-        window.addEventListener('scroll', getPosition2);
-        // reloadGraphData('Sensex', duration, false, true)
-        // loadGraph('Sensex')
-    }, []);
-    // useEffect(() => {
-    //     loadGraph();
-    //   }, [duration, clicked, loadBankFD]);
 
     const initializeschemeData = () => {
         const urlIdentity = window.location.pathname.split('/scheme/')[1];
@@ -317,10 +297,11 @@ function MFTopFunds() {
             values: returnsGraphData[duration] ? returnsGraphData[duration].values.map(d => ({ x: d[0], y: d[1] })) : [],
             color: '#ffffff'
         },
+       
         {
-            key: 'Sensex',
-            values: sensexReturnsData[duration] ? sensexReturnsData[duration].values.map(d => ({ x: d[0], y: d[1] })) : [],
-            color: 'yellow'
+            key: typeOfReturn ? 'Bank FD' : 'Sensex',
+            values: typeOfReturn ? bankFDReturnsData[duration] ? bankFDReturnsData[duration].values.map(d => ({ x: d[0], y: d[1] })) : [] : sensexReturnsData[duration] ? sensexReturnsData[duration].values.map(d => ({ x: d[0], y: d[1] })) : [],
+            color: typeOfReturn ? 'green' : 'yellow'
         }
     ];
 
@@ -346,7 +327,8 @@ function MFTopFunds() {
             yAxis: {
                 showMaxMin: false,
                 tickFormat: (d) => d3.format('.02f')(d),
-                axisLabelDistance: -10
+                axisLabelDistance: -10,
+
             }
         }
     };
@@ -409,9 +391,7 @@ function MFTopFunds() {
                                 : '',
                         },
                     }));
-                    // setGraphDate(localStorage.getItem('graphDate'));
-                    // setGraphDate(utils.formatDate(graphDate));
-                    // console.log("graphDate",graphDate)
+
                     callback(++count);
 
                     if (returnsGraphData['FiveYearly']) {
@@ -429,7 +409,7 @@ function MFTopFunds() {
                     rest.getbankFDReturnGraphdata(duration).then((res) => {
                         if (res.Response && res.Status === 'Success') {
                             console.log("getbankFDReturnGraphdata", res.Response)
-                            let BankData = parseFloat(res.Response).toFixed(2);
+                            let BankData = Number(res.Response).toFixed(2);
                             BankData = duration === 'FiveYearly'
                                 ? (Number(BankData) / 5).toFixed(2)
                                 : duration === 'ThreeYearly'
@@ -637,7 +617,11 @@ function MFTopFunds() {
                                                         id="exchangeToggle"
                                                         name="exchangeToggle"
                                                         checked={typeOfReturn}
-                                                        onChange={(e) => setTypeOfReturn(e.target.checked)}
+                                                        // onChange={(e) => setTypeOfReturn(e.target.checked)}
+                                                        onChange={(e) => {
+                                                            setTypeOfReturn(e.target.checked);
+                                                            reloadGraphData(e.target.checked ? 'Sensex' : 'Bank FD', duration, true);
+                                                        }}
                                                     />
                                                     <label></label>
                                                     <button className='mn-graph-btn'>
@@ -655,8 +639,8 @@ function MFTopFunds() {
                                             />
                                             <div className="mn-graph-footer text-center">
                                                 <span className="fund"></span><span>This Fund</span>
-                                                <span className="fund" style={{ backgroundColor: !typeOfReturn ? 'green' : '#FFFF00' }}></span>{' '}
-                                                <span>{(typeOfReturn) ? 'Sensex' : 'Bank FD'}</span>
+                                                <span className="fund" style={{ backgroundColor: !typeOfReturn ? '#FFFF00' : 'green' }}></span>{' '}
+                                                <span>{(!typeOfReturn) ? 'Sensex' : 'Bank FD'}</span>
                                             </div>
                                             <div className="duration">
                                                 <button className={`dur-button ${duration === 'Monthly' ? 'active' : ''}`} onClick={() => reloadGraphData(sensexOrBankFD, 'Monthly', true)}>1M</button>
