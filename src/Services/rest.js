@@ -264,6 +264,24 @@ const rest = {
       return data
     })
   },
+  getschemeTopSectors: function (postdata) {
+    let api = new API_URLS()
+    let url = api.getschemeTopSectors()
+    // console.log("ReturnGraph", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getschemeMarketCap: function (postdata) {
+    let api = new API_URLS()
+    let url = api.getschemeMarketCap()
+    // console.log("ReturnGraph", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
 
 
 }

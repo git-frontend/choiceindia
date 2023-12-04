@@ -290,6 +290,8 @@ export class API_URLS {
     sensexReturnGraphUrl = 'Scheme/SensexReturnData';
     bankFDReturnGraphUrl='Scheme/BankFDReturn';
     navReturnGraphUrl = 'Scheme/navreturngraph';
+    schemeTopSectors='Scheme/topsectors';
+    schemeMarketCap='Scheme/marketcap';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -997,6 +999,12 @@ export class API_URLS {
     }
     getNavReturnGraph() {
         return this.MFBaseURL + this.navReturnGraphUrl
+    }
+    getschemeTopSectors() {
+        return this.MFBaseURL + this.schemeTopSectors
+    }
+    getschemeMarketCap() {
+        return this.MFBaseURL + this.schemeMarketCap
     }
 
 }

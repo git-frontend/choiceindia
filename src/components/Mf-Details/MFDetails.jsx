@@ -2,6 +2,8 @@ import React from 'react';
 import NVD3Chart from 'react-nvd3';
 import 'nvd3/build/nv.d3.css';
 import * as d3 from 'd3';
+import { Doughnut, Arc, Tooltip } from 'react-chartjs-2';
+import { Chart, ArcElement } from 'chart.js/auto';
 import Accordion from 'react-bootstrap/Accordion';
 import { useState, useEffect } from "react";
 import "./mf-details.scss";
@@ -43,9 +45,17 @@ function MFTopFunds() {
     const [chartData, setChartData] = useState([{ values: [] }, { values: [] }]);
     const [bankFDReturnsData, setBankFDReturnsData] = useState({});
     const [sensexReturnsData, setSensexReturnsData] = useState({});
+    const [schemeDistributionResponse, setSchemeDistributionResponse] = useState({})
+    const [schemeDistributionAsOnDate, setSchemeDistributionAsOnDate] = useState('');
+    const [selectedDistributionValue, setSelectedDistributionValue] = useState('');
+    const [showDropdownLoader, setShowDropdownLoader] = useState(true)
+    const [isClicked, setIsClicked] = useState(false);
+    const [topSectorsResponseObject, setTopSectorsResponseObject] = useState([]);
+    const [showHideDropdownValues, setShowHideDropdownValues] = useState({ "marketcap": true, "company": true, "sector": true });
     const toggleTab = (index) => {
         setToggleState(index);
     };
+    
     const getPosition = () => {
         const element = document.getElementById("showForm");
         if (element) {
@@ -68,7 +78,8 @@ function MFTopFunds() {
             getPerformancePeerComparisonData()
             sipLumpsumCalc()
             reloadGraphData('Sensex', duration, false, true)
-
+            getSchemeDistributionData()
+            getSchemeTopSectors()
         }
     }, [rendercount]);
     const getPosition2 = () => {
@@ -130,8 +141,10 @@ function MFTopFunds() {
                     navigate(`/404`, { replace: true });
                 }
                 console.log("ERROR", err);
+
             }
         );
+        getSchemeDistributionData();
     };
     const FundManagerDetails = () => {
         const urlIdentity = window.location.pathname.split('/scheme/')[1];
@@ -297,7 +310,7 @@ function MFTopFunds() {
             values: returnsGraphData[duration] ? returnsGraphData[duration].values.map(d => ({ x: d[0], y: d[1] })) : [],
             color: '#ffffff'
         },
-       
+
         {
             key: typeOfReturn ? 'Bank FD' : 'Sensex',
             values: typeOfReturn ? bankFDReturnsData[duration] ? bankFDReturnsData[duration].values.map(d => ({ x: d[0], y: d[1] })) : [] : sensexReturnsData[duration] ? sensexReturnsData[duration].values.map(d => ({ x: d[0], y: d[1] })) : [],
@@ -343,7 +356,7 @@ function MFTopFunds() {
         }
         setSensexOrBankFD(type);
         setDuration(duration);
-        console.log("dhgjhdgfj", type, duration)
+        // console.log("dhgjhdgfj", type, duration)
         if (!returnsGraphData[duration]) {
             getReturnsData(duration, (count) => {
                 if (count === 3) {
@@ -408,7 +421,7 @@ function MFTopFunds() {
 
                     rest.getbankFDReturnGraphdata(duration).then((res) => {
                         if (res.Response && res.Status === 'Success') {
-                            console.log("getbankFDReturnGraphdata", res.Response)
+                            // console.log("getbankFDReturnGraphdata", res.Response)
                             let BankData = Number(res.Response).toFixed(2);
                             BankData = duration === 'FiveYearly'
                                 ? (Number(BankData) / 5).toFixed(2)
@@ -431,9 +444,9 @@ function MFTopFunds() {
                     });
                     rest.getsensexReturnGraphdata(duration).then((res) => {
                         if (res.Response && res.Status === 'Success') {
-                            console.log("getsensexReturnGraphdata", res.Response)
+                            // console.log("getsensexReturnGraphdata", res.Response)
                             let sensexData = getGraphDataFromString(res.Response);
-                            console.log("sensexData", sensexData)
+                            // console.log("sensexData", sensexData)
                             setSensexReturnsData((prevSensexReturnsData) => ({
                                 ...prevSensexReturnsData,
                                 [duration]: {
@@ -536,6 +549,287 @@ function MFTopFunds() {
     };
 
 
+    //scheme  portfolio analysis
+
+    const getSchemeDistributionData = () => {
+        const urlIdentity = window.location.pathname.split('/scheme/')[1];
+        const arr = urlIdentity.split('-').slice(-2)
+        const request = {
+            "SchemeCode": arr[0],
+            "SchemePlanCode": arr[1]
+        }
+        rest.getSchemeDistributionData(request)
+            .then((res) => {
+                if (res.Response !== null) {
+                    setSchemeDistributionAsOnDate(res.Response.HoldingDate);
+                    const updatedSchemeDistributionResponse = {};
+                    res.Response.lstTopSectors.forEach((obj, index) => {
+                        updatedSchemeDistributionResponse[obj.Company] = obj;
+                    });
+                    setSchemeDistributionResponse(updatedSchemeDistributionResponse);
+                    if (updatedSchemeDistributionResponse["Equity"] && updatedSchemeDistributionResponse["Equity"]['NetAssetPercent'] !== 0) {
+                        setSelectedDistributionValue("1");
+                    } else if (updatedSchemeDistributionResponse["Debt"] && updatedSchemeDistributionResponse["Debt"]['NetAssetPercent'] !== 0) {
+                        setSelectedDistributionValue("2");
+                    } else if (!updatedSchemeDistributionResponse["Others"] && updatedSchemeDistributionResponse["Others"]['NetAssetPercent'] !== 0) {
+                        setSelectedDistributionValue("3");
+                    }
+                    getDistributionData(selectedDistributionValue);
+                } else {
+                    // setSchemeDistributionAsOnDate("");
+                    setShowDropdownLoader(false);
+                }
+            })
+            .catch((error) => {
+                // Handle error if needed
+                console.error('Error fetching scheme distribution data:', error);
+            });
+    }
+
+    const getDistributionData = (value, isClicked = false) => {
+        setShowDropdownLoader(true);
+
+        setSelectedDistributionValue((prevValue) => {
+            if (prevValue === value && isClicked) {
+                setShowDropdownLoader(false);
+                return prevValue;
+            }
+
+            // if (value === '1' || value === '2' || value === '3') {
+            //     getSchemeTopSectors(value);
+            // }
+            if (value === '1') {
+                setTopSectorsResponseObject([])
+                setShowHideDropdownValues({ marketcap: true })
+                getSchemeTopSectors(value)
+            }
+            else if (value === '2') {
+                setShowHideDropdownValues({ marketcap: false });
+                setTopSectorsResponseObject([])
+                getSchemeTopSectors(value)
+            }
+            else if (value === '3') {
+                setShowHideDropdownValues({ marketcap: false });
+                setTopSectorsResponseObject([])
+                getSchemeTopSectors(value)
+            }
+
+            if (value === '1' && (!schemeDistributionResponse?.Equity || schemeDistributionResponse?.Equity?.NetAssetPercent === 0)) {
+                toggleTab(2);
+            } else if (value === '2' && (!schemeDistributionResponse?.Debt || schemeDistributionResponse?.Debt?.NetAssetPercent === 0)) {
+                toggleTab(3);
+            } else if (value === '3' && (!schemeDistributionResponse?.Others || schemeDistributionResponse?.Others?.NetAssetPercent === 0)) {
+                toggleTab(1);
+            }
+
+
+            return value;
+        });
+    };
+    const [datas, setDatas] = useState({
+        labels: [],
+        datasets: [
+            {
+                data: [],
+                backgroundColor: [],
+                hoverBackgroundColor: [],
+            },
+        ],
+    });
+
+    const [datas1, setDatas1] = useState({
+        labels: [],
+        datasets: [
+            {
+                data: [],
+                backgroundColor: [],
+                hoverBackgroundColor: [],
+            },
+        ],
+    });
+    // console.log("datas1", datas1.labels)
+
+
+    // const getSchemeTopSectors = (value) => {
+    //     setTopSectorsResponseObject([]);
+    //     const urlIdentity = window.location.pathname.split('/scheme/')[1];
+    //     const arr = urlIdentity.split('-').slice(-2)
+    //     const mrktSectorCompanyRequestObject = {
+    //         "SchemeCode": arr[0],
+    //         "SchemePlanCode": arr[1],
+    //         "Type": value || selectedDistributionValue 
+    //     }
+    //     console.log("mrktSectorCompanyRequestObject req", mrktSectorCompanyRequestObject)
+    //     rest.getschemeTopSectors(mrktSectorCompanyRequestObject).then((res) => {
+    //         if (res.Response !== null) {
+    //             console.log("getschemeTopSectors ", res.Response)
+    //             let topSectorsResponse = res.Response;
+    //             setTopSectorsResponseObject(res.Response)
+    //             if (topSectorsResponse.Sector === "" || topSectorsResponse.Sector === "Others") {
+
+    //             }
+    //             const updatedDatas = {
+    //                 labels: topSectorsResponse.map((sector) => sector.Sector),
+    //                 datasets: [
+    //                     {
+    //                         data: topSectorsResponse.map((sector) => sector.NetAssetPercent),
+    //                         backgroundColor: topSectorsResponse.map((sector) => randDarkColor(sector.color)),
+    //                         hoverBackgroundColor: topSectorsResponse.map((sector) => sector.hoverColor),
+    //                     },
+    //                 ],
+    //             };
+    //             setDatas(updatedDatas)
+
+    //             const updatedOtherDatas = {
+    //                 labels: topSectorsResponse.map((sector) => sector.Sector || "Others"),
+    //                 datasets: [
+    //                     {
+    //                         data: topSectorsResponse.map((sector) => sector.NetAssetPercent),
+    //                         backgroundColor: topSectorsResponse.map((sector) => randDarkColor(sector.color)),
+    //                         hoverBackgroundColor: topSectorsResponse.map((sector) => sector.hoverColor),
+    //                     },
+    //                 ],
+    //             };
+    //             setDatas1(updatedOtherDatas);
+    //             setShowDropdownLoader(false);
+    //         } else {
+    //             setShowDropdownLoader(false);
+    //             setTopSectorsResponseObject([]);
+    //         }
+    //     });
+    // };
+    const getSchemeTopSectors = () => {
+        setTopSectorsResponseObject([]);
+        const urlIdentity = window.location.pathname.split('/scheme/')[1];
+        const arr = urlIdentity.split('-').slice(-2);
+        const type = selectedDistributionValue;
+        const mrktSectorCompanyRequestObject = {
+            "SchemeCode": arr[0],
+            "SchemePlanCode": arr[1],
+            "Type": type
+        };
+    
+        rest.getschemeTopSectors(mrktSectorCompanyRequestObject).then((res) => {
+            if (res.Response !== null) {
+                let topSectorsResponse = res.Response;
+                let OthersArray = [];
+                let instrument = "";
+                let netAssetPercent = 0;
+                let k = 0;
+                let othersColor = "";
+                let othersIndex = null;
+    
+                for (let i = 0; i < topSectorsResponse.length; i++) {
+                    let colorArray = randDarkColor();
+                    if (k === 4) {
+                        k = 0;
+                    }
+                    topSectorsResponse[i]["color"] = colorArray;
+                    k++;
+    
+                    if (topSectorsResponse[i].Sector === "" || topSectorsResponse[i].Sector === "Others") {
+                        instrument = topSectorsResponse[i].Instrument;
+                        netAssetPercent += Number(topSectorsResponse[i].NetAssetPercent);
+    
+                        if (othersIndex === null) {
+                            othersIndex = i;
+                        }
+                        othersColor = topSectorsResponse[othersIndex]["color"];
+    
+                        if (topSectorsResponse[i].lTopHoldings && topSectorsResponse[i].lTopHoldings.length > 0) {
+                            for (let j = 0; j < topSectorsResponse[i].lTopHoldings.length; j++) {
+                                OthersArray.push(topSectorsResponse[i].lTopHoldings[j]);
+                            }
+                        }
+                    }
+                }
+    
+                topSectorsResponse = topSectorsResponse.filter((obj) => obj.Sector !== "" && obj.Sector !== "Others");
+    
+                let othersObject = {
+                    Instrument: instrument,
+                    NetAssetPercent: netAssetPercent,
+                    Sector: "Others",
+                    color: othersColor,
+                    lTopHoldings: OthersArray,
+                };
+    
+                if (instrument !== "") {
+                    topSectorsResponse.push(othersObject);
+                }
+    
+                if (topSectorsResponse && topSectorsResponse[0]) {
+                    // Assuming you have a function toggleAccordion to handle the accordion
+                    // toggleAccordion(topSectorsResponse[0]);
+                }
+    
+                setTopSectorsResponseObject(topSectorsResponse);  
+    
+                const updatedDatas = {
+                    labels: topSectorsResponse.map((sector) => sector.Sector),
+                    datasets: [
+                        {
+                            data: topSectorsResponse.map((sector) => sector.NetAssetPercent),
+                            backgroundColor: topSectorsResponse.map((sector) => randDarkColor(sector.color)),
+                            hoverBackgroundColor: topSectorsResponse.map((sector) => sector.hoverColor),
+                        },
+                    ],
+                };
+                setDatas(updatedDatas);
+    
+                const updatedOtherDatas = {
+                    labels: topSectorsResponse.map((sector) => sector.Sector || "Others"),
+                    datasets: [
+                        {
+                            data: topSectorsResponse.map((sector) => sector.NetAssetPercent),
+                            backgroundColor: topSectorsResponse.map((sector) => randDarkColor(sector.color)),
+                            hoverBackgroundColor: topSectorsResponse.map((sector) => sector.hoverColor),
+                        },
+                    ],
+                };
+                setDatas1(updatedOtherDatas);
+    
+                setShowDropdownLoader(false);
+    
+               
+            } else {
+                setShowDropdownLoader(false);
+                setTopSectorsResponseObject([]);
+            }
+        });
+    };
+    
+    
+    function randDarkColor() {
+        const rgb = `rgb(${Math.floor(Math.random() * 210)}, ${Math.floor(Math.random() * 210)}, ${Math.floor(Math.random() * 210)})`;
+        return rgb;
+    }
+    const charteroption = {
+        plugins: {
+            legend: {
+                display: false,
+                position: 'right',
+            },
+            tooltip: {
+                enabled: true,
+                backgroundColor: 'rgba(255, 255, 255, 0.49)',
+                titleFont: {
+                    size: 14,
+                    weight: 'normal'
+                },
+                bodyColor: 'rgba(0, 0, 0, 1)',
+                borderColor: 'rgba(255, 255, 255, 0.49)',
+                borderWidth: 1,
+                titleColor: 'rgba(0, 0, 0, 1)',
+                borderColor: '#786c6b',
+                bodyFont: {
+                    size: 16,
+                    weight: 'bold',
+                },
+            },
+
+        },
+    }
     return (
         <div>
             <section className="fund-listing-details">
@@ -737,11 +1031,11 @@ function MFTopFunds() {
                                     </div>
                                     <div className='col-md-6'>
                                         <div className='order-wise-sec'>
-                                            <p className='firt-par'>As on: 2023-07-31</p>
+                                            <p className='firt-par'>As on: {schemeDistributionAsOnDate}</p>
                                             <p className='view-lc'>View allocation % by</p>
                                             <div className='drop-items'>
                                                 <select className='form-select'>
-                                                    <option value="" selected>Sector</option>
+                                                    <option value="" selected >Sector</option>
                                                     <option value="">Company</option>
                                                     <option value="">Market Cap</option>
                                                 </select>
@@ -755,21 +1049,26 @@ function MFTopFunds() {
                                             <div className='list-tabs-number'>
                                                 <button
                                                     className={toggleState === 1 ? "tabs  active-tabs" : "tabs"}
-                                                    onClick={() => toggleTab(1)}
+                                                    // onClick={() => toggleTab(1)}
+                                                    onClick={() => { getDistributionData('1', true); toggleTab(1); }}
+                                                    disabled={!schemeDistributionResponse?.Equity || schemeDistributionResponse?.Equity?.NetAssetPercent === 0}
                                                 >
-                                                    Equity: 98.23%
+                                                    Equity: {schemeDistributionResponse?.Equity ? `: ${(schemeDistributionResponse.Equity.NetAssetPercent).toFixed(2)}%` : ''}
 
                                                 </button>
                                                 <button
                                                     className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-                                                    onClick={() => toggleTab(2)}
+                                                    // onClick={() => toggleTab(2)}
+                                                    onClick={() => { getDistributionData('2', true); toggleTab(2); }}
+                                                    disabled={!schemeDistributionResponse?.Debt || schemeDistributionResponse?.Debt?.NetAssetPercent === 0}
                                                 >
-                                                    Debt: 1.76%
+                                                    Debt: {schemeDistributionResponse?.Debt ? `: ${(schemeDistributionResponse.Debt.NetAssetPercent).toFixed(2)}%` : ''}
 
                                                 </button>
                                                 <button
                                                     className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                                                    onClick={() => toggleTab(3)}
+                                                    onClick={() => { getDistributionData('3', true); toggleTab(3); }}
+                                                    disabled={!schemeDistributionResponse?.Others || schemeDistributionResponse?.Others?.NetAssetPercent === 0}
                                                 >
 
                                                     Others
@@ -782,327 +1081,50 @@ function MFTopFunds() {
                                                 >
                                                     <div className="equity-tab-cont">
                                                         <div className='lft-chart'>
-                                                            <img src={Image1} className="img-fluid" alt="" />
+                                                            {/* <img src={Image1} className="img-fluid" alt="" /> */}
+                                                            <Doughnut data={datas} options={charteroption} />
                                                         </div>
-                                                        <div className="right-cont-details">
-                                                            <Accordion defaultActiveKey="0">
-                                                                <Accordion.Item eventKey="0" >
-                                                                    <Accordion.Header as="h3" className='faq-header'>
-                                                                        <span className='cirl' style={{ background: "#7C160E" }}>
+                                                        {
+                                                            topSectorsResponseObject ?
+                                                                <div className="right-cont-details">
+                                                                    <Accordion defaultActiveKey="0">
+                                                                        {
 
-                                                                        </span>
-                                                                        <div className='header-flx'>
-                                                                            <h4>BFSI</h4>
-                                                                            <h3 style={{ color: "#7C160E" }}>23.33%</h3>
-                                                                        </div>
-                                                                    </Accordion.Header>
-                                                                    <Accordion.Body>
-                                                                        <div className='acd-list'>
-                                                                            <h4>1. HDFC Bank Limited</h4>
-                                                                            <h4>9.19%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>2. State Bank Of India</h4>
-                                                                            <h4>5.67%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>3. Capri Global Capital Limited</h4>
-                                                                            <h4>2.77%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>4. Punjab National Bank</h4>
-                                                                            <h4>2.32%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>5. Bandhan Bank Ltd</h4>
-                                                                            <h4>0.95%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>6. Jio Financial Services </h4>
-                                                                            <h4>0.92%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>7. Piramal Enterprises Limited</h4>
-                                                                            <h4>0.91%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>8. Sundaram Finance Ltd</h4>
-                                                                            <h4>0.60%</h4>
-                                                                        </div>
-                                                                    </Accordion.Body>
-                                                                </Accordion.Item>
-                                                                <Accordion.Item eventKey="1">
-                                                                    <Accordion.Header as="h3" className='faq-header'>
-                                                                        <span className='cirl' style={{ background: "#AEA096" }}>
+                                                                            topSectorsResponseObject.map((sectors, index) => {
+                                                                                return (
+                                                                                    <Accordion.Item eventKey={index + ""} key={index}>
+                                                                                        <Accordion.Header as="h3" className='faq-header'>
+                                                                                            <span className='cirl' style={{ backgroundColor: randDarkColor(sectors.color) }}>
 
-                                                                        </span>
-                                                                        <div className='header-flx'>
-                                                                            <h4>Pharmaceuticals</h4>
-                                                                            <h3 style={{ color: "#AEA096" }}>23.33%</h3>
-                                                                        </div>
-                                                                    </Accordion.Header>
-                                                                    <Accordion.Body>
-                                                                        <div className='acd-list'>
-                                                                            <h4>1. HDFC Bank Limited</h4>
-                                                                            <h4>9.19%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>2. State Bank Of India</h4>
-                                                                            <h4>5.67%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>3. Capri Global Capital Limited</h4>
-                                                                            <h4>2.77%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>4. Punjab National Bank</h4>
-                                                                            <h4>2.32%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>5. Bandhan Bank Ltd</h4>
-                                                                            <h4>0.95%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>6. Jio Financial Services </h4>
-                                                                            <h4>0.92%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>7. Piramal Enterprises Limited</h4>
-                                                                            <h4>0.91%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>8. Sundaram Finance Ltd</h4>
-                                                                            <h4>0.60%</h4>
-                                                                        </div>
-                                                                    </Accordion.Body>
-                                                                </Accordion.Item>
-                                                                <Accordion.Item eventKey="2" >
-                                                                    <Accordion.Header as="h3" className='faq-header'>
-                                                                        <span className='cirl' style={{ background: "#BE7111" }}>
+                                                                                            </span>
+                                                                                            <div className='header-flx'>
+                                                                                                <h4>{sectors.Sector}</h4>
+                                                                                                <h3 style={{ color: randDarkColor(sectors.color) }}> {(sectors.NetAssetPercent)}%</h3>
+                                                                                            </div>
+                                                                                        </Accordion.Header>
+                                                                                        <Accordion.Body>
+                                                                                            {sectors.lTopHoldings.map((holding, i) => (
+                                                                                                <div key={i} className='acd-list'>
+                                                                                                    <h4>{i + 1}. {holding.Company}</h4>
+                                                                                                    <h4>{(holding.NetAssetPercent)}%</h4>
+                                                                                                </div>
+                                                                                            ))}
+                                                                                        </Accordion.Body>
+                                                                                    </Accordion.Item>
+                                                                                )
+                                                                            })
 
-                                                                        </span>
-                                                                        <div className='header-flx'>
-                                                                            <h4>Oil & Gas</h4>
-                                                                            <h3 style={{ color: "#BE7111" }}>9.99%</h3>
-                                                                        </div>
-                                                                    </Accordion.Header>
-                                                                    <Accordion.Body>
-                                                                        <div className='acd-list'>
-                                                                            <h4>1. HDFC Bank Limited</h4>
-                                                                            <h4>9.19%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>2. State Bank Of India</h4>
-                                                                            <h4>5.67%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>3. Capri Global Capital Limited</h4>
-                                                                            <h4>2.77%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>4. Punjab National Bank</h4>
-                                                                            <h4>2.32%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>5. Bandhan Bank Ltd</h4>
-                                                                            <h4>0.95%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>6. Jio Financial Services </h4>
-                                                                            <h4>0.92%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>7. Piramal Enterprises Limited</h4>
-                                                                            <h4>0.91%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>8. Sundaram Finance Ltd</h4>
-                                                                            <h4>0.60%</h4>
-                                                                        </div>
-                                                                    </Accordion.Body>
-                                                                </Accordion.Item>
-                                                                <Accordion.Item eventKey="3" >
-                                                                    <Accordion.Header as="h3" className='faq-header'>
-                                                                        <span className='cirl' style={{ background: "#8018BA" }}>
 
-                                                                        </span>
-                                                                        <div className='header-flx'>
-                                                                            <h4>Metal & Mining</h4>
-                                                                            <h3 style={{ color: "#8018BA" }}>8.41%</h3>
-                                                                        </div>
-                                                                    </Accordion.Header>
-                                                                    <Accordion.Body>
-                                                                        <div className='acd-list'>
-                                                                            <h4>1. HDFC Bank Limited</h4>
-                                                                            <h4>9.19%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>2. State Bank Of India</h4>
-                                                                            <h4>5.67%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>3. Capri Global Capital Limited</h4>
-                                                                            <h4>2.77%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>4. Punjab National Bank</h4>
-                                                                            <h4>2.32%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>5. Bandhan Bank Ltd</h4>
-                                                                            <h4>0.95%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>6. Jio Financial Services </h4>
-                                                                            <h4>0.92%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>7. Piramal Enterprises Limited</h4>
-                                                                            <h4>0.91%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>8. Sundaram Finance Ltd</h4>
-                                                                            <h4>0.60%</h4>
-                                                                        </div>
-                                                                    </Accordion.Body>
-                                                                </Accordion.Item>
-                                                                <Accordion.Item eventKey="4" >
-                                                                    <Accordion.Header as="h3" className='faq-header'>
-                                                                        <span className='cirl' style={{ background: "#B8A970" }}>
+                                                                        }
 
-                                                                        </span>
-                                                                        <div className='header-flx'>
-                                                                            <h4>Infrastructure</h4>
-                                                                            <h3 style={{ color: "#B8A970" }}>8.23%</h3>
-                                                                        </div>
-                                                                    </Accordion.Header>
-                                                                    <Accordion.Body>
-                                                                        <div className='acd-list'>
-                                                                            <h4>1. HDFC Bank Limited</h4>
-                                                                            <h4>9.19%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>2. State Bank Of India</h4>
-                                                                            <h4>5.67%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>3. Capri Global Capital Limited</h4>
-                                                                            <h4>2.77%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>4. Punjab National Bank</h4>
-                                                                            <h4>2.32%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>5. Bandhan Bank Ltd</h4>
-                                                                            <h4>0.95%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>6. Jio Financial Services </h4>
-                                                                            <h4>0.92%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>7. Piramal Enterprises Limited</h4>
-                                                                            <h4>0.91%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>8. Sundaram Finance Ltd</h4>
-                                                                            <h4>0.60%</h4>
-                                                                        </div>
-                                                                    </Accordion.Body>
-                                                                </Accordion.Item>
-                                                                <Accordion.Item eventKey="5" >
-                                                                    <Accordion.Header as="h3" className='faq-header'>
-                                                                        <span className='cirl' style={{ background: "#CD4BA8" }}>
+                                                                    </Accordion>
+                                                                </div>
+                                                                :
+                                                                <div className="text-center">
+                                                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                                                </div>
+                                                        }
 
-                                                                        </span>
-                                                                        <div className='header-flx'>
-                                                                            <h4>Power</h4>
-                                                                            <h3 style={{ color: "#CD4BA8" }}>6.62%</h3>
-                                                                        </div>
-                                                                    </Accordion.Header>
-                                                                    <Accordion.Body>
-                                                                        <div className='acd-list'>
-                                                                            <h4>1. HDFC Bank Limited</h4>
-                                                                            <h4>9.19%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>2. State Bank Of India</h4>
-                                                                            <h4>5.67%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>3. Capri Global Capital Limited</h4>
-                                                                            <h4>2.77%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>4. Punjab National Bank</h4>
-                                                                            <h4>2.32%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>5. Bandhan Bank Ltd</h4>
-                                                                            <h4>0.95%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>6. Jio Financial Services </h4>
-                                                                            <h4>0.92%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>7. Piramal Enterprises Limited</h4>
-                                                                            <h4>0.91%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>8. Sundaram Finance Ltd</h4>
-                                                                            <h4>0.60%</h4>
-                                                                        </div>
-                                                                    </Accordion.Body>
-                                                                </Accordion.Item>
-                                                                <Accordion.Item eventKey="6" >
-                                                                    <Accordion.Header as="h3" className='faq-header'>
-                                                                        <span className='cirl' style={{ background: "#45BF60" }}>
-
-                                                                        </span>
-                                                                        <div className='header-flx'>
-                                                                            <h4>IT Consulting & Software</h4>
-                                                                            <h3 style={{ color: "#45BF60" }}>4.89%</h3>
-                                                                        </div>
-                                                                    </Accordion.Header>
-                                                                    <Accordion.Body>
-                                                                        <div className='acd-list'>
-                                                                            <h4>1. HDFC Bank Limited</h4>
-                                                                            <h4>9.19%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>2. State Bank Of India</h4>
-                                                                            <h4>5.67%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>3. Capri Global Capital Limited</h4>
-                                                                            <h4>2.77%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>4. Punjab National Bank</h4>
-                                                                            <h4>2.32%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>5. Bandhan Bank Ltd</h4>
-                                                                            <h4>0.95%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>6. Jio Financial Services </h4>
-                                                                            <h4>0.92%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>7. Piramal Enterprises Limited</h4>
-                                                                            <h4>0.91%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>8. Sundaram Finance Ltd</h4>
-                                                                            <h4>0.60%</h4>
-                                                                        </div>
-                                                                    </Accordion.Body>
-                                                                </Accordion.Item>
-                                                            </Accordion>
-                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -1111,33 +1133,47 @@ function MFTopFunds() {
                                                 >
                                                     <div className="equity-tab-cont">
                                                         <div className='lft-chart'>
-                                                            <img src={Image2} className="img-fluid" alt="" />
+                                                            <Doughnut data={datas1} options={charteroption} />
                                                         </div>
-                                                        <div className="right-cont-details">
-                                                            <Accordion defaultActiveKey="0">
-                                                                <Accordion.Item eventKey="0" >
-                                                                    <Accordion.Header as="h3" className='faq-header'>
-                                                                        <span className='cirl' style={{ background: "#7C160E" }}>
+                                                        {
+                                                            topSectorsResponseObject ?
+                                                                <div className="right-cont-details">
+                                                                    <Accordion defaultActiveKey="0">
+                                                                        {
 
-                                                                        </span>
-                                                                        <div className='header-flx'>
-                                                                            <h4>Others</h4>
-                                                                            <h3 style={{ color: "#7C160E" }}>1.46%</h3>
-                                                                        </div>
-                                                                    </Accordion.Header>
-                                                                    <Accordion.Body>
-                                                                        <div className='acd-list'>
-                                                                            <h4>1. Clearing Corporation Of India Ltd</h4>
-                                                                            <h4>0.92%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>2. Net Receivables / (Payables)</h4>
-                                                                            <h4>0.54%</h4>
-                                                                        </div>
-                                                                    </Accordion.Body>
-                                                                </Accordion.Item>
-                                                            </Accordion>
-                                                        </div>
+                                                                            topSectorsResponseObject.map((sectors, index) => {
+                                                                                return (
+                                                                                    <Accordion.Item eventKey={index + ""} key={index} >
+                                                                                        <Accordion.Header as="h3" className='faq-header'>
+                                                                                            <span className='cirl' style={{ backgroundColor: randDarkColor(sectors.color) }}>
+
+                                                                                            </span>
+                                                                                            <div className='header-flx'>
+                                                                                                <h4>{sectors.Sector} Others</h4>
+                                                                                                <h3 style={{ color: randDarkColor(sectors.color) }}>{(sectors.NetAssetPercent)}%</h3>
+                                                                                            </div>
+                                                                                        </Accordion.Header>
+                                                                                        <Accordion.Body>
+                                                                                            {sectors.lTopHoldings.map((holding, i) => (
+                                                                                                <div key={i} className='acd-list'>
+                                                                                                    <h4>{i + 1}. {holding.Company}</h4>
+                                                                                                    <h4>{(holding.NetAssetPercent)}%</h4>
+                                                                                                </div>
+                                                                                            ))}
+                                                                                        </Accordion.Body>
+                                                                                    </Accordion.Item>
+                                                                                )
+                                                                            })
+
+
+                                                                        }
+                                                                    </Accordion>
+                                                                </div>
+                                                                :
+                                                                <div className="text-center">
+                                                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                                                </div>
+                                                        }
                                                     </div>
                                                 </div>
 
@@ -1146,33 +1182,47 @@ function MFTopFunds() {
                                                 >
                                                     <div className="equity-tab-cont">
                                                         <div className='lft-chart'>
-                                                            <img src={Image2} className="img-fluid" alt="" />
+                                                            <Doughnut data={datas1} options={charteroption} />
                                                         </div>
-                                                        <div className="right-cont-details">
-                                                            <Accordion defaultActiveKey="0">
-                                                                <Accordion.Item eventKey="0" >
-                                                                    <Accordion.Header as="h3" className='faq-header'>
-                                                                        <span className='cirl' style={{ background: "#7C160E" }}>
+                                                        {
+                                                            topSectorsResponseObject ?
+                                                                <div className="right-cont-details">
+                                                                    <Accordion defaultActiveKey="0">
+                                                                        {
 
-                                                                        </span>
-                                                                        <div className='header-flx'>
-                                                                            <h4>Others</h4>
-                                                                            <h3 style={{ color: "#7C160E" }}>1.46%</h3>
-                                                                        </div>
-                                                                    </Accordion.Header>
-                                                                    <Accordion.Body>
-                                                                        <div className='acd-list'>
-                                                                            <h4>1. Clearing Corporation Of India Ltd</h4>
-                                                                            <h4>0.92%</h4>
-                                                                        </div>
-                                                                        <div className='acd-list'>
-                                                                            <h4>2. Net Receivables / (Payables)</h4>
-                                                                            <h4>0.54%</h4>
-                                                                        </div>
-                                                                    </Accordion.Body>
-                                                                </Accordion.Item>
-                                                            </Accordion>
-                                                        </div>
+                                                                            topSectorsResponseObject.map((sectors, index) => {
+                                                                                return (
+                                                                                    <Accordion.Item eventKey={index + ""} key={index} >
+                                                                                        <Accordion.Header as="h3" className='faq-header'>
+                                                                                            <span className='cirl' style={{ backgroundColor: randDarkColor(sectors.color) }}>
+
+                                                                                            </span>
+                                                                                            <div className='header-flx'>
+                                                                                                <h4>{sectors.Sector} Others</h4>
+                                                                                                <h3 style={{ color: randDarkColor(sectors.color) }}>{(sectors.NetAssetPercent)}%</h3>
+                                                                                            </div>
+                                                                                        </Accordion.Header>
+                                                                                        <Accordion.Body>
+                                                                                            {sectors.lTopHoldings.map((holding, i) => (
+                                                                                                <div key={i} className='acd-list'>
+                                                                                                    <h4>{i + 1}. {holding.Company}</h4>
+                                                                                                    <h4>{(holding.NetAssetPercent)}%</h4>
+                                                                                                </div>
+                                                                                            ))}
+                                                                                        </Accordion.Body>
+                                                                                    </Accordion.Item>
+                                                                                )
+                                                                            })
+
+
+                                                                        }
+                                                                    </Accordion>
+                                                                </div>
+                                                                :
+                                                                <div className="text-center">
+                                                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                                                </div>
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
