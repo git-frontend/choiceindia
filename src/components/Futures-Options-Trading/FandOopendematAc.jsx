@@ -81,7 +81,7 @@ function FandOopendematAc() {
                 <span className='fandoimg'>
                   <LazyLoader src={image3} alt={"Demat Account with Free Research"} className={"img-fluid img"} width={"80"} height={"80"} />
                 </span>
-                <h3 className="fando-head">Free Research Advisory</h3>
+                <h3 className="fando-head">Free Research Calls</h3>
                
               </div>
               <div className="fando-open-demat-item">

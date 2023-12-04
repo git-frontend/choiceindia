@@ -83,8 +83,8 @@ function Footer() {
                               <NavLink to="/services#wealth" onClick={() => { chapterScroll('wealth') }}    className="cursor-pointer">Wealth Planning</NavLink>
                               </li> */}
                             <li>
-                              <NavLink to="/services#Wealth-Management"  className="cursor-pointer">
-                              Wealth Planning
+                              <NavLink to="/services#Wealth-Management" className="cursor-pointer">
+                                Wealth Planning
                               </NavLink>
                             </li>
                             <li>
@@ -97,16 +97,16 @@ function Footer() {
                               <NavLink to="/services#Capital-Advisory" className="cursor-pointer">Capital Advisory</NavLink>
                             </li>
                             <li>
-                              <NavLink  to="/services#Management-Consultancy" className="cursor-pointer">Management Consultancy</NavLink>
+                              <NavLink to="/services#Management-Consultancy" className="cursor-pointer">Management Consultancy</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/government-advisory" >Government Advisory</NavLink>
                             </li>
                             <li>
-                            <NavLink to="/services#Tax-Advisory" className="cursor-pointer">
-                              Tax Advisory
-                            </NavLink>
-                             </li>
+                              <NavLink to="/services#Tax-Advisory" className="cursor-pointer">
+                                Tax Advisory
+                              </NavLink>
+                            </li>
                           </ul>
                           <ul className="reset quicklink2">
                             <li>
@@ -267,7 +267,7 @@ function Footer() {
                       <strong>Choice Finserv Private Limited</strong>: NBFC Registration Number : N - 13.02216 <br />
                     </p>
                     <p>
-                      <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024 
+                      <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024
                       | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
                       For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> | Online Dispute Resolution Link: <a href="https://smartodr.in/login" target="_blank">https://smartodr.in/login</a></p>
@@ -290,7 +290,8 @@ function Footer() {
                     <p>  <strong>Research Disclaimer and Disclosure inter-alia as required under Securities and Exchange Board of India (Research Analysts) Regulations, 2014</strong></p>
                     <p>  Choice  Equity  Broking  Private  Limited  (“CEBPL”)  is  a  registered  Research  Analyst  Entity  (Reg.  No.  INH000000222  )  (hereinafter    be  referred  as  “CEBPL”).  (CIN.    NO.: U65999MH2010PTC198714).</p>
                     <p> <strong>Reg. Address:</strong> Sunil Patodia Tower, J B Nagar, Andheri(East), Mumbai 400099. Tel. No. 022-6707 9999 . </p>
-                    <p><strong>Compliance Officer:</strong> Swati Matkar. Tel. 022-6707 9999-Ext. 896. <br />
+                    <p><strong>Compliance Officer:</strong> Mr.Prashant Salian. Tel. 022-67079999
+                      - Ext-2310<br />
                       Email- Compliance@choiceindia.com</p>
                     <p><strong>Grievance officer:</strong> Deepika Singhvi  Tel.022-67079999- Ext-834. <br />
                       Email-  ig@choiceindia.com</p>
@@ -307,7 +308,7 @@ function Footer() {
 
           <div className="footer-marquee">
             <Marquee direction="left" speed={100} delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider career-list-slider">
-              <p>Attention Investors: ( 1 ) Prevent unauthorized transactions in your trading account - Update your mobile numbers/email IDs with your stock broker(s). Receive information of your transactions directly from exchange on your mobile/email at the end of the day. ( 2 )  Prevent unauthorized transactions in your demat account - Update your mobile number with your Depository Participant, to receive alerts on your registered mobile number for all debit and other important transactions in your demat account directly from NSDL/CDSL on the same day. - Issued in the interest of the investors. ( 3 ) No need to issue Cheque by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment. ( 4 ) No worries for refund as the money remains in investor's account.( 5 ) AMFI Reg. No. ARN:126541 ( 6 ) Investors should be cautious on unsolicited emails and SMS advising to buy, sell or hold securities and trade only on the basis of informed decision. Investors are advised to invest after conducting appropriate analysis of respective companies and not to blindly follow unfounded rumours, tips etc. Further, you are also requested to share your knowledge or evidence of systemic wrongdoing, potential frauds or unethical behaviour through the anonymous portal facility provided on BSE & NSE website. Issued in the interest of the investors.  ( 7 ) KYC is one time exercise while dealing in securities markets - Once KYC is done through a SEBI registered intermediary (broker, DP, Mutual Fund, etc.), you need not undergo the same process again when you approach another intermediary. </p>
+              Attention Investors: ( 1 ) Prevent unauthorized transactions in your trading account - Update your mobile numbers/email IDs with your stock broker(s). Receive information of your transactions directly from exchange on your mobile/email at the end of the day. ( 2 )  Prevent unauthorized transactions in your demat account - Update your mobile number with your Depository Participant, to receive alerts on your registered mobile number for all debit and other important transactions in your demat account directly from NSDL/CDSL on the same day. - Issued in the interest of the investors. ( 3 ) No need to issue Cheque by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment. ( 4 ) No worries for refund as the money remains in investor's account.( 5 ) AMFI Reg. No. ARN:126541 ( 6 ) Investors should be cautious on unsolicited emails and SMS advising to buy, sell or hold securities and trade only on the basis of informed decision. Investors are advised to invest after conducting appropriate analysis of respective companies and not to blindly follow unfounded rumours, tips etc. Further, you are also requested to share your knowledge or evidence of systemic wrongdoing, potential frauds or unethical behaviour through the anonymous portal facility provided on BSE & NSE website. Issued in the interest of the investors.  ( 7 ) KYC is one time exercise while dealing in securities markets - Once KYC is done through a SEBI registered intermediary (broker, DP, Mutual Fund, etc.), you need not undergo the same process again when you approach another intermediary. 
               {/* Registration details: Choice Equity Broking Private Limited – BSE – TM Code – 3299, NSE – TM Code – 13773, MSEI - – TM Code – 73200, , MCX – TM Code – 40585, NCDEX – TM Code – 01006, ICEX TM Code -1274 ( 6 ) Depository Participant SEBI Reg. No. - IN-DP-84-2015, CDSL DP ID – 12066900. NSDL ID: IN301895  */}
             </Marquee>
           </div>
