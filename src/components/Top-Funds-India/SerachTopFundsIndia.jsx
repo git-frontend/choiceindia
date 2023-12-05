@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function SerachTopFunds() {
     const [data, setData] = useState([]);
-    const [trigger, setTrigger] = useState();
     const [filteredData, setFilteredData] = useState([]);
     const [isloading, setisloading] = useState(true);
     //for listing top funds
+   /**
+    * filterdata for list top mf funds
+    */
+
     const goToTopFundsDetail = () => {
         rest.getCategoriesList().then(
             res => {
@@ -26,14 +29,16 @@ function SerachTopFunds() {
                 }
             }
         )
+            .catch((error) => {
+                // console.log(error, "error cities");
+                setisloading(false);
+                setData([]);
+                setFilteredData([])
+            });
     }
     useEffect(() => {
-        setTrigger(true)
-        if (trigger === true) {
-            goToTopFundsDetail()
-        }
-
-    }, [trigger])
+            goToTopFundsDetail();
+    }, [])
     //for search filter key 
     const fundhandleSearch = (e) => {
         const searchTerm = e.target.value.toLowerCase();
@@ -63,7 +68,7 @@ function SerachTopFunds() {
                                     :
                                     <div >
                                         {
-                                            filteredData.length ?
+                                            filteredData.length > 0  ?
                                                 <div className='search-items-sec' >
                                                     {
                                                         filteredData.map((res, i) => {

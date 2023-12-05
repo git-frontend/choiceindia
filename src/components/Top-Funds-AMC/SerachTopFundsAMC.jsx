@@ -6,15 +6,12 @@ import { Link } from "react-router-dom";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function SerachTopFunds() {
     const [data, setData] = useState([]);
-    const [trigger, setTrigger] = useState();
     const [filteredData, setFilteredData] = useState([]);
     const [isloading, setisloading] = useState(true);
     const getAMCList = () => {
         rest.getAMCList().then(
             (res) => {
                 setisloading(false);
-                setData(res.Response);
-                console.log("res", res.Response);
                 const amcArray = [];
                 if (res.Response) {
                     for (let item of res.Response) {
@@ -28,26 +25,33 @@ function SerachTopFunds() {
                             });
                         }
                     }
+                    setData(amcArray)
+                    setFilteredData(amcArray);
                 }
-                setFilteredData(amcArray);
+                else{
+                    setisloading(false);
+                    setData([]);
+                    setFilteredData([])
+                }
+                
             }
-        );
+        )
+        .catch((error) => {
+            // console.log(error, "error");
+            setisloading(false);
+            setData([]);
+            setFilteredData([])
+        });
     };
     useEffect(() => {
-
-        setTrigger(true)
-        if (trigger === true) {
-            getAMCList()
-        }
-    }, [trigger])
+            getAMCList();
+    }, [])
     const fundhandleSearch = (e) => {
         const searchTerm = e.target.value.toLowerCase();
-        const filteredResults = data.filter((res) => res.AMCNAME.toLowerCase().includes(searchTerm));
+        const filteredResults = data.filter((res) => res?.name.toLowerCase().includes(searchTerm));
         setFilteredData(filteredResults);
-    }
-    const goToAMCDetail = (amc) => {
-        amc.param = amc.name.toLowerCase().split(' ').join('-');
-    }
+    };
+    
     return (
         <>
             <section className='search-funds-sec' id='showForm'>
@@ -70,7 +74,7 @@ function SerachTopFunds() {
                                 :
                                 <div className='col-md-12'>
                                     {
-                                        filteredData.length ?
+                                        filteredData.length > 0 ?
                                             <div className='search-items-sec'>
                                                 {
                                                     filteredData.map((res, i) => {
