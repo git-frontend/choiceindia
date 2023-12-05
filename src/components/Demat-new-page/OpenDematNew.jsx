@@ -142,8 +142,8 @@ function OpenDematNew() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="ban-caption text-center">
-                                <h1 className="title-secnd">Demat Account</h1>
-                                <h4>A Comprehensive Guide for Beginners</h4>
+                                <h1 className="title-secnd">What is Demat Account?</h1>
+                                {/* <h4>A Comprehensive Guide for Beginners</h4> */}
                             </div>
                         </div>
                     </div>
@@ -199,10 +199,10 @@ function OpenDematNew() {
                             </div>
                         </div>
                         <div className="sub-description">
-                            <div className="pr-sec">
+                            {/* <div className="pr-sec">
                                 <p>Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.<br/><br/>
                                 Explore topics related to Demat accounts, how they work, the different types available, and more. Gain insight into their significance and how they play a pivotal role in your investment journey.</p>
-                            </div>
+                            </div> */}
                             <div className="hide-fr-desk">
                                 <h3>Table of Contents</h3>
                                 <div className="arrow-sh" onClick={handleClick2}>
@@ -238,8 +238,8 @@ function OpenDematNew() {
                                 </div>                                
                             </div>
                             <InView as="div" className="pr-sec"  onChange={(e) => {initialize && !scrollConfig.current.isTriggered && e===true && setIsActive4('id0')}} id="id0">
-                                <h2>What is a Demat Account?</h2>
-                                <p>A Demat account, short for Dematerialized Account, is your passport to the world of stock market investments. It allows you to hold shares, bonds, mutual funds, and other securities in electronic form, eliminating the need for physical certificates.<br/><br/>
+                                {/* <h2>What is a Demat Account?</h2> */}
+                                <p>A Demat account securely holds an investor's stocks, bonds, mutual funds, and other securities electronically. It’s also called a Dematerialised account as it eliminates the need for paper share certificates and ensures easy buying and selling of stocks and securities.<br/><br/>
 
                                 This transformation to digital holdings has streamlined the investment process and enhanced governance under the Securities and Exchange Board of India (SEBI). Gone are the days of cumbersome, manual account openings.<br/><br/>
 
