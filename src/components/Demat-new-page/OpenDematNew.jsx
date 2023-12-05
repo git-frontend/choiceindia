@@ -250,6 +250,7 @@ function OpenDematNew() {
 
 To begin your journey into online trading, you must open a Demat account with a Depository Participant (DP). This step aligns to eliminate physical certificates and ensure seamless tracking and monitoring of your holdings. <br/><br/>
 Upon activation of your Demat account, submit your physical securities through a Dematerialization Request Form (DRF). Ensure each physical certificate is defaced by marking "Surrendered for Dematerialization." You will receive an acknowledgment slip for your surrendered share certificates.</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/3u0VZAHMwO0?si=sqbJJfBthND0ReKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </InView>
                             <InView as="div" className="pr-sec"  onChange={(e) => {initialize && !scrollConfig.current.isTriggered && e===true && setIsActive4('id1')}} id="id1">
                                 <h2><a href="/blog/how-demat-account-works/">How Does a Demat Account Work?</a></h2>
@@ -257,6 +258,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                 <img src={HowDoes} alt={"How a Demat Account Works"} className={"img-fluid"} width={"670"} height={"826"} /><br/><br/>
                                 <p>Every stockbroker charges an opening fee for a Demat account, as they are responsible for maintaining your account. For your Demat account to operate seamlessly, you need to link it with a <a href="/open-trading-account">trading account</a>. Your Depository Participant (DP) forwards your buy orders to the stock exchange when you make purchases via a trading platform. <br/><br/>
                                 Once your buy order matches with a corresponding sell order, the stock exchange sends it to a clearinghouse for settlement. At the end of the trading day, the shares you've bought are credited to your Demat account. Similarly, the seller's Demat account is debited for the sold shares.<br/><br/>
+                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/at5pItTsJJE?si=VgNo0MHto7TNA245" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br/><br/>
                                 Remember, without a trading account, you cannot utilize your Demat account for investments. A trading account handles the monetary transactions associated with buying and selling shares.
                                 </p>
                             </InView>
