@@ -197,7 +197,33 @@ function Banner() {
                 return 0;
         }
     };
+    const renderPageNumbers = () => {
+        const displayRange = 3;
+        const totalPages = Math.ceil(filteredCategoryData.length / itemsPerPage);
 
+        let startPage = Math.max(1, currentPage - displayRange);
+        let endPage = Math.min(totalPages, currentPage + displayRange);
+
+        const difference = displayRange * 2 + 1 - (endPage - startPage + 1);
+        if (difference > 0) {
+            startPage = Math.max(1, startPage - difference);
+            endPage = Math.min(totalPages, endPage + difference);
+        }
+
+        return (
+            <ul className="pagination">
+                {Array.from({ length: endPage - startPage + 1 }, (_, index) => (
+                    <li
+                        key={startPage + index}
+                        className={currentPage === startPage + index ? "active" : ""}
+                        onClick={() => setCurrentPage(startPage + index)}
+                    >
+                        {startPage + index}
+                    </li>
+                ))}
+            </ul>
+        );
+    };
     return (
         <>
             <section className="funds-bannersection">
@@ -256,7 +282,7 @@ function Banner() {
                                 </div>
                                 <div className='drop-items'>
                                     <select className='form-select' onChange={FilterByStars}>
-                                        <option value="" disabled hidden defaultValue>Stars</option>
+                                        <option value="value" disabled hidden defaultValue selected>Ratings</option>
                                         <option value="" defaultValue>All</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -299,101 +325,104 @@ function Banner() {
                                     </div>
                                 </div>
                                 :
-                                <div className='col-md-12'>
-                                    {filteredCategoryData.slice(startIndex, endIndex).map((fund, i) => (
-                                        <div className='card' key={fund.SchemeName}>
-                                            <Link to={`/scheme/${fund.SchemeName.toLowerCase().replace(/ /g, '-')}-${fund.SchemeCode}-${fund.SchemePlanCode}`} >
-                                                <div className="display-flex">
-                                                    <div className='flex-i'>
-                                                        <h3>{fund.SchemeName}</h3>
-                                                        <p className='category'>
-                                                            <span>Expense Ratio : {fund.ExpenseRatio}%</span>
-                                                            <span className='brder-left'>AUM : {(parseFloat(fund.SchemeReturns.NetAsset).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'Cr.')}</span>
-                                                        </p>
-                                                    </div>
-                                                    <div className='flex-i'>
-                                                        <div className='rating-det'>
-                                                            {[1, 2, 3, 4, 5].map((rating) => (
-                                                                <FontAwesomeIcon
-                                                                    key={rating}
-                                                                    icon={faStar}
-                                                                    className={`${fund?.CMSStarRatings >= rating ? 'fill' : 'unfill'}`}
-                                                                />
-                                                            ))}
+                                filteredCategoryData.length === 0 ? (
+                                    <div className="text-center">
+                                         <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                    </div>
+                                ) : (
+                                    <div className='col-md-12'>
+                                        {filteredCategoryData.slice(startIndex, endIndex).map((fund, i) => (
+                                            <div className='card' key={fund.SchemeName}>
+                                                <Link to={`/scheme/${fund.SchemeName.toLowerCase().replace(/ /g, '-')}-${fund.SchemeCode}-${fund.SchemePlanCode}`} >
+                                                    <div className="display-flex">
+                                                        <div className='flex-i'>
+                                                            <h3>{fund.SchemeName}</h3>
+                                                            <p className='category'>
+                                                                <span>Expense Ratio : {fund.ExpenseRatio}%</span>
+                                                                <span className='brder-left'>AUM : {(parseFloat(fund.SchemeReturns.NetAsset).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'Cr.')}</span>
+                                                            </p>
+                                                        </div>
+                                                        <div className='flex-i'>
+                                                            <div className='rating-det'>
+                                                                {[1, 2, 3, 4, 5].map((rating) => (
+                                                                    <FontAwesomeIcon
+                                                                        key={rating}
+                                                                        icon={faStar}
+                                                                        className={`${fund?.CMSStarRatings >= rating ? 'fill' : 'unfill'}`}
+                                                                    />
+                                                                ))}
 
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div className='row'>
-                                                    <div className='col-xl-5 col-md-6 left'>
-                                                        <ul className='fundlist-flex'>
-                                                            <li className='fundlist'>
-                                                                <h5 className='time-period'>1M</h5>
-                                                                <h5>{schemeReturnsToFixed(fund.SchemeReturns.OneMonthReturn)}%</h5>
-                                                            </li>
-                                                            <li className='fundlist'>
-                                                                <h5 className='time-period'>3M</h5>
-                                                                <h5>{schemeReturnsToFixed(fund.SchemeReturns.ThreeMonthsReturn)}%</h5>
-                                                            </li>
-                                                            <li className='fundlist'>
-                                                                <h5 className='time-period'>6M</h5>
-                                                                <h5>{schemeReturnsToFixed(fund.SchemeReturns.SixMonthsReturn)}%</h5>
-                                                            </li>
-                                                        </ul>
+                                                    <div className='row'>
+                                                        <div className='col-xl-5 col-md-6 left'>
+                                                            <ul className='fundlist-flex'>
+                                                                <li className='fundlist'>
+                                                                    <h5 className='time-period'>1M</h5>
+                                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.OneMonthReturn)}%</h5>
+                                                                </li>
+                                                                <li className='fundlist'>
+                                                                    <h5 className='time-period'>3M</h5>
+                                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.ThreeMonthsReturn)}%</h5>
+                                                                </li>
+                                                                <li className='fundlist'>
+                                                                    <h5 className='time-period'>6M</h5>
+                                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.SixMonthsReturn)}%</h5>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div className='right col-xl-5 col-md-6'>
+                                                            <ul className='fundlist-flex border-left'>
+                                                                <li className='fundlist text-center'>
+                                                                    <h5 className='time-period'>1Y</h5>
+                                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.OneYearReturn)}%</h5>
+                                                                </li>
+                                                                <li className='fundlist'>
+                                                                    <h5 className='time-period'>3Y</h5>
+                                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.ThreeYearReturn)}%</h5>
+                                                                </li>
+                                                                <li className='fundlist'>
+                                                                    <h5 className='time-period'>5Y</h5>
+                                                                    <h5>{schemeReturnsToFixed(fund.SchemeReturns.FiveYearReturn)}%</h5>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div className='col-xl-2 col-md-12'>
+                                                            <button type='button' className='btn-bg'>View Details</button>
+                                                        </div>
                                                     </div>
-                                                    <div className='right col-xl-5 col-md-6'>
-                                                        <ul className='fundlist-flex border-left'>
-                                                            <li className='fundlist text-center'>
-                                                                <h5 className='time-period'>1Y</h5>
-                                                                <h5>{schemeReturnsToFixed(fund.SchemeReturns.OneYearReturn)}%</h5>
-                                                            </li>
-                                                            <li className='fundlist'>
-                                                                <h5 className='time-period'>3Y</h5>
-                                                                <h5>{schemeReturnsToFixed(fund.SchemeReturns.ThreeYearReturn)}%</h5>
-                                                            </li>
-                                                            <li className='fundlist'>
-                                                                <h5 className='time-period'>5Y</h5>
-                                                                <h5>{schemeReturnsToFixed(fund.SchemeReturns.FiveYearReturn)}%</h5>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div className='col-xl-2 col-md-12'>
-                                                        <button type='button' className='btn-bg'>View Details</button>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    )
-                                    )
-                                    }
-
-                                    <span className='bg-before'></span>
-                                    <div className='wrapper'>
-                                        <div className='pagination-sec'>
-                                            <button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
-                                                <LazyLoader src={PreSingleArrow} className="img-fluid" width={20} height={29} />
-                                            </button>
-                                            <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage <= 2}>
-                                                <LazyLoader src={PreDobbleArrow} className="img-fluid" width={25} height={29} />
-                                            </button>
-
-                                            <div className="pagination">
-                                                {Array.from({ length: totalPages }, (_, index) => (
-                                                    <li key={index} className={currentPage === index + 1 ? "active" : ""} onClick={() => setCurrentPage(index + 1)}>
-                                                        {index + 1}
-                                                    </li>
-                                                ))}
+                                                </Link>
                                             </div>
 
-                                            <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
-                                                <LazyLoader src={NextDobbleArrow} className="img-fluid" width={25} height={29} />
-                                            </button>
-                                            <button onClick={() => setCurrentPage(currentPage + 2)} disabled={currentPage >= totalPages - 1}>
-                                                <LazyLoader src={NextSingleArrow} className="img-fluid" width={20} height={29} />
-                                            </button>
+                                        )
+                                        )
+                                        }
+
+                                        <span className='bg-before'></span>
+                                        <div className='wrapper'>
+                                            <div className='pagination-sec'>
+                                                <button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
+                                                    <LazyLoader src={PreSingleArrow} className="img-fluid" width={20} height={29} />
+                                                </button>
+                                                <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage <= 2}>
+                                                    <LazyLoader src={PreDobbleArrow} className="img-fluid" width={25} height={29} />
+                                                </button>
+
+                                                <div className="pagenum">
+                                                    {renderPageNumbers()}
+                                                </div>
+
+                                                <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
+                                                    <LazyLoader src={NextDobbleArrow} className="img-fluid" width={25} height={29} />
+                                                </button>
+                                                <button onClick={() => setCurrentPage(currentPage + 2)} disabled={currentPage >= totalPages - 1}>
+                                                    <LazyLoader src={NextSingleArrow} className="img-fluid" width={20} height={29} />
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                )
                         }
                     </div>
                 </div>

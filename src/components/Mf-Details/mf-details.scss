@@ -804,6 +804,11 @@
         }
 
         &.card-calculator {
+           .title-secnd{
+            span{
+                color: $yellowColor;
+            }
+           }
             .accordian-sec {
                 .accordion-item {
                     border: 0;

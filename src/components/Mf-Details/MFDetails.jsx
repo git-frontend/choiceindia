@@ -55,7 +55,7 @@ function MFTopFunds() {
     const toggleTab = (index) => {
         setToggleState(index);
     };
-    
+
     const getPosition = () => {
         const element = document.getElementById("showForm");
         if (element) {
@@ -708,7 +708,7 @@ function MFTopFunds() {
             "SchemePlanCode": arr[1],
             "Type": type
         };
-    
+
         rest.getschemeTopSectors(mrktSectorCompanyRequestObject).then((res) => {
             if (res.Response !== null) {
                 let topSectorsResponse = res.Response;
@@ -718,7 +718,7 @@ function MFTopFunds() {
                 let k = 0;
                 let othersColor = "";
                 let othersIndex = null;
-    
+
                 for (let i = 0; i < topSectorsResponse.length; i++) {
                     let colorArray = randDarkColor();
                     if (k === 4) {
@@ -726,16 +726,16 @@ function MFTopFunds() {
                     }
                     topSectorsResponse[i]["color"] = colorArray;
                     k++;
-    
+
                     if (topSectorsResponse[i].Sector === "" || topSectorsResponse[i].Sector === "Others") {
                         instrument = topSectorsResponse[i].Instrument;
                         netAssetPercent += Number(topSectorsResponse[i].NetAssetPercent);
-    
+
                         if (othersIndex === null) {
                             othersIndex = i;
                         }
                         othersColor = topSectorsResponse[othersIndex]["color"];
-    
+
                         if (topSectorsResponse[i].lTopHoldings && topSectorsResponse[i].lTopHoldings.length > 0) {
                             for (let j = 0; j < topSectorsResponse[i].lTopHoldings.length; j++) {
                                 OthersArray.push(topSectorsResponse[i].lTopHoldings[j]);
@@ -743,9 +743,9 @@ function MFTopFunds() {
                         }
                     }
                 }
-    
+
                 topSectorsResponse = topSectorsResponse.filter((obj) => obj.Sector !== "" && obj.Sector !== "Others");
-    
+
                 let othersObject = {
                     Instrument: instrument,
                     NetAssetPercent: netAssetPercent,
@@ -753,18 +753,18 @@ function MFTopFunds() {
                     color: othersColor,
                     lTopHoldings: OthersArray,
                 };
-    
+
                 if (instrument !== "") {
                     topSectorsResponse.push(othersObject);
                 }
-    
+
                 if (topSectorsResponse && topSectorsResponse[0]) {
                     // Assuming you have a function toggleAccordion to handle the accordion
                     // toggleAccordion(topSectorsResponse[0]);
                 }
-    
-                setTopSectorsResponseObject(topSectorsResponse);  
-    
+
+                setTopSectorsResponseObject(topSectorsResponse);
+
                 const updatedDatas = {
                     labels: topSectorsResponse.map((sector) => sector.Sector),
                     datasets: [
@@ -776,7 +776,7 @@ function MFTopFunds() {
                     ],
                 };
                 setDatas(updatedDatas);
-    
+
                 const updatedOtherDatas = {
                     labels: topSectorsResponse.map((sector) => sector.Sector || "Others"),
                     datasets: [
@@ -788,18 +788,18 @@ function MFTopFunds() {
                     ],
                 };
                 setDatas1(updatedOtherDatas);
-    
+
                 setShowDropdownLoader(false);
-    
-               
+
+
             } else {
                 setShowDropdownLoader(false);
                 setTopSectorsResponseObject([]);
             }
         });
     };
-    
-    
+
+
     function randDarkColor() {
         const rgb = `rgb(${Math.floor(Math.random() * 210)}, ${Math.floor(Math.random() * 210)}, ${Math.floor(Math.random() * 210)})`;
         return rgb;
@@ -1027,7 +1027,7 @@ function MFTopFunds() {
                             <div className='card-mn box-shadow analysis-portfolio'>
                                 <div className='row align-items-center'>
                                     <div className='col-md-6'>
-                                        <h3 className='title-secnd'>Scheme's Portfolio <span>Analysis</span></h3>
+                                        <h2 className='title-secnd'>Scheme's Portfolio <span>Analysis</span></h2>
                                     </div>
                                     <div className='col-md-6'>
                                         <div className='order-wise-sec'>
@@ -1245,7 +1245,7 @@ function MFTopFunds() {
                                 }
                             </div>
                             <div className='card-mn box-shadow fund-comparison-details'>
-                                <h3 className='title-secnd'><span>Peer</span> Scheme Comparison</h3>
+                                <h2 className='title-secnd'><span>Peer</span> Scheme Comparison</h2>
                                 {
                                     peerComparisonResponseObject.length ?
                                         <div>
@@ -1300,7 +1300,7 @@ function MFTopFunds() {
                                 }
                             </div>
                             <div className='card-mn box-shadow performance-hist-details'>
-                                <h3 className='title-secnd'>Scheme's <span>Performance</span> (Historical)</h3>
+                                <h2 className='title-secnd'>Scheme's <span>Performance</span> (Historical)</h2>
                                 <div className='table-responsive'>
                                     {
                                         performanceResponseObject.length ?
@@ -1350,7 +1350,7 @@ function MFTopFunds() {
                             <div className='card-mn box-shadow card-calculator'>
                                 <div className='row'>
                                     <div className='col-md-6'>
-                                        <h3 className='title-secnd'>Lumpsum & SIP Calculator</h3>
+                                        <h2 className='title-secnd'>Lumpsum & SIP <span>Calculator</span></h2>
                                     </div>
                                     <div className='col-md-6'>
                                         <div className="toggle">
@@ -1467,10 +1467,16 @@ function MFTopFunds() {
                 <div className='container'>
                     <div className='row justify-content-center'>
                         <div className='col-md-10'>
-                            <div className='more-cont-dcr'>
-                                <h2 className='title-secnd'>Invest in Quant Tax Plan Growth <span>Online</span></h2>
-                                <p>With Choice, grow your wealth in mutual funds as we enable you to buy Quant Tax Plan Growth online. We help you understand all the important details to Invest in Quant Tax Plan Growth Scheme such as its Value, NAV, AUM, Performance, Exit Load, etc. along with its Historical Returns. Also, you can calculate the Expected Future Returns of this scheme using our Lumpsum & SIP Calculator and access its Sector-wise, Company- wise and Category-wise Holdings!</p>
-                            </div>
+                            {
+                                schemedata.map((res, i) => {
+                                    return (
+                                        <div className='more-cont-dcr' key={res.SchemeCode}>
+                                            <h2 className='title-secnd'>Invest in {res.SchemeBasic.SchemeMainName} <span>Online</span></h2>
+                                            <p>With Choice, grow your wealth in mutual funds as we enable you to buy {res.SchemeBasic.SchemeMainName} online. We help you understand all the important details to Invest in {res.SchemeBasic.SchemeMainName} Scheme such as its Value, NAV, AUM, Performance, Exit Load, etc. along with its Historical Returns. Also, you can calculate the Expected Future Returns of this scheme using our Lumpsum & SIP Calculator and access its Sector-wise, Company- wise and Category-wise Holdings!</p>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </div>
