@@ -9,9 +9,9 @@ function SerachTopFunds() {
     const [filteredData, setFilteredData] = useState([]);
     const [isloading, setisloading] = useState(true);
     //for listing top funds
-   /**
-    * filterdata for list top mf funds
-    */
+    /**
+     * filterdata for list top mf funds
+     */
 
     const goToTopFundsDetail = () => {
         rest.getCategoriesList().then(
@@ -37,7 +37,7 @@ function SerachTopFunds() {
             });
     }
     useEffect(() => {
-            goToTopFundsDetail();
+        goToTopFundsDetail();
     }, [])
     //for search filter key 
     const fundhandleSearch = (e) => {
@@ -68,7 +68,7 @@ function SerachTopFunds() {
                                     :
                                     <div >
                                         {
-                                            filteredData.length > 0  ?
+                                            filteredData && filteredData.length > 0  ?
                                                 <div className='search-items-sec' >
                                                     {
                                                         filteredData.map((res, i) => {

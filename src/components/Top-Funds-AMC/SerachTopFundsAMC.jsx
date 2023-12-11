@@ -74,7 +74,7 @@ function SerachTopFunds() {
                                 :
                                 <div className='col-md-12'>
                                     {
-                                        filteredData.length > 0 ?
+                                        filteredData && filteredData.length > 0  ?
                                             <div className='search-items-sec'>
                                                 {
                                                     filteredData.map((res, i) => {
