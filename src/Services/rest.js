@@ -282,6 +282,15 @@ const rest = {
       return data
     })
   },
+  getschemeTopHoldings: function (postdata) {
+    let api = new API_URLS()
+    let url = api.getschemeTopHoldings()
+    // console.log("ReturnGraph", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
 
 
 }

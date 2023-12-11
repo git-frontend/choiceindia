@@ -292,6 +292,7 @@ export class API_URLS {
     navReturnGraphUrl = 'Scheme/navreturngraph';
     schemeTopSectors='Scheme/topsectors';
     schemeMarketCap='Scheme/marketcap';
+    schemeTopHoldings='Scheme/topholdings';
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -1005,6 +1006,9 @@ export class API_URLS {
     }
     getschemeMarketCap() {
         return this.MFBaseURL + this.schemeMarketCap
+    }
+    getschemeTopHoldings() {
+        return this.MFBaseURL + this.schemeTopHoldings
     }
 
 }

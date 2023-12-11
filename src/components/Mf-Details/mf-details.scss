@@ -232,52 +232,60 @@
                         }
                     }
                 }
-                .nv-chart{
+
+                .nv-chart {
                     margin-top: 2rem;
-                    .nvd3-svg{
+
+                    .nvd3-svg {
                         height: 188px;
-                        .nvd3{
-                           .nv-legendWrap{
-                            .nv-legend{
-                                .nv-series{
-                                    display: none;
-                                }
-                            }
-                           }
-                           .nv-focus{
-                            .nv-axis{
-                                line{
-                                    opacity: 0;
-                                }
-                            }
-                            .nv-y{
-                                .tick{
-                                    text{
-                                        fill:$whiteColor;
-                                    }
-                                }
-                                .nv-axisMin-y{
-                                    text{
-                                        fill:$whiteColor;
-                                    }
-                                }
-                                .nv-axisMax-y{
-                                    text{
-                                        fill:$whiteColor ;
+
+                        .nvd3 {
+                            .nv-legendWrap {
+                                .nv-legend {
+                                    .nv-series {
+                                        display: none;
                                     }
                                 }
                             }
-                            .nv-x{
-                                .nvd3 {
-                                    .tick{
-                                        text{
-                                            display: none;
-                                        }  
+
+                            .nv-focus {
+                                .nv-axis {
+                                    line {
+                                        opacity: 0;
+                                    }
+                                }
+
+                                .nv-y {
+                                    .tick {
+                                        text {
+                                            fill: $whiteColor;
+                                        }
+                                    }
+
+                                    .nv-axisMin-y {
+                                        text {
+                                            fill: $whiteColor;
+                                        }
+                                    }
+
+                                    .nv-axisMax-y {
+                                        text {
+                                            fill: $whiteColor ;
+                                        }
+                                    }
+                                }
+
+                                .nv-x {
+                                    .nvd3 {
+                                        .tick {
+                                            text {
+                                                display: none;
+                                            }
+                                        }
                                     }
                                 }
                             }
-                           }
-                           
+
                         }
                     }
                 }
@@ -299,30 +307,34 @@
                         margin-right: 0.3rem;
                     }
                 }
-                .duration{
+
+                .duration {
                     position: absolute;
                     bottom: 0;
                     left: 25%;
                     display: block;
+
                     @media (max-width:$sm) {
                         left: 14%;
                     }
-                    .dur-button{
-                      color:$whiteColor;
-                      font-size: 1.25rem;
-                      font-family: $font-family-poppins-regular;
-                      background-color: $darkblack;
-                      border: none;
-                      padding: 0.5rem 1rem;
-                      &.active {
-                        background-color: #B8C7E5;
-                        color:#0068B3 ;
-                      }
+
+                    .dur-button {
+                        color: $whiteColor;
+                        font-size: 1.25rem;
+                        font-family: $font-family-poppins-regular;
+                        background-color: $darkblack;
+                        border: none;
+                        padding: 0.5rem 1rem;
+
+                        &.active {
+                            background-color: #B8C7E5;
+                            color: #0068B3;
+                        }
                     }
 
-                    
+
                 }
-                
+
             }
 
             .per-ttl {
@@ -417,13 +429,60 @@
                 }
 
                 .drop-items {
+                    position: relative;
+
                     @media (max-width:$sm) {
                         width: 100%;
                         padding-top: 1rem;
                     }
+
+                    .dropdown {
+                        .btn-select {
+                            span {
+                                display: inline-block;
+                                vertical-align: middle;
+                                max-width: 7rem;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                            }
+                        }
+
+                        &.show {
+                            .btn-select {
+                                &:after {
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover+.form-select-btn {
+                        display: block;
+                    }
+
+
+                }
+
+                .form-select-btn {
+                    display: none;
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    border: 1px solid $secondary;
+
+                    button {
+                        border: none;
+                        text-align: left;
+                        background-color: $whiteColor;
+                        color: $secondary;
+                        font-size: 1.3rem;
+                    }
                 }
 
                 .form-select {
+                    position: relative;
                     font-size: 1.3rem;
                     font-family: $font-family-poppins-regular;
                     color: $secondary;
@@ -432,10 +491,14 @@
                     box-shadow: none;
                     padding: 1rem 4rem 1rem .75rem;
                     width: 11.375rem;
+
                     &:focus {
                         outline: 0;
                     }
+
                 }
+
+
             }
 
             .cont-all-details {
@@ -469,12 +532,19 @@
                             background: $yellowColor;
                         }
 
+
+
                         @media (max-width:$sm) {
                             padding: 1.2rem;
                             border-radius: 10px;
                             font-size: 1.1rem;
                             margin-right: 0.5rem;
                         }
+                    }
+
+                    button:disabled {
+                        background: #fbfafa;
+                        color: #d2cdcd !important;
                     }
                 }
 
@@ -502,10 +572,14 @@
 
                         .right-cont-details {
                             width: 55%;
+                            overflow-x: hidden;
+                            height: 600px;
+                            overflow-y: scroll;
 
                             @media (max-width:$sm) {
                                 width: 100%;
                                 padding-top: 2rem;
+                                height: auto;
                             }
 
                             .accordion-item {
@@ -585,6 +659,36 @@
 
                         }
                     }
+
+                    .content-tabs-details-company {
+                        table {
+                            width: 100%;
+
+                            tr {
+                                border-bottom: 1px solid #D0D0D0;
+                                color: $primary;
+                                font-size: 1.375rem;
+                                font-family: $font-family-poppins-regular;
+                                line-height: 1.2;
+                                font-weight: 500;
+                                text-align: left;
+
+                                td {
+                                    padding: 0.6rem 1rem;
+                                    &:nth-child(2) {
+                                            text-align: right;
+                                    }
+                                }
+
+
+                            }
+                        }
+                    }
+                }
+
+                .scrollbar {
+                    max-height: 24rem;
+                    overflow: auto;
                 }
             }
         }
@@ -804,11 +908,12 @@
         }
 
         &.card-calculator {
-           .title-secnd{
-            span{
-                color: $yellowColor;
+            .title-secnd {
+                span {
+                    color: $yellowColor;
+                }
             }
-           }
+
             .accordian-sec {
                 .accordion-item {
                     border: 0;

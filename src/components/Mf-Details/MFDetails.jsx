@@ -18,7 +18,8 @@ import utils from "../../Services/utils";
 import Form from 'react-bootstrap/Form';
 import Image1 from '../../assets/images/mf-investica/pie-chart.png';
 import Image2 from '../../assets/images/mf-investica/donuts-chart.webp';
-
+import NoData from "../../assets/images/brokerage-calculator/no-data.webp";
+import LazyLoader from '../Common-features/LazyLoader';
 function MFTopFunds() {
     const [name, setName] = useState('hideform');
     const [value, onChange] = useState(0);
@@ -52,6 +53,16 @@ function MFTopFunds() {
     const [isClicked, setIsClicked] = useState(false);
     const [topSectorsResponseObject, setTopSectorsResponseObject] = useState([]);
     const [showHideDropdownValues, setShowHideDropdownValues] = useState({ "marketcap": true, "company": true, "sector": true });
+    const [topHoldingsResponseObject, setTopHoldingsResponseObject] = useState([]);
+    const [selectedDropDownValue, setSelectedDropDownValue] = useState('Sector');
+    const [marketCapResponseObject, setMarketCapResponseObject] = useState([]);
+    const [isDropdownVisible, setDropdownVisible] = useState(false);
+    //   const [selectedDropDownValue, setSelectedDropDownValue] = useState('Sector');
+
+    //   const showHideDropDown = (value) => {
+    //     setSelectedDropDownValue(value);
+    //     setDropdownVisible(!isDropdownVisible);
+    //   };
     const toggleTab = (index) => {
         setToggleState(index);
     };
@@ -79,7 +90,7 @@ function MFTopFunds() {
             sipLumpsumCalc()
             reloadGraphData('Sensex', duration, false, true)
             getSchemeDistributionData()
-            getSchemeTopSectors()
+            getSchemeTopSectors("1")
         }
     }, [rendercount]);
     const getPosition2 = () => {
@@ -599,16 +610,19 @@ function MFTopFunds() {
             //     getSchemeTopSectors(value);
             // }
             if (value === '1') {
+                setSelectedDropDownValue("Sector")
                 setTopSectorsResponseObject([])
                 setShowHideDropdownValues({ marketcap: true })
                 getSchemeTopSectors(value)
             }
             else if (value === '2') {
+                setSelectedDropDownValue("Sector")
                 setShowHideDropdownValues({ marketcap: false });
                 setTopSectorsResponseObject([])
                 getSchemeTopSectors(value)
             }
             else if (value === '3') {
+                setSelectedDropDownValue("Sector")
                 setShowHideDropdownValues({ marketcap: false });
                 setTopSectorsResponseObject([])
                 getSchemeTopSectors(value)
@@ -650,121 +664,24 @@ function MFTopFunds() {
     // console.log("datas1", datas1.labels)
 
 
-    // const getSchemeTopSectors = (value) => {
-    //     setTopSectorsResponseObject([]);
-    //     const urlIdentity = window.location.pathname.split('/scheme/')[1];
-    //     const arr = urlIdentity.split('-').slice(-2)
-    //     const mrktSectorCompanyRequestObject = {
-    //         "SchemeCode": arr[0],
-    //         "SchemePlanCode": arr[1],
-    //         "Type": value || selectedDistributionValue 
-    //     }
-    //     console.log("mrktSectorCompanyRequestObject req", mrktSectorCompanyRequestObject)
-    //     rest.getschemeTopSectors(mrktSectorCompanyRequestObject).then((res) => {
-    //         if (res.Response !== null) {
-    //             console.log("getschemeTopSectors ", res.Response)
-    //             let topSectorsResponse = res.Response;
-    //             setTopSectorsResponseObject(res.Response)
-    //             if (topSectorsResponse.Sector === "" || topSectorsResponse.Sector === "Others") {
-
-    //             }
-    //             const updatedDatas = {
-    //                 labels: topSectorsResponse.map((sector) => sector.Sector),
-    //                 datasets: [
-    //                     {
-    //                         data: topSectorsResponse.map((sector) => sector.NetAssetPercent),
-    //                         backgroundColor: topSectorsResponse.map((sector) => randDarkColor(sector.color)),
-    //                         hoverBackgroundColor: topSectorsResponse.map((sector) => sector.hoverColor),
-    //                     },
-    //                 ],
-    //             };
-    //             setDatas(updatedDatas)
-
-    //             const updatedOtherDatas = {
-    //                 labels: topSectorsResponse.map((sector) => sector.Sector || "Others"),
-    //                 datasets: [
-    //                     {
-    //                         data: topSectorsResponse.map((sector) => sector.NetAssetPercent),
-    //                         backgroundColor: topSectorsResponse.map((sector) => randDarkColor(sector.color)),
-    //                         hoverBackgroundColor: topSectorsResponse.map((sector) => sector.hoverColor),
-    //                     },
-    //                 ],
-    //             };
-    //             setDatas1(updatedOtherDatas);
-    //             setShowDropdownLoader(false);
-    //         } else {
-    //             setShowDropdownLoader(false);
-    //             setTopSectorsResponseObject([]);
-    //         }
-    //     });
-    // };
-    const getSchemeTopSectors = () => {
+    const getSchemeTopSectors = (value) => {
         setTopSectorsResponseObject([]);
         const urlIdentity = window.location.pathname.split('/scheme/')[1];
-        const arr = urlIdentity.split('-').slice(-2);
-        const type = selectedDistributionValue;
+        const arr = urlIdentity.split('-').slice(-2)
         const mrktSectorCompanyRequestObject = {
             "SchemeCode": arr[0],
             "SchemePlanCode": arr[1],
-            "Type": type
-        };
-
+            "Type": value || selectedDistributionValue
+        }
+        console.log("mrktSectorCompanyRequestObject req", mrktSectorCompanyRequestObject)
         rest.getschemeTopSectors(mrktSectorCompanyRequestObject).then((res) => {
             if (res.Response !== null) {
+                console.log("getschemeTopSectors ", res.Response)
                 let topSectorsResponse = res.Response;
-                let OthersArray = [];
-                let instrument = "";
-                let netAssetPercent = 0;
-                let k = 0;
-                let othersColor = "";
-                let othersIndex = null;
+                setTopSectorsResponseObject(res.Response)
+                if (topSectorsResponse.Sector === "" || topSectorsResponse.Sector === "Others") {
 
-                for (let i = 0; i < topSectorsResponse.length; i++) {
-                    let colorArray = randDarkColor();
-                    if (k === 4) {
-                        k = 0;
-                    }
-                    topSectorsResponse[i]["color"] = colorArray;
-                    k++;
-
-                    if (topSectorsResponse[i].Sector === "" || topSectorsResponse[i].Sector === "Others") {
-                        instrument = topSectorsResponse[i].Instrument;
-                        netAssetPercent += Number(topSectorsResponse[i].NetAssetPercent);
-
-                        if (othersIndex === null) {
-                            othersIndex = i;
-                        }
-                        othersColor = topSectorsResponse[othersIndex]["color"];
-
-                        if (topSectorsResponse[i].lTopHoldings && topSectorsResponse[i].lTopHoldings.length > 0) {
-                            for (let j = 0; j < topSectorsResponse[i].lTopHoldings.length; j++) {
-                                OthersArray.push(topSectorsResponse[i].lTopHoldings[j]);
-                            }
-                        }
-                    }
                 }
-
-                topSectorsResponse = topSectorsResponse.filter((obj) => obj.Sector !== "" && obj.Sector !== "Others");
-
-                let othersObject = {
-                    Instrument: instrument,
-                    NetAssetPercent: netAssetPercent,
-                    Sector: "Others",
-                    color: othersColor,
-                    lTopHoldings: OthersArray,
-                };
-
-                if (instrument !== "") {
-                    topSectorsResponse.push(othersObject);
-                }
-
-                if (topSectorsResponse && topSectorsResponse[0]) {
-                    // Assuming you have a function toggleAccordion to handle the accordion
-                    // toggleAccordion(topSectorsResponse[0]);
-                }
-
-                setTopSectorsResponseObject(topSectorsResponse);
-
                 const updatedDatas = {
                     labels: topSectorsResponse.map((sector) => sector.Sector),
                     datasets: [
@@ -775,7 +692,7 @@ function MFTopFunds() {
                         },
                     ],
                 };
-                setDatas(updatedDatas);
+                setDatas(updatedDatas)
 
                 const updatedOtherDatas = {
                     labels: topSectorsResponse.map((sector) => sector.Sector || "Others"),
@@ -788,10 +705,7 @@ function MFTopFunds() {
                     ],
                 };
                 setDatas1(updatedOtherDatas);
-
                 setShowDropdownLoader(false);
-
-
             } else {
                 setShowDropdownLoader(false);
                 setTopSectorsResponseObject([]);
@@ -830,6 +744,101 @@ function MFTopFunds() {
 
         },
     }
+
+    const getSchemeTopHoldings = (value) => {
+        setShowDropdownLoader(true);
+        const urlIdentity = window.location.pathname.split('/scheme/')[1];
+        const arr = urlIdentity.split('-').slice(-2)
+        const mrktSectorCompanyRequestObject = {
+            "SchemeCode": arr[0],
+            "SchemePlanCode": arr[1],
+            "Type": value || selectedDistributionValue
+        }
+        console.log("getSchemeTopHoldings", mrktSectorCompanyRequestObject)
+
+        rest.getschemeTopHoldings(mrktSectorCompanyRequestObject)
+            .then((res) => {
+                if (res.Response !== null) {
+                    setTopHoldingsResponseObject(res.Response);
+                    console.log("res.Response", res.Response)
+                } else {
+                    setTopHoldingsResponseObject([]);
+                }
+            })
+            .catch(() => {
+                setShowDropdownLoader(false);
+            });
+    };
+
+    const showHideDropDown = (value) => {
+        setShowDropdownLoader(true);
+        setDropdownVisible(!isDropdownVisible);
+        console.log("showHideDropDown", value)
+
+        if (value === '1') {
+            setSelectedDropDownValue('Market Cap');
+            setShowHideDropdownValues({ marketcap: true });
+
+            if (!marketCapResponseObject || Object.keys(marketCapResponseObject).length === 0) {
+                getSchemeMarketCap()
+            } else {
+                setShowDropdownLoader(false);
+
+            }
+            
+        } else if (value === '2') {
+            setSelectedDropDownValue('Company');
+
+            if (topHoldingsResponseObject.length === 0) {
+                getSchemeTopHoldings(value)
+            } else {
+                setShowDropdownLoader(false);
+            }
+        } else if (value === '3') {
+            setSelectedDropDownValue('Sector');
+
+            if (topSectorsResponseObject.length === 0) {
+                getSchemeTopSectors()
+            } else {
+                setShowDropdownLoader(false);
+
+            }
+        }
+
+        if (selectedDistributionValue !== '1') {
+            setShowHideDropdownValues({ marketcap: false });
+        } else {
+            setShowHideDropdownValues({ marketcap: true });
+        }
+    };
+
+    const getSchemeMarketCap = () => {
+        const urlIdentity = window.location.pathname.split('/scheme/')[1];
+        const arr = urlIdentity.split('-').slice(-2)
+        const mrktSectorCompanyRequestObject = {
+            "SchemeCode": arr[0],
+            "SchemePlanCode": arr[1],
+            "Type": value || selectedDistributionValue
+        }
+        rest.getschemeMarketCap(mrktSectorCompanyRequestObject)
+            .then((res) => {
+                if (res.Response !== null) {
+                    setShowDropdownLoader(false);
+                    const updatedMarketCapResponse = {};
+                    res.Response.lstTopSectors.forEach((obj, index) => {
+                        updatedMarketCapResponse[obj.Company] = obj;
+                    });
+                    setMarketCapResponseObject(updatedMarketCapResponse);
+                } else {
+                    setShowDropdownLoader(false);
+                    setMarketCapResponseObject(null);
+                }
+            })
+            .catch((error) => {
+
+                console.error('Error fetching market cap data:', error);
+            });
+    };
     return (
         <div>
             <section className="fund-listing-details">
@@ -1034,14 +1043,36 @@ function MFTopFunds() {
                                             <p className='firt-par'>As on: {schemeDistributionAsOnDate}</p>
                                             <p className='view-lc'>View allocation % by</p>
                                             <div className='drop-items'>
-                                                <select className='form-select'>
-                                                    <option value="" selected >Sector</option>
-                                                    <option value="">Company</option>
-                                                    <option value="">Market Cap</option>
-                                                </select>
+                                                <div
+                                                    className='form-select'
+                                                    onClick={() => setDropdownVisible(!isDropdownVisible)}
+                                                >
+                                                    <span>{selectedDropDownValue}</span>
+                                                </div>
+                                                {isDropdownVisible && (
+                                                    <div className='form-select-btn'>
+                                                        <button
+                                                            selected
+                                                            onClick={() => showHideDropDown('3')}
+                                                            value='3'
+                                                        >
+                                                            Sector
+                                                        </button>
+                                                        <button onClick={() => showHideDropDown('2')} value='2'>
+                                                            Company
+                                                        </button>
+                                                        <button
+                                                            onClick={() => showHideDropDown('1')}
+                                                            value='1'
+                                                        >
+                                                            Market Cap
+                                                        </button>
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                                 <div className='row'>
                                     <div className='col-md-12'>
@@ -1075,7 +1106,7 @@ function MFTopFunds() {
 
                                                 </button>
                                             </div>
-                                            <div className="content-tabs-details">
+                                            <div className="content-tabs-details" style={{ display: selectedDropDownValue !== 'Sector' ? 'none' : 'block' }}>
                                                 <div
                                                     className={toggleState === 1 ? "content  active-content" : "content"}
                                                 >
@@ -1223,6 +1254,60 @@ function MFTopFunds() {
                                                                     <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                                                                 </div>
                                                         }
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div className="content-tabs-details scrollbar"  style={{ display: selectedDropDownValue !== 'Company' ? 'none' : 'block' }}>
+                                                {topHoldingsResponseObject.length > 0 ? (
+                                                    <div className='content-tabs-details-company'>
+                                                        <table>
+                                                            {topHoldingsResponseObject.map((company, index) => (
+                                                                <tr key={index}>
+                                                                    <td>{index + 1}. {company.Company}</td>
+                                                                    <td>{(company.NetAssetPercent).toFixed(2)}%</td>
+                                                                </tr>
+                                                            ))}
+                                                        </table>
+                                                    </div>
+                                                ) : (
+                                                    <div className="accordion" style={{ display: topHoldingsResponseObject.length === 0 && !showDropdownLoader ? 'block' : 'none' }}>
+                                                        <div className="col-md-4 col-9 m-auto">
+                                                            <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" />
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div className="content-tabs-details" style={{ display: selectedDropDownValue !== 'Market Cap' ? 'none' : 'block' }}>
+                                                <div className="row mt50" style={{ display: marketCapResponseObject && !showDropdownLoader ? 'flex' : 'none' }}>
+                                                    <div className="col-md-5 col-sm-4 col-lg-4 col-12 ver-align-center piechart"></div>
+                                                    <div className="col-12 col-sm-8 col-md-7 flex-row market-cap d-flex justify-content-center align-items-center">
+                                                        {marketCapResponseObject.Large && (
+                                                            <div className="holdings-value large holdinglarge">
+                                                                <div className="holdings-figure">{(marketCapResponseObject.Large.NetAssetPercent).toFixed(2)}%</div>
+                                                                <div className="details-title valuelarge">Large</div>
+                                                            </div>
+                                                        )}
+                                                        {marketCapResponseObject.Mid && (
+                                                            <div className="holdings-value mid mid-wrap">
+                                                                <div className="holdings-figure">{(marketCapResponseObject.Mid.NetAssetPercent).toFixed(2)}%</div>
+                                                                <div className="details-title mid-value">Mid</div>
+                                                            </div>
+                                                        )}
+                                                        {marketCapResponseObject.Small && (
+                                                            <div className="holdings-value small small-wrap">
+                                                                <div className="holdings-figure">{(marketCapResponseObject.Small.NetAssetPercent).toFixed(2)}%</div>
+                                                                <div className="details-title small-value">Small</div>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="accordion" style={{ display: !marketCapResponseObject && !showDropdownLoader && schemeDistributionAsOnDate !== '' ? 'block' : 'none' }}>
+                                                <div className="col-md-6 col-9 m-auto">
+                                                    <p>Data Not Found</p>
+                                                    <div className="col-md-4 col-9 m-auto">
+                                                        <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" />
                                                     </div>
                                                 </div>
                                             </div>
