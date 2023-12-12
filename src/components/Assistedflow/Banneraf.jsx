@@ -107,6 +107,7 @@ function Banneraf() {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   let retryPaymentCounter = 0;
+  let isResendCheck = false;
 
   /**Query Params Data */
   // const userDetails = { uniqueId: new URLSearchParams(search).get('order_unique_id').replaceAll(' ', '+').toString(), bucketId: new URLSearchParams(search).get('bucketId').replaceAll(' ', '+').toString(), clientId: new URLSearchParams(search).get('clientId').replaceAll(' ', '+').toString(), rmId: new URLSearchParams(search).get('rm_id') ? new URLSearchParams(search).get('rm_id').replaceAll(' ', '+').toString() : null, subjectId: new URLSearchParams(search).get('subid') ? new URLSearchParams(search).get('subid').replaceAll(' ', '+').toString() : null, };
@@ -936,9 +937,9 @@ function Banneraf() {
             );
 
             if (flag) {
-              setTimeout(() => {
-                window.open(response.data.Response.PaymentLink ? response.data.Response.PaymentLink : "", "_blank");
-              }, 3000);
+              // setTimeout(() => {
+                window.open(response.data.Response.PaymentLink ? response.data.Response.PaymentLink : "", "_self");
+              // }, 3000);
             } else {
               setShowCancelOrder(true);
             }
@@ -1856,7 +1857,7 @@ function Banneraf() {
                   {
                     (confirmedOrders.length) ?
                       <>
-                        <Button onClick={() => { window.open(paymentLink, '_blank') }}>Continue</Button>
+                        <Button onClick={() => { window.open(paymentLink, '_self') }}>Continue</Button>
                         <Button className="btn btn-danger" onClick={confirmedOrders.length ? cancelOrder : () => { setShowCancelOrder(false) }}>Cancel</Button>
                       </>
                       :
