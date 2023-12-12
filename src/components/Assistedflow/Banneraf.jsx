@@ -107,7 +107,7 @@ function Banneraf() {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   let retryPaymentCounter = 0;
-  let isResendCheck = false;
+  const [isResendCheck, setisResendCheck] = useState(false);
 
   /**Query Params Data */
   // const userDetails = { uniqueId: new URLSearchParams(search).get('order_unique_id').replaceAll(' ', '+').toString(), bucketId: new URLSearchParams(search).get('bucketId').replaceAll(' ', '+').toString(), clientId: new URLSearchParams(search).get('clientId').replaceAll(' ', '+').toString(), rmId: new URLSearchParams(search).get('rm_id') ? new URLSearchParams(search).get('rm_id').replaceAll(' ', '+').toString() : null, subjectId: new URLSearchParams(search).get('subid') ? new URLSearchParams(search).get('subid').replaceAll(' ', '+').toString() : null, };
@@ -534,6 +534,7 @@ function Banneraf() {
     setisModalClose(() => true)
 
     if (isResend) {
+      setisResendCheck(true);
       setLoaders({ ...loaders, reSendOtpLoader: false });
     } else {
       setLoaders({ ...loaders, SendOtpLoader: false });
@@ -566,7 +567,7 @@ function Banneraf() {
       // SubID: "", // investica subscriptionId
       // SubType: "Basket",
       // Token: token ? token : new Date().getTime(),
-      is_resend: isResend ? "Y" : "N",
+      is_resend: isResendCheck ? "Y" : "N",
       subject_id: subId,
       order_unique_id: uniID,
       captcha: captchaToken
