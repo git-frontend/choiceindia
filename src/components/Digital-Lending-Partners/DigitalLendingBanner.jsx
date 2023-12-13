@@ -274,7 +274,7 @@ function DigitalLendingBanner() {
                       </p>
                       <a href="https://walkfin.com/" target="_blank"><span className="knw-btn">Know More</span></a>
                     </div>
-                    <div className="digital-carditem">
+                    <div className="digital-carditem digital-carditem2">
                       <span className="digiimg2">
                         <LazyLoader src={rapipay} alt={"rapipay"} className={"img-fluid"} width={"263"} height={"80"} />
                       </span>
