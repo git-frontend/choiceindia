@@ -16,10 +16,7 @@ import rest from "../../Services/rest";
 import noDataimg from '../../assets/images/no-data.webp';
 import utils from "../../Services/utils";
 import Form from 'react-bootstrap/Form';
-import Image1 from '../../assets/images/mf-investica/pie-chart.png';
-import Image2 from '../../assets/images/mf-investica/donuts-chart.webp';
-import NoData from "../../assets/images/brokerage-calculator/no-data.webp";
-import LazyLoader from '../Common-features/LazyLoader';
+
 function MFTopFunds() {
     const [name, setName] = useState('hideform');
     const [value, onChange] = useState(0);
