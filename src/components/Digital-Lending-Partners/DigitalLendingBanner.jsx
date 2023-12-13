@@ -189,7 +189,7 @@ function DigitalLendingBanner() {
                         <LazyLoader src={rapipay} alt={"rapipay"} className={"img-fluid"} width={"263"} height={"80"} />
                       </span>
                       <h3 className="digi-card-title">
-                      RapiPay Fintech Pvt.Ltd
+                      RapiPay Fintech Private Limited
                       </h3>
                       <p className="digi-subtext">
 
@@ -279,7 +279,7 @@ function DigitalLendingBanner() {
                         <LazyLoader src={rapipay} alt={"rapipay"} className={"img-fluid"} width={"263"} height={"80"} />
                       </span>
                       <h3 className="digi-card-title">
-                        RapiPay Fintech Pvt.Ltd
+                      RapiPay Fintech Private Limited
                       </h3>
                       <p className="digi-subtext">
                         RapiPay is driven by a vision to grow and lead digital banking as a service in the country with its financial super App NYE. Whether you’re a consumer, a retailer, or an MSME, you can bank upon us. For consumers, they offer a wide suite of banking & financial services, and for businesses, they have assisted payment services, POS solutions, and MSME loans.
