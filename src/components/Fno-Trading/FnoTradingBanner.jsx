@@ -16,7 +16,7 @@ function FnoTradingBanner() {
                                 <h5>Choice: Options Trader’s Delight</h5>
                                 <h1 className="title">Master the <br/> Art of Trading</h1>
                                 <p className="para">Leverage our advanced platform, tools, and expertise to make the most of your trading.</p>
-                                <a href="" className="btn-bg">Start Now</a>
+                                <a href="" className="btn-bg btn-new">Start Now</a>
                             </div>
                             
                         </div>

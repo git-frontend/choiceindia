@@ -13,7 +13,7 @@ function FinxTools() {
     const [slider1,setslider1]=useState();
     const [slider2,setslider2]=useState();
 
-    const settings1 = {
+    const settings11 = {
       infinite: true,
       speed: 1500,
       vertical: true,
@@ -23,12 +23,14 @@ function FinxTools() {
       dots: false,
       autoplaySpeed: 5000,
       slidesToScroll: 1,
-      swipeToSlide: true,
-     
+      swipeToSlide: false,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      draggable:false,
     };
 
 
-    const settings = {
+    const settings12 = {
         infinite: true,
         speed: 1500,
         slidesToShow: 1,
@@ -38,8 +40,10 @@ function FinxTools() {
         fade:true,
         autoplaySpeed: 5000,
         slidesToScroll: 1,
-        swipeToSlide: true,
-       
+        swipeToSlide: false,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        draggable:false,
       };
       useEffect(() => {
         setTrigger(true)
@@ -70,7 +74,7 @@ function FinxTools() {
                         <div className="col-lg-10 col-md-12">
                             <div className="finx-tools-data">
                                 <div className="collection-slider">
-                                    <Slider {...settings1}
+                                    <Slider {...settings11}
                                     asNavFor={nav1}
                                     ref={slider => setslider1(slider)}
                                     //   afterChange={(ev) => {
@@ -96,7 +100,7 @@ function FinxTools() {
                                     </Slider>
                                 </div>
                                 <div className="slider-cont-main">
-                                    <Slider {...settings}
+                                    <Slider {...settings12}
                                         asNavFor={nav}
                                         ref={slider => setslider2(slider)}
                                         >

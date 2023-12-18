@@ -17,9 +17,12 @@ import zero3 from '../../assets/images/fno-trading/zero-charges.svg';
 import zero4 from '../../assets/images/fno-trading/free-calls.svg';
 import FnoRecord from "./FnoRecord";
 import FnoTestinmonial from "./FnoTestinmonial";
+import meta_tags from "../../Data/MetaTags";
 function FnoTradings() {
 
-  const [isCheck, setIsCheck] = useState(false)
+
+  const [rendercount, setRenderCount] = useState(() => false);
+
 
   const getPosition = () => {
     const element = document.getElementById("showForm");
@@ -34,21 +37,10 @@ function FnoTradings() {
     }
 };
 
-  const getPositionnew = () => {
-    const element = document.getElementById("branch1");
-    if (element) {
-        const rect = element.getBoundingClientRect();
-        // console.log("checkmate", rect.top.toFixed())
-        if (rect.top.toFixed() < 350) {
-            setIsCheck(true);
-            // console.log('inside name', name);
-        }
 
-    }
-}
 
 useEffect(() => {
-  window.addEventListener('scroll', getPositionnew);
+  // window.addEventListener('scroll', getPositionnew);
   window.addEventListener('scroll', getPosition);
 }, []);
 
@@ -81,6 +73,29 @@ useEffect(() => {
     ],
 };
 
+useEffect(() => {
+  setRenderCount(true)
+  if (rendercount === true) {
+    // let parser = new DOMParser();
+    // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
+    // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+    document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
+    // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+    document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+    document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+    document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+    if(!(document.getElementById('link1')==null)){
+      document.getElementById('link1').remove();
+    document.getElementById('link2').remove();
+    document.getElementById('link3').remove();
+    document.getElementById('link4').remove();
+    document.getElementById('link5').remove();
+    document.getElementById('link6').remove();
+    
+    }
+  }
+}, [rendercount])
+
   return (
     <>
       <div className="fno-trading-main">
@@ -95,19 +110,13 @@ useEffect(() => {
                             <div className="inr-heading">
                                 <h2 className="heading-n">Ready to <br/> Ele<span className="clr1"><img src={Bannerimage} /></span>te Your <br/> Trading Game?</h2>
                             </div>
-                            {
-                                isCheck ?
-                                    <div className="form-fno-new">
-                                        <div className="d-flex justify-content-end" id="campaignForm">
-                                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                <DematAccountForm />
-                                            </GoogleReCaptchaProvider>
-                                        </div>
-                                    </div> :
-                                    <div className="form-fno-new" id="campaignForm">
+                            <div className="form-fno-new">
+                                <div className="d-flex justify-content-end" id="campaignForm">
+                                    <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                         <DematAccountForm />
-                                    </div>
-                            }
+                                    </GoogleReCaptchaProvider>
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>

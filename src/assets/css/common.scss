@@ -112,6 +112,9 @@ body{
     }
     .title-secnd{
         margin-bottom: 2rem;
+        @media (max-width:$md) {
+            margin-bottom: 1.2rem;
+        }
     }
     .title-first{
         text-shadow: inherit;
