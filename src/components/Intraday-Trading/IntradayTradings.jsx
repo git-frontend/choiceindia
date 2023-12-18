@@ -37,14 +37,14 @@ function IntradayTradings() {
         breakpoint: 992,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           adaptiveHeight: true,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -141,7 +141,7 @@ useEffect(() => {
                                   <span>
                                     <img src={zero4} />
                                   </span>
-                                  <h4>Zero</h4>
+                                  <h4>Free</h4>
                                   <h5>Research Calls & Tools</h5>
                               </div>
                           </Slider>

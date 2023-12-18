@@ -105,6 +105,14 @@
         margin: 5rem 0;
         display: flex;
         flex-wrap: wrap;
+        @media (max-width:$sm) {
+            display: block;
+        }
+        .slick-list{
+            @media (max-width:$sm) {
+                width: 140vw;
+            }
+        }
         .list-itm{
             text-align: center;
             background: $whiteColor;
@@ -118,7 +126,8 @@
                 padding:2rem;
             }
             @media (max-width:$sm) {
-                width: 96% !important;
+                width: 94% !important;
+                min-height: 21rem;
             }
             >span{
                 display: inline-block;
@@ -132,6 +141,11 @@
                 color: $primary;
                 font-family: $font-family-poppins-semibold;
                 margin: 1.25rem 0;
+                br{
+                    @media (max-width:$sm) {
+                       display: none;
+                    }  
+                }
             }
             h5{
                 margin: 0;

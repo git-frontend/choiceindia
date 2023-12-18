@@ -36,14 +36,14 @@ function WhyChooseFno() {
             breakpoint: 992,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToScroll: 1,
               adaptiveHeight: true,
             },
           },
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 1,
+              slidesToShow: 2,
               slidesToScroll: 1,
             },
           },
@@ -58,7 +58,7 @@ function WhyChooseFno() {
                   <div className='row justify-content-center'>
                       <div className='col-xl-8 col-md-12'>
                           <div className="heading-sec text-center">
-                              <h2 className="title-secnd">Why Choose Choice?</h2>
+                              <h2 className="title-secnd">Why Choose Choice for Intraday Trading?</h2>
                               <p>Experience a seamless trading journey with our advanced features tailored to meet the most demanding needs of intraday traders.</p>
                           </div>
                       </div>
