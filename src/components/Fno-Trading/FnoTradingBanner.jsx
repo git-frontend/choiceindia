@@ -5,6 +5,16 @@ import Bannerimage from '../../assets/images/fno-trading/hero-bg-1.png';
 import LazyLoader from '../Common-features/LazyLoader';
 function FnoTradingBanner() {
 
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
     
     return (
         <>
@@ -16,7 +26,7 @@ function FnoTradingBanner() {
                                 <h5>Choice: Options Trader’s Delight</h5>
                                 <h1 className="title">Master the <br/> Art of Trading</h1>
                                 <p className="para">Leverage our advanced platform, tools, and expertise to make the most of your trading.</p>
-                                <a href="" className="btn-bg btn-new">Start Now</a>
+                                <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Start Now</a>
                             </div>
                             
                         </div>

@@ -34,6 +34,8 @@ function FnoRecord() {
     };
 
     
+
+    
     return (
         <>
             <section className="fno-records">
