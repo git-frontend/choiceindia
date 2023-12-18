@@ -4,20 +4,32 @@
 .intraday-banner{
     background: url(../../assets/images/intraday-trading/fno-banner-bg.png) no-repeat center;
     background-size: cover;
+    @media (max-width:$sm) {
+        background: inherit;
+    }
     .ban-caption{
         .title{
             color: $whiteColor;
+            @media (max-width:$sm) {
+                color: $primary;
+            }
             span{
                 color: $yellowColor;
             }
         }
         h5{
             color: $whiteColor;
+            @media (max-width:$sm) {
+                color: $primary;
+            }
         }
         .para{
             color: $whiteColor;
             font-family: $font-family-poppins-regular;
             opacity: inherit;
+            @media (max-width:$sm) {
+                color: $primary;
+            }
         }
     }
     .inner-count{
@@ -29,8 +41,8 @@
         top: 3rem;
         @media (max-width:$sm) {
             margin-top: 0;
-            background: $primary;
             border-radius: 0;
+            box-shadow: inherit;
         }
         .count-itm{
             width: 33.33%;
@@ -39,6 +51,9 @@
             position: relative;
             &:first-child{
                 padding: 3rem 0 3rem 0;
+                @media (max-width:$sm) {
+                    padding: 1.5rem 1rem;
+                }
             }
             @media (max-width:$sm) {
                 padding: 1.5rem 1rem;
@@ -70,14 +85,14 @@
                 color: $whiteColor;
                 @media (max-width:$sm) {
                     font-size: 2.2rem;
-                    color: $bgcolor-yellow;
+                    color: $primary;
                 }
             }
             h5{
                 color: $whiteColor;
                 font-family: $font-family-poppins-medium;
                 @media (max-width:$sm) {
-                    color: $whiteColor;
+                    color: $primary;
                 }
             }
         }
@@ -140,11 +155,15 @@
         .sliders-testimonial{
             .test-box{
                 text-align: inherit;
-                margin-bottom: 2rem;
+                min-height: 21rem;
+                @media (max-width:$md) {
+                    min-height: 23rem;
+                }
                 .box-ttl{
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    margin-bottom: 2rem;
                     .ttl-img{
                         display: flex;
                         align-items: center;
@@ -162,6 +181,9 @@
                         margin-bottom: 0;
                         margin-top: 0.5rem;
                     }
+                }
+                p{
+                    margin: 0;
                 }
             }
         }
