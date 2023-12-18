@@ -1,0 +1,137 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.intraday-banner{
+    background: url(../../assets/images/intraday-trading/fno-banner-bg.png) no-repeat center;
+    background-size: cover;
+    .ban-caption{
+        .title{
+            color: $whiteColor;
+            span{
+                color: $yellowColor;
+            }
+        }
+        h5{
+            color: $whiteColor;
+        }
+        .para{
+            color: $whiteColor;
+            font-family: $font-family-poppins-regular;
+            opacity: inherit;
+        }
+    }
+    .inner-count{
+        display: flex;
+        flex-wrap: wrap;
+        box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.16);
+        border-radius: 25px;
+        position: relative;
+        top: 3rem;
+        @media (max-width:$sm) {
+            margin-top: 0;
+            background: $primary;
+            border-radius: 0;
+        }
+        .count-itm{
+            width: 33.33%;
+            padding: 3rem 3rem 3rem 6rem;
+            border-right: 0;
+            position: relative;
+            &:first-child{
+                padding: 3rem 0 3rem 0;
+            }
+            @media (max-width:$sm) {
+                padding: 1.5rem 1rem;
+            }
+            &::before{
+                content: '';
+                width: 2px;
+                height: 70%;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                border:0;
+                border-image-source: linear-gradient(180deg, rgba(255, 206, 2, 0) 0%, rgba(255, 206, 2, 1) 48.66%, rgba(255, 206, 2, 0) 100%);
+                background: linear-gradient(180deg, rgba(255, 206, 2, 0) 0%, rgba(255, 206, 2, 1) 48.66%, rgba(255, 206, 2, 0) 100%);
+                transform: translate(0, -50%);
+                @media (max-width:$sm) {
+                    display: none;
+                }
+            }
+            &:first-child{
+                &::before{
+                    display: none;
+                }
+            }
+            h3{
+                font-size: 3.231rem;
+                font-family: $font-family-poppins-semibold;
+                color: $whiteColor;
+                @media (max-width:$sm) {
+                    font-size: 2.2rem;
+                    color: $bgcolor-yellow;
+                }
+            }
+            h5{
+                color: $whiteColor;
+                font-family: $font-family-poppins-medium;
+                @media (max-width:$sm) {
+                    color: $whiteColor;
+                }
+            }
+        }
+    }
+}
+.why-choose-intr{
+    background: $abt-bg;
+    padding: 7rem 0;
+    .list-section{
+        margin: 5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        .list-itm{
+            text-align: center;
+            background: $whiteColor;
+            border-radius: 16px;
+            padding:4rem 2rem;
+            display: block !important;
+            width: 31%;
+            margin: 0 auto 2rem;
+            box-shadow: 0 0 8px $card-shadow;
+            @media (max-width:$sm) {
+                width: 96% !important;
+            }
+            >span{
+                display: inline-block;
+                margin: 0 auto;
+                img{
+                    height: 56px;
+                }
+            }
+            h4{
+                font-size: 1.625rem;
+                color: $primary;
+                font-family: $font-family-poppins-semibold;
+                margin: 1.25rem 0;
+            }
+            h5{
+                margin: 0;
+            }
+        }
+        .slick-dots{
+            position: relative;
+        }
+    }
+}
+.intr-form-sec{
+    .fno-form-inner{
+        .inr-heading{
+            .heading-n{
+                span{
+                    color: $yellowColor;
+                }
+            }
+        }
+    }
+}
