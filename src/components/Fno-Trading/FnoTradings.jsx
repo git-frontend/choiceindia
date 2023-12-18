@@ -1,7 +1,10 @@
 // import React from 'react';
 import React from "react";
+import { useState, useEffect, useRef } from 'react';
 import './fnotrading.scss';
 import Slider from 'react-slick';
+import DematAccountForm from '../Common-features/DematAccountForm';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import FnoTradingBanner from "./FnoTradingBanner";
@@ -15,6 +18,39 @@ import zero4 from '../../assets/images/fno-trading/free-calls.svg';
 import FnoRecord from "./FnoRecord";
 import FnoTestinmonial from "./FnoTestinmonial";
 function FnoTradings() {
+
+  const [isCheck, setIsCheck] = useState(false)
+
+  const getPosition = () => {
+    const element = document.getElementById("showForm");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+
+        if (rect.top.toFixed() < 259) {
+            setName('visibleform');
+        } else {
+            setName('hideform');
+        }
+    }
+};
+
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        // console.log("checkmate", rect.top.toFixed())
+        if (rect.top.toFixed() < 350) {
+            setIsCheck(true);
+            // console.log('inside name', name);
+        }
+
+    }
+}
+
+useEffect(() => {
+  window.addEventListener('scroll', getPositionnew);
+  window.addEventListener('scroll', getPosition);
+}, []);
 
   const settings2 = {
     infinite: true,
@@ -59,6 +95,19 @@ function FnoTradings() {
                             <div className="inr-heading">
                                 <h2 className="heading-n">Ready to <br/> Ele<span className="clr1"><img src={Bannerimage} /></span>te Your <br/> Trading Game?</h2>
                             </div>
+                            {
+                                isCheck ?
+                                    <div className="form-fno-new">
+                                        <div className="d-flex justify-content-end" id="campaignForm">
+                                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                                <DematAccountForm />
+                                            </GoogleReCaptchaProvider>
+                                        </div>
+                                    </div> :
+                                    <div className="form-fno-new" id="campaignForm">
+                                        <DematAccountForm />
+                                    </div>
+                            }
                         </div>
                     </div>
                 </div>
