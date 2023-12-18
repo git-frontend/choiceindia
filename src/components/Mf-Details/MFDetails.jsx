@@ -396,6 +396,7 @@ function MFTopFunds() {
         rest.getNavReturnGraph(payload).then((res) => {
             if (res.Response && res.Status === 'Success') {
                 const returnData = getGraphDataFromString(res.Response.GraphData);
+                console.log("returnData",returnData)
                 if (returnData) {
                     setReturnsGraphData((prevReturnsGraphData) => ({
                         ...prevReturnsGraphData,
@@ -449,7 +450,7 @@ function MFTopFunds() {
                         if (res.Response && res.Status === 'Success') {
                             // console.log("getsensexReturnGraphdata", res.Response)
                             let sensexData = getGraphDataFromString(res.Response);
-                            // console.log("sensexData", sensexData)
+                            console.log("sensexData", sensexData)
                             setSensexReturnsData((prevSensexReturnsData) => ({
                                 ...prevSensexReturnsData,
                                 [duration]: {
