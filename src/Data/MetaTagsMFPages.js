@@ -157,12 +157,12 @@ const meta_tags = {
     'content': "Choose the best low duration fund in 2023. Explore the list of the top low duration debt mutual funds to invest at low time period (between 6 to 12 months).",
     "link": "https://choiceindia.com/top-funds/best-low-duration-mutual-funds"
   },
-  // penidn
-  "top-funds/best-mutual-fund-for-long-term": {
+  
+  "top-funds/best-long-duration-funds": {
     "title": "Best Mutual Funds for Long Term investment in 2023",
     'lang': "en",
     'content': "Invest in the best mutual fund for long term. Select the best long term mutual funds and ensure a secure MF investment for long duration (greater than 7 years).",
-    "link": "https://choiceindia.com/top-funds/best-mutual-fund-for-long-term"
+    "link": "https://investica.com/mf/top-funds/best-long-duration-funds"
   },
   "top-funds/best-medium-duration-funds": {
     "title": "Medium Duration Fund to Invest - Best Medium Term Debt Funds",
@@ -243,6 +243,260 @@ const meta_tags = {
     'content': "Get the entire list of AMC in Mutual Fund at Choice. Choose the best asset management company in India & start investing in mutual funds.",
     "link": "https://choiceindia.com/amc"
   },
+  "amc/hdfc-mutual-fund": {
+    "title": "Best HDFC Mutual Fund Schemes - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore HDFC Mutual Fund with Choice. Know the best hdfc mutual fund schemes, monitor mutual fund returns, latest NAV & hdfc mf performance.",
+    "link": "https://investica.com/mf/amc/hdfc-mutual-fund"
+  },
+  "amc/icici-prudential-mutual-fund": {
+    "title": "Best ICICI Prudential Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore HDFC Mutual Fund with Choice. Know the best hdfc mutual fund schemes, monitor mutual fund returns, latest NAV & hdfc mf performance.",
+    "link": "https://choiceindia.com/amc/icici-prudential-mutual-fund"
+  },
+  "amc/sbi-mutual-fund": {
+    "title": "Best SBI Mutual Fund Schemes - Returns, NAV & Performance ",
+    'lang': "en",
+    'content': "Explore SBI mutual funds with Choice. Know the best SBI mutual fund, monitor mutual fund returns, latest NAV & SBI mf performance.",
+    "link": "https://choiceindia.com/amc/sbi-mutual-fund"
+  },
+  "amc/aditya-birla-sun-life-mutual-fund": {
+    "title": "Best Aditya Birla Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Aditya Birla sun life mutual fund with Choice. Know the best ABSL mutual fund, monitor mutual fund returns, latest NAV & Aditya Birla mf performance.",
+    "link": "https://choiceindia.com/amc/aditya-birla-sun-life-mutual-fund"
+  },
+  "amc/kotak-mahindra-mutual-fund": {
+    "title": "Best Kotak Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Kotak Mutual Funds with Choice. Know the best kotak MF, monitor mutual fund returns, latest NAV & Kotak Mahindra mutual fund performance.",
+    "link": "https://choiceindia.com/amc/kotak-mahindra-mutual-fund"
+  },
+  "amc/franklin-templeton-mutual-fund": {
+    "title": "Best Franklin Templeton Mutual Fund - NAV, Performance & more ",
+    'lang': "en",
+    'content': "Explore Franklin Templeton Mutual Fund with Choice. Know the best Franklin Templeton Mutual Fund , mutual fund returns, latest NAV & franklin mutual fund performance.",
+    "link": "https://choiceindia.com/amc/franklin-templeton-mutual-fund"
+  },
+  "amc/dsp-mutual-fund": {
+    "title": "Best DSP Blackrock Mutual Fund - Returns, NAV & Performance ",
+    'lang': "en",
+    'content': "Explore DSP Blackrock Mutual Fund with Choice. Know the best DSP mf, monitor latest NAV, DSP MF performance & mutual fund returns.",
+    "link": "https://choiceindia.com/amc/dsp-mutual-fund"
+  },
+  "amc/idfc-mutual-fund": {
+    "title": "Best IDFC Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore IDFC mutual fund with Choice. Know the best IDFC mf, monitor mutual fund returns, latest NAV & IDFC mf performance.",
+    "link": "https://choiceindia.com/amc/idfc-mutual-fund"
+  },
+  "amc/mirae-asset-mutual-fund": {
+    "title": "Best Mirae Asset Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Mirae Asset Mutual fund with Choice. Know the best mirae asset mf, monitor mutual fund returns, latest NAV & mirae asset mutual fund performance.",
+    "link": "https://choiceindia.com/amc/mirae-asset-mutual-fund"
+  },
+  "amc/motilal-oswal-mutual-fund": {
+    "title": "Best Motilal Oswal Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Motilal Oswal mutual fund with Choice. Know the best Motilal Oswal mf, monitor mutual fund returns, latest NAV & Motilal Oswal mutual fund performance.",
+    "link": "https://choiceindia.com/amc/motilal-oswal-mutual-fund"
+  },
+  "amc/reliance-mutual-fund": {
+    "title": "Best Reliance Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Reliance mutual fund schemes with Choice. Know the best Reliance mf, monitor mutual fund returns, latest NAV & Reliance mutual fund performance.",
+    "link": "https://choiceindia.com/amc/reliance-mutual-fund"
+  },
+  "amc/uti-mutual-fund": {
+    "title": "Best UTI Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore UTI mutual fund schemes with Choice. Know the best UTI mf, monitor mutual fund returns, latest NAV & UTI mutual fund performance.",
+    "link": "https://choiceindia.com/amc/uti-mutual-fund"
+  },
+  "amc/axis-mutual-fund": {
+    "title": "Best Axis Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore axis mutual fund schemes with Choice. Know the best Axis bank mutual funds, monitor mutual fund returns, latest NAV & Axis mf performance.",
+    "link": "https://choiceindia.com/amc/axis-mutual-fund"
+  },
+  "amc/l-t-mutual-fund": {
+    "title": "Best L&T Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore L&T mutual fund schemes with Choice. Know the best L&T mf, monitor mutual fund returns, latest NAV & L&T mutual fund performance.",
+    "link": "https://choiceindia.com/amc/l-t-mutual-fund"
+  },
+  "amc/tata-mutual-fund": {
+    "title": "Best Tata Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Tata mutual fund schemes with Choice. Know the best Tata mf, monitor mutual fund returns, latest NAV & Tata mutual fund performance.",
+    "link": "https://choiceindia.com/amc/tata-mutual-fund"
+  },
+  "amc/sundaram-mutual-fund": {
+    "title": "Best Sundaram Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Sundaram mutual fund schemes with Choice. Know the best Sundaram mf, monitor returns, latest mutual fund NAV & Sundaram mutual fund performance.",
+    "link": "https://choiceindia.com/amc/sundaram-mutual-fund"
+  },
+  "amc/invesco-mutual-fund": {
+    "title": "Best Invesco Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Invesco mutual fund with Choice. Know the best Invesco mf, monitor returns, latest invesco mutual fund NAV & Invesco mutual fund performance.",
+    "link": "https://choiceindia.com/amc/invesco-mutual-fund"
+  },
+  "amc/ppfas-mutual-fund": {
+    "title": "Best PPFAS Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore PPFAS mutual fund with Choice. Know the best parag parikh mutual fund, monitor returns, latest ppfas NAV & mutual fund performance.",
+    "link": "https://choiceindia.com/amc/ppfas-mutual-fund"
+  },
+  "amc/dhfl-pramerica-mutual-fund": {
+    "title": "Best DHFL Pramerica Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore DHFL Pramerica mutual fund with Choice. Know the best DHFL Pramerica mf, monitor returns, latest DHLF mutual fund NAV & DHFL mf performance.",
+    "link": "https://choiceindia.com/amc/dhfl-pramerica-mutual-fund"
+  },
+  "amc/jm-financial-mutual-fund": {
+    "title": "Best JM Financial Mutual Fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore JM Financial mutual fund with Choice. Know the best JM mutual fund, monitor returns, latest JM Financial mutual fund NAV & JM mf performance.",
+    "link": "https://choiceindia.com/amc/jm-financial-mutual-fund"
+  },
+  "amc/edelweiss-mutual-fund": {
+    "title": "Best Edelweiss Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Edelweiss mutual fund schemes with Choice. Know the best Edelweiss mf, monitor mutual fund returns, latest edelweiss mutual fund NAV & Edelweiss amc performance.",
+    "link": "https://choiceindia.com/amc/edelweiss-mutual-fund"
+  },
+  "amc/canara-robeco-mutual-fund": {
+    "title": "Best Canara Robeco Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Canara Robeco mutual fund with Choice. Know the best Canara Robeco mf, monitor mutual fund returns, latest NAV & canara robeco mutual fund performance.",
+    "link": "https://choiceindia.com/amc/canara-robeco-mutual-fund"
+  },
+  "amc/lic-mutual-fund": {
+    "title": "Best LIC Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore LIC mutual fund schemes with Choice. Know the best LIC mf, monitor mutual fund returns, latest LIC NAV & LIC mutual fund performance.",
+    "link": "https://choiceindia.com/amc/lic-mutual-fund"
+  },
+  "amc/hsbc-mutual-fund": {
+    "title": "Best HSBC Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore HSBC mutual funds with Choice. Know the best HSBC mf, monitor mutual fund returns, latest HSBC mutual fund NAV & HSBC AMC performance.",
+    "link": "https://choiceindia.com/amc/hsbc-mutual-fund"
+  },
+  "amc/baroda-mutual-fund": {
+    "title": "Best Bank of Baroda Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Bank of Baroda mutual fund schemes with Choice. Know the best BOB mutual fund, monitor mutual fund returns, latest BOB mutual fund NAV & BOB mf performance.",
+    "link": "https://choiceindia.com/amc/baroda-mutual-fund"
+  },
+  "amc/bnp-paribas-mutual-fund": {
+    "title": "Best BNP Paribas Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore BNP Paribas mutual fund schemes with Choice. Know the best BNP Paribas mf, monitor mutual fund returns, latest BNP paribas mutual fund NAV & BNP mf performance.",
+    "link": "https://choiceindia.com/amc/bnp-paribas-mutual-fund"
+  },
+  "amc/idbi-mutual-fund": {
+    "title": "Best IDBI Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore IDBI mutual fund schemes with Choice. Know the best IDBI mf, monitor mutual fund returns, latest IDBI mutual fund NAV & IDBI AMC performance.",
+    "link": "https://choiceindia.com/amc/idbi-mutual-fund"
+  },
+  "amc/principal-mutual-fund": {
+    "title": "Best Principal Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Principal mutual fund schemes with Choice. Know the best Principal mf, monitor mutual fund returns, latest NAV & Principal mf performance.",
+    "link": "https://choiceindia.com/amc/principal-mutual-fund"
+  },
+  "amc/indiabulls-mutual-fund": {
+    "title": "Best Indiabulls Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Indiabulls mutual fund with Choice. Know the best Indiabulls mf, monitor returns, latest indiabulls mutual fund NAV & Indiabulls AMC performance.",
+    "link": "https://choiceindia.com/amc/indiabulls-mutual-fund"
+  },
+  "amc/boi-axa-mutual-fund": {
+    "title": "Best Bank of India Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Bank of India mutual funds with Choice. Know the best boi mutual fund, monitor returns, latest BOI AXA mutual fund NAV & BOI AXA mf performance.",
+    "link": "https://choiceindia.com/amc/boi-axa-mutual-fund"
+  },
+  "amc/union-mutual-fund": {
+    "title": "Best Union Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Union bank mutual funds with Choice. Know the best union mf, monitor returns, latest Union bank mutual fund NAV & Union AMC performance.",
+    "link": "https://choiceindia.com/amc/union-mutual-fund"
+  },
+  "amc/mahindra-mutual-fund": {
+    "title": "Best Mahindra Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Mahindra mutual funds with Choice. Know the best Mahindra mf, monitor returns, latest mahindra mutual fund NAV & Mahindra AMC performance.",
+    "link": "https://choiceindia.com/amc/mahindra-mutual-fund"
+  },
+  "amc/essel-mutual-fund": {
+    "title": "Best Essel Finance Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Essel Finance mutual funds with Choice. Know the best Essel mutual fund, monitor mutual fund returns, latest Essel mutual fund NAV & Essel mf performance.",
+    "link": "https://choiceindia.com/amc/essel-mutual-fund"
+  },
+  "amc/iifl-mutual-fund": {
+    "title": "Best IIFL Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore IIFL mutual fund schemes with Choice. Know the best IIFL mf, monitor mutual fund returns, latest IIFL mutual fund NAV & IIFL mf performance.",
+    "link": "https://choiceindia.com/amc/iifl-mutual-fund"
+  },
+  "amc/quantum-mutual-fund": {
+    "title": "Best Quantum Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Quantum mutual fund with Choice. Know the best Quantum mf, monitor mutual fund returns, latest quantum mutual fund NAV & Quantum mf performance.",
+    "link": "https://choiceindia.com/amc/quantum-mutual-fund"
+  },
+  "amc/taurus-mutual-fund": {
+    "title": "Best Taurus Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Taurus mutual fund with Choice. Know the best Taurus mf, monitor returns, latest Taurus mutual fund NAV & Taurus AMC performance.",
+    "link": "https://choiceindia.com/amc/taurus-mutual-fund"
+  },
+  "amc/shriram-mutual-fund": {
+    "title": "Best Shriram Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Shriram mutual fund with Choice. Know the best Shriram mf, monitor returns, latest Shriram mutual fund NAV & Shriram AMC performance.",
+    "link": "https://choiceindia.com/amc/shriram-mutual-fund"
+  },
+  "amc/yes-mutual-fund": {
+    "title": "Best Yes Bank Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Yes Bank mutual fund schemes with Choice. Know the best Yes bank mf, monitor mutual fund returns, latest Yes bank mutual fund NAV & Yes bank AMC performance.",
+    "link": "https://choiceindia.com/amc/yes-mutual-fund"
+  },
+  "amc/quant-mutual-fund": {
+    "title": "Best Quant Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Quant mutual fund with Choice. Know the best Quant mf, monitor mutual fund returns, latest NAV & Quant AMC performance.",
+    "link": "https://choiceindia.com/amc/quant-mutual-fund"
+  }, 
+  "amc/iti-mutual-fund": {
+    "title": "Best ITI Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore ITI mutual fund schemes with Choice. Know the best ITI mf, monitor mutual fund returns, latest NAV & ITI mutual funds performance.",
+    "link": "https://choiceindia.com/amc/iti-mutual-fund"
+  },
+  "amc/sahara-mutual-fund": {
+    "title": "Best Sahara Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Sahara mutual fund with Choice. Know the best Sahara mf, monitor mutual fund returns, latest NAV & Sahara AMC performance.",
+    "link": "https://choiceindia.com/amc/sahara-mutual-fund"
+  },
+  "amc/srei-mutual-fund": {
+    "title": "Best Seri Mutual fund - Returns, NAV & Performance",
+    'lang': "en",
+    'content': "Explore Seri mutual fund with Choice. Know the best Seri mutual fund (idf), monitor mutual fund returns, latest NAV & Seri mf performance.",
+    "link": "https://choiceindia.com/amc/srei-mutual-fund"
+  },
+
+
 
 }
 
