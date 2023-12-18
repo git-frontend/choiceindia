@@ -378,6 +378,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 line-height: 1.5;
                 color: $whiteColor;
                 font-family: $font-family-poppins-semibold;
+                @media (max-width:$md) {
+                    font-size: 3rem;
+                }
                 .clr1{
                     img{
                         width: 5rem;

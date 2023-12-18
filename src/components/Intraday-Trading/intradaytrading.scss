@@ -114,6 +114,9 @@
             width: 31%;
             margin: 0 auto 2rem;
             box-shadow: 0 0 8px $card-shadow;
+            @media (max-width:$md) {
+                padding:2rem;
+            }
             @media (max-width:$sm) {
                 width: 96% !important;
             }
@@ -158,6 +161,7 @@
                 min-height: 21rem;
                 @media (max-width:$md) {
                     min-height: 23rem;
+                    padding: 2rem;
                 }
                 .box-ttl{
                     display: flex;

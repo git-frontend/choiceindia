@@ -106,7 +106,7 @@ useEffect(() => {
           <section className="fno-free-zero">
               <div className="container">
                   <div className='row justify-content-center'>
-                      <div className='col-md-8'>
+                      <div className='col-xl-8 col-md-12'>
                           <div className="heading-sec text-center">
                               <h2 className="title-secnd">Perks of Choice Demat Account</h2>
                               <p>With Choice, you get more than just a trading account. You get a partner committed to helping you succeed in intraday trading.</p>

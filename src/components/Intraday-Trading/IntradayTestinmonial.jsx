@@ -45,7 +45,7 @@ function FnoTestinmonial() {
             <section className="fno-testimonial intr-testimonial">
                 <div className="container">
                     <div className='row justify-content-center'>
-                        <div className='col-md-10'>
+                        <div className='col-xl-10 col-md-12'>
                             <div className="heading-sec text-center">
                                 <h2 className="title-secnd">Customer Testimonials</h2>
                                 <p>Join the thousands of traders who have elevated their trading experience with Choice.</p>
