@@ -66,7 +66,7 @@ function FnoTestinmonial() {
                                                         <h5>Mumbai</h5>
                                                     </div>
                                                 </div>
-                                                <img src={qoutes} className="clnt-img" />
+                                                <img src={qoutes} className="img-fluid" />
                                             </div>
                                             <p>Choice has improved my trading experience. The real-time data and pre-built strategies have made
                                                 options trading a breeze. I highly recommend them.</p>

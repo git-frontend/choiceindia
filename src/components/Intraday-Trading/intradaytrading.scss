@@ -135,3 +135,33 @@
         }
     }
 }
+.intr-testimonial{
+    .testimonial-record-sliders{
+        .sliders-testimonial{
+            .test-box{
+                .box-ttl{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .ttl-img{
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1rem;
+                        .clnt-img{
+                            width: 56px;
+                            height: 56px;
+                            margin-bottom: 0;
+                        }
+                    }
+                    h4{
+                        margin-top: 0;
+                    }
+                    h5{
+                        margin-bottom: 0;
+                        margin-top: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
