@@ -11,7 +11,7 @@ function FnoTradingBanner() {
             <section className="fno-banner intraday-banner">
                 <div className="container">
                     <div className="row gx-5 align-items-start">
-                        <div className="col-md-6">
+                        <div className="col-xl-6 col-md-7">
                             <div className="ban-caption">
                                 <h5>Choice: Preferred by Intraday Traders</h5>
                                 <h1 className="title">Supercharge Your <br/> <span>Intraday</span> Trading</h1>
@@ -21,7 +21,7 @@ function FnoTradingBanner() {
                         </div>
                     </div>
                    <div className="row">
-                        <div className="col-md-7">
+                        <div className="col-xl-8 col-md-12">
                             <div className="inner-count">
                                 <div className="count-itm">
                                     <h3><span class="hvr-txt"><span>25</span></span><small>+</small></h3>

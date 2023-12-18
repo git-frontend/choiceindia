@@ -106,10 +106,10 @@ useEffect(() => {
           <section className="fno-free-zero">
               <div className="container">
                   <div className='row justify-content-center'>
-                      <div className='col-md-8'>
+                      <div className='col-xl-8 col-md-12'>
                           <div className="heading-sec text-center">
-                              <h2 className="title-secnd">Get a Free Demat Account</h2>
-                              <p>Trade seamlessly. One account for all your trading needs and more.</p>
+                              <h2 className="title-secnd">Perks of Choice Demat Account</h2>
+                              <p>With Choice, you get more than just a trading account. You get a partner committed to helping you succeed in intraday trading.</p>
                           </div>
                       </div>
                   </div>
@@ -156,7 +156,7 @@ useEffect(() => {
               <div className="container">
                   <div className="row">
                       <div className="col-md-10">
-                          <p className="etc-fno-cont">At Choice, we make trading simple for everyone. Whether you’re an experienced trader or a beginner, we’re dedicated to empowering you at every step of your trading journey. Begin mastering the art of trading by opening your Choice Demat account today.</p>
+                          <p className="etc-fno-cont">Take control of your intraday trading. Join Choice today and experience the difference.</p>
                       </div>
                   </div>
               </div>

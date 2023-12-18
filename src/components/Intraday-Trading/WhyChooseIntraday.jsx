@@ -56,7 +56,7 @@ function WhyChooseFno() {
               <section className="why-choose-intr">
               <div className="container">
                   <div className='row justify-content-center'>
-                      <div className='col-md-8'>
+                      <div className='col-xl-8 col-md-12'>
                           <div className="heading-sec text-center">
                               <h2 className="title-secnd">Why Choose Choice?</h2>
                               <p>Experience a seamless trading journey with our advanced features tailored to meet the most demanding needs of intraday traders.</p>
