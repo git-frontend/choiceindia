@@ -495,6 +495,9 @@
                     &:focus {
                         outline: 0;
                     }
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
 
                 }
 
@@ -658,6 +661,49 @@
                             }
 
                         }
+
+                        .right-cont-market-details {
+                            width: 55%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            column-gap: 1.2rem;
+                            @media (max-width:$sm) {
+                                margin-top: 1rem;
+                                width: 100%;
+                            }
+                            .holdings-value {
+                                padding: 0.875rem;
+                                border-radius: 0.9rem;
+                                width: 100%;
+                                margin-bottom: 0;
+                                text-align: center;
+                                .holdings-figure{
+                                    font-size: 1.75rem;
+                                    font-family: $font-family-poppins-semibold;
+                                }
+                                .details-title{
+                                    font-size: 1.375rem;
+                                    font-family: $font-family-poppins-regular;
+                                }
+                                
+                            }
+
+                            .large {
+                                background: linear-gradient(to right, #dee3f2 0, #ddf1fc 100%);
+                                color: #7367f0;
+                            }
+
+                            .mid {
+                                background: #eceef7;
+                                color: #4055b2;
+                            }
+
+                            .small {
+                                background: #e8f6fe;
+                                color: #1daaf1;
+                            }
+                        }
                     }
 
                     .content-tabs-details-company {
@@ -675,8 +721,9 @@
 
                                 td {
                                     padding: 0.6rem 1rem;
+
                                     &:nth-child(2) {
-                                            text-align: right;
+                                        text-align: right;
                                     }
                                 }
 

@@ -54,12 +54,7 @@ function MFTopFunds() {
     const [selectedDropDownValue, setSelectedDropDownValue] = useState('Sector');
     const [marketCapResponseObject, setMarketCapResponseObject] = useState([]);
     const [isDropdownVisible, setDropdownVisible] = useState(false);
-    //   const [selectedDropDownValue, setSelectedDropDownValue] = useState('Sector');
 
-    //   const showHideDropDown = (value) => {
-    //     setSelectedDropDownValue(value);
-    //     setDropdownVisible(!isDropdownVisible);
-    //   };
     const toggleTab = (index) => {
         setToggleState(index);
     };
@@ -658,7 +653,17 @@ function MFTopFunds() {
             },
         ],
     });
-    // console.log("datas1", datas1.labels)
+    const [datas2, setDatas2] = useState({
+        labels: [],
+        datasets: [
+            {
+                data: [],
+                backgroundColor: [],
+                hoverBackgroundColor: [],
+            },
+        ],
+    });
+    console.log("datas2", datas2.labels, datas2.datasets)
 
 
     const getSchemeTopSectors = (value) => {
@@ -782,7 +787,7 @@ function MFTopFunds() {
                 setShowDropdownLoader(false);
 
             }
-            
+
         } else if (value === '2') {
             setSelectedDropDownValue('Company');
 
@@ -826,6 +831,18 @@ function MFTopFunds() {
                         updatedMarketCapResponse[obj.Company] = obj;
                     });
                     setMarketCapResponseObject(updatedMarketCapResponse);
+
+                    const updatedOtherDatas = {
+                        labels: Object.keys(updatedMarketCapResponse).map((company) => company || "Others"),
+                        datasets: [
+                            {
+                                data: Object.values(updatedMarketCapResponse).map((sector) => sector.NetAssetPercent),
+                                backgroundColor: Object.values(updatedMarketCapResponse).map((sector) => randDarkColor(sector.color)),
+                                hoverBackgroundColor: Object.values(updatedMarketCapResponse).map((sector) => sector.hoverColor),
+                            },
+                        ],
+                    };
+                    setDatas2({ ...updatedOtherDatas });
                 } else {
                     setShowDropdownLoader(false);
                     setMarketCapResponseObject(null);
@@ -1069,7 +1086,7 @@ function MFTopFunds() {
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                                 <div className='row'>
                                     <div className='col-md-12'>
@@ -1255,7 +1272,7 @@ function MFTopFunds() {
                                                 </div>
 
                                             </div>
-                                            <div className="content-tabs-details scrollbar"  style={{ display: selectedDropDownValue !== 'Company' ? 'none' : 'block' }}>
+                                            <div className="content-tabs-details scrollbar" style={{ display: selectedDropDownValue !== 'Company' ? 'none' : 'block' }}>
                                                 {topHoldingsResponseObject.length > 0 ? (
                                                     <div className='content-tabs-details-company'>
                                                         <table>
@@ -1276,29 +1293,33 @@ function MFTopFunds() {
                                                 )}
                                             </div>
                                             <div className="content-tabs-details" style={{ display: selectedDropDownValue !== 'Market Cap' ? 'none' : 'block' }}>
-                                                <div className="row mt50" style={{ display: marketCapResponseObject && !showDropdownLoader ? 'flex' : 'none' }}>
-                                                    <div className="col-md-5 col-sm-4 col-lg-4 col-12 ver-align-center piechart"></div>
-                                                    <div className="col-12 col-sm-8 col-md-7 flex-row market-cap d-flex justify-content-center align-items-center">
-                                                        {marketCapResponseObject.Large && (
-                                                            <div className="holdings-value large holdinglarge">
-                                                                <div className="holdings-figure">{(marketCapResponseObject.Large.NetAssetPercent).toFixed(2)}%</div>
-                                                                <div className="details-title valuelarge">Large</div>
-                                                            </div>
-                                                        )}
-                                                        {marketCapResponseObject.Mid && (
-                                                            <div className="holdings-value mid mid-wrap">
-                                                                <div className="holdings-figure">{(marketCapResponseObject.Mid.NetAssetPercent).toFixed(2)}%</div>
-                                                                <div className="details-title mid-value">Mid</div>
-                                                            </div>
-                                                        )}
-                                                        {marketCapResponseObject.Small && (
-                                                            <div className="holdings-value small small-wrap">
-                                                                <div className="holdings-figure">{(marketCapResponseObject.Small.NetAssetPercent).toFixed(2)}%</div>
-                                                                <div className="details-title small-value">Small</div>
-                                                            </div>
-                                                        )}
+                                                
+                                                    <div className='equity-tab-cont'>
+                                                        <div className='lft-chart'>
+                                                            <Doughnut data={datas2} options={charteroption} />
+                                                        </div>
+                                                        <div className="right-cont-market-details">
+                                                            {marketCapResponseObject.Large && (
+                                                                <div className="holdings-value large ">
+                                                                    <div className="holdings-figure">{(marketCapResponseObject.Large.NetAssetPercent).toFixed(2)}%</div>
+                                                                    <div className="details-title ">Large</div>
+                                                                </div>
+                                                            )}
+                                                            {marketCapResponseObject.Mid && (
+                                                                <div className="holdings-value mid">
+                                                                    <div className="holdings-figure">{(marketCapResponseObject.Mid.NetAssetPercent).toFixed(2)}%</div>
+                                                                    <div className="details-title ">Mid</div>
+                                                                </div>
+                                                            )}
+                                                            {marketCapResponseObject.Small && (
+                                                                <div className="holdings-value small ">
+                                                                    <div className="holdings-figure">{(marketCapResponseObject.Small.NetAssetPercent).toFixed(2)}%</div>
+                                                                    <div className="details-title">Small</div>
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     </div>
-                                                </div>
+                                               
                                             </div>
                                             <div className="accordion" style={{ display: !marketCapResponseObject && !showDropdownLoader && schemeDistributionAsOnDate !== '' ? 'block' : 'none' }}>
                                                 <div className="col-md-6 col-9 m-auto">
