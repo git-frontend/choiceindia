@@ -362,6 +362,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
   .fno-form-sec{
     background: url(../../assets/images/fno-trading/bg-mask.png) no-repeat bottom right $primary;
     padding: 7.5rem 0;
+    background-size: cover;
     @media (max-width:$sm) {
         background: $primary;
         padding: 4rem 0;

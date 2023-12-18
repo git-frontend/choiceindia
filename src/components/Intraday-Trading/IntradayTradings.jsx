@@ -1,5 +1,6 @@
 // import React from 'react';
 import React from "react";
+import { useState, useEffect, useRef } from 'react';
 import '../../components/Fno-Trading/fnotrading.scss';
 import './intradaytrading.scss';
 import Slider from 'react-slick';
@@ -8,14 +9,18 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import IntradayTradingBanner from "./IntradayTradingBanner";
 import WhyChooseIntraday from "./WhyChooseIntraday";
 import FinxTools from "./FinxTools";
-import Bannerimage from '../../assets/images/fno-trading/va.png';
 import zero1 from '../../assets/images/fno-trading/zero-opening-free.svg';
 import zero2 from '../../assets/images/fno-trading/zero-amc.svg';
 import zero3 from '../../assets/images/fno-trading/zero-charges.svg';
 import zero4 from '../../assets/images/fno-trading/free-calls.svg';
 import IntradayRecord from "./IntradayRecord";
 import IntradayTestinmonial from "./IntradayTestinmonial";
+import DematAccountForm from '../Common-features/DematAccountForm';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import meta_tags from "../../Data/MetaTags";
 function IntradayTradings() {
+
+  const [rendercount, setRenderCount] = useState(() => false);
 
   const settings2 = {
     infinite: true,
@@ -46,6 +51,29 @@ function IntradayTradings() {
     ],
 };
 
+useEffect(() => {
+  setRenderCount(true)
+  if (rendercount === true) {
+    // let parser = new DOMParser();
+    // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
+    // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+    document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
+    // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+    document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+    document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+    document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+    if(!(document.getElementById('link1')==null)){
+      document.getElementById('link1').remove();
+    document.getElementById('link2').remove();
+    document.getElementById('link3').remove();
+    document.getElementById('link4').remove();
+    document.getElementById('link5').remove();
+    document.getElementById('link6').remove();
+    
+    }
+  }
+}, [rendercount])
+
   return (
     <>
       <div className="fno-trading-main">
@@ -60,7 +88,15 @@ function IntradayTradings() {
                             <div className="inr-heading">
                                 <h2 className="heading-n">Ready to <br/> <span>Optimize</span> Your <br/> Intraday Trading?</h2>
                             </div>
+                            <div className="form-fno-new">
+                                <div className="d-flex justify-content-end" id="campaignForm">
+                                    <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                        <DematAccountForm />
+                                    </GoogleReCaptchaProvider>
+                                </div>
+                            </div> 
                         </div>
+
                     </div>
                 </div>
             </div>

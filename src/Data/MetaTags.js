@@ -2495,6 +2495,12 @@ const meta_tags = {
     'content': "Start trading in Futures and Options (F&O) with Choice. Open a free demat account with No AMC for first year, free expert research, low DP & brokerage charges.",
     "link": "https://choiceindia.com/campaign/fno-trading"
   },
+  "campaign/intraday-trading": {
+    "title": "Intraday Trading - Maximize Your Day Trading Profits with Choice",
+    'lang': "en",
+    'content': "Start intraday trading with Choice & maximize your intraday profits with advanced tools and personalized services. Open your free demat account now!",
+    "link": "https://choiceindia.com/campaign/fno-trading"
+  },
 }
 
 export default meta_tags;

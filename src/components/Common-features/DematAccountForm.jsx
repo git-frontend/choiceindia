@@ -37,7 +37,7 @@ function DematAccountForm(props) {
     const location = useLocation();
 
 
-    const webcheck = ((window.location.pathname.indexOf('campaign/commodity-trading') > -1) || (window.location.pathname.indexOf('campaign/forex-trading') > -1))||(window.location.pathname.indexOf('campaign/trading-strategies') > -1)||(window.location.pathname.indexOf('campaign/hindi/trading-strategies') > -1)||(window.location.pathname.indexOf('technical-analysis') > -1)||(window.location.pathname.indexOf('futures-options-trading') > -1 )||(window.location.pathname.indexOf('/campaign/fno-trading') > -1)? 'campaign' : " ";
+    const webcheck = ((window.location.pathname.indexOf('campaign/commodity-trading') > -1) || (window.location.pathname.indexOf('campaign/forex-trading') > -1))||(window.location.pathname.indexOf('campaign/trading-strategies') > -1)||(window.location.pathname.indexOf('campaign/hindi/trading-strategies') > -1)||(window.location.pathname.indexOf('technical-analysis') > -1)||(window.location.pathname.indexOf('futures-options-trading') > -1 )||(window.location.pathname.indexOf('/campaign/fno-trading') > -1) ||(window.location.pathname.indexOf('/campaign/intraday-trading') > -1)? 'campaign' : " ";
 
     /** state to show thankyou popup (add-lead) */
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
