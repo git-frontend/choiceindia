@@ -688,6 +688,11 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
     padding: 7rem 0;
     .list-section{
         margin: 5rem 0;
+        .slick-list{
+            @media (max-width:$sm) {
+                width: 140vw;
+            }
+        }
         .list-itm{
             text-align: center;
             background: $whiteColor;

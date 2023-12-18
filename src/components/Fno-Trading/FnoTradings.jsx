@@ -59,15 +59,17 @@ useEffect(() => {
         breakpoint: 992,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           adaptiveHeight: true,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
+          infinite: true,
+          autoplay: true,
         },
       },
     ],
