@@ -8,17 +8,17 @@ function FnoRecord() {
         speed: 2000,
         arrows: false,
         slidesToShow: 3,
-        autoplay: false,
+        autoplay: true,
         margin:15,
         dots:true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 5000,
         slidesToScroll: 1,
         responsive: [
           {
             breakpoint: 992,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToScroll: 1,
               adaptiveHeight: true,
             },
           },
