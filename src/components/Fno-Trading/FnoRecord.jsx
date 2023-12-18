@@ -8,7 +8,7 @@ function FnoRecord() {
         speed: 2000,
         arrows: false,
         slidesToShow: 3,
-        autoplay: true,
+        autoplay: false,
         margin:15,
         dots:true,
         autoplaySpeed: 3000,

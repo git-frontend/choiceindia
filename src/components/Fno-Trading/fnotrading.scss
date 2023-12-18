@@ -47,6 +47,12 @@
             @media (max-width:$sm) {
                 margin-top: 2.5rem;
             }
+            &.btn-new{
+                &:hover{
+                    background: $whiteColor !important;
+                    color: $primary;
+                }
+            }
         }
         @media (max-width:$sm) {
             text-align: center;
@@ -213,6 +219,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                     padding: 3rem 3rem;
                     border-radius: 24px;
                     margin-bottom: 2rem;
+                    transition-duration: 0.6s;
                     .icons-m{
                         display: block;
                         @media (max-width:$md) {
@@ -222,6 +229,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                         
                         img{
                             width: 45px;
+                            @media (max-width:$md) {
+                                height: 45px;
+                            }
                         }
                     }
                     .cont{
@@ -262,7 +272,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
 }
 
 .finx-tools{
-    padding: 8rem 0;
+    padding: 7rem 0;
     .heading-sec{
         margin-bottom: 5.5rem;
     }
@@ -350,11 +360,17 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
   }
 
   .fno-form-sec{
-    background: url(../../assets/images/fno-trading/bg-mask.png) no-repeat bottom right $darkblack;
+    background: url(../../assets/images/fno-trading/bg-mask.png) no-repeat bottom right $primary;
     padding: 7.5rem 0;
+    @media (max-width:$sm) {
+        background: $primary;
+        padding: 4rem 0;
+    }
     .fno-form-inner{
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
         .inr-heading{
             .heading-n{
                 font-size: 4rem;
@@ -364,6 +380,53 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 .clr1{
                     img{
                         width: 5rem;
+                        @media (max-width:$sm) {
+                            width: 3rem;
+                        }
+                    }
+                }
+                @media (max-width:$sm) {
+                    text-align: center;
+                    font-size: 2.6rem;
+                    br{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .form-fno-new{
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+            .demat-account-form{
+                .formgrp{
+                    background: #221F200D;
+                    padding: 2rem;
+                    border-radius: 16px;
+                    @media (max-width:$sm) {
+                        padding: 0;
+                    }
+                }
+                @media (max-width:$sm) {
+                    background: $primary;
+                    box-shadow: none;
+                    margin-top: 0;
+                    padding: 2rem 3rem 0 3rem;
+                    .form-ttl{
+                        color: $whiteColor;
+                        font-size: 2rem;
+                    }
+                    .sub-formgrp{
+                        .formcontrol{
+                            border: 1px solid $whiteColor;
+                            color: $whiteColor;
+                            background: $primary;
+                        }
+                        &.cust-checkbox{
+                            .form-check{
+                                color: $whiteColor;
+                            }
+                        }
                     }
                 }
             }
@@ -375,9 +438,19 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
     padding: 7.5rem 0;
     overflow: hidden;
     background: $abt-bg;
+    @media (max-width:$md) {
+        padding: 4rem 0;
+    }
     .record-sliders{
         margin-top: 2rem;
         .sliders-fno{
+            .slick-dots{
+                position: relative;
+                bottom: 0;
+                @media (max-width:$md) {
+                    padding-top: 3rem;
+                }
+            }
             width: 100vw;
             @media (max-width:$md) {
                 width: 100%;
@@ -386,12 +459,16 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 background-color: $whiteColor;
                 border-radius: 0.5rem;
                 margin:1rem 3%;
+                border-radius: 16px;
                 padding: 1.923rem;
                 margin-bottom: 2.462rem;
                 box-shadow: 0 6px 14px rgba(0,0,0,0.16);
                 @media (max-width: $sm) {
                     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
                     // width: 98%;
+                    padding: 1.25rem 1rem;
+                    margin: 1.5%;
+                    border-radius: 10px;
                 }
                 .top-section {
                     display: flex;
@@ -511,9 +588,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
         
                     .bottom {
                         @media (max-width:$sm) {
-                            border-right: 1px solid rgb(0 0 0 / 10%);
-                            padding-right: 1.5rem;
-                            height: 50px;
+                            // border-right: 1px solid rgb(0 0 0 / 10%);
+                            padding-right: 1rem;
+                            // height: 50px;
         
                         }
         
@@ -588,14 +665,17 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             right: 15px;
             transform: inherit;
             z-index: 99;
-            bottom: -40px;
-            background: url(../../assets/images/baseline-arrow.svg) no-repeat;
-            background-size: contain;
+            bottom: -60px;
+            background: url(../../assets/images/baseline-arrow.svg) no-repeat center center;
+            background-size: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+            padding: 1.3rem 2rem;
             &::before{
                 display: none;
             }
             &.slick-prev{
-                right: 55px;
+                right: 85px;
                 transform: rotate(-180deg);
             }
         }
@@ -639,9 +719,13 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
   .fno-content-des{
     padding: 5rem 0;
     background: $whiteColor;
+    @media (max-width:$sm) {
+        padding: 3rem 0;
+    }
     .etc-fno-cont{
         padding-left: 1.6rem;
         position: relative;
+        margin: 0;
         &::before{
             content: '';
             width: 4px;
