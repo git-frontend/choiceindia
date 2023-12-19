@@ -396,7 +396,7 @@ function MFTopFunds() {
         rest.getNavReturnGraph(payload).then((res) => {
             if (res.Response && res.Status === 'Success') {
                 const returnData = getGraphDataFromString(res.Response.GraphData);
-                console.log("returnData",returnData)
+                // console.log("returnData",returnData)
                 if (returnData) {
                     setReturnsGraphData((prevReturnsGraphData) => ({
                         ...prevReturnsGraphData,
@@ -450,7 +450,7 @@ function MFTopFunds() {
                         if (res.Response && res.Status === 'Success') {
                             // console.log("getsensexReturnGraphdata", res.Response)
                             let sensexData = getGraphDataFromString(res.Response);
-                            console.log("sensexData", sensexData)
+                            // console.log("sensexData", sensexData)
                             setSensexReturnsData((prevSensexReturnsData) => ({
                                 ...prevSensexReturnsData,
                                 [duration]: {
@@ -664,7 +664,7 @@ function MFTopFunds() {
             },
         ],
     });
-    console.log("datas2", datas2.labels, datas2.datasets)
+    // console.log("datas2", datas2.labels, datas2.datasets)
 
 
     const getSchemeTopSectors = (value) => {
@@ -676,10 +676,10 @@ function MFTopFunds() {
             "SchemePlanCode": arr[1],
             "Type": value || selectedDistributionValue
         }
-        console.log("mrktSectorCompanyRequestObject req", mrktSectorCompanyRequestObject)
+        // console.log("mrktSectorCompanyRequestObject req", mrktSectorCompanyRequestObject)
         rest.getschemeTopSectors(mrktSectorCompanyRequestObject).then((res) => {
             if (res.Response !== null) {
-                console.log("getschemeTopSectors ", res.Response)
+                // console.log("getschemeTopSectors ", res.Response)
                 let topSectorsResponse = res.Response;
                 setTopSectorsResponseObject(res.Response)
                 if (topSectorsResponse.Sector === "" || topSectorsResponse.Sector === "Others") {
@@ -757,13 +757,13 @@ function MFTopFunds() {
             "SchemePlanCode": arr[1],
             "Type": value || selectedDistributionValue
         }
-        console.log("getSchemeTopHoldings", mrktSectorCompanyRequestObject)
+        // console.log("getSchemeTopHoldings", mrktSectorCompanyRequestObject)
 
         rest.getschemeTopHoldings(mrktSectorCompanyRequestObject)
             .then((res) => {
                 if (res.Response !== null) {
                     setTopHoldingsResponseObject(res.Response);
-                    console.log("res.Response", res.Response)
+                    // console.log("res.Response", res.Response)
                 } else {
                     setTopHoldingsResponseObject([]);
                 }
@@ -776,7 +776,7 @@ function MFTopFunds() {
     const showHideDropDown = (value) => {
         setShowDropdownLoader(true);
         setDropdownVisible(!isDropdownVisible);
-        console.log("showHideDropDown", value)
+        // console.log("showHideDropDown", value)
 
         if (value === '1') {
             setSelectedDropDownValue('Market Cap');
@@ -1360,7 +1360,7 @@ function MFTopFunds() {
                                                             <div className='scheme-list-itm '>
                                                                 <div className='list-itm-lft'>
                                                                     {/* <h4>Quant Tax Plan Growth</h4> */}
-                                                                    <h4><a href={`/mf/scheme/${optimezeString(res.SchemeName)}-${res.SchemeCode}-${res.SchemePlanCode}`}>
+                                                                    <h4><a href={`/scheme/${optimezeString(res.SchemeName)}-${res.SchemeCode}-${res.SchemePlanCode}`}>
                                                                         {res.SchemeName}
                                                                     </a></h4>
                                                                     <h5><span>AUM</span> {res.Size + ' Cr'}</h5>
