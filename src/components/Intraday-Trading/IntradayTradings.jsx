@@ -74,6 +74,18 @@ useEffect(() => {
   }
 }, [rendercount])
 
+
+function scrollToId(id) {
+  var element = document.getElementById(id);
+  var headerOffset = 140;
+  var elementPosition = element.getBoundingClientRect().top;
+  var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+  });
+}
+
   return (
     <>
       <div className="fno-trading-main">
@@ -147,7 +159,7 @@ useEffect(() => {
                           </Slider>
                       </div>
                       <div className="col-md-12 d-flex justify-content-center">
-                            <a href="#" className="btn-bg">Open Demat Account</a>
+                            <a href="javascript:void()" className="btn-bg" onClick={() => scrollToId('campaignForm')}>Open Demat Account</a>
                         </div>
                   </div>
                 </div>
