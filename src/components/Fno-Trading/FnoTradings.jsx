@@ -69,7 +69,7 @@ useEffect(() => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          autoplay: true,
+          autoplay: false,
         },
       },
     ],

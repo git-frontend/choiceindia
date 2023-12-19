@@ -704,6 +704,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             display: block !important;
             width: 94% !important;
             margin: 0 auto;
+            @media (max-width:$md) {
+                padding:2.5rem 1rem;
+            }
             >span{
                 display: inline-block;
                 margin: 0 auto;
