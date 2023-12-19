@@ -4,7 +4,16 @@ import React from "react";
 import Bannerimage from '../../assets/images/fno-trading/hero-bg-1.png';
 import LazyLoader from '../Common-features/LazyLoader';
 function FnoTradingBanner() {
-
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
     
     return (
         <>
@@ -16,7 +25,7 @@ function FnoTradingBanner() {
                                 <h5>Choice: Preferred by Intraday Traders</h5>
                                 <h1 className="title">Supercharge Your <br/> <span>Intraday</span> Trading</h1>
                                 <p className="para">Maximize your intraday profits with advanced tools and personalized services.</p>
-                                <a href="" className="btn-bg btn-bg-dark">Start Today</a>
+                                <a href="javascript:void(0)" className="btn-bg btn-bg-dark" onClick={() => scrollToId('campaignForm')}>Start Today</a>
                             </div>
                         </div>
                     </div>
