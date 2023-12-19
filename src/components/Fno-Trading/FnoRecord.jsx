@@ -11,7 +11,7 @@ function FnoRecord() {
         autoplay: true,
         margin:15,
         dots:true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
         slidesToScroll: 1,
         responsive: [
           {
