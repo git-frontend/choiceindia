@@ -17,7 +17,7 @@ function FnoRecord() {
           {
             breakpoint: 992,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 1,
               slidesToScroll: 1,
               adaptiveHeight: true,
             },
