@@ -77,7 +77,7 @@ const rest = {
       headers: {
         'x-api-key': 'B62664943BAA286B21C66BA9A614D',
         'Content-Type': 'application/json;charset=UTF-8',
-        'Accept':'application/json',
+        'Accept': 'application/json',
         'ip': ipAddress
 
       }
@@ -136,12 +136,12 @@ const rest = {
     const api = new API_URLS();
     const url = api.getMarginCalculatorURL(segmentId, token_qty);
     const headers = {
-      'x-api-key':'B62664943BAA286B21C66BA9A614D',
+      'x-api-key': 'B62664943BAA286B21C66BA9A614D',
       'Content-Type': 'application/json',
       'Accept': 'application/json',
     };
 
-    return axios.get(url, { headers }) 
+    return axios.get(url, { headers })
       .then(({ data }) => {
         return data;
       })
@@ -149,6 +149,147 @@ const rest = {
         console.error('Error fetching margin calculator data:', error);
         throw error;
       });
+  },
+  getCategoriesList: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getCategoriesList()
+    //  console.log("getCategoriesList",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getCategoryData: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getCategoryData()
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getSchemeData: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getSchemeData()
+    //  console.log("getSchemeData",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getFundManagerData: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getFundManagerData()
+    //  console.log("getFundManagerData",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getPerformancePeerComparisonData: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getPerformancePeerComparisonData()
+    // console.log("getPerformancePeerComparisonData", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getAMCList: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.getAMCList()
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  AMCListDetails: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.AMCListData()
+    // console.log("url",url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  sipLumpsumCalc: function (postdata) {
+
+    let api = new API_URLS()
+    let url = api.calculatesipLump()
+    // console.log("url", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getSchemeDistributionData: function (postdata) {
+    let api = new API_URLS()
+    let url = api.getSchemeDistributionurl()
+    // console.log("url", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getsensexReturnGraphdata: function (postdata) {
+    let api = new API_URLS()
+    let url = api.sensexReturnGraphdata()
+    // console.log("sensexReturnGraphdata", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getbankFDReturnGraphdata: function (postdata) {
+    let api = new API_URLS()
+    let url = api.bankFDReturnGraphdata()
+    // console.log("bankFDReturnGraphdata", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getNavReturnGraph: function (postdata) {
+    let api = new API_URLS()
+    let url = api.getNavReturnGraph()
+    // console.log("ReturnGraph", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getschemeTopSectors: function (postdata) {
+    let api = new API_URLS()
+    let url = api.getschemeTopSectors()
+    // console.log("ReturnGraph", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getschemeMarketCap: function (postdata) {
+    let api = new API_URLS()
+    let url = api.getschemeMarketCap()
+    // console.log("ReturnGraph", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
+  },
+  getschemeTopHoldings: function (postdata) {
+    let api = new API_URLS()
+    let url = api.getschemeTopHoldings()
+    // console.log("ReturnGraph", url)
+    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+      //  console.log("datads",data)
+      return data
+    })
   },
 
 
