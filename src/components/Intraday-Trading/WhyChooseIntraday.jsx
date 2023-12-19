@@ -26,7 +26,7 @@ function WhyChooseFno() {
         speed: 2000,
         arrows: false,
         slidesToShow: 8,
-        autoplay: false,
+        autoplay: true,
         margin:15,
         dots:true,
         autoplaySpeed: 3000,
