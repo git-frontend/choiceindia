@@ -855,6 +855,7 @@ function MFTopFunds() {
                 console.error('Error fetching market cap data:', error);
             });
     };
+
     return (
         <div>
             <section className="fund-listing-details">
@@ -898,8 +899,8 @@ function MFTopFunds() {
                                                                         <h4>{parseFloat(res.SchemePerformance.ThreeYrNavper).toFixed(2)} &nbsp;<FontAwesomeIcon icon={faArrowUp} className='fill' /></h4>
                                                                         <p>3 Year Return (%)</p>
                                                                     </div>
-                                                                    <div className='inv-btn'>
-                                                                        <a href='/open-free-demat-account' className='btn-bg'>Invest Now</a>
+                                                                    <div className='inv-btn' onClick={ ()=>setName2(!name2)}>
+                                                                        <span className='btn-bg'>Invest Now</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
