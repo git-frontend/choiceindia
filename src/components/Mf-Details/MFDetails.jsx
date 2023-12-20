@@ -12,11 +12,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import DematAccountForm from '../Common-features/DematAccountForm';
 import FixedForm from './FixedForm';
+import Fixedstickyfooter from './Fixedstickyfooter.jsx';
 import rest from "../../Services/rest";
 import noDataimg from '../../assets/images/no-data.webp';
 import utils from "../../Services/utils";
 import Form from 'react-bootstrap/Form';
-
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function MFTopFunds() {
     const [name, setName] = useState('hideform');
     const [value, onChange] = useState(0);
@@ -75,7 +76,7 @@ function MFTopFunds() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            window.addEventListener('scroll', getPosition);
+            window.addEventListener('scroll', getPosition2);
             initializeschemeData()
             FundManagerDetails();
             getPerformancePeerComparisonData()
@@ -1294,33 +1295,33 @@ function MFTopFunds() {
                                                 )}
                                             </div>
                                             <div className="content-tabs-details" style={{ display: selectedDropDownValue !== 'Market Cap' ? 'none' : 'block' }}>
-                                                
-                                                    <div className='equity-tab-cont'>
-                                                        <div className='lft-chart'>
-                                                            <Doughnut data={datas2} options={charteroption} />
-                                                        </div>
-                                                        <div className="right-cont-market-details">
-                                                            {marketCapResponseObject.Large && (
-                                                                <div className="holdings-value large ">
-                                                                    <div className="holdings-figure">{(marketCapResponseObject.Large.NetAssetPercent).toFixed(2)}%</div>
-                                                                    <div className="details-title ">Large</div>
-                                                                </div>
-                                                            )}
-                                                            {marketCapResponseObject.Mid && (
-                                                                <div className="holdings-value mid">
-                                                                    <div className="holdings-figure">{(marketCapResponseObject.Mid.NetAssetPercent).toFixed(2)}%</div>
-                                                                    <div className="details-title ">Mid</div>
-                                                                </div>
-                                                            )}
-                                                            {marketCapResponseObject.Small && (
-                                                                <div className="holdings-value small ">
-                                                                    <div className="holdings-figure">{(marketCapResponseObject.Small.NetAssetPercent).toFixed(2)}%</div>
-                                                                    <div className="details-title">Small</div>
-                                                                </div>
-                                                            )}
-                                                        </div>
+
+                                                <div className='equity-tab-cont'>
+                                                    <div className='lft-chart'>
+                                                        <Doughnut data={datas2} options={charteroption} />
                                                     </div>
-                                               
+                                                    <div className="right-cont-market-details">
+                                                        {marketCapResponseObject.Large && (
+                                                            <div className="holdings-value large ">
+                                                                <div className="holdings-figure">{(marketCapResponseObject.Large.NetAssetPercent).toFixed(2)}%</div>
+                                                                <div className="details-title ">Large</div>
+                                                            </div>
+                                                        )}
+                                                        {marketCapResponseObject.Mid && (
+                                                            <div className="holdings-value mid">
+                                                                <div className="holdings-figure">{(marketCapResponseObject.Mid.NetAssetPercent).toFixed(2)}%</div>
+                                                                <div className="details-title ">Mid</div>
+                                                            </div>
+                                                        )}
+                                                        {marketCapResponseObject.Small && (
+                                                            <div className="holdings-value small ">
+                                                                <div className="holdings-figure">{(marketCapResponseObject.Small.NetAssetPercent).toFixed(2)}%</div>
+                                                                <div className="details-title">Small</div>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+
                                             </div>
                                             <div className="accordion" style={{ display: !marketCapResponseObject && !showDropdownLoader && schemeDistributionAsOnDate !== '' ? 'block' : 'none' }}>
                                                 <div className="col-md-6 col-9 m-auto">
@@ -1586,7 +1587,10 @@ function MFTopFunds() {
                 </div>
             </section>
             <div className={name2}>
-                <FixedForm />
+                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                    {/* <FixedForm /> */}
+                    <Fixedstickyfooter />
+                </GoogleReCaptchaProvider>
             </div>
 
         </div>
