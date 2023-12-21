@@ -31,7 +31,7 @@ function DematAccountForm(props) {
     const [showErrorToaster, setShowErrorToaster] = useState(false);
     const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
-    const isMF = (window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'yes' : '';
+    const isMF = (window.location.pathname.indexOf('mutual-funds-investment') > -1) || (window.location.pathname.indexOf('top-funds') > -1)|| (window.location.pathname.indexOf('amc') > -1)   ? 'yes' : '';
     const [referID, setReferID] = useState('');
 
     const location = useLocation();

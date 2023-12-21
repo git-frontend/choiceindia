@@ -33,7 +33,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
     var source = useRef('');
     var otpSessionID = useRef('');
     const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1)) ? 'Best-Stock' : "Blog";
-
+    const isMf = ((window.location.pathname.indexOf('top-funds') > -1) || (window.location.pathname.indexOf('amc') > -1)) ? 'yes' : '';
     var otpLeadID = useRef('');
     var referLink = useRef('');
     const [captchaToken, setCaptchaToken] = useState('');
@@ -303,9 +303,9 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
         }).catch((error) => {
             setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
             if (error && error.response && error.response.data && error.response.data.Message) {
-               
+
             } else {
-               
+
             }
         });
     }
@@ -313,45 +313,46 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
 
     return (
         <>
+            
+                    <section className="sendopt  beststockres holidayOTP fixed-form">
+                        <div className="container">
+                            <div className="form_main  form-section">
+                                <div className='form-items'>
+                                    <div className='shape-yellow'>
+                                        <div className='cross-border'></div>
+                                        <h6>Open a Free Demat Account with <br /> Free 1st Year AMC</h6>
+                                    </div>
+                                </div>
 
-            <section className="sendopt  beststockres holidayOTP fixed-form">
-                <div className="container">
-                    <div className="form_main  form-section">
-                        <div className='form-items'>
-                            <div className='shape-yellow'>
-                                <div className='cross-border'></div>
-                                <h6>Open a Free Demat Account with <br /> Free 1st Year AMC</h6>
-                            </div>
-                        </div>
+                                <div className='form-items check-text-box'>
+                                    <div className='form-grp'>
+                                        <input type="text" className='form-control' placeholder='Enter Mobile Number' id="mobile_no" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
+                                        <div>
+                                            <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
+                                        </div>
+                                    </div>
+                                    <div className='form-grp2'>
+                                        {/* <input type="text" className='form-control' placeholder='Referral Code (Optional)' /> */}
+                                        <Form.Control pattern="[a-zA-Z0-9]*" name="refer_id" id="refer_id" placeholder='Referral Code (Optional)' className="form-control" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                                    </div>
+                                    <div className="cust-checkbox">
+                                        <Form.Check inline name="terms_and_conditions" type="checkbox" >
+                                            <Form.Check.Input type="checkbox" checked />
+                                            <Form.Check.Label>I agree &amp; <br /> accept <a className="link-tc" onClick={handleTermsConditionShow}><span>T&C</span></a></Form.Check.Label>
+                                        </Form.Check>
 
-                        <div className='form-items check-text-box'>
-                            <div className='form-grp'>
-                                <input type="text" className='form-control' placeholder='Enter Mobile Number' id="mobile_no" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
-                                <div>
-                                    <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
+
+                                    </div>
+                                </div>
+                                <div className='api_errornew'>
+                                    <button type="submit" className="form-btn  btn-bg-dark btn-bg" onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+                                    <div><small id="API_error" className="errormsg text-danger api-text-danger">{APIError || ''}</small></div>
                                 </div>
                             </div>
-                            <div className='form-grp2'>
-                                {/* <input type="text" className='form-control' placeholder='Referral Code (Optional)' /> */}
-                                <Form.Control pattern="[a-zA-Z0-9]*" name="refer_id" id="refer_id" placeholder='Referral Code (Optional)' className="form-control" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
-                            </div>
-                            <div className="cust-checkbox">
-                                <Form.Check inline name="terms_and_conditions" type="checkbox" >
-                                    <Form.Check.Input type="checkbox" checked />
-                                    <Form.Check.Label>I agree &amp; <br /> accept <a className="link-tc" onClick={handleTermsConditionShow}><span>T&C</span></a></Form.Check.Label>
-                                </Form.Check>
 
-
-                            </div>
                         </div>
-                        <div className='api_errornew'>
-                            <button type="submit" className="form-btn  btn-bg-dark btn-bg" onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
-                            <div><small id="API_error" className="errormsg text-danger api-text-danger">{APIError || ''}</small></div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
+                    </section>
+                    
 
 
             {
