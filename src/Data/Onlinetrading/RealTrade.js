@@ -9,7 +9,7 @@ const imageData =
     {
         "image":`${ImageSub0}`,
         "title":"Choice FinX Signal",
-        "id": 1,
+        "id": 3,
         "description":"AI Based Research Engine that provides Real Time Trading Signals."
         
         
@@ -17,7 +17,7 @@ const imageData =
     {
         "image":`${ImageSub2}`,
         "title":"Sumeet Bagadia Desk",
-        "id": 3,
+        "id": 2,
         "description":"Get expert stock recommendations for all types of trades, along with sector specific investments."
     
         
@@ -25,7 +25,7 @@ const imageData =
     {
         "image":`${ImageSub3}`,
         "title":"Long Term Research Calls",
-        "id": 4,
+        "id": 1,
         "description":"Invest in long-term research calls that are well researched and picked by our team of experts."
     
         
