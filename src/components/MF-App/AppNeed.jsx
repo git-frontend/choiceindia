@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import imageDataapp from '../../Data/images';
+import imageDataappMf from '../../Data/imagesmf';
 import Image1 from '../../assets/images/mf-app/mutual-fund-app-innovative-convenience.webp';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
@@ -70,7 +70,7 @@ function AppNeed() {
                                         >
 
                                             {
-                                                imageDataapp?.map((response, index) => {
+                                                imageDataappMf?.map((response, index) => {
 
                                                     let classNm = "content-list-itm " + ((index === isShown3) ? "list-itm-active" : "")
 
