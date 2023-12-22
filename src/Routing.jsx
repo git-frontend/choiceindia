@@ -192,6 +192,12 @@ const LazyMutualFundCalculator =React.lazy(()=> import('./components/Mutual-Fund
 const Lazytrackrecords =React.lazy(()=> import('./components/Track-Records/trackRecords'))
 const LazyFnoTrading =React.lazy(()=> import('./components/Fno-Trading/FnoTradings'))
 const LazyIntradayTrading =React.lazy(()=> import('./components/Intraday-Trading/IntradayTradings'))
+const LazyMFApp = React.lazy(() => import('./components/MF-App/MFApp'));
+const LazyTopFundsAMC =React.lazy(()=> import('./components/Top-Funds-AMC/TopFundsAMC'));
+const LazyTopFundsIndia =React.lazy(()=> import('./components/Top-Funds-India/TopFundsIndia'));
+const LazyMFDetails =React.lazy(()=> import('./components/Mf-Details/MFDetails'));
+const LazyAMCDetails =React.lazy(()=> import('./components/AMC-Details/AMCDetails'));
+const LazyELSSDetails =React.lazy(()=> import('./components/ELSS-MF-Details/ELSSDetails'));
 
 function Routing() {
 
@@ -1001,6 +1007,36 @@ function Routing() {
                          <Route exact path='/campaign/intraday-trading' element={
                             <React.Suspense>
                                 <LazyIntradayTrading/>
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/mutual-fund-app' element={
+                            <React.Suspense>
+                                < LazyMFApp />
+                                </React.Suspense>
+                        } />
+                         <Route exact path='/amc' element={
+                            <React.Suspense>
+                                < LazyTopFundsAMC />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/top-funds' element={
+                            <React.Suspense>
+                                < LazyTopFundsIndia />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='scheme/:id' element={
+                            <React.Suspense>
+                                < LazyMFDetails />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/amc/:id' element={
+                            <React.Suspense>
+                                < LazyAMCDetails />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/top-funds/:id' element={
+                            <React.Suspense>
+                                 < LazyELSSDetails />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />

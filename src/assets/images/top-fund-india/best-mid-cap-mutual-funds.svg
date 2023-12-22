@@ -1,0 +1,21 @@
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g filter="url(#filter0_d_13049_4383)">
+<rect x="7" y="6" width="130" height="130" fill="url(#pattern0)" shape-rendering="crispEdges"/>
+</g>
+<defs>
+<filter id="filter0_d_13049_4383" x="0" y="0" width="150" height="150" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="3" dy="4"/>
+<feGaussianBlur stdDeviation="5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.772549 0 0 0 0 1 0 0 0 0 0.909804 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_13049_4383"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_13049_4383" result="shape"/>
+</filter>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_13049_4383" transform="scale(0.0104167)"/>
+</pattern>
+<image id="image0_13049_4383" width="96" height="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAACnVBMVEUAAAAuuoIquoYquYAzvnyL58IruYC4++EpuH0junwquYAruYAquYAquH8puIArt38lu4I8wIssuoEquYAquYApuX8nvYQrun0uuoIruYAquIAquX8su4WT6sdz27Kr9di+/uW9/eRHxpQruYCh8NEquYAquYAquIAquoAquX8ruH8qun8quYAqu4Ast3+w99ul8tOG5L4vu4MtuoEquIBXzZ67/OMvu4MruYC1+t+D4bys9dgruYAquYAruYAquX8quYAquX8ruH8quIAquH8quH8quX8quoAqun8quX8qt4Arun8oun+d7s1/4Lpn1ahr2KwzvYZm1aiv99o1voeQ6MU9wowquH9z27Ka7cxZz58quX8quYAquoAquYAouX5e0aNBw4+K5cFt2a63+uCf78+T6ce2+t9bz6GV68li0qY/w46b7cxSy5tDxJA7wIt027KU6sio9Naw99tq1qs/wo6g79CO58OI5cAquX8ruX8puH8suoFVzJ5k1q1j06a4++GG5L6A4LqL5cJHxpNk06dh0qV+37l73rZLyJZHx5N837hOyph027KW68p837dZzqAquYA+xJDA/+Zx2rBu2K6+/uVDxJC4/OEruYC8/eRi06Z23LOc7845v4kzvIW6/OKB4rtMxpX////x+va0+t500qxPy5lGxpNFwpA2vofj9u+//+W2+t+i8dKt5c+P6MSL5sJ53rZ43bVn1qley588wYz7/v30/PjR8eSy+Nyu9tm259Oo48uW68mb38SJ2bl94Lh2065s2K1x0atmzaNYz6BZyZwwvIT3/fvm9/HJ7d+96tig8NGU3L+O2ryB1rR/1rNSzJtTx5no+PHb9OrX8ufW8ufM7uDB69q66daj4ch91LFu0KlBxI/GGdXiAAAAk3RSTlMA/A+/A/jy+D0H4rHp3jIjDf322IdhExH+7MtbCv7+/fz7+vb05cW0rpdqVk0pFv7+/v38/Pv6+fn39fTf0sO5q6aggnxzZFE5NS8cGf79/fj49/by8fHv7evqz7xFQSv+/vv7+vr6+fn39/f19fX19PLx7u3s6+vrnJWMfnQc/Pv29fPz8fDu7e3t6ufguqCaj0og6V9mAAAEtUlEQVRo3u2XVVcbQRSAF5Ju2RAg1oQEa6FAcShepECBAnUXpO7u7u4y7YYASSC4uzuFQt1dfkuXNJTdbvqyO3noOflOTnbm5X5n752dO4OYMWPGjBk6/jLEVHAR7xjrY27oiViFLzGBDRYfwVu07Ex41DzVyiAR320W3PBZ8TOXRzmvBtUXAH5uCnA9GqiNS/CDF98O3Ru6GuBTgAFioLy0MBqDFN6Pwz+E4xMBhY14vpYXJ4Ui8Di4bfFkQCN7+85QLxjp8XJbBf5BAV/CetU6Rl9esAzQyXlE/M1fGDqTrSANnQKM0WGPAwIX1JFd/Nl81RFghJwC+/oc4umsEqexErgfDQgj4jgV/1Xgsua+4dJ8AIojnT1ZbQ+ovsCBLY3ZFEHej6cl3UP9gGC+B5v4nuE3iXTkCgeHW9RkwduuyqHPtY9Hc7Uj/ARzQebSsNE8N7cVtXVpqkmC0petr4r6CAFBgMUcxgKrpUsAwFs+FQ1/LxwKIgu039pfjfwWvBD5MxbMCllNFNS+qK2ksvB1HkmwdmBQNzjQpB+7RjgwjT8X3Q8IwcjXwq72Vl0jSaDWPC96LqwBepx4XMaCqaMCe+GXJ08HVGQBqFNqy3rGxtFMBdyY4AMA4D/73lVo3ryrA2Tw/CrDqEcVz/gz3hMFCILKP7Y+eanMAf9g03Q7hoLk6/pduqq/olzztnNsBw2i7dsaW4YCmc2eA79DBHZWAQOPHgAq8zQZTGsgkF+hNBrjguwNCqYCO1EkLb5Tma4HUAmUY0xXUcbuq4BKQ3lv77oCQGah8B7CFFvRPkChuKLyzesPFdWUvokKmLebQzhVoNYVlnQXlr+g9B5ilTJFytu1krpitO+72yvta0jhF+tiWZwj56I3qG+g0tX2lpMFVQvSWXVl9DCR+AAwRmdFbUlJraaD5Kz3QNggWbTuSEPTeLjc5mfPmklz4HI7E2FF6p0w59zJ4ynPKytrwEnxRacRlpze5eZ2MQoYJX9B+Ar5SS47wcx4n2Sv5cZPX2s5dphtDLurwpwIwaQMqfthQCNnggsq9fWw8kMFbARrQjBJFpe3jy7I1t5SIL4JMgS1ZXU5UEkcHbxV25wOAgpbl20WefMxmYTrH5LG6vQeInaP5qH3716b7LQS4EsAWIKDxfvzhXyeg4/KC3OUeqpYvQFXnJSa4sO39LfZMX15ZMHSsIDgVS7aRUIOxkVSUIV7rJwTMQdhQwrfg7PCF0EEmX7W0+Xi3S0KkYXENgvTyxNTZ6cdY3tFkPk4+BsKnmR38tSpWVKJdGwF2CgSxOlzEVhMsrZSgmwLS96fpAt8knwxBKpAXaMXkIEryM2z8EYpVYUvSKAeduELLBFTMcnTStlfb0JB6gpr/SpCTEZKohKvNqUAsVI2NZhYkJv33wsaTSwo7jCFwItjIH2ktFQVOzZLgiaw2TvBwPrRn4Ht0+AJpgIjzIApqH9IQw1VUPeAhnrGf5Qi8U5jgvNx0ASe840JNhyHJkh2xQEN3BVeZxO4b6YLNskhftLJwrO0u4FrIgIPrnXolo0TSWyJ3MrBEIhYxgRbUAjmyBCocI8nWpKI8+YikHHEKGXHEDNmzJgxM84vKxxHt7YQZlgAAAAASUVORK5CYII="/>
+</defs>
+</svg>

@@ -2501,6 +2501,12 @@ const meta_tags = {
     'content': "Start intraday trading with Choice & maximize your intraday profits with advanced tools and personalized services. Open your free demat account now!",
     "link": "https://choiceindia.com/campaign/fno-trading"
   },
+  "mutual-fund-app": {
+    "title": "Choice FinX Mutual Fund App - India's Best App for Mutual Fund Investment",
+    'lang': "en",
+    'content': "Choice FinX Mutual Fund App is the best mutual fund app in India to invest, manage & track your mutual fund investments. Download our top-rated mutual fund app (Android & iOS) now!",
+    "link": "https://choiceindia.com/mutual-fund-app"
+  },
 }
 
 export default meta_tags;

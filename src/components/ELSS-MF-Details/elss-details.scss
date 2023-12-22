@@ -1,0 +1,375 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.funds-bannersection {
+    padding: 7rem 0 6rem 0;
+    background: url(../../assets/images/amc-details/banner-elss.webp) no-repeat center;
+    background-size: cover;
+
+    .scroll-top-account {
+        display: block;
+        text-decoration: none;
+    }
+}
+
+.more-content-sec {
+    padding: 6rem 0 10rem;
+    background: $abt-bg;
+
+    @media (max-width:$md) {
+        padding: 2rem 0 6rem;
+    }
+
+    .more-contentseo {
+        h2 {
+            text-align: left;
+            margin-bottom: 2rem !important;
+            margin-top: 4rem !important;
+            color: #221f20;
+            font-family:$font-family-poppins-semibold;
+            font-size: 3rem;
+        }
+
+        p {
+            font-family: $font-family-poppins-regular !important;
+            font-weight: 400 !important;
+            color: $primary !important;
+            font-size: 1.625rem !important;
+            line-height: 1.6 !important;
+        }
+        br{
+            display: none !important;
+        }
+        .table {
+            background-color: $bgcolor-blue-light;
+            >:not(caption)>*>* {
+                padding: 1rem 2rem;
+                border-right-width: 2px;
+                border-bottom-width: inherit;
+
+                &:last-child {
+                    border-right-width: 0;
+                }
+            }
+
+            tbody {
+                td {
+                    border-color: $primary;
+                    font-family: $font-family-poppins-medium;
+                    font-weight: 500;
+                    color: $primary;
+                    text-align: left !important;
+                    p{
+                        text-align: left !important;
+                        font-weight: 600 !important;
+                        font-family: $font-family-poppins-semibold !important;
+                    }
+                    @media (max-width:$sm) {
+                        white-space: nowrap;
+                    }
+
+                    &:first-child {
+                        @media (max-width:$sm) {
+                            position: sticky;
+                            left: 0;
+                            background-color: $bg-sky;
+                            min-width: 18rem;
+                            white-space: inherit;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .title-secnd {
+        text-align: left;
+        margin-bottom: 2rem;
+        margin-top: 4rem;
+
+        span {
+            color: $yellowColor;
+        }
+    }
+
+    .seo-para {
+        font-family: $font-family-poppins-regular;
+        font-weight: 400;
+        color: $primary;
+    }
+
+    .table-sec {
+        background-color: $bg-sky;
+        padding: 2rem 5rem;
+        margin-bottom: 2rem;
+
+        @media (max-width:$md) {
+            padding: 2rem 1rem;
+        }
+
+        @media (max-width:$sm) {
+            padding: 2rem 0;
+        }
+
+        .table-sub-heading {
+            font-family: $font-family-poppins-medium;
+            font-weight: 500;
+            color: $primary;
+            padding-left: 2rem;
+        }
+
+        .table-scrollble {
+            @media (max-width:$sm) {
+                overflow-x: scroll;
+            }
+
+            .table {
+                >:not(caption)>*>* {
+                    padding: 1rem 2rem;
+                    border-right-width: 2px;
+                    border-bottom-width: inherit;
+
+                    &:last-child {
+                        border-right-width: 0;
+                    }
+                }
+
+                tbody {
+                    td {
+                        border-color: $primary;
+                        font-family: $font-family-poppins-medium;
+                        font-weight: 500;
+                        color: $primary;
+
+                        @media (max-width:$sm) {
+                            white-space: nowrap;
+                        }
+
+                        &:first-child {
+                            @media (max-width:$sm) {
+                                position: sticky;
+                                left: 0;
+                                background-color: $bg-sky;
+                                min-width: 18rem;
+                                white-space: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.Dematfaq {
+    padding: 9rem 0;
+    background-color: $whiteColor ;
+
+    @media (max-width:$md) {
+        padding: 6rem 0;
+    }
+
+    .title-first {
+        margin-bottom: 2rem;
+
+        span {
+            color: $yellowColor;
+        }
+    }
+
+    .faq-item {
+        border: 1px solid $lightgray !important;
+        border-radius: 20px;
+        background: $whiteColor;
+        padding: 2.5rem 3rem;
+        margin-bottom: 2rem;
+
+        @media (max-width:$sm) {
+            padding: 1.5rem 1rem;
+        }
+
+        .faq-header {
+            .accordion-button {
+                font-family: $font-family-poppins-semibold;
+                color: $primary;
+                font-size: 2rem;
+
+                @media (max-width:$sm) {
+                    font-size: 1.75rem;
+                }
+            }
+
+
+        }
+    }
+
+    .accordion-button {
+
+        &:not(.collapsed) {
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        &:focus {
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        &:after {
+            display: none !important;
+        }
+    }
+
+    @media (max-width:$xs) {
+        padding: 5rem 0;
+    }
+}
+
+.fixed-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: $whiteColor;
+    z-index: 99999;
+    right: 0;
+    box-shadow: 0px 4px 10px 0px $nbfcboxshadow;
+    padding: 1rem 0;
+    // @media (max-width:$md) {
+    //     display: none;
+    // }
+
+    .form-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width:$md) {
+            display: none;
+        }
+
+        .form-items {
+            &.check-text-box {
+                display: flex;
+                align-items: center;
+                column-gap: 1rem;
+                width: 48%;
+                justify-content: flex-end;
+
+                .form-grp2 {
+                    .form-control {
+                        padding: 1rem .75rem;
+                        border-radius: 4px;
+                        border: 2px solid $border-gray;
+                        color: $secondary;
+                        font-size: 1.143rem;
+                        font-family: $font-family-poppins-regular;
+                        font-weight: 400;
+
+                        &:focus {
+                            outline: 0;
+                            box-shadow: inherit;
+                        }
+                    }
+                }
+
+                .cust-checkbox {
+                    .form-check {
+                        margin: 0;
+
+                        .form-check-label {
+                            font-size: 1.143rem;
+                        }
+                    }
+                }
+            }
+
+            .shape-yellow {
+                background: $yellowColor;
+                position: relative;
+                z-index: 1;
+                border-radius: 5px 0 0 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 60px;
+                padding: 1rem 2rem;
+
+                .cross-border {
+                    border-right: 60px solid transparent;
+                    border-left: 0px solid transparent;
+                    border-bottom: 60px solid $yellowColor;
+                    height: 0;
+                    width: 0;
+                    bottom: 0;
+                    right: -59px;
+                    position: absolute;
+                }
+
+                h6 {
+                    margin: 0;
+                    color: $primary;
+                    text-align: center;
+                    font-family: $font-family-poppins-semibold;
+                    font-size: 1.143rem;
+                    font-weight: 700;
+                    line-height: 1.5;
+                }
+            }
+
+            .form-grp {
+                position: relative;
+
+                &:before {
+                    content: '+91';
+                    position: absolute;
+                    display: block;
+                    left: 10px;
+                    top: 1.175rem;
+                    font-size: 1.143rem;
+                    color: $secondary;
+                    z-index: 9999;
+                    font-family: $font-family-poppins-regular;
+                    font-weight: 400;
+                }
+
+                .form-control {
+                    padding: 1rem 0.75rem 1rem 3.3rem;
+                    border-radius: 4px;
+                    border: 2px solid $border-gray;
+                    color: $secondary;
+                    font-size: 1.143rem;
+                    font-family: $font-family-poppins-regular;
+                    font-weight: 400;
+                    width: 90% !important;
+
+                    &:focus {
+                        outline: 0;
+                        box-shadow: inherit;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hideform {
+    @media (max-width: $sm) {
+        display: none !important;
+    }
+}
+
+.visibleform {
+    @media (max-width: $sm) {
+        display: block !important;
+    }
+}
+
+.hideform2 {
+    display: none !important;
+}
+
+.visibleform2 {
+    display: block !important;
+}

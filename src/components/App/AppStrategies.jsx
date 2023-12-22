@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import imageDataapp from '../../Data/images';
+import imageData from '../../Data/Onlinetrading/RealTrade';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -15,7 +15,7 @@ function AppStrategies() {
         focusOnSelect: true,
         touchMove: true,
         arrows: false,
-        slidesToShow: 4,
+        slidesToShow: 3,
         autoplay: true,
         dots: false,
         autoplaySpeed: 2000,
@@ -58,7 +58,7 @@ function AppStrategies() {
                                 <div className='col-md-4'>
 
                                     <div className="trade-easy-images-div">
-                                        <LazyLoader src={imageDataapp[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"312"} height={"632"}/>
+                                        <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"312"} height={"632"}/>
                                         {/* <img src={imageData[isShown3].image}
 
                                             className="single-trade-easy-images" alt='Loading'></img> */}
@@ -78,7 +78,7 @@ function AppStrategies() {
                                         >
 
                                             {
-                                                imageDataapp?.map((response, index) => {
+                                                imageData?.map((response, index) => {
 
                                                     let classNm = "content-list-itm " + ((index === isShown3) ? "list-itm-active" : "")
 
