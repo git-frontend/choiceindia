@@ -142,7 +142,7 @@ function OpenDematNew() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="ban-caption text-center">
-                                <h1 className="title-secnd">What is Demat Account?</h1>
+                                <h1 className="title-secnd">Demat Account</h1>
                                 {/* <h4>A Comprehensive Guide for Beginners</h4> */}
                             </div>
                         </div>
