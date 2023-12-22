@@ -13,17 +13,17 @@ function FnoRecord() {
     const [Data1, setData1] = useState();
     const [showLoader, setShowLoader] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
-    
+
     function chapterScroll3(id) {
         var element = document.getElementById(id);
         var headerOffset = 140;
         var elementPosition = element.getBoundingClientRect().top;
         var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
+            top: offsetPosition,
+            behavior: "smooth"
         });
-      }
+    }
     let tokenList = [{}]
     let multiValue = [];
     let AllFilesValue = {};
@@ -34,7 +34,7 @@ function FnoRecord() {
         setRenderCount(true)
         if (rendercount === true) {
             generateSessionId()
-            FandOstocks()
+            FandORecords()
         }
     }, [rendercount])
     const settings = {
@@ -83,7 +83,7 @@ function FnoRecord() {
                 IntraStocks([])
             })
     }
-    function FandOstocks() {
+    function FandORecords() {
 
         setlist([]);
         tokens = '';
@@ -219,39 +219,40 @@ function FnoRecord() {
                                                                         </div>
                                                                         <div className="top-right">
                                                                             {/* <button className="btn-buy  buybtn"> sell</button> */}
-                                                                            <button onClick={()=>{chapterScroll3('dematform')}} className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > {response?.call_type}</button>
+                                                                            <button onClick={() => { chapterScroll3('dematform') }} className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > {response?.call_type}</button>
                                                                         </div>
                                                                     </div>
                                                                     <div className="middle-section">
                                                                         <div className="middle-left">
                                                                             <div>
-                                                                                <h4 className="big-text">GRASIM</h4>
-                                                                                <span className="small-text">GRASIM INDUSTRIES LTD|</span>
+                                                                                <h4 className="big-text">{(response?.scrip_name).replace(/(\|\d{2}[A-Z]{3}\d{2})/, '')}</h4>
+                                                                                <span className="small-text">{response?.scrip_s_expiry}|</span>
                                                                             </div>
                                                                         </div>
                                                                         <div className="middle-right">
-                                                                            <span className="right-big-text">2,072.35</span>
-                                                                            <h6 className="right-small-text text_green">19.40 (0.94%)</h6>
+                                                                            <span className="right-big-text">{((response?.LTP).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                                                                            <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>
+                                                                                {`${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response.Change || 0).toFixed(2)} (${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response?.ChangePer || 0).toFixed(2)}%)`}</h6>
                                                                         </div>
                                                                     </div>
                                                                     <div className="bottom-section">
                                                                         <div className="d-flex justify-content-between pt-3">
                                                                             <div className="bottom">
                                                                                 <h6 className="bottom_small_text">Stop Loss</h6>
-                                                                                <h4 className="bottom_big_text">2,043.25</h4>
+                                                                                <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                                             </div>
                                                                             <div className="bottom">
                                                                                 <h6 className="bottom_small_text">Entry Price</h6>
-                                                                                <h4 className="bottom_big_text">2,060.90</h4>
+                                                                                <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                                             </div>
                                                                             <div className="bottom">
                                                                                 <h6 className="bottom_small_text">Target Price</h6>
-                                                                                <h4 className="bottom_big_text">2,087.40</h4>
+                                                                                <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                                             </div>
-                                                                            <div className="bottom">
+                                                                            {/* <div className="bottom">
                                                                                 <h6 className="bottom_small_text">2nd Target Price</h6>
                                                                                 <h4 className="bottom_big_text">2,105.05</h4>
-                                                                            </div>
+                                                                            </div> */}
                                                                         </div>
                                                                     </div>
                                                                 </div>
