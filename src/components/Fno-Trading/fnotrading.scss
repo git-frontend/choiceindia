@@ -10,11 +10,18 @@
         background: $whiteColor;
         padding: 4rem 0;
     }
+    .rightsec{
+        position: relative;
+        left: -4rem;
+        .img-fluid{
+            width: auto;
+        }
+    }
     .ban-caption{
         .title {
             color: $primary;
             font-weight: 700;
-            font-size: 4.75rem;
+            font-size: 5.846rem;
             line-height: 1.25;
             padding-bottom: 2.5rem;
             padding-top: 1.25rem;
@@ -24,11 +31,22 @@
                 font-size: 3.125rem;
                 padding: 2rem 0;
             }
+            @media (max-width:$sm) {
+                font-size: 3.45rem;
+                br{
+                    display: none;
+                }
+            }
            
         }
         h5{
             font-family: $font-family-poppins-medium;
             color: $darkblack;
+            font-size: 1.385rem;
+            @media (max-width:$sm) {
+                font-size: 1.333rem;
+            }
+            
         }
         .para {
             font-weight: 400;
@@ -38,8 +56,13 @@
             opacity: 0.7;
             font-family: $font-family-poppins-medium;
             @media (max-width:$sm) {
-                line-height: 2.65rem;
-                font-size: 1.75rem;
+                line-height: 1.5;
+                font-size: 1.333rem;
+                padding: 0 2rem;
+                br{
+                    display: none;
+                }
+                opacity: 1;
             }
         }
         .btn-bg{
@@ -61,6 +84,7 @@
 }
 
 .count-fno-members{
+    background: $abt-bg;
     @media (max-width:$sm) {
         background: $primary;
     }
@@ -70,21 +94,23 @@
         box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.16);
         border-radius: 25px;
         position: relative;
-        margin-top: -6rem;
+        margin-top: -7rem;
         background: $whiteColor;
         @media (max-width:$sm) {
             margin-top: 0;
             background: $primary;
             border-radius: 0;
+            justify-content: space-between;
         }
         .count-itm{
             width: 33.33%;
             text-align: center;
-            padding: 3rem;
+            padding:3.846rem 3rem;
             border-right: 0;
             position: relative;
             @media (max-width:$sm) {
                 padding: 1.5rem 1rem;
+                width: 28%;
             }
             &::before{
                 content: '';
@@ -108,18 +134,22 @@
                 }
             }
             h3{
-                font-size: 3.231rem;
+                font-size: 3rem;
                 font-family: $font-family-poppins-semibold;
                 @media (max-width:$sm) {
-                    font-size: 2.2rem;
+                    font-size: 1.667rem;
                     color: $bgcolor-yellow;
                 }
             }
             h5{
                 color: rgba(34, 31, 32, 0.7);
                 font-family: $font-family-poppins-medium;
+                font-size: 1.692rem;
+                margin: 0;
                 @media (max-width:$sm) {
                     color: $whiteColor;
+                    font-size: 1rem;
+                    line-height: 1.5;
                 }
             }
         }
@@ -130,7 +160,10 @@
     background: $abt-bg;
     padding: 6rem 0;
     .heading-sec{
-        margin-bottom: 5rem;
+        margin-bottom: 5.846rem;
+        p{
+            margin-bottom: 0;
+        }
         @media (max-width:$md) {
             width: 100%;
         }
@@ -150,12 +183,16 @@
                 font-size: 1.8rem;
             }
         }
+        p{
+            font-size: 1.385rem;
+            color: $darkblack;
+        }
     }
     .list-main-prnt{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding-bottom: 8rem;
+        padding-bottom: 12rem;
         position: relative;
         align-items: flex-start;
         @media (max-width:$md) {
@@ -184,7 +221,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
 
         }
         .list-fno-featu{
-            width: 46%;
+            width: 49.5%;
             @media (max-width:$md) {
                 width: 100%;
             }
@@ -216,12 +253,16 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 .lists-itms{
                     display: flex;
                     flex-wrap: wrap;
-                    padding: 3rem 3rem;
+                    padding: 2.462rem;
                     border-radius: 24px;
                     margin-bottom: 2rem;
                     transition-duration: 0.6s;
                     .icons-m{
-                        display: block;
+                        display: flex;
+                        width: 4rem;
+                        height: 4rem;
+                        align-items: center;
+                        justify-content: center;
                         @media (max-width:$md) {
                             display: inline-block;
                             margin-bottom: 2rem;
@@ -235,15 +276,18 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                         }
                     }
                     .cont{
-                        width: calc(100% - 45px);
+                        width: calc(100% - 5rem);
                         padding-left: 2rem;
                         h4{
-                            font-size: 1.75rem;
+                            font-size: 1.692rem;
                             font-family: $font-family-poppins-semibold;
+                            color: $darkblack;
                         }
                         p{
                             padding: 0;
                             margin: 0;
+                            font-size: 1.538rem;
+                            color: $darkblack;
                         }
                     }
                     &:hover{
@@ -254,15 +298,16 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             }
         }
         .img-itm{
-            width: 47%;
+            width: 43%;
             @media (max-width:$md) {
                 width: 100%;
             }
             img{
-                width: 100%;
+                max-width: 100%;
             }
         }
         &.last-child{
+            padding-bottom: 8rem;
             &::before{
                 display: none;
             }
@@ -306,6 +351,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                             left: 0;
                             top: 0;
                         }
+                        .subtext{
+                            font-family: $font-family-poppins-semibold;
+                        }
                     }
                    
                 }
@@ -331,6 +379,8 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                         padding-left: 2rem;
                         position: relative;
                         z-index: 9;
+                        color: $darkblack;
+                        font-size: 1.692rem;
                     }
                 
                 }
@@ -362,7 +412,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
   .fno-form-sec{
     background: url(../../assets/images/fno-trading/bg-mask.png) no-repeat bottom right $primary;
     padding: 7.5rem 0;
-    background-size: cover;
+    background-size: 100% 100%;
     @media (max-width:$sm) {
         background: $primary;
         padding: 4rem 0;
@@ -374,7 +424,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
         align-items: center;
         .inr-heading{
             .heading-n{
-                font-size: 4rem;
+                font-size: 6.308rem;
                 line-height: 1.5;
                 color: $whiteColor;
                 font-family: $font-family-poppins-semibold;
@@ -383,7 +433,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 }
                 .clr1{
                     img{
-                        width: 5rem;
+                        width: 8rem;
                         @media (max-width:$sm) {
                             width: 3rem;
                         }
@@ -445,6 +495,12 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
     @media (max-width:$md) {
         padding: 4rem 0;
     }
+    .heading-sec{
+        p{
+            font-family: $font-family-poppins-medium;
+            font-size: 2.538rem;
+        }
+    }
     .record-sliders{
         margin-top: 2rem;
         .sliders-fno{
@@ -455,7 +511,11 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                     padding-top: 3rem;
                 }
             }
-            width: 100vw;
+            .slick-list{
+                width: 130vw;
+                left: -15vw;
+            }
+            
             @media (max-width:$md) {
                 width: 100%;
             }
@@ -631,7 +691,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
   }
 
   .fno-testimonial{
-    padding: 7rem 0;
+    padding: 7rem 0 8rem 0;
     .slick-dots{
         bottom: -70px;
     }
@@ -644,6 +704,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
         display: block;
         border-radius: 20px;
         min-height: 400px;
+        p{
+            font-size: 1.385rem;
+        }
         .clnt-img{
             margin: 0 auto;
             display: block;
@@ -654,7 +717,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             margin-bottom: 2.5rem;
         }
         h4{
-            font-size: 1.625rem;
+            font-size: 1.846rem;
             font-family: $font-family-poppins-semibold;
             color: $primary;
             margin-top: 2rem;
@@ -715,10 +778,14 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 }
             }
             h4{
-                font-size: 1.625rem;
-                color: $primary;
+                font-size: 2.077rem;
+                color: $darkblack;
                 font-family: $font-family-poppins-semibold;
                 margin: 1.25rem 0 0.5rem 0;
+            }
+            h5{
+                font-size: 1.538rem;
+                color: $darkblack;
             }
         }
         .slick-dots{
@@ -738,6 +805,8 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
         padding-left: 1.6rem;
         position: relative;
         margin: 0;
+        font-size: 1.692rem;
+        line-height: 1.4;
         &::before{
             content: '';
             width: 4px;
@@ -759,3 +828,30 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
 
     }
   }
+
+  .fno-trading-main{
+    .btn-bg{
+        &.btn-new{
+            font-size: 2rem !important;
+            padding: 1.2rem 3.07rem !important;
+            border-radius: 12px !important;
+            font-family: $font-family-poppins-medium !important;
+            @media (max-width:$sm) {
+                font-size: 1.5rem !important;
+                padding: 1.6rem 3.07rem !important;
+            }
+        }
+        
+    }
+    .heading-sec{
+        .title-secnd{
+            font-size: 3.462rem;
+        }
+        p{
+            font-size: 1.692rem;
+            color: $darkblack;
+        }
+    }
+  }
+
+ 

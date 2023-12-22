@@ -41,7 +41,7 @@ function FnoRecord() {
         infinite: true,
         speed: 2000,
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 4,
         autoplay: true,
         margin: 15,
         dots: true,
@@ -191,8 +191,8 @@ function FnoRecord() {
                             </div>
                         </div>
                     </div>
-
-                    <div className="row">
+                </div>
+                <div className="row">
                         <div className="col-md-12">
                             {showLoader ?
                                 <div className="text-center">
@@ -206,7 +206,7 @@ function FnoRecord() {
                                         list && list.length ?
                                             <Slider {...settings} className="sliders-fno">
                                                 {
-                                                    (list || []).slice(0, 4).map((response, index) => {
+                                                    (list || []).slice(0, 6).map((response, index) => {
                                                         return (
                                                             <div className="">
                                                                 <div className="main-left" key={index}>
@@ -270,8 +270,6 @@ function FnoRecord() {
                             }
                         </div>
                     </div>
-
-                </div>
             </section>
 
 

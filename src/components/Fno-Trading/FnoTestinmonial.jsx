@@ -16,11 +16,11 @@ function FnoTestinmonial() {
         speed: 2000,
         arrows: false,
         slidesToShow: 3,
-        autoplay: true,
+        autoplay: false,
         margin:15,
         dots:true,
         autoplaySpeed: 3000,
-        slidesToScroll: 3,
+        slidesToScroll: 3   ,
         responsive: [
           {
             breakpoint: 992,
@@ -49,7 +49,7 @@ function FnoTestinmonial() {
             <section className="fno-testimonial">
                 <div className="container">
                     <div className='row justify-content-center'>
-                        <div className='col-md-8'>
+                        <div className='col-xl-9 col-md-12'>
                             <div className="heading-sec text-center">
                                 <h2 className="title-secnd">Customer Testimonials</h2>
                                 <p>Join the thousands of traders who have elevated their trading experience with Choice.</p>

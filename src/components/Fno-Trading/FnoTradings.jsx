@@ -181,7 +181,7 @@ function scrollToId(id) {
                           </Slider>
                       </div>
                       <div className="col-md-12 d-flex justify-content-center">
-                            <a href="javascript:void(0)" onClick={() => scrollToId('campaignForm')} className="btn-bg">Open Demat Account</a>
+                            <a href="javascript:void(0)" onClick={() => scrollToId('campaignForm')} className="btn-bg btn-new">Open Demat Account</a>
                         </div>
                   </div>
                 </div>
@@ -189,7 +189,7 @@ function scrollToId(id) {
           <section className="fno-content-des">
               <div className="container">
                   <div className="row">
-                      <div className="col-md-10">
+                      <div className="col-md-12">
                           <p className="etc-fno-cont">At Choice, we make trading simple for everyone. Whether you’re an experienced trader or a beginner, we’re dedicated to empowering you at every step of your trading journey. Begin mastering the art of trading by opening your Choice Demat account today.</p>
                       </div>
                   </div>
