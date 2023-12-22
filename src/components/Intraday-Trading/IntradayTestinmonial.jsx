@@ -10,7 +10,7 @@ import img6 from '../../assets/images/intraday-trading/person6.png';
 import img7 from '../../assets/images/intraday-trading/person7.png';
 import img8 from '../../assets/images/intraday-trading/person8.png';
 import qoutes from '../../assets/images/intraday-trading/qouats.svg'
-function FnoTestinmonial() {
+function IntradayTestinmonial() {
 
     const settings = {
         infinite: true,
@@ -193,4 +193,4 @@ function FnoTestinmonial() {
         </>
     );
 };
-export default FnoTestinmonial;
+export default IntradayTestinmonial;

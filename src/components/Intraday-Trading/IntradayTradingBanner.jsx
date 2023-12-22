@@ -3,7 +3,7 @@
 import React from "react";
 import Bannerimage from '../../assets/images/fno-trading/hero-bg-1.png';
 import LazyLoader from '../Common-features/LazyLoader';
-function FnoTradingBanner() {
+function IntradayTradingBanner() {
     function scrollToId(id) {
         var element = document.getElementById(id);
         var headerOffset = 140;
@@ -62,4 +62,4 @@ function FnoTradingBanner() {
         </>
     );
 };
-export default FnoTradingBanner;
+export default IntradayTradingBanner;

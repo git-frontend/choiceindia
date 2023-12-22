@@ -9,7 +9,7 @@ import zero5 from '../../assets/images/intraday-trading/mtf-facility.svg';
 import zero6 from '../../assets/images/intraday-trading/trading-view.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
-function WhyChooseFno() {
+function WhyChooseIntraday() {
     const [view,setView]=useState({
 		matches: window.innerWidth < 767 ? false : true ,
 	  });
@@ -179,4 +179,4 @@ function WhyChooseFno() {
         </>
     );
 };
-export default WhyChooseFno;
+export default WhyChooseIntraday;
