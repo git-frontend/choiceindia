@@ -226,7 +226,7 @@ function FnoRecord() {
                                                                         <div className="middle-left">
                                                                             <div>
                                                                                 <h4 className="big-text">{(response?.scrip_name).replace(/(\|\d{2}[A-Z]{3}\d{2})/, '')}</h4>
-                                                                                <span className="small-text">{response?.scrip_s_expiry}|</span>
+                                                                                <span className="small-text">{response?.scrip_s_expiry}</span>
                                                                             </div>
                                                                         </div>
                                                                         <div className="middle-right">
