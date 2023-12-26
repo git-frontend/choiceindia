@@ -109,7 +109,7 @@ function scrollToId(id) {
           <IntradayTradingBanner />
           <WhyChooseIntraday />
           <FinxTools />
-          <section className="fno-form-sec intr-form-sec">
+          <section className="fno-form-sec intr-form-sec" id="dematform">
             <div className="container">
                 <div className="row">
                     <div className="com-md-12">
