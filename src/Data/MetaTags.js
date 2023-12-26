@@ -1318,7 +1318,7 @@ const meta_tags = {
     ` },
 
   "demat-account": {
-    'title': "What is Demat Account - Meaning, Working, Types & Benefits", 'lang': "en", 'content': "What is Demat account? Know demat account meaning, it's features and benefits, types of demat account, charges, opening process, required documents, and more.", 'link': "https://choiceindia.com/demat-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    'title': "Demat Account - Meaning, Types, Features, Uses and Benefits", 'lang': "en", 'content': "What is Demat account? Know demat account meaning, it's features and benefits, types of demat account, charges, opening process, required documents, and more.", 'link': "https://choiceindia.com/demat-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
      "faqscript": `
      <script type="application/ld+json">
 {
