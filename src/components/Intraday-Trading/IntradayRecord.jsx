@@ -182,7 +182,7 @@ function IntradayRecord() {
             <section className="fno-records">
                 <div className="container">
                     <div className='row justify-content-center'>
-                        <div className='col-md-8'>
+                        <div className='col-xl-8 col-md-12'>
                             <div className="heading-sec text-center">
                                 <h2 className="title-secnd">Our Proven Track Record</h2>
                                 <p>Intraday</p>
