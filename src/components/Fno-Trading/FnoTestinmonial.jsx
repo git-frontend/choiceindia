@@ -16,11 +16,11 @@ function FnoTestinmonial() {
         speed: 2000,
         arrows: false,
         slidesToShow: 3,
-        autoplay: false,
+        autoplay: true,
         margin:15,
         dots:true,
         autoplaySpeed: 3000,
-        slidesToScroll: 3   ,
+        slidesToScroll: 3,
         responsive: [
           {
             breakpoint: 992,

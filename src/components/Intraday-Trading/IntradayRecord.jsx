@@ -43,7 +43,7 @@ function IntradayRecord() {
         autoplay: true,
         margin: 15,
         dots: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 4000,
         slidesToScroll: 1,
         responsive: [
             {
@@ -190,8 +190,8 @@ function IntradayRecord() {
                             </div>
                         </div>
                     </div>
-
-                    <div className="row">
+                </div>
+                <div className="row">
                         <div className="col-md-12">
                             {showLoader ?
                                 <div className="text-center">
@@ -269,8 +269,6 @@ function IntradayRecord() {
                             }
                         </div>
                     </div>
-
-                </div>
             </section>
 
 

@@ -1,7 +1,7 @@
 
 // import React from 'react';
 import React from "react";
-import Bannerimage from '../../assets/images/fno-trading/hero-bg-1.png';
+import Bannerimage from '../../assets/images/fno-trading/hero-bg-1.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 function FnoTradingBanner() {
 

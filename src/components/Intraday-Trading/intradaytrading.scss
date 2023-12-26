@@ -2,8 +2,8 @@
 @import '../../assets/css/customvariable.scss';
 
 .intraday-banner{
-    background: url(../../assets/images/intraday-trading/fno-banner-bg.png) no-repeat center;
-    background-size: cover;
+    background: url(../../assets/images/intraday-trading/fno-banner-bg.png) no-repeat top 10px right #0B121C;
+    background-size: contain;
     @media (max-width:$sm) {
         background: inherit;
     }
@@ -63,23 +63,26 @@
     .inner-count{
         display: flex;
         flex-wrap: wrap;
-        box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.16);
-        border-radius: 25px;
+        // box-shadow: none;
+        // border-radius: 25px;
         position: relative;
         top: 3rem;
         @media (max-width:$sm) {
             margin-top: 2rem;
-            border-radius: 0;
-            box-shadow: inherit;
+            // border-radius: 0;
+            // box-shadow: inherit;
             top: initial;
         }
         .count-itm{
-            width: 33.33%;
+           
             padding: 3rem 3rem 3rem 6rem;
             border-right: 0;
             position: relative;
+            @media (max-width:$md) {
+                width: 33.33%;
+            }
             &:first-child{
-                padding: 3rem 0 3rem 0;
+                padding: 3rem 3rem 3rem 0;
                 @media (max-width:$sm) {
                     padding: 1.5rem 1rem;
                     padding-bottom: 0;

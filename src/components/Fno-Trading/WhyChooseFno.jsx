@@ -6,8 +6,8 @@ import icon2 from '../../assets/images/fno-trading/chain.svg';
 import icon3 from '../../assets/images/fno-trading/paypff.svg';
 import icon4 from '../../assets/images/fno-trading/charts.svg';
 import icon5 from '../../assets/images/fno-trading/oi-spruts.svg';
-import img2 from '../../assets/images/fno-trading/img1.png';
-import img3 from '../../assets/images/fno-trading/img2.png';
+import img2 from '../../assets/images/fno-trading/img1.webp';
+import img3 from '../../assets/images/fno-trading/img2.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
 function WhyChooseFno() {
@@ -138,7 +138,7 @@ the uncertainties of options trading</p>
 
                                 </div>
                                 <div className="img-itm">
-                                    <img src={img2} />
+                                    <LazyLoader src={img2} width={559} height={443} alt={"About Choice"} />
                                 </div>
                             </div>
                             </div>
@@ -152,7 +152,7 @@ the uncertainties of options trading</p>
                                 </div>
                             <div className="list-main-prnt last-child">
                                 <div className="img-itm">
-                                    <img src={img3} />
+                                    <LazyLoader src={img3} width={559} height={443} alt={"About Choice"} />
                                 </div>
                                 <div className="list-fno-featu">
                                     

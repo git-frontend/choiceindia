@@ -42,10 +42,10 @@ function FnoRecord() {
         speed: 2000,
         arrows: false,
         slidesToShow: 4,
-        autoplay: false,
+        autoplay: true,
         margin: 15,
         dots: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 4000,
         slidesToScroll: 1,
         responsive: [
             {

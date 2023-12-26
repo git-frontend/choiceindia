@@ -144,34 +144,34 @@ function scrollToId(id) {
                   </div>
                   <div className="row">
                       <div className="col-md-12">
-                          <Slider {...settings2} className="list-section">
+                      <Slider {...settings2} className="list-section">
                               <div className="list-itm">
                                   <span>
                                     <img src={zero1} />
                                   </span>
                                   <h4>Zero</h4>
-                                  <h5>Account Opening Free</h5>
+                                  <h5>Account <span>Opening Free</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
                                     <img src={zero2} />
                                   </span>
                                   <h4>Zero</h4>
-                                  <h5>AMC for 1st Year</h5>
+                                  <h5>AMC for <span>1st Year</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
                                     <img src={zero3} />
                                   </span>
                                   <h4>Zero</h4>
-                                  <h5>Auto Square-off Charges</h5>
+                                  <h5>Auto Square-off <span>Charges</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
                                     <img src={zero4} />
                                   </span>
-                                  <h4>Free</h4>
-                                  <h5>Research Calls & Tools</h5>
+                                  <h4>Zero</h4>
+                                  <h5>Research Calls <span>& Tools</span></h5>
                               </div>
                           </Slider>
                       </div>
