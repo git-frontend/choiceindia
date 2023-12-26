@@ -26,7 +26,7 @@ function WhyChooseIntraday() {
         speed: 2000,
         arrows: false,
         slidesToShow: 8,
-        autoplay: true,
+        autoplay: false,
         margin:15,
         dots:true,
         autoplaySpeed: 3000,
@@ -95,7 +95,7 @@ function WhyChooseIntraday() {
                                   <span>
                                     <img src={zero3} />
                                   </span>
-                                  <h4>One-Click Square-Off <br/> all Positions</h4>
+                                  <h4>One-Click Square-Off all Positions</h4>
                                   <h5>Efficient trade <br/> management.</h5>
                               </div>
                               <div className="list-itm">

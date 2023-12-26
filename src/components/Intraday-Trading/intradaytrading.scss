@@ -32,6 +32,7 @@
             font-size: 1.429rem;
             @media (max-width:$sm) {
                 color: $primary;
+                padding-top: 1rem;
             }
         }
         .para{
@@ -47,10 +48,16 @@
             }
         }
         .btn-bg{
-            font-size: 1.714rem !important;
-            font-family: $font-family-poppins-medium;
-            border-radius: 0.857rem !important;
-            padding: 0.857rem 2rem !important;
+            // font-size: 1.714rem !important;
+            // font-family: $font-family-poppins-medium;
+            // border-radius: 0.857rem !important;
+            // padding: 0.857rem 2rem !important;
+            @media (max-width:$sm) {
+                background: $primary !important;
+                color: $whiteColor !important;
+                border-radius: 16px !important;
+            }
+            
         }
     }
     .inner-count{
@@ -61,9 +68,10 @@
         position: relative;
         top: 3rem;
         @media (max-width:$sm) {
-            margin-top: 0;
+            margin-top: 2rem;
             border-radius: 0;
             box-shadow: inherit;
+            top: initial;
         }
         .count-itm{
             width: 33.33%;
@@ -74,6 +82,7 @@
                 padding: 3rem 0 3rem 0;
                 @media (max-width:$sm) {
                     padding: 1.5rem 1rem;
+                    padding-bottom: 0;
                 }
             }
             @media (max-width:$md) {
@@ -82,6 +91,7 @@
             @media (max-width:$sm) {
                 padding: 1.5rem 1rem;
                 text-align: center;
+                padding-bottom: 0;
             }
             &::before{
                 content: '';
@@ -119,7 +129,8 @@
                 font-size: 1.571rem;
                 @media (max-width:$sm) {
                     color: $primary;
-                    font-size: 1.3rem;
+                    font-size: 1rem;
+                    padding: 0 1rem;
                 }
             }
         }
@@ -134,6 +145,7 @@
         flex-wrap: wrap;
         @media (max-width:$sm) {
             display: block;
+            margin-top: 2rem;
         }
         .slick-list{
             @media (max-width:$sm) {
@@ -153,8 +165,10 @@
                 padding:2rem;
             }
             @media (max-width:$sm) {
-                width: 94% !important;
-                min-height: 21rem;
+                width: 90% !important;
+                min-height: 20rem;
+                padding: 2rem 1rem;
+                margin-bottom: 0.5rem;
             }
             >span{
                 display: inline-block;
@@ -168,10 +182,9 @@
                 color: $primary;
                 font-family: $font-family-poppins-semibold;
                 margin: 1.25rem 0;
-                br{
-                    @media (max-width:$sm) {
-                       display: none;
-                    }  
+                
+                @media (max-width:$sm) {
+                    font-size: 1.667rem;
                 }
             }
             h5{
@@ -238,3 +251,6 @@
         }
     }
 }
+
+
+

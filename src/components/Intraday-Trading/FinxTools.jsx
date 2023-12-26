@@ -56,7 +56,7 @@ function FinxTools() {
 
     return (
         <>
-            <section className="finx-tools">
+            <section className="finx-tools head-new-pr">
                 <div className="container">
                     <div className='row justify-content-center'>
                         <div className='col-md-12'>
