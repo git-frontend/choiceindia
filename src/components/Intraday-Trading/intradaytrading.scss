@@ -10,6 +10,12 @@
     .ban-caption{
         .title{
             color: $whiteColor;
+            font-size: 4.714rem;
+            line-height: 70px;
+            @media (max-width:$md) {
+                font-size: 3.714rem;
+                line-height: 60px;
+            }
             @media (max-width:$sm) {
                 color: $primary;
             }
@@ -19,6 +25,8 @@
         }
         h5{
             color: $whiteColor;
+            padding-top: 3.5rem;
+            font-size: 1.429rem;
             @media (max-width:$sm) {
                 color: $primary;
             }
@@ -27,9 +35,17 @@
             color: $whiteColor;
             font-family: $font-family-poppins-regular;
             opacity: inherit;
+            font-size: 1.714rem;
+            padding-right: 5rem;
             @media (max-width:$sm) {
                 color: $primary;
             }
+        }
+        .btn-bg{
+            font-size: 1.714rem !important;
+            font-family: $font-family-poppins-medium;
+            border-radius: 0.857rem !important;
+            padding: 0.857rem 2rem !important;
         }
     }
     .inner-count{
@@ -54,6 +70,9 @@
                 @media (max-width:$sm) {
                     padding: 1.5rem 1rem;
                 }
+            }
+            @media (max-width:$md) {
+                padding: 3rem;
             }
             @media (max-width:$sm) {
                 padding: 1.5rem 1rem;
@@ -80,7 +99,7 @@
                 }
             }
             h3{
-                font-size: 3.231rem;
+                font-size: 3rem;
                 font-family: $font-family-poppins-semibold;
                 color: $whiteColor;
                 @media (max-width:$sm) {
@@ -91,8 +110,10 @@
             h5{
                 color: $whiteColor;
                 font-family: $font-family-poppins-medium;
+                font-size: 1.571rem;
                 @media (max-width:$sm) {
                     color: $primary;
+                    font-size: 1.3rem;
                 }
             }
         }
