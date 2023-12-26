@@ -53,7 +53,7 @@ function IntradayTestinmonial() {
                         <div className='col-xl-10 col-md-12'>
                             <div className="heading-sec text-center">
                                 <h2 className="title-secnd">Customer Testimonials</h2>
-                                <p>Join the thousands of traders who have elevated their trading experience with Choice.</p>
+                                <p>Join the ranks of successful traders who have benefited from our intraday calls.</p>
                             </div>
                         </div>
                     </div>
