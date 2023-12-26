@@ -11,13 +11,16 @@
         .title{
             color: $whiteColor;
             font-size: 4.714rem;
-            line-height: 70px;
+            line-height: 90px;
             @media (max-width:$md) {
                 font-size: 3.714rem;
                 line-height: 60px;
             }
             @media (max-width:$sm) {
                 color: $primary;
+                font-size: 3.5rem;
+                line-height: 50px;
+                padding: 1rem 0;
             }
             span{
                 color: $yellowColor;
@@ -25,7 +28,7 @@
         }
         h5{
             color: $whiteColor;
-            padding-top: 3.5rem;
+            padding-top: 2rem;
             font-size: 1.429rem;
             @media (max-width:$sm) {
                 color: $primary;
@@ -39,6 +42,8 @@
             padding-right: 5rem;
             @media (max-width:$sm) {
                 color: $primary;
+                padding: 0;
+                font-size: 1.5rem;
             }
         }
         .btn-bg{
@@ -76,6 +81,7 @@
             }
             @media (max-width:$sm) {
                 padding: 1.5rem 1rem;
+                text-align: center;
             }
             &::before{
                 content: '';
