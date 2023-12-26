@@ -119,7 +119,21 @@ function Thankyoupopup({ isShow, isBlog }) {
                       <div className="close">
                         {/* <Link to="" className="closebtn" onClick={()=>isShow.closeMd(isShow.redirectionLink)} >&times;</Link> */}
                       </div>
-                      <div className={((window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) || (isBlog === 'blog')) ? "thanku sub-broker-success" : ((!isShow.isOnboarding) && (window.location.pathname.indexOf('mutual-fund-distributor') > -1)) ? 'thanku mf-distributor-leads' : (((window.location.pathname.indexOf('sub-broker-franchise') === -1) && (window.location.pathname.indexOf('authorised-person') === -1) && (window.location.pathname.indexOf('remisier') === -1)) && (window.location.pathname.indexOf("nri-demat-account") === -1)&&(window.location.pathname.indexOf("demat-account") === -1)&& (window.location.pathname.indexOf("/minor-demat-account") === -1) && (window.location.pathname.indexOf("/corporate-demat-account") === -1)) ? 'thanku campaign-success' : (((window.location.pathname.indexOf("/minor-demat-account") > -1)) ? 'thanku minor-dl-success' : (((window.location.pathname.indexOf("nri-demat-account") > -1)) ? 'thanku nri-dl-success' : (((window.location.pathname.indexOf("/corporate-demat-account") > -1)) ? 'thanku corporate-dl-success' : 'thanku ')))}>
+                      {/* <div className={((window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) || (isBlog === 'blog')) ? "thanku sub-broker-success" : ((!isShow.isOnboarding) && (window.location.pathname.indexOf('mutual-fund-distributor') > -1)) ? 'thanku mf-distributor-leads' : (((window.location.pathname.indexOf('sub-broker-franchise') === -1) && (window.location.pathname.indexOf('authorised-person') === -1) && (window.location.pathname.indexOf('remisier') === -1)) && (window.location.pathname.indexOf("nri-demat-account") === -1)&&(window.location.pathname.indexOf("demat-account") === -1)&& (window.location.pathname.indexOf("/minor-demat-account") === -1) && (window.location.pathname.indexOf("/corporate-demat-account") === -1)) ? 'thanku campaign-success' : (((window.location.pathname.indexOf("/minor-demat-account") > -1)) ? 'thanku minor-dl-success' : (((window.location.pathname.indexOf("nri-demat-account") > -1)) ? 'thanku nri-dl-success' : (((window.location.pathname.indexOf("/corporate-demat-account") > -1)) ? 'thanku corporate-dl-success' : 'thanku ')))}> */}
+                      <div className={`thanku ${(window.location.pathname.includes('sub-broker-franchise') ||
+                        window.location.pathname.includes('authorised-person') ||
+                        window.location.pathname.includes('remisier') ||
+                        isBlog === 'blog') ? 'sub-broker-success' :
+                        (!isShow.isOnboarding && window.location.pathname.includes('mutual-fund-distributor')) ? 'mf-distributor-leads' :
+                          ((window.location.pathname.includes('sub-broker-franchise') === -1) &&
+                            (window.location.pathname.includes('authorised-person') === -1) &&
+                            (window.location.pathname.includes('remisier') === -1) &&
+                            (window.location.pathname.includes("nri-demat-account") === -1) &&
+                            (window.location.pathname.includes("demat-account") === -1) &&
+                            (window.location.pathname.includes("/minor-demat-account") === -1) &&
+                            (window.location.pathname.includes("/corporate-demat-account") === -1)) ? 'campaign-success' :
+                            (window.location.pathname.includes("top-funds") || window.location.pathname.includes("amc")) ? 'mf-success' : ''
+                        }`}>
                         <h1>Thank You !</h1>
                       </div>
 

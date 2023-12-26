@@ -80,12 +80,15 @@ function MFTopFunds() {
             initializeschemeData()
             FundManagerDetails();
             getPerformancePeerComparisonData()
-            sipLumpsumCalc()
+            // sipLumpsumCalc()
             reloadGraphData('Sensex', duration, false, true)
             getSchemeDistributionData()
             getSchemeTopSectors("1")
         }
     }, [rendercount]);
+    useEffect(() => {
+        sipLumpsumCalc(false);
+    }, [typeOfCalc]);
     const getPosition2 = () => {
         const element = document.getElementById("showForm");
         if (element) {
@@ -249,7 +252,7 @@ function MFTopFunds() {
                     finalR = finalR.concat(positiveK).concat(zeroK).concat(negativeK);
                     setPeerComparisonResponseObject(finalR);
                 }
-                //   sipLumpsumCalc().
+                //   sipLumpsumCalc()
 
             }).catch((error) => {
                 // Handle errors
@@ -257,16 +260,19 @@ function MFTopFunds() {
             });
     }
 
-    const sipLumpsumCalc = (event, switchChange) => {
+    const sipLumpsumCalc = (event, switchChange, updatedNoOfMonths) => {
         let tempstore;
         const urlIdentity = window.location.pathname.split('/scheme/')[1];
         const arr = urlIdentity.split('-').slice(-2);
 
-        if (switchChange) {
-            setTypeOfCalc(true);
-        } else {
-            setTypeOfCalc(false);
-        }
+        // if (switchChange !== undefined) {
+        //     setTypeOfCalc(!typeOfCalc);
+        // }
+        // if (switchChange) {
+        //     setTypeOfCalc(true);
+        // } else {
+        //     setTypeOfCalc(false);
+        // }
 
         if (minInvested < 1) {
             setErrorMsg('Enter a valid amount');
@@ -275,21 +281,34 @@ function MFTopFunds() {
             setErrorMsg('');
         }
 
-        if (noOfMonths <= 6) {
-            tempstore = noOfMonths;
+        const effectiveNoOfMonths = updatedNoOfMonths !== undefined ? updatedNoOfMonths : noOfMonths;
+        if (effectiveNoOfMonths === 6) {
+            tempstore = effectiveNoOfMonths;
             setMonthsLabel(`${tempstore} Month${tempstore > 1 ? 's' : ''}`);
+        } else if (effectiveNoOfMonths > 6 && effectiveNoOfMonths < 12) {
+            tempstore = effectiveNoOfMonths;
+            setMonthsLabel(`${tempstore} Months`);
         } else {
-            tempstore = noOfMonths / 12;
+            tempstore = effectiveNoOfMonths / 12;
             setMonthsLabel(`${tempstore} Year${tempstore > 1 ? 's' : ''}`);
         }
+        // if (effectiveNoOfMonths <= 6) {
+        //     tempstore = effectiveNoOfMonths;
+        //     setMonthsLabel(`${tempstore} Month${tempstore > 1 ? 's' : ''}`);
+        // } else {
+        //     tempstore = effectiveNoOfMonths / 12;
+        //     setMonthsLabel(`${tempstore} Year${tempstore > 1 ? 's' : ''}`);
+        // }
 
         let request = {
             SchemeCode: arr[0],
             SchemePlanCode: arr[1],
-            NoOfMonths: noOfMonths.toString(),
+            NoOfMonths: effectiveNoOfMonths.toString(),
             AmtInvested: minInvested,
             TypeOfCalc: typeOfCalc ? 'SIP' : 'Lumpsum',
         };
+
+        console.log('sip request', request);
 
         rest.sipLumpsumCalc(request)
             .then((res) => {
@@ -298,12 +317,12 @@ function MFTopFunds() {
                 } else {
                     setSipLumpsumdta([]);
                 }
-                // console.log('sipLumpsumCalc res', res);
             })
             .catch((error) => {
-                // console.error('Error:', error);
+                console.error('Error:', error);
             });
-    }
+    };
+
     const fillPercentageloan = ((noOfMonths - 6) / (60 - 6)) * 100;
     const fillStyle = {
         background: `linear-gradient(to right, #D9D9D9 ${fillPercentageloan}%, #D9D9D9 ${fillPercentageloan}%)`,
@@ -899,7 +918,7 @@ function MFTopFunds() {
                                                                         <h4>{parseFloat(res.SchemePerformance.ThreeYrNavper).toFixed(2)} &nbsp;<FontAwesomeIcon icon={faArrowUp} className='fill' /></h4>
                                                                         <p>3 Year Return (%)</p>
                                                                     </div>
-                                                                    <div className='inv-btn' onClick={ ()=>setName2(!name2)}>
+                                                                    <div className='inv-btn' onClick={() => setName2(!name2)}>
                                                                         <span className='btn-bg'>Invest Now</span>
                                                                     </div>
                                                                 </div>
@@ -1466,7 +1485,7 @@ function MFTopFunds() {
                                                 id="exchangeToggle"
                                                 name="exchangeToggle"
                                                 checked={typeOfCalc}
-                                                onChange={(e) => setTypeOfCalc(e.target.checked)}
+                                                onChange={(e) => { setTypeOfCalc(e.target.checked) }}
                                             />
                                             <label></label>
                                             <span className={`${typeOfCalc ? 'selected' : ''}`}>SIP</span>
@@ -1481,7 +1500,19 @@ function MFTopFunds() {
                                                 sipLumpsumdta && sipLumpsumdta.map((res, i) => {
                                                     return (
                                                         <div key={i}>
-                                                            <p className='midl-txt'>SIP of <strong>₹{minInvested}</strong> for <strong>{noOfMonths} Months</strong> would have gained <strong>{(res.AbsoluteProfit).toFixed(2)}%</strong> & its value would have been <strong>₹{Math.floor(res.CurrentValue)}</strong></p>
+                                                            <div className='midl-txt'>
+                                                                {typeOfCalc ?
+                                                                    <p>
+                                                                        SIP of <strong>₹{minInvested}</strong> for <strong>{noOfMonths} Months</strong> would have gained <strong>{(res.AbsoluteProfit).toFixed(2)}%</strong> & its value would have been <strong>₹{Math.floor(res.CurrentValue)}</strong>
+                                                                    </p>
+                                                                    : <p>
+                                                                        Investment of <strong>₹{minInvested}</strong> for{' '}
+                                                                        <strong>{noOfMonths} Months </strong> would have resulted in gain of{' '}
+                                                                        <strong>{(res.AbsoluteProfit).toFixed(2)}%</strong> & its value would have been{' '}
+                                                                        <strong>₹{Math.floor(res.CurrentValue)}</strong>
+                                                                    </p>
+                                                                }
+                                                            </div>
                                                         </div>
 
                                                     )
@@ -1507,7 +1538,7 @@ function MFTopFunds() {
                                                                                 value={minInvested}
                                                                                 maxLength='12'
                                                                                 className='formcontrol'
-                                                                                onChange={(e) => setMinInvested(e.target.value)}
+                                                                                onChange={(e) => { setMinInvested(e.target.value) }}
                                                                             />
                                                                         </div>
                                                                         <span className='text-danger'>{errorMsg} </span>
@@ -1536,8 +1567,10 @@ function MFTopFunds() {
                                                                                         step='6'
                                                                                         value={noOfMonths}
                                                                                         onChange={(e) => {
-                                                                                            setNoOfMonths(e.target.value);
-                                                                                            sipLumpsumCalc(e, true);
+                                                                                            const updatedNoOfMonths = parseInt(e.target.value, 10);
+                                                                                            setNoOfMonths(updatedNoOfMonths);
+                                                                                            sipLumpsumCalc(e, false, updatedNoOfMonths);
+
                                                                                         }}
                                                                                     />
                                                                                 </div>
