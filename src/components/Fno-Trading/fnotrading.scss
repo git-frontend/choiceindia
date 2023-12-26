@@ -159,6 +159,9 @@
 .why-choose-fno{
     background: $abt-bg;
     padding: 6rem 0;
+    @media (max-width:$md) {
+        padding: 4rem 0;
+    }
     .heading-sec{
         margin-bottom: 5.846rem;
         p{
@@ -166,6 +169,9 @@
         }
         @media (max-width:$md) {
             width: 100%;
+        }
+        @media (max-width:$md) {
+            margin-bottom: 2.5rem;
         }
     }
     .head-sec{
@@ -179,13 +185,17 @@
             font-size: 2.5rem;
             font-family: $font-family-poppins-medium;
             padding-bottom: 1rem;
-            @media (max-width:$md) {
+            @media (max-width:$sm) {
                 font-size: 1.8rem;
             }
         }
         p{
             font-size: 1.385rem;
             color: $darkblack;
+            @media (max-width:$sm) {
+                font-size: 1.167rem;
+                line-height: 1.5;
+            }           
         }
     }
     .list-main-prnt{
@@ -197,6 +207,7 @@
         align-items: flex-start;
         @media (max-width:$md) {
             flex-direction: column-reverse;
+            padding-bottom: 6rem;
             &.last-child{
                 flex-direction: initial;
             }
@@ -215,7 +226,7 @@
             background: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 0, 0.2) 51.27%, rgba(0, 0, 0, 0) 84.44%);
 
 border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 0, 0.2) 51.27%, rgba(0, 0, 0, 0) 84.44%);
-@media (max-width:$sm) {
+@media (max-width:$md) {
     display: none;
 }
 
@@ -244,6 +255,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                         margin: 0 auto !important;
                         display: block !important;
                         padding: 2rem 1rem;
+                        @media (max-width:$md) {
+                            min-height: 195px;
+                        }
                     }
                     .slick-dots{
                         position: relative;
@@ -265,7 +279,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                         justify-content: center;
                         @media (max-width:$md) {
                             display: inline-block;
-                            margin-bottom: 2rem;
+                            margin-bottom: 0.5rem;
                         }
                         
                         img{
@@ -278,16 +292,26 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                     .cont{
                         width: calc(100% - 5rem);
                         padding-left: 2rem;
+                        @media (max-width:$md) {
+                            width: 100%;
+                            padding: 0;
+                        }
                         h4{
                             font-size: 1.692rem;
                             font-family: $font-family-poppins-semibold;
                             color: $darkblack;
+                            @media (max-width:$md) {
+                                font-size: 1.692rem;
+                            }
                         }
                         p{
                             padding: 0;
                             margin: 0;
                             font-size: 1.538rem;
                             color: $darkblack;
+                            @media (max-width:$md) {
+                                font-size: 1.333rem;
+                            }
                         }
                     }
                     &:hover{
@@ -304,12 +328,18 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             }
             img{
                 max-width: 100%;
+                @media (max-width:$md) {
+                    width: 100%;
+                }
             }
         }
         &.last-child{
             padding-bottom: 8rem;
             &::before{
                 display: none;
+            }
+            @media (max-width:$md) {
+                padding-bottom: 5rem;
             }
         }
     }
@@ -318,6 +348,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
 
 .finx-tools{
     padding: 7rem 0;
+    @media (max-width:$md) {
+        padding: 3.5rem 0;
+    }
     .heading-sec{
         margin-bottom: 5.5rem;
     }
@@ -381,6 +414,14 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                         z-index: 9;
                         color: $darkblack;
                         font-size: 1.692rem;
+                        @media (max-width:$sm) {
+                            font-size: 1.333rem;
+                            margin: 0;
+                        }
+                        
+                    }
+                    @media (max-width:$sm) {
+                        padding: 1rem;
                     }
                 
                 }
@@ -441,7 +482,8 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 }
                 @media (max-width:$sm) {
                     text-align: center;
-                    font-size: 2.6rem;
+                    font-size: 2.333rem;
+                    padding: 0 2rem;
                     br{
                         display: none;
                     }
@@ -503,6 +545,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
     }
     .record-sliders{
         margin-top: 2rem;
+        @media (max-width:$sm) {
+            margin-top: 0;
+        }
         .sliders-fno{
             .slick-dots{
                 position: relative;
@@ -510,10 +555,17 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 @media (max-width:$md) {
                     padding-top: 3rem;
                 }
+                @media (max-width:$sm) {
+                    padding-top: 1rem;
+                }
             }
             .slick-list{
                 width: 130vw;
                 left: -15vw;
+                @media (max-width:$md) {
+                    width: 100%;
+                    left: initial;
+                }
             }
             
             @media (max-width:$md) {
@@ -531,7 +583,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
                     // width: 98%;
                     padding: 1.25rem 1rem;
-                    margin: 1.5%;
+                    margin: 4%;
                     border-radius: 10px;
                 }
                 .top-section {
@@ -692,6 +744,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
 
   .fno-testimonial{
     padding: 7rem 0 8rem 0;
+    @media (max-width:$sm) {
+        padding: 4rem 0 5rem 0;
+    }
     .slick-dots{
         bottom: -70px;
     }
@@ -699,11 +754,11 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
         text-align: center;
         background: $abt-bg;
         padding: 2.5rem;
-        width: 95%;
+        width: 91%;
         margin: 0 auto;
         display: block;
         border-radius: 20px;
-        min-height: 400px;
+        min-height: 410px;
         p{
             font-size: 1.385rem;
         }
@@ -721,6 +776,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             font-family: $font-family-poppins-semibold;
             color: $primary;
             margin-top: 2rem;
+        }
+        @media (max-width:$md) {
+            width: 95%;
         }
     }
     .sliders-testimonial{
@@ -752,11 +810,17 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
   .fno-free-zero{
     background: $abt-bg;
     padding: 7rem 0;
+    @media (max-width:$sm) {
+        padding: 4rem 0;
+    }
     .list-section{
         margin: 5rem 0;
+        @media (max-width:$md) {
+            margin-top: 3rem;
+        }
         .slick-list{
             @media (max-width:$sm) {
-                width: 140vw;
+                width: 135vw;
             }
         }
         .list-itm{
@@ -769,6 +833,8 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             margin: 0 auto;
             @media (max-width:$md) {
                 padding:2.5rem 1rem;
+                width: 90% !important;
+                border-radius: 20px;
             }
             >span{
                 display: inline-block;
@@ -782,14 +848,31 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 color: $darkblack;
                 font-family: $font-family-poppins-semibold;
                 margin: 1.25rem 0 0.5rem 0;
+                @media (max-width:$sm) {
+                    font-size: 1.833rem;
+                }
+                
             }
             h5{
                 font-size: 1.538rem;
                 color: $darkblack;
+                @media (max-width:$sm) {
+                    font-size: 1.33rem;
+                    line-height: 1.5;
+                    padding: 0 2rem;
+                    span{
+                        display: block;
+                    }
+                }
             }
         }
         .slick-dots{
             position: relative;
+        }
+    }
+    .heading-sec{
+        .title-secnd{
+            padding: 0 !important;
         }
     }
   }
@@ -818,6 +901,11 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             border-radius: 3px;
             background: $bgcolor-yellow;
         }
+        @media (max-width:$sm) {
+            font-size: 1.167rem;
+            padding-left: 1rem;
+            margin: 0 4%;
+        }
     }
   }
 
@@ -839,6 +927,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             @media (max-width:$sm) {
                 font-size: 1.5rem !important;
                 padding: 1.6rem 3.07rem !important;
+                border-radius: 10px !important;
             }
         }
         
@@ -846,10 +935,22 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
     .heading-sec{
         .title-secnd{
             font-size: 3.462rem;
+            color: $darkblack;
+            @media (max-width:$sm) {
+                font-size: 1.833rem;
+                line-height: 1.5;
+                padding: 0 3rem;
+            }
         }
         p{
             font-size: 1.692rem;
+            
             color: $darkblack;
+            @media (max-width:$sm) {
+                font-size: 1.333rem;
+                line-height: 1.5;
+            }
+            
         }
     }
   }
