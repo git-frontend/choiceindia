@@ -961,3 +961,13 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
   }
 
  
+
+  .head-new-pr{
+    .heading-sec{
+        @media (max-width:$sm) {
+            .title-secnd{
+                padding: 0 2rem !important;
+            }
+        }
+    }
+}

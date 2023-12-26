@@ -180,7 +180,7 @@ function IntradayRecord() {
     }
     return (
         <>
-            <section className="fno-records">
+            <section className="fno-records head-new-pr">
                 <div className="container">
                     <div className='row justify-content-center'>
                         <div className='col-xl-8 col-md-12'>
