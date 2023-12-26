@@ -59,7 +59,7 @@ function FinxTools() {
             <section className="finx-tools">
                 <div className="container">
                     <div className='row justify-content-center'>
-                        <div className='col-lg-8 col-md-10'>
+                        <div className='col-md-12'>
                             <div className="heading-sec text-center">
                                 <h2 className="title-secnd">Choice FinX - Your Partner for Intraday Trading</h2>
                                 <p>An All-in-One app to boost your trading journey, on the go!</p>

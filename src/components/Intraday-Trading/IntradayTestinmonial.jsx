@@ -20,8 +20,8 @@ function IntradayTestinmonial() {
         autoplay: true,
         margin:15,
         dots:true,
-        autoplaySpeed: 3000,
-        slidesToScroll: 1,
+        autoplaySpeed: 5000,
+        slidesToScroll: 3,
         responsive: [
           {
             breakpoint: 992,

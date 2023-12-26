@@ -176,7 +176,7 @@ function scrollToId(id) {
                           </Slider>
                       </div>
                       <div className="col-md-12 d-flex justify-content-center">
-                            <a href="" className="btn-bg" onClick={() => scrollToId('campaignForm')}>Open Demat Account</a>
+                            <a href="" className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Open Demat Account</a>
                         </div>
                   </div>
                 </div>

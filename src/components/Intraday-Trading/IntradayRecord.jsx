@@ -38,7 +38,7 @@ function IntradayRecord() {
         infinite: true,
         speed: 2000,
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 4,
         autoplay: true,
         margin:15,
         dots:true,

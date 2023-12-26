@@ -946,6 +946,11 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             font-size: 1.692rem;
             
             color: $darkblack;
+            @media (max-width:$md) {
+                br{
+                    display: none;
+                }
+            }
             @media (max-width:$sm) {
                 font-size: 1.333rem;
                 line-height: 1.5;

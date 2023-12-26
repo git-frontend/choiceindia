@@ -144,7 +144,7 @@
             text-align: center;
             background: $whiteColor;
             border-radius: 16px;
-            padding:4rem 2rem;
+            padding:3rem 2rem;
             display: block !important;
             width: 31%;
             margin: 0 auto 2rem;
@@ -164,7 +164,7 @@
                 }
             }
             h4{
-                font-size: 1.625rem;
+                font-size: 1.692rem;
                 color: $primary;
                 font-family: $font-family-poppins-semibold;
                 margin: 1.25rem 0;
@@ -176,6 +176,8 @@
             }
             h5{
                 margin: 0;
+                font-size: 1.385rem;
+                line-height: 1.5;
             }
         }
         .slick-dots{
@@ -221,6 +223,8 @@
                     }
                     h4{
                         margin-top: 0;
+                        font-family: $font-family-poppins-medium;
+                        font-size: 1.692rem;
                     }
                     h5{
                         margin-bottom: 0;
