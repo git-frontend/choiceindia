@@ -90,7 +90,7 @@ function FinxTools() {
 
                                                 <div key={response.id} className={classNm} onChange={() => setIsShown3(response.id)} >
                                                
-                                                <img src={response.imageico} alt="Collection" className="icon-img"></img>
+                                                <img src={response.imageico} alt={response.alt} className="icon-img"></img>
                                                 <h3 className="subtext">{response.title}</h3>
                                                 </div>
 

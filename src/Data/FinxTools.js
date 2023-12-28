@@ -1,8 +1,8 @@
-import Image1 from '../assets/images/fno-trading/mb1.png' ;
-import Image2 from '../assets/images/fno-trading/mb2.png' ;
-import Image3 from '../assets/images/fno-trading/mb3.png' ;
-import Image4 from '../assets/images/fno-trading/mb4.png' ;
-import Image5 from '../assets/images/fno-trading/mb5.png' ;
+import Image1 from '../assets/images/fno-trading/simple-interface-option-trading-app.png' ;
+import Image2 from '../assets/images/fno-trading/expert-curated-baskets-trading-app.png' ;
+import Image3 from '../assets/images/fno-trading/multi-language-option-trading-app.png' ;
+import Image4 from '../assets/images/fno-trading/trading-app-with-diverse-investment-options.png' ;
+import Image5 from '../assets/images/fno-trading/option-trading-app-with-expert-research.png' ;
 
 
 import Ico1 from '../assets/images/fno-trading/option-trading-app-with-simple-interface.svg' ;
