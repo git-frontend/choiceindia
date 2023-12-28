@@ -1,7 +1,7 @@
 
 // import React from 'react';
 import React from "react";
-import Bannerimage from '../../assets/images/fno-trading/hero-bg-1.webp';
+import Bannerimage from '../../assets/images/fno-trading/fno-trading.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 function FnoTradingBanner() {
 
@@ -33,7 +33,7 @@ function FnoTradingBanner() {
                         <div className="col-md-5 d-none d-sm-block">
                             <div className="rightsec">
 
-                                    <LazyLoader src={Bannerimage} alt={"About Choice"} className={"img-fluid"} width={"609"} height={"476"} />
+                                    <LazyLoader src={Bannerimage} alt={"F & O Trading"} className={"img-fluid"} width={"609"} height={"476"} />
                             {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img> */}
                             </div>
                         </div>
