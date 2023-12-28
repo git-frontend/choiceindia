@@ -1,8 +1,8 @@
-import Image1 from '../assets/images/intraday-trading/mb1.png' ;
-import Image2 from '../assets/images/intraday-trading/mb2.png' ;
-import Image3 from '../assets/images/intraday-trading/mb3.png' ;
-import Image4 from '../assets/images/intraday-trading/mb4.png' ;
-import Image5 from '../assets/images/intraday-trading/mb5.png' ;
+import Image1 from '../assets/images/intraday-trading/simple-interface-intraday-trading-app.png' ;
+import Image2 from '../assets/images/intraday-trading/expert-curated-baskets-trading-app.png' ;
+import Image3 from '../assets/images/intraday-trading/multi-language-intraday-trading-app.png' ;
+import Image4 from '../assets/images/intraday-trading/trading-app-with-diverse-investment-intradays.png' ;
+import Image5 from '../assets/images/intraday-trading/intraday-trading-app-with-top-quality-research.png' ;
 
 
 import Ico1 from '../assets/images/intraday-trading/intraday-trading-app-with-simple-interface.svg' ;

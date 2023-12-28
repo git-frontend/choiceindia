@@ -104,7 +104,7 @@ function FinxTools() {
                                             Finxtoolsimg?.map((response, index) => {
                                                         return(
                                             <div className="imgwrap" key={response.id}>
-                                                <img src={response.image} alt="intraday-trading-app" className="img-fluid" width={"708"} height={"645"}></img>
+                                                <img src={response.image} alt={response.alttag} className="img-fluid" width={"708"} height={"645"}></img>
                                             </div>
                                                         )
                                                     }
