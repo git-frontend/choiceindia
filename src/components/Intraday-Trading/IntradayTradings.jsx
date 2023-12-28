@@ -24,7 +24,7 @@ function IntradayTradings() {
 
   const settings2 = {
     infinite: true,
-    speed: 2000,
+    speed: 1000,
     arrows: false,
     slidesToShow: 4,
     autoplay: true,
@@ -170,7 +170,7 @@ function scrollToId(id) {
                                   <span>
                                     <img src={zero4} alt={"Intraday Trading with Free Expert Research & Tools"}/>
                                   </span>
-                                  <h4>Zero</h4>
+                                  <h4>Free</h4>
                                   <h5>Research Calls <span>& Tools</span></h5>
                               </div>
                           </Slider>

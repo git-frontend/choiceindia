@@ -15,7 +15,7 @@ function FinxTools() {
 
     const settings11 = {
       infinite: true,
-      speed: 1500,
+      speed: 1000,
       vertical: true,
       slidesToShow: 5,
       arrows:false,
@@ -32,7 +32,6 @@ function FinxTools() {
 
     const settings12 = {
         infinite: true,
-        speed: 1500,
         slidesToShow: 1,
         autoplay: true,
         arrows:false,
@@ -44,6 +43,7 @@ function FinxTools() {
         pauseOnHover: false,
         pauseOnFocus: false,
         draggable:false,
+        speed: 1000,
       };
       useEffect(() => {
         setTrigger(true)

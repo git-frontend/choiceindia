@@ -5,7 +5,10 @@
 
 .fno-banner{
     background: url(../../assets/images/fno-trading/fno-banner-bg.png);
-    padding: 4rem 0 8rem 0;
+    padding: 6rem 0 8rem 0;
+    @media (max-width:$md) {
+        padding-bottom: 10rem;
+    }
     @media (max-width:$sm) {
         background: $whiteColor;
         padding: 4rem 0;
@@ -171,7 +174,7 @@
             width: 100%;
         }
         @media (max-width:$md) {
-            margin-bottom: 2.5rem;
+            margin-bottom: 3.5rem;
         }
     }
     .head-sec{
@@ -317,6 +320,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                     &:hover{
                         background: $whiteColor;
                         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                        @media (max-width:$md) {
+                            box-shadow: initial;
+                        }
                     }
                 }
             }
@@ -805,6 +811,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 right: 85px;
                 transform: rotate(-180deg);
             }
+            &.slick-disabled{
+                opacity: 0.4;
+            }
         }
     }
   }
@@ -939,9 +948,10 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
             font-size: 3.462rem;
             color: $darkblack;
             @media (max-width:$sm) {
-                font-size: 1.833rem;
+                font-size: 2rem;
                 line-height: 1.5;
                 padding: 0 3rem;
+                font-family: $font-family-poppins-bold;
             }
         }
         p{

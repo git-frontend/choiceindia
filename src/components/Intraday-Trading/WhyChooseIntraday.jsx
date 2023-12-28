@@ -45,6 +45,7 @@ function WhyChooseIntraday() {
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
+              speed: 1000,
             },
           },
         ],

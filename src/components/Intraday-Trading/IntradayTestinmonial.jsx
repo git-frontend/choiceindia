@@ -37,6 +37,7 @@ function IntradayTestinmonial() {
               slidesToShow: 1,
               slidesToScroll: 1,
               arrows: true,
+              speed: 1000,
               dots:false,
               infinite: false,
             },

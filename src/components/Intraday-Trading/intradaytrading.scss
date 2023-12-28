@@ -142,6 +142,9 @@
 .why-choose-intr{
     background: $abt-bg;
     padding: 7rem 0;
+    @media (max-width:$sm) {
+        padding: 4rem 0;
+    }
     .list-section{
         margin: 5rem 0;
         display: flex;
