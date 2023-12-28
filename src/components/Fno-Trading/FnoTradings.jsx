@@ -11,10 +11,10 @@ import FnoTradingBanner from "./FnoTradingBanner";
 import WhyChooseFno from "./WhyChooseFno";
 import FinxTools from "./FinxTools";
 import Bannerimage from '../../assets/images/fno-trading/va.png';
-import zero1 from '../../assets/images/fno-trading/zero-opening-free.svg';
-import zero2 from '../../assets/images/fno-trading/zero-amc.svg';
-import zero3 from '../../assets/images/fno-trading/zero-charges.svg';
-import zero4 from '../../assets/images/fno-trading/free-calls.svg';
+import zero1 from '../../assets/images/fno-trading/start-option-trading-with-free-demat-account.svg';
+import zero2 from '../../assets/images/fno-trading/start-option-trading-with-zero-amc-for-1st-year.svg';
+import zero3 from '../../assets/images/fno-trading/option-trading-with-zero-auto-square-off-charges.svg';
+import zero4 from '../../assets/images/fno-trading/option-trading-with-free-expert-research-&-tools.svg';
 import FnoRecord from "./FnoRecord";
 import FnoTestinmonial from "./FnoTestinmonial";
 import meta_tags from "../../Data/MetaTags";
@@ -152,28 +152,28 @@ function scrollToId(id) {
                           <Slider {...settings2} className="list-section">
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero1} />
+                                    <img src={zero1} alt={"Start Option Trading with Free Demat Account"} />
                                   </span>
                                   <h4>Zero</h4>
                                   <h5>Account <span>Opening Free</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero2} />
+                                    <img src={zero2} alt={"Start Option Trading with Zero AMC for 1st Year"} />
                                   </span>
                                   <h4>Zero</h4>
                                   <h5>AMC for <span>1st Year</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero3} />
+                                    <img src={zero3} alt={"Option Trading with Zero Auto Square-Off Charges"} />
                                   </span>
                                   <h4>Zero</h4>
                                   <h5>Auto Square-off <span>Charges</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero4} />
+                                    <img src={zero4} alt={"Option Trading with Free Expert Research & Tools"} />
                                   </span>
                                   <h4>Zero</h4>
                                   <h5>Research Calls <span>& Tools</span></h5>

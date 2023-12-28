@@ -109,7 +109,7 @@ function scrollToId(id) {
           <IntradayTradingBanner />
           <WhyChooseIntraday />
           <FinxTools />
-          <section className="fno-form-sec intr-form-sec">
+          <section className="fno-form-sec intr-form-sec" id="dematform">
             <div className="container">
                 <div className="row">
                     <div className="com-md-12">
@@ -144,39 +144,39 @@ function scrollToId(id) {
                   </div>
                   <div className="row">
                       <div className="col-md-12">
-                          <Slider {...settings2} className="list-section">
+                      <Slider {...settings2} className="list-section">
                               <div className="list-itm">
                                   <span>
                                     <img src={zero1} alt={"Start Intraday Trading with Free Demat Account"}/>
                                   </span>
                                   <h4>Zero</h4>
-                                  <h5>Account Opening Free</h5>
+                                  <h5>Account <span>Opening Free</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
                                     <img src={zero2} alt={"Start Intraday Trading with Zero AMC for 1st Year"}/>
                                   </span>
                                   <h4>Zero</h4>
-                                  <h5>AMC for 1st Year</h5>
+                                  <h5>AMC for <span>1st Year</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
                                     <img src={zero3} alt={"Intraday Trading with Zero Auto Square-Off Charges"}/>
                                   </span>
                                   <h4>Zero</h4>
-                                  <h5>Auto Square-off Charges</h5>
+                                  <h5>Auto Square-off <span>Charges</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
                                     <img src={zero4} alt={"Intraday Trading with Free Expert Research & Tools"}/>
                                   </span>
-                                  <h4>Free</h4>
-                                  <h5>Research Calls & Tools</h5>
+                                  <h4>Zero</h4>
+                                  <h5>Research Calls <span>& Tools</span></h5>
                               </div>
                           </Slider>
                       </div>
                       <div className="col-md-12 d-flex justify-content-center">
-                            <a href="" className="btn-bg" onClick={() => scrollToId('campaignForm')}>Open Demat Account</a>
+                            <a href="" className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Open Demat Account</a>
                         </div>
                   </div>
                 </div>

@@ -42,10 +42,10 @@ function FnoRecord() {
         speed: 2000,
         arrows: false,
         slidesToShow: 4,
-        autoplay: false,
+        autoplay: true,
         margin: 15,
         dots: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 4000,
         slidesToScroll: 1,
         responsive: [
             {
@@ -181,7 +181,7 @@ function FnoRecord() {
 
     return (
         <>
-            <section className="fno-records">
+            <section className="fno-records head-new-pr">
                 <div className="container">
                     <div className='row justify-content-center'>
                         <div className='col-xl-8 col-md-12'>
@@ -226,7 +226,7 @@ function FnoRecord() {
                                                                         <div className="middle-left">
                                                                             <div>
                                                                                 <h4 className="big-text">{(response?.scrip_name).replace(/(\|\d{2}[A-Z]{3}\d{2})/, '')}</h4>
-                                                                                <span className="small-text">{response?.scrip_s_expiry}|</span>
+                                                                                <span className="small-text">{response?.scrip_s_expiry}</span>
                                                                             </div>
                                                                         </div>
                                                                         <div className="middle-right">

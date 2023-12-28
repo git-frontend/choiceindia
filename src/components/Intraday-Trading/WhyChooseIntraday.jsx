@@ -26,7 +26,7 @@ function WhyChooseIntraday() {
         speed: 2000,
         arrows: false,
         slidesToShow: 8,
-        autoplay: true,
+        autoplay: false,
         margin:15,
         dots:true,
         autoplaySpeed: 3000,
@@ -65,10 +65,10 @@ function WhyChooseIntraday() {
               <section className="why-choose-intr">
               <div className="container">
                   <div className='row justify-content-center'>
-                      <div className='col-xl-8 col-md-12'>
+                      <div className='col-xl-10 col-md-12'>
                           <div className="heading-sec text-center">
                               <h2 className="title-secnd">Why Choose Choice for Intraday Trading?</h2>
-                              <p>Experience a seamless trading journey with our advanced features tailored to meet the most demanding needs of intraday traders.</p>
+                              <p>Experience a seamless trading journey with our advanced features <br/> tailored to meet the most demanding needs of intraday traders.</p>
                           </div>
                       </div>
                   </div>
@@ -95,7 +95,7 @@ function WhyChooseIntraday() {
                                   <span>
                                     <img src={zero3} alt={"One-Click Square-Off all Positions"}/>
                                   </span>
-                                  <h4>One-Click Square-Off <br/> all Positions</h4>
+                                  <h4>One-Click Square-Off all Positions</h4>
                                   <h5>Efficient trade <br/> management.</h5>
                               </div>
                               <div className="list-itm">
@@ -169,7 +169,7 @@ function WhyChooseIntraday() {
                       </div>
                       
                       <div className="col-md-12 d-flex justify-content-center">
-                            <a href="" className="btn-bg" onClick={() => scrollToId('campaignForm')}>Experience Now</a>
+                            <a href="" className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Experience Now</a>
                         </div>
                   </div>
                 </div>
