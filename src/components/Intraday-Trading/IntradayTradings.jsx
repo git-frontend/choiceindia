@@ -9,10 +9,10 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import IntradayTradingBanner from "./IntradayTradingBanner";
 import WhyChooseIntraday from "./WhyChooseIntraday";
 import FinxTools from "./FinxTools";
-import zero1 from '../../assets/images/fno-trading/zero-opening-free.svg';
-import zero2 from '../../assets/images/fno-trading/zero-amc.svg';
-import zero3 from '../../assets/images/fno-trading/zero-charges.svg';
-import zero4 from '../../assets/images/fno-trading/free-calls.svg';
+import zero1 from '../../assets/images/intraday-trading/start-intraday-trading-with-free-demat-account.svg';
+import zero2 from '../../assets/images/intraday-trading/start-intraday-trading-with-zero-amc-for-1st-year.svg';
+import zero3 from '../../assets/images/intraday-trading/intraday-trading-with-zero-auto-square-off-charges.svg';
+import zero4 from '../../assets/images/intraday-trading/intraday-trading-with-free-expert-research-&-tools.svg';
 import IntradayRecord from "./IntradayRecord";
 import IntradayTestinmonial from "./IntradayTestinmonial";
 import DematAccountForm from '../Common-features/DematAccountForm';
@@ -147,28 +147,28 @@ function scrollToId(id) {
                           <Slider {...settings2} className="list-section">
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero1} />
+                                    <img src={zero1} alt={"Start Intraday Trading with Free Demat Account"}/>
                                   </span>
                                   <h4>Zero</h4>
                                   <h5>Account Opening Free</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero2} />
+                                    <img src={zero2} alt={"Start Intraday Trading with Zero AMC for 1st Year"}/>
                                   </span>
                                   <h4>Zero</h4>
                                   <h5>AMC for 1st Year</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero3} />
+                                    <img src={zero3} alt={"Intraday Trading with Zero Auto Square-Off Charges"}/>
                                   </span>
                                   <h4>Zero</h4>
                                   <h5>Auto Square-off Charges</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero4} />
+                                    <img src={zero4} alt={"Intraday Trading with Free Expert Research & Tools"}/>
                                   </span>
                                   <h4>Free</h4>
                                   <h5>Research Calls & Tools</h5>

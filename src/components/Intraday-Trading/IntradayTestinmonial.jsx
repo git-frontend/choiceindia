@@ -1,14 +1,14 @@
 
 import React from "react";
 import Slider from 'react-slick';
-import img1 from '../../assets/images/intraday-trading/person1.png';
-import img2 from '../../assets/images/intraday-trading/person2.png';
-import img3 from '../../assets/images/intraday-trading/person3.png';
-import img4 from '../../assets/images/intraday-trading/person4.png';
-import img5 from '../../assets/images/intraday-trading/person5.png';
-import img6 from '../../assets/images/intraday-trading/person6.png';
-import img7 from '../../assets/images/intraday-trading/person7.png';
-import img8 from '../../assets/images/intraday-trading/person8.png';
+import img1 from '../../assets/images/intraday-trading/ravi-sharma-intraday-trader.png';
+import img2 from '../../assets/images/intraday-trading/anjali-gupta-intraday-trader.png';
+import img3 from '../../assets/images/intraday-trading/suresh-nair-intraday-trader.png';
+import img4 from '../../assets/images/intraday-trading/vijay-kumar-intraday-trader.png';
+import img5 from '../../assets/images/intraday-trading/amit-intraday-trader.png';
+import img6 from '../../assets/images/intraday-trading/priya-intraday-trader.png';
+import img7 from '../../assets/images/intraday-trading/meena-gupte-intraday-trader.png';
+import img8 from '../../assets/images/intraday-trading/rajesh-agarwal-intraday-trader.png';
 import qoutes from '../../assets/images/intraday-trading/qouats.svg'
 function IntradayTestinmonial() {
 
@@ -170,7 +170,7 @@ function IntradayTestinmonial() {
                                     <div className="test-box">
                                             <div className="box-ttl">
                                                 <div className="ttl-img">
-                                                    <img src={img5} className="clnt-img" />
+                                                    <img src={img8} className="clnt-img" />
                                                     <div>
                                                         <h4>Rajesh Agarwal</h4>
                                                         <h5>Jaipur</h5>

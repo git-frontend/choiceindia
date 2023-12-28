@@ -1,7 +1,7 @@
 
 
 import React,{useState} from "react";
-import Finxtoolsimg from "../../Data/FinxTools";
+import Finxtoolsimg from "../../Data/FinxToolsItraday";
 import Slider from 'react-slick';
 import { useEffect } from "react";
 function FinxTools() {
@@ -86,7 +86,7 @@ function FinxTools() {
 
                                                 <div key={response.id} className={classNm} onChange={() => setIsShown3(response.id)} >
                                                
-                                                <img src={response.imageico} alt="Collection" className="icon-img"></img>
+                                                <img src={response.imageico} alt={response.alttag} className="icon-img"></img>
                                                 <h3 className="subtext">{response.title}</h3>
                                                 </div>
 
@@ -104,7 +104,7 @@ function FinxTools() {
                                             Finxtoolsimg?.map((response, index) => {
                                                         return(
                                             <div className="imgwrap" key={response.id}>
-                                                <img src={response.image} alt="Collection" className="img-fluid" width={"708"} height={"645"}></img>
+                                                <img src={response.image} alt="intraday-trading-app" className="img-fluid" width={"708"} height={"645"}></img>
                                             </div>
                                                         )
                                                     }

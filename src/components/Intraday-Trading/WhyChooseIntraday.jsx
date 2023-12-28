@@ -1,12 +1,12 @@
 
 // import React from 'react';
 import { useState,useEffect } from 'react';
-import zero1 from '../../assets/images/intraday-trading/intraday-research-call.svg';
-import zero2 from '../../assets/images/intraday-trading/technical-charts.svg';
-import zero3 from '../../assets/images/intraday-trading/one-click.svg';
-import zero4 from '../../assets/images/intraday-trading/advance-screener.svg';
-import zero5 from '../../assets/images/intraday-trading/mtf-facility.svg';
-import zero6 from '../../assets/images/intraday-trading/trading-view.svg';
+import zero1 from '../../assets/images/intraday-trading/intraday-research-calls.svg';
+import zero2 from '../../assets/images/intraday-trading/technical-charts-&-indicators-for-day-traders.svg';
+import zero3 from '../../assets/images/intraday-trading/one-click-square-off-all-positions.svg';
+import zero4 from '../../assets/images/intraday-trading/intraday-trading-with-advanced-stock-screeners.svg';
+import zero5 from '../../assets/images/intraday-trading/intraday-trading-with-mtf-facility.svg';
+import zero6 from '../../assets/images/intraday-trading/day-trading-with-auto-trade-via-tradingview.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
 function WhyChooseIntraday() {
@@ -79,42 +79,42 @@ function WhyChooseIntraday() {
                           <Slider {...settings2} className="list-section">
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero1} />
+                                    <img src={zero1} alt={"Intraday Research Calls"}/>
                                   </span>
                                   <h4>Intraday Research <br/> Calls</h4>
                                   <h5>Expert advice for <br/> informed trading.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero2} />
+                                    <img src={zero2} alt={"Technical Charts & Indicators for Day Traders"}/>
                                   </span>
                                   <h4>Technical Charts <br/> & Indicators</h4>
                                   <h5>Comprehensive tools <br/> for market analysis.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero3} />
+                                    <img src={zero3} alt={"One-Click Square-Off all Positions"}/>
                                   </span>
                                   <h4>One-Click Square-Off <br/> all Positions</h4>
                                   <h5>Efficient trade <br/> management.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero4} />
+                                    <img src={zero4} alt={"Intraday Trading with Advanced Stock Screeners"} />
                                   </span>
                                   <h4>Advanced <br/> Screeners</h4>
                                   <h5>Filter stocks to <br/> suit your criteria.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero5} />
+                                    <img src={zero5} alt={"Intraday Trading with MTF Facility"}/>
                                   </span>
                                   <h4>MTF <br/> Facility</h4>
                                   <h5>Leverage your <br/> positions easily.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero6} />
+                                    <img src={zero6} alt={"Day Trading with Auto Trade via TradingView"}/>
                                   </span>
                                   <h4>Auto Trade via <br/> TradingView</h4>
                                   <h5>Simplify your <br/> trading activities</h5>
@@ -124,28 +124,28 @@ function WhyChooseIntraday() {
                           <div className="list-section">
                           <div className="list-itm">
                                   <span>
-                                    <img src={zero1} />
+                                    <img src={zero1} alt={"Intraday Research Calls"}/>
                                   </span>
                                   <h4>Intraday Research <br/> Calls</h4>
                                   <h5>Expert advice for <br/> informed trading.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero2} />
+                                    <img src={zero2} alt={"Technical Charts & Indicators for Day Traders"}/>
                                   </span>
                                   <h4>Technical Charts <br/> & Indicators</h4>
                                   <h5>Comprehensive tools <br/> for market analysis.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero3} />
+                                    <img src={zero3} alt={"One-Click Square-Off all Positions"}/>
                                   </span>
                                   <h4>One-Click Square-Off <br/> all Positions</h4>
                                   <h5>Efficient trade <br/> management.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero4} />
+                                  <img src={zero4} alt={"Intraday Trading with Advanced Stock Screeners"} />
                                   </span>
                                   <h4>Advanced <br/> Screeners</h4>
                                   <h5>Filter stocks to <br/> suit your criteria.</h5>
@@ -159,7 +159,7 @@ function WhyChooseIntraday() {
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero6} />
+                                  <img src={zero6} alt={"Day Trading with Auto Trade via TradingView"}/>
                                   </span>
                                   <h4>Auto Trade via <br/> TradingView</h4>
                                   <h5>Simplify your <br/> trading activities</h5>
