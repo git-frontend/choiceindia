@@ -65,7 +65,7 @@ function IntradayTestinmonial() {
                                         <div className="test-box">
                                             <div className="box-ttl">
                                                 <div className="ttl-img">
-                                                    <img src={img1} className="clnt-img" />
+                                                    <img src={img1} className="clnt-img" alt="Ravi Sharma - Intraday Trader"/>
                                                     <div>
                                                         <h4>Ravi Sharma</h4>
                                                         <h5>Mumbai</h5>
@@ -80,7 +80,7 @@ function IntradayTestinmonial() {
                                     <div className="test-box">
                                             <div className="box-ttl">
                                                 <div className="ttl-img">
-                                                    <img src={img2} className="clnt-img" />
+                                                    <img src={img2} className="clnt-img" alt="Anjali Gupta - Intraday Trader"/>
                                                     <div>
                                                         <h4>Anjali Gupta</h4>
                                                         <h5>Delhi</h5>
@@ -95,7 +95,7 @@ function IntradayTestinmonial() {
                                     <div className="test-box">
                                             <div className="box-ttl">
                                                 <div className="ttl-img">
-                                                    <img src={img3} className="clnt-img" />
+                                                    <img src={img3} className="clnt-img" alt="Suresh Nair - Intraday Trader" />
                                                     <div>
                                                         <h4>Suresh Nair</h4>
                                                         <h5>Chennai</h5>
@@ -110,7 +110,7 @@ function IntradayTestinmonial() {
                                         <div className="test-box">
                                             <div className="box-ttl">
                                                 <div className="ttl-img">
-                                                    <img src={img6} className="clnt-img" />
+                                                    <img src={img6} className="clnt-img" alt="Priya - Intraday Trader" />
                                                     <div>
                                                         <h4>Priya Singh</h4>
                                                         <h5>Kolkata</h5>
@@ -125,7 +125,7 @@ function IntradayTestinmonial() {
                                     <div className="test-box">
                                             <div className="box-ttl">
                                                 <div className="ttl-img">
-                                                    <img src={img5} className="clnt-img" />
+                                                    <img src={img5} className="clnt-img" alt="Amit - Intraday Trader" />
                                                     <div>
                                                         <h4>Amit Patel</h4>
                                                         <h5>Ahmedabad</h5>
@@ -140,7 +140,7 @@ function IntradayTestinmonial() {
                                     <div className="test-box">
                                             <div className="box-ttl">
                                                 <div className="ttl-img">
-                                                    <img src={img4} className="clnt-img" />
+                                                    <img src={img4} className="clnt-img" alt="Vijay Kumar - Intraday Trader" />
                                                     <div>
                                                         <h4>Vijay Kumar</h4>
                                                         <h5>Hyderabad</h5>
@@ -155,7 +155,7 @@ function IntradayTestinmonial() {
                                     <div className="test-box">
                                             <div className="box-ttl">
                                                 <div className="ttl-img">
-                                                    <img src={img7} className="clnt-img" />
+                                                    <img src={img7} className="clnt-img" alt="Meena Gupte - Intraday Trader" />
                                                     <div>
                                                         <h4>Meena Gupte</h4>
                                                         <h5>Pune</h5>
@@ -170,7 +170,7 @@ function IntradayTestinmonial() {
                                     <div className="test-box">
                                             <div className="box-ttl">
                                                 <div className="ttl-img">
-                                                    <img src={img8} className="clnt-img" />
+                                                    <img src={img8} className="clnt-img" alt="Rajesh Agarwal - Intraday Trader" />
                                                     <div>
                                                         <h4>Rajesh Agarwal</h4>
                                                         <h5>Jaipur</h5>
