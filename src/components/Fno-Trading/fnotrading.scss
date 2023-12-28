@@ -780,6 +780,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
         }
         @media (max-width:$md) {
             width: 95%;
+            min-height: 390px;
         }
     }
     .sliders-testimonial{
