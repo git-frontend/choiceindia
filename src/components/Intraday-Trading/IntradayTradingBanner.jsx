@@ -25,7 +25,7 @@ function IntradayTradingBanner() {
                                 <h5>Choice: Preferred by Intraday Traders</h5>
                                 <h1 className="title">Supercharge Your <br/> <span>Intraday</span> Trading</h1>
                                 <p className="para">Maximize your intraday profits with advanced tools and personalized services.</p>
-                                <a href="" className="btn-bg btn-bg-dark btn-new" onClick={() => scrollToId('campaignForm')}>Start Today</a>
+                                <a href="javascript:void(0)" className="btn-bg btn-bg-dark btn-new" onClick={() => scrollToId('campaignForm')}>Start Today</a>
                             </div>
                         </div>
                     </div>

@@ -170,7 +170,7 @@ function WhyChooseIntraday() {
                       </div>
                       
                       <div className="col-md-12 d-flex justify-content-center">
-                            <a href="" className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Experience Now</a>
+                            <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Experience Now</a>
                         </div>
                   </div>
                 </div>
