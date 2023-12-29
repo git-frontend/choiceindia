@@ -71,7 +71,7 @@ function SerachTopFunds() {
                                             filteredData && filteredData.length > 0  ?
                                                 <div className='search-items-sec' >
                                                     {
-                                                        filteredData.map((res, i) => {
+                                                        filteredData.slice(0,38).map((res, i) => {
                                                             return (
                                                                 <div key={res.id} className='search-items'>
                                                                     <Link to={`/top-funds/${res.CategoryURL}`} className="circle">

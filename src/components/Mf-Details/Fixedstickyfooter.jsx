@@ -33,7 +33,8 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
     var source = useRef('');
     var otpSessionID = useRef('');
     const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1)) ? 'Best-Stock' : "Blog";
-    const isMf = ((window.location.pathname.indexOf('top-funds') > -1) || (window.location.pathname.indexOf('amc') > -1)) ? 'yes' : '';
+    const isMF = ((window.location.pathname.indexOf('scheme') > -1) ) ? 'yes' : '';
+    console.log("mf",isMF)
     var otpLeadID = useRef('');
     var referLink = useRef('');
     const [captchaToken, setCaptchaToken] = useState('');
@@ -217,7 +218,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
             // 'sidebar_seo_leads'
             "utm_medium": UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": UTMSource.current || null,
+            "utm_source": isMF == "yes" ? UTMSource.current || 'choice-mf-web':UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
@@ -320,10 +321,10 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
                                 <div className='form-items'>
                                     <div className='shape-yellow'>
                                         <div className='cross-border'></div>
-                                        <h6>Open a Free Demat Account with <br /> Free 1st Year AMC</h6>
+                                        <h6>Invest in Mutual Funds</h6>
                                     </div>
                                 </div>
-
+                               
                                 <div className='form-items check-text-box'>
                                     <div className='form-grp'>
                                         <input type="text" className='form-control' placeholder='Enter Mobile Number' id="mobile_no" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
@@ -344,7 +345,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
 
                                     </div>
                                 </div>
-                                <div className='api_errornew'>
+                                <div className='mf-stickybtn api_errornew'>
                                     <button type="submit" className="form-btn  btn-bg-dark btn-bg" onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
                                     <div><small id="API_error" className="errormsg text-danger api-text-danger">{APIError || ''}</small></div>
                                 </div>
