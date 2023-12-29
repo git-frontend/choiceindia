@@ -2489,6 +2489,18 @@ const meta_tags = {
     'content': "Check out LIVE currency option chain on Choice. Get forex option chain data with real time strike price, analysis, chart, historical data and more.",
     "link": "https://choiceindia.com/currency-option-chain"
   },
+  "campaign/fno-trading": {
+    "title": "F&O Trading - Don't Miss Futures & Options Trading Opportunities",
+    'lang': "en",
+    'content': "Start trading in Futures and Options (F&O) with Choice. Open a free demat account with No AMC for first year, free expert research, low DP & brokerage charges.",
+    "link": "https://choiceindia.com/campaign/fno-trading"
+  },
+  "campaign/intraday-trading": {
+    "title": "Intraday Trading - Maximize Your Day Trading Profits with Choice",
+    'lang': "en",
+    'content': "Start intraday trading with Choice & maximize your intraday profits with advanced tools and personalized services. Open your free demat account now!",
+    "link": "https://choiceindia.com/campaign/fno-trading"
+  },
   "mutual-fund-app": {
     "title": "Choice FinX Mutual Fund App - India's Best App for Mutual Fund Investment",
     'lang': "en",

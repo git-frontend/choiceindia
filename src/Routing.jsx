@@ -190,6 +190,8 @@ const LazyMutualFundCalculator =React.lazy(()=> import('./components/Mutual-Fund
 // const LazyMCXOptionChain =React.lazy(()=> import('./components/MCX-Option-Chain/MCXOptionChain'));
 // const LazyCurrencyOptionChain =React.lazy(()=> import('./components/Currency-Option-Chain/CurrencyOptionChain'));
 const Lazytrackrecords =React.lazy(()=> import('./components/Track-Records/trackRecords'))
+const LazyFnoTrading =React.lazy(()=> import('./components/Fno-Trading/FnoTradings'))
+const LazyIntradayTrading =React.lazy(()=> import('./components/Intraday-Trading/IntradayTradings'))
 const LazyMFApp = React.lazy(() => import('./components/MF-App/MFApp'));
 const LazyTopFundsAMC =React.lazy(()=> import('./components/Top-Funds-AMC/TopFundsAMC'));
 const LazyTopFundsIndia =React.lazy(()=> import('./components/Top-Funds-India/TopFundsIndia'));
@@ -207,7 +209,7 @@ function Routing() {
                 <Remo></Remo>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1  && window.location.pathname.indexOf("/assisted-order-flow") === -1) ? <Header /> : <CampaignHeader />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") && window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1   && window.location.pathname.indexOf("/campaign/fno-trading") === -1 && window.location.pathname.indexOf("/campaign/intraday-trading") === -1)  ? <Header /> : <CampaignHeader />}
                
                 {/* <Header /> */}
                 <div className={ (window.location.pathname.indexOf("/assisted-order-flow") === -1) ? 'App-Body' : 'assist-body'}>
@@ -994,7 +996,17 @@ function Routing() {
                         } /> */}
                         <Route exact path='/track-record-page' element={
                             <React.Suspense>
-                                < Lazytrackrecords />
+                                <Lazytrackrecords />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/campaign/fno-trading' element={
+                            <React.Suspense>
+                                < LazyFnoTrading />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/intraday-trading' element={
+                            <React.Suspense>
+                                <LazyIntradayTrading/>
                             </React.Suspense>
                         } />
                          <Route exact path='/mutual-fund-app' element={
@@ -1030,7 +1042,7 @@ function Routing() {
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/intraday-charges") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 ) ? (window.location.pathname.indexOf("/assisted-order-flow") > -1)? '': <Footer /> : <CampaignFooter />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/intraday-charges") === -1 && window.location.pathname.indexOf("/campaign/fno-trading") && window.location.pathname.indexOf("/campaign/intraday-trading") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 ) ? (window.location.pathname.indexOf("/assisted-order-flow") > -1)? '': <Footer /> : <CampaignFooter />}
             </Router>
         </>
     )
