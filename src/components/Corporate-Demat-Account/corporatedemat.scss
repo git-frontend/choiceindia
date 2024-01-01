@@ -1,0 +1,287 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.Corporate-main {
+    .corporate-banner {
+        margin-top: 12rem;
+        margin-bottom: 6rem;
+
+        .corporate-banner-headings {
+            .para-first {
+                font-family: $font-family-poppins-semibold;
+                font-size: 2rem;
+                line-height: 3;
+                color: $darkblack;
+                margin: 0;
+
+                @media (max-width:$sm) {
+                    font-size: 1.231rem;
+                    line-height: 1.5;
+                }
+            }
+
+            .title {
+                font-size: 4.923rem;
+                line-height: 1.3;
+                color: $primary;
+                font-family: $font-family-poppins-bold;
+
+                @media (max-width:$sm) {
+                    font-size: 3.077rem;
+                    line-height: 1.3;
+                }
+
+                span {
+                    color: $yellowColor;
+                    text-transform: capitalize;
+                    display: block;
+                    font-size: 7.077rem;
+
+                    @media (max-width:$sm) {
+                        font-size: 3.385rem;
+                        line-height: 1;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+
+            .para-scnd {
+                font-size: 1.846rem;
+                line-height: 1.4;
+                color: $darkblack;
+                font-family: $font-family-poppins-regular;
+                margin: 5rem 0rem;
+
+                @media (max-width:$sm) {
+                    font-size: 1.077rem;
+                    margin: 2rem 0rem;
+                    line-height: 1.4;
+                }
+
+
+            }
+
+            .btn-new {
+                font-size: 1.846rem !important;
+                background: $darkblack !important;
+                color: $whiteColor !important;
+                padding: 1.2rem 3.07rem !important;
+                border-radius: 12px !important;
+                font-family: $font-family-poppins-medium !important;
+
+                @media (max-width:$sm) {
+                    font-size: 1.385rem !important;
+                    padding: 1.6rem 3.07rem !important;
+                    border-radius: 10px !important;
+                }
+
+                &:hover {
+                    background: $yellowColor !important;
+                    color: $darkblack !important;
+                }
+            }
+        }
+
+        .banner-img {
+            img {
+                @media (max-width:$sm) {
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+    .count-members {
+        background: $bgcolordark;
+
+        .inner-count {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+
+            @media (max-width:$sm) {
+                margin-top: 0;
+                justify-content: space-between;
+            }
+
+            .count-itm {
+                width: 33.33%;
+                text-align: center;
+                padding: 3.846rem 3rem;
+                border-right: 0;
+                position: relative;
+
+                @media (max-width:$sm) {
+                    padding: 1.5rem 1.3rem;
+                    width: 28%;
+                }
+
+                &::before {
+                    content: '';
+                    width: 2px;
+                    height: 70%;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    border: 0;
+                    border-image-source: linear-gradient(180deg, rgba(247, 173, 54, 0) 0%, rgba(247, 173, 54, 0.3) 48.66%, rgba(247, 173, 54, 0) 100%);
+                    background: linear-gradient(180deg, rgba(247, 173, 54, 0) 0%, rgba(247, 173, 54, 0.3) 48.66%, rgba(247, 173, 54, 0) 100%);
+                    transform: translate(0, -50%);
+                }
+
+                &:first-child {
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                h3 {
+                    font-size: 3.231rem;
+                    color: $whiteColor;
+                    font-family: $font-family-poppins-semibold;
+
+                    @media (max-width:$sm) {
+                        font-size: 2rem;
+                    }
+                }
+
+                h5 {
+                    color: $whiteColor;
+                    font-family: $font-family-poppins-medium;
+                    font-size: 1.692rem;
+                    margin: 0;
+
+                    @media (max-width:$sm) {
+                        font-size: 1rem;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+    }
+
+    .why-corporate-account {
+        background-color: $abt-bg;
+        padding: 8rem 0rem;
+
+        .why-corporate-heading {
+            font-size: 3.462rem;
+            font-family: $font-family-poppins-semibold;
+            color: $darkblack;
+
+            .title-secnd {
+                margin-bottom: 4rem;
+            }
+        }
+
+        .why-corporate-para1 {
+            text-align: center;
+            font-size: 1.846rem;
+            line-height: 1.4;
+            color: $darkblack;
+            font-family: $font-family-poppins-regular;
+
+            @media (max-width:$sm) {
+                text-align: left;
+                font-size: 1.077rem;
+            }
+
+            br {
+                @media (max-width:$sm) {
+                    display: none;
+                }
+            }
+
+            &.para2 {
+                padding: 2.5rem 0rem;
+
+                @media (max-width:$sm) {
+                    display: none;
+                }
+            }
+        }
+
+        .list-section {
+            margin: 5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+
+            @media (max-width:$sm) {
+                display: block;
+                margin-top: 2rem;
+            }
+
+            .slick-list {
+                @media (max-width:$sm) {
+                    width: 140vw;
+                }
+            }
+
+            .list-itm {
+                text-align: center;
+                background: $whiteColor;
+                border-radius: 16px;
+                padding: 3rem 2rem;
+                display: block !important;
+                width: 31%;
+                margin: 0 auto 2rem;
+                box-shadow: 0 0 8px $card-shadow;
+
+                @media (max-width:$md) {
+                    padding: 2rem;
+                }
+
+                @media (max-width:$sm) {
+                    width: 90% !important;
+                    min-height: 20rem;
+                    padding: 2rem 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                >span {
+                    display: inline-block;
+                    margin: 0 auto;
+
+                    img {
+                        height: 56px;
+                    }
+                }
+
+                h4 {
+                    font-size: 1.692rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-semibold;
+                    margin: 1.25rem 0;
+
+                    @media (max-width:$sm) {
+                        font-size: 1.667rem;
+                    }
+                }
+
+                h5 {
+                    margin: 0;
+                    font-size: 1.385rem;
+                    line-height: 1.5;
+                }
+
+                @media (min-width:$sm-x) {
+                    font-size: 1.667rem;
+
+                    &:nth-child(4) {
+                        margin: 0 2rem 2rem auto;
+                    }
+
+                    &:nth-child(5) {
+                        margin: 0 auto 2rem 2rem;
+                    }
+                }
+            }
+
+            .slick-dots {
+                position: relative;
+            }
+        }
+    }
+}

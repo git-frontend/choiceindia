@@ -198,6 +198,7 @@ const LazyTopFundsIndia =React.lazy(()=> import('./components/Top-Funds-India/To
 const LazyMFDetails =React.lazy(()=> import('./components/Mf-Details/MFDetails'));
 const LazyAMCDetails =React.lazy(()=> import('./components/AMC-Details/AMCDetails'));
 const LazyELSSDetails =React.lazy(()=> import('./components/ELSS-MF-Details/ELSSDetails'));
+const LazyCorporateDematAc =React.lazy(()=> import('./components/Corporate-Demat-Account/CorporateDematAc'));
 
 function Routing() {
 
@@ -1037,6 +1038,11 @@ function Routing() {
                         <Route exact path='/top-funds/:id' element={
                             <React.Suspense>
                                  < LazyELSSDetails />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/open-corporate-Demat' element={
+                            <React.Suspense>
+                                 < LazyCorporateDematAc />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
