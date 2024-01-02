@@ -173,6 +173,7 @@
 
             .title-secnd {
                 margin-bottom: 4rem;
+
                 @media (max-width:$sm) {
                     margin-bottom: 2rem;
                     text-align: left;
@@ -219,7 +220,7 @@
 
             .slick-list {
                 @media (max-width:$sm) {
-                    width: 190vw;
+                    width: 100%;
                 }
             }
 
@@ -281,12 +282,14 @@
                         margin: 0 auto 2rem 1rem;
                     }
                 }
+
                 &:hover {
                     // box-shadow: 0 0 8px $card-shadow;
                     background: $whiteColor;
                     box-shadow: 0px 0px 20px 0px #0066B340;
                     border: none;
                     border-bottom: 8px solid $blueColortext;
+
                     @media (max-width:$sm) {
                         box-shadow: 0px 0px 10px 0px #0000001F;
                         border-bottom: none;
@@ -297,6 +300,131 @@
             .slick-dots {
                 position: relative;
                 bottom: -11px
+            }
+        }
+    }
+
+    .types-of-corporate {
+        background-color: $whiteColor;
+        padding: 8rem 0rem;
+
+        .types-list-section {
+            margin: 4rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .types-list-itm {
+                background: $abt-bg;
+                text-align: center;
+                border-radius: 20px;
+                padding: 3rem 3rem;
+                display: block !important;
+                // width: 30%;
+                margin: auto 1rem;
+                border-bottom: 8px solid $blueColortext;
+
+                @media (max-width:$sm) {
+                    margin: 2rem auto;
+                }
+
+                h4 {
+                    color: $darkblack;
+                    font-size: 2.462rem;
+                    font-family: $font-family-poppins-semibold;
+                    margin: 1.25rem 0;
+
+                }
+
+            }
+        }
+
+    }
+
+    .corporate-sticky {
+        background-color: $bgcolordark;
+        padding: 4rem 0rem;
+
+        .corporate-sticky-heading {
+            font-size: 4.308rem;
+            font-family: $font-family-poppins-semibold;
+            color: $whiteColor;
+
+            @media (max-width:$sm) {
+                font-size: 2.154rem;
+                text-align: center;
+            }
+
+            span {
+                color: $bgcolor-yellow;
+                display: block;
+            }
+        }
+
+        .form_main {
+            flex-direction: row;
+            // justify-content: space-between;
+            display: flex;
+            padding: 0rem 0rem;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+
+            .demat_text {
+                width: 100%;
+                margin-bottom: 3rem;
+
+                @media (max-width:$sm) {
+                    text-align: center;
+                    margin-top: 2rem;
+                }
+
+                .form-ttl {
+                    color: $whiteColor;
+                    font-size: 2.4rem;
+                    @media (max-width:$sm) {
+                        font-size: 1.8rem;
+                    }
+
+                }
+            }
+
+            .Mobile_text {
+                width: 45%;
+                margin-right: 3rem;
+
+                .form-textbox {
+                    background-color: $whiteColor;
+                    border-radius: 0.615rem;
+                    border: 1px solid rgba(35, 31, 32, 0.1411764706);
+                    padding: 16px;
+                    width: 100%;
+                }
+            }
+
+            .cust_check {
+                position: absolute;
+                bottom: -28px;
+                left: 0;
+
+                .form_check_text {
+                    color: $whiteColor;
+                    font-size: 1.231rem;
+
+                    .link_tc {
+                        color: $blueColortext;
+                    }
+                }
+
+                input[type=checkbox] {
+                    background-color: $whiteColor !important;
+
+                }
+            }
+
+            .api_errornew {
+                width: 45%;
+                text-align: right;
             }
         }
     }

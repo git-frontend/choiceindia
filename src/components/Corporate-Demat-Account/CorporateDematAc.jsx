@@ -6,6 +6,9 @@ import meta_tags from "../../Data/MetaTags";
 import CorporateBanner from "./CorporateBanner";
 import CorporateCount from './CorporateCount';
 import WhyCorporateDemat from './WhyCorporateDemat';
+import TypesofCorporate from './TypesofCorporate';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 function CorporateDematAc() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -35,7 +38,27 @@ function CorporateDematAc() {
       <div className="Corporate-main">
         <CorporateBanner />
         <CorporateCount />
-        <WhyCorporateDemat/>
+        <WhyCorporateDemat />
+        <TypesofCorporate />
+        <section className="corporate-sticky">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-7">
+                <div className="corporate-sticky-heading">Get Started with<span>Portfolio Management</span>
+                </div>
+              </div>
+              <div className="col-md-5">
+                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
+                  <div id="dematformsticky">
+                    <OpenDemateAccountStickyFooter />
+                  </div>
+                </GoogleReCaptchaProvider>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
       </div>
     </>
   );

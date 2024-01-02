@@ -25,10 +25,10 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     var UTMContent = useRef('');
     var refercode = useRef('');
     var subrefercode = useRef('');
-    const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
+    const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     var source = useRef('');
     var otpSessionID = useRef('');
-    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1)||(window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('nse-holidays') > -1)||(window.location.pathname.indexOf('bse-holidays') > -1)||(window.location.pathname.indexOf('mcx-ncdex-holidays') > -1)||(window.location.pathname.indexOf('stock-market-holidays') > -1)||(window.location.pathname.indexOf('upcoming-agm') > -1)||(window.location.pathname.indexOf('upcoming-board-meeting') > -1)||(window.location.pathname.indexOf('upcoming-bonus-shares') > -1)||(window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1)||(window.location.pathname.indexOf('upcoming-stock-splits') > -1)||(window.location.pathname.indexOf('upcoming-rights-issue') > -1) ) ? 'Best-Stock' : "Blog";
+    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1) || (window.location.pathname.indexOf('open-corporate-Demat') > -1)) ? 'Best-Stock' : "Blog";
 
     var otpLeadID = useRef('');
     var referLink = useRef('');
@@ -45,11 +45,11 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
 
     const [otperror, setOTPErrors] = useState();
 
-      /**variable for loaders */
-  const [consentLoaders, setConsentLoaders] = useState({
-    consentYesLoader: false,
-    consentNoLoader: false
-  });
+    /**variable for loaders */
+    const [consentLoaders, setConsentLoaders] = useState({
+        consentYesLoader: false,
+        consentNoLoader: false
+    });
 
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
@@ -69,16 +69,16 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     }
 
     function chapterScroll1(id) {
-        console.log("check",id);
+        console.log("check", id);
         var element = document.getElementById(id);
         var headerOffset = 140;
         var elementPosition = element.getBoundingClientRect().top;
         var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
+            top: offsetPosition,
+            behavior: "smooth"
         });
-      }
+    }
 
     function handleTermsConditionShow() {
         setShowTermsCondition(true);
@@ -109,36 +109,36 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     function handleOTPClose(link, msg, onboardFlag, actionType, leadID) {
         //   console.log('CCMMM', link, msg);
         setShowOTP(false);
-        if(actionType != 'popup_and_no_update'){
-        if (link) {
+        if (actionType != 'popup_and_no_update') {
+            if (link) {
 
-            let result = link.match("respond-issue");
-            if (result && result.length && result[0] === 'respond-issue') {
-                setIsIssue(() => link);
+                let result = link.match("respond-issue");
+                if (result && result.length && result[0] === 'respond-issue') {
+                    setIsIssue(() => link);
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', closeMd: closeModal }
+                    });
+                } else {
+                    if (link._reactName) {
+                        setShowThanku(prevState => {
+                            return { ...prevState, showModal: false, redirectionLink: link, resText: msg ? msg : '', closeMd: closeModal }
+                        });
+                    } else {
+                        setShowThanku(prevState => {
+                            return { ...prevState, showModal: true, redirectionLink: link, resText: msg ? msg : '', closeMd: closeModal }
+                        });
+                    }
+                }
+            } else {
                 setShowThanku(prevState => {
                     return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', closeMd: closeModal }
                 });
-            } else {
-                if (link._reactName) {
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: false, redirectionLink: link, resText: msg ? msg : '', closeMd: closeModal }
-                    });
-                } else {
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: true, redirectionLink: link, resText: msg ? msg : '', closeMd: closeModal }
-                    });
-                }
             }
         } else {
-            setShowThanku(prevState => {
-                return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', closeMd: closeModal }
-            });
+            referLink.current = link ? link : null;
+            otpLeadID.current = leadID ? leadID : null;
+            setShowConsent(() => true)
         }
-    }else{
-        referLink.current = link? link : null;
-        otpLeadID.current = leadID? leadID : null;
-        setShowConsent(() => true)
-    }
     }
 
 
@@ -165,46 +165,46 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     }
 
     function handleSendOTP(e) {
-        if(mobileNumber && mobileNumber < 10 && !mobileRegex.test(mobileNumber)){
+        if (mobileNumber && mobileNumber < 10 && !mobileRegex.test(mobileNumber)) {
             setErrors({
                 ...errors,
                 'invalidMobile': true
             });
 
-        }else{
-             fetchQueryParams();
-        // sendOTP();
-        handleReCaptchaVerify();
+        } else {
+            fetchQueryParams();
+            // sendOTP();
+            handleReCaptchaVerify();
 
         }
-       
+
     }
 
     function sendOTP() {
         showLoader('sendOTPLoader');
         let request = {
-            "whatsapp_consent":true,
+            "whatsapp_consent": true,
             "service_code": "JF",
             "mobile_number": mobileNumber,
             "product": "FINX",
             "request_source": "CHOICEINDIA",
-            "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
+            "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": subrefercode.current || null,
-           /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
+            /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
-            "utm_campaign": isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || null,
+            "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || null,
             "utm_content": UTMContent.current || null,
-            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
+            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/', ''),
             // 'sidebar_seo_leads'
-            "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
+            "utm_medium": isBlog == "yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": isBlog =="yes" ?UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
+            "utm_source": isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
-            "account_type" :"all"
+            "account_type": "all"
             // "captcha": "1"
         }
         openAccountService.sendOTP(request).then((res) => {
@@ -230,61 +230,61 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         fetchQueryParams();
     }, []);
 
-        // Create an event handler so you can call the verification on button click event or form submit
-        const handleReCaptchaVerify = useCallback(async () => {
-            if (!executeRecaptcha) {
-                return;
-            }
-            showLoader('sendOTPLoader');
-            const token = await executeRecaptcha('sendOTP');
-            // Do whatever you want with the token
-            // sendOTP();
-            if (token) {
-                setCaptchaToken(token);
-                // alert("Token : "+token);
-            }
-            hideLoader('sendOTPLoader');
-        }, [executeRecaptcha]);
-    
-        useEffect(() => {
-            if (captchaToken) {
-                sendOTP();
-            }
-        }, [captchaToken]);
+    // Create an event handler so you can call the verification on button click event or form submit
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) {
+            return;
+        }
+        showLoader('sendOTPLoader');
+        const token = await executeRecaptcha('sendOTP');
+        // Do whatever you want with the token
+        // sendOTP();
+        if (token) {
+            setCaptchaToken(token);
+            // alert("Token : "+token);
+        }
+        hideLoader('sendOTPLoader');
+    }, [executeRecaptcha]);
 
-            /**on click no consent */
-    function submitConsent(consent){
+    useEffect(() => {
+        if (captchaToken) {
+            sendOTP();
+        }
+    }, [captchaToken]);
+
+    /**on click no consent */
+    function submitConsent(consent) {
 
         setOTPErrors(null);
-        if(consent == 'yes'){
-            setConsentLoaders({...consentLoaders, consentYesLoader: true, consentNoLoader: false});
-        }else{
-            setConsentLoaders({...consentLoaders, consentYesLoader: false, consentNoLoader: true});
+        if (consent == 'yes') {
+            setConsentLoaders({ ...consentLoaders, consentYesLoader: true, consentNoLoader: false });
+        } else {
+            setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: true });
         }
-        
+
         let request = {
             "mobile_number": null,
             otp: null,
             session_id: null,
-            is_consent: consent? consent : null,
-            lid: otpLeadID.current? otpLeadID.current : null
+            is_consent: consent ? consent : null,
+            lid: otpLeadID.current ? otpLeadID.current : null
         };
-        
+
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
-                setConsentLoaders({...consentLoaders, consentYesLoader: false, consentNoLoader: false});
-                console.log('Success',res);
-                if(consent == "yes"){
-                    window.location.href = referLink? referLink: null;
-                }else{
+                setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+                console.log('Success', res);
+                if (consent == "yes") {
+                    window.location.href = referLink ? referLink : null;
+                } else {
                     setShowConsent(false)
                 }
             } else {
-                setConsentLoaders({...consentLoaders, consentYesLoader: false, consentNoLoader: false});
+                setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
                 // setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something Went Wrong');
             }
         }).catch((error) => {
-            setConsentLoaders({...consentLoaders, consentYesLoader: false, consentNoLoader: false});
+            setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
             if (error && error.response && error.response.data && error.response.data.Message) {
                 // setOTPErrors(error.response.data.Message);
                 // setMobileNumber('')
@@ -303,40 +303,65 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                         <div className="container">
                             <div className="form_main ">
                                 {
-                                  window.location.pathname.indexOf('best-stocks-for-long-term-investment')==1
-                                  ?
-                                  <div className=" demat_text"><span className="form-ttl">Get the Stocks for Achieving<br /> Your Long Term Goals!</span>
-                                  </div>:
-                                   window.location.pathname.indexOf('best-stocks-to-buy')==1
-                                   ?<div className=" demat_text"><span className="form-ttl">Maximize your portfolio's potential<br /> with the best stocks handpicked <br /> by our expert analysts.</span>
-                                   </div> :
-                                    window.location.pathname.indexOf('best-intraday-stocks-to-buy')==1
-                                    ?<div className=" demat_text"><span className="form-ttl">Get Daily Intraday Stocks from<br /> Our Research Experts.</span>
-                                    </div>:
-                                     window.location.pathname.indexOf('best-short-term-stocks-to-buy')==1
-                                     ?<div className=" demat_text"><span className="form-ttl">Accelerate your portfolio's growth<br /> today with our dynamic<br/> short-term stock picks!</span>
-                                     </div>
-                                  :                               
-                                <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
+                                    window.location.pathname.indexOf('best-stocks-for-long-term-investment') == 1
+                                        ?
+                                        <div className=" demat_text"><span className="form-ttl">Get the Stocks for Achieving<br /> Your Long Term Goals!</span>
+                                        </div> :
+                                        window.location.pathname.indexOf('best-stocks-to-buy') == 1
+                                            ? <div className=" demat_text"><span className="form-ttl">Maximize your portfolio's potential<br /> with the best stocks handpicked <br /> by our expert analysts.</span>
+                                            </div> :
+                                            window.location.pathname.indexOf('best-intraday-stocks-to-buy') == 1
+                                                ? <div className=" demat_text"><span className="form-ttl">Get Daily Intraday Stocks from<br /> Our Research Experts.</span>
+                                                </div> :
+                                                window.location.pathname.indexOf('best-short-term-stocks-to-buy') == 1
+                                                    ? <div className=" demat_text"><span className="form-ttl">Accelerate your portfolio's growth<br /> today with our dynamic<br /> short-term stock picks!</span>
+                                                    </div> :
+                                                    window.location.pathname.indexOf('open-corporate-Demat') == 1
+                                                        ? <div className=" demat_text"><span className="form-ttl">Open Corporate Demat Account</span>
+                                                        </div>
+                                                        :
+                                                        <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
                                 }
-                                <div className="  Mobile_text">
-                                    <input type="text"  className="form-textbox" id="mobile_no" name="mobile_no" placeholder='Mobile Number' autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
-                                    {/* <label htmlFor="form-email" className="form-label" >Mobile Number</label> */}
-                                    <div>
-                                        <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
-                                    </div>
-                                </div>
-                                <div className="  cust_check">
-                                    <input type="checkbox" className="form_check" id="terms_and_conditions" checked readOnly />
-                                    <label className="form_check_text">I agree that I have read and  accept<br /> the <a  onClick={handleTermsConditionShow}><span className="link_tc">Terms and Conditions</span></a></label>
-                                </div>
+                                {
+                                    window.location.pathname.indexOf('open-corporate-Demat') == 1
+                                        ?
+                                        <div className="  Mobile_text">
+                                            <input type="text" className="form-textbox" id="mobile_no" name="mobile_no" placeholder='Mobile Number' autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
+                                            {/* <label htmlFor="form-email" className="form-label" >Mobile Number</label> */}
+                                            <div>
+                                                <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
+                                            </div>
+                                        </div>
+                                        : <div className="  Mobile_text">
+                                            <input type="text" className="form-textbox" id="mobile_no" name="mobile_no" placeholder='Mobile Number' autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
+                                            {/* <label htmlFor="form-email" className="form-label" >Mobile Number</label> */}
+                                            <div>
+                                                <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
+                                            </div>
+                                        </div>
+
+                                }
+                                {
+                                    window.location.pathname.indexOf('open-corporate-Demat') == 1
+                                        ?
+                                        <div className="  cust_check">
+                                            <input type="checkbox" className="form_check" id="terms_and_conditions" checked readOnly />
+                                            <label className="form_check_text">I agree &amp; accept <a onClick={handleTermsConditionShow}><span className="link_tc">T&amp;C</span></a></label>
+                                        </div>
+                                        :
+                                        <div className="  cust_check">
+                                            <input type="checkbox" className="form_check" id="terms_and_conditions" checked readOnly />
+                                            <label className="form_check_text">I agree that I have read and  accept<br /> the <a onClick={handleTermsConditionShow}><span className="link_tc">Terms and Conditions</span></a></label>
+                                        </div>
+                                }
+
                                 <div className='api_errornew'>
-                                <button type="submit" className="form-btn  btn-bg-dark btn-bg"  onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
-                                <div><small id="API_error" className="errormsg text-danger api-text-danger">{APIError || ''}</small></div>
+                                    <button type="submit" className="form-btn  btn-bg-dark btn-bg" onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+                                    <div><small id="API_error" className="errormsg text-danger api-text-danger">{APIError || ''}</small></div>
                                 </div>
                                 {/* <button type="submit" className=" OPt_item sub_group btnsub"><span className="send_OPT_btn" >Send OTP</span></button> */}
-                               
-                                                
+
+
                                 {/* <div className=" OPt_item sub_group"><a href="/" ><span className="send_OPT_btn" >Send OTP</span></a></div> */}
                             </div>
                         </div>
@@ -351,36 +376,36 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                 {/* ? */}
                                 {/* <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={()=>{chapterScroll1  ('dematform')}}>Open Free Account</button> */}
                                 {/* : */}
-                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Open Free Account</button> 
+                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Open Free Account</button>
                                 {/* } */}
                             </div>
                             <section className="stickybottom">
                                 <div className="container mx-auto">
-                                        <form className="d-flex justify-content-between align-items-center">
-                                            <div className='form-group'>
-                                                <h2 className="text">Open <span>100% Free</span> Demat Account + <br/><span>Free</span> First Year <span>AMC</span></h2>
-                                            </div>
-                                            <div className="form-group ">
-                                                <input type="text" className="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder="Mobile Number*" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
+                                    <form className="d-flex justify-content-between align-items-center">
+                                        <div className='form-group'>
+                                            <h2 className="text">Open <span>100% Free</span> Demat Account + <br /><span>Free</span> First Year <span>AMC</span></h2>
+                                        </div>
+                                        <div className="form-group ">
+                                            <input type="text" className="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder="Mobile Number*" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
 
-                                                <div>
-                                                    <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
+                                            <div>
+                                                <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
+                                            </div>
+                                        </div>
+                                        <div className="form-group tnc d-flex align-items-top align-items-top-check">
+                                            <label>
+                                                <input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
+                                            </label>
+                                            <div className="termcon termcon1 ">
+                                                <div> I agree &amp; accept <a className="tc" onClick={handleTermsConditionShow}>T&amp;C</a>
                                                 </div>
                                             </div>
-                                            <div className="form-group tnc d-flex align-items-top align-items-top-check">
-                                                <label>
-                                                    <input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
-                                                </label>
-                                                <div className="termcon termcon1 ">
-                                                    <div> I agree &amp; accept <a className="tc" onClick={handleTermsConditionShow}>T&amp;C</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="form-group">
-                                                <button type="submit" className="form-btn sendotp btn-bg btn-bg-dark" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
-                                                
-                                            </div>
-                                        </form>
+                                        </div>
+                                        <div className="form-group">
+                                            <button type="submit" className="form-btn sendotp btn-bg btn-bg-dark" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+
+                                        </div>
+                                    </form>
                                 </div>
 
                             </section>
@@ -443,8 +468,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                             } </button>
                                     </div>
                                     {
-                                       otperror?
-                                       <span class="text-danger">{otperror}</span> : ''  
+                                        otperror ?
+                                            <span class="text-danger">{otperror}</span> : ''
                                     }
                                 </div>
                             </div>
