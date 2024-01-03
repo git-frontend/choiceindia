@@ -2,157 +2,161 @@ const holidaylist=[
     {
         "id":1,
         "holidayName":"New Year Day",
-        "date":"January 01, 2023",
+        "date":"January 01, 2024",
         "month":"January",
-        "day":"Sunday",
+        "day":"Monday",
     },
     {
         "id":2,
         "holidayName":"Republic Day",
-        "date":"January 26, 2023",
+        "date":"January 26, 2024",
         "month":"January",
-        "day":"Thursday",
+        "day":"Friday",
         "title":"nsebse"
     },
     {
         "id":3,
         "holidayName":"Mahashivratri",
-        "date":"February 18, 2023",
-        "month":"February",
-        "day":"Saturday"
+        "date":"March 08, 2024",
+        "month":"March",
+        "day":"Friday",
+        "title":"nsebse"
     },
     {
         "id":4,
         "holidayName":"Holi",
-        "date":"March 07, 2023",
+        "date":"March 25, 2024",
         "month":"March",
-        "day":"Wednesday",
+        "day":"Monday",
         "title":"nsebse"
     },
     {
         "id":5,
-        "holidayName":"Ram Navami",
-        "date":"March 30, 2023",
+        "holidayName":"Good Friday",
+        "date":"March 29, 2024",
         "month":"March",
-        "day":"Thursday",
+        "day":"Friday",
         "title":"nsebse"
     },
     {
         "id":6,
-        "holidayName":"Mahavir Jayanti",
-        "date":"April 04, 2023",
+        "holidayName":"Id-UI-Fitr (Ramzan Id)",
+        "date":"April 11, 2024",
         "month":"April",
-        "day":"Tuesday",
+        "day":"Thursday",
         "title":"nsebse"
     },
     {
         "id":7,
-        "holidayName":"Good Friday",
-        "date":"April 07, 2023",
+        "holidayName":"Dr. Baba Saheb Ambedkar Jayanti",
+        "date":"April 14, 2024",
         "month":"April",
-        "day":"Friday",
-        "title":"nsebse"
+        "day":"Sunday"
+       
     },
     {
         "id":8,
-        "holidayName":"Dr. Baba Saheb Ambedkar Jayanti",
-        "date":"April 14, 2023",
+        "holidayName":"Shri Ram Navmi",
+        "date":"April 17, 2024",
         "month":"April",
-        "day":"Friday",
+        "day":"Wednesday",
         "title":"nsebse"
     },
     {
         "id":9,
-        "holidayName":"Id-UI-Fitr (Ramzan Id)",
-        "date":"April 22, 2023",
+        "holidayName":"Shri Mahavir Jayanti",
+        "date":"April 21, 2024",
         "month":"April",
-        "day":"Saturday"
+        "day":"Sunday"
     },
+    
     {
         "id":10,
         "holidayName":"Maharashtra Day",
-        "date":"May 01, 2023",
+        "date":"May 01, 2024",
         "month":"May",
-        "day":"Monday",
+        "day":"Wednesday",
         "title":"nsebse"
     },
     {
         "id":11,
         "holidayName":"Bakri Eid",
-        "date":"June 28, 2023",
+        "date":"June 17, 2024",
         "month":"June",
-        "day":"Wednesday",
+        "day":"Monday",
         "title":"nsebse"
     },
     {
         "id":12,
         "holidayName":"Muharram",
-        "date":"July 29, 2023",
+        "date":"July 17, 2024",
         "month":"July",
-        "day":"Saturday"
+        "day":"Wednesday", 
+        "title":"nsebse"
     },
     {
         "id":13,
         "holidayName":"Independence Day",
-        "date":"August 15, 2023",
+        "date":"August 15, 2024",
         "month":"August",
-        "day":"Tuesday",
+        "day":"Thursday",
         "title":"nsebse"
     },
     {
         "id":14,
         "holidayName":"Ganesh Chaturthi",
-        "date":"September  19, 2023",
+        "date":"September 07, 2024",
         "month":"September",
-        "day":"Tuesday",
-        "title":"nsebse"
+        "day":"Saturday",
+        
     },
     {
         "id":15,
         "holidayName":"Mahatma Gandhi Jayanti",
-        "date":"October 02, 2023",
+        "date":"October 02, 2024",
         "month":"October",
-        "day":"Monday",
+        "day":"Wednesday",
         "title":"nsebse"
     },
     {
         "id":16,
         "holidayName":"Dussehra",
-        "date":"October 24, 2023",
+        "date":"October 12, 2024",
         "month":"October",
-        "day":"Tuesday",
-        "title":"nsebse"
+        "day":"Saturday",
+        
     },
     {
         "id":17,
         "holidayName":"Diwali Laxmi Pujan",
-        "date":"November 12, 2023",
+        "date":"November 01, 2024",
         "month":"November",
-        "day":"Sunday"
+        "day":"Friday",
+        "title":"nsebse"
     },
     {
         "id":18,
         "holidayName":"Diwali-Balipratipada",
-        "date":"November 14, 2023",
+        "date":"November 02, 2024",
         "month":"November",
-        "day":"Tuesday",
-        "title":"nsebse"
+        "day":"Saturday",
+        
     },
     {
         "id":19,
         "holidayName":"Gurunanak Jayanti",
-        "date":"November 27, 2023",
+        "date":"November 15, 2024",
         "month":"November",
-        "day":"Monday",
+        "day":"Friday",
         "title":"nsebse"
     }
     ,
     {
         "id":20,
         "holidayName":"Christmas",
-        "date":"December 25, 2023",
+        "date":"December 25, 2024",
         "month":"December",
-        "day":"Monday",
+        "day":"Wednesday",
         "title":"nsebse"
     }
 
