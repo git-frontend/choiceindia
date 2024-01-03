@@ -370,6 +370,11 @@
             flex-wrap: wrap;
             position: relative;
 
+            @media (max-width:$sm) {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .demat_text {
                 width: 100%;
                 margin-bottom: 3rem;
@@ -382,6 +387,7 @@
                 .form-ttl {
                     color: $whiteColor;
                     font-size: 2.4rem;
+
                     @media (max-width:$sm) {
                         font-size: 1.8rem;
                     }
@@ -392,6 +398,16 @@
             .Mobile_text {
                 width: 45%;
                 margin-right: 3rem;
+
+                @media (min-width:$sm-x) and (max-width:$md) {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-bottom: 3rem;
+                }
+                @media (max-width:$sm) {
+                    margin-right: 0;
+                    width: 70%;
+                }
 
                 .form-textbox {
                     background-color: $whiteColor;
@@ -406,6 +422,14 @@
                 position: absolute;
                 bottom: -28px;
                 left: 0;
+                @media (min-width:$sm-x) and (max-width:$md) {
+                    left: 0;
+                    bottom: 33%;
+                }
+                @media (max-width:$sm) {
+                    top: 59%;
+                    left: 53px;
+                }
 
                 .form_check_text {
                     color: $whiteColor;
@@ -425,6 +449,25 @@
             .api_errornew {
                 width: 45%;
                 text-align: right;
+                @media (min-width:$sm-x) and (max-width:$md) {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 3rem;
+                }
+                @media (max-width:$sm) {
+                    text-align: center;
+                    width: 70%;
+                    margin-top: 6rem;
+                }
+
+                .btn-bg {
+                    @media (min-width:$sm-x) and (max-width:$md) {
+                        min-width: 22rem !important;
+                    }
+                    @media (max-width:$sm) {
+                        min-width: 20rem !important;
+                    }
+                }
             }
         }
     }
