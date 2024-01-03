@@ -618,14 +618,14 @@ function Holidayscategory() {
                               <h3 className="third-heading-para">Indian Stock Market Holidays 2024</h3>
                               Here are the details of all the holidays that you will come across in the annual year 2024:
                               <h4 className="fourth-heading-para">1. Republic Day – 26th January 2024</h4>
-                              <strong>Day: Thursday</strong>
+                              <strong>Day: Friday</strong>
                               <br /><br />
                               Republic Day is one of the most vibrant national festivals. It is the first day in the list of <strong>stock market holidays 2024 </strong>and has several astounding reasons for celebration.
                               <br /><br />
                               On this day, you can witness the national parade at Janpath and the extravagant display of the Indian army.
 
-                              <h4 className="fourth-heading-para">2. Holi – 07th March 2024</h4>
-                              <strong>Day: Tuesday</strong>
+                              <h4 className="fourth-heading-para">2. Holi – 25th March 2024</h4>
+                              <strong>Day: Monday</strong>
                               <br /><br />
                               The festival of colors marks one of the important <strong>share market holidays 2024.</strong> It is a Hindu festival that holds prominence in the annual calendar.
                               <br /><br />
@@ -642,7 +642,7 @@ function Holidayscategory() {
                               This Jain festival celebrates the birth of lord Mahavir. On this day, people observe peace and spread the teachings of the last Tirthankara of avasarpini.
                               <br /><br />
                               It is a vital holiday, especially for people who practice Jainism.
-                              <h4 className="fourth-heading-para">5. Good Friday – 07th April 2024</h4>
+                              <h4 className="fourth-heading-para">5. Good Friday – 29th March 2024</h4>
                               <strong>Day: Friday</strong>
                               <br /><br />
                               This gazetted holiday honors the life of Jesus Christ. It commemorates Jesus's crucifixion and his final hours before the same.
@@ -740,13 +740,13 @@ function Holidayscategory() {
                             <h4 className="fourth-heading-para">1. Republic Day</h4>
                             <strong>Date: </strong> 26th January
                             <br/>
-                            <strong>Day: </strong>Thursday
+                            <strong>Day: </strong>Friday
                             <br/><br/>
                             One of the first NSE holidays is Republic Day. This holiday marks the date on which the Constitution of India finally came into effect. Replacing the Government of India Act 1935 as the nation’s governing document, this was a direct representation of the country’s sovereign status.
                             <h4 className="fourth-heading-para">2. Holi</h4>
-                            <strong>Date: </strong>7th March
+                            <strong>Date: </strong>25th March
                             <br/>
-                            <strong>Day:</strong> Tuesday	
+                            <strong>Day:</strong> Monday	
                             <br/><br/>
                             Stemming from ancient Hindu traditions, Holi marks the beginning of spring and is believed to symbolize the triumph of good over evil. While several activities are associated with the festival, the most prominent one involves people playing with colors.
                             <h4 className="fourth-heading-para">3. Ram Navami </h4>
@@ -763,7 +763,7 @@ function Holidayscategory() {
                             <br/>
                             One of the most important religious festivals in the Jain community, Mahavir Jayanti celebrates the birth of the 24th and the last Tirthankara, Mahavir. The exact date of the occasion varies on the Gregorian calendar, occurring in either March or April.
                             <h4 className="fourth-heading-para">5. Good Friday </h4>
-                            <strong>Date:</strong> 7th April
+                            <strong>Date:</strong> 29th March
                             <br/>
                             <strong>Day:</strong> Friday
                             <br/>
@@ -863,15 +863,15 @@ function Holidayscategory() {
                               <h3 className="third-heading-para">BSE Stock Market Holidays in India 2024</h3>
                               Let’s delve into the major <strong>BSE</strong> <Link to="/stock-market-holidays" onClick={()=>setToggleState(0)}>stock market holidays of 2024</Link> and their significance.
                               <h4 className="fourth-heading-para">1. Republic Day</h4>
-                              <strong>Date –</strong> 26th January, Thursday
+                              <strong>Date –</strong> 26th January, Friday
                               <br /><br />
                               It is the first holiday on the list of <strong>BSE trading holidays.</strong> Republic Day marks the day when the constitution of the country was established. The government organizes several events and parades on this day.
                               <h4 className="fourth-heading-para">2. Maha Shivaratri</h4>
-                              <strong>Date –</strong> 1st March, Tuesday
+                              <strong>Date –</strong> 8th March, Friday
                               <br /><br />
                               A popular <strong>BSE holiday,</strong> Maha Shivaratri is observed as the wedding day of Shiva and Parvati. The event usually takes place at night.
                               <h4 className="fourth-heading-para">3. Holi</h4>
-                              <strong>Date –</strong> 7th March, Tuesday
+                              <strong>Date –</strong> 25th March, Monday
                               <br /><br />
                               Known as the festival of colors, Holi signifies the victory of good over evil. People celebrate it by using colors and arranging events.
                               <h4 className="fourth-heading-para">4. Ram Navami</h4>
@@ -883,7 +883,7 @@ function Holidayscategory() {
                               <br /><br />
                               Mahavir Jayanti is the most important festival of the Jain community. It celebrates the birth of the last Tirthankara, Mahavir.
                               <h4 className="fourth-heading-para">6. Good Friday</h4>
-                              <strong>Date –</strong> 7th April, Friday
+                              <strong>Date –</strong> 29th March, Friday
                               <br /><br />
                               A famous <strong>BSE trading holiday,</strong> Good Friday, commemorates the crucifixion and death of Jesus. It is also called Holy Friday by the Christian community.
                               <h4 className="fourth-heading-para">7. Dr.Baba Saheb Ambedkar Jayanti</h4>
@@ -976,7 +976,7 @@ function Holidayscategory() {
                               <strong>Status:</strong> Closed all day.
                               <br /><br />
                               2024 will mark the 74th republic day for India. Every year, the 26th of January is marked as a national holiday for drafting the Indian Constitution on the same date in the year 1950. The commodity trading exchange will remain shut to honour this day. 
-                              <h4 className="fourth-heading-para">8th March 2024 - Holi</h4>
+                              <h4 className="fourth-heading-para">25th March 2024 - Holi</h4>
                               <strong>Status:</strong> The morning session will remain closed.
                               <br /><br />
                               The festival of colours is celebrated with pomp and celebration around the country. Since the primary celebrations of Holi occur during the early morning hours and extend up to the afternoon, MCX has decided to close off the morning session and strictly limit the operational hours to the evening session.
@@ -990,7 +990,7 @@ function Holidayscategory() {
                               <strong>Status:</strong> The morning session will remain closed.
                               <br /><br />
                               Mahavir Jayanti is one of the most important festivals for the Jain community in India, celebrating the birth of Mahavir, an important figure. The festival is marked by prayers and fasting throughout the day. In recognition of the important festival, MCX has declared that the morning session of commodity trading will remain closed. 
-                              <h4 className="fourth-heading-para">7th April 2024 - Good Friday</h4>
+                              <h4 className="fourth-heading-para">29th March 2024 - Good Friday</h4>
                               <strong>Status:</strong> Closed for the entire day.
                               <br /><br />
                               Every year, Good Friday is celebrated to commemorate the crucifixion of Jesus, which led to his death. It is regarded as one of the most important days for Christians and is synonymous with prayers and fasting. The commodity trading market considers this and grants investors an off-day.
