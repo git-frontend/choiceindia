@@ -48,8 +48,17 @@ function HowOpenDematAc() {
             },
         ],
     };
-
-
+   
+      function chapterScroll(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
     return (
         <>
             <section className="how-open-demat">
@@ -64,6 +73,7 @@ function HowOpenDematAc() {
                     </div>
                     <div className="row">
                         <div className="col-md-12">
+                            <div className="flex-mobile">
                             <div className="process-list-section">
                                 <div className="list-itm">
                                     <span>
@@ -113,6 +123,7 @@ function HowOpenDematAc() {
                                   <h6>Start trading and managing your corporate securities</h6>
                                 </div>
                             </div>
+                            </div>
                            <div className="accordian-sec">
                                 <div className="accor-ttl">
                                     <h3>Documents Required to Open Corporate Demat Account</h3>
@@ -125,7 +136,7 @@ function HowOpenDematAc() {
                                                     <div className="account-checklist">
                                                         <div className="checklist-items">
                                                             <div className="checklist">
-                                                                <span>
+                                                                <span className="img-check">
                                                                     <img src={AcChecklist} />
                                                                 </span>
                                                                 <div className="checklist-details">
@@ -134,7 +145,7 @@ function HowOpenDematAc() {
                                                                 </div>
                                                             </div>
                                                             <div className="checklist">
-                                                                <span>
+                                                                <span className="img-check">
                                                                     <img src={AcChecklist} />
                                                                 </span>
                                                                 <div className="checklist-details">
@@ -145,7 +156,7 @@ function HowOpenDematAc() {
                                                         </div>
                                                         <div className="checklist-items">
                                                             <div className="checklist">
-                                                                    <span>
+                                                                <span className="img-check">
                                                                         <img src={AcChecklist} />
                                                                     </span>
                                                                     <div className="checklist-details">
@@ -154,12 +165,114 @@ function HowOpenDematAc() {
                                                                     </div>
                                                                 </div>
                                                                 <div className="checklist">
-                                                                    <span>
+                                                                    <span className="img-check">
                                                                         <img src={AcChecklist} />
                                                                     </span>
                                                                     <div className="checklist-details">
                                                                         <h6>Net Worth Certificate</h6>
                                                                         <span>Net Worth Certificate by a Chartered Account (for a new company only).</span>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                        <div className="checklist-items">
+                                                            <div className="checklist">
+                                                                    <span className="img-check">
+                                                                        <img src={AcChecklist} />
+                                                                    </span>
+                                                                    <div className="checklist-details">
+                                                                        <h6>Promoter Details</h6>
+                                                                        <span>Photographs, POI, POA, PAN of individual promoters holding control, and UBA (Ultimate Beneficiary Owner) form.</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="checklist">
+                                                                    <span className="img-check">
+                                                                        <img src={AcChecklist} />
+                                                                    </span>
+                                                                    <div className="checklist-details">
+                                                                        <h6>Incorporation Certificate & Memorandum</h6>
+                                                                        <span>Certified true copy of Certificate of Incorporation and Memorandum and Articles of Association.</span>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                        <div className="checklist-items">
+                                                            <div className="checklist">
+                                                                    <span className="img-check">
+                                                                        <img src={AcChecklist} />
+                                                                    </span>
+                                                                    <div className="checklist-details">
+                                                                        <h6>Bank Account Proof</h6>
+                                                                        <span>Proof of the Company's Bank Account.</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="checklist">
+                                                                    <span className="img-check">
+                                                                        <img src={AcChecklist} />
+                                                                    </span>
+                                                                    <div className="checklist-details">
+                                                                        <h6>Annual Report</h6>
+                                                                        <span>Certified true copy of the Annual Report for  the last two years.</span>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                        <div className="checklist-items">
+                                                            <div className="checklist">
+                                                                    <span className="img-check">
+                                                                        <img src={AcChecklist} />
+                                                                    </span>
+                                                                    <div className="checklist-details">
+                                                                        <h6>Director Photos</h6>
+                                                                        <span>
+                                                                            Passport-size photographs of the Director/Authorized officials
+                                                                            with a seal as per KYC kit/KRA requirements.</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="checklist">
+                                                                    <span className="img-check">
+                                                                        <img src={AcChecklist} />
+                                                                    </span>
+                                                                    <div className="checklist-details">
+                                                                        <h6>Form DIR-12</h6>
+                                                                        <span>Required if the directors have changed.</span>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                        <div className="checklist-items">
+                                                            <div className="checklist">
+                                                                    <span className="img-check">
+                                                                        <img src={AcChecklist} />
+                                                                    </span>
+                                                                    <div className="checklist-details">
+                                                                        <h6>Shareholding Pattern</h6>
+                                                                        <span>Shareholding pattern (as of date) of the company certified by the Auditor.</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="checklist">
+                                                                <span className="img-check">
+                                                                        <img src={AcChecklist} />
+                                                                    </span>
+                                                                    <div className="checklist-details">
+                                                                        <h6>Form INC-22 </h6>
+                                                                        <span>Required if the company address has been changed.</span>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                        <div className="checklist-items">
+                                                            <div className="checklist">
+                                                            <span className="img-check">
+                                                                        <img src={AcChecklist} />
+                                                                    </span>
+                                                                    <div className="checklist-details">
+                                                                        <h6>Declaration/Resolution</h6>
+                                                                        <span>A declaration/Board resolution on the company’s letterhead as per format.</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="checklist">
+                                                                <span className="img-check">
+                                                                        <img src={AcChecklist} />
+                                                                    </span>
+                                                                    <div className="checklist-details">
+                                                                        <h6>Form INC-1</h6>
+                                                                        <span>Required if applicable.</span>
                                                                     </div>
                                                                 </div>
                                                         </div>
@@ -169,6 +282,9 @@ function HowOpenDematAc() {
                                     </Accordion>
                                 </div>
                            </div>
+                           <div className="col-md-12 d-flex justify-content-center">
+                                <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => chapterScroll('campaignForm')}>Open Free Account</a>
+                            </div>
                         </div>
                     </div>
                 </div>

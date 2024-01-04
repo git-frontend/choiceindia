@@ -11,6 +11,7 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import KeyFeatures from "./KeyFeatures";
 import HowOpenDematAc from "./HowOpenDematAc";
+import WhyChooseChoice from "./WhyChooseChoice";
 function CorporateDematAc() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -61,6 +62,7 @@ function CorporateDematAc() {
         </section>
         <KeyFeatures/>
         <HowOpenDematAc/>
+        <WhyChooseChoice/>
       </div>
     </>
   );
