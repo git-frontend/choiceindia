@@ -565,4 +565,212 @@
             }
         }
     }
+    .how-open-demat{
+        background-color: $abt-bg;
+        padding: 8rem 0rem;
+        p{
+            text-align: center;
+            font-size: 1.846rem;
+            line-height: 1.4;
+            color: $darkblack;
+            font-family: $font-family-poppins-regular;
+            margin-bottom: 0;
+            margin-top: 2rem;
+        }
+        .process-list-section{
+            margin: 5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            .list-itm {
+                background-color: $whiteColor;
+                text-align: center;
+                border-radius: 20px;
+                padding: 4rem 2rem;
+                display: block !important;
+                width: 18%;
+                margin: 0 auto 2rem;
+                @media (max-width:$md) {
+                    padding: 2rem;
+                }
+                @media (max-width:$sm) {
+                    width: 90% !important;
+                    min-height: 22rem;
+                    padding: 2rem 1rem;
+                    margin-bottom: 0.5rem;
+                }
+                >span {
+                    display: inline-block;
+                    margin: 0 auto;
+    
+                    img {
+                        height: 85px;
+                    }
+                }
+            }
+        }
+        .partner-work-steps {
+            display: flex;
+            flex-wrap: wrap;
+            // align-items: center;
+            justify-content: center;
+            margin-top: 5rem;
+            position: relative;
+            .work-steps-itm {
+                width: 19%;
+                text-align: center;
+    
+                span {
+                    display: block;
+                    margin: 0 auto;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background: $abt-bg;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    justify-content: center;
+                    border: 3px solid $bluetext;
+                    color: $bluetext;
+                    font-weight: 600;
+                    font-family: $font-family-poppins-semibold;
+                    font-size: 1.714rem;
+                    h6 {
+                        background: $blueColortext;
+                        width: 30px;
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        color: $whiteColor;
+                        font-family: $font-family-poppins-medium;
+                        font-size: 1.2rem;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+    
+                    @media (max-width:$md) {
+                        width: 110px;
+                        height: 110px;
+                    }
+                }
+    
+                h6 {
+                    font-size: 1.571rem;
+                    font-family: $font-family-poppins-regular;
+                    color: $primary;
+                    margin-top: 3rem;
+                    line-height: 1.5;
+                }
+    
+                @media (max-width:$sm-x) {
+                    width: 33.33%;
+                    margin-bottom: 3rem;
+                }
+    
+                @media (max-width:$xs) {
+                    width: 49.33%;
+                    margin-bottom: 3rem;
+                }
+            }
+    
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                border: none;
+                border-top: 3px solid $bluetext;
+                top: 0;
+                left: 0;
+                height: 3px;
+                width: 78%;
+                top: 14%;
+                margin: 0 auto;
+                right: 0;
+                @media (max-width:$sm) {
+                    display: none;
+                }
+            }
+        }
+        .accordian-sec{
+            .accor-ttl{
+                text-align: center;
+                margin-top: 6rem;
+                margin-bottom: 3rem;
+                h3{
+                    font-size: 2.286rem;
+                    font-weight: 600;
+                    font-family: $font-family-poppins-semibold;
+                    line-height: 48px;
+                    color: $primary;
+                }
+            }
+           .open-demat-accordion{
+            .faq-item{
+                background: $whiteColor;
+                border: 1px solid $nbfcboxshadow;    
+                border-radius: 10px;
+                .faq-header{
+                    .accordion-button{
+                        color: $primary;
+                        font-size: 1.714rem;
+                        font-weight: 500;
+                        font-family: $font-family-poppins-medium;
+                        border-radius: 10px;
+                        &:not(.collapsed) {
+                            background-color: rgba(0, 0, 0, 0) !important;
+                            box-shadow: none !important;
+                        }
+                        &:focus{
+                            background-color: rgba(0, 0, 0, 0) !important;
+                            box-shadow: none !important;
+                        }
+                        &::after{
+                            background-image: url(../../assets/images/Corporate-Demat-Account/arrow-up.svg);
+                            width: 2.857rem;
+                            height: 2.857rem;
+                            background-size:2.857rem;
+                        }
+                    }
+                }
+            }
+            .accordion-body{
+                padding: 0;
+                .account-checklist{
+                    .checklist-items{
+                        display: flex;
+                        .checklist{
+                            border: 1px solid $nbfcboxshadow;   
+                            border-bottom: 0;
+                            border-left: 0;
+                            display: flex;
+                            align-items: flex-start;
+                            flex-wrap: wrap;
+                            column-gap: 1.25rem;
+                            width: 50%;
+                            padding: 1rem;
+                            &:last-child{
+                                border-right: 0;
+                            }
+                            h6{
+                                font-size: 1.571rem;
+                                font-weight: 500;
+                                font-family: $font-family-poppins-medium;
+                                margin: 0;
+                            }
+                            span{
+                                font-size: 1.286rem;
+                                font-weight: 400;
+                                font-family: $font-family-poppins-regular;
+                            }
+                        }
+                    }
+                }
+            }
+          
+           }
+        }
+    }
 }
