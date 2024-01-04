@@ -1,12 +1,5 @@
 const holidaylist=[
-    {
-        "id":1,
-        "holidayName":"New Year Day",
-        "date":"January 01, 2024",
-        "month":"January",
-        "day":"Monday",
-        "title":"nsebse"
-    },
+    
     {
         "id":2,
         "holidayName":"Republic Day",

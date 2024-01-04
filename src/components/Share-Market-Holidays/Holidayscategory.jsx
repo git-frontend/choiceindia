@@ -38,6 +38,13 @@ function Holidayscategory() {
   const [isActive, setIsActive] = useState(1);
   const [title, setTitle] = useState("All");
 
+  let holi ={
+    "id":1,
+    "holidayName":"New Year Day",
+    "date":"January 01, 2024",
+    "month":"January",
+    "day":"Monday",
+}
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -69,7 +76,13 @@ function Holidayscategory() {
   }, [rendercount])
 
   useEffect(() => {
-    monthFliter(month)
+    if(toggleState === 3){
+      monthFliter(month,3)
+    }else{
+    
+      monthFliter(month)
+      }
+    
 
 
   }, [toggleState])
@@ -78,7 +91,7 @@ function Holidayscategory() {
   let AllmonthValue = {};
   let nsebsevalue = {};
   let nseMonthvalue = {}
-
+  let nsebsevalue2 = {};
 
 
   function OtherHolidays() {
@@ -136,14 +149,26 @@ function Holidayscategory() {
   }
   // console.log("toggleafter",toggleState)
   function monthFliter(id, value) {
-    value ? setToggleState(value) : ""
+    value ? setToggleState( ()=>value) : ""
     // console.log (toggleState,"toggle3")
     setmonth(id)
     setShowdata(() => false);
-
-    if (toggleState == 1 || toggleState == 2 || toggleState == 3) {
-      id == "All" ? setfilterlist(nselist) : setfilterlist(nsefilter[id])
+    if (value == 3 && nselist && nselist[0]?.id !=1) {
+      nselist.unshift(holi)
+    
+    }else{
+      if(nselist && nselist[0]?.id ===1){
+        nselist.shift()
+      }
     }
+    
+    
+
+    if (toggleState == 1 || toggleState == 2 || toggleState == 3 ) {
+      
+      
+      id == "All" ? setfilterlist(nselist) : setfilterlist(nsefilter[id])
+    } 
     else {
       id == "All" ? setfilterlist(holidaylist) : setfilterlist(datalist[id])
     }
@@ -986,7 +1011,7 @@ function Holidayscategory() {
                                     <strong>Status:</strong> Morning sessions off.
                                     <br /><br />
                                     The third day of Diwali is celebrated with devotion throughout the country. Since the puja primary takes place during the initial hours of the day, MCX has decided to close the morning trading sessions for this day.
-                                   
+
                                     <h4 className="fourth-heading-para">15th November 2024 - Guru Nanak Jayanti</h4>
                                     <strong>Status:</strong> The morning trading session was called off.
                                     <br /><br />
