@@ -5,6 +5,7 @@ const holidaylist=[
         "date":"January 01, 2024",
         "month":"January",
         "day":"Monday",
+        "title":"nsebse"
     },
     {
         "id":2,
