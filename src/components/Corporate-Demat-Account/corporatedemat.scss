@@ -500,7 +500,9 @@
                 width: 23%; 
                 margin: 0 auto 2rem;
                 // box-shadow: 0 0 8px $card-shadow;
-
+                @media (min-width:$sm-x) and (max-width:$md) {
+                    width: 46%;
+                }
                 @media (max-width:$md) {
                     padding: 2rem;
                 }
