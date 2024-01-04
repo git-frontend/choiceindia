@@ -9,6 +9,7 @@ import WhyCorporateDemat from './WhyCorporateDemat';
 import TypesofCorporate from './TypesofCorporate';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
+import KeyFeatures from "./KeyFeatures";
 function CorporateDematAc() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -56,9 +57,8 @@ function CorporateDematAc() {
               </div>
             </div>
           </div>
-
         </section>
-
+        <KeyFeatures/>
       </div>
     </>
   );

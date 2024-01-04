@@ -469,6 +469,98 @@
                     }
                 }
             }
+           
+        }
+    }
+    .key-features{
+        background-color: $whiteColor;
+        padding: 8rem 0rem;
+        .key-list-section {
+            margin: 4rem 0;
+            display: flex;
+            flex-wrap: wrap;
+
+            @media (max-width:$sm) {
+                display: block;
+                margin-top: 2rem;
+            }
+
+            .slick-list {
+                @media (max-width:$sm) {
+                    width: 100%;
+                }
+            }
+
+            .list-itm {
+                background-color: $abt-bg;
+                text-align: left;
+                border-radius: 10px;
+                padding: 3rem 2rem;
+                display: block !important;
+                width: 23%; 
+                margin: 0 auto 2rem;
+                // box-shadow: 0 0 8px $card-shadow;
+
+                @media (max-width:$md) {
+                    padding: 2rem;
+                }
+
+                @media (max-width:$sm) {
+                    width: 90% !important;
+                    min-height: 22rem;
+                    padding: 2rem 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                >span {
+                    display: inline-block;
+                    margin: 0 auto;
+
+                    img {
+                        height: 56px;
+                    }
+                }
+
+                h4 {
+                    font-size:2rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-semibold;
+                    margin: 1.25rem 0;
+
+                    @media (max-width:$sm) {
+                        font-size: 1.667rem;
+                    }
+                }
+
+                h5 {
+                    margin: 0;
+                    font-size: 1.692rem;
+                    line-height: 1.5;
+                }
+
+                @media (min-width:$sm-x) {
+                    font-size: 1.667rem;
+
+                    &:nth-child(4) {
+                        margin: 0 1rem 2rem auto;
+                    }
+
+                    &:nth-child(5) {
+                        margin: 0 auto 2rem 1rem;
+                    }
+                }
+
+                &:hover {
+                    // box-shadow: 0 0 8px $card-shadow;
+               
+                    border-bottom: 5px solid $blueColortext;
+                }
+            }
+
+            .slick-dots {
+                position: relative;
+                bottom: -11px
+            }
         }
     }
 }
