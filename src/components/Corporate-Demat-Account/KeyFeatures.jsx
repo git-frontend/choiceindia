@@ -3,6 +3,7 @@ import search from '../../assets/images/Corporate-Demat-Account/search.svg';
 import support from '../../assets/images/Corporate-Demat-Account/support.svg';
 import reliable from '../../assets/images/Corporate-Demat-Account/reliable.svg';
 import checkcircle from '../../assets/images/Corporate-Demat-Account/check-circle.svg';
+import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
 function KeyFeatures() {
     const [view, setView] = useState({
@@ -65,14 +66,14 @@ function KeyFeatures() {
                                     <Slider {...settings2} className="key-list-section">
                                         <div className="list-itm">
                                             <span>
-                                                <img src={search} alt={""} />
+                                                <LazyLoader src={search} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
                                             </span>
                                             <h4>Research Services</h4>
                                             <h5>A dedicated research team offering Technical and Fundamental Research free of cost.</h5>
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                                <img src={support} alt={""} />
+                                                <LazyLoader src={support} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
                                             </span>
                                             <h4>Customer Support</h4>
                                             <h5>Excellent support team available via phone, email, and our branch offices, to guide you at every
@@ -80,14 +81,14 @@ function KeyFeatures() {
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                                <img src={reliable} alt={""} />
+                                                <LazyLoader src={reliable} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
                                             </span>
                                             <h4>Reliable Expertise</h4>
                                             <h5>25+ years of expertise in the finance domain, Choice is a trusted name in the broking industry.</h5>
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                                <img src={checkcircle} alt={""} />
+                                                <LazyLoader src={checkcircle} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
                                             </span>
                                             <h4>Locally Available</h4>
                                             <h5>With 104+ local offices across the country, we are always within your reach.</h5>
@@ -98,14 +99,14 @@ function KeyFeatures() {
                                     <div className="key-list-section">
                                         <div className="list-itm">
                                             <span>
-                                                <img src={search} alt={""} />
+                                            <LazyLoader src={search} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
                                             </span>
                                             <h4>Research Services</h4>
                                             <h5>A dedicated research team offering Technical and Fundamental Research free of cost.</h5>
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                                <img src={support} alt={""} />
+                                            <LazyLoader src={support} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
                                             </span>
                                             <h4>Customer Support</h4>
                                             <h5>Excellent support team available via phone, email, and our branch offices, to guide you at every
@@ -113,14 +114,14 @@ function KeyFeatures() {
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                                <img src={reliable} alt={""} />
+                                            <LazyLoader src={reliable} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
                                             </span>
                                             <h4>Reliable Expertise</h4>
                                             <h5>25+ years of expertise in the finance domain, Choice is a trusted name in the broking industry.</h5>
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                                <img src={checkcircle} alt={""} />
+                                            <LazyLoader src={checkcircle} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
                                             </span>
                                             <h4>Locally Available</h4>
                                             <h5>With 104+ local offices across the country, we are always within your reach.</h5>
