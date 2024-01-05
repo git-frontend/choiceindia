@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import arcticons from '../../assets/images/Corporate-Demat-Account/arcticons.svg';
 import nounpartnership from '../../assets/images/Corporate-Demat-Account/noun-partnership.svg';
+import LazyLoader from '../Common-features/LazyLoader';
 function TypesofCorporate() {
 
 
@@ -19,24 +20,24 @@ function TypesofCorporate() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="types-list-section">
-                                <div className="col-md-4">
+                                {/* <div className="col-md-4"> */}
                                     <div className="types-list-itm">
                                         <span>
-                                            <img src={arcticons} alt={""} />
+                                            <LazyLoader src={arcticons} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
                                         </span>
                                         <h4>Private Limited/<br />
                                             Limited Company</h4>
                                     </div>
-                                </div>
-                                <div className="col-md-4">
+                                {/* </div> */}
+                                {/* <div className="col-md-4"> */}
                                     <div className="types-list-itm">
                                         <span>
-                                            <img src={nounpartnership} alt={""} />
+                                            <LazyLoader src={nounpartnership} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
                                         </span>
                                         <h4>Limited Liability <br />
                                             Partnership (LLP)</h4>
                                     </div>
-                                </div>
+                                {/* </div> */}
                             </div>
                         </div>
                     </div>
