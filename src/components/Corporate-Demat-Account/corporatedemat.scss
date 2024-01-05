@@ -504,7 +504,9 @@
     .key-features {
         background-color: $whiteColor;
         padding: 8rem 0rem;
-
+        @media (max-width:$sm) {
+            padding: 4rem 0;
+        }
         .key-list-section {
             margin: 4rem 0;
             display: flex;
