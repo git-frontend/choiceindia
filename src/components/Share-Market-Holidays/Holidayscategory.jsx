@@ -953,7 +953,7 @@ function Holidayscategory() {
                                     <strong>Status:</strong> The evening session remains closed.
                                     <br /><br />
                                     Traders and investors can utilise the morning session of the first day of the year to indulge in the market. But as soon as it is 5 PM, MCX will end the trading window, and you can only buy and sell commodities starting from 9 AM the next day.
-                                    <h4 className="fourth-heading-para">26th January 2024 - Republic Day</h4>
+                                    <h4 className="fourth-heading-para"><strong>26th January 2024 - Republic Day</strong></h4>
                                     <strong>Status:</strong> Closed all day.
                                     <br /><br />
                                     2024 will mark the 74th republic day for India. Every year, the 26th of January is marked as a national holiday for drafting the Indian Constitution on the same date in the year 1950. The commodity trading exchange will remain shut to honour this day.
@@ -962,62 +962,62 @@ function Holidayscategory() {
                               <br /><br />
                               The festival of colours is celebrated with pomp and celebration around the country. Since the primary celebrations of Holi occur during the early morning hours and extend up to the afternoon, MCX has decided to close off the morning session and strictly limit the operational hours to the evening session. */}
 
-                                    <h4 className="fourth-heading-para">25th March 2024 - Holi</h4>
+                                    <h4 className="fourth-heading-para"><strong>25th March 2024 - Holi</strong></h4>
                                     <strong>Status:</strong> The commodity market is shut for the entire day.
                                     <br /><br />
                                     The festival of colours is celebrated with pomp and celebration around the country. Since the primary celebrations of Holi occur during the early morning hours and extend up to the afternoon, MCX has decided to close off the morning session and strictly limit the operational hours to the evening session.
-                                    <h4 className="fourth-heading-para">17th March 2024 - Ram Navami</h4>
+                                    <h4 className="fourth-heading-para"><strong>17th March 2024 - Ram Navami</strong></h4>
                                     <strong>Status:</strong> The commodity market is shut for the entire day
                                     <br /><br />
                                     The birth of the Indian god, Rama, is regarded as one of the most key events in India. Celebrations in various cities last throughout the day and extend to later hours of the night. Considering this, MCX has decided to shut off trading for the day.
-                                    <h4 className="fourth-heading-para">29th March 2024 - Good Friday</h4>
+                                    <h4 className="fourth-heading-para"><strong>29th March 2024 - Good Friday</strong></h4>
                                     <strong>Status:</strong> Closed for the entire day.
                                     <br /><br />
                                     Every year, Good Friday is celebrated to commemorate the crucifixion of Jesus, which led to his death. It is regarded as one of the most important days for Christians and is synonymous with prayers and fasting. The commodity trading market considers this and grants investors an off-day.
 
-                                    <h4 className="fourth-heading-para">14th April 2024 - Dr. Baba Saheb Ambedkar Jayanti</h4>
+                                    <h4 className="fourth-heading-para"><strong>14th April 2024 - Dr. Baba Saheb Ambedkar Jayanti</strong></h4>
                                     <strong>Status:</strong> All sessions closed.
                                     <br /><br />
                                     Marking the birth of the architect of the Indian constitution, the 14th of April is celebrated across the world as an ode to the celebrated Dr Baba Saheb Ambedkar. In recognition of his achievements for independent India, MCX has suspended all daily trading activities.
-                                    <h4 className="fourth-heading-para">11th April 2024 - Ramzan Eid</h4>
+                                    <h4 className="fourth-heading-para"><strong>11th April 2024 - Ramzan Eid</strong></h4>
                                     <strong>Status:</strong> Completely closed.
                                     <br /><br />
                                     Ramzan Eid marks the end of a 30-day fasting period for Muslims, where they do not consume food or water from the first light of dawn to the setting of the sun. Ramzan Eid is a day of celebration, with feasts and other activities that last the entire day. Hence, MCX has included the 22nd of April as a holiday for the commodity trading space.
 
-                                    <h4 className="fourth-heading-para">1st May 2024 - Maharashtra Day</h4>
+                                    <h4 className="fourth-heading-para"><strong>1st May 2024 - Maharashtra Day</strong></h4>
                                     <strong>Status:</strong> Only morning session closed.
                                     <br /><br />
                                     It marks the day on which the prosperous state of Maharashtra was formed. Maharashtra Day is a state-wide holiday celebrated with a flag hoisting and function. Hence, the commodity exchanges have decided to address the early morning festivities and declare a holiday for the morning session.
-                                    <h4 className="fourth-heading-para">17th July 2024 - Muharram</h4>
+                                    <h4 className="fourth-heading-para"><strong>17th July 2024 - Muharram</strong></h4>
                                     <strong>Status:</strong> Morning session closed.
                                     <br /><br />
                                     The first day of the year in the Islamic calendar is crucial for the Islamic community, marking the start of the holy month. As an ode to the community celebrations, the commodity exchange only permits trading in the evening session.
 
-                                    <h4 className="fourth-heading-para">15th August 2024 - Independence Day</h4>
+                                    <h4 className="fourth-heading-para"><strong>15th August 2024 - Independence Day</strong></h4>
                                     <strong>Status:</strong> Closed for the entire day.
                                     <br /><br />
                                     One of the three national holidays in India, Independence day marks a memorable moment in Indian history. On this day in 1947, India was finally freed from British Rule and ushered in a new era. The significance of this feat compels MCX to suspend all trading activities for the day.
 
-                                    <h4 className="fourth-heading-para">7th September 2024 - Ganesh Chaturthi</h4>
+                                    <h4 className="fourth-heading-para"><strong>7th September 2024 - Ganesh Chaturthi</strong></h4>
                                     <strong>Status:</strong> Morning session paused.
                                     <br /><br />
                                     The commodity market witnesses no activity during the morning of the start of Ganesh Chaturthi, a festival where people install idols of Ganpati in their houses for 1, 3, 5, 7 or 11 days.
 
-                                    <h4 className="fourth-heading-para">2nd October 2024 - Gandhi Jayanti</h4>
+                                    <h4 className="fourth-heading-para"><strong>2nd October 2024 - Gandhi Jayanti</strong></h4>
                                     <strong>Status:</strong> All trading sessions closed.
                                     <br /><br />
                                     The birthday of the father of the nation is celebrated as a national holiday in India. Gandhi Jayanti is characterised by prayer services and tributes to Mahatma Gandhi all over India. Hence, it is no surprise that the commodity market remains shut for the entire day on 2nd October.
-                                    <h4 className="fourth-heading-para">1st November 2024 - Laxmi Poojan</h4>
+                                    <h4 className="fourth-heading-para"><strong>1st November 2024 - Laxmi Poojan</strong></h4>
                                     <strong>Status:</strong> Morning sessions off.
                                     <br /><br />
                                     The third day of Diwali is celebrated with devotion throughout the country. Since the puja primary takes place during the initial hours of the day, MCX has decided to close the morning trading sessions for this day.
 
-                                    <h4 className="fourth-heading-para">15th November 2024 - Guru Nanak Jayanti</h4>
+                                    <h4 className="fourth-heading-para"><strong>15th November 2024 - Guru Nanak Jayanti</strong></h4>
                                     <strong>Status:</strong> The morning trading session was called off.
                                     <br /><br />
                                     The birth of Guru Nanak, the founder of Sikhism, is celebrated all over the country. It is the most important festival for the Sikh community. MCX has decided to continue only the evening trading sessions during this festival.
 
-                                    <h4 className="fourth-heading-para">25th December 2024 - Christmas</h4>
+                                    <h4 className="fourth-heading-para"><strong>25th December 2024 - Christmas</strong></h4>
                                     <strong>Status:</strong> Full day off.
                                     <br /><br />
                                     Christmas is marked by decorations, lit-up trees and several types of sweets to celebrate the birth of Jesus Christ. It is a religious and cultural celebration that takes up the entire day, making it possible for MCX to pause all trading activities on the 25th of December.
