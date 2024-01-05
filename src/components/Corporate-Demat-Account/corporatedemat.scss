@@ -854,18 +854,88 @@
     .why-choose-choice{
         background-color: $whiteColor;
         padding: 8rem 0rem;
+        @media (max-width:$sm) {
+           padding: 4rem 0;
+        }
         h2{
             margin-bottom: 2rem;
+            @media (max-width:$sm) {
+                text-align: left;
+            }
         }
         p{
             font-size: 1.714rem;
             line-height: 1.5;
+            font-family: $font-family-poppins-regular;
+            font-weight: 400;
+            @media (max-width:$sm) {
+                font-size: 1rem;
+                text-align: left;
+            }
         }
         .awrd-list-section {
             margin: 4rem 0;
             display: flex;
             flex-wrap: wrap;
-
+            @media (max-width:$sm) {
+                display: block;
+                margin-top: 2rem;
+                margin-bottom: 0;
+            }
+            .slick-list {
+                @media (max-width:$sm) {
+                    width: 100%;
+                }
+            }
+            .list-itm {
+                display: block !important;
+                width: 33.33%; 
+                margin: 0 auto;
+                text-align: center;
+                @media (max-width:$md) {
+                    width: 28%;
+                }
+                @media (max-width:$sm) {
+                    width: 90% !important;
+                }
+            }
+            .slick-dots {
+                position: relative;
+                bottom: -11px
+            }
+        }
+    }
+    .benifits-sec{
+        background-color: $abt-bg;
+        padding: 8rem 0rem;
+        @media (max-width:$sm) {
+            padding: 4rem 0;
+         }
+        h2{
+            margin-bottom: 2rem;
+            @media (max-width:$sm) {
+                text-align: left;
+            }
+        }
+        p{
+            font-size: 1.714rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-regular;
+            font-weight: 400;
+            @media (max-width:$sm) {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+        .benifits-list-section {
+            margin: 4rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 4rem auto 0;
+            @media (max-width:$md) {
+                width: 100%;
+            }
             @media (max-width:$sm) {
                 display: block;
                 margin-top: 2rem;
@@ -878,15 +948,56 @@
             }
 
             .list-itm {
-                display: block !important;
-                width: 33.33%; 
-                margin: 0 auto;
+                background-color: $whiteColor;
                 text-align: center;
+                border-radius: 10px;
+                padding:2rem;
+                display: block !important;
+                min-height: 17rem;
+                margin: 0 auto;
+                height: 100%;
+                width: 21%;
+                border-bottom: 5px solid $yellowColor;
                 @media (min-width:$sm-x) and (max-width:$md) {
-                    width: 46%;
+                    width: 22%;
+                    min-height: 15rem;
                 }
                 @media (max-width:$sm) {
                     width: 90% !important;
+                    min-height: 22rem;
+                    padding: 2rem 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                >span {
+                    display: inline-block;
+                    margin: 0 auto;
+                    color: $bgcolor-blue;
+                    font-size: 2.786rem;
+                    font-weight: 600;
+                    font-family: $font-family-poppins-semibold;
+                    line-height: 58px;
+                    @media (max-width:$md) {
+                        font-size: 2rem;
+                        line-height: 48px;
+                    }
+                }
+
+                h5 {
+                    margin-bottom: 0;
+                    margin-top: 1.5rem;
+                    font-size: 1.571rem;
+                    line-height: 1.5;
+                    font-weight: 500;
+                    font-family: $font-family-poppins-medium;
+                    @media (max-width:$md) {
+                        font-size: 1.25rem;
+                    }
+                    br{
+                        @media (max-width:$md) {
+                            display: none;
+                        }
+                    }
                 }
             }
 

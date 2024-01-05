@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import mcx from '../../assets/images/Corporate-Demat-Account/mcx-award.png';
-import BeGameChanger from '../../assets/images/Corporate-Demat-Account/be-game-changer.png';
-import IciciBank from '../../assets/images/Corporate-Demat-Account/icici-bank-award.png';
+import search from '../../assets/images/Corporate-Demat-Account/search.svg';
+import support from '../../assets/images/Corporate-Demat-Account/support.svg';
+import reliable from '../../assets/images/Corporate-Demat-Account/reliable.svg';
+import checkcircle from '../../assets/images/Corporate-Demat-Account/check-circle.svg';
 import Slider from 'react-slick';
-import LazyLoader from '../Common-features/LazyLoader';
-function WhyChooseChoice() {
+function Benefits() {
     const [view, setView] = useState({
         matches: window.innerWidth < 767 ? false : true,
     });
@@ -49,14 +49,13 @@ function WhyChooseChoice() {
 
     return (
         <>
-            <section className="why-choose-choice">
+            <section className="benifits-sec">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
                             <div className="text-center">
-                                <h2 className="title-secnd">Why Choose Choice?</h2>
-                                <p>We provide access to expert advice, comprehensive financial services, personalized services, and the opportunity to bank substantial returns with professional portfolio management.</p>
-                                <p>Our track record of regulatory compliance and industry expertise sets us apart. We are proud to have received multiple awards and recognitions that reflect our commitment to excellence.</p>
+                                <h2 className="title-secnd">Benefits of Our Corporate Demat Account</h2>
+                                <p>All-in-One account for all your trading needs and more.</p>
                             </div>
                         </div>
                     </div>
@@ -64,29 +63,44 @@ function WhyChooseChoice() {
                         <div className="col-md-12">
                             {
                                 view && !view.matches ?
-                                    <Slider {...settings2} className="awrd-list-section">
+                                    <Slider {...settings2} className="benifits-list-section">
                                         <div className="list-itm">
-                                            <LazyLoader src={mcx} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <span>‘0’</span>
+                                            <h5>Account Opening Fee</h5>
                                         </div>
                                         <div className="list-itm">
-                                            <LazyLoader src={BeGameChanger} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <span>‘0’</span>
+                                            <h5>AMC for <br/>1st Yea</h5>
                                         </div>
                                         <div className="list-itm">
-                                            <LazyLoader src={IciciBank} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <span>‘0’</span>
+                                            <h5>Auto Square-off <br/> Charges</h5>
+                                        </div>
+                                        <div className="list-itm">
+                                            <span>‘Free’</span>
+                                            <h5>Research <br/> Calls</h5>
                                         </div>
 
                                     </Slider>
                                     :
-                                    <div className="awrd-list-section">
-                                        <div className="list-itm">
-                                            <LazyLoader src={mcx} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                    <div className="benifits-list-section">
+                                    <div className="list-itm">
+                                            <span>‘0’</span>
+                                            <h5>Account <br/> Opening Fee</h5>
                                         </div>
                                         <div className="list-itm">
-                                            <LazyLoader src={BeGameChanger} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <span>‘0’</span>
+                                            <h5>AMC for <br/>1st Yea</h5>
                                         </div>
                                         <div className="list-itm">
-                                            <LazyLoader src={IciciBank} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <span>‘0’</span>
+                                            <h5>Auto Square-off <br/> Charges</h5>
                                         </div>
+                                        <div className="list-itm">
+                                            <span>‘Free’</span>
+                                            <h5>Research <br/> Calls</h5>
+                                        </div>
+
                                     </div>
                             }
                         </div>
@@ -97,4 +111,4 @@ function WhyChooseChoice() {
         </>
     );
 }
-export default WhyChooseChoice;
+export default Benefits;
