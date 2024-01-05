@@ -749,68 +749,68 @@ const meta_tags = {
 
   "nri-demat-account": { 'title': "Open NRI Demat Account Online in India at Choice", 'lang': "en", "content": "Open NRI Demat Account Online in India at Choice with Free Research with Highest Success Ratio, Lowest Brokerage Charges & Lowest Account Opening Fee.", "link": "https://choiceindia.com/nri-demat-account", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "corporate-demat-account": {
-    'title': "Open a Corporate Demat Account Online with Choice", 'lang': "en", "content": "Open a Corporate Demat account online with Choice.  Get an advanced trading platform, the lowest dp charges and dedicated relationship manager, free call for trade facility and more.",
-    "link": 'https://choiceindia.com/corporate-demat-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
-    "faqscript": `<script type="application/ld+json">
-     {
-      "@context": "https://schema.org",
-       "@type": "FAQPage",
-       "mainEntity": [{
-         "@type": "Question",
-         "name": "What is a Company or Corporate Demat Account?",
-         "acceptedAnswer": {
-           "@type": "Answer",
-           "text": "Companies and corporations can also participate in the stock market with a Corporate Demat Account."
-         }
-       },{
-         "@type": "Question",
-         "name": "Can a Demat and Trading account be opened for a Company in India?",
-         "acceptedAnswer": {
-           "@type": "Answer",
-           "text": "Yes, Indian companies can open Demat and Trading accounts too. These are called Corporate Demat/Trading accounts."
-         }
-       },{
-         "@type": "Question",
-         "name": "What is the procedure to open a demat account for Company?",
-         "acceptedAnswer": {
-           "@type": "Answer",
-           "text": "Below is the procedure to open corporate demat accounts,
-     1. Fill Corporate Demat account forms
-     2. KYC forms of each account holder
-     3. Aadhar and Photos of account holders (signed)
-     4. Pan Card copies of each account holder and company
-     5. Address proofs of each account holder and company
-     6. Cancelled cheques of account holders or last 3 months bank statement
-     7. Balance sheet of the partnership of last 2 FY (new companies will have to provide IT returns declaration
-     8. Duly filled annexures
-     9. FATCA Declaration"
-         }
-       },{
-         "@type": "Question",
-         "name": "Which documents are required for a Corporate Or Company demat account?",
-         "acceptedAnswer": {
-           "@type": "Answer",
-           "text": "Below documents are required for a corporate demat account,
-     1. Aadhar and Photos of account holders (signed)
-     2. Pan Card copies of each account holder and company
-     3. Address proofs of each account holder and company
-     4. Cancelled cheques of account holders or last 3 months bank statement
-     5. Balance sheet of the partnership of last 2 FY (new companies will have to provide IT returns declaration
-     6. Duly filled annexures
-     7. FATCA Declaration"
-         }
-       },{
-         "@type": "Question",
-         "name": "How Much Time is Required to Open a Corporate Demat Account?",
-         "acceptedAnswer": {
-           "@type": "Answer",
-           "text": "If all the documents are in order, it takes 2-3 working days for the account to be active."
-         }
-       }]
-     }
-     </script>
-     ` },
+  // "corporate-demat-account": {
+  //   'title': "Open a Corporate Demat Account Online with Choice", 'lang': "en", "content": "Open a Corporate Demat account online with Choice.  Get an advanced trading platform, the lowest dp charges and dedicated relationship manager, free call for trade facility and more.",
+  //   "link": 'https://choiceindia.com/corporate-demat-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+  //   "faqscript": `<script type="application/ld+json">
+  //    {
+  //     "@context": "https://schema.org",
+  //      "@type": "FAQPage",
+  //      "mainEntity": [{
+  //        "@type": "Question",
+  //        "name": "What is a Company or Corporate Demat Account?",
+  //        "acceptedAnswer": {
+  //          "@type": "Answer",
+  //          "text": "Companies and corporations can also participate in the stock market with a Corporate Demat Account."
+  //        }
+  //      },{
+  //        "@type": "Question",
+  //        "name": "Can a Demat and Trading account be opened for a Company in India?",
+  //        "acceptedAnswer": {
+  //          "@type": "Answer",
+  //          "text": "Yes, Indian companies can open Demat and Trading accounts too. These are called Corporate Demat/Trading accounts."
+  //        }
+  //      },{
+  //        "@type": "Question",
+  //        "name": "What is the procedure to open a demat account for Company?",
+  //        "acceptedAnswer": {
+  //          "@type": "Answer",
+  //          "text": "Below is the procedure to open corporate demat accounts,
+  //    1. Fill Corporate Demat account forms
+  //    2. KYC forms of each account holder
+  //    3. Aadhar and Photos of account holders (signed)
+  //    4. Pan Card copies of each account holder and company
+  //    5. Address proofs of each account holder and company
+  //    6. Cancelled cheques of account holders or last 3 months bank statement
+  //    7. Balance sheet of the partnership of last 2 FY (new companies will have to provide IT returns declaration
+  //    8. Duly filled annexures
+  //    9. FATCA Declaration"
+  //        }
+  //      },{
+  //        "@type": "Question",
+  //        "name": "Which documents are required for a Corporate Or Company demat account?",
+  //        "acceptedAnswer": {
+  //          "@type": "Answer",
+  //          "text": "Below documents are required for a corporate demat account,
+  //    1. Aadhar and Photos of account holders (signed)
+  //    2. Pan Card copies of each account holder and company
+  //    3. Address proofs of each account holder and company
+  //    4. Cancelled cheques of account holders or last 3 months bank statement
+  //    5. Balance sheet of the partnership of last 2 FY (new companies will have to provide IT returns declaration
+  //    6. Duly filled annexures
+  //    7. FATCA Declaration"
+  //        }
+  //      },{
+  //        "@type": "Question",
+  //        "name": "How Much Time is Required to Open a Corporate Demat Account?",
+  //        "acceptedAnswer": {
+  //          "@type": "Answer",
+  //          "text": "If all the documents are in order, it takes 2-3 working days for the account to be active."
+  //        }
+  //      }]
+  //    }
+  //    </script>
+  //    ` },
 
   "minor-demat-account": {
     'title': "Minor Demat Account Opening Online for Free with Choice", 'lang': "en", "content": "Open a free minor Demat account online with Choice within a few minutes and start investing in the stock market for your children’s future.",
@@ -2506,6 +2506,12 @@ const meta_tags = {
     'lang': "en",
     'content': "Choice FinX Mutual Fund App is the best mutual fund app in India to invest, manage & track your mutual fund investments. Download our top-rated mutual fund app (Android & iOS) now!",
     "link": "https://choiceindia.com/mutual-fund-app"
+  }, 
+  "corporate-demat-account": {
+    "title": "Open a Corporate Demat Account Online with Choice",
+    'lang': "en",
+    'content': "Open a Corporate Demat account online with Choice. Get an advanced trading platform, the lowest DP charges and dedicated relationship manager, free call for trade facility and more.",
+    "link": "https://choiceindia.com/corporate-demat-account"
   },
 }
 

@@ -387,11 +387,11 @@ function Routing() {
                                 < Lazynridemateaccount />
                             </React.Suspense>
                         } />
-                        <Route exact path='/corporate-demat-account' element={
+                        {/* <Route exact path='/corporate-demat-account' element={
                             <React.Suspense>
                                 < Lazycorporatedemateaccount />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route exact path='/minor-demat-account' element={
                             <React.Suspense>
                                 < Lazyminordemateaccount />
@@ -1040,7 +1040,7 @@ function Routing() {
                                  < LazyELSSDetails />
                             </React.Suspense>
                         } />
-                         <Route exact path='/open-corporate-Demat' element={
+                         <Route exact path='/corporate-demat-account' element={
                             <React.Suspense>
                                  < LazyCorporateDematAc />
                             </React.Suspense>
