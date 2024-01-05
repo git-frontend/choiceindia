@@ -634,9 +634,9 @@ function Holidayscategory() {
                           <input type="checkbox" className="read-more-state" id="post-1" />
                           <span className="read-more-wrap restext"> The Indian stock market is an exciting proposition for investors to generate additional income. Every year, numerous brokers, dealers, and traders explore the market to deal in lucrative financial holdings.
                             <br /><br />
-                            However, as an investor, you should know that the stock market does not operate 24x7. There are predefined <strong>stock market holidays</strong> during which there are no trading activities.
+                            However, as an investor, you should know that the stock market does not operate 24x7. There are predefined stock market holidays during which there are no trading activities.
                             <br /><br />
-                            So, the equity sector does not witness any trading activity. This article aims to inform you about the <strong>stock market holidays 2024</strong> and their significance.
+                            So, the equity sector does not witness any trading activity. This article aims to inform you about the stock market holidays 2024 and their significance.
                             <br />
                             <span className="read-more-target restext">
                               Ensure you note these dates before planning a well-thought 2024 share market trading schedule.
@@ -645,14 +645,14 @@ function Holidayscategory() {
                               <h4 className="fourth-heading-para">1. Republic Day – 26th January 2024</h4>
                               <strong>Day: Friday</strong>
                               <br /><br />
-                              Republic Day is one of the most vibrant national festivals. It is the first day in the list of <strong>stock market holidays 2024 </strong>and has several astounding reasons for celebration.
+                              Republic Day is one of the most vibrant national festivals. It is the first day in the list of stock market holidays 2024 and has several astounding reasons for celebration.
                               <br /><br />
                               On this day, you can witness the national parade at Janpath and the extravagant display of the Indian army.
 
                               <h4 className="fourth-heading-para">2. Holi – 25th March 2024</h4>
                               <strong>Day: Monday</strong>
                               <br /><br />
-                              The festival of colors marks one of the important <strong>share market holidays 2024.</strong> It is a Hindu festival that holds prominence in the annual calendar.
+                              The festival of colors marks one of the important share market holidays 2024. It is a Hindu festival that holds prominence in the annual calendar.
                               <br /><br />
                               This holiday marks the celebration of the triumph of good over evil. It is a cultural festival and usually falls on the full moon.
                               <h4 className="fourth-heading-para">3. Ram Navami – 17th April 2024</h4>
@@ -660,7 +660,7 @@ function Holidayscategory() {
                               <br /><br />
                               This festival celebrates the birthday of lord Rama. People make Panakam on this day and celebrate the occasion in fervor.
                               <br /><br />
-                              It is one of the important <strong>stock market holidays,</strong> and you cannot perform any trading on this day.
+                              It is one of the important stock market holidays, and you cannot perform any trading on this day.
                               <h4 className="fourth-heading-para">4. Mahavir Jayanti – 21st April 2024</h4>
                               <strong>Day: Sunday</strong>
                               <br /><br />
@@ -672,7 +672,7 @@ function Holidayscategory() {
                               <br /><br />
                               This gazetted holiday honors the life of Jesus Christ. It commemorates Jesus's crucifixion and his final hours before the same.
                               <br /><br />
-                              Notably, this day is the Friday before Easter Sunday. No transactions can be performed on <strong>share market holidays 2024.</strong>
+                              Notably, this day is the Friday before Easter Sunday. No transactions can be performed on share market holidays 2024.
                               <h4 className="fourth-heading-para">6. Dr. Baba Saheb Ambedkar Jayanti – 14th April 2024</h4>
                               <strong>Day: Sunday</strong>
                               <br /><br />
@@ -684,11 +684,11 @@ function Holidayscategory() {
                               <br /><br />
                               This holiday marks the annual festival of Maharashtra, a western state in India. It celebrates the formation of the state.
                               <br /><br />
-                              You can witness parades and cultural exhibitions of Maharashtra, one of the vital <strong>stock market holidays.</strong>
+                              You can witness parades and cultural exhibitions of Maharashtra, one of the vital stock market holidays.
                               <h4 className="fourth-heading-para">8. Bakri Id – 17th June 2024</h4>
                               <strong>Day: Monday</strong>
                               <br /><br />
-                              Also known as the ‘holiday of sacrifice,’ this Islamic festival is another inclusion in the <strong>Indian stock market holidays 2024.</strong>
+                              Also known as the ‘holiday of sacrifice,’ this Islamic festival is another inclusion in the Indian stock market holidays 2024.
                               <br /><br />
                               The followers celebrate this festival to honor the willingness of Abraham to sacrifice his son. It highlights the act of obeying God’s command.
                               <h4 className="fourth-heading-para">9. Independence Day – 15th August 2024</h4>
@@ -702,7 +702,7 @@ function Holidayscategory() {
                               <br /><br />
                               This holiday commemorates the Hindu god of wisdom, Lord Ganesha. People install clay idols and pray to Lord Ganpati for prosperity and wisdom.
                               <br /><br />
-                              Notably, this day is the tenth off-day in the list of <strong>stock market holidays.</strong>
+                              Notably, this day is the tenth off-day in the list of stock market holidays.
                               <h4 className="fourth-heading-para">11. Mahatma Gandhi Jayanti – 02nd October 2024</h4>
                               <strong>Day: Wednesday</strong>
                               <br /><br />
@@ -722,7 +722,7 @@ function Holidayscategory() {
                               <h4 className="fourth-heading-para">14. Guru Nanak Jayanti – 15th November 2024</h4>
                               <strong>Day: Friday</strong>
                               <br /><br />
-                              This is an important Sikh festival that celebrates the birth of Guru Nanak, the first mentor in Sikhism. It is one of the final <strong>stock market holidays of 2024,</strong> and you cannot trade on this holiday.
+                              This is an important Sikh festival that celebrates the birth of Guru Nanak, the first mentor in Sikhism. It is one of the final stock market holidays of 2024, and you cannot trade on this holiday.
                               <h4 className="fourth-heading-para">15. Christmas – 25th December 2024</h4>
                               <strong>Day: Wednesday</strong>
                               <br /><br />
@@ -852,17 +852,17 @@ function Holidayscategory() {
                                 <br />
                                 <span className="read-more-target restext">
                                   <br />
-                                  Besides, there are many <strong>BSE holidays</strong> when you can’t trade. Take a look at the <strong>BSE holidays 2024</strong> list to plan your trading strategy successfully.
+                                  Besides, there are many BSE holidays when you can’t trade. Take a look at the BSE holidays 2024 list to plan your trading strategy successfully.
                                   <h3 className="third-heading-para">BSE Stock Market Holidays in India 2024</h3>
-                                  Let’s delve into the major <strong>BSE</strong> <Link to="/stock-market-holidays" onClick={() => setToggleState(0)}>stock market holidays of 2024</Link> and their significance.
+                                  Let’s delve into the major BSE <Link to="/stock-market-holidays" onClick={() => setToggleState(0)}>stock market holidays of 2024</Link> and their significance.
                                   <h4 className="fourth-heading-para">1. Republic Day</h4>
                                   <strong>Date –</strong> 26th January, Friday
                                   <br /><br />
-                                  It is the first holiday on the list of <strong>BSE trading holidays.</strong> Republic Day marks the day when the constitution of the country was established. The government organizes several events and parades on this day.
+                                  It is the first holiday on the list of BSE trading holidays. Republic Day marks the day when the constitution of the country was established. The government organizes several events and parades on this day.
                                   <h4 className="fourth-heading-para">2. Maha Shivaratri</h4>
                                   <strong>Date –</strong>  8th March, Friday
                                   <br /><br />
-                                  A popular <strong>BSE holiday,</strong> Maha Shivaratri is observed as the wedding day of Shiva and Parvati. The event usually takes place at night.
+                                  A popular BSE holiday, Maha Shivaratri is observed as the wedding day of Shiva and Parvati. The event usually takes place at night.
                                   <h4 className="fourth-heading-para">3. Holi</h4>
                                   <strong>Date –</strong> 25th March, Monday
                                   <br /><br />
@@ -870,7 +870,7 @@ function Holidayscategory() {
                                   <h4 className="fourth-heading-para">4. Ram Navami</h4>
                                   <strong>Date –</strong> 17th March, Wednesday
                                   <br /><br />
-                                  Ram Navami is next on the list of <strong>BSE stock market holidays.</strong> It is a celebration of the body of Ram, as an avatar of Vishnu.
+                                  Ram Navami is next on the list of BSE stock market holidays. It is a celebration of the body of Ram, as an avatar of Vishnu.
                                   {/* <h4 className="fourth-heading-para">5. Mahavir Jayanti</h4>
                               <strong>Date –</strong> 4th April, Tuesday
                               <br /><br />
@@ -878,7 +878,7 @@ function Holidayscategory() {
                                   <h4 className="fourth-heading-para">5. Good Friday</h4>
                                   <strong>Date –</strong> 29th March, Friday
                                   <br /><br />
-                                  A famous <strong>BSE trading holiday,</strong> Good Friday, commemorates the crucifixion and death of Jesus. It is also called Holy Friday by the Christian community.
+                                  A famous BSE trading holiday, Good Friday, commemorates the crucifixion and death of Jesus. It is also called Holy Friday by the Christian community.
                                   <h4 className="fourth-heading-para">6. Dr.Baba Saheb Ambedkar Jayanti</h4>
                                   <strong>Date –</strong> 14th April, Sunday
                                   <br /><br />
@@ -902,11 +902,11 @@ function Holidayscategory() {
                                   <h4 className="fourth-heading-para">11. Independence Day</h4>
                                   <strong>Date –</strong> 15th August, Thursday
                                   <br /><br />
-                                  It is the most essential <strong>BSE stock market holiday</strong> as it celebrates India's Independence from British rule. India achieved independence on 15 August 1947, after 200 years of struggle.
+                                  It is the most essential BSE stock market holiday as it celebrates India's Independence from British rule. India achieved independence on 15 August 1947, after 200 years of struggle.
                                   <h4 className="fourth-heading-para">12. Mahatma Gandhi Jayanti</h4>
                                   <strong>Date –</strong> 2nd October, Wednesday
                                   <br /><br />
-                                  This <strong>BSE holiday</strong> marks the birthday of Mahatma Gandhi, the father of our nation.
+                                  This BSE holiday marks the birthday of Mahatma Gandhi, the father of our nation.
                                   <h4 className="fourth-heading-para">13. Gurunanak Jayanti</h4>
                                   <strong>Date –</strong> 15th November, Friday
                                   <br /><br />
@@ -914,9 +914,9 @@ function Holidayscategory() {
                                   <h4 className="fourth-heading-para">14. Christmas</h4>
                                   <strong>Date –</strong> 25th December, Wednesday
                                   <br /><br />
-                                  Christmas is among the most celebrated festivals in the world and is the final one of the BSE <strong>stock market holidays.</strong> This holiday is a celebration of the birth of Jesus Christ, whose teachings form the foundation of Christianity.
+                                  Christmas is among the most celebrated festivals in the world and is the final one of the BSE stock market holidays. This holiday is a celebration of the birth of Jesus Christ, whose teachings form the foundation of Christianity.
                                   <br /><br />
-                                  Although the primary list of <strong>BSE holidays 2024</strong> is given here, BSE may modify the schedule. That's why it is important to keep an eye out on the official website for an updated holiday list. So, plan your trades according to the holiday list and the availability of shares.
+                                  Although the primary list of BSE holidays 2024 is given here, BSE may modify the schedule. That's why it is important to keep an eye out on the official website for an updated holiday list. So, plan your trades according to the holiday list and the availability of shares.
                                   <br /><br />
                                   Also, remember that market trading hours can differ according to the trading instrument.
 
@@ -1022,7 +1022,7 @@ function Holidayscategory() {
                                     <br /><br />
                                     Christmas is marked by decorations, lit-up trees and several types of sweets to celebrate the birth of Jesus Christ. It is a religious and cultural celebration that takes up the entire day, making it possible for MCX to pause all trading activities on the 25th of December.
                                     <br /><br />
-                                    India is home to only two major commodity exchanges- MCX and NCDEX. The list of <strong>NCDEX holidays 2024</strong> matches the ones specified by MCX. Hence, the entire commodity market follows a similar pattern in terms of holidays.
+                                    India is home to only two major commodity exchanges- MCX and NCDEX. The list of NCDEX holidays 2024 matches the ones specified by MCX. Hence, the entire commodity market follows a similar pattern in terms of holidays.
                                     <br /><br />
                                     So, why not keep this list handy and start derivative trading if you haven’t yet? Simply <Link to="/open-free-demat-account"> open a demat account with Choice India </Link>to be eligible for executing trades in the commodity market and diversify your portfolio!
 
