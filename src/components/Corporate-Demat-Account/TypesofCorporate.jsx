@@ -20,7 +20,6 @@ function TypesofCorporate() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="types-list-section">
-                                {/* <div className="col-md-4"> */}
                                     <div className="types-list-itm">
                                         <span>
                                             <LazyLoader src={arcticons} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
@@ -28,8 +27,6 @@ function TypesofCorporate() {
                                         <h4>Private Limited/<br />
                                             Limited Company</h4>
                                     </div>
-                                {/* </div> */}
-                                {/* <div className="col-md-4"> */}
                                     <div className="types-list-itm">
                                         <span>
                                             <LazyLoader src={nounpartnership} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
@@ -37,12 +34,11 @@ function TypesofCorporate() {
                                         <h4>Limited Liability <br />
                                             Partnership (LLP)</h4>
                                     </div>
-                                {/* </div> */}
                             </div>
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
         </>
     );
 }

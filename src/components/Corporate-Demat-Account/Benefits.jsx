@@ -41,6 +41,7 @@ function Benefits() {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     speed: 1000,
+                    autoplay: true,
                 },
             },
         ],

@@ -6,6 +6,9 @@
         margin-top: 12rem;
         margin-bottom: 0;
         overflow: hidden;
+        @media (max-width:$sm) {
+            margin-top: 10rem;
+        }
         .banner-img{
             width: 806px;
             position: relative;
@@ -205,7 +208,7 @@
         background-color: $abt-bg;
         padding: 8rem 0rem;
         @media (max-width:$sm) {
-            padding: 5rem 0rem !important;
+            padding: 4rem 0rem !important;
         }
         .why-corporate-heading {
             font-size: 3.462rem;
@@ -284,6 +287,9 @@
                     min-height: 22rem;
                     padding: 2rem 1rem;
                     margin-bottom: 0.5rem;
+                    box-shadow: 0 0 8px $card-shadow;
+                    background-color: $whiteColor;
+                    border: 0;
                 }
 
                 >span {
@@ -349,7 +355,7 @@
         background-color: $whiteColor;
         padding: 8rem 0rem;
         @media (max-width:$sm) {
-            padding: 5rem 0rem !important;
+            padding: 4rem 0rem !important;
         }
         .types-list-section {
             margin: 4rem 0;
@@ -365,17 +371,32 @@
                 border-radius: 20px;
                 padding: 3rem 3rem;
                 display: block !important;
-                // width: 30%;
                 margin: auto 1rem;
                 border-bottom: 8px solid $blueColortext;
                 @media (max-width:$sm) {
-                    margin: 2rem auto;
+                    margin: 2rem auto 0;
+                    width: 90%;
+                    border-bottom: 0;
+                    border-radius: 10px;
+                }
+                >span{
+                    img{
+                        @media (max-width:$sm) {
+                            height: 56px;
+                            width: 56px;
+                        }
+                       
+                    }
                 }
                 h4 {
                     color: $darkblack;
                     font-size: 2.462rem;
+                    line-height: 1.5;
                     font-family: $font-family-poppins-semibold;
                     margin: 1.25rem 0;
+                    @media (max-width:$sm) {
+                      font-size: 1.462rem;
+                    }
                 }
             }
         }
@@ -522,8 +543,29 @@
     .key-features {
         background-color: $whiteColor;
         padding: 8rem 0rem;
+        overflow: hidden;
         @media (max-width:$sm) {
             padding: 4rem 0;
+        }
+        .title-secnd{
+            @media (max-width:$sm) {
+               text-align: left;
+            }
+        }
+        p {
+            text-align: center;
+            font-size: 1.846rem;
+            line-height: 1.4;
+            color: $darkblack;
+            font-family: $font-family-poppins-regular;
+            margin-bottom: 0;
+            margin-top: 2rem;
+
+            @media (max-width:$sm) {
+                font-size: 1rem;
+                text-align: left;
+                margin-top: 1rem;
+            }
         }
         .key-list-section {
             margin: 4rem 0;
@@ -533,11 +575,13 @@
             @media (max-width:$sm) {
                 display: block;
                 margin-top: 2rem;
+                margin-bottom: 0;
             }
 
             .slick-list {
                 @media (max-width:$sm) {
-                    width: 100%;
+                    // width: 100%;
+                    margin-right: -50%;
                 }
             }
 
@@ -549,8 +593,6 @@
                 display: block !important;
                 width: 23%;
                 margin: 0 auto 2rem;
-
-                // box-shadow: 0 0 8px $card-shadow;
                 @media (min-width:$sm-x) and (max-width:$md) {
                     width: 46%;
                 }
@@ -562,7 +604,6 @@
                 @media (max-width:$sm) {
                     width: 90% !important;
                     min-height: 22rem;
-                    padding: 2rem 1rem;
                     margin-bottom: 0.5rem;
                 }
 
@@ -590,6 +631,9 @@
                     margin: 0;
                     font-size: 1.692rem;
                     line-height: 1.5;
+                    @media (max-width:$sm) {
+                        font-size: 1.143rem;
+                    }
                 }
 
                 @media (min-width:$sm-x) {
@@ -605,9 +649,11 @@
                 }
 
                 &:hover {
-                    // box-shadow: 0 0 8px $card-shadow;
-
                     border-bottom: 5px solid $blueColortext;
+                    @media (max-width:$sm) {
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 0;
+                    }
                 }
             }
 
@@ -660,6 +706,7 @@
 
                 @media (max-width:$sm) {
                     row-gap: 3rem;
+                    margin: 4rem 0;
                 }
 
                 .list-itm {
@@ -1007,6 +1054,7 @@
     .benifits-sec {
         background-color: $abt-bg;
         padding: 8rem 0rem;
+        overflow: hidden;
 
         @media (max-width:$sm) {
             padding: 4rem 0;
@@ -1038,19 +1086,19 @@
             flex-wrap: wrap;
             width: 90%;
             margin: 4rem auto 0;
-
             @media (max-width:$md) {
                 width: 100%;
             }
-
             @media (max-width:$sm) {
                 display: block;
                 margin-top: 2rem;
+                margin-bottom: 2rem;
             }
             &.slick-slider{
                 .slick-list{
                     @media (max-width:$sm) {
                         margin-right: -30%;
+                        padding-bottom: 1rem;
                     }
                 }
             }
@@ -1134,9 +1182,9 @@
 }
 
 .Dematfaq{
-    padding: 10rem 0;
+    padding: 8rem 0;
     @media (max-width:$md) {
-        padding: 6rem 0;
+        padding: 4rem 0;
     }
     .faq-ttl{
         text-align: center;
@@ -1145,7 +1193,6 @@
                 text-align: left;
             }
         }
-       
         p{
             font-size: 1.714rem;
             line-height: 1.5;
@@ -1172,6 +1219,16 @@
                 @media (max-width:$sm) {
                    display: none;
                 }
+            }
+            .accordion-body{
+                @media (max-width:$sm) {
+                    font-size: 1.125rem;
+                 }
+            }
+            .accordion-button{
+                @media (max-width:$sm) {
+                    font-size: 1.35rem;
+                 }
             }
         }
 
@@ -1201,6 +1258,7 @@
             font-family: $font-family-poppins-regular;
             @media (max-width:$sm) {
                 text-align: left;
+                font-size: 1rem;
             }
         }
     }
@@ -1230,8 +1288,6 @@
             display: block !important;
             width: 47%;
             margin: 0 auto 2rem;
-
-            // box-shadow: 0 0 8px $card-shadow;
             @media (min-width:$sm-x) and (max-width:$md) {
                 width: 46%;
             }
@@ -1242,16 +1298,19 @@
 
             @media (max-width:$sm) {
                 width: 90% !important;
-                min-height: 22rem;
-                padding: 2rem 1rem;
+                min-height: 20rem;
+                padding: 1rem;
                 margin-bottom: 0.5rem;
             }
 
             h5 {
                 margin: 0;
-                font-size: 1.385;
+                font-size: 1.385rem;
                 line-height: 1.5;
                 color: $darkblack;
+                @media (max-width:$sm) {
+                    font-size: 0.929rem;
+                }
             }
 
             .client-list-itm {
@@ -1269,12 +1328,14 @@
                 // }
                 .client-details {
                     margin-left: 2rem;
-
                     h6 {
                         font-size: 1.385rem;
                         font-family: $font-family-poppins-semibold;
                         color: $darkblack;
-
+                        margin: 0;
+                        @media (max-width:$sm) {
+                           font-size: 1rem; 
+                        }
                     }
 
                     p {
@@ -1283,6 +1344,9 @@
                         color: $darkblack;
                         padding: 0;
                         margin: 0;
+                        @media (max-width:$sm) {
+                            font-size:0.857rem; 
+                         }
                     }
                 }
 
