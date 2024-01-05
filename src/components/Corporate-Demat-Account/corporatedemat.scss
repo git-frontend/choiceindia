@@ -4,9 +4,26 @@
 .Corporate-main {
     .corporate-banner {
         margin-top: 12rem;
-        margin-bottom: 6rem;
-
+        margin-bottom: 0;
+        overflow: hidden;
+        .banner-img{
+            width: 806px;
+            position: relative;
+            left: -150px;
+            @media (max-width:$md) {
+                display: none;
+            }
+        }
         .corporate-banner-headings {
+            position: relative;
+            z-index: 99;
+            @media (max-width:$md) {
+                text-align: center;
+                padding-bottom: 5rem;
+            }
+            @media (max-width:$sm) {
+                text-align: left;
+            }
             .para-first {
                 font-family: $font-family-poppins-semibold;
                 font-size: 2rem;
@@ -66,7 +83,7 @@
                 }
                 @media (max-width:$sm) {
                     font-size: 1.077rem;
-                    margin: 2rem 0rem;
+                    margin: 2rem 0rem 4rem;
                     line-height: 1.4;
                 }
 
@@ -163,11 +180,13 @@
                     color: $whiteColor;
                     font-family: $font-family-poppins-medium;
                     font-size: 1.692rem;
+                    line-height: 1.5;
                     margin: 0;
-
+                    @media (max-width:$md) {
+                        font-size: 1.45rem;
+                    }
                     @media (max-width:$sm) {
                         font-size: 1rem;
-                        line-height: 1.5;
                     }
                 }
             }
@@ -177,7 +196,9 @@
     .why-corporate-account {
         background-color: $abt-bg;
         padding: 8rem 0rem;
-
+        @media (max-width:$sm) {
+            padding: 5rem 0rem !important;
+        }
         .why-corporate-heading {
             font-size: 3.462rem;
             font-family: $font-family-poppins-semibold;
@@ -319,13 +340,17 @@
     .types-of-corporate {
         background-color: $whiteColor;
         padding: 8rem 0rem;
-
+        @media (max-width:$sm) {
+            padding: 5rem 0rem !important;
+        }
         .types-list-section {
             margin: 4rem 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-
+            @media (max-width:$sm) {
+                margin: 0;
+            }
             .types-list-itm {
                 background: $abt-bg;
                 text-align: center;
@@ -390,7 +415,6 @@
             .demat_text {
                 width: 100%;
                 margin-bottom: 3rem;
-
                 @media (max-width:$sm) {
                     text-align: center;
                     margin-top: 2rem;
@@ -940,10 +964,11 @@
                 display: block;
                 margin-top: 2rem;
             }
-
-            .slick-list {
-                @media (max-width:$sm) {
-                    width: 100%;
+            &.slick-slider{
+                .slick-list{
+                    @media (max-width:$sm) {
+                        margin-right: -30%;
+                    }
                 }
             }
 
@@ -963,8 +988,8 @@
                     min-height: 15rem;
                 }
                 @media (max-width:$sm) {
-                    width: 90% !important;
-                    min-height: 22rem;
+                    width: 85% !important;
+                    min-height: 15rem;
                     padding: 2rem 1rem;
                     margin-bottom: 0.5rem;
                 }
@@ -981,6 +1006,10 @@
                         font-size: 2rem;
                         line-height: 48px;
                     }
+                    @media (max-width:$sm) {
+                        font-size: 2.786rem;
+                        line-height: 58px;
+                    }
                 }
 
                 h5 {
@@ -993,9 +1022,15 @@
                     @media (max-width:$md) {
                         font-size: 1.25rem;
                     }
+                    @media (max-width:$sm) {
+                        font-size: 1.429rem;
+                    }
                     br{
                         @media (max-width:$md) {
                             display: none;
+                        }
+                        @media (max-width:$sm) {
+                            display: block;
                         }
                     }
                 }
@@ -1004,6 +1039,50 @@
             .slick-dots {
                 position: relative;
                 bottom: -11px
+            }
+        }
+    }
+}
+
+.Dematfaq{
+    padding: 10rem 0;
+    @media (max-width:$md) {
+        padding: 6rem 0;
+    }
+    .faq-ttl{
+        text-align: center;
+        .title-secnd{
+            @media (max-width:$sm) {
+                text-align: left;
+            }
+        }
+       
+        p{
+            font-size: 1.714rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-regular;
+            font-weight: 400;
+            margin-top: 2rem;
+            margin-bottom: 3.5rem;
+            @media (max-width:$sm) {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+    }
+    .open-demat-faqs-accordion{
+        .faq-item{
+            position: relative;
+            .numbers{
+                position: absolute;
+                left: -4%;
+                top: 35%;
+                font-size: 2.286rem;
+                font-weight: 500;
+                font-family: $font-family-poppins-medium;
+                @media (max-width:$sm) {
+                   display: none;
+                }
             }
         }
     }

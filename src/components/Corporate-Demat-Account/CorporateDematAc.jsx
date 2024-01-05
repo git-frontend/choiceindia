@@ -2,6 +2,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from 'react';
 import './corporatedemat.scss';
+import "./../OpenDematAccount/DematPage.scss";
 import meta_tags from "../../Data/MetaTags";
 import CorporateBanner from "./CorporateBanner";
 import CorporateCount from './CorporateCount';
@@ -13,6 +14,7 @@ import KeyFeatures from "./KeyFeatures";
 import HowOpenDematAc from "./HowOpenDematAc";
 import WhyChooseChoice from "./WhyChooseChoice";
 import Benefits from "./Benefits";
+import CorporateFaqs from "./CorporateFaqs";
 function CorporateDematAc() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -65,6 +67,7 @@ function CorporateDematAc() {
         <HowOpenDematAc/>
         <WhyChooseChoice/>
         <Benefits/>
+        <CorporateFaqs/>
       </div>
     </>
   );

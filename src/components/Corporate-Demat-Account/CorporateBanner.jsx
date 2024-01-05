@@ -11,7 +11,7 @@ function CorporateBanner() {
             <section className="corporate-banner">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-xl-6 col-md-12">
                             <div className="corporate-banner-headings">
                                 <p className="para-first">Open Corporate Demat Account</p>
                                 <h1 className="title"><span>EMPOWER</span>
