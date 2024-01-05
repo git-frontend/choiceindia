@@ -13,6 +13,7 @@ import KeyFeatures from "./KeyFeatures";
 import HowOpenDematAc from "./HowOpenDematAc";
 import WhyChooseChoice from "./WhyChooseChoice";
 import Benefits from "./Benefits";
+import ClientTestimonials from "./ClientTestimonials";
 function CorporateDematAc() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -65,6 +66,7 @@ function CorporateDematAc() {
         <HowOpenDematAc/>
         <WhyChooseChoice/>
         <Benefits/>
+        <ClientTestimonials/>
       </div>
     </>
   );

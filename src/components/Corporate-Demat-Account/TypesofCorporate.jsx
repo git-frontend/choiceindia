@@ -19,7 +19,7 @@ function TypesofCorporate() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="types-list-section">
-                                <div className="col-md-4">
+                                {/* <div className="col-md-4"> */}
                                     <div className="types-list-itm">
                                         <span>
                                             <img src={arcticons} alt={""} />
@@ -27,8 +27,8 @@ function TypesofCorporate() {
                                         <h4>Private Limited/<br />
                                             Limited Company</h4>
                                     </div>
-                                </div>
-                                <div className="col-md-4">
+                                {/* </div> */}
+                                {/* <div className="col-md-4"> */}
                                     <div className="types-list-itm">
                                         <span>
                                             <img src={nounpartnership} alt={""} />
@@ -36,7 +36,7 @@ function TypesofCorporate() {
                                         <h4>Limited Liability <br />
                                             Partnership (LLP)</h4>
                                     </div>
-                                </div>
+                                {/* </div> */}
                             </div>
                         </div>
                     </div>
