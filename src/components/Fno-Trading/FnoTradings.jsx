@@ -155,7 +155,7 @@ function scrollToId(id) {
                                     <img src={zero1} alt={"Start Option Trading with Free Demat Account"} />
                                   </span>
                                   <h4>Zero</h4>
-                                  <h5>Account <span>Opening Free</span></h5>
+                                  <h5>Account <span>Opening Fee</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
