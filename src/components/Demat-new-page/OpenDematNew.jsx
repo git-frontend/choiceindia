@@ -295,6 +295,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                     </li>
                                 </ol>
                                 <p>Demat account features are designed to empower you to manage your investments efficiently.</p>
+                                <iframe className="cust-video" src="https://www.youtube.com/embed/29-dyEIktIo?si=OZKg_lRrG5aACue6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </InView>
                             
                             <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id4')} id="id4">
@@ -328,6 +329,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                     </li>
                                 </ol>
                                 <p>With these advantages, a Demat account emerges as a must-have tool for modern investors.</p>
+                                <iframe className="cust-video" src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=JoEnoJU3qiCOpMfN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </InView>
                             <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id2')} id="id2">
                                 <h2>Types of Demat Accounts in India</h2>
@@ -467,6 +469,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                 <p>Opening a Demat account has never been easier, thanks to digitalization. You have two primary options: online and offline account opening.</p>
                                 <h3><a href="/blog/demat-account-opening-online/">Online Demat Account Opening</a></h3>
                                 <p>Most brokerage firms offer online account opening, allowing you to complete the process from the comfort of your home. It's quick, convenient, and paperless.</p>
+                                <iframe className="cust-video" src="https://www.youtube.com/embed/dbtHtNsWZkI?si=5os5LGH4EX5NSeWd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br/>
                                 <p>An online demat account opening process involves:</p>
                                 <ol className="none-para">
                                     <li>Visiting the preferred broking company’s official website</li>
@@ -549,6 +552,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                     </li>
                                 </ol>
                                 <p>Take your time to research and compare different DPs and brokerage firms before making a decision. Your choice can significantly impact your overall investment experience.</p>
+                                <iframe className="cust-video" src="https://www.youtube.com/embed/GT4sJNBSF7A?si=9xDt2Mg0uCrk94aM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </InView>
                             
                             
@@ -607,6 +611,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                         <p>When you place a buy order, the shares are debited from your Demat account and sold from your Trading account. When you sell, the shares are credited to your Demat account after the transaction is complete.</p>
                                     </li>
                                 </ul>
+                                <iframe className="cust-video" src="https://www.youtube.com/embed/Z4i7dMIySI0?si=QZJtxasGcr5tPyhH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br/><br/>
                                 <p>Understanding this distinction enables you to make informed decisions while managing your investments and executing trades efficiently.</p>
                             </InView>
                             <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id11')} id="id11">
