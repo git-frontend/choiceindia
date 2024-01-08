@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import Bannerimage from "../../assets/images/Corporate-Demat-Account/stock-photo.webp";
-import Bannerimage from "../../assets/images/Corporate-Demat-Account/stock-photo-handsome.png";
+import Bannerimage from "../../assets/images/Corporate-Demat-Account/open-corporate-demat-account.png";
 import LazyLoader from '../Common-features/LazyLoader';
 
 function CorporateBanner() {
@@ -22,7 +22,7 @@ function CorporateBanner() {
                         </div>
                         <div className="col-md-6">
                             <div className="banner-img">
-                                <LazyLoader src={Bannerimage} className='img-fluid' width={'806'} height={'596'} alt={''} />
+                                <LazyLoader src={Bannerimage} className='img-fluid' width={'806'} height={'596'} alt={'Open corporate demat account'} />
                             </div>
                         </div>
                     </div>

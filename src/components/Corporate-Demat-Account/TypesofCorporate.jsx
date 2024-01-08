@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import arcticons from '../../assets/images/Corporate-Demat-Account/arcticons.svg';
-import nounpartnership from '../../assets/images/Corporate-Demat-Account/noun-partnership.svg';
+import arcticons from '../../assets/images/Corporate-Demat-Account/private-limited-company.svg';
+import nounpartnership from '../../assets/images/Corporate-Demat-Account/limited-liability-partnership-(llp).svg';
 import LazyLoader from '../Common-features/LazyLoader';
 function TypesofCorporate() {
 
@@ -22,14 +22,14 @@ function TypesofCorporate() {
                             <div className="types-list-section">
                                     <div className="types-list-itm">
                                         <span>
-                                            <LazyLoader src={arcticons} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                                            <LazyLoader src={arcticons} className={'img-fluid'} width={"100"} height={"100"} alt={"Private limited company"} />
                                         </span>
                                         <h4>Private Limited/<br />
                                             Limited Company</h4>
                                     </div>
                                     <div className="types-list-itm">
                                         <span>
-                                            <LazyLoader src={nounpartnership} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                                            <LazyLoader src={nounpartnership} className={'img-fluid'} width={"100"} height={"100"} alt={"limited-liability-partnership-(llp)"} />
                                         </span>
                                         <h4>Limited Liability <br />
                                             Partnership (LLP)</h4>

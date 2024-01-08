@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import mcx from '../../assets/images/Corporate-Demat-Account/mcx-award.png';
-import BeGameChanger from '../../assets/images/Corporate-Demat-Account/be-game-changer.png';
-import IciciBank from '../../assets/images/Corporate-Demat-Account/icici-bank-award.png';
+import mcx from '../../assets/images/free-demat-compaign/mcx-awards-2022.webp';
+import BeGameChanger from '../../assets/images/free-demat-compaign/gratitude-awards.webp';
+import IciciBank from '../../assets/images/free-demat-compaign/achievers-brokers-club.webp';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 function WhyChooseChoice() {
@@ -67,26 +67,26 @@ function WhyChooseChoice() {
                                 view && !view.matches ?
                                     <Slider {...settings2} className="awrd-list-section">
                                         <div className="list-itm">
-                                            <LazyLoader src={mcx} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <LazyLoader src={mcx} className={'img-fluid'} width={"308"} height={"318"} alt={"MCX Awards 2022"} />
                                         </div>
                                         <div className="list-itm">
-                                            <LazyLoader src={BeGameChanger} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <LazyLoader src={BeGameChanger} className={'img-fluid'} width={"308"} height={"318"} alt={"Gratitude Awards"} />
                                         </div>
                                         <div className="list-itm">
-                                            <LazyLoader src={IciciBank} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <LazyLoader src={IciciBank} className={'img-fluid'} width={"308"} height={"318"} alt={"Achievers Broker's Club"} />
                                         </div>
 
                                     </Slider>
                                     :
                                     <div className="awrd-list-section">
                                         <div className="list-itm">
-                                            <LazyLoader src={mcx} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <LazyLoader src={mcx} className={'img-fluid'} width={"308"} height={"318"} alt={"MCX Awards 2022"} />
                                         </div>
                                         <div className="list-itm">
-                                            <LazyLoader src={BeGameChanger} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <LazyLoader src={BeGameChanger} className={'img-fluid'} width={"308"} height={"318"} alt={"Gratitude Awards"} />
                                         </div>
                                         <div className="list-itm">
-                                            <LazyLoader src={IciciBank} className={'img-fluid'} width={"308"} height={"318"} alt={""} />
+                                            <LazyLoader src={IciciBank} className={'img-fluid'} width={"308"} height={"318"} alt={"Achievers Broker's Club"} />
                                         </div>
                                     </div>
                             }

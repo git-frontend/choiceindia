@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import FillOut from '../../assets/images/Corporate-Demat-Account/fill-out.svg';
-import OurRM from '../../assets/images/Corporate-Demat-Account/our-rm.svg';
-import RequiredDoc from '../../assets/images/Corporate-Demat-Account/required-document.svg';
-import VeriProcess from '../../assets/images/Corporate-Demat-Account/verification-process.svg';
-import StartTrading from '../../assets/images/Corporate-Demat-Account/start-trading.svg';
+import FillOut from '../../assets/images/Corporate-Demat-Account/fill-contact-form-to-open-corporate-account.svg';
+import OurRM from '../../assets/images/Corporate-Demat-Account/rm-guide-on-corporate-demat-account-opening-process.svg';
+import RequiredDoc from '../../assets/images/Corporate-Demat-Account/share-required-documents-to-open-corporate-account.svg';
+import VeriProcess from '../../assets/images/Corporate-Demat-Account/corporate-demat-account-verification.svg';
+import StartTrading from '../../assets/images/Corporate-Demat-Account/start-trading-using-your-corporate-demat-account.svg';
 import AcChecklist from '../../assets/images/Corporate-Demat-Account/account-checklist.svg';
 import { Accordion } from "react-bootstrap";
 import LazyLoader from '../Common-features/LazyLoader';
@@ -77,27 +77,27 @@ function HowOpenDematAc() {
                             <div className="process-list-section">
                                 <div className="list-itm">
                                     <span>
-                                    <LazyLoader src={FillOut} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                                    <LazyLoader src={FillOut} className={'img-fluid'} width={"100"} height={"100"} alt={"Fill contact form to open corporate account"} />
                                     </span>
                                 </div>
                                 <div className="list-itm">
                                     <span>
-                                    <LazyLoader src={OurRM} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                                    <LazyLoader src={OurRM} className={'img-fluid'} width={"100"} height={"100"} alt={"RM guide on corporate demat account opening process"} />
                                     </span>
                                 </div>
                                 <div className="list-itm">
                                     <span>
-                                    <LazyLoader src={RequiredDoc} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                                    <LazyLoader src={RequiredDoc} className={'img-fluid'} width={"100"} height={"100"} alt={"Share Required documents to open corporate account"} />
                                     </span>
                                 </div>
                                 <div className="list-itm">
                                     <span>
-                                    <LazyLoader src={VeriProcess} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                                    <LazyLoader src={VeriProcess} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account verification"} />
                                     </span>
                                 </div>
                                 <div className="list-itm">
                                     <span>
-                                    <LazyLoader src={StartTrading} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                                    <LazyLoader src={StartTrading} className={'img-fluid'} width={"100"} height={"100"} alt={"Start trading using your corporate demat account"} />
                                     </span>
                                 </div>
                             </div>

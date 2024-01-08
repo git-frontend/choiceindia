@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from "react";
-import search from '../../assets/images/Corporate-Demat-Account/search.svg';
-import support from '../../assets/images/Corporate-Demat-Account/support.svg';
-import reliable from '../../assets/images/Corporate-Demat-Account/reliable.svg';
-import checkcircle from '../../assets/images/Corporate-Demat-Account/check-circle.svg';
 import Slider from 'react-slick';
 function Benefits() {
     const [view, setView] = useState({

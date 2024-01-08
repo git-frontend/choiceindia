@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import process from '../../assets/images/Corporate-Demat-Account/process.svg';
-import clockstopwatch from '../../assets/images/Corporate-Demat-Account/clock-stopwatch.svg';
-import money from '../../assets/images/Corporate-Demat-Account/money.svg';
-import shieldcheck from '../../assets/images/Corporate-Demat-Account/shield-check.svg';
-import transaction from '../../assets/images/Corporate-Demat-Account/transaction.svg';
+import process from '../../assets/images/Corporate-Demat-Account/corporate-demat-account-with-streamlined-operations.svg';
+import clockstopwatch from '../../assets/images/Corporate-Demat-Account/open-corporate-demat-account-real-time-access.svg';
+import money from '../../assets/images/Corporate-Demat-Account/corporate-demat-account-with-cost-effective-trading.svg';
+import shieldcheck from '../../assets/images/Corporate-Demat-Account/corporate-demat-account-with-secure-trading.svg';
+import transaction from '../../assets/images/Corporate-Demat-Account/corporate-demat-account-with-effortless-transactions.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
 
@@ -83,35 +83,35 @@ function WhyCorporateDemat() {
                   <Slider {...settings2} className="list-section">
                     <div className="list-itm">
                       <span>
-                        <LazyLoader src={process} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                        <LazyLoader src={process} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with streamlined operations"} />
                       </span>
                       <h4>Streamlined Operations</h4>
                       <h5>Simplify corporate actions by eliminating the complexities associated with physical securities.</h5>
                     </div>
                     <div className="list-itm">
                       <span>
-                        <LazyLoader src={shieldcheck} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                        <LazyLoader src={shieldcheck} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with secure trading"} />
                       </span>
                       <h4>Secure Trading</h4>
                       <h5>Protect your corporate assets with enhanced security against forgery, damage, and loss.</h5>
                     </div>
                     <div className="list-itm">
                       <span>
-                        <LazyLoader src={clockstopwatch} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                        <LazyLoader src={clockstopwatch} className={'img-fluid'} width={"100"} height={"100"} alt={"Open corporate demat account real-time access"} />
                       </span>
                       <h4>OReal-time Access</h4>
                       <h5>Empower your trades with real-time access to financial instruments. Make informed decisions instantly.</h5>
                     </div>
                     <div className="list-itm">
                       <span>
-                        <LazyLoader src={transaction} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                        <LazyLoader src={transaction} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with effortless transactions"} />
                       </span>
                       <h4>Effortless Transactions</h4>
                       <h5>Experience faster transactions and reduce manual paperwork. Manage your corporate securities efficiently.</h5>
                     </div>
                     <div className="list-itm">
                       <span>
-                        <LazyLoader src={money} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                        <LazyLoader src={money} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with cost-effective trading"} />
                       </span>
                       <h4>Cost-effective Trading</h4>
                       <h5>Leverage our low brokerage rates. Our Corporate Demat account offers cost-effectiveness to your business.</h5>
@@ -122,35 +122,35 @@ function WhyCorporateDemat() {
                   <div className="list-section">
                     <div className="list-itm">
                       <span>
-                      <LazyLoader src={process} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                      <LazyLoader src={process} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with streamlined operations"} />
                       </span>
                       <h4>Streamlined Operations</h4>
                       <h5>Simplify corporate actions by eliminating the complexities associated with physical securities.</h5>
                     </div>
                     <div className="list-itm">
                       <span>
-                      <LazyLoader src={shieldcheck} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                      <LazyLoader src={shieldcheck} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with secure trading"} />
                       </span>
                       <h4>Secure Trading</h4>
                       <h5>Protect your corporate assets with enhanced security against forgery, damage, and loss.</h5>
                     </div>
                     <div className="list-itm">
                       <span>
-                      <LazyLoader src={clockstopwatch} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                      <LazyLoader src={clockstopwatch} className={'img-fluid'} width={"100"} height={"100"} alt={"Open corporate demat account real-time access"} />
                       </span>
                       <h4>OReal-time Access</h4>
                       <h5>Empower your trades with real-time access to financial instruments. Make informed decisions instantly.</h5>
                     </div>
                     <div className="list-itm">
                       <span>
-                      <LazyLoader src={transaction} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                      <LazyLoader src={transaction} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with effortless transactions"} />
                       </span>
                       <h4>Effortless Transactions</h4>
                       <h5>Experience faster transactions and reduce manual paperwork. Manage your corporate securities efficiently.</h5>
                     </div>
                     <div className="list-itm">
                       <span>
-                      <LazyLoader src={money} className={'img-fluid'} width={"100"} height={"100"} alt={""} />
+                      <LazyLoader src={money} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with cost-effective trading"} />
                       </span>
                       <h4>Cost-effective Trading</h4>
                       <h5>Leverage our low brokerage rates. Our Corporate Demat account offers cost-effectiveness to your business.</h5>

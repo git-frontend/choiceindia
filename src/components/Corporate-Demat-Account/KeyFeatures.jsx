@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import search from '../../assets/images/Corporate-Demat-Account/search.svg';
-import support from '../../assets/images/Corporate-Demat-Account/support.svg';
-import reliable from '../../assets/images/Corporate-Demat-Account/reliable.svg';
-import checkcircle from '../../assets/images/Corporate-Demat-Account/check-circle.svg';
+import search from '../../assets/images/Corporate-Demat-Account/corporate-demat-account-with-research-services.svg';
+import support from '../../assets/images/Corporate-Demat-Account/corporate-demat-account-with-customer-support.svg';
+import reliable from '../../assets/images/Corporate-Demat-Account/corporate-demat-account-with-local-branch-support.svg';
+import checkcircle from '../../assets/images/Corporate-Demat-Account/open-corporate-demat-account-from-trusted-broker.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
 function KeyFeatures() {
@@ -68,14 +68,14 @@ function KeyFeatures() {
                                     <Slider {...settings2} className="key-list-section">
                                         <div className="list-itm">
                                             <span>
-                                                <LazyLoader src={search} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
+                                                <LazyLoader src={search} className={'img-fluid'} width={"56"} height={"56"} alt={"Corporate demat account with research services"} />
                                             </span>
                                             <h4>Research Services</h4>
                                             <h5>A dedicated research team offering Technical and Fundamental Research free of cost.</h5>
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                                <LazyLoader src={support} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
+                                                <LazyLoader src={support} className={'img-fluid'} width={"56"} height={"56"} alt={"Corporate demat account with customer support"} />
                                             </span>
                                             <h4>Customer Support</h4>
                                             <h5>Excellent support team available via phone, email, and our branch offices, to guide you at every
@@ -83,14 +83,14 @@ function KeyFeatures() {
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                                <LazyLoader src={reliable} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
+                                                <LazyLoader src={reliable} className={'img-fluid'} width={"56"} height={"56"} alt={"Corporate demat account with local branch support"} />
                                             </span>
                                             <h4>Reliable Expertise</h4>
                                             <h5>25+ years of expertise in the finance domain, Choice is a trusted name in the broking industry.</h5>
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                                <LazyLoader src={checkcircle} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
+                                                <LazyLoader src={checkcircle} className={'img-fluid'} width={"56"} height={"56"} alt={"Open corporate demat account from trusted broker"} />
                                             </span>
                                             <h4>Locally Available</h4>
                                             <h5>With 104+ local offices across the country, we are always within your reach.</h5>
@@ -101,14 +101,14 @@ function KeyFeatures() {
                                     <div className="key-list-section">
                                         <div className="list-itm">
                                             <span>
-                                            <LazyLoader src={search} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
+                                            <LazyLoader src={search} className={'img-fluid'} width={"56"} height={"56"} alt={"Corporate demat account with research services"} />
                                             </span>
                                             <h4>Research Services</h4>
                                             <h5>A dedicated research team offering Technical and Fundamental Research free of cost.</h5>
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                            <LazyLoader src={support} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
+                                            <LazyLoader src={support} className={'img-fluid'} width={"56"} height={"56"} alt={"Corporate demat account with customer support"} />
                                             </span>
                                             <h4>Customer Support</h4>
                                             <h5>Excellent support team available via phone, email, and our branch offices, to guide you at every
@@ -116,14 +116,14 @@ function KeyFeatures() {
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                            <LazyLoader src={reliable} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
+                                            <LazyLoader src={reliable} className={'img-fluid'} width={"56"} height={"56"} alt={"Corporate demat account with local branch support"} />
                                             </span>
                                             <h4>Reliable Expertise</h4>
                                             <h5>25+ years of expertise in the finance domain, Choice is a trusted name in the broking industry.</h5>
                                         </div>
                                         <div className="list-itm">
                                             <span>
-                                            <LazyLoader src={checkcircle} className={'img-fluid'} width={"56"} height={"56"} alt={""} />
+                                            <LazyLoader src={checkcircle} className={'img-fluid'} width={"56"} height={"56"} alt={"Open corporate demat account from trusted broker"} />
                                             </span>
                                             <h4>Locally Available</h4>
                                             <h5>With 104+ local offices across the country, we are always within your reach.</h5>
