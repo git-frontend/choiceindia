@@ -949,7 +949,7 @@ function Holidayscategory() {
                                     Every year, the multi-commodity exchange decides on a list of holidays and releases a circular to inform investors. The exchange can also alter or change these holidays with appropriate prior notice.
                                     <h3 className="third-heading-para">MCX Trading Holidays for 2024</h3>
                                     The circular for MCX holidays 2024 in India has already been released. According to the contents of the notice, here are the days on which the commodity market will either remain completely closed or close off a particular trading section.
-                                    <h4 className="fourth-heading-para">1st January 2024 - New Year's Day</h4>
+                                    <h4 className="fourth-heading-para"><strong>1st January 2024 - New Year's Day</strong></h4>
                                     <strong>Status:</strong> The evening session remains closed.
                                     <br /><br />
                                     Traders and investors can utilise the morning session of the first day of the year to indulge in the market. But as soon as it is 5 PM, MCX will end the trading window, and you can only buy and sell commodities starting from 9 AM the next day.
