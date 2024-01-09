@@ -347,7 +347,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                         <div>
                             <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
                                 <div></div>
-                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Open Free Account</button>
+                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Invest in Unlisted Shares</button>
                             </div>
                         </div> :
                         webcheck == "Blog" ?
