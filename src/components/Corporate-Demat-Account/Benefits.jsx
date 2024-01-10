@@ -49,7 +49,7 @@ function Benefits() {
             <section className="benifits-sec">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-md-10">
+                        <div className="col-xl-10 col-md-12">
                             <div className="caption">
                                 <h2 className="title-secnd">Benefits of Our Corporate Demat Account</h2>
                                 <p>All-in-One account for all your trading needs and more.</p>
@@ -57,7 +57,7 @@ function Benefits() {
                         </div>
                     </div>
                     <div className="row justify-content-center">
-                        <div className="col-md-10">
+                        <div className="col-xl-10 col-md-12">
                             {
                                 view && !view.matches ?
                                     <Slider {...settings2} className="benifits-list-section">

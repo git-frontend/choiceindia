@@ -42,6 +42,7 @@ function ClientTestimonials() {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     speed: 1000,
+                    dots:false,
                 },
             },
         ],

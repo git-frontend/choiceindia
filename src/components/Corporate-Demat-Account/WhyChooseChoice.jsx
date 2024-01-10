@@ -53,7 +53,7 @@ function WhyChooseChoice() {
             <section className="why-choose-choice">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-md-10">
+                        <div className="col-xl-10 col-md-12">
                             <div className="caption">
                                 <h2 className="title-secnd">Why Choose Choice?</h2>
                                 <p>We provide access to expert advice, comprehensive financial services, personalized services, and the opportunity to bank substantial returns with professional portfolio management.</p>
@@ -62,7 +62,7 @@ function WhyChooseChoice() {
                         </div>
                     </div>
                     <div className="row justify-content-center">
-                        <div className="col-md-10">
+                        <div className="col-xl-10 col-md-12">
                             {
                                 view && !view.matches ?
                                     <Slider {...settings2} className="awrd-list-section">

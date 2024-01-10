@@ -83,78 +83,99 @@ function WhyCorporateDemat() {
                 view && !view.matches ?
                   <Slider {...settings2} className="list-section">
                     <div className="list-itm">
+                      <div className="bx-item-cont">
                       <span>
                         <LazyLoader src={process} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with streamlined operations"} />
                       </span>
                       <h4>Streamlined Operations</h4>
                       <h5>Simplify corporate actions by eliminating the complexities associated with physical securities.</h5>
+                      </div>
+                      
                     </div>
                     <div className="list-itm">
+                    <div className="bx-item-cont">
                       <span>
                         <LazyLoader src={shieldcheck} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with secure trading"} />
                       </span>
                       <h4>Secure Trading</h4>
                       <h5>Protect your corporate assets with enhanced security against forgery, damage, and loss.</h5>
                     </div>
+                    </div>
                     <div className="list-itm">
+                    <div className="bx-item-cont">
                       <span>
                         <LazyLoader src={clockstopwatch} className={'img-fluid'} width={"100"} height={"100"} alt={"Open corporate demat account real-time access"} />
                       </span>
                       <h4>OReal-time Access</h4>
                       <h5>Empower your trades with real-time access to financial instruments. Make informed decisions instantly.</h5>
                     </div>
+                    </div>
                     <div className="list-itm">
+                    <div className="bx-item-cont">
                       <span>
                         <LazyLoader src={transaction} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with effortless transactions"} />
                       </span>
                       <h4>Effortless Transactions</h4>
                       <h5>Experience faster transactions and reduce manual paperwork. Manage your corporate securities efficiently.</h5>
                     </div>
+                    </div>
                     <div className="list-itm">
+                    <div className="bx-item-cont">
                       <span>
                         <LazyLoader src={money} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with cost-effective trading"} />
                       </span>
                       <h4>Cost-effective Trading</h4>
                       <h5>Leverage our low brokerage rates. Our Corporate Demat account offers cost-effectiveness to your business.</h5>
                     </div>
+                    </div>
 
                   </Slider>
                   :
                   <div className="list-section">
                     <div className="list-itm">
+                    <div className="bx-item-cont">
                       <span>
                       <LazyLoader src={process} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with streamlined operations"} />
                       </span>
                       <h4>Streamlined Operations</h4>
                       <h5>Simplify corporate actions by eliminating the complexities associated with physical securities.</h5>
                     </div>
+                    </div>
                     <div className="list-itm">
+                    <div className="bx-item-cont">
                       <span>
                       <LazyLoader src={shieldcheck} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with secure trading"} />
                       </span>
                       <h4>Secure Trading</h4>
                       <h5>Protect your corporate assets with enhanced security against forgery, damage, and loss.</h5>
                     </div>
+                    </div>
                     <div className="list-itm">
+                    <div className="bx-item-cont">
                       <span>
                       <LazyLoader src={clockstopwatch} className={'img-fluid'} width={"100"} height={"100"} alt={"Open corporate demat account real-time access"} />
                       </span>
                       <h4>OReal-time Access</h4>
                       <h5>Empower your trades with real-time access to financial instruments. Make informed decisions instantly.</h5>
                     </div>
+                    </div>
                     <div className="list-itm">
+                    <div className="bx-item-cont">
                       <span>
                       <LazyLoader src={transaction} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with effortless transactions"} />
                       </span>
                       <h4>Effortless Transactions</h4>
                       <h5>Experience faster transactions and reduce manual paperwork. Manage your corporate securities efficiently.</h5>
                     </div>
+                    </div>
                     <div className="list-itm">
+                    <div className="bx-item-cont">
                       <span>
                       <LazyLoader src={money} className={'img-fluid'} width={"100"} height={"100"} alt={"Corporate demat account with cost-effective trading"} />
                       </span>
                       <h4>Cost-effective Trading</h4>
                       <h5>Leverage our low brokerage rates. Our Corporate Demat account offers cost-effectiveness to your business.</h5>
+                    </div>
                     </div>
                   </div>
               }
