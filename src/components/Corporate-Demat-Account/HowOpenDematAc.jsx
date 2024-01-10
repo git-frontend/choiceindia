@@ -283,7 +283,7 @@ function HowOpenDematAc() {
                                 </div>
                            </div>
                            <div className="col-md-12 d-flex justify-content-center">
-                                <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => chapterScroll('campaignForm')}>Open Free Account</a>
+                                <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => chapterScroll('dematformsticky')}>Open Free Account</a>
                             </div>
                         </div>
                     </div>

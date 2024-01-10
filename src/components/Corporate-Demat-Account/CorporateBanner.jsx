@@ -4,7 +4,16 @@ import Bannerimage from "../../assets/images/Corporate-Demat-Account/open-corpor
 import LazyLoader from '../Common-features/LazyLoader';
 
 function CorporateBanner() {
-
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
 
     return (
         <>
@@ -17,7 +26,7 @@ function CorporateBanner() {
                                 <h1 className="title"><span>EMPOWER</span>
                                     Your Business</h1>
                                 <p className="para-scnd">Trade easily across all segments on NSE, BSE, and MCX with our all-in-one Corporate Demat account.</p>
-                                <a href="javascript:void(0)" className="btn-bg btn-bg-dark btn-new" onClick={() => scrollToId('campaignForm')}>Start Today</a>
+                                <a href="javascript:void(0)" className="btn-bg btn-bg-dark btn-new" onClick={() => scrollToId('dematformsticky')}>Start Today</a>
                             </div>
                         </div>
                         <div className="col-md-6">

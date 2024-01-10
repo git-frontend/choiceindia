@@ -217,6 +217,7 @@
 
             .title-secnd {
                 margin-bottom: 4rem;
+                color: $darkblack !important;
 
                 @media (max-width:$sm) {
                     margin-bottom: 2rem;
@@ -349,6 +350,11 @@
                 bottom: -11px
             }
         }
+        .corporate-btn{
+            font-size: 1.846rem !important;
+            font-family: $font-family-poppins-medium !important;
+            padding: 1.3rem 4rem !important;
+        }
     }
 
     .types-of-corporate {
@@ -457,8 +463,8 @@
             }
 
             .Mobile_text {
-                width: 45%;
-                margin-right: 3rem;
+                width: 55%;
+                // margin-right: 3rem;
 
                 @media (min-width:$sm-x) and (max-width:$md) {
                     width: 100%;
@@ -498,7 +504,7 @@
                 .form_check_text {
                     color: $whiteColor;
                     font-size: 1.231rem;
-
+                    padding-left: 0.6rem;
                     .link_tc {
                         color: $blueColortext;
                     }
@@ -568,7 +574,7 @@
             }
         }
         .key-list-section {
-            margin: 4rem 0;
+            margin: 4rem 0 0 0;
             display: flex;
             flex-wrap: wrap;
 
@@ -1371,6 +1377,11 @@
             position: relative;
             bottom: -11px
         }
+    }
+    .testimonial-btn{
+        font-size: 1.846rem !important;
+        font-family: $font-family-poppins-medium !important;
+        min-width: 14rem !important;
     }
 }
 }

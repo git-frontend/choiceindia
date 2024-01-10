@@ -160,7 +160,7 @@ function WhyCorporateDemat() {
             </div>
 
             <div className="col-md-12 d-flex justify-content-center">
-              <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Get Started</a>
+              <a href="javascript:void(0)" className="btn-bg btn-new corporate-btn" onClick={() => scrollToId('dematformsticky')}>Get Started</a>
             </div>
           </div>
         </div>
