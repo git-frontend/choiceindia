@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Thankyoupopup from './Thanku-popup.jsx';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
-function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
+function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
 
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
@@ -29,10 +29,10 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     var source = useRef('');
     var otpSessionID = useRef('');
     var subrefercode = useRef('');
-    const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
+    const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
-
+    const blogcheck = ((window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'yes' : " ")
     /** state to show thankyou popup default */
     // const [showAdPopUp, setshowAdPopUp] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'' });
 
@@ -68,10 +68,10 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link,msg,info,actionType,leadId) {
+    function handleOTPClose(link, msg, info, actionType, leadId) {
         // console.log('TTYTYTYTY',link,msg,info);
         setShowOTP(false);
-        let obj = {"link": link, "msg":msg, "info":info, "actionType":actionType, "leadId":leadId};
+        let obj = { "link": link, "msg": msg, "info": info, "actionType": actionType, "leadId": leadId };
         // if (link) {
 
         //     let result = link.match("respond-issue");
@@ -136,31 +136,32 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     function sendOTP() {
         showLoader('sendOTPLoader');
         let request = {
-            "whatsapp_consent":true,
+            "whatsapp_consent": true,
             "service_code": "JF", // type1=='MF' ? "MF": "JF",
             "mobile_number": mobileNumber,
             "product": "FINX", //type1=='MF' ? "INVESTICA":"FINX",
             "request_source": "CHOICEINDIA",
-            "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
+            "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": "1", // type1=='MF' ?"true":"1",
-            "referred_id": refercode.current || null , //|| referID || null,
+            "referred_id": refercode.current || null, //|| referID || null,
             "sub_ref": subrefercode.current || null,
-           /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
+            /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
-            "utm_campaign": isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || null,
-            "utm_content": UTMContent.current || null,
-            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
+            "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || null,
+            "utm_content": (window.location.pathname.indexOf("/blog/unlisted-shares-price-list/") > -1) ? 'in_content_cta' : UTMContent.current || null,
+            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/', ''),
             // 'sidebar_seo_leads'
-            "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
+            "utm_medium": isBlog == "yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": isBlog =="yes" ?UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
+            "utm_source": (window.location.pathname.indexOf("/unlisted-shares-price-list/") > -1) ? 'ul_leads' : isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
-            "account_type" :  "all" // type1=='MF'?"":"all"
+            "account_type": "all" // type1=='MF'?"":"all"
             // "captcha": "1"
-          
+
         };
+        console.log("hghg", request)
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
@@ -208,62 +209,76 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
 
     return (
         <>
-        {
-            showOpenAccountPopup ?
-            <div className="exit-intent-sleekbox-overlay sleekbox-popup-active otp-main-modal demat-modal-sleekbox-overlay show-res">
-                <div className="exit-intent-sleekbox-popup">
-                    <div className="close">
-                        <a onClick={hideComponent} class="closebtn cursor-pointer" >&times;</a>
-                    </div>
-                    <div className="popup-sub-row">
-                        <div className="leftwrap">
-                            <div className="popup-sub">
-                                <h4 >100% Free Demat Account  </h4>
-                                <h4 className="dsmblock">100% Free <span> Demat Account + 1st Year</span> Free AMC</h4>
-                                <ul>
-                                    <li><span> No </span> Account <span>Opening Fee</span></li>
-                                    <li><span> Lowest DP </span>  Charges (Rs.10 only)</li>
-                                    <li> <span>Zero Auto Square Off </span>Charges</li>
-                                    <li><span>Free Call</span>  for Trade Facility</li>
-                                </ul>
-                                {/* <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p> */}
+            {
+                showOpenAccountPopup ?
+                    <div className="exit-intent-sleekbox-overlay sleekbox-popup-active otp-main-modal demat-modal-sleekbox-overlay show-res">
+                        <div className="exit-intent-sleekbox-popup">
+                            <div className="close">
+                                <a onClick={hideComponent} class="closebtn cursor-pointer" >&times;</a>
                             </div>
-                        </div>
-                        <div className="popup-sub-right">
-                            <div className="signal-form" id="form-banner">
-                         
-                           
-                                <form id="sso_form-pop" name="sso_form" className="mt-4 enq-form dmt_form" method="post">
-                                    <input type="hidden" name="scode" id="scode" value="JFP" />
-                                    <input type="hidden" id="source" name="source" value="CHOICEINDIA" />
-                                    <h4 className="desktophide">+ 1st Year Free AMC </h4>
-                                    <h4 className="desktopshow">100% Free <span> Demat Account + <br/>1st Year</span> Free AMC</h4>
-                                    <div className="form-group">
-                                        {/* <label htmlFor="mobile-number" hidden="">Mobile Number<span style={{ 'color': 'red' }}>*</span></label> */}
-                                        <input type="text" pattern='\d*' autoComplete="off" maxLength="10" className="write numberonly input-type dmt" id="mobile_no" name="mobile_no" placeholder="Mobile Number" value={mobileNumber} onChange={handleMobile}/>
-                                        <div>
-                                            <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
-                                            <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errors.required ? 'Mobile Number is Required' : ''}</small>
+                            <div className="popup-sub-row">
+                                {
+                                    blogcheck ?
+                                        <div></div> :
+                                        <div className="leftwrap">
+                                            <div className="popup-sub">
+                                                <h4 >100% Free Demat Account  </h4>
+                                                <h4 className="dsmblock">100% Free <span> Demat Account + 1st Year</span> Free AMC</h4>
+                                                <ul>
+                                                    <li><span> No </span> Account <span>Opening Fee</span></li>
+                                                    <li><span> Lowest DP </span>  Charges (Rs.10 only)</li>
+                                                    <li> <span>Zero Auto Square Off </span>Charges</li>
+                                                    <li><span>Free Call</span>  for Trade Facility</li>
+                                                </ul>
+                                                {/* <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p> */}
+                                            </div>
                                         </div>
+                                }
+                                <div className="popup-sub-right">
+                                    <div className="signal-form" id="form-banner">
+
+
+                                        <form id="sso_form-pop" name="sso_form" className="mt-4 enq-form dmt_form" method="post">
+                                            <input type="hidden" name="scode" id="scode" value="JFP" />
+                                            <input type="hidden" id="source" name="source" value="CHOICEINDIA" />
+                                            {
+                                                blogcheck ?
+                                                    <h4 className="desktophide">Let’s Invest In <span>Unlisted Shares</span></h4>
+                                                     :
+                                                    <h4 className="desktophide">+ 1st Year Free AMC </h4>
+                                            }
+                                            {
+                                                blogcheck ?
+                                                    <h4 className="desktopshow">Let’s Invest In <span>Unlisted Shares</span></h4>
+                                                    :
+                                                    <h4 className="desktopshow">100% Free <span> Demat Account + <br />1st Year</span> Free AMC</h4>
+                                            }
+                                            <div className="form-group">
+                                                {/* <label htmlFor="mobile-number" hidden="">Mobile Number<span style={{ 'color': 'red' }}>*</span></label> */}
+                                                <input type="text" pattern='\d*' autoComplete="off" maxLength="10" className="write numberonly input-type dmt" id="mobile_no" name="mobile_no" placeholder="Mobile Number" value={mobileNumber} onChange={handleMobile} />
+                                                <div>
+                                                    <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
+                                                    <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errors.required ? 'Mobile Number is Required' : ''}</small>
+                                                </div>
+                                            </div>
+                                            <div className="form-check">
+                                                <input type="checkbox" className="tick_by_def" data="JFP" id="terms_and_conditions" name="terms_and_conditions" checked readOnly />
+                                                <label className="tc" target="_blank" htmlFor="exampleCheck1">I agree & accept <a className="termsPopup" onClick={handleTermsConditionShow}>T&C</a></label>
+                                            </div>
+                                            <button type="submit" id="dem_btn_submit" className="btn btn-primary w-100 btn-f-sm signal-same-btn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+                                            <div style={{ textAlign: 'center' }}>
+                                                <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{APIError || ''}</small>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div className="form-check">
-                                        <input type="checkbox" className="tick_by_def" data="JFP" id="terms_and_conditions" name="terms_and_conditions" checked readOnly />
-                                        <label className="tc" target="_blank" htmlFor="exampleCheck1">I agree & accept <a className="termsPopup" onClick={handleTermsConditionShow}>T&C</a></label>
-                                    </div>
-                                    <button type="submit" id="dem_btn_submit" className="btn btn-primary w-100 btn-f-sm signal-same-btn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
-                                    <div style={{ textAlign: 'center' }}>
-                                        <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{APIError || ''}</small>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>   : ''
-        }
-        {
-            showOTP ? <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} openInfoPopup={(msg)=>openInfoPopup(msg)}></OpenAccountOTPModal> : ''
-        }
+                    </div> : ''
+            }
+            {
+                showOTP ? <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} openInfoPopup={(msg) => openInfoPopup(msg)}></OpenAccountOTPModal> : ''
+            }
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static" className="termcondition"
                 keyboard={false} centered>
                 <Modal.Header closeButton>
