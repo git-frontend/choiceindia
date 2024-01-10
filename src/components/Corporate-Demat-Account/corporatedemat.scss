@@ -1068,27 +1068,34 @@
         @media (max-width:$sm) {
             padding: 4rem 0;
         }
-
-        h2 {
-            margin-bottom: 2rem;
-
+        .caption{
+            text-align: center;
             @media (max-width:$sm) {
-                text-align: left;
+                padding: 0 1.25rem;
             }
+            h2 {
+                margin-bottom: 2rem;
+    
+                @media (max-width:$sm) {
+                    text-align: left;
+                }
+            }
+    
+            p {
+                font-size: 1.714rem;
+                line-height: 1.5;
+                font-family: $font-family-poppins-regular;
+                font-weight: 400;
+    
+                @media (max-width:$sm) {
+                    font-size: 1rem;
+                    text-align: left;
+                }
+            }
+    
         }
 
-        p {
-            font-size: 1.714rem;
-            line-height: 1.5;
-            font-family: $font-family-poppins-regular;
-            font-weight: 400;
-
-            @media (max-width:$sm) {
-                font-size: 1rem;
-                text-align: left;
-            }
-        }
-
+       
         .benifits-list-section {
             margin: 4rem 0;
             display: flex;
