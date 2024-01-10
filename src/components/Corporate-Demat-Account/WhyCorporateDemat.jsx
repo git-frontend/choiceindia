@@ -47,6 +47,7 @@ function WhyCorporateDemat() {
           slidesToScroll: 1,
           speed: 1000,
           autoplay: true,
+          adaptiveHeight: true,
         },
       },
     ],

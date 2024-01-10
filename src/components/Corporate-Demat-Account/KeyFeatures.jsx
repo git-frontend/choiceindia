@@ -43,6 +43,7 @@ function KeyFeatures() {
                     slidesToScroll: 1,
                     speed: 1000,
                     autoplay: true,
+                    adaptiveHeight: true,
                 },
             },
         ],
@@ -55,7 +56,7 @@ function KeyFeatures() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <div className="text-center">
+                            <div className="caption">
                                 <h2 className="title-secnd">Key Features of Corporate Demat Account</h2>
                                 <p>Choice Corporate Demat account is feature-rich and designed to meet specific business needs and provide you with the best possible experience.</p>
                             </div>
