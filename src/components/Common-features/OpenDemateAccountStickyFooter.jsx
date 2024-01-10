@@ -28,7 +28,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     var source = useRef('');
     var otpSessionID = useRef('');
-    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1) || (window.location.pathname.indexOf('corporate-demat-account') > -1)) ? 'Best-Stock' : "Blog";
+    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1)||(window.location.pathname.indexOf('corporate-demat-account') > -1)) ? 'Best-Stock' : "Blog";
+    const UnlistBlog = (window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'yes' : "";
 
     var otpLeadID = useRef('');
     var referLink = useRef('');
@@ -315,12 +316,13 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                                 </div> :
                                                 window.location.pathname.indexOf('best-short-term-stocks-to-buy') == 1
                                                     ? <div className=" demat_text"><span className="form-ttl">Accelerate your portfolio's growth<br /> today with our dynamic<br /> short-term stock picks!</span>
-                                                    </div> :
+                                                    </div>
+                                                    :
                                                     window.location.pathname.indexOf('corporate-demat-account') == 1
-                                                        ? <div className=" demat_text"><span className="form-ttl">Open Corporate Demat Account</span>
-                                                        </div>
-                                                        :
-                                                        <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
+                                                    ? <div className=" demat_text"><span className="form-ttl">Open Corporate Demat Account</span>
+                                                    </div>
+                                                    :
+                                                    <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
                                 }
                                 {
                                     window.location.pathname.indexOf('corporate-demat-account') == 1
@@ -354,7 +356,6 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                             <label className="form_check_text">I agree that I have read and  accept<br /> the <a onClick={handleTermsConditionShow}><span className="link_tc">Terms and Conditions</span></a></label>
                                         </div>
                                 }
-
                                 <div className='api_errornew'>
                                     <button type="submit" className="form-btn  btn-bg-dark btn-bg" onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
                                     <div><small id="API_error" className="errormsg text-danger api-text-danger">{APIError || ''}</small></div>
@@ -367,50 +368,57 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                         </div>
                     </section>
                     :
-                    webcheck == "Blog" ?
+                    UnlistBlog ?
                         <div>
                             <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
                                 <div></div>
-                                {/* { */}
-                                {/* window.location.pathname.indexOf("demat-account") > -1 */}
-                                {/* ? */}
-                                {/* <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={()=>{chapterScroll1  ('dematform')}}>Open Free Account</button> */}
-                                {/* : */}
-                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Open Free Account</button>
-                                {/* } */}
+                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Invest in Unlisted Shares</button>
                             </div>
-                            <section className="stickybottom">
-                                <div className="container mx-auto">
-                                    <form className="d-flex justify-content-between align-items-center">
-                                        <div className='form-group'>
-                                            <h2 className="text">Open <span>100% Free</span> Demat Account + <br /><span>Free</span> First Year <span>AMC</span></h2>
-                                        </div>
-                                        <div className="form-group ">
-                                            <input type="text" className="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder="Mobile Number*" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
-
-                                            <div>
-                                                <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
+                        </div> :
+                        webcheck == "Blog" ?
+                            <div>
+                                <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                    <div></div>
+                                    {/* { */}
+                                    {/* window.location.pathname.indexOf("demat-account") > -1 */}
+                                    {/* ? */}
+                                    {/* <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={()=>{chapterScroll1  ('dematform')}}>Open Free Account</button> */}
+                                    {/* : */}
+                                    <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Open Free Account</button>
+                                    {/* } */}
+                                </div>
+                                <section className="stickybottom">
+                                    <div className="container mx-auto">
+                                        <form className="d-flex justify-content-between align-items-center">
+                                            <div className='form-group'>
+                                                <h2 className="text">Open <span>100% Free</span> Demat Account + <br /><span>Free</span> First Year <span>AMC</span></h2>
                                             </div>
-                                        </div>
-                                        <div className="form-group tnc d-flex align-items-top align-items-top-check">
-                                            <label>
-                                                <input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
-                                            </label>
-                                            <div className="termcon termcon1 ">
-                                                <div> I agree &amp; accept <a className="tc" onClick={handleTermsConditionShow}>T&amp;C</a>
+                                            <div className="form-group ">
+                                                <input type="text" className="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder="Mobile Number*" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
+
+                                                <div>
+                                                    <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="form-group">
-                                            <button type="submit" className="form-btn sendotp btn-bg btn-bg-dark" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+                                            <div className="form-group tnc d-flex align-items-top align-items-top-check">
+                                                <label>
+                                                    <input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
+                                                </label>
+                                                <div className="termcon termcon1 ">
+                                                    <div> I agree &amp; accept <a className="tc" onClick={handleTermsConditionShow}>T&amp;C</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="form-group">
+                                                <button type="submit" className="form-btn sendotp btn-bg btn-bg-dark" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
 
-                                        </div>
-                                    </form>
-                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
 
-                            </section>
-                        </div> :
-                        ""
+                                </section>
+                            </div> :
+                            ""
             }
 
             {

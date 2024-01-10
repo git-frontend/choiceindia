@@ -31,13 +31,13 @@ function DematAccountForm(props) {
     const [showErrorToaster, setShowErrorToaster] = useState(false);
     const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
-    const isMF = (window.location.pathname.indexOf('mutual-funds-investment') > -1) || (window.location.pathname.indexOf('top-funds') > -1)|| (window.location.pathname.indexOf('amc') > -1)   ? 'yes' : '';
+    const isMF = (window.location.pathname.indexOf('mutual-funds-investment') > -1) || (window.location.pathname.indexOf('top-funds') > -1) || (window.location.pathname.indexOf('amc') > -1) ? 'yes' : '';
     const [referID, setReferID] = useState('');
 
     const location = useLocation();
 
 
-    const webcheck = ((window.location.pathname.indexOf('campaign/commodity-trading') > -1) || (window.location.pathname.indexOf('campaign/forex-trading') > -1))||(window.location.pathname.indexOf('campaign/trading-strategies') > -1)||(window.location.pathname.indexOf('campaign/hindi/trading-strategies') > -1)||(window.location.pathname.indexOf('technical-analysis') > -1)||(window.location.pathname.indexOf('futures-options-trading') > -1 )||(window.location.pathname.indexOf('/campaign/fno-trading') > -1) ||(window.location.pathname.indexOf('/campaign/intraday-trading') > -1)? 'campaign' : " ";
+    const webcheck = ((window.location.pathname.indexOf('campaign/commodity-trading') > -1) || (window.location.pathname.indexOf('campaign/forex-trading') > -1)) || (window.location.pathname.indexOf('campaign/trading-strategies') > -1) || (window.location.pathname.indexOf('campaign/hindi/trading-strategies') > -1) || (window.location.pathname.indexOf('technical-analysis') > -1) || (window.location.pathname.indexOf('futures-options-trading') > -1) || (window.location.pathname.indexOf('/campaign/fno-trading') > -1) || (window.location.pathname.indexOf('/campaign/intraday-trading') > -1) || (window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'campaign' : " ";
 
     /** state to show thankyou popup (add-lead) */
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
@@ -74,8 +74,8 @@ function DematAccountForm(props) {
 
     const { executeRecaptcha } = useGoogleReCaptcha();
 
-       /**to show consent popup */
-       const [consent, setShowConsent] = useState(false);
+    /**to show consent popup */
+    const [consent, setShowConsent] = useState(false);
 
     /**variable for loaders */
     const [consentLoaders, setConsentLoaders] = useState({
@@ -89,12 +89,12 @@ function DematAccountForm(props) {
     var otpLeadID = useRef('');
     var referLink = useRef('');
 
-    const[showRefMsg, setShowRefMsg] = useState();
+    const [showRefMsg, setShowRefMsg] = useState();
 
     /**on click no consent */
     function submitConsent(consent) {
 
-        
+
         if (consent == 'yes') {
             setConsentLoaders({ ...consentLoaders, consentYesLoader: true, consentNoLoader: false });
         } else {
@@ -115,7 +115,7 @@ function DematAccountForm(props) {
                 console.log('Success', res);
                 if (consent == "yes") {
                     window.location.href = referLink.current ? referLink.current : null;
-                }else{
+                } else {
                     setShowConsent(() => false);
                 }
                 // }
@@ -152,19 +152,19 @@ function DematAccountForm(props) {
     /**function executes to close the ad popup */
     function hideOpenAccountAdPopup(showAdValues) {
 
-        if(showAdValues.actionType != 'popup_and_no_update'){
-        if (showAdValues.link) {
-            setShowThanku(prevState => {
-                return { ...prevState, showModal: true, redirectionLink: showAdValues?.link, resText: showAdValues?.msg, isOnboarding: showAdValues?.info, closeMd: closeModal }
-            });
+        if (showAdValues.actionType != 'popup_and_no_update') {
+            if (showAdValues.link) {
+                setShowThanku(prevState => {
+                    return { ...prevState, showModal: true, redirectionLink: showAdValues?.link, resText: showAdValues?.msg, isOnboarding: showAdValues?.info, closeMd: closeModal }
+                });
+            }
+            setShowOpenAccountPopup(false);
+            callOpenAccountAdPopupAgain();
+        } else {
+            referLink.current = showAdValues.link ? showAdValues.link : null;
+            otpLeadID.current = showAdValues.leadId ? showAdValues.leadId : null;
+            setShowConsent(() => true)
         }
-        setShowOpenAccountPopup(false);
-        callOpenAccountAdPopupAgain();
-    }else{
-        referLink.current = showAdValues.link? showAdValues.link : null;
-        otpLeadID.current = showAdValues.leadId? showAdValues.leadId : null;
-        setShowConsent(() => true)
-    }
     }
 
     function callOpenAccountAdPopupAgain() {
@@ -226,37 +226,37 @@ function DematAccountForm(props) {
     function handleOTPClose(link, msg, info, actionType, leadID) {
         setShowOTP(false);
 
-        if(actionType != 'popup_and_no_update'){
-        if (link) {
+        if (actionType != 'popup_and_no_update') {
+            if (link) {
 
-            let result = link.match("respond-issue");
-            if (result && result.length && result[0] === 'respond-issue') {
-                setIsIssue(() => link);
+                let result = link.match("respond-issue");
+                if (result && result.length && result[0] === 'respond-issue') {
+                    setIsIssue(() => link);
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
+                    });
+                } else {
+                    if (link._reactName) {
+                        setShowThanku(prevState => {
+                            return { ...prevState, showModal: false, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
+                        });
+                    } else {
+                        setShowThanku(prevState => {
+                            return { ...prevState, showModal: true, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
+                        });
+                    }
+                }
+            } else {
                 setShowThanku(prevState => {
                     return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
                 });
-            } else {
-                if (link._reactName) {
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: false, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
-                    });
-                } else {
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: true, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
-                    });
-                }
             }
         } else {
-            setShowThanku(prevState => {
-                return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
-            });
+            referLink.current = link ? link : null;
+            otpLeadID.current = leadID ? leadID : null;
+            setShowRefMsg(() => msg ? msg : '');
+            setShowConsent(() => true)
         }
-    }else{
-        referLink.current = link? link : null;
-        otpLeadID.current = leadID? leadID : null;
-        setShowRefMsg(() => msg? msg : '');
-        setShowConsent(() => true)
-    }
         // closeModal(link);
     }
 
@@ -342,7 +342,7 @@ function DematAccountForm(props) {
             "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
             "utm_source": UTMSource.current || 'blog_leads',
             "utm_term": UTMTerm.current || null,
-            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
+            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/', ''),
             "utm_content": UTMContent.current || null
         };
 
@@ -384,13 +384,13 @@ function DematAccountForm(props) {
             "sub_ref": subrefercode.current || null,
             /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
-            "utm_campaign": isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current? UTMCampaign.current :  (window.location.pathname.indexOf("/minor-demat-account") > -1)? 'DL_Minor' : (window.location.pathname.indexOf("/nri-demat-account") > -1)? 'DL_NRI' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : null,
-            "utm_content": UTMContent.current || null,
-            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
+            "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current ? UTMCampaign.current : (window.location.pathname.indexOf("/minor-demat-account") > -1) ? 'DL_Minor' : (window.location.pathname.indexOf("/nri-demat-account") > -1) ? 'DL_NRI' : (window.location.pathname.indexOf("/blog/unlisted-shares-price-list/") > -1) ? 'choice_blog_leads' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : null,
+            "utm_content": (window.location.pathname.indexOf("/blog/unlisted-shares-price-list/") > -1) ? 'desktop_sticky_cta' : UTMContent.current || null,
+            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/', ''),
             // 'sidebar_seo_leads'
-            "utm_medium": isBlog == "yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
+            "utm_medium": isBlog == "yes" ? UTMMedium.current || 'choice_blog' : (window.location.pathname.indexOf("/blog/unlisted-shares-price-list/") > -1) ? 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation':isMF == "yes" ? UTMSource.current || 'choice-mf-web' :(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate': UTMSource.current || null,
+            "utm_source": (window.location.pathname.indexOf("/unlisted-shares-price-list/") > -1) ? 'ul_leads' : isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' : isMF == "yes" ? UTMSource.current || 'choice-mf-web' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
@@ -398,6 +398,7 @@ function DematAccountForm(props) {
             // "captcha": "1"
 
         };
+        console.log("request", request)
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
@@ -676,9 +677,13 @@ function DematAccountForm(props) {
             {
                 (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></OpenDemateAccountStickyFooter> : ''
             }
-            <div className={window.location.pathname.indexOf('open-free-demat-account-app') > -1 ? 'demat-account-form app-dmt-page': 'demat-account-form'} id="dematform">
-
-                <h2 className="form-ttl">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'title')}</h2>
+            <div className={window.location.pathname.indexOf('open-free-demat-account-app') > -1 ? 'demat-account-form app-dmt-page' : 'demat-account-form'} id="dematform">
+                {
+                    window.location.pathname.indexOf('blog/unlisted-shares-price-list/') == 1
+                        ?
+                        <h2 className="form-ttl">Invest In Unlisted Shares</h2> :
+                        <h2 className="form-ttl">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'title')}</h2>
+                }
                 <Form>
                     <Form.Group className="mb-3 formgrp">
                         <div className="sub-formgrp">
@@ -705,14 +710,14 @@ function DematAccountForm(props) {
                                 ""
                                 :
                                 <div className="sub-formgrp">
-                                <Form.Control pattern="[a-zA-Z0-9]*" name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
-                                {/* {
+                                    <Form.Control pattern="[a-zA-Z0-9]*" name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                                    {/* {
                             refercode.current? '': 
                             <span className="cross-refer-img" onClick={showReferBlock2}><img src={backIcon}/></span>
                         } */}
 
-                            </div>
-                               }
+                                </div>
+                        }
                         {/* : '' */}
                         {/* } */}
 
@@ -911,7 +916,7 @@ function DematAccountForm(props) {
                                     </div>
                                     {
                                         consentError ?
-                                        <span class="text-danger">{consentError}</span> : ''
+                                            <span class="text-danger">{consentError}</span> : ''
                                     }
                                 </div>
                             </div>
