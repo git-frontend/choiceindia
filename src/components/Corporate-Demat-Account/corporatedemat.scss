@@ -1250,7 +1250,16 @@
                 padding: 0;
                 @media (max-width:$sm) {
                     font-size: 1.35rem;
+                    &:after {
+                        display: block !important;
+                        width: 1.857rem;
+                        height: 1.857rem;
+                        background-size: 1.857rem;
+                        background-image: url(../../assets/images/Corporate-Demat-Account/arrow-up.svg);
+                    }
                  }
+
+                
             }
         }
 
