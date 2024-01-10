@@ -502,7 +502,7 @@
 
                 .form-textbox {
                     background-color: $whiteColor;
-                    border-radius: 0.615rem;
+                    border-radius: 10px !important;
                     border: 1px solid rgba(35, 31, 32, 0.1411764706);
                     padding: 16px;
                     width: 100%;
@@ -542,7 +542,7 @@
             .api_errornew {
                 width: 45%;
                 text-align: right;
-
+               
                 @media (min-width:$sm-x) and (max-width:$md) {
                     width: 100%;
                     text-align: center;
@@ -556,6 +556,7 @@
                 }
 
                 .btn-bg {
+                    border-radius: 10px !important;
                     @media (min-width:$sm-x) and (max-width:$md) {
                         min-width: 22rem !important;
                     }
