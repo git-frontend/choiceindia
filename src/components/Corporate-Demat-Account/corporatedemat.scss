@@ -655,7 +655,7 @@
 
                 h4 {
                     font-size: 2rem;
-                    color: $primary;
+                    color: $darkblack;
                     font-family: $font-family-poppins-semibold;
                     margin: 1.25rem 0;
 
@@ -708,28 +708,29 @@
         @media (max-width:$sm) {
             padding: 4rem 0;
         }
-
-        .title-secnd {
-            @media (max-width:$sm) {
-                text-align: left;
-            }
-        }
-
-        p {
+        .caption{
             text-align: center;
-            font-size: 1.846rem;
-            line-height: 1.4;
-            color: $darkblack;
-            font-family: $font-family-poppins-regular;
-            margin-bottom: 0;
-            margin-top: 2rem;
-
             @media (max-width:$sm) {
-                font-size: 1rem;
+                padding: 0 1rem;
                 text-align: left;
-                margin-top: 1rem;
+            }
+            .title-secnd {
+                color: $darkblack;
+            }
+            p {
+                font-size: 1.846rem;
+                line-height: 1.4;
+                color: $darkblack;
+                font-family: $font-family-poppins-regular;
+                margin-bottom: 0;
+                margin-top: 2rem;
+                @media (max-width:$sm) {
+                    font-size: 1rem;
+                    margin-top: 1rem;
+                }
             }
         }
+       
 
         .flex-mobile {
             @media (max-width:$sm) {
@@ -838,7 +839,7 @@
                     h6 {
                         font-size: 1.571rem;
                         font-family: $font-family-poppins-regular;
-                        color: $primary;
+                        color: $darkblack;
                         margin-top: 2rem;
                         line-height: 1.5;
 
@@ -894,9 +895,9 @@
 
         .accordian-sec {
             margin-bottom: 6rem;
-
             @media (max-width:$sm) {
                 margin-bottom: 3rem;
+                padding: 0 0.75rem;
             }
 
             .accor-ttl {
@@ -915,7 +916,7 @@
                     font-weight: 600;
                     font-family: $font-family-poppins-semibold;
                     line-height: 48px;
-                    color: $primary;
+                    color: $darkblack;
 
                     @media (max-width:$sm) {
                         font-size: 1.5rem;
@@ -932,7 +933,7 @@
 
                     .faq-header {
                         .accordion-button {
-                            color: $primary;
+                            color: $darkblack;
                             font-size: 1.714rem;
                             font-weight: 500;
                             font-family: $font-family-poppins-medium;
@@ -999,7 +1000,7 @@
                                         font-weight: 500;
                                         font-family: $font-family-poppins-medium;
                                         margin: 0;
-
+                                        color: $darkblack;
                                         @media (max-width:$sm) {
                                             font-size: 1rem;
                                         }
@@ -1009,7 +1010,7 @@
                                         font-size: 1.286rem;
                                         font-weight: 400;
                                         font-family: $font-family-poppins-regular;
-
+                                        color: $darkblack;
                                         @media (max-width:$sm) {
                                             display: none;
                                         }
@@ -1046,7 +1047,7 @@
         }
         h2 {
             margin-bottom: 2rem;
-
+            color: $darkblack;
             @media (max-width:$sm) {
                 text-align: left;
             }
@@ -1057,7 +1058,7 @@
             line-height: 1.5;
             font-family: $font-family-poppins-regular;
             font-weight: 400;
-
+            color: $darkblack;
             @media (max-width:$sm) {
                 font-size: 1rem;
                 text-align: left;
@@ -1119,7 +1120,7 @@
             }
             h2 {
                 margin-bottom: 2rem;
-    
+                color: $darkblack;
                 @media (max-width:$sm) {
                     text-align: left;
                 }
@@ -1130,7 +1131,7 @@
                 line-height: 1.5;
                 font-family: $font-family-poppins-regular;
                 font-weight: 400;
-    
+                color: $darkblack;
                 @media (max-width:$sm) {
                     font-size: 1rem;
                     text-align: left;
@@ -1213,7 +1214,7 @@
                     line-height: 1.5;
                     font-weight: 500;
                     font-family: $font-family-poppins-medium;
-
+                    color: $darkblack;
                     @media (max-width:$md) {
                         font-size: 1.25rem;
                     }
@@ -1247,6 +1248,7 @@
     .faq-ttl{
         text-align: center;
         .title-secnd{
+            color: $darkblack;
             @media (max-width:$sm) {
                 text-align: left;
             }
@@ -1258,6 +1260,7 @@
             font-weight: 400;
             margin-top: 2rem;
             margin-bottom: 3.5rem;
+            color: $darkblack;
             @media (max-width:$sm) {
                 font-size: 1rem;
                 text-align: left;
@@ -1284,12 +1287,14 @@
                 padding-left: 0;
                 padding-right: 0;
                 padding-bottom: 0;
+                color: $darkblack;
                 @media (max-width:$sm) {
                     font-size: 1.125rem;
                  }
             }
             .accordion-button{
                 padding: 0;
+                color: $darkblack;
                 @media (max-width:$sm) {
                     font-size: 1.35rem;
                     &:after {
@@ -1322,6 +1327,9 @@
             text-align: left;
             width: 100%;
             padding: 0 1.25rem;
+        }
+        .title-secnd{
+            color: $darkblack;
         }
         .Testimonials-para1 {
             margin-top: 2rem;

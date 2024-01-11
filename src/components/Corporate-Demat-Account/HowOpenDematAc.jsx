@@ -65,7 +65,7 @@ function HowOpenDematAc() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <div className="text-center">
+                            <div className="caption">
                                 <h2 className="title-secnd">How to Open a Demat Account?</h2>
                                 <p>Opening a Corporate Demat account with us is a straightforward process.</p>
                             </div>
