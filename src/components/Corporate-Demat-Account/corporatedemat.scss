@@ -1295,6 +1295,7 @@
             .accordion-button{
                 padding: 0;
                 color: $darkblack;
+                font-size: 1.692rem;
                 @media (max-width:$sm) {
                     font-size: 1.35rem;
                     &:after {
