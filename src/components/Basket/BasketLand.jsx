@@ -17,7 +17,7 @@ function BasketLand() {
 
     /** Generate Session ID */
     function generateSessionId() {
-        fetch('https://api.jiffy.in/api/settings/GenKey')
+        fetch('https://finx.choiceindia.com/api/settings/GenKey')
             .then(response => {
                 return response.json();
             })

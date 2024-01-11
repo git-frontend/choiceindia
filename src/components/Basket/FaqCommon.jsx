@@ -12,7 +12,7 @@ function FaqCommon() {
     /** Get FAQ List */
     function getData() {
         var myHeaders = new Headers();
-        myHeaders.append("authorization", " Basic Z0h2bnRuWjhCajhZeXQ3TjFYVA==");
+        myHeaders.append("authorization", " Basic WXp4cUZXZGJVdzlYOGVhMVBHejpY");
         myHeaders.append("Cookie", "_x_w=20");
         var requestOptions = {
             method: 'GET',
