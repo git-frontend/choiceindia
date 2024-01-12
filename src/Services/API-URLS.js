@@ -94,7 +94,7 @@ export class API_URLS {
     nbfcBaseURL = '';
 
     /** Base URL for JIFFY APIs */
-    jiffyServerURL = "https://api.jiffy.in/";
+    jiffyServerURL = "";
     /** faq URL */
     faqURL = "https://choicebroking.freshdesk.com/api/v2/"
 
