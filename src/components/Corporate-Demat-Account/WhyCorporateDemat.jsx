@@ -73,7 +73,7 @@ function WhyCorporateDemat() {
                 <h2 className="title-secnd">Why Open a Corporate Demat Account</h2>
                 <p className="why-corporate-para1">Tailored for businesses, our Corporate Demat account enables stock market investments,<br />
                   including mutual funds and stocks. It allows businesses to manage their assets or securities efficiently.</p>
-                <p className="why-corporate-para1 para2"> How our account can elevate your corporate trading experience:</p>
+                <p className="why-corporate-para1 para2">Here’s how our account can elevate your corporate trading experience:</p>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ function WhyCorporateDemat() {
                       <span>
                         <LazyLoader src={clockstopwatch} className={'img-fluid'} width={"100"} height={"100"} alt={"Open corporate demat account real-time access"} />
                       </span>
-                      <h4>OReal-time Access</h4>
+                      <h4>Real-time Access</h4>
                       <h5>Empower your trades with real-time access to financial instruments. Make informed decisions instantly.</h5>
                     </div>
                     </div>
@@ -155,7 +155,7 @@ function WhyCorporateDemat() {
                       <span>
                       <LazyLoader src={clockstopwatch} className={'img-fluid'} width={"100"} height={"100"} alt={"Open corporate demat account real-time access"} />
                       </span>
-                      <h4>OReal-time Access</h4>
+                      <h4>Real-time Access</h4>
                       <h5>Empower your trades with real-time access to financial instruments. Make informed decisions instantly.</h5>
                     </div>
                     </div>

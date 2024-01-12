@@ -66,7 +66,7 @@ function HowOpenDematAc() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="caption">
-                                <h2 className="title-secnd">How to Open a Demat Account?</h2>
+                                <h2 className="title-secnd">Corporate Demat Account Opening Process</h2>
                                 <p>Opening a Corporate Demat account with us is a straightforward process.</p>
                             </div>
                         </div>
@@ -104,7 +104,7 @@ function HowOpenDematAc() {
                             <div className="partner-work-steps">
                                 <div className="work-steps-itm">
                                   <span>1</span>
-                                  <h6>Fill out the <br/> contact form</h6>
+                                  <h6>Fill out the<br/> contact form</h6>
                                 </div>
                                 <div className="work-steps-itm">
                                   <span>2</span>
@@ -112,11 +112,11 @@ function HowOpenDematAc() {
                                 </div>
                                 <div className="work-steps-itm">
                                   <span>3</span>
-                                  <h6>Share the required documents</h6>
+                                  <h6>Submit the required documents</h6>
                                 </div>
                                 <div className="work-steps-itm">
                                   <span>4</span>
-                                  <h6>Verification process (takes 48-72 hours)</h6>
+                                  <h6>Undergo the verification process (takes 48-72 hours)</h6>
                                 </div>
                                 <div className="work-steps-itm">
                                   <span>5</span>

@@ -67,7 +67,7 @@ function Benefits() {
                                         </div>
                                         <div className="list-itm">
                                             <span>‘0’</span>
-                                            <h5>AMC for <br/> 1st Yea</h5>
+                                            <h5>AMC for <br/> 1st Year</h5>
                                         </div>
                                         <div className="list-itm">
                                             <span>‘0’</span>
@@ -87,7 +87,7 @@ function Benefits() {
                                         </div>
                                         <div className="list-itm">
                                             <span>‘0’</span>
-                                            <h5>AMC for <br/> 1st Yea</h5>
+                                            <h5>AMC for <br/> 1st Year</h5>
                                         </div>
                                         <div className="list-itm">
                                             <span>‘0’</span>

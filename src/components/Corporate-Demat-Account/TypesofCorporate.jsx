@@ -13,7 +13,7 @@ function TypesofCorporate() {
                         <div className="col-md-11">
                             <div className="why-corporate-heading text-center">
                                 <h2 className="title-secnd">Types of Corporate Demat Accounts</h2>
-                                <p className="why-corporate-para1">Choice offers different Corporate Demat account services for your business's varied needs. Our comprehensive services for corporates include research calls, investment services, wealth management, and portfolio management. To help you build an optimal portfolio.</p>
+                                <p className="why-corporate-para1">Choice offers different Corporate Demat account services for your business's varied needs. Our comprehensive services for corporates include research calls, investment services, wealth management, and portfolio management to help you build an optimal portfolio.</p>
                             </div>
                         </div>
                     </div>

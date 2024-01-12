@@ -27,7 +27,7 @@ function CorporateFaqs() {
                                     <h5 className="numbers">1.</h5>
                                     <Accordion.Header as="h3" className='faq-header'>What is a Corporate Demat Account?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                    Companies and corporations can also participate in the stock market using a Corporate Demat Account.
+                                    A Corporate Demat Account is an account dedicated towards companies and corporations to help them participate in the stock market and manage their securities
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>

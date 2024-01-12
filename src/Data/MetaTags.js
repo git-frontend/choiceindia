@@ -2510,7 +2510,7 @@ const meta_tags = {
   "corporate-demat-account": {
     "title": "Open a Corporate Demat Account Online with Choice",
     'lang': "en",
-    'content': "Open a Corporate Demat account online with Choice. Get an advanced trading platform, the lowest DP charges and dedicated relationship manager, free call for trade facility and more.",
+    'content': "Open a Corporate Demat account with Choice. Avail features and benefits like advanced trading platform, low DP charges and dedicated relationship manager, free call for trade facility and more.",
     "link": "https://choiceindia.com/corporate-demat-account"
   },
 }
