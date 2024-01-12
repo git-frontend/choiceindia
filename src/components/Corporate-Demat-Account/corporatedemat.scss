@@ -208,6 +208,12 @@
         @media (max-width:$sm) {
             padding: 4rem 0rem !important;
         }
+        .why-corporate-top{
+            text-align: center;
+            margin: 0 auto;
+            @media (max-width:$sm) {
+                text-align: left;
+            }
         .why-corporate-heading {
             font-size: 3.462rem;
             font-family: $font-family-poppins-semibold;
@@ -225,6 +231,7 @@
                 }
             }
         }
+    }
 
         .why-corporate-para1 {
             text-align: center;
