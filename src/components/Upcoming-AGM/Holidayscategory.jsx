@@ -229,34 +229,34 @@ function Holidayscategory() {
                       config?.activeTab.key == 'lBoardMeetings' ?
                         <div>
                           <h1 className=" title-secnd1">Upcoming Board Meetings</h1>
-                          <p className="title_para res_para">Following are the complete list of upcoming board meetings in 2023.</p>
+                          <p className="title_para res_para">Following are the complete list of upcoming board meetings in 2024.</p>
                         </div> :
                         config?.activeTab?.key == 'lAGMEGM' ?
                           <div>
                             <h1 className=" title-secnd1">Upcoming AGM</h1>
-                            <p className="title_para res_para ">Following are the complete Upcoming AGM 2023 list.</p>
+                            <p className="title_para res_para ">Following are the complete Upcoming AGM 2024 list.</p>
                             {/* <h1 className=" title-secnd1">Upcoming Bonus Shares</h1>
-                            <p className="title_para res_para ">Get the list of upcoming bonus shares in 2023.</p> */}
+                            <p className="title_para res_para ">Get the list of upcoming bonus shares in 2024.</p> */}
                           </div> :
                           config?.activeTab?.key == 'lBonus' ?
                             <div>
                               <h1 className=" title-secnd1">Upcoming Bonus Shares</h1>
-                              <p className="title_para res_para">Get the list of upcoming bonus shares in 2023</p>
+                              <p className="title_para res_para">Get the list of upcoming bonus shares in 2024</p>
                             </div> :
                             config?.activeTab?.key == 'lDividend' ?
                               <div>
                                 <h1 className=" title-secnd1">Upcoming Dividend</h1>
-                                <p className="title_para res_para ">Find out the list of upcoming dividend paying stocks in 2023</p>
+                                <p className="title_para res_para ">Find out the list of upcoming dividend paying stocks in 2024</p>
                               </div> :
                               config?.activeTab?.key == 'lRights' ?
                                 <div>
                                   <h1 className=" title-secnd1">Upcoming Rights Issue</h1>
-                                  <p className="title_para res_para ">Check out the list of upcoming rights issues of shares in 2023.</p>
+                                  <p className="title_para res_para ">Check out the list of upcoming rights issues of shares in 2024.</p>
                                 </div> :
                                 config?.activeTab?.key == 'lSplits' ?
                                   <div>
                                     <h1 className=" title-secnd1">Upcoming Stock Splits</h1>
-                                    <p className="title_para res_para">View the list of upcoming stock splits in 2023 in India</p>
+                                    <p className="title_para res_para">View the list of upcoming stock splits in 2024 in India</p>
                                   </div> :
                                   ""
                     }
@@ -742,7 +742,7 @@ function Holidayscategory() {
                       config?.activeTab?.key == 'lBonus' ?
                         <div className="row">
                           <div className="col-md-12">
-                            <h2 className="secttitle text-center">Upcoming Bonus Shares in 2023</h2>
+                            <h2 className="secttitle text-center">Upcoming Bonus Shares in 2024</h2>
                           </div>
                           <div className="col-md-12">
                             <div className="para px-3">
@@ -750,7 +750,7 @@ function Holidayscategory() {
                               <span className="read-more-wrap restext">Bonus Shares are additional shares offered to the shareholders of the company. The company can opt to give out its accumulated earnings in the form of Bonus Shares instead of Dividends.
                                 <br />
                                 <h3 className="third-heading-para"><strong>Upcoming Bonus Shares in India</strong></h3>
-                                This section lists the companies likely to declare Bonus Shares in 2023. It will dynamically be updated as and when the announcement is made. The ratio of Bonus Shares is given alongside the date of the announcement.
+                                This section lists the companies likely to declare Bonus Shares in 2024. It will dynamically be updated as and when the announcement is made. The ratio of Bonus Shares is given alongside the date of the announcement.
                                 <br />
                                 <span className="read-more-target restext">
                                   <h3 className="third-heading-para">Why Are Companies Issuing Bonus Shares?</h3>
@@ -767,7 +767,7 @@ function Holidayscategory() {
                         config?.activeTab?.key == 'lDividend' ?
                           <div className="row">
                             <div className="col-md-12">
-                              <h2 className="secttitle text-center">Upcoming Dividend in 2023</h2>
+                              <h2 className="secttitle text-center">Upcoming Dividend in 2024</h2>
                             </div>
                             <div className="col-md-12">
                               <div className="para px-3">
@@ -775,12 +775,12 @@ function Holidayscategory() {
                                 <span className="read-more-wrap restext">Dividend is sharing profit with shareholders by a company. The Dividend section will provide the list of upcoming dividend paying stocks who have announced dividends for their shareholders. Investors and traders will be able to track the highest dividend paying stocks to modify their portfolios accordingly. You can also use the customize option by modifying your date to understand which are the best dividend paying stocks for the long-term.
                                   <br />
                                   <h3 className="third-heading-para"><strong>Upcoming Dividend Paying Stocks</strong></h3>
-                                  You can browse the Dividends section and view the Dividend (%) to understand upcoming dividend stocks which are paying the highest dividend in 2023.
+                                  You can browse the Dividends section and view the Dividend (%) to understand upcoming dividend stocks which are paying the highest dividend in 2024.
                                   <br />
                                   <span className="read-more-target restext">
                                     <h3 className="third-heading-para">How Do Dividends Work?</h3>
                                     <ul>
-                                      <li>You purchase a certain number of shares. For example, let’s say you own 100 shares of WIPRO stock and WIPRO announced a quarterly dividend payout on 14th January, 2023 of Rs. 50 per equity share to all shareholders.</li>
+                                      <li>You purchase a certain number of shares. For example, let’s say you own 100 shares of WIPRO stock and WIPRO announced a quarterly dividend payout on 14th January, 2024 of Rs. 50 per equity share to all shareholders.</li>
                                       <li>Multiply the dividend by the number of shares. In this case: 50*100 i.e., you receive a quarterly payment of Rs. 500.</li>
                                       <li>The company usually sends a cheque or makes a payment into your brokerage account.</li>
                                       <li>Dividend Reinvestment Programs or DRIPs are offered by companies if you would like to reinvest the payout back into company stock.</li>
@@ -794,7 +794,7 @@ function Holidayscategory() {
                           config?.activeTab?.key == 'lRights' ?
                             <div className="row">
                               <div className="col-md-12">
-                                <h2 className="secttitle text-center">Upcoming Rights Issue in 2023</h2>
+                                <h2 className="secttitle text-center">Upcoming Rights Issue in 2024</h2>
                               </div>
                               <div className="col-md-12">
                                 <div className="para px-3">
@@ -821,7 +821,7 @@ function Holidayscategory() {
                             config?.activeTab?.key == 'lSplits' ?
                               <div className="row">
                                 <div className="col-md-12">
-                                  <h2 className="secttitle text-center">Upcoming Stock Splits in 2023</h2>
+                                  <h2 className="secttitle text-center">Upcoming Stock Splits in 2024</h2>
                                 </div>
                                 <div className="col-md-12">
                                   <div className="para px-3">

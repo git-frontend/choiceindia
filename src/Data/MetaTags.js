@@ -2221,27 +2221,27 @@ const meta_tags = {
     "link": "https://choiceindia.com/lending-partners"
   },
   "stock-market-holidays": {
-    "title": "Stock Market Holidays 2023 - List of Indian Share Market Holidays",
+    "title": "Stock Market Holidays 2024 - List of Indian Share Market Holidays",
     'lang': "en",
-    'content': "Check out the stock market holidays in 2023 on Choice. Stay updated with Indian share market holidays in 2023 & plan your investment accordingly.",
+    'content': "Check out the stock market holidays in 2024 on Choice. Stay updated with Indian share market holidays in 2024 & plan your investment accordingly.",
     "link": "https://choiceindia.com/stock-market-holidays"
   },
   "nse-holidays": {
-    "title": "NSE Holidays 2023 List - Check NSE Trading Holidays of 2023",
+    "title": "NSE Holidays 2024 List - Check NSE Trading Holidays of 2024",
     'lang': "en",
-    'content': "Find a comprehensive list of NSE holidays in 2023 on Choice. Visit to download a PDF of the 2023 NSE trading holidays.",
+    'content': "Find a comprehensive list of NSE holidays in 2024 on Choice. Visit to download a PDF of the 2023 NSE trading holidays.",
     "link": "https://choiceindia.com/nse-holidays"
   },
   "bse-holidays": {
-    "title": "BSE Holidays 2023 List - Check BSE Trading Holidays of 2023",
+    "title": "BSE Holidays 2024 List - Check BSE Trading Holidays of 2024",
     'lang': "en",
-    'content': "Check out the complete list of BSE holidays for 2023 on Choice. To download a PDF of the 2023 BSE trading holidays, visit Choice India.",
+    'content': "Check out the complete list of BSE holidays for 2024 on Choice. To download a PDF of the 2023 BSE trading holidays, visit Choice India.",
     "link": "https://choiceindia.com/bse-holidays"
   },
   "mcx-ncdex-holidays": {
-    "title": "MCX Holidays 2023 List - Check MCX & NCDEX Trading Holidays in 2023",
+    "title": "MCX Holidays 2024 List - Check MCX & NCDEX Trading Holidays in 2024",
     'lang': "en",
-    'content': "Check the list of MCX and NCDEX holidays for 2023. Visit Choice India to download the complete trading holidays of MCX and NCDEX in pdf format.",
+    'content': "Check the list of MCX and NCDEX holidays for 2024. Visit Choice India to download the complete trading holidays of MCX and NCDEX in pdf format.",
     "link": "https://choiceindia.com/mcx-ncdex-holidays"
   },
 
@@ -2259,7 +2259,7 @@ const meta_tags = {
     "link": "https://choiceindia.com/loan/privacy-policy"
   },
   "upcoming-agm": {
-    "title": "Upcoming AGM - List of Upcoming AGM Dates & Companies in 2023",
+    "title": "Upcoming AGM - List of Upcoming AGM Dates & Companies in 2024",
     'lang': "en",
     'content': "Find the list of upcoming AGM/EGM on Choice. Get updated with upcoming Annual General Meeting/Extraordinary General Meeting along with it's dates & companies.",
     "link": "https://choiceindia.com/upcoming-agm"
@@ -2271,27 +2271,27 @@ const meta_tags = {
     "link": "https://choiceindia.com/upcoming-board-meeting"
   },
   "upcoming-bonus-shares": {
-    "title": "Upcoming Bonus Shares in 2023 - List of Bonus Shares to Buy",
+    "title": "Upcoming Bonus Shares in 2024 - List of Bonus Shares to Buy",
     'lang': "en",
-    'content': "Check out upcoming bonus shares in 2023 on Choice. Get the list of all upcoming bonus shares companies in India likely to declare/issue bonus shares.",
+    'content': "Check out upcoming bonus shares in 2024 on Choice. Get the list of all upcoming bonus shares companies in India likely to declare/issue bonus shares.",
     "link": "https://choiceindia.com/upcoming-bonus-shares"
   },
   "upcoming-dividend-paying-stocks": {
-    "title": "Upcoming Dividend in 2023 - List of Upcoming Dividend Paying Stocks in India",
+    "title": "Upcoming Dividend in 2024 - List of Upcoming Dividend Paying Stocks in India",
     'lang': "en",
-    'content': "Get the list of upcoming dividend paying stocks in 2023 on Choice. Check out the upcoming dividend dates declared by companies in NSE.",
+    'content': "Get the list of upcoming dividend paying stocks in 2024 on Choice. Check out the upcoming dividend dates declared by companies in NSE.",
     "link": "https://choiceindia.com/upcoming-dividend-paying-stocks"
   },
   "upcoming-stock-splits": {
-    "title": "Upcoming Stock Splits in 2023 - List of Recent Share Splits in India",
+    "title": "Upcoming Stock Splits in 2024 - List of Recent Share Splits in India",
     'lang': "en",
-    'content': "Find out upcoming stock splits in 2023 on Choice. View the list recent share splits in India by NSE & BSE listed companies along with it's face value.",
+    'content': "Find out upcoming stock splits in 2024 on Choice. View the list recent share splits in India by NSE & BSE listed companies along with it's face value.",
     "link": "https://choiceindia.com/upcoming-stock-splits"
   },
   "upcoming-rights-issue": {
-    "title": "Upcoming Rights Issue in 2023 - List of Upcoming Rights Issue of Shares",
+    "title": "Upcoming Rights Issue in 2024 - List of Upcoming Rights Issue of Shares",
     'lang': "en",
-    'content': "Find the list of upcoming rights issue in 2023 on Choice. Get the complete list of recently announced rights issue of shares in Indian stock market.",
+    'content': "Find the list of upcoming rights issue in 2024 on Choice. Get the complete list of recently announced rights issue of shares in Indian stock market.",
     "link": "https://choiceindia.com/upcoming-rights-issue"
   },
   "campaign/free-demat-account": {
