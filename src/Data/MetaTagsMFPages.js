@@ -498,7 +498,7 @@ const meta_tags = {
   "top-funds/best-flexicap-mutual-funds": {
     "title": "Best Flexicap Funds - Top Flexi cap Mutual Funds to Invest",
     'lang': "en",
-    'content': "Explore Seri mutual fund with Choice. Know the best Seri mutual fund (idf), monitor mutual fund returns, latest NAV & Seri mf performance.",
+    'content': "nvest in Best Flexicap Funds and to get the right balance across stocks with varied market capitalizations. Explore top flexicap funds at Choice.",
     "link": "https://choiceindia.com/top-funds/best-flexicap-mutual-funds"
   },
 
