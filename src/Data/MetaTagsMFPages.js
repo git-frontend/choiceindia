@@ -495,6 +495,12 @@ const meta_tags = {
     'content': "Explore Seri mutual fund with Choice. Know the best Seri mutual fund (idf), monitor mutual fund returns, latest NAV & Seri mf performance.",
     "link": "https://choiceindia.com/amc/srei-mutual-fund"
   },
+  "top-funds/best-flexicap-mutual-funds": {
+    "title": "Best Flexicap Funds - Top Flexi cap Mutual Funds to Invest",
+    'lang': "en",
+    'content': "Explore Seri mutual fund with Choice. Know the best Seri mutual fund (idf), monitor mutual fund returns, latest NAV & Seri mf performance.",
+    "link": "https://choiceindia.com/top-funds/best-flexicap-mutual-funds"
+  },
 
 
 

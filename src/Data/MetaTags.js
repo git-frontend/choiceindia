@@ -2229,13 +2229,13 @@ const meta_tags = {
   "nse-holidays": {
     "title": "NSE Holidays 2024 List - Check NSE Trading Holidays of 2024",
     'lang': "en",
-    'content': "Find a comprehensive list of NSE holidays in 2024 on Choice. Visit to download a PDF of the 2023 NSE trading holidays.",
+    'content': "Find a comprehensive list of NSE holidays in 2024 on Choice. Visit to download a PDF of the 2024 NSE trading holidays.",
     "link": "https://choiceindia.com/nse-holidays"
   },
   "bse-holidays": {
     "title": "BSE Holidays 2024 List - Check BSE Trading Holidays of 2024",
     'lang': "en",
-    'content': "Check out the complete list of BSE holidays for 2024 on Choice. To download a PDF of the 2023 BSE trading holidays, visit Choice India.",
+    'content': "Check out the complete list of BSE holidays for 2024 on Choice. To download a PDF of the 2024 BSE trading holidays, visit Choice India.",
     "link": "https://choiceindia.com/bse-holidays"
   },
   "mcx-ncdex-holidays": {
