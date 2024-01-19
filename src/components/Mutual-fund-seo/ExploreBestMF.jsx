@@ -39,60 +39,60 @@ function chapterScroll(id) {
             </div>
             <div className="col-md-8">
                 <div className="best-mf-list">
-                    <div className="mf-lis-itm">
+                    <a className="mf-lis-itm" href="/top-funds/best-elss-tax-saving-mutual-funds">
                         <span className="sm-img-itm">
                           <LazyLoader src={img1} alt={"Tax Saving Mutual Funds"} className={"img-fluid"} width={"60"} height={"60"} />
                         </span>
                         <h4>Tax Saving</h4>
-                    </div>
-                    <div className="mf-lis-itm">
+                    </a>
+                    <a className="mf-lis-itm" href="/top-funds/best-banking-psu-debt-funds"> 
                         <span className="sm-img-itm">
                           <LazyLoader src={img2} alt={"Debt Mutual Funds"} className={"img-fluid"} width={"60"} height={"60"} />
                         </span>
                         <h4>Debt Funds</h4>
-                    </div>
-                    <div className="mf-lis-itm">
+                    </a>
+                    <a className="mf-lis-itm" href="/top-funds/best-balanced-mutual-funds">
                         <span className="sm-img-itm">
                           <LazyLoader src={img3} alt={"Balanced Mutual Funds"} className={"img-fluid"} width={"60"} height={"60"} />
                         </span>
                         <h4>Balanced Funds</h4>
-                    </div>
-                    <div className="mf-lis-itm">
+                    </a>
+                    <a className="mf-lis-itm" href="/top-funds/best-large-cap-mutual-funds">
                         <span className="sm-img-itm">
                           <LazyLoader src={img4} alt={"Large Cap Mutual Funds"} className={"img-fluid"} width={"60"} height={"60"} />
                         </span>
                         <h4>Large Caps</h4>
-                    </div>
-                    <div className="mf-lis-itm">
+                    </a>
+                    <a className="mf-lis-itm" href="/top-funds/best-mid-cap-mutual-funds">
                         <span className="sm-img-itm">
                           <LazyLoader src={img5} alt={"Mid Cap Mutual Funds"} className={"img-fluid"} width={"60"} height={"60"} />
                         </span>
                         <h4>Mid Caps</h4>
-                    </div>
-                    <div className="mf-lis-itm">
+                    </a>
+                    <a className="mf-lis-itm" href="/top-funds/best-small-cap-mutual-funds">
                         <span className="sm-img-itm">
                           <LazyLoader src={img6} alt={"Small Cap Mutual Funds"} className={"img-fluid"} width={"60"} height={"60"} />
                         </span>
                         <h4>Small Caps</h4>
-                    </div>
-                    <div className="mf-lis-itm">
+                    </a>
+                    <a className="mf-lis-itm" href="/top-funds/best-multicap-mutual-funds">
                         <span className="sm-img-itm">
                           <LazyLoader src={img7} alt={"Multi Cap Mutual Funds"} className={"img-fluid"} width={"60"} height={"60"} />
                         </span>
                         <h4>Multi Caps</h4>
-                    </div>
-                    <div className="mf-lis-itm">
+                    </a>
+                    <a className="mf-lis-itm" href="/top-funds/best-liquid-mutual-funds">
                         <span className="sm-img-itm">
                           <LazyLoader src={img8} alt={"Liquid Mutual Funds"} className={"img-fluid"} width={"60"} height={"60"} />
                         </span>
                         <h4>Liquid Funds</h4>
-                    </div>
-                    <div className="mf-lis-itm">
+                    </a>
+                    <a className="mf-lis-itm" href="/top-funds/best-sector-mutual-funds">
                         <span className="sm-img-itm">
                           <LazyLoader src={img9} alt={"Dividend Yield Mutual Funds"} className={"img-fluid"} width={"60"} height={"60"} />
                         </span>
-                        <h4>Dividend Yield Funds</h4>
-                    </div>
+                        <h4>Sectoral Funds</h4>
+                    </a>
                 </div>
             </div>
           </div>

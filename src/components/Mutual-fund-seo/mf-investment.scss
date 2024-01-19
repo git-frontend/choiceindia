@@ -160,6 +160,9 @@ body{
             border: 1px solid transparent;
             text-align: center;
             transition: 0.2s ease;
+            text-decoration: none;
+            color: $bgcolordark;
+           
             .sm-img-itm{
                 display: flex;
                 align-items: center;

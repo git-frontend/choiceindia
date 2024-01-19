@@ -42,7 +42,7 @@ function MFFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="3" className='faq-item'>
-                                    <Accordion.Header as="h3" className='faq-header'>Does one need an account in a bank to invest in its mutual fund?</Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>Does one need an account in a bank to invest in mutual funds?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     Yes, you must have a bank account for investing in mutual funds. The rule is according to SEBI Mutual Fund Regulations. You will need to provide bank details in your application for mutual funds.
 
