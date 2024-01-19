@@ -498,7 +498,7 @@ const meta_tags = {
   "top-funds/best-flexicap-mutual-funds": {
     "title": "Best Flexicap Funds - Top Flexi cap Mutual Funds to Invest",
     'lang': "en",
-    'content': "nvest in Best Flexicap Funds and to get the right balance across stocks with varied market capitalizations. Explore top flexicap funds at Choice.",
+    'content': "Invest in Best Flexicap Funds and to get the right balance across stocks with varied market capitalizations. Explore top flexicap funds at Choice.",
     "link": "https://choiceindia.com/top-funds/best-flexicap-mutual-funds"
   },
 
