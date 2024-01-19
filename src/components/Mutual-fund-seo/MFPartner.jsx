@@ -51,21 +51,21 @@ function MFPartner() {
               <h2 className="title-first">Our Partner mutual fund houses</h2>
               <div className="">
                 <Slider {...settings} className="partner-slider">
-                    <div className="part-item">
+                    <a className="part-item" href="/amc/hdfc-mutual-fund">
                       <LazyLoader src={img1} alt={"HDFC Mutual Fund"} className={"img-fluid"} width={"250"} height={"56"} />
-                    </div>
-                    <div className="part-item">
+                    </a>
+                    <a className="part-item" href="/amc/icici-prudential-mutual-fund">
                       <LazyLoader src={img2} alt={"ICICI Prudential Mutual Fund"} className={"img-fluid"} width={"250"} height={"56"} />
-                    </div>
-                    <div className="part-item">
+                    </a>
+                    <a className="part-item" href="/amc/sbi-mutual-fund">
                       <LazyLoader src={img3} alt={"SBI Mutual Fund"} className={"img-fluid"} width={"250"} height={"56"} />
-                    </div>
-                    <div className="part-item">
+                    </a>
+                    <a className="part-item" href="/amc/aditya-birla-sun-life-mutual-fund">
                       <LazyLoader src={img4} alt={"Birla Sun Life Mutual Fund"} className={"img-fluid"} width={"250"} height={"56"} />
-                    </div>
-                    <div className="part-item">
+                    </a>
+                    <a className="part-item" href="/amc/kotak-mahindra-mutual-fund">
                       <LazyLoader src={img5} alt={"Kotak Mutual Fund"} className={"img-fluid"} width={"250"} height={"56"} />
-                    </div>
+                    </a>
                 </Slider>
               </div>
             </div>

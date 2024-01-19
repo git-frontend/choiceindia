@@ -235,8 +235,9 @@ const meta_tags = {
     "title": "Best Banking and Financial Services Funds in India for 2024",
     'lang': "en",
     'content': "Explore the best banking and financial services fund in India at Choice. Pick top rated financial sector mutual funds to start your investment journey today.",
-    "link": "https://investica.com/mf/top-funds/best-banking-financial-sector-mutual-funds"
+    "link": "https://choiceindia.com/top-funds/best-banking-financial-sector-mutual-funds"
   },
+  //amc
   "amc": {
     "title": "Mutual Fund AMC's - List of Asset Management Companies",
     'lang': "en",
@@ -247,12 +248,12 @@ const meta_tags = {
     "title": "Best HDFC Mutual Fund Schemes - Returns, NAV & Performance",
     'lang': "en",
     'content': "Explore HDFC Mutual Fund with Choice. Know the best hdfc mutual fund schemes, monitor mutual fund returns, latest NAV & hdfc mf performance.",
-    "link": "https://investica.com/mf/amc/hdfc-mutual-fund"
+    "link": "https://choiceindia.com/amc/hdfc-mutual-fund"
   },
   "amc/icici-prudential-mutual-fund": {
     "title": "Best ICICI Prudential Mutual fund - Returns, NAV & Performance",
     'lang': "en",
-    'content': "Explore HDFC Mutual Fund with Choice. Know the best hdfc mutual fund schemes, monitor mutual fund returns, latest NAV & hdfc mf performance.",
+    'content': "Best ICICI Prudential Mutual fund - Returns, NAV & Performance",
     "link": "https://choiceindia.com/amc/icici-prudential-mutual-fund"
   },
   "amc/sbi-mutual-fund": {
