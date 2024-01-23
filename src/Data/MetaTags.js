@@ -72,7 +72,7 @@ const meta_tags = {
 
   "ipo-investment-account": { 'title': "IPO Investment: Invest In IPO Online With Choice", 'lang': "en", "content": "IPO Investment - Now investing in IPO is smooth and simple with Choice. Open a Demat account and avail benefits such as listing gains, & short-term profit.", 'link': 'https://choiceindia.com/ipo-investment-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "mutual-funds-investment": { 'title': "Invest in Mutual Funds Online in India with Choice", 'lang': "en", 'content': "With Choice, you may begin investing in mutual funds online in India. The choice mutual funds investment platform simplifies investing in mutual funds for everyone.", 'link': "https://choiceindia.com/mutual-funds-investment", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "mutual-funds-investment": { 'title': "Invest in Mutual Funds Online in India with Choice", 'lang': "en", 'content': "Simplify your investment journey by opting to invest in mutual funds. Pick your way of investing and explore a diverse range of mutual funds & fund houses.", 'link': "https://choiceindia.com/mutual-funds-investment", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
 
   "investment-app": { 'title': "Best Investment App for Stocks, Mutual Funds, ETF and IPO", 'lang': "en", 'content': "Start your investment journey with the top investment app in India. The Choice app allows you to invest in several types of securities, including bonds, ETFs, mutual funds, and derivatives.", 'link': "https://choiceindia.com/investment-app", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
@@ -2229,13 +2229,13 @@ const meta_tags = {
   "nse-holidays": {
     "title": "NSE Holidays 2024 List - Check NSE Trading Holidays of 2024",
     'lang': "en",
-    'content': "Find a comprehensive list of NSE holidays in 2024 on Choice. Visit to download a PDF of the 2023 NSE trading holidays.",
+    'content': "Find a comprehensive list of NSE holidays in 2024 on Choice. Visit to download a PDF of the 2024 NSE trading holidays.",
     "link": "https://choiceindia.com/nse-holidays"
   },
   "bse-holidays": {
     "title": "BSE Holidays 2024 List - Check BSE Trading Holidays of 2024",
     'lang': "en",
-    'content': "Check out the complete list of BSE holidays for 2024 on Choice. To download a PDF of the 2023 BSE trading holidays, visit Choice India.",
+    'content': "Check out the complete list of BSE holidays for 2024 on Choice. To download a PDF of the 2024 BSE trading holidays, visit Choice India.",
     "link": "https://choiceindia.com/bse-holidays"
   },
   "mcx-ncdex-holidays": {
