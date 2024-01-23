@@ -750,7 +750,9 @@
         padding-top: 8rem;
         display: flex;
         flex-wrap: wrap;
-
+        @media (max-width: $sm) {
+           flex-direction: column-reverse; 
+        }
         .stories-sec-left {
             width: 40%;
 
@@ -777,7 +779,9 @@
             padding-left: 5rem;
             padding-right: 2rem;
             padding-top: 5rem;
-
+            @media (max-width: $sm) {
+                padding-right: 0;
+              }
             h4 {
                 font-size: 2rem;
                 color: $primary;
@@ -842,7 +846,9 @@
             position: absolute;
             left: 44%;
             width: 90rem;
-
+            @media (max-width: $sm) {
+               display: none;
+             }
             .stories-sec-slider {
                 .itm-img {
                     padding: 2rem;

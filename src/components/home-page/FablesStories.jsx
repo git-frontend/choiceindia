@@ -129,7 +129,7 @@ function FablesStories() {
 											fslider.length ?
 												<div className="col-md-12">
 													<div className="stories-sec-main">
-														<div className="stories-sec-left d-none d-sm-block">
+														<div className="stories-sec-left d-sm-block">
 															<div>
 																{
 																	fslider && fslider.length && fslider[sliderimag] ?
