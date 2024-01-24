@@ -74,10 +74,10 @@ function MarketInsights() {
     };
     const navigate = useNavigate();
 
-    function marketinsightDetail(id,id2) {
+    function marketinsightDetail(id) {
         navigate({
-          pathname: `/research-new/${id}/${tempid.name}`,
-          search: `?id=${id2}`
+          pathname: `/research-report/${id}`,
+        //   search: `?id=${id2}`
         })
       }
 
@@ -162,7 +162,8 @@ function MarketInsights() {
             
                                                             return (
             
-                                                                <div key={response.uuid} className={classNameNm} onClick={() => { marketinsightDetail(response.uuid, response.report_subtype_uuid) }} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
+                                                                <div key={response.uuid} className={classNameNm} onClick={() => { marketinsightDetail(response.redirect_slug
+                                                                    ) }} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                                     <div className="insights-item-cont cursor-pointer" >
                                                                         <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
                                                                         {/* <img src={response.feature_image} alt="" /> */}
