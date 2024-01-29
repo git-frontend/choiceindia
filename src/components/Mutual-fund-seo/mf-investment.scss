@@ -648,6 +648,15 @@ body{
         text-transform: capitalize;
         margin-bottom: 5rem;
     }
+
+    .img-hover{
+    filter: grayscale(1);
+    transition:0.5s;
+    &:hover{
+    filter: grayscale(0);
+    }
+    }
+
 }
 
 .investmentcontent {
