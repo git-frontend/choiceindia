@@ -52,19 +52,19 @@ function MFPartner() {
               <div className="">
                 <Slider {...settings} className="partner-slider">
                     <a className="part-item" href="/amc/hdfc-mutual-fund">
-                      <LazyLoader src={img1} alt={"HDFC Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"56"} />
+                      <LazyLoader src={img1} alt={"HDFC Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
                     </a>
                     <a className="part-item" href="/amc/icici-prudential-mutual-fund">
-                      <LazyLoader src={img2} alt={"ICICI Prudential Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"56"} />
+                      <LazyLoader src={img2} alt={"ICICI Prudential Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
                     </a>
                     <a className="part-item" href="/amc/sbi-mutual-fund">
-                      <LazyLoader src={img3} alt={"SBI Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"56"} />
+                      <LazyLoader src={img3} alt={"SBI Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
                     </a>
                     <a className="part-item" href="/amc/aditya-birla-sun-life-mutual-fund">
-                      <LazyLoader src={img4} alt={"Birla Sun Life Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"56"} />
+                      <LazyLoader src={img4} alt={"Birla Sun Life Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
                     </a>
                     <a className="part-item" href="/amc/kotak-mahindra-mutual-fund">
-                      <LazyLoader src={img5} alt={"Kotak Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"56"} />
+                      <LazyLoader src={img5} alt={"Kotak Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
                     </a>
                 </Slider>
               </div>
