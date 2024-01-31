@@ -1410,11 +1410,11 @@ const meta_tags = {
     }
   }]
 },
-{
+{ 
   "@context": "https://schema.org/",
   "@type": "BlogPosting",
   "mainEntityOfPage": {
-    "@type": "WebPage",
+    "@type": "WebPage", 
     "@id": "https://choiceindia.com/demat-account"
   },
   "headline": "Demat Account - Meaning, Types, Features, Uses and Benefits",
