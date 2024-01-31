@@ -28,7 +28,11 @@ function DematPage() {
     if (rendercount === true) {
       let parser = new DOMParser();
       let doc = parser.parseFromString(meta_tags[location.pathname.replace(/\//g, "")].faqscript, 'text/html');
-      document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
+      let doc1 = parser.parseFromString(meta_tags[location.pathname.replace(/\//g, "")].faqscript1, 'text/html');
+      let doc2 = parser.parseFromString(meta_tags[location.pathname.replace(/\//g, "")].faqscript2, 'text/html');
+      document.body.appendChild(doc.getElementsByTagName('script')[0] || [] ? doc.getElementsByTagName('script')[0] || [] : '');
+      document.body.appendChild(doc.getElementsByTagName('script')[1] || [] ? doc1.getElementsByTagName('script')[1] || [] : '');
+      document.body.appendChild(doc.getElementsByTagName('script')[2]||[]? doc2.getElementsByTagName('script')[2]||[]: '' );
       document.title = meta_tags[location.pathname.replace(/\//g, "")] ? meta_tags[location.pathname.replace(/\//g, "")].title : '';
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace(/\//g,"")]? meta_tags[location.pathname.replace(/\//g,"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace(/\//g, "")] ? meta_tags[location.pathname.replace(/\//g, "")].content : '';

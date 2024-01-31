@@ -109,11 +109,17 @@ function OpenDematNew() {
     // }, [isActive4]);
 
     useEffect(() => {
+            console.log("kkkkkkkkkk")
+
         setRenderCount(true)
         if (rendercount === true) {
             let parser = new DOMParser();
-            let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
-            document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
+            let doc = parser.parseFromString(meta_tags[location.pathname.replace(/\//g, "")].faqscript, 'text/html');
+            let doc1 = parser.parseFromString(meta_tags[location.pathname.replace(/\//g, "")].faqscript1, 'text/html');
+            let doc2 = parser.parseFromString(meta_tags[location.pathname.replace(/\//g, "")].faqscript2, 'text/html');
+             document.body.appendChild(doc.getElementsByTagName('script')[0] || [] ? doc.getElementsByTagName('script')[0] || [] : '');
+             document.body.appendChild(doc.getElementsByTagName('script1')[0] || [] ? doc1.getElementsByTagName('script')[0] || [] : '');
+             document.body.appendChild(doc.getElementsByTagName('script2')[0]||[]? doc2.getElementsByTagName('script')[0]||[]: '' );
             document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
           // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
