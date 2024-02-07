@@ -22,9 +22,9 @@ function CorporateBanner() {
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
                             <div className="corporate-banner-headings">
-                                <p className="para-first">Open Corporate Demat Account</p>
-                                <h1 className="title"><span>EMPOWER</span>
-                                    Your Business</h1>
+                                <h1 className="para-first">Open Corporate Demat Account</h1>
+                                <p className="title"><span>EMPOWER</span>
+                                    Your Business</p>
                                 <p className="para-scnd">Trade easily across all segments on NSE, BSE, and MCX with our all-in-one Corporate Demat account.</p>
                                 <a href="javascript:void(0)" className="btn-bg btn-bg-dark btn-new" onClick={() => scrollToId('dematformsticky')}>Start Today</a>
                             </div>

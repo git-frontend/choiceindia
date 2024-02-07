@@ -1321,7 +1321,7 @@ const meta_tags = {
     'title': "Demat Account - Meaning, Types, Features, Uses and Benefits", 'lang': "en", 'content': "What is Demat account? Know demat account meaning, it's features and benefits, types of demat account, charges, opening process, required documents, and more.", 'link': "https://choiceindia.com/demat-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
      "faqscript": `
      <script type="application/ld+json">
-{
+{ 
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [{
@@ -1410,10 +1410,64 @@ const meta_tags = {
     }
   }]
 }
-</script>
-
+</script> `,
+    "faqscript1": `
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://choiceindia.com/demat-account"
+  },
+  "headline": "Demat Account - Meaning, Types, Features, Uses and Benefits",
+  "description": "Detailed guide over a Demat Account, its features, benefits, types, charges levied, how it works, documents required, choosing a broker and how to open a Demat account.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://i.ytimg.com/vi_webp/3u0VZAHMwO0/maxresdefault.webp",
+    "width": "1278",
+    "height": "720"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Team Choice"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Choice India",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://choiceindia.com/static/media/choice-logo.924aa461a450ed092f58ea7c3e4a4a9d.svg",
+      "width": "150",
+      "height": "37"
+    }
+  },
+  "datePublished": "2023-10-17",
+  "dateModified": "2021-01-18"
+}
+</script>`,
     
-    `},
+    "faqscript2": `
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "What is Demat Account | Introduction of Demat Account in Simple Way",
+  "description": "An introduction to demat account, what are shares, how demat account helps to keep them safe",
+  "thumbnailUrl": "https://i.ytimg.com/vi_webp/3u0VZAHMwO0/maxresdefault.webp",
+  "uploadDate": "2023-10-17",
+  "duration": "PT0M59S",
+  "contentUrl": "https://choiceindia.com/demat-account",
+  "embedUrl": "https://www.youtube.com/embed/3u0VZAHMwO0?si=sqbJJfBthND0ReKo",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://www.youtube.com/watch?v=3u0VZAHMwO0={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}
+</script>`  
+  
+  },
 
   "info/stratezy": { 'title': "Stratezy - A Free Trading Strategy Builder by Choice", 'lang': "en", "content": "Stratezy - A Free Trading Strategy Builder by Choice. Stratezy is the free-trading strategy builder for intraday and options trades. Optimise your trading strategies and make it lives with Strategy.", "link": "https://choiceindia.com/info/stratezy", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
