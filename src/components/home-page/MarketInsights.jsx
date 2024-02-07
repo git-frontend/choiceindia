@@ -74,11 +74,24 @@ function MarketInsights() {
     };
     const navigate = useNavigate();
 
-    function marketinsightDetail(id) {
-        navigate({
-          pathname: `/research-report/${id}`,
-        //   search: `?id=${id2}`
-        })
+    function marketinsightDetail(id, id2) {
+        // navigate({
+        //   pathname: `/research-report/${id}`,
+        // //   search: `?id=${id2}`
+        // })
+        if (id2 === 'f890363a-512e-4797-91fd-4d40732844a3') {
+            navigate(`/research-report/${id}-share-price-target`);
+          } else if (id2 === '0') {
+            navigate(`/research-report/${id}-ipo-review`);
+          } else if (id2 === '1aa86611-7b88-4069-af82-1e04e80659a4') {
+            navigate(`/research-report/${id}-industry-analysis`);
+          } else if (id2 === '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad') {
+            navigate(`/research-report/${id}`);
+          } else {
+            navigate(`/research-new/${id}/${tempid.name}`, {
+                search: `?id=${id2}`
+            });
+          }
       }
 
 
@@ -162,7 +175,7 @@ function MarketInsights() {
             
                                                             return (
             
-                                                                <div key={response.uuid} className={classNameNm} onClick={() => { marketinsightDetail(response.redirect_slug
+                                                                <div key={response.uuid} className={classNameNm} onClick={() => { marketinsightDetail(response.redirect_slug,response.report_subtype_uuid
                                                                     ) }} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                                     <div className="insights-item-cont cursor-pointer" >
                                                                         <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
