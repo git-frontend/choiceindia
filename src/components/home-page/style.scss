@@ -8,13 +8,15 @@
 .home-banner {
     padding: 4rem 0 0;
     background-color: $bglight-grey;
+
     @media (max-width: $sm) {
         padding: 7rem 0 3rem;
     }
+
     .banner-img {
         width: 100%;
         height: auto;
-       
+
         @media (max-width:576px) {
             display: none;
         }
@@ -43,8 +45,8 @@
                     font-size: 3rem;
                     line-height: 4rem;
                     margin-bottom: 2rem;
-                    
-                    
+
+
                 }
 
                 @media (max-width: $sm) {
@@ -62,12 +64,14 @@
                 color: $secondary;
                 font-family: $font-family-poppins-regular;
                 display: none;
+
                 @media (max-width: $sm) {
                     font-size: 1.5rem;
                     text-align: center;
                     display: block;
                 }
             }
+
             @media (max-width: $sm) {
                 text-align: center;
                 display: block;
@@ -186,6 +190,7 @@
         background: url(../../assets/images/home-bgtop.png) no-repeat top left;
         background-size: contain;
         z-index: -1;
+
         @media (max-width: $md) {
             display: none;
         }
@@ -468,8 +473,9 @@
         display: flex;
 
         margin-top: 5rem;
+
         @media (max-width: $sm) {
-            
+
             display: none;
         }
 
@@ -490,7 +496,7 @@
 
                     @media (max-width: $sm) {
                         height: 250px;
-                        
+
                     }
                 }
 
@@ -750,9 +756,11 @@
         padding-top: 8rem;
         display: flex;
         flex-wrap: wrap;
+
         @media (max-width: $sm) {
-           flex-direction: column-reverse; 
+            flex-direction: column-reverse;
         }
+
         .stories-sec-left {
             width: 40%;
 
@@ -779,9 +787,11 @@
             padding-left: 5rem;
             padding-right: 2rem;
             padding-top: 5rem;
+
             @media (max-width: $sm) {
                 padding-right: 0;
-              }
+            }
+
             h4 {
                 font-size: 2rem;
                 color: $primary;
@@ -803,20 +813,23 @@
                 @media screen and (max-width: $md) {
                     font-size: 1.3rem;
                 }
-                .read-btn{
+
+                .read-btn {
                     position: absolute;
                     right: 0;
                     bottom: 0;
                     background: $whiteColor;
                     font-family: $font-family-poppins-bold;
-                    em{
+
+                    em {
                         font-family: $font-family-poppins-regular;
-                        margin:0 0.2rem;
+                        margin: 0 0.2rem;
                         margin-right: 1rem;
                         display: inline-block;
                         font-style: normal;
                     }
-                    &:hover{
+
+                    &:hover {
                         color: $yellowColor;
                     }
                 }
@@ -846,9 +859,11 @@
             position: absolute;
             left: 44%;
             width: 90rem;
+
             @media (max-width: $sm) {
-               display: none;
-             }
+                display: none;
+            }
+
             .stories-sec-slider {
                 .itm-img {
                     padding: 2rem;
@@ -1167,7 +1182,8 @@
                         color: #0C71B9;
                         font-size: 2.4rem;
                     }
-                    .tag-letter{
+
+                    .tag-letter {
                         display: block;
                         width: 2rem;
                         height: 2rem;
@@ -1178,6 +1194,7 @@
                         font-size: 1.5rem;
                         font-family: $font-family-RedHat-Bold;
                     }
+
                     h4 {
                         font-family: $font-family-RedHat-Bold;
                         padding-left: 1.5rem;
@@ -1190,12 +1207,15 @@
                         padding-left: 2.5rem;
                         font-family: $font-family-poppins-regular, sans-serif;
                         padding-left: 3rem;
+
                         @media (max-width: $sm) {
-                            
+
                             padding-top: 0.5rem;
                         }
-                        &.rght-txt{
+
+                        &.rght-txt {
                             padding-left: 1rem;
+
                             @media (max-width: $xs) {
                                 width: 100%;
                                 padding: 0;
@@ -1466,6 +1486,7 @@
                 p {
                     margin: 0;
                     font-size: 1.6rem;
+
                     @media (min-width:$sm) and (max-width: $md) {
                         font-size: 1.4rem;
                     }
@@ -1617,8 +1638,8 @@
 //   .slick-dots li.slick-active + li:nth-last-child(1){
 //       display: inline-block;
 //   }
-.market-insights{
-    .slick-current{
+.market-insights {
+    .slick-current {
         width: 100% !important;
     }
 }
@@ -1635,4 +1656,21 @@
 
 .width-unset {
     width: unset !important;
+}
+
+.cust-slider-docts {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 10px;
+    height: 10px;
+    padding: 5px !important;
+    cursor: pointer;
+    color: transparent;
+    border: 0 !important;
+    border-radius: 100% !important;
+    outline: none;
+    background: #797A7D !important;
+    opacity: 0.25 !important;
+   margin-left: 0.4rem;
 }

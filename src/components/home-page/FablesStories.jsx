@@ -8,6 +8,7 @@ import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
+import { Button } from "react-bootstrap";
 
 function FablesStories() {
 	let Id;
@@ -17,7 +18,7 @@ function FablesStories() {
 	const [sliderimag, setSliderImag] = useState(5);
 	const [isloading, setisloading] = useState(true);
 
-
+	const [numButtons, setNumButtons] = useState(0);
 	/** get list of fabal */
 
 	function loadFabalList() {
@@ -47,20 +48,20 @@ function FablesStories() {
 	function loadFableBlog(Id) {
 		homeServices.fablesBlog(Id).then(
 			res => {
-				
+
 				if (res && res.status === 200 && res.data && res.data.posts) {
 					setblog(res.data.posts)
-					
+
 
 				} else {
 					setblog([]);
-					
+
 				}
 
 			}
 		).catch((error) => {
 			setblog([]);
-			
+
 		});
 	}
 
@@ -74,7 +75,11 @@ function FablesStories() {
 		}
 
 	}, [trigger])
-
+	useEffect(() => {
+		if (fslider.length > 0) {
+			setNumButtons(fslider.length);
+		}
+	}, [fslider]);
 	const settings1 = {
 		infinite: true,
 		speed: 2500,
@@ -137,7 +142,9 @@ function FablesStories() {
 
 
 																		<div id="stories-timeout">
-																			<LazyLoader src={fslider[sliderimag]?.feature_image} width={"521"} height={"450"} alt={fslider[sliderimag]?.meta_title} />
+																			<Link to={`/blog/${fslider[sliderimag].slug}/`}>
+																				<LazyLoader src={fslider[sliderimag]?.feature_image} width={"521"} height={"450"} alt={fslider[sliderimag]?.meta_title} />
+																			</Link>
 																			{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
 																		</div>
 																		:
@@ -167,6 +174,15 @@ function FablesStories() {
 																		</div>
 
 																}
+															</div>
+															<div>
+																{Array.from({ length: numButtons }, (_, index) => (
+																	<Button key={index} className="cust-slider-docts" onClick={() => {
+																		setSliderImag(index)
+																	}}>
+
+																	</Button>
+																))}
 															</div>
 															<div className="sec-slider-cont">
 																<Slider {...settings1}
