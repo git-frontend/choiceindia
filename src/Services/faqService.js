@@ -5,7 +5,14 @@ const faqService = {
 
     headerConfig: {
         headers: { "authorization": "Basic WXp4cUZXZGJVdzlYOGVhMVBHejpY" }
+
     },
+    faqHeaderConfig: {
+        headers: {  "source":"choiceindia",
+                    'Content-Type' : 'application/json' }
+
+    },
+   
 
     FaqCategory: function () {
 
@@ -16,14 +23,14 @@ const faqService = {
         })
     },
 
-    FaqFolder: function (id) {
+    // FaqFolder: function (id) {
 
-        let api = new API_URLS()
-        let url = api.getFaqfolderURL(id)
-        return axios.get(url, this.headerConfig).then(({ data }) => {
-            return data
-        })
-    },
+    //     let api = new API_URLS()
+    //     let url = api.getFaqURL(id)
+    //     return axios.get(url, this.headerConfig).then(({ data }) => {
+    //         return data
+    //     })
+    // },
 
     FaqArticle: function (id) {
 
@@ -34,11 +41,12 @@ const faqService = {
         })
 
     },
-    FaqSearch: function (pros) {
-
+    FaqSearch: function (payload,token) {
+        let headers = this.faqHeaderConfig.headers;
+        headers['Authorization'] = token
         let api = new API_URLS()
-        let url = api.getFaqSearchURL(pros)
-        return axios.get(url, this.headerConfig).then(({ data }) => {
+        let url = api.getFaqURL()
+        return axios.post(url,payload, {headers: headers}).then(({ data }) => {
             return data
         })
 

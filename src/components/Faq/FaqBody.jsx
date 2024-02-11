@@ -14,7 +14,8 @@ import { useSearchParams } from "react-router-dom";
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useCallback } from 'react';
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
@@ -31,10 +32,13 @@ export default function FaqBody() {
   const [isarticle, setIsarticle] = useState(false);
   const [isloading, setisloading] = useState(true);
   const [iscategory, setiscategory] = useState(true);
-  let data = '';
+  const [check, setCheck] = useState(false);
+  const [captcha, setCaptcha] = useState("");
+  let data=useRef('')
   var active = useRef('');
   const [searchParams, setSearchParams] = useSearchParams();
   active.current = searchParams.get('active') || '';
+  const { executeRecaptcha } = useGoogleReCaptcha();
   // console.log("check",active.current)
 
   /** yup validation search text */
@@ -87,7 +91,8 @@ export default function FaqBody() {
 
   /** Get Faq qus  */
   const faqChange = (e2) => {
-    data = e2.target.value;
+    data.current = e2.target.value;
+    
   };
 
 
@@ -102,21 +107,27 @@ export default function FaqBody() {
 
   /** faq search function */
 
-  function loadfaqsearch() {
+  function loadfaqsearch(token) {
     setIsloader(true);
     setisloading(true);
+    let payload = {
+      type:"search",
+      term:data.current
+    }
 
-    faqService.FaqSearch(data).then(
+    faqService.FaqSearch(payload,token).then(
       res => {
-        if (res) {
+        if (res && res.Body) {
           setisloading(false);
           chapterScroll('faq-section')
           setIsloader(false)
           setIsarticle(true);
           setSelected(-1)
-          setSearchlist(res);
+          setSearchlist(res.Body);
 
         } else {
+          chapterScroll('faq-section')
+          setIsloader(false)
           setisloading(false);
           setSearchlist([]);
 
@@ -127,6 +138,8 @@ export default function FaqBody() {
       }
     ).catch((error) => {
       setisloading(false);
+      chapterScroll('faq-section')
+      setIsloader(false)
       setSearchlist([]);
     });
 
@@ -149,21 +162,26 @@ export default function FaqBody() {
   /** FAQ category section */
 
   function loadfaqcategory() {
-    // setisloading(true);
+    setCheck(true)
     faqService.FaqCategory().then(
       res => {
         if (res) {
-          setiscategory(false)
-          setList(res);
-          if(active.current == 'loan') {
-            loadfaqFolder("22000109076");
-            setSelected(5)
-            setList2("Loans")
+            setiscategory(false)
+            setList(res)
 
-          } else{
-            loadfaqFolder(res[0].category_linkage);
+  if(active.current == 'loan') {
+    handleReCaptchaVerify('folder',"22000109076");
+    setList2("Loans")
+    setSelected(5)
+  } else{
+    handleReCaptchaVerify('folder',res[0].category_linkage.toString());
 
-          } 
+  } 
+
+             
+
+          
+           
 
         } else {
           setiscategory(false)
@@ -180,15 +198,20 @@ export default function FaqBody() {
 
   /** FAQ Folder section */
 
-  function loadfaqFolder(id) {
-    // console.log("id " ,id)
+  function loadfaqFolder(token,id) {
+    let payload={
+      type:'category',
+      category_linkage:id
+    }
     setisloading(true);
-    faqService.FaqFolder(id).then(
+    faqService.FaqSearch(payload,token).then(
       res => {
         if (res) {
+
           setisloading(false)
-          setFolder(res)
-          loadfaqarticle(res[0].id);
+          setFolder(res.Body)
+          handleReCaptchaVerify('article',res.Body[0].id.toString());
+
 
         } else {
           setisloading(false)
@@ -205,13 +228,17 @@ export default function FaqBody() {
 
   /** FAQ Article section */
 
-  function loadfaqarticle(id) {
+  function loadfaqarticle(token,id) {
     setisloading(true);
-    faqService.FaqArticle(id).then(
+    let payload={
+      type:"article",
+      category_linkage:id
+    }
+    faqService.FaqSearch(payload,token).then(
       res => {
         if (res) {
           setisloading(false)
-          setArticle(res)
+          setArticle(res.Body)
         } else {
           setisloading(false)
           setArticle([])
@@ -236,8 +263,7 @@ export default function FaqBody() {
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
-      loadfaqcategory();
-
+      
       var input = document.getElementById("value3");
       input.addEventListener("keypress", function (eve) {
         if (eve.key === "Enter") {
@@ -245,18 +271,53 @@ export default function FaqBody() {
           document.getElementById("btnsearch").click();
         }
       })
+    
     }
 
   }, [trigger])
 
+    // Create an event handler so you can call the verification on button click event or form submit
+    const handleReCaptchaVerify = useCallback(async (identifier,id) => {
+      
+      if(identifier === 'search'){
+            setIsloader(true);
+             }      
+       setisloading(true);
+    
+      if (!executeRecaptcha) {
+          return;
+      }
+      const token = await executeRecaptcha('faqPage');
+    
+    if(identifier === 'search' && token){
+      loadfaqsearch(token)
+      
+     }else if(identifier === 'folder'){
+      loadfaqFolder(token,id)
+
+     }else if(identifier === 'article'){
+      loadfaqarticle(token,id)
+     }
+
+    
+      
+     
+  }, [executeRecaptcha]);
+
+useEffect(()=>{
+  if(!check && captcha === 'Page_load'){
+    loadfaqcategory()
+  } 
+},[captcha])
+
   return (
     <>
-      <div className="faq-main">
+      <div className="faq-main"  onMouseOver={()=> {setCaptcha('Page_load')}}>
 
         <section className="banner-app">
           <img src={image1} className="ban-img" alt='Loading' width={"1519"} height={"669"} />
           <div className='app-banner-caption'>
-            <div className='container'>
+            <div className='container' >
               <div className='row'>
                 <div className='col-md-6'>
                   <div className='caption-cont'>
@@ -266,7 +327,7 @@ export default function FaqBody() {
 
                       <Form.Control type="text" id="value3" autoComplete="off" placeholder="Search for your issue" className="formcontrol" {...register('faq', { onChange: (e2) => { faqChange(e2) } })} />
 
-                      <Button type='submit' id="btnsearch" variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>{isloader == false ? 'Search' : <Spinner animation="border" />}</Button>
+                      <Button type='submit' id="btnsearch" variant="warning" onClick={() => data.current.length > 0 ? handleReCaptchaVerify('search') : console.log("check3333333333333333")}>{isloader == false ? 'Search' : <Spinner animation="border" />}</Button>
                     </div>
                     <div>
 
@@ -353,7 +414,7 @@ export default function FaqBody() {
                                   return (
                                     <div key={response.id} className={classNameNm2} onClick={() => {
 
-                                      loadfaqFolder(response.category_linkage);
+                                      handleReCaptchaVerify('folder',response.category_linkage.toString());
                                       setList2(response.category_name);
                                       setSelectedId(0);
                                       setSelected(i);
@@ -418,7 +479,7 @@ export default function FaqBody() {
 
                                     return (
                                       <div key={response.id} className={classNameNm} onClick={() => {
-                                        loadfaqarticle(response.id);
+                                        handleReCaptchaVerify('article',response.id.toString());
                                         chapterScroll('faq-section');
                                         setSelectedId(index)
                                       }}>
