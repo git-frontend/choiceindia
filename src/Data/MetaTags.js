@@ -1409,12 +1409,15 @@ const meta_tags = {
       "text": "Yes, you can open a Demat account without an Aadhar card by providing other government-issued identity documents."
     }
   }]
-},
-{ 
+}
+</script> `,
+    "faqscript1": `
+ <script type="application/ld+json">
+{
   "@context": "https://schema.org/",
   "@type": "BlogPosting",
   "mainEntityOfPage": {
-    "@type": "WebPage", 
+    "@type": "WebPage",
     "@id": "https://choiceindia.com/demat-account"
   },
   "headline": "Demat Account - Meaning, Types, Features, Uses and Benefits",
@@ -1441,7 +1444,11 @@ const meta_tags = {
   },
   "datePublished": "2023-10-17",
   "dateModified": "2021-01-18"
-},
+}
+</script>`,
+    
+    "faqscript2": `
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
@@ -1458,10 +1465,9 @@ const meta_tags = {
     "startOffset-input": "required name=seek_to_second_number"
   }
 }
-</script>
-
-    
-    `},
+</script>`  
+  
+  },
 
   "info/stratezy": { 'title': "Stratezy - A Free Trading Strategy Builder by Choice", 'lang': "en", "content": "Stratezy - A Free Trading Strategy Builder by Choice. Stratezy is the free-trading strategy builder for intraday and options trades. Optimise your trading strategies and make it lives with Strategy.", "link": "https://choiceindia.com/info/stratezy", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 

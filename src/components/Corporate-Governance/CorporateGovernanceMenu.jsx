@@ -11,59 +11,84 @@ import loaderimg2 from '../../assets/vedio/loader2.mp4'
 function CodeConductMenu() {
     const [data, setData] = useState();
     const [list, setList] = useState();
+    const [CGList, setCGList] = useState();
     const [trigger, setTrigger] = useState(false);
     const [isloading, setisloading] = useState(true);
+    const policies = CGList?.filter(e => e.title === "policies")
+    const committee = CGList?.filter(e => e.title === "committee")
 
-    function loadCorporatepdf() {
-        cmsService.Corporate().then(
+    // function loadCorporatepdf() {
+    //     cmsService.Corporate().then(
+    //         res => {
+    //             if (res) {
+    //                 setisloading(false);
+    //                 setData(res.data.data);
+    //                 // console.log("check", res.data.data)
+
+    //             } else {
+    //                 setisloading(false);
+    //                 setData([]);
+
+    //             }
+
+    //         }
+    //     ).catch((error) => {
+    //         setisloading(false);
+    //         setData([]);
+    //     });
+    // }
+
+
+    // function loadCorporatecommitteepdf() {
+    //     cmsService.CorporateCommitee().then(
+    //         res => {
+    //             if (res) {
+    //                 setisloading(false);
+    //                 setList(res.data.data);
+    //                 // console.log("check", res.data.data)
+
+    //             } else {
+    //                 setisloading(false);
+    //                 setList([]);
+
+    //             }
+
+    //         }
+    //     ).catch((error) => {
+    //         setisloading(false)
+    //         setList([]);
+    //     });
+    // }
+
+    function loadCorporateGovernancepdf() {
+        cmsService.CorporateGovernance().then(
             res => {
                 if (res) {
                     setisloading(false);
-                    setData(res.data.data);
+                    setCGList(res.data.data);
                     // console.log("check", res.data.data)
 
                 } else {
                     setisloading(false);
-                    setData([]);
-
-                }
-
-            }
-        ).catch((error) => {
-            setisloading(false);
-            setData([]);
-        });
-    }
-
-
-    function loadCorporatecommitteepdf() {
-        cmsService.CorporateCommitee().then(
-            res => {
-                if (res) {
-                    setisloading(false);
-                    setList(res.data.data);
-                    // console.log("check", res.data.data)
-
-                } else {
-                    setisloading(false);
-                    setList([]);
+                    setCGList([]);
 
                 }
 
             }
         ).catch((error) => {
             setisloading(false)
-            setList([]);
+            setCGList([]);
         });
     }
+
 
     useEffect(() => {
         setTrigger(true)
 
         if (trigger === true) {
-            loadCorporatepdf();
-            loadCorporatecommitteepdf();
-
+            // loadCorporatepdf();
+            // loadCorporatecommitteepdf();
+            loadCorporateGovernancepdf()
         }
 
     }, [trigger])
@@ -89,7 +114,7 @@ function CodeConductMenu() {
                             <div>
 
                                 {
-                                    (data && data.length) ?
+                                    (policies && policies.length) ?
                                         <div className="row code-mainwrapper cgmainwrap">
                                             <div className="col-md-12">
 
@@ -98,7 +123,7 @@ function CodeConductMenu() {
 
                                                 <div className="subtext">
                                                     {
-                                                        (data || [])?.map((res, i) => {
+                                                        (policies || [])?.map((res, i) => {
 
                                                             return (
                                                                 <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
@@ -162,7 +187,7 @@ function CodeConductMenu() {
 
                     <div>
                         {
-                            (list && list.length) ?
+                            (committee && committee.length) ?
                                 <div className="row code-mainwrapper cgmainwrap">
                                     <div className="col-md-12">
 
@@ -171,7 +196,7 @@ function CodeConductMenu() {
 
                                         <div className="subtext">
                                             {
-                                                (list || []).map((res, i) => {
+                                                (committee || []).map((res, i) => {
                                                     return (
                                                         <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
                                                             <div>{res.headline ? res.headline : ''} </div>

@@ -191,6 +191,7 @@ export class API_URLS {
     //   noticeRightURL = 'items/notices?filter[status][_eq]=published&filter[type][_eq]=right_issues&limit=1000&sort[]=id';
     corporateURL = 'items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=policies&limit=1000&sort[]=id';
     corporatecommiteeURL = 'items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=committee&limit=1000&sort[]=id';
+    corporateGovernanceURL = 'items/corporate_governance?filter[status][_eq]=published&limit=1000&sort[]=id';
     shareholdingURL = 'items/share_holding_pattern?filter[status][_eq]=published&limit=1000&sort[]=id';
     transactionURL = 'items/related_party_transaction?filter[status][_eq]=Published&limit=1000&sort[]=id';
     closureURL = 'items/closure_trading_window?filter[status][_eq]=Published&limit=1000&sort[]=id';
@@ -693,6 +694,9 @@ export class API_URLS {
 
     getNoticesUrlR() {
         return this.CMSURL + this.noticeRightURL
+    }
+    getcorporateGovernanceURL() {
+        return this.CMSURL + this.corporateGovernanceURL
     }
     getcorporateURL() {
         return this.CMSURL + this.corporateURL

@@ -133,7 +133,16 @@ documentList: function () {
     })
 },
 
-/** Corporate Services page */
+    /** Corporate Services page */
+
+CorporateGovernance: function () {
+
+        let api = new API_URLS()
+        let url = api.getcorporateGovernanceURL()
+        return axios.get(url).then((data) => {
+            return data
+        })
+    },
 
 Corporate: function () {
 
