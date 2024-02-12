@@ -175,15 +175,7 @@ function FablesStories() {
 
 																}
 															</div>
-															<div>
-																{Array.from({ length: numButtons }, (_, index) => (
-																	<Button key={index} className="cust-slider-docts" onClick={() => {
-																		setSliderImag(index)
-																	}}>
 
-																	</Button>
-																))}
-															</div>
 															<div className="sec-slider-cont">
 																<Slider {...settings1}
 																	slidesToShow={3}
@@ -228,7 +220,15 @@ function FablesStories() {
 																</Slider>
 															</div>
 														</div>
+														<div className="stories-botton-dots">
+															{Array.from({ length: numButtons }, (_, index) => (
+																<Button key={index} className={`cust-slider-docts ${index === sliderimag ? 'active' : ''}`} onClick={() => {
+																	setSliderImag(index)
+																}}>
 
+																</Button>
+															))}
+														</div>
 													</div>
 												</div> :
 												<div className="text-center">
