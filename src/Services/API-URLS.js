@@ -1014,5 +1014,9 @@ export class API_URLS {
     getschemeTopHoldings() {
         return this.MFBaseURL + this.schemeTopHoldings
     }
+/** FAQ API URL */
+    getFaqURL() {
+        return this.jiffyServerURL + `api/faq/list`
+    }
 
 }

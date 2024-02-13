@@ -8,6 +8,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function Faq() {
 
@@ -50,7 +51,10 @@ function Faq() {
         skeleton ? <Template1 /> :
           <div className='faq-skeleton-parent'>
             {/**<FaqBanner />*/}
+            <GoogleReCaptchaProvider  reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
             <FaqBody />
+            </GoogleReCaptchaProvider>
+            
           </div>
       }
     </div>
