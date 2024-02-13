@@ -11,23 +11,30 @@ const config = {
     liveFileURL: "https://cms.jiffy.in/",
     UATFileURL: "https://cms.jiffy.in/",
 
-    UATJiffyServerURL: "https://devfinx.choiceindia.com/",
+    UATJiffyServerURL: "https://finx.choiceindia.com/",
     liveJiffyServerURL: "https://finx.choiceindia.com/",
+
+    UATJiffyURL: "http://devjiffy.choicebroking.in/",
+    liveJiffyURL: "https://finx.choiceindia.com/",
 
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
+    UATNewResearchReportURL: "https://finx.choiceindia.com/api/researchreport/v2/api",
     liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
+    liveNewResearchReportURL: "https://finx.choiceindia.com/api/researchreport/v2/api",
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
     liveSSOBaseURL: 'https://sso-api.choiceindia.com/',
     UATOnbBaseURL: 'https://uat-pwa.choicetechlab.com/',
     liveOnbBaseURL: 'https://accounts.choiceindia.com/',
     UATLMSBaseURL: 'https://lms-api.choicetechlab.com/',
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
-    // livereferURL: "https://finx.choiceindia.com/api/middleware/",
-    // UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
+    livereferURL: "https://finx.choiceindia.com/api/middleware/",
+    UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
     liveresearchURL: "https://researchreportapi.jiffy.in/",
     UATresearchURL: "https://researchreportdevapi.choicetechlab.com/",
+    liveperformanceURL: "https://finx.choiceindia.com/api/",
+    UATperformanceURL: "https://finx.choiceindia.com/api/",
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
     UATnbfcBaseURL: "https://api-uat.synofin.tech/od/od-application-creation/",
@@ -54,6 +61,7 @@ const config = {
 
 export class API_URLS {
     NbfcAuthURL = '';
+    newResearchReportURL = 'https://finx.choiceindia.com/api/researchreport/v2/api';
     JiffyBaseURL = '';
     LMSBaseURL = '';
     OnbBaseURL = '';
@@ -75,6 +83,8 @@ export class API_URLS {
     MiddlewareGoURL = ''
     /**Server URL */
     serverURL = "https://choiceindia.com/fables/ghost/api/v3/";
+    /**Server URL */
+    jiffyURL = "devjiffy.choicebroking.in";
     jiffyExpertPageURL = "research-report/research/experts/EQ/all/"
     jiffyFundamentalPageURL = "research-report/research/fundamental/EQ/all/"
     jiffySignalPageURL = "research-report/research/signals/EQ/all/"
@@ -88,8 +98,11 @@ export class API_URLS {
     /** faq URL */
     faqURL = "https://choicebroking.freshdesk.com/api/v2/"
 
+    /** refer and earn URL */
+    referURL = "https://uatapi.choicebroking.in/api/middleware"
+
     /**Research New Fetch Success Ratio */
-    fetchResearchReport = "api/researchreport/v2/api/research-report-new"
+    fetchResearchReport = "/research-report-new"
     /** Research URL */
     researchURL = "https://uatapi.choicebroking.in/api/middleware"
     /** NACH Base URL */
@@ -155,11 +168,11 @@ export class API_URLS {
 
     /** Performance */
 
-    performancefontURL = 'api/techanalysis/getcounters';
+    performancefontURL = 'techanalysis/getcounters';
 
     // multiple tokens url
 
-    multipletokensURL = 'api/cm/ProfileMkt/MultipleTouchlineV2';
+    multipletokensURL = 'cm/ProfileMkt/MultipleTouchlineV2';
     /** performance Success ratio */
 
     successURL = 'api/success-ratio';
@@ -180,7 +193,7 @@ export class API_URLS {
     verifyOTPURL = 'verify-otp';
     nbfcverifyOTPURL = 'api/verify-otp';
     // for event calendar
-    eventdetailsURL = 'api/cm/ProfileMkt/EventDetails';
+    eventdetailsURL = 'cm/ProfileMkt/EventDetails';
 
 
     /** pdf API */
@@ -257,13 +270,13 @@ export class API_URLS {
 
 
     //for brokerage calculator
-    searchURL = 'api/cm/ScripContract/Search/';
-    scripDetURL = 'api/cm/ScripContract/ScripDetails/';
+    searchURL = 'cm/ScripContract/Search/';
+    scripDetURL = 'cm/ScripContract/ScripDetails/';
     scripBrokerageURL = 'order-charges';
     //for  OI spurts
-    OIspurts = 'api/md/Data/TopOISpurtsBySegmentDerivatives';
+    OIspurts = 'md/Data/TopOISpurtsBySegmentDerivatives';
     //for margin calculator
-    marginCalculatorUrl = 'api/margin/GetMargin/';
+    marginCalculatorUrl = 'margin/GetMargin/';
     trackrecordUrl = 'items/Track_record';
     //for MF pages 
     categoryListUrl = 'static/CategoryList';
@@ -299,6 +312,7 @@ export class API_URLS {
 
         this.setOnbServerURL(config[configKey + 'OnbBaseURL']);
 
+        this.setJiffyURL(config[configKey + 'JiffyURL'])
         this.setSSOServerURL(config[configKey + 'SSOBaseURL']);
 
 
@@ -309,7 +323,10 @@ export class API_URLS {
 
         this.setfaqURL(config[configKey + 'faqURL']);
         this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
+        this.setNewResearchReportURL(config[configKey + 'NewResearchReportURL']);
+        this.setreferURL(config[configKey + 'referURL']);
         this.setresearchURL(config[configKey + 'researchURL']);
+        this.setperformanceURL(config[configKey + 'performanceURL']);
         this.setnbfcBaseURL(config[configKey + 'nbfcBaseURL']);
         this.setNACHBaseURL(config[configKey + 'NachBaseURL']);
         this.setNbfcAuthURL(config[configKey + 'NbfcAuthURL']);
@@ -357,6 +374,14 @@ export class API_URLS {
     }
 
 
+    /**
+   * Set Base URL of CMS APIs
+   * @param url url to Be set
+   */
+    setNewResearchReportURL(url) {
+        this.newResearchReportURL = url;
+    }
+
     setFileURL = (url) => {
         this.FileURL = url;
     }
@@ -382,6 +407,14 @@ export class API_URLS {
      */
     setJiffyServerURL = (url) => {
         this.jiffyServerURL = url;
+    }
+
+    /**
+     * Set Server URL 
+     * @param {*} url 
+     */
+    setJiffyURL = (url) => {
+        this.jiffyURL = url;
     }
 
 
@@ -412,16 +445,16 @@ export class API_URLS {
     }
 
     getExpertDetailURL = (id) => {
-        return this.JiffyServerURL + this.jiffyExpertPageURL + id
+        return this.jiffyURL + this.jiffyExpertPageURL + id
     }
 
 
     getFundamentalDetailURL = (id) => {
-        return this.JiffyServerURL + this.jiffyFundamentalPageURL + id
+        return this.jiffyURL + this.jiffyFundamentalPageURL + id
     }
 
     getSignalDetailURL = (id) => {
-        return this.JiffyServerURL + this.jiffySignalPageURL + id
+        return this.jiffyURL + this.jiffySignalPageURL + id
     }
 
     /**
@@ -434,6 +467,15 @@ export class API_URLS {
     }
 
     /**
+     * Set faq URL 
+     * @param {*} url 
+     */
+    setreferURL = (url) => {
+
+        this.referURL = url;
+    }
+
+    /**
     * Set Research URL 
     * @param {*} url 
     */
@@ -442,9 +484,18 @@ export class API_URLS {
         this.researchURL = url;
     }
 
+    /**
+    * Set Research URL 
+    * @param {*} url 
+    */
+    setperformanceURL = (url) => {
+
+        this.performanceURL = url;
+    }
+
 
     fetchResearchReportURL() {
-        return this.JiffyServerURL + this.fetchResearchReport;
+        return this.newResearchReportURL + this.fetchResearchReport;
     }
 
     fetchSignalReportURL() {
@@ -537,9 +588,9 @@ export class API_URLS {
     getFableFolderURL(id) {
         return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}`
     }
-    /** faq  API url */
-    getFaqURL() {
-        return this.jiffyServerURL + `api/faq/list`
+    /** faq search API url */
+    getFaqSearchURL(pros) {
+        return this.faqURL + `search/solutions?term=${pros}`
     }
     /** Get Market Insite and fabal List URL */
 
@@ -634,11 +685,11 @@ export class API_URLS {
     }
 
     getreferearnURL(id) {
-        return this.JiffyServerURL + `api/middleware/GetUserReferralData?ClientID=${id}`;
+        return this.referURL + `/GetUserReferralData?ClientID=${id}`;
     }
 
     getreferallink(id) {
-        return this.JiffyServerURL + `api/middleware/v1/40a9f5ac41a0f6223825/user/${id}/referral_link`
+        return this.referURL + `/v1/40a9f5ac41a0f6223825/user/${id}/referral_link`
     }
 
     getExpertResearchreportURL() {
@@ -655,10 +706,10 @@ export class API_URLS {
 
     getperformanceURL() {
 
-        return this.JiffyServerURL + this.performancefontURL;
+        return this.performanceURL + this.performancefontURL;
     }
     getMultipletokens() {
-        return this.JiffyServerURL + this.multipletokensURL;
+        return this.performanceURL + this.multipletokensURL;
     }
 
     getsuccessURL() {
@@ -883,7 +934,7 @@ export class API_URLS {
     }
     //for event deatils
     getEventDetails() {
-        return this.JiffyServerURL + this.eventdetailsURL;
+        return this.performanceURL + this.eventdetailsURL;
     }
     /** Company ipo */
     companyIpoURL() {
@@ -891,10 +942,10 @@ export class API_URLS {
     }
     //Get URL for Search Scrips
     getSearchURL() {
-        return this.JiffyServerURL + this.searchURL
+        return this.performanceURL + this.searchURL
     }
     getScripDetURL() {
-        return this.JiffyServerURL + this.scripDetURL
+        return this.performanceURL + this.scripDetURL
     }
     getScripBrokerageURL() {
         return this.MiddlewareGoURL + this.scripBrokerageURL;
@@ -906,10 +957,10 @@ export class API_URLS {
     }
     //OIspurts 
     getOISpurtsURL() {
-        return this.JiffyServerURL + this.OIspurts
+        return this.performanceURL + this.OIspurts
     }
     getMarginCalculatorURL(segmentId, token_qty) {
-        return this.JiffyServerURL + this.marginCalculatorUrl + segmentId + "/" + token_qty;
+        return this.performanceURL + this.marginCalculatorUrl + segmentId + "/" + token_qty;
     }
     gettrackDocumnetURL() {
         return this.CMSURL + this.trackrecordUrl
@@ -962,6 +1013,10 @@ export class API_URLS {
     }
     getschemeTopHoldings() {
         return this.MFBaseURL + this.schemeTopHoldings
+    }
+/** FAQ API URL */
+    getFaqURL() {
+        return this.jiffyServerURL + `api/faq/list`
     }
 
 }
