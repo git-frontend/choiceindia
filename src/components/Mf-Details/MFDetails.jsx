@@ -150,7 +150,7 @@ function MFTopFunds() {
                 if (err && err.message && (err.message.indexOf('404') > -1)) {
                     navigate(`/404`, { replace: true });
                 }
-                console.log("ERROR", err);
+                // console.log("ERROR", err);
 
             }
         );
@@ -311,7 +311,7 @@ function MFTopFunds() {
             TypeOfCalc: typeOfCalc ? 'SIP' : 'Lumpsum',
         };
 
-        console.log('sip request', request);
+        // console.log('sip request', request);
 
         rest.sipLumpsumCalc(request)
             .then((res) => {

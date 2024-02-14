@@ -93,7 +93,7 @@ function Holidayscategory() {
   useEffect(() => {
     config.activeTab.key =(window.location.pathname.indexOf('upcoming-board-meeting') > -1) ? config.activeTab[0].key:(window.location.pathname.indexOf('upcoming-agm') > -1)? "lAGMEGM":(window.location.pathname.indexOf('upcoming-bonus-shares') > -1)?"lBonus":(window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1)?"lDividend":(window.location.pathname.indexOf('upcoming-rights-issue') > -1)?"lRights":(window.location.pathname.indexOf('upcoming-stock-splits') > -1)?"lSplits":"";
     // config.activeTab.key=config.activeTab[0].key
-    console.log("config.activeTab.key",config.activeTab.key)
+    // console.log("config.activeTab.key",config.activeTab.key)
   }, []);
 
 

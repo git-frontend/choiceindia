@@ -184,7 +184,7 @@ function Banner() {
 
     rest.multipleTokensURLData(payload).then((res) => {
       if (res.Status === "Success" && res.Response && res.Response.lMT && res.Response.lMT.length) {
-        console.log(brokerageObj, "setBrokerageObj2 res.Response", res.Response)
+        // console.log(brokerageObj, "setBrokerageObj2 res.Response", res.Response)
 
         let data = {
           buyPrice: decimalConversion(item.SegmentId, (res.Response.lMT[0].BBP || res.Response.lMT[0].LTP) / 100),
@@ -201,7 +201,7 @@ function Banner() {
         // console.log(" data.brokerage", data.brokerage)
         data = Object.assign(brokerageObj, data)
         setBrokerageObj(data)
-        console.log("setBrokerageObj2", brokerageObj)
+        // console.log("setBrokerageObj2", brokerageObj)
         setTimeout(() => {
           getBrokerage()
         }, 1000);
@@ -239,9 +239,9 @@ function Banner() {
   const BrokerageCal = (scrip) => {
     let brokerage;
     let turnover = brokerageObj.turnOver;
-    console.log("tur", turnover)
+    // console.log("tur", turnover)
     let qty = Math.floor(turnover / 10000000);
-    console.log("qty", qty)
+    // console.log("qty", qty)
     brokerageObj.sebi = qty * 15;
     // let selectedState = stateArray.filter((obj) => obj.value === brokerageObj.state)[0];
     let brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / (brokerageObj.selectedScrip.isPrice ? 1 : 100);
@@ -342,8 +342,8 @@ function Banner() {
       if (res.Status === 'Success' && res.Response) {
         let buyBrokerage = res.Response.buyBrokerage;
         let sellBrokerage = res.Response.sellBrokerage;
-        console.log("buyBrokerage", buyBrokerage, newBrokerageObj, brokerageObj)
-        console.log("sellBrokerage", sellBrokerage)
+        // console.log("buyBrokerage", buyBrokerage, newBrokerageObj, brokerageObj)
+        // console.log("sellBrokerage", sellBrokerage)
         newBrokerageObj.stt = 0;
         newBrokerageObj.transactionCharge = 0;
         newBrokerageObj.clearance = 0;
@@ -408,8 +408,8 @@ function Banner() {
 
         //  Object.assign(newBrokerageObj, brokerageObj);
         setNewBrokerageObj(newBrokerageObj);
-        console.log("newBrokerageObj", newBrokerageObj)
-        console.log("brokerageObj", brokerageObj)
+        // console.log("newBrokerageObj", newBrokerageObj)
+        // console.log("brokerageObj", brokerageObj)
       } else {
 
       }

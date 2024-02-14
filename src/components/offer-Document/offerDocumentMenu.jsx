@@ -19,9 +19,9 @@ function OfferDocumentMenu() {
                 res => {
                     if (res && res.data && res.data.data ) {
                         setisloading(false)
-                        console.log("dddee",res.data.data)
+                        // console.log("dddee",res.data.data)
                         values = res.data.data;
-                        console.log("ddd",values)
+                        // console.log("ddd",values)
                         values.forEach(ele => {
 
                             if (!AllFilesValue[ele.title]) {
@@ -33,7 +33,7 @@ function OfferDocumentMenu() {
                             }
                         })
                         setDatalist(AllFilesValue);
-                        console.log("check",AllFilesValue)
+                        // console.log("check",AllFilesValue)
                     } else {
                         setisloading(false)
                         setDatalist([]);

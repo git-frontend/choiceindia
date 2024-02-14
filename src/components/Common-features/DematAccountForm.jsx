@@ -112,7 +112,7 @@ function DematAccountForm(props) {
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
                 setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
-                console.log('Success', res);
+                // console.log('Success', res);
                 if (consent == "yes") {
                     window.location.href = referLink.current ? referLink.current : null;
                 } else {
@@ -398,7 +398,7 @@ function DematAccountForm(props) {
             // "captcha": "1"
 
         };
-        console.log("request", request)
+        // console.log("request", request)
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {

@@ -164,7 +164,7 @@ function Banner() {
                 }
             })
             .catch((err) => {
-                console.log("err", err);
+                // console.log("err", err);
                 setMarginConfig((prevState) => ({
                     ...prevState,
                     searchedData: [],
@@ -222,7 +222,7 @@ function Banner() {
     }
 
     const addResetContract = (isAdd) => {
-        console.log("ff", marginConfig.qty)
+        // console.log("ff", marginConfig.qty)
         if (!marginConfig.qty || marginConfig.qty === '0') return;
 
         if (isAdd) {
@@ -259,7 +259,7 @@ function Banner() {
                 isCheck ||
                 !marginConfig.searchInput
             ) {
-                console.log('You have already added this contract. Please select different scrip" : "Please select scrip"')
+                // console.log('You have already added this contract. Please select different scrip" : "Please select scrip"')
                 return false;
             }
 

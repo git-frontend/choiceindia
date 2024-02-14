@@ -10,7 +10,7 @@ import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function TrendingReports(props) {
-  console.log("dd",props)
+  // console.log("dd",props)
   const [isloading, setisloading] = useState(true);
   const [list, setList] = useState(null);
   const [showData, setShowData] = useState([]);
@@ -23,7 +23,7 @@ function TrendingReports(props) {
   let sliceCount = Math.floor((Math.random() * 5) + 1);
 
   function getSingleDetail(id) {
-    console.log('IIddIII', id);
+    // console.log('IIddIII', id);
    
     if(props.data1.report_subtype_uuid === "f890363a-512e-4797-91fd-4d40732844a3"){
       navigate({
@@ -82,7 +82,7 @@ function TrendingReports(props) {
   function loadResearch(id) {
     ResearchService.researchcategory(id).then(
       res => {
-        console.log("res.response.data.uuid",id)
+        // console.log("res.response.data.uuid",id)
         if(res){
           setisloading(false);
         // console.log('YYYYY',res.response.totalCount);

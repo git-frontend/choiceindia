@@ -70,7 +70,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     }
 
     function chapterScroll1(id) {
-        console.log("check", id);
+        // console.log("check", id);
         var element = document.getElementById(id);
         var headerOffset = 140;
         var elementPosition = element.getBoundingClientRect().top;
@@ -274,7 +274,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
                 setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
-                console.log('Success', res);
+                // console.log('Success', res);
                 if (consent == "yes") {
                     window.location.href = referLink ? referLink : null;
                 } else {

@@ -13,12 +13,12 @@ export default function Header() {
 
   function check(){
     window.location.pathname="/services"
-    console.log("checking",window.location.pathname);
+    // console.log("checking",window.location.pathname);
 
     
   }
   function check2(){
-    console.log("checking")
+    // console.log("checking")
     //  window.open = "https://choiceinsurance.in/";    
      window.open("https://choiceinsurance.in/");   
   }

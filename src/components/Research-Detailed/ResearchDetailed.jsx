@@ -32,7 +32,7 @@ function ResearchDetailed() {
     const hasIPOReview = window.location.pathname.includes('-ipo-review');
     const hasINdReview = window.location.pathname.includes('-industry-analysis');
     const haseco = window.location.pathname.includes('');
-    console.log("c",hasINdReview)
+    // console.log("c",hasINdReview)
     
     let id2;
 
@@ -54,11 +54,11 @@ function ResearchDetailed() {
     else {
       return; 
     }
-    console.log("id",id2)
+    // console.log("id",id2)
 
     ResearchService.getSingleResearchDetail(id2, checkIPO).then(
       res => {
-        console.log("checkIPO",checkIPO)
+        // console.log("checkIPO",checkIPO)
         if (res) {
           if (res.response.data) {
             setList(res.response.data);

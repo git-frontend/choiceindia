@@ -18,7 +18,7 @@ function TradingStrategies() {
     
     if (element) {
       const rect = element.getBoundingClientRect();
-      console.log("checkmate", rect.top.toFixed())
+      // console.log("checkmate", rect.top.toFixed())
       if (rect.top.toFixed() < 350) {
         setIsCheck(true);
         // console.log('inside name', name);

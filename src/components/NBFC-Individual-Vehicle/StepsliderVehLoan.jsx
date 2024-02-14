@@ -25,7 +25,7 @@ function StepsSlider() {
             const rect2 = element.getBoundingClientRect();
             const rect3 = element.getBoundingClientRect();
             if (rect.top.toFixed() > 140 && rect.top.toFixed() < 294) {
-                console.log('inside name12', rect.top.toFixed());
+                // console.log('inside name12', rect.top.toFixed());
                             setName('steps-itm-active');
                           
                         }else {

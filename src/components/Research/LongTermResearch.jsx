@@ -111,8 +111,8 @@ function LongTermResearch() {
   };
 
   function getSingleDetail(id) {
-    console.log("goto signal", id)
-    console.log("tempid.id",tempid.id)
+    // console.log("goto signal", id)
+    // console.log("tempid.id",tempid.id)
     // console.log('IIIII',id);
     // navigate(`/research-new/${id}/${tempid}`);
     if (tempid.id === 'f890363a-512e-4797-91fd-4d40732844a3') {
@@ -171,7 +171,7 @@ function LongTermResearch() {
 
     setTrigger(true)
     if (trigger === true) {
-      console.log("test", urlid);
+      // console.log("test", urlid);
       (activeurl == "economic-analysis") ? (loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'), setcount(4)) : (activeurl == "industry-analysis") ? (loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4'), setcount(3)) : (activeurl == "ipo-nfo-analysis") ? (lpoSearch(), setcount(2)) : (loadResearch('f890363a-512e-4797-91fd-4d40732844a3'), setcount(1));
 
       let mediaQuery = window.matchMedia("(min-width: 770px)");

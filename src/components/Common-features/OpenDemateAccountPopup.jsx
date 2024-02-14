@@ -161,7 +161,7 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
             // "captcha": "1"
 
         };
-        console.log("hghg", request)
+        // console.log("hghg", request)
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {

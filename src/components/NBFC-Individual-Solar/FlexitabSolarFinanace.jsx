@@ -14,7 +14,7 @@ function FlexitabSolarFinanace() {
    /** scroll purpose */
    function chapterScroll2(id) {
     
-    console.log("checkal",id)
+    // console.log("checkal",id)
     var element2 = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition2 = element2.getBoundingClientRect().top;

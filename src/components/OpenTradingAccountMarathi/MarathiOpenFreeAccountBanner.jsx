@@ -13,7 +13,7 @@ const OpenFreeAccountBanner = () => {
     const[ischeck,setIscheck]=useState(false);
 
     function chapterScroll(id) {
-        console.log("check",id);
+        // console.log("check",id);
         var element = document.getElementById(id);
         var headerOffset = 140;
         var elementPosition = element.getBoundingClientRect().top;

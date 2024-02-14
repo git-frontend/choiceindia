@@ -131,7 +131,7 @@ function Banner() {
       if(err&&err.message&&(err.message.indexOf('404')>-1)){
         navigate(`/404`, { replace: true });
       }
-      console.log("ERROR",err)
+      // console.log("ERROR",err)
     }
   }
  /** for avoid multiple rendering */

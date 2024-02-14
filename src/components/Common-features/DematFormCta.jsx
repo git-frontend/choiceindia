@@ -24,7 +24,7 @@ function DematFormCta() {
           }else{
               setName('card-sticky-blog');
           } 
-          console.log(name,"jj",rect.top.toFixed())  
+          // console.log(name,"jj",rect.top.toFixed())  
       }
   };
 

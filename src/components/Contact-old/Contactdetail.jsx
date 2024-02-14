@@ -32,7 +32,7 @@ function Contactdetail() {
 
    city_list.forEach(ele => {
 
-      console.log(ele.id, ele.city_name, " == ", data[ele.id] ? data[ele.id].id : 'no id', data[ele.id] ? data[ele.id].city : "")
+      // console.log(ele.id, ele.city_name, " == ", data[ele.id] ? data[ele.id].id : 'no id', data[ele.id] ? data[ele.id].city : "")
       data2[ele.id] = ele
    })
 

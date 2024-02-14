@@ -587,7 +587,7 @@ if (!otp.length) {
         hideLoader('verifyLoader');
         // console.log(res, "verifyOTPN");
         if (res && res.data && res.data.status != 'error') {
-            console.log("verify",res)
+            // console.log("verify",res)
             fetchQueryParams();
             // addNewLead();
             handleOTPPopupClose();
@@ -629,7 +629,7 @@ showLoader('addLeadLoader');
 subBrokerService.addNewLead(request).then((res) => {
     
     hideLoader('addLeadLoader');
-    console.log(res, "addNewLead");
+    // console.log(res, "addNewLead");
     if (res && res.data && !res.data.errorCode) {
       //  console.log('TTT',res);
         handleOTPPopupClose();

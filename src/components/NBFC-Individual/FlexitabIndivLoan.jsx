@@ -15,7 +15,7 @@ function flexitab() {
     /** scroll purpose */
 function chapterScroll3(id) {
     
-    console.log("checkal",id)
+    // console.log("checkal",id)
     var element3 = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition3 = element3.getBoundingClientRect().top;

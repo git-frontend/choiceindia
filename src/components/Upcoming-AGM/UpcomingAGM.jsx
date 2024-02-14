@@ -19,9 +19,9 @@ function Sharemarketholidays(holiday) {
     setToggleState(index);
   };
   if(holiday.ischeck){
-    console.log(holiday,'prop')
+    // console.log(holiday,'prop')
   }else{
-    console.log('fsdprop')
+    // console.log('fsdprop')
   }
 
   const [skeleton, setSkeleton] = useState(() => true);
@@ -33,7 +33,7 @@ function Sharemarketholidays(holiday) {
   const location = useLocation();
 
   useEffect(() => {
-    console.log('tttt');
+    // console.log('tttt');
     document.title =
       holiday && holiday.holiday && holiday.holiday.title
         ? holiday.holiday.title

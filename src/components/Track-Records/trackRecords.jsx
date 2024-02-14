@@ -64,9 +64,9 @@ function trackRecords() {
         res => {
           if (res && res.data && res.data.data) {
             setisloading(false)
-            console.log("dddee", res.data.data)
+            // console.log("dddee", res.data.data)
             values = res.data.data;
-            console.log("ddd", values)
+            // console.log("ddd", values)
             // values.forEach(ele => {
 
             //   if (!AllFilesValue[ele.title]) {
@@ -78,7 +78,7 @@ function trackRecords() {
             //   }
             // })
             setDatalist(values);
-            console.log("check", values)
+            // console.log("check", values)
           } else {
             setisloading(false)
             setDatalist([]);

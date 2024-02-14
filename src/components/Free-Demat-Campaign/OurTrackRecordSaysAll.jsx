@@ -237,7 +237,7 @@ function OurTrackRecordSaysAll() {
               if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
 
                 res.Response.lMT.forEach((ele, index) => {
-                  console.log("ele", ele)
+                  // console.log("ele", ele)
                   ele['LTP'] = ele['LTP'] / 100;
                   ele.PrevClose = ele.PC / 100;
                   ele.Change = Number(ele.LTP) - Number(ele.PrevClose);

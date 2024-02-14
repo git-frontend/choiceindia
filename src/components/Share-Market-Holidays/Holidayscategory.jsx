@@ -68,7 +68,7 @@ function Holidayscategory() {
           checkurl == 'bse-holidays' ? setToggleState(2) :
 
             checkurl == 'mcx-ncdex-holidays' ? setToggleState(3) :
-              console.log(holidaylist)
+              // console.log(holidaylist)
       FilterMonth()
       OtherHolidays()
 
@@ -125,7 +125,7 @@ function Holidayscategory() {
     setnsefilter(nseMonthvalue)
 
 
-    console.log("month a", nseMonthvalue)
+    // console.log("month a", nseMonthvalue)
 
 
   }
@@ -133,7 +133,7 @@ function Holidayscategory() {
 
   function FilterMonth() {
     holidaylist.forEach((res) => {
-      console.log(res)
+      // console.log(res)
       if (!AllmonthValue[res.month]) {
         AllmonthValue[res.month] = [];
         AllmonthValue[res.month].push(res)

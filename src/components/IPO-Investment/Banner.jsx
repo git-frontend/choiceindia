@@ -20,7 +20,7 @@ function Banner() {
 
     /** scroll purpose */
     function chapterScroll(id) {
-        console.log("check",id);
+        // console.log("check",id);
         var element = document.getElementById(id);
         var headerOffset = 140;
         var elementPosition = element.getBoundingClientRect().top;
@@ -35,7 +35,7 @@ function Banner() {
       /** hide and show section */
       const getPosition = () => {
         const element = document.getElementById("showForm");
-        console.log(element,"hgfh")
+        // console.log(element,"hgfh")
         if(element){
             const rect = element.getBoundingClientRect();
           

@@ -33,7 +33,7 @@ function InvestorCharterMain() {
                             }
                         })
                         setDatalist(AllFilesValue);
-                        console.log("data",AllFilesValue)
+                        // console.log("data",AllFilesValue)
                     } else {
                         setisloading(false)
                         setDatalist([]);

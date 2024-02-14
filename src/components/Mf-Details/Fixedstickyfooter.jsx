@@ -34,7 +34,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
     var otpSessionID = useRef('');
     const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1)) ? 'Best-Stock' : "Blog";
     const isMF = ((window.location.pathname.indexOf('scheme') > -1) ) ? 'yes' : '';
-    console.log("mf",isMF)
+    // console.log("mf",isMF)
     var otpLeadID = useRef('');
     var referLink = useRef('');
     const [captchaToken, setCaptchaToken] = useState('');
@@ -87,7 +87,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
         setErrors({});
     }
     function chapterScroll1(id) {
-        console.log("check", id);
+        // console.log("check", id);
         var element = document.getElementById(id);
         var headerOffset = 140;
         var elementPosition = element.getBoundingClientRect().top;
