@@ -162,7 +162,7 @@ const meta_tags = {
     "title": "Best Mutual Funds for Long Term investment in 2024",
     'lang': "en",
     'content': "Invest in the best mutual fund for long term. Select the best long term mutual funds and ensure a secure MF investment for long duration (greater than 7 years).",
-    "link": "https://investica.com/mf/top-funds/best-long-duration-funds"
+    "link": "https://choiceindia.com/top-funds/best-long-duration-funds"
   },
   "top-funds/best-medium-duration-funds": {
     "title": "Medium Duration Fund to Invest - Best Medium Term Debt Funds",
@@ -495,6 +495,72 @@ const meta_tags = {
     'lang': "en",
     'content': "Explore Seri mutual fund with Choice. Know the best Seri mutual fund (idf), monitor mutual fund returns, latest NAV & Seri mf performance.",
     "link": "https://choiceindia.com/amc/srei-mutual-fund"
+  },
+  "amc/360-one-mutual-fund": {
+    "title": "Best 360 ONE Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang":"",
+    "content": "Explore 360 one mutual fund with Choice. Know the best 360 one mutual fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/360-one-mutual-fund"
+  }, 
+  "amc/bandhan-mutual-fund": {
+    "title": "Best Bandhan Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang": "",
+    "content": "Explore bandhan mutual fund with Choice. Know the best bandham mutual fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/bandhan-mutual-fund"
+  },
+  "amc/bank-of-india-mutual-fund": {
+    "title": "Best Bank of India Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang": "",
+    "content": "Explore Bank of India mutual fund with Choice. Know the best Bank of India mutual fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/bank-of-india-mutual-fund"
+  },
+  "amc/baroda-bnp-paribas-mutual-fund": {
+    "title": "Best Baroda BNP Paribas Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang": "",
+    "content": "Explore baroda bnp paribas mutual fund with Choice. Know the best baroda bnp paribas mutual fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/baroda-bnp-paribas-mutual-fund"
+  },
+  "amc/groww-mutual-fund": {
+    "title": "Best Groww Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang": "",
+    "content": "Explore Groww mutual fund with Choice. Know the best Groww mutual fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/groww-mutual-fund"
+  },
+  "amc/l&t-mutual-fund": {
+    "title": "Best L&T Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang": "",
+    "content": "Explore L&T Mutual Fund with Choice. Know the best L&T Mutual Fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/l&t-mutual-fund"
+  },
+  "amc/mahindra-manulife-mutual-fund": {
+    "title": "Best Mahindra Manulife Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang": "",
+    "content": "Explore Mahindra Manulife Mutual Fund with Choice. Know the best mahindra manulife mutual fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/mahindra-manulife-mutual-fund"
+  },
+  "amc/navi-mutual-fund": {
+    "title": "Best Navi Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang": "",
+    "content": "Explore Navi Mutual Fund with Choice. Know the best navi mutual fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/navi-mutual-fund"
+  },
+  "amc/nippon-india-mutual-fund": {
+    "title": "Best Nippon India Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang": "",
+    "content": "Explore Nippon India Mutual Fund with Choice. Know the best nippon india mutual fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/nippon-india-mutual-fund"
+  },
+  "amc/pgim-india-mutual-fund": {
+    "title": "Best PGIM India Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang": "",
+    "content": "Explore PGIM India Mutual Fund with Choice. Know the best PGIM India mutual fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/pgim-india-mutual-fund"
+  },
+  "amc/whiteoak-capital-mutual-fund": {
+    "title": "Best WhiteOak Capital Mutual Fund Schemes - Returns, NAV & Performance",
+    "lang": "",
+    "content": "Explore WhiteOak Capital Mutual Fund with Choice. Know the best WhiteOak Capital mutual fund, monitor mutual fund returns, latest NAV & mf performance.",
+    "link":"https://choiceindia.com/amc/whiteoak-capital-mutual-fund"
   },
   "top-funds/best-flexicap-mutual-funds": {
     "title": "Best Flexicap Funds - Top Flexi cap Mutual Funds to Invest",

@@ -2129,7 +2129,7 @@ const meta_tags = {
   "hindi/mutual-fund-distributor": {
     'title': "चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें",
     "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
-    "link": 'https://choiceindia.com/mutual-fund-distributor', "faqscript": ``, 'lang': "hi", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": ""
+    "link": 'https://choiceindia.com/hindi/mutual-fund-distributor', "faqscript": ``, 'lang': "hi", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": ""
   },
 
   "gujarati/sub-broker-franchise": {
@@ -2567,6 +2567,18 @@ const meta_tags = {
     'content': "Open a Corporate Demat account with Choice. Avail features and benefits like advanced trading platform, low DP charges and dedicated relationship manager, free call for trade facility and more.",
     "link": "https://choiceindia.com/corporate-demat-account"
   },
+  "nach-cancellation": {
+    "title": "Online NACH Mandate Cancellation",
+    "lang": "",
+    "content": "Request online nach cancellation with Choice Fill the details to file a request for NACH mandate cancellation.",
+    "link":"https://choiceindia.com/nach-cancellation"
+  },
+  "merchant-investment-banking": {
+    "title": " Merchant Banking and Investment Banking",
+    "lang": "",
+    "content": "Elevate your financial strategy with experienced Merchant and Investment Banking services with the category 1 merchant banker, Choice.",
+    "link":"https://choiceindia.com/merchant-investment-banking"
+  }
 }
 
 export default meta_tags;
