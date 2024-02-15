@@ -368,7 +368,7 @@ let reconnect = () => {
 		reconnectObservable.subscribe(() => {
 			let userId = getUserId() || "guest";
 			if (userId) {
-				socket = new W3CWebSocket('wss://brd.jiffy.in:4520')
+				socket = new W3CWebSocket('wss://brd.choiceindia.co.in:4520')
 				socket.binaryType = "arraybuffer"
 				let message = getSocketLogonRequest()
 				sendMsg(message)
@@ -404,7 +404,7 @@ export function subscribeOnStream(
 	sessionIdData,
 	isIndex
 ) {
-	let socketUrl='wss://' + 'brd.jiffy.in' + ':' + (( '4520'))
+	let socketUrl='wss://brd.choiceindia.co.in:4520'
 	/* let split_symbol = symbolInfo.name.split(/[:/]/); */
 	//let symbol = split_symbol[0]
 	segmentId = segmentId_rec
@@ -514,7 +514,7 @@ export function unSubscribeMultitouchline(data) {
 export function subscribeMultitouchline(tokenList,onRealtimeCallback,sessionIdData){
 	//subscribeOnStream(1,8866,onRealtimeCallback,'guest',session,false)
 
-	let socketUrl='wss://' + 'brd.jiffy.in' + ':' + (( '4520'))
+	let socketUrl='wss://brd.choiceindia.co.in:4520'
 	/* let split_symbol = symbolInfo.name.split(/[:/]/); */
 	//let symbol = split_symbol[0]
 	setSessionId(sessionIdData)
