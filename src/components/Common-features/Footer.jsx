@@ -122,7 +122,8 @@ function Footer() {
                               <NavLink to="/brokerage-charges">Pricing</NavLink>
                             </li> */}
                             <li>
-                              <a href="https://finx.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a>
+                              {/* <a href="https://finx.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a> */} 
+                              <NavLink to="/brokerage-calculator">Calculator</NavLink>
                             </li>
                             <li>
                               <NavLink to="/career">Careers</NavLink>
