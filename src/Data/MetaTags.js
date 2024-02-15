@@ -42,9 +42,9 @@ const meta_tags = {
 
   "investor-awareness": { 'title': "Investor Awareness - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/investor-awareness", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "Investor-charter": { 'title': "Investor Charter - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/Investor-charter", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "investor-charter": { 'title': "Investor Charter - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/Investor-charter", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "Investor-complaints": { 'title': "Investor Complaints - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/Investor-complaints", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "investor-complaints": { 'title': "Investor Complaints - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/Investor-complaints", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "terms-conditions": { 'title': "Terms and Conditions - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/terms-conditions", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
@@ -84,7 +84,7 @@ const meta_tags = {
   "advisory-for-investors": { 'title': "Advisory for Investors - Choice", 'lang': "en", 'content': "Visit Choice International Limited's official website to know the advisory for the investors.", 'link': "https://choiceindia.com/advisory-for-investors", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "marathi/open-demat-account": {
-    'title': "मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही", 'content': "चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.", 'link': "https://choiceindia.com/marathi/open-demat-account", "lang": 'mr', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "", "link4": "", "link5": "https://choiceindia.com/marathi/open-demat-account", "link6": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "", "href4": "", "href5": "mr-in", "href6": "x-default",
+    'title': "मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही", 'content': "चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.", 'link': "https://choiceindia.com/marathi/open-demat-account", "lang": 'mr', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account","link3": "https://choiceindia.com/marathi/open-demat-account","link4": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in","href3": "mr-in","href4": "x-default",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -941,7 +941,7 @@ const meta_tags = {
     ` },
 
   "hindi/open-demat-trading-account": {
-    'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC", 'lang': "hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और फ्री एएमसी प्राप्त करें पहले वर्ष के लिए। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।", "link": "https://choiceindia.com/hindi/open-demat-trading-account", 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "", "link4": "", "link5": "https://choiceindia.com/marathi/open-demat-account", "link6": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "", "href4": "", "href5": "mr-in", "href6": "x-default",
+    'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC", 'lang': "hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और फ्री एएमसी प्राप्त करें पहले वर्ष के लिए। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।", "link": "https://choiceindia.com/hindi/open-demat-trading-account", 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "https://choiceindia.com/marathi/open-demat-account", "link4": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1621,7 +1621,7 @@ const meta_tags = {
 
   "hindi/trading-account": {
     'title': "मुफ़्त ट्रेडिंग अकाउंट खोलें + प्रथम वर्ष के लिए निःशुल्क AMC", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन ट्रेडिंग अकाउंट खोलें और प्रथम वर्ष के लिए फ्री एएमसी प्राप्त करें। चॉइस के साथ अपने ट्रेडिंग खाते पर कम ब्रोकरेज और डीपी शुल्क प्राप्त करें।",
-    "link": 'https://choiceindia.com/hindi/trading-account', 'lang': "hi", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "link": 'https://choiceindia.com/hindi/trading-account', 'lang': "hi", 'link1': "https://choiceindia.com/open-trading-account", 'link2': "https://choiceindia.com/hindi/trading-account", 'link3': "https://choiceindia.com/open-trading-account", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1962,7 +1962,7 @@ const meta_tags = {
 
   "hindi/online-trading-app": {
     'title': "फिनएक्स ट्रेडिंग ऐप - भारत का श्रेष्ठ ऑनलाइन मोबाइल ट्रेडिंग ऐप",
-    "content": "फिनएक्स ट्रेडिंग ऐप भारत का श्रेष्ठ मोबाइल ट्रेडिंग ऐप है। ऑनलाइन ट्रेडिंग ऐप -  फिनएक्स (एंड्रॉइड और आईओएस) डाउनलोड करें और शेयर बाज़ार में तेजी निवेश करें।", "link": "https://choiceindia.com/hindi/online-trading-app", 'lang': "hi", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "content": "फिनएक्स ट्रेडिंग ऐप भारत का श्रेष्ठ मोबाइल ट्रेडिंग ऐप है। ऑनलाइन ट्रेडिंग ऐप -  फिनएक्स (एंड्रॉइड और आईओएस) डाउनलोड करें और शेयर बाज़ार में तेजी निवेश करें।", "link": "https://choiceindia.com/hindi/online-trading-app", 'lang': "hi", 'link1': "https://choiceindia.com/online-trading-app", 'link2': "https://choiceindia.com/hindi/online-trading-app", 'link3': "https://choiceindia.com/online-trading-app", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -2129,7 +2129,7 @@ const meta_tags = {
   "hindi/mutual-fund-distributor": {
     'title': "चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें",
     "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
-    "link": 'https://choiceindia.com/hindi/mutual-fund-distributor', "faqscript": ``, 'lang': "hi", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": ""
+    "link": 'https://choiceindia.com/hindi/mutual-fund-distributor', "faqscript": ``, 'lang': "hi", 'link1': "https://choiceindia.com/mutual-fund-distributor", 'link2': "https://choiceindia.com/hindi/mutual-fund-distributor", 'link3': "https://choiceindia.com/mutual-fund-distributor", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": ""
   },
 
   "gujarati/sub-broker-franchise": {
@@ -2152,7 +2152,7 @@ const meta_tags = {
   "hindi/mutual-funds-investment": {
     'title': "म्यूचुअल फंड में ऑनलाइन निवेश करें च्वाइस के साथ",
     "content": "चॉइस के साथ, आप भारत में ऑनलाइन म्यूचुअल फंड में निवेश करना शुरू कर सकते हैं। चॉइस म्यूचुअल फंड निवेश मंच सभी के लिए म्यूचुअल फंड में निवेश को आसान बनाता है।",
-    "link": 'https://choiceindia.com/hindi/mutual-funds-investment', "lang": 'hi', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": ""
+    "link": 'https://choiceindia.com/hindi/mutual-funds-investment', "lang": 'hi', "faqscript": ``, 'link1': "https://choiceindia.com/mutual-funds-investment", 'link2': "https://choiceindia.com/hindi/mutual-funds-investment", 'link3': "https://choiceindia.com/mutual-funds-investment", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": ""
   },
   "etf-exchange-traded-funds": {
     'title': "What is ETF? Meaning and How to Invest in ETF?",
@@ -2268,7 +2268,7 @@ const meta_tags = {
     'content': "Stock Broker in Delhi. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9322512424.",
     "link": "https://choiceindia.com/stock-broker-in-delhi"
   },
-  "digital-lending-partners": {
+  "lending-partners": {
     "title": "Lending Partners with Choice Finserv",
     'lang': "en",
     'content': "In our portfolio, we're working with lending institutions. Visit to view a complete list of our partners for lending.",
@@ -2569,16 +2569,42 @@ const meta_tags = {
   },
   "nach-cancellation": {
     "title": "Online NACH Mandate Cancellation",
-    "lang": "",
-    "content": "Request online nach cancellation with Choice Fill the details to file a request for NACH mandate cancellation.",
+    "lang": "en",
+    "content": "Request online nach cancellation with Choice.Fill the details to file a request for NACH mandate cancellation.",
     "link":"https://choiceindia.com/nach-cancellation"
   },
   "merchant-investment-banking": {
     "title": " Merchant Banking and Investment Banking",
-    "lang": "",
+    "lang": "en",
     "content": "Elevate your financial strategy with experienced Merchant and Investment Banking services with the category 1 merchant banker, Choice.",
     "link":"https://choiceindia.com/merchant-investment-banking"
-  } 
+  },
+   "track-record-page": {
+  "title":"",
+  "lang": "en",
+  "content": ""
+  },
+  "code-of-conduct": {
+    "title": "",
+    "lang": "en",
+    "content":""
+  },
+  "related-party-transaction": {
+   "title": "",
+    "lang": "en",
+    "content":""
+  },
+  "investor-presentation": {
+   "title": "",
+    "lang": "en",
+    "content":""
+  },
+  "closure-of-trading-window": {
+   "title": "",
+    "lang": "en",
+    "content":""
+  }
+
 }
 
 export default meta_tags;
