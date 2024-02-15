@@ -2578,7 +2578,7 @@ const meta_tags = {
     "lang": "",
     "content": "Elevate your financial strategy with experienced Merchant and Investment Banking services with the category 1 merchant banker, Choice.",
     "link":"https://choiceindia.com/merchant-investment-banking"
-  }
+  } 
 }
 
 export default meta_tags;
