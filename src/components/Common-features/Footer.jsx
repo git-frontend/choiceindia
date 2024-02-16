@@ -293,7 +293,7 @@ function Footer() {
                     <p> <strong>Reg. Address:</strong> Sunil Patodia Tower, J B Nagar, Andheri(East), Mumbai 400099. Tel. No. 022-6707 9999 . </p>
                     <p><strong>Compliance Officer:</strong> Mr.Prashant Salian. Tel. 022-67079999
                       - Ext-2310<br />
-                      Email- Compliance@choiceindia.com</p>
+                      Email- prashant.salain@choiceindia.com</p>
                     <p><strong>Grievance officer:</strong> Deepika Singhvi  Tel.022-67079999- Ext-834. <br />
                       Email-  ig@choiceindia.com</p>
                     <p><strong>Research Disclaimer:</strong> Investment in the securities market is subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.</p>
