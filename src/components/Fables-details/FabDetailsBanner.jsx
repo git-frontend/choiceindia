@@ -16,6 +16,7 @@ import utils from "../../Services/utils";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import DematFormCta from "../Common-features/DematFormCta";
 import { useLocation } from 'react-router-dom';
+import NewDematAccountForm from "../Common-features/NewDematAccountForm";
 function Fabdetailsbanner(props) {
     const location = useLocation();
     const [rendercount, setRenderCount] = useState(() => false);
@@ -87,7 +88,12 @@ function Fabdetailsbanner(props) {
     //         </>
     //     );
     // }
-
+    const handleClick = (event) => {
+        setIsActive(current => !current);
+    };
+    const [isActive, setIsActive] = useState();
+    const [name, setName] = useState('hideform');
+    const [isCheck, setIsCheck] = useState(false);
     return (
 
         <div className='banner-main'>
@@ -228,9 +234,15 @@ function Fabdetailsbanner(props) {
                                                             {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                             <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
                                         </GoogleReCaptchaProvider> */}
-                                                            <DematFormCta />
+                                                            {/* <DematFormCta /> */}
+                                                            <div className={"form-mobile " + (isActive ? 'p-hide' : 'p-show')}>
+                                                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                                            <NewDematAccountForm/>
+                                                                </GoogleReCaptchaProvider>
+                                                           
                                                             <div className="stickyform formwrap d-flex justify-content-end ">
 
+                                                            </div>
                                                             </div>
                                                         </div> :
                                                         props.formName === 'form-mutual-fund-distributor' ?
@@ -257,6 +269,25 @@ function Fabdetailsbanner(props) {
                                                     '')
                                         }
 
+
+                                        <div className={name}>
+                                        <div className="btn-fixed">
+                                            <div className="open-account-mob" onClick={handleClick}>
+                                                <span>Open Free Demat Account in 5 Mins</span>
+                                                <span>
+                                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="16" cy="16" r="16" fill="#FFCE02"/>
+                                                    <path d="M8 16H24.6667H8ZM24.6667 16L16.6667 8L24.6667 16ZM24.6667 16L16.6667 24L24.6667 16Z" fill="#FFCE02"/>
+                                                    <path d="M8 16H24.6667M24.6667 16L16.6667 8M24.6667 16L16.6667 24" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>
+{/* 
+                                        <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                            <button className=" primary-orange-btn scroll-top-account openbtn" onClick={handleClick}>Open Account Now</button>
+                                        </div> */}
+                                    </div>
                                     </div>
 
                                 </div>

@@ -42,7 +42,7 @@
                 position: static;
             }
             @media screen and (max-width: $md) {
-                display: none;
+                // display: none;
                 width: 90%;
             }
             @media (min-width:$sm-x) and (max-width: $md) {
@@ -697,6 +697,21 @@
         position: inherit;
         top: inherit;
     }
+}
+.detailbanner{
+.btn-fixed{
+    z-index: 99;
+    .open-account-mob{
+        display: flex;
+        background: $pricolor;
+        justify-content: space-between;
+        color: $whiteColor;
+        font-size: 1.385rem;
+        align-items: center;
+        padding: 1rem;
+        text-align: left;
+    }
+}
 }
 
 

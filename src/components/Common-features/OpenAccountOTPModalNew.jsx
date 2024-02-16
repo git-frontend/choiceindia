@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
 // import OTPimage from '../../assets/images/otp.svg';
+import enterOtp from '../../assets/images/enterotp.svg';
 import "../Common-features/demat-form.scss";
 import { Link } from "react-router-dom";
 import OpenAccountLanguageContent from '../../Services/OpenAccountLanguageContent';
@@ -410,7 +411,12 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                     <a href="javascript:void(0)" onClick={onClose} className="closebtn" >&times;</a>
                                 </div> */}
                                 <div className="popup-sub-right">
-                                
+                                <div className="otp-ver-sec">
+                                <div className="otp-circle">
+                                    <img src={enterOtp} className="img-fluid" height={52} width={52}/>
+
+                                </div>
+                                </div>
                                 <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
                                     <div className="otpform-new  fade-in" >
                                         {/* <img src={OTPimage} /> */}
