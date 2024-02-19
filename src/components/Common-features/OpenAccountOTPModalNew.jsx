@@ -418,10 +418,11 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                 </div>
                                 </div>
                                 <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
-                                    <div className="otpform-new  fade-in" >
+                                    <div className="otpform-new" >
+                                    {/* <div className="otpform-new  fade-in" > */}
                                         {/* <img src={OTPimage} /> */}
 
-                                       <div className="d-flex">
+                                       <div className="d-flex otp-sent">
                                         <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplblnew')} {mobileNumber}</p>
                                         <button className="changenumbtn" onClick={handleButtonClick}>(Change)</button>
                                         </div>
@@ -450,7 +451,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                         {/* </div> */}
                                     </div>
- <div>
+ <div className="otp-pd">
                                         {
                                             !count ?
                                                 <div className="d-flex align-items-center justify-content-between pt-3">
@@ -487,6 +488,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                 </div>
+                                <span className="close-btn-mdl" onClick={()=>{setDelayPassed(false)}}>&times;</span>
                             </div>
                         </div>
                     {/* </div> */}

@@ -958,6 +958,11 @@
 	.heading{
 		display: none;
 	}
+	.title-secnd{
+		@media (max-width:$md) {
+			width: 80%;
+		}
+	}
 	.formgrp-new{
 		background: #004393;
 		padding: 0;
@@ -1036,7 +1041,9 @@
                 font-size: 1.7rem;
             }
             @media (max-width:$sm) {
-                font-size: 2.0rem;
+				font-size: 1.357rem;
+				line-height: 1.5;
+				width: 60%;
             }
         }
         ul{
@@ -1088,67 +1095,100 @@
 	.slider-btns{
 		display: none;
 	}
-	.popup-sub-row{
-		.popup-sub-right{
-			width: 100%;
-			.heading{
-				margin: 0;
-				color: $whiteColor;
-				padding-bottom: 1rem;
-			}
-			.otp-ver-sec{
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding: 1rem 0 4rem;
-				.otp-circle{
+	.exit-intent-sleekbox-popup{
+		position: relative;
+		.popup-sub-row{
+			.popup-sub-right{
+				width: 100%;
+				.heading{
+					margin: 0;
+					color: $whiteColor;
+					padding-bottom: 1rem;
+				}
+				.otp-ver-sec{
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					background-color: rgb(255 255 255 / 16%);
-					width: 6.75rem;
-					height: 6.75rem;
-					border-radius: 50%;
-					box-shadow: 0px 0px 0px 15px rgb(255 255 255 / 6%);
-				}
-			}
-			.otpform-new{
-				padding: 0;
-				background: inherit;
-				border-radius: inherit;
-				box-shadow: unset;
-				.otp-mdl-input-chk{
-					.digit-otp{
-						width: 100% !important;
+					padding: 1rem 0 4rem;
+					.otp-circle{
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						background-color: rgb(255 255 255 / 16%);
+						width: 6.75rem;
+						height: 6.75rem;
+						border-radius: 50%;
+						box-shadow: 0px 0px 0px 15px rgb(255 255 255 / 6%);
 					}
-					.time{
-						color: rgb(255 255 255 / 70%);
-						margin: 0;
-						span{
-							color: $whiteColor;
+				}
+				.otpform-new{
+					padding: 0;
+					background: inherit;
+					border-radius: inherit;
+					box-shadow: unset;
+					.otp-sent{
+						@media (max-width:$md) {
+							width: 100%;
+						}
+						.changenumbtn{
+							@media (max-width:$sm) {
+								font-size: 1.143rem !important;
+							}
 						}
 					}
-				}
-				.subheading{
-					color: $whiteColor;
-				}
-				.changenumbtn{
-					color: $yellowColor;
-					font-family: $font-family-poppins-regular;
-					font-weight: 400;
-				}
-				.resend{
-					color: $whiteColor;
-					.bluetxt{
-						color: $yellowColor;
+					.otp-pd{
+						@media (max-width:$md) {
+							order: 4;
+							width: 100%;
+						}
 					}
-				}
-				.ortext{
-					color: $yellowColor;
+					.otp-mdl-input-chk{
+						@media (max-width:$sm) {
+							width: calc(100% - 112px);
+							padding-right: 10px;
+						}
+						.digit-otp{
+							width: 100% !important;
+						}
+						.time{
+							color: rgb(255 255 255 / 70%);
+							margin: 0;
+							span{
+								color: $whiteColor;
+							}
+						}
+					}
+					.subheading{
+						color: $whiteColor;
+						@media (max-width:$sm) {
+							font-size: 1.143rem;
+						}
+					}
+					.changenumbtn{
+						color: $yellowColor;
+						font-family: $font-family-poppins-regular;
+						font-weight: 400;
+					}
+					.resend{
+						color: $whiteColor;
+						@media (max-width:$sm) {
+							font-size: 1.143rem;
+						}
+						.bluetxt{
+							color: $yellowColor;
+						}
+					}
+					.ortext{
+						color: $whiteColor;
+						@media (max-width:$sm) {
+							font-size: 1.143rem;
+						}
+					}
 				}
 			}
 		}
 	}
+	
 	
 }
 
@@ -1160,6 +1200,19 @@
 	margin: 0;
 	width: 100% !important;
 	transition-duration: 0.6s;
+	.close-btn-mdl{
+		display: none;
+		@media (max-width:$md) {
+			display: block;
+			color: #fff;
+			font-size: 2.5rem;
+			position: absolute;
+			right: 0.8rem;
+			text-decoration: none;
+			top: 0;
+		}
+
+	}
 	.thank-you-msg{
 		.blog-thnu-circle{
 			display: flex;
@@ -1227,13 +1280,30 @@
 			max-width: inherit !important;
 		}
 		.sticy-card-blog-new{
+			position: relative;
 			@media (max-width:$md) {
-				padding: 0;
+				padding: 1rem 0 1rem;
+			}
+			@media (max-width:$sm) {
+				padding: 0 !important;
 			}
 			ul{
 				@media (max-width:$md) {
 					display: none;
 				}	
+			}
+			.close-btn-mdl{
+				display: none;
+				@media (max-width:$md) {
+					display: block;
+					color: #fff;
+					font-size: 2.5rem;
+					position: absolute;
+					right: 0.8rem;
+					text-decoration: none;
+					top: 0;
+				}
+
 			}
 		}
 		.formgrp-new{
@@ -1258,12 +1328,33 @@
 					@media (max-width:$sm) {
 						min-width: inherit;
 						white-space: nowrap;
+						min-height: 2.75rem !important;
+						border-radius: 0.5rem !important;
+						padding: 1rem 1.8rem !important;
+						font-size: 1.071rem !important;
+						height: 44px;
+						width: 112px !important;
 					}
 				}	
 			}
 			.sub-formgrp-new{
 				@media (max-width:$md) {
 					width: 60%;
+				}
+				&::before{
+					@media (max-width:$sm) {
+						top: 1.2rem;
+						font-size: 1.017rem !important;
+					}
+				}
+				.formcontrol{
+					@media (max-width:$sm) {
+					min-height: 2.75rem !important;
+					border-radius: 0.5rem !important;
+					padding: 1rem 3.3rem !important;
+					font-size: 1.017rem !important;
+					height: 44px;
+				}
 				}
 			}
 		}
@@ -1279,6 +1370,19 @@
 			@media (max-width:$md) {
 				padding: 0;
 			}
+			.close-btn-mdl{
+				display: none;
+				@media (max-width:$md) {
+					display: block;
+					color: #fff;
+					font-size: 2.5rem;
+					position: absolute;
+					right: 0.8rem;
+					text-decoration: none;
+					top: 0;
+				}
+
+			}
 			.popup-sub-row{
 				.popup-sub-right{
 					.otp-ver-sec{
@@ -1289,16 +1393,39 @@
 					.heading{
 						@media (max-width:$md) {
 							text-align: left;
+							width: 80%;
+						}
+						@media (max-width:$sm) {
+							font-size: 1.35rem;
 						}
 					}
 					.otpform-new{
 						@media (max-width:$md) {
 							position: relative;
+							display: flex;
+    						flex-wrap: wrap;
+							justify-content: space-between;
+						}
+						@media (max-width:$sm) {
+							display: flex;
+    						flex-wrap: wrap;
+						}
+						.resend{
+							@media (max-width:$sm) {
+								margin: 0 !important;
+							}
 						}
 						.digit-otp{
 							@media (max-width:$md) {
-								width: 55% !important;
+								width: 100% !important;
     							margin: 0 !important;
+							}
+							@media (max-width:$sm) {
+								min-height: 2.75rem !important;
+								border-radius: 0.5rem !important;
+								padding: 0.9rem 2.3rem !important;
+								height: 44px;
+								font-size: 1.071rem !important;
 							}
 							
 						}
@@ -1309,9 +1436,10 @@
 						}
 						.btnwrap{
 							@media (max-width:$md) {
-								right: 0;
-								position: absolute;
-								top: 28%;
+								order: 3;
+							}
+							@media (max-width:$sm) {
+								width: 112px;
 							}
 							.btn-bg{
 								@media (max-width:$md) {
@@ -1320,7 +1448,14 @@
 								}
 								@media (max-width:$sm) {
 									min-width: inherit;
+									min-height: 2.75rem !important;
+									border-radius: 0.5rem !important;
+									width: 100%;
+									padding: 0.65rem 1rem !important;
+									font-size: 1.071rem !important;
+									height: 44px;
 								}
+								
 							}
 						}
 					}
@@ -1339,14 +1474,11 @@
 				@media (max-width:$md) {
 					min-height: 10rem;
 					flex-direction: inherit;
-					justify-content: center;
+					justify-content: space-between;
 				}
 				.thank-logo{
 					@media (max-width:$md) {
 						width: 20%;
-					}
-					@media (max-width:$sm) {
-						width: 35%;
 					}
 					.blog-thnu-circle{
 						@media (max-width:$sm) {
@@ -1359,11 +1491,18 @@
 			.thank-content{
 				@media (max-width:$md) {
 					text-align: left;
+					width: 70%;
 				}
 				.subheading{
 					@media (max-width:$sm) {
 						margin: 0;
 						padding: 0;
+						font-size: 1.357rem;
+					}
+				}
+				.thankyou-title{
+					@media (max-width:$sm) {
+						font-size: 1.714rem;
 					}
 				}
 			}

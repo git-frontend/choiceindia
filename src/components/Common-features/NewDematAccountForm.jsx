@@ -556,6 +556,7 @@ function NewDematAccountForm(props) {
                             <span className="bx-text">Free Research Advisory & Tools</span>
                         </li>
                         </ul>
+                        <span className="close-btn-mdl" onClick={()=>{setDelayPassed(false)}}>&times;</span>
                        </div>
                         <Form>
                             <Form.Group className="mb-3 formgrp formgrp-new">
@@ -618,6 +619,7 @@ function NewDematAccountForm(props) {
             {
                 showThanku.showModal && (
                     <div className="demat-account-form demat-account-form-new blog-thanku-popup">
+                    <span className="close-btn-mdl" onClick={()=>{setDelayPassed(false)}}>&times;</span>
                         <div className="thank-you-msg">
                             <div className="thank-logo">
                                 <div className="blog-thnu-circle">

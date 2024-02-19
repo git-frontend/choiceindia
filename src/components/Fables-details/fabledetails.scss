@@ -31,12 +31,12 @@
             // z-index: 1;
             // top: 5rem;
             // display: block;
-            width: 30rem;
+            // width: 30rem;
             // right: 10%;
             // transform: translate(20%);
-            float: right;
-            position: sticky;
-            top: 145px;
+            // float: right;
+            // position: sticky;
+            // top: 145px;
             @media screen and (max-width: $sm) {
                 top: inherit;
                 position: static;
@@ -681,6 +681,10 @@
 .card-sticky-blog{
     position: sticky;
     top: 140px;
+    @media (max-width:$md) {
+        position: inherit;
+        top: inherit;
+    }
     .btn-fixed{
         .openbtn{
             display: flex;
@@ -706,10 +710,21 @@
         background: $pricolor;
         justify-content: space-between;
         color: $whiteColor;
-        font-size: 1.385rem;
+        font-size: 1.429rem;
         align-items: center;
         padding: 1rem;
         text-align: left;
+        .sticy-contnet{
+            @media (max-width:$md) {
+            width: 50%;
+            }
+            &.icon{
+                @media (max-width:$md) {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+        }
     }
 }
 }
