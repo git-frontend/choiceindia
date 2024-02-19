@@ -967,6 +967,7 @@
 		background: #004393;
 		padding: 0;
 		display: grid;
+		box-shadow: inherit;
 		.form-label{
 			display: none;
 		}
@@ -1496,9 +1497,11 @@
 					}
 			}
 			.thank-content{
+				padding-top: 3rem;
 				@media (max-width:$md) {
 					text-align: left;
 					width: 70%;
+					padding: 0 ;
 				}
 				.subheading{
 					@media (max-width:$sm) {

@@ -616,8 +616,8 @@ function NewDematAccountForm(props) {
                     </div>
                 )
             }
-            {
-                showThanku.showModal && (
+            {/* {
+                showThanku.showModal && ( */}
                     <div className="demat-account-form demat-account-form-new blog-thanku-popup">
                     <span className="close-btn-mdl">&times;</span>
                         <div className="thank-you-msg">
@@ -634,9 +634,9 @@ function NewDematAccountForm(props) {
                         </div>
                         
                     </div>
-                )
+                {/* )
 
-            }
+            } */}
 
             {
                 showOTP && !showThanku.showModal && (
