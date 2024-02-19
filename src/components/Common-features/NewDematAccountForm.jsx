@@ -556,7 +556,7 @@ function NewDematAccountForm(props) {
                             <span className="bx-text">Free Research Advisory & Tools</span>
                         </li>
                         </ul>
-                        <span className="close-btn-mdl" onClick={()=>{setDelayPassed(false)}}>&times;</span>
+                        <span className="close-btn-mdl">&times;</span>
                        </div>
                         <Form>
                             <Form.Group className="mb-3 formgrp formgrp-new">
@@ -600,7 +600,7 @@ function NewDematAccountForm(props) {
                                     {/* <label className="lbl">I agree that I have read &amp; accept the <a className="link-tc">Terms &amp; Conditions</a></label> */}
                                 </div>
 
-                                <div className="sub-formgrp mt-5 mb-0">
+                                <div className="sub-formgrp mt-5 mb-0 send-otp-btn">
                                     {
                                         <Button variant="primary"
                                             type="submit" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
@@ -619,7 +619,7 @@ function NewDematAccountForm(props) {
             {
                 showThanku.showModal && (
                     <div className="demat-account-form demat-account-form-new blog-thanku-popup">
-                    <span className="close-btn-mdl" onClick={()=>{setDelayPassed(false)}}>&times;</span>
+                    <span className="close-btn-mdl">&times;</span>
                         <div className="thank-you-msg">
                             <div className="thank-logo">
                                 <div className="blog-thnu-circle">

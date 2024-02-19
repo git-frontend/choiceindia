@@ -488,7 +488,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                 </div>
-                                <span className="close-btn-mdl" onClick={()=>{setDelayPassed(false)}}>&times;</span>
+                                <span className="close-btn-mdl">&times;</span>
                             </div>
                         </div>
                     {/* </div> */}

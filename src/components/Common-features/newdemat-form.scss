@@ -966,6 +966,7 @@
 	.formgrp-new{
 		background: #004393;
 		padding: 0;
+		display: grid;
 		.form-label{
 			display: none;
 		}
@@ -980,6 +981,7 @@
 			// 		border: 1px solid $whiteColor;
 			// 	}
 			// }
+			order: 4;
 			.form-check-label{
 				color: #ffffffb3;
 				.link-tc{
@@ -988,6 +990,9 @@
 					font-family: $font-family-poppins-medium;
 				}
 			}
+		}
+		.send-otp-btn{
+			margin-top: 1rem !important;
 		}
 	}
 	.slider-btns{
@@ -1036,9 +1041,11 @@
        }
        &.sub-new-small{
         .title-secnd{
-            font-size: 2.5rem;
+            font-size: 2.286rem;
+			text-align: center;
             @media (max-width:$md) {
                 font-size: 1.7rem;
+				text-align: left;
             }
             @media (max-width:$sm) {
 				font-size: 1.357rem;
