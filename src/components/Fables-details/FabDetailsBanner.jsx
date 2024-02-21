@@ -281,7 +281,7 @@ useEffect(() => {
                                                             {/* <DematFormCta /> */}
                                                             
                                                             <div className={name2}>
-                                                            <div className={"form-mobile " + (isActive ? 'p-hide' : 'p-show')}>
+                                                            <div className={"form-mobile form-mobile-flex " + (isActive ? 'p-hide' : 'p-show')}>
                                                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                                             <NewDematAccountForm/>
                                                                 </GoogleReCaptchaProvider>

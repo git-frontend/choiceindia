@@ -681,6 +681,10 @@
 .card-sticky-blog{
     position: sticky;
     top: 140px;
+    .form-mobile-flex{
+        display: flex;
+        justify-content: flex-end;
+    }
     @media (max-width:$md) {
         position: inherit;
         top: inherit;
