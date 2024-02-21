@@ -685,6 +685,9 @@
         display: flex;
         justify-content: flex-end;
     }
+    @media (max-width:1400px) {
+        top: 125px;
+    }
     @media (max-width:$md) {
         position: inherit;
         top: inherit;
