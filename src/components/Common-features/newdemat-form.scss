@@ -1269,7 +1269,7 @@
         position: fixed !important;
         top: inherit !important;
         bottom: 0;
-        z-index: 9999999;
+        z-index: 9999999999;
         width: 100%;
         left: 0;
         // background: #4d4d4d80;
@@ -1290,6 +1290,7 @@
 			border-radius: inherit;
 			padding: 1.5rem;
 			max-width: inherit !important;
+			width: 100% !important;
 		}
 		.sticy-card-blog-new{
 			position: relative;
