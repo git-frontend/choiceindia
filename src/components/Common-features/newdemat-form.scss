@@ -1102,7 +1102,7 @@
 	background-size: cover;
 	border-radius: 14px;
 	margin: 0;
-	width: 100% !important;
+	max-width: 412px;
 	transition-duration: 0.6s;
 	.slider-btns{
 		display: none;
@@ -1165,6 +1165,9 @@
 						.time{
 							color: rgb(255 255 255 / 70%);
 							margin: 0;
+							@media (max-width:$sm) {
+								font-size: 1.143rem;
+							}
 							span{
 								color: $whiteColor;
 							}
@@ -1210,7 +1213,7 @@
 	background-size: cover;
 	border-radius: 14px;
 	margin: 0;
-	width: 100% !important;
+	max-width: 412px;
 	transition-duration: 0.6s;
 	.close-btn-mdl{
 		display: none;
@@ -1356,16 +1359,16 @@
 				}
 				&::before{
 					@media (max-width:$sm) {
-						top: 1.2rem;
-						font-size: 1.017rem !important;
+						top: 1rem;
+						font-size: 1.143rem !important;
 					}
 				}
 				.formcontrol{
 					@media (max-width:$sm) {
 					min-height: 2.75rem !important;
 					border-radius: 0.5rem !important;
-					padding: 1rem 3.3rem !important;
-					font-size: 1.017rem !important;
+					padding: 1rem 2.9rem !important;
+					font-size: 1.143rem !important;
 					height: 44px;
 				}
 				}
@@ -1378,6 +1381,7 @@
 			border-radius: inherit;
 			padding: 1.5rem;
 			max-width: inherit !important;
+			width: 100% !important;
 		}
 		.exit-intent-sleekbox-popup{
 			@media (max-width:$md) {
@@ -1423,6 +1427,11 @@
 							display: flex;
     						flex-wrap: wrap;
 						}
+						.time{
+							@media (max-width:$sm) {
+								font-size: 1rem !important;
+							}
+						}
 						.resend{
 							@media (max-width:$sm) {
 								margin: 0 !important;
@@ -1434,11 +1443,11 @@
     							margin: 0 !important;
 							}
 							@media (max-width:$sm) {
-								min-height: 2.75rem !important;
+								// min-height: 2.75rem !important;
 								border-radius: 0.5rem !important;
 								padding: 0.9rem 2.3rem !important;
 								height: 44px;
-								font-size: 1.071rem !important;
+								// font-size: 1.071rem !important;
 							}
 							
 						}
@@ -1481,6 +1490,7 @@
 			border-radius: inherit;
 			padding: 1.5rem;
 			max-width: inherit !important;
+			width: 100% !important;
 		}
 
 			.thank-you-msg{
