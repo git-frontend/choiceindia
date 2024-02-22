@@ -16,7 +16,7 @@ function CollectionSlider() {
 
     const settings1 = {
       infinite: true,
-      speed: 1500,
+      speed: 2000,
       vertical: true,
       slidesToShow: 3,
       arrows:false,
@@ -31,7 +31,7 @@ function CollectionSlider() {
 
     const settings = {
         infinite: true,
-        speed: 1500,
+        speed: 2000,
         slidesToShow: 1,
         autoplay: true,
         arrows:false,
