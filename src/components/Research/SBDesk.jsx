@@ -43,9 +43,9 @@ function SBDesk() {
     }, [trigger])
 
 
-    useEffect(() => {
-        window.open("https://finx.choiceindia.com/research-report/research/experts/EQ");
-    },[])
+    // useEffect(() => {
+    //     window.open("https://finx.choiceindia.com/research-report/research/experts/EQ");
+    // },[])
     /**
      * Generate Session Id
      */

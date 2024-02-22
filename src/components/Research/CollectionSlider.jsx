@@ -16,13 +16,13 @@ function CollectionSlider() {
 
     const settings1 = {
       infinite: true,
-      speed: 2000,
+      speed: 1500,
       vertical: true,
       slidesToShow: 3,
       arrows:false,
       autoplay: true,
       dots: false,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 1500,
       slidesToScroll: 1,
       swipeToSlide: true,
      
