@@ -619,15 +619,16 @@ function SubBrokerForm(props) {
             "referredId": refercode.current || null,
             "serviceCode": "CBAEF",
             "utm_source":isBlog =="yes" ? UTMSource.current || 'sb_lead_generation':UTMSource.current || null,
-            "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog':UTMMedium.current || null,
+            "utm_medium":isBlog =="yes" ? UTMMedium.current || 'blog_leads':UTMMedium.current || null,
             "utm_campaign":isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads':UTMCampaign.current || null,
             "utm_term": UTMTerm.current || null,
             "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
-            "utm_content": UTMContent.current || null,
+            "utm_content": isBlog =="yes" ? UTMContent.current || 'in_content_cta':UTMContent.current || null,
             "whatsappConsent": true,
             "master_service_name":"CBA", 
             "captchaResp": captchaToken
         };
+        console.log("jjjj",request)
         subBrokerService.sendOTPNew(request).then((res) => {
             // console.log(res, "sendOTP");
             // console.log('SUBCP',res)
