@@ -168,8 +168,8 @@ function InvBankingExplore() {
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div className="bnr-left bnr-left2 d-flex justify-content-center">
-                                            <Link to="/offer-document" className="btn-bg">Offer Documents</Link>
+                                            <div className="bnr-left bnr-left2">
+                                            <Link to="/offer-document" className="btn-bg mt-2">Offer Documents</Link>
                                             </div>
                                             
                                         </div>

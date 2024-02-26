@@ -46,7 +46,7 @@ function CapitalAdvisory() {
                                 </div>
                             </div>
                             <Link to="/merchant-investment-banking" className="btn-bg explore">Explore</Link>
-                             <Link to="/offer-document" className="btn-bg">Offer Documents</Link>
+                             <Link to="/offer-document" className="btn-bg offer-btn">Offer Documents</Link>
                         </div>
                     </div>
 

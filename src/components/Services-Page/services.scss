@@ -236,8 +236,17 @@
             margin: 0 auto;
             display: block;
             max-width: 100px;
+
+          
         }
     }
+
+   .offer-btn{
+   @media (min-width:320px) and (max-width:767px){
+   margin-top:1.7rem;
+   max-width:224px;
+   }
+   }
 
     .rightsec {
         padding-left: 0;
