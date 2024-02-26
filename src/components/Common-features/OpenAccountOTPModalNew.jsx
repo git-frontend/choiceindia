@@ -29,6 +29,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
     const [outCome,setOutCome]= useState();
 
+     const otpVerify =useRef("");
     /**function to generate random probabity number for AB test */
     function generateRandomNumber(){
       var random = Math.random();
@@ -97,6 +98,12 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
     useEffect(() => {
         // setShow(() => true);
+        if (window.location.pathname.includes('blog') === true) {
+            otpVerify.current.style.display = "block";
+        }
+        else {
+            otpVerify.current.style.display = "none";
+        }
         generateRandomNumber();
         setCount(30);
     }, []);
@@ -410,8 +417,8 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                 {/* <div className="close">
                                     <a href="javascript:void(0)" onClick={onClose} className="closebtn" >&times;</a>
                                 </div> */}
-                                <div className="popup-sub-right">
-                                <div className="otp-ver-sec">
+                    <div className="popup-sub-right">
+                                <div className="otp-ver-sec" ref={otpVerify}>
                                 <div className="otp-circle">
                                     <img src={enterOtp} className="img-fluid" height={52} width={52}/>
 

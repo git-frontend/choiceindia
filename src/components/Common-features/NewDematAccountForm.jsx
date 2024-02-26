@@ -38,8 +38,11 @@ function NewDematAccountForm(props) {
     const [referID, setReferID] = useState('');
     const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1) ? 'demat-web' : " ")
  
-
-
+    const [blogForm, setblogForm] = useState("");
+    const [blogFormOtp, setBlogFormOtp] = useState("");
+    const [blogThankuPopup,setBlogThankuPopup] = useState("");
+    const blogformContent = useRef("");
+    const otpVerify = useRef("");
 
     /** state to show thankyou popup (add-lead) */
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
@@ -114,7 +117,18 @@ function NewDematAccountForm(props) {
     }
 
     useEffect(() => {
-     
+        if (window.location.pathname.includes('blog') === true) {
+            setblogForm('blog-lead-form');
+            setBlogFormOtp('blog-form-otp');
+            setBlogThankuPopup('blog-thanku-popup');
+            blogformContent.current.style.display = "block";
+        }
+        else {
+            setblogForm('');
+            setBlogFormOtp('');
+            setBlogThankuPopup('');
+            blogformContent.current.style.display = "none";
+        }
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
                 showOpenAccountAdPopup();
@@ -521,10 +535,10 @@ function NewDematAccountForm(props) {
             }
             {
                 !showOTP && !showThanku.showModal && (
-                    <div className="demat-account-form demat-account-form-new blog-lead-form" id="dematform">
+                    <div className={`demat-account-form demat-account-form-new ${blogForm}`} id="dematform">
 
                         <h2 className="heading">Open Demat Account</h2>
-                       <div className="sticy-card-blog-new sub-new-small">
+                       <div className="sticy-card-blog-new sub-new-small" ref={blogformContent}>
                        <h3 className="title-secnd">Free Demat Account Opening in 5 Mins</h3>
                         <ul>
                         <li>
@@ -618,7 +632,7 @@ function NewDematAccountForm(props) {
             }
             {
                 showThanku.showModal && (
-                    <div className="demat-account-form demat-account-form-new blog-thanku-popup">
+                    <div className={`demat-account-form demat-account-form-new ${blogFormOtp}`}>
                         <div className="thank-you-msg">
                             <div className="thank-logo">
                                 <div className="blog-thnu-circle">
@@ -639,7 +653,7 @@ function NewDematAccountForm(props) {
 
             {
                 showOTP && !showThanku.showModal && (
-                    <div className="demat-account-form demat-account-form-new blog-form-otp">
+                    <div className={`demat-account-form demat-account-form-new ${blogFormOtp}`}>
                         <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} ></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
