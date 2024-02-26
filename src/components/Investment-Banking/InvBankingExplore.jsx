@@ -5,6 +5,7 @@ import image2 from '../../assets/images/investment-banking/merchant-banking.webp
 import image3 from '../../assets/images/investment-banking/ipo-review.webp';
 import image4 from '../../assets/images/investment-banking/business-valuation.webp';
 import LazyLoader from "../Common-features/LazyLoader";
+import { Link } from "react-router-dom";
 
 function InvBankingExplore() {
 
@@ -167,6 +168,10 @@ function InvBankingExplore() {
                                                     </ul>
                                                 </div>
                                             </div>
+                                            <div className="bnr-left bnr-left2 d-flex justify-content-center">
+                                            <Link to="/offer-document" className="btn-bg">Offer Documents</Link>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
