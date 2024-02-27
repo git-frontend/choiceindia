@@ -121,7 +121,7 @@ function MFTopFunds() {
                     // console.log("res.Responsec", res.Response)
                     setSchemedata([res.Response])
                     document.title = res.Response.SchemeBasic.SchemeMainName? res.Response.SchemeBasic.SchemeMainName +" NAV & SIP Returns": '';
-                    document.getElementById('meta-tags').content = res.Response.SchemeBasic.SchemeMainName? "Invest in" +res.Response.SchemeBasic.SchemeMainName +" scheme with Choice. Check the" +res.Response.SchemeBasic.SchemeMainName +" NAV, SIP returns & performance" : '';
+                    document.getElementById('meta-tags').content = res.Response.SchemeBasic.SchemeMainName? " Invest in " +res.Response.SchemeBasic.SchemeMainName +" scheme with Choice. Check the " +res.Response.SchemeBasic.SchemeMainName +" NAV, SIP returns & performance" : '';
                     document.getElementById('canonical-link').href = "https://choiceindia.com/scheme/"+urlIdentity;
                     if (SchemePlanCode != 2066) {
                         if (res.Response.SchemeBasic.DRLumpSumAllowed == "N") {
