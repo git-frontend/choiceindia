@@ -4,7 +4,7 @@ import { API_URLS } from "./API-URLS";
 const faqService = {
 
     headerConfig: {
-        headers: { "authorization": "Basic WXp4cUZXZGJVdzlYOGVhMVBHejpY" }
+        // headers: { "authorization": "Basic WXp4cUZXZGJVdzlYOGVhMVBHejpY" }
 
     },
     faqHeaderConfig: {

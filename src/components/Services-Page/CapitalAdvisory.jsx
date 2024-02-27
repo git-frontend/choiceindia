@@ -45,7 +45,8 @@ function CapitalAdvisory() {
                                     <p>Our team understands the dynamics of various industries for assisting our clients looking for going public.</p>
                                 </div>
                             </div>
-                            <Link to="/merchant-investment-banking" className="btn-bg">Explore</Link>
+                            <Link to="/merchant-investment-banking" className="btn-bg explore">Explore</Link>
+                             <Link to="/offer-document" className="btn-bg offer-btn">Offer Documents</Link>
                         </div>
                     </div>
 
