@@ -120,22 +120,22 @@ body{
     padding: 7rem 0 9rem 0;
     background: $abt-bg;
     position: relative;
-    &::before {
-        content: '';
-        width: 24rem;
-        height: 38rem;
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background: url(../../assets/images/mutual-funds-investment/bg-exp.webp) no-repeat top left;
-        background-size: contain;
-        z-index: 1;
+    // &::before {
+    //     content: '';
+    //     width: 24rem;
+    //     height: 38rem;
+    //     display: block;
+    //     position: absolute;
+    //     left: 0;
+    //     bottom: 0;
+    //     background: url(../../assets/images/mutual-funds-investment/bg-exp.webp) no-repeat top left;
+    //     background-size: contain;
+    //     z-index: 1;
 
-        @media (max-width: $md) {
-            display: none;
-        }
-    }
+    //     @media (max-width: $md) {
+    //         display: none;
+    //     }
+    // }
     .best-mf-cont{
         padding-top: 4rem;
         .title-first{
@@ -144,6 +144,13 @@ body{
         }
         @media (max-width: $sm-x) {
             padding-top: 0;
+        }
+        .btn-bg-dark{
+            
+            &:hover{
+                background: $bgcolordark !important;
+                color: $whiteColor !important; 
+            }
         }
     }
     .best-mf-list{
@@ -655,6 +662,17 @@ body{
     &:hover{
     filter: grayscale(0);
     }
+    }
+    .mf-partner-explore-btn{
+        text-align: center;
+        margin-top: 5rem ;
+        .btn-bg-dark{
+            min-width: 17rem;
+            &:hover{
+                background: $bgcolordark !important;
+                color: $whiteColor !important; 
+            }
+        }
     }
 
 }

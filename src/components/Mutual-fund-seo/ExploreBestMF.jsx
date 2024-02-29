@@ -35,7 +35,8 @@ function chapterScroll(id) {
           <div className="row">
             <div className="col-md-4 best-mf-cont">
               <h2 className="title-first">explore the best mutual funds</h2>
-              <p>Experience the convenience and ease in investing with a platform that offers funds across all categories at one place </p>
+              <p className="mb-5">Experience the convenience and ease in investing with a platform that offers funds across all categories at one place </p>
+              <Link to="/top-funds"><span className="btn-bg btn-bg-dark">Explore more</span></Link>
             </div>
             <div className="col-md-8">
                 <div className="best-mf-list">
