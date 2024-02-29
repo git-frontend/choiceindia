@@ -47,6 +47,9 @@
             background: #F8F8F8;
             margin-bottom: 2.175rem;
             border: 0;
+            &:last-child{
+                margin-bottom: 0;
+            }
             @media (max-width: $sm) {
                 margin-bottom: 2rem;
             }
