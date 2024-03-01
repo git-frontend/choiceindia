@@ -19,7 +19,7 @@ function BugBountyRules() {
                                 <div className="">
                                     <h3>Scope:</h3>
                                     <ul>
-                                        <li>This program applies to Choice Equity Broking's mobile application and website (<a href="https://choiceindia.com/">https://choiceindia.com</a>).</li>
+                                        <li>This program applies to Choice Equity Broking's mobile application and website (<a href="https://choiceindia.com/" target="_blank">https://choiceindia.com</a>).</li>
                                         <li>Only vulnerabilities within the designated scope are eligible for rewards.</li>
                                     </ul>
                                     <h3>Responsible Disclosure:</h3>
