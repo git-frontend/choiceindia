@@ -130,11 +130,13 @@
         margin-left: 1%;
         padding: 1.923rem;
         margin-bottom: 2.462rem;
-        box-shadow: 0 6px 14px rgba(0,0,0,0.16);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+
         @media (max-width: $sm) {
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
             // width: 98%;
         }
+
         .top-section {
             display: flex;
             padding-bottom: 0.313rem;
@@ -386,7 +388,7 @@
 
                 @media (max-width:$md) {
                     background-color: $whiteColor;
-                    
+
                 }
             }
 
@@ -567,33 +569,117 @@
 //     }
 
 .beststockres {
-    
-   
 
 
-    .api_errornew{
+
+
+    .api_errornew {
         text-align: left;
-        
-            .btn-bg-dark {
+
+        .btn-bg-dark {
+            @media (max-width: $md) {
+                width: 100%;
+
+            }
+
+            &:hover {
                 @media (max-width: $md) {
-                   width: 100%;
-        
+                    background-color: $primary !important;
+                    color: $whiteColor !important;
+
                 }
-                &:hover{
-                    @media (max-width: $md) {
-                        background-color:$primary !important ;
-                        color: $whiteColor !important;
-             
-                     }   
-                }
-           
+            }
+
         }
-        .api-text-danger{
+
+        .api-text-danger {
             max-width: 200px;
-           
+
             @media (max-width: $md) {
                 max-width: 100%;
             }
         }
-    } 
+    }
+}
+
+.form-section {
+    background-color: $primary;
+    padding: 4rem 0rem;
+    .best-stock-Newform {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        @media (max-width:$sm) {
+            flex-direction: column;
+        }
+
+        .best-stock-left {
+            width: 70%;
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+            .best-stock-left-title {
+                color: $whiteColor;
+                font-family: $font-family-poppins-semibold;
+                font-size: 3.077rem;
+                line-height: 4.308rem;
+            }
+
+            .list-section {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+                margin-top: 3rem;
+                @media (max-width:$md) {
+                    flex-wrap: wrap;
+                }
+                .list-item {
+                    width: 20%;
+                    padding:2rem 2rem 2rem 2rem;
+                    @media (max-width:$md) {
+                        width: 50%;
+                       }
+                    &:first-child{
+                        padding: 2rem 2rem 2rem 0rem;
+                        @media (max-width:$sm) {
+                            padding: 1.5rem 1rem;
+                            padding-bottom: 0;
+                        }
+                    }
+                    &:last-child{
+                        padding: 2rem 0rem 2rem 2rem;
+                        @media (max-width:$sm) {
+                            padding: 1.5rem 1rem;
+                            padding-bottom: 0;
+                        }
+                    }
+                    .list-item-title {
+                        color: $whiteColor;
+                        padding-top: 1rem;
+                        font-family: $font-family-poppins-semibold;
+                        font-size: 1.846rem;
+                        line-height: 2.769rem;
+                   }
+                   &.list-item-big{
+                    width: 30%;
+                    @media (max-width:$md) {
+                        width: 50%;
+                       }
+                   }
+
+                }
+            }
+
+        }
+
+        .best-stock-right {
+            width: 30%;
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+        }
+    }
 }

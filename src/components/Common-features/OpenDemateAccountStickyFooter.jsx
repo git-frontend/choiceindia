@@ -28,8 +28,10 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     var source = useRef('');
     var otpSessionID = useRef('');
-    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1)||(window.location.pathname.indexOf('corporate-demat-account') > -1)) ? 'Best-Stock' : "Blog";
+    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1) || (window.location.pathname.indexOf('corporate-demat-account') > -1)) ? 'Best-Stock' : "Blog";
     const UnlistBlog = (window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'yes' : "";
+
+    const additionalClass = window.location.pathname.includes('best-stocks-to-buy') ? 'New_form_main' : '';
 
     var otpLeadID = useRef('');
     var referLink = useRef('');
@@ -300,9 +302,10 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         <>
             {
                 webcheck == "Best-Stock" ?
-                    <section className="sendopt  beststockres holidayOTP">
+                    // <section className="sendopt  beststockres holidayOTP">
+                        <section className={`sendopt  beststockres holidayOTP ${additionalClass}`}>
                         <div className="container">
-                            <div className="form_main ">
+                            <div className="form_main">
                                 {
                                     window.location.pathname.indexOf('best-stocks-for-long-term-investment') == 1
                                         ?
@@ -319,10 +322,10 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                                     </div>
                                                     :
                                                     window.location.pathname.indexOf('corporate-demat-account') == 1
-                                                    ? <div className=" demat_text"><span className="form-ttl">Open Corporate Demat Account</span>
-                                                    </div>
-                                                    :
-                                                    <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
+                                                        ? <div className=" demat_text"><span className="form-ttl">Open Corporate Demat Account</span>
+                                                        </div>
+                                                        :
+                                                        <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
                                 }
                                 {
                                     window.location.pathname.indexOf('corporate-demat-account') == 1

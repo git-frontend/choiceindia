@@ -214,4 +214,43 @@
         transform: rotate(360deg);
     }
 }
-
+.New_form_main{
+    background-color: $primary;
+    .form_main{
+        padding: 0rem 0rem !important;
+        flex-wrap: wrap;
+        margin: 0rem 1rem;
+        @media (max-width:$md) {
+            background-color:$primary;
+            border: none;
+        }
+        .demat_text{
+            display: none !important;
+        }
+        .Mobile_text{
+            width: 100%;
+        }
+        .cust_check{
+            width: 100% !important;
+            .form_check_text{
+                @media (max-width:$md) {
+                    color: $whiteColor;
+                }
+            }
+        }
+        .api_errornew{
+            margin-top: 2rem;
+            width: 100%;
+            @media (max-width:$md) {
+                margin-top: 1rem;
+            }
+            .btn-bg{
+                min-width: inherit;
+                width: 100% !important;
+                padding: 1rem 2.8rem !important;
+                border-radius: 12px !important;
+            }
+        }
+    }
+    
+}
