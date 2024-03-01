@@ -13,7 +13,7 @@ function BugBountyBanner() {
                     <div className="col-xl-5 col-md-6">
                         <div className="caption-txt">
                             <h1 className="big-ttl">Choice Bug <br/>Bounty Program</h1>
-                            <p className="para">Found a bug on our platform? Report it and get rewarded. Driven by tech, but led by people Choice believes in maintaining the highest levels of security at all times. And to do that we need your help. Scrutinize, search and send us reports on any bugs you find on our app or web platform, and together lets bug it out!</p>
+                            <p className="para"><strong>Security matters!</strong> Report vulnerabilities and be part of making Choice the most trusted investment platform.</p>
                             <a href="/" className="btn-bg">Submit</a>
                         </div>
                     </div>
