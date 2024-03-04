@@ -509,3 +509,17 @@
 		padding: 5rem 0;
 	}
 }
+.form-section-margin{
+    .best-stock-Newform{
+        .best-stock-left{
+            .list-section{
+                .list-item{
+                    width: 25% !important;
+                    @media (max-width:$md) {
+                        width: 50% !important;
+                       }
+                }
+            }
+        }
+    }
+}

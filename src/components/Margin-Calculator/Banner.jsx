@@ -5,6 +5,13 @@ import { Accordion } from "react-bootstrap";
 import { Link, useLocation } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import "../Common-features/common-demat-suppotive.scss";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import FreeAmc from "../../assets/images/brokerage-calculator/Free_AMC_for_First_Year.svg";
+import LowDP from "../../assets/images/brokerage-calculator/Low_DP_charges.svg";
+import  NoAutoSquare from "../../assets/images/brokerage-calculator/No-Auto-Square.svg";
+import FreeResearch from "../../assets/images/brokerage-calculator/Free_Research_Advisory.svg";
+import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 function Banner() {
     const [toggleState, setToggleState] = useState(1);
     const toggleTab = (index) => {
@@ -699,7 +706,7 @@ function Banner() {
                                                                 }}
                                                                 required
                                                             />
-                                                            
+
 
                                                             {(!marginConfig.qty || marginConfig.qty < 1) ? (
                                                                 <p className="animate error marginpara">
@@ -739,7 +746,7 @@ function Banner() {
                                                             <div className='button-sec'>
                                                                 <div className='btn-items'>
                                                                     <Button className="btn-add btn btn-primary" onClick={() => addResetContract(true)}
-                                                                    disabled={marginConfig.marketLot < 1 || marginConfig.qty < 1}
+                                                                        disabled={marginConfig.marketLot < 1 || marginConfig.qty < 1}
                                                                     >Add</Button>
                                                                 </div>
                                                                 <div className='btn-items'>
@@ -937,7 +944,53 @@ function Banner() {
                     </div>
                 </div>
             </section>
-            <OpenFreeDematAccount />
+            <section className="form-section-all form-section-margin">
+                <div className="container">
+                    <div className="best-stock-Newform">
+                        <div className="best-stock-left">
+                            <h3 className="best-stock-left-title" >Open a <span className="bold_text">Free</span>  Demat <br /> Account in <span className="bold_text">5 Mins.</span></h3>
+                            <div className="list-section">
+                                <div className="list-item">
+                                    <span>
+                                        <img src={FreeAmc} className={'img-fluid'} width={'56'} height={'56'} alt="Demat account yearly AMC"></img>
+                                    </span>
+                                    <h4 className="list-item-title">Free AMC
+                                        <br/>
+                                        <span className='font-weight-new'>for First Year</span></h4>
+                                </div>
+                                <div className="list-item">
+                                    <span>
+                                        <img src={FreeAmc} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Trading Charges"></img>
+                                    </span>
+                                    <h4 className="list-item-title">Free Research<br/>
+                                    <span className='font-weight-new'>Advisory</span></h4>
+                                </div>
+                                <div className="list-item ">
+                                    <span>
+                                        <img src={FreeAmc} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Brokerage Charges"></img>
+                                    </span>
+                                    <h4 className="list-item-title">Low DP<br/>
+                                    <span className='font-weight-new'>Charges (₹ 10)</span></h4>
+                                </div>
+                                <div className="list-item ">
+                                    <span>
+                                        <img src={FreeAmc} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Auto Square off Charges"></img>
+                                    </span>
+                                    <h4 className="list-item-title">No Auto Square
+                                    Off <span className='font-weight-new'>Charges</span></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="best-stock-right">
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
+                                <div id="dematformsticky">
+                                    <OpenDemateAccountStickyFooter />
+                                </div>
+                            </GoogleReCaptchaProvider></div>
+                    </div>
+                </div>
+            </section>
+            {/* <OpenFreeDematAccount /> */}
             <section className='more-content'>
                 <div className='container'>
                     {
