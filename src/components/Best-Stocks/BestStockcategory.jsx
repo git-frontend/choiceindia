@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./best-stock.scss";
+import "../Common-features/common-demat-suppotive.scss";
 import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
 import "../Remisier/Remisier.scss";
@@ -13,10 +14,10 @@ import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountS
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import expert_reserch from '../../assets/images/Best_Stocks/expert_reserch.svg';
-import zero_auto from '../../assets/images/Best_Stocks/zero_auto.svg';
-import trade_paisa from '../../assets/images/Best_Stocks/trade_paisa.svg';
-import low_broke from '../../assets/images/Best_Stocks/low_broke.svg';
+import expert_reserch from '../../assets/images/Best_Stocks/Expert_Research.svg';
+import zero_auto from '../../assets/images/Best_Stocks/Zero_Auto_Square_Off_Charges.svg';
+import trade_paisa from '../../assets/images/Best_Stocks/Trade_@2_Paisa.svg';
+import low_broke from '../../assets/images/Best_Stocks/Low_Brokerage_Charges.svg';
 
 import { useRef } from 'react';
 import {
@@ -810,36 +811,46 @@ function BestStockcategory() {
                 </div>
               </div>
             </section>
-            <section className="form-section">
+            <section className="form-section-all">
               <div className="container">
                 <div className="best-stock-Newform">
                   <div className="best-stock-left">
+                  {
+                      toggleState == 1 ?
+                    <h3 className="best-stock-left-title" >Handpicked Intraday Stocks by Research Experts.</h3>
+                    : toggleState == 2 ?
+                    <h3 className="best-stock-left-title" >Optimize portfolio with best short term stocks.</h3>
+                    : toggleState == 3 ?
+                    <h3 className="best-stock-left-title" >Get Expert-Recommended Long-Term Stocks Now!</h3>
+                    : toggleState == 0 ?
                     <h3 className="best-stock-left-title" >Unlock potential with expert-picked best stocks.</h3>
+                    :
+                    ""}
                     <div className="list-section">
                       <div className="list-item">
                         <span>
-                          <img src={expert_reserch}  className={'img-fluid'} width={'56'} height={'56'}></img>
+                          <img src={expert_reserch}  className={'img-fluid'} width={'56'} height={'56'} alt="Stock Research by Choice"></img>
                         </span>
                         <h4 className="list-item-title">Expert<br />
                           Research</h4>
                       </div>
                       <div className="list-item">
                         <span>
-                          <img src={trade_paisa} className={'img-fluid'} width={'56'} height={'56'}></img>
+                          <img src={trade_paisa} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Trading Charges"></img>
                         </span>
                         <h4 className="list-item-title">Trade @ <br />
                           2 Paisa</h4>
                       </div>
                       <div className="list-item list-item-big">
                         <span>
-                          <img src={low_broke} className={'img-fluid'} width={'56'} height={'56'}></img>
+                          <img src={low_broke} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Brokerage Charges"></img>
                         </span>
                         <h4 className="list-item-title">Low Brokerage<br />
                           Charges</h4>
                       </div>
                       <div className="list-item list-item-big">
                         <span>
-                          <img src={zero_auto} className={'img-fluid'} width={'56'} height={'56'}></img>
+                          <img src={zero_auto} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Auto Square off Charges"></img>
                         </span>
                         <h4 className="list-item-title">Zero Auto Square<br/>
                           Off Charges</h4>
