@@ -27,6 +27,16 @@ function Banner() {
     slidesToScroll: 1,
   };
 
+    function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
 
   const [skeleton, setSkeleton] = useState(() => true);
   setTimeout(() => {
@@ -45,12 +55,14 @@ function Banner() {
                 <div className="slider-caption">
                     <div className="">
                         <div className="slider-caption-sub">
-                          <h2 className="big-ttl"><span>Diwali  Picks</span> Nov’23</h2>
+                          <h1 className="big-ttl"><span>Stock Research Reports</span></h1>
                           <p>The report highlights investment opportunities  identified by our research team during the month.</p>
                           <div className="research-Picks">
-                          <a onClick={() => { window.open(Fundamental) }}  target="_blank" className="cursor-pointer "><span className="btn-bg btn-bg-dark">Fundamental Pick</span></a>
-                          <a onClick={() => { window.open(Technical) }}  target="_blank" className="cursor-pointer"><span className="btn-bg btn-bg-dark">Technical Pick</span></a>
-                          </div>
+                    {/* <a onClick={() => { window.open(Fundamental) }}  target="_blank" className="cursor-pointer "><span className="btn-bg btn-bg-dark">Fundamental Pick</span></a> */}
+                          <a onClick={()=>chapterScroll('longTermSection')} className="cursor-pointer "><span className="btn-bg btn-bg-dark">Fundamental Pick</span></a>
+                          {/* <a onClick={() => { window.open(Technical) }}  target="_blank" className="cursor-pointer"><span className="btn-bg btn-bg-dark">Technical Pick</span></a> */}
+                    <a onClick={()=>chapterScroll('shortTermSection')} className="cursor-pointer"><span className="btn-bg btn-bg-dark">Technical Pick</span></a>
+                  </div>
                         </div>
                         
                     </div>
