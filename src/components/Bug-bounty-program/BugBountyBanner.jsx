@@ -14,13 +14,13 @@ function BugBountyBanner() {
                         <div className="caption-txt">
                             <h1 className="big-ttl">Choice Bug <br/>Bounty Program</h1>
                             <p className="para"><strong>Security matters!</strong> Report vulnerabilities and be part of making Choice the most trusted investment platform.</p>
-                            <a href="/" className="btn-bg">Submit</a>
+                            <a href="https://forms.gle/3NDK58SHEJm7x5H69" className="btn-bg" target="_blank">Submit</a>
                         </div>
                     </div>
                     <div className="col-md-5 d-none d-sm-block">
                         <div className="rightsec">
-                                <LazyLoader src={appbanner} alt={"Choice Bug Bounty Program"} className={"img-fluid"} width={"609"} height={"476"} />
-                                {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img> */}
+                            <LazyLoader src={appbanner} alt={"Choice Bug Bounty Program"} className={"img-fluid"} width={"609"} height={"476"} />
+                            {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img> */}
                         </div>
                     </div>
                 </div>
