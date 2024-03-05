@@ -960,21 +960,21 @@ function Banner() {
                                 </div>
                                 <div className="list-item">
                                     <span>
-                                        <img src={FreeAmc} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Trading Charges"></img>
+                                        <img src={FreeResearch} className={'img-fluid'} width={'56'} height={'56'} alt="open demat account with research advisory"></img>
                                     </span>
                                     <h4 className="list-item-title">Free Research<br/>
                                     <span className='font-weight-new'>Advisory</span></h4>
                                 </div>
                                 <div className="list-item ">
                                     <span>
-                                        <img src={FreeAmc} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Brokerage Charges"></img>
+                                        <img src={LowDP} className={'img-fluid'} width={'56'} height={'56'} alt="DP Charges after Demat Account Opening"></img>
                                     </span>
                                     <h4 className="list-item-title">Low DP<br/>
                                     <span className='font-weight-new'>Charges (₹ 10)</span></h4>
                                 </div>
                                 <div className="list-item ">
                                     <span>
-                                        <img src={FreeAmc} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Auto Square off Charges"></img>
+                                        <img src={NoAutoSquare} className={'img-fluid'} width={'56'} height={'56'} alt="Free Demat Auto square off charges"></img>
                                     </span>
                                     <h4 className="list-item-title">No Auto Square
                                     Off <span className='font-weight-new'>Charges</span></h4>
