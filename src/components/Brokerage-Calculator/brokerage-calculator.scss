@@ -536,6 +536,9 @@
                     @media (max-width:$md) {
                         width: 50% !important;
                        }
+                       @media (max-width:$sm) {
+                        width: 100% !important;
+                    }
                 }
             }
         }
