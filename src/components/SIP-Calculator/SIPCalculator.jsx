@@ -1,7 +1,6 @@
 
 import React from "react";
 import "./sip-calculator.scss";
-import "../Common-features/common-demat-suppotive.scss";
 import "../../components/Brokerage-Calculator/brokerage-calculator.scss";
 import Banner from "./Banner";
 import { useState, useEffect } from "react";
