@@ -514,16 +514,31 @@ function BestStockcategory() {
     urlLink();
 
   }
-  const sections = [
-    {
-      title: ['Open a Free Demat Account in 5 Mins.'],
-      images: [expert_reserch,trade_paisa, zero_auto,low_broke ],
-      subtitle: ['Expert Research', 'Trade @ 2 Paisa', 'Low Brokerage Charges', 'Zero Auto Square Off Charges'],
-      alt: ['Stock Research by Choice','Choice Trading Charges','Choice Brokerage Charges'
-      ,'Choice Auto Square off Charges']
-    },
+  const generateSections = () => {
+    const titles = [
+      'Unlock potential with expert-picked best stocks.',
+      'Handpicked Intraday Stocks by Research Experts',
+      'Optimize portfolio with best short term stocks.',
+      'Get Expert-Recommended Long-Term Stocks Now!'
+    ];
 
-  ];
+    const commonData = {
+      images: [expert_reserch, trade_paisa, zero_auto, low_broke],
+      subtitle: ['Expert Research', 'Trade @ 2 Paisa', 'Low Brokerage Charges', 'Zero Auto Square Off Charges'],
+      alt: ['Stock Research by Choice', 'Choice Trading Charges', 'Choice Brokerage Charges', 'Choice Auto Square off Charges']
+    };
+    const selectedTitle = titles[toggleState];
+    const index = titles.indexOf(selectedTitle);
+    return [
+      {
+        title: [selectedTitle],
+        ...commonData,
+        index
+      }
+    ];
+  };
+
+  const sections = generateSections();
   return (
     <div>
       {
