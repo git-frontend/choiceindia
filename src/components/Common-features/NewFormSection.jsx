@@ -14,7 +14,7 @@ const NewFormSection = ({ sections }) => {
                             <div key={index} className='row align-items-center'>
                                 <div className="col-md-8" >
                                     <div className='row'>
-                                        <div className='col-md-12'>
+                                        <div className='col-xl-6 col-md-12'>
                                             <h3 className="best-stock-left-title">
                                                 {section.title.map((text, i) => (
                                                     <span key={i} >

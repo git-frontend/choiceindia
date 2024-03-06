@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./best-stock.scss";
-import "../Common-features/common-demat-suppotive.scss";
+import NewFormSection from '../Common-features/NewFormSection';
 import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
 import "../Remisier/Remisier.scss";
@@ -9,8 +9,6 @@ import rest from "../../Services/rest";
 import utils from "../../Services/utils";
 import { API_URLS } from "../../Services/API-URLS";
 import "../Remisier/Remisier.scss";
-import BestStockOpenDematAccount from './BestStockOpenDematAccount';
-import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
@@ -516,6 +514,16 @@ function BestStockcategory() {
     urlLink();
 
   }
+  const sections = [
+    {
+      title: ['Open a Free Demat Account in 5 Mins.'],
+      images: [expert_reserch,trade_paisa, zero_auto,low_broke ],
+      subtitle: ['Expert Research', 'Trade @ 2 Paisa', 'Low Brokerage Charges', 'Zero Auto Square Off Charges'],
+      alt: ['Stock Research by Choice','Choice Trading Charges','Choice Brokerage Charges'
+      ,'Choice Auto Square off Charges']
+    },
+
+  ];
   return (
     <div>
       {
@@ -811,62 +819,7 @@ function BestStockcategory() {
                 </div>
               </div>
             </section>
-            <section className="form-section-all">
-              <div className="container">
-                <div className="best-stock-Newform">
-                  <div className="best-stock-left">
-                  {
-                      toggleState == 1 ?
-                    <h3 className="best-stock-left-title" >Handpicked Intraday Stocks by Research Experts.</h3>
-                    : toggleState == 2 ?
-                    <h3 className="best-stock-left-title" >Optimize portfolio with best short term stocks.</h3>
-                    : toggleState == 3 ?
-                    <h3 className="best-stock-left-title" >Get Expert-Recommended Long-Term Stocks Now!</h3>
-                    : toggleState == 0 ?
-                    <h3 className="best-stock-left-title" >Unlock potential with expert-picked best stocks.</h3>
-                    :
-                    ""}
-                    <div className="list-section">
-                      <div className="list-item">
-                        <span>
-                          <img src={expert_reserch}  className={'img-fluid'} width={'56'} height={'56'} alt="Stock Research by Choice"></img>
-                        </span>
-                        <h4 className="list-item-title">Expert<br />
-                          Research</h4>
-                      </div>
-                      <div className="list-item">
-                        <span>
-                          <img src={trade_paisa} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Trading Charges"></img>
-                        </span>
-                        <h4 className="list-item-title">Trade @ <br />
-                          2 Paisa</h4>
-                      </div>
-                      <div className="list-item list-item-big">
-                        <span>
-                          <img src={low_broke} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Brokerage Charges"></img>
-                        </span>
-                        <h4 className="list-item-title">Low Brokerage<br />
-                          Charges</h4>
-                      </div>
-                      <div className="list-item list-item-big">
-                        <span>
-                          <img src={zero_auto} className={'img-fluid'} width={'56'} height={'56'} alt="Choice Auto Square off Charges"></img>
-                        </span>
-                        <h4 className="list-item-title">Zero Auto Square<br/>
-                          Off Charges</h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="best-stock-right">
-                    <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
-                      <div id="dematformsticky">
-                        <OpenDemateAccountStickyFooter />
-                      </div>
-                    </GoogleReCaptchaProvider></div>
-                </div>
-              </div>
-            </section>
-
+            <NewFormSection sections={sections} />
             <section className="readmoresection readmorecontent">
               <div className="container">
 
