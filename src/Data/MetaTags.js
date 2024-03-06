@@ -2603,7 +2603,13 @@ const meta_tags = {
    "title": "",
     "lang": "en",
     "content":""
-  }
+  },
+  "bug-bounty-program": {
+    "title": "Choice Bug Bounty",
+    'lang': "en",
+    'content': "Contribute for making Choice the most trusted investment platform.",
+    "link": "https://choiceindia.com/bug-bounty-program"
+  },
 
 }
 
