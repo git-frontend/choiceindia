@@ -516,10 +516,10 @@ function BestStockcategory() {
   }
   const generateSections = () => {
     const titles = [
-      'Unlock potential with expert-picked best stocks.',
-      'Handpicked Intraday Stocks by Research Experts',
-      'Optimize portfolio with best short term stocks.',
-      'Get Expert-Recommended Long-Term Stocks Now!'
+      'Get the best stocks at your fingertips!',
+      'Get best intraday stock picks daily.',
+      'Get best short term stock picks now!',
+      'Get best long term stocks to invest now!'
     ];
 
     const commonData = {

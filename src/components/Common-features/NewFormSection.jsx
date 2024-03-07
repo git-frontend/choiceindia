@@ -15,12 +15,15 @@ const NewFormSection = ({ sections }) => {
                                 <div className="col-md-8" >
                                     <div className='row'>
                                         <div className='col-xl-8 col-md-12'>
-                                            <h3 className="best-stock-left-title">
+                                            {/* <h3 className="best-stock-left-title">
                                                 {section.title.map((text, i) => (
                                                     <span key={i} >
                                                         {text}
                                                     </span>
                                                 ))}
+                                            </h3> */}.
+                                            <h3 className="best-stock-left-title" style={{ whiteSpace: 'pre-line' }}>
+                                                {section.title.join('\n')}
                                             </h3>
                                         </div>
                                     </div>
