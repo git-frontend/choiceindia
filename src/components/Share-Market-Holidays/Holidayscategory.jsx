@@ -185,9 +185,12 @@ function Holidayscategory() {
 
   const sections = [
     {
-      title:['Open a Free Demat Account + Free 1st Year AMC'],
+      title: [
+        'Open a ',<span className="bold_text"> Free Demat Account </span>,'\n ',
+        '+ Free 1st Year AMC'
+      ],
       images: [FreeAmc, LowDP, NoAutoSquare,FreeResearch],
-      subtitle: ['Free Account Opening', 'Free Expert Research', 'Low DP Charges','Zero AMC For First Year'],
+      subtitle: ['Free Account Opening', 'Free Expert Research', 'Low DP \nCharges','Zero AMC For First Year'],
       alt:['Open Demat Account with Choice','Stock Research by Choice','DP Charges after Demat Account Opening','AMC Charges at Choice']
     },
    

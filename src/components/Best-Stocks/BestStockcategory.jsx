@@ -516,15 +516,15 @@ function BestStockcategory() {
   }
   const generateSections = () => {
     const titles = [
-      'Get the best stocks at your fingertips!',
-      'Get best intraday stock picks daily.',
-      'Get best short term stock picks now!',
-      'Get best long term stocks to invest now!'
+      ['Maximize potential with\n ', <span className="bold_text"> expert-picked best stocks</span>],
+      ['Handpicked',<span className="bold_text"> Intraday Stocks</span>, '\n by Research Experts'],
+      ['Optimize portfolio with\n',<span className="bold_text"> best short term stocks</span>],
+      ['Get ', <span className="bold_text">finely researched</span>,'\n Long-Term Stocks Now!']
     ];
 
     const commonData = {
       images: [expert_reserch, trade_paisa, zero_auto, low_broke],
-      subtitle: ['Expert Research', 'Trade @ 2 Paisa', 'Low Brokerage Charges', 'Zero Auto Square Off Charges'],
+      subtitle: ['Expert \n Research', 'Trade @ \n2 Paisa', 'Low Brokerage Charges', 'Zero Auto Square Off Charges'],
       alt: ['Stock Research by Choice', 'Choice Trading Charges', 'Choice Brokerage Charges', 'Choice Auto Square off Charges']
     };
     const selectedTitle = titles[toggleState];

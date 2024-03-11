@@ -14,16 +14,9 @@ const NewFormSection = ({ sections }) => {
                             <div key={index} className='row align-items-center'>
                                 <div className="col-md-8" >
                                     <div className='row'>
-                                        <div className='col-xl-8 col-md-12'>
-                                            {/* <h3 className="best-stock-left-title">
-                                                {section.title.map((text, i) => (
-                                                    <span key={i} >
-                                                        {text}
-                                                    </span>
-                                                ))}
-                                            </h3> */}.
+                                        <div className='col-xl-12 col-md-12'>
                                             <h3 className="best-stock-left-title" style={{ whiteSpace: 'pre-line' }}>
-                                                {section.title.join('\n')}
+                                                {section.title}
                                             </h3>
                                         </div>
                                     </div>
@@ -41,9 +34,14 @@ const NewFormSection = ({ sections }) => {
                                                         />
                                                     </span>
                                                     <h4 className="list-item-title">
-                                                        {section.subtitle[i]}
-                                                        {/* <span className="font-weight-new">{section.subtitle[i]}</span> */}
+                                                        {section.subtitle[i].split('\n').map((line, j) => (
+                                                            j === 0 ? line : [<br key={j} />, line]
+                                                        ))}
                                                     </h4>
+                                                    {/* <h4 className="list-item-title" >
+                                                        {section.subtitle[i]}
+                                                        <span className="font-weight-new">{section.subtitle[i]}</span>
+                                                    </h4> */}
                                                 </div>
                                             </div>
                                         ))}

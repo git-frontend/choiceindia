@@ -36,7 +36,7 @@ function BrokerageCalculator() {
   }, [rendercount])
   const sections = [
     {
-      title:['Open a Free Demat Account in 5 Mins.'],
+      title:['Open a',<span className="bold_text"> Free </span>, 'Demat\n Account in', <span className="bold_text"> 5 Mins.</span>],
       images: [FreeAmc, LowDP, NoAutoSquare,FreeResearch],
       subtitle: ['Free AMC for First Year', 'Free Research Advisory', 'Low DP Charges (₹ 10)','No Auto Square Off Charges'],
       alt:['Demat account yearly AMC','open demat account with research advisory','DP Charges after Demat Account Opening','Free Demat Auto square off charges']

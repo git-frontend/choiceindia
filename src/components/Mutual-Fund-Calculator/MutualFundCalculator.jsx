@@ -38,7 +38,7 @@ function MutualFundCalculator() {
   }, [rendercount])
   const sections = [
     {
-      title:['Start investing in Mutual Funds Now!'],
+      title:['Start investing in \n', <span className="bold_text">Mutual Funds</span>, ' Now!'],
       images: [Readymade_Baskets, Goal_Based_Investment, Choice_Rated_Schemes],
       subtitle: ['Readymade Baskets', 'Goal Based Investment', 'Choice Rated Schemes'],
       alt:['Mutual Fund Baskets by Choice','Mutual Fund Goal based Investment','Choice Rated Mutual Fund Schemes']
