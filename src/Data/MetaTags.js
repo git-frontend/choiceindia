@@ -253,7 +253,7 @@ const meta_tags = {
     ` },
 
   "open-free-demat-account": {
-    'title': "Free Demat Account Opening Online with No Annual Charges", 'lang': "en", 'content': "Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "", "link4": "", "link5": "https://choiceindia.com/marathi/open-demat-account", "link6": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "", "href4": "", "href5": "mr-in", "href6": "x-default",
+    'title': "Open Demat Account - Free Demat Account Opening Online (No AMC*)", 'lang': "en", 'content': "Free Demat Account Opening Online - Open Demat Account in 5 Min at Choice. Zero AMC for First Year. Free Expert Research. Low DP Charges. Trade @ 2 Paisa.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "", "link4": "", "link5": "https://choiceindia.com/marathi/open-demat-account", "link6": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "", "href4": "", "href5": "mr-in", "href6": "x-default",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -2603,7 +2603,13 @@ const meta_tags = {
    "title": "",
     "lang": "en",
     "content":""
-  }
+  },
+  "bug-bounty-program": {
+    "title": "Choice Bug Bounty",
+    'lang': "en",
+    'content': "Contribute for making Choice the most trusted investment platform.",
+    "link": "https://choiceindia.com/bug-bounty-program"
+  },
 
 }
 
