@@ -1050,15 +1050,6 @@
 			@media (max-width:1400px) {
                 font-size: 2rem;
             }
-            @media (max-width:$md) {
-                font-size: 1.7rem;
-				text-align: left;
-            }
-            @media (max-width:$sm) {
-				font-size: 1.357rem;
-				line-height: 1.5;
-				width: 60%;
-            }
         }
         ul{
             li{
@@ -1146,36 +1137,13 @@
 					background: inherit;
 					border-radius: inherit;
 					box-shadow: unset;
-					.otp-sent{
-						@media (max-width:$md) {
-							width: 100%;
-						}
-						.changenumbtn{
-							@media (max-width:$sm) {
-								font-size: 1.143rem !important;
-							}
-						}
-					}
-					.otp-pd{
-						@media (max-width:$md) {
-							order: 4;
-							width: 100%;
-						}
-					}
 					.otp-mdl-input-chk{
-						@media (max-width:$sm) {
-							width: calc(100% - 112px);
-							padding-right: 10px;
-						}
 						.digit-otp{
 							width: 100% !important;
 						}
 						.time{
 							color: rgb(255 255 255 / 70%);
 							margin: 0;
-							@media (max-width:$sm) {
-								font-size: 1.143rem;
-							}
 							span{
 								color: $whiteColor;
 							}
@@ -1183,9 +1151,6 @@
 					}
 					.subheading{
 						color: $whiteColor;
-						@media (max-width:$sm) {
-							font-size: 1.143rem;
-						}
 					}
 					.changenumbtn{
 						color: $yellowColor;
@@ -1194,18 +1159,12 @@
 					}
 					.resend{
 						color: $whiteColor;
-						@media (max-width:$sm) {
-							font-size: 1.143rem;
-						}
 						.bluetxt{
 							color: $yellowColor;
 						}
 					}
 					.ortext{
 						color: $whiteColor;
-						@media (max-width:$sm) {
-							font-size: 1.143rem;
-						}
 					}
 				}
 			}
@@ -1329,6 +1288,17 @@
 				}
 
 			}
+			.title-secnd{
+			@media (max-width:$md) {
+                font-size: 1.7rem;
+				text-align: left;
+            }
+            @media (max-width:$sm) {
+				font-size: 1.357rem;
+				line-height: 1.5;
+				width: 60%;
+            }
+			}
 		}
 		.formgrp-new{
 			@media (max-width:$md) {
@@ -1425,6 +1395,27 @@
 						}
 					}
 					.otpform-new{
+						.otp-pd{
+							@media (max-width:$md) {
+								order: 4;
+								width: 100%;
+							}
+						}
+						.otp-sent{
+							@media (max-width:$md) {
+								width: 100%;
+							}
+							.changenumbtn{
+								@media (max-width:$sm) {
+									font-size: 1.143rem !important;
+								}
+							}
+							.subheading{
+								@media (max-width:$sm) {
+									font-size: 1.143rem;
+								}
+							}
+						}
 						@media (max-width:$md) {
 							position: relative;
 							display: flex;
@@ -1443,6 +1434,11 @@
 						.resend{
 							@media (max-width:$sm) {
 								margin: 0 !important;
+							}
+						}
+						.ortext{
+							@media (max-width:$sm) {
+								font-size: 1.143rem;
 							}
 						}
 						.digit-otp{
@@ -1486,6 +1482,18 @@
 									height: 44px;
 								}
 								
+							}
+						}
+					}
+					.otp-mdl-input-chk{
+						@media (max-width:$sm) {
+							width: calc(100% - 112px);
+							padding-right: 10px;
+						}
+						
+						.time{
+							@media (max-width:$sm) {
+								font-size: 1.143rem;
 							}
 						}
 					}
