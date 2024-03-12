@@ -26,7 +26,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     const [show,setShow] = useState(true);
     const [searchParams, setSearchParams] = useSearchParams();
     // const [otpparam, setOtpparam] = useState('');
-
+    const closeButton = useRef("");
     const [outCome,setOutCome]= useState();
 
      const otpVerify =useRef("");
@@ -99,10 +99,17 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     useEffect(() => {
         // setShow(() => true);
         if (window.location.pathname.includes('blog') === true) {
-            otpVerify.current.style.display = "block";
+            otpVerify.current.style.display = "flex";
+            if (window.innerWidth <= 920) {
+                closeButton.current.style.display = "block";
+            }
+            else {
+                closeButton.current.style.display = "none";
+            }
         }
         else {
             otpVerify.current.style.display = "none";
+            closeButton.current.style.display = "none";
         }
         generateRandomNumber();
         setCount(30);
@@ -495,7 +502,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                 </div>
-                                <span className="close-btn-mdl">&times;</span>
+                                <span className="close-btn-mdl" ref={closeButton}>&times;</span>
                             </div>
                         </div>
                     {/* </div> */}

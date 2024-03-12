@@ -41,7 +41,6 @@ function NewDematAccountForm(props) {
     const [blogForm, setblogForm] = useState("");
     const [blogFormOtp, setBlogFormOtp] = useState("");
     const [blogThankuPopup,setBlogThankuPopup] = useState("");
-    const blogformContent = useRef("");
     const otpVerify = useRef("");
 
     /** state to show thankyou popup (add-lead) */
@@ -121,13 +120,11 @@ function NewDematAccountForm(props) {
             setblogForm('blog-lead-form');
             setBlogFormOtp('blog-form-otp');
             setBlogThankuPopup('blog-thanku-popup');
-            blogformContent.current.style.display = "block";
         }
         else {
             setblogForm('');
             setBlogFormOtp('');
             setBlogThankuPopup('');
-            blogformContent.current.style.display = "none";
         }
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
@@ -538,7 +535,7 @@ function NewDematAccountForm(props) {
                     <div className={`demat-account-form demat-account-form-new ${blogForm}`} id="dematform">
 
                         <h2 className="heading">Open Demat Account</h2>
-                       <div className="sticy-card-blog-new sub-new-small" ref={blogformContent}>
+                      {window.location.pathname.includes("blog") &&  <div className="sticy-card-blog-new sub-new-small">
                        <h3 className="title-secnd">Free Demat Account Opening in 5 Mins</h3>
                         <ul>
                         <li>
@@ -571,7 +568,7 @@ function NewDematAccountForm(props) {
                         </li>
                         </ul>
                         <span className="close-btn-mdl">&times;</span>
-                       </div>
+                       </div>}
                         <Form>
                             <Form.Group className="mb-3 formgrp formgrp-new">
                                 <Form.Label>Mobile Number*</Form.Label>
@@ -618,7 +615,7 @@ function NewDematAccountForm(props) {
                                     {
                                         <Button variant="primary"
                                             type="submit" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
-                                            {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'otpbtn')}</Button>
+                                            {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'otpbtn',window.location.pathname.includes('blog'))}</Button>
                                     }
                                 </div>
                             </Form.Group>
@@ -632,7 +629,7 @@ function NewDematAccountForm(props) {
             }
             {
                 showThanku.showModal && (
-                    <div className={`demat-account-form demat-account-form-new ${blogFormOtp}`}>
+                    <div className={`demat-account-form demat-account-form-new ${blogThankuPopup}`}>
                         <div className="thank-you-msg">
                             <div className="thank-logo">
                                 <div className="blog-thnu-circle">
