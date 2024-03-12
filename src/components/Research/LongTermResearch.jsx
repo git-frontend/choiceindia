@@ -137,6 +137,7 @@ function LongTermResearch() {
   let goToDetail = (report) => {
     let api = new API_URLS()
     let url = api.getFundamentalDetailURL(report.redirect_slug)
+    console.log("API URL "+url);
     window.open(url)
   }
 
@@ -181,8 +182,8 @@ function LongTermResearch() {
     }
   }, [trigger])
   return (
-    <div>
-      <section className="research-banner-tabs" >
+    <div id="longTermSection">
+      <section className="research-banner-tabs">
         <div className="container">
 
           <div className="row" id='lt-search'>

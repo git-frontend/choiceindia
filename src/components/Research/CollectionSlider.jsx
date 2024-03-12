@@ -22,7 +22,7 @@ function CollectionSlider() {
       arrows:false,
       autoplay: true,
       dots: false,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 1500,
       slidesToScroll: 1,
       swipeToSlide: true,
      
@@ -31,7 +31,7 @@ function CollectionSlider() {
 
     const settings = {
         infinite: true,
-        speed: 1500,
+        speed: 2000,
         slidesToShow: 1,
         autoplay: true,
         arrows:false,

@@ -19,7 +19,7 @@ function ShortTermResearch() {
   };
 
   return (
-    <div>
+    <div id="shortTermSection">
 
         <section className="research-banner-tabs short-term-research">
         <div className="container">

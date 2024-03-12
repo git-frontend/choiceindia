@@ -21,7 +21,7 @@ const Researchimg =
         "image":`${Image3}`,
         "title":"Our Top Picks",
         "id": 3,
-        "description":"Check out the most interesting and unique categories of Stock collections",
+        "description":"Get top stocks recommendations by our expert research team",
     },
    
 ]
