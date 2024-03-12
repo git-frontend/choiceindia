@@ -523,7 +523,7 @@ function BestStockcategory() {
     ];
 
     const commonData = {
-      images: [expert_reserch, trade_paisa, zero_auto, low_broke],
+      images: [expert_reserch, trade_paisa,  low_broke,zero_auto],
       subtitle: ['Expert \n Research', 'Trade @ \n2 Paisa', 'Low Brokerage Charges', 'Zero Auto Square Off Charges'],
       alt: ['Stock Research by Choice', 'Choice Trading Charges', 'Choice Brokerage Charges', 'Choice Auto Square off Charges']
     };

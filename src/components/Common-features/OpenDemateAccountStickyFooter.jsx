@@ -26,14 +26,27 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     var refercode = useRef('');
     var subrefercode = useRef('');
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
+    
     var source = useRef('');
     var otpSessionID = useRef('');
-    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1) || (window.location.pathname.indexOf('corporate-demat-account') > -1)||(window.location.pathname.indexOf('sip-calculator') > -1)||(window.location.pathname.indexOf('mutual-fund-calculator') > -1)||(window.location.pathname.indexOf('margin-calculator') > -1)||(window.location.pathname.indexOf('brokerage-calculator') > -1)||(window.location.pathname.indexOf('futures-and-options-margin-calculator') > -1)||(window.location.pathname.indexOf('commodity-margin-calculator') > -1)||(window.location.pathname.indexOf('forex-margin-calculator') > -1)) ? 'Best-Stock' : "Blog";
+    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1) || (window.location.pathname.indexOf('/corporate-demat-account') > -1)||(window.location.pathname.indexOf('sip-calculator') > -1)||(window.location.pathname.indexOf('mutual-fund-calculator') > -1)||(window.location.pathname.indexOf('margin-calculator') > -1)||(window.location.pathname.indexOf('brokerage-calculator') > -1)||(window.location.pathname.indexOf('futures-and-options-margin-calculator') > -1)||(window.location.pathname.indexOf('commodity-margin-calculator') > -1)||(window.location.pathname.indexOf('forex-margin-calculator') > -1)) ? 'Best-Stock' : "Blog";
 
     const UnlistBlog = (window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'yes' : "";
 
-    const additionalClass = ((window.location.pathname.includes('best-stocks-to-buy') > -1) || (window.location.pathname.includes('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.includes('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.includes('best-stocks-for-long-term-investment') > -1)||(window.location.pathname.includes('sip-calculator') > -1)||(window.location.pathname.indexOf('mutual-fund-calculator') > -1)||(window.location.pathname.indexOf('mutual-fund-calculator') > -1)||(window.location.pathname.indexOf('margin-calculator') > -1)||(window.location.pathname.indexOf('brokerage-calculator') > -1)||(window.location.pathname.indexOf('futures-and-options-margin-calculator') > -1)||(window.location.pathname.indexOf('commodity-margin-calculator') > -1)||(window.location.pathname.indexOf('forex-margin-calculator') > -1)) ? 'New_form_main' : '';
+    const additionalClass = ((window.location.pathname.includes('best-stocks-to-buy') > -1) || 
+    (window.location.pathname.includes('best-intraday-stocks-to-buy') > -1) || 
+    (window.location.pathname.includes('best-short-term-stocks-to-buy') > -1) || 
+    (window.location.pathname.includes('best-stocks-for-long-term-investment') > -1) ||
+    (window.location.pathname.includes('sip-calculator') > -1) ||
+    (window.location.pathname.includes('mutual-fund-calculator') > -1) ||
+    (window.location.pathname.includes('margin-calculator') > -1) ||
+    (window.location.pathname.includes('brokerage-calculator') > -1) ||
+    (window.location.pathname.includes('futures-and-options-margin-calculator') > -1) ||
+    (window.location.pathname.includes('commodity-margin-calculator') > -1) ||
+    (window.location.pathname.includes('forex-margin-calculator') > -1)) 
+    && (window.location.pathname.indexOf('corporate-demat-account') === -1) ? 'New_form_main' : ' ';
 
+  
     var otpLeadID = useRef('');
     var referLink = useRef('');
     const [captchaToken, setCaptchaToken] = useState('');
@@ -198,13 +211,13 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
             "sub_ref": subrefercode.current || null,
             /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
-            "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || null,
+            "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' :(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate': UTMCampaign.current || null,
             "utm_content": UTMContent.current || null,
             "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/', ''),
             // 'sidebar_seo_leads'
             "utm_medium": isBlog == "yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
+            "utm_source": isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' :(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate':  UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
