@@ -76,7 +76,18 @@ function BestStockcategory() {
       })
       .then(res => {
         if (res.Status == 'Success') {
+          if(checkurl == 'intraday'){
           IntraStocks(res.Response);
+
+          }else if(checkurl == 'all-stock'){
+            AllStocks(res.Response)
+          }
+          else if(checkurl == 'short-term'){
+            ShortTermStocks(res.Response)
+          }
+          else if(checkurl == 'long-term'){
+            LongTermStocks(res.Response)
+          }
           setData1(res.Response);
 
 
@@ -90,7 +101,7 @@ function BestStockcategory() {
 
   }
 
-  function AllStocks() {
+  function AllStocks(session) {
     setToggleState(0)
     setlist([]);
     storefile = '';
@@ -140,7 +151,7 @@ function BestStockcategory() {
           // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
           const payload = {
             'UserId': 'guest',
-            'SessionId': Data1,
+            'SessionId': session ? session:Data1 ,
             'MultipleTokens': tokens
           }
 
@@ -181,7 +192,7 @@ function BestStockcategory() {
   }
 
 
-  function LongTermStocks() {
+  function LongTermStocks(session) {
     setToggleState(3)
     setlist([]);
     tokens = '';
@@ -235,7 +246,7 @@ function BestStockcategory() {
           // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
           const payload = {
             'UserId': 'guest',
-            'SessionId': Data1,
+            'SessionId': session ? session:Data1,
             'MultipleTokens': tokens
           }
 
@@ -276,7 +287,7 @@ function BestStockcategory() {
       });
   }
 
-  function ShortTermStocks() {
+  function ShortTermStocks(session) {
     setToggleState(2)
     // console.log("change",toggleState)
     setlist([]);
@@ -330,7 +341,7 @@ function BestStockcategory() {
           // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
           const payload = {
             'UserId': 'guest',
-            'SessionId': Data1,
+            'SessionId': session ? session:Data1,
             'MultipleTokens': tokens
           }
 
@@ -482,6 +493,8 @@ function BestStockcategory() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
+      generateSessionId()
+
       checkurl == 'intraday' ? generateSessionId() :
         checkurl == 'short-term' ? ShortTermStocks() :
           checkurl == 'all-stock' ? AllStocks() :
