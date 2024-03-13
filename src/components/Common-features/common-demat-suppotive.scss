@@ -13,6 +13,7 @@
             line-height: 4.308rem;
             margin-bottom: 4rem;
             white-space: pre-line;
+
             .bold_text {
                 color: $yellowColor ;
             }
@@ -26,6 +27,13 @@
         }
 
         .list-item {
+            .mobile-img {
+                @media (max-width:$sm) {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
             @media (max-width:$md) {
                 display: flex;
                 flex-direction: row;
@@ -48,6 +56,12 @@
                 @media (max-width:$md) {
                     padding-left: 2rem;
                     padding-top: 0;
+                }
+
+                br {
+                    @media (max-width:$sm) {
+                       display: none;
+                    }
                 }
             }
         }

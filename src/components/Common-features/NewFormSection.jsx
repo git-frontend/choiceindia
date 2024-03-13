@@ -27,7 +27,7 @@ const NewFormSection = ({ sections }) => {
                                                     <span>
                                                         <img
                                                             src={imgSrc}
-                                                            className={'img-fluid'}
+                                                            className={'img-fluid mobile-img'}
                                                             width={'56'}
                                                             height={'56'}
                                                             alt={section.alt[i]}
