@@ -587,13 +587,14 @@ function NewDematAccountForm(props) {
                             <span className="bx-text">Free Research Advisory & Tools</span>
                         </li>
                         </ul>
-                            <span className="close-btn-mdl" onClick={() => {
+                        {window.innerWidth<=992 &&  <span className="close-btn-mdl" onClick={() => {
                                 props.setIsActive(false);
                                 props.openAccount.current.style.zIndex = 9999999999;
                                 setBlogPopUpForm('');
                                 setIsPopUp(false);
                                 props.blogPop(false);
-                        }}>&times;</span>
+                        }}>&times;</span>} 
+                           
                        </div>}
                         <Form>
                             <Form.Group className="mb-3 formgrp formgrp-new">
