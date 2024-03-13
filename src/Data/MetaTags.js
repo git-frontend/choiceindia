@@ -3,7 +3,7 @@ const meta_tags = {
   "services": { 'title': "Get Financial Services in India - Choice", 'lang': "en", 'content': 'Choice is the leading financial service provider in India that offers the best financial services such as stock market investing, wealth management, loans, insurance & tax advisory services etc.', "link": "https://choiceindia.com/services", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "https://choiceindia.com/": {
-    'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India', 'lang': "en", 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.`, 'link': "https://choiceindia.com/", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "", "faqscript": `<script type="application/ld+json">
+    'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India', 'lang': "en", 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.`, 'link': "https://choiceindia.com", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "", "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -59,7 +59,7 @@ const meta_tags = {
 
 
   "contact-us": { 'title': "Get In Touch with Choice’s Customer Support Team", 'lang': "en", 'content': "Get in touch with our Choice customer care team @ +91 88 2424 2424 or drop us a mail at care@choiceindia.com. Contact us or visit any of our branch offices across India.", "link": "https://choiceindia.com/contact-us", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
-
+  "blog/":{'title':"Choice Blog - Stay Updated with Stock Market Information"},
   "blog": { 'title': "Choice Blog - Stay Updated with Stock Market Information", 'lang': "en", 'content': "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice.", 'link': 'https://choiceindia.com/blog/', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "faq": { 'title': "Frequently Asked Questions | Choice", 'lang': "en", 'content': "Find FAQs related to our products, services, investment advisory, account opening, and more. Get answers to all your queries about the stock market at Choice.", "link": "https://choiceindia.com/faq", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
