@@ -15,7 +15,7 @@ const NewFormSection = ({ sections }) => {
                                 <div className="col-md-8" >
                                     <div className='row'>
                                         <div className='col-xl-12 col-md-12'>
-                                            <h3 className="best-stock-left-title" style={{ whiteSpace: 'pre-line' }}>
+                                            <h3 className="best-stock-left-title">
                                                 {section.title}
                                             </h3>
                                         </div>

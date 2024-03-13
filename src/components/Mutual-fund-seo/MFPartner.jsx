@@ -69,7 +69,7 @@ function MFPartner() {
                 </Slider>
               </div>
               <div className="mf-partner-explore-btn">
-                <Link to="/top-funds"><span className="btn-bg btn-bg-dark">Explore more</span></Link>
+                <Link to="/amc"><span className="btn-bg btn-bg-dark">Explore more</span></Link>
               </div>
             </div>
           </div>
