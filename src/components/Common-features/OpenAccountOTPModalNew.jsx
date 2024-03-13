@@ -13,7 +13,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
 
 
-function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick}) {
+function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick,setIsActive,openAccount,setBlogPopUpForm,blogPop}) {
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -99,7 +99,6 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     useEffect(() => {
         // setShow(() => true);
         if (window.location.pathname.includes('blog') === true) {
-            otpVerify.current.style.display = "flex";
             if (window.innerWidth <= 920) {
                 closeButton.current.style.display = "block";
             }
@@ -108,7 +107,6 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
             }
         }
         else {
-            otpVerify.current.style.display = "none";
             closeButton.current.style.display = "none";
         }
         generateRandomNumber();
@@ -425,12 +423,13 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                     <a href="javascript:void(0)" onClick={onClose} className="closebtn" >&times;</a>
                                 </div> */}
                     <div className="popup-sub-right">
-                                <div className="otp-ver-sec" ref={otpVerify}>
+                        {window.location.pathname.includes("blog") &&  <div className="otp-ver-sec" ref={otpVerify}>
                                 <div className="otp-circle">
                                     <img src={enterOtp} className="img-fluid" height={52} width={52}/>
 
                                 </div>
-                                </div>
+                                </div>}
+                               
                                 <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
                                     <div className="otpform-new" >
                                     {/* <div className="otpform-new  fade-in" > */}
@@ -502,7 +501,12 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                 </div>
-                                <span className="close-btn-mdl" ref={closeButton}>&times;</span>
+                    <span className="close-btn-mdl" ref={closeButton} onClick={() => {
+                        setIsActive(false);
+                        openAccount.current.style.zIndex = 9999999999;
+                        setBlogPopUpForm("");
+                        blogPop(false);
+                                }}>&times;</span>
                             </div>
                         </div>
                     {/* </div> */}

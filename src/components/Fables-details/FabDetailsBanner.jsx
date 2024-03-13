@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import Bannerimage from '../../assets/images/fabledetails/choice-blog-default.png';
 import ctaBanner from '../../assets/images/fable/cta-banner.png';
 import Free from '../../assets/images/fable/free.png';
@@ -24,7 +24,19 @@ function Fabdetailsbanner(props) {
     const blogpageUrl = window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1 ? 'yes' : '';
     const [linkage, setLinkage] = useState(['facebook', 'whatsapp', 'linkedin', 'twitter']);
     const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice";
+    const [popUp, setPopUp] = useState(false);
+    const [formMobile, setFormMobile] = useState('');
 
+    function blogPop(isPopUp) {
+    console.log("Flag " + isPopUp);
+    if (isPopUp) {
+        setFormMobile('');  
+        }
+    else {
+        setFormMobile('form-mobile');
+    }    
+    setPopUp(isPopUp);
+    }
 
 
     function shareiconLink(key) {
@@ -88,8 +100,16 @@ function Fabdetailsbanner(props) {
     //         </>
     //     );
     // }
+    const openAccountMobile = useRef("");
     const handleClick = (event) => {
-        setIsActive(current => !current);
+        // setIsActive(current => !current);
+            if (popUp) {
+            return;
+        }
+
+        openAccountMobile.current.style.zIndex = 0;
+        setIsActive(true); 
+
     };
     const [isActive, setIsActive] = useState();
     const [name, setName] = useState('hideform');
@@ -281,9 +301,9 @@ useEffect(() => {
                                                             {/* <DematFormCta /> */}
                                                             
                                                             <div className={name2}>
-                                                            <div className={"form-mobile form-mobile-flex " + (isActive ? 'p-hide' : 'p-show')}>
+                                                            <div className={`${formMobile} form-mobile-flex ` + (isActive ? 'p-hide' : 'p-show')}>
                                                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                            <NewDematAccountForm/>
+                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop}/>
                                                                 </GoogleReCaptchaProvider>
                                                            
                                                             <div className="stickyform formwrap d-flex justify-content-end ">
@@ -319,7 +339,7 @@ useEffect(() => {
 
 
                                         <div className={name}>
-                                        <div className="btn-fixed">
+                                        <div className="btn-fixed" ref={openAccountMobile}>
                                             <div className="open-account-mob" onClick={handleClick}>
                                                 <span className="sticy-contnet content">Open Free Demat Account in 5 Mins</span>
                                                 <span className="sticy-contnet icon">
