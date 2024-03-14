@@ -42,9 +42,9 @@ const meta_tags = {
 
   "investor-awareness": { 'title': "Investor Awareness - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/investor-awareness", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "investor-charter": { 'title': "Investor Charter - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/Investor-charter", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "investor-charter": { 'title': "Investor Charter - Choice India", 'lang': "en", 'content': "Choice India aims to conduct securities trading with integrity & adherence to regulations, promoting fairness & transparency to enhance investor wealth creation", 'link': "https://choiceindia.com/investor-charter", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "investor-complaints": { 'title': "Investor Complaints - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/Investor-complaints", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "investor-complaints": { 'title': "Investors Complaints - Choice India", 'lang': "en", 'content': "Complaints received from investors and the respective monthly and yearly disposal data.", 'link': "https://choiceindia.com/investor-complaints", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "terms-conditions": { 'title': "Terms and Conditions - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/terms-conditions", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
@@ -59,7 +59,7 @@ const meta_tags = {
 
 
   "contact-us": { 'title': "Get In Touch with Choice’s Customer Support Team", 'lang': "en", 'content': "Get in touch with our Choice customer care team @ +91 88 2424 2424 or drop us a mail at care@choiceindia.com. Contact us or visit any of our branch offices across India.", "link": "https://choiceindia.com/contact-us", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
-  "blog/":{'title':"Choice Blog - Stay Updated with Stock Market Information"},
+  "blog/":{'title':"Choice Blog - Stay Updated with Stock Market Information",'lang': "en",'content':"Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice.",'link':'https://choiceindia.com/blog/'},
   "blog": { 'title': "Choice Blog - Stay Updated with Stock Market Information", 'lang': "en", 'content': "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice.", 'link': 'https://choiceindia.com/blog/', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "faq": { 'title': "Frequently Asked Questions | Choice", 'lang': "en", 'content': "Find FAQs related to our products, services, investment advisory, account opening, and more. Get answers to all your queries about the stock market at Choice.", "link": "https://choiceindia.com/faq", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
@@ -253,7 +253,7 @@ const meta_tags = {
     ` },
 
   "open-free-demat-account": {
-    'title': "Open Demat Account - Free Demat Account Opening Online (No AMC*)", 'lang': "en", 'content': "Free Demat Account Opening Online - Open Demat Account in 5 Min at Choice. Zero AMC for First Year. Free Expert Research. Low DP Charges. Trade @ 2 Paisa.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "", "link4": "", "link5": "https://choiceindia.com/marathi/open-demat-account", "link6": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "", "href4": "", "href5": "mr-in", "href6": "x-default",
+    'title': "Open Demat Account - Free Demat Account Opening Online (No AMC*)", 'lang': "en", 'content': "Free Demat Account Opening Online - Open Demat Account in 5 Min at Choice. Zero AMC for First Year. Free Expert Research. Low DP Charges. Trade @ 2 Paisa.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3':"https://choiceindia.com/marathi/open-demat-account", "link4":"https://choiceindia.com/open-free-demat-account", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -563,7 +563,7 @@ const meta_tags = {
 
   "open-trading-account": {
     'title': "Open Trading Account Online for Free without AMC Charges - Choice", 'lang': "en", "content": "Open a trading account online for free without AMC charges at Choice. Enjoy low DP charges, the lowest intraday charges, and a zero account opening fee.",
-    "link": "https://choiceindia.com/open-trading-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "link": "https://choiceindia.com/open-trading-account", 'link1': "https://choiceindia.com/open-trading-account", 'link2': "https://choiceindia.com/hindi/trading-account", 'link3': "https://choiceindia.com/open-trading-account", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -2580,29 +2580,34 @@ const meta_tags = {
     "link":"https://choiceindia.com/merchant-investment-banking"
   },
    "track-record-page": {
-  "title":"",
+  "title":"Track Record-Choice India",
   "lang": "en",
-  "content": ""
+  "content":"We believe transparency and success should go hand in hand. Check out Choice's impeccable track record for yourself",
+  "link":"https://choiceindia.com/track-record-page"
   },
   "code-of-conduct": {
-    "title": "",
+    "title": "Code of Conduct - Choice India",
     "lang": "en",
-    "content":""
+    "content": "Go through our code of conduct page for comprehensive guidelines on ethical behavior, fostering a respectful and inclusive environment for all stakeholders.",
+    "link":"https://choiceindia.com/code-of-conduct"
   },
   "related-party-transaction": {
-   "title": "",
+   "title": "Related Party Transaction - Choice India",
     "lang": "en",
-    "content":""
+    "content": "Go through the disclosure of the related partys and their respective details.",
+    "link":"https://choiceindia.com/related-party-transaction"
   },
   "investor-presentation": {
-   "title": "",
+   "title": "Investor Presentation - Choice India",
     "lang": "en",
-    "content":""
+    "content": "Explore through the investor presentation and get to know about the company details all over.",
+    "link":"https://choiceindia.com/investor-presentation"
   },
   "closure-of-trading-window": {
-   "title": "",
+   "title": "Closure of Trading Window - Choice India",
     "lang": "en",
-    "content":""
+    "content": "Official letters reguarding the closure of trading window for the respective months and duration.",
+    "link":"https://choiceindia.com/closure-of-trading-window"
   },
   "bug-bounty-program": {
     "title": "Choice Bug Bounty",
@@ -2610,6 +2615,12 @@ const meta_tags = {
     'content': "Contribute for making Choice the most trusted investment platform.",
     "link": "https://choiceindia.com/bug-bounty-program"
   },
+  "government-advisory": {
+    "title": "Government advisory - Choice India",
+    "lang":"en",
+    "content": "Check out Choice India's government advisory services that provide end to end project management solutions to the government.",
+    "link":"https://choiceindia.com/government-advisory"
+  }
 
 }
 
