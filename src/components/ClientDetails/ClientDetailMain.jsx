@@ -14,7 +14,7 @@ function ClientDetailMain() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
-                            <h2 className="title">Update Client Details</h2>
+                            <h1 className="title">Update Client Details</h1>
 
                         </div>
                     </div>

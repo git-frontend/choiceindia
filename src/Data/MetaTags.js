@@ -33,29 +33,30 @@ const meta_tags = {
     'title': `Career At Choice | Work With India's Leading FinTech Company`, 'lang': "en", 'content': ` Work with Choice India's leading Fintech company. Visit us to know the current job openings.`, "link": "https://choiceindia.com/career", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": ""
   },
 
-  "news-announcement": { 'title': "News & Annoucement - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/news-announcement", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "news-announcement": { 'title': "News & Annoucement - Choice International Limited", 'lang': "en", 'content': "Stay informed with our latest news and announcements. Get updates on company developments and industry news with Choice India", 'link': "https://choiceindia.com/news-announcement", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
 
   "insurance": { 'title': "Best Insurance Broker in India - Get a Best Insurance Policy Online", 'lang': "en", 'content': "Get best insurance quotes online from the leading insurance broker in India. Choice helps you with choosing right insurance policy comparing with various insurance companies such as life insurance, car insurance, health insurance & travel insurance etc.", 'link': "https://choiceindia.com/insurance", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "equity-broking": { 'title': "Equity Broking Services - Invest in Stocks, Dervivatives, Commodities and Currencies", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/equity-broking", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "equity-broking": { 'title': "Equity Broking Services - Invest in Stocks, Dervivatives, Commodities and Currencies", 'lang': "en", 'content': "Experience seamless equity trading services with Choice India. Explore our platform and start investing in the stock market today.", 'link': "https://choiceindia.com/equity-broking", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "investor-awareness": { 'title': "Investor Awareness - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/investor-awareness", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "investor-awareness": { 'title': "Investor Awareness - Choice International Limited", 'lang': "en", 'content': "Explore investor awareness resources and stay updated with the market trends with Choice India. Explore the documents to empower your investing knowledge", 'link': "https://choiceindia.com/investor-awareness", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "investor-charter": { 'title': "Investor Charter - Choice India", 'lang': "en", 'content': "Choice India aims to conduct securities trading with integrity & adherence to regulations, promoting fairness & transparency to enhance investor wealth creation", 'link': "https://choiceindia.com/investor-charter", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "investor-complaints": { 'title': "Investors Complaints - Choice India", 'lang': "en", 'content': "Complaints received from investors and the respective monthly and yearly disposal data.", 'link': "https://choiceindia.com/investor-complaints", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "terms-conditions": { 'title': "Terms and Conditions - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/terms-conditions", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "terms-conditions": { 'title': "Terms and Conditions - Choice International Limited", 'lang': "en", 'content': "Read & Understand the terms and conditions that sets out the terms of a legally binding agreement between you and Choice India.", 'link': "https://choiceindia.com/terms-conditions", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "privacy-policy": { 'title': "Privacy Policy - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/privacy-policy", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "privacy-policy": { 'title': "Privacy Policy - Choice International Limited", 'lang': "en", 'content': "Learn how we handle your personal information responsibly with our comprehensive privacy policy. Protecting your privacy is our priority", 'link': "https://choiceindia.com/privacy-policy", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "disclaimer": { 'title': "Disclaimer - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/disclaimer", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "disclaimer": { 'title': "Disclaimer - Choice International Limited", 'lang': "en", 'content': "Read the disclaimer to understand the limitations and liabilities associated with using Choice India's services. Stay informed with all the details.", 'link': "https://choiceindia.com/disclaimer", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "cebpl-policies": { 'title': "CEBPL Policies - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/cebpl-policies", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "file-download": { 'title': "Download Demat Account Opening Form", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/file-download", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
-
+  "file-download": { 'title': "Download Demat Account Opening Form", 'lang': "en", 'content': "Access important documents and resources with ease. Download files related to investments and more from Choice India.", 'link': "https://choiceindia.com/file-download", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  
+  "emi-calculator":{'lang':"en","content":"Plan your finances easy and acurately with our EMI calculator. Calculate your emi amount with respect to the loan amount & make informed decisions with Choice"},
 
 
   "contact-us": { 'title': "Get In Touch with Choice’s Customer Support Team", 'lang': "en", 'content': "Get in touch with our Choice customer care team @ +91 88 2424 2424 or drop us a mail at care@choiceindia.com. Contact us or visit any of our branch offices across India.", "link": "https://choiceindia.com/contact-us", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
@@ -409,19 +410,19 @@ const meta_tags = {
 
   "investors": { 'title': "Choice International Limted's Quarterly Results, Corporate Annoucement", 'lang': "en", "content": "Stay tuned with us to know more about Choice International Limited's most recent happenings, including its quarterly earnings, corporate announcements, shareholding patterns, and AGM.", "link": "https://choiceindia.com/investors", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "client-details-update": { 'title': "Update Client Details - Change Your Email and Phone Number", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/client-details-update", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "client-details-update": { 'title': "Update Client Details - Change Your Email and Phone Number", 'lang': "en", 'content': "Update your client details at ease and ensure a smooth and secure service at Choice. We ensure the safety of your information.", 'link': "https://choiceindia.com/client-details-update", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "annual-report": { 'title': "Annual Report - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/annual-report", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "annual-report": { 'title': "Annual Report - Choice International Limited", 'lang': "en", 'content': "Review our annual performance and achievements. Access our comprehensive annual report for insights into Choice India's operations and yearly performance.", 'link': "https://choiceindia.com/annual-report", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "financial-info": { 'title': "Financial Information - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/financial-info", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "financial-info": { 'title': "Financial Information - Choice International Limited", 'lang': "en", 'content': "Gain insights into the financial performance of choice international ltd. Access financial statements and analyse the company's financial health.", 'link': "https://choiceindia.com/financial-info", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "news-media": { 'title': "News and Media - Choice", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/news-media", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "board-of-directors": { 'title': "Board Of Directors", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/board-of-directors", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "board-of-directors": { 'title': "Board Of Directors", 'lang': "en", 'content': "Meet our board of directors and leadership team. Learn about the expertise and vision driving Choice India's success", 'link': "https://choiceindia.com/board-of-directors", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "voting-results": { 'title': "Voting Results - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/voting-results", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "notices": { 'title': "Notices - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/notices" },
+  "notices": { 'title': "Notices - Choice International Limited", 'lang': "en", 'content': "Go through the important official notices and announcements. Access important updates and notifications associated with Choice.", 'link': "https://choiceindia.com/notices" },
 
   "code-conduct": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", 'lang': "en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
@@ -511,7 +512,7 @@ const meta_tags = {
 
   "corporate-governance": { 'title': "Corporate Goveranc - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/corporate-governance", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "share-holding-pattern": { 'title': "Share Holding Pattern - Choice International Limited", 'lang': "en", 'content': "", 'link': "https://choiceindia.com/share-holding-pattern", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "share-holding-pattern": { 'title': "Share Holding Pattern - Choice International Limited", 'lang': "en", 'content': "Gain insights into the shareholding structure of Choice. Explore the share holding pattern and the company's holdings at the current date.", 'link': "https://choiceindia.com/share-holding-pattern", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
 
 
@@ -1705,7 +1706,7 @@ const meta_tags = {
     `},
 
   "online-trading-app": {
-    'title': "Choice FinX Trading App - Best Indian Online Stock Trading App (Android & iOS)", 'lang': "en", "content": "Choice FinX is the best Indian trading app to trade in stocks, commodities, currencies, futures & options. Choice FinX online mobile trading app is available for Android & iPhone devices.", 'link': "https://choiceindia.com/online-trading-app", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    'title': "Choice FinX Trading App - Best Indian Online Stock Trading App (Android & iOS)", 'lang': "en", "content": "Choice FinX is the best Indian trading app to trade in stocks, commodities, currencies, futures & options. Choice FinX online mobile trading app is available for Android & iPhone devices.", 'link': "https://choiceindia.com/online-trading-app", 'link1': "https://choiceindia.com/online-trading-app", 'link2': "https://choiceindia.com/hindi/online-trading-app", 'link3': "https://choiceindia.com/online-trading-app", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -2038,7 +2039,7 @@ const meta_tags = {
   "mutual-fund-distributor": {
     'title': "Become a Mutual Fund Distributor with Choice", 'lang': "en",
     "content": "Become a Mutual Fund Distributor online in a few steps. Uncover how to become a MF distributor and empanel with Choice to start your mutual fund agent business today!",
-    "link": 'https://choiceindia.com/mutual-fund-distributor', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    "link": 'https://choiceindia.com/mutual-fund-distributor', "faqscript": ``, 'link1': "https://choiceindia.com/mutual-fund-distributor", 'link2': "https://choiceindia.com/hindi/mutual-fund-distributor", 'link3': "https://choiceindia.com/mutual-fund-distributor", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
   {
     "@context": "https://schema.org",
