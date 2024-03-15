@@ -59,7 +59,7 @@ const meta_tags = {
   "emi-calculator":{'lang':"en","content":"Plan your finances easy and acurately with our EMI calculator. Calculate your emi amount with respect to the loan amount & make informed decisions with Choice"},
 
 
-  "contact-us": { 'title': "Get In Touch with Choice’s Customer Support Team", 'lang': "en", 'content': "Get in touch with our Choice customer care team @ +91 88 2424 2424 or drop us a mail at care@choiceindia.com. Contact us or visit any of our branch offices across India.", "link": "https://choiceindia.com/contact-us", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "contact-us": { 'title': "Get In Touch with Choice’s Customer Support Team", 'lang': "en", 'content': "Get in touch with our Choice customer care team @ +91 88 2424 2424 or drop us a mail at care@choiceindia.com. Contact us or visit any of our nearest branch.", "link": "https://choiceindia.com/contact-us", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
   "blog/":{'title':"Choice Blog - Stay Updated with Stock Market Information",'lang': "en",'content':"Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice.",'link':'https://choiceindia.com/blog/'},
   "blog": { 'title': "Choice Blog - Stay Updated with Stock Market Information", 'lang': "en", 'content': "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice.", 'link': 'https://choiceindia.com/blog/', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
@@ -427,7 +427,7 @@ const meta_tags = {
   "code-conduct": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", 'lang': "en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "commodity-trading": {
-    'title': "Open Commodity Trading Account Online for Free at Choice", 'lang': "en", 'content': "Open a free online commodity trading account at Choice. Start trading commodities with Choice and benefit from low brokerage fees, low dp charges, free research assistance, and more.", 'link': "https://choiceindia.com/commodity-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "", "faqscript": `<script type="application/ld+json">
+    'title': "Open Commodity Trading Account Online for Free at Choice", 'lang': "en", 'content': "Open a free online commodity trading account. Start trading commodities with Choice and avail low brokerage, low dp charges, free research advice and more.", 'link': "https://choiceindia.com/commodity-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "", "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -498,9 +498,9 @@ const meta_tags = {
     </script>
     `},
 
-  "derivatives-trading": { "title": "Open Derivatives Trading Account Online for Free with Choice", 'lang': "en", "content": "Open a free online derivatives trading account to trade futures and options contracts while taking advantage of free research and advisory services and cheap brokerage and dp charges.", "link": "https://choiceindia.com/derivatives-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "derivatives-trading": { "title": "Open Derivatives Trading Account Online for Free with Choice", 'lang': "en", "content": "Open a free online derivatives trading account to trade futures and options contracts at ease. Start derivatives trading today with Choice.", "link": "https://choiceindia.com/derivatives-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "equity-stock-trading": { 'title': "Open Equity Trading Account Online for Free with No AMC Charges", 'lang': "en", 'content': "Open a free stock trading account online at Choice without paying AMC fees and take advantage of the minimal brokerage and dp fees, free research, and advice services.", 'link': "https://choiceindia.com/equity-stock-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "equity-stock-trading": { 'title': "Open Equity Trading Account Online for Free with No AMC Charges", 'lang': "en", 'content': "Open a free stock trading account online at Choice with 0 AMC fees and take advantage of the minimal brokerage and dp fees, free research, and advice services.", 'link': "https://choiceindia.com/equity-stock-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "currency-forex-trading": { 'title': "Open Currency / Forex Trading Account Online for Free at Choice", 'lang': "en", 'content': "Open a free currency or forex trading account online to take advantage of minimal brokerage fees, free research, and advisory services, as well as the first year being free of annual fees.", 'link': "https://choiceindia.com/currency-forex-trading", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
@@ -942,7 +942,7 @@ const meta_tags = {
     ` },
 
   "hindi/open-demat-trading-account": {
-    'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC", 'lang': "hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और फ्री एएमसी प्राप्त करें पहले वर्ष के लिए। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।", "link": "https://choiceindia.com/hindi/open-demat-trading-account", 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "https://choiceindia.com/marathi/open-demat-account", "link4": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default",
+    'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC", 'lang': "hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया, 15 मिनट के भीतर आपका खाता खोल देगी।", "link": "https://choiceindia.com/hindi/open-demat-trading-account", 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "https://choiceindia.com/marathi/open-demat-account", "link4": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1706,7 +1706,7 @@ const meta_tags = {
     `},
 
   "online-trading-app": {
-    'title': "Choice FinX Trading App - Best Indian Online Stock Trading App (Android & iOS)", 'lang': "en", "content": "Choice FinX is the best Indian trading app to trade in stocks, commodities, currencies, futures & options. Choice FinX online mobile trading app is available for Android & iPhone devices.", 'link': "https://choiceindia.com/online-trading-app", 'link1': "https://choiceindia.com/online-trading-app", 'link2': "https://choiceindia.com/hindi/online-trading-app", 'link3': "https://choiceindia.com/online-trading-app", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": "",
+    'title': "Choice FinX Trading App - Best Indian Online Stock Trading App (Android & iOS)", 'lang': "en", "content": "Simplify trading with the best online trading app in India. Trade across all segments using smart features with Choice FinX trading app. Download now!", 'link': "https://choiceindia.com/online-trading-app", 'link1': "https://choiceindia.com/online-trading-app", 'link2': "https://choiceindia.com/hindi/online-trading-app", 'link3': "https://choiceindia.com/online-trading-app", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1786,7 +1786,7 @@ const meta_tags = {
     `},
 
   "campaign/free-amc-demat-account": {
-    'title': "Open a Free AMC Demat Account + Zero Account Opening Fee", 'lang': "en", "content": "Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Up to 25X Margin Available, Free Research with 78% Success Ratio & more.",
+    'title': "Open a Free AMC Demat Account + Zero Account Opening Fee", 'lang': "en", "content": "Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Up to 25X Margin, Free Research with 78% Success Ratio & more.",
     "link": "https://choiceindia.com/campaign/free-amc-demat-account", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "", "faqscript": `<script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -2038,7 +2038,7 @@ const meta_tags = {
   "partner-assets/emitra": { 'title': "Basket Investing - चॉइस पार्टनर ई-मित्र की प्रचार सामग्री", 'lang': "en", "content": "", "link": 'https://choiceindia.com/partner-assests/emitra/', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
   "mutual-fund-distributor": {
     'title': "Become a Mutual Fund Distributor with Choice", 'lang': "en",
-    "content": "Become a Mutual Fund Distributor online in a few steps. Uncover how to become a MF distributor and empanel with Choice to start your mutual fund agent business today!",
+    "content": "Become a Mutual Fund Distributor online in few steps. Know how to become a MF distributor & empanel with Choice to start your mutual fund agent business today!",
     "link": 'https://choiceindia.com/mutual-fund-distributor', "faqscript": ``, 'link1': "https://choiceindia.com/mutual-fund-distributor", 'link2': "https://choiceindia.com/hindi/mutual-fund-distributor", 'link3': "https://choiceindia.com/mutual-fund-distributor", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
   {
@@ -2168,11 +2168,11 @@ const meta_tags = {
   },
 
   "best-stocks-to-buy": {
-    'title': "Best Stocks to Buy Today in India - Choice", 'lang': "en", "content": "Looking for the best stocks to buy today in India? Visit us to learn about the best stocks to invest in the Indian stock market across a diverse range of sectors.",
+    'title': "Best Stocks to Buy Today in India - Choice", 'lang': "en", "content": "Looking for the best stocks to buy today in India? Check our stock picks for the best stocks to invest today among a diverse range of stocks.",
     "link": "https://choiceindia.com/best-stocks-to-buy"
   },
   "best-intraday-stocks-to-buy": {
-    'title': "Best Intraday Stocks to Buy Today - Choice", 'lang': "en", "content": "Visit Choice to find today's best intraday stocks. The best intraday stocks to buy today were suggested by our team of experienced analysts. To find out the top intraday stocks right now, visit our website.",
+    'title': "Best Intraday Stocks to Buy Today - Choice", 'lang': "en", "content": "Trade only in the best intraday stocks selected by our experts to ensure successful trades. Explore the top day trading hot stocks for today.",
     "link": "https://choiceindia.com/best-intraday-stocks-to-buy"
   },
   "best-short-term-stocks-to-buy": {
@@ -2403,7 +2403,7 @@ const meta_tags = {
   "brokerage-calculator": {
     "title": "Brokerage Calculator - Calculate Intraday & Delivery Brokerage Charges",
     'lang': "en",
-    'content': "Brokerage Calculator - Calculate your intraday & delivery brokerage charges. Know your estimate brokerage fees for Futures & Options, Commodity, Currency at Choice.",
+    'content': "Use our brokerage calculator to verifyr intraday & delivery brokerage charges. Know your estimate brokerage fees for Futures & Options, Commodity and Currency",
     "link": "https://choiceindia.com/brokerage-calculator"
   },
   "oi-spurts": {
@@ -2565,7 +2565,7 @@ const meta_tags = {
   "corporate-demat-account": {
     "title": "Open a Corporate Demat Account Online with Choice",
     'lang': "en",
-    'content': "Open a Corporate Demat account with Choice. Avail features and benefits like advanced trading platform, low DP charges and dedicated relationship manager, free call for trade facility and more.",
+    'content': "Open a Corporate Demat account with Choice today! Accelerate your business investments with a secure corporate demat account at minimal charges.",
     "link": "https://choiceindia.com/corporate-demat-account"
   },
   "nach-cancellation": {
