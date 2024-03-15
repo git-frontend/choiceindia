@@ -4,7 +4,7 @@
 .form-section-all {
     background-color: $primary;
     padding: 4rem 0rem;
-
+    
     .best-stock-Newform {
         .best-stock-left-title {
             color: $whiteColor;
@@ -68,6 +68,24 @@
     }
 }
 
+    .best-stock-Newform{
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            height: 724px;
+            width: 921px;
+            right: -250px;
+            top: -372px;
+            background: url('../../assets/images/new-form-bg.png') top right no-repeat;
+            background-size: contain;
+        }
+            @media (max-width:$md) {
+                &:before {
+                    display: none;
+                }
+        }
 .sendopt {
     background-color: $bgcolordark;
 
@@ -260,7 +278,8 @@
             }
         }
     }
-}
+}}
+
 
 // .form-section-all {
 //     background-color: $primary;
