@@ -2,34 +2,87 @@
 @import '../../assets/css/common.scss';
 
 //shubham code
-@media (max-width:$md){
+
 .blog-pop-up-form{
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    left: 0;
-    overflow: auto;
-    padding: 1.5rem;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999999999 !important;
-    overflow: hidden;
+	@media (max-width:$md){
+		align-items: center;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		left: 0;
+		overflow: auto;
+		padding: 1.5rem;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 999999999 !important;
+		overflow: hidden;
+	}
 
-&::before{
-    background: rgba(62, 64, 79, 0.302);
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+	&::before{
+		@media (max-width:$md){
+		background: rgba(62, 64, 79, 0.302);
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		}
+	}
+	.demat-account-form{
+		position: relative !important;
+		@media (max-width:$md){
+			width: 100% !important;
+			padding: 2rem 1.25rem;
+		}
+		.sticy-card-blog-new{
+			&.sticy-card-blog-new{
+				@media (max-width:$md){
+					padding: 0;
+				}
+				.title-secnd{
+					@media (max-width:$md){
+						font-size: 1.714rem;
+						text-align: left;
+					}
+				}
+				ul{
+					li{
+						.bx-text{
+							@media (max-width:$md){
+								font-size: 1.143rem;
+							}
+						}
+					}
+				}
+				.close-btn-mdl{
+					display: none;
+					@media (max-width:$md) {
+						display: block;
+						color: #fff;
+						font-size: 2.5rem;
+						position: absolute;
+						right: 0.8rem;
+						text-decoration: none;
+						top: 0;
+						font-family: $font-family-poppins-regular;
+						font-weight: 400;
+					}
+			
+				}
+			}
+		}
+		.sub-formgrp{
+			&.cust-checkbox{
+				@media (max-width:$md) {
+					display: none;
+				}
+			}
+		}
+	}
 
-}
-
-}
 }
 
 .demat-account-form {
@@ -229,7 +282,7 @@
 		align-items: center;
 		flex-direction: column;
 		text-align: center;
-
+		row-gap: 2rem;
 		.thankyou-title {
 			color: $bluetextlight;
 			font-family: $font-family-poppins-semibold
@@ -1559,7 +1612,7 @@
 					}
 			}
 			.thank-content{
-				padding-top: 3rem;
+				// padding-top: 3rem;
 				@media (max-width:$md) {
 					text-align: left;
 					width: 70%;
