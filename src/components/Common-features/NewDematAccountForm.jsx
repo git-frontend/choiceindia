@@ -125,9 +125,10 @@ function NewDematAccountForm(props) {
     function addBLogPopUp() {
     if (window.innerWidth <= 992) {
         setBlogPopUpForm('blog-pop-up-form'); 
-        setIsPopUp(true);
+        //setIsPopUp(true);
         }
          props.blogPop(true);
+         setIsPopUp(true);
         
     }
 
@@ -682,7 +683,7 @@ function NewDematAccountForm(props) {
                 showOTP && !showThanku.showModal && (
                     <div className={`${blogPopUpForm}`}>
                       <div className={`demat-account-form demat-account-form-new ${blogFormOtp}`}>
-                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} setIsActive={props.setIsActive} openAccount={props.openAccount} setBlogPopUpForm={setBlogPopUpForm} blogPop={props.blogPop}></OpenAccountOTPModalNew>
+                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} setIsActive={props.setIsActive} openAccount={props.openAccount} setBlogPopUpForm={setBlogPopUpForm} blogPop={props.blogPop} isPopUp={isPopUp}></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
                         <Button variant="primary" type="submit" className={showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}></Button>

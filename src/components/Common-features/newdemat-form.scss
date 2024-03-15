@@ -1,8 +1,7 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
-//shubham code
-
+//blog lead form for pupup in responsive view
 .blog-pop-up-form{
 	@media (max-width:$md){
 		align-items: center;
@@ -74,10 +73,69 @@
 				}
 			}
 		}
-		.sub-formgrp{
-			&.cust-checkbox{
+		//popup otp section
+		&.blog-form-otp{
+			.exit-intent-sleekbox-popup{
 				@media (max-width:$md) {
-					display: none;
+					padding: 0;
+				}
+				.popup-sub-row{
+					.close-btn-mdl{
+						@media (max-width:$md) {
+							display: none;
+						}
+					}
+					.popup-sub-right{
+						.heading{
+							@media (max-width:$md) {
+								font-size: 1.714rem;
+							}
+						}
+						.btn-bg{
+							@media (max-width:$md) {
+								margin-bottom: 0;
+								margin-top: 1.5rem;
+							}
+						}
+						.otpform-new{
+							.otp-pd{
+								.pt-3{
+									@media (max-width:$md) {
+										padding: 0 !important;
+									}
+								}
+							}
+							.otp-mdl-input-chk{
+								.invalid-feedback{
+									@media (max-width:$md) {
+										font-size: 1rem;
+										text-align: left;
+									}
+								}
+							}
+						}
+						.otp-ver-sec{
+							@media (max-width:$md) {
+								padding: 1rem 0 2.5rem;
+							}
+						}
+					}
+				}
+			}
+		}
+		//thank you pupup
+		&.blog-thanku-popup{
+			.thank-you-msg{
+				@media (max-width:$md) {
+					row-gap: 3rem;
+				}
+				.thank-logo{
+					.blog-thnu-circle{
+						@media (max-width:$md) {
+							width: 10rem;
+							height: 10rem;
+						}
+					}
 				}
 			}
 		}
@@ -1036,7 +1094,7 @@
 	margin: 0;
 	// width: 100% !important;
 	max-width: 412px;
-	transition-duration: 0.6s;
+	// transition-duration: 0.6s;
 	.heading{
 		display: none;
 	}
@@ -1186,12 +1244,12 @@
 	border-radius: 14px;
 	margin: 0;
 	max-width: 412px;
-	transition-duration: 0.6s;
+	// transition-duration: 0.6s;
 	.slider-btns{
 		display: none;
 	}
 	.exit-intent-sleekbox-popup{
-		position: relative;
+		// position: relative;
 		.popup-sub-row{
 			.popup-sub-right{
 				width: 100%;
@@ -1213,7 +1271,7 @@
 						width: 6.75rem;
 						height: 6.75rem;
 						border-radius: 50%;
-						box-shadow: 0px 0px 0px 15px rgb(255 255 255 / 6%);
+						box-shadow: 0px 0px 0px 10px rgb(255 255 255 / 6%);
 					}
 				}
 				.otpform-new{
@@ -1265,7 +1323,7 @@
 	border-radius: 14px;
 	margin: 0;
 	max-width: 412px;
-	transition-duration: 0.6s;
+	// transition-duration: 0.6s;
 	.close-btn-mdl{
 		display: none;
 		@media (max-width:$md) {
@@ -1285,10 +1343,10 @@
 			align-items: center;
 			justify-content: center;
 			background-color: rgb(255 255 255 / 16%);
-			width: 6.75rem;
-			height: 6.75rem;
+			width: 12.375rem;
+			height: 12.375rem;
 			border-radius: 50%;
-			box-shadow: 0px 0px 0px 15px rgb(255 255 255 / 6%);
+			box-shadow: 0px 0px 0px 10px rgb(255 255 255 / 6%);
 		}
 		.thankyou-title{
 			color: $whiteColor;
@@ -1341,13 +1399,13 @@
 
 	.blog-lead-form{
 		@media (max-width:$md) {
+			position: relative;
 			border-radius: inherit;
 			padding: 1.5rem;
 			max-width: inherit !important;
 			width: 100% !important;
 		}
 		.sticy-card-blog-new{
-			position: relative;
 			@media (max-width:$md) {
 				padding: 1rem 0 1rem;
 			}
@@ -1388,7 +1446,7 @@
 			@media (max-width:$md) {
 				padding: 0;
 				display: flex;
-				align-items: center;
+				align-items: flex-start;
 				justify-content: space-between;
 				gap: 1rem;
 				box-shadow: inherit;
@@ -1475,7 +1533,9 @@
 							width: 80%;
 						}
 						@media (max-width:$sm) {
-							font-size: 1.35rem;
+							font-size: 1.357rem;
+							font-weight: 600;
+    						font-family: $font-family-poppins-semibold;
 						}
 					}
 					.otpform-new{
@@ -1595,7 +1655,7 @@
 
 			.thank-you-msg{
 				@media (max-width:$md) {
-					min-height: 10rem;
+					min-height: inherit;
 					flex-direction: inherit;
 					justify-content: space-between;
 				}

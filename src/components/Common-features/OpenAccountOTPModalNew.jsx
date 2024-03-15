@@ -13,7 +13,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
 
 
-function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick,setIsActive,openAccount,setBlogPopUpForm,blogPop}) {
+function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick,setIsActive,openAccount,setBlogPopUpForm,blogPop,isPopUp}) {
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -98,12 +98,10 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
     useEffect(() => {
         // setShow(() => true);
-        if (window.location.pathname.includes('blog') === true) {
-            if (window.innerWidth <= 920) {
+        console.log("Pop up "+isPopUp);
+        if (window.location.pathname.includes('blog') === true && !isPopUp) {
+            if (window.innerWidth <= 992) {
                 closeButton.current.style.display = "block";
-            }
-            else {
-                closeButton.current.style.display = "none";
             }
         }
         else {
