@@ -717,13 +717,16 @@
         background: $pricolor;
         justify-content: space-between;
         color: $whiteColor;
-        font-size: 1.429rem;
         align-items: center;
         padding: 1rem;
         text-align: left;
         .sticy-contnet{
             @media (max-width:$md) {
             width: 50%;
+            font-size: 1.429rem;
+            color: $whiteColor;
+            font-family: $font-family-poppins-semibold;
+            font-weight: 600;
             }
             &.icon{
                 @media (max-width:$md) {
