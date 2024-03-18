@@ -130,11 +130,13 @@
         margin-left: 1%;
         padding: 1.923rem;
         margin-bottom: 2.462rem;
-        box-shadow: 0 6px 14px rgba(0,0,0,0.16);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+
         @media (max-width: $sm) {
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
             // width: 98%;
         }
+
         .top-section {
             display: flex;
             padding-bottom: 0.313rem;
@@ -386,7 +388,7 @@
 
                 @media (max-width:$md) {
                     background-color: $whiteColor;
-                    
+
                 }
             }
 
@@ -567,33 +569,36 @@
 //     }
 
 .beststockres {
-    
-   
 
 
-    .api_errornew{
+
+
+    .api_errornew {
         text-align: left;
-        
-            .btn-bg-dark {
+
+        .btn-bg-dark {
+            @media (max-width: $md) {
+                width: 100%;
+
+            }
+
+            &:hover {
                 @media (max-width: $md) {
-                   width: 100%;
-        
+                    background-color: $primary !important;
+                    color: $whiteColor !important;
+
                 }
-                &:hover{
-                    @media (max-width: $md) {
-                        background-color:$primary !important ;
-                        color: $whiteColor !important;
-             
-                     }   
-                }
-           
+            }
+
         }
-        .api-text-danger{
+
+        .api-text-danger {
             max-width: 200px;
-           
+
             @media (max-width: $md) {
                 max-width: 100%;
             }
         }
-    } 
+    }
 }
+

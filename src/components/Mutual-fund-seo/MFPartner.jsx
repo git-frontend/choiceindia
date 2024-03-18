@@ -7,7 +7,7 @@ import img2 from '../../assets/images/mutual-funds-investment/icici-prudential-m
 import img3 from '../../assets/images/mutual-funds-investment/sbi-mutual-fund.webp'
 import img4 from '../../assets/images/mutual-funds-investment/birla-sun-life-mutual-fund.webp'
 import img5 from '../../assets/images/mutual-funds-investment/kotak-mutual-fund.webp'
-
+import { Link } from "react-router-dom";
 import LazyLoader from '../Common-features/LazyLoader';
 
 function MFPartner() {
@@ -39,11 +39,11 @@ function MFPartner() {
       },
     ],
   };
- 
+
 
   return (
     <div>
-      
+
       <section className="mf-partner">
         <div className="container">
           <div className="row">
@@ -51,27 +51,30 @@ function MFPartner() {
               <h2 className="title-first">Our Partner mutual fund houses</h2>
               <div className="">
                 <Slider {...settings} className="partner-slider">
-                    <a className="part-item" href="/amc/hdfc-mutual-fund">
-                      <LazyLoader src={img1} alt={"HDFC Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
-                    </a>
-                    <a className="part-item" href="/amc/icici-prudential-mutual-fund">
-                      <LazyLoader src={img2} alt={"ICICI Prudential Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
-                    </a>
-                    <a className="part-item" href="/amc/sbi-mutual-fund">
-                      <LazyLoader src={img3} alt={"SBI Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
-                    </a>
-                    <a className="part-item" href="/amc/aditya-birla-sun-life-mutual-fund">
-                      <LazyLoader src={img4} alt={"Birla Sun Life Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
-                    </a>
-                    <a className="part-item" href="/amc/kotak-mahindra-mutual-fund">
-                      <LazyLoader src={img5} alt={"Kotak Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
-                    </a>
+                  <a className="part-item" href="/amc/hdfc-mutual-fund">
+                    <LazyLoader src={img1} alt={"HDFC Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
+                  </a>
+                  <a className="part-item" href="/amc/icici-prudential-mutual-fund">
+                    <LazyLoader src={img2} alt={"ICICI Prudential Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
+                  </a>
+                  <a className="part-item" href="/amc/sbi-mutual-fund">
+                    <LazyLoader src={img3} alt={"SBI Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
+                  </a>
+                  <a className="part-item" href="/amc/aditya-birla-sun-life-mutual-fund">
+                    <LazyLoader src={img4} alt={"Birla Sun Life Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
+                  </a>
+                  <a className="part-item" href="/amc/kotak-mahindra-mutual-fund">
+                    <LazyLoader src={img5} alt={"Kotak Mutual Fund"} className={"img-fluid img-hover"} width={"250"} height={"150"} />
+                  </a>
                 </Slider>
+              </div>
+              <div className="mf-partner-explore-btn">
+                <Link to="/amc"><span className="btn-bg btn-bg-dark">Explore more</span></Link>
               </div>
             </div>
           </div>
-          
-        </div>  
+
+        </div>
       </section>
 
     </div>

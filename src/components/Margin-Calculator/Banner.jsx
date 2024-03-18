@@ -1,10 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import rest from "../../Services/rest";
+import NewFormSection from '../Common-features/NewFormSection';
 import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import { Accordion } from "react-bootstrap";
 import { Link, useLocation } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import "../Common-features/common-demat-suppotive.scss";
+import FreeAmc from "../../assets/images/brokerage-calculator/Free_AMC_for_First_Year.svg";
+import LowDP from "../../assets/images/brokerage-calculator/Low_DP_charges.svg";
+import  NoAutoSquare from "../../assets/images/brokerage-calculator/No-Auto-Square.svg";
+import FreeResearch from "../../assets/images/brokerage-calculator/Free_Research_Advisory.svg";
 function Banner() {
     const [toggleState, setToggleState] = useState(1);
     const toggleTab = (index) => {
@@ -553,7 +559,15 @@ function Banner() {
         }
     };
 
-
+    const sections = [
+        {
+          title:['Open a',<span className="bold_text"> Free </span>, 'Demat\n Account in', <span className="bold_text"> 5 Mins.</span>],
+          images: [FreeAmc,FreeResearch, LowDP, NoAutoSquare,],
+          subtitle: ['Free AMC for First Year', 'Free Research Advisory', 'Low DP Charges (₹ 10)','No Auto Square Off Charges'],
+          alt:['Demat account yearly AMC','open demat account with research advisory','DP Charges after Demat Account Opening','Free Demat Auto square off charges']
+        },
+       
+      ];
 
     return (
         <>
@@ -699,7 +713,7 @@ function Banner() {
                                                                 }}
                                                                 required
                                                             />
-                                                            
+
 
                                                             {(!marginConfig.qty || marginConfig.qty < 1) ? (
                                                                 <p className="animate error marginpara">
@@ -739,7 +753,7 @@ function Banner() {
                                                             <div className='button-sec'>
                                                                 <div className='btn-items'>
                                                                     <Button className="btn-add btn btn-primary" onClick={() => addResetContract(true)}
-                                                                    disabled={marginConfig.marketLot < 1 || marginConfig.qty < 1}
+                                                                        disabled={marginConfig.marketLot < 1 || marginConfig.qty < 1}
                                                                     >Add</Button>
                                                                 </div>
                                                                 <div className='btn-items'>
@@ -937,7 +951,8 @@ function Banner() {
                     </div>
                 </div>
             </section>
-            <OpenFreeDematAccount />
+            <NewFormSection sections={sections} />
+            {/* <OpenFreeDematAccount /> */}
             <section className='more-content'>
                 <div className='container'>
                     {
