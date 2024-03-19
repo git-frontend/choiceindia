@@ -11,8 +11,8 @@ function InvestorComplaintsMain() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title">Investor Complaints</h2>
-
+                            <h1 className="title">Investor Complaints</h1>
+                          
                         </div>
                     </div>
                     <div className="row quicklinkswrap mb-5">
