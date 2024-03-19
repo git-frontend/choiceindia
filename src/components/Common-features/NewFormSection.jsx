@@ -11,7 +11,7 @@ const NewFormSection = ({ sections }) => {
                 <div className="container">
                     <div className="best-stock-Newform">
                         {sections.map((section, index) => (
-                            <div key={index} className='row align-items-center'>
+                            <div key={index} className='row align-items-center position-relative'>
                                 <div className="col-md-8" >
                                     <div className='row'>
                                         <div className='col-xl-12 col-md-12'>
