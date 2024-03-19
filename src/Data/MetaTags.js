@@ -46,6 +46,8 @@ const meta_tags = {
 
   "investor-complaints": { 'title': "Investors Complaints - Choice India", 'lang': "en", 'content': "Complaints received from investors and the respective monthly and yearly disposal data.", 'link': "https://choiceindia.com/investor-complaints", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
+  "Investor-complaints": { 'title': "Investors Complaints - Choice India", 'lang': "en", 'content': "Complaints received from investors and the respective monthly and yearly disposal data.", 'link': "https://choiceindia.com/investor-complaints", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+
   "terms-conditions": { 'title': "Terms and Conditions - Choice International Limited", 'lang': "en", 'content': "Read & Understand the terms and conditions that sets out the terms of a legally binding agreement between you and Choice India.", 'link': "https://choiceindia.com/terms-conditions", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "privacy-policy": { 'title': "Privacy Policy - Choice International Limited", 'lang': "en", 'content': "Learn how we handle your personal information responsibly with our comprehensive privacy policy. Protecting your privacy is our priority", 'link': "https://choiceindia.com/privacy-policy", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
