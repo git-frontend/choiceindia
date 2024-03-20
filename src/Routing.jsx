@@ -8,6 +8,7 @@ import OpentoTop from './components/Common-features/OpentoTop';
 import '../src/assets/css/common.scss';
 import Home from './components/home-page/Home';
 import CampaignHeader from './components/Contact/CampaignHeader';
+import Under25Header from './components/Under-25/Under25Header';
 import CampaignFooter from './components/Common-features/CampaignFooter';
 import AboutUs from './components/About-us/AboutUs';
 import { NavLink } from 'react-router-dom';
@@ -200,6 +201,7 @@ const LazyAMCDetails =React.lazy(()=> import('./components/AMC-Details/AMCDetail
 const LazyELSSDetails =React.lazy(()=> import('./components/ELSS-MF-Details/ELSSDetails'));
 const LazyCorporateDematAc =React.lazy(()=> import('./components/Corporate-Demat-Account/CorporateDematAc'));
 const LazyBugBountyProgram =React.lazy(()=> import('./components/Bug-bounty-program/BugBountyProgram'));
+const LazyUnder25 =React.lazy(()=> import('./components/Under-25/Under25'));
 
 function Routing() {
 
@@ -211,8 +213,24 @@ function Routing() {
                 <Remo></Remo>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") && window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1   && window.location.pathname.indexOf("/campaign/fno-trading") === -1 && window.location.pathname.indexOf("/campaign/intraday-trading") === -1)  ? <Header /> : <CampaignHeader />}
-               
+                {window.location.pathname.indexOf("/campaign/sub-broker") === -1 &&
+window.location.pathname.indexOf("/campaign/trading-strategies") === -1 &&
+window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 &&
+window.location.pathname.indexOf("/campaign/commodity-trading") === -1 &&
+window.location.pathname.indexOf("/campaign/forex-trading") === -1 &&
+window.location.pathname.indexOf("/campaign/free-demat-account") === -1 &&
+window.location.pathname.indexOf("/campaign/futures-options-trading") === -1 &&
+window.location.pathname.indexOf("/campaign/technical-analysis") === -1 &&
+window.location.pathname.indexOf("/campaign/open-demat-account") === -1 &&
+window.location.pathname.indexOf("/campaign/free-amc-demat-account") === -1 &&
+window.location.pathname.indexOf("/partner-assests/emitra") === -1 &&
+window.location.pathname.indexOf("/intraday-charges") === -1 &&
+window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1 &&
+window.location.pathname.indexOf("/campaign/fno-trading") === -1 &&
+window.location.pathname.indexOf("/campaign/intraday-trading") === -1 ?
+  (window.location.pathname.indexOf("/under-25") !== -1 ? <Under25Header /> : <Header />)
+  : <CampaignHeader />}
+            {/* {(window.location.pathname.indexOf("/under-25") === -1)  ? <Header /> : <Under25Header />} */}
                 {/* <Header /> */}
                 <div className={ (window.location.pathname.indexOf("/assisted-order-flow") === -1) ? 'App-Body' : 'assist-body'}>
                     <Routes>
@@ -1050,6 +1068,11 @@ function Routing() {
                          <Route exact path='/bug-bounty-program' element={
                             <React.Suspense>
                                  < LazyBugBountyProgram />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/under-25' element={
+                            <React.Suspense>
+                                 < LazyUnder25 />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />

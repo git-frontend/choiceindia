@@ -1,0 +1,91 @@
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+
+.App-Body{
+    margin-top: inherit;
+}
+.Header{
+    .main-header{
+        &.under-25-header{
+            background: #6eadcd;
+            box-shadow: inherit;
+            .navbar{
+                padding: 0;
+                .nav-header{
+                    >li{
+                        .nav-link{
+                            color: $whiteColor;
+                            font-family: $font-family-poppins-regular;
+                            font-weight: 400;
+                            font-size: 1.143rem;
+                        }
+                        &.get-btn-outline{
+                            border: 1px solid $whiteColor;
+                            border-radius: 12px;
+                            color: $whiteColor;
+                            text-align: center;
+                            a{
+                                padding: 1rem 2rem;
+                                &:hover{
+                                    &::before{
+                                        display: none !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .service-section{
+       
+                        //opacity: 0;
+                        #navbarScrollingDropdown{
+                            &::before{
+                                opacity: 0; 
+                            }
+                            color: transparent !important;
+                            &::after{
+                                color: $whiteColor;
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+    }
+}
+.banner-sec{
+    .ban-img{
+        height: auto;
+        width: 100%;
+    } 
+}
+.pay-only-order{
+    padding: 8rem 0;
+    position: relative;
+            .pay-order-img{
+            position: relative;
+            &::before{
+                background: url(../../assets/images/under-25/seven-order.png) no-repeat;
+                background-size: contain;
+                content: "";
+                display: block;
+                height: 17rem;
+                right: -26%;
+                position: absolute;
+                top: -17%;
+                width: 25rem;
+                z-index: 1;
+            }
+            &::after{
+                background: url(../../assets/images/under-25/market-value.png) no-repeat;
+                background-size: contain;
+                bottom: -12%;
+                content: "";
+                display: block;
+                height: 13rem;
+                position: absolute;
+                left: -13%;
+                width: 25rem;
+                z-index: 1;
+            }
+           }
+}
