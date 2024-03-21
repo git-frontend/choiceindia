@@ -6,14 +6,17 @@ function PayOnlyOrder() {
     <>
         <section className='pay-only-order'>
             <div className='container'>
-                <div className='row'>
-                    <div className='col-md-6'>
+                <div className='pay-order'>
+                    <div className='img-sec'>
                         <div className='pay-order-img'>
                             <img src={PayOrder} alt="under 25" height={591} width={549} className="img-fluid"/>
                         </div>
                     </div>
-                    <div className='col-md-6'>
-                        <div></div>
+                    <div className='content-sec'>
+                        <div className='caption'>
+                            <h3>Pay only ₹7/order.</h3>
+                            <p>Compared to ₹20/order elsewhere, save a flat 65% on brokerage with Choice FinX.</p>
+                        </div>
                     </div>
                 </div>
             </div>

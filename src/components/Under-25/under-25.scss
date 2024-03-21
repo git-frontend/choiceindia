@@ -59,33 +59,83 @@
     } 
 }
 .pay-only-order{
-    padding: 8rem 0;
+    padding: 12rem 0 10rem;
     position: relative;
+    .pay-order{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .img-sec{
+            width: 50%;
             .pay-order-img{
-            position: relative;
-            &::before{
-                background: url(../../assets/images/under-25/seven-order.png) no-repeat;
-                background-size: contain;
-                content: "";
-                display: block;
-                height: 17rem;
-                right: -26%;
-                position: absolute;
-                top: -17%;
-                width: 25rem;
-                z-index: 1;
+                position: relative;
+                img{
+                    width: 100%;
+                }
+                &::before{
+                    background: url(../../assets/images/under-25/seven-order.webp) no-repeat;
+                    background-size: contain;
+                    content: "";
+                    display: block;
+                    height: 17rem;
+                    right: -17rem;
+                    position: absolute;
+                    top: -9rem;
+                    width: 25rem;
+                    z-index: 1;
+                }
+                &::after{
+                    background: url(../../assets/images/under-25/market-value.webp) no-repeat;
+                    background-size: contain;
+                    bottom: -6rem;
+                    content: "";
+                    display: block;
+                    height: 13rem;
+                    position: absolute;
+                    left: -7rem;
+                    width: 25rem;
+                    z-index: 1;
+                }
+               }
+        }
+        .content-sec{
+            width: 40%;
+            .caption{
+                h3{
+                    font-size: 3.857rem;
+                    font-family: $font-family-poppins-semibold;
+                }
+                p{
+                    font-size: 1.857rem;
+                    line-height: 1.5;
+                    font-family: $font-family-poppins-regular;
+                    padding: 2rem 5rem 0 0;
+                }
             }
-            &::after{
-                background: url(../../assets/images/under-25/market-value.png) no-repeat;
-                background-size: contain;
-                bottom: -12%;
-                content: "";
-                display: block;
-                height: 13rem;
-                position: absolute;
-                left: -13%;
-                width: 25rem;
-                z-index: 1;
-            }
-           }
+        }
+        }
+    }
+.financial-needs-sec{
+    padding: 8rem 0;
+    .heading-sec{
+        text-align: center;
+        .avtar-sec{
+            margin-bottom: 1rem;
+        }
+    }
+    .name-stocks{
+        position: relative;
+        .stocks-banner{
+            width: 100%;
+        }
+        .banner-caption{
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            z-index: 9;
+        }
+    }
 }
+           
