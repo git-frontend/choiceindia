@@ -12,7 +12,7 @@ function OneAcFinancialNeeds() {
                         <div className='avtar-sec'>
                             <img src={Avtar} alt='Avtar' width={141} height={59} className='img-fluid' />
                         </div>
-                        <h2 className='title-secnd'>One account for all your <br/>financial needs.</h2>
+                        <h2>One account for all your <br/>financial needs.</h2>
                     </div>
                     <div className='name-stocks'>
                         <img src={stocks} alt='You name the stocks' height={621} width={1301} className='img-fluid stocks-banner' />
