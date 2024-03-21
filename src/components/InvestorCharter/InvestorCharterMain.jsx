@@ -62,7 +62,7 @@ function InvestorCharterMain() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
-                            <h2 className="title">Investor Charter</h2>
+                            <h1 className="title">Investor Charter</h1>
 
                         </div>
                     </div>

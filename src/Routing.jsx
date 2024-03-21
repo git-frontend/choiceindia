@@ -514,7 +514,7 @@ function Routing() {
                                 < LazyPrivacyPolicy />
                             </React.Suspense>
                         } />
-                        <Route exact path='/Investor-complaints' element={
+                        <Route exact path='/investor-complaints' element={
                             <React.Suspense>
                                 < LazyInvestorcomplaints />
                             </React.Suspense>

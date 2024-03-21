@@ -4,7 +4,7 @@
 .Corporate-main {
     .corporate-banner {
         margin-top: 12rem;
-        margin-bottom: 0;
+        margin-bottom: 8rem;
         overflow: hidden;
         @media (max-width:$sm) {
             margin-top: 10rem;
@@ -19,10 +19,25 @@
         }
         .corporate-banner-headings {
             position: relative;
-            z-index: 99;
+            &::after{
+                content: '';
+                background: url('../../assets/images/Corporate-Demat-Account/bg-arrow.webp') no-repeat;
+                display: block;
+                background-size: contain;
+                position: absolute;
+                height: 93.27px;
+                width: 230.62px;
+                right: -160px;
+                top: 105px;
+                @media (max-width:$md) {
+                   display: none;
+                }
+                
+            }
+            // z-index: 99;
             @media (max-width:$md) {
                 text-align: center;
-                padding-bottom: 5rem;
+                // padding-bottom: 5rem;
             }
             @media (max-width:$sm) {
                 text-align: left;
@@ -32,7 +47,7 @@
                 font-family: $font-family-poppins-semibold;
                 font-size: 2rem;
                 line-height: 3;
-                color: $darkblack;
+                color: $bgcolor-blue;
                 margin: 0;
 
                 @media (max-width:$md) {
@@ -85,7 +100,7 @@
                 font-size: 1.846rem;
                 line-height: 1.4;
                 color: $darkblack;
-                font-family: $font-family-poppins-regular;
+                font-family: $font-family-poppins-medium;
                 margin: 5rem 0rem;
 
                 @media (max-width:$md) {

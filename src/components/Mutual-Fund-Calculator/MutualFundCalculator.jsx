@@ -6,10 +6,12 @@ import "./mutual-fund-calculator.scss";
 import Banner from "./Banner";
 import { useState,useEffect} from "react";
 import meta_tags from "../../Data/MetaTags";
-import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import MoreContent from "./MoreContent";
-import MutualFaq from "./MutualFaq";
-
+import MutualFaq from "./MutualFaq"
+import Readymade_Baskets from '../../assets/images/sip-calculator/Readymade_Baskets.svg';
+import Goal_Based_Investment from '../../assets/images/sip-calculator/Goal_Based_Investment.svg';
+import Choice_Rated_Schemes from '../../assets/images/sip-calculator/Choice_Rated_Schemes.svg';
+import NewFormSection from '../Common-features/NewFormSection';
 function MutualFundCalculator() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -34,10 +36,20 @@ function MutualFundCalculator() {
       }
     }
   }, [rendercount])
+  const sections = [
+    {
+      title:['Start investing in \n', <span className="bold_text">Mutual Funds</span>, ' Now!'],
+      images: [Readymade_Baskets, Goal_Based_Investment, Choice_Rated_Schemes],
+      subtitle: ['Readymade Baskets', 'Goal Based Investment', 'Choice Rated Schemes'],
+      alt:['Mutual Fund Baskets by Choice','Mutual Fund Goal based Investment','Choice Rated Mutual Fund Schemes']
+    },
+   
+  ];
   return (
     <div>
         <Banner />
-        <OpenFreeDematAccount/>
+        {/* <OpenFreeDematAccount/> */}
+        <NewFormSection sections={sections} />
         <MoreContent/>
         <MutualFaq/>
     </div>

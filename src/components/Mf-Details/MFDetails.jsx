@@ -1315,7 +1315,7 @@ function MFTopFunds() {
                                                 ) : (
                                                     <div className="accordion" style={{ display: topHoldingsResponseObject.length === 0 && !showDropdownLoader ? 'block' : 'none' }}>
                                                         <div className="col-md-4 col-9 m-auto">
-                                                            <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" />
+                                                            {/* <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" /> */}
                                                         </div>
                                                     </div>
                                                 )}
@@ -1353,7 +1353,7 @@ function MFTopFunds() {
                                                 <div className="col-md-6 col-9 m-auto">
                                                     <p>Data Not Found</p>
                                                     <div className="col-md-4 col-9 m-auto">
-                                                        <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" />
+                                                        {/* <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" /> */}
                                                     </div>
                                                 </div>
                                             </div>

@@ -2,6 +2,7 @@
 // import React from 'react';
 import React, { useState, useEffect } from "react";
 import './emi-calculator.scss';
+import meta_tags from '../../Data/MetaTags';
 
 function EmiCalculator() {
     const [loanAmount, setLoanAmount] = useState(50000);
@@ -11,8 +12,12 @@ function EmiCalculator() {
     const [errorMessages, setErrorMessages] = useState({loanAmount: '',interestRate: '',tenure: ''});
     useEffect(() => {
         calculateEmi();
-    },[loanAmount,interestRate,tenure])
-
+    }, [loanAmount, interestRate, tenure])
+    
+    useEffect(() => {
+    document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+    },[])
+        
     // Calculate EMi 
     const calculateEmi = () => {
         const errors = {

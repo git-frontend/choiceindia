@@ -54,7 +54,7 @@ function CEBPLPoliciesMain() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
-                            <h2 className="title">CEBPL Policies</h2>
+                            <h1 className="title">CEBPL Policies</h1>
 
                         </div>
                     </div>

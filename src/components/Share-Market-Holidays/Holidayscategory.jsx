@@ -1,9 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import NewFormSection from '../Common-features/NewFormSection';
 import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import {
   useLocation,
@@ -14,11 +13,12 @@ import bseholidays from "../../assets/images/share-market-holidays/pdf/bse-holid
 import mcxncdexholidays from "../../assets/images/share-market-holidays/pdf/mcx-ncdex-holidays-2024.pdf";
 import { FaRegFilePdf } from 'react-icons/fa';
 import Dropdown from 'react-bootstrap/Dropdown';
-
 import { useEffect } from "react";
 import holidaylist from '../../Data/StockMarketHolidays';
-
-
+import FreeAmc from "../../assets/images/share-market-holidays/Free-Account-Opening.svg";
+import LowDP from "../../assets/images/share-market-holidays/Free-Expert-Research.svg";
+import NoAutoSquare from "../../assets/images/share-market-holidays/Low-DP-charges.svg";
+import FreeResearch from "../../assets/images/share-market-holidays/Zero-Auto-Square.svg";
 function Holidayscategory() {
 
 
@@ -183,7 +183,18 @@ function Holidayscategory() {
 
 
 
-
+  const sections = [
+    {
+      title: [
+        'Open a ',<span className="bold_text"> Free Demat Account </span>,'\n ',
+        '+ Free 1st Year AMC'
+      ],
+      images: [FreeAmc, LowDP, NoAutoSquare,FreeResearch],
+      subtitle: ['Free Account Opening', 'Free Expert Research', 'Low DP \nCharges','Zero AMC For First Year'],
+      alt:['Open Demat Account with Choice','Stock Research by Choice','DP Charges after Demat Account Opening','AMC Charges at Choice']
+    },
+   
+  ];
 
 
 
@@ -617,9 +628,7 @@ function Holidayscategory() {
                 </div>
               </div>
             </section>
-            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
-              <OpenDemateAccountStickyFooter />
-            </GoogleReCaptchaProvider>
+            <NewFormSection sections={sections} />
             <section className="readmoresection holiday-readmore">
               <div className="container">
 

@@ -55,7 +55,7 @@ function InvestorAwarenessMain() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
-                            <h2 className="title">Investor Awareness</h2>
+                            <h1 className="title">Investor Awareness</h1>
 
                         </div>
                     </div>
