@@ -6,7 +6,7 @@ $font-family-satoshi-light: 'Satoshi-Light', sans-serif;
 $font-family-satoshi-regular: 'Satoshi-Regular', sans-serif;
 $font-family-satoshi-medium: 'Satoshi-Medium', sans-serif;
 $font-family-satoshi-bold: 'Satoshi-Bold', sans-serif;
-//Font family for switzer
+// Font family for switzer
 $font-family-switzer-light: 'Switzer-Light', sans-serif;
 $font-family-switzer-regular: 'Switzer-Regular', sans-serif;
 $font-family-switzer-medium: 'Switzer-Medium', sans-serif;
@@ -279,8 +279,8 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             display: block;
             left: 0;
             position: absolute;
-            top: 15%;
-            transform: translateY(-15%);
+            top: 20%;
+            transform: translateY(-20%);
             width: 44%;
             padding-left: 5rem;
             h3{
@@ -291,6 +291,69 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             p{
                 font-size: 1.429rem;
                 font-family: $font-family-switzer-regular;
+            }
+        }
+        .icons{
+            position: absolute;
+            &.icon-1{
+                bottom: 3%;
+                left: 30%;
+                transform: translateX(-30%);
+            }
+            &.icon-2{
+                bottom: 25%;
+                left: 43%;
+                transform: translateX(-43%);
+            }
+            &.icon-3{
+                bottom: 3%;
+                left: 55%;
+                transform: translateX(-55%);
+            }
+            &.icon-4{
+                bottom: 55%;
+                left: 63%;
+                transform: translateX(-63%);
+            }
+            &.icon-5{
+                top: 3%;
+                left: 80%;
+                transform: translateX(-80%);
+            }
+            &.icon-6{
+                bottom: 55%;
+                right: 3%;
+                transform: translateX(3%);
+            }
+        }
+    }
+    .mutual-funds-order{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+       .left-sec{
+        width: 50%;
+        .mf-funds{
+           position: relative;
+           .banner-caption{
+            display: block;
+            left: 0;
+            position: absolute;
+            top: 20%;
+            transform: translateY(-20%);
+            width: 44%;
+            padding-left: 5rem;
+           }
+        }
+       }
+        .right-sec{
+            width: 50%;
+            .orders{
+                // background: url(../../assets/images/under-25/mutual-fund.png) no-repeat;
+                // background-size: cover;
+                // height: 100%;
+                // width: 100%;
             }
         }
     }
