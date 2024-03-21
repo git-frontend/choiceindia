@@ -180,7 +180,7 @@ export class API_URLS {
 
   // multiple tokens url
 
-  multipletokensURL = "cm/ProfileMkt/MultiTouchlineW2";
+  multipletokensURL = "cm/ProfileMkt/MultipleTouchlineW2";
   /** performance Success ratio */
 
   successURL = "api/success-ratio";
