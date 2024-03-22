@@ -2,11 +2,14 @@
 import React from "react";
 import "./brokerage-calculator.scss";
 import Banner from "./Banner";
+import NewFormSection from '../Common-features/NewFormSection';
 import { useState,useEffect} from "react";
 import meta_tags from "../../Data/MetaTags";
-import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import MoreContent from "./MoreContent";
-
+import FreeAmc from "../../assets/images/brokerage-calculator/Free_AMC_for_First_Year.svg";
+import LowDP from "../../assets/images/brokerage-calculator/Low_DP_charges.svg";
+import  NoAutoSquare from "../../assets/images/brokerage-calculator/No-Auto-Square.svg";
+import FreeResearch from "../../assets/images/brokerage-calculator/Free_Research_Advisory.svg";
 function BrokerageCalculator() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -31,10 +34,20 @@ function BrokerageCalculator() {
       }
     }
   }, [rendercount])
+  const sections = [
+    {
+      title:['Open a',<span className="bold_text"> Free </span>, 'Demat\n Account in', <span className="bold_text"> 5 Mins.</span>],
+      images: [FreeAmc, FreeResearch ,LowDP,NoAutoSquare],
+      subtitle: ['Free AMC for First Year', 'Free Research Advisory', 'Low DP Charges (₹ 10)','No Auto Square Off Charges'],
+      alt:['Demat account yearly AMC','open demat account with research advisory','DP Charges after Demat Account Opening','Free Demat Auto square off charges']
+    },
+   
+  ];
   return (
     <div>
         <Banner />
-        <OpenFreeDematAccount/>
+        {/* <OpenFreeDematAccount/> */}
+        <NewFormSection sections={sections} />
         <MoreContent/>
     </div>
   );

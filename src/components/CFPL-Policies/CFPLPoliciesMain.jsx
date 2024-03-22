@@ -54,7 +54,7 @@ function CFPLPoliciesMain() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
-                            <h2 className="title">CFPL Disclosures</h2>
+                            <h1 className="title">CFPL Disclosures</h1>
 
                         </div>
                     </div>
