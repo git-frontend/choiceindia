@@ -44,6 +44,7 @@ function NewDematAccountForm(props) {
     const [blogThankuPopup, setBlogThankuPopup] = useState("");
     const [blogPopUpForm, setBlogPopUpForm] = useState("");
     const otpVerify = useRef("");
+    const [ghostClick, setghostClick]=useState("")
 
     /** state to show thankyou popup (add-lead) */
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
@@ -137,6 +138,7 @@ function NewDematAccountForm(props) {
             setblogForm('blog-lead-form');
             setBlogFormOtp('blog-form-otp');
             setBlogThankuPopup('blog-thanku-popup');
+            setghostClick('blog-ghost-click')
             setTimeout(() => {
             addBLogPopUp();
             },1500)
@@ -145,6 +147,7 @@ function NewDematAccountForm(props) {
             setblogForm('');
             setBlogFormOtp('');
             setBlogThankuPopup('');
+            setghostClick('')
         }
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
@@ -554,7 +557,7 @@ function NewDematAccountForm(props) {
             {
                 !showOTP && !showThanku.showModal && (
                 <div className={`${blogPopUpForm}`}>
-                     <div className={`demat-account-form demat-account-form-new ${blogForm}`} id="dematform">
+                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${ghostClick}`} id="dematform">
 
                         <h2 className="heading">Open Demat Account</h2>
                       {window.location.pathname.includes("blog") &&  <div className="sticy-card-blog-new sub-new-small">
