@@ -272,6 +272,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
     .name-stocks{
         position: relative;
         margin-top: 6rem;
+        margin-bottom: 2rem;
         .stocks-banner{
             width: 100%;
         }
@@ -333,27 +334,38 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
         justify-content: space-between;
         flex-wrap: wrap;
        .left-sec{
-        width: 50%;
+        width: 49%;
         .mf-funds{
            position: relative;
-           .banner-caption{
+           img{
+            width: 100%;
+           }
+           .mf-caption{
             display: block;
             left: 0;
             position: absolute;
             top: 20%;
             transform: translateY(-20%);
-            width: 44%;
-            padding-left: 5rem;
+            width:80%;
+            padding-left: 4rem;
+            h3{
+                margin-bottom: 1.5rem;
+                font-size: 2.857rem;
+                font-family: $font-family-satoshi-bold;
+            }
+            p{
+                font-size: 1.429rem;
+                font-family: $font-family-switzer-regular;
+            }
            }
         }
        }
         .right-sec{
-            width: 50%;
+            width: 49%;
             .orders{
-                // background: url(../../assets/images/under-25/mutual-fund.png) no-repeat;
-                // background-size: cover;
-                // height: 100%;
-                // width: 100%;
+                img{
+                    width: 100%;
+                }
             }
         }
     }

@@ -8,6 +8,8 @@ import  Voltas  from '../../assets/images/under-25/voltas.png';
 import  Sonata  from '../../assets/images/under-25/sonata.png';
 import  eicher  from '../../assets/images/under-25/eicher-moters.png';
 import  mf  from '../../assets/images/under-25/mutual-fund.png';
+import  zeropercent  from '../../assets/images/under-25/zero-percent.png';
+import  InvestTrends  from '../../assets/images/under-25/invest-trends.png';
 function OneAcFinancialNeeds() {
   return (
     <>
@@ -52,12 +54,21 @@ function OneAcFinancialNeeds() {
                                 <img src={mf} width={587} height={503} className="img-fluid ban-mf"/>
                                 <div className='mf-caption'>
                                     <h3>Mutual funds ain't your grandpa's thing anymore.</h3>
-                                    <p>Build your future with compounding power, right from your phone.</p>
+                                    <p>Build your future with compounding <br /> power, right from your phone.</p>
                                 </div>
                             </div>
                         </div>
                         <div className='right-sec'>
-                            <div className='orders'></div>
+                            <div className='orders'>
+                                <img src={zeropercent} className="img-fluid"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='invest-trends'>
+                        <img src={InvestTrends} alt='Invest in trends' height={621} width={1301} className='img-fluid stocks-banner' />
+                        <div className='invest-caption'>
+                            <h3>You name the stocks</h3>
+                            <p>With over 5000+ stocks & 100+ ETFs, from established names like Reliance and Tata to the next big thing, own shares of some of the most popular companies.</p>
                         </div>
                     </div>
                 </div>
