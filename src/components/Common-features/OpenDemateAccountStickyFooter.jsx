@@ -33,18 +33,24 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
 
     const UnlistBlog = (window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'yes' : "";
 
-    const additionalClass = ((window.location.pathname.includes('best-stocks-to-buy') > -1) || 
-    (window.location.pathname.includes('best-intraday-stocks-to-buy') > -1) || 
-    (window.location.pathname.includes('best-short-term-stocks-to-buy') > -1) || 
-    (window.location.pathname.includes('best-stocks-for-long-term-investment') > -1) ||
-    (window.location.pathname.includes('sip-calculator') > -1) ||
-    (window.location.pathname.includes('mutual-fund-calculator') > -1) ||
-    (window.location.pathname.includes('margin-calculator') > -1) ||
-    (window.location.pathname.includes('brokerage-calculator') > -1) ||
-    (window.location.pathname.includes('futures-and-options-margin-calculator') > -1) ||
-    (window.location.pathname.includes('commodity-margin-calculator') > -1) ||
-    (window.location.pathname.includes('forex-margin-calculator') > -1)) 
-    && (window.location.pathname.indexOf('corporate-demat-account') === -1) ? 'New_form_main' : ' ';
+    const additionalClass = (
+        window.location.pathname.includes('stock-market-holidays') ||
+        window.location.pathname.includes('nse-holidays') ||
+        window.location.pathname.includes('bse-holidays') ||
+        window.location.pathname.includes('mcx-ncdex-holidays') ||
+        window.location.pathname.includes('best-stocks-to-buy') ||
+        window.location.pathname.includes('best-intraday-stocks-to-buy') ||
+        window.location.pathname.includes('best-short-term-stocks-to-buy') ||
+        window.location.pathname.includes('best-stocks-for-long-term-investment') ||
+        window.location.pathname.includes('sip-calculator') ||
+        window.location.pathname.includes('mutual-fund-calculator') ||
+        window.location.pathname.includes('margin-calculator') ||
+        window.location.pathname.includes('brokerage-calculator') ||
+        window.location.pathname.includes('futures-and-options-margin-calculator') ||
+        window.location.pathname.includes('commodity-margin-calculator') ||
+        window.location.pathname.includes('forex-margin-calculator')
+    ) ? 'New_form_main' : '';
+    
 
   
     var otpLeadID = useRef('');
