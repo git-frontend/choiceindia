@@ -157,7 +157,6 @@
 		margin-top: 1rem;
 		margin-bottom: 1.5rem;
 		position: relative;
-
 		.formcontrol {
 			background: $whiteColor;
 			outline: none;
@@ -1114,6 +1113,10 @@
 		.new-sub-formgrp{
 			display: none;
 		}
+		.sub-formgrp{
+			order: 1;
+			margin-bottom: 0;
+		}
 		.cust-checkbox{
 			// display: none;
 			// .form-check-input{
@@ -1122,8 +1125,8 @@
 			// 		border: 1px solid $whiteColor;
 			// 	}
 			// }
-			order: 4;
-			margin-bottom: 0;
+			order: 2;
+			margin-bottom: 1rem;
 			.form-check-label{
 				color: #ffffffb3;
 				.link-tc{
@@ -1135,6 +1138,7 @@
 		}
 		.send-otp-btn{
 			margin-top: 1rem !important;
+			order: 3;
 		}
 	}
 	.slider-btns{
