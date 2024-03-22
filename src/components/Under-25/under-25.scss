@@ -193,6 +193,10 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
 }
 //banner section
 .banner-sec{
+    background: url(../../assets/images/under-25/banner.png) no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
     .ban-img{
         height: auto;
         width: 100%;
@@ -251,6 +255,8 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                     line-height: 1.5;
                     font-family: $font-family-switzer-regular;
                     padding: 2rem 5rem 0 0;
+                    margin: 0;
+                    color: $primary;
                 }
             }
         }
@@ -292,6 +298,8 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             p{
                 font-size: 1.429rem;
                 font-family: $font-family-switzer-regular;
+                margin: 0;
+                color: $primary;
             }
         }
         .icons{
@@ -356,6 +364,8 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             p{
                 font-size: 1.429rem;
                 font-family: $font-family-switzer-regular;
+                margin: 0;
+                color: $primary;
             }
            }
         }
@@ -365,6 +375,166 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             .orders{
                 img{
                     width: 100%;
+                }
+            }
+        }
+    }
+    .invest-trends{
+        position: relative;
+        margin-top: 2rem;
+        .invest-banner{
+            width: 100%;
+        }
+        .invest-caption{
+            display: block;
+            left: 0;
+            position: absolute;
+            top: 20%;
+            transform: translateY(-20%);
+            width: 30%;
+            padding-left: 4rem;
+            h3{
+                margin-bottom: 1.5rem;
+                font-size: 2.857rem;
+                font-family: $font-family-satoshi-bold;
+            }
+            p{
+                font-size: 1.429rem;
+                font-family: $font-family-switzer-regular;
+                margin: 0;
+                color: $primary;
+            }
+        }
+    }
+}
+//Choioce Demat Account
+.choice-demat-ac{
+    padding: 8rem 0;
+    .heading-section{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        .arrow-txt{
+            font-family: $font-family-satoshi-bold;
+            font-size:7rem;
+            position: relative;
+            padding-left: 7rem;
+            opacity: 10%;
+            color: #9942FF;
+            &::before{
+                content: '';
+                display: block;
+                position: absolute;
+                background: url(../../assets/images/under-25/is-less-than.svg) no-repeat;
+                background-size: contain;
+                left: 0;
+                top: 50%;
+                width: 6rem;
+                height: 6rem;
+                transform: translateY(-50%);
+            }
+        }
+        .heading-content{
+            text-align: center;
+           h2{
+            font-family: $font-family-satoshi-bold;
+            font-size: 4.286rem;
+           }
+           p{
+            font-size: 1.857rem;
+            line-height: 1.5;
+            font-family: $font-family-switzer-regular;
+            margin: 0;
+            color: $primary;
+            }
+        }
+    }
+    .demat-ac-benifits{
+        margin-top: 3rem;
+        .columns{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #F8F8F8;
+            padding: 3rem 4rem;
+            .benifits-items{
+                text-align: center;
+                h3{
+                    font-size: 3.786rem;
+                    font-family: $font-family-satoshi-bold;
+                }
+                p{
+                    font-size: 1.851rem;
+                    line-height: 1.5;
+                    font-family: $font-family-switzer-regular;
+                    margin: 0;
+                    color: $primary;
+                }
+            }
+            &.column-1{
+                border-top-left-radius: 32px;
+                border-top-right-radius: 32px;
+                margin-bottom: 0.5rem;
+            } 
+            &.column-2{
+                border-bottom-left-radius: 32px;
+                border-bottom-right-radius: 32px;
+            }   
+        }
+    }
+}
+//hold up section
+.hold-up-sec{
+    padding: 10rem 0;
+    .heading-sec{
+        text-align: center;
+        margin-bottom: 5rem;
+        h2{
+            font-family: $font-family-satoshi-bold;
+            font-size: 4.286rem;
+        }
+        p{
+            font-size: 1.851rem;
+            line-height: 1.5;
+            font-family: $font-family-switzer-regular;
+            margin: 0;
+            color: $primary;
+        }
+    }
+    .hold-up{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .imgcard{
+            width: 32%;
+            .card-details{
+                position: relative;
+                img{
+                    width: 100%;
+                }
+                .card-caption{
+                    display: block;
+                    left: 0;
+                    position: absolute;
+                    top: 20%;
+                    transform: translateY(-20%);
+                    width: 70%;
+                    padding-left: 3rem;
+                    h4{
+                        font-size: 1.857rem;
+                        font-weight: 700;
+                        font-family: $font-family-satoshi-bold;
+                        color: $whiteColor;
+                    }
+                    p{
+                        font-size: 1.143rem;
+                        line-height: 1.5;
+                        font-family: $font-family-satoshi-regular;
+                        font-weight: 400;
+                        margin: 0;
+                        color: $whiteColor;
+                    }
                 }
             }
         }

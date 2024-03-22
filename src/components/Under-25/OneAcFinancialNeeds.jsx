@@ -65,10 +65,10 @@ function OneAcFinancialNeeds() {
                         </div>
                     </div>
                     <div className='invest-trends'>
-                        <img src={InvestTrends} alt='Invest in trends' height={621} width={1301} className='img-fluid stocks-banner' />
+                        <img src={InvestTrends} alt='Invest in trends' height={621} width={1301} className='img-fluid invest-banner' />
                         <div className='invest-caption'>
-                            <h3>You name the stocks</h3>
-                            <p>With over 5000+ stocks & 100+ ETFs, from established names like Reliance and Tata to the next big thing, own shares of some of the most popular companies.</p>
+                            <h3>Invest in trends, not tickers.</h3>
+                            <p>Curated eqiuty and mutual fund baskets that capture the next big thing, before it blows up.</p>
                         </div>
                     </div>
                 </div>
