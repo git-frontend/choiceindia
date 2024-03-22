@@ -589,7 +589,7 @@ function NewDematAccountForm(props) {
                             </svg>
             
                             </span>
-                            <span className="bx-text">Free Research Advisory & Tools</span>
+                            <span className="bx-text">Free Expert Research</span>
                         </li>
                         </ul>
                         {window.innerWidth<=992 &&  <span className="close-btn-mdl" onClick={() => {
@@ -597,7 +597,7 @@ function NewDematAccountForm(props) {
                                 props.openAccount.current.style.zIndex = 9999999999;
                                 setBlogPopUpForm('');
                                 setIsPopUp(false);
-                                props.blogPop(false);
+                                props.blogPop(false);  
                         }}>&times;</span>} 
                            
                        </div>}
