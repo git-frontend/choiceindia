@@ -85,7 +85,7 @@ const meta_tags = {
   "advisory-for-investors": { 'title': "Advisory for Investors - Choice", 'lang': "en", 'content': "Visit Choice International Limited's official website to know the advisory for the investors.", 'link': "https://choiceindia.com/advisory-for-investors", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "marathi/open-demat-account": {
-    'title': "मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही", 'content': "नि:शुल्क ऑनलाइन डीमॅट खाते उघड़ा केवळ 5 मिनिटात. मिळवा कमीत-कमी ब्रोकरेज आणि DP शुल्क, पहिल्या वर्षात 0 AMC, मोफत शेअर्स रिसर्च आणि 2 पैसे/ट्रेड", 'link': "https://choiceindia.com/marathi/open-demat-account", "lang": 'mr', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account","link3": "https://choiceindia.com/marathi/open-demat-account","link4": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in","href3": "mr-in","href4": "x-default",
+    'title': "मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही", 'content': "नि:शुल्क ऑनलाइन डीमॅट खाते उघड़ा केवळ 5 मिनिटात. मिळवा कमीत-कमी ब्रोकरेज आणि DP शुल्क, पहिल्या वर्षात 0 AMC, मोफत शेअर्स रिसर्च आणि 2 पैसे/ट्रेड", 'link': "https://choiceindia.com/marathi/open-demat-account", "lang": 'mr', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account","link3": "https://choiceindia.com/marathi/open-demat-account","link4": "https://choiceindia.com/open-free-demat-account","link5": "https://choiceindia.com/open-free-demat-account" , "link6": "https://choiceindia.com/open-free-demat-account","href1": "en-in", "href2": "hi-in","href3": "mr-in","href4": "x-default",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -254,7 +254,7 @@ const meta_tags = {
     ` },
 
   "open-free-demat-account": {
-    'title': "Open Demat Account - Free Demat Account Opening Online (No AMC*)", 'lang': "en", 'content': "Open Free Demat Account - Start your Demat Account online at Choice. Enjoy Zero AMC for the First Year, Free Expert Research, Low DP Charges, and Trade @ 2 Paisa.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3':"https://choiceindia.com/marathi/open-demat-account", "link4":"https://choiceindia.com/open-free-demat-account", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default", "href5": "", "href6": "",
+    'title': "Open Demat Account - Free Demat Account Opening Online (No AMC*)", 'lang': "en", 'content': "Open Free Demat Account - Start your Demat Account online at Choice. Enjoy Zero AMC for the First Year, Free Expert Research, Low DP Charges, and Trade @ 2 Paisa.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3':"https://choiceindia.com/marathi/open-demat-account", 'link4':"https://choiceindia.com/open-free-demat-account",'link5':"https://choiceindia.com/marathi/open-demat-account",'link6':"https://choiceindia.com/marathi/open-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -942,7 +942,7 @@ const meta_tags = {
     ` },
 
   "hindi/open-demat-trading-account": {
-    'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC", 'lang': "hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया, 15 मिनट के भीतर आपका खाता खोल देगी।", "link": "https://choiceindia.com/hindi/open-demat-trading-account", 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "https://choiceindia.com/marathi/open-demat-account", "link4": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default",
+    'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC", 'lang': "hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया, 15 मिनट के भीतर आपका खाता खोल देगी।", "link": "https://choiceindia.com/hindi/open-demat-trading-account", 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3': "https://choiceindia.com/marathi/open-demat-account", "link4": "https://choiceindia.com/open-free-demat-account","link5": "https://choiceindia.com/open-free-demat-account","link6": "https://choiceindia.com/open-free-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
