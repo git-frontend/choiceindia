@@ -34,6 +34,10 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     const UnlistBlog = (window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'yes' : "";
 
     const additionalClass = (
+        window.location.pathname.includes('stock-market-holidays') ||
+        window.location.pathname.includes('nse-holidays') ||
+        window.location.pathname.includes('bse-holidays') ||
+        window.location.pathname.includes('mcx-ncdex-holidays') ||
         window.location.pathname.includes('best-stocks-to-buy') ||
         window.location.pathname.includes('best-intraday-stocks-to-buy') ||
         window.location.pathname.includes('best-short-term-stocks-to-buy') ||
