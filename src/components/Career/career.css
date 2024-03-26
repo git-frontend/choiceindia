@@ -2,10 +2,10 @@
 /*Font family*/
 /*bg varibales*/
 /*textvaribales*/
+/*Shadow color*/
 /*Responsive screen width*/
 .career-parent {
-  -webkit-animation: hideMe 4s forwards;
-          animation: hideMe 4s forwards;
+  animation: hideMe 4s forwards;
 }
 
 .career-list-slider .slick-slide {
@@ -449,12 +449,10 @@
 }
 .Marquee .Marquee-content {
   display: flex;
-  -webkit-animation: marquee 10s linear infinite running;
-          animation: marquee 10s linear infinite running;
+  animation: marquee 10s linear infinite running;
 }
 .Marquee .Marquee-content:hover {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
 }
 .Marquee .Marquee-content .Marquee-tag {
   width: 450px;
@@ -471,14 +469,6 @@
   background: rgba(255, 255, 255, 0.5);
   transform: scale(1);
   cursor: pointer;
-}
-@-webkit-keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translate(-50%);
-  }
 }
 @keyframes marquee {
   0% {

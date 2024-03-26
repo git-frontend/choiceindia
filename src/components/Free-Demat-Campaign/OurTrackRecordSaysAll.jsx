@@ -151,18 +151,14 @@ function OurTrackRecordSaysAll() {
                       setShowLoader(false)
                       AllFilesValue = Object.assign(storefile[i], ele);
                       multiValue.push(AllFilesValue)
-                    } else {
-
-
-
-                    }
+                    } 
                   }
                 })
 
                 setlist(multiValue);
 
               } else {
-                setlist([])
+                setShowLoader(false)
               }
             })
         }
@@ -170,7 +166,7 @@ function OurTrackRecordSaysAll() {
       // )
       .catch((error) => {
         setShowLoader(false)
-        setlist([]);
+        
       });
   }
   //for F and O
@@ -249,16 +245,15 @@ function OurTrackRecordSaysAll() {
                       AllFilesValue = Object.assign(storefile[i], ele);
                       multiValue.push(AllFilesValue)
                       setShowLoader(false)
-                    } else {
-
-
-
-                    }
+                    } 
                   }
                 })
 
                 setlist(multiValue);
 
+              }
+              else {
+                setShowLoader(false)
               }
             })
         }
@@ -266,17 +261,23 @@ function OurTrackRecordSaysAll() {
 
       .catch((error) => {
         setShowLoader(false)
-        setlist([]);
+        
       });
   }
 
-
+  useEffect(() => {
+    setRenderCount(true)
+    if (rendercount === true) {
+      
+      generateSessionId()
+    }
+  }, [rendercount])
 
 
 
   useEffect(() => {
-    generateSessionId()
-    setRenderCount(true)
+   
+   
     if (/Android|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
 
       setcheckdevice('https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy')
@@ -292,7 +293,7 @@ function OurTrackRecordSaysAll() {
       setcheckdevice('https://finx.choiceindia.com/auth/login')
 
     }
-  }, [rendercount])
+  }, [])
   useEffect(() => {
     let mediaQuery = window.matchMedia("(min-width: 767px)");
     mediaQuery.addListener(setView);

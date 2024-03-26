@@ -2,6 +2,7 @@
 /*Font family*/
 /*bg varibales*/
 /*textvaribales*/
+/*Shadow color*/
 /*Responsive screen width*/
 .stickybottom {
   padding: 1rem;
@@ -12,13 +13,13 @@
   z-index: 99999;
   left: 0;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .stickybottom {
     display: none !important;
   }
 }
 .stickybottom .text {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.5rem;
   font-family: "PoppinsBold", sans-serif;
   color: #ffffff;
@@ -52,7 +53,7 @@
   pointer-events: none;
 }
 .stickybottom form .form-group .write {
-  color: #ffffff;
+  color: #221F20 !important;
   width: 100%;
   padding: 5px 13px 5px 17px;
   border: 1px solid #ffffff;
@@ -61,9 +62,9 @@
   padding-bottom: 5px;
   min-height: 42px;
   box-shadow: none;
-  font-size: 14px;
+  font-size: 1.2rem;
   font-weight: 500;
-  background: transparent;
+  background: #ffffff;
 }
 .stickybottom form .form-group .signal-same-btn {
   width: 100%;
@@ -92,7 +93,7 @@
   color: #ffffff;
 }
 .stickybottom .tnc {
-  width: 35%;
+  width: 23%;
 }
 .stickybottom .tnc .checkbox {
   margin-top: 5px;
@@ -101,7 +102,7 @@
 .stickybottom .tnc .tc {
   color: #ffffff;
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 .stickybottom .sendotp {
@@ -109,6 +110,7 @@
   border-radius: 8px;
   padding: 12px 24px;
   color: #221F20;
+  margin-left: 2.5rem;
 }
 .stickybottom .sendotp span {
   color: #221F20;
@@ -135,7 +137,7 @@
   left: 0;
   display: none !important;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .btn-fixed {
     display: block !important;
   }
@@ -143,20 +145,25 @@
 .btn-fixed .openbtn {
   border-radius: 0 !important;
   width: 100%;
-  background-color: #221F20;
+  background-color: #FFCE02;
   font-size: 1.5rem;
   border-radius: 8px;
   font-weight: bold;
-  color: #FFCE02;
+  color: #221F20;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   border: 1px solid transparent;
   padding: 11px 13px;
   font-family: "PoppinsRegular", sans-serif;
+}
+@media (max-width: 992px) {
+  .btn-fixed .openbtn:hover {
+    background: #FFCE02 !important;
+    color: #221F20 !important;
+  }
 }
 
 .loaderB {
@@ -165,18 +172,8 @@
   border-top: 5px solid #221F20;
   width: 30px;
   height: 30px;
-  -webkit-animation: spin 2s linear infinite;
   /* Safari */
   animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
 }
 @keyframes spin {
   0% {
@@ -185,4 +182,51 @@
   100% {
     transform: rotate(360deg);
   }
+}
+.New_form_main {
+  background-color: #221F20;
+}
+@media (max-width: 992px) {
+  .New_form_main {
+    background-color: #221F20 !important;
+  }
+}
+.New_form_main .form_main {
+  padding: 0rem 0rem !important;
+  flex-wrap: wrap;
+  margin: 0rem 1rem;
+  background-color: #221F20;
+}
+@media (max-width: 992px) {
+  .New_form_main .form_main {
+    background-color: #221F20 !important;
+    border: none !important;
+  }
+}
+.New_form_main .form_main .demat_text {
+  display: none !important;
+}
+.New_form_main .form_main .Mobile_text {
+  width: 100%;
+}
+.New_form_main .form_main .cust_check {
+  width: 100% !important;
+  margin-top: 1rem;
+}
+.New_form_main .form_main .cust_check .form_check_text {
+  color: #ffffff !important;
+}
+.New_form_main .form_main .api_errornew {
+  margin-top: 2rem;
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .New_form_main .form_main .api_errornew {
+    margin-top: 1rem;
+  }
+}
+.New_form_main .form_main .api_errornew .btn-bg {
+  min-width: inherit;
+  width: 100% !important;
+  border-radius: 12px !important;
 }/*# sourceMappingURL=OpenDemateAccountStickyFooter.css.map */
