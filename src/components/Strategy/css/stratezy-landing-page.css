@@ -309,14 +309,7 @@ body {
   box-shadow: 0px 0px 8px #d6d6d6;
 }
 .scroll-top .fa-angle-up {
-  -webkit-animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
-          animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-
-@-webkit-keyframes bounce {
-  50% {
-    transform: translateY(-8px);
-  }
+  animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 @keyframes bounce {
@@ -329,22 +322,9 @@ body {
 }
 
 /** keyframes added */
-@-webkit-keyframes shine {
-  to {
-    background-position-x: -200%;
-  }
-}
 @keyframes shine {
   to {
     background-position-x: -200%;
-  }
-}
-@-webkit-keyframes hideMe {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 @keyframes hideMe {
@@ -362,8 +342,7 @@ body {
   background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
   border-radius: 5px;
   background-size: 200% 100%;
-  -webkit-animation: 1.5s shine linear infinite;
-          animation: 1.5s shine linear infinite;
+  animation: 1.5s shine linear infinite;
 }
 
 .statezy-banner {
@@ -471,14 +450,10 @@ body {
   position: absolute;
   top: -10%;
   left: 25%;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 0.1s;
+  animation-name: fadeInUp;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -532,14 +507,10 @@ body {
   position: absolute;
   top: -18%;
   right: 13%;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
+  animation-name: fadeInUp;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -593,14 +564,10 @@ body {
   position: absolute;
   top: 28%;
   right: -6%;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+  animation-name: fadeInUp;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -787,7 +754,7 @@ body {
   }
 }
 .why-stratezy .rightwrap .sliderwrap {
-  width: 70%;
+  width: 100%;
   min-height: 21rem;
 }
 @media (max-width: 1024px) {
@@ -801,10 +768,18 @@ body {
   line-height: 2.5rem;
   font-family: "PoppinsSemiBold", sans-serif;
   padding-top: 2rem;
+  margin-bottom: 0;
+  padding-bottom: 2rem;
+  text-align: left;
 }
 @media (min-width: 767px) and (max-width: 1024px) {
   .why-stratezy .rightwrap .heading {
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .why-stratezy .rightwrap .heading {
+    text-align: center;
   }
 }
 .why-stratezy .rightwrap .subtext {
@@ -822,7 +797,7 @@ body {
 .why-stratezy .sliderbtn {
   display: flex;
   flex-direction: row;
-  margin-top: 2rem;
+  margin-top: 0;
 }
 @media (max-width: 767px) {
   .why-stratezy .sliderbtn {
@@ -949,12 +924,15 @@ body {
   color: #221F20;
   padding-bottom: 1rem;
   width: 70%;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .stratezy .featureone .heading {
     font-size: 1.5rem;
     line-height: 2rem;
     padding-bottom: 0;
+    width: 100%;
+    text-align: left;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
@@ -1043,6 +1021,7 @@ body {
   line-height: 2.5rem;
   color: #221F20;
   padding-bottom: 1rem;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .stratezy .featuretwo .heading {
@@ -1139,12 +1118,14 @@ body {
   color: #221F20;
   padding-bottom: 1rem;
   width: 60%;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .stratezy .featurethree .heading {
     font-size: 1.5rem;
     line-height: 2rem;
     padding-bottom: 0;
+    width: 100%;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
@@ -1234,6 +1215,7 @@ body {
   line-height: 2.5rem;
   color: #221F20;
   padding-bottom: 1rem;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .stratezy .featurefour .heading {
@@ -1307,14 +1289,14 @@ body {
 }
 
 .algorithmstrategy {
-  padding: 10rem 0 8rem;
+  padding: 5rem 0;
   position: relative;
   background-color: #D8E9DB;
-  margin-top: 30rem;
+  margin-top: 0;
 }
 .algorithmstrategy .wrapper {
   position: relative;
-  margin-top: -40rem;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1365,7 +1347,7 @@ body {
 .algorithmstrategy .wrap {
   margin-top: 10rem;
   display: block;
-  margin: 12rem auto 0;
+  margin: 0;
   justify-content: space-between;
 }
 @media (max-width: 767px) {
@@ -1413,16 +1395,6 @@ body {
 }
 
 /*==== FADE IN UP ===*/
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 80%, 0);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -1434,7 +1406,6 @@ body {
   }
 }
 .fadeInUp {
-  -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
 }
 
@@ -1505,22 +1476,11 @@ body {
 }
 
 .slider-item {
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  animation-duration: 3s;
   min-height: 200px;
 }
 .slider-item.active {
-  -webkit-animation: fadeIn 1s ease-in-out;
-          animation: fadeIn 1s ease-in-out;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {

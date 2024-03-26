@@ -1,20 +1,7 @@
 /** keyframes added */
-@-webkit-keyframes shine {
-  to {
-    background-position-x: -200%;
-  }
-}
 @keyframes shine {
   to {
     background-position-x: -200%;
-  }
-}
-@-webkit-keyframes hideMe {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 @keyframes hideMe {
@@ -52,8 +39,7 @@
   background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
   border-radius: 5px;
   background-size: 200% 100%;
-  -webkit-animation: 1.5s shine linear infinite;
-          animation: 1.5s shine linear infinite;
+  animation: 1.5s shine linear infinite;
   width: 25rem;
   height: 25rem;
   margin: 2rem;
@@ -79,7 +65,6 @@
 .template2-child-2 {
   margin: 10rem 0rem 0rem 0rem;
   width: auto;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -98,12 +83,10 @@
   background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
   border-radius: 5px;
   background-size: 200% 100%;
-  -webkit-animation: 1.5s shine linear infinite;
-          animation: 1.5s shine linear infinite;
+  animation: 1.5s shine linear infinite;
 }
 
 .template3-child-3 {
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
@@ -153,8 +136,7 @@
   background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
   border-radius: 5px;
   background-size: 200% 100%;
-  -webkit-animation: 1.5s shine linear infinite;
-          animation: 1.5s shine linear infinite;
+  animation: 1.5s shine linear infinite;
   color: transparent;
 }
 @media (min-width: 320px) and (max-width: 480px) {
@@ -179,7 +161,6 @@
 }
 .template3-child-3 .template3-child3-content {
   width: 50%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -195,7 +176,6 @@
 }
 .template3-child-3 .template3-child3-img {
   width: 50%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -213,8 +193,7 @@
   background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
   border-radius: 5px;
   background-size: 200% 100%;
-  -webkit-animation: 1.5s shine linear infinite;
-          animation: 1.5s shine linear infinite;
+  animation: 1.5s shine linear infinite;
   width: 50%;
   height: 40rem;
   margin: auto;

@@ -2,6 +2,7 @@
 /*Font family*/
 /*bg varibales*/
 /*textvaribales*/
+/*Shadow color*/
 /*Responsive screen width*/
 .errorbannersectoion {
   position: relative;
@@ -13,4 +14,74 @@
   font-size: 1.4rem;
   color: #221F20;
   text-align: center;
+}
+
+.new-404 {
+  padding: 5rem 0;
+}
+@media (max-width: 992px) {
+  .new-404 {
+    padding-top: 0;
+  }
+}
+.new-404 .left-error {
+  text-align: center;
+}
+.new-404 .left-error p {
+  margin-bottom: 3.5rem;
+  font-size: 1.75rem;
+}
+@media (max-width: 767px) {
+  .new-404 .left-error p {
+    font-size: 1.575rem;
+  }
+}
+.new-404 .right-error {
+  width: 450px;
+}
+@media only screen and (min-width: 1200px) {
+  .new-404 .right-error {
+    width: 400px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .new-404 .right-error {
+    width: 450px;
+  }
+}
+@media (max-width: 992px) {
+  .new-404 .right-error {
+    width: 100%;
+    margin-top: 4rem;
+  }
+}
+.new-404 .right-error .cust-lnk {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: 0;
+  font-size: 1.675rem;
+  color: #221F20;
+  background: #F3FAFF;
+  padding: 1.75rem 2rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  transition: 0.5s;
+}
+.new-404 .right-error .cust-lnk:hover {
+  background: #ffffff;
+  box-shadow: 0 0 10px #d6edeb;
+}
+@media (max-width: 767px) {
+  .new-404 .right-error .cust-lnk {
+    font-size: 1.375rem;
+  }
+}
+.new-404 .right-error .cust-lnk svg {
+  width: 40px;
+}
+.new-404 .right-error .cust-lnk span {
+  display: inline-block;
+  font-family: "PoppinsMedium", sans-serif;
+  margin-left: 2.5rem;
 }/*# sourceMappingURL=ErrorPage.css.map */
