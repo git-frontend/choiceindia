@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../Under-25/Banner';
 import ChoiceDematAc from './ChoiceDematAc';
+import FormSec from './FormSec';
 import HoldUp from './HoldUp';
 import OneAcFinancialNeeds from './OneAcFinancialNeeds';
 import PayOnlyOrder from './PayOnlyOrder';
@@ -15,6 +16,7 @@ function Under25() {
     <OneAcFinancialNeeds />
     <ChoiceDematAc />
     <HoldUp />
+    <FormSec />
     </>
   )
 }
