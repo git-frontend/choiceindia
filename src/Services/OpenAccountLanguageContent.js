@@ -56,7 +56,7 @@ const language = {
         otpresendsuccess2: 'दिए गए मोबाइल नंबर पर OTP भेजा गया है'
     },
     hindimutualfund: {
-        title: 'मुफ़्त खाता खोलें',
+        title: 'अपना खाता खोलें',
         moblbl: 'मोबाइल नंबर',
         invalidmob: 'वैध मोबाइल नंबर दर्ज करें',
         reqmob: 'मोबाइल नंबर आवश्यक है',
