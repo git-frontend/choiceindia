@@ -15,7 +15,7 @@ function TermCondition() {
                           <div className="col-md-12">
                               <div className="terms-cont" id="style-1">
                                   <ul className="terms-list">
-                                      <li>Demat Account Refer and Earn Program Terms and Conditions - All existing customers for Choice Equity Broking Limited are eligible for the program.</li>
+                                      <li>All existing customers for Choice Equity Broking Limited are eligible for the program.</li>
                                       <li>This Refer and Earn scheme will be valid for users with FinX App only, and will not be valid for users with FinX website.</li>
                                       <li>Rs.500/- will be paid in the form of brokerage reversal, which means initially customers will be charged brokerage with applicable taxes and only brokerage amount will be reversed and not taxes.</li>
                                       <li>Rs 500 referral amount will be credited in the wallet only after the friend has opened the account and done first trade.</li>
