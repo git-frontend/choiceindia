@@ -130,7 +130,7 @@ const { register,formState: reset } = useForm({
                             <div className="sec-banner-left">
                                 <h1>Join the Best Demat Account Refer and Earn Program</h1>
                                 <div className="banner-box">
-                                    <p>Invite your friends and get up to Rs.100 incentive per referral and your friend will get up to Rs. 100.{referid}</p>
+                                    <p>Invite your friends and get up to Rs.100 incentive per referral and your friend will get up to Rs. 100.</p>
 
                                     <div className="get-link-form generate-refer-link">
                                     
