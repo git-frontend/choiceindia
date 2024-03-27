@@ -678,11 +678,11 @@ export class API_URLS {
   }
 
   getreferearnURL(id) {
-    return this.referURL + `/GetUserReferralData?ClientID=${id}`;
+    return this.referURL + `GetUserReferralData?ClientID=${id}`;
   }
 
   getreferallink(id) {
-    return this.referURL + `/v1/40a9f5ac41a0f6223825/user/${id}/referral_link`;
+    return this.referURL + `v1/40a9f5ac41a0f6223825/user/${id}/referral_link`;
   }
 
   getExpertResearchreportURL() {

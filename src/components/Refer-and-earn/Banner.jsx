@@ -15,7 +15,7 @@ import Spinner from 'react-bootstrap/Spinner';
 
 function Banner() {
     const[ischeck,setIscheck]=useState(false);
-    let referid='';
+    const[referid,setReferid]=useState("")
     const[referal,setreferal]=useState();
     const[referal1,setreferal1]=useState();
     const[show,setShow]=useState('Get Link');
@@ -34,8 +34,8 @@ function Banner() {
 
        /** Get  cliend id  */
    const clientChange = (e2) => {
-    referid = e2.target.value;
-      if(referid.length === 0){
+    setReferid(e2.target.value)
+      if(e2.target.value.length === 0){
         setShow('Get Link');
         setIsShow(false);
         setIserror(false);
@@ -63,8 +63,8 @@ function loadrefer() {
       res => {
         setIsloader(false)
         setList(res);
-        if(res.Response.success === false){
-            setreferal1(res.Response.error.description)
+        if(res.Status === 'Fail'){
+            setreferal1(res.Reason)
             setIserror(true)
             //console.log("show1",show)
             
@@ -84,8 +84,13 @@ function loadrefer() {
         }
     
     
-      }
-    )
+      })
+      .catch((error) => {
+        
+        setreferal1('Something went wrong')
+        setIserror(true)
+      })
+    
   };
 
   function shareLink(key) {
@@ -125,7 +130,7 @@ const { register,formState: reset } = useForm({
                             <div className="sec-banner-left">
                                 <h1>Join the Best Demat Account Refer and Earn Program</h1>
                                 <div className="banner-box">
-                                    <p>Invite your friends and get up to Rs.100 incentive per referral and your friend will get up to Rs. 100.</p>
+                                    <p>Invite your friends and get up to Rs.100 incentive per referral and your friend will get up to Rs. 100.{referid}</p>
 
                                     <div className="get-link-form generate-refer-link">
                                     
