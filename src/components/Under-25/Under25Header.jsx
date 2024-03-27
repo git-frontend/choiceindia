@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState,useEffect} from 'react'
 import  ImageSub0  from '../../assets/images/under-25/choice-logo.svg';
 import {NavLink, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,17 +8,32 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import "../../assets/css/header.scss";
 // import "../../components/Under-25/under-25.scss";
 export default function Under25Header() {
+    const [scrolling, setScrolling] = useState(false);
     const [show, setShow] = useState(true)
-  function check(){
-    window.location.pathname="/services"
-  }
-  function check2(){  
-     window.open("https://choiceinsurance.in/");   
-  }
-   
+    function check(){
+        window.location.pathname="/services"
+    }
+    function check2(){  
+        window.open("https://choiceinsurance.in/");   
+    }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
         return (
             <div className="Header">
-            <header className="main-header under-25-header">
+            <header className={scrolling ? 'main-header header-scroll' : 'main-header'}>
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
                     <a href="/">

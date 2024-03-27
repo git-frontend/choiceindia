@@ -141,13 +141,15 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
 .App-Body{
     margin-top: inherit;
 }
-
 //header section
 .Header{
     .main-header{
-        &.under-25-header{
-            background: #6eadcd;
+            background: transparent;
             box-shadow: inherit;
+            min-height: 100px;
+            &.header-scroll{
+                background:#6eadcd;
+            }
             .navbar{
                 padding: 0;
                 .nav-header{
@@ -188,30 +190,99 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                     }
                 }
             }
-        }
     }
 }
 //banner section
 .banner-sec{
+    position: relative;
+    width: 100%;
+    height: 100%;
     background: url(../../assets/images/under-25/banner.png) no-repeat;
     background-size: cover;
-    height: 100%;
-    width: 100%;
-    .ban-img{
-        height: auto;
-        width: 100%;
-    } 
+    background-position: bottom;
+    padding: 10rem 0 14rem;
+    @media (max-width:$sm) {
+        padding: 6rem 0 14rem;
+    }
+    .banner-form{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .left-sect{
+            width: 60%;
+            @media (max-width:$md) {
+                width: 50%;
+            }
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+            .banner-caption{
+                h1{
+                    font-size: 6.143rem;
+                    font-family: $font-family-satoshi-bold;
+                    font-weight: 700;
+                    color: $whiteColor;
+                    margin-bottom: 2.5rem;
+                    @media (max-width:$md) {
+                        font-size: 3.143rem;
+                        margin-bottom: 1rem;
+                    }
+                }
+                p{
+                    font-size: 2.857rem;
+                    font-family: $font-family-switzer-medium;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    color: $whiteColor;
+                    margin: 0;
+                    @media (max-width:$md) {
+                        font-size: 1.857rem;
+                    }
+                }
+            }
+        }
+        .right-sect{
+            width: 40%;
+            @media (max-width:$md) {
+                width: 50%;
+            }
+            @media (max-width:$sm) {
+                width: 100%;
+                position: absolute;
+                top: 60%;
+                left: 0;
+                right: 0;
+            }
+            .form-card{
+                @media (max-width:$sm) {
+                    width: 90%;
+                }
+            }
+        }
+       
+    }
+       
 }
 //pay only order section
 .pay-only-order{
-    padding: 12rem 0 10rem;
+    padding: 12rem 0 6rem;
     position: relative;
+    @media (max-width:$sm) {
+        padding: 20rem 0 0;
+    }
     .pay-order{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+        @media (max-width:$sm) {
+           row-gap: 7rem;
+        }
         .img-sec{
             width: 50%;
+            @media (max-width:$sm) {
+                width:100%;
+            }
             .pay-order-img{
                 position: relative;
                 img{
@@ -228,6 +299,17 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                     top: -9rem;
                     width: 25rem;
                     z-index: 1;
+                    @media (max-width:$md) {
+                        height: 12rem;
+                        top: -6rem;
+                        width: 22rem;
+                    }
+                    @media (max-width:$sm) {
+                        height: 8rem;
+                        top: 0;
+                        width: 16rem;
+                        right: -3rem;
+                    }
                 }
                 &::after{
                     background: url(../../assets/images/under-25/market-value.webp) no-repeat;
@@ -240,15 +322,35 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                     left: -7rem;
                     width: 25rem;
                     z-index: 1;
+                    @media (max-width:$md) {
+                        height: 11rem;
+                        left: -4rem;
+                        width: 22rem;
+                    }
+                    @media (max-width:$sm) {
+                        left: 0;
+                        width: 20rem;
+                        margin: 0 auto;
+                        right: 0;
+                    }
                 }
                }
         }
         .content-sec{
             width: 40%;
+            @media (max-width:$md) {
+                width: 45%;
+            }
+            @media (max-width:$sm) {
+                width:100%;
+            }
             .caption{
                 h3{
                     font-size: 3.857rem;
                     font-family: $font-family-satoshi-bold;
+                    @media (max-width:$md) {
+                        font-size: 2.857rem;
+                    }
                 }
                 p{
                     font-size: 1.851rem;
@@ -257,6 +359,10 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                     padding: 2rem 5rem 0 0;
                     margin: 0;
                     color: $primary;
+                    @media (max-width:$md) {
+                        padding: 2rem 0 0 0;
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
@@ -270,6 +376,12 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
         h2{
             font-family: $font-family-satoshi-bold;
             font-size: 5.714rem;
+            @media (max-width:$md) {
+                font-size: 3.714rem;
+            }
+            @media (max-width:$sm) {
+                font-size: 2.286rem;
+            }
         }
         .avtar-sec{
             margin-bottom: 1rem;
@@ -290,20 +402,41 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             transform: translateY(-20%);
             width: 44%;
             padding-left: 5rem;
+            @media (max-width:$sm) {
+                top: 30%;
+                transform: translateY(-30%);
+                width: 60%;
+                padding-left: 2rem;
+            }
             h3{
                 margin-bottom: 1.5rem;
                 font-size: 2.857rem;
                 font-family: $font-family-satoshi-bold;
+                @media (max-width:$sm) {
+                    font-size: 2.286rem;
+                }
             }
             p{
                 font-size: 1.429rem;
                 font-family: $font-family-switzer-regular;
                 margin: 0;
                 color: $primary;
+                line-height: 1.5;
+                @media (max-width:$sm) {
+                    font-size: 1rem;
+                }
             }
         }
         .icons{
             position: absolute;
+            @media (max-width:$sm) {
+               display: none;
+            }
+            img{
+                @media (max-width:$md) {
+                    width: 60%;
+                 }
+            }
             &.icon-1{
                 bottom: 3%;
                 left: 30%;
@@ -548,64 +681,199 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
         width: 100%;
         border-radius: 32px;
         padding: 6rem 0;
-        .form-card{
-            background: $whiteColor;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 3rem 2.5rem;
-            border-radius: 30px;
-            .card-heading{
-                text-align: center;
-                margin-bottom: 2rem;
-                h5{
-                    font-size: 2.143rem;
-                    line-height: 46px;
-                    font-weight: 600;
-                    font-family: $font-family-poppins-semibold;
-                    
+    }
+}
+.form-card{
+    background: $whiteColor;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+    .card-heading{
+        text-align: center;
+        margin-bottom: 2rem;
+        h5{
+            font-size: 2.143rem;
+            // line-height: 46px;
+            font-weight: 600;
+            font-family: $font-family-poppins-semibold;
+            @media (max-width:$md) {
+                font-size: 1.243rem;
+            }
+        }
+        p{
+            font-size: 1.429rem;
+            font-family: $font-family-poppins-regular;
+            line-height: 1.5;
+            color: rgba(34, 31, 32, 0.6);
+            margin: 0;
+            @media (max-width:$md) {
+                font-size: 1rem;
+            }
+        }
+    }
+    input{
+        font-weight: 500;
+        background: rgba(34, 31, 32, 0.04);
+        background-image: inherit !important;
+        border: 2px solid rgba(34, 31, 32, 0.08);
+        border-radius: 15px;
+        box-shadow: inherit;
+        font-family: $font-family-poppins-medium;
+        font-size: 1.429rem;
+        outline: none;
+        padding: 1.75rem 1.5rem;
+    }
+    .input-checkbox {
+        position: relative;
+        display: flex;
+        align-items: baseline;
+        column-gap: 3rem;
+        margin: 1.5rem 0 3rem 0;
+        @media (max-width:$md) {
+            column-gap: 2rem;
+            margin: 1rem 0 1.5rem 0;
+          }
+        .container-checkbox {
+            position: relative;
+            input {
+              position: absolute;
+              cursor: pointer;
+              height: 0;
+              width: 0;
+            }
+             input:checked ~ .checkmark {
+                  background-color: #2196F3;
+            }
+            input:checked ~ .checkmark:after {
+                  display: block;
+            }
+            .checkmark {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              height: 24px;
+              width: 24px;
+              background-color: #eee;
+              transform: translateY(-50%);
+              border-radius: 4px;
+              border: 1.5px solid rgba(34, 31, 32, 0.16);
+              @media (max-width:$md) {
+                height: 15px;
+                width: 15px;
+              }
+              &:after {
+                content: "";
+                position: absolute;
+                display: none;
+              }
+              &:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+              }
+            }
+        }
+        .form-label{
+            display: flex;
+            flex-wrap: wrap;
+            label{
+                width: 100%;
+                font-size: 1.429rem;
+                font-family: $font-family-poppins-regular;
+                font-weight: 400;
+                @media (max-width:$md) {
+                    font-size: 1rem;
+                }
+            }
+            a{
+                display: block;
+                text-decoration: none;
+                color: $primary;
+                font-weight: 600;
+                font-family: $font-family-poppins-semibold;
+                font-size: 1.429rem;
+                @media (max-width:$md) {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .btn-otp{
+        width: 100%;
+        font-size: 1.286rem !important;
+    }
+}
+.take-word{
+    padding: 10rem 0;
+    .take-word-sec{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .images-sec{
+            width: 48%;
+            display: flex;
+            column-gap: 1.5rem;
+            img{
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+            .images-sec-2{
+                margin-top: 1.5rem;
+            }
+            .images-sec-1{
+               position: relative;
+            }
+            .blur-1{
+                position: relative;
+               &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-height: 156px;
+                background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+               }
+            }
+            .blur-2{
+                position: relative;
+               &::before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                min-height: 156px;
+                background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+               }
+            }
+        }
+        .content-sec{
+            width: 34%;
+            .caption{
+                h3{
+                    font-size: 3.857rem;
+                    font-family: $font-family-satoshi-bold;
                 }
                 p{
-                    font-size: 1.429rem;
-                    font-family: $font-family-poppins-regular;
+                    font-size: 1.851rem;
                     line-height: 1.5;
-                    color: rgba(34, 31, 32, 0.6);
+                    font-family: $font-family-switzer-regular;
+                    padding: 2rem 5rem 0 0;
+                    margin: 0;
+                    color: $primary;
                 }
-            }
-            input{
-                font-weight: 500;
-                background: rgba(34, 31, 32, 0.04);
-                background-image: inherit !important;
-                border: 2px solid rgba(34, 31, 32, 0.08);
-                border-radius: 15px;
-                box-shadow: inherit;
-                font-family: $font-family-poppins-medium;
-                font-size: 1.429rem;
-                outline: none;
-                padding: 1.75rem 1.5rem;
-            }
-            .input-checkbox {
-                display: flex;
-                align-items: baseline;
-                column-gap: 1rem;
-                margin: 1.5rem 0 3rem 0;
-                .form-label{
-                    display: flex;
-                    flex-wrap: wrap;
-                    label{
-                        width: 100%;
-                    }
-                    a{
-                        display: block;
-                        text-decoration: none;
-                        color: $primary;
-                        font-weight: 600;
-                        font-family: $font-family-poppins-semibold;
-                    }
+                .btn-get{
+                    margin-top: 5rem;
+                    font-size: 1.286rem !important;
                 }
-            }
-            .btn-otp{
-                width: 100%;
-                font-size: 1.286rem !important;
             }
         }
     }
