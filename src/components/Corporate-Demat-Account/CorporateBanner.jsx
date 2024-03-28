@@ -35,9 +35,10 @@ function CorporateBanner() {
                         {
                          ischeck ?
                         <div className="rightsec d-flex justify-content-end" id="mutualid">
-                            <GoogleReCaptchaProvider reCaptchaKey={(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? "6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" : "6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz"} >
-                                <NewDematAccountForm />
-                            </GoogleReCaptchaProvider>
+                         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                            {/* <DematAccountForm /> */}
+                                            <NewDematAccountForm />
+                                        </GoogleReCaptchaProvider>
                         </div>:
                             <div className="rightsec d-flex justify-content-end" id="mutualid">
                                     <NewDematAccountForm />
