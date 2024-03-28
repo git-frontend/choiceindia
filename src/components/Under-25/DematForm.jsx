@@ -21,8 +21,8 @@ function Form() {
                           <a href='/'>Terms & Conditions</a>
                       </div>
                   </div>
-                  <div class="sub-formgrp">
-                    <button type="submit" class="btn-bg btn btn-primary btn-otp">Recieve OTP</button>
+                  <div className="sub-formgrp">
+                    <button type="submit" className="btn-bg btn btn-primary btn-otp">Recieve OTP</button>
                   </div>
               </div> 
    
