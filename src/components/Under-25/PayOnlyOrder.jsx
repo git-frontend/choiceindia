@@ -4,7 +4,7 @@ import  PayOrder  from '../../assets/images/under-25/pay-order-banner.png';
 function PayOnlyOrder() {
   return (
     <>
-        <section className='pay-only-order' id="showForm">
+        <section className='pay-only-order'>
             <div className='container'>
                 <div className='pay-order'>
                     <div className='img-sec'>

@@ -66,7 +66,7 @@ export default function Under25Header() {
                                 <NavLink to= '/career'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Career</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Youth</NavLink>
+                                <NavLink to= '/'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link fw-semibold" + (isActive ? "single-nav-links nav-link fw-semibold active-header" :'')}>Youth</NavLink>
                             </li>
                         </ul>
                         <ul className="navbar-nav ms-auto nav-header">

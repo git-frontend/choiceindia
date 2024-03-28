@@ -1,15 +1,14 @@
 import React from 'react';
 import  Avtar  from '../../assets/images/under-25/avtar.png';
 import  stocks  from '../../assets/images/under-25/stocks.png';
-import  DLF  from '../../assets/images/under-25/dlf.png';
-import  Reliance  from '../../assets/images/under-25/reliance.png';
-import  AdaniPower  from '../../assets/images/under-25/adani-power.png';
-import  Voltas  from '../../assets/images/under-25/voltas.png';
-import  Sonata  from '../../assets/images/under-25/sonata.png';
-import  eicher  from '../../assets/images/under-25/eicher-moters.png';
+import  DLF  from '../../assets/images/under-25/dlf.svg';
+import  Reliance  from '../../assets/images/under-25/reliance.svg';
+import  AdaniPower  from '../../assets/images/under-25/adani-power.svg';
+import  Voltas  from '../../assets/images/under-25/voltas.svg';
+import  Sonata  from '../../assets/images/under-25/sonata.svg';
+import  eicher  from '../../assets/images/under-25/eicher-moters.svg';
 import  mf  from '../../assets/images/under-25/mutual-fund.png';
 import  zeropercent  from '../../assets/images/under-25/zero-percent.png';
-import  InvestTrends  from '../../assets/images/under-25/invest-trends.png';
 function OneAcFinancialNeeds() {
   return (
     <>
@@ -24,28 +23,30 @@ function OneAcFinancialNeeds() {
                         <h2>One account for all your <br/>financial needs.</h2>
                     </div>
                     <div className='name-stocks'>
-                        <img src={stocks} alt='You name the stocks' height={621} width={1301} className='img-fluid stocks-banner' />
                         <div className='banner-caption'>
                             <h3>You name the stocks</h3>
                             <p>With over 5000+ stocks & 100+ ETFs, from established names like Reliance and Tata to the next big thing, own shares of some of the most popular companies.</p>
                         </div>
+                        <div className='im-sec'>
+                            <img src={stocks} alt='You name the stocks' height={621} width={1301} className='img-fluid stocks-banner' />
+                        </div>
                         <div className='icons icon-1'>
-                            <img src={eicher} alt="Eicher Moter" height={121} width={122} className="img-fluid"/>
+                            <img src={eicher} alt="Eicher Moter" height={107} width={107} className="img-fluid"/>
                         </div>
                         <div className='icons icon-2'>
-                            <img src={DLF} alt="DLF" height={121} width={122} className="img-fluid"/>
+                            <img src={DLF} alt="DLF" height={107} width={107} className="img-fluid"/>
                         </div>
                         <div className='icons icon-3'>
-                            <img src={Reliance} alt="Reliance" height={121} width={122} className="img-fluid"/>
+                            <img src={Reliance} alt="Reliance" height={107} width={107} className="img-fluid"/>
                         </div>
                         <div className='icons icon-4'>
-                            <img src={AdaniPower} alt="Adani Power" height={121} width={122} className="img-fluid"/>
+                            <img src={AdaniPower} alt="Adani Power" height={107} width={107} className="img-fluid"/>
                         </div>
                         <div className='icons icon-5'>
-                            <img src={Voltas} alt="Voltas" height={121} width={122} className="img-fluid"/>
+                            <img src={Voltas} alt="Voltas" height={107} width={107} className="img-fluid"/>
                         </div>
                         <div className='icons icon-6'>
-                            <img src={Sonata} alt="Sonata" height={121} width={122} className="img-fluid"/>
+                            <img src={Sonata} alt="Sonata" height={107} width={107} className="img-fluid"/>
                         </div>
                     </div>
                     <div className='mutual-funds-order'>
@@ -65,7 +66,6 @@ function OneAcFinancialNeeds() {
                         </div>
                     </div>
                     <div className='invest-trends'>
-                        <img src={InvestTrends} alt='Invest in trends' height={621} width={1301} className='img-fluid invest-banner' />
                         <div className='invest-caption'>
                             <h3>Invest in trends, not tickers.</h3>
                             <p>Curated eqiuty and mutual fund baskets that capture the next big thing, before it blows up.</p>
