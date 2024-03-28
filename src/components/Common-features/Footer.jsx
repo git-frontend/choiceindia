@@ -358,6 +358,9 @@ function Footer() {
               <li>
                 <a href="https://sachet.rbi.org.in/" target="_blank">Sachet Portal</a>
               </li>
+              <li>
+                <a href="https://solutions.razorpay.com/zatanna/choice_equity" target="_blank">Direct Pay-in</a>
+              </li>
               {/* <li>
                 <a href="#" target="_blank">Branches/Authorized Persons</a>
               </li> */}

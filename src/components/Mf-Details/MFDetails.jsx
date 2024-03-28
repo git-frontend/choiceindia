@@ -120,6 +120,9 @@ function MFTopFunds() {
                 if (res && res.Response) {
                     // console.log("res.Responsec", res.Response)
                     setSchemedata([res.Response])
+                    document.title = res.Response.SchemeBasic.SchemeMainName? res.Response.SchemeBasic.SchemeMainName +" NAV & SIP Returns": '';
+                    document.getElementById('meta-tags').content = res.Response.SchemeBasic.SchemeMainName? " Invest in " +res.Response.SchemeBasic.SchemeMainName +" scheme with Choice. Check the " +res.Response.SchemeBasic.SchemeMainName +" NAV, SIP returns & performance" : '';
+                    document.getElementById('canonical-link').href = "https://choiceindia.com/scheme/"+urlIdentity;
                     if (SchemePlanCode != 2066) {
                         if (res.Response.SchemeBasic.DRLumpSumAllowed == "N") {
                             disableLumpsum = true;
@@ -1312,7 +1315,7 @@ function MFTopFunds() {
                                                 ) : (
                                                     <div className="accordion" style={{ display: topHoldingsResponseObject.length === 0 && !showDropdownLoader ? 'block' : 'none' }}>
                                                         <div className="col-md-4 col-9 m-auto">
-                                                            <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" />
+                                                            {/* <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" /> */}
                                                         </div>
                                                     </div>
                                                 )}
@@ -1350,7 +1353,7 @@ function MFTopFunds() {
                                                 <div className="col-md-6 col-9 m-auto">
                                                     <p>Data Not Found</p>
                                                     <div className="col-md-4 col-9 m-auto">
-                                                        <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" />
+                                                        {/* <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" /> */}
                                                     </div>
                                                 </div>
                                             </div>

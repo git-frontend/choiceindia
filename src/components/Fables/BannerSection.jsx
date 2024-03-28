@@ -38,10 +38,10 @@ function BannerSection() {
 					<div className="row mt2">
 						<div className="col-md-12 d-flex justify-content-between flex-wrap">
 							<div className="fables-caption-left">
-								<h2 className="big-ttl">
+								<h1 className="big-ttl">
 									Fables
 									<span>Stories that Matter</span>
-								</h2>
+								</h1>
 							</div>
 							<div className="fables-caption-right">
 								<div className="heading-sec">

@@ -35,26 +35,9 @@
   src: url("../fonts/RedHatDisplayBold.eot") format("embedded-opentype"), url("../fonts/RedHatDisplayBold.woff2") format("woff2"), url("../fonts/RedHatDisplayBold.woff") format("woff"), url("../fonts/RedHatDisplayBold.ttf") format("truetype"), url("../fonts/RedHatDisplayBold.svg#RedHatDisplayBold") format("svg");
   font-display: swap;
 }
-@-webkit-keyframes bounce {
-  50% {
-    transform: translateY(-8px);
-  }
-}
 @keyframes bounce {
   50% {
     transform: translateY(-8px);
-  }
-}
-@-webkit-keyframes toTopFromBottom {
-  49% {
-    -webkit-transform: translateY(-100%);
-  }
-  50% {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-  }
-  51% {
-    opacity: 1;
   }
 }
 @keyframes toTopFromBottom {
@@ -74,17 +57,9 @@
     transform: translateY(-8px);
   }
 }
-/*# sourceMappingURL=landingpage.css.map */
+
 /* NEW */
 /* Safari */
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -93,15 +68,7 @@
     transform: rotate(360deg);
   }
 }
-@-webkit-keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/*# sourceMappingURL=style.css.map */
+
 p {
   font-family: "PoppinsRegular", sans-serif, sans-serif;
   font-size: 1.375rem;
@@ -440,6 +407,14 @@ nav .navbar-collapse {
   background: #FFFFFF !important;
 }
 
+.btn-fixed .btn-bg.btn-bg-dark {
+  background: #FFCE02 !important;
+  color: #221F20 !important;
+}
+.btn-fixed .btn-bg.btn-bg-dark:hover {
+  background: #FFCE02 !important;
+}
+
 .link-nrl {
   display: flex;
   align-items: center;
@@ -536,12 +511,10 @@ nav .navbar-collapse {
   box-shadow: 0px 0px 8px #d6d6d6;
 }
 .scroll-top .fa-angle-up {
-  -webkit-animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
-          animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .scroll-top svg {
-  -webkit-animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
-          animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .title {
@@ -730,13 +703,6 @@ nav .navbar-collapse {
   background-color: #fff;
   padding: 0 5px;
 }
-.bannersection .signal-form form .write:not(:-ms-input-placeholder).write:not(:focus) ~ .hello {
-  display: block;
-  top: -11px;
-  font-size: 16px;
-  background-color: #fff;
-  padding: 0 5px;
-}
 .bannersection .signal-form form .write:not(:placeholder-shown).write:not(:focus) ~ .hello {
   display: block;
   top: -11px;
@@ -751,12 +717,6 @@ nav .navbar-collapse {
   padding: 0 5px;
 }
 .bannersection .signal-form form .mobilewrite:not(:-moz-placeholder-shown).mobilewrite:not(:focus) ~ .hello {
-  top: -11px;
-  background: #fff;
-  font-size: 16px;
-  padding: 0 5px;
-}
-.bannersection .signal-form form .mobilewrite:not(:-ms-input-placeholder).mobilewrite:not(:focus) ~ .hello {
   top: -11px;
   background: #fff;
   font-size: 16px;
@@ -1234,9 +1194,9 @@ nav .navbar-collapse {
   padding-bottom: 5px;
   min-height: 42px;
   box-shadow: none;
-  font-size: 14px;
+  font-size: 1.2rem;
   font-weight: 500;
-  background: transparent;
+  background: #ffffff;
 }
 .stickybottom form .form-group .signal-same-btn {
   width: 100%;
@@ -1266,7 +1226,7 @@ nav .navbar-collapse {
   cursor: pointer;
 }
 .stickybottom .tnc {
-  width: 35%;
+  width: 23%;
 }
 .stickybottom .tnc .checkbox {
   margin-top: 5px;
@@ -1275,7 +1235,7 @@ nav .navbar-collapse {
 .stickybottom .tnc .tc {
   color: #fff;
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: underline !important;
 }
 .stickybottom .sendotp {
   background-color: #FFFFFF;
@@ -1323,7 +1283,6 @@ nav .navbar-collapse {
   vertical-align: middle;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   border: 1px solid transparent;
   padding: 11px 13px;
@@ -1533,7 +1492,6 @@ nav .navbar-collapse {
   border-top: 5px solid white;
   width: 30px;
   height: 30px;
-  -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
 
@@ -1543,7 +1501,6 @@ nav .navbar-collapse {
   border-top: 5px solid #221F20;
   width: 30px;
   height: 30px;
-  -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
 
@@ -1558,6 +1515,11 @@ nav .navbar-collapse {
   height: 400px;
   aspect-ratio: 400/400;
 }
+@media (max-width: 992px) {
+  .chapter-content-img {
+    height: auto;
+  }
+}
 
 .dotLoaderB {
   width: 24px;
@@ -1567,7 +1529,6 @@ nav .navbar-collapse {
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  -webkit-animation: rotation 2s linear infinite;
   animation: rotation 2s linear infinite;
 }
 
@@ -1603,6 +1564,12 @@ nav .navbar-collapse {
 @media (max-width: 992px) {
   html {
     font-size: 11px;
+  }
+  .btn-view-more-sticky.btn-fixed {
+    display: block !important;
+  }
+  .bannersection {
+    padding: 7rem 0;
   }
 }
 @media (max-width: 767px) {
@@ -1712,9 +1679,6 @@ nav .navbar-collapse {
   }
   .m52 {
     margin: 42px 0;
-  }
-  .btn-view-more-sticky.btn-fixed {
-    display: block !important;
   }
   .demat-modal-sleekbox-overlay .exit-intent-sleekbox-popup {
     width: 90%;
@@ -1909,4 +1873,19 @@ nav .navbar-collapse {
     position: relative !important;
     right: 1%;
   }
+}
+@media (max-width: 768px) {
+  .hideform {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .visibleform {
+    display: block !important;
+  }
+}
+
+.demat-cam-page-new .btn-fixed {
+  display: none !important;
 }/*# sourceMappingURL=landingpage.css.map */

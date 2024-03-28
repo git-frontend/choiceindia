@@ -199,6 +199,7 @@ const LazyMFDetails =React.lazy(()=> import('./components/Mf-Details/MFDetails')
 const LazyAMCDetails =React.lazy(()=> import('./components/AMC-Details/AMCDetails'));
 const LazyELSSDetails =React.lazy(()=> import('./components/ELSS-MF-Details/ELSSDetails'));
 const LazyCorporateDematAc =React.lazy(()=> import('./components/Corporate-Demat-Account/CorporateDematAc'));
+const LazyBugBountyProgram =React.lazy(()=> import('./components/Bug-bounty-program/BugBountyProgram'));
 
 function Routing() {
 
@@ -513,7 +514,7 @@ function Routing() {
                                 < LazyPrivacyPolicy />
                             </React.Suspense>
                         } />
-                        <Route exact path='/Investor-complaints' element={
+                        <Route exact path='/investor-complaints' element={
                             <React.Suspense>
                                 < LazyInvestorcomplaints />
                             </React.Suspense>
@@ -1043,6 +1044,12 @@ function Routing() {
                          <Route exact path='/corporate-demat-account' element={
                             <React.Suspense>
                                  < LazyCorporateDematAc />
+                            </React.Suspense>
+                        } />
+
+                         <Route exact path='/bug-bounty-program' element={
+                            <React.Suspense>
+                                 < LazyBugBountyProgram />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />

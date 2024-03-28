@@ -52,7 +52,7 @@ function Banner() {
                         </div>
                         <div className="col-lg-7 col-md-7">
                             <div className="free-banner-caption">
-                                <h1 className="big-ttl">Free Demat Account<br /> Opening in <span className="clock">5</span> Minutes </h1>
+                                <h1 className="big-ttl">Open Free Demat Account<br /> in <span className="clock">5</span> Minutes </h1>
                                 <div className="campaign-banner-features">
                                     <div className="campaign-features-list">
                                         <span className="campaign-img">
