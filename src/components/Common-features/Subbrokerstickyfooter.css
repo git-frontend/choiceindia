@@ -2,6 +2,7 @@
 /*Font family*/
 /*bg varibales*/
 /*textvaribales*/
+/*Shadow color*/
 /*Responsive screen width*/
 .stickybottom {
   padding: 1rem;
@@ -12,13 +13,13 @@
   z-index: 99999;
   left: 0;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .stickybottom {
     display: none !important;
   }
 }
 .stickybottom .text {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.5rem;
   font-family: "PoppinsBold", sans-serif;
   color: #ffffff;
@@ -52,7 +53,7 @@
   pointer-events: none;
 }
 .stickybottom form .form-group .write {
-  color: #ffffff;
+  color: #221F20;
   width: 100%;
   padding: 5px 13px 5px 17px;
   border: 1px solid #ffffff;
@@ -61,9 +62,10 @@
   padding-bottom: 5px;
   min-height: 42px;
   box-shadow: none;
-  font-size: 14px;
+  font-size: 1.2rem;
   font-weight: 500;
   background: transparent;
+  background: #ffffff;
 }
 .stickybottom form .form-group .signal-same-btn {
   width: 100%;
@@ -92,7 +94,7 @@
   color: #ffffff;
 }
 .stickybottom .tnc {
-  width: 35%;
+  width: 23%;
 }
 .stickybottom .tnc .checkbox {
   margin-top: 5px;
@@ -101,7 +103,7 @@
 .stickybottom .tnc .tc {
   color: #ffffff;
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: underline !important;
   cursor: pointer;
 }
 .stickybottom .form-btn {
@@ -109,7 +111,7 @@
   border-radius: 8px;
   padding: 12px 24px;
   color: #221F20;
-  margin-left: 5rem;
+  margin-left: 2.5rem;
 }
 .stickybottom .form-btn span {
   color: #221F20;
@@ -136,24 +138,22 @@
   left: 0;
   display: none !important;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .btn-fixed {
     display: block !important;
   }
 }
 .btn-fixed .openbtn {
-  /* border-radius: 0 !important; */
   width: 100%;
-  background-color: #221F20;
+  background-color: #FFCE02;
   font-size: 1.5rem;
   border-radius: 8px;
   font-weight: bold;
-  color: #FFCE02;
+  color: #221F20;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   border: 1px solid transparent;
   padding: 11px 13px;

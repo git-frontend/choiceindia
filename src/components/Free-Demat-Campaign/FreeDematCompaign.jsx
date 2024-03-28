@@ -84,6 +84,21 @@ function FreeDematCompaign() {
         sitemap4.href = meta_tags[location.pathname.replace('/', "")].link4 || '';
         sitemap4.hreflang = meta_tags[location.pathname.replace('/', "")].href4 || '';
         document.head.appendChild(sitemap4);
+
+        const sitemap5 = document.createElement('link');
+        sitemap5.rel = "alternate";
+        sitemap5.id = "link5";
+        sitemap5.href = meta_tags[location.pathname.replace('/', "")].link5 || '';
+        sitemap5.hreflang = meta_tags[location.pathname.replace('/', "")].href5 || '';
+        document.head.appendChild(sitemap5);
+
+        const sitemap6 = document.createElement('link');
+        sitemap6.rel = "alternate";
+        sitemap6.id = "link6";
+        sitemap6.href = meta_tags[location.pathname.replace('/', "")].link6 || '';
+        sitemap6.hreflang = meta_tags[location.pathname.replace('/', "")].href6 || '';
+        document.head.appendChild(sitemap6);
+        
     }
       
     }
