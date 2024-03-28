@@ -16,7 +16,7 @@ function HoldUp() {
                     <div className='hold-up'>
                         <div className='imgcard'>
                             <div className='card-details'>
-                                <img src={SecuredInvs} width={587} height={503} className="img-fluid ban-mf"/>
+                                <img alt='Secured Investments' src={SecuredInvs} width={587} height={503} className="img-fluid ban-mf"/>
                                 <div className='card-caption'>
                                     <h4>Secured Investments, Smart moves.</h4>
                                     <p>Chill investments for low-key money goals.</p>
@@ -25,7 +25,7 @@ function HoldUp() {
                         </div>
                         <div className='imgcard'>
                             <div className='card-details'>
-                                <img src={Covered} width={587} height={503} className="img-fluid ban-mf"/>
+                                <img alt='Covered' src={Covered} width={587} height={503} className="img-fluid ban-mf"/>
                                 <div className='card-caption'>
                                     <h4>Adulting 101? We got you covered</h4>
                                     <p>Get a range of insurance to live a stress-free life.</p>
@@ -34,7 +34,7 @@ function HoldUp() {
                         </div>
                         <div className='imgcard'>
                             <div className='card-details'>
-                                <img src={Track} width={587} height={503} className="img-fluid ban-mf"/>
+                                <img alt='Tacks in a single app' src={Track} width={587} height={503} className="img-fluid ban-mf"/>
                                 <div className='card-caption'>
                                     <h4>Keep all tacks in a single app</h4>
                                     <p>One app, endless possibilities for all your financial needs.</p>

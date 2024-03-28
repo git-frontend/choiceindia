@@ -12,18 +12,18 @@ function TakeWord() {
                 <div className='images-sec'>
                     <div className='images-sec-1'>
                         <div className='blur-1'>
-                            <img src={Img1} className="img-fluid"/>
+                            <img alt='' src={Img1} className="img-fluid"/>
                         </div>
                        <div className='blur-2'>
-                            <img src={Img2} className="img-fluid"/>
+                            <img alt='' src={Img2} className="img-fluid"/>
                        </div>
                     </div>
                     <div className='images-sec-2'>
                         <div className='blur-1'>
-                            <img src={Img3} className="img-fluid"/>
+                            <img alt='' src={Img3} className="img-fluid"/>
                         </div>
                         <div className='blur-2'>
-                            <img src={Img4} className="img-fluid"/>
+                            <img alt='' src={Img4} className="img-fluid"/>
                         </div>
                     </div>
                 </div>

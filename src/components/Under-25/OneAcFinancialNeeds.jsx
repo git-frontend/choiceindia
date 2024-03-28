@@ -52,7 +52,7 @@ function OneAcFinancialNeeds() {
                     <div className='mutual-funds-order'>
                         <div className='left-sec'>
                             <div className='mf-funds'>
-                                <img src={mf} width={587} height={503} className="img-fluid ban-mf"/>
+                                <img alt='Mutual funds' src={mf} width={587} height={503} className="img-fluid ban-mf"/>
                                 <div className='mf-caption'>
                                     <h3>Mutual funds ain't your grandpa's thing anymore.</h3>
                                     <p>Build your future with compounding <br /> power, right from your phone.</p>
@@ -61,7 +61,7 @@ function OneAcFinancialNeeds() {
                         </div>
                         <div className='right-sec'>
                             <div className='orders'>
-                                <img src={zeropercent} className="img-fluid"/>
+                                <img alt='zero Percent' src={zeropercent} className="img-fluid"/>
                             </div>
                         </div>
                     </div>
