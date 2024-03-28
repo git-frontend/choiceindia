@@ -126,8 +126,7 @@ function Banner() {
                 <h1>Join the Best Demat Account Refer and Earn Program</h1>
                 <div className="banner-box">
                   <p>
-                    Invite your friends and get up to Rs.100 incentive per
-                    referral and your friend will get up to Rs. 100.
+                  Invite your friends and get <span>₹500*</span> brokerage reversal per referral.
                   </p>
 
                   <div className="get-link-form generate-refer-link">
