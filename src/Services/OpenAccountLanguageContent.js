@@ -112,7 +112,7 @@ const language = {
 
 const OpenAccountLanguageContent = {
     getContent: function (lang, field, isBlog) {
-        console.log("Blog "+isBlog);
+        // console.log("Blog "+isBlog);
         if ((window.innerWidth > 990 && isBlog)) {
             return language[lang]['blogField'];
         }
