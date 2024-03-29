@@ -355,7 +355,7 @@ function NewDematAccountForm(props) {
             /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
             "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' :(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate': UTMCampaign.current || null,
-            "utm_content": isBlog == "yes" ? UTMContent.current || 'in_content_cta' : UTMContent.current || null,
+            "utm_content": isBlog == "yes" ? UTMContent.current || 'desktop_sticky_cta' : UTMContent.current || null,
             "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             // 'sidebar_seo_leads'
             "utm_medium": isBlog == "yes" ? UTMMedium.current || 'blog_leads' : UTMMedium.current || null,
