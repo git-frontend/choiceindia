@@ -306,21 +306,16 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             @media (max-width:$sm) {
                 width: 100%;
                 position: absolute;
-                top: 50%;
+                top: 60%;
                 left: 0;
                 right: 0;
             }
             .form-demat{
                 width: 90%;
                 @media (max-width:$sm) {
-                    width: 100%;
                     display: flex;
                     justify-content: center;
-                }
-                .demat-account-form{
-                    @media (max-width:$sm) {
-                        width: 100%;
-                    }
+                    margin: 0 auto;
                 }
             }
            
@@ -335,7 +330,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
     position: relative;
     overflow: hidden;
     @media (max-width:$sm) {
-        padding: 20rem 0 0;
+        padding: 24rem 0 0;
     }
     .pay-order{
         display: flex;
@@ -988,6 +983,9 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                         font-weight: 400;
                         margin: 0;
                         color: $whiteColor;
+                        @media (max-width:$md) {
+                            font-size: 1.143rem;
+                        }
                         @media (max-width:$sm) {
                             font-size: 1.243rem;
                         }
@@ -1012,6 +1010,10 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
+            @media (max-width:$sm) {
+                width: 90%;
+                margin: 0 auto;
+            }
         }
     }
 }
@@ -1019,8 +1021,10 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
     box-shadow: 0px 0px 15px #00000040;
     background: $whiteColor;
     padding: 2rem 2.5rem;
-    @media (max-width:$md) {
-        width: 100%;
+    width: 100%;
+    @media (max-width:$sm) {
+        padding: 2rem;
+        margin: 0;
     }
     .btn-bg-dark {
         background: $primary !important;
@@ -1119,6 +1123,9 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                 width: 100%;
             }
             .caption{
+                @media (max-width:$sm) {
+                    text-align: center;
+                }
                 h3{
                     font-size: 3.857rem;
                     font-family: $font-family-satoshi-bold;
