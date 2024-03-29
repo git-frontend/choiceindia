@@ -802,17 +802,16 @@
 					display: flex;
 					flex-wrap: wrap;
 					justify-content: center;
-					width: auto !important;
+					// width: auto !important;
 					overflow: hidden;
 					line-height: 50px;
 					text-align: center;
 					font-size: 1.5rem;
 					font-weight: 600;
 					color: #221F20;
-
 					letter-spacing: 8px;
 					margin: 0 auto;
-
+					width: 100% !important;
 					&::placeholder {
 						color: rgba(0, 0, 0, 0.3);
 						font-size: 1.2rem;
