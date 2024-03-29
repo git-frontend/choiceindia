@@ -36,7 +36,7 @@ function NewDematAccountForm(props) {
     const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     const [referID, setReferID] = useState('');
-    const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1) ? 'demat-web' : " ")
+    const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1) || (window.location.pathname.indexOf('/under-25') > -1) ? 'demat-web' : " ")
  
 
 
@@ -527,6 +527,12 @@ function NewDematAccountForm(props) {
                         (window.location.pathname.indexOf("/mutual-funds-investment") > -1) ?
                         <h2 className="heading">Open Your Account</h2>:
                         <h2 className="heading">Open Demat Account</h2>
+
+                      }
+                      {
+                        (window.location.pathname.indexOf("/under-25") > -1) ?
+                        <p className="under-p">Take Control of Your Finances</p>:""
+                
 
                       }
                         
