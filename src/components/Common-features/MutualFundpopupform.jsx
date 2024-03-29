@@ -61,6 +61,7 @@ var UTMContent = useRef('');
 const [showOTP, setShowOTP] = useState(false);
 const [isCheck, setisCheck] = useState(false);
 const [value, setValue] = useState('Details');
+const isBlog=(window.location.pathname.indexOf('blog') > -1)? 'yes':'';
 /** state to show thankyou popup default */
 const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
 
@@ -461,16 +462,17 @@ let request = {
     // "messgae": '',
     "referredId": refercode.current || null,
     "serviceCode": "CBAMF",
-    "utm_source": UTMSource.current ||null,
-    "utm_medium":UTMMedium.current || null,
-    "utm_campaign": UTMCampaign.current || null,
+    "utm_source": isBlog =="yes" ? UTMSource.current ||'mff_lead_generation':UTMSource.current || null,
+    "utm_medium":isBlog =="yes" ? UTMMedium.current || 'blog_leads':UTMMedium.current|| null,
+    "utm_campaign": isBlog =="yes" ? UTMCampaign.current|| 'choice_blog_leads':UTMCampaign.current || null,
     "utm_term": UTMTerm.current || null,
     "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
-    "utm_content": UTMContent.current || null,
+    "utm_content": isBlog =="yes" ? UTMContent.current || 'in_content_cta_mobile': UTMContent.current || null,
     "whatsappConsent": true,
     "master_service_name":"CBA", 
     "captchaResp": captchaToken
 };
+// console.log("request",request)
 subBrokerService.sendOTPNew(request).then((res) => {
     // console.log(res, "sendOTP");
     hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
