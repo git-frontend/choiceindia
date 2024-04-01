@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import  Avtar  from '../../assets/images/under-25/avtar.png';
 import  stocks  from '../../assets/images/under-25/stocks.png';
 import  DLF  from '../../assets/images/under-25/dlf.svg';
@@ -10,9 +10,30 @@ import  eicher  from '../../assets/images/under-25/eicher-moters.svg';
 import  mf  from '../../assets/images/under-25/mutual-fund.png';
 import  zeropercent  from '../../assets/images/under-25/zero-percent.png';
 function OneAcFinancialNeeds() {
+
+    const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById('your-section-id'); // Change 'your-section-id' to the ID of your target section
+      if (!section) return;
+
+      const sectionTop = section.offsetTop;
+      const currentScrollPos = window.pageYOffset;
+      const isScrolledIntoView = currentScrollPos > sectionTop;
+
+      setIsVisible(isScrolledIntoView);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
-    <section className='financial-needs-sec'>
+    <section className='financial-needs-sec' id='your-section-id'>
         <div className='container'>
             <div className='row'>
                 <div className='col-md-12'>
@@ -30,24 +51,27 @@ function OneAcFinancialNeeds() {
                         <div className='im-sec'>
                             <img src={stocks} alt='You name the stocks' height={621} width={1301} className='img-fluid stocks-banner' />
                         </div>
-                        <div className='icons icon-1'>
-                            <img src={eicher} alt="Eicher Moter" height={107} width={107} className="img-fluid"/>
+                        <div className={`scroll-div ${isVisible ? 'show' : 'hide'}`}>
+                            <div className='icons icon-1'>
+                                <img src={eicher} alt="Eicher Moter" height={107} width={107} className="img-fluid"/>
+                            </div>
+                            <div className='icons icon-2'>
+                                <img src={DLF} alt="DLF" height={107} width={107} className="img-fluid"/>
+                            </div>
+                            <div className='icons icon-3'>
+                                <img src={Reliance} alt="Reliance" height={107} width={107} className="img-fluid"/>
+                            </div>
+                            <div className='icons icon-4'>
+                                <img src={AdaniPower} alt="Adani Power" height={107} width={107} className="img-fluid"/>
+                            </div>
+                            <div className='icons icon-5'>
+                                <img src={Voltas} alt="Voltas" height={107} width={107} className="img-fluid"/>
+                            </div>
+                            <div className='icons icon-6'>
+                                <img src={Sonata} alt="Sonata" height={107} width={107} className="img-fluid"/>
+                            </div>
                         </div>
-                        <div className='icons icon-2'>
-                            <img src={DLF} alt="DLF" height={107} width={107} className="img-fluid"/>
-                        </div>
-                        <div className='icons icon-3'>
-                            <img src={Reliance} alt="Reliance" height={107} width={107} className="img-fluid"/>
-                        </div>
-                        <div className='icons icon-4'>
-                            <img src={AdaniPower} alt="Adani Power" height={107} width={107} className="img-fluid"/>
-                        </div>
-                        <div className='icons icon-5'>
-                            <img src={Voltas} alt="Voltas" height={107} width={107} className="img-fluid"/>
-                        </div>
-                        <div className='icons icon-6'>
-                            <img src={Sonata} alt="Sonata" height={107} width={107} className="img-fluid"/>
-                        </div>
+                        
                     </div>
                     <div className='mutual-funds-order'>
                         <div className='left-sec'>

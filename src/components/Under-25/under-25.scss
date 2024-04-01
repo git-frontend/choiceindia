@@ -545,7 +545,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             &.icon-1{
                 bottom: 3%;
                 right: 870px;
-                animation: bounce-in-top 10s ease-out infinite;
+                animation: bounce-in-top 10s ease forwards;
                 @media (max-width:$md) {
                     bottom: 10%;
                     right: 450px;
@@ -558,7 +558,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             &.icon-2{
                 bottom: 25%;
                 right: 680px;
-                animation: bounce-in-top 10s ease-out infinite;
+                animation: bounce-in-top 10s ease forwards;
                 @media (max-width:$md) {
                     top: 4%;
                     right: -65px;
@@ -570,7 +570,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             &.icon-3{
                 bottom: 3%;
                 right: 500px;
-                animation: bounce-in-right 10s ease-out infinite;
+                animation: bounce-in-right 10s ease forwards;
                 @media (max-width:$md) {
                     bottom: 25%;
                     right: 380px;
@@ -583,7 +583,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             &.icon-4{
                 bottom: 55%;
                 right: 410px;
-                animation: bounce-in-right 10s ease-out infinite;
+                animation: bounce-in-right 10s ease forwards;
                 @media (max-width:$md) {
                     bottom: 40%;
                     right: 450px;
@@ -595,7 +595,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             &.icon-5{
                 top: 3%;
                 right: 220px;
-                animation: bounce-in-top 10s ease-out infinite;
+                animation: bounce-in-top 10s ease forwards;
                 @media (max-width:$md) {
                     top: 23%;
                     right: 20px;
@@ -607,7 +607,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             &.icon-6{
                 bottom: 55%;
                 right: 25px;
-                animation: bounce-in-right 10s ease-out infinite;
+                animation: bounce-in-right 10s ease forwards;
                 @media (max-width:$md) {
                     right: -30px;
                 }
@@ -615,6 +615,15 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                     right: -60px;
                     bottom: 54%;
                 }
+            }
+        }
+        .scroll-div{
+            width: 100%;
+            &.show{
+                display: block;
+            }
+            &.hide{
+                display: none;
             }
         }
     }
