@@ -780,7 +780,11 @@ function Banneraf() {
             if (subId) {
               setShowPopUp("RMFlow");
             } else {
-              setShowPopUp("ClientFlow")
+              if(response.data.Response && response.data.Response.PaymentLink){
+                window.open(response.data.Response.PaymentLink, "_self");
+              }else{
+                setShowPopUp("ClientFlow")
+              }
             }
           } else {
             setShowCancelOrder(true);
