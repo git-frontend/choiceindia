@@ -11,6 +11,7 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import '../Common-features/demat-form.scss'
 import "./mf-details.scss";
 import Form from 'react-bootstrap/Form';
+import utils from '../../Services/utils';
 function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
@@ -225,15 +226,15 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
             "account_type": "all"
             // "captcha": "1"
         }
+        utils.pushDataLayerEvent({
+            'event': 'send_otp',
+            'page_path': window.location.pathname,
+            'page_url': window.location.href,
+            'platform': 'website'
+        })
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
-                utils.pushDataLayerEvent({
-                    'event': 'send_otp',
-                    'page_path': window.location.pathname,
-                    'page_url': window.location.href,
-                    'platform': 'website'
-                })
                 otpSessionID.current = res.data.Body.otp_session_id;
                 otpLeadID.current = res.data.Body.lid
                 handleOTPShow();

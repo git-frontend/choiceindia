@@ -10,7 +10,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
-
+import utils from "../../Services/utils";
 
 function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick}) {
     // console.log('PPP',onClose.handleOTPClose());

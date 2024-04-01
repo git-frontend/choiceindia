@@ -9,6 +9,7 @@ import OpenAccountLanguageContent from '../../Services/OpenAccountLanguageConten
 import Spinner from 'react-bootstrap/Spinner';
 import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal'
+import utils from "../../Services/utils";
 
 
 function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, language, openInfoPopup, showPopup }) {

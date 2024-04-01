@@ -7,6 +7,7 @@ import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import { Link } from "react-router-dom";
 import Thankyoupopup from './Thanku-popup.jsx';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import utils from '../../Services/utils';
 
 function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
 
@@ -162,6 +163,7 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
 
         };
         // console.log("hghg", request)
+
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {

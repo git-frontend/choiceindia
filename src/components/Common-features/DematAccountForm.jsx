@@ -412,16 +412,16 @@ function DematAccountForm(props) {
             // "captcha": "1"
 
         };
+        utils.pushDataLayerEvent({
+            'event': 'send_otp',
+            'page_path': window.location.pathname,
+            'page_url': window.location.href,
+            'platform': 'website'
+        })
         // console.log("request", request)
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
-                utils.pushDataLayerEvent({
-                    'event': 'send_otp',
-                    'page_path': window.location.pathname,
-                    'page_url': window.location.href,
-                    'platform': 'website'
-                })
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
 
                 setShowThanku(prevState => {
