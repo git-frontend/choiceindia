@@ -112,7 +112,7 @@ function Fabdetailsbanner(props) {
         setIsActive(true); 
 
     };
-    const [isActive, setIsActive] = useState();
+    const [isActive, setIsActive] = useState(false);
     const [name, setName] = useState('hideform');
     const [isCheck, setIsCheck] = useState(false);
 
@@ -356,7 +356,9 @@ useEffect(() => {
 
 
                                         <div className={name}>
-                                        <div className="btn-fixed" ref={openAccountMobile}>
+                                       {(!window.location.pathname.includes('sub-broker') && 
+                                       !window.location.pathname.includes('mutual-fund-distributor')) &&
+                                       <div className="btn-fixed" ref={openAccountMobile}>
                                             <div className="open-account-mob" onClick={handleClick}>
                                                 <span className="sticy-contnet content">Open Free Demat Account in 5 Mins</span>
                                                 <span className="sticy-contnet icon">
@@ -367,7 +369,7 @@ useEffect(() => {
                                                     </svg>
                                                 </span>
                                             </div>
-                                        </div>
+                                        </div>}
 {/* 
                                         <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
                                             <button className=" primary-orange-btn scroll-top-account openbtn" onClick={handleClick}>Open Account Now</button>
