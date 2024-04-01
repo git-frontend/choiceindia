@@ -338,6 +338,12 @@ function NewDematAccountForm(props) {
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
+                utils.pushDataLayerEvent({
+                    'event': 'send_otp',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'platform': 'website'
+                })
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
                 // setForm('sent-otp')
                 // setformdata()
@@ -591,7 +597,7 @@ function NewDematAccountForm(props) {
             {
                 showThanku.showModal && (
                     <div className="demat-account-form demat-account-form-new">
-                        <div className="thank-you-msg">
+                        <div className="thank-you-msg" id="thank-you-tag">
                         <LazyLoader src={thumbsup} className={'img-fluid'} width={"160"} height={"160"} alt="Loading" />
                         <h2 className={(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) ? "thankyou-title campaign-success":"thankyou-title"}>Thank You!</h2>
                             <p className="subheading">{showThanku.resText? showThanku.resText: "You are being redirected to onboarding page!"}</p>

@@ -18,6 +18,7 @@ import failureimg from '../../assets/images/failure.svg';
 import './Thankyoupopup.scss';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import backIcon from '../../assets/images/backspace.svg';
+import utils from "../../Services/utils";
 
 function DematAccountForm(props) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -111,6 +112,19 @@ function DematAccountForm(props) {
 
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
+                utils.pushDataLayerEvent({
+                    'event': 'open_account_lead_submit',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'phone': mobileNumber || "",
+                    'platform': 'website'
+                })
+                utils.pushDataLayerEvent({
+                    'event': 'otp_procced',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'platform': 'website'
+                })
                 setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
                 // console.log('Success', res);
                 if (consent == "yes") {
@@ -402,6 +416,12 @@ function DematAccountForm(props) {
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
+                utils.pushDataLayerEvent({
+                    'event': 'send_otp',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'platform': 'website'
+                })
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
 
                 setShowThanku(prevState => {

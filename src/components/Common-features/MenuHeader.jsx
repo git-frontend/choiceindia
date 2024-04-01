@@ -7,6 +7,8 @@ import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import utils from '../../Services/utils';
+
 export default function Header() {
 
     const [show, setShow] = useState(true)
@@ -41,13 +43,13 @@ export default function Header() {
                     </button>
                         <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                         <ul className="navbar-nav ms-auto nav-header">
-                            <li className="nav-item">
+                            <li className="nav-item generic-id">
                                 <NavLink to= '/about-us'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>About</NavLink>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item generic-id">
                                 <NavLink to= '/investment-app'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
                             </li>
-                            <li className="nav-item service-section-sub">
+                            <li className="nav-item service-section-sub generic-id">
                                 <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
                                 
                                  <NavDropdown  title="Services" id="navbarScrollingDropdown" className="top-nav-links service-section serv-drop">
@@ -61,16 +63,16 @@ export default function Header() {
                                  {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Tax Advisory</NavDropdown.Item> */}
                                 </NavDropdown>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item generic-id">
                                 <NavLink to= '/research-listing'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
                             </li>
                             {/* <li className="nav-item">
                                 <NavLink to= '/career'   className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
                             </li> */}
-                            <li className="nav-item">
+                            <li className="nav-item generic-id">
                                 <NavLink to= '/partner'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Partners</NavLink>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item generic-id">
                                 <NavLink to= '/contact-us'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
                             </li>
                             {/* <li className="nav-item login-btn">
@@ -78,7 +80,14 @@ export default function Header() {
                             </li> */}
                             <li className="nav-item login-btn">
                                 <NavDropdown title="Log In" id="navbarScrollingDropdown" className="top-nav-links login-btn">
-                                <NavDropdown.Item className="nav-dropdown-links" href='https://finx.choiceindia.com/auth/login' target="_blank">client</NavDropdown.Item>
+                                <NavDropdown.Item className="nav-dropdown-links generic-id" href='https://finx.choiceindia.com/auth/login' target="_blank" onClick={() => {utils.pushDataLayerEvent(
+                                    {
+                                        'event': 'login_click',
+                                        'page_path': window.location.pathname,
+                                        'page_url': window.location.href,
+                                        'platform': 'website'
+                                    }
+                                )}}>client</NavDropdown.Item>
                                   <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://backoffice.choiceindia.com/WebLogin/index.cfm?Logintype=Branch'>partner</NavDropdown.Item>
                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'>employee</NavDropdown.Item>
                                 </NavDropdown>
@@ -88,8 +97,15 @@ export default function Header() {
                             </li> */}
 
                            
-                            <li className="nav-item get-btn get-btn2">
-                                <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Open Free Account</NavLink>
+                            <li className="nav-item get-btn get-btn2" id="open-account-tag">
+                                <NavLink className="nav-link"  onClick={ ()=>{setShow(!show);utils.pushDataLayerEvent({
+                                    'event': 'open_free_account_click',
+                                    'page_path': window.location.pathname,
+                                    'page_url': window.location.href,
+                                    'cta_source': 'top_nav',
+                                    'platform': 'website'
+                                })
+                                }} to='/open-free-demat-account'>Open Free Account</NavLink>
                             </li>
                         </ul>
                     </div>

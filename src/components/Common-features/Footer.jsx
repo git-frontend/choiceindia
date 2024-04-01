@@ -214,22 +214,22 @@ function Footer() {
                           </div>
 
                           <div className="footer-social-links">
-                            <a href="https://www.facebook.com/ChoiceHQ/" aria-label="Facebook" target="_blank">
+                            <a href="https://www.facebook.com/ChoiceHQ/" aria-label="Facebook" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faFacebookF} />
                             </a>
-                            <a href="https://twitter.com/ChoiceHQ_Social" aria-label="Twitter" target="_blank">
+                            <a href="https://twitter.com/ChoiceHQ_Social" aria-label="Twitter" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faTwitter} />
                             </a>
-                            <a href="https://www.linkedin.com/company/choice-broking/" aria-label="Linkedin" target="_blank">
+                            <a href="https://www.linkedin.com/company/choice-broking/" aria-label="Linkedin" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faLinkedinIn} />
                             </a>
-                            <a href="https://instagram.com/choicehq_social" aria-label="Instagram" target="_blank">
+                            <a href="https://instagram.com/choicehq_social" aria-label="Instagram" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faInstagram} />
                             </a>
-                            <a href="https://www.youtube.com/c/ChoiceHQ" aria-label="Youtube" target="_blank">
+                            <a href="https://www.youtube.com/c/ChoiceHQ" aria-label="Youtube" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faYoutube} />
                             </a>
-                            <a href="https://t.me/CEBPL" aria-label="Telegram" target="_blank">
+                            <a href="https://t.me/CEBPL" aria-label="Telegram" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faTelegramPlane} />
                             </a>
                           </div>
