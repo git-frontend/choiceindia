@@ -228,7 +228,7 @@ window.location.pathname.indexOf("/intraday-charges") === -1 &&
 window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1 &&
 window.location.pathname.indexOf("/campaign/fno-trading") === -1 &&
 window.location.pathname.indexOf("/campaign/intraday-trading") === -1 ?
-  (window.location.pathname.indexOf("/under-25") !== -1 ? <Under25Header /> : <Header />)
+  (window.location.pathname.indexOf("/under25") !== -1 ? <Under25Header /> : <Header />)
   : <CampaignHeader />}
             {/* {(window.location.pathname.indexOf("/under-25") === -1)  ? <Header /> : <Under25Header />} */}
                 {/* <Header /> */}
@@ -1070,7 +1070,7 @@ window.location.pathname.indexOf("/campaign/intraday-trading") === -1 ?
                                  < LazyBugBountyProgram />
                             </React.Suspense>
                         } />
-                         <Route exact path='/under-25' element={
+                         <Route exact path='/under25' element={
                             <React.Suspense>
                                  < LazyUnder25 />
                             </React.Suspense>

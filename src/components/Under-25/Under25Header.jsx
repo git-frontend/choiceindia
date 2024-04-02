@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import  ImageSub0  from '../../assets/images/under-25/choice-logo.svg';
+import  ImageSub1  from '../../assets/images/under-25/choice-logo-dark.svg';
 import {NavLink, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
@@ -38,8 +39,8 @@ export default function Under25Header() {
                 <div className="container">
                     <a href="/">
                     <div  className="navbar-brand logo-main">
-                        <img src={ImageSub0} width="150" height="37" className="img-fluid logo-dark" alt="Choice - Best Stock Broker in India" />
-                        </div>
+                        <img src={scrolling ? ImageSub1 : ImageSub0} width="150" height="37" className="img-fluid logo-dark" alt="Choice - Best Stock Broker in India" /> 
+                    </div>
                        </a>
                     <button className="navbar-toggler border" 
                     onClick={ ()=>setShow(!show)} >

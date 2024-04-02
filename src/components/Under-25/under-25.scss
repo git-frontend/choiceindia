@@ -148,7 +148,47 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             box-shadow: inherit;
             min-height: 100px;
             &.header-scroll{
-                background:#6eadcd;
+                backdrop-filter: blur(20px);
+                background-color: rgba(255, 255, 255, 0.4);
+                .navbar{
+                    .navbar-toggler{
+                        border-color: $primary !important;
+                        svg{
+                            path{
+                                @media (max-width:$md) {
+                                    color: $primary;
+                                }
+                            }
+                        }
+                    }
+                    .nav-header{
+                        >li{
+                            .nav-link{
+                                color: $primary;
+                            }
+                            &.get-btn2{
+                                a{
+                                    color: $whiteColor;
+                                }
+                             }
+                            &.get-btn-outline{
+                                border: 1px solid $primary;
+                                color: $primary;
+                                @media (max-width:$md) {
+                                    border:0;
+                                    color: $primary;
+                                }
+                            }
+                        }
+                        .service-section{
+                            #navbarScrollingDropdown{
+                                &::after{
+                                    color: $primary;
+                                }
+                            } 
+                        }
+                    }
+                }
             }
             @media (max-width:$md) {
                 min-height: inherit;
@@ -180,7 +220,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                             color: $whiteColor;
                             font-family: $font-family-satoshi-regular;
                             font-weight: 400;
-                            font-size: 1.143rem;
+                            font-size: 1.3rem;
                             @media (max-width:$md) {
                                 color: inherit;
                                 font-size: 1.4rem;
