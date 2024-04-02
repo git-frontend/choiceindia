@@ -335,12 +335,7 @@ function NewDematAccountForm(props) {
             // "captcha": "1"
 
         };
-        utils.pushDataLayerEvent({
-            'event': 'send_otp',
-            'page_path': window.location.pathname,
-            'page_url': window.location.href,
-            'platform': 'website'
-        })
+        
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
