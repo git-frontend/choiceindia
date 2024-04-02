@@ -1070,10 +1070,33 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
     box-shadow: 0px 0px 15px #00000040;
     background: $whiteColor;
     padding: 2rem 2.5rem;
-    width: 100%;
+    width: 40rem;
+    @media (max-width:$md) {
+        width: 100%;
+    }
     @media (max-width:$sm) {
         padding: 2rem;
         margin: 0;
+    }
+    .under-card-heading{
+        text-align: center;
+        .heading{
+            margin: 0;
+            font-size: 2.143rem;
+            font-weight: 600;
+            font-family: 'PoppinsSemiBold';
+            @media (max-width:$md) {
+                font-size: 1.75rem;
+                line-height: 25px;
+            }
+        }
+        p{
+            font-size: 1.429rem;
+            color: rgba(34, 31, 32, 0.6);
+            @media (max-width:$md) {
+                font-size: 1.15rem;
+            }
+        }
     }
     .btn-bg-dark {
         background: $primary !important;
@@ -1081,15 +1104,6 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
     }
     .slider-btns{
         display: none;
-    }
-    .heading{
-        margin: 0;
-        font-size: 2.143rem;
-        font-weight: 600;
-        font-family: 'PoppinsSemiBold';
-        @media (max-width:$sm) {
-            font-size: 1.75rem;
-        }
     }
     .under-p{
         text-align: center;

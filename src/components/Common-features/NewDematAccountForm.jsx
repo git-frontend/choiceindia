@@ -526,8 +526,12 @@ function NewDematAccountForm(props) {
                       {
                         (window.location.pathname.indexOf("/mutual-funds-investment") > -1) ?
                         <h2 className="heading">Open Your Account</h2>:
-                        (window.location.pathname.indexOf("/under-25") > -1) ?
-                        <h2 className="heading">Open your free trading account</h2>:
+                        (window.location.pathname.indexOf("/under25") > -1) ?
+                        <div className="under-card-heading">
+                            <h2 className="heading">Open your free trading account</h2>
+                            <p>Take Control of Your Finances</p>
+                        </div>
+                        :
                         <h2 className="heading">Open Demat Account</h2>
 
                       }
