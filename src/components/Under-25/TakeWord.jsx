@@ -1,8 +1,8 @@
 import React from 'react'
-import  Img1  from '../../assets/images/under-25/image-girl-1.png';
-import  Img2  from '../../assets/images/under-25/image-family.png';
-import  Img3  from '../../assets/images/under-25/image-men-1.png';
-import  Img4  from '../../assets/images/under-25/image-girl-2.png';
+import  Img1  from '../../assets/images/under-25/image-girl-1.webp';
+import  Img2  from '../../assets/images/under-25/image-family.webp';
+import  Img3  from '../../assets/images/under-25/image-men-1.webp';
+import  Img4  from '../../assets/images/under-25/image-girl-2.webp';
 function TakeWord() {
   return (
     <>
@@ -12,18 +12,18 @@ function TakeWord() {
                 <div className='images-sec'>
                     <div className='images-sec-1'>
                         <div className='blur-1'>
-                            <img alt='' src={Img1} className="img-fluid"/>
+                            <img src={Img1} alt='Take Word' height={127} width={88} className="img-fluid"/>
                         </div>
                        <div className='blur-2'>
-                            <img alt='' src={Img2} className="img-fluid"/>
+                            <img src={Img2} alt='Take Word' height={127} width={88} className="img-fluid"/>
                        </div>
                     </div>
                     <div className='images-sec-2'>
                         <div className='blur-1'>
-                            <img alt='' src={Img3} className="img-fluid"/>
+                            <img src={Img3} alt='Take Word' height={127} width={88} className="img-fluid"/>
                         </div>
                         <div className='blur-2'>
-                            <img alt='' src={Img4} className="img-fluid"/>
+                            <img src={Img4} alt='Take Word' height={127} width={88} className="img-fluid"/>
                         </div>
                     </div>
                 </div>

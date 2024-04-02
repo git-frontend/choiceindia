@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import  Avtar  from '../../assets/images/under-25/avtar.png';
-import  stocks  from '../../assets/images/under-25/stocks.png';
+import  Avtar  from '../../assets/images/under-25/avtar.svg';
+import  stocks  from '../../assets/images/under-25/stocks.webp';
 import  DLF  from '../../assets/images/under-25/dlf.svg';
 import  Reliance  from '../../assets/images/under-25/reliance.svg';
 import  AdaniPower  from '../../assets/images/under-25/adani-power.svg';
 import  Voltas  from '../../assets/images/under-25/voltas.svg';
 import  Sonata  from '../../assets/images/under-25/sonata.svg';
 import  eicher  from '../../assets/images/under-25/eicher-moters.svg';
-import  mf  from '../../assets/images/under-25/mutual-fund.png';
-import  zeropercent  from '../../assets/images/under-25/zero-percent.png';
+import  mf  from '../../assets/images/under-25/mutual-fund.webp';
+import  zeropercent  from '../../assets/images/under-25/zero-percent.webp';
 function OneAcFinancialNeeds() {
 
     const [isVisible, setIsVisible] = useState(false);
@@ -85,7 +85,7 @@ function OneAcFinancialNeeds() {
                         </div>
                         <div className='right-sec'>
                             <div className='orders'>
-                                <img alt='zero Percent' src={zeropercent} className="img-fluid"/>
+                                <img alt='zero Percent' src={zeropercent} className="img-fluid" width={587} height={503}/>
                             </div>
                         </div>
                     </div>

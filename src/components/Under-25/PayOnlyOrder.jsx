@@ -1,5 +1,5 @@
 import React from 'react';
-import  PayOrder  from '../../assets/images/under-25/pay-order-banner.png';
+import  PayOrder  from '../../assets/images/under-25/pay-order-banner.webp';
 
 function PayOnlyOrder() {
   return (
@@ -9,7 +9,7 @@ function PayOnlyOrder() {
                 <div className='pay-order'>
                     <div className='img-sec'>
                         <div className='pay-order-img'>
-                            <img src={PayOrder} alt="under 25" height={591} width={549} className="img-fluid"/>
+                            <img src={PayOrder} alt="Pay Order" height={591} width={549} className="img-fluid"/>
                         </div>
                     </div>
                     <div className='content-sec'>

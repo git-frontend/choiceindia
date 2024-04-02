@@ -1,7 +1,7 @@
 import React from 'react'
-import  SecuredInvs  from '../../assets/images/under-25/secured-invesments.png';
-import  Covered  from '../../assets/images/under-25/covered.png';
-import  Track  from '../../assets/images/under-25/track.png';
+import  SecuredInvs  from '../../assets/images/under-25/secured-invesments.webp';
+import  Covered  from '../../assets/images/under-25/covered.webp';
+import  Track  from '../../assets/images/under-25/track.webp';
 function HoldUp() {
   return (
     <>
@@ -18,7 +18,7 @@ function HoldUp() {
                             <div className='card-details'>
                                 <img alt='Secured Investments' src={SecuredInvs} width={587} height={503} className="img-fluid ban-mf"/>
                                 <div className='card-caption'>
-                                    <h4>Secured Investments, Smart moves.</h4>
+                                    <h3>Secured Investments, Smart moves.</h3>
                                     <p>Chill investments for low-key money goals.</p>
                                 </div>
                             </div>
@@ -27,7 +27,7 @@ function HoldUp() {
                             <div className='card-details'>
                                 <img alt='Covered' src={Covered} width={587} height={503} className="img-fluid ban-mf"/>
                                 <div className='card-caption'>
-                                    <h4>Adulting 101? We got you covered</h4>
+                                    <h3>Adulting 101? We got you covered</h3>
                                     <p>Get a range of insurance to live a stress-free life.</p>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@ function HoldUp() {
                             <div className='card-details'>
                                 <img alt='Tacks in a single app' src={Track} width={587} height={503} className="img-fluid ban-mf"/>
                                 <div className='card-caption'>
-                                    <h4>Keep all tacks in a single app</h4>
+                                    <h3>Keep all tacks in a single app</h3>
                                     <p>One app, endless possibilities for all your financial needs.</p>
                                 </div>
                             </div>
