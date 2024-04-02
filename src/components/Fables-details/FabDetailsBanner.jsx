@@ -18,6 +18,7 @@ import DematFormCta from "../Common-features/DematFormCta";
 import { useLocation } from 'react-router-dom';
 import NewDematAccountForm from "../Common-features/NewDematAccountForm";
 function Fabdetailsbanner(props) {
+    const [highlightForm, setHighlightForm] = useState(false);
     const location = useLocation();
     const [rendercount, setRenderCount] = useState(() => false);
     const pageUrl = location.href
@@ -158,6 +159,22 @@ useEffect(() => {
   
     return () => clearTimeout(timeout);
   }, []);
+  
+
+
+
+useEffect(() => {
+    const handleCTAClick = (event) => {
+        if (event.target.tagName === 'A' && event.target.closest('.blog-cta')) {
+            setHighlightForm(true); 
+        }
+    };
+
+    document.addEventListener('click', handleCTAClick);
+    return () => {
+        document.removeEventListener('click', handleCTAClick);
+    };
+}, []);
     return (
 
         <div className='banner-main'>
@@ -303,7 +320,7 @@ useEffect(() => {
                                                             <div className={name2}>
                                                             <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')}>
                                                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop}/>
+                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop} highlight={highlightForm}/>
                                                                 </GoogleReCaptchaProvider>
                                                            
                                                             <div className="stickyform formwrap d-flex justify-content-end ">
