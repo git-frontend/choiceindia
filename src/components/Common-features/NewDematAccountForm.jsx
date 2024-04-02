@@ -25,6 +25,9 @@ import LazyLoader from "../Common-features/LazyLoader";
 import utils from "../../Services/utils";
 
 function NewDematAccountForm(props) {
+    console.log("props",props)
+    const [highlightForm, setHighlightForm] = useState(false);
+    const inputRef = useRef(null);
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
     const [mobileNumber, setMobileNumber] = useState('');
@@ -45,7 +48,7 @@ function NewDematAccountForm(props) {
     const [blogThankuPopup, setBlogThankuPopup] = useState("");
     const [blogPopUpForm, setBlogPopUpForm] = useState("");
     const otpVerify = useRef("");
-    const [ghostClick, setghostClick]=useState("")
+    
 
     /** state to show thankyou popup (add-lead) */
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
@@ -139,7 +142,6 @@ function NewDematAccountForm(props) {
             setblogForm('blog-lead-form');
             setBlogFormOtp('blog-form-otp');
             setBlogThankuPopup('blog-thanku-popup');
-            setghostClick('blog-ghost-click')
             setTimeout(() => {
             addBLogPopUp();
             },1500)
@@ -148,7 +150,6 @@ function NewDematAccountForm(props) {
             setblogForm('');
             setBlogFormOtp('');
             setBlogThankuPopup('');
-            setghostClick('')
         }
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
@@ -553,6 +554,20 @@ function NewDematAccountForm(props) {
           
         }, [showThanku.showModal])
 
+
+
+        useEffect(() => {
+            setHighlightForm(props.highlight);
+            console.log("Highlight "+props.highlight);
+            if(props.highlight){
+            document.getElementById("mobile_no").focus();
+            if(window.innerWidth<=992){
+            console.log("Pop up form is added");
+            addBLogPopUp();
+            }
+            }
+            
+        }, [props.highlight]);
     return (
         <>
             {
@@ -564,7 +579,7 @@ function NewDematAccountForm(props) {
             {
                 !showOTP && !showThanku.showModal && (
                 <div className={`${blogPopUpForm}`}>
-                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${ghostClick}`} id="dematform">
+                     <div className={`demat-account-form demat-account-form-new ${blogForm}`} id="dematform">
 
                         <h2 className="heading">Open Demat Account</h2>
                       {window.location.pathname.includes("blog") &&  <div className="sticy-card-blog-new sub-new-small">
@@ -605,17 +620,16 @@ function NewDematAccountForm(props) {
                                 setBlogPopUpForm('');
                                 setIsPopUp(false);
                                 props.blogPop(false);  
+                                setHighlightForm(false);
+                                props.modifyHighLight(false);
                         }}>&times;</span>} 
                            
                        </div>}
                         <Form>
-                            <Form.Group className="mb-3 formgrp formgrp-new">
+                            <Form.Group className= "mb-3 formgrp formgrp-new">
                                 <Form.Label>Mobile Number*</Form.Label>
-                               
                                 <div className="sub-formgrp sub-formgrp-new">
-                               
-                                    <Form.Control isValid={!errors.invalidMobile || !errors.required} type="tel" pattern="\d*" name="mobile_no" id="mobile_no" placeholder="0000000000" className="formcontrol digit-otp " autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
-                                    
+                                    <Form.Control isValid={!errors.invalidMobile || !errors.required} type="tel" pattern="\d*" name="mobile_no" id="mobile_no" placeholder="0000000000" className={`formcontrol digit-otp ${highlightForm ? 'highlight' : ''}`} autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
                                     {
                                         errors.invalidMobile ? <Form.Control.Feedback type="invalid">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'invalidmob')}</Form.Control.Feedback> : ''
                                     }
