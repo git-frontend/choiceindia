@@ -8,6 +8,7 @@ const language = {
         invalidmob: 'Invalid Mobile Number',
         reqmob: 'Mobile Number is Required',
         otpbtn: 'Send OTP',
+        blogField:"Open Now",
         otpmodalheader: 'OTP Verification',
         otplbl: 'A OTP has been sent to',
         otptextbox: 'Enter OTP',
@@ -110,8 +111,14 @@ const language = {
 };
 
 const OpenAccountLanguageContent = {
-    getContent: function (lang, field) {
-        return language[lang][field];
+    getContent: function (lang, field, isBlog) {
+        // console.log("Blog "+isBlog);
+        if ((window.innerWidth > 990 && isBlog)) {
+            return language[lang]['blogField'];
+        }
+        else {
+            return language[lang][field];
+        }
     }
 }
 
