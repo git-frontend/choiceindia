@@ -148,8 +148,9 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
             box-shadow: inherit;
             min-height: 100px;
             &.header-scroll{
-                backdrop-filter: blur(20px);
-                background-color: rgba(255, 255, 255, 0.4);
+                // backdrop-filter: blur(20px);
+                // background-color: rgba(255, 255, 255, 0.4);
+                background: $whiteColor;
                 box-shadow: 0px 0px 8px $boxshadow;
                 .navbar{
                     .navbar-toggler{
@@ -219,8 +220,8 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                     >li{
                         .nav-link{
                             color: $whiteColor;
-                            font-family: $font-family-satoshi-regular;
-                            font-weight: 400;
+                            font-family: $font-family-satoshi-medium;
+                            font-weight: 500;
                             font-size: 1.3rem;
                             @media (max-width:$md) {
                                 color: inherit;
@@ -441,7 +442,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                }
         }
         .content-sec{
-            width: 40%;
+            width: 37%;
             @media (max-width:$md) {
                 width: 45%;
             }
@@ -1094,8 +1095,10 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
         p{
             font-size: 1.429rem;
             color: rgba(34, 31, 32, 0.6);
+            margin-bottom: 2.5rem;
             @media (max-width:$md) {
                 font-size: 1.15rem;
+                margin-bottom: 2rem;
             }
         }
     }
@@ -1223,6 +1226,9 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
     }
 }
 
+.scroll-top-btn{
+    background-color: #6EADCD;
+}
 
 @keyframes bounce-in-right {
 	0% {
