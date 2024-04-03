@@ -152,6 +152,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
                 // background-color: rgba(255, 255, 255, 0.4);
                 background: $whiteColor;
                 box-shadow: 0px 0px 8px $boxshadow;
+                animation: 0.5s slide-down;
                 .navbar{
                     .navbar-toggler{
                         border-color: $primary !important;
@@ -1262,4 +1263,15 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
 	100% {
 		transform: translateY(0);
 	}
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: .9;
+        transform: translateY(0);
+    }
 }
