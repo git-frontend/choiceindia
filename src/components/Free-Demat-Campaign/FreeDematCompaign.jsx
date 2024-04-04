@@ -113,7 +113,6 @@ function FreeDematCompaign() {
               <DocumentsRequiredDematAccountOpeningOnline />
               <WhyOpenFreeDematAccount />
               <OneAccountFinancialNeeds />
-              <OpenLowBrokerageDematAccount />
               <GetFreeResearchCall />
               <OurTrackRecordSaysAll />
               <WhyChoiceOpenDematAccount />
