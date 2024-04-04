@@ -313,7 +313,7 @@ useEffect(() => {
                                                 </div>
                                                 :
                                                 ((props.showForm) ?
-                                                    (props.formName === 'form-demat' ?
+                                                    (props.formName === 'form-demat' || props.formName === 'mf-form' ?
                                                         <div className="col-md-4" id="open-account-wrap">
                                                             {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                             <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
@@ -323,7 +323,7 @@ useEffect(() => {
                                                             <div className={name2}>
                                                             <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')}>
                                                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop} highlight={highlightForm} modifyHighLight={modifyHighLight}/>
+                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop} highlight={highlightForm} modifyHighLight={modifyHighLight} formName={props.formName}/>
                                                                 </GoogleReCaptchaProvider>
                                                            
                                                             <div className="stickyform formwrap d-flex justify-content-end ">
