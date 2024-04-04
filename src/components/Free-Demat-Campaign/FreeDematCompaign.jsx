@@ -109,16 +109,21 @@ function FreeDematCompaign() {
 
               <Banner/>
         {/* <CreateBacktestStrategies/> */}
-              <GetFreeResearchCall />
-              <OurTrackRecordSaysAll />
+              <OpenAccountEasySteps/>
+              <DocumentsRequiredDematAccountOpeningOnline />
               <WhyOpenFreeDematAccount />
               <OneAccountFinancialNeeds />
               <OpenLowBrokerageDematAccount />
-              <OpenAccountEasySteps/>
-              {/* <DematAccountOnlineSteps /> */}
-              <DocumentsRequiredDematAccountOpeningOnline />
+              <GetFreeResearchCall />
+              <OurTrackRecordSaysAll />
               <WhyChoiceOpenDematAccount />
               <Faq/>
+              
+  
+              {/* <DematAccountOnlineSteps /> */}
+              
+              
+              
               <BChargesMoreContent/>
       </div>
 
