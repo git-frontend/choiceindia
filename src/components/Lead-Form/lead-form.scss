@@ -1,0 +1,121 @@
+@import '../../assets/css/header.scss';
+@import '../../assets/css/customvariable.scss';
+
+.lead-form-main{
+    padding: 1rem 0;
+    .radio-form-section{
+        width: 45%;
+        .form-card{
+            box-shadow:0 0 4px 1px $nbfcboxshadow;
+            padding: 1.25rem 1rem;
+            p{
+                font-size: 1.714rem;
+                font-weight: 400;
+                font-family: $font-family-poppins-regular;
+                color: $darkblack;
+                margin-bottom: 2rem;
+                line-height: 36px;
+            }
+            .radio-btn-sec{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 1rem;
+                .form-check{
+                    .form-check-label{
+                        font-size: 1.143rem;
+                        line-height: 1.5;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        color: $darkblack;
+                    }
+                }
+            }
+        }
+    }
+    .form-section{
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding-top: 4rem;
+        justify-content: space-between;
+        .btn-submit-sec{
+            margin-top: 3rem;
+            .btnsubmit{
+                background: $yellowColor !important;
+                color: $primary !important;
+                &:hover{
+                    background: $primary !important;
+                    color: $whiteColor !important;
+                }
+            }
+        }
+        .cust-checkbox{
+            .form-check-label{
+                font-size: 1.286rem;
+                font-family: $font-family-poppins-regular;
+                font-weight: 400;
+                .link-tc{
+                    display: block;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-family: $font-family-poppins-semibold;
+                }
+            }
+        }
+        .input-field{
+            background: $whiteColor;
+            color: $secondary;
+            outline: none;
+            box-shadow: inherit;
+            border: 1px solid $secondary;
+            border-radius: 12px;
+            font-family: $font-family-poppins-regular;
+            font-size: 1.429rem;
+            background-image: inherit !important;
+            height: calc(4rem + 2px);
+            padding: 1rem 1.5rem 0;
+            &.formselect{
+                padding: 1rem 1.5rem;
+                margin-bottom: 3rem;
+                &::after{
+                    content: '*';
+                    color: #FE777D;
+                    padding-left: 0.5rem;
+                }
+            }
+        }
+        .textarea-label{
+            margin-bottom: 3rem;
+            .textarea{
+                padding: 1rem 1.5rem;
+            }
+        }
+        .input-label{
+            margin-bottom: 3rem;
+            label{
+                color: $secondary;
+                padding: 1rem 1.5rem;
+                &::after{
+                    content: '*';
+                    color: #FE777D;
+                    padding-left: 0.5rem;
+                }
+            }
+            &.mandate-none{
+                label{
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
+        }
+      
+        .left-form-sec{
+            width: 48%;
+        }
+        .right-form-sec{
+            width: 48%;
+        }
+    }
+}
