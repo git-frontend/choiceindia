@@ -39,9 +39,8 @@ function OpenAccountEasySteps() {
                  <div className='row'>
                     <div className="col-md-12">
                         <div className='text-center'>
-                            <h2 className="title-first">Open a Demat Account Online <span>in Easy Steps</span></h2>
-                             <p>Know the comprehensive step-by-step account opening procedure by <br/>
-                                <a href="https://choiceindia.com/assets/downloads/Guidance-for-Online-Account-Opening.pdf" target="_blank">visiting this page.</a>
+                            <h2 className="title-first">How To Open a <span>Demat Account Online</span> with Choice</h2>
+                             <p>Know the account opening procedure in detail by <a href="https://choiceindia.com/assets/downloads/Guidance-for-Online-Account-Opening.pdf" target="_blank">visiting this page.</a>
                             </p>
                         </div>
                     </div>
@@ -106,7 +105,7 @@ function OpenAccountEasySteps() {
                                     </div>
                                     </div>
                                     <div className='easy-text'>
-                                    Complete In-Person<br/> Verification
+                                    Complete IPV
                                     </div>
                                     
                                 </li>
