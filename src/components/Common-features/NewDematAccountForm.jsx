@@ -606,7 +606,7 @@ function NewDematAccountForm(props) {
                     <div className="demat-account-form demat-account-form-new">
                         <div className="thank-you-msg">
                         <LazyLoader src={thumbsup} className={'img-fluid'} width={"160"} height={"160"} alt="Loading" />
-                        <h2 className={(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) ? "thankyou-title campaign-success":"thankyou-title"}>Thank You!</h2>
+                        <h2 className={(window.location.pathname.indexOf('corporate-demat-account')>-1)?"thankyou-title corporate-dl-success":(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) ? "thankyou-title campaign-success":(window.location.pathname.indexOf('mutual-funds-investment')>-1)?"thankyou-title mf-success":"thankyou-title"}>Thank You!</h2>
                             <p className="subheading">{showThanku.resText? showThanku.resText: "You are being redirected to onboarding page!"}</p>
                         </div>
                         
