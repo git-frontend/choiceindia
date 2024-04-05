@@ -189,6 +189,9 @@
         }
         .input-label{
             margin-bottom: 3rem;
+            .invalid-feedback{
+                font-size: 1.114rem;
+            }
             label{
                 color: $secondary;
                 padding: 1rem 1.5rem;
