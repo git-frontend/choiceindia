@@ -103,6 +103,9 @@
             .btnsubmit{
                 background: $yellowColor !important;
                 color: $primary !important;
+                @media (max-width:$sm) {
+                    width: 100%;
+                }
                 &:hover{
                     background: $primary !important;
                     color: $whiteColor !important;
