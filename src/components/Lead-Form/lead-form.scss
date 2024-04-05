@@ -2,7 +2,7 @@
 @import '../../assets/css/customvariable.scss';
 
 .lead-form-main{
-    padding: 4rem 0;
+    padding: 2rem 0;
     .radio-form-section{
         width: 47%;
         @media (max-width:$md) {
@@ -203,6 +203,7 @@
                 svg{
                     height: 25px;
                     width: 25px;
+                    transform: rotate(180deg);
                 }
             }
             &.mandate-none{
