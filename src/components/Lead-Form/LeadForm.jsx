@@ -6,6 +6,15 @@ import "./lead-form.scss"
 
 
 function LeadForm() {
+
+  const options = [
+    {label: "Individual", value: 1},
+    {label: "Proprietorship", value: 2},
+    {label: "Partnership", value: 3},
+    {label: "LLP", value: 4},
+    {label: "HUF", value: 5},
+    {label: "Company", value: 6}
+  ]
   return (
     <>
     <section className='lead-form-main'>
@@ -16,10 +25,19 @@ function LeadForm() {
                <div className='form-card'>
                   <p>You are :</p>
                   <div className='radio-btn-sec'>
-                    <Form.Check type="radio" name='group1' label="Customer" aria-label="Customer" id='1'/>
-                    <Form.Check type="radio" name='group1' label="EPC" aria-label="EPC" id='2'/>
-                    <Form.Check type="radio" name='group1' label="Manufacturer/OEM" aria-label="Manufacturer/OEM" id='3'/>
-                  </div>
+                      <div class="rdio"> 
+                        <input name="radio" value="1" id="radio1" type="radio" checked/>
+                        <label for="radio1">Customer</label>
+                      </div>
+                      <div class="rdio"> 
+                        <input name="radio" value="2" id="radio2" type="radio" checked/>
+                        <label for="radio2">EPC</label>
+                      </div>
+                      <div class="rdio">
+                        <input name="radio" value="3" id="radio3" type="radio"/>
+                        <label for="radio3">Manufacturer/OEM</label>
+                      </div>
+                    </div>
                </div>
             </div>
             <div className='form-section'>
@@ -27,13 +45,10 @@ function LeadForm() {
                     <FloatingLabel controlId="floatingNameofEntity" label="Name of Entity" className='input-label'>
                       <Form.Control type="text" placeholder="Name of Entity" className='input-field'/>
                     </FloatingLabel>
-                    <Select placeholder='Entity Type *' className="input-field formselect" searchable={true} options="" labelField="stateName" valueField="stateName"  value="" style={{ 'fontSize': 'large' }} />
-                    {/* <Form.Select aria-label="Default select example" className='input-field formselect'>
-                      <option>Entity Type <span className='mandate-icon'>*</span></option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </Form.Select> */}
+                    <FloatingLabel controlId="floatingNameofEntity" label="Entity Type" className='input-label'>
+                      <Select placeholder={false} className="input-field formselect" searchable={false} options={options} value="Proprietorship" style={{ 'fontSize': 'large' }} />
+                      
+                    </FloatingLabel>
                     <FloatingLabel controlId="floatingNameofEntity" label="Contact Person" className='input-label'>
                       <Form.Control type="text" placeholder="Contact Person" className='input-field'/>
                     </FloatingLabel>
@@ -76,7 +91,7 @@ function LeadForm() {
                         style={{ height: '150px' }}
                       />
                     </FloatingLabel>
-                    <FloatingLabel controlId="floatingTextarea2" label="Write your message">
+                    <FloatingLabel controlId="floatingTextarea2" label="Write your message" className='textarea-label'>
                       <Form.Control
                       className='input-field'
                         as="textarea"
