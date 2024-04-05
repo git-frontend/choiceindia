@@ -2,8 +2,6 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Select from 'react-dropdown-select';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import "./lead-form.scss"
 
 
@@ -135,33 +133,6 @@ function LeadForm() {
     </section>
 
 
-    <Modal className='common-modal-css common-modal-thankyou'
-             
-              size="md"
-              aria-labelledby="contained-modal-title-vcenter"
-              backdrop='static'
-              keyboard={false}
-              centered
-           
-            >
-              <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
-
-                </Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-           <img src="" height="80" width="80" alt='Failure' /> <img src="" height="100" width="100" alt='Success' />
-              
-               
-                <h4>Oops</h4>
-                <h3>
-                  Something went wrong!
-                </h3>
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="warning" className='btn-yellow' onClick={() => isShow.closeMd()}>Ok</Button>
-              </Modal.Footer>
-            </Modal>
     </>
   )
 }
