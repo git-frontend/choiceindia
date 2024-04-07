@@ -213,23 +213,26 @@ function Routing() {
                 <Remo></Remo>
                 <ScrolltoTop />
                 <OpentoTop />
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") && window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1   && window.location.pathname.indexOf("/campaign/fno-trading") === -1 && window.location.pathname.indexOf("/campaign/intraday-trading") === -1)  ? <Header /> : <CampaignHeader />}
+{/*                
                 {window.location.pathname.indexOf("/campaign/sub-broker") === -1 &&
-window.location.pathname.indexOf("/campaign/trading-strategies") === -1 &&
-window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 &&
-window.location.pathname.indexOf("/campaign/commodity-trading") === -1 &&
-window.location.pathname.indexOf("/campaign/forex-trading") === -1 &&
-window.location.pathname.indexOf("/campaign/free-demat-account") === -1 &&
-window.location.pathname.indexOf("/campaign/futures-options-trading") === -1 &&
-window.location.pathname.indexOf("/campaign/technical-analysis") === -1 &&
-window.location.pathname.indexOf("/campaign/open-demat-account") === -1 &&
-window.location.pathname.indexOf("/campaign/free-amc-demat-account") === -1 &&
-window.location.pathname.indexOf("/partner-assests/emitra") === -1 &&
-window.location.pathname.indexOf("/intraday-charges") === -1 &&
-window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1 &&
-window.location.pathname.indexOf("/campaign/fno-trading") === -1 &&
-window.location.pathname.indexOf("/campaign/intraday-trading") === -1 ?
-  (window.location.pathname.indexOf("/under25") !== -1 ? <Under25Header /> : <Header />)
-  : <CampaignHeader />}
+                    window.location.pathname.indexOf("/campaign/trading-strategies") === -1 &&
+                    window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 &&
+                    window.location.pathname.indexOf("/campaign/commodity-trading") === -1 &&
+                    window.location.pathname.indexOf("/campaign/forex-trading") === -1 &&
+                    window.location.pathname.indexOf("/campaign/free-demat-account") === -1 &&
+                    window.location.pathname.indexOf("/campaign/futures-options-trading") === -1 &&
+                    window.location.pathname.indexOf("/campaign/technical-analysis") === -1 &&
+                    window.location.pathname.indexOf("/campaign/open-demat-account") === -1 &&
+                    window.location.pathname.indexOf("/campaign/free-amc-demat-account") === -1 &&
+                    window.location.pathname.indexOf("/partner-assests/emitra") === -1 &&
+                    window.location.pathname.indexOf("/intraday-charges") === -1 &&
+                    window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1 &&
+                    window.location.pathname.indexOf("/campaign/fno-trading") === -1 &&
+                    window.location.pathname.indexOf("/campaign/intraday-trading") === -1 ?
+                    (window.location.pathname.indexOf("/under25") !== -1 ? <Under25Header /> : <Header />)
+                    : <CampaignHeader />} */}
+
             {/* {(window.location.pathname.indexOf("/under-25") === -1)  ? <Header /> : <Under25Header />} */}
                 {/* <Header /> */}
                 <div className={ (window.location.pathname.indexOf("/assisted-order-flow") === -1) ? 'App-Body' : 'assist-body'}>
