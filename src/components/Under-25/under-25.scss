@@ -295,8 +295,10 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
     background-position: bottom;
     padding: 10rem 0 14rem;
     margin-top: -9.5rem;
+
     @media (max-width:$sm) {
         padding: 6rem 0 14rem;
+        margin-top: -6rem;
     }
     .banner-form{
         display: flex;
@@ -810,6 +812,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        padding-top: 4rem;
         .arrow-txt{
             font-family: $font-family-satoshi-bold;
             font-size:7rem;
