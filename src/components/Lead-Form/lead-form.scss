@@ -179,7 +179,11 @@
         .textarea-label{
             margin-bottom: 2rem;
             .textarea{
-                padding: 1rem 1.5rem 0;
+                padding: 1.625rem 1.5rem;
+                height: 150px;
+                &.height-auto{
+                    height: 70px;
+                }
                 &:focus{
                     border-color: #86b7fe;
                     border: 1px solid #86b7fe;
