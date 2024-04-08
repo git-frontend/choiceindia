@@ -19,8 +19,10 @@ function LeadForm() {
   
    const [formType,setFormType]=useState(1);
 
+
    const {register,reset,handleSubmit,
   formState:errors}=useForm();
+
 
   const submitHandler=(data)=>{
   console.log(data);
@@ -52,7 +54,83 @@ function LeadForm() {
                </div>
             </div>
             {formType==1?
-             <h2>Customer Form</h2>:
+              <form className='form-section' onSubmit={handleSubmit(submitHandler)}>
+             <div className='dis-flex'>
+                 <div className='flex-items'>
+                    <FloatingLabel controlId="floatingName" label="Name" className='input-label'>
+                       <Form.Control type="text" placeholder="Name" className='input-field' name="name" {...register("name")}/>
+                       <Form.Control.Feedback type="invalid">Please provide a Name of Entity</Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingpinCode" label="Pin Code" className='input-label'>
+                       <Form.Control type="text" placeholder="pin code" name="pin-code" className='input-field' {...register("pin-code")}/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Mobile No/WhatsApp No" className='input-label'>
+                       <Form.Control type="text" placeholder="Mobile No/WhatsApp No" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+ 
+                 <FloatingLabel controlId="floatingNameofEntity" label="Monthly Electricity Bill (Rs.)" className='input-label mandate-none'>
+                       <Form.Control type="text" placeholder="Monthly Electricity Bill (Rs.)" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Mail ID" className='input-label mandate-none'>
+                       <Form.Control type="text" placeholder="Mail ID" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Roof Space Available for Solar Installation (Sqft)" className='input-label mandate-none'>
+                       <Form.Control type="text" placeholder="Roof Space Available for Solar Installation (Sqft)" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Address" className='input-label'>
+                       <Form.Control type="text" placeholder="Address" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Solar Plant Capacity Requirement (KW)" className='input-label'>
+                       <Form.Control type="text" placeholder="Solar Plant Capacity Requirement (KW)" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingTextarea2" label="Write your message" className='textarea-label'>
+                       <Form.Control
+                       className='input-field'
+                         as="textarea"
+                         placeholder="Write your message"
+                         style={{ height: '150px' }}
+                       />
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+             </div>
+                 <div className='col-md-12'> 
+                       <div key="inline-checkbox" className="cust-checkbox">
+                           <Form.Check inline name="terms_and_conditions" type="checkbox">
+                               <Form.Check.Input type="checkbox" />
+                               <Form.Check.Label>I agree that I have read &amp; accept <a className="link-tc">
+                                 <span>Terms & Conditions</span></a>
+                               </Form.Check.Label>
+                           </Form.Check>
+                       </div>
+                       <div className='btn-submit-sec'>
+                           <button type="submit" className="btn-bg btn-bg-dark btnsubmit">Submit</button>
+                       </div>
+                 </div>
+             </form>:
              formType===2?
              <form className='form-section' onSubmit={handleSubmit(submitHandler)}>
              <div className='dis-flex'>
@@ -150,7 +228,94 @@ function LeadForm() {
              </form>
              :
              formType==3 && 
-             <h2>Manufacturer Form</h2>}
+             <form className='form-section' onSubmit={handleSubmit(submitHandler)}>
+             <div className='dis-flex'>
+                 <div className='flex-items'>
+                    <FloatingLabel controlId="floatingName" label="Entity Name" className='input-label'>
+                       <Form.Control type="text" placeholder="Entity Name" className='input-field' name="Entity-Name" {...register("name")}/>
+                       <Form.Control.Feedback type="invalid">Please provide a Name of Entity</Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingpinCode" label="Sales Turnover (Cr)" className='input-label mandate-none'>
+                       <Form.Control type="text" placeholder="Sales Turnover (Cr)" name="pin-code" className='input-field' {...register("pin-code")}/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Brand Name" className='input-label mandate-none'>
+                       <Form.Control type="text" placeholder="Brand Name" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="No of Dealers/EPC" className='input-label mandate-none'>
+                       <Form.Control type="text" placeholder="No of Dealers/EPC" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Website" className='input-label mandate-none'>
+                       <Form.Control type="text" placeholder="Website" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Mail ID" className='input-label'>
+                       <Form.Control type="text" placeholder="Mail ID" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Contact Person" className='input-label'>
+                       <Form.Control type="text" placeholder="Contact Person" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Business Address" className='input-label'>
+                       <Form.Control type="text" placeholder="Business Address" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Mobile No/WhatsApp No" className='input-label'>
+                       <Form.Control type="text" placeholder="Mobile No/WhatsApp No" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingNameofEntity" label="Production capacity in MW" className='input-label'>
+                       <Form.Control type="text" placeholder="Production capacity in MW" className='input-field'/>
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+                 <div className='flex-items'>
+                 <FloatingLabel controlId="floatingTextarea2" label="Write your message" className='textarea-label'>
+                       <Form.Control
+                       className='input-field'
+                         as="textarea"
+                         placeholder="Write your message"
+                         style={{ height: '150px' }}
+                       />
+                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                     </FloatingLabel>
+                 </div>
+             </div>
+                 <div className='col-md-12'> 
+                       <div key="inline-checkbox" className="cust-checkbox">
+                           <Form.Check inline name="terms_and_conditions" type="checkbox">
+                               <Form.Check.Input type="checkbox" />
+                               <Form.Check.Label>I agree that I have read &amp; accept <a className="link-tc">
+                                 <span>Terms & Conditions</span></a>
+                               </Form.Check.Label>
+                           </Form.Check>
+                       </div>
+                       <div className='btn-submit-sec'>
+                           <button type="submit" className="btn-bg btn-bg-dark btnsubmit">Submit</button>
+                       </div>
+                 </div>
+             </form>}
    
           </div>
         </div>
