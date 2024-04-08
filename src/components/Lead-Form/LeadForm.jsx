@@ -22,7 +22,11 @@ function LeadForm() {
 
    const {register,reset,handleSubmit,
   formState:errors}=useForm();
-
+ console.log(errors);
+ 
+  const CustomerFormHandler=(data)=>{
+  console.log(data);
+  }
 
   const submitHandler=(data)=>{
   console.log(data);
@@ -54,12 +58,14 @@ function LeadForm() {
                </div>
             </div>
             {formType==1?
-              <form className='form-section' onSubmit={handleSubmit(submitHandler)}>
+              <form className='form-section' onSubmit={handleSubmit(CustomerFormHandler)}>
              <div className='dis-flex'>
                  <div className='flex-items'>
                     <FloatingLabel controlId="floatingName" label="Name" className='input-label'>
-                       <Form.Control type="text" placeholder="Name" className='input-field' name="name" {...register("name")}/>
-                       <Form.Control.Feedback type="invalid">Please provide a Name of Entity</Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Name" className='input-field' name="name" {...register("name",{
+                      'required':true
+                       })}/>
+                       <Form.Control.Feedback type="invalid">{errors.name && "Please provide a Name of Entity"}</Form.Control.Feedback>
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
@@ -136,7 +142,8 @@ function LeadForm() {
              <div className='dis-flex'>
                  <div className='flex-items'>
                     <FloatingLabel controlId="floatingNameofEntity" label="Name of Entity" className='input-label'>
-                       <Form.Control type="text" placeholder="Name of Entity" className='input-field' name="entityName" {...register("entityName")}/>
+                       <Form.Control type="text" placeholder="Name of Entity" className='input-field' name="entityName" {...register("entityName",
+                       {type:"required"})}/>
                        <Form.Control.Feedback type="invalid">Please provide a Name of Entity</Form.Control.Feedback>
                      </FloatingLabel>
                  </div>
