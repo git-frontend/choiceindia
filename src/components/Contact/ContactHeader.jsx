@@ -16,7 +16,7 @@ function ContactHeader() {
       const element = document.getElementById("section-under25");
       if (element) {
         const rect = element.getBoundingClientRect();
-        setIsScrolled(window.scrollY > rect.top);
+        setIsScrolled(window.scrollY > 100);
       }
     };
 

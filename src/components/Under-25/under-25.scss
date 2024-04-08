@@ -138,9 +138,9 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
   }
   
 
-.App-Body{
-    margin-top: inherit;
-}
+// .App-Body{
+//     margin-top: inherit;
+// }
 //header section
 .Header{
     .main-header-new{
@@ -294,6 +294,7 @@ $font-family-switzer-black: 'Switzer-Black', sans-serif;
     background-size: cover;
     background-position: bottom;
     padding: 10rem 0 14rem;
+    margin-top: -9.5rem;
     @media (max-width:$sm) {
         padding: 6rem 0 14rem;
     }

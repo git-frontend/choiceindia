@@ -235,7 +235,7 @@ function Routing() {
 
             {/* {(window.location.pathname.indexOf("/under-25") === -1)  ? <Header /> : <Under25Header />} */}
                 {/* <Header /> */}
-                <div className={(window.location.pathname.indexOf("/assisted-order-flow") !== -1) ? 'assist-body' : ((window.location.pathname.indexOf("/under25") !== -1) ? 'under25-body' : 'App-Body')}>
+                <div className={(window.location.pathname.indexOf("/assisted-order-flow") !== -1) ? 'assist-body' : 'App-Body' }>
 
                     <Routes>
                         <Route exact path='/' element={
