@@ -1,29 +1,23 @@
 import React, { useState,useEffect } from 'react'
 import "../../assets/css/header.scss"
 import MenuHeader from '../Common-features/MenuHeader';
-
+import { useLocation } from 'react-router-dom';
 
 function ContactHeader() {
-  const [isUnder25, setIsUnder25] = useState(window.location.pathname.includes('under25'));
+  const location = useLocation();
+  const [isUnder25, setIsUnder25] = useState(location.pathname.includes('under25'));
   const [isScrolled, setIsScrolled] = useState(false);
-  useEffect(() => {
-    const handleNavLinkClick = () => {
-      setIsUnder25(false); 
-    };
 
-   
-    document.querySelectorAll('.nav-link').forEach((link) => {
-      link.addEventListener('click', handleNavLinkClick);
-    });
-    return () => {
-      document.querySelectorAll('.nav-link').forEach((link) => {
-        link.removeEventListener('click', handleNavLinkClick);
-      });
-    };
-  }, []);
+  useEffect(() => {
+    setIsUnder25(location.pathname.includes('under25'));
+  }, [location]);
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      const element = document.getElementById("section-under25");
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        setIsScrolled(window.scrollY > rect.top);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -32,6 +26,7 @@ function ContactHeader() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
   return (
     <div className="Header">
        <header className={`${isUnder25 ? 'main-header main-header-new' : 'main-header'} ${isScrolled ? 'header-scroll' : ''}`}>

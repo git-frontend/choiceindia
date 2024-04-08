@@ -5,7 +5,7 @@ function Banner() {
   const [isCheck, setIsCheck] = useState(false)
   return (
     <>
-        <section className='banner-sec'>
+        <section className='banner-sec' id='section-under25'>
               <div className='container'>
                   <div className='row'>
                     <div className='col-md-12'>
