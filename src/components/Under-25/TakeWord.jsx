@@ -31,7 +31,7 @@ function TakeWord() {
                     <div className='caption'>
                         <h3>Don’t just take <br />our word for it</h3>
                         <p>Unlock limitless possibilities in just a few minutes, crafted specifically for you.</p>
-                        <button type="submit" className="btn-bg btn btn-primary btn-get">Get FinX now</button>
+                        <a href='https://finx.choiceindia.com/auth/login' target="_blank"  type="submit" className="btn-bg btn btn-primary btn-get">Get FinX now</a>
                     </div>
                 </div>
             </div>
