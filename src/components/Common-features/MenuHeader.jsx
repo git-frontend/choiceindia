@@ -78,12 +78,19 @@ export default function Header() {
                                 <NavLink to= '/career'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Career</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link fw-semibold" + (isActive ? "single-nav-links nav-link fw-semibold active-header" :'')}>Youth</NavLink>
+                                <NavLink to= '/under25'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link fw-semibold" + (isActive ? "single-nav-links nav-link fw-semibold active-header" :'')}>Youth</NavLink>
                             </li>
                         </ul>
                         <ul className="navbar-nav  nav-header">
-                            <li className="nav-item get-btn-outline">
+                            {/* <li className="nav-item get-btn-outline">
                                 <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/'>Log in</NavLink>
+                            </li> */}
+                            <li className="nav-item login-btn get-btn-outline">
+                                <NavDropdown title="Log In" id="navbarScrollingDropdown" className="top-nav-links login-btn">
+                                <NavDropdown.Item className="nav-dropdown-links" href='https://finx.choiceindia.com/auth/login' target="_blank">client</NavDropdown.Item>
+                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://backoffice.choiceindia.com/WebLogin/index.cfm?Logintype=Branch'>partner</NavDropdown.Item>
+                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'>employee</NavDropdown.Item>
+                                </NavDropdown>
                             </li>
                             
                             <li className="nav-item get-btn get-btn2">
