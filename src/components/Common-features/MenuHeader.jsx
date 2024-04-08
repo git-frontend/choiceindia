@@ -57,8 +57,8 @@ export default function Header() {
                     </button>
                         <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                         {window.location.pathname.includes('under25') ? (
-                        <div className='d-flex flex-row justify-content-between flex-grow-1'>
-                            <ul className="navbar-nav me-auto nav-header">
+                        <div className='d-flex  flex-column flex-lg-row justify-content-between flex-grow-1'>
+                            <ul className="navbar-nav  nav-header">
                             <li className="nav-item service-section-sub">
                                 <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
                                  <NavDropdown  title="Services" id="navbarScrollingDropdown" className="top-nav-links service-section serv-drop">
@@ -81,10 +81,11 @@ export default function Header() {
                                 <NavLink to= '/'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link fw-semibold" + (isActive ? "single-nav-links nav-link fw-semibold active-header" :'')}>Youth</NavLink>
                             </li>
                         </ul>
-                        <ul className="navbar-nav ms-auto nav-header">
+                        <ul className="navbar-nav  nav-header">
                             <li className="nav-item get-btn-outline">
                                 <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/'>Log in</NavLink>
                             </li>
+                            
                             <li className="nav-item get-btn get-btn2">
                                 <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Get Started</NavLink>
                             </li>
