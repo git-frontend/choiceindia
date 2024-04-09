@@ -22,18 +22,23 @@ function LeadForm() {
 
    const {register,reset,handleSubmit,
   formState:{errors}}=useForm({mode:'onChange'});
-
- console.log("Error",errors);
  
  function numberHandler(e){
   e.target.value = e.target.value.replace(/[^0-9]/gi,"");
  }
 
   const CustomerFormHandler=(data)=>{
+  reset();
   console.log(data);
   }
 
   const submitHandler=(data)=>{
+  reset();
+  console.log(data);
+  }
+
+  const OEMHandler=(data)=>{
+  reset();
   console.log(data);
   }
   
@@ -71,7 +76,7 @@ function LeadForm() {
                  <div className='flex-items'>
                     <FloatingLabel controlId="floatingName" label="Name" className='input-label'>
                        <Form.Control type="text" placeholder="Name" className='input-field' name="name" {...register("name",{
-                      'required':true, minLength: 3, pattern: /^[A-Za-z-\s]*$/
+                      'required':true, minLength: 3, pattern: /^[a-zA-z]+([\s][a-zA-Z]+)*$/
                        })}/>
                       {errors.name?.type=="required" ? <span style={{color:"red"}}>This field is required</span>:
                       errors.name?.type=="pattern" ? <span style={{color:"red"}}>Name cannot contains numbers,special characters</span>:
@@ -157,7 +162,6 @@ function LeadForm() {
                          name="message"
                          {...register("message")}
                        />
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                      </FloatingLabel>
                  </div>
              </div>
@@ -185,15 +189,24 @@ function LeadForm() {
              <div className='dis-flex'>
                  <div className='flex-items'>
                     <FloatingLabel controlId="floatingNameofEntity" label="Name of Entity" className='input-label'>
-                       <Form.Control type="text" placeholder="Name of Entity" className='input-field' name="entityName" {...register("entityName",
-                       {type:"required"})}/>
+                       <Form.Control type="text" placeholder="Name of Entity" className='input-field' name="entityName" 
+                       {...register("entityName",
+                       {"required":true,
+                       pattern:/^[a-zA-z]+([\s][a-zA-Z]+)*$/})}/>
                        <Form.Control.Feedback type="invalid">Please provide a Name of Entity</Form.Control.Feedback>
+                       {errors.entityName?.type==="required" ? <span style={{color:"red"}}>Please provide a Name of Entity</span>:
+                        errors.entityName?.type==="pattern"? <span style={{color:"red"}}>Please enter valid entity name</span> :
+                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Business Address" className='input-label'>
-                       <Form.Control type="text" placeholder="Business Address" name="business-address" className='input-field' {...register("business-address")}/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Business Address" name="business_address" className='input-field' 
+                       {...register("business_address",
+                        {
+                        "required":true
+                        })}/>
+                       {errors.business_address && <span style={{color:"red"}}>Please enter the business address</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
@@ -204,14 +217,25 @@ function LeadForm() {
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Residence Address" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Residence Address" className='input-field'/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Residence Address" className='input-field' name="residence_address"
+                       {...register("residence_address")}/>
+                      
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Contact Person" className='input-label'>
-                       <Form.Control type="text" placeholder="Contact Person" className='input-field'/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Contact Person" className='input-field' name="contact_person"
+                       {...register("contact_person",
+                       {
+                       "required":true,
+                       pattern:/^[a-zA-z]+([\s][a-zA-Z]+)*$/
+                       })}/>
+                       {errors.contact_person?.type==="required" ?
+                       <span style={{color:"red"}}>Please provide contact person name</span>
+                       :
+                       errors.contact_person?.type==="pattern" ?
+                       <span style={{color:"red"}}>Please enter valid person name</span>:
+                       " "}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
@@ -277,66 +301,108 @@ function LeadForm() {
              </form>
              :
              formType==3 && 
-             <form className='form-section' onSubmit={handleSubmit(submitHandler)}>
+             <form className='form-section' onSubmit={handleSubmit(OEMHandler)}>
              <div className='dis-flex'>
                  <div className='flex-items'>
                     <FloatingLabel controlId="floatingName" label="Entity Name" className='input-label'>
-                       <Form.Control type="text" placeholder="Entity Name" className='input-field' name="Entity-Name" {...register("name")}/>
-                       <Form.Control.Feedback type="invalid">Please provide a Name of Entity</Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Entity Name" className='input-field' name="EntityName" 
+                       {...register("EntityName",{"required":true,
+                       pattern: /^[a-zA-z]+([\s][a-zA-Z]+)*$/})}/>
+                       {errors.EntityName?.type==="required" ? <span style={{color:"red"}}>Please provide the entity name</span>:
+                       errors.EntityName?.type==="pattern" ? <span style={{color:"red"}}>Please provide valid entity name</span>:
+                       ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingpinCode" label="Sales Turnover (Cr)" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Sales Turnover (Cr)" name="pin-code" className='input-field' {...register("pin-code")}/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Sales Turnover (Cr)" name="SalesTurnover" className='input-field' 
+                       onInput={numberHandler}
+                       {...register("SalesTurnover",{
+                       "pattern":/^\d/
+                       })}/>
+                       {errors.SalesTurnover ? <span style={{color:"red"}}>Please provide valid Sales Turnover</span>:
+                       ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Brand Name" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Brand Name" className='input-field'/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Brand Name" className='input-field' name="brandName" 
+                       {...register("brandName",
+                       {pattern:/^[a-zA-z]*$/})}/>
+                       {errors.brandName ? <span style={{color:"red"}}>Please provide valid Brand Name</span>:
+                       ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="No of Dealers/EPC" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="No of Dealers/EPC" className='input-field'/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="No of Dealers/EPC" className='input-field' name="No_of_EPC" 
+                       {...register("No_of_EPC",
+                       {"pattern":/^\d/})}
+                       onInput={numberHandler}/>
+                       {errors.No_of_EPC ? <span style={{color:"red"}}>Please provide valid No. of Dealers</span>:
+                       ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Website" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Website" className='input-field'/>
+                       <Form.Control type="text" placeholder="Website" className='input-field' name="website" {...register("website")}/>
                        <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Mail ID" className='input-label'>
-                       <Form.Control type="text" placeholder="Mail ID" className='input-field'/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Mail ID" className='input-field' name="mail" 
+                       {...register("mail",
+                       {"required":true,
+                       pattern:/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/})}/>
+                        {errors.mail?.type==="pattern" ?<span style={{color:"red"}}>Please enter valid email ID</span> :
+                        errors.mail?.type==="required" ?<span style={{color:"red"}}>Please provide the email ID</span>:
+                       ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Contact Person" className='input-label'>
-                       <Form.Control type="text" placeholder="Contact Person" className='input-field'/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Contact Person" className='input-field' name="contact_person" 
+                       {...register("contact_person",
+                      {"required":true,
+                       pattern:/^[a-zA-z]+([\s][a-zA-Z]+)*$/} )}/>
+                      {errors.contact_person?.type==="required" ? <span style={{color:"red"}}>Please provide the contact person name</span>:
+                       errors.contact_person?.type==="pattern"? <span style={{color:"red"}}>Please enter valid contact person name</span>:
+                       ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Business Address" className='input-label'>
-                       <Form.Control type="text" placeholder="Business Address" className='input-field'/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Business Address" className='input-field' name="business_address" 
+                       {...register("business_address",
+                       {"required":true})}/>
+                       {errors.business_address? <span style={{color:"red"}}>Please provide the business address</span>:
+                       ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Mobile No/WhatsApp No" className='input-label'>
-                       <Form.Control type="text" placeholder="Mobile No/WhatsApp No" className='input-field'/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Mobile No/WhatsApp No" className='input-field' name="mobile_number" 
+                       {...register("mobile_number",
+                       {
+                        'required':true,pattern:/[6-9][0-9]{9}/
+                        })}
+                        onInput={numberHandler}/>
+                         {errors.mobile_number?.type==="required" ? <span style={{color:"red"}}>This field is required</span>:
+                       errors.mobile_number?.type==="pattern" ? <span style={{color:"red"}}>Please enter valid mobile number</span>:
+                       ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Production capacity in MW" className='input-label'>
-                       <Form.Control type="text" placeholder="Production capacity in MW" className='input-field'/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Production capacity in MW" className='input-field' name="Production_Capacity" 
+                       {...register("Production_Capacity",
+                       {"required":true,
+                       pattern:/^\d+(\.\d{1,2})?$/})}
+                       />
+                       {errors.Production_Capacity?.type==="required" ? <span style={{"color":"red"}}>Please enter Production Capacity</span> :
+                        errors.Production_Capacity?.type==="pattern"?<span style={{"color":"red"}}>Please provide valid Production Capacity</span>:
+                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
@@ -345,6 +411,8 @@ function LeadForm() {
                        className='input-field textarea'
                          as="textarea"
                          placeholder="Write your message"
+                         name="message"
+                         {...register("message")}
                        />
                        <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                      </FloatingLabel>
@@ -352,12 +420,16 @@ function LeadForm() {
              </div>
                  <div className='col-md-12'> 
                        <div key="inline-checkbox" className="cust-checkbox">
-                           <Form.Check inline name="terms_and_conditions" type="checkbox">
-                               <Form.Check.Input type="checkbox" />
+                           <Form.Check inline type="checkbox">
+                               <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions",
+                              {
+                                required: "It is mandatory to check"
+                             })}/>
                                <Form.Check.Label>I agree that I have read &amp; accept <a className="link-tc">
                                  <span>Terms & Conditions</span></a>
                                </Form.Check.Label>
                            </Form.Check>
+                           {<span style={{"color":"red"}}>{errors.terms_and_conditions && errors.terms_and_conditions.message}</span>}
                        </div>
                        <div className='btn-submit-sec'>
                            <button type="submit" className="btn-bg btn-bg-dark btnsubmit">Submit</button>
