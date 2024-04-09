@@ -85,11 +85,29 @@ export default function Header() {
                                         'event': 'login_click',
                                         'page_path': window.location.pathname,
                                         'page_url': window.location.href,
+                                        login_type:'client',
                                         'platform': 'website'
                                     }
                                 )}}>client</NavDropdown.Item>
-                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://backoffice.choiceindia.com/WebLogin/index.cfm?Logintype=Branch'>partner</NavDropdown.Item>
-                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'>employee</NavDropdown.Item>
+                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://backoffice.choiceindia.com/WebLogin/index.cfm?Logintype=Branch' onClick={() => {utils.pushDataLayerEvent(
+                                    {
+                                        'event': 'login_click',
+                                        'page_path': window.location.pathname,
+                                        'page_url': window.location.href,
+                                        login_type:'partner',
+                                        'platform': 'website'
+                                    }
+                                )}}>partner</NavDropdown.Item>
+                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'
+                                 onClick={() => {utils.pushDataLayerEvent(
+                                    {
+                                        'event': 'login_click',
+                                        'page_path': window.location.pathname,
+                                        'page_url': window.location.href,
+                                        login_type:'employee',
+                                        'platform': 'website'
+                                    }
+                                )}}>employee</NavDropdown.Item>
                                 </NavDropdown>
                             </li>
                             {/* <li className="nav-item login-btn">
