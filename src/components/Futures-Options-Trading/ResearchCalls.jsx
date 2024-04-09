@@ -106,9 +106,10 @@ function ResearchCalls() {
 
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
 
+            ele['LTP'] = ele['LTP'] / 100;
           });
 
-
+          setlist(res.response.research);
           let unique = []
           for (let i = 0; i < tokenList.length; i++) {
             unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
@@ -154,7 +155,12 @@ function ResearchCalls() {
                 setlist(multiValue);
 
               }
-            })
+              else{
+                setShowLoader(false)
+              }
+            }).catch((error)=>{
+              setShowLoader(false)
+            });
         }
       })
 
@@ -239,7 +245,7 @@ function ResearchCalls() {
                                       <span className="small-text">{response?.scrip_s_expiry}</span>
                                     </div>
                                     <div className="middle-right">
-                                      <span className="right-big-text">{(response?.LTP).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                                      <span className="right-big-text">{response?.LTP ?((response?.LTP).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ","):0.00.toFixed(2)}</span>
                                       <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>
                                           {`${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response.Change || 0).toFixed(2)} (${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response?.ChangePer || 0).toFixed(2)}%)`}</h6>
                                     </div>
@@ -302,7 +308,7 @@ function ResearchCalls() {
                                           <span className="small-text">{response?.scrip_s_expiry}</span>
                                         </div>
                                         <div className="middle-right">
-                                          <span className="right-big-text">{(response?.LTP).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                                          <span className="right-big-text">{response?.LTP ?((response?.LTP).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ","):0.00.toFixed(2)}</span>
                                           <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>
                                           {`${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response.Change || 0).toFixed(2)} (${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response?.ChangePer || 0).toFixed(2)}%)`}</h6>
                                         </div>
