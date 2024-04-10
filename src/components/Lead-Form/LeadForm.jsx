@@ -214,7 +214,8 @@ function LeadForm() {
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" className='input-label' label="Entity Type">
-                       <Select placeholder={false} className="input-field formselect" searchable={false} options={options} value="Proprietorship" style={{ 'fontSize': 'large' }} name="entityType" {...register("entityType")}/>
+                       <Select placeholder={false} className="input-field formselect" searchable={false} options={options} value="Proprietorship" style={{ 'fontSize': 'large' }} 
+                         name="entityType" {...register("entityType")}/>
                        <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                      </FloatingLabel>
                  </div>
@@ -246,11 +247,9 @@ function LeadForm() {
                  <FloatingLabel controlId="floatingNameofEntity" label="Sales Turnover of latest FY (Rs In Lakh)" className='input-label mandate-none'>
                        <Form.Control type="text" placeholder="Sales Turnover of latest FY (Rs In Lakh)" className='input-field' name="sales_turnover"
                        {...register("sales_turnover",
-                       {"required":true,
-                       "pattern":/^[1-9]{1}\d/})}
+                       {"pattern":/^[1-9]{1}\d/})}
                         onInput={numberHandler}/>
-                       {errors.sales_turnover?.type==="required" ? <span style={{color:"red"}}>This field cannot be empty</span>:
-                        errors.sales_turnover?.type==="pattern" ? <span style={{color:"red"}}>Please provide correct Sales Turover
+                       {errors.sales_turnover?.type==="pattern" ? <span style={{color:"red"}}>Please provide correct Sales Turover
                          value</span>:
                         ""}
                      </FloatingLabel>
