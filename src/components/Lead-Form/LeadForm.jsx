@@ -1,29 +1,39 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Select from 'react-dropdown-select';
-import {useForm} from 'react-hook-form';
+import {useForm, Controller} from 'react-hook-form';
 import "./lead-form.scss"
 
 
 function LeadForm() {
 
-  const options = [
+  // const options = [
+  //   {label: "Individual", value: 1},
+  //   {label: "Proprietorship", value: 2},
+  //   {label: "Partnership", value: 3},
+  //   {label: "LLP", value: 4},
+  //   {label: "HUF", value: 5},
+  //   {label: "Company", value: 6}
+  // ]
+
+  const [options, setOptions] = useState([
     {label: "Individual", value: 1},
     {label: "Proprietorship", value: 2},
     {label: "Partnership", value: 3},
     {label: "LLP", value: 4},
     {label: "HUF", value: 5},
     {label: "Company", value: 6}
-  ]
+  ])
  
    const [entityType,setEntityType]=useState("Entity Type");
-
+   const [show,setShow]=useState(true);
+   const [value,setValue]=useState("");
   
    const [formType,setFormType]=useState(1);
+   const [error,setError]=useState(false);
 
-
-   const {register,reset,handleSubmit,
+   const {register,reset,handleSubmit, control, getValues,watch,
   formState:{errors}}=useForm({mode:'onChange'});
  
  function numberHandler(e){
@@ -36,9 +46,20 @@ function LeadForm() {
   }
 
   const submitHandler=(data)=>{
-  reset();
-  console.log(data);
+  if(!watch("entityType")?.length){
+  setError(true);
+  return;
   }
+  setError(false);
+  setShow(true);
+  setEntityType("Entity Type");
+  console.log(data);
+  reset();
+  }
+
+  useEffect(() => {
+    console.log('TTTTT',getValues())
+  },[formType])
 
   const OEMHandler=(data)=>{
   reset();
@@ -213,10 +234,22 @@ function LeadForm() {
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
-                 <FloatingLabel controlId="floatingNameofEntity" className='input-label' label="Entity Type">
-                       <Select placeholder={false} className="input-field formselect" searchable={false} options={options} value="Proprietorship" style={{ 'fontSize': 'large' }} 
-                         name="entityType" {...register("entityType")}/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                 <FloatingLabel  controlId="floatingNameofEntity" label={!watch('entityType')?.length && entityType} className={!watch('entityType')?.length ? 'input-label selectdropdown':'selectdropdown'}>
+                         <Controller name="entityType"  control={control} render={({ field: {onChange, value}}) => {
+                          return (
+                           <Select placeholder={false} className="input-field formselect" searchable={false} options={options}  style={{ 'fontSize': 'large' }} 
+                              onChange={(v) =>{
+                              onChange(v)
+                              // setEntityType("")
+                              // setShow(false)
+                              setValue(undefined)
+                              // setValue(v[0].value)
+                            }
+                            }
+                            values={watch('entityType')}
+                              />
+  )}}></Controller>
+                         {error && !watch('entityType')?.length && <span style={{color:"red"}}>Please select entity type</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
