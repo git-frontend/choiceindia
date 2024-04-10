@@ -41,7 +41,9 @@ function NewDematAccountForm(props) {
     const [referID, setReferID] = useState('');
     const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1) || (window.location.pathname.indexOf('/under25') > -1) ? 'demat-web' : " ")
  
-
+    const [view,setView]=useState({
+		matches: window.innerWidth < 767 ? false : true ,
+	  });
 
     // const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1) ? 'demat-web' : " ")
     const mfForm=(props.formName==='mf-form');
@@ -160,6 +162,14 @@ function NewDematAccountForm(props) {
             }, 60000);
         }
     }, []);
+
+    useEffect(() => {
+        let mediaQuery = window.matchMedia("(min-width: 767px)");
+        mediaQuery.addListener(setView);
+        // this is the cleanup function to remove the listener
+        return () => mediaQuery.removeListener(setView);
+      }, []);
+
     // useEffect(()=>{
     //     setformdata()
     // },[form])
@@ -360,12 +370,12 @@ function NewDematAccountForm(props) {
             /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
             "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' :(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate': UTMCampaign.current || null,
-            "utm_content": isBlog == "yes" ? UTMContent.current || 'desktop_sticky_cta' : UTMContent.current || null,
+            "utm_content": isBlog == "yes" ? (view && !view.matches) ? UTMContent.current || 'mobile_sticky_cta' : UTMContent.current || 'desktop_sticky_cta' : UTMContent.current || null,
             "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             // 'sidebar_seo_leads'
             "utm_medium": isBlog == "yes" ? UTMMedium.current || 'blog_leads' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": isBlog == "yes" ? UTMSource.current || 'demat_lead_generation':(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' :(window.location.pathname.indexOf("/mutual-funds-investment") > -1) ? 'choice-mf-web': UTMSource.current || null,
+            "utm_source": isBlog == "yes" ?(mfForm) ? UTMSource.current||"mf_lead_generation" : UTMSource.current || 'demat_lead_generation':(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' :(window.location.pathname.indexOf("/mutual-funds-investment") > -1) ? 'choice-mf-web': UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
