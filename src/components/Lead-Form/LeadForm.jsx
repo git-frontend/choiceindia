@@ -57,9 +57,6 @@ function LeadForm() {
   reset();
   }
 
-  useEffect(() => {
-    console.log('TTTTT',getValues())
-  },[formType])
 
   const OEMHandler=(data)=>{
   reset();
