@@ -49,6 +49,9 @@ function Thankyoupopup({ isShow, isBlog }) {
      else if(window.location.pathname.includes('nri-demat-account')){
     setClassIdentifier('nri-dl-success')
   } 
+  else if(window.location.pathname.includes('mutual-fund-distributor') || window.location.pathname.includes('hindi/mutual-fund-distributor')){
+  setClassIdentifier('mf-distributor-leads');
+  }
   else if (window.location.pathname.includes('open-free-demat-account') || window.location.pathname.includes('demat-account') ||
     window.location.pathname.includes('open-brokerage-account') || window.location.pathname.includes('open-demat-trading-account')
     || window.location.pathname.includes('open-demat-account') || window.location.pathname.includes('free-amc-demat-account') ||
