@@ -170,10 +170,8 @@ function LeadForm() {
                  <FloatingLabel controlId="floatingNameofEntity" label="Solar Plant Capacity Requirement (KW)" className='input-label'>
                        <Form.Control type="text" placeholder="Solar Plant Capacity Requirement (KW)" className='input-field' name="solar_plant_capacity"
                         {...register("solar_plant_capacity",
-                        {"required":true,pattern:/^\d+(\.\d{1,2})?$/})}/>
-                       {errors.solar_plant_capacity?.type==="required" ?
-                       <span style={{"color":"red"}}>This is field is required</span>:
-                       errors.solar_plant_capacity?.type==="pattern" ? <span style={{"color":"red"}}>Please enter valid solar plant capacity</span> :
+                        {pattern:/^\d+(\.\d{1,2})?$/})}/>
+                       { errors.solar_plant_capacity?.type==="pattern" ? <span style={{"color":"red"}}>Please enter valid solar plant capacity</span> :
                        ""}
                      </FloatingLabel>
                  </div>
