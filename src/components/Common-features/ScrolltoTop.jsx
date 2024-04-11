@@ -33,7 +33,7 @@ export default function ScrolltoTop() {
 {
     scroll && (
         <button 
-        onClick = {scrollTop} className="scroll-top">
+        onClick = {scrollTop} className={(window.location.pathname.indexOf("/under25") !== -1 ? "scroll-top scroll-top-btn" : "scroll-top")}>
         
         <FontAwesomeIcon icon={faAngleUp} /></button>
     )
