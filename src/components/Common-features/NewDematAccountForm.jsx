@@ -22,6 +22,7 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import backIcon from '../../assets/images/backspace.svg';
 import thumbsup from '../../assets/images/demat-images/thumbsup.gif';
 import LazyLoader from "../Common-features/LazyLoader";
+import utils from "../../Services/utils";
 
 function NewDematAccountForm(props) {
     console.log("props",props)
@@ -387,6 +388,12 @@ function NewDematAccountForm(props) {
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
+                utils.pushDataLayerEvent({
+                    'event': 'send_otp',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
                 // setForm('sent-otp')
                 // setformdata()
