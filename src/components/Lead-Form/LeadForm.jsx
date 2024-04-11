@@ -28,7 +28,6 @@ function LeadForm() {
  
    const [entityType,setEntityType]=useState("Entity Type");
    const [show,setShow]=useState(true);
-   const [value,setValue]=useState("");
   
    const [formType,setFormType]=useState(1);
    const [error,setError]=useState(false);
