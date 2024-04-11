@@ -4,7 +4,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Select from 'react-dropdown-select';
 import {useForm, Controller} from 'react-hook-form';
 import "./lead-form.scss"
-
+import '../Assistedflow/assistedflow.scss';
 
 function LeadForm() {
 
@@ -31,6 +31,7 @@ function LeadForm() {
   
    const [formType,setFormType]=useState(1);
    const [error,setError]=useState(false);
+   const [loading,setLoading]=useState(false);
 
    const {register,reset,handleSubmit, control, getValues,watch,
   formState:{errors}}=useForm({mode:'onChange'});
@@ -45,6 +46,7 @@ function LeadForm() {
 
   const CustomerFormHandler=(data)=>{
   reset();
+  setLoading(true);
   console.log(data);
   }
 
@@ -56,6 +58,7 @@ function LeadForm() {
   setError(false);
   setShow(true);
   setEntityType("Entity Type");
+  setLoading(true);
   console.log(data);
   reset();
   }
@@ -63,6 +66,7 @@ function LeadForm() {
 
   const OEMHandler=(data)=>{
   reset();
+  setLoading(true);
   console.log(data);
   }
   
@@ -176,12 +180,10 @@ function LeadForm() {
                  <FloatingLabel controlId="floatingNameofEntity" label="Solar Plant Capacity Requirement (KW)" className='input-label'>
                        <Form.Control type="text" placeholder="Solar Plant Capacity Requirement (KW)" className='input-field' name="solar_plant_capacity"
                         {...register("solar_plant_capacity",
-                        {required:true,
-                         pattern:/^[1-9]\d+(\.\d{1,2})?$/})}
+                        {pattern:/^[1-9]\d+(\.\d{1,2})?$/})}
                         onInput={numericHandler}
                         maxLength={50}/>
-                       {errors.solar_plant_capacity?.type==="required" ?
-                       <span style={{color:"red"}}>Please enter solar plant capacity requirement</span> : errors.solar_plant_capacity?.type==="pattern" ? 
+                       {errors.solar_plant_capacity?.type==="pattern" ? 
                        <span style={{"color":"red"}}>Please enter valid solar plant capacity</span> :
                        ""}
                      </FloatingLabel>
@@ -213,7 +215,8 @@ function LeadForm() {
                            "")}
                        </div>
                        <div className='btn-submit-sec'>
-                           <button type="submit" className="btn-bg btn-bg-dark btnsubmit">Submit</button>
+                           <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}>{loading ? <div className='loaderB mx-auto'></div>
+                            : "Submit"}</button>
                        </div>
                  </div>
              </form>:
@@ -253,7 +256,6 @@ function LeadForm() {
                               onChange(v)
                               // setEntityType("")
                               // setShow(false)
-                              setValue(undefined)
                               // setValue(v[0].value)
                             }
                             }
@@ -383,7 +385,8 @@ function LeadForm() {
                            {<span style={{"color":"red"}}>{errors.terms_and_conditions && errors.terms_and_conditions.message}</span>}
                        </div>
                        <div className='btn-submit-sec'>
-                           <button type="submit" className="btn-bg btn-bg-dark btnsubmit">Submit</button>
+                       <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}>{loading ? <div className='loaderB mx-auto'></div>
+                            : "Submit"}</button>
                        </div>
                  </div>
              </form>
@@ -426,7 +429,7 @@ function LeadForm() {
                  <FloatingLabel controlId="floatingNameofEntity" label="No of Dealers/EPC" className='input-label mandate-none'>
                        <Form.Control type="text" placeholder="No of Dealers/EPC" className='input-field' name="No_of_EPC" 
                        {...register("No_of_EPC",
-                       {"pattern":/^[1-9]{1}\d/})}
+                       {"pattern":/^[1-9]+([0-9]*)$/})}
                        maxLength={5}
                        onInput={numberHandler}/>
                        {errors.No_of_EPC ? <span style={{color:"red"}}>Please provide valid No. of Dealers</span>:
@@ -526,7 +529,8 @@ function LeadForm() {
                            {<span style={{"color":"red"}}>{errors.terms_and_conditions && errors.terms_and_conditions.message}</span>}
                        </div>
                        <div className='btn-submit-sec'>
-                           <button type="submit" className="btn-bg btn-bg-dark btnsubmit">Submit</button>
+                       <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}>{loading ? <div className='loaderB mx-auto'></div>
+                            : "Submit"}</button>
                        </div>
                  </div>
              </form>}
