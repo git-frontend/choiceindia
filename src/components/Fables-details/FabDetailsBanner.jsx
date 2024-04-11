@@ -161,11 +161,14 @@ useEffect(() => {
   }, []);
   
 
-
+function modifyHighLight(value){
+setHighlightForm(value);
+}
 
 useEffect(() => {
     const handleCTAClick = (event) => {
         if (event.target.tagName === 'A' && event.target.closest('.blog-cta')) {
+            event.preventDefault();
             setHighlightForm(true); 
         }
     };
@@ -320,7 +323,7 @@ useEffect(() => {
                                                             <div className={name2}>
                                                             <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')}>
                                                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop} highlight={highlightForm}/>
+                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop} highlight={highlightForm} modifyHighLight={modifyHighLight}/>
                                                                 </GoogleReCaptchaProvider>
                                                            
                                                             <div className="stickyform formwrap d-flex justify-content-end ">

@@ -551,8 +551,13 @@ function NewDematAccountForm(props) {
 
         useEffect(() => {
             setHighlightForm(props.highlight);
+            console.log("Highlight "+props.highlight);
             if(props.highlight){
-                document.getElementById("mobile_no").focus();
+            document.getElementById("mobile_no").focus();
+            if(window.innerWidth<=992){
+            console.log("Pop up form is added");
+            addBLogPopUp();
+            }
             }
             
         }, [props.highlight]);
@@ -608,6 +613,8 @@ function NewDematAccountForm(props) {
                                 setBlogPopUpForm('');
                                 setIsPopUp(false);
                                 props.blogPop(false);  
+                                setHighlightForm(false);
+                                props.modifyHighLight(false);
                         }}>&times;</span>} 
                            
                        </div>}

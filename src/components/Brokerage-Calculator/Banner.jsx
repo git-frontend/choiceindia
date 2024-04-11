@@ -694,7 +694,7 @@ function Banner() {
                               <span>Turnover</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{parseFloat(newBrokerageObj.turnOver).toFixed(2)}</span>
+                              <span>{newBrokerageObj?.turnOver? (parseFloat(newBrokerageObj ?.turnOver).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -702,7 +702,7 @@ function Banner() {
                               <span className='text-bold'>Brokerage</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>{parseFloat(newBrokerageObj?.brokerage).toFixed(2)}</span>
+                              <span className='text-bold'>{newBrokerageObj?.brokerage? (parseFloat(newBrokerageObj ?.brokerage).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex brd-bottom'>
@@ -710,7 +710,32 @@ function Banner() {
                               <span className='font-danger'>Net P&L</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='font-danger'>{parseFloat((newBrokerageObj && newBrokerageObj.sellValue) - (newBrokerageObj && newBrokerageObj.buyValue) - ((newBrokerageObj && newBrokerageObj.brokerage) + (newBrokerageObj && newBrokerageObj.stt) + (newBrokerageObj && newBrokerageObj.transactionCharge) + (newBrokerageObj && newBrokerageObj.clearance) + (newBrokerageObj && newBrokerageObj.GST) + (newBrokerageObj && newBrokerageObj.sebi))).toFixed(2)}</span>
+                              <span className='font-danger'>
+                                {parseFloat(
+                                  (newBrokerageObj && newBrokerageObj.sellValue) -
+                                  (newBrokerageObj && newBrokerageObj.buyValue) -
+                                  (
+                                    (newBrokerageObj && newBrokerageObj.brokerage) +
+                                    (newBrokerageObj && newBrokerageObj.stt) +
+                                    (newBrokerageObj && newBrokerageObj.transactionCharge) +
+                                    (newBrokerageObj && newBrokerageObj.clearance) +
+                                    (newBrokerageObj && newBrokerageObj.GST) +
+                                    (newBrokerageObj && newBrokerageObj.sebi)
+                                  )
+                                ).toFixed(2) !== 'NaN' ?
+                                  parseFloat(
+                                    (newBrokerageObj && newBrokerageObj.sellValue) -
+                                    (newBrokerageObj && newBrokerageObj.buyValue) -
+                                    (
+                                      (newBrokerageObj && newBrokerageObj.brokerage) +
+                                      (newBrokerageObj && newBrokerageObj.stt) +
+                                      (newBrokerageObj && newBrokerageObj.transactionCharge) +
+                                      (newBrokerageObj && newBrokerageObj.clearance) +
+                                      (newBrokerageObj && newBrokerageObj.GST) +
+                                      (newBrokerageObj && newBrokerageObj.sebi)
+                                    )
+                                  ).toFixed(2) : '0.00'}
+                              </span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -718,7 +743,7 @@ function Banner() {
                               <span>Brokerage</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{parseFloat(newBrokerageObj?.brokerage).toFixed(2)}</span>
+                              <span>{newBrokerageObj?.brokerage? (parseFloat(newBrokerageObj ?.brokerage).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -726,7 +751,7 @@ function Banner() {
                               <span>STT/CTT</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{parseFloat(newBrokerageObj?.stt).toFixed(2)}</span>
+                              <span>{newBrokerageObj?.stt? (parseFloat(newBrokerageObj ?.stt).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -734,7 +759,7 @@ function Banner() {
                               <span>Transaction Charges</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{parseFloat(newBrokerageObj?.transactionCharge).toFixed(2)}</span>
+                              <span>{newBrokerageObj?.transactionCharge? (parseFloat(newBrokerageObj ?.transactionCharge).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -742,7 +767,7 @@ function Banner() {
                               <span>Clearing Charges</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{parseFloat(newBrokerageObj?.clearance).toFixed(2)}</span>
+                              <span>{newBrokerageObj?.clearance? (parseFloat(newBrokerageObj ?.clearance).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -750,7 +775,7 @@ function Banner() {
                               <span>GST</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{parseFloat(newBrokerageObj?.GST).toFixed(2)}</span>
+                              <span>{newBrokerageObj?.GST? (parseFloat(newBrokerageObj ?.GST).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -758,7 +783,7 @@ function Banner() {
                               <span>State Stamp Duty</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{parseFloat(newBrokerageObj?.stateStampDuty).toFixed(2)}</span>
+                              <span>{newBrokerageObj?.stateStampDuty? (parseFloat(newBrokerageObj ?.stateStampDuty).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -766,7 +791,7 @@ function Banner() {
                               <span>SEBI Turnover Fees</span>
                             </div>
                             <div className='flex-items'>
-                              <span>{parseFloat(newBrokerageObj?.sebi).toFixed(2)}</span>
+                              <span>{newBrokerageObj?.sebi? (parseFloat(newBrokerageObj ?.sebi).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -774,7 +799,25 @@ function Banner() {
                               <span className='text-bold'>TOTAL TAXES & CHARGES</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>{parseFloat((newBrokerageObj && newBrokerageObj.brokerage) + (newBrokerageObj && newBrokerageObj.stt) + (newBrokerageObj && newBrokerageObj.transactionCharge) + (newBrokerageObj && newBrokerageObj.clearance) + (newBrokerageObj && newBrokerageObj.GST) + (newBrokerageObj && newBrokerageObj.sebi)).toFixed(2)}</span>
+                              <span className='text-bold'>
+                                {parseFloat(
+                                  (newBrokerageObj && newBrokerageObj.brokerage) +
+                                  (newBrokerageObj && newBrokerageObj.stt) +
+                                  (newBrokerageObj && newBrokerageObj.transactionCharge) +
+                                  (newBrokerageObj && newBrokerageObj.clearance) +
+                                  (newBrokerageObj && newBrokerageObj.GST) +
+                                  (newBrokerageObj && newBrokerageObj.sebi)
+                                ).toFixed(2) !== "NaN" ?
+                                  parseFloat(
+                                    (newBrokerageObj && newBrokerageObj.brokerage) +
+                                    (newBrokerageObj && newBrokerageObj.stt) +
+                                    (newBrokerageObj && newBrokerageObj.transactionCharge) +
+                                    (newBrokerageObj && newBrokerageObj.clearance) +
+                                    (newBrokerageObj && newBrokerageObj.GST) +
+                                    (newBrokerageObj && newBrokerageObj.sebi)
+                                  ).toFixed(2) :
+                                  "0.00"}
+                              </span>
                               {/* <span className='text-bold'>{(newBrokerageObj?.brokerage) + (newBrokerageObj?.stt) + (newBrokerageObj?.transactionCharge) + (newBrokerageObj?.clearance) + (newBrokerageObj?.GST) + (newBrokerageObj?.sebi)}</span> */}
                             </div>
                           </div>
@@ -783,7 +826,7 @@ function Banner() {
                               <span className='text-bold'>Net Buy Value</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>{parseFloat(newBrokerageObj?.buyValue).toFixed(2)}</span>
+                              <span className='text-bold'>{newBrokerageObj?.buyValue? (parseFloat(newBrokerageObj ?.buyValue).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                           <div className='card-flex'>
@@ -791,7 +834,7 @@ function Banner() {
                               <span className='text-bold'>Net Sell Value</span>
                             </div>
                             <div className='flex-items'>
-                              <span className='text-bold'>{parseFloat(newBrokerageObj?.sellValue).toFixed(2)}</span>
+                              <span className='text-bold'>{newBrokerageObj?.sellValue? (parseFloat(newBrokerageObj ?.sellValue).toFixed(2)):0.00.toFixed(2)}</span>
                             </div>
                           </div>
                         </div>
