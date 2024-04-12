@@ -6,6 +6,9 @@ import {useForm, Controller} from 'react-hook-form';
 import leadService from '../../Services/LeadFormService'
 import "./lead-form.scss"
 import '../Assistedflow/assistedflow.scss';
+import thumbsup from '../../assets/images/demat-images/thumbsup.gif';
+import LazyLoader from "../Common-features/LazyLoader";
+import "../Common-features/newdemat-form.scss"
 
 function LeadForm() {
 
@@ -27,6 +30,7 @@ function LeadForm() {
     {label: "Company", value: 6}
   ])
  
+   const [showThanku,setShowThanku]=useState(false);
    const [entityType,setEntityType]=useState("Entity Type");
    const [show,setShow]=useState(true);
   
@@ -36,6 +40,15 @@ function LeadForm() {
 
    const {register,reset,handleSubmit, control, getValues,watch,
   formState:{errors}}=useForm({mode:'onChange'});
+
+  useEffect(()=>{
+  if(showThanku){
+  setTimeout(()=>{
+  setShowThanku(false);
+  },2000)
+  
+  }
+  },[showThanku])
  
  function numberHandler(e){
   e.target.value = e.target.value.replace(/[^0-9]/gi,"");
@@ -52,7 +65,7 @@ function LeadForm() {
   pin_code:Number(data.pincode),
   mo_num:data.mobile_num,
   email:data.mail,
-  e_bill:Number(data.bill),
+  e_bill:data.bill,
   sqft:Number(data.Roof_Space),
   address:data.address,
   capacity:Number(data.solar_plant_capacity),
@@ -63,11 +76,9 @@ function LeadForm() {
   leadService.CustomerForm(payload).then((res)=>{
   setLoading(false);
   reset();
+  setShowThanku(true);
   console.log("Response ",res);
   }).catch((err)=>console.log(err))
-
-  console.log(data);
-  console.log("Payload",payload);
   }
 
   const submitHandler=(data)=>{
@@ -81,28 +92,52 @@ function LeadForm() {
   let payload={
   form_type:'epc',
   name:data.entityName,
-  entityType:data.entityType[0].value,
+  entity_type:data.entityType[0].label.toLowerCase(),
   c_person:data.contact_person,
   email:data.mail,
   b_address:data.business_address,
   r_address:data.residence_address,
   turnover:data.sales_turnover,
-  capacity:data.Installed_capacity,
+  capacity:Number(data.Installed_capacity),
   mo_num:data.mobile_number,
   dealings:data.dealing_with_brands,
   comment:data.message,
   is_terms_accepted:data.terms_and_conditions
   }
   setLoading(true);
-  console.log(payload);
+  leadService.EPCForm(payload).then(res=>{
+  setLoading(false);
   reset();
+  setShowThanku(true);
+  console.log(res);
+  }).catch(err=>console.log(err))
   }
 
 
   const OEMHandler=(data)=>{
-  reset();
+  let payload={
+  form_type:'oem',
+  name:data.name,
+  brand_name:data.brand_name,
+  website:data.website,
+  c_person:data.contact_person,
+  mo_num:data.mo_num,
+  capacity:Number(data.capacity),
+  turnover:data.turnover,
+  epc:Number(data.epc),
+  email:data.email,
+  b_address:data.b_address,
+  comment:data.comment,
+  is_terms_accepted:data.is_terms_accepted
+  }
   setLoading(true);
-  console.log(data);
+  leadService.OEMForm(payload).then(res=>{
+  setLoading(false);
+  reset();
+  setShowThanku(true);
+  console.log(res);
+  }).catch(err=>console.log(err))
+
   }
   
   return (
@@ -575,6 +610,26 @@ function LeadForm() {
         </div>
       </div>
     </section>
+
+    {showThanku &&
+     (<div className={`lead-pop-up-form`}>
+     <div className={`demat-account-form demat-account-form-new blog-thanku-popup`}>
+          <div className="thank-you-msg">
+              <div className="thank-logo">
+                  <div className="blog-thnu-circle">
+                  <LazyLoader src={thumbsup} className={'img-fluid'} width={"160"} height={"160"} alt="Loading" />
+                  </div>
+              </div>
+             
+          <div className="thank-content">
+                  <h2>Thank You!</h2>
+                  <p className="subheading">"Your all the details have been saved successfully!"</p>
+          </div>
+          </div>
+          
+      </div>       
+  </div>
+)}
 
 
     </>

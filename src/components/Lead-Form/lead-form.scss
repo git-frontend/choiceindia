@@ -258,3 +258,29 @@
         }
     }
 }
+
+.lead-pop-up-form{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    overflow: auto;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999999 !important;
+    overflow: hidden;
+
+    &::before{
+    background: rgba(62, 64, 79, 0.302);
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+    }
+}
