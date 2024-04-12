@@ -55,102 +55,105 @@ export default function Header() {
                     onClick={ ()=>setShow(!show)} >
                         { show ? <FontAwesomeIcon icon={faBars} />  : <FontAwesomeIcon icon={faXmark} /> }
                     </button>
-                        <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
-                        {window.location.pathname.includes('under25') ? (
-                        <div className='d-flex  flex-column flex-lg-row justify-content-between flex-grow-1'>
-                            <ul className="navbar-nav  nav-header">
-                            <li className="nav-item service-section-sub">
-                                <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
-                                 <NavDropdown  title="Services" id="navbarScrollingDropdown" className="top-nav-links service-section serv-drop">
-                                    <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to="/equity-broking">Broking &amp; Distribution</NavDropdown.Item>
-                                    <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>{setShow(!show),check2()}}  >Insurance</NavDropdown.Item>
-                                    <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to='/loan'>Loans</NavDropdown.Item>
-                                    <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)}  as={Link} to='/government-advisory'>Government Advisory</NavDropdown.Item>
-                                </NavDropdown>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to= '/research-listing'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to= '/investment-app'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to= '/career'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Career</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to= '/under25'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link fw-semibold" + (isActive ? "single-nav-links nav-link fw-semibold active-header" :'')}>Youth</NavLink>
-                            </li>
-                        </ul>
-                        <ul className="navbar-nav  nav-header">
-                            {/* <li className="nav-item get-btn-outline">
-                                <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/'>Log in</NavLink>
-                            </li> */}
-                            <li className="nav-item login-btn get-btn-outline">
-                                <NavDropdown title="Log In" id="navbarScrollingDropdown" className="top-nav-links login-btn">
-                                <NavDropdown.Item className="nav-dropdown-links" href='https://finx.choiceindia.com/auth/login' target="_blank">client</NavDropdown.Item>
-                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://backoffice.choiceindia.com/WebLogin/index.cfm?Logintype=Branch'>partner</NavDropdown.Item>
-                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'>employee</NavDropdown.Item>
-                                </NavDropdown>
-                            </li>
-                            
-                            <li className="nav-item get-btn get-btn2">
-                                <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Get Started</NavLink>
-                            </li>
-                        </ul></div>):(
-                        <ul className="navbar-nav ms-auto nav-header">
-                            <li className="nav-item">
-                                <NavLink to= '/about-us'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>About</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to= '/investment-app'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
-                            </li>
-                            <li className="nav-item service-section-sub">
-                                <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
-                                
-                                 <NavDropdown  title="Services" id="navbarScrollingDropdown" className="top-nav-links service-section serv-drop">
-                                <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to="/equity-broking">Broking &amp; Distribution</NavDropdown.Item>
-                                  {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking'>Wealth Planning</NavDropdown.Item> */}
+                    {!window.location.pathname.includes('solar-loan/lead-form') && 
+                     <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
+                     {window.location.pathname.includes('under25') ? (
+                     <div className='d-flex  flex-column flex-lg-row justify-content-between flex-grow-1'>
+                         <ul className="navbar-nav  nav-header">
+                         <li className="nav-item service-section-sub">
+                             <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
+                              <NavDropdown  title="Services" id="navbarScrollingDropdown" className="top-nav-links service-section serv-drop">
+                                 <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to="/equity-broking">Broking &amp; Distribution</NavDropdown.Item>
                                  <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>{setShow(!show),check2()}}  >Insurance</NavDropdown.Item>
                                  <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to='/loan'>Loans</NavDropdown.Item>
-                                 {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Capital Advisory</NavDropdown.Item> */}
-                                 {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Management Consultancy</NavDropdown.Item> */}
                                  <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)}  as={Link} to='/government-advisory'>Government Advisory</NavDropdown.Item>
-                                 {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Tax Advisory</NavDropdown.Item> */}
-                                </NavDropdown>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to= '/research-listing'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
-                            </li>
-                            {/* <li className="nav-item">
-                                <NavLink to= '/career'   className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
-                            </li> */}
-                            <li className="nav-item">
-                                <NavLink to= '/partner'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Partners</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to= '/contact-us'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
-                            </li>
-                            {/* <li className="nav-item login-btn">
-                                <a href='https://jiffy.choiceindia.com/auth/login'  onClick={ ()=>setShow(!show)} >Log In</a>
-                            </li> */}
-                            <li className="nav-item login-btn">
-                                <NavDropdown title="Log In" id="navbarScrollingDropdown" className="top-nav-links login-btn">
-                                <NavDropdown.Item className="nav-dropdown-links" href='https://finx.choiceindia.com/auth/login' target="_blank">client</NavDropdown.Item>
-                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://backoffice.choiceindia.com/WebLogin/index.cfm?Logintype=Branch'>partner</NavDropdown.Item>
-                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'>employee</NavDropdown.Item>
-                                </NavDropdown>
-                            </li>
-                            {/* <li className="nav-item login-btn">
-                                <a href='https://jiffy.choiceindia.com/auth/login'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</a>
-                            </li> */}
+                             </NavDropdown>
+                         </li>
+                         <li className="nav-item">
+                             <NavLink to= '/research-listing'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
+                         </li>
+                         <li className="nav-item">
+                             <NavLink to= '/investment-app'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
+                         </li>
+                         <li className="nav-item">
+                             <NavLink to= '/career'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Career</NavLink>
+                         </li>
+                         <li className="nav-item">
+                             <NavLink to= '/under25'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link fw-semibold" + (isActive ? "single-nav-links nav-link fw-semibold active-header" :'')}>Youth</NavLink>
+                         </li>
+                     </ul>
+                     <ul className="navbar-nav  nav-header">
+                         {/* <li className="nav-item get-btn-outline">
+                             <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/'>Log in</NavLink>
+                         </li> */}
+                         <li className="nav-item login-btn get-btn-outline">
+                             <NavDropdown title="Log In" id="navbarScrollingDropdown" className="top-nav-links login-btn">
+                             <NavDropdown.Item className="nav-dropdown-links" href='https://finx.choiceindia.com/auth/login' target="_blank">client</NavDropdown.Item>
+                               <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://backoffice.choiceindia.com/WebLogin/index.cfm?Logintype=Branch'>partner</NavDropdown.Item>
+                              <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'>employee</NavDropdown.Item>
+                             </NavDropdown>
+                         </li>
+                         
+                         <li className="nav-item get-btn get-btn2">
+                             <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Get Started</NavLink>
+                         </li>
+                     </ul></div>):(
+                     <ul className="navbar-nav ms-auto nav-header">
+                         <li className="nav-item">
+                             <NavLink to= '/about-us'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>About</NavLink>
+                         </li>
+                         <li className="nav-item">
+                             <NavLink to= '/investment-app'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
+                         </li>
+                         <li className="nav-item service-section-sub">
+                             <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
+                             
+                              <NavDropdown  title="Services" id="navbarScrollingDropdown" className="top-nav-links service-section serv-drop">
+                             <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to="/equity-broking">Broking &amp; Distribution</NavDropdown.Item>
+                               {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking'>Wealth Planning</NavDropdown.Item> */}
+                              <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>{setShow(!show),check2()}}  >Insurance</NavDropdown.Item>
+                              <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to='/loan'>Loans</NavDropdown.Item>
+                              {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Capital Advisory</NavDropdown.Item> */}
+                              {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Management Consultancy</NavDropdown.Item> */}
+                              <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)}  as={Link} to='/government-advisory'>Government Advisory</NavDropdown.Item>
+                              {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Tax Advisory</NavDropdown.Item> */}
+                             </NavDropdown>
+                         </li>
+                         <li className="nav-item">
+                             <NavLink to= '/research-listing'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
+                         </li>
+                         {/* <li className="nav-item">
+                             <NavLink to= '/career'   className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
+                         </li> */}
+                         <li className="nav-item">
+                             <NavLink to= '/partner'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Partners</NavLink>
+                         </li>
+                         <li className="nav-item">
+                             <NavLink to= '/contact-us'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
+                         </li>
+                         {/* <li className="nav-item login-btn">
+                             <a href='https://jiffy.choiceindia.com/auth/login'  onClick={ ()=>setShow(!show)} >Log In</a>
+                         </li> */}
+                         <li className="nav-item login-btn">
+                             <NavDropdown title="Log In" id="navbarScrollingDropdown" className="top-nav-links login-btn">
+                             <NavDropdown.Item className="nav-dropdown-links" href='https://finx.choiceindia.com/auth/login' target="_blank">client</NavDropdown.Item>
+                               <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://backoffice.choiceindia.com/WebLogin/index.cfm?Logintype=Branch'>partner</NavDropdown.Item>
+                              <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'>employee</NavDropdown.Item>
+                             </NavDropdown>
+                         </li>
+                         {/* <li className="nav-item login-btn">
+                             <a href='https://jiffy.choiceindia.com/auth/login'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</a>
+                         </li> */}
 
-                           
-                            <li className="nav-item get-btn get-btn2">
-                                <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Open Free Account</NavLink>
-                            </li>
-                        </ul>
-                        )}
-                    </div>
+                        
+                         <li className="nav-item get-btn get-btn2">
+                             <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Open Free Account</NavLink>
+                         </li>
+                     </ul>
+                     )}
+                 </div>
+                    }
+                       
                 </div>
             </nav>
           
