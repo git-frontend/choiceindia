@@ -4,12 +4,12 @@ import { API_URLS } from "./API-URLS";
 const leadService={
 
 headerConfig: {
-    headers: { 'content-type': 'multipart/form-data' }
+    headers: { 'content-type': 'application/json' }
 },    
 
 CustomerForm:async function(postdata){
     let api = new API_URLS();
-    let url = api.getContactFormURL();
+    let url = api.getLeadFormURL();
     return await axios.post(url, postdata, this.headerConfig).then(({ data }) => {
         return data
     })
@@ -17,7 +17,7 @@ CustomerForm:async function(postdata){
 
  EPCForm:async function(postdata){
     let api = new API_URLS();
-    let url = api.getContactFormURL();
+    let url = api.getLeadFormURL();
     return await axios.post(url, postdata, this.headerConfig).then(({ data }) => {
         return data
     })
@@ -25,7 +25,7 @@ CustomerForm:async function(postdata){
 
  OEMForm:async function(postdata){
     let api = new API_URLS();
-    let url = api.getContactFormURL();
+    let url = api.getLeadFormURL();
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
         return data
     })

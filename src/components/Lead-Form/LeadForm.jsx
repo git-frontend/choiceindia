@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Select from 'react-dropdown-select';
 import {useForm, Controller} from 'react-hook-form';
+import leadService from '../../Services/LeadFormService'
 import "./lead-form.scss"
 import '../Assistedflow/assistedflow.scss';
 
@@ -48,18 +49,23 @@ function LeadForm() {
   let payload={
   form_type:'regular',
   name:data.name,
-  pincode:data.pincode,
+  pin_code:Number(data.pincode),
   mo_num:data.mobile_num,
   email:data.mail,
-  e_bill:data.bill,
-  sqft:data.Roof_Space,
+  e_bill:Number(data.bill),
+  sqft:Number(data.Roof_Space),
   address:data.address,
-  capacity:data.solar_plant_capacity,
+  capacity:Number(data.solar_plant_capacity),
   comment:data.message,
   is_terms_accepted:data.terms_and_conditions
   }
-  reset();
   setLoading(true);
+  leadService.CustomerForm(payload).then((res)=>{
+  setLoading(false);
+  reset();
+  console.log("Response ",res);
+  }).catch((err)=>console.log(err))
+
   console.log(data);
   console.log("Payload",payload);
   }
