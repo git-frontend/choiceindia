@@ -382,6 +382,7 @@ function LeadForm() {
                          name="dealing_with_brands"
                          {...register("dealing_with_brands",
                         {pattern:/^[a-zA-z]+([\,][a-zA-Z]+)*$/})}
+                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z,]/gi,"")}
                        />
                        {errors.dealing_with_brands?.type==="pattern" && 
                        <span style={{color:"red"}}>Please provide valid brand names</span>}
