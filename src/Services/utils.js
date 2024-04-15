@@ -154,8 +154,14 @@ const utils ={
         } else {
             return ''
         }
-    }
+    },
       
+
+    /**push event using datalayer */
+    pushDataLayerEvent (eventData) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(eventData);
+    }
 
 }
 

@@ -9,6 +9,7 @@ import OpenAccountLanguageContent from '../../Services/OpenAccountLanguageConten
 import Spinner from 'react-bootstrap/Spinner';
 import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal'
+import utils from "../../Services/utils";
 
 
 function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, language, openInfoPopup, showPopup }) {
@@ -123,6 +124,19 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
             openAccountService.verifyOTP(request, type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
+                    utils.pushDataLayerEvent({
+                        'event': 'open_account_lead_submit',
+                        'page_path': window.location.pathname,
+                        'page_url': window.location.href,
+                        'phone': mobileNumber || "",
+                        'platform': 'website'
+                    })
+                    utils.pushDataLayerEvent({
+                        'event': 'otp_procced',
+                        'page_path': window.location.pathname,
+                        'page_url': window.location.href,
+                        'platform': 'website'
+                    })
                     //  console.log('HANDLER',res);
                     // if (res.data.Body.isOnboardFlag === 'Y') {
                     //Your Onboarding has been completed

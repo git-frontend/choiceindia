@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import Bannerimage from '../../assets/images/fabledetails/choice-blog-default.png';
 import ctaBanner from '../../assets/images/fable/cta-banner.png';
 import Free from '../../assets/images/fable/free.png';
@@ -16,14 +16,28 @@ import utils from "../../Services/utils";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import DematFormCta from "../Common-features/DematFormCta";
 import { useLocation } from 'react-router-dom';
+import NewDematAccountForm from "../Common-features/NewDematAccountForm";
 function Fabdetailsbanner(props) {
+    const [highlightForm, setHighlightForm] = useState(false);
     const location = useLocation();
     const [rendercount, setRenderCount] = useState(() => false);
     const pageUrl = location.href
     const blogpageUrl = window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1 ? 'yes' : '';
     const [linkage, setLinkage] = useState(['facebook', 'whatsapp', 'linkedin', 'twitter']);
     const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice";
+    const [popUp, setPopUp] = useState(false);
+    const [formMobile, setFormMobile] = useState('');
 
+    function blogPop(isPopUp) {
+    console.log("Flag " + isPopUp);
+    if (isPopUp) {
+        setFormMobile('');  
+        }
+    else {
+        setFormMobile('form-mobile');
+    }    
+    setPopUp(isPopUp);
+    }
 
 
     function shareiconLink(key) {
@@ -87,7 +101,83 @@ function Fabdetailsbanner(props) {
     //         </>
     //     );
     // }
+    const openAccountMobile = useRef("");
+    const handleClick = (event) => {
+        // setIsActive(current => !current);
+            if (popUp) {
+            return;
+        }
 
+        openAccountMobile.current.style.zIndex = 0;
+        setIsActive(true); 
+
+    };
+    const [isActive, setIsActive] = useState(false);
+    const [name, setName] = useState('hideform');
+    const [isCheck, setIsCheck] = useState(false);
+
+
+
+    const [show, setShow] = useState(false);
+  const [delayPassed, setDelayPassed] = useState(false);
+  const [name2, setName2 ] = useState('card-sticky-blog');
+  const [count, setCount] = useState(0)
+  const [view,setView]=useState({
+		matches: window.innerWidth < 767 ? false : true ,
+	  });
+    const getPosition = () => {
+      const element = document.getElementById("showCard");
+      if(element){
+          const rect = element.getBoundingClientRect();
+          
+          if(rect.top.toFixed() < 120){
+              setName2('card-sticky-blog visibleBlog');
+              
+          }else{
+              setName2('card-sticky-blog');
+          } 
+          // console.log(name,"jj",rect.top.toFixed())  
+      }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', getPosition);
+}, []);
+
+
+useEffect(() => {
+  let mediaQuery = window.matchMedia("(min-width: 767px)");
+  mediaQuery.addListener(setView);
+  // this is the cleanup function to remove the listener
+  return () => mediaQuery.removeListener(setView);
+  }, []);
+  // console.log(show,'LLL')  
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setDelayPassed(true);
+    }, 15000);
+  
+    return () => clearTimeout(timeout);
+  }, []);
+  
+
+function modifyHighLight(value){
+setHighlightForm(value);
+}
+
+useEffect(() => {
+    const handleCTAClick = (event) => {
+        if (event.target.tagName === 'A' && event.target.closest('.blog-cta')) {
+            event.preventDefault();
+            setHighlightForm(true); 
+        }
+    };
+
+    document.addEventListener('click', handleCTAClick);
+    return () => {
+        document.removeEventListener('click', handleCTAClick);
+    };
+}, []);
     return (
 
         <div className='banner-main'>
@@ -223,15 +313,25 @@ function Fabdetailsbanner(props) {
                                                 </div>
                                                 :
                                                 ((props.showForm) ?
-                                                    (props.formName === 'form-demat' ?
+                                                    (props.formName === 'form-demat' || props.formName === 'mf-form' ?
                                                         <div className="col-md-4" id="open-account-wrap">
                                                             {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                             <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
                                         </GoogleReCaptchaProvider> */}
-                                                            <DematFormCta />
+                                                            {/* <DematFormCta /> */}
+                                                            
+                                                            <div className={name2}>
+                                                            <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')}>
+                                                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop} highlight={highlightForm} modifyHighLight={modifyHighLight} formName={props.formName}/>
+                                                                </GoogleReCaptchaProvider>
+                                                           
                                                             <div className="stickyform formwrap d-flex justify-content-end ">
 
                                                             </div>
+                                                            </div>
+                                                            </div>
+                                                            
                                                         </div> :
                                                         props.formName === 'form-mutual-fund-distributor' ?
                                                             <div className="col-md-4" id="open-account-wrap">
@@ -257,6 +357,27 @@ function Fabdetailsbanner(props) {
                                                     '')
                                         }
 
+
+                                        <div className={name}>
+                                       {(!window.location.pathname.includes('sub-broker') && 
+                                       !window.location.pathname.includes('mutual-fund-distributor')) &&
+                                       <div className="btn-fixed" ref={openAccountMobile}>
+                                            <div className="open-account-mob" onClick={handleClick}>
+                                                <span className="sticy-contnet content">Open Free Demat Account in 5 Mins</span>
+                                                <span className="sticy-contnet icon">
+                                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="16" cy="16" r="16" fill="#FFCE02"/>
+                                                    <path d="M8 16H24.6667H8ZM24.6667 16L16.6667 8L24.6667 16ZM24.6667 16L16.6667 24L24.6667 16Z" fill="#FFCE02"/>
+                                                    <path d="M8 16H24.6667M24.6667 16L16.6667 8M24.6667 16L16.6667 24" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>}
+{/* 
+                                        <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                            <button className=" primary-orange-btn scroll-top-account openbtn" onClick={handleClick}>Open Account Now</button>
+                                        </div> */}
+                                    </div>
                                     </div>
 
                                 </div>

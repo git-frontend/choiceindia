@@ -31,18 +31,18 @@
             // z-index: 1;
             // top: 5rem;
             // display: block;
-            width: 30rem;
+            // width: 30rem;
             // right: 10%;
             // transform: translate(20%);
-            float: right;
-            position: sticky;
-            top: 145px;
+            // float: right;
+            // position: sticky;
+            // top: 145px;
             @media screen and (max-width: $sm) {
                 top: inherit;
                 position: static;
             }
             @media screen and (max-width: $md) {
-                display: none;
+                // display: none;
                 width: 90%;
             }
             @media (min-width:$sm-x) and (max-width: $md) {
@@ -681,6 +681,17 @@
 .card-sticky-blog{
     position: sticky;
     top: 140px;
+    .form-mobile-flex{
+        display: flex;
+        justify-content: flex-end;
+    }
+    @media (max-width:1400px) {
+        top: 125px;
+    }
+    @media (max-width:$md) {
+        position: inherit;
+        top: inherit;
+    }
     .btn-fixed{
         .openbtn{
             display: flex;
@@ -697,6 +708,35 @@
         position: inherit;
         top: inherit;
     }
+}
+.detailbanner{
+.btn-fixed{
+    z-index: 9999999999;
+    .open-account-mob{
+        display: flex;
+        background: $pricolor;
+        justify-content: space-between;
+        color: $whiteColor;
+        align-items: center;
+        padding: 1rem;
+        text-align: left;
+        .sticy-contnet{
+            @media (max-width:$md) {
+            width: 50%;
+            font-size: 1.429rem;
+            color: $whiteColor;
+            font-family: $font-family-poppins-semibold;
+            font-weight: 600;
+            }
+            &.icon{
+                @media (max-width:$md) {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}
 }
 
 

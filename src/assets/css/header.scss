@@ -2,6 +2,7 @@
 
 .Header{
     .main-header{
+        min-height: 119px;
         position: fixed;
         background: $whiteColor;
         width: 100%;
@@ -10,8 +11,10 @@
         left: 0;
         box-shadow: 0px 0px 8px #F0F0F0;
         padding: 2rem 0;
-        min-height: 110px;
-        
+        min-height: 119px;
+        @media (max-width:1400px) {
+            min-height: 100px;
+        }
         .navbar{
             box-shadow: none;
             .logo-main{

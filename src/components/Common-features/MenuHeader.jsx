@@ -9,6 +9,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import  ImageSub0new  from '../../assets/images/under-25/choice-logo.svg';
 import  ImageSub1new from '../../assets/images/under-25/choice-logo-dark.svg';
 
+import utils from '../../Services/utils';
+
 export default function Header() {
 
     const [show, setShow] = useState(true)
@@ -145,15 +147,21 @@ export default function Header() {
                              <a href='https://jiffy.choiceindia.com/auth/login'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</a>
                          </li> */}
 
-                        
-                         <li className="nav-item get-btn get-btn2">
-                             <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Open Free Account</NavLink>
-                         </li>
-                     </ul>
-                     )}
-                 </div>
-                    }
-                       
+                           
+                            <li className="nav-item get-btn get-btn2" id="open-account-tag">
+                                <NavLink className="nav-link"  onClick={ ()=>{setShow(!show);utils.pushDataLayerEvent({
+                                    'event': 'open_free_account_click',
+                                    'page_path': window.location.pathname,
+                                    'page_url': window.location.href,
+                                    'cta_source': 'top_nav',
+                                    'platform': 'website'
+                                })
+                                }} to='/open-free-demat-account'>Open Free Account</NavLink>
+                            </li>
+                        </ul>
+                        )}
+                    </div>
+}
                 </div>
             </nav>
           
