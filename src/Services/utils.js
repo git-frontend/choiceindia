@@ -170,8 +170,6 @@ const utils ={
         }else{
             return "";
         }
-        // console.log('INPUT',input)
-        // console.log('Output',CryptoJS.SHA256(input).toString())
     }
 
 }
