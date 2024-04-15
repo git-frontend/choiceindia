@@ -152,17 +152,21 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     utils.pushDataLayerEvent({
-                        'event': 'open_account_lead_submit',
-                        'page_path': window.location.pathname,
-                        'page_url': window.location.href,
-                        'phone': mobileNumber || "",
-                        'platform': 'website'
-                    })
-                    utils.pushDataLayerEvent({
                         'event': 'otp_procced',
                         'page_path': window.location.pathname,
                         'page_url': window.location.href,
-                        'platform': 'website'
+                        'lead_source':'choiceindia',
+                        'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                    })
+                    utils.pushDataLayerEvent({
+                        'event': 'open_account_lead_submit',
+                        'page_path': window.location.pathname,
+                        'page_url': window.location.href,
+                        'phone': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'lead_source':'choiceindia',
+                        'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                     })
                    //  console.log('HANDLER',res);
                     // setOtpparam("Otp-success")

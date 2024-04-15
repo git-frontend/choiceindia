@@ -384,7 +384,7 @@ function NewDematAccountForm(props) {
             // "captcha": "1"
 
         };
-        console.log("ffff",request)
+        
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
@@ -392,6 +392,9 @@ function NewDematAccountForm(props) {
                     'event': 'send_otp',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
+                    'lead_source': 'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'lead_id': res.data.Body.leadid,
                     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;

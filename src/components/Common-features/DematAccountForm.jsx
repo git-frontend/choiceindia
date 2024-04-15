@@ -113,17 +113,21 @@ function DematAccountForm(props) {
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
                 utils.pushDataLayerEvent({
-                    'event': 'open_account_lead_submit',
-                    'page_path': window.location.pathname,
-                    'page_url': window.location.href,
-                    'phone': mobileNumber || "",
-                    'platform': 'website'
-                })
-                utils.pushDataLayerEvent({
                     'event': 'otp_procced',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
-                    'platform': 'website'
+                    'lead_source':'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
+                utils.pushDataLayerEvent({
+                    'event': 'open_account_lead_submit',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'phone': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'lead_source':'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
                 setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
                 // console.log('Success', res);
@@ -420,7 +424,10 @@ function DematAccountForm(props) {
                     'event': 'send_otp',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
-                    'platform': 'website'
+                    'lead_source': 'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'lead_id': res.data.Body.leadid,
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
 
