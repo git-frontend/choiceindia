@@ -9,6 +9,7 @@ import '../Assistedflow/assistedflow.scss';
 import thumbsup from '../../assets/images/demat-images/thumbsup.gif';
 import LazyLoader from "../Common-features/LazyLoader";
 import "../Common-features/newdemat-form.scss"
+import {toast} from 'react-toastify';
 
 function LeadForm() {
 
@@ -20,7 +21,6 @@ function LeadForm() {
   //   {label: "HUF", value: 5},
   //   {label: "Company", value: 6}
   // ]
-
   const [options, setOptions] = useState([
     {label: "Individual", value: 1},
     {label: "Proprietorship", value: 2},
@@ -37,7 +37,7 @@ function LeadForm() {
    const [formType,setFormType]=useState(1);
    const [error,setError]=useState(false);
    const [loading,setLoading]=useState(false);
-
+   console.log(formType);
    const {register,reset,handleSubmit, control, getValues,watch,
   formState:{errors}}=useForm({mode:'onChange'});
 
@@ -45,7 +45,7 @@ function LeadForm() {
   if(showThanku){
   setTimeout(()=>{
   setShowThanku(false);
-  },2000)
+  },5000)
   
   }
   },[showThanku])
@@ -76,9 +76,13 @@ function LeadForm() {
   leadService.CustomerForm(payload).then((res)=>{
   setLoading(false);
   reset();
+  setFormType(1);
   setShowThanku(true);
   console.log("Response ",res);
-  }).catch((err)=>console.log(err))
+  }).catch((err)=>{
+  setLoading(false);
+  console.log(err)
+  toast.error(err.message)})
   }
 
   const submitHandler=(data)=>{
@@ -108,6 +112,7 @@ function LeadForm() {
   leadService.EPCForm(payload).then(res=>{
   setLoading(false);
   reset();
+  setFormType(1);
   setShowThanku(true);
   console.log(res);
   }).catch(err=>console.log(err))
@@ -134,11 +139,12 @@ function LeadForm() {
   leadService.OEMForm(payload).then(res=>{
   setLoading(false);
   reset();
+  setFormType(1);
   setShowThanku(true);
   console.log(res);
   }).catch(err=>console.log(err))
 
-  }
+  } 
   
   return (
     <>
@@ -151,17 +157,17 @@ function LeadForm() {
                   <p>You are :</p>
                   <div className='radio-btn-sec'>
                       <div className="rdio"> 
-                        <input name="form_type" value="1" id="radio1" type="radio" defaultChecked onClick={()=>{setFormType(1)
+                        <input name="form_type" value="1" id="radio1" type="radio" checked={formType===1} defaultChecked onClick={()=>{setFormType(1)
                         reset()}}/>
                         <label htmlFor="radio1">Customer</label>
                       </div>
                       <div className="rdio"> 
-                        <input name="form_type" value="2" id="radio2" type="radio" onClick={()=>{setFormType(2)
+                        <input name="form_type" value="2" id="radio2" type="radio" checked={formType===2} onClick={()=>{setFormType(2)
                         reset()}}/>
                         <label htmlFor="radio2">EPC</label>
                       </div>
                       <div className="rdio">
-                        <input name="form_type" value="oem" id="radio3" type="radio" onClick={()=>{setFormType(3)
+                        <input name="form_type" value="3" id="radio3" type="radio" checked={formType===3} onClick={()=>{setFormType(3)
                         reset()}} {...register("form_type")}/>
                         <label htmlFor="radio3">Manufacturer/OEM</label>
                       </div>
@@ -169,7 +175,7 @@ function LeadForm() {
                </div>
             </div>
             {formType==1?
-              <form className='form-section' onSubmit={handleSubmit(CustomerFormHandler)} noValidate>
+              <form className='form-section' onSubmit={handleSubmit(CustomerFormHandler)}>
              <div className='dis-flex'>
                  <div className='flex-items'>
                     <FloatingLabel controlId="floatingName" label="Name" className='input-label'>
@@ -250,10 +256,11 @@ function LeadForm() {
                  <FloatingLabel controlId="floatingNameofEntity" label="Solar Plant Capacity Requirement (KW)" className='input-label'>
                        <Form.Control type="text" placeholder="Solar Plant Capacity Requirement (KW)" className='input-field' name="solar_plant_capacity"
                         {...register("solar_plant_capacity",
-                        {pattern:/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
+                        {required:true,
+                        pattern:/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
                         onInput={numericHandler}
                         maxLength={20}/>
-                       {errors.solar_plant_capacity?.type==="pattern" ? 
+                       {errors.solar_plant_capacity?.type==="required" ? <span style={{"color":"red"}}>This field is required</span>:errors.solar_plant_capacity?.type==="pattern"? 
                        <span style={{"color":"red"}}>Please enter valid solar plant capacity</span> :
                        ""}
                      </FloatingLabel>
@@ -302,7 +309,7 @@ function LeadForm() {
                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z ]/gi,"")}
                        maxLength={100}/>
                        <Form.Control.Feedback type="invalid">Please provide a Name of Entity</Form.Control.Feedback>
-                       {errors.entityName?.type==="required" ? <span style={{color:"red"}}>Please provide a Name of Entity</span>:
+                       {errors.entityName?.type==="required" ? <span style={{color:"red"}}>This field is required</span>:
                         errors.entityName?.type==="pattern"? <span style={{color:"red"}}>Please enter valid entity name</span> :
                         ""}
                      </FloatingLabel>
@@ -314,7 +321,7 @@ function LeadForm() {
                         {
                         "required":true
                         })}/>
-                       {errors.business_address && <span style={{color:"red"}}>Please enter the business address</span>}
+                       {errors.business_address && <span style={{color:"red"}}>This field is required</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
@@ -354,7 +361,7 @@ function LeadForm() {
                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z ]/gi,"")}
                        maxLength={100}/>
                        {errors.contact_person?.type==="required" ?
-                       <span style={{color:"red"}}>Please provide contact person name</span>
+                       <span style={{color:"red"}}>This field is required</span>
                        :
                        errors.contact_person?.type==="minLength" ?
                        <span style={{color:"red"}}>Name must contains at least 3 characters</span> :
@@ -470,7 +477,7 @@ function LeadForm() {
                        <Form.Control type="text" placeholder="Entity Name" className='input-field' name="name" 
                        {...register("name",{"required":true,
                        pattern: /^[a-zA-z]+([\s][a-zA-Z]+)*$/})}/>
-                       {errors.name?.type==="required" ? <span style={{color:"red"}}>Please provide the entity name</span>:
+                       {errors.name?.type==="required" ? <span style={{color:"red"}}>This field is required</span>:
                        errors.name?.type==="pattern" ? <span style={{color:"red"}}>Please provide valid entity name</span>:
                        ""}
                      </FloatingLabel>
@@ -483,7 +490,7 @@ function LeadForm() {
                        "pattern":/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/
                        })}
                        maxLength={8}/>
-                       {errors.turn_over ? <span style={{color:"red"}}>Please provide valid Sales Turnover</span>:
+                       {errors.turn_over ? <span style={{color:"red"}}>Sales Turnover must include 1 or 2 digits after precision</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -520,7 +527,7 @@ function LeadForm() {
                        {"required":true,
                        pattern:/^[a-zA-Z]{1}[A-Za-z0-9._%+-]{1,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})$/})}/>
                         {errors.email?.type==="pattern" ?<span style={{color:"red"}}>Please enter valid email ID</span> :
-                        errors.email?.type==="required" ?<span style={{color:"red"}}>Please provide the email ID</span>:
+                        errors.email?.type==="required" ?<span style={{color:"red"}}>This field is required</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -531,7 +538,7 @@ function LeadForm() {
                       {"required":true,
                        pattern:/^[a-zA-z]+([\s][a-zA-Z]+)*$/} )}
                        maxLength={100}/>
-                      {errors.contact_person?.type==="required" ? <span style={{color:"red"}}>Please provide the contact person name</span>:
+                      {errors.contact_person?.type==="required" ? <span style={{color:"red"}}>This field is required</span>:
                        errors.contact_person?.type==="pattern"? <span style={{color:"red"}}>Please enter valid contact person name</span>:
                        ""}
                      </FloatingLabel>
@@ -541,7 +548,7 @@ function LeadForm() {
                        <Form.Control type="text" placeholder="Business Address" className='input-field' name="b_address" 
                        {...register("b_address",
                        {"required":true})}/>
-                       {errors.b_address? <span style={{color:"red"}}>Please provide the business address</span>:
+                       {errors.b_address? <span style={{color:"red"}}>This field is required</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -568,8 +575,8 @@ function LeadForm() {
                        maxLength={20}
                        onInput={numericHandler}
                        />
-                       {errors.capacity?.type==="required" ? <span style={{"color":"red"}}>Please enter Production Capacity</span> :
-                        errors.capacity?.type==="pattern"?<span style={{"color":"red"}}>Please provide valid Production Capacity</span>:
+                       {errors.capacity?.type==="required" ? <span style={{"color":"red"}}>This field is required</span> :
+                        errors.capacity?.type==="pattern"?<span style={{"color":"red"}}>Production Capacity must include 1 or 2 digits after precision</span>:
                         ""}
                      </FloatingLabel>
                  </div>
