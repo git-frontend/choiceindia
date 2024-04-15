@@ -343,7 +343,10 @@ function NewDematAccountForm(props) {
                     'event': 'send_otp',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
-                    'platform': 'website'
+                    'lead_source': 'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'lead_id': res.data.Body.leadid,
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
                 // setForm('sent-otp')
