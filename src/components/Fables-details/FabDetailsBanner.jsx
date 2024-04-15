@@ -167,17 +167,19 @@ setHighlightForm(value);
 
 useEffect(() => {
     const handleCTAClick = (event) => {
-        if (event.target.tagName === 'A' && event.target.closest('.blog-cta')) {
+        if (props.formName == "form-demat" || (event.target.tagName === 'A' && event.target.closest('.blog-cta'))) {
             event.preventDefault();
             setHighlightForm(true); 
         }
     };
-
-    document.addEventListener('click', handleCTAClick);
-    return () => {
-        document.removeEventListener('click', handleCTAClick);
-    };
-}, []);
+    if(props.formName == "form-demat"){
+        document.addEventListener('click', handleCTAClick);
+        return () => {
+            document.removeEventListener('click', handleCTAClick);
+        };
+    }
+    
+}, [props.formName]);
     return (
 
         <div className='banner-main'>
@@ -335,9 +337,11 @@ useEffect(() => {
                                                         </div> :
                                                         props.formName === 'form-mutual-fund-distributor' ?
                                                             <div className="col-md-4" id="open-account-wrap">
+                                                                <div className={name2}>
                                                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                                                     <MutualSubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
                                                                 </GoogleReCaptchaProvider>
+                                                                </div>
                                                                 <div className="stickyform formwrap d-flex justify-content-end ">
 
                                                                 </div>
@@ -345,9 +349,11 @@ useEffect(() => {
 
                                                             :
                                                             <div className="col-md-4" id="sub-broker-wrap">
+                                                                <div className={name2}>
                                                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                                                     <SubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
                                                                 </GoogleReCaptchaProvider>
+                                                                </div>
                                                                 <div className="franchise-form justify-content-end d-flex">
 
                                                                 </div>
@@ -363,7 +369,9 @@ useEffect(() => {
                                        !window.location.pathname.includes('mutual-fund-distributor')) &&
                                        <div className="btn-fixed" ref={openAccountMobile}>
                                             <div className="open-account-mob" onClick={handleClick}>
+                                                
                                                 <span className="sticy-contnet content">Open Free Demat Account in 5 Mins</span>
+
                                                 <span className="sticy-contnet icon">
                                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <circle cx="16" cy="16" r="16" fill="#FFCE02"/>
