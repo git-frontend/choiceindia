@@ -144,7 +144,7 @@ function NewDematAccountForm(props) {
     }
 
     useEffect(() => {
-        if (window.location.pathname.includes('blog') === true) {
+        if ((window.location.pathname.includes('blog') ||  window.location.pathname.includes('ipo'))=== true) {
             setblogForm('blog-lead-form');
             setBlogFormOtp('blog-form-otp');
             setBlogThankuPopup('blog-thanku-popup');
@@ -163,7 +163,7 @@ function NewDematAccountForm(props) {
             }, 60000);
         }
     }, []);
-
+    
     useEffect(() => {
         let mediaQuery = window.matchMedia("(min-width: 767px)");
         mediaQuery.addListener(setView);
@@ -651,7 +651,7 @@ function NewDematAccountForm(props) {
                            
                        </div>} */}
                         {/* <h2 className="heading">Open Demat Account</h2> */}
-                      {window.location.pathname.includes("blog") &&  
+                      {(window.location.pathname.includes("blog")  || window.location.pathname.includes("ipo") )&&  
                       (mfForm?
                         <div className="sticy-card-blog-new sub-new-small">
                         <h3 className="title-secnd">Start Investing in Mutual Funds Now !</h3>
