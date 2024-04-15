@@ -37,7 +37,7 @@ function NewDematAccountForm(props) {
     const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     const [referID, setReferID] = useState('');
-    const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1) ? 'demat-web' : " ")
+    const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1) || (window.location.pathname.indexOf('/under25') > -1) ? 'demat-web' : " ")
  
 
 
@@ -536,7 +536,20 @@ function NewDematAccountForm(props) {
                       {
                         (window.location.pathname.indexOf("/mutual-funds-investment") > -1) ?
                         <h2 className="heading">Open Your Account</h2>:
+                        (window.location.pathname.indexOf("/under25") > -1) ?
+                        <div className="under-card-heading">
+                            <h2 className="heading">Open your free trading account</h2>
+                            <p>Take Control of Your Finances</p>
+                        </div>
+                        :
                         <h2 className="heading">Open Demat Account</h2>
+
+                      }
+                      {
+                        (window.location.pathname.indexOf("/under-25") > -1) ?
+                        
+                        <p className="under-p">Take Control of Your Finances</p>:""
+                
 
                       }
                         
@@ -603,7 +616,7 @@ function NewDematAccountForm(props) {
                     <div className="demat-account-form demat-account-form-new">
                         <div className="thank-you-msg" id="thank-you-tag">
                         <LazyLoader src={thumbsup} className={'img-fluid'} width={"160"} height={"160"} alt="Loading" />
-                        <h2 className={(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) ? "thankyou-title campaign-success":"thankyou-title"}>Thank You!</h2>
+                        <h2 className={(window.location.pathname.indexOf('corporate-demat-account')>-1)?"thankyou-title corporate-dl-success":(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) ? "thankyou-title campaign-success":(window.location.pathname.indexOf('mutual-funds-investment')>-1)?"thankyou-title mf-success":"thankyou-title"}>Thank You!</h2>
                             <p className="subheading">{showThanku.resText? showThanku.resText: "You are being redirected to onboarding page!"}</p>
                         </div>
                         
