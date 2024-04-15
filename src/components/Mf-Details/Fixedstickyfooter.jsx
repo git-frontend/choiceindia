@@ -231,7 +231,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
                 utils.pushDataLayerEvent({
-                    'event': 'send_otp',
+                    'event': 'ci_onboard_lead_initiated',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
                     'lead_source': 'choiceindia',
@@ -302,7 +302,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
                 utils.pushDataLayerEvent({
-                    'event': 'otp_procced',
+                    'event': 'ci_onboard_lead_generated',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
                     'lead_source':'choiceindia',

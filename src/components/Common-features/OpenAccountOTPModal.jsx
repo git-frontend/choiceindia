@@ -125,7 +125,7 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     utils.pushDataLayerEvent({
-                        'event': 'otp_procced',
+                        'event': 'ci_onboard_lead_generated',
                         'page_path': window.location.pathname,
                         'page_url': window.location.href,
                         'lead_source': 'choiceindia',
