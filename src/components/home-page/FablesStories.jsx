@@ -241,7 +241,7 @@ function FablesStories() {
 										fslider.length ?
 											<div className="row">
 												<div className="col-md-12 mt-5 d-flex justify-content-center">
-													<Link to="/blog" className="btn-bg">
+													<Link to="/blog" className="btn-bg generic-id" >
 														View All
 													</Link>
 												</div>

@@ -11,6 +11,7 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import '../Common-features/demat-form.scss'
 import "./mf-details.scss";
 import Form from 'react-bootstrap/Form';
+import utils from '../../Services/utils';
 function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
@@ -225,9 +226,16 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
             "account_type": "all"
             // "captcha": "1"
         }
+        
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
+                utils.pushDataLayerEvent({
+                    'event': 'send_otp',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'platform': 'website'
+                })
                 otpSessionID.current = res.data.Body.otp_session_id;
                 otpLeadID.current = res.data.Body.lid
                 handleOTPShow();
@@ -290,6 +298,19 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
 
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
+                utils.pushDataLayerEvent({
+                    'event': 'open_account_lead_submit',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'phone': mobileNumber || "",
+                    'platform': 'website'
+                })
+                utils.pushDataLayerEvent({
+                    'event': 'otp_procced',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'platform': 'website'
+                })
                 setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
                 console.log('Success', res);
                 if (consent == "yes") {

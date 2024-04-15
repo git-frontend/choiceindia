@@ -77,65 +77,65 @@ function Footer() {
                             </li>
 
                             <li>
-                              <NavLink className="cursor-pointer" to="/equity-broking" >Broking &amp; Distribution</NavLink>
+                              <NavLink className="cursor-pointer generic-id" to="/equity-broking" >Broking &amp; Distribution</NavLink>
                             </li>
                             {/* <li>
                               <NavLink to="/services#wealth" onClick={() => { chapterScroll('wealth') }}    className="cursor-pointer">Wealth Planning</NavLink>
                               </li> */}
                             <li>
-                              <NavLink to="/services#Wealth-Management" className="cursor-pointer">
+                              <NavLink to="/services#Wealth-Management" className="cursor-pointer generic-id">
                                 Wealth Planning
                               </NavLink>
                             </li>
                             <li>
-                              <NavLink to="/services#Insurance" className="cursor-pointer">Insurance</NavLink>
+                              <NavLink to="/services#Insurance" className="cursor-pointer generic-id">Insurance</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/loan" >Loans</NavLink>
+                              <NavLink className="cursor-pointer generic-id" to="/loan" >Loans</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/services#Capital-Advisory" className="cursor-pointer">Capital Advisory</NavLink>
+                              <NavLink to="/services#Capital-Advisory" className="cursor-pointer generic-id">Capital Advisory</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/services#Management-Consultancy" className="cursor-pointer">Management Consultancy</NavLink>
+                              <NavLink to="/services#Management-Consultancy" className="cursor-pointer generic-id">Management Consultancy</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/government-advisory" >Government Advisory</NavLink>
+                              <NavLink className="cursor-pointer" to="/government-advisory generic-id" >Government Advisory</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/services#Tax-Advisory" className="cursor-pointer">
+                              <NavLink to="/services#Tax-Advisory" className="cursor-pointer generic-id">
                                 Tax Advisory
                               </NavLink>
                             </li>
                           </ul>
-                          <ul className="reset quicklink2">
+                          <ul className="reset quicklink2 generic-id">
                             <li>
                               <h4>Company</h4>
                             </li>
                             <li>
-                              <NavLink to="/about-us">Our Team</NavLink>
+                              <NavLink to="/about-us" className="generic-id">Our Team</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/investors">Investors</NavLink>
+                              <NavLink to="/investors" className="generic-id">Investors</NavLink>
                             </li>
                             {/* <li>
                               <NavLink to="/brokerage-charges">Pricing</NavLink>
                             </li> */}
                             <li>
                               {/* <a href="https://finx.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a> */} 
-                              <NavLink to="/brokerage-calculator">Calculator</NavLink>
+                              <NavLink to="/brokerage-calculator" className="generic-id">Calculator</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/career">Careers</NavLink>
+                              <NavLink to="/career" className="generic-id">Careers</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/contact-us">Contact Us</NavLink>
+                              <NavLink to="/contact-us" className="generic-id">Contact Us</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/refer-and-earn">Refer &amp; Earn</NavLink>
+                              <NavLink to="/refer-and-earn" className="generic-id">Refer &amp; Earn</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/faq">FAQ’s</NavLink>
+                              <NavLink to="/faq" className="generic-id">FAQ’s</NavLink>
                             </li>
                           </ul>
                           <ul className="reset quicklink2">
@@ -143,31 +143,31 @@ function Footer() {
                               <h4>Resources</h4>
                             </li>
                             <li>
-                              <NavLink to="/research-listing" onClick={() => { chapterScroll('longterm-scroll') }} >Fundamental</NavLink>
+                              <NavLink to="/research-listing" className="generic-id" onClick={() => { chapterScroll('longterm-scroll') }} >Fundamental</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/research-listing" onClick={() => { chapterScroll('shortterm-scroll') }}>Technical</NavLink>
+                              <NavLink to="/research-listing" className="generic-id" onClick={() => { chapterScroll('shortterm-scroll') }}>Technical</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/blog">Fables</NavLink>
+                              <NavLink to="/blog" className="generic-id">Fables</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/brokerage-charges">Pricing</NavLink>
+                              <NavLink to="/brokerage-charges" className="generic-id">Pricing</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/file-download">Downloads</NavLink>
+                              <NavLink to="/file-download" className="generic-id">Downloads</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/news-media">News &amp; Media</NavLink>
+                              <NavLink to="/news-media" className="generic-id">News &amp; Media</NavLink>
                             </li>
                             <li>
-                              <Link to="/offer-document">Offer Document</Link>
+                              <Link to="/offer-document" className="generic-id">Offer Document</Link>
                             </li>
                             <li>
-                              <Link to="/track-record-page">Track Record</Link>
+                              <Link to="/track-record-page" className="generic-id">Track Record</Link>
                             </li>
                             <li>
-                              <a href="https://finx.choiceindia.com/auth/login?redirectUrl=https://accounts.choiceindia.com/modification" target="_blank">Online KYC Updation</a>
+                              <a href="https://finx.choiceindia.com/auth/login?redirectUrl=https://accounts.choiceindia.com/modification" className="generic-id" target="_blank">Online KYC Updation</a>
                             </li>
                           </ul>
                         </div>
@@ -214,22 +214,22 @@ function Footer() {
                           </div>
 
                           <div className="footer-social-links">
-                            <a href="https://www.facebook.com/ChoiceHQ/" aria-label="Facebook" target="_blank">
+                            <a href="https://www.facebook.com/ChoiceHQ/" aria-label="Facebook" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faFacebookF} />
                             </a>
-                            <a href="https://twitter.com/ChoiceHQ_Social" aria-label="Twitter" target="_blank">
+                            <a href="https://twitter.com/ChoiceHQ_Social" aria-label="Twitter" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faTwitter} />
                             </a>
-                            <a href="https://www.linkedin.com/company/choice-broking/" aria-label="Linkedin" target="_blank">
+                            <a href="https://www.linkedin.com/company/choice-broking/" aria-label="Linkedin" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faLinkedinIn} />
                             </a>
-                            <a href="https://instagram.com/choicehq_social" aria-label="Instagram" target="_blank">
+                            <a href="https://instagram.com/choicehq_social" aria-label="Instagram" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faInstagram} />
                             </a>
-                            <a href="https://www.youtube.com/c/ChoiceHQ" aria-label="Youtube" target="_blank">
+                            <a href="https://www.youtube.com/c/ChoiceHQ" aria-label="Youtube" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faYoutube} />
                             </a>
-                            <a href="https://t.me/CEBPL" aria-label="Telegram" target="_blank">
+                            <a href="https://t.me/CEBPL" aria-label="Telegram" target="_blank" className="generic-id">
                               <FontAwesomeIcon icon={faTelegramPlane} />
                             </a>
                           </div>

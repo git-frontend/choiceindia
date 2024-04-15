@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
 // import OTPimage from '../../assets/images/otp.svg';
+import enterOtp from '../../assets/images/enterotp.svg';
 import "../Common-features/demat-form.scss";
 import { Link } from "react-router-dom";
 import OpenAccountLanguageContent from '../../Services/OpenAccountLanguageContent';
@@ -10,9 +11,9 @@ import Spinner from 'react-bootstrap/Spinner';
 import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
+import utils from "../../Services/utils";
 
-
-function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick}) {
+function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick,setIsActive,openAccount,setBlogPopUpForm,blogPop,isPopUp}) {
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -25,9 +26,10 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     const [show,setShow] = useState(true);
     const [searchParams, setSearchParams] = useSearchParams();
     // const [otpparam, setOtpparam] = useState('');
-
+    const closeButton = useRef("");
     const [outCome,setOutCome]= useState();
 
+     const otpVerify =useRef("");
     /**function to generate random probabity number for AB test */
     function generateRandomNumber(){
       var random = Math.random();
@@ -96,6 +98,15 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
     useEffect(() => {
         // setShow(() => true);
+        console.log("Pop up "+isPopUp);
+        if (window.location.pathname.includes('blog') === true && !isPopUp) {
+            if (window.innerWidth <= 992) {
+                closeButton.current.style.display = "block";
+            }
+        }
+        else {
+            closeButton.current.style.display = "none";
+        }
         generateRandomNumber();
         setCount(30);
     }, []);
@@ -140,6 +151,19 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
             openAccountService.verifyOTP(request, type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
+                    utils.pushDataLayerEvent({
+                        'event': 'open_account_lead_submit',
+                        'page_path': window.location.pathname,
+                        'page_url': window.location.href,
+                        'phone': mobileNumber || "",
+                        'platform': 'website'
+                    })
+                    utils.pushDataLayerEvent({
+                        'event': 'otp_procced',
+                        'page_path': window.location.pathname,
+                        'page_url': window.location.href,
+                        'platform': 'website'
+                    })
                    //  console.log('HANDLER',res);
                     // setOtpparam("Otp-success")
                    
@@ -409,13 +433,20 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                 {/* <div className="close">
                                     <a href="javascript:void(0)" onClick={onClose} className="closebtn" >&times;</a>
                                 </div> */}
-                                <div className="popup-sub-right">
-                                
+                    <div className="popup-sub-right">
+                        {window.location.pathname.includes("blog") &&  <div className="otp-ver-sec" ref={otpVerify}>
+                                <div className="otp-circle">
+                                    <img src={enterOtp} className="img-fluid" height={52} width={52}/>
+
+                                </div>
+                                </div>}
+                               
                                 <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
-                                    <div className="otpform-new  fade-in" >
+                                    <div className="otpform-new" >
+                                    {/* <div className="otpform-new  fade-in" > */}
                                         {/* <img src={OTPimage} /> */}
 
-                                       <div className="d-flex">
+                                       <div className="d-flex otp-sent">
                                         <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplblnew')} {mobileNumber}</p>
                                         <button className="changenumbtn" onClick={handleButtonClick}>(Change)</button>
                                         </div>
@@ -444,7 +475,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                         {/* </div> */}
                                     </div>
- <div>
+ <div className="otp-pd">
                                         {
                                             !count ?
                                                 <div className="d-flex align-items-center justify-content-between pt-3">
@@ -481,6 +512,12 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                 </div>
+                    <span className="close-btn-mdl" ref={closeButton} onClick={() => {
+                        setIsActive(false);
+                        openAccount.current.style.zIndex = 9999999999;
+                        setBlogPopUpForm("");
+                        blogPop(false);
+                                }}>&times;</span>
                             </div>
                         </div>
                     {/* </div> */}

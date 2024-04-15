@@ -527,7 +527,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
             "utm_campaign":isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads':UTMCampaign.current || null,
             "utm_term": UTMTerm.current || null,
             "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
-            "utm_content": isBlog =="yes" ? UTMContent.current || 'in_content_cta':UTMContent.current || null,
+            "utm_content": isBlog =="yes" ? UTMContent.current || 'mobile_sticky_cta':UTMContent.current || null,
             "whatsappConsent": true,
             "master_service_name":"CBA", 
             "captchaResp": captchaToken
