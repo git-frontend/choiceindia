@@ -18,6 +18,7 @@ import failureimg from '../../assets/images/failure.svg';
 import './Thankyoupopup.scss';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import backIcon from '../../assets/images/backspace.svg';
+import utils from "../../Services/utils";
 
 function DematAccountForm(props) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -111,6 +112,23 @@ function DematAccountForm(props) {
 
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
+                utils.pushDataLayerEvent({
+                    'event': 'ci_onboard_lead_generated',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'lead_source':'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
+                utils.pushDataLayerEvent({
+                    'event': 'open_account_lead_submit',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'phone': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'lead_source':'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
                 setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
                 // console.log('Success', res);
                 if (consent == "yes") {
@@ -402,6 +420,15 @@ function DematAccountForm(props) {
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
+                utils.pushDataLayerEvent({
+                    'event': 'ci_onboard_lead_initiated',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'lead_source': 'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'lead_id': res.data.Body.leadid,
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
 
                 setShowThanku(prevState => {

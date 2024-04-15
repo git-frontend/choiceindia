@@ -11,7 +11,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
-
+import utils from "../../Services/utils";
 
 function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick,setIsActive,openAccount,setBlogPopUpForm,blogPop,isPopUp}) {
     // console.log('PPP',onClose.handleOTPClose());
@@ -151,6 +151,23 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
             openAccountService.verifyOTP(request, type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
+                    utils.pushDataLayerEvent({
+                        'event': 'ci_onboard_lead_generated',
+                        'page_path': window.location.pathname,
+                        'page_url': window.location.href,
+                        'lead_source':'choiceindia',
+                        'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                    })
+                    utils.pushDataLayerEvent({
+                        'event': 'open_account_lead_submit',
+                        'page_path': window.location.pathname,
+                        'page_url': window.location.href,
+                        'phone': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'lead_source':'choiceindia',
+                        'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                    })
                    //  console.log('HANDLER',res);
                     // setOtpparam("Otp-success")
                    

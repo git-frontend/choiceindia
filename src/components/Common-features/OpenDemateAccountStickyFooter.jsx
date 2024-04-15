@@ -7,6 +7,7 @@ import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import Thankyoupopup from './Thanku-popup.jsx';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import '../Common-features/demat-form.scss'
+import utils from '../../Services/utils';
 
 function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -230,9 +231,19 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
             "account_type": "all"
             // "captcha": "1"
         }
+
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
+                utils.pushDataLayerEvent({
+                    'event': 'ci_onboard_lead_initiated',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'lead_source': 'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'lead_id': res.data.Body.leadid,
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
                 otpSessionID.current = res.data.Body.otp_session_id;
                 otpLeadID.current = res.data.Body.lid
                 handleOTPShow();
@@ -295,6 +306,23 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
 
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
+                utils.pushDataLayerEvent({
+                    'event': 'ci_onboard_lead_generated',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'lead_source':'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
+                utils.pushDataLayerEvent({
+                    'event': 'open_account_lead_submit',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'phone': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'lead_source':'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
                 setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
                 // console.log('Success', res);
                 if (consent == "yes") {
@@ -317,6 +345,15 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         });
     }
 
+    function pushCustomEvents(){
+        utils.pushDataLayerEvent({
+            'event': 'open_free_account_click',
+            'page_path': window.location.pathname,
+            'page_url': window.location.href,
+            'cta_source': 'bottom_banner',
+            'platform': 'website'
+        })
+      }
 
     return (
         <>
@@ -407,7 +444,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                     {/* ? */}
                                     {/* <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={()=>{chapterScroll1  ('dematform')}}>Open Free Account</button> */}
                                     {/* : */}
-                                    <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Open Free Account</button>
+                                    <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={() => {openDemateAccountPopup; pushCustomEvents()}}>Open Free Account</button>
                                     {/* } */}
                                 </div>
                                 <section className="stickybottom">

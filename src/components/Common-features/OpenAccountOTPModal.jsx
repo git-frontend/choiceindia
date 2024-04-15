@@ -9,6 +9,7 @@ import OpenAccountLanguageContent from '../../Services/OpenAccountLanguageConten
 import Spinner from 'react-bootstrap/Spinner';
 import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal'
+import utils from "../../Services/utils";
 
 
 function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, language, openInfoPopup, showPopup }) {
@@ -123,6 +124,23 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
             openAccountService.verifyOTP(request, type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
+                    utils.pushDataLayerEvent({
+                        'event': 'ci_onboard_lead_generated',
+                        'page_path': window.location.pathname,
+                        'page_url': window.location.href,
+                        'lead_source': 'choiceindia',
+                        'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                    })
+                    utils.pushDataLayerEvent({
+                        'event': 'open_account_lead_submit',
+                        'page_path': window.location.pathname,
+                        'page_url': window.location.href,
+                        'lead_source': 'choiceindia',
+                        'phone': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                    })
                     //  console.log('HANDLER',res);
                     // if (res.data.Body.isOnboardFlag === 'Y') {
                     //Your Onboarding has been completed

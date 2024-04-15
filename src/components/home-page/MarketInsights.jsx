@@ -177,7 +177,7 @@ function MarketInsights() {
             
                                                                 <div key={response.uuid} className={classNameNm} onClick={() => { marketinsightDetail(response.redirect_slug,response.report_subtype_uuid
                                                                     ) }} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
-                                                                    <div className="insights-item-cont cursor-pointer" >
+                                                                    <div className="insights-item-cont cursor-pointer generic-id-footer">
                                                                         <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
                                                                         {/* <img src={response.feature_image} alt="" /> */}
                                                                         <span className="ttl-sm" >{response.tag || '-'}</span>
@@ -207,7 +207,7 @@ function MarketInsights() {
                                     fabal.length ?
                                         <div className="row">
                                             <div className="col-md-12 mt-5 d-flex justify-content-center">
-                                                <Link to="/research-listing" className="btn-bg">
+                                                <Link to="/research-listing" className="btn-bg" id="read-more-tag">
                                                     Read More
                                                 </Link>
                                             </div>

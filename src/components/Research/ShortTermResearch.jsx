@@ -39,13 +39,13 @@ function ShortTermResearch() {
                 Sumeet Bagadia’s Desk
                 
               </button>
-              <button
+              {/* <button
                 className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
                 onClick={() => toggleTab(2)}
               >
                Signal
                 
-              </button>
+              </button> */}
             </div>
 
             <div className="content-tabs SB-content-tab">

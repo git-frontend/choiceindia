@@ -154,8 +154,25 @@ const utils ={
         } else {
             return ''
         }
-    }
+    },
       
+
+    /**push event using datalayer */
+    pushDataLayerEvent (eventData) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(eventData);
+    },
+
+    /**Secure mobile number for user events in GA4 */
+    generateSHA256Hash(input){
+        if(input){
+            return CryptoJS.SHA256(input).toString();
+        }else{
+            return "";
+        }
+        // console.log('INPUT',input)
+        // console.log('Output',CryptoJS.SHA256(input).toString())
+    }
 
 }
 

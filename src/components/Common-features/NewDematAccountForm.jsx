@@ -144,7 +144,7 @@ function NewDematAccountForm(props) {
     }
 
     useEffect(() => {
-        if ((window.location.pathname.includes('blog') ||  window.location.pathname.includes('ipo'))=== true) {
+        if (window.location.pathname.includes('blog') === true) {
             setblogForm('blog-lead-form');
             setBlogFormOtp('blog-form-otp');
             setBlogThankuPopup('blog-thanku-popup');
@@ -163,7 +163,7 @@ function NewDematAccountForm(props) {
             }, 60000);
         }
     }, []);
-    
+
     useEffect(() => {
         let mediaQuery = window.matchMedia("(min-width: 767px)");
         mediaQuery.addListener(setView);
@@ -384,14 +384,17 @@ function NewDematAccountForm(props) {
             // "captcha": "1"
 
         };
-        console.log("ffff",request)
+        
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
                 utils.pushDataLayerEvent({
-                    'event': 'send_otp',
+                    'event': 'ci_onboard_lead_initiated',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
+                    'lead_source': 'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'lead_id': res.data.Body.leadid,
                     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
@@ -651,7 +654,7 @@ function NewDematAccountForm(props) {
                            
                        </div>} */}
                         {/* <h2 className="heading">Open Demat Account</h2> */}
-                      {(window.location.pathname.includes("blog")  || window.location.pathname.includes("ipo") )&&  
+                      {window.location.pathname.includes("blog") &&  
                       (mfForm?
                         <div className="sticy-card-blog-new sub-new-small">
                         <h3 className="title-secnd">Start Investing in Mutual Funds Now !</h3>
