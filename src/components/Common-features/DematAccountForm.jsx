@@ -91,6 +91,7 @@ function DematAccountForm(props) {
     var referLink = useRef('');
 
     const [showRefMsg, setShowRefMsg] = useState();
+    const [leadId, setLeadId] = useState();
 
     /**on click no consent */
     function submitConsent(consent) {
@@ -113,18 +114,25 @@ function DematAccountForm(props) {
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
                 utils.pushDataLayerEvent({
-                    'event': 'open_account_lead_submit',
+                    'event': 'ci_onboard_lead_generated',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
-                    'phone': mobileNumber || "",
-                    'platform': 'website'
+                    'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'leadId': leadId,
+                    'lead_source':'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
-                utils.pushDataLayerEvent({
-                    'event': 'otp_procced',
-                    'page_path': window.location.pathname,
-                    'page_url': window.location.href,
-                    'platform': 'website'
-                })
+                // utils.pushDataLayerEvent({
+                //     'event': 'open_account_lead_submit',
+                //     'page_path': window.location.pathname,
+                //     'page_url': window.location.href,
+                //     'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+                //     'leadId': leadId,
+                //     'lead_source':'choiceindia',
+                //     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                // })
                 setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
                 // console.log('Success', res);
                 if (consent == "yes") {
@@ -416,11 +424,15 @@ function DematAccountForm(props) {
         openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
+                setLeadId(res.data.Body.leadid);
                 utils.pushDataLayerEvent({
-                    'event': 'send_otp',
+                    'event': 'ci_onboard_lead_initiated',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
-                    'platform': 'website'
+                    'lead_source': 'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'leadId': res.data.Body.leadid,
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
 

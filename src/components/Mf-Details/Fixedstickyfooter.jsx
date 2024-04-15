@@ -50,6 +50,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
     const [consent, setShowConsent] = useState(false);
 
     const [otperror, setOTPErrors] = useState();
+    const [leadId, setLeadId] = useState();
 
     /**variable for loaders */
     const [consentLoaders, setConsentLoaders] = useState({
@@ -230,11 +231,15 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
+                setLeadId(res.data.Body.leadid);
                 utils.pushDataLayerEvent({
-                    'event': 'send_otp',
+                    'event': 'ci_onboard_lead_initiated',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
-                    'platform': 'website'
+                    'lead_source': 'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'leadId': res.data.Body.leadid,
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
                 otpSessionID.current = res.data.Body.otp_session_id;
                 otpLeadID.current = res.data.Body.lid
@@ -299,18 +304,24 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
         openAccountService.verifyOTP(request, "JF").then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
                 utils.pushDataLayerEvent({
-                    'event': 'open_account_lead_submit',
+                    'event': 'ci_onboard_lead_generated',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
-                    'phone': mobileNumber || "",
-                    'platform': 'website'
+                    'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'leadId': leadId,
+                    'lead_source':'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
-                utils.pushDataLayerEvent({
-                    'event': 'otp_procced',
-                    'page_path': window.location.pathname,
-                    'page_url': window.location.href,
-                    'platform': 'website'
-                })
+                // utils.pushDataLayerEvent({
+                //     'event': 'open_account_lead_submit',
+                //     'page_path': window.location.pathname,
+                //     'page_url': window.location.href,
+                //     'phone': utils.generateSHA256Hash(mobileNumber.toString()),
+                //     'lead_source':'choiceindia',
+                //     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                // })
                 setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
                 console.log('Success', res);
                 if (consent == "yes") {
