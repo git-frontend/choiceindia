@@ -167,7 +167,7 @@ function Fabdetailsbanner(props) {
 
     useEffect(() => {
         const handleCTAClick = (event) => {
-            if (props.formName == "form-demat" || (event.target.tagName === 'A' && event.target.closest('.blog-cta'))) {
+            if (props.formName == "form-demat" && (event.target.tagName === 'A' && event.target.closest('.blog-cta'))) {
                 event.preventDefault();
                 setHighlightForm(true);
             }
