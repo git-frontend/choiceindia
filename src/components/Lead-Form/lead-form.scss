@@ -240,10 +240,12 @@
             label{
                 color: $secondary;
                 padding: 1rem 1.5rem;
+                width:100%;
                 &::after{
                     content: '*';
                     color: #FE777D;
                     padding-left: 0.2rem;
+                    left:initial;
                 }
             }
             .react-dropdown-select-dropdown-handle{
