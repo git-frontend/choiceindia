@@ -160,11 +160,11 @@
         .openbtn{
             // border-radius: 0 !important;
             width: 100%;
-            background-color: $yellowColor;
+            background-color: $yellowColor !important;
             font-size: 1.5rem;
             border-radius: 8px;
             font-weight: bold;
-            color: $primary;
+            color: $primary !important;
             text-align: center;
             vertical-align: middle;
             user-select: none;

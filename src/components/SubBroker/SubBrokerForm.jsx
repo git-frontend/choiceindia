@@ -861,6 +861,8 @@ function getOTPOnCall(){
                  {
                 (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <SubbrokerStickyFooter SubbrokerpopupForm={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></SubbrokerStickyFooter> : ''
             }
+             {
+             (! props.isFromFableDetails  || window.innerWidth >= 992) && (
             <div className="demat-account-form" id="sub-broker-form">
 
 
@@ -984,6 +986,7 @@ function getOTPOnCall(){
                 </Form>
 
             </div>
+             )}
             {
                 showOTPPopup ?
                     //     <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
