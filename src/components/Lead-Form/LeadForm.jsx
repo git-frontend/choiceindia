@@ -72,6 +72,9 @@ function LeadForm() {
  }
 
  const numericHandler=(e)=>{
+  if(e.target.value.length === 1 && (e.target.value === '.' || e.target.value==='0')){
+    e.target.value="";   
+}
   e.target.value=e.target.value.replace(/[^0-9.]/gi,"");
   }
 
@@ -286,7 +289,7 @@ function LeadForm() {
                         onInput={numericHandler}
                         maxLength={20}/>
                        {errors.solar_plant_capacity?.type==="required" ? <span className="error-msg">This field is required</span>:errors.solar_plant_capacity?.type==="pattern"? 
-                       <span className='error-msg'>Please enter valid solar plant capacity</span> :
+                       <span className='error-msg'>Solar Plant Capacity must include 1 or 2 digits after precision.</span> :
                        ""}
                      </FloatingLabel>
                  </div>
@@ -405,8 +408,7 @@ function LeadForm() {
                        {...register("sales_turnover",
                        {"pattern":/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
                         onInput={numericHandler}/>
-                       {errors.sales_turnover?.type==="pattern" ? <span className="error-msg">Please provide correct Sales Turover
-                         value</span>:
+                       {errors.sales_turnover?.type==="pattern" ? <span className="error-msg">Sales Turnover must include 1 or 2 digits after precision.</span>:
                         ""}
                      </FloatingLabel>
                  </div>
@@ -432,8 +434,7 @@ function LeadForm() {
                        {pattern:/(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
                        onInput={numericHandler}
                        maxLength={70}/>
-                      {errors.Installed_capacity?.type==="pattern" ? <span className="error-msg">Please provide valid Installed 
-                      Capacity</span>:
+                      {errors.Installed_capacity?.type==="pattern" ? <span className="error-msg">Installed capacity must include 1 or 2 digits after precision.</span>:
                         ""} 
                      </FloatingLabel>
                  </div>
