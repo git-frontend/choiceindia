@@ -174,7 +174,7 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
                     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb',
                     'lead_source': 'choiceindia',
                     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                    'lead_id': res.data.Body.leadid,
+                    'leadId': res.data.Body.leadid,
                 })
                 otpSessionID.current = res.data.Body.otp_session_id;
                 setShowOpenAccountPopup(false);
