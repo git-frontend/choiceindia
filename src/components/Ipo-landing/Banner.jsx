@@ -1,7 +1,7 @@
 import React from "react";
 import icon1 from '../../assets/images/ipo-landing/bajaj-energy.svg'
 import LazyLoader from '../Common-features/LazyLoader';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import cmsService from "../../Services/cmsService";
 import utils from "../../Services/utils";
 import { Accordion } from "react-bootstrap";
@@ -9,7 +9,7 @@ import Slider from 'react-slick';
 import img8 from '../../assets/images/ipo-landing/arrow-right.svg';
 import { useNavigate } from 'react-router-dom'
 import NewDematAccountForm from "../Common-features/NewDematAccountForm";
-
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function Banner() {
 
   const [name, setName] = useState('card-sticky');
@@ -26,6 +26,7 @@ function Banner() {
   const [isActive, setIsActive] = useState(false);
   const [formMobile, setFormMobile] = useState('');
   const [popUp, setPopUp] = useState(false);
+  const [highlightForm, setHighlightForm] = useState(false);
   /**for slider */
   const settings = {
     infinite: true,
@@ -59,7 +60,7 @@ function Banner() {
       const rect = element.getBoundingClientRect();
 
       if (rect.top.toFixed() < 530) {
-        setName('card-sticky visibleCard');
+        setName('card-sticky-blog visibleBlog');
       } else {
         setName('card-sticky');
       }
@@ -157,17 +158,33 @@ function Banner() {
     // this is the cleanup function to remove the listener
     return () => mediaQuery.removeListener(setView);
   }, []);
- 
+
   function blogPop(isPopUp) {
     console.log("Flag " + isPopUp);
     if (isPopUp) {
-        setFormMobile('');  
-        }
-    else {
-        setFormMobile('form-mobile');
-    }    
-    setPopUp(isPopUp);
+      setFormMobile('');
     }
+    else {
+      setFormMobile('form-mobile');
+    }
+    setPopUp(isPopUp);
+  }
+
+
+  const openAccountMobile = useRef("");
+  const handleClick = (event) => {
+    // setIsActive(current => !current);
+    if (popUp) {
+      return;
+    }
+
+    openAccountMobile.current.style.zIndex = 0;
+    setIsActive(true);
+
+  };
+  function modifyHighLight(value) {
+    setHighlightForm(value);
+}
   return (
     <>
       {/* form section */}
@@ -216,15 +233,16 @@ function Banner() {
 
         </div>
       </div> */}
-      <div className={name}>
+      <div className={`${name2}`+ ' card-sticky visibleCard'}>
         <div className="container d-flex justify-content-end">
-          <div className="sticky-new">
-            
+          <div className="sticky-new" >
             <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')}>
-              <NewDematAccountForm  blogPop={blogPop}/>
-              </div>
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+              <NewDematAccountForm modifyHighLight={modifyHighLight} blogPop={blogPop} openAccount={openAccountMobile} setIsActive={setIsActive} />
+              </GoogleReCaptchaProvider>
             </div>
-     
+          </div>
+
         </div>
       </div>
 
@@ -286,11 +304,15 @@ function Banner() {
                   </div>
                 </div>
                 <div className={name2}>
-                  <div className="btn-fixed">
-                    <a className="openbtn">
+                  <div className="btn-fixed" ref={openAccountMobile}>
+                    <a className="openbtn" onClick={handleClick}>
                       <span>{res.form_title} {res.form_title2} </span>
                       <span>
-                        <LazyLoader src={img8} alt={""} className={"img-fluid"} width={"32"} height={"32"} />
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="16" cy="16" r="16" fill="#FFCE02" />
+                          <path d="M8 16H24.6667H8ZM24.6667 16L16.6667 8L24.6667 16ZM24.6667 16L16.6667 24L24.6667 16Z" fill="#FFCE02" />
+                          <path d="M8 16H24.6667M24.6667 16L16.6667 8M24.6667 16L16.6667 24" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
                       </span>
                     </a>
                   </div>
