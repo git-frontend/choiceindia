@@ -4,8 +4,8 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Select from 'react-dropdown-select';
 import {useForm, Controller} from 'react-hook-form';
 import leadService from '../../Services/LeadFormService'
-import "./lead-form.scss"
 import '../Assistedflow/assistedflow.scss';
+import "./lead-form.scss"
 import thumbsup from '../../assets/images/demat-images/thumbsup.gif';
 import LazyLoader from "../Common-features/LazyLoader";
 import "../Common-features/newdemat-form.scss"
@@ -201,9 +201,9 @@ function LeadForm() {
                        })}
                        autoComplete="off"
                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z ]/gi,"")}/>
-                      {errors.name?.type=="required" ? <span classname="error-msg">This field is required</span>:
-                      errors.name?.type=="pattern" ? <span classname="error-msg">Please provide valid name</span>:
-                      errors.name?.type=="minLength" ? <span classname="error-msg">Name must contains at least 3 characters</span>:
+                      {errors.name?.type=="required" ? <span className="error-msg">This field is required</span>:
+                      errors.name?.type=="pattern" ? <span className="error-msg">Please provide valid name</span>:
+                      errors.name?.type=="minLength" ? <span className="error-msg">Name must contains at least 3 characters</span>:
                        ""} 
                      </FloatingLabel>
                  </div>
@@ -214,7 +214,7 @@ function LeadForm() {
                        {
                         'required':true,maxLength:6,minLength:6,pattern:/[1-9][0-9]{5}/
                        })} onInput={numberHandler}/>
-                       {errors.pincode?.type==="required" ? <span classname="error-msg">This field is required</span>:
+                       {errors.pincode?.type==="required" ? <span className="error-msg">This field is required</span>:
                        errors.pincode?.type==="pattern" ? <span className="error-msg">Please enter correct pincode</span>:
                        errors.pincode?.type==="maxLength"? <span className="error-msg">Invalid Pincode</span>:
                        errors.pincode?.type==="minLength"? <span className="error-msg">Pincode must contains 6 digits</span>:
@@ -245,6 +245,7 @@ function LeadForm() {
                        : errors.bill?.type==="pattern"  ?  <span className="error-msg">Electricity bill must include 1 or 2 digits after precision.</span> :
                        " "}
                      </FloatingLabel>
+
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Mail ID" className='input-label mandate-none'>
@@ -301,23 +302,16 @@ function LeadForm() {
                        />
                      </FloatingLabel>
                  </div>
-             </div>
-                 <div className='col-md-12'> 
+                 <div className='flex-items pdt-15' > 
                        <div key="inline-checkbox" className="cust-checkbox">
                            <Form.Check inline name="terms_and_conditions" type="checkbox" >
-                               <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions",
-                            {
-                              required: "It is mandatory to check"
-                           })}/>
-                               <Form.Check.Label>I agree that I have read &amp; accept <a className="link-tc">
+                               <Form.Check.Input type="checkbox" name="terms_and_conditions" 
+                               {...register("terms_and_conditions")} checked={true}/>
+                               <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
+                               target="_blank" className="link-tc">
                                  <span>Terms & Conditions</span></a>
                                </Form.Check.Label>
                            </Form.Check>
-                           {(errors.terms_and_conditions && (
-                           <div>
-                            <span className="error-msg">{errors.terms_and_conditions.message}</span>
-                            </div>
-                           ))}
                        </div>
                        <div className='btn-submit-sec'>
                            <button type="submit" className="btn-bg btn-bg-dark btnsubmit" 
@@ -327,6 +321,8 @@ function LeadForm() {
                             : "Submit"}</button>
                        </div>
                  </div>
+             </div>
+                
              </form>:
              formType===2?
              <form className='form-section' onSubmit={handleSubmit(submitHandler)}>
@@ -340,8 +336,8 @@ function LeadForm() {
                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z ]/gi,"")}
                        maxLength={100}/>
                        <Form.Control.Feedback type="invalid">Please provide a Name of Entity</Form.Control.Feedback>
-                       {errors.entityName?.type==="required" ? <span classname="error-msg">This field is required</span>:
-                        errors.entityName?.type==="pattern"? <span classname="error-msg">Please enter valid entity name</span> :
+                       {errors.entityName?.type==="required" ? <span className="error-msg">This field is required</span>:
+                        errors.entityName?.type==="pattern"? <span className="error-msg">Please enter valid entity name</span> :
                         ""}
                      </FloatingLabel>
                  </div>
@@ -352,7 +348,7 @@ function LeadForm() {
                         {
                         "required":true
                         })}/>
-                       {errors.business_address && <span classname="error-msg">This field is required</span>}
+                       {errors.business_address && <span className="error-msg">This field is required</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
@@ -370,7 +366,7 @@ function LeadForm() {
                             values={watch('entityType')}
                               />
   )}}></Controller>
-                         {error && !watch('entityType')?.length && <span classname="error-msg">Please select entity type</span>}
+                         {error && !watch('entityType')?.length && <span className="error-msg">Please select entity type</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
@@ -392,12 +388,12 @@ function LeadForm() {
                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z ]/gi,"")}
                        maxLength={100}/>
                        {errors.contact_person?.type==="required" ?
-                       <span classname="error-msg">This field is required</span>
+                       <span className="error-msg">This field is required</span>
                        :
                        errors.contact_person?.type==="minLength" ?
-                       <span classname="error-msg">Name must contains at least 3 characters</span> :
+                       <span className="error-msg">Name must contains at least 3 characters</span> :
                        errors.contact_person?.type==="pattern" ?
-                       <span classname="error-msg">Please enter valid contact person name</span>:
+                       <span className="error-msg">Please enter valid contact person name</span>:
                        " "}
                      </FloatingLabel>
                  </div>
@@ -409,7 +405,7 @@ function LeadForm() {
                        {...register("sales_turnover",
                        {"pattern":/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
                         onInput={numericHandler}/>
-                       {errors.sales_turnover?.type==="pattern" ? <span classname="error-msg">Please provide correct Sales Turover
+                       {errors.sales_turnover?.type==="pattern" ? <span className="error-msg">Please provide correct Sales Turover
                          value</span>:
                         ""}
                      </FloatingLabel>
@@ -423,8 +419,8 @@ function LeadForm() {
                         'required':true,pattern:/[6-9][0-9]{9}/
                         })}
                         onInput={numberHandler}/>
-                        {errors.mobile_number?.type==="required" ? <span classname="error-msg">This field is required</span>:
-                       errors.mobile_number?.type==="pattern" ? <span classname="error-msg">Please enter valid mobile number</span>:
+                        {errors.mobile_number?.type==="required" ? <span className="error-msg">This field is required</span>:
+                       errors.mobile_number?.type==="pattern" ? <span className="error-msg">Please enter valid mobile number</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -436,7 +432,7 @@ function LeadForm() {
                        {pattern:/(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
                        onInput={numericHandler}
                        maxLength={70}/>
-                      {errors.Installed_capacity?.type==="pattern" ? <span classname="error-msg">Please provide valid Installed 
+                      {errors.Installed_capacity?.type==="pattern" ? <span className="error-msg">Please provide valid Installed 
                       Capacity</span>:
                         ""} 
                      </FloatingLabel>
@@ -447,8 +443,8 @@ function LeadForm() {
                        {...register("mail",
                        {required:true,
                        pattern:/^[a-zA-Z]{1}[A-Za-z0-9._%+-]{1,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})$/})}/>
-                       {errors.mail?.type==="required" ? <span classname="error-msg">This field is required</span>:
-                       errors.mail?.type==="pattern" ? <span classname="error-msg">Please provide valid email ID</span> :
+                       {errors.mail?.type==="required" ? <span className="error-msg">This field is required</span>:
+                       errors.mail?.type==="pattern" ? <span className="error-msg">Please provide valid email ID</span> :
                        ""}
                      </FloatingLabel>
                  </div>
@@ -465,7 +461,7 @@ function LeadForm() {
                         onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z,]/gi,"")}
                        />
                        {errors.dealing_with_brands?.type==="pattern" && 
-                       <span classname="error-msg">Please provide valid brand names</span>}
+                       <span className="error-msg">Please provide valid brand names</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
@@ -481,28 +477,30 @@ function LeadForm() {
                        <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                      </FloatingLabel>
                  </div>
-             </div>
-                 <div className='col-md-12'> 
+                 <div className='flex-items  pdt-15'> 
                        <div key="inline-checkbox" className="cust-checkbox">
                        <Form.Check inline type="checkbox">
-                               <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions",
-                              {
-                                required: "It is mandatory to check"
-                             })}/>
-                               <Form.Check.Label>I agree that I have read &amp; accept <a className="link-tc">
+                               <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions")}
+                               checked={true}/>
+                               <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
+                                target="_blank" className="link-tc">
                                  <span>Terms & Conditions</span></a>
                                </Form.Check.Label>
                            </Form.Check>
-                           {<span classname="error-msg">{errors.terms_and_conditions && errors.terms_and_conditions.message}</span>}
                        </div>
                        <div className='btn-submit-sec'>
                        <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}
                        onClick={(e)=>{
                         setCheckErrors(true);
+                        if(!watch("entityType")?.length){
+                          setError(true);
+                          }
                        }}>{loading ? <div className='loaderB mx-auto'></div>
                             : "Submit"}</button>
                        </div>
                  </div>
+             </div>
+           
              </form>
              :
              formType==3 && 
@@ -513,8 +511,8 @@ function LeadForm() {
                        <Form.Control type="text" placeholder="Entity Name" className='input-field' name="name"  autoComplete="off"
                        {...register("name",{"required":true,
                        pattern: /^[a-zA-z]+([\s][a-zA-Z]+)*$/})}/>
-                       {errors.name?.type==="required" ? <span classname="error-msg">This field is required</span>:
-                       errors.name?.type==="pattern" ? <span classname="error-msg">Please provide valid entity name</span>:
+                       {errors.name?.type==="required" ? <span className="error-msg">This field is required</span>:
+                       errors.name?.type==="pattern" ? <span className="error-msg">Please provide valid entity name</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -526,7 +524,7 @@ function LeadForm() {
                        "pattern":/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/
                        })}
                        maxLength={8}/>
-                       {errors.turn_over ? <span classname="error-msg">Sales Turnover must include 1 or 2 digits after precision</span>:
+                       {errors.turn_over ? <span className="error-msg">Sales Turnover must include 1 or 2 digits after precision</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -535,7 +533,7 @@ function LeadForm() {
                        <Form.Control type="text" placeholder="Brand Name" className='input-field' name="brand_name"  autoComplete="off"
                        {...register("brand_name",
                        {pattern:/^[a-zA-z]*$/})}/>
-                       {errors.brandName ? <span classname="error-msg">Please provide valid Brand Name</span>:
+                       {errors.brandName ? <span className="error-msg">Please provide valid Brand Name</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -546,7 +544,7 @@ function LeadForm() {
                        {"pattern":/^[1-9]+([0-9]*)$/})}
                        maxLength={5}
                        onInput={numberHandler}/>
-                       {errors.epc ? <span classname="error-msg">Please provide valid No. of Dealers</span>:
+                       {errors.epc ? <span className="error-msg">Please provide valid No. of Dealers</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -587,7 +585,7 @@ function LeadForm() {
                        <Form.Control type="text" placeholder="Business Address"  autoComplete="off" className='input-field' name="b_address" 
                        {...register("b_address",
                        {"required":true})}/>
-                       {errors.b_address? <span classname="error-msg">This field is required</span>:
+                       {errors.b_address? <span className="error-msg">This field is required</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -631,19 +629,16 @@ function LeadForm() {
                        <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                      </FloatingLabel>
                  </div>
-             </div>
-                 <div className='col-md-12'> 
+                 <div className='flex-items  pdt-15'> 
                        <div key="inline-checkbox" className="cust-checkbox">
                            <Form.Check inline type="checkbox">
-                               <Form.Check.Input type="checkbox" name="is_terms_accepted" {...register("is_terms_accepted",
-                              {
-                                required: "It is mandatory to check"
-                             })}/>
-                               <Form.Check.Label>I agree that I have read &amp; accept <a className="link-tc">
+                               <Form.Check.Input type="checkbox" name="is_terms_accepted" {...register("is_terms_accepted")}
+                               checked={true}/>
+                               <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
+                               target="_blank" className="link-tc">
                                  <span>Terms & Conditions</span></a>
                                </Form.Check.Label>
                            </Form.Check>
-                           {<span className="error-msg">{errors.is_terms_accepted && errors.is_terms_accepted.message}</span>}
                        </div>
                        <div className='btn-submit-sec'>
                        <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}
@@ -653,6 +648,7 @@ function LeadForm() {
                             : "Submit"}</button>
                        </div>
                  </div>
+             </div>
              </form>}
    
           </div>
@@ -671,8 +667,8 @@ function LeadForm() {
               </div>
              
           <div className="thank-content">
-                  <h2>Thank You!</h2>
-                  <p className="subheading">"Your all the details have been saved successfully!"</p>
+                  <h2><strong>Thank You!</strong></h2>
+                  <p className="subheading">Thank you for sharing your details. Our representative shall get in touch with you shortly.</p>
           </div>
           </div>
           
