@@ -43,7 +43,7 @@ export default function Header() {
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
                 
-                <a href="/">
+                <a href="/" target={window.location.pathname.includes('solar-loan/lead-form') && '_blank'}>
                         <div className="navbar-brand logo-main">
                             {window.location.pathname.includes('under25') ? (
                                 <img src={isScrolled ? ImageSub1new : ImageSub0new }width="150" height="37" className="img-fluid logo-dark" alt="Choice - Best Stock Broker in India" />

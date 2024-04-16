@@ -302,6 +302,7 @@ function LeadForm() {
                          autoComplete="off"
                          name="message"
                          {...register("message")}
+                         maxLength={200}
                        />
                      </FloatingLabel>
                  </div>
@@ -474,6 +475,7 @@ function LeadForm() {
                          placeholder="Write your message"
                         name="message"
                         {...register("message")}
+                        maxLength={200}
                        />
                        <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                      </FloatingLabel>
@@ -626,6 +628,7 @@ function LeadForm() {
                          placeholder="Write your message"
                          name="comment"
                          {...register("comment")}
+                         maxLength={200}
                        />
                        <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                      </FloatingLabel>
