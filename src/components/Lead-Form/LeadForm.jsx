@@ -29,7 +29,7 @@ function LeadForm() {
     {label: "HUF", value: 5},
     {label: "Company", value: 6}
   ])
- 
+   const [toc,setToc]=useState(false);
    const [showThanku,setShowThanku]=useState(false);
    const [entityType,setEntityType]=useState("Entity Type");
    const [show,setShow]=useState(true);
@@ -78,6 +78,21 @@ function LeadForm() {
   e.target.value=e.target.value.replace(/[^0-9.]/gi,"");
   }
 
+  const capacityHandler=(e)=>{
+  if(e.target.value.length===1 && (e.target.value==='.'|| e.target.value==='0' || e.target.value===' ' ||
+(e.target.value>='A' && e.target.value<='Z') || (e.target.value>='a' && e.target.value<='z'))){
+    e.target.value=""; 
+  }
+  e.target.value=e.target.value.replace(/[^0-9a-zA-Z. ]/gi,"");
+  }
+ 
+  const turnoverHandler=(e)=>{
+  if(e.target.value.length===1 && (e.target.value==='0' || e.target.value===' ' ||
+    (e.target.value>='A' && e.target.value<='Z') || (e.target.value>='a' && e.target.value<='z'))){
+        e.target.value=""; 
+      }
+      e.target.value=e.target.value.replace(/[^0-9a-zA-Z ]/gi,""); 
+  }
   const CustomerFormHandler=(data)=>{
   let payload={
   form_type:'regular',
@@ -315,18 +330,24 @@ function LeadForm() {
                        <div key="inline-checkbox" className="cust-checkbox">
                            <Form.Check inline name="terms_and_conditions" type="checkbox" >
                                <Form.Check.Input type="checkbox" name="terms_and_conditions" 
-                               {...register("terms_and_conditions")} checked={true}/>
+                               {...register("terms_and_conditions",{
+                               required:"It is mandatory to check terms and conditions"
+                               })} onClick={(e)=>setToc(!toc)} checked={toc}/>
                                <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
                                target="_blank" className="link-tc">
                                  <span>Terms & Conditions</span></a>
                                </Form.Check.Label>
                            </Form.Check>
+                           <div>
+                           {errors.terms_and_conditions && <span className='error-msg'>{errors.terms_and_conditions.message}</span>}
+                           </div>
+                           
                        </div>
                        <div className='btn-submit-sec'>
                            <button type="submit" className="btn-bg btn-bg-dark btnsubmit" 
                            onClick={(e)=>{
                             setCheckErrors(true);
-                           }} disabled={loading}>{loading ? <div className='loaderB mx-auto'></div>
+                           }} disabled={loading || !toc}>{loading ? <div className='loaderB mx-auto'></div>
                             : "Submit"}</button>
                        </div>
                  </div>
@@ -409,7 +430,7 @@ function LeadForm() {
                  <div className='flex-items'>
  
                  <FloatingLabel controlId="floatingNameofEntity" label="Sales Turnover of latest FY (Rs In Lakh)" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Sales Turnover of latest FY (Rs In Lakh)" maxLength={7} autoComplete="off"
+                       <Form.Control type="text" placeholder="Sales Turnover of latest FY (Rs In Lakh)" maxLength={9} autoComplete="off"
                        className='input-field' name="sales_turnover"
                        {...register("sales_turnover",
                        {"pattern":/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
@@ -437,8 +458,8 @@ function LeadForm() {
                        <Form.Control type="text" placeholder="Installed capacity of Latest FY (KW/MW)" className='input-field' autoComplete="off"
                        name="Installed_capacity"
                        {...register("Installed_capacity",
-                       {pattern:/(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
-                       onInput={numericHandler}
+                       {pattern:/(^[1-9]{1}[0-9a-zA-Z ]*)+(\.[0-9]{1,2}[a-zA-Z ]*)?$/})}
+                       onInput={capacityHandler}
                        maxLength={70}/>
                       {errors.Installed_capacity?.type==="pattern" ? <span className="error-msg">Installed capacity must include 1 or 2 digits after precision.</span>:
                         ""} 
@@ -463,12 +484,8 @@ function LeadForm() {
                          placeholder="Dealing with Manufacturers/Brands"
                          name="dealing_with_brands"
                          autoComplete="off"
-                         {...register("dealing_with_brands",
-                        {pattern:/^[a-zA-z]+([\,][a-zA-Z]+)*$/})}
-                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z,]/gi,"")}
+                         {...register("dealing_with_brands")}
                        />
-                       {errors.dealing_with_brands?.type==="pattern" && 
-                       <span className="error-msg">Please provide valid brand names</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
@@ -488,13 +505,17 @@ function LeadForm() {
                  <div className='flex-items  pdt-15'> 
                        <div key="inline-checkbox" className="cust-checkbox">
                        <Form.Check inline type="checkbox">
-                               <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions")}
-                               checked={true}/>
+                               <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions",
+                               {required:"It is mandatory to check terms and conditions"})}
+                            />
                                <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
                                 target="_blank" className="link-tc">
                                  <span>Terms & Conditions</span></a>
                                </Form.Check.Label>
                            </Form.Check>
+                           <div>
+                           {errors.terms_and_conditions && <span className='error-msg'>{errors.terms_and_conditions.message}</span>}
+                           </div>
                        </div>
                        <div className='btn-submit-sec'>
                        <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}
@@ -527,11 +548,11 @@ function LeadForm() {
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingpinCode" label="Sales Turnover (Cr)" className='input-label mandate-none'>
                        <Form.Control type="text" placeholder="Sales Turnover (Cr)" name="turn_over" className='input-field' autoComplete="off"
-                       onInput={numericHandler}
+                       onInput={turnoverHandler}
                        {...register("turn_over",{
-                       "pattern":/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/
+                       "pattern":/^(^[1-9]{1}[0-9a-zA-Z ]*)+(\.\d{1,2})?$/
                        })}
-                       maxLength={8}/>
+                       maxLength={12}/>
                        {errors.turn_over ? <span className="error-msg">Sales Turnover must include 1 or 2 digits after precision</span>:
                        ""}
                      </FloatingLabel>
@@ -540,8 +561,12 @@ function LeadForm() {
                  <FloatingLabel controlId="floatingNameofEntity" label="Brand Name" className='input-label mandate-none'>
                        <Form.Control type="text" placeholder="Brand Name" className='input-field' name="brand_name"  autoComplete="off"
                        {...register("brand_name",
-                       {pattern:/^[a-zA-z]*$/})}/>
-                       {errors.brandName ? <span className="error-msg">Please provide valid Brand Name</span>:
+                       {pattern:/^[a-zA-z]+([\s][a-zA-Z]+)*$/})}
+                       maxLength={50}
+                       onInput={(e)=>{
+                       e.target.value=e.target.value.replace(/[^a-zA-Z ]/,"")
+                       }}/>
+                       {errors.brand_name ? <span className="error-msg">Please provide valid Brand Name</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -641,13 +666,16 @@ function LeadForm() {
                  <div className='flex-items  pdt-15'> 
                        <div key="inline-checkbox" className="cust-checkbox">
                            <Form.Check inline type="checkbox">
-                               <Form.Check.Input type="checkbox" name="is_terms_accepted" {...register("is_terms_accepted")}
-                               checked={true}/>
+                               <Form.Check.Input type="checkbox" name="is_terms_accepted" {...register("is_terms_accepted",
+                               {required:"It is mandatory to check terms and conditions"})}/>
                                <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
                                target="_blank" className="link-tc">
                                  <span>Terms & Conditions</span></a>
                                </Form.Check.Label>
                            </Form.Check>
+                           <div>
+                            {errors.is_terms_accepted && <span className='error-msg'>{errors.is_terms_accepted.message}</span>}
+                           </div>
                        </div>
                        <div className='btn-submit-sec'>
                        <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}
