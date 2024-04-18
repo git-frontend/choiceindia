@@ -29,11 +29,16 @@ function LeadForm() {
     {label: "HUF", value: 5},
     {label: "Company", value: 6}
   ])
+
+
    const [toc,setToc]=useState(false);
    const [showThanku,setShowThanku]=useState(false);
    const [entityType,setEntityType]=useState("Entity Type");
    const [show,setShow]=useState(true);
   
+   const btn={
+    'cursor':(!toc && "not-allowed")
+    }
    const [formType,setFormType]=useState(1);
    const [error,setError]=useState(false);
    const [loading,setLoading]=useState(false);
@@ -83,16 +88,40 @@ function LeadForm() {
 (e.target.value>='A' && e.target.value<='Z') || (e.target.value>='a' && e.target.value<='z'))){
     e.target.value=""; 
   }
-  e.target.value=e.target.value.replace(/[^0-9a-zA-Z. ]/gi,"");
+  e.target.value=e.target.value.replace(/[^0-9mwkwMKWK. ]/gi,"");
   }
  
   const turnoverHandler=(e)=>{
-  if(e.target.value.length===1 && (e.target.value==='0' || e.target.value===' ' ||
+  if(e.target.value.length===1 && (e.target.value==='0' || e.target.value===' ' || e.target.value=="." ||
     (e.target.value>='A' && e.target.value<='Z') || (e.target.value>='a' && e.target.value<='z'))){
         e.target.value=""; 
       }
-      e.target.value=e.target.value.replace(/[^0-9a-zA-Z ]/gi,""); 
+      e.target.value=e.target.value.replace(/[^0-9COREcore. ]/gi,""); 
   }
+
+  const plantCapacityHandler=(e)=>{
+    if(e.target.value.length===1 && (e.target.value==='0' || e.target.value===' ' || e.target.value=="." ||
+    (e.target.value>='A' && e.target.value<='Z') || (e.target.value>='a' && e.target.value<='z'))){
+        e.target.value=""; 
+      }
+      e.target.value=e.target.value.replace(/[^0-9kwKW. ]/gi,""); 
+  }
+  const productionHandler=(e)=>{
+    if(e.target.value.length===1 && (e.target.value==='.'|| e.target.value==='0' || e.target.value===' ' ||
+(e.target.value>='A' && e.target.value<='Z') || (e.target.value>='a' && e.target.value<='z'))){
+    e.target.value=""; 
+  }
+  e.target.value=e.target.value.replace(/[^0-9mwMW. ]/gi,"");
+  }
+
+  const lakhHandler=(e)=>{
+    if(e.target.value.length===1 && (e.target.value==='.'|| e.target.value==='0' || e.target.value===' ' ||
+    (e.target.value>='A' && e.target.value<='Z') || (e.target.value>='a' && e.target.value<='z'))){
+        e.target.value=""; 
+      }
+      e.target.value=e.target.value.replace(/[^0-9lakhLAKH. ]/gi,"");
+  }
+
   const CustomerFormHandler=(data)=>{
   let payload={
   form_type:'regular',
@@ -311,11 +340,11 @@ function LeadForm() {
                        name="solar_plant_capacity"
                         {...register("solar_plant_capacity",
                         {required:true,
-                        pattern:/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
-                        onInput={numericHandler}
+                        pattern:/^\d+(\.\d+)? ?(?:kw|kW|KW)?$/})}
+                        onInput={plantCapacityHandler}
                         maxLength={20}/>
                        {errors.solar_plant_capacity?.type==="required" ? <span className="error-msg">This field is required</span>:errors.solar_plant_capacity?.type==="pattern"? 
-                       <span className='error-msg'>Solar Plant Capacity must include 1 or 2 digits after precision.</span> :
+                       <span className='error-msg'>Please enter valid Solar Plant Capacity.</span> :
                        ""}
                      </FloatingLabel>
                  </div>
@@ -353,7 +382,8 @@ function LeadForm() {
                            <button type="submit" className="btn-bg btn-bg-dark btnsubmit" 
                            onClick={(e)=>{
                             setCheckErrors(true);
-                           }} disabled={loading || !toc}>{loading ? <div className='loaderB mx-auto'></div>
+                           }} disabled={loading || !toc}
+                           style={btn}>{loading ? <div className='loaderB mx-auto'></div>
                             : "Submit"}</button>
                        </div>
                  </div>
@@ -439,9 +469,9 @@ function LeadForm() {
                        <Form.Control type="text" placeholder="Sales Turnover of latest FY (Rs In Lakh)" maxLength={9} autoComplete="off"
                        className='input-field' name="sales_turnover"
                        {...register("sales_turnover",
-                       {"pattern":/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
-                        onInput={numericHandler}/>
-                       {errors.sales_turnover?.type==="pattern" ? <span className="error-msg">Sales Turnover must include 1 or 2 digits after precision.</span>:
+                       {"pattern":/^\d+(\.\d+)? ?(?:lakh|Lakh|LAKH)?$/})}
+                        onInput={lakhHandler}/>
+                       {errors.sales_turnover?.type==="pattern" ? <span className="error-msg">Please enter valid Sales turnover</span>:
                         ""}
                      </FloatingLabel>
                  </div>
@@ -464,10 +494,10 @@ function LeadForm() {
                        <Form.Control type="text" placeholder="Installed capacity of Latest FY (KW/MW)" className='input-field' autoComplete="off"
                        name="Installed_capacity"
                        {...register("Installed_capacity",
-                       {pattern:/(^[1-9]{1}[0-9a-zA-Z ]*)+(\.[0-9]{1,2}[a-zA-Z ]*)?$/})}
+                       {pattern:/^\d+(\.\d+)? ?(?:mw|kw|MW|KW|mW|kW)?$/})}
                        onInput={capacityHandler}
-                       maxLength={70}/>
-                      {errors.Installed_capacity?.type==="pattern" ? <span className="error-msg">Installed capacity must include 1 or 2 digits after precision.</span>:
+                       maxLength={40}/>
+                      {errors.Installed_capacity?.type==="pattern" ? <span className="error-msg">Please provide valid Installed Capacity</span>:
                         ""} 
                      </FloatingLabel>
                  </div>
@@ -531,7 +561,8 @@ function LeadForm() {
                         if(!watch("entityType")?.length){
                           setError(true);
                           }
-                       }}>{loading ? <div className='loaderB mx-auto'></div>
+                       }}
+                        style={btn}>{loading ? <div className='loaderB mx-auto'></div>
                             : "Submit"}</button>
                        </div>
                  </div>
@@ -557,10 +588,10 @@ function LeadForm() {
                        <Form.Control type="text" placeholder="Sales Turnover (Cr)" name="turn_over" className='input-field' autoComplete="off"
                        onInput={turnoverHandler}
                        {...register("turn_over",{
-                       "pattern":/^(^[1-9]{1}[0-9a-zA-Z ]*)+(\.\d{1,2})?$/
+                       "pattern":/^\d+(\.\d+)? ?(?:core|Core|CORE|Cr)?$/
                        })}
                        maxLength={12}/>
-                       {errors.turn_over ? <span className="error-msg">Sales Turnover must include 1 or 2 digits after precision</span>:
+                       {errors.turn_over ? <span className="error-msg">Please enter valid sales turnover value</span>:
                        ""}
                      </FloatingLabel>
                  </div>
@@ -648,12 +679,12 @@ function LeadForm() {
                        <Form.Control type="text" placeholder="Production capacity in MW"  autoComplete="off" className='input-field' name="capacity" 
                        {...register("capacity",
                        {"required":true,
-                       pattern:/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
-                       maxLength={20}
-                       onInput={numericHandler}
+                       pattern:/^\d+(\.\d+)? ?(?:mw|MW|mW)?$/})}
+                       maxLength={40}
+                       onInput={productionHandler}
                        />
                        {errors.capacity?.type==="required" ? <span className="error-msg">This field is required</span> :
-                        errors.capacity?.type==="pattern"?<span className="error-msg">Production Capacity must include 1 or 2 digits after precision</span>:
+                        errors.capacity?.type==="pattern"?<span className="error-msg">Please enter valid Production Capacity</span>:
                         ""}
                      </FloatingLabel>
                  </div>
@@ -689,7 +720,8 @@ function LeadForm() {
                        <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading || !toc}
                        onClick={(e)=>{
                         setCheckErrors(true);
-                       }}>{loading ? <div className='loaderB mx-auto'></div>
+                       }}
+                       style={btn}>{loading ? <div className='loaderB mx-auto'></div>
                             : "Submit"}</button>
                        </div>
                  </div>
