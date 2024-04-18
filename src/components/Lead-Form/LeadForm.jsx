@@ -111,6 +111,7 @@ function LeadForm() {
   leadService.CustomerForm(payload).then((res)=>{
   setLoading(false);
   reset();
+  setToc(false);
   setFormType(1);
   setShowThanku(true);
   console.log("Response ",res);
@@ -147,6 +148,7 @@ function LeadForm() {
   leadService.EPCForm(payload).then(res=>{
   setLoading(false);
   reset();
+  setToc(false);
   setFormType(1);
   setShowThanku(true);
   console.log(res);
@@ -177,6 +179,7 @@ function LeadForm() {
   leadService.OEMForm(payload).then(res=>{
   setLoading(false);
   reset();
+  setToc(false);
   setFormType(1);
   setShowThanku(true);
   console.log(res);
@@ -198,17 +201,20 @@ function LeadForm() {
                   <div className='radio-btn-sec'>
                       <div className="rdio"> 
                         <input name="form_type" value="1" id="radio1" type="radio" checked={formType===1} defaultChecked onClick={()=>{setFormType(1)
-                        reset()}}/>
+                        reset()
+                        setToc(false)}}/>
                         <label htmlFor="radio1">Customer</label>
                       </div>
                       <div className="rdio"> 
                         <input name="form_type" value="2" id="radio2" type="radio" checked={formType===2} onClick={()=>{setFormType(2)
-                        reset()}}/>
+                        reset()
+                        setToc(false)}}/>
                         <label htmlFor="radio2">EPC</label>
                       </div>
                       <div className="rdio">
                         <input name="form_type" value="3" id="radio3" type="radio" checked={formType===3} onClick={()=>{setFormType(3)
-                        reset()}} {...register("form_type")}/>
+                        reset()
+                        setToc(false)}} {...register("form_type")}/>
                         <label htmlFor="radio3">Manufacturer/OEM</label>
                       </div>
                     </div>
@@ -507,6 +513,7 @@ function LeadForm() {
                        <Form.Check inline type="checkbox">
                                <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions",
                                {required:"It is mandatory to check terms and conditions"})}
+                               onClick={(e)=>setToc(!toc)} checked={toc}
                             />
                                <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
                                 target="_blank" className="link-tc">
@@ -518,7 +525,7 @@ function LeadForm() {
                            </div>
                        </div>
                        <div className='btn-submit-sec'>
-                       <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}
+                       <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading || !toc}
                        onClick={(e)=>{
                         setCheckErrors(true);
                         if(!watch("entityType")?.length){
@@ -667,7 +674,8 @@ function LeadForm() {
                        <div key="inline-checkbox" className="cust-checkbox">
                            <Form.Check inline type="checkbox">
                                <Form.Check.Input type="checkbox" name="is_terms_accepted" {...register("is_terms_accepted",
-                               {required:"It is mandatory to check terms and conditions"})}/>
+                               {required:"It is mandatory to check terms and conditions"})}
+                               onClick={(e)=>setToc(!toc)} checked={toc}/>
                                <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
                                target="_blank" className="link-tc">
                                  <span>Terms & Conditions</span></a>
@@ -678,7 +686,7 @@ function LeadForm() {
                            </div>
                        </div>
                        <div className='btn-submit-sec'>
-                       <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}
+                       <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading || !toc}
                        onClick={(e)=>{
                         setCheckErrors(true);
                        }}>{loading ? <div className='loaderB mx-auto'></div>
