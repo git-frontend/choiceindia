@@ -168,10 +168,13 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
                 utils.pushDataLayerEvent({
-                    'event': 'send_otp',
+                    'event': 'ci_onboard_lead_initiated',
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
-                    'platform': 'website'
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb',
+                    'lead_source': 'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'leadId': res.data.Body.leadid,
                 })
                 otpSessionID.current = res.data.Body.otp_session_id;
                 setShowOpenAccountPopup(false);

@@ -125,18 +125,24 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     utils.pushDataLayerEvent({
-                        'event': 'open_account_lead_submit',
+                        'event': 'ci_onboard_lead_generated',
                         'page_path': window.location.pathname,
                         'page_url': window.location.href,
-                        'phone': mobileNumber || "",
-                        'platform': 'website'
+                        'lead_source': 'choiceindia',
+                        'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'leadId': otpLID? otpLID: "",
+                        'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                     })
-                    utils.pushDataLayerEvent({
-                        'event': 'otp_procced',
-                        'page_path': window.location.pathname,
-                        'page_url': window.location.href,
-                        'platform': 'website'
-                    })
+                    // utils.pushDataLayerEvent({
+                    //     'event': 'open_account_lead_submit',
+                    //     'page_path': window.location.pathname,
+                    //     'page_url': window.location.href,
+                    //     'lead_source': 'choiceindia',
+                    //     'phone': utils.generateSHA256Hash(mobileNumber.toString()),
+                    //     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                    // })
                     //  console.log('HANDLER',res);
                     // if (res.data.Body.isOnboardFlag === 'Y') {
                     //Your Onboarding has been completed

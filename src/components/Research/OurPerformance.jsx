@@ -155,7 +155,7 @@ function OurPerformance() {
 
   return (
     <div>
-      <section className="our-performance">
+      {/* <section className="our-performance">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -166,140 +166,8 @@ function OurPerformance() {
           </div>
           <div className="row gx-5 mt-5 pt-5 d-none">
             <div className="col-xl-4 col-md-6">
-
-              {/* <div className="progress-bar-performance">
-                <div className="card">
-                  <div className="percent">
-                    <svg className="sb-bar">
-                      <circle cx="150" cy="150" r="145"></circle>
-                      <circle cx="150" cy="150" r="145" style={{ '--percent': `${list.success_ratio_percentage || 0}` }}></circle>
-                    </svg> */}
-              {/**<svg className="c-quant-bar">
-                      <circle cx="125" cy="125" r="120"></circle>
-                      <circle cx="125" cy="125" r="120" style={{ '--percent': '55' }}></circle>
-  </svg>*/}
-              {/* <svg className="jiffy-signal-bar">
-                      <circle cx="100" cy="100" r="95"></circle>
-                      <circle cx="100" cy="100" r="95" style={{ '--percent': `${Number(data) || 0}` }}></circle>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div> */}
               <div className="col-xl-7 col-md-6">
-                {/* <div className="performance-tabs SB-bloc-tabs">
-                <button
-                  className={count == 1 ? "tabs active-tabs" : " tabs" }
-                  onClick={() => {setcount(1);loadsuccess(successWeek);loadperformance(counterwdate)}}
-                >
-                  Weekly
-
-                </button>
-                <button
-                  className={count == 2 ? "tabs active-tabs" :"tabs" }
-                  onClick={() => {setcount(2);loadsuccess(successMonth);loadperformance(countermdate)}}
-                >
-                  Monthly
-
-                </button>
-                <button
-                  className={count == 3 ? "tabs active-tabs" :"tabs" }
-                  onClick={() => {setcount(3);loadsuccess(successSdate);loadperformance(finaldate)}}
-                >
-                  Quarterly
-
-                </button>
-              </div> */}
-                {/* <div className="heading-content-tabs ">
-                <div className="content active-content">
-                  <div className="wrapper">
-                    <div className="wrap">
-                      <div className="colorwrap blue"></div>
-                      <div className="wrap-des">
-                      <p className="subtext">Expert</p>
-                        <p className="percentage">{list.success_ratio_percentage||0}</p>
-                      </div>
-                    </div> */}
-                {/**<div className="wrap">
-                      <div className="colorwrap green"></div>
-                      <div className="wrap-des">
-                       
-                        <p className="percentage">60%</p>
-                      </div>
-</div>*/}
-                {/* <div className="wrap">
-                      <div className="colorwrap yellow"></div>
-                      <div className="wrap-des">
-                        <p className="subtext">Jiffy Signal</p>
-                        <p className="percentage">{Number(data)||0}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                </div> */}
-
-                {/**<div className={toggleState === 2 ? "content  active-content" : "content"}>
-                  <div className="wrapper">
-
-                    <div className="wrap">
-                      <div className="colorwrap yellow"></div>
-                      <div className="wrap-des">
-                        <p className="subtext">Jiffy Signal</p>
-                        <p className="percentage">{Number(data.SR)}</p>
-                      </div>
-
-                    </div>
-                    <div className="wrap">
-                      <div className="colorwrap blue"> </div>
-                      <div className="wrap-des">
-                      <p className="subtext">Expert</p>
-                        <p className="percentage">{list.success_ratio_percentage}</p>
-                      </div>
-
-                    </div>
-                       <div className="wrap">
-                      <div className="colorwrap green"></div>
-                      <div className="wrap-des">
-                       
-                        <p className="percentage">60%</p>
-                      </div>
-</div>
-
-                  </div>
-                </div>
-
-                <div
-                  className={toggleState === 3 ? "content  active-content" : "content"}>
-                  <div className="wrapper">
-
-                    <div className="wrap">
-                      <div className="colorwrap yellow"> </div>
-                      <div className="wrap-des">
-                        <p className="subtext">Jiffy Signal</p>
-                        <p className="percentage">{Number(data.SR)}</p>
-                      </div>
-
-                    </div>
-
-                       <div className="wrap">
-                      <div className="colorwrap green"></div>
-                      <div className="wrap-des">
-                       
-                        <p className="percentage">60%</p>
-                      </div>
-</div>
-                    <div className="wrap">
-                      <div className="colorwrap blue"> </div>
-                      <div className="wrap-des">
-                      <p className="subtext">Expert</p>
-                        <p className="percentage">{list.success_ratio_percentage}</p>
-                      </div>
-
-                    </div>
-
-                  </div>
-</div>*/}
-
+                
               </div>
             </div>
           </div>
@@ -320,7 +188,7 @@ function OurPerformance() {
                       isloading ?
                         <div className="text-center">
                           <div>
-                            {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                           
                             <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                             </div>
                         </div>
@@ -372,7 +240,7 @@ function OurPerformance() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="filedownloadfaq">
         <div className="container">

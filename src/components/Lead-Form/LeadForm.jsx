@@ -3,8 +3,13 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Select from 'react-dropdown-select';
 import {useForm, Controller} from 'react-hook-form';
-import "./lead-form.scss"
+import leadService from '../../Services/LeadFormService'
 import '../Assistedflow/assistedflow.scss';
+import "./lead-form.scss"
+import thumbsup from '../../assets/images/demat-images/thumbsup.gif';
+import LazyLoader from "../Common-features/LazyLoader";
+import "../Common-features/newdemat-form.scss"
+import {toast} from 'react-toastify';
 
 function LeadForm() {
 
@@ -16,7 +21,6 @@ function LeadForm() {
   //   {label: "HUF", value: 5},
   //   {label: "Company", value: 6}
   // ]
-
   const [options, setOptions] = useState([
     {label: "Individual", value: 1},
     {label: "Proprietorship", value: 2},
@@ -26,28 +30,79 @@ function LeadForm() {
     {label: "Company", value: 6}
   ])
  
+   const [showThanku,setShowThanku]=useState(false);
    const [entityType,setEntityType]=useState("Entity Type");
    const [show,setShow]=useState(true);
   
    const [formType,setFormType]=useState(1);
    const [error,setError]=useState(false);
    const [loading,setLoading]=useState(false);
-
+   console.log(formType);
    const {register,reset,handleSubmit, control, getValues,watch,
   formState:{errors}}=useForm({mode:'onChange'});
+
+  const [checkErrors,setCheckErrors]=useState(false);
+  //scroll up if there is any error
+  if (Object.keys(errors).length > 0 && checkErrors) {
+    const firstErrorField = Object.keys(errors)[0];
+    // Get the corresponding input element
+    const errorFieldElement = document.querySelector(
+      `[name=${firstErrorField}]`
+    );
+    // Scroll to the error field if it exists
+    if (errorFieldElement) {
+      errorFieldElement.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    }
+  }
+  useEffect(()=>{
+  if(showThanku){
+  setTimeout(()=>{
+  setShowThanku(false);
+  },5000)
+  
+  }
+  },[showThanku])
  
  function numberHandler(e){
   e.target.value = e.target.value.replace(/[^0-9]/gi,"");
  }
 
  const numericHandler=(e)=>{
+  if(e.target.value.length === 1 && (e.target.value === '.' || e.target.value==='0')){
+    e.target.value="";   
+}
   e.target.value=e.target.value.replace(/[^0-9.]/gi,"");
   }
 
   const CustomerFormHandler=(data)=>{
-  reset();
+  let payload={
+  form_type:'regular',
+  name:data.name,
+  pin_code:Number(data.pincode),
+  mo_num:data.mobile_num,
+  email:data.mail,
+  e_bill:data.bill,
+  sqft:Number(data.Roof_Space),
+  address:data.address,
+  capacity:Number(data.solar_plant_capacity),
+  comment:data.message,
+  is_terms_accepted:data.terms_and_conditions
+  }
   setLoading(true);
-  console.log(data);
+  leadService.CustomerForm(payload).then((res)=>{
+  setLoading(false);
+  reset();
+  setFormType(1);
+  setShowThanku(true);
+  console.log("Response ",res);
+  }).catch((err)=>{
+  setLoading(false);
+  console.log(err)
+  toast.error(err.message)})
   }
 
   const submitHandler=(data)=>{
@@ -58,17 +113,63 @@ function LeadForm() {
   setError(false);
   setShow(true);
   setEntityType("Entity Type");
+  let payload={
+  form_type:'epc',
+  name:data.entityName,
+  entity_type:data.entityType[0].label.toLowerCase(),
+  c_person:data.contact_person,
+  email:data.mail,
+  b_address:data.business_address,
+  r_address:data.residence_address,
+  turnover:data.sales_turnover,
+  capacity:Number(data.Installed_capacity),
+  mo_num:data.mobile_number,
+  dealings:data.dealing_with_brands,
+  comment:data.message,
+  is_terms_accepted:data.terms_and_conditions
+  }
   setLoading(true);
-  console.log(data);
+  leadService.EPCForm(payload).then(res=>{
+  setLoading(false);
   reset();
+  setFormType(1);
+  setShowThanku(true);
+  console.log(res);
+  }).catch((err)=>{
+    setLoading(false);
+    console.log(err)
+    toast.error(err.message)})
   }
 
 
   const OEMHandler=(data)=>{
-  reset();
-  setLoading(true);
-  console.log(data);
+  let payload={
+  form_type:'oem',
+  name:data.name,
+  brand_name:data.brand_name,
+  website:data.website,
+  c_person:data.contact_person,
+  mo_num:data.mo_num,
+  capacity:Number(data.capacity),
+  turnover:data.turnover,
+  epc:Number(data.epc),
+  email:data.email,
+  b_address:data.b_address,
+  comment:data.comment,
+  is_terms_accepted:data.is_terms_accepted
   }
+  setLoading(true);
+  leadService.OEMForm(payload).then(res=>{
+  setLoading(false);
+  reset();
+  setFormType(1);
+  setShowThanku(true);
+  console.log(res);
+  }).catch((err)=>{
+    setLoading(false);
+    console.log(err)
+    toast.error(err.message)})
+  } 
   
   return (
     <>
@@ -81,110 +182,119 @@ function LeadForm() {
                   <p>You are :</p>
                   <div className='radio-btn-sec'>
                       <div className="rdio"> 
-                        <input name="radio" value="1" id="radio1" type="radio" defaultChecked onClick={()=>{setFormType(1)
+                        <input name="form_type" value="1" id="radio1" type="radio" checked={formType===1} defaultChecked onClick={()=>{setFormType(1)
                         reset()}}/>
                         <label htmlFor="radio1">Customer</label>
                       </div>
                       <div className="rdio"> 
-                        <input name="radio" value="2" id="radio2" type="radio" onClick={()=>{setFormType(2)
+                        <input name="form_type" value="2" id="radio2" type="radio" checked={formType===2} onClick={()=>{setFormType(2)
                         reset()}}/>
                         <label htmlFor="radio2">EPC</label>
                       </div>
                       <div className="rdio">
-                        <input name="radio" value="3" id="radio3" type="radio" onClick={()=>{setFormType(3)
-                        reset()}}/>
+                        <input name="form_type" value="3" id="radio3" type="radio" checked={formType===3} onClick={()=>{setFormType(3)
+                        reset()}} {...register("form_type")}/>
                         <label htmlFor="radio3">Manufacturer/OEM</label>
                       </div>
                     </div>
                </div>
             </div>
             {formType==1?
-              <form className='form-section' onSubmit={handleSubmit(CustomerFormHandler)} noValidate>
+              <form className='form-section' onSubmit={handleSubmit(CustomerFormHandler)}>
              <div className='dis-flex'>
                  <div className='flex-items'>
                     <FloatingLabel controlId="floatingName" label="Name" className='input-label'>
                        <Form.Control type="text" placeholder="Name" className='input-field' maxLength="100" name="name" {...register("name",{
                       'required':true, minLength: 3, pattern: /^[a-zA-z]+([\s][a-zA-Z]+)*$/
                        })}
+                       autoComplete="off"
                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z ]/gi,"")}/>
-                      {errors.name?.type=="required" ? <span style={{color:"red"}}>This field is required</span>:
-                      errors.name?.type=="pattern" ? <span style={{color:"red"}}>Please provide valid name</span>:
-                      errors.name?.type=="minLength" ? <span style={{color:"red"}}>Name must contains at least 3 characters</span>:
+                      {errors.name?.type=="required" ? <span className="error-msg">This field is required</span>:
+                      errors.name?.type=="pattern" ? <span className="error-msg">Please provide valid name</span>:
+                      errors.name?.type=="minLength" ? <span className="error-msg">Name must contains at least 3 characters</span>:
                        ""} 
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingpinCode" label="Pin Code" className='input-label'>
-                       <Form.Control type="text" placeholder="pin code" name="pincode" maxLength="6" className='input-field' {...register("pincode",
+                       <Form.Control type="text" placeholder="pin code" name="pincode" maxLength="6" className='input-field'  autoComplete="off"
+                        {...register("pincode",
                        {
                         'required':true,maxLength:6,minLength:6,pattern:/[1-9][0-9]{5}/
                        })} onInput={numberHandler}/>
-                       {errors.pincode?.type==="required" ? <span style={{color:"red"}}>This field is required</span>:
-                       errors.pincode?.type==="pattern" ? <span style={{color:"red"}}>Please enter correct pincode</span>:
-                       errors.pincode?.type==="maxLength"? <span style={{color:"red"}}>Invalid Pincode</span>:
-                       errors.pincode?.type==="minLength"? <span style={{color:"red"}}>Pincode must contains 6 digits</span>:
+                       {errors.pincode?.type==="required" ? <span className="error-msg">This field is required</span>:
+                       errors.pincode?.type==="pattern" ? <span className="error-msg">Please enter correct pincode</span>:
+                       errors.pincode?.type==="maxLength"? <span className="error-msg">Invalid Pincode</span>:
+                       errors.pincode?.type==="minLength"? <span className="error-msg">Pincode must contains 6 digits</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Mobile No/WhatsApp No" className='input-label'>
-                       <Form.Control type="text" placeholder="Mobile No/WhatsApp No" className='input-field' name="mobile_num" maxLength="10"
+                       <Form.Control type="text" placeholder="Mobile No/WhatsApp No" className='input-field' name="mobile_num"  autoComplete="off"
+                        maxLength="10"
                        {...register("mobile_num",{
                        'required':true,pattern:/[6-9][0-9]{9}/
                        })} onInput={numberHandler}/>
-                        {errors.mobile_num?.type==="required" ? <span style={{color:"red"}}>This field is required</span>:
-                       errors.mobile_num?.type==="pattern" ? <span style={{color:"red"}}>Please enter valid mobile number</span>:
+                        {errors.mobile_num?.type==="required" ? <span className="error-msg">This field is required</span>:
+                       errors.mobile_num?.type==="pattern" ? <span className="error-msg">Please enter valid mobile number</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
  
                  <FloatingLabel controlId="floatingNameofEntity" label="Monthly Electricity Bill (Rs.)" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Monthly Electricity Bill (Rs.)" maxLength="20"
+                       <Form.Control type="text" placeholder="Monthly Electricity Bill (Rs.)"   autoComplete="off" maxLength="20"
                         className='input-field' name="bill" {...register("bill",
-                       {pattern:/^[1-9]{1}\d+(\.\d{1,2})?$/})}
+                       {minLength:3,
+                        pattern:/^[1-9]{1}\d+(\.\d{1,2})?$/})}
                         onInput={numericHandler}/>
-                       {errors.bill?.type==="pattern" ?  <span style={{color:"red"}}>Please enter valid electricity bill</span>
-                       :
+                       {errors.bill?.type==="minLength" ?  <span className="error-msg">Please enter valid electricity bill</span>
+                       : errors.bill?.type==="pattern"  ?  <span className="error-msg">Electricity bill must include 1 or 2 digits after precision.</span> :
                        " "}
                      </FloatingLabel>
+
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Mail ID" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Mail ID" className='input-field' name="mail" {...register("mail",
+                       <Form.Control type="text" placeholder="Mail ID" className='input-field'  autoComplete="off" name="mail" {...register("mail",
                        {pattern:/^[a-zA-Z]{1}[A-Za-z0-9._%+-]{1,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})$/})}/>
-                       {errors.mail?.type==="pattern" ?<span style={{color:"red"}}>Please enter valid email ID</span> :
+                       {errors.mail?.type==="pattern" ?<span className="error-msg">Please enter valid email ID</span> :
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Roof Space Available for Solar Installation (Sqft)" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Roof Space Available for Solar Installation (Sqft)" className='input-field' name="Roof_Space" {...register("Roof_Space",{
-                        pattern:/^[1-9]{1}\d+(\.\d{1,2})?$/
+                       <Form.Control type="text" placeholder="Roof Space Available for Solar Installation (Sqft)" className='input-field'  autoComplete="off"
+                       name="Roof_Space" {...register("Roof_Space",{
+                        pattern:/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/
                        })}
                        onInput={numericHandler}
-                       maxLength={40}/>
-                      {errors.Roof_Space?.type==="pattern"? <span style={{color:"red"}}>Please enter valid Roof Space Available for Solar Installation (Sqft)</span> :
+                       maxLength={20}/>
+                      {errors.Roof_Space?.type==="pattern"? <span className="error-msg">Roof Space Available for Solar Installation must contain 1 or 2 digits after precision</span> :
                       ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Address" className='input-label'>
-                       <Form.Control type="text" placeholder="Address" className='input-field' name="address" {...register("address",
+                       <Form.Control type="text" placeholder="Address" className='input-field' name="address"  autoComplete="off"
+                        {...register("address",
                        {"required":true})}/>
-                       {errors.address?.type==="required" ? <span style={{"color":"red"}}>This is field is required</span> :
+                       {errors.address?.type==="required" ? <span className="error-msg">This is field is required</span> :
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Solar Plant Capacity Requirement (KW)" className='input-label'>
-                       <Form.Control type="text" placeholder="Solar Plant Capacity Requirement (KW)" className='input-field' name="solar_plant_capacity"
+                       <Form.Control type="text" placeholder="Solar Plant Capacity Requirement (KW)" className='input-field'  autoComplete="off"
+                       name="solar_plant_capacity"
                         {...register("solar_plant_capacity",
-                        {pattern:/^[1-9]\d+(\.\d{1,2})?$/})}
+                        {required:true,
+                        pattern:/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
                         onInput={numericHandler}
-                        maxLength={50}/>
-                       {errors.solar_plant_capacity?.type==="pattern" ? 
-                       <span style={{"color":"red"}}>Please enter valid solar plant capacity</span> :
+                        maxLength={20}/>
+                       {errors.solar_plant_capacity?.type==="required" ? <span className="error-msg">This field is required</span>:errors.solar_plant_capacity?.type==="pattern"? 
+                       <span className='error-msg'>Solar Plant Capacity must include 1 or 2 digits after precision.</span> :
                        ""}
                      </FloatingLabel>
                  </div>
@@ -194,57 +304,60 @@ function LeadForm() {
                        className='input-field textarea'
                          as="textarea"
                          placeholder="Write your message"
+                         autoComplete="off"
                          name="message"
                          {...register("message")}
+                         maxLength={200}
                        />
                      </FloatingLabel>
                  </div>
-             </div>
-                 <div className='col-md-12'> 
+                 <div className='flex-items pdt-15' > 
                        <div key="inline-checkbox" className="cust-checkbox">
                            <Form.Check inline name="terms_and_conditions" type="checkbox" >
-                               <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions",
-                            {
-                              required: "It is mandatory to check"
-                           })}/>
-                               <Form.Check.Label>I agree that I have read &amp; accept <a className="link-tc">
+                               <Form.Check.Input type="checkbox" name="terms_and_conditions" 
+                               {...register("terms_and_conditions")} checked={true}/>
+                               <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
+                               target="_blank" className="link-tc">
                                  <span>Terms & Conditions</span></a>
                                </Form.Check.Label>
                            </Form.Check>
-                           {(errors.terms_and_conditions ?  <span style={{color:"red"}}>{errors.terms_and_conditions.message}</span>:
-                           "")}
                        </div>
                        <div className='btn-submit-sec'>
-                           <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}>{loading ? <div className='loaderB mx-auto'></div>
+                           <button type="submit" className="btn-bg btn-bg-dark btnsubmit" 
+                           onClick={(e)=>{
+                            setCheckErrors(true);
+                           }} disabled={loading}>{loading ? <div className='loaderB mx-auto'></div>
                             : "Submit"}</button>
                        </div>
                  </div>
+             </div>
+                
              </form>:
              formType===2?
              <form className='form-section' onSubmit={handleSubmit(submitHandler)}>
              <div className='dis-flex'>
                  <div className='flex-items'>
                     <FloatingLabel controlId="floatingNameofEntity" label="Name of Entity" className='input-label'>
-                       <Form.Control type="text" placeholder="Name of Entity" className='input-field' name="entityName" 
+                       <Form.Control type="text" placeholder="Name of Entity" className='input-field' name="entityName" autoComplete="off"
                        {...register("entityName",
                        {"required":true,
                        pattern:/^[a-zA-z]+([\s][a-zA-Z]+)*$/})}
                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z ]/gi,"")}
                        maxLength={100}/>
                        <Form.Control.Feedback type="invalid">Please provide a Name of Entity</Form.Control.Feedback>
-                       {errors.entityName?.type==="required" ? <span style={{color:"red"}}>Please provide a Name of Entity</span>:
-                        errors.entityName?.type==="pattern"? <span style={{color:"red"}}>Please enter valid entity name</span> :
+                       {errors.entityName?.type==="required" ? <span className="error-msg">This field is required</span>:
+                        errors.entityName?.type==="pattern"? <span className="error-msg">Please enter valid entity name</span> :
                         ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Business Address" className='input-label'>
-                       <Form.Control type="text" placeholder="Business Address" name="business_address" className='input-field' 
+                       <Form.Control type="text" placeholder="Business Address" name="business_address" className='input-field' autoComplete="off"
                        {...register("business_address",
                         {
                         "required":true
                         })}/>
-                       {errors.business_address && <span style={{color:"red"}}>Please enter the business address</span>}
+                       {errors.business_address && <span className="error-msg">This field is required</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
@@ -262,19 +375,19 @@ function LeadForm() {
                             values={watch('entityType')}
                               />
   )}}></Controller>
-                         {error && !watch('entityType')?.length && <span style={{color:"red"}}>Please select entity type</span>}
+                         {error && !watch('entityType')?.length && <span className="error-msg">Please select entity type</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Residence Address" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Residence Address" className='input-field' name="residence_address"
+                       <Form.Control type="text" placeholder="Residence Address" className='input-field' name="residence_address" autoComplete="off"
                        {...register("residence_address")}/>
                       
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Contact Person" className='input-label'>
-                       <Form.Control type="text" placeholder="Contact Person" className='input-field' name="contact_person"
+                       <Form.Control type="text" placeholder="Contact Person" className='input-field' name="contact_person" autoComplete="off"
                        {...register("contact_person",
                        {
                        "required":true,
@@ -284,63 +397,61 @@ function LeadForm() {
                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z ]/gi,"")}
                        maxLength={100}/>
                        {errors.contact_person?.type==="required" ?
-                       <span style={{color:"red"}}>Please provide contact person name</span>
+                       <span className="error-msg">This field is required</span>
                        :
                        errors.contact_person?.type==="minLength" ?
-                       <span style={{color:"red"}}>Name must contains at least 3 characters</span> :
+                       <span className="error-msg">Name must contains at least 3 characters</span> :
                        errors.contact_person?.type==="pattern" ?
-                       <span style={{color:"red"}}>Please enter valid contact person name</span>:
+                       <span className="error-msg">Please enter valid contact person name</span>:
                        " "}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
  
                  <FloatingLabel controlId="floatingNameofEntity" label="Sales Turnover of latest FY (Rs In Lakh)" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Sales Turnover of latest FY (Rs In Lakh)" maxLength={7}
+                       <Form.Control type="text" placeholder="Sales Turnover of latest FY (Rs In Lakh)" maxLength={7} autoComplete="off"
                        className='input-field' name="sales_turnover"
                        {...register("sales_turnover",
-                       {"pattern":/^[1-9]{1}\d/})}
-                        onInput={numberHandler}/>
-                       {errors.sales_turnover?.type==="pattern" ? <span style={{color:"red"}}>Please provide correct Sales Turover
-                         value</span>:
+                       {"pattern":/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
+                        onInput={numericHandler}/>
+                       {errors.sales_turnover?.type==="pattern" ? <span className="error-msg">Sales Turnover must include 1 or 2 digits after precision.</span>:
                         ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Mobile No/WhatsApp No" className='input-label'>
-                       <Form.Control type="text" placeholder="Mobile No/WhatsApp No" className='input-field'
+                       <Form.Control type="text" placeholder="Mobile No/WhatsApp No" className='input-field' autoComplete="off"
                         maxLength={10} name="mobile_number" 
                        {...register("mobile_number",
                        {
                         'required':true,pattern:/[6-9][0-9]{9}/
                         })}
                         onInput={numberHandler}/>
-                        {errors.mobile_number?.type==="required" ? <span style={{color:"red"}}>This field is required</span>:
-                       errors.mobile_number?.type==="pattern" ? <span style={{color:"red"}}>Please enter valid mobile number</span>:
+                        {errors.mobile_number?.type==="required" ? <span className="error-msg">This field is required</span>:
+                       errors.mobile_number?.type==="pattern" ? <span className="error-msg">Please enter valid mobile number</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Installed capacity of Latest FY (KW/MW)" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Installed capacity of Latest FY (KW/MW)" className='input-field'
+                       <Form.Control type="text" placeholder="Installed capacity of Latest FY (KW/MW)" className='input-field' autoComplete="off"
                        name="Installed_capacity"
                        {...register("Installed_capacity",
-                       {pattern:/^[1-9]\d+(\.\d{1,2})?$/})}
+                       {pattern:/(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
                        onInput={numericHandler}
                        maxLength={70}/>
-                      {errors.Installed_capacity?.type==="pattern" ? <span style={{"color":"red"}}>Please provide valid Installed 
-                      Capacity</span>:
+                      {errors.Installed_capacity?.type==="pattern" ? <span className="error-msg">Installed capacity must include 1 or 2 digits after precision.</span>:
                         ""} 
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Mail ID" className='input-label'>
-                       <Form.Control type="text" placeholder="Mail ID" className='input-field' name="mail"
+                       <Form.Control type="text" placeholder="Mail ID" className='input-field' name="mail" autoComplete="off"
                        {...register("mail",
                        {required:true,
                        pattern:/^[a-zA-Z]{1}[A-Za-z0-9._%+-]{1,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})$/})}/>
-                       {errors.mail?.type==="required" ? <span style={{color:"red"}}>This field is required</span>:
-                       errors.mail?.type==="pattern" ? <span style={{color:"red"}}>Please provide valid email ID</span> :
+                       {errors.mail?.type==="required" ? <span className="error-msg">This field is required</span>:
+                       errors.mail?.type==="pattern" ? <span className="error-msg">Please provide valid email ID</span> :
                        ""}
                      </FloatingLabel>
                  </div>
@@ -351,44 +462,53 @@ function LeadForm() {
                          as="textarea"
                          placeholder="Dealing with Manufacturers/Brands"
                          name="dealing_with_brands"
+                         autoComplete="off"
                          {...register("dealing_with_brands",
                         {pattern:/^[a-zA-z]+([\,][a-zA-Z]+)*$/})}
+                        onInput={(e)=>e.target.value=e.target.value.replace(/[^a-zA-Z,]/gi,"")}
                        />
                        {errors.dealing_with_brands?.type==="pattern" && 
-                       <span style={{color:"red"}}>Please provide valid brand names</span>}
+                       <span className="error-msg">Please provide valid brand names</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingTextarea2" label="Write your message" className='textarea-label'>
                        <Form.Control
+                       autoComplete="off"
                        className='input-field textarea'
                          as="textarea"
                          placeholder="Write your message"
                         name="message"
                         {...register("message")}
+                        maxLength={200}
                        />
                        <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                      </FloatingLabel>
                  </div>
-             </div>
-                 <div className='col-md-12'> 
+                 <div className='flex-items  pdt-15'> 
                        <div key="inline-checkbox" className="cust-checkbox">
                        <Form.Check inline type="checkbox">
-                               <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions",
-                              {
-                                required: "It is mandatory to check"
-                             })}/>
-                               <Form.Check.Label>I agree that I have read &amp; accept <a className="link-tc">
+                               <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions")}
+                               checked={true}/>
+                               <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
+                                target="_blank" className="link-tc">
                                  <span>Terms & Conditions</span></a>
                                </Form.Check.Label>
                            </Form.Check>
-                           {<span style={{"color":"red"}}>{errors.terms_and_conditions && errors.terms_and_conditions.message}</span>}
                        </div>
                        <div className='btn-submit-sec'>
-                       <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}>{loading ? <div className='loaderB mx-auto'></div>
+                       <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}
+                       onClick={(e)=>{
+                        setCheckErrors(true);
+                        if(!watch("entityType")?.length){
+                          setError(true);
+                          }
+                       }}>{loading ? <div className='loaderB mx-auto'></div>
                             : "Submit"}</button>
                        </div>
                  </div>
+             </div>
+           
              </form>
              :
              formType==3 && 
@@ -396,149 +516,174 @@ function LeadForm() {
              <div className='dis-flex'>
                  <div className='flex-items'>
                     <FloatingLabel controlId="floatingName" label="Entity Name" className='input-label'>
-                       <Form.Control type="text" placeholder="Entity Name" className='input-field' name="EntityName" 
-                       {...register("EntityName",{"required":true,
+                       <Form.Control type="text" placeholder="Entity Name" className='input-field' name="name"  autoComplete="off"
+                       {...register("name",{"required":true,
                        pattern: /^[a-zA-z]+([\s][a-zA-Z]+)*$/})}/>
-                       {errors.EntityName?.type==="required" ? <span style={{color:"red"}}>Please provide the entity name</span>:
-                       errors.EntityName?.type==="pattern" ? <span style={{color:"red"}}>Please provide valid entity name</span>:
+                       {errors.name?.type==="required" ? <span className="error-msg">This field is required</span>:
+                       errors.name?.type==="pattern" ? <span className="error-msg">Please provide valid entity name</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingpinCode" label="Sales Turnover (Cr)" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Sales Turnover (Cr)" name="SalesTurnover" className='input-field' 
-                       onInput={numberHandler}
-                       {...register("SalesTurnover",{
-                       "pattern":/^[1-9]{1}\d/
+                       <Form.Control type="text" placeholder="Sales Turnover (Cr)" name="turn_over" className='input-field' autoComplete="off"
+                       onInput={numericHandler}
+                       {...register("turn_over",{
+                       "pattern":/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/
                        })}
                        maxLength={8}/>
-                       {errors.SalesTurnover ? <span style={{color:"red"}}>Please provide valid Sales Turnover</span>:
+                       {errors.turn_over ? <span className="error-msg">Sales Turnover must include 1 or 2 digits after precision</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Brand Name" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Brand Name" className='input-field' name="brandName" 
-                       {...register("brandName",
+                       <Form.Control type="text" placeholder="Brand Name" className='input-field' name="brand_name"  autoComplete="off"
+                       {...register("brand_name",
                        {pattern:/^[a-zA-z]*$/})}/>
-                       {errors.brandName ? <span style={{color:"red"}}>Please provide valid Brand Name</span>:
+                       {errors.brandName ? <span className="error-msg">Please provide valid Brand Name</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="No of Dealers/EPC" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="No of Dealers/EPC" className='input-field' name="No_of_EPC" 
-                       {...register("No_of_EPC",
+                       <Form.Control type="text" placeholder="No of Dealers/EPC" className='input-field' name="epc"  autoComplete="off"
+                       {...register("epc",
                        {"pattern":/^[1-9]+([0-9]*)$/})}
                        maxLength={5}
                        onInput={numberHandler}/>
-                       {errors.No_of_EPC ? <span style={{color:"red"}}>Please provide valid No. of Dealers</span>:
+                       {errors.epc ? <span className="error-msg">Please provide valid No. of Dealers</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Website" className='input-label mandate-none'>
-                       <Form.Control type="text" placeholder="Website" className='input-field' name="website" {...register("website")}/>
-                       <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+                       <Form.Control type="text" placeholder="Website" className='input-field' name="website" 
+                        autoComplete="off" {...register("website",{
+                        pattern:/^(https|http?:\/\/)?([\da-z.-]+)\.([a-z.]{2,})([/\w .-]*)*\/?$/}
+                        )}/>
+                        {errors.website && <span className="error-msg">Please enter valid url</span>}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Mail ID" className='input-label'>
-                       <Form.Control type="text" placeholder="Mail ID" className='input-field' name="mail" 
-                       {...register("mail",
+                       <Form.Control type="text" placeholder="Mail ID" className='input-field' name="email" autoComplete="off"
+                       {...register("email",
                        {"required":true,
                        pattern:/^[a-zA-Z]{1}[A-Za-z0-9._%+-]{1,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})$/})}/>
-                        {errors.mail?.type==="pattern" ?<span style={{color:"red"}}>Please enter valid email ID</span> :
-                        errors.mail?.type==="required" ?<span style={{color:"red"}}>Please provide the email ID</span>:
+                        {errors.email?.type==="pattern" ?<span className="error-msg">Please enter valid email ID</span> :
+                        errors.email?.type==="required" ?<span className="error-msg">This field is required</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Contact Person" className='input-label'>
-                       <Form.Control type="text" placeholder="Contact Person" className='input-field' name="contact_person" 
+                       <Form.Control type="text" placeholder="Contact Person" className='input-field' autoComplete="off" name="contact_person" 
                        {...register("contact_person",
                       {"required":true,
                        pattern:/^[a-zA-z]+([\s][a-zA-Z]+)*$/} )}
                        maxLength={100}/>
-                      {errors.contact_person?.type==="required" ? <span style={{color:"red"}}>Please provide the contact person name</span>:
-                       errors.contact_person?.type==="pattern"? <span style={{color:"red"}}>Please enter valid contact person name</span>:
+                      {errors.contact_person?.type==="required" ? <span className="error-msg">This field is required</span>:
+                       errors.contact_person?.type==="pattern"? <span className="error-msg">Please enter valid contact person name</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Business Address" className='input-label'>
-                       <Form.Control type="text" placeholder="Business Address" className='input-field' name="business_address" 
-                       {...register("business_address",
+                       <Form.Control type="text" placeholder="Business Address"  autoComplete="off" className='input-field' name="b_address" 
+                       {...register("b_address",
                        {"required":true})}/>
-                       {errors.business_address? <span style={{color:"red"}}>Please provide the business address</span>:
+                       {errors.b_address? <span className="error-msg">This field is required</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Mobile No/WhatsApp No" className='input-label'>
-                       <Form.Control type="text" placeholder="Mobile No/WhatsApp No" className='input-field' name="mobile_number" 
+                       <Form.Control type="text" placeholder="Mobile No/WhatsApp No"  autoComplete="off" className='input-field' name="mo_num" 
                        maxLength={10}
-                       {...register("mobile_number",
+                       {...register("mo_num",
                        {
                         'required':true,pattern:/[6-9][0-9]{9}/
                         })}
                         onInput={numberHandler}/>
-                         {errors.mobile_number?.type==="required" ? <span style={{color:"red"}}>This field is required</span>:
-                       errors.mobile_number?.type==="pattern" ? <span style={{color:"red"}}>Please enter valid mobile number</span>:
+                         {errors.mo_num?.type==="required" ? <span className="error-msg">This field is required</span>:
+                       errors.mo_num?.type==="pattern" ? <span className="error-msg">Please enter valid mobile number</span>:
                        ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
                  <FloatingLabel controlId="floatingNameofEntity" label="Production capacity in MW" className='input-label'>
-                       <Form.Control type="text" placeholder="Production capacity in MW" className='input-field' name="Production_Capacity" 
-                       {...register("Production_Capacity",
+                       <Form.Control type="text" placeholder="Production capacity in MW"  autoComplete="off" className='input-field' name="capacity" 
+                       {...register("capacity",
                        {"required":true,
-                       pattern:/^[1-9]\d+(\.\d{1,2})?$/})}
+                       pattern:/^(^[1-9]{1}[0-9]*)+(\.\d{1,2})?$/})}
                        maxLength={20}
                        onInput={numericHandler}
                        />
-                       {errors.Production_Capacity?.type==="required" ? <span style={{"color":"red"}}>Please enter Production Capacity</span> :
-                        errors.Production_Capacity?.type==="pattern"?<span style={{"color":"red"}}>Please provide valid Production Capacity</span>:
+                       {errors.capacity?.type==="required" ? <span className="error-msg">This field is required</span> :
+                        errors.capacity?.type==="pattern"?<span className="error-msg">Production Capacity must include 1 or 2 digits after precision</span>:
                         ""}
                      </FloatingLabel>
                  </div>
                  <div className='flex-items'>
-                 <FloatingLabel controlId="floatingTextarea2" label="Write your message" className='textarea-label'>
+                 <FloatingLabel controlId="floatingTextarea2" label="Write your message"  autoComplete="off" className='textarea-label'>
                        <Form.Control
                        className='input-field textarea'
                          as="textarea"
                          placeholder="Write your message"
-                         name="message"
-                         {...register("message")}
+                         name="comment"
+                         {...register("comment")}
+                         maxLength={200}
                        />
                        <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
                      </FloatingLabel>
                  </div>
-             </div>
-                 <div className='col-md-12'> 
+                 <div className='flex-items  pdt-15'> 
                        <div key="inline-checkbox" className="cust-checkbox">
                            <Form.Check inline type="checkbox">
-                               <Form.Check.Input type="checkbox" name="terms_and_conditions" {...register("terms_and_conditions",
-                              {
-                                required: "It is mandatory to check"
-                             })}/>
-                               <Form.Check.Label>I agree that I have read &amp; accept <a className="link-tc">
+                               <Form.Check.Input type="checkbox" name="is_terms_accepted" {...register("is_terms_accepted")}
+                               checked={true}/>
+                               <Form.Check.Label>I agree that I have read &amp; accept <a href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f"
+                               target="_blank" className="link-tc">
                                  <span>Terms & Conditions</span></a>
                                </Form.Check.Label>
                            </Form.Check>
-                           {<span style={{"color":"red"}}>{errors.terms_and_conditions && errors.terms_and_conditions.message}</span>}
                        </div>
                        <div className='btn-submit-sec'>
-                       <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}>{loading ? <div className='loaderB mx-auto'></div>
+                       <button type="submit" className="btn-bg btn-bg-dark btnsubmit" disabled={loading}
+                       onClick={(e)=>{
+                        setCheckErrors(true);
+                       }}>{loading ? <div className='loaderB mx-auto'></div>
                             : "Submit"}</button>
                        </div>
                  </div>
+             </div>
              </form>}
    
           </div>
         </div>
       </div>
     </section>
+
+    {showThanku &&
+     (<div className={`lead-pop-up-form`}>
+     <div className={`demat-account-form demat-account-form-new blog-thanku-popup`}>
+          <div className="thank-you-msg">
+              <div className="thank-logo">
+                  <div className="blog-thnu-circle">
+                  <LazyLoader src={thumbsup} className={'img-fluid'} width={"160"} height={"160"} alt="Loading" />
+                  </div>
+              </div>
+             
+          <div className="thank-content">
+                  <h2><strong>Thank You!</strong></h2>
+                  <p className="subheading">Thank you for sharing your details. Our representative shall get in touch with you shortly.</p>
+          </div>
+          </div>
+          
+      </div>       
+  </div>
+)}
 
 
     </>

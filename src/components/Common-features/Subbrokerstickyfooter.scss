@@ -159,18 +159,19 @@
         }
         .openbtn{
             // border-radius: 0 !important;
-            width: 100%;
-            background-color: $yellowColor;
+            width: 100%  ;
+            background-color: $yellowColor !important;
             font-size: 1.5rem;
             border-radius: 8px;
             font-weight: bold;
-            color: $primary;
-            text-align: center;
+            color: $primary !important;
+            text-align: center !important;
             vertical-align: middle;
             user-select: none;
             border: 1px solid transparent;
             padding: 11px 13px;
             font-family: $font-family-poppins-regular;
+            display: block !important;
         }
  
 }
