@@ -135,7 +135,10 @@ function LeadForm() {
   setFormType(1);
   setShowThanku(true);
   console.log(res);
-  }).catch(err=>console.log(err))
+  }).catch((err)=>{
+    setLoading(false);
+    console.log(err)
+    toast.error(err.message)})
   }
 
 
@@ -162,8 +165,10 @@ function LeadForm() {
   setFormType(1);
   setShowThanku(true);
   console.log(res);
-  }).catch(err=>console.log(err))
-
+  }).catch((err)=>{
+    setLoading(false);
+    console.log(err)
+    toast.error(err.message)})
   } 
   
   return (

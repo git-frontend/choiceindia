@@ -53,10 +53,10 @@ export default function Header() {
                         </div>
                         {/*<img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
   */}                      </a>
-                    <button className="navbar-toggler border" 
+                  {!window.location.pathname.includes('solar-loan/lead-form') &&  <button className="navbar-toggler border" 
                     onClick={ ()=>setShow(!show)} >
                         { show ? <FontAwesomeIcon icon={faBars} />  : <FontAwesomeIcon icon={faXmark} /> }
-                    </button>
+                    </button> }
                     {!window.location.pathname.includes('solar-loan/lead-form') && 
                      <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                      {window.location.pathname.includes('under25') ? (
