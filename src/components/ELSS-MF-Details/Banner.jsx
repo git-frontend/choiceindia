@@ -11,7 +11,7 @@ import NextSingleArrow from '../../assets/images/amc-details/next-arrow-single.s
 import NextDobbleArrow from '../../assets/images/amc-details/next-arrow-dobble.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function Banner() {
 
@@ -26,6 +26,7 @@ function Banner() {
     const [returnsFilter, setReturnsFilter] = useState('');
     const [sortFilter, setSortFilter] = useState('');
     const [isloading, setisloading] = useState(true);
+    const navigate = useNavigate();
     const getPosition = () => {
         const element = document.getElementById("showForm");
         if (element) {
