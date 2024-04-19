@@ -11,8 +11,9 @@ import PreDobbleArrow from '../../assets/images/amc-details/pre-arrow-dobble.svg
 import NextSingleArrow from '../../assets/images/amc-details/next-arrow-single.svg';
 import NextDobbleArrow from '../../assets/images/amc-details/next-arrow-dobble.svg';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Banner() {
+    const navigate = useNavigate();
     const [name, setName] = useState('hideform');
     const [amcWiseData, setAmcWiseData] = useState([]);
     const [categoryData, setCategoryData] = useState([]);
@@ -48,9 +49,9 @@ function Banner() {
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', getPosition);
-        initializeData()
+        initializeData();
     }, []);
+
     const initializeData = () => {
         let urlIdentity = window.location.pathname.split('/amc/')[1];
         let newurl = urlIdentity.split('-').join(' ');
@@ -61,25 +62,23 @@ function Banner() {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = Math.min(startIndex + itemsPerPage, categoryData.length);
     const getAMCData = (newurl) => {
-        rest.AMCListDetails(newurl).then(
-            res => {
+        rest.AMCListDetails(newurl)
+            .then(res => {
                 if (res && res.Response) {
                     setisloading(false);
                     setAmcWiseData([res]);
-                    setCategoryData(res.Response)
-                    setFilteredCategoryData(res.Response)
+                    setCategoryData(res.Response);
+                    setFilteredCategoryData(res.Response);
                 } else {
                     setisloading(false);
                     navigate(`/404`, { replace: true });
                 }
-            },
-            err => {
-                if (err && err.message && (err.message.indexOf('404') > -1)) {
-                    navigate(`/404`, { replace: true });
-                }
-                // console.log("ERROR", err);
-            }
-        );
+            })
+            .catch(err => {
+                console.error(err);
+                setisloading(false);
+                navigate(`/404`, { replace: true });
+            });
     };
 
     const schemeReturnsToFixed = (value) => {
