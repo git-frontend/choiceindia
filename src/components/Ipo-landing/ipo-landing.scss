@@ -557,7 +557,7 @@
     }
 
 .card-sticky{
-    position: sticky;
+    position: fixed;
     top: 100px;
     margin-bottom: -586px;
     .sticky-new{
@@ -615,6 +615,8 @@
     &.visibleCard{
         margin: 0;
         margin-bottom: 11rem;
+        left: 50%;
+        margin-left: 250px;
         .sticy-card-sub{
             width: 31.33%;
             padding: 0;
