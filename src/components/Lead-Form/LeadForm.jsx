@@ -42,7 +42,6 @@ function LeadForm() {
    const [formType,setFormType]=useState(1);
    const [error,setError]=useState(false);
    const [loading,setLoading]=useState(false);
-   console.log(formType);
    const {register,reset,handleSubmit, control, getValues,watch,
   formState:{errors}}=useForm({mode:'onChange'});
 
@@ -146,10 +145,12 @@ function LeadForm() {
   console.log("Response ",res);
   }).catch((err)=>{
   setLoading(false);
-  console.log(err)
-  toast.error(err.message)})
+  toast.error(err.message,{
+    position:"bottom-right"
+    })
+})
   }
-
+  
   const submitHandler=(data)=>{
   if(!watch("entityType")?.length){
   setError(true);
@@ -183,8 +184,9 @@ function LeadForm() {
   console.log(res);
   }).catch((err)=>{
     setLoading(false);
-    console.log(err)
-    toast.error(err.message)})
+    toast.error(err.message,{
+      position:"bottom-right"
+      })})
   }
 
 
@@ -214,8 +216,9 @@ function LeadForm() {
   console.log(res);
   }).catch((err)=>{
     setLoading(false);
-    console.log(err)
-    toast.error(err.message)})
+    toast.error(err.message,{
+      position:"bottom-right"
+      })})
   } 
   
   return (
