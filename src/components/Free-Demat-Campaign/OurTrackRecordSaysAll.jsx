@@ -269,12 +269,109 @@ function OurTrackRecordSaysAll() {
         
       });
   }
+  //New 
+  function IntradayNew() {
+    setToggleState(1)
+    // console.log("change",toggleState)
+    setlist([]);
+    tokens = '';
+    tokenList = [];
+    storefile = '';
+    setShowLoader(true)
+    let request = {
+      "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
+      "is_expert": 1,
+      "research_type": "intra_day",
+      "limit": 10,
+      "offset": 0,
+      "segment": "",
+      "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
+      "status": "Target Achieved",
+      "subcategory_id": "",
+      "search": "",
+      "id": "",
+      "user_id": "",
+      "timeline_enabled": 1,
+      "category_id": 2
+    }
+    rest.expertReportData(request).then(
+
+      res => {
+
+        if (res) {
+          // console.log("checkdd",res.response.research);
+          storefile = res.response.research;
+          // setlist(res.response.research);
+
+          res.response.research.forEach(ele => {
+
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+            ele['LTP'] = ele['LTP'] / 100;
+          });
+
+          setlist(res.response.research);
+          let unique = []
+          for (let i = 0; i < tokenList.length; i++) {
+            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
+          }
+          unique.forEach(element => {
+            if (!tokens.includes(element)) {
+              tokens += element
+            }
+          });
+          // console.log("SegmentId",tokens);
+          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': Data1,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+
+                res.Response.lMT.forEach((ele, index) => {
+                  // console.log("ele", ele)
+                  ele['LTP'] = ele['LTP'] / 100;
+                  ele.PrevClose = ele.PC / 100;
+                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+                  for (let i = 0; i < storefile.length; i++) {
+
+                    if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
+                      AllFilesValue = Object.assign(storefile[i], ele);
+                      multiValue.push(AllFilesValue)
+                      setShowLoader(false)
+                    } 
+                  }
+                })
+
+                setlist(multiValue);
+
+              }
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+              
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        
+      });
+  }
 
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
       
-      generateSessionId()
+      IntradayNew()
     }
   }, [rendercount])
 
@@ -319,7 +416,7 @@ function OurTrackRecordSaysAll() {
               <div className="col-xl-4 col-md-6">
                 <ul className="list-group list_group1">
                   <li className={toggleState === 1 ? "list-group-item list listsec" : "list-group-item list"}
-                    onClick={generateSessionId}> Intraday</li>
+                    onClick={IntradayNew}> Intraday</li>
                   <li className={toggleState === 2 ? "list-group-item list listsec" : "list-group-item list"}
                     onClick={FandOstocks}>F&O </li>
                 </ul>
