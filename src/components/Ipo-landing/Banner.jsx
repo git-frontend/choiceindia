@@ -238,7 +238,7 @@ function Banner() {
           <div className="sticky-new" >
             <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')}>
             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-              <NewDematAccountForm modifyHighLight={modifyHighLight} blogPop={blogPop} openAccount={openAccountMobile} setIsActive={setIsActive} />
+              <NewDematAccountForm modifyHighLight={modifyHighLight} blogPop={blogPop} openAccount={openAccountMobile} setIsActive={setIsActive} highlight={highlightForm}/>
               </GoogleReCaptchaProvider>
             </div>
           </div>
