@@ -439,12 +439,19 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                     <a href="javascript:void(0)" onClick={onClose} className="closebtn" >&times;</a>
                                 </div> */}
                     <div className="popup-sub-right">
-                        {window.location.pathname.includes("blog") &&  <div className="otp-ver-sec" ref={otpVerify}>
+                        {window.location.pathname.includes("blog") ? <div className="otp-ver-sec" ref={otpVerify}>
                                 <div className="otp-circle">
                                     <img src={enterOtp} className="img-fluid" height={52} width={52}/>
 
                                 </div>
-                                </div>}
+                                </div>:
+                                <div className="otp-ver-sec" ref={otpVerify}>
+                                <div className="otp-circle">
+                                    <img src={enterOtp} className="img-fluid" height={52} width={52}/>
+
+                                </div>
+                                </div>
+                                }
                                
                                 <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
                                     <div className="otpform-new" >
