@@ -129,12 +129,13 @@ function LeadForm() {
   mo_num:data.mobile_num,
   email:data.mail,
   e_bill:data.bill,
-  sqft:Number(data.Roof_Space),
+  sqft:data.Roof_Space,
   address:data.address,
-  capacity:Number(data.solar_plant_capacity),
+  capacity:data.solar_plant_capacity,
   comment:data.message,
   is_terms_accepted:data.terms_and_conditions
   }
+  // console.log(payload);
   setLoading(true);
   leadService.CustomerForm(payload).then((res)=>{
   setLoading(false);
@@ -168,12 +169,13 @@ function LeadForm() {
   b_address:data.business_address,
   r_address:data.residence_address,
   turnover:data.sales_turnover,
-  capacity:Number(data.Installed_capacity),
+  capacity:data.Installed_capacity,
   mo_num:data.mobile_number,
   dealings:data.dealing_with_brands,
   comment:data.message,
   is_terms_accepted:data.terms_and_conditions
   }
+  // console.log(payload);
   setLoading(true);
   leadService.EPCForm(payload).then(res=>{
   setLoading(false);
@@ -198,14 +200,15 @@ function LeadForm() {
   website:data.website,
   c_person:data.contact_person,
   mo_num:data.mo_num,
-  capacity:Number(data.capacity),
-  turnover:data.turnover,
+  capacity:data.capacity,
+  turnover:data.turn_over,
   epc:Number(data.epc),
   email:data.email,
   b_address:data.b_address,
   comment:data.comment,
   is_terms_accepted:data.is_terms_accepted
   }
+  // console.log("Payload "+payload);
   setLoading(true);
   leadService.OEMForm(payload).then(res=>{
   setLoading(false);
@@ -626,7 +629,7 @@ function LeadForm() {
                  <FloatingLabel controlId="floatingNameofEntity" label="Website" className='input-label mandate-none'>
                        <Form.Control type="text" placeholder="Website" className='input-field' name="website" 
                         autoComplete="off" {...register("website",{
-                        pattern:/^(https|http?:\/\/)?([\da-z.-]+)\.([a-z.]{2,})([/\w .-]*)*\/?$/}
+                        pattern:/^([https|http?:\/\/)?([\da-z.-]+)\.([a-z.]{2,})([/\w .-]*)*\/?$/}
                         )}/>
                         {errors.website && <span className="error-msg">Please enter valid url</span>}
                      </FloatingLabel>
