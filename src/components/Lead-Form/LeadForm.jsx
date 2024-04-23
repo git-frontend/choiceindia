@@ -10,7 +10,7 @@ import thumbsup from '../../assets/images/demat-images/thumbsup.gif';
 import LazyLoader from "../Common-features/LazyLoader";
 import "../Common-features/newdemat-form.scss"
 import {toast} from 'react-toastify';
-
+import rest from '../../Services/rest';
 function LeadForm() {
 
   // const options = [
@@ -42,6 +42,9 @@ function LeadForm() {
    const [formType,setFormType]=useState(1);
    const [error,setError]=useState(false);
    const [loading,setLoading]=useState(false);
+   const [ip,setip]=useState()
+   const [apiKey,setApiKey]=useState()
+   const [toggle,setToggle]=useState()
    const {register,reset,handleSubmit, control, getValues,watch,
   formState:{errors}}=useForm({mode:'onChange'});
 
@@ -70,6 +73,16 @@ function LeadForm() {
   
   }
   },[showThanku])
+
+  useEffect(()=>{
+    setToggle(true)
+    if(toggle){
+      storeIpAddress()
+      getCryptoNACHKey()
+
+    }
+
+  },[toggle])
  
  function numberHandler(e){
   e.target.value = e.target.value.replace(/[^0-9]/gi,"");
@@ -137,7 +150,7 @@ function LeadForm() {
   }
   // console.log(payload);
   setLoading(true);
-  leadService.CustomerForm(payload).then((res)=>{
+  leadService.CustomerForm(payload,ip,apiKey).then((res)=>{
   setLoading(false);
   reset();
   setToc(false);
@@ -177,7 +190,7 @@ function LeadForm() {
   }
   // console.log(payload);
   setLoading(true);
-  leadService.EPCForm(payload).then(res=>{
+  leadService.EPCForm(payload,ip,apiKey).then(res=>{
   setLoading(false);
   reset();
   setToc(false);
@@ -210,7 +223,7 @@ function LeadForm() {
   }
   // console.log("Payload "+payload);
   setLoading(true);
-  leadService.OEMForm(payload).then(res=>{
+  leadService.OEMForm(payload,ip,apiKey).then(res=>{
   setLoading(false);
   reset();
   setToc(false);
@@ -223,6 +236,22 @@ function LeadForm() {
       position:"bottom-right"
       })})
   } 
+
+  function storeIpAddress(){
+
+    rest.IpAddress().then(res=>{
+       setip(res.IPv4)
+      
+    })
+  }
+  function getCryptoNACHKey () {
+    const currentDate = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    const secretKey = "NEESISHKRUTRI";
+    const data = currentDate + secretKey;
+    var SHA256 = require("crypto-js/sha256");
+    const Key = SHA256(data);
+    setApiKey(Key)
+  }
   
   return (
     <>

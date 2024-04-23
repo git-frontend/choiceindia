@@ -5,28 +5,54 @@ const leadService={
 
 headerConfig: {
     headers: { 'content-type': 'application/json' }
-},    
+},  
 
-CustomerForm:async function(postdata){
+
+
+CustomerForm:async function(postdata,ipAddress,key){
     let api = new API_URLS();
     let url = api.getLeadFormURL();
-    return await axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+    return await axios.post(url, postdata, {
+        headers: {
+          'x-api-key': key,
+          'Content-Type': 'application/json;charset=UTF-8',
+          'Accept': 'application/json',
+          'ip': ipAddress
+  
+        }
+      }).then(({ data }) => {
         return data
     })
 },
 
- EPCForm:async function(postdata){
+ EPCForm:async function(postdata,ipAddress,key){
     let api = new API_URLS();
     let url = api.getLeadFormURL();
-    return await axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+    return await axios.post(url, postdata, {
+        headers: {
+          'x-api-key': key,
+          'Content-Type': 'application/json;charset=UTF-8',
+          'Accept': 'application/json',
+          'ip': ipAddress
+  
+        }
+      }).then(({ data }) => {
         return data
     })
  },
 
- OEMForm:async function(postdata){
+ OEMForm:async function(postdata,ipAddress,key){
     let api = new API_URLS();
     let url = api.getLeadFormURL();
-    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+    return axios.post(url, postdata, {
+        headers: {
+          'x-api-key': key,
+          'Content-Type': 'application/json;charset=UTF-8',
+          'Accept': 'application/json',
+          'ip': ipAddress
+  
+        }
+      }).then(({ data }) => {
         return data
     })
  }
