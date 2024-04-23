@@ -445,6 +445,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
                                 </div>
                                 </div>:
+                                window.location.pathname.indexOf('ipo')===1 &&
                                 <div className="otp-ver-sec" ref={otpVerify}>
                                 <div className="otp-circle">
                                     <img src={enterOtp} className="img-fluid" height={52} width={52}/>

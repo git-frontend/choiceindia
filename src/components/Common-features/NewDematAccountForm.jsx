@@ -903,7 +903,7 @@ function NewDematAccountForm(props) {
                 <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')} <Link to="/terms-conditions" target="_blank" className="term_link">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termlink')}</Link> </Modal.Body>
             </Modal>
 
-            <Modal className='common-modal-css common-modal-thankyou'
+            <Modal className='common-modal-css common-modal-thankyou new-demat-modal'
                 show={showErrorToaster}
                 size="md"
                 aria-labelledby="contained-modal-title-vcenter"
