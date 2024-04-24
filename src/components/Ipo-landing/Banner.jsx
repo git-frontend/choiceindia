@@ -160,7 +160,7 @@ function Banner() {
   }, []);
 
   function blogPop(isPopUp) {
-    console.log("Flag " + isPopUp);
+    //console.log("Flag " + isPopUp);
     if (isPopUp) {
       setFormMobile('');
     }

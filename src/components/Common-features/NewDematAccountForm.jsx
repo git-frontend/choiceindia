@@ -25,7 +25,7 @@ import LazyLoader from "../Common-features/LazyLoader";
 import utils from "../../Services/utils";
 
 function NewDematAccountForm(props) {
-    console.log("props",props)
+    //console.log("props",props)
     const [highlightForm, setHighlightForm] = useState(false);
     const inputRef = useRef(null);
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -593,11 +593,11 @@ function NewDematAccountForm(props) {
 
         useEffect(() => {
             setHighlightForm(props.highlight);
-            console.log("Highlight "+props.highlight);
+            //console.log("Highlight "+props.highlight);
             if(props.highlight){
             document.getElementById("mobile_no").focus();
             if(window.innerWidth<=992){
-            console.log("Pop up form is added");
+            //console.log("Pop up form is added");
             addBLogPopUp();
             }
             }
