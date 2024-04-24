@@ -150,7 +150,7 @@ function NewDematAccountForm(props) {
             setBlogThankuPopup('blog-thanku-popup');
             setTimeout(() => {
             addBLogPopUp();
-            },1500)
+            },20000)
         }
         else {
             setblogForm('');

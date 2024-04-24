@@ -29,7 +29,7 @@ function Fabdetailsbanner(props) {
     const [formMobile, setFormMobile] = useState('');
 
     function blogPop(isPopUp) {
-        console.log("Flag " + isPopUp);
+        //console.log("Flag " + isPopUp);
         if (isPopUp) {
             setFormMobile('');
         }
