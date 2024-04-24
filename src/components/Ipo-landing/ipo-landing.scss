@@ -202,10 +202,10 @@
             .openbtn {
                 border-radius: 0;
                 width: 100%;
-                background-color: $pricolor;
+                background-color: $pricolor !important;
                 font-size: 1.5rem;
                 font-weight: bold;
-                color: $whiteColor;
+                color: $whiteColor !important;
                 text-align: center;
                 vertical-align: middle;
                 user-select: none;
