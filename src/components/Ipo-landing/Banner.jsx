@@ -24,7 +24,7 @@ function Banner() {
     matches: window.innerWidth < 767 ? false : true,
   });
   const [isActive, setIsActive] = useState(false);
-  const [formMobile, setFormMobile] = useState('');
+  const [formMobile, setFormMobile] = useState('form-mobile');
   const [popUp, setPopUp] = useState(false);
   const [highlightForm, setHighlightForm] = useState(false);
   /**for slider */

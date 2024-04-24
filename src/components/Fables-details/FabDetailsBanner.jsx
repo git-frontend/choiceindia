@@ -26,7 +26,7 @@ function Fabdetailsbanner(props) {
     const [linkage, setLinkage] = useState(['facebook', 'whatsapp', 'linkedin', 'twitter']);
     const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice";
     const [popUp, setPopUp] = useState(false);
-    const [formMobile, setFormMobile] = useState('');
+    const [formMobile, setFormMobile] = useState('form-mobile');
 
     function blogPop(isPopUp) {
         //console.log("Flag " + isPopUp);
