@@ -45,6 +45,7 @@ function LeadForm() {
    const [ip,setip]=useState()
    const [apiKey,setApiKey]=useState()
    const [toggle,setToggle]=useState()
+   const [response,setResponse]=useState();
    const {register,reset,handleSubmit, control, getValues,watch,
   formState:{errors}}=useForm({mode:'onChange'});
 
@@ -156,7 +157,7 @@ function LeadForm() {
   setToc(false);
   setFormType(1);
   setShowThanku(true);
-  console.log("Response ",res);
+  setResponse(res);
   }).catch((err)=>{
   setLoading(false);
   toast.error(err.message,{
@@ -192,16 +193,23 @@ function LeadForm() {
   setLoading(true);
   leadService.EPCForm(payload,ip,apiKey).then(res=>{
   setLoading(false);
+  if(res.StatusCode===200){
+  setResponse(res);
   reset();
   setToc(false);
   setFormType(1);
   setShowThanku(true);
   console.log(res);
+  }
+  else{
+    toast.error(res.message,{position:"bottom-right"})
+  }
   }).catch((err)=>{
     setLoading(false);
     toast.error(err.message,{
       position:"bottom-right"
-      })})
+      })
+    })
   }
 
 
@@ -229,7 +237,7 @@ function LeadForm() {
   setToc(false);
   setFormType(1);
   setShowThanku(true);
-  console.log(res);
+  setResponse(res);
   }).catch((err)=>{
     setLoading(false);
     toast.error(err.message,{
@@ -780,7 +788,8 @@ function LeadForm() {
              
           <div className="thank-content">
                   <h2><strong>Thank You!</strong></h2>
-                  <p className="subheading">Thank you for sharing your details. Our representative shall get in touch with you shortly.</p>
+                  <p className="subheading">{response?.message ? response.message:
+                  "Thank you for sharing your details. Our representative shall get in touch with you shortly."}</p>
           </div>
           </div>
           
