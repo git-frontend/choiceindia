@@ -283,37 +283,7 @@ function OpenDematNew() {
 
                                 </a>
                             </InView>
-                            {/* <div>
-                            <a
-                            onClick={() => {
-                              setVideoVisibility(true);
-                            }}
-                            className={
-                              "open-vid " +
-                              (VideoVisibility ? "active" : "")
-                            }
-                          >
-                            {VideoVisibility ? (
-                              <iframe
-                               className="cust-video"
-                                src={`https://www.youtube.com/embed/3u0VZAHMwO0?si=sqbJJfBthND0ReKo`}
-                                title="YouTube video player"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                              ></iframe>
-                            ) : (
-                              <img
-                                src={`https://img.youtube.com/vi/3u0VZAHMwO0/maxresdefault.jpg`}
-                                className="img-fluid"
-                              />
-                            )}
-
-                            <div className="wrapper">
-                              <span className="tri"></span>
-                            </div>
-                          </a>
-                            </div> */}
+                           
                             <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id5')} id="id5">
                                 <h2>Key Features of Demat Account</h2>
                                 <LazyLoader src={features} className="img-fluid" alt={"Features of Demat Account"} width={"670"} height={"847"} /><br /><br />
