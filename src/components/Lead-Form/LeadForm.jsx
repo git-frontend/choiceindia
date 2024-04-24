@@ -160,9 +160,17 @@ function LeadForm() {
   setResponse(res);
   }).catch((err)=>{
   setLoading(false);
-  toast.error(err.message,{
-    position:"bottom-right"
-    })
+  //console.log("Error",err);
+  if (err && err.response && err.response.data && err.response.data.Message) {
+    toast.error(err.response.data.Message,{
+      position:"bottom-right"
+      })
+  } else {
+    toast.error("Something went wrong, please try again later!",{
+      position:"bottom-right"
+    });
+  }
+  
 })
   }
   
@@ -193,22 +201,23 @@ function LeadForm() {
   setLoading(true);
   leadService.EPCForm(payload,ip,apiKey).then(res=>{
   setLoading(false);
-  if(res.StatusCode===200){
   setResponse(res);
   reset();
   setToc(false);
   setFormType(1);
   setShowThanku(true);
   console.log(res);
-  }
-  else{
-    toast.error(res.message,{position:"bottom-right"})
-  }
   }).catch((err)=>{
     setLoading(false);
-    toast.error(err.message,{
-      position:"bottom-right"
-      })
+    if (err && err.response && err.response.data && err.response.data.Message) {
+      toast.error(err.response.data.Message,{
+        position:"bottom-right"
+        })
+    } else {
+      toast.error("Something went wrong, please try again later!",{
+        position:"bottom-right"
+      });
+    }
     })
   }
 
@@ -240,9 +249,16 @@ function LeadForm() {
   setResponse(res);
   }).catch((err)=>{
     setLoading(false);
-    toast.error(err.message,{
-      position:"bottom-right"
-      })})
+    if (err && err.response && err.response.data && err.response.data.Message) {
+      toast.error(err.response.data.Message,{
+        position:"bottom-right"
+        })
+    } else {
+      toast.error("Something went wrong, please try again later!",{
+        position:"bottom-right"
+      });
+    }
+  })
   } 
 
   function storeIpAddress(){
