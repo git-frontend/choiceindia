@@ -25,7 +25,7 @@ import LazyLoader from "../Common-features/LazyLoader";
 import utils from "../../Services/utils";
 
 function NewDematAccountForm(props) {
-    console.log("props",props)
+    // console.log("props",props)
     const [highlightForm, setHighlightForm] = useState(false);
     const inputRef = useRef(null);
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -358,13 +358,15 @@ function NewDematAccountForm(props) {
 
     function sendOTP() {
         showLoader('sendOTPLoader');
+        const encodedMobileNumber = btoa(mobileNumber);
         let request = {
             "whatsapp_consent": true,
-            "service_code": type1 == 'MF' ? "MF" : "JF",
-            "mobile_number": mobileNumber,
-            "product": type1 == 'MF' ? "INVESTICA" : "FINX",
-            "request_source": "CHOICEINDIA",
-            "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
+            // "service_code": type1 == 'MF' ? "MF" : "JF",
+            "mobile_number": encodedMobileNumber,
+            "type":"send",
+            // "product": type1 == 'MF' ? "INVESTICA" : "FINX",
+            // "request_source": "CHOICEINDIA",
+            // "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1 == 'MF' ? "true" : "1",
             "referred_id": refercode.current || referID || null,
             "sub_ref": subrefercode.current || null,
@@ -379,29 +381,31 @@ function NewDematAccountForm(props) {
             "utm_source": isBlog == "yes" ?(mfForm) ? UTMSource.current||"mf_lead_generation" : UTMSource.current || 'demat_lead_generation':(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' :(window.location.pathname.indexOf("/mutual-funds-investment") > -1) ? 'choice-mf-web': UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
-            "captchaResp": captchaToken,
-            "account_type": type1 == 'MF' ? "" : "all"
-            // "captcha": "1"
+            // "captchaResp": captchaToken,
+            "account_type": type1 == 'MF' ? "" : "all",
+            // "captcha": "1",
+            "apps_flyer": null
 
         };
         
-        openAccountService.sendOTP(request, type1).then((res) => {
+        openAccountService.sendOTP(request,captchaToken ).then((res) => {
             hideLoader('sendOTPLoader');
-            if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
-                utils.pushDataLayerEvent({
-                    'event': 'ci_onboard_lead_initiated',
-                    'page_path': window.location.pathname,
-                    'page_url': window.location.href,
-                    'lead_source': 'choiceindia',
-                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                    'leadId': res.data.Body.leadid,
-                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                })
-                otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
+            console.log("res",res)
+            if (res && res.StatusCode === 200 ) {
+                // utils.pushDataLayerEvent({
+                //     'event': 'ci_onboard_lead_initiated',
+                //     'page_path': window.location.pathname,
+                //     'page_url': window.location.href,
+                //     'lead_source': 'choiceindia',
+                //     // 'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                //     'leadId': res.data.Body.leadid,
+                //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                // })
+                otpSessionID.current = (type1 == 'MF') ? res.Body.session_id : res.Body.otp_session_id;
                 // setForm('sent-otp')
                 // setformdata()
                 setShowThanku(prevState => {
-                    return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.data.Body.new_lead ? res.data.Body.new_lead : false }
+                    return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.Body.new_lead ? res.Body.new_lead : false }
                 });
                 fetchQueryParams();
                 // resetOTPPopup();
@@ -414,8 +418,8 @@ function NewDematAccountForm(props) {
             }
         }).catch((error) => {
             hideLoader('sendOTPLoader');
-            if (error && error.response && error.response.data && error.response.data.Message) {
-                setAPIError(error.response.data.Message);
+            if (error && error.response && error.response.Body && error.response.Body.Message) {
+                setAPIError(error.response.Body.Message);
                 showAPIErrorToaster();
             } else {
                 setAPIError("Something went wrong, please try again later!");
@@ -575,11 +579,11 @@ function NewDematAccountForm(props) {
 
         useEffect(() => {
             setHighlightForm(props.highlight);
-            console.log("Highlight "+props.highlight);
+            // console.log("Highlight "+props.highlight);
             if(props.highlight){
             document.getElementById("mobile_no").focus();
             if(window.innerWidth<=992){
-            console.log("Pop up form is added");
+            // console.log("Pop up form is added");
             addBLogPopUp();
             }
             }

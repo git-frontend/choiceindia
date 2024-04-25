@@ -25,8 +25,8 @@ const config = {
   liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
   liveNewResearchReportURL:
     "https://finx.choiceindia.com/api/researchreport/v2/api",
-  UATSSOBaseURL: "https://sso-api.choicetechlab.com/",
-  liveSSOBaseURL: "https://sso-api.choiceindia.com/",
+  UATSSOBaseURL: "https://accounts.choicebroking.in/lmsbrok/",
+  liveSSOBaseURL: "https://accounts.choicebroking.in/lmsbrok/",
   UATOnbBaseURL: "https://uat-pwa.choicetechlab.com/",
   liveOnbBaseURL: "https://accounts.choiceindia.com/",
   UATLMSBaseURL: "https://lms-api.choicetechlab.com/",
@@ -193,7 +193,7 @@ export class API_URLS {
   verifyInvesOTPURL = "investica-verifyotp";
   OTPInvesOnCallURL = "call-for-otp";
   resendInvesOTPURL = "investica-resendotp";
-  sendOTPURL = "sign-up";
+  sendOTPURL = "finx/lead/add";
   resendOTPURL = "resend-otp";
   nbfcResendOTPURL = "api/resend-otp";
   OTPOnCallURL = "otp-on-call";
