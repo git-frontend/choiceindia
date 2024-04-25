@@ -25,11 +25,7 @@ import LazyLoader from "../Common-features/LazyLoader";
 import utils from "../../Services/utils";
 
 function NewDematAccountForm(props) {
-<<<<<<< HEAD
-    // console.log("props",props)
-=======
     //console.log("props",props)
->>>>>>> eb60681d87f180cee1b1db85fbb9e3dad4477016
     const [highlightForm, setHighlightForm] = useState(false);
     const inputRef = useRef(null);
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
