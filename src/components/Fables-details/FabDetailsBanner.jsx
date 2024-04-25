@@ -26,10 +26,10 @@ function Fabdetailsbanner(props) {
     const [linkage, setLinkage] = useState(['facebook', 'whatsapp', 'linkedin', 'twitter']);
     const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice";
     const [popUp, setPopUp] = useState(false);
-    const [formMobile, setFormMobile] = useState('');
+    const [formMobile, setFormMobile] = useState('form-mobile');
 
     function blogPop(isPopUp) {
-        console.log("Flag " + isPopUp);
+        //console.log("Flag " + isPopUp);
         if (isPopUp) {
             setFormMobile('');
         }
@@ -102,6 +102,7 @@ function Fabdetailsbanner(props) {
     //     );
     // }
     const openAccountMobile = useRef("");
+    const mobileForm=useRef("");
     const handleClick = (event) => {
         // setIsActive(current => !current);
         if (popUp) {
@@ -324,9 +325,9 @@ function Fabdetailsbanner(props) {
                                                             {/* <DematFormCta /> */}
 
                                                             <div className={name2}>
-                                                                <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')}>
+                                                                <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')} ref={mobileForm}>
                                                                     <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop} highlight={highlightForm} modifyHighLight={modifyHighLight} formName={props.formName} />
+                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop} highlight={highlightForm} modifyHighLight={modifyHighLight} formName={props.formName} mobileForm={mobileForm}/>
                                                                     </GoogleReCaptchaProvider>
 
                                                                     <div className="stickyform formwrap d-flex justify-content-end ">

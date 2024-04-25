@@ -1,6 +1,9 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
+.new-demat-modal{
+z-index:9999999999999999 !important;
+}
 //blog lead form for pupup in responsive view
 .blog-pop-up-form{
 	@media (max-width:$md){
