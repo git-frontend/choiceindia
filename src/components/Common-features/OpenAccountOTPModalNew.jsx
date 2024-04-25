@@ -26,7 +26,6 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     const [show,setShow] = useState(true);
     const [searchParams, setSearchParams] = useSearchParams();
     // const [otpparam, setOtpparam] = useState('');
-    const closeButton = useRef("");
     const [outCome,setOutCome]= useState();
 
      const otpVerify =useRef("");
@@ -98,16 +97,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
     useEffect(() => {
         // setShow(() => true);
-        console.log("Pop up "+isPopUp);
-        if (window.location.pathname.includes('blog') === true && !isPopUp) {
-            if (window.innerWidth <= 992) {
-                closeButton.current.style.display = "block";
-            }
-        }
-        else {
-            if(closeButton.current)
-            closeButton.current.style.display = "none";
-        }
+        //console.log("Pop up "+isPopUp);
         generateRandomNumber();
         setCount(30);
     }, []);
@@ -526,12 +516,12 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                 </div>
-                    {!isPopUp && <span className="close-btn-mdl" ref={closeButton} onClick={() => {
+                                {/* {!isPopUp && <span className="close-btn-mdl" ref={closeButton} onClick={() => {
                         setIsActive(false);
                         openAccount.current.style.zIndex = 9999999999;
                         setBlogPopUpForm("");
                         blogPop(false);
-                                }}>&times;</span>}
+                                }}>&times;</span>} */}
                             </div>
                         </div>
                     {/* </div> */}
