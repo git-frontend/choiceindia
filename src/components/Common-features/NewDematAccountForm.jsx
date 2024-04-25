@@ -135,11 +135,19 @@ function NewDematAccountForm(props) {
 
     function addBLogPopUp() {
     if (window.innerWidth <= 992) {
+        if(props.mobileForm.current.classList.contains('p-show')){
         setBlogPopUpForm('blog-pop-up-form'); 
+        props.blogPop(true);
+        setIsPopUp(true);
+        }
+        else{
+        setBlogPopUpForm('');
+        props.blogPop(false);
+        setIsPopUp(false);
+        }
         //setIsPopUp(true);
         }
-         props.blogPop(true);
-         setIsPopUp(true);
+         
         
     }
 
@@ -150,7 +158,7 @@ function NewDematAccountForm(props) {
             setBlogThankuPopup('blog-thanku-popup');
             setTimeout(() => {
             addBLogPopUp();
-            },40000)
+            },20000)
         }
         else {
             setblogForm('');

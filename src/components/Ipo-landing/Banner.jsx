@@ -42,6 +42,8 @@ function Banner() {
 
   const [outCome, setOutCome] = useState();
 
+  const mobileForm=useRef("");
+
   /**function to generate random probabity number for AB test */
   function generateRandomNumber() {
     var random = Math.random();
@@ -236,9 +238,9 @@ function Banner() {
       <div className={`${name2}`+ ' card-sticky visibleCard'}>
         <div className="container d-flex justify-content-end">
           <div className="sticky-new" >
-            <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')}>
+            <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')} ref={mobileForm}>
             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-              <NewDematAccountForm modifyHighLight={modifyHighLight} blogPop={blogPop} openAccount={openAccountMobile} setIsActive={setIsActive} highlight={highlightForm}/>
+              <NewDematAccountForm modifyHighLight={modifyHighLight} blogPop={blogPop} openAccount={openAccountMobile} setIsActive={setIsActive} highlight={highlightForm} isActive={isActive} mobileForm={mobileForm}/>
               </GoogleReCaptchaProvider>
             </div>
           </div>

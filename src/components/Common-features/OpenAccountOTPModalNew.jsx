@@ -105,6 +105,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
             }
         }
         else {
+            if(closeButton.current)
             closeButton.current.style.display = "none";
         }
         generateRandomNumber();
@@ -525,12 +526,12 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                 </div>
-                    <span className="close-btn-mdl" ref={closeButton} onClick={() => {
+                    {!isPopUp && <span className="close-btn-mdl" ref={closeButton} onClick={() => {
                         setIsActive(false);
                         openAccount.current.style.zIndex = 9999999999;
                         setBlogPopUpForm("");
                         blogPop(false);
-                                }}>&times;</span>
+                                }}>&times;</span>}
                             </div>
                         </div>
                     {/* </div> */}
