@@ -436,63 +436,63 @@ function OpenDematNew() {
                             </InView>
                             <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id8')} id="id8">
                                 <h2><a href="/blog/demat-account-charges/">Demat Account Charges</a></h2>
-                                <p>While opening a Demat account is often free or comes at a nominal charge, there are various fees and charges associated with maintaining and using it. Some common Demat account charges include</p>
-                                <LazyLoader src={charges} className="img-fluid" alt={"Demat Account Charges"} width={"670"} height={"1608"} /><br /><br />
+                                <p>Opening a Demat account is often free or even if it's charged, it usually requires a nominal fee. Other than the opening fees, there are various fees and charges associated with maintaining and using it. Some common Demat account charges include</p>
+                                {/* <LazyLoader src={charges} className="img-fluid" alt={"Demat Account Charges"} width={"670"} height={"1608"} /><br /><br /> */}
                                 <ol className="drk-bld">
                                     <li>
-                                        <h3>Account Opening Fee</h3>
-                                        <p>This is a one-time charge for opening a Demat account. It varies from one Depository Participant (DP)/brokerage company to another.</p>
-                                    </li>
-                                    <li>
                                         <h3>Annual Maintenance Charges (AMC)</h3>
-                                        <p>These are yearly fees for maintaining a Demat account. They can range from a few hundred to a couple of thousand rupees, depending on your DP.</p>
+                                        {/* <p>This is a one-time charge for opening a Demat account. It varies from one Depository Participant (DP)/brokerage company to another.</p> */}
                                     </li>
                                     <li>
                                         <h3>Transaction Charges</h3>
-                                        <p>Each time you buy or sell securities, you may be charged a transaction fee. This fee can be a fixed amount or a percentage of the transaction value.</p>
+                                        {/* <p>These are yearly fees for maintaining a Demat account. They can range from a few hundred to a couple of thousand rupees, depending on your DP.</p> */}
                                     </li>
                                     <li>
                                         <h3>Debit Transaction Charges</h3>
-                                        <p>These charges apply when you sell or transfer securities from your Demat account. They can be a fixed fee or a percentage of the transaction value.</p>
+                                        {/* <p>Each time you buy or sell securities, you may be charged a transaction fee. This fee can be a fixed amount or a percentage of the transaction value.</p> */}
                                     </li>
                                     <li>
                                         <h3>Dematerialization Charges</h3>
-                                        <p>Applicable when converting physical shares to electronic form.</p>
+                                        {/* <p>These charges apply when you sell or transfer securities from your Demat account. They can be a fixed fee or a percentage of the transaction value.</p> */}
                                     </li>
                                     <li>
                                         <h3>Rematerialization Charges</h3>
-                                        <p>Incurred when converting electronic shares back to physical form.</p>
+                                        {/* <p>Applicable when converting physical shares to electronic form.</p> */}
                                     </li>
                                     <li>
                                         <h3>Pledge Charges</h3>
-                                        <p>A fee is imposed when you pledge your securities for margin trading or loans.</p>
+                                        {/* <p>Incurred when converting electronic shares back to physical form.</p> */}
                                     </li>
                                     <li>
                                         <h3>POA (Power of Attorney) Charges</h3>
-                                        <p>If you grant a Power of Attorney to your broker or DP, there may be charges associated with this service.</p>
+                                        {/* <p>A fee is imposed when you pledge your securities for margin trading or loans.</p> */}
                                     </li>
                                     <li>
-                                        <h3>Custodian Fee</h3>
-                                        <p>For certain types of securities, like foreign securities, you might incur custodian fees.</p>
+                                        <h3>Custodian Fees</h3>
+                                        {/* <p>If you grant a Power of Attorney to your broker or DP, there may be charges associated with this service.</p> */}
                                     </li>
                                     <li>
                                         <h3>Failed Transaction Charges</h3>
-                                        <p>If a transaction fails due to insufficient funds or other reasons, you may be charged a penalty.</p>
+                                        {/* <p>For certain types of securities, like foreign securities, you might incur custodian fees.</p> */}
                                     </li>
                                     <li>
                                         <h3>Account Closure Charges</h3>
-                                        <p>This applies if you decide to <a href="/blog/how-to-close-a-demat-account/">close your Demat account.</a></p>
+                                        {/* <p>If a transaction fails due to insufficient funds or other reasons, you may be charged a penalty.</p> */}
                                     </li>
                                     <li>
                                         <h3>Stamp Duty</h3>
-                                        <p>Stamp duty charges vary by state and are levied when you sell securities.</p>
+                                        {/* <p>This applies if you decide to <a href="/blog/how-to-close-a-demat-account/">close your Demat account.</a></p> */}
                                     </li>
+                                    {/* <li>
+                                        <h3>Stamp Duty</h3>
+                                        <p>Stamp duty charges vary by state and are levied when you sell securities.</p>
+                                    </li> */}
                                 </ol>
                                 <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat accounts</a>, making it cost-effective for investors.</p>
-                                <div className="flex-image">
+                                {/* <div className="flex-image">
                                     <LazyLoader src={openingcharges} className="img-fluid" alt={"Choice Demat Account Opening Charges"} width={"356"} height={"485"} />
                                     <LazyLoader src={amccharges} className="img-fluid" alt={"Choice AMC Charges"} width={"356"} height={"485"} />
-                                </div>
+                                </div> */}
                             </InView>
                             <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id6')} id="id6">
                                 <h2><a href="/blog/how-to-open-demat-account/">How to Open a Demat Account?</a></h2>
