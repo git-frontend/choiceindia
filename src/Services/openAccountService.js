@@ -23,7 +23,7 @@ const formheaders = {
   "AuthType": "cp",
   "product": "FINX",
   "ServiceCode": "JF",
-  "deviceInfo": { "app_name": "Choice Finx", "app_package_name": "com.choiceequitybroking.jiffy", "app_version": "6.0.0.240408(362)", "deviceId": "android_0d86d8b2451b693e", "fcm_token": "chdR9RXlSdmSuIV9tdcooR:APA91bHr17lV_67ZT5wh1o7CinXfS75Mm6LftOxGB8Kk3SJPflidbdU3FNOcZVFeKicCTaMF26Lx65bIJWGmv1iCc7mzE_zBU5LmSQoiOV5RhrcX1AbTYfD9YmidMA-eosC8y3u28XO3", "ipAddress": "152.58.51.121", "model": "Android, vivo, V2246, OsVersion : 14(34)", "platform": "android" }
+  "deviceInfo": "{'platform':'Web'}"
   }
 }
 

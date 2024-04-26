@@ -427,7 +427,7 @@ function DematAccountForm(props) {
             // "captchaResp": captchaToken,
             "account_type": type1 == 'MF' ? "" : "all",
             // "captcha": "1"
-            "apps_flyer": null
+           
 
         };
         // console.log("request", request)
