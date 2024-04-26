@@ -25,8 +25,12 @@ const config = {
   liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
   liveNewResearchReportURL:
     "https://finx.choiceindia.com/api/researchreport/v2/api",
-  UATSSOBaseURL: "https://accounts.choicebroking.in/lmsbrok/",
-  liveSSOBaseURL: "https://accounts.choicebroking.in/lmsbrok/",
+  UATNEWSSOBaseURL: "https://accounts.choicebroking.in/lmsbrok/",
+  liveNEWSSOBaseURL: "https://accounts.choicebroking.in/lmsbrok/",
+  UATSSOBaseURL: "https://sso-api.choiceindia.com/",
+  liveSSOBaseURL: "https://sso-api.choiceindia.com/",
+
+
   UATOnbBaseURL: "https://uat-pwa.choicetechlab.com/",
   liveOnbBaseURL: "https://accounts.choiceindia.com/",
   UATLMSBaseURL: "https://lms-api.choicetechlab.com/",
@@ -71,6 +75,8 @@ export class API_URLS {
   jiffyResearchURL = "";
   /** SSO Base URL */
   SSOServerURL = "";
+
+  NEWSSOServerURL="";
   /**File Download Base URL*/
   FileURL = "";
 
@@ -329,6 +335,7 @@ export class API_URLS {
 
     this.setJiffyURL(config[configKey + "JiffyURL"]);
     this.setSSOServerURL(config[configKey + "SSOBaseURL"]);
+    this.setNEWSSOServerURL(config[configKey + "NEWSSOBaseURL"]);
 
     this.setJiffyServerURL(config[configKey + "JiffyServerURL"]);
     this.setServerURL(config[configKey + "ServerURL"]);
@@ -402,6 +409,9 @@ export class API_URLS {
    */
   setSSOServerURL = (url) => {
     this.SSOServerURL = url;
+  };
+  setNEWSSOServerURL = (url) => {
+    this.NEWSSOServerURL = url;
   };
   /**
    * Set Server URL
@@ -591,7 +601,7 @@ export class API_URLS {
     return this.jiffyResearchURL + this.addMarketInsiteNewURL;
   }
   getSendOTPURL() {
-    return this.SSOServerURL + this.sendOTPURL;
+    return this.NEWSSOServerURL + this.sendOTPURL;
     // return "https://sso-beta.choiceindia.com/" + this.sendOTPURL;
   }
 
@@ -606,7 +616,7 @@ export class API_URLS {
   }
 
   getVerifyOTPURL() {
-    return this.SSOServerURL + this.verifyOTPURL;
+    return this.NEWSSOServerURL + this.verifyOTPURL;
     // return "https://sso-beta.choiceindia.com/" + this.verifyOTPURL;
   }
 
