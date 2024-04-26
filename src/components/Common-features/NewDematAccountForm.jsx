@@ -79,7 +79,7 @@ function NewDematAccountForm(props) {
     var source = useRef('');
     var subrefercode = useRef('');
     var subrefercodeInv = useRef('');
-    var otpSessionID = useRef('');
+    // var otpSessionID = useRef('');
     var isMobile = useRef(isMobileDevice());
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
@@ -90,9 +90,17 @@ function NewDematAccountForm(props) {
     const [showReferInput, setShowReferInput] = useState(() => false);
     //creating a state variable isPopUp for seeing whether the popup as come or not
     const [isPopUp, setIsPopUp] = useState(false);
-
-   
-
+    const [otpSessionID, setOTPSessionID] = useState(null)
+    // const [type, setType] = useState('send')
+    // console.log("fdf",type)
+    // const updateType = (newType) => {
+    //     setType(newType);
+    // };
+    // useEffect(() => {
+    //     if (type === 'resend') {
+    //         sendOTP(type);
+    //     }
+    // }, [type]);
     // const[form, setForm]=useState("Open-demat-account")
     const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -382,14 +390,22 @@ function NewDematAccountForm(props) {
         // });
     }
 
-    function sendOTP() {
+    const [type, setType] = useState('send');
+    console.log("type",type)
+    const updateType = (newType) => {
+        setType(newType);
+        sendOTP(newType); // Call sendOTP with the updated type
+    };
+
+    function sendOTP(type) {
+        console.log('Sending OTP with type:', type);
         showLoader('sendOTPLoader');
         const encodedMobileNumber = btoa(mobileNumber);
         let request = {
             "whatsapp_consent": true,
             // "service_code": type1 == 'MF' ? "MF" : "JF",
             "mobile_number": encodedMobileNumber,
-            "type":"send",
+            "type":type,
             // "product": type1 == 'MF' ? "INVESTICA" : "FINX",
             // "request_source": "CHOICEINDIA",
             // "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
@@ -413,7 +429,7 @@ function NewDematAccountForm(props) {
             "apps_flyer": null
 
         };
-        
+        console.log("request",request)
         openAccountService.sendOTP(request,captchaToken ).then((res) => {
             hideLoader('sendOTPLoader');
             console.log("res",res)
@@ -427,7 +443,7 @@ function NewDematAccountForm(props) {
                 //     'leadId': res.data.Body.leadid,
                 //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 // })
-                otpSessionID.current = (type1 == 'MF') ? res.Body.session_id : res.Body.otp_session_id;
+                setOTPSessionID((type1 == 'MF') ? res.Body.session_id : res.Body.otp_session_id)
                 // setForm('sent-otp')
                 // setformdata()
                 setShowThanku(prevState => {
@@ -439,13 +455,13 @@ function NewDematAccountForm(props) {
 
 
             } else {
-                setAPIError("Something went wrong, please try again later!");
+                setAPIError("Something went wrong, please try again laterrrrr!");
                 showAPIErrorToaster();
             }
         }).catch((error) => {
             hideLoader('sendOTPLoader');
-            if (error && error.response && error.response.Body && error.response.Body.Message) {
-                setAPIError(error.response.Body.Message);
+            if (error && error.response && error.response.data && error.response.data.Message) {
+                setAPIError(error.response.data.Message); 
                 showAPIErrorToaster();
             } else {
                 setAPIError("Something went wrong, please try again later!");
@@ -572,7 +588,7 @@ function NewDematAccountForm(props) {
 
     useEffect(() => {
         if (captchaToken) {
-            sendOTP();
+            sendOTP(type);
         }
     }, [captchaToken]);
 
@@ -900,7 +916,7 @@ function NewDematAccountForm(props) {
                 showOTP && !showThanku.showModal && (
                     <div className={`${blogPopUpForm}`}>
                       <div className={`demat-account-form demat-account-form-new ${blogFormOtp}`}>
-                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} setIsActive={props.setIsActive} openAccount={props.openAccount} setBlogPopUpForm={setBlogPopUpForm} blogPop={props.blogPop} isPopUp={isPopUp}></OpenAccountOTPModalNew>
+                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} setIsActive={props.setIsActive} openAccount={props.openAccount} setBlogPopUpForm={setBlogPopUpForm} blogPop={props.blogPop} isPopUp={isPopUp}  updateType={updateType}></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
                         <Button variant="primary" type="submit" className={showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}></Button>

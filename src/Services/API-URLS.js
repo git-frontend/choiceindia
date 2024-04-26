@@ -197,7 +197,7 @@ export class API_URLS {
   resendOTPURL = "resend-otp";
   nbfcResendOTPURL = "api/resend-otp";
   OTPOnCallURL = "otp-on-call";
-  verifyOTPURL = "verify-otp";
+  verifyOTPURL = "finx/otp/verify";
   nbfcverifyOTPURL = "api/verify-otp";
   // for event calendar
   eventdetailsURL = "cm/ProfileMkt/EventDetails";

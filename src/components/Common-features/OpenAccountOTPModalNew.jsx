@@ -13,7 +13,8 @@ import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
 import utils from "../../Services/utils";
 
-function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick,setIsActive,openAccount,setBlogPopUpForm,blogPop,isPopUp}) {
+function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick,setIsActive,openAccount,setBlogPopUpForm,blogPop,isPopUp, updateType }) {
+    console.log("otpSessionID",otpSessionID)
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -136,7 +137,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
             showLoader('verifyLoader');
             let request = {
                 otp: otp,
-                session_id: otpID.current
+                session_id: otpSessionID
             };
 
             openAccountService.verifyOTP(request, type2).then((res) => {
@@ -322,7 +323,14 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     //         return params;
     //       }); 
     // }, [otpparam]);
-    
+    const handleUpdateType = () => {
+        
+        updateType('resend');
+    };
+    const handleUpdateTypeCall = () => {
+        
+        updateType('otp-on-call');
+    };
     return (
         <>
             {/* <div id="opt-box-id">
@@ -483,7 +491,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         {
                                             !count ?
                                                 <div className="d-flex align-items-center justify-content-between pt-3">
-                                                    <button className="resend" onClick={resendOTP}>
+                                                    <button className="resend" onClick={handleUpdateType}>
                                                         {/* {loaders.resendOTPLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading123...</span></Spinner>
                                                         : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresend')} */}
                                                         Get OTP <span className="bluetxt">SMS</span>
@@ -492,7 +500,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                                     <span className="ortext">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otportext')}</span>
 
                                                     
-                                                    <button className="resend" onClick={getOTPOnCall}>
+                                                    <button className="resend" onClick={handleUpdateTypeCall}>
                                                         {/* {loaders.OTPOnCallLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading456...</span></Spinner>
                                                         
                                                         : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otponcall')} */}
