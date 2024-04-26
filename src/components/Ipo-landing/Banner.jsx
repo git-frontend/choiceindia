@@ -1,15 +1,15 @@
 import React from "react";
 import icon1 from '../../assets/images/ipo-landing/bajaj-energy.svg'
 import LazyLoader from '../Common-features/LazyLoader';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import cmsService from "../../Services/cmsService";
 import utils from "../../Services/utils";
 import { Accordion } from "react-bootstrap";
 import Slider from 'react-slick';
 import img8 from '../../assets/images/ipo-landing/arrow-right.svg';
-import {useNavigate} from 'react-router-dom'
-
-
+import { useNavigate } from 'react-router-dom'
+import NewDematAccountForm from "../Common-features/NewDematAccountForm";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function Banner() {
 
   const [name, setName] = useState('card-sticky');
@@ -17,14 +17,17 @@ function Banner() {
   const [apiData, setApiData] = useState();
   const [show, setshow] = useState(false);
   const [rendercount, setRenderCount] = useState(false);
- const AllFilesValue={}
- let navigate = useNavigate();
-/**mobile view */
+  const AllFilesValue = {}
+  let navigate = useNavigate();
+  /**mobile view */
   const [view, setView] = useState({
     matches: window.innerWidth < 767 ? false : true,
   });
-
-/**for slider */
+  const [isActive, setIsActive] = useState(false);
+  const [formMobile, setFormMobile] = useState('form-mobile');
+  const [popUp, setPopUp] = useState(false);
+  const [highlightForm, setHighlightForm] = useState(false);
+  /**for slider */
   const settings = {
     infinite: true,
     speed: 1500,
@@ -37,10 +40,12 @@ function Banner() {
 
   };
 
-  const [outCome,setOutCome]= useState();
+  const [outCome, setOutCome] = useState();
+
+  const mobileForm=useRef("");
 
   /**function to generate random probabity number for AB test */
-  function generateRandomNumber(){
+  function generateRandomNumber() {
     var random = Math.random();
 
     if (random < 0.75) {
@@ -50,21 +55,21 @@ function Banner() {
     }
   }
 
-/** for position identifier */
+  /** for position identifier */
   const getPosition = () => {
     const element = document.getElementById("showCard");
     if (element) {
       const rect = element.getBoundingClientRect();
 
       if (rect.top.toFixed() < 530) {
-        setName('card-sticky visibleCard');
+        setName('card-sticky-blog visibleBlog');
       } else {
         setName('card-sticky');
       }
     }
   };
 
-/** for position identifier */
+  /** for position identifier */
   const getPosition2 = () => {
     const element = document.getElementById("showCard");
     if (element) {
@@ -80,8 +85,8 @@ function Banner() {
 
   /** company ipo detail */
   function loadCompanyIpo() {
-    let urlIdentity=window.location.pathname.split('/ipo/')[1]
-    let values ={}
+    let urlIdentity = window.location.pathname.split('/ipo/')[1]
+    let values = {}
     cmsService.companyIpoService().then(
       res => {
         if (res) {
@@ -92,49 +97,49 @@ function Banner() {
           values.forEach(ele => {
             if (!AllFilesValue[ele.slug_url]) {
               if ((urlIdentity == ele.slug_url)) {
-                
+
                 AllFilesValue['Body'] = [];
                 AllFilesValue['Body'].push(ele)
               }
             }
-            
-           
+
+
           })
 
-          if(AllFilesValue.Body){
+          if (AllFilesValue.Body) {
             setApiData(AllFilesValue.Body);
-           
-          }else{
+
+          } else {
             navigate(`/404`, { replace: true });
           }
-          
-          document.title = AllFilesValue.Body[0].ipo_meta_title ? AllFilesValue.Body[0].ipo_meta_title : ''  ;
-      document.getElementById('meta-tags').content = AllFilesValue.Body[0].ipo_meta_content ? AllFilesValue.Body[0].ipo_meta_content : '';
-      document.getElementById('canonical-link').href = AllFilesValue.Body[0].ipo_canonical_link ? AllFilesValue.Body[0].ipo_canonical_link: '';
 
-      document.getElementById('meta-type').content = AllFilesValue.Body[0].ipo_og_type ? AllFilesValue.Body[0].ipo_og_type : ''; 
-      document.getElementById('meta-url').content = AllFilesValue.Body[0].ipo_og_url ? AllFilesValue.Body[0].ipo_og_url : ''; 
-      document.getElementById('meta-descr').content = AllFilesValue.Body[0].ipo_og_description ? AllFilesValue.Body[0].ipo_og_description : ''; 
-      document.getElementById('meta-title').content = AllFilesValue.Body[0].ipo_og_title ? AllFilesValue.Body[0].ipo_og_title : '';
-      document.getElementById('meta-image').content = AllFilesValue.Body[0].ipo_og_image ? `https://cmsapi.choiceindia.com/assets/${AllFilesValue.Body[0].ipo_og_image}` : '';
+          document.title = AllFilesValue.Body[0].ipo_meta_title ? AllFilesValue.Body[0].ipo_meta_title : '';
+          document.getElementById('meta-tags').content = AllFilesValue.Body[0].ipo_meta_content ? AllFilesValue.Body[0].ipo_meta_content : '';
+          document.getElementById('canonical-link').href = AllFilesValue.Body[0].ipo_canonical_link ? AllFilesValue.Body[0].ipo_canonical_link : '';
 
-      document.getElementById('twitter-meta-url').content = AllFilesValue.Body[0].ipo_twitter_url ? AllFilesValue.Body[0].ipo_twitter_url : ''; 
-      document.getElementById('twitter-meta-descr').content = AllFilesValue.Body[0].ipo_twitter_desc ? AllFilesValue.Body[0].ipo_twitter_desc : ''; 
-      document.getElementById('twitter-meta-title').content = AllFilesValue.Body[0].ipo_twitter_title ? AllFilesValue.Body[0].ipo_twitter_title : '';
-      document.getElementById('twitter-meta-image').content = AllFilesValue.Body[0].ipo_twitter_image ? `https://cmsapi.choiceindia.com/assets/${AllFilesValue.Body[0].ipo_twitter_image}` : '';
+          document.getElementById('meta-type').content = AllFilesValue.Body[0].ipo_og_type ? AllFilesValue.Body[0].ipo_og_type : '';
+          document.getElementById('meta-url').content = AllFilesValue.Body[0].ipo_og_url ? AllFilesValue.Body[0].ipo_og_url : '';
+          document.getElementById('meta-descr').content = AllFilesValue.Body[0].ipo_og_description ? AllFilesValue.Body[0].ipo_og_description : '';
+          document.getElementById('meta-title').content = AllFilesValue.Body[0].ipo_og_title ? AllFilesValue.Body[0].ipo_og_title : '';
+          document.getElementById('meta-image').content = AllFilesValue.Body[0].ipo_og_image ? `https://cmsapi.choiceindia.com/assets/${AllFilesValue.Body[0].ipo_og_image}` : '';
+
+          document.getElementById('twitter-meta-url').content = AllFilesValue.Body[0].ipo_twitter_url ? AllFilesValue.Body[0].ipo_twitter_url : '';
+          document.getElementById('twitter-meta-descr').content = AllFilesValue.Body[0].ipo_twitter_desc ? AllFilesValue.Body[0].ipo_twitter_desc : '';
+          document.getElementById('twitter-meta-title').content = AllFilesValue.Body[0].ipo_twitter_title ? AllFilesValue.Body[0].ipo_twitter_title : '';
+          document.getElementById('twitter-meta-image').content = AllFilesValue.Body[0].ipo_twitter_image ? `https://cmsapi.choiceindia.com/assets/${AllFilesValue.Body[0].ipo_twitter_image}` : '';
         } else {
           setApiData([]);
         }
 
       }
-    ),err=>{
-      if(err&&err.message&&(err.message.indexOf('404')>-1)){
+    ), err => {
+      if (err && err.message && (err.message.indexOf('404') > -1)) {
         navigate(`/404`, { replace: true });
       }
       // console.log("ERROR",err)
     }
   }
- /** for avoid multiple rendering */
+  /** for avoid multiple rendering */
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -147,7 +152,7 @@ function Banner() {
 
 
 
-/**mobile view */
+  /**mobile view */
 
   useEffect(() => {
     let mediaQuery = window.matchMedia("(min-width: 767px)");
@@ -156,12 +161,36 @@ function Banner() {
     return () => mediaQuery.removeListener(setView);
   }, []);
 
+  function blogPop(isPopUp) {
+    //console.log("Flag " + isPopUp);
+    if (isPopUp) {
+      setFormMobile('');
+    }
+    else {
+      setFormMobile('form-mobile');
+    }
+    setPopUp(isPopUp);
+  }
 
 
+  const openAccountMobile = useRef("");
+  const handleClick = (event) => {
+    // setIsActive(current => !current);
+    if (popUp) {
+      return;
+    }
+
+    openAccountMobile.current.style.zIndex = 0;
+    setIsActive(true);
+
+  };
+  function modifyHighLight(value) {
+    setHighlightForm(value);
+}
   return (
     <>
       {/* form section */}
-      <div className={name}>
+      {/* <div className={name}>
         <div className="container d-flex justify-content-end">
           {
             apiData?.map((res) => {
@@ -203,6 +232,18 @@ function Banner() {
               )
             })
           }
+
+        </div>
+      </div> */}
+      <div className={`${name2}`+ ' card-sticky visibleCard'}>
+        <div className="container d-flex justify-content-end">
+          <div className="sticky-new" >
+            <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')} ref={mobileForm}>
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+              <NewDematAccountForm modifyHighLight={modifyHighLight} blogPop={blogPop} openAccount={openAccountMobile} setIsActive={setIsActive} highlight={highlightForm} isActive={isActive} mobileForm={mobileForm}/>
+              </GoogleReCaptchaProvider>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -265,11 +306,15 @@ function Banner() {
                   </div>
                 </div>
                 <div className={name2}>
-                  <div className="btn-fixed">
-                    <a className="openbtn">
+                  <div className="btn-fixed" ref={openAccountMobile}>
+                    <a className="openbtn" onClick={handleClick}>
                       <span>{res.form_title} {res.form_title2} </span>
                       <span>
-                        <LazyLoader src={img8} alt={""} className={"img-fluid"} width={"32"} height={"32"} />
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="16" cy="16" r="16" fill="#FFCE02" />
+                          <path d="M8 16H24.6667H8ZM24.6667 16L16.6667 8L24.6667 16ZM24.6667 16L16.6667 24L24.6667 16Z" fill="#FFCE02" />
+                          <path d="M8 16H24.6667M24.6667 16L16.6667 8M24.6667 16L16.6667 24" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
                       </span>
                     </a>
                   </div>
@@ -352,32 +397,32 @@ function Banner() {
                       <div className='chart-custom'>
                         <table className='q-graph'>
                           <tbody>
-                            {(res?.revenue_first && res ?.profit_loss_1) ? 
+                            {(res?.revenue_first && res?.profit_loss_1) ?
                               <tr className='qtr'>
-                              <td className='sent bar' style={{ height: `${res.revenue_first.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_first.split(' ')[0]}</p></td>
-                              <td className={res.profit_loss_1 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_1.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_1}</p></td>
-                            </tr>:''
+                                <td className='sent bar' style={{ height: `${res.revenue_first.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_first.split(' ')[0]}</p></td>
+                                <td className={res.profit_loss_1 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_1.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_1}</p></td>
+                              </tr> : ''
                             }
-                          {(res?.revenue_second && res ?.profit_loss_2) ? 
-                          <tr className='qtr'>
-                          <td className='sent bar' style={{ height: `${res.revenue_second.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_second.split(' ')[0]}</p></td>
-                          <td className={res.profit_loss_2 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_2.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_2}</p></td>
-                        </tr>:''
-                          }
-                            {(res?.revenue_third && res ?.profit_loss_3) ? 
-                            <tr className='qtr'>
-                            <td className='sent bar' style={{ height: `${res.revenue_third.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_third.split(' ')[0]}</p></td>
-                            <td className={res.profit_loss_3 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_3.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_3}</p></td>
-                          </tr>:''}
+                            {(res?.revenue_second && res?.profit_loss_2) ?
+                              <tr className='qtr'>
+                                <td className='sent bar' style={{ height: `${res.revenue_second.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_second.split(' ')[0]}</p></td>
+                                <td className={res.profit_loss_2 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_2.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_2}</p></td>
+                              </tr> : ''
+                            }
+                            {(res?.revenue_third && res?.profit_loss_3) ?
+                              <tr className='qtr'>
+                                <td className='sent bar' style={{ height: `${res.revenue_third.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_third.split(' ')[0]}</p></td>
+                                <td className={res.profit_loss_3 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_3.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_3}</p></td>
+                              </tr> : ''}
 
-                            {(res?.revenue_fourth && res ?.profit_loss_4) ? 
-                            <tr className='qtr'>
-                            <td className='sent bar' style={{ height: `${res.revenue_fourth.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_fourth.split(' ')[0]}</p></td>
-                            <td className={res.profit_loss_4 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_4.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_4}</p></td>
+                            {(res?.revenue_fourth && res?.profit_loss_4) ?
+                              <tr className='qtr'>
+                                <td className='sent bar' style={{ height: `${res.revenue_fourth.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_fourth.split(' ')[0]}</p></td>
+                                <td className={res.profit_loss_4 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_4.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_4}</p></td>
 
-                          </tr>:''}
+                              </tr> : ''}
 
-                            
+
                           </tbody>
                         </table>
 
@@ -390,32 +435,32 @@ function Banner() {
                           <div className='tick' ><p>0</p></div>
                         </div>
                         <div className='for-date'>
-                        {
-                          res?.revenue_first ?
-                          <div className='sub-l1'>
-                            {res?.revenue_first.split(' ')[1]}
-                          </div>:''
-                        }
-                        {
-                          res?.revenue_second ?
-                          <div className='sub-l1'>
-                          {res?.revenue_second.split(' ')[1]}
-                        </div>:''
-                        }
-                        {
-                          res?.revenue_third ?
-                          <div className='sub-l1'>
-                            {res?.revenue_third.split(' ')[1]}
-                          </div>:''
-                        }
-                        {
-                          res?.revenue_fourth ?
-                          <div className='sub-l1'>
-                            {res?.revenue_fourth.split(' ')[1]}
-                          </div>:''
-                        }
-                          
-                          
+                          {
+                            res?.revenue_first ?
+                              <div className='sub-l1'>
+                                {res?.revenue_first.split(' ')[1]}
+                              </div> : ''
+                          }
+                          {
+                            res?.revenue_second ?
+                              <div className='sub-l1'>
+                                {res?.revenue_second.split(' ')[1]}
+                              </div> : ''
+                          }
+                          {
+                            res?.revenue_third ?
+                              <div className='sub-l1'>
+                                {res?.revenue_third.split(' ')[1]}
+                              </div> : ''
+                          }
+                          {
+                            res?.revenue_fourth ?
+                              <div className='sub-l1'>
+                                {res?.revenue_fourth.split(' ')[1]}
+                              </div> : ''
+                          }
+
+
                         </div>
 
                       </div>
