@@ -324,12 +324,12 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     //       }); 
     // }, [otpparam]);
     const handleUpdateType = () => {
-        
         updateType('resend');
+        handleOTPResendSuccessToaster('otp');
     };
     const handleUpdateTypeCall = () => {
-        
         updateType('otp-on-call');
+        handleOTPResendSuccessToaster('call');
     };
     return (
         <>
