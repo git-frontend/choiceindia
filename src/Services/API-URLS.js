@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 /**URL Config */
 const config = {
@@ -314,7 +314,7 @@ export class API_URLS {
   schemeTopHoldings = "Scheme/topholdings";
 
   /* For Solar Lead Form URL */
-  solarLead="api/solarLead";
+  solarLead="api/newLeadDetail";
 
   constructor() {
     this.setConfig(environment ? "live" : "UAT");
