@@ -12,7 +12,7 @@ import Modal from 'react-bootstrap/Modal'
 import utils from "../../Services/utils";
 
 
-function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, language, openInfoPopup, showPopup }) {
+function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, language, openInfoPopup, showPopup,updateType }) {
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -118,7 +118,7 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
             let request = {
                 "mobile_number": mobileNumber,
                 otp: otp,
-                session_id: otpID.current
+                session_id: otpSessionID
             };
 
             openAccountService.verifyOTP(request, type2).then((res) => {
@@ -298,7 +298,14 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
         }, 5000)
     }
 
-
+    const handleUpdateType = () => {
+        updateType('resend');
+        handleOTPResendSuccessToaster('otp');
+    };
+    const handleUpdateTypeCall = () => {
+        updateType('otp-on-call');
+        handleOTPResendSuccessToaster('call');
+    };
     return (
         <>
             {/* <div id="opt-box-id">
@@ -434,11 +441,11 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
                                         {
                                             !count ?
                                                 <div className="d-flex align-items-center justify-content-center">
-                                                    <button className="resend" onClick={resendOTP}>{loaders.resendOTPLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading123...</span></Spinner>
+                                                    <button className="resend" onClick={handleUpdateType}>{loaders.resendOTPLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading123...</span></Spinner>
                                                         // <div className="dotLoaderB colorB marginLoader"></div>
                                                         : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresend')}</button>
                                                     <span className="ortext">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otportext')}</span>
-                                                    <button className="resend" onClick={getOTPOnCall}>{loaders.OTPOnCallLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading456...</span></Spinner>
+                                                    <button className="resend" onClick={handleUpdateTypeCall}>{loaders.OTPOnCallLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading456...</span></Spinner>
                                                         // <div className="dotLoaderB colorB marginLoader"></div>
                                                         : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otponcall')}</button></div> : ''
                                         }

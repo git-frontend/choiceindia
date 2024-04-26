@@ -398,7 +398,7 @@ function NewDematAccountForm(props) {
     };
 
     function sendOTP(type) {
-        console.log('Sending OTP with type:', type);
+        // console.log('Sending OTP with type:', type);
         showLoader('sendOTPLoader');
         const encodedMobileNumber = btoa(mobileNumber);
         let request = {
@@ -455,7 +455,7 @@ function NewDematAccountForm(props) {
 
 
             } else {
-                setAPIError("Something went wrong, please try again laterrrrr!");
+                setAPIError("Something went wrong, please try again later!");
                 showAPIErrorToaster();
             }
         }).catch((error) => {

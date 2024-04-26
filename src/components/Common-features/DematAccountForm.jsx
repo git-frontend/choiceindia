@@ -51,6 +51,7 @@ function DematAccountForm(props) {
     // const [otp, setOtp] = useState('');
     // const [OTPErrors, setOTPErrors] = useState('');
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
+    const [otpSessionID, setOTPSessionID] = useState(null)
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
@@ -63,7 +64,7 @@ function DematAccountForm(props) {
     var source = useRef('');
     var subrefercode = useRef('');
     var subrefercodeInv = useRef('');
-    var otpSessionID = useRef('');
+    // var otpSessionID = useRef('');
     var isMobile = useRef(isMobileDevice());
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
@@ -391,16 +392,24 @@ function DematAccountForm(props) {
         //     return { ...prevState, showModal: true, isFailure: true, titleText: 'Success', msgText: 'Oops', closeMd: closeModal }
         // });
     }
+    const [type, setType] = useState('send');
+    console.log("type",type)
+    const updateType = (newType) => {
+        setType(newType);
+        sendOTP(newType); // Call sendOTP with the updated type
+    };
 
-    function sendOTP() {
+    function sendOTP(type) {
         showLoader('sendOTPLoader');
+        const encodedMobileNumber = btoa(mobileNumber);
         let request = {
             "whatsapp_consent": true,
-            "service_code": type1 == 'MF' ? "MF" : "JF",
-            "mobile_number": mobileNumber,
-            "product": type1 == 'MF' ? "INVESTICA" : "FINX",
-            "request_source": "CHOICEINDIA",
-            "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
+            // "service_code": type1 == 'MF' ? "MF" : "JF",
+            "mobile_number": encodedMobileNumber,
+            "type":type,
+            // "product": type1 == 'MF' ? "INVESTICA" : "FINX",
+            // "request_source": "CHOICEINDIA",
+            // "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1 == 'MF' ? "true" : "1",
             "referred_id": refercode.current || referID || null,
             "sub_ref": subrefercode.current || null,
@@ -415,33 +424,36 @@ function DematAccountForm(props) {
             "utm_source": (window.location.pathname.indexOf("/unlisted-shares-price-list/") > -1) ? 'ul_leads' : isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' : isMF == "yes" ? UTMSource.current || 'choice-mf-web' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
-            "captchaResp": captchaToken,
-            "account_type": type1 == 'MF' ? "" : "all"
+            // "captchaResp": captchaToken,
+            "account_type": type1 == 'MF' ? "" : "all",
             // "captcha": "1"
+            "apps_flyer": null
 
         };
         // console.log("request", request)
-        openAccountService.sendOTP(request, type1).then((res) => {
+        openAccountService.sendOTP(request,captchaToken ).then((res) => {
             hideLoader('sendOTPLoader');
-            if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
-                setLeadId(res.data.Body.leadid);
-                utils.pushDataLayerEvent({
-                    'event': 'ci_onboard_lead_initiated',
-                    'page_path': window.location.pathname,
-                    'page_url': window.location.href,
-                    'lead_source': 'choiceindia',
-                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                    'leadId': res.data.Body.leadid,
-                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                })
-                otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
-
+            if (res && res.StatusCode === 200 ) {
+                setLeadId(res.Body.leadid);
+                // utils.pushDataLayerEvent({
+                //     'event': 'ci_onboard_lead_initiated',
+                //     'page_path': window.location.pathname,
+                //     'page_url': window.location.href,
+                //     'lead_source': 'choiceindia',
+                //     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                //     'leadId': res.data.Body.leadid,
+                //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                // })
+                setOTPSessionID((type1 == 'MF') ? res.Body.session_id : res.Body.otp_session_id)
+                // setForm('sent-otp')
+                // setformdata()
                 setShowThanku(prevState => {
-                    return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.data.Body.new_lead ? res.data.Body.new_lead : false }
+                    return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.Body.new_lead ? res.Body.new_lead : false }
                 });
                 fetchQueryParams();
                 // resetOTPPopup();
                 handleOTPShow();
+
 
             } else {
                 setAPIError("Something went wrong, please try again later!");
@@ -450,7 +462,7 @@ function DematAccountForm(props) {
         }).catch((error) => {
             hideLoader('sendOTPLoader');
             if (error && error.response && error.response.data && error.response.data.Message) {
-                setAPIError(error.response.data.Message);
+                setAPIError(error.response.data.Message); 
                 showAPIErrorToaster();
             } else {
                 setAPIError("Something went wrong, please try again later!");
@@ -458,6 +470,7 @@ function DematAccountForm(props) {
             }
         });
     }
+
 
     function fetchQueryParams() {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
@@ -689,7 +702,7 @@ function DematAccountForm(props) {
 
     useEffect(() => {
         if (captchaToken) {
-            sendOTP();
+            sendOTP(type);
         }
     }, [captchaToken]);
 
@@ -784,7 +797,7 @@ function DematAccountForm(props) {
 
             {
                 showOTP ?
-                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP}></OpenAccountOTPModal> : ''
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} updateType={updateType}></OpenAccountOTPModal> : ''
             }
 
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
