@@ -872,7 +872,10 @@ function NewDematAccountForm(props) {
             }
             {
                 showThanku.showModal && (
-                <div className={`${blogPopUpForm}`}>
+                <div className={`${blogPopUpForm} ${(window.location.pathname.includes("open-free-demat-account") ||
+                 window.location.pathname.includes("corporate-demat-account") ||
+                 window.location.pathname.includes("demat-account")
+                 || window.location.pathname.includes("mutual-funds-investment")) && 'demat-form-wrapper'}`}>
                    <div className={`demat-account-form demat-account-form-new ${blogThankuPopup}`}>
                         <div className="thank-you-msg">
                             <div className="thank-logo">
