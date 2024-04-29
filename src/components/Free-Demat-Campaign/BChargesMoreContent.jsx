@@ -16,18 +16,19 @@ function BChargesMoreContent() {
                             <div className="para">
                                 {/* <input type="checkbox" className="read-more-state" id="post-1" /> */}
                                 <div className="read-more-wrap "> 
-                                <p className="seo-para">The stock market is an old establishment that has existed since 1875 when BSE was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;</p>
+                                <p className="seo-para">The stock market is an old establishment that has existed since 1875 when BSE was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey.</p>
                                    <h3 className="seo-h3">What is a Demat Account?</h3>
-                                <p className="seo-para">If we put it into simple terms we can say that the <Link to="/demat-account">Demat account</Link> is a depository where you can safely store your investments in different forms. A Demat account can not only hold your stocks but can also hold your mutual funds, bonds and ETFs.</p>
+                                <p className="seo-para">If we put it into simple terms we can say that a  <Link to="/demat-account">Demat account</Link>  is a depository where you can safely store your investments in digital form without the need of paper certificates. A Demat account can not only hold your stocks but can also hold your mutual funds, bonds and ETFs.</p>
                                 {/* {!show ? <span onClick={()=>{setshow(true);}}><em className="btn-read moreless-button">Read more</em></span>:""}
                                 {show ? */}
                                 <div>
                                     <div className="read-more-target">
-                                <p className="seo-para">Demat account is your safe locker as you don’t live in perpetual fear of losing any shares or investments, the whole process is electronic and you’re away from all kinds of triggers that could force you to make irrational decisions.</p>
+                                <p className="seo-para">Demat account is your safe locker as you don’t live in perpetual fear of losing any shares or investments, the whole process is electronic and you’re away from all kinds of triggers that could force you to make irrational decisions. To dig deeper, you can refer to our <Link to="/demat-account">Demat account detailed guide</Link> and know all in and outs of a demat account.</p>
                                     <h3 className="seo-h3">Why Demat Account is Necessary for Investing?</h3>
-                                    <p className="seo-para">As mentioned previously, before electronic trading was introduced into the stock market in 1996 people stored their shares as certificates which were in form of physical paper and due to human errors, it is not assured that those physically held shares are in safe hands,</p>
-                                    <p className="seo-para">Therefore keeping convenience in mind, the whole process of trading took an electronic route and since then this trend has followed and it was made mandatory for any investor to open a Demat account to participate in the stock market.</p>
-                                  <h3 className="seo-h3">Difference Between Demat and Trading Account</h3>
+                                    <p className="seo-para">As mentioned previously, before electronic trading was introduced into the stock market in 1996 people stored their shares as certificates which were in form of physical paper and due to human errors, it is not assured that those physically held shares are in safe hands.</p>
+                                    <p className="seo-para">Therefore keeping convenience in mind, the whole process of trading took an electronic route and since then this trend has followed and it was made mandatory for any investor to open a Demat account to participate in the stock market.Additionally, there are a lot 
+                                    of <Link to="/blog/benefits-of-a-demat-account/">benefits offered by demat account</Link>  that make it a convenient way to trade and invest.</p>
+                                  {/* <h3 className="seo-h3">Difference Between Demat and Trading Account</h3>
                                     <p className="seo-para">Now that we’ve explored what is a Demat account and how it helps us, let's further dive in and understand, how does a <Link to="/open-trading-account">Trading Account</Link> play a role here?</p>
                                     <p className="seo-para">In the Stock Market, it is evident that we’ll have a lot of transactions going around and to make these transactions we need to have a trading account, now many might argue shouldn’t the Demat account itself should do that job?</p>
                                     <p className="seo-para">Well to answer that question people need to understand that a Demat account is just a repository where your stocks are stored, for transactional purposes in the stock market you need a trading account.</p>
@@ -38,8 +39,8 @@ function BChargesMoreContent() {
                                     <h4 className="seo-h4"> 2. Bank Link</h4>
                                       <p className="seo-para">As mentioned before a trading account helps you with transactions, so it makes sense that your trading account and your bank account are both linked to each other so that you can make transactions seamlessly.</p>
                                       <p className="seo-para">When you add money into your trading account you can go ahead and buy stocks that will be stored in your Demat account and if you sell your stocks, your Demat account will get rid of those stocks and the money will be deposited into your trading account and from there it will be transferred to your bank account as per your convenience.</p>
-                                  </div>
-                                  <h3 className="seo-h3"><Link to="/blog/benefits-of-a-demat-account/">Benefits of Opening Demat Account </Link></h3>
+                                  </div> */}
+                                  {/* <h3 className="seo-h3"><Link to="/blog/benefits-of-a-demat-account/">Benefits of Opening Demat Account </Link></h3>
                                     <p className="seo-para">In the above-mentioned sections we have told you why is a Demat account necessary but told very less on why exactly is a Demat account beneficial for you,</p>
                                   <div className="ml-3">
                                     <h4 className="seo-h4"> 1. Corporate Benefits </h4>
@@ -120,7 +121,7 @@ function BChargesMoreContent() {
                                       <li className="seo-h5">Transactional Charges</li>
                                       <p className="seo-para">The main aim of having a Demat account is participating in the Indian markets and while doing that it is evident that every transaction you make on the Demat account is a move towards your future.DPs charge <Link to="/blog/dp-transaction-charges/">transactional charges</Link> on both credit and debits, where every time you engaged in a trade a nominal amount is charged on your behalf for facilitating a smooth transaction between your Demat account and the market.</p>
                                     </ul>
-                                  </div>
+                                  </div> */}
                                   <h3 className="seo-h3">Why Should You Choose Choice to Open a Demat Account?</h3>
                                     <p className="seo-para mb-0">You’ve been through all the information that is out there about Demat and you hone enough knowledge to understand that picking a DP is no easy job, you’ll have to consider a lot of factors like charges and the services they provide and if that aligns with your conscience, you opt for them.</p>
                                     <p className="seo-para">But let us present ourselves and tell you why exactly you need to open a Demat account with Choice;</p>
@@ -129,6 +130,7 @@ function BChargesMoreContent() {
                                     <li className="seo-para">Free access to expert research and advisory, these reports provided have proven to have an impeccable accuracy record.</li>
                                     <li className="seo-para">Insanely low brokerage charges, Choice platform happens to be very trader friendly where call and trade orders have charges on them and squaring off your positions is also absolutely free. The Brokerage charges are as low as 2 paise.</li>
                                     <li className="seo-para"><a href="/campaign/free-amc-demat-account">Open a Demat account with no amc</a>, Choice opens an account for you, free of cost.</li>
+                                    <li className="seo-para">Invest in multiple financial instruments.</li>
                                   </ul>
                                     </div> 
                                     {/* <span onClick={()=>{setshow(false);}}>&nbsp;<em className="btn-read moreless-button">Read less</em></span> */}

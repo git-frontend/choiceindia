@@ -28,15 +28,16 @@ function Faqs() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>
-                                    <Accordion.Header as="h3" className='faq-header'> What are the documents required to open a Demat Account?</Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>Is Demat account free?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                    The following documents will be required to open an account for a resident individual with Choice :
-                                        <ul>
-                                            <li>PAN Card</li>
-                                            <li>Cancelled Cheque (that captures the MICR Code)</li>
-                                            <li>Passport Size Photograph</li>
-                                            <li>Address Proof</li>
-                                        </ul>
+                                    Yes. You can open a demat account for free with choice. You also have free AMC for 1st year and trade at a nominal broking charges.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+                                <Accordion.Item eventKey="2" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>Can I open a Demat account online?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    Yes. You can open a demat account online very easily. You just have to follow the few easy steps mentioned above.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 {/* <Accordion.Item eventKey="2" className='faq-item'>
@@ -65,7 +66,7 @@ function Faqs() {
                                 <Accordion.Item eventKey="5" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header' > How do I open a Trading Account without opening a Demat Account?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                            NSE/BSE mandates a Demat with your Trading Account for securities. Currency and Commodities do not require a Demat Account, so if your trading requirements are restricted to that; a Trading Account can be opted for. This will have to be specified in the documentation process with the broker. For more information regarding the same, you can contact our customer care team at care@choiceindia.com
+                                            NSE/BSE mandates a Demat with your Trading Account for securities. Currency and Commodities do not require a Demat Account, so if your trading requirements are restricted to that; you can <Link to="/open-trading-account">open a trading account</Link>. This will have to be specified in the documentation process with the broker. For more information regarding the same, you can contact our customer care team at care@choiceindia.com
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="6" className='faq-item'>
