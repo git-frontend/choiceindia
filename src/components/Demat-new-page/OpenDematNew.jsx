@@ -50,7 +50,7 @@ function OpenDematNew() {
         isTriggered: false
     });
 
-    const [isActive2, setIsActive2] = useState(false);
+    const [isActive2, setIsActive2] = useState(false);``
 
     const handleClick = (event) => {
         setIsActive(current => !current);
@@ -311,7 +311,28 @@ function OpenDematNew() {
                                         <p>In the unfortunate event of a Demat account holder's demise, assets can be seamlessly transferred to the next of kin. This ensures a hassle-free process compared to physical certificates.</p>
                                     </li>
                                 </ol>
-                                <iframe className="cust-video" src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=kXmV-bHdsV_leXv_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                {/* <iframe className="cust-video" src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=kXmV-bHdsV_leXv_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+                                <a
+                                    onClick={handletClick}
+                                    className={"open-vid " + (VideoVisibility ? "active" : "")}
+                                >
+                                    {VideoVisibility ? (
+                                        <iframe
+                                            className="cust-video"
+                                            src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=kXmV-bHdsV_leXv_"
+                                            title="YouTube video player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                        ></iframe>
+                                    ) : (
+                                        <LazyLoader
+                                            src="https://img.youtube.com/vi/Qmm7rrwyDzc/maxresdefault.jpg"
+                                            alt="Thumbnail"
+                                            className="img-fluid"
+                                        />
+                                    )}
+                                </a>
                                 <br/><br/>
                                 <p>Other than the above mentioned benefits, there are many other <a href="/blog/benefits-of-a-demat-account/">benefits of a demat account</a> like regular and automatic updates about Corporate actions like dividends, bonuses, or split, integration with trading account, loan against securities, faster and smoother settlements, reduction in errors
                                 </p>
@@ -400,7 +421,30 @@ function OpenDematNew() {
                                 <br/><br/>
                                 Settlement - Once your buy order matches with a corresponding sell order, the stock exchange sends it to a clearinghouse for settlement. At the end of the trading day, the shares you've bought are credited to your Demat account. Similarly, the seller's Demat account is debited for the sold shares.
                                 <br/><br/>
-                                    <iframe src="https://www.youtube.com/embed/at5pItTsJJE?si=VgNo0MHto7TNA245" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="cust-video"></iframe><br /><br />
+                                    {/* <iframe src="https://www.youtube.com/embed/at5pItTsJJE?si=VgNo0MHto7TNA245" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="cust-video"></iframe> */}
+                                    <a
+                                    onClick={handletClick}
+                                    className={"open-vid " + (VideoVisibility ? "active" : "")}
+                                >
+                                    {VideoVisibility ? (
+                                        <iframe
+                                            className="cust-video"
+                                            src="https://www.youtube.com/embed/at5pItTsJJE?si=VgNo0MHto7TNA245"
+                                            title="YouTube video player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                        ></iframe>
+                                    ) : (
+                                        <LazyLoader
+                                            src="https://img.youtube.com/vi/at5pItTsJJE/maxresdefault.jpg"
+                                            alt="Thumbnail"
+                                            className="img-fluid"
+                                        />
+                                    )}
+
+                                </a>
+                                    <br /><br />
                                     Remember, without a trading account, you cannot utilize your Demat account for investments. A trading account handles the monetary transactions associated with buying and selling shares.
                                 </p>
                             </InView>
@@ -499,7 +543,30 @@ function OpenDematNew() {
                                 <p>Opening a Demat account has never been easier, thanks to digitalization. You have two primary options: online and offline account opening.</p>
                                 <h3><a href="/blog/demat-account-opening-online/">Online Demat Account Opening</a></h3>
                                 <p>Most brokerage firms offer online account opening, allowing you to complete the process from the comfort of your home. It's quick, convenient, and paperless.</p>
-                                <iframe className="cust-video" src="https://www.youtube.com/embed/dbtHtNsWZkI?si=5os5LGH4EX5NSeWd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br />
+                                {/* <iframe className="cust-video" src="https://www.youtube.com/embed/dbtHtNsWZkI?si=5os5LGH4EX5NSeWd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+                                <a
+                                    onClick={handletClick}
+                                    className={"open-vid " + (VideoVisibility ? "active" : "")}
+                                >
+                                    {VideoVisibility ? (
+                                        <iframe
+                                            className="cust-video"
+                                            src="https://www.youtube.com/embed/dbtHtNsWZkI?si=5os5LGH4EX5NSeWd"
+                                            title="YouTube video player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                        ></iframe>
+                                    ) : (
+                                        <LazyLoader
+                                            src="https://img.youtube.com/vi/dbtHtNsWZkI/maxresdefault.jpg"
+                                            alt="Thumbnail"
+                                            className="img-fluid"
+                                        />
+                                    )}
+
+                                </a>
+                                <br />
                                 <p>An online demat account opening process involves:</p>
                                 <ol className="none-para">
                                     <li>Visiting the preferred broking company’s official website</li>
@@ -880,10 +947,15 @@ function OpenDematNew() {
                                         <p>Yes, you can have multiple Demat accounts, but there are regulatory restrictions. Each account must have a different purpose or ownership structure.</p>
                                     </li>
                                     <li>
-                                        <h3>How to check my Demat account?</h3>
-                                        <p>You can check your Demat account balance and transaction history through the online portal provided by your DP.</p>
+                                        <h3>What is the eligibility to open a demat account?</h3>
+                                        <p>Age - There is no minimum age criteria. Individuals above 18 yers are eligible for a regular demat account while the ones below 18 can open a minor demat account. Their parents or guardians will be in-charge of the account until the minor comes to age.
+                                        <br/><br/>
+                                        Citizenship - Must be Indian Citizen residing in India
+                                        <br/><br/>
+                                        Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter ID, Passport, Driving License)
+                                        </p>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <h3>What happens if I forget my Demat account password?</h3>
                                         <p>Contact your DP for password reset assistance. They will guide you through the process.</p>
                                     </li>
@@ -914,10 +986,10 @@ function OpenDematNew() {
                                     <li>
                                         <h3>Can I open a Demat account without an Aadhar Card?</h3>
                                         <p>Yes, you <a href="/blog/can-i-open-demat-account-without-aadhar-card/">can open a Demat account without an Aadhar card</a> by providing other government-issued identity documents.</p>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </InView>
-                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id18')} id="id18">
+                            {/* <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id18')} id="id18">
                                 <h2>Legal and Regulatory Information</h2>
                                 <p>As an investor, it's crucial to be aware of the legal and regulatory aspects governing your Demat account. Here are some key points to keep in mind:</p>
                                 <ul className="reset-list">
@@ -954,7 +1026,7 @@ function OpenDematNew() {
                                     </li>
 
                                 </ul>
-                            </InView>
+                            </InView> */}
                             <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id19')} id="id19">
                                 <h2>Demat Glossary</h2>
                                 <p>A glossary of key terms and phrases related to Demat accounts to help you better understand the world of electronic securities and investments:</p>
