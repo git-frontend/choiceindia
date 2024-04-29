@@ -312,6 +312,10 @@ export class API_URLS {
   schemeTopSectors = "Scheme/topsectors";
   schemeMarketCap = "Scheme/marketcap";
   schemeTopHoldings = "Scheme/topholdings";
+
+  /* For Solar Lead Form URL */
+  solarLead="api/newLeadDetail";
+
   constructor() {
     this.setConfig(environment ? "live" : "UAT");
   }
@@ -1007,5 +1011,10 @@ export class API_URLS {
   /** FAQ API URL */
   getFaqURL() {
     return this.jiffyServerURL + `api/faq/list`;
+  }
+
+  //Solar Loan URL
+  getLeadFormURL(){
+   return this.nachBaseURL+this.solarLead;
   }
 }
