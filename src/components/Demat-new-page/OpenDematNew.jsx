@@ -515,7 +515,7 @@ function OpenDematNew() {
                                 </ol>
                                 <LazyLoader src={openingprocess} className="img-fluid" alt={"Demat Account Opening Process"} width={"670"} height={"1029"} /><br /><br />
                                 <span className="bl-box">Choice completes the verification process in under 4 hours. Our team will assist you if you encounter any issues during the Demat account opening process.</span>
-                                <h3>Offline Demat Account Opening</h3>
+                                {/* <h3>Offline Demat Account Opening</h3>
                                 <p>If you prefer a more traditional approach, visit the nearest branch office of your chosen Depository Participant (DP) or brokerage firm to open an account. The process includes:</p>
                                 <ol>
                                     <li>Collecting the account opening form from the DP's office</li>
@@ -533,10 +533,10 @@ function OpenDematNew() {
                                         <li>Passport-size photographs</li>
                                         <li>Bank statement or canceled cheque to link your bank account</li>
                                     </ol>
-                                </span>
+                                </span> */}
                             </InView>
 
-                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id3')} id="id3">
+                            {/* <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id3')} id="id3">
                                 <h2>How to Choose the Right DP and Brokerage Firm?</h2>
                                 <p>Selecting the right Depository Participant (DP) and brokerage firm is a crucial decision for your investment journey. Always choose one that is trustworthy and reliable, and aligns with your trading and investment needs.</p>
                                 <LazyLoader src={choosing} className="img-fluid" alt={"Choosing a DP or Broker"} width={"670"} height={"413"} /><br /><br />
@@ -583,12 +583,12 @@ function OpenDematNew() {
                                 </ol>
                                 <p>Take your time to research and compare different DPs and brokerage firms before making a decision. Your choice can significantly impact your overall investment experience.</p>
                                 <iframe className="cust-video" src="https://www.youtube.com/embed/GT4sJNBSF7A?si=9xDt2Mg0uCrk94aM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            </InView>
+                            </InView> */}
 
 
 
 
-                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id9')} id="id9">
+                            {/* <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id9')} id="id9">
                                 <h2><a href="/blog/difference-between-demat-and-trading-account/">Trading Account vs Demat Account</a></h2>
                                 <p>While the Demat account holds your securities, the trading account facilitates buying and selling. A combination of both is essential for participating in the stock market. Here’s a breakdown of their differences:</p>
                                 <LazyLoader src={tradingaccount} className="img-fluid" alt={"Difference Between Demat and Trading Account"} width={"670"} height={"874"} /><br /><br />
@@ -861,18 +861,19 @@ function OpenDematNew() {
                                 </ol>
                                 <LazyLoader src={closureDemat} className="img-fluid" alt={"Demat Aaccount Closing Process"} width={"670"} height={"1298"} /><br /><br />
                                 <p>Remember, closing a Demat account should be done thoughtfully. Ensure you have explored all options and considered the implications before making this decision.</p>
-                            </InView>
+                            </InView> */}
+
                             <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id17')} id="id17">
                                 <h2>Demat Account - Frequently Asked Questions</h2>
                                 <p>Got questions? Explore our FAQs for answers to common questions and concerns related to Demat account. If you need further assistance or personalized guidance, feel free to contact us.</p>
                                 <ul>
                                     <li>
-                                        <h3>Who can open a Demat account?</h3>
+                                        <h3>What is the eligibility to have a demat account?</h3>
                                         <p>A Demat account can be opened by Indian residents, non-resident Indians (NRIs), and foreign investors through registered depository participants (DPs).</p>
                                     </li>
                                     <li>
-                                        <h3>How secure is my Demat account?</h3>
-                                        <p>Demat accounts are highly secure, using encryption and authentication measures. Your DP and depository maintain stringent security standards.</p>
+                                        <h3>Is Demat account safe?</h3>
+                                        <p>Demat being a digitalised account is regulated by SEBI, and registered under NSDL and CDSL. However being associated with a reputed broker like choice ensures safety.</p>
                                     </li>
                                     <li>
                                         <h3>Can I have multiple Demat accounts?</h3>
