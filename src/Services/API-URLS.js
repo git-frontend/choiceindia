@@ -63,6 +63,11 @@ const config = {
 
   liveMiddlewareGoURL: "https://api.choiceindia.com/middleware-go/",
   UATMiddlewareGoURL: "https://api.choiceindia.com/middleware-go/",
+
+  livessoRegisterServerURL: "https://sso.choiceindia.com/",
+  UATssoRegisterServerURL: "https://sso.choicetechlab.com/",
+
+
 };
 
 export class API_URLS {
@@ -90,6 +95,9 @@ export class API_URLS {
   ConnectBaseURL = "";
   //
   MiddlewareGoURL = "";
+  /**connect base URL */
+  // generate  sso token base  
+  ssoRegisterServerURL=""
   /**Server URL */
   serverURL = "https://choiceindia.com/fables/ghost/api/v3/";
   /**Server URL */
@@ -321,7 +329,8 @@ export class API_URLS {
 
   /* For Solar Lead Form URL */
   solarLead="api/newLeadDetail";
-
+ /* For generate sso token*/
+ ssoRegisterTokenGet="api/connect/token";
   constructor() {
     this.setConfig(environment ? "live" : "UAT");
   }
@@ -359,6 +368,8 @@ export class API_URLS {
     this.setMFBaseURLV2(config[configKey + "MFBaseURLV2"]);
     this.setConnectBaseURL(config[configKey + "ConnectBaseURL"]);
     this.setMiddlewareGoURL(config[configKey + "MiddlewareGoURL"]);
+    this.setssoRegisterServerURL(config[configKey + "ssoRegisterServerURL"]);
+
   }
 
   /**set Connect base URL */
@@ -508,6 +519,10 @@ export class API_URLS {
   setperformanceURL = (url) => {
     this.performanceURL = url;
   };
+  setssoRegisterServerURL = (url) => {
+    this.ssoRegisterServerURL = url;
+  };
+
 
   fetchResearchReportURL() {
     return this.newResearchReportURL + this.fetchResearchReport;
@@ -1027,4 +1042,8 @@ export class API_URLS {
   getLeadFormURL(){
    return this.nachBaseURL+this.solarLead;
   }
+  // generate sso token 
+  getSSOTokenURL(){
+    return this.ssoRegisterServerURL+this.ssoRegisterTokenGet;
+   }
 }

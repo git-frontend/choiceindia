@@ -250,6 +250,7 @@ function NewDematAccountForm(props) {
     }
 
     function handleOTPClose(link, msg, info) {
+        console.log("sso link",link)
         setShowOTP(false);
 
         if (link) {
@@ -601,7 +602,7 @@ function NewDematAccountForm(props) {
                   } else {
                     showThanku.closeMd(showThanku.redirectionLink);
                   }
-                }, 15000)
+                }, 1500000)
               } else if (showThanku.page != 'add-lead' && showThanku.redirectionLink) {
                 setTimeout(() => {
                   if (showThanku.redirectionLink === null) {
@@ -609,7 +610,7 @@ function NewDematAccountForm(props) {
                   } else {
                     showThanku.closeMd(showThanku.redirectionLink);
                   }
-                }, 2000)
+                }, 2000000)
               }
 
         }

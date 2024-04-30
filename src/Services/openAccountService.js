@@ -1,5 +1,7 @@
 import axios from "axios";
 import { API_URLS } from "./API-URLS";
+import utils from "./utils";
+
 const apiURL = new API_URLS()
 const headers = {
   'Accept': 'application.json',
@@ -25,6 +27,12 @@ const formheaders = {
   "ServiceCode": "JF",
   "deviceInfo": "{'platform':'Web'}"
   }
+}
+const tokenheader={
+    "Content-Type": "application/json",
+    "Source": "FINX_WEB",
+    "clientId":"N2E4NDY3MDZkYmY5MDlhYfHCYK0zGx8k46ILP2H3znk="
+
 }
 
 const openAccountService = {
@@ -60,6 +68,11 @@ const openAccountService = {
   addNewLead: function (request) {
     let url = apiURL.getchoiceIndiaNewLeadURL();
     return axios.post(url,request,headers);
+  },
+  
+  getSSOToken: function (request) {
+    let url = apiURL.getSSOTokenURL();
+    return axios.post(url,request,{ headers: tokenheader });
   }
 
 };
