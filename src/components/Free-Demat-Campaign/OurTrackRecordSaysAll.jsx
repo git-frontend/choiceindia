@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoader from '../Common-features/LazyLoader';
 import { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import "../../components/Best-Stocks/best-stock.scss";
@@ -784,7 +785,7 @@ function OurTrackRecordSaysAll() {
                                     </div>
                                     :
                                     <div className="text-center">
-                                      <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                      <LazyLoader src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                                     </div>
                                 }
                               </div>

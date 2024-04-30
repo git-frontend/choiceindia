@@ -26,7 +26,6 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     const [show,setShow] = useState(true);
     const [searchParams, setSearchParams] = useSearchParams();
     // const [otpparam, setOtpparam] = useState('');
-    const closeButton = useRef("");
     const [outCome,setOutCome]= useState();
 
      const otpVerify =useRef("");
@@ -98,15 +97,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
     useEffect(() => {
         // setShow(() => true);
-        console.log("Pop up "+isPopUp);
-        if (window.location.pathname.includes('blog') === true && !isPopUp) {
-            if (window.innerWidth <= 992) {
-                closeButton.current.style.display = "block";
-            }
-        }
-        else {
-            closeButton.current.style.display = "none";
-        }
+        //console.log("Pop up "+isPopUp);
         generateRandomNumber();
         setCount(30);
     }, []);
@@ -439,12 +430,20 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                     <a href="javascript:void(0)" onClick={onClose} className="closebtn" >&times;</a>
                                 </div> */}
                     <div className="popup-sub-right">
-                        {window.location.pathname.includes("blog") &&  <div className="otp-ver-sec" ref={otpVerify}>
+                        {window.location.pathname.includes("blog") ? <div className="otp-ver-sec" ref={otpVerify}>
                                 <div className="otp-circle">
                                     <img src={enterOtp} className="img-fluid" height={52} width={52}/>
 
                                 </div>
-                                </div>}
+                                </div>:
+                                window.location.pathname.indexOf('ipo')===1 &&
+                                <div className="otp-ver-sec" ref={otpVerify}>
+                                <div className="otp-circle">
+                                    <img src={enterOtp} className="img-fluid" height={52} width={52}/>
+
+                                </div>
+                                </div>
+                                }
                                
                                 <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
                                     <div className="otpform-new" >
@@ -517,12 +516,12 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                 </div>
-                    <span className="close-btn-mdl" ref={closeButton} onClick={() => {
+                                {/* {!isPopUp && <span className="close-btn-mdl" ref={closeButton} onClick={() => {
                         setIsActive(false);
                         openAccount.current.style.zIndex = 9999999999;
                         setBlogPopUpForm("");
                         blogPop(false);
-                                }}>&times;</span>
+                                }}>&times;</span>} */}
                             </div>
                         </div>
                     {/* </div> */}

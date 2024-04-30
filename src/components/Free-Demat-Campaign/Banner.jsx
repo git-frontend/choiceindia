@@ -16,8 +16,7 @@ function Banner() {
         const element = document.getElementById("showForm");
         if (element) {
             const rect = element.getBoundingClientRect();
-
-            if (rect.top.toFixed() < 259) {
+            if (rect.top.toFixed() < 4450) {
                 setName('visibleform');
             } else {
                 setName('hideform');

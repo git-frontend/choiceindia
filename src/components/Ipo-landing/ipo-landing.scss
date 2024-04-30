@@ -192,7 +192,7 @@
         .btn-fixed {
             position: fixed;
             bottom: 0;
-            z-index: 99999999;
+            z-index:9999999999;
             width: 100%;
             left: 0;
             display: none;
@@ -202,10 +202,10 @@
             .openbtn {
                 border-radius: 0;
                 width: 100%;
-                background-color: $pricolor;
+                background-color: $pricolor !important;
                 font-size: 1.5rem;
                 font-weight: bold;
-                color: $whiteColor;
+                color: $whiteColor !important;
                 text-align: center;
                 vertical-align: middle;
                 user-select: none;
@@ -557,9 +557,12 @@
     }
 
 .card-sticky{
-    position: sticky;
+    position: fixed;
     top: 100px;
     margin-bottom: -586px;
+    .sticky-new{
+    margin-top: 100px;
+    }
     .sticy-card-sub{
         position: relative;
         // padding: 3rem;
@@ -612,6 +615,8 @@
     &.visibleCard{
         margin: 0;
         margin-bottom: 11rem;
+        left: 50%;
+        margin-left: 250px;
         .sticy-card-sub{
             width: 31.33%;
             padding: 0;
@@ -655,7 +660,7 @@
         top: 230px;
     }
     @media (max-width:$md) {
-        display: none;
+        z-index: 99999999999;
     }
 }
 .ipo-breakup{
