@@ -10,7 +10,7 @@ function BChargesMoreContent() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title-first pb-5 text-center">Basics : Free Demat Account Opening</h2>
+                            <h2 className="title-first pb-5 text-center">Basics about Trading account</h2>
                         </div>
                         <div className="col-md-12">
                             <div className="para">
@@ -27,7 +27,7 @@ function BChargesMoreContent() {
                                 Well, then you’re in luck! In this post, we will cover everything about trading accounts, their fees, benefits, and other details. So, without further ado, let’s begin!</p>
 
                                     <h3 className="seo-h3">What is a Trading Account?</h3>
-                                    <p className="seo-para">If you’re wondering or Googling “trading account is which type of account”? then you’re at the right place. But before we answer the same, it is important that you understand the trading account meaning.</p>
+                                    <p className="seo-para">If you’re wondering or Googling “trading account is which type of account”? then you’re at the right place. But before we answer the same, it is important that you understand the <Link to="/blog/trading-account-meaning/">meaning of the trading account.</Link></p>
                                     <p className="seo-para">You can consider it an investment account containing cash, securities, and other holdings that helps you purchase or sell your assets, like equity shares in the stock market.</p>
                                     <p className="seo-para">In short, a trading account is hence like a bank account that speeds up the process of buying and selling shares. Moreover, you don't have to be physically present at a stock exchange for these financial transactions.</p>
                                     <p className="seo-para">You just need to open a trading account with a reliable and registered stock broker to get started. The stock broker will guide you in trading shares and handling all the processes. In addition, you will receive a unique ID for conducting the stock market purchases.</p>
@@ -38,11 +38,11 @@ function BChargesMoreContent() {
                                     <p className="seo-para">200 INR/- + GST (Yearly Plan)<br/>
                                     1500 INR/- + GST (Lifetime AMC Coverage Plan)<br/>
                                     3000 INR/-Full Refundable AMC Plan (Choice will recount the total AMC amount when you close the account)</p>
-                                    <p className="seo-para">However, the trading account charges vary in trading equity, currency, and commodities</p>
+                                    <p className="seo-para">However, these charges vary in equity, currency, and commodities and you need to know the detailed <Link to="/blog/trading-account-charges-fees/">Trading account charges</Link> while you trade in any specific instrument.</p>
                                   <h3 className="seo-h3">Trading Account Benefits with Choice</h3>
                                     <p className="seo-para">When you open trading account with Choice, you receive multiple benefits besides free AMC charges for the first year.</p>
                                     <p className="seo-para">Low DP charges (10 INR)<br/>
-                                    Low brokerage charges<br/>
+                                    <Link to="/brokerage-charges">Low brokerage charges</Link><br/>
                                     Low intraday charges (0.02% for equity)</p>
                                     <p className="seo-para">The company also has more than 25 years of experience in the broking industry. So, you'll receive high-quality services along with their expertise.</p>
                                     <p className="seo-para">If you’re still not convinced, here's a few more reasons why you must choose Choice for your trading account.</p>
@@ -90,8 +90,8 @@ function BChargesMoreContent() {
                                     <p className="seo-para">Thereafter, you must send it to the Choice headquarters at their official address.</p>
                                   </div>
                                   <h3 className="seo-h3">Difference between Trading Account and Demat Account</h3>
-                                    <p className="seo-para">You need to understand the difference between a trading account and Demat account to expand your wealth in the stock market.</p>
-                                    <p className="seo-para">To answer the same, a Demat account is used for storing the shares you have bought in a digitized format. Acting as a repository, its prime objective is to hold the securities.</p>
+                                    <p className="seo-para">You need to understand the <Link to="/blog/difference-between-demat-and-trading-account/">difference between a trading account and Demat account</Link> to expand your wealth in the stock market.</p>
+                                    <p className="seo-para">To answer the same, a <Link to="/demat-account">Demat account</Link> is used for storing the shares you have bought in a digitized format. Acting as a repository, its prime objective is to hold the securities.</p>
                                     <p className="seo-para">On the other hand, a trading account acts as a platform for selling and buying securities or shares. So, the major financial transactions are a part of this account.</p>
                                   <h4 className="seo-h4">Holding Securities</h4>
                                     <p className="seo-para">Demat Account - It can hold equity shares, government securities, ETF and mutual funds.</p>
@@ -107,7 +107,7 @@ function BChargesMoreContent() {
                                   <p className="seo-para">Trading Account - It works like a current bank account.</p>
                                   <p className="seo-para">But irrespective of which you want to open, opening both on the Choice online platform is very simple. All you need to do is follow the steps mentioned on the website to get started. However, keep your account IDs safe no matter which accounts you prefer to use.</p>
                                   <h3 className="seo-h3">How to open a trading account with Choice?</h3>
-                                  <p className="seo-para">Choice is considered one of the best trading accounts in India due to its top-class features. Also, the simple account opening process makes it the best trading account for beginners.</p>
+                                  <p className="seo-para">Choice is considered one of the <Link to="/blog/best-trading-account-in-india/">best trading accounts in India</Link> due to its top-class features. Also, the simple account opening process makes it the <Link to="/blog/best-trading-account-for-beginners/">best trading account for beginners.</Link></p>
                                   <p className="seo-para">The platform offers two options to open a trading account online.</p>
                                   <p className="seo-para">You can either open a Demat Account and trading Account together, or you can register for only a trading account and link it to your existing depository participant identity (DP) and a referral code. But you have to do this while signing up for the account.</p>
                                   <p className="seo-para">However, if you don't mention the referral code, Choice will open both accounts on your behalf. To elaborate, here are the detailed steps for setting up your account with Choice:</p>
@@ -119,7 +119,9 @@ function BChargesMoreContent() {
                                       <li className="seo-para mb-0">If all these steps are successful, Choice will set up your trading account.</li>
                                       <li className="seo-para mb-0">After your registration, you need to send the self-attested POA to the official email address of Choice HQ.</li>
                                     </ul>
+                                    <p className="seo-para">However you can anytime access our blog over a detailed guide on <Link to="/blog/how-to-open-trading-account-online/">how to open a Trading Account.</Link></p>
                                   </div>
+                                  <br/>
                                   <h3 className="seo-h3">Parting Thoughts</h3>
                                   <p className="seo-para">Opening a trading account with Choice will be an excellent financial decision for your future. You can take up small trades and learn the basics using the user-friendly platform. Moreover, you will understand how to invest wisely and receive better returns with time.</p>
                                   <p className="seo-para">The free AMC charges for the first year make the process even more convenient. Additionally, you get affordable rates while trading equities, currencies, or commodities.</p>

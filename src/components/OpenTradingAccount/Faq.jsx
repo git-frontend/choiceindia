@@ -68,12 +68,12 @@ function Faqs() {
                                             <Accordion.Body className='open-demat-faq-body'>
                                             Below are the documents required to open a trading account online, it is helpful to keep them handy when you try to open a trading account online.
                                             <ul>
-                                            <ol>Address Proof</ol>
-                                            <ol>PAN Card</ol>
-                                            <ol>Cancelled Cheque</ol>
-                                            <ol>Photograph</ol>
-                                            <ol>Signature on a White Paper</ol>
-                                            <ol>Income Proof</ol>
+                                            <li>Address Proof</li>
+                                            <li>PAN Card</li>
+                                            <li>Cancelled Cheque</li>
+                                            <li>Photograph</li>
+                                            <li>Signature on a White Paper</li>
+                                            <li>Income Proof</li>
                                             </ul>
                                             Note: These must be individual documents and they need to be self-attested before they are uploaded.
                                             </Accordion.Body>
