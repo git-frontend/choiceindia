@@ -16,7 +16,6 @@ function BChargesMoreContent() {
                             <div className="para">
                                 {/* <input type="checkbox" className="read-more-state" id="post-1" /> */}
                                 <div className="read-more-wrap "> 
-                                   <h3 className="seo-h3">How to Open a Trading Account Online?</h3>
                                 <p className="seo-para">If you want to increase your income, you can’t live from paycheck to paycheck. You have to invest your money to build wealth over time. So, you can start by investing in the stock market.
                                 <br/> The first thing you’ll need is a trading account. It is an essential financial instrument that makes the process of investing and earning convenient. Moreover, it makes the transactions secure.</p>
                                 {/* {!show ? <span onClick={()=>{setshow(true);}}><em className="btn-read moreless-button">Read more</em></span>:""}
