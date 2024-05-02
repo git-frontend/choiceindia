@@ -10,126 +10,120 @@ function BChargesMoreContent() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title-first pb-5 text-center">Free Demat Account Opening at Choice</h2>
+                            <h2 className="title-first pb-5 text-center">Basics : Free Demat Account Opening</h2>
                         </div>
                         <div className="col-md-12">
                             <div className="para">
                                 {/* <input type="checkbox" className="read-more-state" id="post-1" /> */}
                                 <div className="read-more-wrap "> 
-                                <p className="seo-para">The stock market is an old establishment that has existed since 1875 when BSE was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;</p>
-                                   <h3 className="seo-h3">What is a Demat Account?</h3>
-                                <p className="seo-para">If we put it into simple terms we can say that the <Link to="/demat-account">Demat account</Link> is a depository where you can safely store your investments in different forms. A Demat account can not only hold your stocks but can also hold your mutual funds, bonds and ETFs.</p>
+                                   <h3 className="seo-h3">How to Open a Trading Account Online?</h3>
+                                <p className="seo-para">If you want to increase your income, you can’t live from paycheck to paycheck. You have to invest your money to build wealth over time. So, you can start by investing in the stock market.
+                                <br/> The first thing you’ll need is a trading account. It is an essential financial instrument that makes the process of investing and earning convenient. Moreover, it makes the transactions secure.</p>
                                 {/* {!show ? <span onClick={()=>{setshow(true);}}><em className="btn-read moreless-button">Read more</em></span>:""}
                                 {show ? */}
                                 <div>
                                     <div className="read-more-target">
-                                <p className="seo-para">Demat account is your safe locker as you don’t live in perpetual fear of losing any shares or investments, the whole process is electronic and you’re away from all kinds of triggers that could force you to make irrational decisions.</p>
-                                    <h3 className="seo-h3">Why Demat Account is Necessary for Investing?</h3>
-                                    <p className="seo-para">As mentioned previously, before electronic trading was introduced into the stock market in 1996 people stored their shares as certificates which were in form of physical paper and due to human errors, it is not assured that those physically held shares are in safe hands,</p>
-                                    <p className="seo-para">Therefore keeping convenience in mind, the whole process of trading took an electronic route and since then this trend has followed and it was made mandatory for any investor to open a Demat account to participate in the stock market.</p>
-                                  <h3 className="seo-h3">Difference Between Demat and Trading Account</h3>
-                                    <p className="seo-para">Now that we’ve explored what is a Demat account and how it helps us, let's further dive in and understand, how does a <Link to="/open-trading-account">Trading Account</Link> play a role here?</p>
-                                    <p className="seo-para">In the Stock Market, it is evident that we’ll have a lot of transactions going around and to make these transactions we need to have a trading account, now many might argue shouldn’t the Demat account itself should do that job?</p>
-                                    <p className="seo-para">Well to answer that question people need to understand that a Demat account is just a repository where your stocks are stored, for transactional purposes in the stock market you need a trading account.</p>
-                                    <p className="seo-para">Now that we've understood how does a <Link to="/blog/difference-between-demat-and-trading-account/">Demat account and a trading account differ</Link> from each other, let's look into the details;</p>
+                                <p className="seo-para">Curious to know more about these accounts? <br/>
+                                Well, then you’re in luck! In this post, we will cover everything about trading accounts, their fees, benefits, and other details. So, without further ado, let’s begin!</p>
+
+                                    <h3 className="seo-h3">What is a Trading Account?</h3>
+                                    <p className="seo-para">If you’re wondering or Googling “trading account is which type of account”? then you’re at the right place. But before we answer the same, it is important that you understand the trading account meaning.</p>
+                                    <p className="seo-para">You can consider it an investment account containing cash, securities, and other holdings that helps you purchase or sell your assets, like equity shares in the stock market.</p>
+                                    <p className="seo-para">In short, a trading account is hence like a bank account that speeds up the process of buying and selling shares. Moreover, you don't have to be physically present at a stock exchange for these financial transactions.</p>
+                                    <p className="seo-para">You just need to open a trading account with a reliable and registered stock broker to get started. The stock broker will guide you in trading shares and handling all the processes. In addition, you will receive a unique ID for conducting the stock market purchases.</p>
+                                  <h3 className="seo-h3">Trading Account Fees & Charges</h3>
+                                    <p className="seo-para">Before understanding trading account opening and its basics, you need to understand the associated fees. When you choose Choice for your account, you can open it for free!</p>
+                                    <p className="seo-para">To elaborate, you can open a free trading account where the annual maintenance charges (AMC) are free for the first year to get you started. Subsequently, from the second year, Choice charges a minimal fee to keep your account functional.
+                                     Additionally, you can choose from three AMC plans provided by the company -</p>
+                                    <p className="seo-para">200 INR/- + GST (Yearly Plan)<br/>
+                                    1500 INR/- + GST (Lifetime AMC Coverage Plan)<br/>
+                                    3000 INR/-Full Refundable AMC Plan (Choice will recount the total AMC amount when you close the account)</p>
+                                    <p className="seo-para">However, the trading account charges vary in trading equity, currency, and commodities</p>
+                                  <h3 className="seo-h3">Trading Account Benefits with Choice</h3>
+                                    <p className="seo-para">When you open trading account with Choice, you receive multiple benefits besides free AMC charges for the first year.</p>
+                                    <p className="seo-para">Low DP charges (10 INR)<br/>
+                                    Low brokerage charges<br/>
+                                    Low intraday charges (0.02% for equity)</p>
+                                    <p className="seo-para">The company also has more than 25 years of experience in the broking industry. So, you'll receive high-quality services along with their expertise.</p>
+                                    <p className="seo-para">If you’re still not convinced, here's a few more reasons why you must choose Choice for your trading account.</p>
                                   <div className="ml-3">
-                                    <h4 className="seo-h4"> 1. Delivery </h4>
-                                      <p className="seo-para">A Demat account stores your stocks only when you take the delivery for it, you can further buy or sell in the future whereas your trading account facilitates you for your intraday activities, in intraday trading, you are required to sell off your positions by the end of the day, hence the intraday trades you’ve taken are not delivered to your Demat account.</p>
-                                    <h4 className="seo-h4"> 2. Bank Link</h4>
-                                      <p className="seo-para">As mentioned before a trading account helps you with transactions, so it makes sense that your trading account and your bank account are both linked to each other so that you can make transactions seamlessly.</p>
-                                      <p className="seo-para">When you add money into your trading account you can go ahead and buy stocks that will be stored in your Demat account and if you sell your stocks, your Demat account will get rid of those stocks and the money will be deposited into your trading account and from there it will be transferred to your bank account as per your convenience.</p>
+                                    <h4 className="seo-h4"> 1.  User-friendly Platform </h4>
+                                      <p className="seo-para">Choice offers you an easy-to-use and technically advanced trading platform. You can open a paperless account within 5 minutes and get started with your trading journey.</p>
+                                      <p className="seo-para">Furthermore, you can buy or sell shares using the web platform or mobile apps available on Android and iOS. This way, you can trade faster!</p>
+                                    <h4 className="seo-h4"> 2. Convenient Trading</h4>
+                                      <p className="seo-para">Along with convenient features on the portal, you also get a free trade call facility. So, you can conduct your trades over calls absolutely free.</p>
+                                      <p className="seo-para">Moreover, you will receive more returns through their referral program. Here, you can send referrals to other interested traders. So, you will earn whenever someone registers and it will act as a long-term income source for you.</p>
+                                    <h4 className="seo-h4"> 3. Excellent Customer Support</h4>
+                                      <p className="seo-para">Choice offers excellent customer support through their dedicated team, who are always at your service. You can reach them 24/7 via their official email address or phone number.</p>
+                                      <p className="seo-para">Additionally, they have over 48 branches across the country, so you'll receive prompt assistance whenever you need it.</p>
+                                      <p className="seo-para">That’s not all!</p>
+                                      <p className="seo-para">Choice has an expert research team that provides you with technical assistance and advisory services. So, you can move ahead with your trading transactions without any hassle.</p>
                                   </div>
-                                  <h3 className="seo-h3"><Link to="/blog/benefits-of-a-demat-account/">Benefits of Opening Demat Account </Link></h3>
-                                    <p className="seo-para">In the above-mentioned sections we have told you why is a Demat account necessary but told very less on why exactly is a Demat account beneficial for you,</p>
-                                  <div className="ml-3">
-                                    <h4 className="seo-h4"> 1. Corporate Benefits </h4>
-                                      <p className="seo-para">Stocks as a single entity is not only associated with trading, when you buy into a stock you are exposed or eligible to tons of corporate benefits like stock splits, bonuses, dividend payouts etc.</p>
-                                      <p className="seo-para">Managing all these benefits means your stocks are dynamic, they can change in number when you get a bonus or a stock split. When you are eligible for a dividend payout, the dividends are directly transferred to your bank account.</p>
-                                      <p className="seo-para">All these happen seamlessly, but that wouldn’t be the case if it weren't for the Demat account.</p>
-                                    <h4 className="seo-h4"> 2. Nomination Facilities</h4>
-                                      <p className="seo-para">When you open a Demat account for yourself you are required to add a nominee for precautionary measures, the transfer of assets between you and your nominee happens without any hassle, requiring you to have little to no paperwork.</p>
-                                    <h4 className="seo-h4"> 3. Physical Limitations</h4>
-                                      <p className="seo-para">Electronic trading was introduced in 1994, before that we had people trading via physical means using paper certificates. This came with a lot of drawbacks including misplacing stocks, theft, damage to the certificates, etc.</p>
-                                      <p className="seo-para">With a Demat account, all these problems are tackled altogether, a Demat account provides all the securities that would be required with password authentication.</p>
-                                    <h4 className="seo-h4"> 4. Versatile Options</h4>
-                                      <p className="seo-para">Talking in terms of finance we usually see most of the instruments involved in it are limited to a few folks who check out the rigid structure of authentication and security, but that problem is tackled by Demat accounts without compromising security or authentication.</p>
-                                      <p className="seo-para">While opening a Demat account you are provided with plenty options from which you can open your Demat account;</p>
-                                    <ul>
-                                      <li className="seo-h5">Individual Demat Account</li>
-                                        <p className="seo-para">Individual Demat account is a fairly simple one and the name itself is explanatory. It is a Demat account dedicated to an individual who operates it themselves.</p>
-                                      <li className="seo-h5">Minor Demat Account</li>
-                                        <p className="seo-para">For the most part, usually, minors or people aged below 18 are not allowed to be engaging in a financial agreement, but, we have certain provisions in place which would allow a minor to have a Demat account.</p>
-                                        <p className="seo-para">However, this<Link to="/minor-demat-account"> minor Demat account</Link> needs to be operated under the guidance of the minor’s parent or guardian, meaning the minor himself cannot buy or sell shares.</p>
-                                        <p className="seo-para">Once the account holder is aged above 18 and wishes to take control of their Demat account, they can do so legally.</p>
-                                      <li className="seo-h5"><Link to="/nri-demat-account">NRI Demat Account</Link></li>
-                                        <p className="seo-para">We understand and we know that any legal Indian can possess equities to buy and sell according to their free will, but, what about NRIs?</p>
-                                        <p className="seo-para">NRI’s or Non-Resident Indians, do they have the provisions to enjoy the tremendous growth shown by the Indian markets?</p>
-                                        <p className="seo-para">Turns out, they do have the provisions to participate in the Indian markets. NRIs are allowed to have Demat accounts but while abiding by the rules of FEMA (Foreign Exchange Management Act)</p>
-                                      <li className="seo-h5">Corporate Demat Account</li>
-                                        <p className="seo-para">Demat accounts are not only limited to personal use, there are provisions for the corporate companies to invest as a single entity. <Link to="/corporate-demat-account">Corporate Demat accounts</Link> are especially special because it reduces the paperwork significantly while you are buying, selling, trading and transferring securities.</p>
-                                    </ul>
-                                  </div>
-                                  <p className="seo-para">Now that we’ve covered and also understand what is Demat and how Demat is necessary for us to invest in securities in India, now let’s look at how to do we set up or open a Demat account online.</p>
-                                  <h3 className="seo-h3">Requirements For Opening a Demat Account</h3>
-                                    <p className="seo-para">If you’re looking to have a personal touch while opening your Demat account you probably will opt for an offline means and opening a Demat account offline would require you to be prepared with documents and we’ll help you with it;</p>
+                                  <h3 className="seo-h3">Trading Account Features</h3>
+                                    <p className="seo-para">It's important to understand the features of a trading account to operate it well. Instead of visiting the stock exchange, online trading accounts allow you to conduct trades from any location conveniently.</p>
+                                    <p className="seo-para">Here, the features you receive from the account depend upon the broker you select. For instance, Choice is a full-service broker that allows you to trade equity, commodity, currency, derivatives, and other options.</p>
+                                    <p className="seo-para">They make an ideal choice as they facilitate:</p>
                                   <ul>
-                                    <li className="seo-para">First of all, you’d have to decide on your DP or Depository Participant, DP is an intermediate between you and your investments and DPs are usually banks, financial institutions and brokers.</li>
-                                    <li className="seo-para">For choosing the appropriate DP you have to decide upon the brokerage charges and annual maintenance charges.</li>
-                                    <li className="seo-para">You need to have a bank account and complete your KYC</li>
-                                    <li className="seo-para">While completing your KYC you’ll have to attach copies of your;</li>
-                                    <div className="ml-3">
-                                      <p className="seo-para">
-                                        1. PAN Card<br />
-                                        2. ID Proof (eg; Aadhar)<br />
-                                        3. Proof of Permanent Residence<br />
-                                        4. Passport-size photographs
-                                      </p>
-                                    </div>
-                                    <li className="seo-para">While you submit your KYC along with all the copies of your necessary documents, you need to make sure you have the original documents with you as well for verification purposes.</li>
-                                    <li className="seo-para">After the verification process, you are required to sign an agreement that lists out all the terms and conditions.</li>
-                                    <li className="seo-para">Once your account is opened, your DP will be providing you with a unique client ID, this client ID will allow you to access your Demat account online.</li>
+                                    <li className="seo-para">Easy account opening and trading processes</li>
+                                    <li className="seo-para">A convenient trading platform accessible on all devices</li>
+                                    <li className="seo-para">Same account for trading in multiple segments like commodities, currencies, stocks, and F&O.</li>
+                                    <li className="seo-para">Completely safe and reliable trading platform</li>                     
                                   </ul>
-                                  <p className="seo-para">After you’ve gained access to your Demat account make sure your DP provides you with Beneficiary ID and POA number or Power of Attorney number along with your client ID, this information will help you apply for IPOs.</p>
-                                  <h3 className="seo-h3">How to Open a Demat Account Online</h3>
-                                    <p className="seo-para">Opening a Demat account online is relatively easier than opening an account while actually having to be at the physical location of your preferred DP. You opening a Demat account online will obviously allow you to open an account at the convenience of your house.</p>
-                                    <p className="seo-para">Although the requirements of opening a Demat account online will require you to have pretty much the same documents you’d usually want while opening a Demat account physically, there are some extra requirements that you need to know to be prepared;</p>
+                                  <p className="seo-para">This means that in the long run, you can monitor all your trading orders placed using the online trading account. This will include partially executed, executed, and even failed orders.</p>
+                                  <p className="seo-para">You can also track your progress by comparing yearly investment returns. In addition, you can check the status of multiple stocks at the starting and ending of any trading day.</p>
+                                  <h3 className="seo-h3">Documents Required for Trading Account Opening</h3>
+                                    <p className="seo-para">Opening a trading account with Choice is extremely convenient and quick. But, you need to have the necessary documents and complete the KYC process. Then, your account will be set up within 15 to 20 minutes.</p>
+                                    <p className="seo-para">However, if you haven't completed the KYC, it might take a couple of business days to open your trading account.</p>
+                                    <p className="seo-para">Here are the documents required for trading account opening with Choice:</p>
                                   <div className="ml-3">
                                     <ul>
-                                      <li className="seo-para">Visit your preferred DP’s website, almost every other financial institution or bank has an online presence in this day and age, so you’ll not be facing any problems finding your preferred DP’s website.</li>
-                                      <li className="seo-para">While you’re at the website you’ll be required to fill out a few basic details like Recipient Name, Email ID, Contact Number and City.</li>
-                                      <li className="seo-para">Once you’ve filled out the necessary details, you’ll receive an OTP for verification and when you punch in the OTP your initiation process starts.</li>
-                                      <li className="seo-para">Your DP will get in contact with you for completing all the mentioned formalities and then open a Demat account.</li>
+                                      <li className="seo-para mb-0">Aadhar card</li>
+                                      <li className="seo-para mb-0">PAN card</li>
+                                      <li className="seo-para mb-0">Income proof</li>
+                                      <li className="seo-para mb-0">Proof of address</li>
+                                      <li className="seo-para mb-0">Your photograph</li>
+                                      <li className="seo-para mb-0">A cancelled cheque</li>
+                                      <li className="seo-para mb-0">Your official signature on a piece of white paper</li>
                                     </ul>
+                                    <p className="seo-para">You must also remember to self-attest all these important documents before uploading them to the website. Additionally, apart from these documents, you also have to provide the POA (power of attorney) to the broker.</p>
+                                    <p className="seo-para">This is a very important document that you need to fill up and self-attest.</p>
+                                    <p className="seo-para">Thereafter, you must send it to the Choice headquarters at their official address.</p>
                                   </div>
-                                  <h3 className="seo-h3">Demat Account Opening Fee and Charges</h3>
-                                    <p className="seo-para">This is the most common type and is available for majority of the Indian citizens residing in India.</p>
-                                  <h4 className="seo-h4">Repatriable Demat Account</h4>
-                                    <p className="seo-para">While opening a Demat account you probably will be associated with various fees and charges, these are namely opening charge, safety charge, annual maintenance charge, transaction charges and Demat charges.</p>
-                                    <p className="seo-para">Before you decide upon a DP to open your Demat account you are advised to check about all this information and only then make a decision to open a Demat account at your prefered DP.</p>
+                                  <h3 className="seo-h3">Difference between Trading Account and Demat Account</h3>
+                                    <p className="seo-para">You need to understand the difference between a trading account and Demat account to expand your wealth in the stock market.</p>
+                                    <p className="seo-para">To answer the same, a Demat account is used for storing the shares you have bought in a digitized format. Acting as a repository, its prime objective is to hold the securities.</p>
+                                    <p className="seo-para">On the other hand, a trading account acts as a platform for selling and buying securities or shares. So, the major financial transactions are a part of this account.</p>
+                                  <h4 className="seo-h4">Holding Securities</h4>
+                                    <p className="seo-para">Demat Account - It can hold equity shares, government securities, ETF and mutual funds.</p>
+                                    <p className="seo-para">Trading Account - It doesn't hold any financial instruments, but assists in purchasing and selling them</p>
+                                  <h3 className="seo-h3">Suitability</h3>
+                                    <p className="seo-para">Demat Account - It's suitable for traders who prefer stock deliveries and hold them for long periods</p>
+                                    <p className="seo-para">Trading Account - It's suitable for users interested in intraday trading and quick transactions that won't take long hours.</p>
+                                  <h3 className="seo-h3">Regulatory</h3>
+                                  <p className="seo-para">Demat Account - SEBI and NSDL approval is mandatory here.</p>
+                                  <p className="seo-para">Trading Account - These approvals are not mandatory here.</p>
+                                  <h3 className="seo-h3">Function</h3>
+                                  <p className="seo-para">Demat Account - It functions like a savings account.</p>
+                                  <p className="seo-para">Trading Account - It works like a current bank account.</p>
+                                  <p className="seo-para">But irrespective of which you want to open, opening both on the Choice online platform is very simple. All you need to do is follow the steps mentioned on the website to get started. However, keep your account IDs safe no matter which accounts you prefer to use.</p>
+                                  <h3 className="seo-h3">How to open a trading account with Choice?</h3>
+                                  <p className="seo-para">Choice is considered one of the best trading accounts in India due to its top-class features. Also, the simple account opening process makes it the best trading account for beginners.</p>
+                                  <p className="seo-para">The platform offers two options to open a trading account online.</p>
+                                  <p className="seo-para">You can either open a Demat Account and trading Account together, or you can register for only a trading account and link it to your existing depository participant identity (DP) and a referral code. But you have to do this while signing up for the account.</p>
+                                  <p className="seo-para">However, if you don't mention the referral code, Choice will open both accounts on your behalf. To elaborate, here are the detailed steps for setting up your account with Choice:</p>
                                   <div className="ml-3">
                                     <ul>
-                                      <li className="seo-h5">Demat Charges</li>
-                                        <p className="seo-para">Most of the existing financial institutions and banks don’t usually charge Demat charges anymore but there used to be a time when banks used to charge anywhere in between 600-900 rupees just to open a Demat account.</p>
-                                        <p className="seo-para">Now you might find it common that institutions open Demat accounts for you for free or at a very nominal price.</p>
-                                      <li className="seo-h5">Safety Charges</li>
-                                        <p className="seo-para">Safety charges are levied in exchange for keeping all your securities safe and maintaining a Demat account.</p>
-                                        <p className="seo-para">Safety charges or account custodian charge fees are usually levied on the DP by the depository, these are one-time charges on the DPs. The DPs who charge safety charges on their customers do it on a monthly basis.</p>
-                                      <li className="seo-h5">Annual Maintainance Charge (AMC)</li>
-                                        <p className="seo-para mb-0">Annual Maintainance charges are levied on the investor by the DP for the services they provide.</p>
-                                        <p className="seo-para">The annual Maintainance charge is also called the folio maintenance charge, these charges range between 200 - 1000 rupees per annum. The style at which <Link to="/blog/what-are-dp-charges/">DPs charge</Link> AMC differs accordingly, some DPs charge their investors quarterly and some even take a lifetime fee, but charging investors annually is the most common way of collecting AMC.</p>
-                                      <li className="seo-h5">Transactional Charges</li>
-                                      <p className="seo-para">The main aim of having a Demat account is participating in the Indian markets and while doing that it is evident that every transaction you make on the Demat account is a move towards your future.DPs charge <Link to="/blog/dp-transaction-charges/">transactional charges</Link> on both credit and debits, where every time you engaged in a trade a nominal amount is charged on your behalf for facilitating a smooth transaction between your Demat account and the market.</p>
+                                      <li className="seo-para mb-0">Visit the trading account opening page and fill in the required details for the account</li>
+                                      <li className="seo-para mb-0">Upload the official documents mentioned above along with your passport size photograph</li>
+                                      <li className="seo-para mb-0">You need to complete the in-person verification process</li>
+                                      <li className="seo-para mb-0">If all these steps are successful, Choice will set up your trading account.</li>
+                                      <li className="seo-para mb-0">After your registration, you need to send the self-attested POA to the official email address of Choice HQ.</li>
                                     </ul>
                                   </div>
-                                  <h3 className="seo-h3">Why Should You Choose Choice to Open a Demat Account?</h3>
-                                    <p className="seo-para mb-0">You’ve been through all the information that is out there about Demat and you hone enough knowledge to understand that picking a DP is no easy job, you’ll have to consider a lot of factors like charges and the services they provide and if that aligns with your conscience, you opt for them.</p>
-                                    <p className="seo-para">But let us present ourselves and tell you why exactly you need to open a Demat account with Choice;</p>
-                                  <ul>
-                                    <li className="seo-para">Free AMC for a year and after a year the maintenance charge is at just 200 Rupees + GST, which is significantly lesser than the market standard.</li>
-                                    <li className="seo-para">Free access to expert research and advisory, these reports provided have proven to have an impeccable accuracy record.</li>
-                                    <li className="seo-para">Insanely low brokerage charges, Choice platform happens to be very trader friendly where call and trade orders have charges on them and squaring off your positions is also absolutely free. The Brokerage charges are as low as 2 paise.</li>
-                                    <li className="seo-para"><a href="/campaign/free-amc-demat-account">Open a Demat account with no amc</a>, Choice opens an account for you, free of cost.</li>
-                                  </ul>
+                                  <h3 className="seo-h3">Parting Thoughts</h3>
+                                  <p className="seo-para">Opening a trading account with Choice will be an excellent financial decision for your future. You can take up small trades and learn the basics using the user-friendly platform. Moreover, you will understand how to invest wisely and receive better returns with time.</p>
+                                  <p className="seo-para">The free AMC charges for the first year make the process even more convenient. Additionally, you get affordable rates while trading equities, currencies, or commodities.</p>
+                                  <p className="seo-para">Lastly, the Choice platform is also completely safe to conduct your trade transactions. So, you can begin online trading by opening an account here worry-free!</p>
                                     </div> 
                                     {/* <span onClick={()=>{setshow(false);}}>&nbsp;<em className="btn-read moreless-button">Read less</em></span> */}
                                     </div>

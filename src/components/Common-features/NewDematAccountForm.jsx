@@ -881,7 +881,7 @@ function NewDematAccountForm(props) {
                             </div>
                            
                         <div className="thank-content">
-                            <h2 className={(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) ? "thankyou-title campaign-success":"thankyou-title"}>Thank You!</h2>
+                            <h2 className={(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) || (window.location.pathname.indexOf('open-trading-account') > -1)? "thankyou-title campaign-success":"thankyou-title"}>Thank You!</h2>
                                 <p className="subheading">{showThanku.resText? showThanku.resText: "You are being redirected to onboarding page!"}</p>
                         </div>
                         </div>
