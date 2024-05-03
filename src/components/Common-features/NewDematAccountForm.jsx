@@ -634,6 +634,8 @@ function NewDematAccountForm(props) {
                             <p>Take Control of Your Finances</p>
                         </div>
                         :
+                        (window.location.pathname.indexOf("open-trading-account")>-1)?
+                        <h2 className="heading">Open Trading Account</h2>:
                         <h2 className="heading">Open Demat Account</h2>
                       }
                       {/* {window.location.pathname.includes("blog") &&  <div className="sticy-card-blog-new sub-new-small">

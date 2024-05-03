@@ -48,7 +48,7 @@ function DocumentsRequiredDematAccountOpeningOnline() {
                           </div>
                         <div className="doc-caption">
                           <h3 className="count">Identity Proof</h3>
-                          <p>PAN Card is mandatory for Demat Account Opening.</p>
+                          <p>PAN Card is mandatory for Trading Account Opening.</p>
                         </div>
                   </div>
                   <div className="doc-rec-details">
@@ -86,7 +86,7 @@ function DocumentsRequiredDematAccountOpeningOnline() {
                       </div>
                       <div className="doc-caption">
                         <h3 className="count count-5">Signature</h3>
-                        <p>Upload the photo of your signature, while completing your demat account opening process.</p>
+                        <p>Upload the photo of your signature, while completing your trading account opening process.</p>
                       </div>
                   </div>
                 </div>

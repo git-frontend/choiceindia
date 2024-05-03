@@ -98,12 +98,6 @@ It’s completely safe to open a trading account online.
 
                                             </Accordion.Body>
                                         </Accordion.Item>
-                                        <Accordion.Item eventKey="8" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header'>How much money can I add to my trading account?</Accordion.Header>
-                                            <Accordion.Body className='open-demat-faq-body'>
-                                            There are limits as such to the maximum amount that can be added to your account. You will need to check with your back regarding transfers to Demat/ Trading accounts.
-                                            </Accordion.Body>
-                                        </Accordion.Item>
                                         <Accordion.Item eventKey="9" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>Can I use the same trading account for all segments?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
