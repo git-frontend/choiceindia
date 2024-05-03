@@ -125,7 +125,7 @@ function DocumentsRequiredDematAccountOpeningOnline() {
                           </div>
                           <div className="doc-caption">
                             <h3 className="count count-3">Signature</h3>
-                            <p>Upload the photo of your signature, while completing your demat account opening process.</p>
+                            <p>Upload the photo of your signature, while completing your trading account opening process.</p>
                           </div>
                       </div>
                     </div>
