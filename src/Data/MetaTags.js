@@ -1327,17 +1327,17 @@ const meta_tags = {
   "@type": "FAQPage",
   "mainEntity": [{
     "@type": "Question",
-    "name": "Who can open a Demat account?",
+    "name": "What is the eligibility to have a demat account?",
     "acceptedAnswer": {
       "@type": "Answer",
       "text": "A Demat account can be opened by Indian residents, non-resident Indians (NRIs), and foreign investors through registered depository participants (DPs)."
     }
   },{
     "@type": "Question",
-    "name": "How secure is my Demat account?",
+    "name": "Is Demat account safe?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Demat accounts are highly secure, using encryption and authentication measures. Your DP and depository maintain stringent security standards."
+      "text": "Demat being a digitalised account is regulated by SEBI, and registered under NSDL and CDSL. However being associated with a reputed broker like choice ensures safety."
     }
   },{
     "@type": "Question",
@@ -1348,66 +1348,12 @@ const meta_tags = {
     }
   },{
     "@type": "Question",
-    "name": "How to check my Demat account?",
+    "name": "What is the eligibility to open a demat account?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "You can check your Demat account balance and transaction history through the online portal provided by your DP."
-    }
-  },{
-    "@type": "Question",
-    "name": "What happens if I forget my Demat account password?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Contact your DP for password reset assistance. They will guide you through the process."
-    }
-  },{
-    "@type": "Question",
-    "name": "How do I update my personal information in my Demat account?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Submit the necessary documents and updates to your DP for any changes in personal information."
-    }
-  },{
-    "@type": "Question",
-    "name": "Can I trade in commodities using my Demat account?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No, commodities trading requires a separate commodity trading account."
-    }
-  },{
-    "@type": "Question",
-    "name": "What is the procedure for transferring shares from one Demat account to another?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "You can initiate the transfer through a delivery instruction slip (DIS) or by submitting an off-market transfer request."
-    }
-  },{
-    "@type": "Question",
-    "name": "Are there any restrictions on the number of shares I can hold in my Demat account?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "There are no specific restrictions on the number of shares you can hold, but DPs may have their limits for operational efficiency."
-    }
-  },{
-    "@type": "Question",
-    "name": "When does the IEX bonus share get credited to the Demat account?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Bonus shares are credited after the company's board approves the bonus issue, and the record date is announced."
-    }
-  },{
-    "@type": "Question",
-    "name": "How to change the nominee in the Demat account?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Fill out the nomination change form provided by your DP and submit the necessary documents."
-    }
-  },{
-    "@type": "Question",
-    "name": "Can I open a Demat account without an Aadhar Card?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Yes, you can open a Demat account without an Aadhar card by providing other government-issued identity documents."
+      "text": "Age - There is no minimum age criteria. Individuals above 18 yers are eligible for a regular demat account while the ones below 18 can open a minor demat account. Their parents or guardians will be in-charge of the account until the minor comes to age.
+Citizenship - Must be Indian Citizen residing in India
+Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter ID, Passport, Driving License)"
     }
   }]
 }

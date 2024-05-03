@@ -11,8 +11,8 @@ import Nro from '../../assets/images/demat-images/new-demat/nro-demat-account.we
 import bsda from '../../assets/images/demat-images/new-demat/bsda-demat-account.webp';
 import different from '../../assets/images/demat-images/new-demat/different-types-of-demat-account.webp';
 import choosing from '../../assets/images/demat-images/new-demat/choosing-a-dp-broker.webp';
-import benefits from '../../assets/images/demat-images/new-demat/demat-account-benefits.webp';
-import features from '../../assets/images/demat-images/new-demat/demat-account-features.webp';
+import benefits from '../../assets/images/demat-images/new-demat/feature2.webp';
+import features from '../../assets/images/demat-images/new-demat/feature1.webp';
 import openingprocess from '../../assets/images/demat-images/new-demat/demat-account-opening-process.webp';
 import checklist from '../../assets/images/demat-images/new-demat/documents-required-to-open-demat-account.webp';
 import charges from '../../assets/images/demat-images/new-demat/demat-account-charges.webp';
@@ -26,6 +26,7 @@ import pledgeshares from '../../assets/images/demat-images/new-demat/how-to-pled
 import addnominee from '../../assets/images/demat-images/new-demat/how-to-add-nominee-to-demat-account.webp';
 import closedemat from '../../assets/images/demat-images/new-demat/how-to-close-demat-account.webp';
 import closureDemat from '../../assets/images/demat-images/new-demat/demat-account-closing-process.webp';
+import feature1 from '../../assets/images/demat-images/new-demat/feature1.webp';
 import meta_tags from "../../Data/MetaTags";
 import { InView } from 'react-intersection-observer';
 
@@ -36,8 +37,10 @@ import { useRef } from "react";
 
 
 function OpenDematNew() {
-
-
+    const [VideoVisibility, setVideoVisibility] = useState(false);
+    const handletClick = () => {
+        setVideoVisibility(true);
+    };
     const [isActive, setIsActive] = useState();
     const [isActive4, setIsActive4] = useState('id0');
     const [initialize, setInitialize] = useState(false);
@@ -47,8 +50,8 @@ function OpenDematNew() {
         isTriggered: false
     });
 
-    const [isActive2, setIsActive2] = useState(false);
-    
+    const [isActive2, setIsActive2] = useState(false);``
+
     const handleClick = (event) => {
         setIsActive(current => !current);
     };
@@ -64,7 +67,7 @@ function OpenDematNew() {
         window.addEventListener('scroll', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            if(!scrollConfig.current.state) scrollConfig.current = {
+            if (!scrollConfig.current.state) scrollConfig.current = {
                 ...scrollConfig.current,
                 state: true
             }
@@ -75,7 +78,7 @@ function OpenDematNew() {
         window.addEventListener('scrollend', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            if(scrollConfig.current.state) scrollConfig.current = {
+            if (scrollConfig.current.state) scrollConfig.current = {
                 isTriggered: false,
                 state: false
             };
@@ -110,7 +113,7 @@ function OpenDematNew() {
     // }, [isActive4]);
 
     useEffect(() => {
-            // console.log("kkkkkkkkkk")
+        // console.log("kkkkkkkkkk")
 
         setRenderCount(true)
         if (rendercount === true) {
@@ -118,9 +121,9 @@ function OpenDematNew() {
             let doc = parser.parseFromString(meta_tags[location.pathname.replace(/\//g, "")].faqscript, 'text/html');
             let doc1 = parser.parseFromString(meta_tags[location.pathname.replace(/\//g, "")].faqscript1, 'text/html');
             let doc2 = parser.parseFromString(meta_tags[location.pathname.replace(/\//g, "")].faqscript2, 'text/html');
-             document.body.appendChild(doc.getElementsByTagName('script')[0] || [] ? doc.getElementsByTagName('script')[0] || [] : '');
-             document.body.appendChild(doc.getElementsByTagName('script1')[0] || [] ? doc1.getElementsByTagName('script')[0] || [] : '');
-             document.body.appendChild(doc.getElementsByTagName('script2')[0]||[]? doc2.getElementsByTagName('script')[0]||[]: '' );
+            document.body.appendChild(doc.getElementsByTagName('script')[0] || [] ? doc.getElementsByTagName('script')[0] || [] : '');
+            document.body.appendChild(doc.getElementsByTagName('script1')[0] || [] ? doc1.getElementsByTagName('script')[0] || [] : '');
+            document.body.appendChild(doc.getElementsByTagName('script2')[0] || [] ? doc2.getElementsByTagName('script')[0] || [] : '');
             document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
           // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
@@ -135,8 +138,8 @@ function OpenDematNew() {
         }
           
         }
-      }, [rendercount])
-    
+    }, [rendercount])
+
     return (
         <div>
 
@@ -203,8 +206,8 @@ function OpenDematNew() {
                         </div> */}
                         <div className="sub-description">
                             <div className="pr-sec">
-                                <p>Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.<br/><br/>
-                                Explore topics related to Demat accounts, how they work, the different types available, and more. Gain insight into their significance and how they play a pivotal role in your investment journey.</p>
+                                <p>Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.<br /><br />
+                                    Explore topics related to Demat accounts, how they work, the different types available, and more. Gain insight into their significance and how they play a pivotal role in your investment journey.</p>
                             </div>
                             {/* <div className="hide-fr-desk">
                                 <h3>Table of Contents</h3>
@@ -240,70 +243,106 @@ function OpenDematNew() {
                                     </ul>
                                 </div>                                
                             </div> */}
-                            <InView as="div" className="pr-sec"  onChange={(e) => {initialize && !scrollConfig.current.isTriggered && e===true && setIsActive4('id0')}} id="id0">
+                            <InView as="div" className="pr-sec" onChange={(e) => { initialize && !scrollConfig.current.isTriggered && e === true && setIsActive4('id0') }} id="id0">
                                 <h2>What is Demat Account?</h2>
-                                <p>A Demat account securely holds an investor's stocks, bonds, mutual funds, and other securities electronically. It’s also called a Dematerialised account as it eliminates the need for paper share certificates and ensures easy buying and selling of stocks and securities.<br/><br/>
-
-                                This transformation to digital holdings has streamlined the investment process and enhanced governance under the Securities and Exchange Board of India (SEBI). Gone are the days of cumbersome, manual account openings.<br/><br/>
-
-                                In today's digital age, you can <a href="/open-free-demat-account">open a Demat account</a> within minutes. The COVID-19 pandemic accelerated the shift towards online share trading, making it more accessible than ever before.</p>
-                                <LazyLoader src={evolution} alt={"Evolution of Share Ownership in India"} className={"img-fluid"} width={"670"} height={"734"} /><br/><br/>
+                                <p>A Demat account or in-short a dematerialized account is an account that securely holds an investor's securities like stocks, bonds, mutual funds and more. It acts as an intermediary between the investors and the stock market to ensure smooth and paperless transactions between them.
+                                <br /><br />
+                                You can assume it as a bank account but here instead of cash, your demat account holds your shares and other securities safely and you can effortlessly add or withdraw your assets as per your need.
+                               </p>
+                                {/* <LazyLoader src={evolution} alt={"Evolution of Share Ownership in India"} className={"img-fluid"} width={"670"} height={"734"} /><br /><br /> */}
                                 <h3>What is Dematerialization?</h3>
-                                <p><a href="/blog/dematerialisation/">Dematerialization</a> refers to the process of <a href="/blog/physical-shares-to-demat/">converting physical share certificates</a> into electronic form. This transformation enables easy access to your shares from anywhere in the world.<br/><br/>
+                                <p>In today's digital age, you can <a href="/open-free-demat-account">open a Demat account</a> within minutes. This was not the case earlier where shares were traded in the form of physical paper certificates. This process had many limitations and hence the process of dematerialization was introduced.
+                                <br/><br/>
+                                <a href="/blog/dematerialisation/">Dematerialization</a> refers to the process of <a href="/blog/physical-shares-to-demat/">converting physical share certificates</a> into electronic form.This transformation enabled easy access to your shares from anywhere in the world. 
+                                The introduction of a Demat account ensured seamless tracking and monitoring of investors holdings.
+                                <br /><br /> </p>
+                                {/* <iframe className="cust-video" src="https://www.youtube.com/embed/3u0VZAHMwO0?si=sqbJJfBthND0ReKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+                                <a
+                                    onClick={handletClick}
+                                    className={"open-vid " + (VideoVisibility ? "active" : "")}
+                                >
+                                    {VideoVisibility ? (
+                                        <iframe
+                                            className="cust-video"
+                                            src="https://www.youtube.com/embed/3u0VZAHMwO0?si=sqbJJfBthND0ReKo"
+                                            title="YouTube video player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                        ></iframe>
+                                    ) : (
+                                        <LazyLoader
+                                            src="https://img.youtube.com/vi/3u0VZAHMwO0/maxresdefault.jpg"
+                                            alt="Thumbnail"
+                                            className="img-fluid"
+                                        />
+                                    )}
 
-To begin your journey into online trading, you must open a Demat account with a Depository Participant (DP). This step aligns to eliminate physical certificates and ensure seamless tracking and monitoring of your holdings. <br/><br/>
-Upon activation of your Demat account, submit your physical securities through a Dematerialization Request Form (DRF). Ensure each physical certificate is defaced by marking "Surrendered for Dematerialization." You will receive an acknowledgment slip for your surrendered share certificates.</p>
-<iframe className="cust-video" src="https://www.youtube.com/embed/3u0VZAHMwO0?si=sqbJJfBthND0ReKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </a>
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id5')} id="id5">
-                                <h2>Key Features of Demat Account</h2>
-                                <LazyLoader src={features} className="img-fluid" alt={"Features of Demat Account"} width={"670"} height={"847"}/><br/><br/>
-                                <p>Demat accounts come packed with features to simplify your investment journey. Here are some of the key highlights:</p>
+                           
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id5')} id="id5">
+                                <h2>Features and Benefits of Demat Account</h2>
+                                {/* <LazyLoader src={features} className="img-fluid" alt={"Features of Demat Account"} width={"670"} height={"847"} /> */}
+                                <p>Demat accounts come packed with features and benefits to simplify your investment journey. Here are some of the key highlights:</p>
                                 <ol className="drk-bld">
                                     <li>
-                                        <h3>Online Access</h3>
+                                        <h3>Easily Accessible</h3>
                                         <p>With internet connectivity, you can access your Demat account 24/7 to monitor holdings and execute transactions from anywhere.</p>
                                     </li>
                                     <li>
-                                        <h3>Centralized Recordkeeping</h3>
-                                        <p>All your investments are electronically recorded in one place, making tracking and management convenient.</p>
+                                        <h3>Safety and Security</h3>
+                                        <p>Demat accounts offer unparalleled safety for your financial assets, significantly reducing the risk of loss or theft.</p>
                                     </li>
                                     <li>
-                                        <h3>Automatic Updates</h3>
-                                        <p>Corporate actions like dividends, bonuses, or splits are credited directly to your account, ensuring you don't miss out on any benefits.</p>
+                                        <h3>Elimination of Paper Certificates</h3>
+                                        <p>With Demat accounts the shares are stored in digital form making them easily accessible eliminating the need to manage the physical share certificates. Additionally, unlike physical share certificates, demat holdings do not require stamp duty, saving you additional costs.</p>
                                     </li>
                                     <li>
-                                        <h3>Safe and Secure Transactions</h3>
-                                        <p>Manage multiple investments, including stocks, mutual funds, and bonds, all from one Demat account.</p>
+                                        <h3>All in one account</h3>
+                                        <p>A Demat account acts as a secure storage for your financial assets like shares and securities, bonds, ETFs, debentures and more. This consolidation simplifies asset management and facilitates tax filing with all your records in one place.</p>
                                     </li>
                                     <li>
-                                        <h3>Single Point of Access</h3>
-                                        <p>Demat accounts can be seamlessly linked to your trading account for a smooth trading experience.</p>
-                                    </li>
-                                    <li>
-                                        <h3>Integration with Trading Account</h3>
-                                        <p>Demat accounts can be seamlessly linked to your trading account for a smooth trading experience.</p>
-                                    </li>
-                                    <li>
-                                        <h3>Consolidated Asset Storage</h3>
-                                        <p>A Demat account serves as a single repository for all your financial assets, including bonds, debentures, ETFs, and more. This consolidation simplifies asset management and facilitates tax filing with all your records in one place.</p>
-                                    </li>
-                                    <li>
-                                        <h3>Loan Against Securities</h3>
-                                        <p>You can use your Demat account holdings as collateral for loans, enabling you to continue trading even with limited capital.</p>
-                                    </li>
-                                    <li>
-                                        <h3>Receive Bonus Shares</h3>
-                                        <p>When you invest in a company's shares, you become eligible for bonus shares that the company may offer. Demat accounts make it easy to receive and manage these additional shares.</p>
+                                        <h3>Easy Transmission</h3>
+                                        <p>In the unfortunate event of a Demat account holder's demise, assets can be seamlessly transferred to the next of kin. This ensures a hassle-free process compared to physical certificates.</p>
                                     </li>
                                 </ol>
-                                <p>Demat account features are designed to empower you to manage your investments efficiently.</p>
-                                <iframe className="cust-video" src="https://www.youtube.com/embed/29-dyEIktIo?si=OZKg_lRrG5aACue6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                {/* <iframe className="cust-video" src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=kXmV-bHdsV_leXv_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+                                <a
+                                    onClick={handletClick}
+                                    className={"open-vid " + (VideoVisibility ? "active" : "")}
+                                >
+                                    {VideoVisibility ? (
+                                        <iframe
+                                            className="cust-video"
+                                            src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=kXmV-bHdsV_leXv_"
+                                            title="YouTube video player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                        ></iframe>
+                                    ) : (
+                                        <LazyLoader
+                                            src="https://img.youtube.com/vi/Qmm7rrwyDzc/maxresdefault.jpg"
+                                            alt="Thumbnail"
+                                            className="img-fluid"
+                                        />
+                                    )}
+                                </a>
+                                <br/><br/>
+                                <p>Other than the above mentioned benefits, there are many other <a href="/blog/benefits-of-a-demat-account/">benefits of a demat account</a> like regular and automatic updates about Corporate actions like dividends, bonuses, or split, integration with trading account, loan against securities, faster and smoother settlements, reduction in errors
+                                </p>
+                                <div className="d-flex justify-content-between col-11">
+                                    <span><LazyLoader src={features} className="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
+                                    <span><LazyLoader src={benefits} className="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
+                                </div>
+                                
+                                
                             </InView>
-                            
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id4')} id="id4">
+
+                            {/* <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id4')} id="id4">
                                 <h2><a href="/blog/benefits-of-a-demat-account/">Benefits of a Demat Account</a></h2>
-                                <LazyLoader src={benefits} className="img-fluid" alt={"Benefits of Demat Account"} width={"670"} height={"1008"}/><br/><br/>
+                                <LazyLoader src={benefits} className="img-fluid" alt={"Benefits of Demat Account"} width={"670"} height={"1008"} /><br /><br />
                                 <p>The introduction of Dematerialization has revolutionized the stock market and unlocked numerous benefits for investors:</p>
                                 <ol className="drk-bld">
                                     <li>
@@ -333,55 +372,83 @@ Upon activation of your Demat account, submit your physical securities through a
                                 </ol>
                                 <p>With these advantages, a Demat account emerges as a must-have tool for modern investors.</p>
                                 <iframe className="cust-video" src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=JoEnoJU3qiCOpMfN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id2')} id="id2">
+                            </InView> */}
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id2')} id="id2">
                                 <h2>Types of Demat Accounts in India</h2>
-                                <LazyLoader src={HowChoose} alt={"How to Choose Best Demat Account"} className={"img-fluid"} width={"670"} height={"413"} /><br/><br/>
+                                {/* <LazyLoader src={HowChoose} alt={"How to Choose Best Demat Account"} className={"img-fluid"} width={"670"} height={"413"} /><br /><br /> */}
                                 <p>In India, there are several <a href="/blog/demat-account-types/">types of Demat accounts</a> to cater to various investor profiles. Here is a quick look:</p>
                                 <ol className="drk-bld">
                                     <li>
                                         <h3>Regular Demat Account</h3>
-                                        <LazyLoader src={Regular} className="img-fluid" alt={"Regular Demat Account"} width={"670"} height={"413"} /><br/><br/>
-                                        <p>Ideal for Indian residents, this account is managed by depository participants, and regulated by two depositories. It offers swift transactions, allowing you to buy or sell shares within minutes. Regular Demat accounts may include: <br/><br/>
-                                       <a href="/minor-demat-account"><strong>Minor Demat Account:</strong></a> Specifically designed for minors, this account allows parents or guardians to manage investments on behalf of their children until they reach the legal age of 18. It offers a secure way to build a financial foundation for the younger generation.<br/><br/>
-                                        <a href="/corporate-demat-account"><strong>Corporate Demat Account:</strong></a> This type of Demat account is tailored for corporate entities and organizations. It enables businesses to hold and manage their securities electronically, facilitating smoother transactions and enhanced financial control. Corporate Demat accounts are instrumental in corporate actions and shareholder meetings.
+                                        {/* <LazyLoader src={Regular} className="img-fluid" alt={"Regular Demat Account"} width={"670"} height={"413"} /><br /><br /> */}
+                                        <p>Ideal for Indian residents, this account is managed by depository participants, and regulated by two depositories. It offers swift transactions, allowing you to buy or sell shares within minutes. Regular Demat accounts could be categorized into: <br /><br />
+                                            <a href="/minor-demat-account"><strong>Minor Demat Account:</strong></a> Specifically designed for minors, this account allows parents or guardians to manage investments on behalf of their children until they reach the legal age of 18. It offers a secure way to build a financial foundation for the younger generation.<br /><br />
+                                            <a href="/corporate-demat-account"><strong>Corporate Demat Account:</strong></a> This type of Demat account is tailored for corporate entities and organizations. It enables businesses to hold and manage their securities electronically, facilitating smoother transactions and enhanced financial control. Corporate Demat accounts are instrumental in corporate actions and shareholder meetings.
                                         </p>
                                     </li>
                                     <li>
                                         <h3>Repatriable Demat Account (<a href="/nri-demat-account">NRI Demat Account</a>)</h3>
-                                        <LazyLoader src={Repatriable} className="img-fluid" alt={"Repatriable Demat Account"} width={"670"} height={"413"} /><br/><br/>
-                                        <p>NRIs can leverage this account to transfer funds abroad. It requires an NRE bank account for operation.</p>
+                                        {/* <LazyLoader src={Repatriable} className="img-fluid" alt={"Repatriable Demat Account"} width={"670"} height={"413"} /><br /><br /> */}
+                                        <p>It’s a type of demat account designed for NRIs so that they can leverage this account to transfer funds abroad . It requires an NRE bank account for operation.</p>
                                     </li>
                                     <li>
                                         <h3>Non-Repatriable Demat Account</h3>
-                                        <LazyLoader src={Nro} className="img-fluid" alt={"NRO Demat Account"} width={"670"} height={"413"} /><br/><br/>
-                                        <p>Unlike the Repatriable account, funds cannot be transferred abroad with this type. It necessitates an NRO bank account association.</p>
+                                        {/* <LazyLoader src={Nro} className="img-fluid" alt={"NRO Demat Account"} width={"670"} height={"413"} /><br /><br /> */}
+                                        <p>This is also intended towards NRIs but unlike the repatriable demat account, in a non-repatriable demat account, funds cannot be transferred abroad. It necessitates an NRO bank account association.</p>
                                     </li>
                                     <li>
                                         <h3>Basic Services Demat Account</h3>
-                                        <LazyLoader src={bsda} className="img-fluid" alt={"BSDA Demat Account"} width={"670"} height={"413"} /><br/><br/>
+                                        {/* <LazyLoader src={bsda} className="img-fluid" alt={"BSDA Demat Account"} width={"670"} height={"413"} /><br /><br /> */}
                                         <p>Designed to promote financial inclusion, the Basic Services Demat Account caters to individuals from economically disadvantaged backgrounds. Offering a simplified and cost-effective way to participate in the Indian securities market. This type of account is subject to certain restrictions and limitations, making it an accessible entry point for new investors with limited resources.</p>
                                     </li>
                                 </ol>
-                                <LazyLoader src={different} className="img-fluid" alt={"Different Types of Demat Account"} width={"670"} height={"706"}/><br/><br/>
-                                <p>Choosing the right Demat account type depends on your residency status and investment goals.</p>
-                                
+                                {/* <LazyLoader src={different} className="img-fluid" alt={"Different Types of Demat Account"} width={"670"} height={"706"} /><br /><br />
+                                <p>Choosing the right Demat account type depends on your residency status and investment goals.</p> */}
+
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => {initialize && !scrollConfig.current.isTriggered && e===true && setIsActive4('id1')}} id="id1">
+                            <InView as="div" className="pr-sec" onChange={(e) => { initialize && !scrollConfig.current.isTriggered && e === true && setIsActive4('id1') }} id="id1">
                                 <h2><a href="/blog/how-demat-account-works/">How Does a Demat Account Work?</a></h2>
                                 <p>A Demat account functions as the digital vault for your securities. It allows you to buy, hold, and sell shares with ease, regardless of your location. However, it doesn't operate in isolation. Here's how it collaborates with other elements to offer seamless transactions:</p>
-                                <LazyLoader src={HowDoes} alt={"How a Demat Account Works"} className={"img-fluid"} width={"670"} height={"826"} /><br/><br/>
-                                <p>Every stockbroker charges an opening fee for a Demat account, as they are responsible for maintaining your account. For your Demat account to operate seamlessly, you need to link it with a <a href="/open-trading-account">trading account</a>. Your Depository Participant (DP) forwards your buy orders to the stock exchange when you make purchases via a trading platform. <br/><br/>
-                                Once your buy order matches with a corresponding sell order, the stock exchange sends it to a clearinghouse for settlement. At the end of the trading day, the shares you've bought are credited to your Demat account. Similarly, the seller's Demat account is debited for the sold shares.<br/><br/>
-                                <iframe src="https://www.youtube.com/embed/at5pItTsJJE?si=VgNo0MHto7TNA245" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="cust-video"></iframe><br/><br/>
-                                Remember, without a trading account, you cannot utilize your Demat account for investments. A trading account handles the monetary transactions associated with buying and selling shares.
+                                {/* <LazyLoader src={HowDoes} alt={"How a Demat Account Works"} className={"img-fluid"} width={"670"} height={"826"} /><br /><br /> */}
+                                <p><strong>Account opening -</strong>  Stock brokers help you open a Demat account and in return they charge some fees in order to maintain the same. <br /><br />
+                                <strong>Link it with a trading account -</strong> In order to carry out your trading activities, you need to link your demat account with a trading account. Now-a-days opening a trading account doesn’t require any individual process as brokers open it alongside while one opens a demat account and hence they are already linked to each other.
+                                <br /><br />
+                                <strong>Order placement -</strong>  Your Depository Participant (DP) forwards your buy orders to the stock exchange when you make purchases via a trading platform.
+                                <br/><br/>
+                                <strong>Settlement -</strong> Once your buy order matches with a corresponding sell order, the stock exchange sends it to a clearinghouse for settlement. At the end of the trading day, the shares you've bought are credited to your Demat account. Similarly, the seller's Demat account is debited for the sold shares.
+                                <br/><br/>
+                                    {/* <iframe src="https://www.youtube.com/embed/at5pItTsJJE?si=VgNo0MHto7TNA245" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="cust-video"></iframe> */}
+                                    <a
+                                    onClick={handletClick}
+                                    className={"open-vid " + (VideoVisibility ? "active" : "")}
+                                >
+                                    {VideoVisibility ? (
+                                        <iframe
+                                            className="cust-video"
+                                            src="https://www.youtube.com/embed/at5pItTsJJE?si=VgNo0MHto7TNA245"
+                                            title="YouTube video player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                        ></iframe>
+                                    ) : (
+                                        <LazyLoader
+                                            src="https://img.youtube.com/vi/at5pItTsJJE/maxresdefault.jpg"
+                                            alt="Thumbnail"
+                                            className="img-fluid"
+                                        />
+                                    )}
+
+                                </a>
+                                    <br /><br />
+                                    Remember, without a trading account, you cannot utilize your Demat account for investments. A trading account handles the monetary transactions associated with buying and selling shares.
                                 </p>
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id7')} id="id7">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id7')} id="id7">
                                 <h2><a href="/blog/documents-required-for-demat-account-opening/">Documents Required for Demat Account Opening</a></h2>
                                 <p>Proper documentation is crucial when opening a Demat account. Here's a list of the essential documents:</p>
                                 <ol className="none-para drk-bld">
-                                    <li><strong>Proof of Identity:</strong> You can submit any one of the following:
+                                    <li><strong>Proof of Identity:</strong>
                                         <ol>
                                             <li>Aadhar Card</li>
                                             <li>Passport</li>
@@ -400,79 +467,104 @@ Upon activation of your Demat account, submit your physical securities through a
                                             <li>Bank statement</li>
                                         </ol>
                                     </li>
-                                    <li><strong>PAN Card:</strong> It is mandatory for all Demat account holders.</li>
+                                    <li><strong>PAN Card(mandatory)</strong></li>
                                     <li><strong>Passport-Size Photographs:</strong> Typically, you need 2-3 recent passport-sized photographs if you opt for the offline process. For the online process, it will be e-KYC authentication.</li>
                                 </ol>
-                                <LazyLoader src={checklist} className="img-fluid" alt={"Documents Required to Open Demat Account"} width={"670"} height={"740"}/><br/><br/>
+                                {/* <LazyLoader src={checklist} className="img-fluid" alt={"Documents Required to Open Demat Account"} width={"670"} height={"740"} /><br /><br /> */}
                                 <p>Ensure that all documents are self-attested copies, and keep the original documents handy for verification purposes during the <a href="/blog/demat-account-opening-process/">demat account opening process</a>.</p>
                                 <span className="bl-box">For certain segments, such as derivatives, income proofs may be necessary.</span>
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id8')} id="id8">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id8')} id="id8">
                                 <h2><a href="/blog/demat-account-charges/">Demat Account Charges</a></h2>
-                                <p>While opening a Demat account is often free or comes at a nominal charge, there are various fees and charges associated with maintaining and using it. Some common Demat account charges include</p>
-                                <LazyLoader src={charges} className="img-fluid" alt={"Demat Account Charges"} width={"670"} height={"1608"} /><br/><br/>
-                                <ol className="drk-bld">
+                                <p>Opening a Demat account is often free or even if it's charged, it usually requires a nominal fee. Other than the opening fees, there are various fees and charges associated with maintaining and using it. Some common Demat account charges include</p>
+                                {/* <LazyLoader src={charges} className="img-fluid" alt={"Demat Account Charges"} width={"670"} height={"1608"} /><br /><br /> */}
+                                <ol className="">
                                     <li>
-                                        <h3>Account Opening Fee</h3>
-                                        <p>This is a one-time charge for opening a Demat account. It varies from one Depository Participant (DP)/brokerage company to another.</p>
+                                        <p>Annual Maintenance Charges (AMC)</p>
+                                        {/* <p>This is a one-time charge for opening a Demat account. It varies from one Depository Participant (DP)/brokerage company to another.</p> */}
                                     </li>
                                     <li>
-                                        <h3>Annual Maintenance Charges (AMC)</h3>
-                                        <p>These are yearly fees for maintaining a Demat account. They can range from a few hundred to a couple of thousand rupees, depending on your DP.</p>
+                                        <p>Transaction Charges</p>
+                                        {/* <p>These are yearly fees for maintaining a Demat account. They can range from a few hundred to a couple of thousand rupees, depending on your DP.</p> */}
                                     </li>
                                     <li>
-                                        <h3>Transaction Charges</h3>
-                                        <p>Each time you buy or sell securities, you may be charged a transaction fee. This fee can be a fixed amount or a percentage of the transaction value.</p>
+                                        <p>Debit Transaction Charges</p>
+                                        {/* <p>Each time you buy or sell securities, you may be charged a transaction fee. This fee can be a fixed amount or a percentage of the transaction value.</p> */}
                                     </li>
                                     <li>
-                                        <h3>Debit Transaction Charges</h3>
-                                        <p>These charges apply when you sell or transfer securities from your Demat account. They can be a fixed fee or a percentage of the transaction value.</p>
+                                        <p>Dematerialization Charges</p>
+                                        {/* <p>These charges apply when you sell or transfer securities from your Demat account. They can be a fixed fee or a percentage of the transaction value.</p> */}
                                     </li>
                                     <li>
-                                        <h3>Dematerialization Charges</h3>
-                                        <p>Applicable when converting physical shares to electronic form.</p>
+                                        <p>Rematerialization Charges</p>
+                                        {/* <p>Applicable when converting physical shares to electronic form.</p> */}
                                     </li>
                                     <li>
-                                        <h3>Rematerialization Charges</h3>
-                                        <p>Incurred when converting electronic shares back to physical form.</p>
+                                        <p>Pledge Charges</p>
+                                        {/* <p>Incurred when converting electronic shares back to physical form.</p> */}
                                     </li>
                                     <li>
-                                        <h3>Pledge Charges</h3>
-                                        <p>A fee is imposed when you pledge your securities for margin trading or loans.</p>
+                                        <p>POA (Power of Attorney) Charges</p>
+                                        {/* <p>A fee is imposed when you pledge your securities for margin trading or loans.</p> */}
                                     </li>
                                     <li>
-                                        <h3>POA (Power of Attorney) Charges</h3>
-                                        <p>If you grant a Power of Attorney to your broker or DP, there may be charges associated with this service.</p>
+                                        <p>Custodian Fees</p>
+                                        {/* <p>If you grant a Power of Attorney to your broker or DP, there may be charges associated with this service.</p> */}
                                     </li>
                                     <li>
-                                        <h3>Custodian Fee</h3>
-                                        <p>For certain types of securities, like foreign securities, you might incur custodian fees.</p>
+                                        <p>Failed Transaction Charges</p>
+                                        {/* <p>For certain types of securities, like foreign securities, you might incur custodian fees.</p> */}
                                     </li>
                                     <li>
-                                        <h3>Failed Transaction Charges</h3>
-                                        <p>If a transaction fails due to insufficient funds or other reasons, you may be charged a penalty.</p>
+                                        <p>Account Closure Charges</p>
+                                        {/* <p>If a transaction fails due to insufficient funds or other reasons, you may be charged a penalty.</p> */}
                                     </li>
                                     <li>
-                                        <h3>Account Closure Charges</h3>
-                                        <p>This applies if you decide to <a href="/blog/how-to-close-a-demat-account/">close your Demat account.</a></p>
+                                        <p>Stamp Duty</p>
+                                        {/* <p>This applies if you decide to <a href="/blog/how-to-close-a-demat-account/">close your Demat account.</a></p> */}
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <h3>Stamp Duty</h3>
                                         <p>Stamp duty charges vary by state and are levied when you sell securities.</p>
-                                    </li>
+                                    </li> */}
                                 </ol>
-                                <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat accounts</a>, making it cost-effective for investors.</p>
-                                <div className="flex-image">
+                                <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat account</a>, making it cost-effective for investors.</p>
+                                {/* <div className="flex-image">
                                     <LazyLoader src={openingcharges} className="img-fluid" alt={"Choice Demat Account Opening Charges"} width={"356"} height={"485"} />
-                                    <LazyLoader src={amccharges} className="img-fluid" alt={"Choice AMC Charges"}  width={"356"} height={"485"}/>
-                                </div>
+                                    <LazyLoader src={amccharges} className="img-fluid" alt={"Choice AMC Charges"} width={"356"} height={"485"} />
+                                </div> */}
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id6')} id="id6">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id6')} id="id6">
                                 <h2><a href="/blog/how-to-open-demat-account/">How to Open a Demat Account?</a></h2>
-                                <p>Opening a Demat account has never been easier, thanks to digitalization. You have two primary options: online and offline account opening.</p>
+                                <p>Opening a Demat Account has been a lot easier today, thanks to digitalization. You have two primary options: online and offline account opening.</p>
                                 <h3><a href="/blog/demat-account-opening-online/">Online Demat Account Opening</a></h3>
                                 <p>Most brokerage firms offer online account opening, allowing you to complete the process from the comfort of your home. It's quick, convenient, and paperless.</p>
-                                <iframe className="cust-video" src="https://www.youtube.com/embed/dbtHtNsWZkI?si=5os5LGH4EX5NSeWd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br/>
+                                {/* <iframe className="cust-video" src="https://www.youtube.com/embed/dbtHtNsWZkI?si=5os5LGH4EX5NSeWd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+                                <a
+                                    onClick={handletClick}
+                                    className={"open-vid " + (VideoVisibility ? "active" : "")}
+                                >
+                                    {VideoVisibility ? (
+                                        <iframe
+                                            className="cust-video"
+                                            src="https://www.youtube.com/embed/dbtHtNsWZkI?si=5os5LGH4EX5NSeWd"
+                                            title="YouTube video player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                        ></iframe>
+                                    ) : (
+                                        <LazyLoader
+                                            src="https://img.youtube.com/vi/dbtHtNsWZkI/maxresdefault.jpg"
+                                            alt="Thumbnail"
+                                            className="img-fluid"
+                                        />
+                                    )}
+
+                                </a>
+                                <br />
+                                <br/>
+                                <br/>
                                 <p>An online demat account opening process involves:</p>
                                 <ol className="none-para">
                                     <li>Visiting the preferred broking company’s official website</li>
@@ -486,9 +578,9 @@ Upon activation of your Demat account, submit your physical securities through a
                                     <li>Enter your Aadhar details (ensure your phone number is linked to your Aadhar card) and receive an OTP</li>
                                     <li>After successful verification, your Demat account will be opened and activated</li>
                                 </ol>
-                                <LazyLoader src={openingprocess} className="img-fluid" alt={"Demat Account Opening Process"} width={"670"} height={"1029"} /><br/><br/>
+                                <LazyLoader src={openingprocess} className="img-fluid" alt={"Demat Account Opening Process"} width={"670"} height={"1029"} /><br /><br />
                                 <span className="bl-box">Choice completes the verification process in under 4 hours. Our team will assist you if you encounter any issues during the Demat account opening process.</span>
-                                <h3>Offline Demat Account Opening</h3>
+                                {/* <h3>Offline Demat Account Opening</h3>
                                 <p>If you prefer a more traditional approach, visit the nearest branch office of your chosen Depository Participant (DP) or brokerage firm to open an account. The process includes:</p>
                                 <ol>
                                     <li>Collecting the account opening form from the DP's office</li>
@@ -498,26 +590,26 @@ Upon activation of your Demat account, submit your physical securities through a
                                     <li>Waiting for account activation</li>
                                 </ol>
                                 <span className="bl-box">
-                                Ensure you have the following documents ready for the Demat account opening:
-                                <ol>
-                                    <li>PAN Card</li>
-                                    <li>Proof of identity (Aadhar card, passport, voter ID, etc.)</li>
-                                    <li>Proof of address (utility bill, bank statement, passport, etc.)</li>
-                                    <li>Passport-size photographs</li>
-                                    <li>Bank statement or canceled cheque to link your bank account</li>
-                                </ol>
-                                </span>
+                                    Ensure you have the following documents ready for the Demat account opening:
+                                    <ol>
+                                        <li>PAN Card</li>
+                                        <li>Proof of identity (Aadhar card, passport, voter ID, etc.)</li>
+                                        <li>Proof of address (utility bill, bank statement, passport, etc.)</li>
+                                        <li>Passport-size photographs</li>
+                                        <li>Bank statement or canceled cheque to link your bank account</li>
+                                    </ol>
+                                </span> */}
                             </InView>
-                            
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id3')} id="id3">
+
+                            {/* <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id3')} id="id3">
                                 <h2>How to Choose the Right DP and Brokerage Firm?</h2>
                                 <p>Selecting the right Depository Participant (DP) and brokerage firm is a crucial decision for your investment journey. Always choose one that is trustworthy and reliable, and aligns with your trading and investment needs.</p>
-                                <LazyLoader src={choosing} className="img-fluid" alt={"Choosing a DP or Broker"} width={"670"} height={"413"} /><br/><br/>
+                                <LazyLoader src={choosing} className="img-fluid" alt={"Choosing a DP or Broker"} width={"670"} height={"413"} /><br /><br />
                                 <p>Here are some factors to consider when choosing:</p>
                                 <ol className="list-pr">
                                     <li>
                                         <p><strong>Reputation and Reliability:</strong> Opt for a DP and brokerage firm with a strong reputation for reliability, security, and customer service. Check online reviews and ask for recommendations from experienced investors.</p>
-                                        <span className="txt-it">Prioritize two-factor authentication, secure socket layer (SSL) certificates, and 
+                                        <span className="txt-it">Prioritize two-factor authentication, secure socket layer (SSL) certificates, and
                                             regular security audits.</span>
                                     </li>
                                     <li>
@@ -556,15 +648,15 @@ Upon activation of your Demat account, submit your physical securities through a
                                 </ol>
                                 <p>Take your time to research and compare different DPs and brokerage firms before making a decision. Your choice can significantly impact your overall investment experience.</p>
                                 <iframe className="cust-video" src="https://www.youtube.com/embed/GT4sJNBSF7A?si=9xDt2Mg0uCrk94aM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            </InView>
-                            
-                            
-                            
-                            
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id9')} id="id9">
+                            </InView> */}
+
+
+
+
+                            {/* <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id9')} id="id9">
                                 <h2><a href="/blog/difference-between-demat-and-trading-account/">Trading Account vs Demat Account</a></h2>
                                 <p>While the Demat account holds your securities, the trading account facilitates buying and selling. A combination of both is essential for participating in the stock market. Here’s a breakdown of their differences:</p>
-                                <LazyLoader src={tradingaccount} className="img-fluid" alt={"Difference Between Demat and Trading Account"} width={"670"} height={"874"} /><br/><br/>
+                                <LazyLoader src={tradingaccount} className="img-fluid" alt={"Difference Between Demat and Trading Account"} width={"670"} height={"874"} /><br /><br />
                                 <h3>Trading Account</h3>
                                 <ul className="drk-bld">
                                     <li>
@@ -614,13 +706,13 @@ Upon activation of your Demat account, submit your physical securities through a
                                         <p>When you place a buy order, the shares are debited from your Demat account and sold from your Trading account. When you sell, the shares are credited to your Demat account after the transaction is complete.</p>
                                     </li>
                                 </ul>
-                                <iframe className="cust-video" src="https://www.youtube.com/embed/Z4i7dMIySI0?si=QZJtxasGcr5tPyhH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br/><br/>
+                                <iframe className="cust-video" src="https://www.youtube.com/embed/Z4i7dMIySI0?si=QZJtxasGcr5tPyhH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br /><br />
                                 <p>Understanding this distinction enables you to make informed decisions while managing your investments and executing trades efficiently.</p>
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id11')} id="id11">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id11')} id="id11">
                                 <h2>How to Buy and Sell Shares Using a Demat Account?</h2>
                                 <p>Once your Demat account is linked to your trading account, you can start buying and selling shares. Here's a step-by-step guide for both processes:</p>
-                                <LazyLoader src={buysell} className="img-fluid" alt={"How to Buy and Sell Shares Using Demat Account"} width={"670"} height={"1212"} /><br/><br/>
+                                <LazyLoader src={buysell} className="img-fluid" alt={"How to Buy and Sell Shares Using Demat Account"} width={"670"} height={"1212"} /><br /><br />
                                 <h3>Buying Shares</h3>
                                 <ol className="none-para">
                                     <li><strong>Login:</strong> Access your trading account using the provided login credentials.</li>
@@ -639,10 +731,10 @@ Upon activation of your Demat account, submit your physical securities through a
                                 </ol>
                                 <p>Remember that market orders are executed at the prevailing market price, while limit orders are executed at a specific price or better. Monitor your trades and portfolio regularly.</p>
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id10')} id="id10">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id10')} id="id10">
                                 <h2>Utilizing Your Demat Account</h2>
                                 <p>To make the most of your Demat account, stay informed about market trends, conduct thorough research, and diversify your portfolio. Whether you are a long-term investor or a day trader, your Demat account is a valuable tool for wealth creation.</p>
-                                <LazyLoader src={diversification} className="img-fluid" alt={"portfolio-diversification"} width={"670"} height={"874"} /><br/><br/>
+                                <LazyLoader src={diversification} className="img-fluid" alt={"portfolio-diversification"} width={"670"} height={"874"} /><br /><br />
                                 <p>Let’s delve deeper into how to make the most of your Demat account for effective investing and trading:</p>
                                 <h3>Managing Your Portfolio</h3>
                                 <p>Your Demat account is your digital portfolio manager. Here is how to manage it effectively:</p>
@@ -721,8 +813,8 @@ Upon activation of your Demat account, submit your physical securities through a
                                     </li>
                                 </ul>
                             </InView>
-                            
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id12')} id="id12">
+
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id12')} id="id12">
                                 <h2>How to Monitor Your Demat Account?</h2>
                                 <p>Monitoring your Demat account is essential to keep track of your investments and make informed decisions. Here is how you can do it:</p>
                                 <ol className="none-para">
@@ -739,10 +831,10 @@ Upon activation of your Demat account, submit your physical securities through a
                                 </ol>
                                 <p>Regularly monitoring your Demat account helps you stay updated on your investments' performance and make timely decisions based on market conditions.</p>
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id13')} id="id13">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id13')} id="id13">
                                 <h2>How to Transfer Shares from One Demat Account to Another?</h2>
                                 <p>If you need to <a href="/blog/can-we-transfer-shares-from-one-demat-account-to-another/">transfer shares from one Demat account to another</a>, you can do so through a process called "off-market transfer." Here's how to transfer shares:</p>
-                                <LazyLoader src={transfershares} className="img-fluid" alt={"How to Transfer Shares from One Demat Account to Another"} width={"670"} height={"1347"} /><br/><br/>
+                                <LazyLoader src={transfershares} className="img-fluid" alt={"How to Transfer Shares from One Demat Account to Another"} width={"670"} height={"1347"} /><br /><br />
                                 <ol className="none-para">
                                     <li><strong>Initiate the Transfer:</strong> The account from which you want to transfer shares (the sender) initiates the process. You will need to fill out a Delivery Instruction Slip (DIS) or a similar form provided by your Depository Participant (DP).</li>
                                     <li><strong>Provide Details:</strong> In the DIS, provide the recipient's Demat account details, including their DP ID and client ID. Ensure the details are accurate to prevent any issues.</li>
@@ -755,7 +847,7 @@ Upon activation of your Demat account, submit your physical securities through a
                                 </ol>
                                 <p>It's essential to ensure that the details provided in the transfer request are accurate to avoid any delays or issues. The transfer process may take a few days to complete, depending on the DPs involved.</p>
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id14')} id="id14">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id14')} id="id14">
                                 <h2>How to Pledge Shares in a Demat Account?</h2>
                                 <p>Pledging shares in your Demat account can be done to secure loans or margin trading facilities. Here's how to pledge shares:</p>
                                 <ol className="none-para">
@@ -772,12 +864,12 @@ Upon activation of your Demat account, submit your physical securities through a
                                     <li><strong>Maintain Margin:</strong> Ensure that you maintain the required collateral margin to avoid margin calls.</li>
                                     <li><strong>Release of Pledge:</strong> When you repay the loan or meet the margin requirements, you can request the release of the pledge. The shares will be unblocked and available for trading or other transactions.</li>
                                 </ol>
-                                <LazyLoader src={pledgeshares} className="img-fluid" alt={"How to Pledge Shares in a Demat Account"} width={"670"} height={"1347"}  /><br/><br/>
+                                <LazyLoader src={pledgeshares} className="img-fluid" alt={"How to Pledge Shares in a Demat Account"} width={"670"} height={"1347"} /><br /><br />
                                 <p>Always check with your broker or DP for the specific procedures and requirements for pledging shares in your Demat account.</p>
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id15')} id="id15">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id15')} id="id15">
                                 <h2>How to Add Nominee to Demat Account?</h2>
-                                <LazyLoader src={addnominee} className="img-fluid" alt={"How to Add Nominee to Demat Account"} width={"670"} height={"1903"}  /><br/><br/>
+                                <LazyLoader src={addnominee} className="img-fluid" alt={"How to Add Nominee to Demat Account"} width={"670"} height={"1903"} /><br /><br />
                                 <h3>Nomination Process</h3>
                                 <ol className="none-para">
                                     <li><strong>Obtain Nomination Form:</strong> Contact your Depository Participant (DP) or broker and request a nomination form.</li>
@@ -794,10 +886,10 @@ Upon activation of your Demat account, submit your physical securities through a
                                 <p>It's essential to keep your nomination details updated, especially if there are changes in your family or personal circumstances. Nomination ensures a smoother transfer of your assets to the intended beneficiary in case of unfortunate events.</p>
                                 <p>Please check with your specific Depository Participant or broker for any additional steps or requirements, as processes may vary slightly depending on the institution.</p>
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id16')} id="id16">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id16')} id="id16">
                                 <h2><a href="/blog/how-to-close-a-demat-account/">How to Close a Demat Account?</a></h2>
                                 <p>Closing a dormant Demat account is a necessary step to avoid maintenance charges and keep your financial house in order. Here is how to go about closing it: </p>
-                                <LazyLoader src={closedemat} className="img-fluid" alt={"How to Close Demat Account"} width={"670"} height={"930"}/><br/><br/>
+                                <LazyLoader src={closedemat} className="img-fluid" alt={"How to Close Demat Account"} width={"670"} height={"930"} /><br /><br />
                                 <ol>
                                     <li>
                                         <h3>Determine Account Activity</h3>
@@ -832,30 +924,36 @@ Upon activation of your Demat account, submit your physical securities through a
                                         <p>Once the account closure is complete, your DP will provide confirmation. Ensure you receive all necessary documents and statements.</p>
                                     </li>
                                 </ol>
-                                <LazyLoader src={closureDemat} className="img-fluid" alt={"Demat Aaccount Closing Process"} width={"670"} height={"1298"} /><br/><br/>
+                                <LazyLoader src={closureDemat} className="img-fluid" alt={"Demat Aaccount Closing Process"} width={"670"} height={"1298"} /><br /><br />
                                 <p>Remember, closing a Demat account should be done thoughtfully. Ensure you have explored all options and considered the implications before making this decision.</p>
-                            </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id17')} id="id17">
+                            </InView> */}
+
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id17')} id="id17">
                                 <h2>Demat Account - Frequently Asked Questions</h2>
                                 <p>Got questions? Explore our FAQs for answers to common questions and concerns related to Demat account. If you need further assistance or personalized guidance, feel free to contact us.</p>
                                 <ul>
                                     <li>
-                                        <h3>Who can open a Demat account?</h3>
+                                        <h3>What is the eligibility to have a demat account?</h3>
                                         <p>A Demat account can be opened by Indian residents, non-resident Indians (NRIs), and foreign investors through registered depository participants (DPs).</p>
                                     </li>
                                     <li>
-                                        <h3>How secure is my Demat account?</h3>
-                                        <p>Demat accounts are highly secure, using encryption and authentication measures. Your DP and depository maintain stringent security standards.</p>
+                                        <h3>Is Demat account safe?</h3>
+                                        <p>Demat being a digitalised account is regulated by SEBI, and registered under NSDL and CDSL. However being associated with a reputed broker like choice ensures safety.</p>
                                     </li>
                                     <li>
                                         <h3>Can I have multiple Demat accounts?</h3>
                                         <p>Yes, you can have multiple Demat accounts, but there are regulatory restrictions. Each account must have a different purpose or ownership structure.</p>
                                     </li>
                                     <li>
-                                        <h3>How to check my Demat account?</h3>
-                                        <p>You can check your Demat account balance and transaction history through the online portal provided by your DP.</p>
+                                        <h3>What is the eligibility to open a demat account?</h3>
+                                        <p><strong>Age -</strong> There is no minimum age criteria. Individuals above 18 yers are eligible for a regular demat account while the ones below 18 can open a minor demat account. Their parents or guardians will be in-charge of the account until the minor comes to age.
+                                        <br/><br/>
+                                        <strong>Citizenship -</strong> Must be Indian Citizen residing in India
+                                        <br/><br/>
+                                        <strong>Other requirements -</strong> Have valid pan card & a valid address proof (Aadhar, Voter ID, Passport, Driving License)
+                                        </p>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <h3>What happens if I forget my Demat account password?</h3>
                                         <p>Contact your DP for password reset assistance. They will guide you through the process.</p>
                                     </li>
@@ -886,16 +984,16 @@ Upon activation of your Demat account, submit your physical securities through a
                                     <li>
                                         <h3>Can I open a Demat account without an Aadhar Card?</h3>
                                         <p>Yes, you <a href="/blog/can-i-open-demat-account-without-aadhar-card/">can open a Demat account without an Aadhar card</a> by providing other government-issued identity documents.</p>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id18')} id="id18">
+                            {/* <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id18')} id="id18">
                                 <h2>Legal and Regulatory Information</h2>
                                 <p>As an investor, it's crucial to be aware of the legal and regulatory aspects governing your Demat account. Here are some key points to keep in mind:</p>
                                 <ul className="reset-list">
                                     <li>
-                                    <h3>SEBI Regulations</h3>
-                                    <p>The Securities and Exchange Board of India (SEBI) is the regulatory authority that oversees the functioning of Demat accounts and the securities market in India. Familiarize yourself with SEBI's guidelines and regulations.</p>
+                                        <h3>SEBI Regulations</h3>
+                                        <p>The Securities and Exchange Board of India (SEBI) is the regulatory authority that oversees the functioning of Demat accounts and the securities market in India. Familiarize yourself with SEBI's guidelines and regulations.</p>
                                     </li>
                                     <li>
                                         <h3>Income Tax Implications</h3>
@@ -920,14 +1018,14 @@ Upon activation of your Demat account, submit your physical securities through a
                                     <li>
                                         <h3>Stay Informed</h3>
                                         <p>
-                                        Regulations and tax laws can change over time. Stay informed about any updates or amendments that may impact your Demat account and investments.<br/><br/>
-                                        By being aware of the legal and regulatory aspects, you can ensure that your investments are in compliance with the law and that your rights as an investor are protected.<br/><br/>
-                                        Your Demat account is a valuable tool in your financial journey, and understanding how to use it effectively is essential. If you have any questions or need further assistance, feel free to contact us.</p>
+                                            Regulations and tax laws can change over time. Stay informed about any updates or amendments that may impact your Demat account and investments.<br /><br />
+                                            By being aware of the legal and regulatory aspects, you can ensure that your investments are in compliance with the law and that your rights as an investor are protected.<br /><br />
+                                            Your Demat account is a valuable tool in your financial journey, and understanding how to use it effectively is essential. If you have any questions or need further assistance, feel free to contact us.</p>
                                     </li>
-                                
+
                                 </ul>
-                            </InView>
-                            <InView as="div" className="pr-sec"  onChange={(e) => !scrollConfig.current.isTriggered && e===true && setIsActive4('id19')} id="id19">
+                            </InView> */}
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id19')} id="id19">
                                 <h2>Demat Glossary</h2>
                                 <p>A glossary of key terms and phrases related to Demat accounts to help you better understand the world of electronic securities and investments:</p>
                                 <ol className="none-para">
@@ -986,38 +1084,38 @@ Upon activation of your Demat account, submit your physical securities through a
                             </InView>
                         </div>
                         <div className={"right-form-main " + (isActive ? 'shadow' : 'none-shadow')}>
-                        <div className={"form-mobile " + (isActive ? 'p-hide' : 'p-show')}>
-                            <button className="close-arrow-mb" onClick={handleClick}>
-                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.3164 1.82026e-06C4.63799 -0.00329398 0.0319564 4.46942 0.0285663 9.99011C0.0251763 15.5108 4.62569 19.9889 10.3041 19.9922C13.0322 19.9965 15.6496 18.944 17.5774 17.0674C19.506 15.194 20.5903 12.6526 20.592 10.0021C20.5953 4.48139 15.9948 0.00329772 10.3164 1.82026e-06ZM10.3167 18.9922C5.20633 18.9955 1.06078 14.9706 1.05726 10.0022C1.05381 5.03382 5.19377 1.00336 10.3041 1C12.7594 0.995729 15.1152 1.94287 16.8502 3.63184C18.5859 5.31769 19.5619 7.60468 19.5635 9.98999C19.567 14.9584 15.4271 18.9888 10.3167 18.9922ZM11.0313 9.9961L14.3038 6.81446C14.4998 6.62006 14.4998 6.30896 14.3038 6.11456C14.1051 5.91736 13.7795 5.91419 13.5767 6.10742L10.3041 9.28906L7.03157 6.10748C6.83161 5.91699 6.51163 5.91699 6.31168 6.10748C6.10884 6.30072 6.10558 6.61725 6.30433 6.81446L9.57688 9.9961L6.30433 13.1777C6.2079 13.2715 6.15379 13.3986 6.15373 13.5312C6.15373 13.8073 6.38394 14.0312 6.66795 14.0313C6.80437 14.0314 6.93526 13.9787 7.03157 13.8848L10.3041 10.7031L13.5767 13.8848C13.673 13.9787 13.8039 14.0314 13.9403 14.0313C14.0766 14.0312 14.2073 13.9786 14.3038 13.8849C14.5047 13.6896 14.5047 13.373 14.3038 13.1777L11.0313 9.9961Z" fill="#676767"/>
-                                </svg>
-                            </button>
-                            {
-                                isCheck ?
-                                    <div className="">
-                                        <div className="d-flex justify-content-end" id="campaignForm">
-                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                            {/* <DematAccountForm /> */}
-                                            <NewDematAccountForm />
-                                        </GoogleReCaptchaProvider>
+                            <div className={"form-mobile " + (isActive ? 'p-hide' : 'p-show')}>
+                                <button className="close-arrow-mb" onClick={handleClick}>
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.3164 1.82026e-06C4.63799 -0.00329398 0.0319564 4.46942 0.0285663 9.99011C0.0251763 15.5108 4.62569 19.9889 10.3041 19.9922C13.0322 19.9965 15.6496 18.944 17.5774 17.0674C19.506 15.194 20.5903 12.6526 20.592 10.0021C20.5953 4.48139 15.9948 0.00329772 10.3164 1.82026e-06ZM10.3167 18.9922C5.20633 18.9955 1.06078 14.9706 1.05726 10.0022C1.05381 5.03382 5.19377 1.00336 10.3041 1C12.7594 0.995729 15.1152 1.94287 16.8502 3.63184C18.5859 5.31769 19.5619 7.60468 19.5635 9.98999C19.567 14.9584 15.4271 18.9888 10.3167 18.9922ZM11.0313 9.9961L14.3038 6.81446C14.4998 6.62006 14.4998 6.30896 14.3038 6.11456C14.1051 5.91736 13.7795 5.91419 13.5767 6.10742L10.3041 9.28906L7.03157 6.10748C6.83161 5.91699 6.51163 5.91699 6.31168 6.10748C6.10884 6.30072 6.10558 6.61725 6.30433 6.81446L9.57688 9.9961L6.30433 13.1777C6.2079 13.2715 6.15379 13.3986 6.15373 13.5312C6.15373 13.8073 6.38394 14.0312 6.66795 14.0313C6.80437 14.0314 6.93526 13.9787 7.03157 13.8848L10.3041 10.7031L13.5767 13.8848C13.673 13.9787 13.8039 14.0314 13.9403 14.0313C14.0766 14.0312 14.2073 13.9786 14.3038 13.8849C14.5047 13.6896 14.5047 13.373 14.3038 13.1777L11.0313 9.9961Z" fill="#676767" />
+                                    </svg>
+                                </button>
+                                {
+                                    isCheck ?
+                                        <div className="">
+                                            <div className="d-flex justify-content-end" id="campaignForm">
+                                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                                    {/* <DematAccountForm /> */}
+                                                    <NewDematAccountForm />
+                                                </GoogleReCaptchaProvider>
+                                            </div>
+                                        </div> :
+                                        <div className="">
+                                            <div className="d-flex justify-content-end" id="campaignForm">
+                                                {/* <DematAccountForm /> */}
+                                                <NewDematAccountForm />
+                                            </div>
                                         </div>
-                                    </div> :
-                                    <div className="">
-                                        <div className="d-flex justify-content-end" id="campaignForm">
-                                            {/* <DematAccountForm /> */}
-                                            <NewDematAccountForm />
-                                        </div>
-                                    </div>
-                            }
-                        </div>
-                        <div className={name}>
-                            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={handleClick}>Open Account Now</button>
+                                }
+                            </div>
+                            <div className={name}>
+                                <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                    <button className=" primary-orange-btn scroll-top-account openbtn" onClick={handleClick}>Open Account Now</button>
+                                </div>
                             </div>
                         </div>
-                        </div>
                     </div>
-                    
+
                 </div>
             </section>
 
