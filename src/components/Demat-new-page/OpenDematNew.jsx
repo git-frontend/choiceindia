@@ -414,12 +414,12 @@ function OpenDematNew() {
                                 <h2><a href="/blog/how-demat-account-works/">How Does a Demat Account Work?</a></h2>
                                 <p>A Demat account functions as the digital vault for your securities. It allows you to buy, hold, and sell shares with ease, regardless of your location. However, it doesn't operate in isolation. Here's how it collaborates with other elements to offer seamless transactions:</p>
                                 {/* <LazyLoader src={HowDoes} alt={"How a Demat Account Works"} className={"img-fluid"} width={"670"} height={"826"} /><br /><br /> */}
-                                <p>Account opening - Stock brokers help you open a Demat account and in return they charge some fees in order to maintain the same. <br /><br />
-                                Link it with a trading account - In order to carry out your trading activities, you need to link your demat account with a trading account. Now-a-days opening a trading account doesn’t require any individual process as brokers open it alongside while one opens a demat account and hence they are already linked to each other.
+                                <p><strong>Account opening -</strong>  Stock brokers help you open a Demat account and in return they charge some fees in order to maintain the same. <br /><br />
+                                <strong>Link it with a trading account -</strong> In order to carry out your trading activities, you need to link your demat account with a trading account. Now-a-days opening a trading account doesn’t require any individual process as brokers open it alongside while one opens a demat account and hence they are already linked to each other.
                                 <br /><br />
-                                Order placement - Your Depository Participant (DP) forwards your buy orders to the stock exchange when you make purchases via a trading platform.
+                                <strong>Order placement -</strong>  Your Depository Participant (DP) forwards your buy orders to the stock exchange when you make purchases via a trading platform.
                                 <br/><br/>
-                                Settlement - Once your buy order matches with a corresponding sell order, the stock exchange sends it to a clearinghouse for settlement. At the end of the trading day, the shares you've bought are credited to your Demat account. Similarly, the seller's Demat account is debited for the sold shares.
+                                <strong>Settlement -</strong> Once your buy order matches with a corresponding sell order, the stock exchange sends it to a clearinghouse for settlement. At the end of the trading day, the shares you've bought are credited to your Demat account. Similarly, the seller's Demat account is debited for the sold shares.
                                 <br/><br/>
                                     {/* <iframe src="https://www.youtube.com/embed/at5pItTsJJE?si=VgNo0MHto7TNA245" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="cust-video"></iframe> */}
                                     <a
@@ -532,7 +532,7 @@ function OpenDematNew() {
                                         <p>Stamp duty charges vary by state and are levied when you sell securities.</p>
                                     </li> */}
                                 </ol>
-                                <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat accounts</a>, making it cost-effective for investors.</p>
+                                <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat account</a>, making it cost-effective for investors.</p>
                                 {/* <div className="flex-image">
                                     <LazyLoader src={openingcharges} className="img-fluid" alt={"Choice Demat Account Opening Charges"} width={"356"} height={"485"} />
                                     <LazyLoader src={amccharges} className="img-fluid" alt={"Choice AMC Charges"} width={"356"} height={"485"} />
@@ -540,7 +540,7 @@ function OpenDematNew() {
                             </InView>
                             <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id6')} id="id6">
                                 <h2><a href="/blog/how-to-open-demat-account/">How to Open a Demat Account?</a></h2>
-                                <p>Opening a Demat account has never been easier, thanks to digitalization. You have two primary options: online and offline account opening.</p>
+                                <p>Opening a Demat Account has been a lot easier today, thanks to digitalization. You have two primary options: online and offline account opening.</p>
                                 <h3><a href="/blog/demat-account-opening-online/">Online Demat Account Opening</a></h3>
                                 <p>Most brokerage firms offer online account opening, allowing you to complete the process from the comfort of your home. It's quick, convenient, and paperless.</p>
                                 {/* <iframe className="cust-video" src="https://www.youtube.com/embed/dbtHtNsWZkI?si=5os5LGH4EX5NSeWd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
@@ -567,6 +567,8 @@ function OpenDematNew() {
 
                                 </a>
                                 <br />
+                                <br/>
+                                <br/>
                                 <p>An online demat account opening process involves:</p>
                                 <ol className="none-para">
                                     <li>Visiting the preferred broking company’s official website</li>
@@ -948,11 +950,11 @@ function OpenDematNew() {
                                     </li>
                                     <li>
                                         <h3>What is the eligibility to open a demat account?</h3>
-                                        <p>Age - There is no minimum age criteria. Individuals above 18 yers are eligible for a regular demat account while the ones below 18 can open a minor demat account. Their parents or guardians will be in-charge of the account until the minor comes to age.
+                                        <p><strong>Age -</strong> There is no minimum age criteria. Individuals above 18 yers are eligible for a regular demat account while the ones below 18 can open a minor demat account. Their parents or guardians will be in-charge of the account until the minor comes to age.
                                         <br/><br/>
-                                        Citizenship - Must be Indian Citizen residing in India
+                                        <strong>Citizenship -</strong> Must be Indian Citizen residing in India
                                         <br/><br/>
-                                        Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter ID, Passport, Driving License)
+                                        <strong>Other requirements -</strong> Have valid pan card & a valid address proof (Aadhar, Voter ID, Passport, Driving License)
                                         </p>
                                     </li>
                                     {/* <li>
