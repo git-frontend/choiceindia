@@ -44,7 +44,7 @@ const config = {
   // UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
   UATNachBaseURL: "https://dev-api.choicetechlab.com/",
   // liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
-  liveNachBaseURL: "https://go.choiceindia.com/",
+  liveNachBaseURL: "https://solar-loan.choiceindia.com/",
   UATNbfcAuthURL: "https://api-uat.synofin.tech/oauth/",
   liveNbfcAuthURL: "https://api-prod.synofin.tech/oauth/",
 
@@ -312,6 +312,10 @@ export class API_URLS {
   schemeTopSectors = "Scheme/topsectors";
   schemeMarketCap = "Scheme/marketcap";
   schemeTopHoldings = "Scheme/topholdings";
+
+  /* For Solar Lead Form URL */
+  solarLead="api/newLeadDetail";
+
   constructor() {
     this.setConfig(environment ? "live" : "UAT");
   }
@@ -1007,5 +1011,10 @@ export class API_URLS {
   /** FAQ API URL */
   getFaqURL() {
     return this.jiffyServerURL + `api/faq/list`;
+  }
+
+  //Solar Loan URL
+  getLeadFormURL(){
+   return this.nachBaseURL+this.solarLead;
   }
 }
