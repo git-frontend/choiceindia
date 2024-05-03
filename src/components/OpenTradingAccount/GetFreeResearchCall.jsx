@@ -20,7 +20,7 @@ function GetFreeResearchCall() {
                        <p>GetLeverage our research facility by getting regular expert research calls for intraday, F&O, Commodity and Currency within the Choice FinX app.</p>
                   </div>
                        <div className="text-center">
-                        <LazyLoader src={DailyResearchCalls} className={'img-fluid'} width={"370"} height={"588"} alt={"Open Demat Account with Daily Research Calls"}/>
+                        <LazyLoader src={DailyResearchCalls} className={'img-fluid'} width={"370"} height={"588"} alt={"Open Trading Account with Daily Research Calls"}/>
                       </div>
                   </div>
                   <div className="daily-automated-card right-sec"> 
@@ -29,7 +29,7 @@ function GetFreeResearchCall() {
                       <p>Choice “Signal” our AI based trading research delivers your real time trading calls in multi time frame breakouts.</p>
                    </div>
                       <div className="text-center">
-                        <LazyLoader src={AutomatedTradingCalls} className={'img-fluid'} width={"370"} height={"588"} alt={"Open Demat Account with Automated Trading Calls"}/>
+                        <LazyLoader src={AutomatedTradingCalls} className={'img-fluid'} width={"370"} height={"588"} alt={"Open Trading Account with Automated Trading Calls"}/>
                       </div>
                   </div>
                </div>
