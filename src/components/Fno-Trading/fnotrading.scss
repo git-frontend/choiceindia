@@ -2,10 +2,12 @@
 @import '../../assets/css/customvariable.scss';
 
 
-
+.slick-track{
+height:auto !important;
+}
 .fno-banner{
     background: url(../../assets/images/fno-trading/fno-banner-bg.png);
-    padding: 6rem 0 8rem 0;
+    padding: 6rem 0 15rem 0;
     @media (max-width:$md) {
         padding-bottom: 10rem;
     }
@@ -13,13 +15,13 @@
         background: $whiteColor;
         padding: 4rem 0;
     }
-    .rightsec{
-        position: relative;
-        left: -4rem;
-        .img-fluid{
-            width: auto;
-        }
-    }
+    // .rightsec{
+    //     position: relative;
+    //     left: -4rem;
+    //     .img-fluid{
+    //         width: auto;
+    //     }
+    // }
     .ban-caption{
         .title {
             color: $primary;
@@ -245,18 +247,18 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                     display: none;
                 }
                 &.featu-list-slider{
-                    display: none;
+                    // display: none;
                     @media (max-width:$md) {
                         display: block;
                     }
                     
-                    margin-top: 4rem;
+                    //margin-top: 4rem;
                     .lists-itms{
-                        background: $whiteColor;
-                        text-align: center;
+                        //background: $whiteColor;
+                        // text-align: center;
                         width: 96% !important;
-                        margin: 0 auto !important;
-                        display: block !important;
+                        margin: 1rem auto !important;
+                        display: flex !important;
                         padding: 2rem 1rem;
                         @media (max-width:$md) {
                             min-height: 195px;
@@ -266,6 +268,14 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                         position: relative;
                     }
                     
+                }
+                //shubham changes
+                .list-itm-active{
+                    background: $whiteColor;
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                    @media (max-width:$md) {
+                        box-shadow: initial;
+                    }
                 }
                 .lists-itms{
                     display: flex;
@@ -317,13 +327,13 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                             }
                         }
                     }
-                    &:hover{
-                        background: $whiteColor;
-                        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                        @media (max-width:$md) {
-                            box-shadow: initial;
-                        }
-                    }
+                    // &:hover{
+                    //     background: $whiteColor;
+                    //     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                    //     @media (max-width:$md) {
+                    //         box-shadow: initial;
+                    //     }
+                    // }
                 }
             }
         }

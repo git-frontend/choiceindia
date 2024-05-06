@@ -3,6 +3,7 @@
 import React from "react";
 import Bannerimage from '../../assets/images/fno-trading/fno-trading.webp';
 import LazyLoader from '../Common-features/LazyLoader';
+import NewDematAccountForm from "../Common-features/NewDematAccountForm";
 function FnoTradingBanner() {
 
     function scrollToId(id) {
@@ -20,7 +21,7 @@ function FnoTradingBanner() {
         <>
             <section className="fno-banner">
                 <div className="container">
-                    <div className="row gx-5 align-items-start">
+                    <div className="row gx-5 justify-content-between">
                         <div className="col-md-6">
                             <div className="ban-caption">
                                 <h5>Choice: Options Trader’s Delight</h5>
@@ -30,12 +31,12 @@ function FnoTradingBanner() {
                             </div>
                             
                         </div>
-                        <div className="col-md-5 d-none d-sm-block">
-                            <div className="rightsec">
-
-                                    <LazyLoader src={Bannerimage} alt={"F & O Trading"} className={"img-fluid"} width={"609"} height={"476"} />
-                            {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img> */}
-                            </div>
+                        <div className="col-md-5 d-sm-block">
+                            <NewDematAccountForm/>
+                            {/* <div className="rightsec">
+                                <LazyLoader src={Bannerimage} alt={"F & O Trading"} className={"img-fluid"} width={"609"} height={"476"} />
+                                <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
+                            </div> */}
                         </div>
                     </div>
                 </div>
