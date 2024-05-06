@@ -18,7 +18,9 @@ import noDataimg from '../../assets/images/no-data.webp';
 import utils from "../../Services/utils";
 import Form from 'react-bootstrap/Form';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import {  useNavigate } from "react-router-dom";
 function MFTopFunds() {
+    const navigate = useNavigate();
     const [name, setName] = useState('hideform');
     const [value, onChange] = useState(0);
     const [name2, setName2] = useState('hideform2');
