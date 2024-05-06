@@ -416,6 +416,7 @@ function NewDematAccountForm(props) {
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
                 utils.pushDataLayerEvent({
                     'event': 'ci_onboard_lead_initiated',
+                    'ObLeadReferenceId': referID,
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
                     'lead_source': 'choiceindia',
@@ -634,6 +635,8 @@ function NewDematAccountForm(props) {
                             <p>Take Control of Your Finances</p>
                         </div>
                         :
+                        (window.location.pathname.indexOf("open-trading-account")>-1)?
+                        <h2 className="heading">Open Trading Account</h2>:
                         <h2 className="heading">Open Demat Account</h2>
                       }
                       {/* {window.location.pathname.includes("blog") &&  <div className="sticy-card-blog-new sub-new-small">
@@ -881,7 +884,7 @@ function NewDematAccountForm(props) {
                             </div>
                            
                         <div className="thank-content">
-                            <h2 className={(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) ? "thankyou-title campaign-success":"thankyou-title"}>Thank You!</h2>
+                            <h2 className={(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) || (window.location.pathname.indexOf('open-trading-account') > -1)? "thankyou-title campaign-success":"thankyou-title"}>Thank You!</h2>
                                 <p className="subheading">{showThanku.resText? showThanku.resText: "You are being redirected to onboarding page!"}</p>
                         </div>
                         </div>
