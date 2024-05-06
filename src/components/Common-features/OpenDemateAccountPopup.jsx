@@ -169,6 +169,7 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
                 utils.pushDataLayerEvent({
                     'event': 'ci_onboard_lead_initiated',
+                    'ObLeadReferenceId': refercode.current || "",
                     'page_path': window.location.pathname,
                     'page_url': window.location.href,
                     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb',

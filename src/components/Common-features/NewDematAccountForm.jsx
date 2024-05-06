@@ -250,7 +250,6 @@ function NewDematAccountForm(props) {
     }
 
     function handleOTPClose(link, msg, info) {
-        console.log("sso link",link)
         setShowOTP(false);
 
         if (link) {
@@ -602,7 +601,7 @@ function NewDematAccountForm(props) {
                   } else {
                     showThanku.closeMd(showThanku.redirectionLink);
                   }
-                }, 1500000)
+                }, 15000)
               } else if (showThanku.page != 'add-lead' && showThanku.redirectionLink) {
                 setTimeout(() => {
                   if (showThanku.redirectionLink === null) {
@@ -610,7 +609,7 @@ function NewDematAccountForm(props) {
                   } else {
                     showThanku.closeMd(showThanku.redirectionLink);
                   }
-                }, 2000000)
+                }, 2000)
               }
 
         }
@@ -654,6 +653,8 @@ function NewDematAccountForm(props) {
                             <p>Take Control of Your Finances</p>
                         </div>
                         :
+                        (window.location.pathname.indexOf("open-trading-account")>-1)?
+                        <h2 className="heading">Open Trading Account</h2>:
                         <h2 className="heading">Open Demat Account</h2>
                       }
                       {/* {window.location.pathname.includes("blog") &&  <div className="sticy-card-blog-new sub-new-small">
@@ -901,7 +902,7 @@ function NewDematAccountForm(props) {
                             </div>
                            
                         <div className="thank-content">
-                            <h2 className={(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) ? "thankyou-title campaign-success":"thankyou-title"}>Thank You!</h2>
+                            <h2 className={(window.location.pathname.indexOf('campaign/free-demat-account') > -1) ||(window.location.pathname.indexOf('demat-account') > -1)  ||(window.location.pathname.indexOf('open-free-demat-account') > -1) || (window.location.pathname.indexOf('open-trading-account') > -1)? "thankyou-title campaign-success":"thankyou-title"}>Thank You!</h2>
                                 <p className="subheading">{showThanku.resText? showThanku.resText: "You are being redirected to onboarding page!"}</p>
                         </div>
                         </div>

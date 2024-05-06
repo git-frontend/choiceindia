@@ -48,7 +48,7 @@ const config = {
   // UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
   UATNachBaseURL: "https://dev-api.choicetechlab.com/",
   // liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
-  liveNachBaseURL: "https://go.choiceindia.com/",
+  liveNachBaseURL: "https://solar-loan.choiceindia.com/",
   UATNbfcAuthURL: "https://api-uat.synofin.tech/oauth/",
   liveNbfcAuthURL: "https://api-prod.synofin.tech/oauth/",
 

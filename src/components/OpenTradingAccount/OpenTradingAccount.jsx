@@ -1,19 +1,23 @@
 // import "./opentradingaccount.scss";
 // import DematAccountForm from '../Common-features/DematAccountForm';
 import "../OpenDematAccount/DematPage"
-import OpentradingAccountBanner from "./OpentradingAccountBanner";
-import WhyOpenTradingAccount from "./WhyOpenTradingAccount";
-import TradingAccountOpeningProcess from "./TradingAccountOpeningProcess";
-import LowBrokerageTradingAccount from "./LowBrokerageTradingAccount";
-import WhyChoice from "./TradingWhyChoice";
-import TradingFaq from "./TradingFaq";
 import { useState, useEffect} from 'react';
 import {
     useLocation,
   } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
+  import "../Free-Demat-Campaign/free-demat-compaign.scss";
+  import "./../OpenDematAccount/DematPage.scss";
   import { Link } from "react-router-dom";
-  
+  import Banner from "./Banner";
+  import OpenAccountEasySteps from "./OpenAccountEasySteps";
+  import DocumentsRequiredDematAccountOpeningOnline from "./DocumentsRequiredDematAccountOpeningOnline";
+  import WhyOpenFreeDematAccount from "./WhyOpenFreeDematAccount";
+  import OneAccountFinancialNeeds from "./OneAccountFinancialNeeds";
+  import GetFreeResearchCall from "./GetFreeResearchCall";
+  import WhyChoiceOpenDematAccount from "./WhyChoiceOpenDematAccount";
+  import Faq from "./Faq";
+import BChargesMoreContent from "./BChargesMoreContent";
 function OpenTradingAccount() {
     const [rendercount, setRenderCount] = useState(() => false);
     const location = useLocation();
@@ -57,13 +61,17 @@ function OpenTradingAccount() {
 
     return (
         <>
-            <OpentradingAccountBanner />
-            <WhyOpenTradingAccount />
-            <WhyChoice />
-            <LowBrokerageTradingAccount />
-            <TradingAccountOpeningProcess />
-            <TradingFaq />
-            <section className="readmoresection">
+           <Banner/>
+           <OpenAccountEasySteps/>
+           <DocumentsRequiredDematAccountOpeningOnline />
+           <WhyOpenFreeDematAccount />
+           <OneAccountFinancialNeeds/>
+           <GetFreeResearchCall/>
+           <WhyChoiceOpenDematAccount/>
+           <Faq/>
+           {/* SEO Content*/}
+           <BChargesMoreContent/>
+            {/* <section className="readmoresection">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -271,7 +279,7 @@ function OpenTradingAccount() {
                     </div>
                 </div>
 
-            </section>
+            </section> */}
         </>
     );
 }
