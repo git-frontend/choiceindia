@@ -25,7 +25,7 @@ const config = {
   liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
   liveNewResearchReportURL:
     "https://finx.choiceindia.com/api/researchreport/v2/api",
-  UATNEWSSOBaseURL: "https://accounts.choicebroking.in/lmsbrok/",
+  UATNEWSSOBaseURL: "https://lms-api.choicetechlab.com/",
   liveNEWSSOBaseURL: "https://accounts.choiceindia.com/lmsapi/",
   UATSSOBaseURL: "https://sso-api.choiceindia.com/",
   liveSSOBaseURL: "https://sso-api.choiceindia.com/",
