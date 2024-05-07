@@ -26,7 +26,7 @@ const config = {
   liveNewResearchReportURL:
     "https://finx.choiceindia.com/api/researchreport/v2/api",
   UATNEWSSOBaseURL: "https://accounts.choicebroking.in/lmsbrok/",
-  liveNEWSSOBaseURL: "https://accounts.choicebroking.in/lmsbrok/",
+  liveNEWSSOBaseURL: "https://accounts.choiceindia.com/lmsapi/",
   UATSSOBaseURL: "https://sso-api.choiceindia.com/",
   liveSSOBaseURL: "https://sso-api.choiceindia.com/",
 
