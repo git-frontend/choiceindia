@@ -4,6 +4,7 @@ import React,{useState} from "react";
 import Finxtoolsimg from "../../Data/FinxTools";
 import Slider from 'react-slick';
 import { useEffect } from "react";
+import LazyLoader from '../Common-features/LazyLoader';
 function FinxTools() {
 
     const [isShown3, setIsShown3] = useState(0);
@@ -12,10 +13,10 @@ function FinxTools() {
     const [trigger, setTrigger] = useState(false);
     const [slider1,setslider1]=useState();
     const [slider2,setslider2]=useState();
-
+    
     const settings11 = {
       infinite: true,
-      speed: 1000,
+      speed:2000,
       vertical: true,
       slidesToShow: 5,
       arrows:false,
@@ -77,18 +78,18 @@ function FinxTools() {
                                     <Slider {...settings11}
                                     asNavFor={nav1}
                                     ref={slider => setslider1(slider)}
-                                    //   afterChange={(ev) => {
-                                    //     setIsShown3(ev)
-                                    //     console.log("check",ev);
-                                    //   }}
+                                      afterChange={(ev) => {
+                                        setIsShown3(ev)
+                                      }}
                                     >
                                     {
                                         Finxtoolsimg?.map((response, index) => {
 
-                                            let classNm = "slider-item " + ((index === isShown3) ? "active" : "")
+                                            let classNm = "slider-item " + ((index === isShown3) ? "slider-item-active" : "")
                                             return(
 
-                                                <div key={response.id} className={classNm} onChange={() => setIsShown3(response.id)} >
+                                                <div key={response.id} className={classNm} onMouseOver={()=>setIsShown3(index)}
+                                                 >
                                                
                                                 <img src={response.imageico} alt={response.alt} className="icon-img"></img>
                                                 <h3 className="subtext">{response.title}</h3>
@@ -100,7 +101,7 @@ function FinxTools() {
                                     </Slider>
                                 </div>
                                 <div className="slider-cont-main">
-                                    <Slider {...settings12}
+                                    {/* <Slider {...settings12}
                                         asNavFor={nav}
                                         ref={slider => setslider2(slider)}
                                         >
@@ -116,7 +117,8 @@ function FinxTools() {
                                         )
                                                 }
                                 
-                                        </Slider>
+                                        </Slider> */}
+                                      <LazyLoader src={Finxtoolsimg[isShown3].image} width={708} height={645} alt={Finxtoolsimg[isShown3].alt} />
                                 </div>
                             </div>
                         </div>

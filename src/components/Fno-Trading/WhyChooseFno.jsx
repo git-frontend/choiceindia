@@ -7,12 +7,16 @@ import icon3 from '../../assets/images/fno-trading/real-time-pay-off-charts.svg'
 import icon6 from '../../assets/images/fno-trading/option-chain.svg';
 import icon4 from '../../assets/images/fno-trading/techinical-charts.svg';
 import icon5 from '../../assets/images/fno-trading/oi-spurts.svg';
-import img2 from '../../assets/images/fno-trading/options-traders-benefits.webp';
-import img3 from '../../assets/images/fno-trading/expiry-day-traders-benefits.webp';
+import img2 from '../../assets/images/fno-trading/Pre Build Option Strategies.svg';
+import img3 from '../../assets/images/fno-trading/Advanced Option Chain.svg';
+import img4 from '../../assets/images/fno-trading/Technical Charts with Realtime Payoff.svg';
+import img5 from '../../assets/images/fno-trading/OI Spurts.svg';
+import option1 from "../../assets/images/fno-trading/option1.svg";
+import option2 from "../../assets/images/fno-trading/option2.svg";
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
-import "../../../node_modules/slick-carousel/slick/slick.css"
-import "../../../node_modules/slick-carousel/slick/slick-theme.css"
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 function WhyChooseFno() {
     const [isShown2, setIsShown2] = useState(0);
     const [isShown1,setIsShown1]=useState(0);
@@ -60,21 +64,21 @@ function WhyChooseFno() {
     {
     image:img1,
     alt:"Pre-built Option Strategies",
-    photo:img2,
+    photo:option1,
     heading:"Pre-built Option Strategies",
     content:"Gain access to a library of proven strategies."
     },
     {
     image:icon2,
     alt:"Advanced Option Chain",
-    photo:img3,
+    photo:option2,
     heading:"Advanced Option Chain",
     content:"Navigate the market with precision."
     },
     {
     image:icon3,
     alt:"Real-Time Pay-off Charts",
-    photo:img2,
+    photo:img4,
     heading:"Real-Time Pay-off Charts",
     content:"Visualize your potential gains instantly."
     }
@@ -91,14 +95,14 @@ function WhyChooseFno() {
     {
     image:icon4,
     alt:"Technical Charts",
-    photo:img3,
+    photo:img4,
     heading:"Technical Charts",
     content:"Make informed decisions with advanced charts."
     },
     {
     image:icon5,
     alt:"OI Spurts",
-    photo:img2,
+    photo:img5,
     heading:"OI Spurts",
     content:"Stay ahead with open-interest insights."
     }
@@ -193,7 +197,7 @@ the uncertainties of options trading</p>
                                 </div>
                             <div className="list-main-prnt last-child">
                                 <div className="img-itm">
-                                    <LazyLoader src={ExpiryTraders[isShown1].photo} width={559} height={443} alt={"Benefits for Expiry Day Traders"} />
+                                    <LazyLoader src={ExpiryTraders[isShown1].photo} width={596} height={360} alt={"Benefits for Expiry Day Traders"} />
                                 </div>
                                 <div className="list-fno-featu">
                                     

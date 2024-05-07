@@ -4,18 +4,19 @@ import React from "react";
 import Bannerimage from '../../assets/images/fno-trading/fno-trading.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 import NewDematAccountForm from "../Common-features/NewDematAccountForm";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 function FnoTradingBanner() {
 
-    function scrollToId(id) {
-        var element = document.getElementById(id);
-        var headerOffset = 140;
-        var elementPosition = element.getBoundingClientRect().top;
-        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
-    }
+    // function scrollToId(id) {
+    //     var element = document.getElementById(id);
+    //     var headerOffset = 140;
+    //     var elementPosition = element.getBoundingClientRect().top;
+    //     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    //     window.scrollTo({
+    //         top: offsetPosition,
+    //         behavior: "smooth"
+    //     });
+    // }
     
     return (
         <>
@@ -27,16 +28,19 @@ function FnoTradingBanner() {
                                 <h5>Choice: Options Trader’s Delight</h5>
                                 <h1 className="title">Master the <br/> Art of Trading</h1>
                                 <p className="para">Leverage our advanced platform, tools, and <br/> expertise to make the most of your trading.</p>
-                                <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Start Now</a>
+                                {/* <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Start Now</a> */}
                             </div>
                             
                         </div>
-                        <div className="col-md-5 d-sm-block">
-                            <NewDematAccountForm/>
-                            {/* <div className="rightsec">
-                                <LazyLoader src={Bannerimage} alt={"F & O Trading"} className={"img-fluid"} width={"609"} height={"476"} />
-                                <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
-                            </div> */}
+                        <div className="col-md-6 d-sm-block">
+                     
+                            <div className="rightsec">
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                        <NewDematAccountForm/>
+                        </GoogleReCaptchaProvider>
+                                {/* <LazyLoader src={Bannerimage} alt={"F & O Trading"} className={"img-fluid"} width={"609"} height={"476"} />
+                                <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img> */}
+                            </div>
                         </div>
                     </div>
                 </div>
