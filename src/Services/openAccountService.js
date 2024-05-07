@@ -21,7 +21,7 @@ const newheaders = {
 };
 const formheaders = {
   ssoheaders: {
-  "Source": "FINX_WEB",
+  "Source": "CHOICEINDIA",
   "AuthType": "cp",
   "product": "FINX",
   "ServiceCode": "JF",
@@ -30,8 +30,8 @@ const formheaders = {
 }
 const tokenheader={
     "Content-Type": "application/json",
-    "Source": "FINX_WEB",
-    "clientId":"N2E4NDY3MDZkYmY5MDlhYfHCYK0zGx8k46ILP2H3znk="
+    "Source": "CHOICEINDIA",
+    "clientId":"N2E4NDY3MDZkYmY5MDlhYVlQ1ceR+YA+0iyV5NNu5bw="
 
 }
 
@@ -60,7 +60,9 @@ const openAccountService = {
     return axios.post(url, request, { headers: newheaders });
   },
 
-  verifyOTP: function (request,type) {
+  verifyOTP: function (request,token) {
+    let fheaders = formheaders.ssoheaders;
+    fheaders['Authorization'] = token;
     let url = apiURL.getVerifyOTPURL(); 
      return  axios.post(url, request,{ headers: formheaders.ssoheaders } );
   },

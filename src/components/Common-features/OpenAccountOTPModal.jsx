@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef ,useCallback  } from "react";
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
@@ -10,7 +10,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal'
 import utils from "../../Services/utils";
-
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, language, openInfoPopup, showPopup,updateType }) {
     // console.log('PPP',onClose.handleOTPClose());
@@ -24,6 +24,8 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
     var otpLID = useRef(otpLeadID);
     const type2 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const [show, setShow] = useState(true);
+    const { executeRecaptcha } = useGoogleReCaptcha();
+    const [captchaToken, setCaptchaToken] = useState('');
     // console.log('SSS',show);
     function handleClose() {
         //  console.log('Handleclose');
@@ -116,89 +118,40 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
         } else {
             showLoader('verifyLoader');
             let request = {
-                "mobile_number": mobileNumber,
                 otp: otp,
                 session_id: otpSessionID
             };
 
-            openAccountService.verifyOTP(request, type2).then((res) => {
+            openAccountService.verifyOTP(request, captchaToken).then((res) => {
                 hideLoader('verifyLoader');
-                if (res && res.status === 200 && res.data && res.data.Body) {
-                    utils.pushDataLayerEvent({
-                        'event': 'ci_onboard_lead_generated',
-                        'page_path': window.location.pathname,
-                        'page_url': window.location.href,
-                        'lead_source': 'choiceindia',
-                        'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-                        'leadId': otpLID? otpLID: "",
-                        'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                    })
-                    // utils.pushDataLayerEvent({
-                    //     'event': 'open_account_lead_submit',
-                    //     'page_path': window.location.pathname,
-                    //     'page_url': window.location.href,
-                    //     'lead_source': 'choiceindia',
-                    //     'phone': utils.generateSHA256Hash(mobileNumber.toString()),
-                    //     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                    //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                    // })
-                    //  console.log('HANDLER',res);
-                    // if (res.data.Body.isOnboardFlag === 'Y') {
-                    //Your Onboarding has been completed
-                    // } else if (res.data.Body.isOnboardFlag === 'C') {
-                    // IsBackOffice should be Y, isCredentialGenerated = 1 , uccStatus='success',
-                    // then redirect to Jiffy Login .
-                    // else
-                    // should display the popup with message provided in response  "Account Opening Application in Review. Please Contact Customer Support"
-                    // } else {
-                    if (res && res.data && res.data.Body && res.data.Body.url) {
-                        // console.log('inside call',res.data.Message);
-                        // setShowLead(prevState => {
-                        //     return {...prevState, showModal: true, redirectLink: res.data.Body.url, closeOTP: onClose}
-                        // });
-                        setRedirectURL(() => res.data.Body.url);
-                        
-                        let result = res.data.Body.url.match("respond-issue");
-                        if(res.data.Body.actionType && res.data.Body.actionType != 'popup_and_no_update'){
-                            if (result && result.length && result[0] === 'respond-issue') {
+                if (res && res.data.StatusCode === 200 && res.data.Body) {
+                    let verifyResponse = res.data.Body;
+                    // console.log("verifyResponse", verifyResponse);
+
+                    if (verifyResponse.is_onboard_flag === "C") {
+                        onClose("https://finx.choiceindia.com/auth/login",verifyResponse.message);
+                    } else if (verifyResponse.is_onboard_flag === 'N' || verifyResponse.is_onboard_flag === '' || verifyResponse.is_onboard_flag === 'NI') {
+
+                        let authCode = verifyResponse.auth_code;
+                        let request = {
+                            "grant_type": "authorization_code",
+                            "code": authCode
+                        };
+                        openAccountService.getSSOToken(request).then((res) => {
+                            if (res && res.data.StatusCode == 200) {
+                                localStorage.setItem('access_token', res.data.Body.access_token);
+                                // console.log("verifyResponse in sso",res)
+                                let url = verifyResponse.url + "&accessToken=" + localStorage.getItem('access_token');
+                                // console.log("new url", url);
+                                // openInfoPopup(res.data.Message);
+                                onClose(url,verifyResponse.message);
+                            } else {
                                 openInfoPopup(res.data.Message);
-                                onClose(res.data.Body.url);
-                            } else {
-                                // console.log('Else onboard');
-                                onClose(res.data.Body.url, res.data.Message ? res.data.Message : '', res.data.Body.isOnboardFlag ? res.data.Body.isOnboardFlag : "");
+                                onClose();
                             }
-                        }else{
-                            onClose(res.data.Body.url, res.data.Message ? res.data.Message : '', res.data.Body.isOnboardFlag ? res.data.Body.isOnboardFlag : "", res.data.Body.actionType? res.data.Body.actionType : "",res.data.Body.lid ? res.data.Body.lid : '');
-                            // setShowConsent(() => (res.data.Body.action_type && res.data.Body.action_type == 'no_action') ? true: false);
-                        }
+                        })
 
-
-                        // console.log('inside call',showlead.showModal);
-                        // window.location.href = res.data.Body.url;
-                    } else {
-                        if (res && res.data && res.data.Message) {
-                            openInfoPopup(res.data.Message);
-                            onClose();
-                        } else {
-                            // setShowLead(prevState => {
-                            //     return { ...prevState, showModal: true, redirectLink: 'https://jiffy.choiceindia.com/auth/login'}
-                            // });
-                            if (type2 == 'MF') {
-                                onClose("https://investica.com/auth/sign-in")
-                            } else {
-                                onClose("https://finx.choiceindia.com/auth/login");
-                            }
-
-
-
-                            // (type2=='MF' )? 
-                            // window.location.href ="https://investica.com/auth/sign-in" 
-                            //:
-                            //window.location.href = "https://jiffy.choiceindia.com/auth/login";
-                        }
                     }
-                    // }
                 } else {
                     setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
                 }
@@ -212,6 +165,27 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
             });
         }
     }
+    
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) {
+            return;
+        }
+        showLoader('verifyLoader');
+        const token = await executeRecaptcha('verifyOTP');
+        // Do whatever you want with the token
+        // sendOTP();
+        if (token) {
+            setCaptchaToken(token);
+            // alert("Token : "+token);
+        }
+        hideLoader('verifyLoader');
+    }, [executeRecaptcha]);
+
+    useEffect(() => {
+        if (captchaToken) {
+            verifyOTP();
+        }
+    }, [captchaToken]);
 
     //resend OTP ON SMS
     function resendOTP() {
@@ -435,7 +409,7 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
                                     </div>
 
                                     <div className="btnwrap">
-                                        <button className="btn-bg" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpverifybtn')}</button>
+                                        <button className="btn-bg" disabled={loaders.verifyLoader} onClick={handleReCaptchaVerify}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpverifybtn')}</button>
                                     </div>
                                     <div>
                                         {

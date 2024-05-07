@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
@@ -12,7 +12,7 @@ import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
 import utils from "../../Services/utils";
-
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick,setIsActive,openAccount,setBlogPopUpForm,blogPop,isPopUp, updateType }) {
     // console.log("otpSessionID",otpSessionID)
     // console.log('PPP',onClose.handleOTPClose());
@@ -28,7 +28,8 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     const [searchParams, setSearchParams] = useSearchParams();
     // const [otpparam, setOtpparam] = useState('');
     const [outCome,setOutCome]= useState();
-
+    const { executeRecaptcha } = useGoogleReCaptcha();
+    const [captchaToken, setCaptchaToken] = useState('');
      const otpVerify =useRef("");
     /**function to generate random probabity number for AB test */
     function generateRandomNumber(){
@@ -221,14 +222,14 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                 session_id: otpSessionID
             };
 
-            openAccountService.verifyOTP(request, type2).then((res) => {
+            openAccountService.verifyOTP(request, captchaToken).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.data.StatusCode === 200 && res.data.Body) {
                     let verifyResponse = res.data.Body;
                     // console.log("verifyResponse", verifyResponse);
 
                     if (verifyResponse.is_onboard_flag === "C") {
-                        onClose("https://finx.choiceindia.com/auth/login");
+                        onClose("https://finx.choiceindia.com/auth/login",verifyResponse.message);
                     } else if (verifyResponse.is_onboard_flag === 'N' || verifyResponse.is_onboard_flag === '' || verifyResponse.is_onboard_flag === 'NI') {
 
                         let authCode = verifyResponse.auth_code;
@@ -243,7 +244,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                 let url = verifyResponse.url + "&accessToken=" + localStorage.getItem('access_token');
                                 // console.log("new url", url);
                                 // openInfoPopup(res.data.Message);
-                                onClose(url);
+                                onClose(url,verifyResponse.message);
                             } else {
                                 openInfoPopup(res.data.Message);
                                 onClose();
@@ -265,7 +266,27 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
         }
     }
     
-    
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) {
+            return;
+        }
+        showLoader('verifyLoader');
+        const token = await executeRecaptcha('verifyOTP');
+        // Do whatever you want with the token
+        // sendOTP();
+        if (token) {
+            setCaptchaToken(token);
+            // alert("Token : "+token);
+        }
+        hideLoader('verifyLoader');
+    }, [executeRecaptcha]);
+
+    useEffect(() => {
+        if (captchaToken) {
+            verifyOTP();
+        }
+    }, [captchaToken]);
+
     
     
     
@@ -553,7 +574,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                     <div className="btnwrap">
-                                        <button className={"btn-bg btn-bg-dark"}  id={(outCome == 'A')? 'otp-proceed-test' : 'otp-verify-test'} disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', (outCome == 'A')? 'otpverifybtnNew' : 'otpverifybtn')}</button>
+                                        <button className={"btn-bg btn-bg-dark"}  id={(outCome == 'A')? 'otp-proceed-test' : 'otp-verify-test'} disabled={loaders.verifyLoader} onClick={handleReCaptchaVerify}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', (outCome == 'A')? 'otpverifybtnNew' : 'otpverifybtn')}</button>
                                     </div>
                                     </div>
                                    
