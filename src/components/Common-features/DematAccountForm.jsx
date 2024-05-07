@@ -393,7 +393,7 @@ function DematAccountForm(props) {
         // });
     }
     const [type, setType] = useState('send');
-    console.log("type",type)
+    // console.log("type",type)
     const updateType = (newType) => {
         setType(newType);
         sendOTP(newType); // Call sendOTP with the updated type

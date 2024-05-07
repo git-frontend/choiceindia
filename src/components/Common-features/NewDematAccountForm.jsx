@@ -391,7 +391,7 @@ function NewDematAccountForm(props) {
     }
 
     const [type, setType] = useState('send');
-    console.log("type",type)
+    // console.log("type",type)
     const updateType = (newType) => {
         setType(newType);
         sendOTP(newType); // Call sendOTP with the updated type
@@ -428,10 +428,10 @@ function NewDematAccountForm(props) {
             // "captcha": "1",
 
         };
-        console.log("request",request)
+        // console.log("request",request)
         openAccountService.sendOTP(request,captchaToken ).then((res) => {
             hideLoader('sendOTPLoader');
-            console.log("res",res)
+            // console.log("res",res)
             if (res && res.StatusCode === 200 ) {
                 // utils.pushDataLayerEvent({
                 //     'event': 'ci_onboard_lead_initiated',
