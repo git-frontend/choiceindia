@@ -28,7 +28,7 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
     var UTMTerm = useRef('');
     var refercode = useRef('');
     var source = useRef('');
-    var otpSessionID = useRef('');
+    // var otpSessionID = useRef('');
     var subrefercode = useRef('');
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     const [captchaToken, setCaptchaToken] = useState('');
@@ -36,7 +36,7 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
     const blogcheck = ((window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'yes' : " ")
     /** state to show thankyou popup default */
     // const [showAdPopUp, setshowAdPopUp] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'' });
-
+    const [otpSessionID, setOTPSessionID] = useState(null)
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
         setMobileNumber(value);
@@ -133,16 +133,24 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
             handleReCaptchaVerify();
         }
     }
-
+    const [type, setType] = useState('send');
+    // console.log("type",type)
+    const updateType = (newType) => {
+        setType(newType);
+        handleReCaptchaVerify()
+         // Call sendOTP with the updated type
+    };
     function sendOTP() {
         showLoader('sendOTPLoader');
+        const encodedMobileNumber = btoa(mobileNumber);
         let request = {
             "whatsapp_consent": true,
-            "service_code": "JF", // type1=='MF' ? "MF": "JF",
-            "mobile_number": mobileNumber,
-            "product": "FINX", //type1=='MF' ? "INVESTICA":"FINX",
-            "request_source": "CHOICEINDIA",
-            "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
+            // "service_code": "JF", // type1=='MF' ? "MF": "JF",
+            "mobile_number": encodedMobileNumber,
+            "type":type,
+            // "product": "FINX", //type1=='MF' ? "INVESTICA":"FINX",
+            // "request_source": "CHOICEINDIA",
+            // "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": "1", // type1=='MF' ?"true":"1",
             "referred_id": refercode.current || null, //|| referID || null,
             "sub_ref": subrefercode.current || null,
@@ -157,38 +165,49 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
             "utm_source": (window.location.pathname.indexOf("/unlisted-shares-price-list/") > -1) ? 'ul_leads' : isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
-            "captchaResp": captchaToken,
+            // "captchaResp": captchaToken,
             "account_type": "all" // type1=='MF'?"":"all"
             // "captcha": "1"
 
         };
         // console.log("hghg", request)
 
-        openAccountService.sendOTP(request).then((res) => {
+        openAccountService.sendOTP(request,captchaToken ).then((res) => {
             hideLoader('sendOTPLoader');
-            if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
-                utils.pushDataLayerEvent({
-                    'event': 'ci_onboard_lead_initiated',
-                    'ObLeadReferenceId': refercode.current || "",
-                    'page_path': window.location.pathname,
-                    'page_url': window.location.href,
-                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb',
-                    'lead_source': 'choiceindia',
-                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                    'leadId': res.data.Body.leadid,
-                })
-                otpSessionID.current = res.data.Body.otp_session_id;
-                setShowOpenAccountPopup(false);
+            // console.log("res",res)
+            if (res && res.StatusCode === 200 ) {
+                // utils.pushDataLayerEvent({
+                //     'event': 'ci_onboard_lead_initiated',
+                //     'page_path': window.location.pathname,
+                //     'page_url': window.location.href,
+                //     'lead_source': 'choiceindia',
+                //     // 'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                //     'leadId': res.data.Body.leadid,
+                //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                // })
+                setOTPSessionID((type1 == 'MF') ? res.Body.session_id : res.Body.otp_session_id)
+                // setForm('sent-otp')
+                // setformdata()
+                setShowThanku(prevState => {
+                    return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.Body.new_lead ? res.Body.new_lead : false }
+                });
+                fetchQueryParams();
+                // resetOTPPopup();
                 handleOTPShow();
+
+
             } else {
                 setAPIError("Something went wrong, please try again later!");
+                showAPIErrorToaster();
             }
         }).catch((error) => {
             hideLoader('sendOTPLoader');
             if (error && error.response && error.response.data && error.response.data.Message) {
-                setAPIError(error.response.data.Message);
+                setAPIError(error.response.data.Message); 
+                showAPIErrorToaster();
             } else {
                 setAPIError("Something went wrong, please try again later!");
+                showAPIErrorToaster();
             }
         });
     }
@@ -215,7 +234,7 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
 
     useEffect(() => {
         if (captchaToken) {
-            sendOTP();
+            sendOTP(type,captchaToken);
         }
     }, [captchaToken]);
 
@@ -289,7 +308,7 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
                     </div> : ''
             }
             {
-                showOTP ? <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} openInfoPopup={(msg) => openInfoPopup(msg)}></OpenAccountOTPModal> : ''
+                showOTP ? <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID} onClose={handleOTPClose} openInfoPopup={(msg) => openInfoPopup(msg)} updateType={updateType}></OpenAccountOTPModal> : ''
             }
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static" className="termcondition"
                 keyboard={false} centered>
