@@ -7,12 +7,12 @@ import icon3 from '../../assets/images/fno-trading/real-time-pay-off-charts.svg'
 import icon6 from '../../assets/images/fno-trading/option-chain.svg';
 import icon4 from '../../assets/images/fno-trading/techinical-charts.svg';
 import icon5 from '../../assets/images/fno-trading/oi-spurts.svg';
-import img2 from '../../assets/images/fno-trading/Pre Build Option Strategies.svg';
+import img2 from '../../assets/images/fno-trading/BackTesting.webp';
 import img3 from '../../assets/images/fno-trading/Advanced Option Chain.svg';
-import img4 from '../../assets/images/fno-trading/Technical Charts with Realtime Payoff.svg';
-import img5 from '../../assets/images/fno-trading/OI Spurts.svg';
-import option1 from "../../assets/images/fno-trading/option1.svg";
-import option2 from "../../assets/images/fno-trading/option2.svg";
+import img4 from '../../assets/images/fno-trading/Technical-Charts-with-Realtime-Payoff.webp';
+import img5 from '../../assets/images/fno-trading/OI-Spurts-Options.webp';
+import option1 from "../../assets/images/fno-trading/option1.webp";
+import option2 from "../../assets/images/fno-trading/option2.webp";
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css";
@@ -183,7 +183,10 @@ the uncertainties of options trading</p>
 
                                 </div>
                                 <div className="img-itm">
-                                    <LazyLoader src={optionsTraders[isShown2].photo} width={559} height={443} alt={"Benefits for Options Traders"} />
+                                <div className="img-shadow">
+                                <LazyLoader src={optionsTraders[isShown2].photo} width={800} height={600} alt={"Benefits for Options Traders"} />
+                                    </div>
+                                   
                                 </div>
                             </div>
                             </div>
@@ -197,7 +200,10 @@ the uncertainties of options trading</p>
                                 </div>
                             <div className="list-main-prnt last-child">
                                 <div className="img-itm">
+                                    <div className="img-shadow">
                                     <LazyLoader src={ExpiryTraders[isShown1].photo} width={596} height={360} alt={"Benefits for Expiry Day Traders"} />
+                                    </div>
+
                                 </div>
                                 <div className="list-fno-featu">
                                     

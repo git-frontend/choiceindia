@@ -4,16 +4,11 @@ import React,{useState} from "react";
 import Finxtoolsimg from "../../Data/FinxTools";
 import Slider from 'react-slick';
 import { useEffect } from "react";
-import LazyLoader from '../Common-features/LazyLoader';
 function FinxTools() {
 
     const [isShown3, setIsShown3] = useState(0);
-    const [nav,setNav]=useState();
-    const [nav1,setNav1]=useState();
     const [trigger, setTrigger] = useState(false);
-    const [slider1,setslider1]=useState();
-    const [slider2,setslider2]=useState();
-    
+   
     const settings11 = {
       infinite: true,
       speed:2000,
@@ -22,41 +17,10 @@ function FinxTools() {
       arrows:false,
       autoplay: true,
       dots: false,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 2000,
       slidesToScroll: 1,
-      swipeToSlide: false,
-      pauseOnHover: false,
-      pauseOnFocus: false,
-      draggable:false,
+      swipeToSlide: true,
     };
-
-
-    const settings12 = {
-        infinite: true,
-        slidesToShow: 1,
-        autoplay: true,
-        arrows:false,
-        dots: false,
-        fade:true,
-        autoplaySpeed: 5000,
-        slidesToScroll: 1,
-        swipeToSlide: false,
-        pauseOnHover: false,
-        pauseOnFocus: false,
-        draggable:false,
-        speed: 1000,
-      };
-      useEffect(() => {
-        setTrigger(true)
-        if (trigger === true) {
-         
-          setNav(slider1)
-          setNav1(slider2)
-    
-    
-        }
-    
-      }, [trigger])
 
 
     return (
@@ -76,8 +40,6 @@ function FinxTools() {
                             <div className="finx-tools-data">
                                 <div className="collection-slider">
                                     <Slider {...settings11}
-                                    asNavFor={nav1}
-                                    ref={slider => setslider1(slider)}
                                       afterChange={(ev) => {
                                         setIsShown3(ev)
                                       }}
@@ -87,13 +49,14 @@ function FinxTools() {
 
                                             let classNm = "slider-item " + ((index === isShown3) ? "slider-item-active" : "")
                                             return(
-
-                                                <div key={response.id} className={classNm} onMouseOver={()=>setIsShown3(index)}
-                                                 >
+                                               <div onMouseOver={()=>setIsShown3(index)} >
+                                              <div key={response.id} className={classNm} >
                                                
-                                                <img src={response.imageico} alt={response.alt} className="icon-img"></img>
-                                                <h3 className="subtext">{response.title}</h3>
-                                                </div>
+                                               <img src={response.imageico} alt={response.alt} className="icon-img"></img>
+                                               <h3 className={(index === isShown3) ? "subtext-active":"subtext"}>{response.title}</h3>
+                                               </div>
+                                               </div>
+                                                
 
                                             )
                                         })
@@ -101,24 +64,7 @@ function FinxTools() {
                                     </Slider>
                                 </div>
                                 <div className="slider-cont-main">
-                                    {/* <Slider {...settings12}
-                                        asNavFor={nav}
-                                        ref={slider => setslider2(slider)}
-                                        >
-                                        {
-                                            Finxtoolsimg?.map((response, index) => {
-                                                        return(
-                                            <div className="imgwrap" key={response.id}>
-                                                <img src={response.image} alt={response.alt} className="img-fluid" width={"708"} height={"645"}></img>
-                                            </div>
-                                                        )
-                                                    }
-                                        
-                                        )
-                                                }
-                                
-                                        </Slider> */}
-                                      <LazyLoader src={Finxtoolsimg[isShown3].image} width={708} height={645} alt={Finxtoolsimg[isShown3].alt} />
+                                      <img src={Finxtoolsimg[isShown3].image} width={708} height={645} alt={Finxtoolsimg[isShown3].alt} />
                                 </div>
                             </div>
                         </div>

@@ -1,8 +1,8 @@
-import Image1 from '../assets/images/fno-trading/finx1.svg' ;
-import Image2 from '../assets/images/fno-trading/finx2.svg' ;
-import Image3 from '../assets/images/fno-trading/finx3.svg' ;
-import Image4 from '../assets/images/fno-trading/finx4.svg' ;
-import Image5 from '../assets/images/fno-trading/finx5.svg' ;
+import Image1 from '../assets/images/fno-trading/finx1.webp';
+import Image2 from '../assets/images/fno-trading/finx2.webp';
+import Image3 from '../assets/images/fno-trading/finx3.webp';
+import Image4 from '../assets/images/fno-trading/finx4.webp';
+import Image5 from '../assets/images/fno-trading/finx5.webp';
 
 
 import Ico1 from '../assets/images/fno-trading/option-trading-app-with-simple-interface.svg' ;
