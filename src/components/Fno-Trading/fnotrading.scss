@@ -430,6 +430,7 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                 .slider-item-active{
                 background:#C5EAEB;
                 font-weight: normal;
+                border-left:6px solid #25B8AF;
                 }
                 .slider-item{
                     display: flex !important;
