@@ -274,10 +274,12 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, la
 
     const handleUpdateType = () => {
         updateType('resend');
+        setCount(30);
         handleOTPResendSuccessToaster('otp');
     };
     const handleUpdateTypeCall = () => {
         updateType('otp-on-call');
+        setCount(30);
         handleOTPResendSuccessToaster('call');
     };
     return (

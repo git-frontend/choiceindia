@@ -394,10 +394,11 @@ function NewDematAccountForm(props) {
     // console.log("type",type)
     const updateType = (newType) => {
         setType(newType);
-        sendOTP(newType); // Call sendOTP with the updated type
+        handleReCaptchaVerify()
+         // Call sendOTP with the updated type
     };
 
-    function sendOTP(type) {
+    function sendOTP(type, captchaToken) {
         // console.log('Sending OTP with type:', type);
         showLoader('sendOTPLoader');
         const encodedMobileNumber = btoa(mobileNumber);
@@ -587,7 +588,7 @@ function NewDematAccountForm(props) {
 
     useEffect(() => {
         if (captchaToken) {
-            sendOTP(type);
+            sendOTP(type,captchaToken);
         }
     }, [captchaToken]);
 
@@ -917,7 +918,7 @@ function NewDematAccountForm(props) {
                 showOTP && !showThanku.showModal && (
                     <div className={`${blogPopUpForm}`}>
                       <div className={`demat-account-form demat-account-form-new ${blogFormOtp}`}>
-                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} setIsActive={props.setIsActive} openAccount={props.openAccount} setBlogPopUpForm={setBlogPopUpForm} blogPop={props.blogPop} isPopUp={isPopUp}  updateType={updateType}></OpenAccountOTPModalNew>
+                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} setIsActive={props.setIsActive} openAccount={props.openAccount} setBlogPopUpForm={setBlogPopUpForm} blogPop={props.blogPop} isPopUp={isPopUp}  updateType={updateType} ></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
                         <Button variant="primary" type="submit" className={showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}></Button>

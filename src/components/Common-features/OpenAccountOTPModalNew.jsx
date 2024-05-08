@@ -390,10 +390,12 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     // }, [otpparam]);
     const handleUpdateType = () => {
         updateType('resend');
+        setCount(30);
         handleOTPResendSuccessToaster('otp');
     };
     const handleUpdateTypeCall = () => {
         updateType('otp-on-call');
+        setCount(30);
         handleOTPResendSuccessToaster('call');
     };
     return (

@@ -38,7 +38,7 @@ const tokenheader={
 const openAccountService = {
 
   sendOTP: function (request,token) {
-    console.log("token",token)
+    // console.log("token",token)
     let fheaders = formheaders.ssoheaders;
     fheaders['Authorization'] = token;
     // let url = apiURL.getSendOTPURL();

@@ -396,10 +396,10 @@ function DematAccountForm(props) {
     // console.log("type",type)
     const updateType = (newType) => {
         setType(newType);
-        sendOTP(newType); // Call sendOTP with the updated type
+        handleReCaptchaVerify()
     };
 
-    function sendOTP(type) {
+    function sendOTP(type, captchaToken) {
         showLoader('sendOTPLoader');
         const encodedMobileNumber = btoa(mobileNumber);
         let request = {
@@ -702,7 +702,7 @@ function DematAccountForm(props) {
 
     useEffect(() => {
         if (captchaToken) {
-            sendOTP(type);
+            sendOTP(type , captchaToken);
         }
     }, [captchaToken]);
 
