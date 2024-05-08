@@ -69,6 +69,7 @@ const config = {
 
 
 };
+export const clientId = environment ? "N2E4NDY3MDZkYmY5MDlhYVlQ1ceR+YA+0iyV5NNu5bw=" : "OGI5NTA5NzA5ZDMwYzQwNbLVuZzUJXegXE9ksxWQz30=";
 
 export class API_URLS {
   NbfcAuthURL = "";

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URLS } from "./API-URLS";
+import { API_URLS ,clientId } from "./API-URLS";
 import utils from "./utils";
 
 const apiURL = new API_URLS()
@@ -31,7 +31,7 @@ const formheaders = {
 const tokenheader={
     "Content-Type": "application/json",
     "Source": "CHOICEINDIA",
-    "clientId":"N2E4NDY3MDZkYmY5MDlhYVlQ1ceR+YA+0iyV5NNu5bw="
+    "clientId":clientId 
 
 }
 
