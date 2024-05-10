@@ -608,7 +608,7 @@ export class API_URLS {
   getFableFolderURL(id) {
     return (
       this.serverURL +
-      `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}`
+      `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}&limit=all`
     );
   }
   /** faq search API url */
