@@ -1,6 +1,6 @@
 
 // import React from 'react';
-import React,{useState} from "react";
+import React,{useState,useEffect,useRef} from "react";
 import img1 from '../../assets/images/fno-trading/pre-built-option-strategies.svg';
 import icon2 from '../../assets/images/fno-trading/advanced-option-chain.svg';
 import icon3 from '../../assets/images/fno-trading/real-time-pay-off-charts.svg';
@@ -20,11 +20,28 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 function WhyChooseFno() {
     const [isShown2, setIsShown2] = useState(0);
     const [isShown1,setIsShown1]=useState(0);
+    const [nav1, setNav1] = useState(null);
+    const [nav2, setNav2] = useState(null);
+    const [trigger,setTrigger]=useState(false);
+    let sliderRef1 = useRef(null);
+    let sliderRef2 = useRef(null);
+    const [nav3,setNav3]=useState(null);
+    const [nav4,setNav4]=useState(null);
+    let sliderRef3=useRef(null);
+    let sliderRef4=useRef(null);
+    useEffect(() => {
+        setTrigger(true);
+        if(trigger==true){
+            setNav1(sliderRef1);
+            setNav2(sliderRef2);
+            setNav3(sliderRef3);
+            setNav4(sliderRef4);
+        }
+      }, [trigger]);
     const settings3 = {
         infinite: true,
         speed:2000,
         vertical: true,
-        focusOnSelect: true,
         touchMove: true,
         arrows: false,
         slidesToShow: 3,
@@ -35,7 +52,7 @@ function WhyChooseFno() {
         swipeToSlide: true,
         responsive: [
           {
-            breakpoint: 768,
+            breakpoint: 992,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
@@ -48,6 +65,42 @@ function WhyChooseFno() {
           
         ]
     };
+
+    const setting4={
+    arrows:false
+    }
+
+    const settings5={
+        infinite: true,
+        speed:2000,
+        vertical: true,
+        touchMove: true,
+        arrows: false,
+        slidesToShow: 3,
+        autoplay: true,
+        dots: false,
+        autoplaySpeed: 2000,
+        slidesToScroll: 1,
+        swipeToSlide: true,
+        responsive: [
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              vertical: false,
+              autoplaySpeed: 3000,
+              adaptiveHeight: false,
+              dots: true,
+            }
+          }
+          
+        ]
+    }
+
+    const settings6={
+    arrows:false
+    }
 
     function scrollToId(id) {
         var element = document.getElementById(id);
@@ -162,13 +215,16 @@ the uncertainties of options trading</p>
                                     </div> */}
                                     
                                     <Slider {...settings3} className="featu-list featu-list-slider"
-                                     afterChange={(ev) => {
-                                        setIsShown2(ev)
-                                      }}>
+                                    asNavFor={nav2} ref={(slider) => (sliderRef1 = slider)}
+                                    focusOnSelect={true}
+                                    //  afterChange={(ev) => {
+                                    //     setIsShown2(ev)
+                                    //   }}
+                                      >
                                     {optionsTraders.map((option,idx)=>{
-                                    let classNm="lists-itms "+ (idx===isShown2?"list-itm-active":"");
+                                    let classNm="lists-itms "+ (idx===isShown2?"active":"");
                                      return(
-                                     <div className={classNm} key={idx} onMouseOver={() => setIsShown2(idx)}>
+                                     <div className={classNm} key={idx}>
                                      <span className="icons-m">
                                                 <img src={option.image} alt={option.alt} />
                                             </span>
@@ -182,12 +238,40 @@ the uncertainties of options trading</p>
                                     </Slider>
 
                                 </div>
+
+                                <div className="image-slider">
+                                <Slider asNavFor={nav1} ref={(slider) => (sliderRef2 = slider)} {...setting4}>
                                 <div className="img-itm">
-                                <div className="img-shadow">
-                                <LazyLoader src={optionsTraders[isShown2].photo} width={800} height={600} alt={"Benefits for Options Traders"} />
+                                  <div className="img-shadow">
+                                  <img src={optionsTraders[0].photo} width={800} height={600} alt={"Benefits for Options Traders"} />
+                                      </div>
+                                  </div>
+
+                                  <div className="img-itm">
+                                  <div className="img-shadow">
+                                  <img src={optionsTraders[1].photo} width={800} height={600} alt={"Benefits for Options Traders"} />
+                                      </div>
+                                  </div>
+
+                                  <div className="img-itm">
+                                  <div className="img-shadow">
+                                  <img src={optionsTraders[2].photo} width={800} height={600} alt={"Benefits for Options Traders"} />
+                                      </div>
+                                  </div>
+                                  
+
+                                  {/* {
+                                  optionsTraders.map((option,idx)=>(
+                                    <div className="img-itm">
+                                    <img src={option.photo} width={800} height={600} alt={"Benefits for Options Traders"} />
                                     </div>
-                                   
+                                  ))
+                                  } */}
+                              
+                                </Slider>
                                 </div>
+                           
+                             
                             </div>
                             </div>
 
@@ -199,12 +283,28 @@ the uncertainties of options trading</p>
                                     </div>
                                 </div>
                             <div className="list-main-prnt last-child">
+                            <div className="image-slider">
+                            <Slider asNavFor={nav4} ref={(slider) => (sliderRef3 = slider)} {...settings6}>
+                            <div className="img-itm">
+                                    <div className="img-shadow">
+                                    <img src={ExpiryTraders[0].photo} width={596} height={360} alt={"Benefits for Expiry Day Traders"} />
+                                    </div>
+                                </div>
+
+                               <div className="img-itm">
+                                    <div className="img-shadow">
+                                    <img src={ExpiryTraders[1].photo} width={596} height={360} alt={"Benefits for Expiry Day Traders"} />
+                                    </div>
+                                </div>
+
                                 <div className="img-itm">
                                     <div className="img-shadow">
-                                    <LazyLoader src={ExpiryTraders[isShown1].photo} width={596} height={360} alt={"Benefits for Expiry Day Traders"} />
+                                    <img src={ExpiryTraders[2].photo} width={596} height={360} alt={"Benefits for Expiry Day Traders"} />
                                     </div>
-
                                 </div>
+                            </Slider>
+                            </div>
+                           
                                 <div className="list-fno-featu">
                                     
                                     {/* <div className="featu-list">
@@ -237,14 +337,13 @@ the uncertainties of options trading</p>
                                         </div>
                                     </div> */}
 
-                                    <Slider {...settings3} className="featu-list featu-list-slider"
-                                      afterChange={(ev) => {
-                                        setIsShown1(ev)
-                                      }}>
+                                    <Slider asNavFor={nav3} ref={(slider) => (sliderRef4 = slider)}  {...settings5} className="featu-list featu-list-slider"
+                                    focusOnSelect={true}
+                                     >
                                     {ExpiryTraders.map((option,idx)=>{
-                                    let classNm="lists-itms "+ (idx===isShown1?"list-itm-active":"");
+                                    let classNm="lists-itms "+ (idx===isShown1?"active":"");
                                      return(
-                                     <div className={classNm} key={idx} onMouseOver={() => setIsShown1(idx)}>
+                                     <div className={classNm} key={idx}>
                                      <span className="icons-m">
                                                 <img src={option.image} alt={option.alt} />
                                             </span>
