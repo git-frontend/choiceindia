@@ -369,22 +369,24 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
         @media (max-width:$md){
         width:100%;
         }
+        .shadow-slider-img{
+            box-shadow: 0px 4px 73px 0px #00000029;
             .img-itm{
+                display: block !important;
                 width: 100%;
                 
                 @media (max-width:$md) {
                     width: 100%;
                 }
-               
-                .img-shadow{
-                    box-shadow: 0px 4px 56px 0px #00000029;
                     img{
                         max-width: 100%;
                         height: auto;
                         width: 100%;
+                        // box-shadow: 0px 4px 73px 4px #00000029;
                     }
-                }
             }
+        }
+           
         }
        
         &.last-child{

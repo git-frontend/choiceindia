@@ -45,7 +45,7 @@ function WhyChooseFno() {
         touchMove: true,
         arrows: false,
         slidesToShow: 3,
-        autoplay: true,
+        autoplay:true,
         dots: false,
         autoplaySpeed: 2000,
         slidesToScroll: 1,
@@ -67,7 +67,7 @@ function WhyChooseFno() {
     };
 
     const setting4={
-    arrows:false
+    arrows:false,
     }
 
     const settings5={
@@ -240,26 +240,17 @@ the uncertainties of options trading</p>
                                 </div>
 
                                 <div className="image-slider">
-                                <Slider asNavFor={nav1} ref={(slider) => (sliderRef2 = slider)} {...setting4}>
+                               <div className="shadow-slider-img">
+                               <Slider asNavFor={nav1} ref={(slider) => (sliderRef2 = slider)} {...setting4}>
                                 <div className="img-itm">
-                                  <div className="img-shadow">
-                                  <img src={optionsTraders[0].photo} width={800} height={600} alt={"Benefits for Options Traders"} />
-                                      </div>
+                                        <img src={optionsTraders[0].photo} width={800} height={600} alt={"Benefits for Options Traders"} />
                                   </div>
-
                                   <div className="img-itm">
-                                  <div className="img-shadow">
-                                  <img src={optionsTraders[1].photo} width={800} height={600} alt={"Benefits for Options Traders"} />
-                                      </div>
+                                    <img src={optionsTraders[1].photo} width={800} height={600} alt={"Benefits for Options Traders"} />
                                   </div>
-
                                   <div className="img-itm">
-                                  <div className="img-shadow">
                                   <img src={optionsTraders[2].photo} width={800} height={600} alt={"Benefits for Options Traders"} />
-                                      </div>
                                   </div>
-                                  
-
                                   {/* {
                                   optionsTraders.map((option,idx)=>(
                                     <div className="img-itm">
@@ -269,6 +260,7 @@ the uncertainties of options trading</p>
                                   } */}
                               
                                 </Slider>
+                               </div>
                                 </div>
                            
                              
@@ -284,25 +276,22 @@ the uncertainties of options trading</p>
                                 </div>
                             <div className="list-main-prnt last-child">
                             <div className="image-slider">
+                            <div className="shadow-slider-img">
                             <Slider asNavFor={nav4} ref={(slider) => (sliderRef3 = slider)} {...settings6}>
                             <div className="img-itm">
-                                    <div className="img-shadow">
                                     <img src={ExpiryTraders[0].photo} width={596} height={360} alt={"Benefits for Expiry Day Traders"} />
-                                    </div>
                                 </div>
 
                                <div className="img-itm">
-                                    <div className="img-shadow">
                                     <img src={ExpiryTraders[1].photo} width={596} height={360} alt={"Benefits for Expiry Day Traders"} />
-                                    </div>
                                 </div>
 
                                 <div className="img-itm">
-                                    <div className="img-shadow">
                                     <img src={ExpiryTraders[2].photo} width={596} height={360} alt={"Benefits for Expiry Day Traders"} />
-                                    </div>
                                 </div>
                             </Slider>
+                            </div>
+                           
                             </div>
                            
                                 <div className="list-fno-featu">
