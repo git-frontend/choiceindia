@@ -1,7 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-// import Blog1 from '../../assets/images/fable/blog-img1.jpg';
-// import Blog2 from '../../assets/images/fable/blog-img2.jpg';
-// import Blog3 from '../../assets/images/fable/blog-img3.jpg';
 import FablesTrending from "../../Services/fableServices";
 import LazyLoader from "../Common-features/LazyLoader";
 import { Link } from "react-router-dom";
@@ -16,6 +13,7 @@ function FableBlogList() {
     const [check, setCheck] = useState(false);
     const [count,setCount] = useState(0);
     const [isloading,setisloading ] = useState(true);
+    const [loadedCount, setLoadedCount] = useState(3);
     const demo_ref = useRef(null)
     // const demo_ref2 = useRef(null);
 
@@ -24,8 +22,7 @@ function FableBlogList() {
             res => {
                 setisloading(false);
                 setData(res.data.data);
-               // console.log("check", res.data.data)
-                // loadfaqFolder(res[0].category_linkage);
+               
             }
         )
     };
@@ -35,35 +32,23 @@ function FableBlogList() {
             res => {
                 setisloading(false);
                 setPost(res.data.posts);
-                setCheck(false)
-                // setPostAll(res.data.posts)
-            //    console.log("check222", res.data.posts)
-                // loadfaqFolder(res[0].category_linkage);
+                setLoadedCount(3)
+              
             }
         )
     };
 
-    function goToScroll(value){
-        // console.log('GGG');
-        if(value === true){
-            // console.log(demo_ref2)
-            // demo_ref2?.current?.scrollIntoView({behavior: 'smooth'})
-            var element = document.getElementById('res-des-scrlls');
-            var headerOffset = -20;
-            var elementPosition = element.getBoundingClientRect().top;
-            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-        }else{
-            // console.log(demo_ref)
-            demo_ref?.current?.scrollIntoView({behavior: 'smooth'})
-        }
-        
-        
+    function goToScroll(value) {
+        const element = value ? document.getElementById('res-des-scrlls') : demo_ref.current;
+        const headerOffset = -20;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
         setCheck(value);
-      }
+    }
 
     useEffect(() => {
         setTrigger(true)
@@ -76,7 +61,15 @@ function FableBlogList() {
 
     }, [trigger])
 
+    function loadMorePosts() {
+        setLoadedCount(prevCount => prevCount + 15);
+        
+    }
 
+    function loadLessPosts() {
+        setLoadedCount(3);
+        setCheck(false);
+    }
     return (
         <div ref={demo_ref}>
 
@@ -86,7 +79,6 @@ function FableBlogList() {
                         isloading?
                         <div className="text-center">
                                     <div>
-                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
                                         <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                          </div>
                                 </div>:
@@ -116,41 +108,7 @@ function FableBlogList() {
                     
                 </div>
 
-                {/** <li>
-                                <a href="/" className="link-txt link-active">All</a>
-                            </li>
-                            <li>
-                                <a href="/" className="link-txt">National</a>
-                            </li>
-                            <li>
-                                <a href="/" className="link-txt">International</a>
-                            </li>
-                            <li>
-                                <a href="/" className="link-txt">Economy</a>
-                            </li>
-                            <li>
-                                <a href="/" className="link-txt">Industry</a>
-                            </li>
-                            <li>
-                                <a href="/" className="link-txt">Commodity</a>
-                            </li>
-                            <li>
-                                <a href="/" className="link-txt">IPO</a>
-                            </li>
-                            <li>
-                                <a href="/" className="link-txt">Currency</a>
-                            </li>
-                            <li>
-                                <a href="/" className="link-txt">Policies</a>
-                            </li>
-                            <li>
-                                <a href="/" className="link-txt">M&amp;A</a>
-                            </li>
-                            <li>
-                                <a href="/" className="link-txt">Trades</a>
-                    </li> */}
-
-
+               
 {
     isloading?
     <div></div>:
@@ -163,7 +121,7 @@ function FableBlogList() {
                             post.length?
                             <div className="tab-blog-list">
                             {
-                                (post||[]).slice(0, check?post.length:3).map((res,index)=>{
+                                post.slice(0, check ? post.length : loadedCount).map((res, index)=>{
                                     return(
                                           
                                         <Link  to={`/blog/${res.slug}`} className="tab-blog-item mb-5" key={res.id}>
@@ -197,11 +155,13 @@ function FableBlogList() {
                             
                         </div>
                     </div>
-                    {
-                        post&&(post.length > 3) ? 
-                        <div className="mt-5 d-flex justify-content-center" >{check?<a className="btn-bg btn-ptr" style={{cursor:"pointer"}} onClick={()=> {goToScroll(false)}}>Load Less</a>:<a className="btn-bg btn-ptr"  style={{cursor:"pointer"}} onClick={()=> {goToScroll(true)}}>Load More</a>}</div>
-                      :""
-                    }
+                    <div className="mt-5 d-flex justify-content-center">
+                            {post.length > loadedCount && !check ? (
+                                <a className="btn-bg btn-ptr" style={{ cursor: "pointer" }} onClick={loadMorePosts}>Load More</a>
+                            ) : (
+                                <a className="btn-bg btn-ptr" style={{ cursor: "pointer" }} onClick={loadLessPosts}>Load Less</a>
+                            )}
+                        </div>
                 </div>
 
 }

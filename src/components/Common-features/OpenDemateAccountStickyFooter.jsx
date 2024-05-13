@@ -27,9 +27,9 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     var refercode = useRef('');
     var subrefercode = useRef('');
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
-    
+    const [otpSessionID, setOTPSessionID] = useState(null)
     var source = useRef('');
-    var otpSessionID = useRef('');
+    // var otpSessionID = useRef('');
     const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1) || (window.location.pathname.indexOf('/corporate-demat-account') > -1)||(window.location.pathname.indexOf('sip-calculator') > -1)||(window.location.pathname.indexOf('mutual-fund-calculator') > -1)||(window.location.pathname.indexOf('margin-calculator') > -1)||(window.location.pathname.indexOf('brokerage-calculator') > -1)||(window.location.pathname.indexOf('futures-and-options-margin-calculator') > -1)||(window.location.pathname.indexOf('commodity-margin-calculator') > -1)||(window.location.pathname.indexOf('forex-margin-calculator') > -1)) ? 'Best-Stock' : "Blog";
 
     const UnlistBlog = (window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'yes' : "";
@@ -204,16 +204,24 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         }
 
     }
-
-    function sendOTP() {
+    const [type, setType] = useState('send');
+    // console.log("type",type)
+    const updateType = (newType) => {
+        setType(newType);
+        handleReCaptchaVerify()
+         // Call sendOTP with the updated type
+    };
+    function sendOTP(type, captchaToken) {
         showLoader('sendOTPLoader');
+        const encodedMobileNumber = btoa(mobileNumber);
         let request = {
             "whatsapp_consent": true,
-            "service_code": "JF",
-            "mobile_number": mobileNumber,
-            "product": "FINX",
-            "request_source": "CHOICEINDIA",
-            "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
+            // "service_code": "JF",
+            "mobile_number": encodedMobileNumber,
+            "type":type,
+            // "product": "FINX",
+            // "request_source": "CHOICEINDIA",
+            // "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": subrefercode.current || null,
@@ -228,37 +236,47 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
             "utm_source": isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' :(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate':  UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
-            "captchaResp": captchaToken,
+            // "captchaResp": captchaToken,
             "account_type": "all"
             // "captcha": "1"
         }
 
-        openAccountService.sendOTP(request).then((res) => {
+        openAccountService.sendOTP(request,captchaToken ).then((res) => {
             hideLoader('sendOTPLoader');
-            if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
-                setLeadId(res.data.Body.leadid);
-                utils.pushDataLayerEvent({
-                    'event': 'ci_onboard_lead_initiated',
-                    'ObLeadReferenceId': refercode.current || "",
-                    'page_path': window.location.pathname,
-                    'page_url': window.location.href,
-                    'lead_source': 'choiceindia',
-                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                    'leadId': res.data.Body.leadid,
-                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                })
-                otpSessionID.current = res.data.Body.otp_session_id;
-                otpLeadID.current = res.data.Body.lid
+            // console.log("res",res)
+            if (res && res.StatusCode === 200 ) {
+                // utils.pushDataLayerEvent({
+                //     'event': 'ci_onboard_lead_initiated',
+                //     'page_path': window.location.pathname,
+                //     'page_url': window.location.href,
+                //     'lead_source': 'choiceindia',
+                //     // 'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                //     'leadId': res.data.Body.leadid,
+                //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                // })
+                setOTPSessionID( res.Body.otp_session_id)
+                // setForm('sent-otp')
+                // setformdata()
+                setShowThanku(prevState => {
+                    return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.Body.new_lead ? res.Body.new_lead : false }
+                });
+                fetchQueryParams();
+                // resetOTPPopup();
                 handleOTPShow();
+
+
             } else {
                 setAPIError("Something went wrong, please try again later!");
+                showAPIErrorToaster();
             }
         }).catch((error) => {
             hideLoader('sendOTPLoader');
             if (error && error.response && error.response.data && error.response.data.Message) {
-                setAPIError(error.response.data.Message);
+                setAPIError(error.response.data.Message); 
+                showAPIErrorToaster();
             } else {
                 setAPIError("Something went wrong, please try again later!");
+                showAPIErrorToaster();
             }
         });
     }
@@ -285,10 +303,9 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
 
     useEffect(() => {
         if (captchaToken) {
-            sendOTP();
+            sendOTP(type,captchaToken);
         }
     }, [captchaToken]);
-
     /**on click no consent */
     function submitConsent(consent) {
 
@@ -488,7 +505,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
 
             {
                 showOTP ?
-                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} otpLeadID={otpLeadID.current} onClose={handleOTPClose} openInfoPopup={(msg) => openInfoPopup(msg)}></OpenAccountOTPModal> : ''
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID} otpLeadID={otpLeadID.current} onClose={handleOTPClose} openInfoPopup={(msg) => openInfoPopup(msg)} updateType={updateType}></OpenAccountOTPModal> : ''
             }
             {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
                 keyboard={false} centered>
