@@ -292,6 +292,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                         margin: 1rem auto !important;
                         display: flex !important;
                         padding: 2rem 1rem;
+                        &:hover{
+                            cursor: pointer;
+                            }
                         @media (max-width:$md) {
                             min-height: 195px;
                         }
@@ -300,14 +303,6 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                         position: relative;
                     }
                     
-                }
-                //shubham changes
-                .list-itm-active{
-                    background: $whiteColor;
-                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                    @media (max-width:$md) {
-                        box-shadow: initial;
-                    }
                 }
                 .lists-itms{
                     display: flex;
@@ -452,12 +447,6 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                     }
                    
                 }
-                .slider-item-active{
-                background: linear-gradient(90deg, rgba(12, 188, 183, 0.16) 0%, rgba(12, 188, 183, 0.0773539) 51.65%, rgba(12, 188, 183, 0.0409775) 74.39%, rgba(12, 188, 183, 0) 100%);
-                font-weight: normal;
-                border-left:6px solid #25B8AF;
-            
-                }
                 .subtext-active{
                     
                     width: calc(100% - 50px);
@@ -483,6 +472,9 @@ border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 15.92%, rgba(0, 0, 
                     padding: 1.5rem 2.5rem;
                     position: relative;
                     overflow: hidden;
+                    &:hover{
+                    cursor:pointer;
+                    }
                     .icon-img{
                         width: 45px;
                         height: 45px;
