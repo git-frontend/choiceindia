@@ -25,8 +25,12 @@ const config = {
   liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
   liveNewResearchReportURL:
     "https://finx.choiceindia.com/api/researchreport/v2/api",
-  UATSSOBaseURL: "https://sso-api.choicetechlab.com/",
+  UATNEWSSOBaseURL: "https://lms-api.choicetechlab.com/",
+  liveNEWSSOBaseURL: "https://accounts.choiceindia.com/lmsapi/",
+  UATSSOBaseURL: "https://sso-api.choiceindia.com/",
   liveSSOBaseURL: "https://sso-api.choiceindia.com/",
+
+
   UATOnbBaseURL: "https://uat-pwa.choicetechlab.com/",
   liveOnbBaseURL: "https://accounts.choiceindia.com/",
   UATLMSBaseURL: "https://lms-api.choicetechlab.com/",
@@ -59,7 +63,13 @@ const config = {
 
   liveMiddlewareGoURL: "https://api.choiceindia.com/middleware-go/",
   UATMiddlewareGoURL: "https://api.choiceindia.com/middleware-go/",
+
+  livessoRegisterServerURL: "https://sso.choiceindia.com/",
+  UATssoRegisterServerURL: "https://sso.choicetechlab.com/",
+
+
 };
+export const clientId = environment ? "N2E4NDY3MDZkYmY5MDlhYVlQ1ceR+YA+0iyV5NNu5bw=" : "OGI5NTA5NzA5ZDMwYzQwNbLVuZzUJXegXE9ksxWQz30=";
 
 export class API_URLS {
   NbfcAuthURL = "";
@@ -71,6 +81,8 @@ export class API_URLS {
   jiffyResearchURL = "";
   /** SSO Base URL */
   SSOServerURL = "";
+
+  NEWSSOServerURL="";
   /**File Download Base URL*/
   FileURL = "";
 
@@ -84,6 +96,9 @@ export class API_URLS {
   ConnectBaseURL = "";
   //
   MiddlewareGoURL = "";
+  /**connect base URL */
+  // generate  sso token base  
+  ssoRegisterServerURL=""
   /**Server URL */
   serverURL = "https://choiceindia.com/fables/ghost/api/v3/";
   /**Server URL */
@@ -193,11 +208,11 @@ export class API_URLS {
   verifyInvesOTPURL = "investica-verifyotp";
   OTPInvesOnCallURL = "call-for-otp";
   resendInvesOTPURL = "investica-resendotp";
-  sendOTPURL = "sign-up";
+  sendOTPURL = "finx/lead/add";
   resendOTPURL = "resend-otp";
   nbfcResendOTPURL = "api/resend-otp";
   OTPOnCallURL = "otp-on-call";
-  verifyOTPURL = "verify-otp";
+  verifyOTPURL = "finx/otp/verify";
   nbfcverifyOTPURL = "api/verify-otp";
   // for event calendar
   eventdetailsURL = "cm/ProfileMkt/EventDetails";
@@ -315,7 +330,8 @@ export class API_URLS {
 
   /* For Solar Lead Form URL */
   solarLead="api/newLeadDetail";
-
+ /* For generate sso token*/
+ ssoRegisterTokenGet="api/connect/token";
   constructor() {
     this.setConfig(environment ? "live" : "UAT");
   }
@@ -333,6 +349,7 @@ export class API_URLS {
 
     this.setJiffyURL(config[configKey + "JiffyURL"]);
     this.setSSOServerURL(config[configKey + "SSOBaseURL"]);
+    this.setNEWSSOServerURL(config[configKey + "NEWSSOBaseURL"]);
 
     this.setJiffyServerURL(config[configKey + "JiffyServerURL"]);
     this.setServerURL(config[configKey + "ServerURL"]);
@@ -352,6 +369,8 @@ export class API_URLS {
     this.setMFBaseURLV2(config[configKey + "MFBaseURLV2"]);
     this.setConnectBaseURL(config[configKey + "ConnectBaseURL"]);
     this.setMiddlewareGoURL(config[configKey + "MiddlewareGoURL"]);
+    this.setssoRegisterServerURL(config[configKey + "ssoRegisterServerURL"]);
+
   }
 
   /**set Connect base URL */
@@ -406,6 +425,9 @@ export class API_URLS {
    */
   setSSOServerURL = (url) => {
     this.SSOServerURL = url;
+  };
+  setNEWSSOServerURL = (url) => {
+    this.NEWSSOServerURL = url;
   };
   /**
    * Set Server URL
@@ -498,6 +520,10 @@ export class API_URLS {
   setperformanceURL = (url) => {
     this.performanceURL = url;
   };
+  setssoRegisterServerURL = (url) => {
+    this.ssoRegisterServerURL = url;
+  };
+
 
   fetchResearchReportURL() {
     return this.newResearchReportURL + this.fetchResearchReport;
@@ -582,7 +608,7 @@ export class API_URLS {
   getFableFolderURL(id) {
     return (
       this.serverURL +
-      `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}`
+      `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}&limit=all`
     );
   }
   /** faq search API url */
@@ -595,7 +621,7 @@ export class API_URLS {
     return this.jiffyResearchURL + this.addMarketInsiteNewURL;
   }
   getSendOTPURL() {
-    return this.SSOServerURL + this.sendOTPURL;
+    return this.NEWSSOServerURL + this.sendOTPURL;
     // return "https://sso-beta.choiceindia.com/" + this.sendOTPURL;
   }
 
@@ -610,7 +636,7 @@ export class API_URLS {
   }
 
   getVerifyOTPURL() {
-    return this.SSOServerURL + this.verifyOTPURL;
+    return this.NEWSSOServerURL + this.verifyOTPURL;
     // return "https://sso-beta.choiceindia.com/" + this.verifyOTPURL;
   }
 
@@ -1017,4 +1043,8 @@ export class API_URLS {
   getLeadFormURL(){
    return this.nachBaseURL+this.solarLead;
   }
+  // generate sso token 
+  getSSOTokenURL(){
+    return this.ssoRegisterServerURL+this.ssoRegisterTokenGet;
+   }
 }

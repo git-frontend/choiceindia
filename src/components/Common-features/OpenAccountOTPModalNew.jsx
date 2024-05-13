@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
@@ -12,8 +12,9 @@ import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
 import utils from "../../Services/utils";
-
-function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick,setIsActive,openAccount,setBlogPopUpForm,blogPop,isPopUp}) {
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick,setIsActive,openAccount,setBlogPopUpForm,blogPop,isPopUp, updateType }) {
+    // console.log("otpSessionID",otpSessionID)
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -27,7 +28,8 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     const [searchParams, setSearchParams] = useSearchParams();
     // const [otpparam, setOtpparam] = useState('');
     const [outCome,setOutCome]= useState();
-
+    const { executeRecaptcha } = useGoogleReCaptcha();
+    const [captchaToken, setCaptchaToken] = useState('');
      const otpVerify =useRef("");
     /**function to generate random probabity number for AB test */
     function generateRandomNumber(){
@@ -129,6 +131,87 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     }
 
     // to verify the OTP 
+    // function verifyOTP() {
+    //     if (!otp.length) {
+    //         setOTPErrors(OpenAccountLanguageContent.getContent(language ? language : 'en', 'otprequired'));
+    //     } else {
+    //         showLoader('verifyLoader');
+    //         let request = {
+    //             otp: otp,
+    //             session_id: otpSessionID
+    //         };
+
+    //         openAccountService.verifyOTP(request, type2).then((res) => {
+    //             hideLoader('verifyLoader');
+    //             if (res && res.data.StatusCode === 200 && res.data.Body) {
+    //                 let verifyResponse=res.data.Body
+    //                 console.log("verifyResponse",verifyResponse)
+    //                 // utils.pushDataLayerEvent({
+    //                 //     'event': 'ci_onboard_lead_generated',
+    //                 //     'page_path': window.location.pathname,
+    //                 //     'page_url': window.location.href,
+    //                 //     'lead_source':'choiceindia',
+    //                 //     'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+    //                 //     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+    //                 //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+    //                 // })
+    //                 if(verifyResponse.is_onboard_flag=== "C"){
+    //                     onClose("https://finx.choiceindia.com/auth/login");
+    //                 }
+    //                 else{
+    //                     let authCode= verifyResponse.auth_code;
+    //                     console.log("authCode",authCode)
+    //                     let request={
+    //                         "grant_type": "authorization_code",
+    //                         "code": authCode
+    //                     }
+    //                     openAccountService.getSSOToken(request).then((res)=>{
+    //                         console.log("getSSOToken",res)
+    //                         if(res && res.StatusCode==200){
+    //                             console.log("res sso",res)
+    //                             localStorage.setItem('access_token', res.Body.access_token)
+    //                             localStorage.setItem('refresh_token', res.Body.refresh_token)
+    //                             localStorage.setItem('expires_in', res.Body.expires_in)
+    //                             localStorage.setItem('id_token', res.Body.id_token)
+
+                               
+    //                             console.log("raartret",verifyResponse.is_onboard_flag)
+    //                             if(verifyResponse.is_onboard_flag=='N' ||verifyResponse.is_onboard_flag=='' || verifyResponse.is_onboard_flag=='NI'){
+                                    
+    //                                     let url=verifyResponse.url+"&accessToken="+localStorage.getItem('access_token');
+    //                                     console.log("new url",url)
+    //                                     // window.open(url, "_self");
+    //                                     openInfoPopup(res.data.Message);
+    //                                     onClose(url);
+
+                                  
+                                     
+    //                             }else{
+    //                                 openInfoPopup(res.data.Message);
+    //                                 onClose()
+    //                             }
+
+    //                         }
+    //                     })
+    //                     .catch((error) => {
+    //                        console.log("error",error)
+    //                     });
+                    
+    //                 }
+               
+    //             } else {
+    //                 setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
+    //             }
+    //         }).catch((error) => {
+    //             hideLoader('verifyLoader');
+    //             if (error && error.response && error.response.data && error.response.data.Message) {
+    //                 setOTPErrors(error.response.data.Message);
+    //             } else {
+    //                 setOTPErrors(OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
+    //             }
+    //         });
+    //     }
+    // }
     function verifyOTP() {
         if (!otp.length) {
             setOTPErrors(OpenAccountLanguageContent.getContent(language ? language : 'en', 'otprequired'));
@@ -136,81 +219,39 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
             showLoader('verifyLoader');
             let request = {
                 otp: otp,
-                session_id: otpID.current
+                session_id: otpSessionID
             };
 
-            openAccountService.verifyOTP(request, type2).then((res) => {
+            openAccountService.verifyOTP(request, captchaToken).then((res) => {
                 hideLoader('verifyLoader');
-                if (res && res.status === 200 && res.data && res.data.Body) {
-                    utils.pushDataLayerEvent({
-                        'event': 'ci_onboard_lead_generated',
-                        'page_path': window.location.pathname,
-                        'page_url': window.location.href,
-                        'lead_source':'choiceindia',
-                        'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-                        'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                    })
-                    // utils.pushDataLayerEvent({
-                    //     'event': 'open_account_lead_submit',
-                    //     'page_path': window.location.pathname,
-                    //     'page_url': window.location.href,
-                    //     'phone': utils.generateSHA256Hash(mobileNumber.toString()),
-                    //     'lead_source':'choiceindia',
-                    //     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                    //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                    // })
-                   //  console.log('HANDLER',res);
-                    // setOtpparam("Otp-success")
-                   
-                    // if (res.data.Body.isOnboardFlag === 'Y') {
-                    //Your Onboarding has been completed
-                    // } else if (res.data.Body.isOnboardFlag === 'C') {
-                    // IsBackOffice should be Y, isCredentialGenerated = 1 , uccStatus='success',
-                    // then redirect to Jiffy Login .
-                    // else
-                    // should display the popup with message provided in response  "Account Opening Application in Review. Please Contact Customer Support"
-                    // } else {
-                    if (res && res.data && res.data.Body && res.data.Body.url) {
-                        // console.log('inside call',res.data.Message);
-                        // setShowLead(prevState => {
-                        //     return {...prevState, showModal: true, redirectLink: res.data.Body.url, closeOTP: onClose}
-                        // });
+                if (res && res.data.StatusCode === 200 && res.data.Body) {
+                    let verifyResponse = res.data.Body;
+                    // console.log("verifyResponse", verifyResponse);
 
-                        let result = res.data.Body.url.match("respond-issue");
-                        if(result && result.length && result[0] === 'respond-issue'){
-                            openInfoPopup(res.data.Message);
-                            onClose(res.data.Body.url);
-                        }else{
-                           // console.log('Else onboard');
-                            onClose(res.data.Body.url,res.data.Message? res.data.Message:'',res.data.Body.isOnboardFlag? res.data.Body.isOnboardFlag:"");
-                        }
-                        
-                        // console.log('inside call',showlead.showModal);
-                        // window.location.href = res.data.Body.url;
-                    } else {
-                        if (res && res.data && res.data.Message) {
-                            openInfoPopup(res.data.Message);
-                            onClose();
-                        } else {
-                            // setShowLead(prevState => {
-                            //     return { ...prevState, showModal: true, redirectLink: 'https://jiffy.choiceindia.com/auth/login'}
-                            // });
-                            if (type2 == 'MF') {
-                                onClose("https://investica.com/auth/sign-in")
+                    if (verifyResponse.is_onboard_flag === "C") {
+                        onClose("https://finx.choiceindia.com/auth/login",verifyResponse.message);
+                    } else if (verifyResponse.is_onboard_flag === 'N' || verifyResponse.is_onboard_flag === '' || verifyResponse.is_onboard_flag === 'NI') {
+
+                        let authCode = verifyResponse.auth_code;
+                        let request = {
+                            "grant_type": "authorization_code",
+                            "code": authCode
+                        };
+                        openAccountService.getSSOToken(request).then((res) => {
+                            if (res && res.data.StatusCode == 200) {
+                                localStorage.setItem('access_token', res.data.Body.access_token);
+                                // console.log("verifyResponse in sso",res)
+                                let url = verifyResponse.url + "&accessToken=" + localStorage.getItem('access_token');
+                                // console.log("new url", url);
+                                // openInfoPopup(res.data.Message);
+                                onClose(url,verifyResponse.message);
                             } else {
-                                onClose("https://finx.choiceindia.com/auth/login");
+                                openInfoPopup(res.data.Message);
+                                onClose();
                             }
+                        })
 
-
-
-                            // (type2=='MF' )? 
-                            // window.location.href ="https://investica.com/auth/sign-in" 
-                            //:
-                            //window.location.href = "https://jiffy.choiceindia.com/auth/login";
-                        }
                     }
-                    // }
                 } else {
                     setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
                 }
@@ -224,6 +265,31 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
             });
         }
     }
+    
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) {
+            return;
+        }
+        showLoader('verifyLoader');
+        const token = await executeRecaptcha('verifyOTP');
+        // Do whatever you want with the token
+        // sendOTP();
+        if (token) {
+            setCaptchaToken(token);
+            // alert("Token : "+token);
+        }
+        hideLoader('verifyLoader');
+    }, [executeRecaptcha]);
+
+    useEffect(() => {
+        if (captchaToken) {
+            verifyOTP();
+        }
+    }, [captchaToken]);
+
+    
+    
+    
 
     //resend OTP ON SMS
     function resendOTP() {
@@ -322,7 +388,16 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     //         return params;
     //       }); 
     // }, [otpparam]);
-    
+    const handleUpdateType = () => {
+        updateType('resend');
+        setCount(30);
+        handleOTPResendSuccessToaster('otp');
+    };
+    const handleUpdateTypeCall = () => {
+        updateType('otp-on-call');
+        setCount(30);
+        handleOTPResendSuccessToaster('call');
+    };
     return (
         <>
             {/* <div id="opt-box-id">
@@ -483,7 +558,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         {
                                             !count ?
                                                 <div className="d-flex align-items-center justify-content-between pt-3">
-                                                    <button className="resend" onClick={resendOTP}>
+                                                    <button className="resend" onClick={handleUpdateType}>
                                                         {/* {loaders.resendOTPLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading123...</span></Spinner>
                                                         : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresend')} */}
                                                         Get OTP <span className="bluetxt">SMS</span>
@@ -492,7 +567,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                                     <span className="ortext">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otportext')}</span>
 
                                                     
-                                                    <button className="resend" onClick={getOTPOnCall}>
+                                                    <button className="resend" onClick={handleUpdateTypeCall}>
                                                         {/* {loaders.OTPOnCallLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading456...</span></Spinner>
                                                         
                                                         : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otponcall')} */}
@@ -501,7 +576,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                     </div>
                                     <div className="btnwrap">
-                                        <button className={"btn-bg btn-bg-dark"}  id={(outCome == 'A')? 'otp-proceed-test' : 'otp-verify-test'} disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', (outCome == 'A')? 'otpverifybtnNew' : 'otpverifybtn')}</button>
+                                        <button className={"btn-bg btn-bg-dark"}  id={(outCome == 'A')? 'otp-proceed-test' : 'otp-verify-test'} disabled={loaders.verifyLoader} onClick={handleReCaptchaVerify}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', (outCome == 'A')? 'otpverifybtnNew' : 'otpverifybtn')}</button>
                                     </div>
                                     </div>
                                    

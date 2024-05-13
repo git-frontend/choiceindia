@@ -170,7 +170,15 @@ const utils ={
         }else{
             return "";
         }
-    }
+    },
+     encryptText(plainText) {
+        if (!plainText) return ''
+        let key = CryptoJS.enc.Utf8.parse('2b7e151628aed2a6abf7158809cf4f3c');
+        let iv = CryptoJS.enc.Utf8.parse('3ad77bb40d7a3660');
+        let config = { keySize: 128, iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 };
+        let encPassword = CryptoJS.AES.encrypt(plainText, key, config);
+        return encPassword.ciphertext.toString(CryptoJS.enc.Base64);
+      }
 
 }
 
