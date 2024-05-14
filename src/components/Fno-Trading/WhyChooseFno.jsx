@@ -349,7 +349,7 @@ the uncertainties of options trading</p>
                             </div>
                         </div>
                         <div className="col-md-12 d-flex justify-content-center">
-                            <a href="javascript:void(0)"  className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Start Trading</a>
+                            <a href="javascript:void(0)"  className="btn-bg btn-new" onClick={() => scrollToId('demat-form-section')}>Start Trading</a>
                         </div>
                     </div>
 

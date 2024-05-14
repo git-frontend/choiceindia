@@ -32,7 +32,7 @@ function FnoTradingBanner() {
                             </div>
                             
                         </div>
-                        <div className="col-md-6 d-sm-block">
+                        <div className="col-md-6 d-sm-block" id="demat-form-section">
                      
                             <div className="rightsec">
                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
