@@ -563,7 +563,7 @@ const meta_tags = {
     ` },
 
   "open-trading-account": {
-    'title': "Open Trading Account Online for Free without AMC Charges - Choice", 'lang': "en", "content": "Open a trading account online for free without AMC charges at Choice. Enjoy low DP charges, the lowest intraday charges, and a zero account opening fee.",
+    'title': "Open Trading Account in Few Steps! Trade Effortless Earn Limitless", 'lang': "en", "content": "Open a trading account online with Choice. Follow simple steps for free trading account opening & trade at low DP charges, lowest intraday charges with expert research calls for seamless trading.",
     "link": "https://choiceindia.com/open-trading-account", 'link1': "https://choiceindia.com/open-trading-account", 'link2': "https://choiceindia.com/hindi/trading-account", 'link3': "https://choiceindia.com/open-trading-account", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
@@ -648,7 +648,7 @@ const meta_tags = {
     ` },
 
   "open-brokerage-account": {
-    'title': "Open Brokerage Account Online for Free with Choice", 'lang': "en", "content": "Open a free brokerage account online with Choice. Get a brokerage account with free AMC for the first year, low DP charges, free research advisory, and more.",
+    'title': "Open Zero Brokerage Account in India", 'lang': "en", "content": "Open a free brokerage account online with Choice. Best brokerage account in India with free AMC for the first year, low DP charges, free research advisory & hasselfree account opening process.",
     "link": 'https://choiceindia.com/open-brokerage-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
