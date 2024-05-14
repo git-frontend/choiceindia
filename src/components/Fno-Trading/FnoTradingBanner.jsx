@@ -25,7 +25,7 @@ function FnoTradingBanner() {
                     <div className="row gx-5 justify-content-between">
                         <div className="col-md-6">
                             <div className="ban-caption">
-                                <h5>Choice: Options Trader’s Delight</h5>
+                                {/* <h5>Choice: Options Trader’s Delight</h5> */}
                                 <h1 className="title">Master the <br/> Art of Trading</h1>
                                 <p className="para">Leverage our advanced platform, tools, and <br/> expertise to make the most of your trading.</p>
                                 {/* <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => scrollToId('campaignForm')}>Start Now</a> */}
