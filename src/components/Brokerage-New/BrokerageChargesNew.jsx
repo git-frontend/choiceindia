@@ -35,7 +35,6 @@ function BrokerageCharges() {
     <>
       <div className="brokerage-charges-new">
         <Banner />
-        
        </div> 
     </>
   );
