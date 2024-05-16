@@ -5,6 +5,7 @@ import meta_tags from "../../Data/MetaTags";
 import Banner from './Banner';
 import CorporateCount from '../Corporate-Demat-Account/CorporateCount';
 import BrokerageTabs from './BrokerageTabs';
+import BrokerageCosts from "./BrokerageCosts";
 import "./brokeragenew.scss"
 import '../Corporate-Demat-Account/corporatedemat.scss';
 function BrokerageCharges() {
@@ -45,6 +46,7 @@ function BrokerageCharges() {
         <Banner />
         <CorporateCount data={data} />
         <BrokerageTabs/>
+        <BrokerageCosts/>
        </div> 
     </>
   );

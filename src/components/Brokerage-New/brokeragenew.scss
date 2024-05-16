@@ -4,6 +4,9 @@
 .brokerage-charges-new{
     .brokerage-charges-banner{
         padding: 5rem 0rem;
+        @media (max-width:$sm) {
+            padding: 3.5rem 0rem;
+        }
         .banner-left{
             .big-ttl{
                 margin-bottom: 2.25rem;
@@ -107,6 +110,9 @@
     }
     .BrokerageTabs{
         padding: 6rem 0rem;
+        @media (max-width:$sm) {
+            padding: 3.5rem 0rem;
+        }
         .title-tab{
             .title-secnd{
                 text-align: center;
@@ -142,7 +148,7 @@
                     @extend.box-shadow;
                     border-radius: 18px;
                     padding: 1.625rem 1.438rem;
-                    margin-bottom: 9rem;
+                    // margin-bottom: 9rem;
                     background: $whiteColor;
                     .condition{
                         color: $secondary;
@@ -233,4 +239,85 @@
             
         }
     }
+        .BrokerageCosts {
+            padding: 6rem 0rem;
+            background-color: $abt-bg ;
+            @media (max-width:$sm) {
+                padding: 3.5rem 0rem;
+            }
+            .title {
+                text-align: center;
+    
+                .title-secnd {
+                    text-align: center;
+                    padding-bottom: 1.5rem;
+                    margin: 0;
+    
+                    @media (max-width:$sm) {
+                        text-align: left;
+                    }
+                }
+    
+                p {
+                    text-align: center;
+                    font-size: 1.5rem;
+                    line-height: 2.25rem;
+                    color: $darkblack;
+                    font-family: $font-family-poppins-regular;
+                    margin-bottom: 4.375rem;
+    
+                    @media (max-width:$sm) {
+                        text-align: left;
+                    }
+                }
+            }
+    
+            .calculator-list-section {
+                display: flex;
+                flex-wrap: wrap;
+           
+    
+                .list-itm {
+                       background-color: $whiteColor;
+                        border-radius: 16px;
+                        display: block !important;
+                        margin: 0 auto 2rem;
+                        padding: 3.25rem 2rem 2rem 2rem;
+                        text-align: left;
+                        width: 47%;
+                        border-bottom: 6px solid $pricolor;
+                        @media (max-width:$sm) {
+                            width: 100%;
+                        }
+                        h3{
+                            color: $darkblack;
+                            font-size:2rem;
+                            font-family: $font-family-poppins-semibold;
+                            font-weight: 600;
+                            line-height: 3rem;
+                        }
+                        p{
+                           font-size: 1.125rem;
+                           line-height: 1.5rem; 
+                           color: $darkblack;
+                           font-family: $font-family-poppins-regular;
+                        }
+                        .list-itm-btn{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            .nav-link{
+                                 text-decoration: none;
+                                 background-color:$bgcolor-yellow;
+                                 color:$primary ;
+                                 padding: 1.125rem 1.75rem;
+                                 border-radius: 12px;
+                                 font-size: 1.125rem;
+                                 font-family:$font-family-poppins-medium ;
+
+                            }
+                        }
+                }
+            }
+        }
 }
