@@ -6,6 +6,7 @@ import Banner from './Banner';
 import CorporateCount from '../Corporate-Demat-Account/CorporateCount';
 import BrokerageTabs from './BrokerageTabs';
 import BrokerageCosts from "./BrokerageCosts";
+import Applicablecharges from "./Applicablecharges";
 import "./brokeragenew.scss"
 import '../Corporate-Demat-Account/corporatedemat.scss';
 function BrokerageCharges() {
@@ -47,6 +48,7 @@ function BrokerageCharges() {
         <CorporateCount data={data} />
         <BrokerageTabs/>
         <BrokerageCosts/>
+        <Applicablecharges/>
        </div> 
     </>
   );
