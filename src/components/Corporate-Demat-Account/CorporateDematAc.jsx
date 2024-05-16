@@ -40,11 +40,18 @@ function CorporateDematAc() {
     }
   }, [rendercount])
 
+  const data = [
+    {
+      count: ["25", "104", "850K"],
+      sign: ["+", "+", "+"],
+      title: ["Year of Experience", "Local Branches", "Happy Clients"],
+    },
+  ];
   return (
     <>
       <div className="Corporate-main">
         <CorporateBanner />
-        <CorporateCount />
+        <CorporateCount data={data} />
         <WhyCorporateDemat />
         <TypesofCorporate />
         <section className="corporate-sticky">

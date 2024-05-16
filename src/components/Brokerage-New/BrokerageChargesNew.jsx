@@ -2,9 +2,11 @@
 import React from "react";
 import { useState,useEffect} from "react";
 import meta_tags from "../../Data/MetaTags";
-import "./brokeragenew.scss";
 import Banner from './Banner';
-
+import CorporateCount from '../Corporate-Demat-Account/CorporateCount';
+import BrokerageTabs from './BrokerageTabs';
+import "./brokeragenew.scss"
+import '../Corporate-Demat-Account/corporatedemat.scss';
 function BrokerageCharges() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -30,11 +32,19 @@ function BrokerageCharges() {
       }
     }
   }, [rendercount])
-
+  const data = [
+    {
+      count: ["25", "PAN", "9 Lakh"],
+      sign: ["+", "", "+"],
+      title: ["Year of Experience", "Indian Service", "Happy Customer"],
+    },
+  ];
   return (
     <>
-      <div className="brokerage-charges-new">
+      <div className="brokerage-charges-new Corporate-main ">
         <Banner />
+        <CorporateCount data={data} />
+        <BrokerageTabs/>
        </div> 
     </>
   );

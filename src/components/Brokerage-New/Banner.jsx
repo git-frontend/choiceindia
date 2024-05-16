@@ -4,10 +4,10 @@ import LazyLoader from '../Common-features/LazyLoader';
 import NewDematAccountForm from '../Common-features/NewDematAccountForm';
 import Slider from 'react-slick';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import icon1 from '../../assets/images/Brokerage-New/icon1.svg';
-import icon2 from '../../assets/images/Brokerage-New/icon2.svg';
-import icon3 from '../../assets/images/Brokerage-New/icon3.svg';
-import icon4 from '../../assets/images/Brokerage-New/icon4.svg';
+import icon1 from '../../assets/images/Brokerage-New/Group 99790.svg';
+import icon2 from '../../assets/images/Brokerage-New/Group 99791.svg';
+import icon3 from '../../assets/images/Brokerage-New/Group 99792.svg';
+import icon4 from '../../assets/images/Brokerage-New/Group 99793.svg';
 function Banner() {
     const [ischeck, setIscheck] = useState(false);
     const settings1 = {
@@ -56,23 +56,23 @@ function Banner() {
                                 <p className="para">Choice makes investing in the stock market simple and accessible, offering you the best Demat account with the lowest brokerage.</p>
                                 <Slider {...settings1} className="carditem-option-tab">
                                     <div className="carditem-option">
-                                        <span className="carditem-option-img"><LazyLoader src={icon1} alt={""} className={"img-fluid"} width={"202"} height={"157"} /></span>
+                                        <span className="carditem-option-img"><LazyLoader src={icon1} alt={""} className={""} width={"202"} height={"157"} /></span>
                                     </div>
                                     <div className="carditem-option">
-                                        <span className="carditem-option-img"><LazyLoader src={icon2} alt={""} className={"img-fluid"} width={"166"} height={"157"} /></span>
+                                        <span className="carditem-option-img"><LazyLoader src={icon2} alt={""} className={""} width={"166"} height={"157"} /></span>
                                     </div>
                                     <div className="carditem-option">
-                                        <span className="carditem-option-img"><LazyLoader src={icon3} alt={""} className={"img-fluid"} width={"200"} height={"157"} /></span>
+                                        <span className="carditem-option-img"><LazyLoader src={icon3} alt={""} className={""} width={"200"} height={"157"} /></span>
                                     </div>
                                     <div className="carditem-option">
-                                        <span className="carditem-option-img"><LazyLoader src={icon4} alt={""} className={"img-fluid"} width={"144"} height={"157"} /></span>
+                                        <span className="carditem-option-img"><LazyLoader src={icon4} alt={""} className={""} width={"144"} height={"157"} /></span>
                                     </div>
                                 </Slider>
                                 {/* </div> */}
                             </div>
                           
                                     <div className="col-xl-5 col-md-6">
-                                        <div className="d-flex justify-content-end" id="campaignForm">
+                                        <div className="d-flex justify-content-center justify-content-lg-end" id="campaignForm">
                                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                                 <NewDematAccountForm />
                                             </GoogleReCaptchaProvider>
