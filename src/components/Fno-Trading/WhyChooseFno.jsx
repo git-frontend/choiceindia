@@ -40,19 +40,21 @@ function WhyChooseFno() {
       }, [trigger]);
     const settings3 = {
         infinite: true,
-        speed:2000,
+        speed: 1000,
         vertical: true,
-        touchMove: true,
-        arrows: false,
         slidesToShow: 3,
-        autoplay:true,
+        arrows:false,
+        autoplay: true,
         dots: false,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 5000,
         slidesToScroll: 1,
-        swipeToSlide: true,
+        swipeToSlide: false,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        draggable:false,
         responsive: [
           {
-            breakpoint: 992,
+            breakpoint:767,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
@@ -72,19 +74,21 @@ function WhyChooseFno() {
 
     const settings5={
         infinite: true,
-        speed:2000,
+        speed: 1000,
         vertical: true,
-        touchMove: true,
-        arrows: false,
         slidesToShow: 3,
+        arrows:false,
         autoplay: true,
         dots: false,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 5000,
         slidesToScroll: 1,
-        swipeToSlide: true,
+        swipeToSlide: false,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        draggable:false,
         responsive: [
           {
-            breakpoint: 992,
+            breakpoint:767,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
@@ -222,7 +226,7 @@ the uncertainties of options trading</p>
                                     //   }}
                                       >
                                     {optionsTraders.map((option,idx)=>{
-                                    let classNm="lists-itms "+ (idx===isShown2?"active":"");
+                                    let classNm="lists-itms "+ (idx===isShown2 ?"active":"");
                                      return(
                                      <div className={classNm} key={idx}>
                                      <span className="icons-m">
