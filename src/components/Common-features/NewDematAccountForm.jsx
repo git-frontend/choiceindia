@@ -162,6 +162,7 @@ function NewDematAccountForm(props) {
     useEffect(() => {
         if (window.location.pathname.includes('blog') === true || window.location.pathname.includes('ipo') === true) {
             setblogForm('blog-lead-form');
+            props.newDematForm(true);
             setBlogFormOtp('blog-form-otp');
             setBlogThankuPopup('blog-thanku-popup');
             setTimeout(() => {

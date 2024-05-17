@@ -846,6 +846,9 @@ function getOTPOnCall(){
         setShowOTP(true);
     }
     useEffect(() => {
+        if(window.location.pathname.includes('blog') === true || window.location.pathname.includes('ipo') === true){
+            props.newDematForm(false);
+            }
         if(onlyblog){
             setTimeout(() => {
                 showOpenAccountAdPopup()

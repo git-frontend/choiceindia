@@ -198,6 +198,9 @@ function DematAccountForm(props) {
     }
 
     useEffect(() => {
+        if(window.location.pathname.includes('blog') === true || window.location.pathname.includes('ipo') === true){
+        props.newDematForm(false);
+        }
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
                 showOpenAccountAdPopup();
