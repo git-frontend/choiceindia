@@ -32,7 +32,7 @@ function Fabdetailsbanner(props) {
    const [newLeadForm,setNewLeadForm]=useState(false);
     
     function newDematForm(blogForm){
-    console.log("New Lead Form "+blogForm);
+    // console.log("New Lead Form "+blogForm);
     setNewLeadForm(blogForm);
     }
 
