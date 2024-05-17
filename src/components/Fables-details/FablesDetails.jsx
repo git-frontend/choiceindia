@@ -87,12 +87,12 @@ setTrigger(true)
   function checkWhetherToShowForm(details) {
     setShowForm(false);
     if (details[0].tags) {
-      console.log("details[0].tags",details[0].tags)
+      // console.log("details[0].tags",details[0].tags)
       details[0].tags.forEach((item, i) => {
         if (item.slug === 'form-demat' || item.slug === 'form-equity-subbroker' || item.slug === 'form-mutual-fund-distributor' || item.slug==='mf-form') {
           setShowForm(true);
           formName.current = item.slug;
-          console.log("item",item)
+          // console.log("item",item)
         }
 
       })
