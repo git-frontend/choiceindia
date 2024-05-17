@@ -65,6 +65,9 @@ function SubBrokerForm(props) {
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const onlyblog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     useEffect(() => {
+        if(window.location.pathname.includes('blog') === true){
+            props.newDematForm(false);
+            }
         if (onlyblog) {
             setTimeout(() => {
                 showOpenAccountAdPopup()
