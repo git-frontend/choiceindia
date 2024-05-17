@@ -432,4 +432,183 @@
                     }
         }
     }  
+    .brokeragefaq{
+        padding: 6rem 0rem;
+        @media (max-width:$sm) {
+            padding: 3.5rem 0rem;
+        }
+        .title-secnd {
+            text-align: center;
+            padding-bottom: 4.5rem;
+            margin: 0;
+
+            @media (max-width:$sm) {
+                text-align: left;
+            }
+        }
+        .faq-item {
+            border: 1px solid #C2C2C2 !important;
+            border-radius: 20px;
+            background: #FFFFFF;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+    
+            @media (max-width:$sm) {
+                padding: 1.5rem 1rem;
+            }
+    
+            .faq-header {
+                .accordion-button{
+                    font-family: $font-family-poppins-semibold;
+                    color: $primary;
+                    font-size: 2rem;
+                    @media (max-width:$sm) {
+                        font-size: 1.75rem;
+                    }
+                }
+                
+                
+            }
+        }
+    
+        .accordion-button {
+    
+            &:not(.collapsed) {
+                background-color: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+    
+            &:focus {
+                border: none !important;
+                box-shadow: none !important;
+            }
+    
+            &:after {
+                display: none !important;
+            }
+        }
+    }
+    .all-In-one-section {
+        padding: 6rem 0rem;
+        background-color: $abt-bg ;
+        @media (max-width:$sm) {
+                padding: 3.5rem 0rem;
+            }
+       
+        .caption{
+            text-align: center;
+            @media (max-width:$sm) {
+                padding: 0 1.25rem;
+            }
+            h2 {
+                margin-bottom: 2rem;
+                color: $darkblack;
+                font-family: $font-family-poppins-medium;
+                font-weight: 500;
+                font-size: 2.5rem;
+                line-height: 4.063rem;
+                @media (max-width:$sm) {
+                    text-align: left;
+                }
+                .caption-dark{
+                    font-family: $font-family-poppins-semibold;
+                    font-weight: 600;
+                    display: block;
+                }
+            }
+    
+            
+    
+        }
+
+       
+        .benifits-list-section {
+            margin: 4rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 4rem auto 0;
+            @media (max-width:$md) {
+                width: 100%;
+            }
+            @media (max-width:$sm) {
+                display: block;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+
+            .list-itm {
+                background-color: $whiteColor;
+                text-align: center;
+                border-radius: 10px;
+                padding: 2rem;
+                display: block !important;
+                min-height: 17rem;
+                margin: 0 auto;
+                height: 100%;
+                width: 15%;
+                border-bottom: 5px solid $yellowColor;
+
+                @media (min-width:$sm-x) and (max-width:$md) {
+                    width: 33%;
+                    min-height: 15rem;
+                }
+
+                @media (max-width:$sm) {
+                    width: 50% !important;
+                    min-height: 15rem;
+                    padding: 2rem 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                >span {
+                    display: inline-block;
+                    margin: 0 auto;
+                    color: $bgcolor-blue;
+                    font-size: 2.786rem;
+                    font-weight: 600;
+                    font-family: $font-family-poppins-semibold;
+                    line-height: 58px;
+
+                    @media (max-width:$md) {
+                        font-size: 2rem;
+                        line-height: 48px;
+                    }
+                    @media (max-width:$sm) {
+                        font-size: 2.786rem;
+                        line-height: 58px;
+                    }
+                }
+
+                h5 {
+                    margin-bottom: 0;
+                    margin-top: 1.5rem;
+                    font-size: 1.571rem;
+                    line-height: 1.5;
+                    font-weight: 500;
+                    font-family: $font-family-poppins-medium;
+                    color: $darkblack;
+                    @media (max-width:$md) {
+                        font-size: 1.25rem;
+                    }
+                    @media (max-width:$sm) {
+                        font-size: 1.429rem;
+                    }
+                  
+                    br {
+                        @media (max-width:$md) {
+                            display: none;
+                        }
+                        @media (max-width:$sm) {
+                            display: block;
+                        }
+                    }
+            }
+
+            
+        }
+    }
+    }
 }

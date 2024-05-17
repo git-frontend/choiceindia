@@ -7,6 +7,8 @@ import CorporateCount from '../Corporate-Demat-Account/CorporateCount';
 import BrokerageTabs from './BrokerageTabs';
 import BrokerageCosts from "./BrokerageCosts";
 import Applicablecharges from "./Applicablecharges";
+import BrokerageFaq from "./BrokerageFaq";
+import BrokeragSegments from "./BrokeragSegments";
 import "./brokeragenew.scss"
 import '../Corporate-Demat-Account/corporatedemat.scss';
 import NewFormSection from '../Common-features/NewFormSection';
@@ -58,13 +60,15 @@ function BrokerageCharges() {
   ];
   return (
     <>
-      <div className="brokerage-charges-new Corporate-main ">
+      <div className="brokerage-charges-new Corporate-main">
         <Banner />
         <CorporateCount data={data} />
         <BrokerageTabs/>
         <BrokerageCosts/>
         <Applicablecharges/>
         <NewFormSection sections={sections} />
+        <BrokerageFaq/>
+        <BrokeragSegments/>
        </div> 
     </>
   );
