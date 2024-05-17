@@ -9,6 +9,10 @@ import BrokerageCosts from "./BrokerageCosts";
 import Applicablecharges from "./Applicablecharges";
 import "./brokeragenew.scss"
 import '../Corporate-Demat-Account/corporatedemat.scss';
+import NewFormSection from '../Common-features/NewFormSection';
+import comp from "../../assets/images/Brokerage-New/comp.svg";
+import Advanced from "../../assets/images/Brokerage-New/Advanced.svg";
+import expert from "../../assets/images/Brokerage-New/expert.svg";
 function BrokerageCharges() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -41,6 +45,17 @@ function BrokerageCharges() {
       title: ["Year of Experience", "Indian Service", "Happy Customer"],
     },
   ];
+  const sections = [
+    {
+      title: [
+        'Traders & Investors Choose Us'
+      ],
+      images: [comp, Advanced, expert],
+      subtitle: ['Competitive Pricing & Charges', 'Advanced Trading Platform', 'Expert Research & Analysis'],
+      alt:['Open Demat Account with Choice','Stock Research by Choice','DP Charges after Demat Account Opening','AMC Charges at Choice']
+    },
+   
+  ];
   return (
     <>
       <div className="brokerage-charges-new Corporate-main ">
@@ -49,6 +64,7 @@ function BrokerageCharges() {
         <BrokerageTabs/>
         <BrokerageCosts/>
         <Applicablecharges/>
+        <NewFormSection sections={sections} />
        </div> 
     </>
   );
