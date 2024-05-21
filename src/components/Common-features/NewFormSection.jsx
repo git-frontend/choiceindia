@@ -4,6 +4,7 @@ import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountS
 import "../Common-features/common-demat-suppotive.scss";
 const NewFormSection = ({ sections }) => {
     console.log("sections", sections)
+    // const  = (window.location.pathname.indexOf('brokerage-charges') > -1) ? 'yes' : '';
     return (
 
         <>

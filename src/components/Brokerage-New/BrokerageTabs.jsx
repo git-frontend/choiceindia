@@ -200,7 +200,7 @@ function BrokerageTabs() {
                                        <tr>
                                           <td className="charges-heads">Transaction charges</td>
                                           <td data-label="Currency Futures">0.02%</td>
-                                          
+                                          <td data-label="Currency Options">0.02%</td>
                                        </tr>
                                        <tr className="grey-back">
                                           <td className="charges-heads">GST</td>
