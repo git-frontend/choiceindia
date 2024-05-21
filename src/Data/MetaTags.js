@@ -254,7 +254,7 @@ const meta_tags = {
     ` },
 
   "open-free-demat-account": {
-    'title': "Open Demat Account - Free Demat Account Opening Online (No AMC*)", 'lang': "en", 'content': "Follow simple steps to Open your Free Demat Account Online at Choice. Enjoy No AMC* for First Year, Low DP Charges & Trade @ 2 Paisa.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3':"https://choiceindia.com/marathi/open-demat-account", 'link4':"https://choiceindia.com/open-free-demat-account",'link5':"https://choiceindia.com/marathi/open-demat-account",'link6':"https://choiceindia.com/marathi/open-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default", "href5": "", "href6": "",
+    'title': "Open Free Demat Account. Online Account Opening - Choice", 'lang': "en", 'content': "Open a demat account with Choice - Online free Demat account opening in few steps. Trade @2 paisa, low DP & brokerage charges and avail 0 AMC*. Invest/trade in equity, fno, mutual funds & more.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3':"https://choiceindia.com/marathi/open-demat-account", 'link4':"https://choiceindia.com/open-free-demat-account",'link5':"https://choiceindia.com/marathi/open-demat-account",'link6':"https://choiceindia.com/marathi/open-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
