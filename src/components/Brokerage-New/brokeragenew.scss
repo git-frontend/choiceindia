@@ -314,6 +314,9 @@
                     padding: 1.625rem 1.438rem;
                     // margin-bottom: 9rem;
                     background: $whiteColor;
+                    @media (max-width:$sm) {
+                        padding: 0;
+                    }
                     .condition{
                         color: $secondary;
                         padding:0.75rem 1.625rem;
@@ -323,12 +326,56 @@
                         td{
                             padding: 1.419rem 1.8rem 1.5rem 1.8rem;
                             font-size: 1.3rem;
+                            @media (max-width:$sm) {
+                            --bs-table-accent-bg:initial;
+                            &::before{
+                                content: attr(data-label);
+                            float: none;
+                            font-size:10px;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            display: block;
+                            }
                         }
+                        }
+                        
                         th{
                             text-transform: uppercase;
                             padding: 0.803rem 2rem 2.041rem 2rem;
                             font-family: $font-family-poppins-semibold;
                             font-size: 1.093rem;
+                        }
+                        .tableheading{
+                            @media (max-width:$sm) {
+                                display: none;
+                             }
+                        }
+                        .charges-heads{
+                            @media (max-width:$sm) {
+                                width: 100%;
+                                background-color: $tablestrip;
+                                border:  0.5px solid $darkblack;
+                                border-left: 0;
+                                border-right: 0;
+                                font-family: $font-family-poppins-semibold;
+                                font-weight: 600;
+                            }
+                        }
+                        tbody{
+                           tr{
+                            @media (max-width:$sm) {
+                                display: flex;
+                                flex-wrap: wrap;
+                                background: #fff;
+                            }
+                            td{
+                                .charges-heads{
+                                    @media (max-width:$sm) {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                           } 
                         }
                     }
                 }
@@ -367,6 +414,9 @@
                           height: 3px;
                           background: $pricolor;
                           border-radius: 4px;
+                          @media (max-width:$sm) {
+                            bottom: -2px;
+                        }
                         }
                         h4{
                             color:$pricolor ;
@@ -377,6 +427,10 @@
                         line-height: 3rem;
                         font-family: $font-family-poppins-semibold;
                         margin: 0;
+                        @media (max-width:$sm) {
+                            font-size: 1rem;
+                            line-height: 0.8rem;
+                        }
                     }
                     img{
                       margin: 0 auto;

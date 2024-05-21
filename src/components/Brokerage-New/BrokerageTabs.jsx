@@ -24,6 +24,7 @@ function BrokerageTabs() {
          <section className="BrokerageTabs">
             <div className="container">
                <div className="row">
+                  <div className="col-md-12">
                   <div className="title-tab">
                       <h2 className="title-secnd">Transparent Brokerage Charges</h2>
                       <p>Here’s a detailed breakdown of our low brokerage charges with no hidden costs.</p>    
@@ -67,55 +68,55 @@ function BrokerageTabs() {
                                  <table className="table table-borderless table-striped table-hover">
                                     <thead>
                                        <tr>
-                                          <th width="15%">Charges</th>
-                                          <th width="20%">Equity Intraday</th>
-                                          <th>Equity Delivery</th>
-                                          <th>Equity Futures</th>
-                                          <th>Equity Options</th>
+                                          <th width="15%" className="tableheading">Our Charges</th>
+                                          <th width="20%" className="tableheading">Equity Intraday</th>
+                                          <th className="tableheading">Equity Delivery</th>
+                                          <th className="tableheading">Equity Futures</th>
+                                          <th className="tableheading"> Equity Options</th>
                                        </tr>
                                     </thead>
                                     <tbody>
                                        <tr>
                                           <td className="charges-heads">Brokerage</td>
-                                          <td>0.02%</td>
-                                          <td>0.2%</td>
-                                          <td>0.02%</td>
-                                          <td>₹ 25 per Lot.</td>
+                                          <td data-label="Equity Intraday">0.02%</td>
+                                          <td data-label="Equity Delivery">0.2%</td>
+                                          <td data-label="Equity Futures">0.02%</td>
+                                          <td data-label="Equity Options">₹25 per lot</td>
                                        </tr>
                                        <tr className="grey-back">
-                                          <td className="charges-heads">STT</td>
-                                          <td>0.025% on the sell side</td>
-                                          <td>0.1% on buy &amp; sell</td>
-                                          <td>0.0125% on sell side</td>
-                                          <td>0.0625% on sell side (on premium). In case of Options Exercise 0.125% on (Settlement Price * Quantity) to be paid by Buyer</td>
+                                          <td className="charges-heads">STT (Securities Transaction Tax)</td>
+                                          <td data-label="Equity Intraday">0.025% sell</td>
+                                          <td data-label="Equity Delivery">0.1% Buy | Sell</td>
+                                          <td data-label="Equity Futures">0.0125% Sell</td>
+                                          <td data-label="Equity Options">0.0625% (on premium) Sell In case of Options Exercise 0.125% (on Settlement Price* Quantity) to be paid by the Buyer</td>
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">Transaction charges</td>
-                                          <td>NSE/BSE: 0.00325%</td>
-                                          <td>NSE/BSE: 0.00325%</td>
-                                          <td>NSE: Exchange transaction charge: 0.0019% Clearing charge: 0.0005%</td>
-                                          <td>NSE: Exchange transaction charge: 0.05% Clearing charge: 0.002%</td>
+                                          <td data-label="Equity Intraday">NSE/BSE: 0.00325%</td>
+                                          <td data-label="Equity Delivery">NSE/BSE: 0.00325%</td>
+                                          <td data-label="Equity Futures">(NSE)- Exchange transaction charge: 0.0019% - Clearing charge: 0.0005%</td>
+                                          <td data-label="Equity Options">(NSE)- Exchange transaction charge: 0.05% - Clearing charge: 0.002%</td>
                                        </tr>
                                        <tr className="grey-back">
                                           <td className="charges-heads">GST</td>
-                                          <td>18% on (Brokerage + Transaction Charges)</td>
-                                          <td>18% on (Brokerage + Transaction Charges)</td>
-                                          <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
-                                          <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
+                                          <td data-label="Equity Intraday">18% on (Brokerage + Transaction Charges)</td>
+                                          <td data-label="Equity Delivery">18% on (Brokerage + Transaction Charges)</td>
+                                          <td data-label="Equity Futures">18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
+                                          <td data-label="Equity Options"> 18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">SEBI charges</td>
-                                          <td>₹ 10 / crore</td>
-                                          <td>₹ 10 / crore</td>
-                                          <td>₹ 10 / crore</td>
-                                          <td>₹ 10 / crore</td>
+                                          <td data-label="Equity Intraday">₹ 10 / crore</td>
+                                          <td data-label="Equity Delivery">₹ 10 / crore</td>
+                                          <td data-label="Equity Futures">₹ 10 / crore</td>
+                                          <td data-label="Equity Options">₹ 10 / crore</td>
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">NSE IPFT Charges</td>
-                                          <td>₹ 10 / crore</td>
-                                          <td>₹ 10 / crore</td>
-                                          <td>₹ 10 / crore</td>
-                                          <td>₹ 50 / crore (On Premium)</td>
+                                          <td data-label="Equity Intraday">₹ 10 / crore</td>
+                                          <td data-label="Equity Delivery">₹ 10 / crore</td>
+                                          <td data-label="Equity Futures">₹ 10 / crore</td>
+                                          <td data-label="Equity Options">₹ 50 / crore (On Premium)</td>
                                        </tr>
                                     </tbody>
                                  </table>
@@ -133,36 +134,36 @@ function BrokerageTabs() {
                                  <table className="table table-borderless table-striped table-hover">
                                     <thead>
                                        <tr>
-                                          <th width="15%">Charges</th>
-                                          <th>Currency Futures</th>
-                                          <th>Currency Options</th>
+                                          <th width="15%" className="tableheading">Our Charges</th>
+                                          <th className="tableheading">Currency Futures</th>
+                                          <th className="tableheading">Currency Options</th>
                                        </tr>
                                     </thead>
                                     <tbody>
                                        <tr>
                                           <td className="charges-heads">Brokerage</td>
-                                          <td>0.02%</td>
-                                          <td>₹ 20 per Lot</td>
+                                          <td data-label="Currency Futures">0.02%</td>
+                                          <td data-label="Currency Options">₹ 20 per Lot</td>
                                        </tr>
                                        <tr className="grey-back">
                                           <td className="charges-heads">STT</td>
-                                          <td>No STT</td>
-                                          <td>No STT</td>
+                                          <td data-label="Currency Futures">No STT</td>
+                                          <td data-label="Currency Options">No STT</td>
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">Transaction charges</td>
-                                          <td>NSE Trans. Chgs.: 0.0009% Clearing charge: 0.0005%</td>
-                                          <td>NSE Trans. Chgs.: 0.035% Clearing charge: 0.002%</td>
+                                          <td data-label="Currency Futures">NSE Trans. Chgs.: 0.0009% Clearing charge: 0.0005%</td>
+                                          <td data-label="Currency Options">NSE Trans. Chgs.: 0.035% Clearing charge: 0.002%</td>
                                        </tr>
                                        <tr className="grey-back">
                                           <td className="charges-heads">GST</td>
-                                          <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
-                                          <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
+                                          <td data-label="Currency Futures">18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
+                                          <td data-label="Currency Options">18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">SEBI charges</td>
-                                          <td>₹ 10 / crore</td>
-                                          <td>₹ 10 / crore</td>
+                                          <td data-label="Currency Futures">₹ 10 / crore</td>
+                                          <td data-label="Currency Options">₹ 10 / crore</td>
                                        </tr>
                                     </tbody>
                                  </table>
@@ -179,36 +180,39 @@ function BrokerageTabs() {
                                  <table className="table table-borderless table-striped table-hover">
                                     <thead>
                                        <tr>
-                                          <th width="15%"> Charges</th>
-                                          <th>Commodity Futures</th>
-                                          <th>Commodity Options</th>
+                                          <th width="15%" className="tableheading">Our Charges</th>
+                                          <th className="tableheading">Commodity Futures</th>
+                                          <th className="tableheading">Commodity Options</th>
                                        </tr>
                                     </thead>
                                     <tbody>
                                        <tr>
                                           <td className="charges-heads">Brokerage</td>
-                                          <td>0.02%</td>
-                                          <td>₹ 50 per Lot.</td>
+                                          <td data-label="Currency Futures">0.02%</td>
+                                          <td data-label="Currency Options">₹ 50 per Lot.</td>
                                        </tr>
                                        <tr className="grey-back">
                                           <td className="charges-heads">CTT</td>
-                                          <td>0.01% on sell side</td>
-                                          <td>0.05% on sell side. In case of Options Exercise 0.125% on (Settlement Price * Quantity) to be paid by Buyer</td>
+                                          <td data-label="Currency Futures">0.02%</td>
+                                          <td data-label="Currency Options">0.01% on sell side</td>
+                                          
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">Transaction charges</td>
-                                          <td>Exchange txn charge: 0.0026% <br /> Clearing charge: 0.0003% ,<br />RMS Charge 0.005% (Only NCDEX)</td>
-                                          <td>Exchange txn charge: 0.05%  Clearing charge : 0.002%</td>
+                                          <td data-label="Currency Futures">0.02%</td>
+                                          
                                        </tr>
                                        <tr className="grey-back">
                                           <td className="charges-heads">GST</td>
-                                          <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
-                                          <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
+                                          <td data-label="Currency Futures">0.02%</td>
+                                          <td data-label="Currency Options">18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
+                                         
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">SEBI charges</td>
-                                          <td>₹ 10 / crore</td>
-                                          <td>₹ 10 / crore</td>
+                                          <td data-label="Currency Futures">0.02%</td>
+                                          <td data-label="Currency Options">₹ 10 / crore</td>
+                                          
                                        </tr>
                                     </tbody>
                                  </table>
@@ -218,6 +222,7 @@ function BrokerageTabs() {
                            </div>
                         </div>
                      </div>
+                  </div>
                   </div>
                </div>
             </div>
