@@ -15,9 +15,8 @@ import NewFormSection from '../Common-features/NewFormSection';
 import comp from "../../assets/images/Brokerage-New/comp.svg";
 import Advanced from "../../assets/images/Brokerage-New/Advanced.svg";
 import expert from "../../assets/images/Brokerage-New/expert.svg";
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import "../Common-features/common-demat-suppotive.scss";
+import BrokeragBenefits from "./BrokeragBenefits";
 function BrokerageCharges() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -77,6 +76,7 @@ function BrokerageCharges() {
       <div className="brokerage-charges-new Corporate-main">
         <Banner />
         <CorporateCount data={data} />
+        <BrokeragBenefits/>
         <BrokerageTabs />
         <BrokerageCosts />
         <Applicablecharges />
