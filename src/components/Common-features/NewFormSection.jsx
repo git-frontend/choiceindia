@@ -3,7 +3,7 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import "../Common-features/common-demat-suppotive.scss";
 const NewFormSection = ({ sections }) => {
-    // console.log("sections", sections)
+    console.log("sections", sections)
     return (
 
         <>

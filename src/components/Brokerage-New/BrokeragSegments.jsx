@@ -19,31 +19,31 @@ function BrokeragSegments() {
                         </div>
                     </div>
                     <div className="row justify-content-center">
-                       <div className="col-xl-10 col-md-12">
+                       <div className="col-md-12">
                            <div className="benifits-list-section">
                                <div className="list-itm">
                                    <span><LazyLoader src={intraday} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"72"} height={"72"} /></span>
-                                   <h5>Account <br /> Opening Fee</h5>
+                                   <h5>Intraday</h5>
                                </div>
                                <div className="list-itm">
                                    <span><LazyLoader src={commodity} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"72"} height={"72"}  /></span>
-                                   <h5>AMC for <br /> 1st Year</h5>
+                                   <h5>Commodity</h5>
                                </div>
                                <div className="list-itm">
                                    <span><LazyLoader src={MutualFunds} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"72"} height={"72"} /></span>
-                                   <h5>Auto Square-off <br /> Charges</h5>
+                                   <h5>Mutual Funds</h5>
                                </div>
                                <div className="list-itm">
                                    <span><LazyLoader src={FO} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"72"} height={"72"}  /></span>
-                                   <h5>Research <br /> Calls</h5>
+                                   <h5>F&O</h5>
                                </div>
                                <div className="list-itm">
                                    <span><LazyLoader src={currency} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"72"} height={"72"}  /></span>
-                                   <h5>Research <br /> Calls</h5>
+                                   <h5>Currency</h5>
                                </div>
                                <div className="list-itm">
                                    <span><LazyLoader src={IPO} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"72"} height={"72"}  /></span>
-                                   <h5>Research <br /> Calls</h5>
+                                   <h5>IPO</h5>
                                </div>
                            </div>
                        </div>

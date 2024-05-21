@@ -1,6 +1,6 @@
 
 import React from "react";
-import { useState,useEffect} from "react";
+import { useState, useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
 import Banner from './Banner';
 import CorporateCount from '../Corporate-Demat-Account/CorporateCount';
@@ -15,6 +15,9 @@ import NewFormSection from '../Common-features/NewFormSection';
 import comp from "../../assets/images/Brokerage-New/comp.svg";
 import Advanced from "../../assets/images/Brokerage-New/Advanced.svg";
 import expert from "../../assets/images/Brokerage-New/expert.svg";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
+import "../Common-features/common-demat-suppotive.scss";
 function BrokerageCharges() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -28,15 +31,15 @@ function BrokerageCharges() {
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
-      if(!(document.getElementById('link1')==null)){
+      if (!(document.getElementById('link1') == null)) {
         document.getElementById('link1').remove();
-      document.getElementById('link2').remove();
-      document.getElementById('link3').remove();
-      if(document.getElementById('link4')!==null){
-      document.getElementById('link4').remove();
-      document.getElementById('link5').remove();
-      document.getElementById('link6').remove();
-      }
+        document.getElementById('link2').remove();
+        document.getElementById('link3').remove();
+        if (document.getElementById('link4') !== null) {
+          document.getElementById('link4').remove();
+          document.getElementById('link5').remove();
+          document.getElementById('link6').remove();
+        }
       }
     }
   }, [rendercount])
@@ -54,22 +57,34 @@ function BrokerageCharges() {
       ],
       images: [comp, Advanced, expert],
       subtitle: ['Competitive Pricing & Charges', 'Advanced Trading Platform', 'Expert Research & Analysis'],
-      alt:['Open Demat Account with Choice','Stock Research by Choice','DP Charges after Demat Account Opening','AMC Charges at Choice']
+      alt: ['Open Demat Account with Choice', 'Stock Research by Choice', 'DP Charges after Demat Account Opening', 'AMC Charges at Choice']
     },
-   
+
+  ];
+  const data2 = [
+    {
+      title: [
+        'Benefit from Our \n low brokerage account'
+      ],
+      images: [],
+      subtitle: ['', '', ''],
+      alt: ['', '', '', '']
+    },
+
   ];
   return (
     <>
       <div className="brokerage-charges-new Corporate-main">
         <Banner />
         <CorporateCount data={data} />
-        <BrokerageTabs/>
-        <BrokerageCosts/>
-        <Applicablecharges/>
+        <BrokerageTabs />
+        <BrokerageCosts />
+        <Applicablecharges />
         <NewFormSection sections={sections} />
-        <BrokerageFaq/>
-        <BrokeragSegments/>
-       </div> 
+        <BrokerageFaq />
+        <BrokeragSegments />
+        <NewFormSection sections={data2} />
+      </div>
     </>
   );
 }

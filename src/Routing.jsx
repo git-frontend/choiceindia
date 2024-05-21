@@ -554,11 +554,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/brokerage-charges' element={
+                        {/* <Route exact path='/brokerage-charges' element={
                             <React.Suspense>
                                 < LazyBrokerageCharges />
                             </React.Suspense>
-                        } />
+                        } /> */}
 
                         {/* <Route exact path='/choice-insurance' element={
                             <React.Suspense>
@@ -1085,7 +1085,7 @@ function Routing() {
                                  < LazyUnder25 />
                             </React.Suspense>
                         } />
-                        <Route exact path='/brokerage-charges-new' element={
+                        <Route exact path='/brokerage-charges' element={
                             <React.Suspense>
                                 < LazyBrokerageChargesNew />
                             </React.Suspense>
