@@ -13,7 +13,7 @@ function BrokeragBenefits() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: true,
     autoplaySpeed: 1000,

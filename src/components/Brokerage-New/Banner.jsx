@@ -36,8 +36,8 @@ function Banner() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    dots: false,
-                    autoplay: true,
+                    dots: true,
+                    autoplay: false,
                     speed: 2500,
                     autoplaySpeed: 3000,
                 }
