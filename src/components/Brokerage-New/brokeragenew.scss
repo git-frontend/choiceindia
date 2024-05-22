@@ -6,6 +6,7 @@
         padding: 5rem 0rem;
         @media (max-width:$sm) {
             padding: 3.5rem 0rem;
+            overflow: hidden;
         }
         .banner-left{
             .big-ttl{
@@ -26,6 +27,10 @@
                         left: -1.2rem;
                         top:7px;
                         background-size: contain;
+                        @media (min-width:$md) and (max-width:$xl) {
+                            width: 204px;
+                            height: 56px;
+                        }
                         @media (min-width:$sm-x) and (max-width:$md) {
                             width: 148px;
                             height: 40px;
@@ -314,7 +319,7 @@
                     padding: 1.625rem 1.438rem;
                     // margin-bottom: 9rem;
                     background: $whiteColor;
-                    @media (max-width:$sm) {
+                    @media (max-width:$md) {
                         padding: 0;
                     }
                     .condition{
@@ -326,7 +331,7 @@
                         td{
                             padding: 1.419rem 1.8rem 1.5rem 1.8rem;
                             font-size: 1.3rem;
-                            @media (max-width:$sm) {
+                            @media (max-width:$md) {
                             --bs-table-accent-bg:initial;
                             &::before{
                                 content: attr(data-label);
@@ -346,12 +351,12 @@
                             font-size: 1.093rem;
                         }
                         .tableheading{
-                            @media (max-width:$sm) {
+                            @media (max-width:$md) {
                                 display: none;
                              }
                         }
                         .charges-heads{
-                            @media (max-width:$sm) {
+                            @media (max-width:$md) {
                                 width: 100%;
                                 background-color: $tablestrip;
                                 border:  0.5px solid $darkblack;
@@ -363,14 +368,14 @@
                         }
                         tbody{
                            tr{
-                            @media (max-width:$sm) {
+                            @media (max-width:$md) {
                                 display: flex;
                                 flex-wrap: wrap;
                                 background: #fff;
                             }
                             td{
                                 .charges-heads{
-                                    @media (max-width:$sm) {
+                                    @media (max-width:$md) {
                                         width: 100%;
                                     }
                                 }
@@ -427,8 +432,8 @@
                         line-height: 3rem;
                         font-family: $font-family-poppins-semibold;
                         margin: 0;
-                        @media (max-width:$sm) {
-                            font-size: 1rem;
+                        @media (max-width:$md) {
+                            font-size: 1.3rem;
                             line-height: 0.8rem;
                         }
                     }
@@ -789,7 +794,6 @@
                     padding: 2rem 1rem;
                     margin-bottom: 2.5rem;
                 }
-s
                 
                 h5 {
                     margin-bottom: 0;
