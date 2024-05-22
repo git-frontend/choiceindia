@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import "../Common-features/common-demat-suppotive.scss";
-const NewFormSection = ({ sections }) => {
-    console.log("sections", sections)
-    // const  = (window.location.pathname.indexOf('brokerage-charges') > -1) ? 'yes' : '';
+const NewFormSection = ({ sections ,addIsBrokerageClass  }) => {
+    const isbrokerage = addIsBrokerageClass ? 'brokrage-class' : '';
     return (
 
         <>
-            <section className="form-section-all">
+            <section className={`form-section-all ${isbrokerage}`}>
                 <div className="container">
                     <div className="best-stock-Newform">
                         {sections.map((section, index) => (

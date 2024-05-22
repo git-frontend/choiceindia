@@ -14,7 +14,7 @@ function BrokerageFaq() {
                         <div className="col-md-12">
                             <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                                 <Accordion.Item eventKey="0" className='faq-item'>
-                                    <Accordion.Header as="h3" className='faq-header'>How is Brokerage Calculated?</Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>What is brokerage?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     Brokerage is a fee or commission charged by a broker for executing transactions or providing specialized services on behalf of clients. Choice charges the lowest brokerage fees for services such as purchases, sales, consultations, negotiations, and delivery from our regular clients.
                                     </Accordion.Body>
@@ -46,10 +46,10 @@ function BrokerageFaq() {
                                 <Accordion.Item eventKey="5" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>What factors influence brokerage calculation?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                       Brokerage depends on:
-                                       Buy/Sale Price: The price of a single unit of stocks/securities.
-                                       Volume: The volume of transactions. Higher volumes often mean lower commission percentages.
-                                       Types of Brokers: Full-service brokers, like Choice, provide value-added services (research advisory, market advisory, customer support, real-time market updates) that attract different charges than discount brokers.
+                                    Brokerage depends on:
+                                    Buy/Sale Price: The price of a single unit of stocks/securities.
+                                    Volume: The volume of transactions. Higher volumes often mean lower commission percentages.
+                                    Types of Brokers: Full-service brokers, like Choice, provide value-added services (research advisory, market advisory, customer support, real-time market updates) that attract different charges than discount brokers.
 
                                     </Accordion.Body>
                                 </Accordion.Item>
@@ -71,6 +71,37 @@ function BrokerageFaq() {
                                     Delivery Brokerage Charges apply to trades where an investor buys on one day and sells on another. At Choice, these are calculated at 0.2%.
                                     </Accordion.Body>
                                 </Accordion.Item>
+                                <Accordion.Item eventKey="9" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>What are the Brokerage charges for Equities Trading?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    At Choice, the brokerage charges for Equities Trading are 0.02% for Delivery and Intraday, 0.02% for Futures, and ₹25 per lot for Options.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="10" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>What are the Brokerage charges for Futures and Options Trading?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    For Futures and Options Trading at Choice, the charges are 0.2% for Delivery and Intraday, 0.02% for Futures, and ₹25 per lot for Options.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="11" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>What are Depository Participant charges?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    Once stocks are purchased, they are digitally held by the Depository (NSDL and CDSL in India). The Depository charges a fee to the Depository Participant (broker) for holding these securities (only for delivery), which is then charged to the investor.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="12" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>What is a Brokerage Calculator?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    A Brokerage Calculator is a digital tool provided by most brokers, including Choice, that allows traders to calculate their brokerage charges in advance. It can also calculate GST, STT, transaction fees, and stamp duty charges.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="13" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>How to use a Brokerage Calculator</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    To use it, one needs to input the buy/sell price of a stock, number of shares, state (to calculate stamp duty), and lot size (for trading in Options). It's a great tool for intraday traders to analyze the cost of their trade before buying and selling stocks.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
                             </Accordion>
                             <div>
 

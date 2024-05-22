@@ -20,16 +20,16 @@ function BrokerageCosts() {
                            <p>Know how much you will pay in <br/>
                               brokerage with every trade.</p>
                            <div className="list-itm-btn">
-                              <a className='nav-link' href="/brokerage-calculator">Try Now</a>
+                              <a className='nav-link' href="/brokerage-calculator">Calculate now</a>
                               <LazyLoader src={brokeragecalculator} alt={""} className={"img-fluid"} width={"168"} height={"146"} />
                            </div>
                         </div>
                         <div className="list-itm">
                            <h3>Margin Calculator</h3>
-                           <p>Know how much you will pay in <br/>
-                              brokerage with every trade.</p>
+                           <p>Check the margin required for<br/>
+                           F&O, Commodity, & Currency trade.</p>
                               <div className="list-itm-btn">
-                              <a className='nav-link' href="/margin-calculator">Try Now</a>
+                              <a className='nav-link' href="/margin-calculator">Calculate now</a>
                               <LazyLoader src={brokeragecalculator} alt={""} className={"img-fluid"} width={"168"} height={"146"} />
                            </div>
                         </div>

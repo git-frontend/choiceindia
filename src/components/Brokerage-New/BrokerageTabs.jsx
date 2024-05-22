@@ -45,7 +45,7 @@ function BrokerageTabs() {
                            onClick={() => toggleTab(2)}
                         >
                           
-                           <h4>Currency</h4>
+                           <h4>Commodity</h4>
 
                         </button>
                         <button
@@ -53,7 +53,7 @@ function BrokerageTabs() {
                            onClick={() => toggleTab(3)}
                         >
                           
-                           <h4>Commodity</h4>
+                           <h4>Currency</h4>
 
                         </button>
                      </div>
@@ -99,35 +99,90 @@ function BrokerageTabs() {
                                        </tr>
                                        <tr className="grey-back">
                                           <td className="charges-heads">GST</td>
-                                          <td data-label="Equity Intraday">18% on (Brokerage + Transaction Charges)</td>
-                                          <td data-label="Equity Delivery">18% on (Brokerage + Transaction Charges)</td>
-                                          <td data-label="Equity Futures">18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
-                                          <td data-label="Equity Options"> 18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
+                                          <td data-label="Equity Intraday">18% (on brokerage + transaction charges)</td>
+                                          <td data-label="Equity Delivery">18% (on brokerage + transaction charges)</td>
+                                          <td data-label="Equity Futures">18% (on brokerage + transaction charges)</td>
+                                          <td data-label="Equity Options"> 18% (on brokerage + transaction charges)</td>
                                        </tr>
                                        <tr>
-                                          <td className="charges-heads">SEBI charges</td>
-                                          <td data-label="Equity Intraday">₹ 10 / crore</td>
-                                          <td data-label="Equity Delivery">₹ 10 / crore</td>
-                                          <td data-label="Equity Futures">₹ 10 / crore</td>
-                                          <td data-label="Equity Options">₹ 10 / crore</td>
+                                          <td className="charges-heads">SEBI Charges</td>
+                                          <td data-label="Equity Intraday">₹10/crore</td>
+                                          <td data-label="Equity Delivery">₹10/crore</td>
+                                          <td data-label="Equity Futures">₹10/crore</td>
+                                          <td data-label="Equity Options">₹10/crore</td>
                                        </tr>
                                        <tr>
-                                          <td className="charges-heads">NSE IPFT Charges</td>
-                                          <td data-label="Equity Intraday">₹ 10 / crore</td>
-                                          <td data-label="Equity Delivery">₹ 10 / crore</td>
-                                          <td data-label="Equity Futures">₹ 10 / crore</td>
-                                          <td data-label="Equity Options">₹ 50 / crore (On Premium)</td>
+                                          <td className="charges-heads">N.S.E. IPFT Charges</td>
+                                          <td data-label="Equity Intraday">₹10/crore</td>
+                                          <td data-label="Equity Delivery">₹10/crore</td>
+                                          <td data-label="Equity Futures">₹10/crore</td>
+                                          <td data-label="Equity Options">₹50/crore (on premium)</td>
                                        </tr>
                                     </tbody>
                                  </table>
                               </div>
-                              <p className="condition">Condition Applied* : Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
+                              <p className="condition"><strong>*Condition Applied: </strong>The above charges are applicable for clients registered online. Charges may vary for offline clients (who can avail of extended facilities like a higher margin and dedicated Relationship Manager/Dealer).</p>
                            </div>
 
                         </div>
 
                         <div
                            className={toggleState === 2 ? "content  active-content" : "content"}
+                        >
+                           <div className="tab-data-sec">
+                              <div className="table-responsive">
+                                 <table className="table table-borderless table-striped table-hover">
+                                    <thead>
+                                       <tr>
+                                          <th width="15%" className="tableheading">Our Charges</th>
+                                          <th className="tableheading">Commodity Futures</th>
+                                          <th className="tableheading">Commodity Options</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td className="charges-heads">Brokerage</td>
+                                          <td data-label="Commodity Futures">0.02%</td>
+                                          <td data-label="Commodity Options">₹50 per lot</td>
+                                       </tr>
+                                       <tr className="grey-back">
+                                          <td className="charges-heads">CTT (Commodities Transaction Tax)</td>
+                                          <td data-label="Commodity Futures">0.01% Sell</td>
+                                          <td data-label="Commodity Options">0.05% Sell In case of Options Exercise: 0.125% (on Settlement Price* Quantity) to be paid by the Buyer</td>
+                                       </tr>
+                                       <tr>
+                                          <td className="charges-heads">Transaction Charges</td>
+                                          <td data-label="Commodity Futures">- Exchange Txn. charge: 0.0026% 
+- Clearing charge: 0.003% 
+- RMS charge: 0.005% (only NCDEX)
+</td>
+                                          <td data-label="Commodity Options">- Exchange Txn. charge: 0.05% 
+- Clearing charge: 0.002% 
+</td>
+                                       </tr>
+                                       <tr className="grey-back">
+                                          <td className="charges-heads">G.S.T.</td>
+                                          <td data-label="Commodity Futures">18% 
+(on brokerage + transaction charges + clearing charges)
+</td>
+                                          <td data-label="Commodity Options">18% 
+(on brokerage + transaction charges + clearing charges)
+</td>
+                                       </tr>
+                                       <tr>
+                                          <td className="charges-heads">SEBI Charges</td>
+                                          <td data-label="Commodity Futures">₹10/crore</td>
+                                          <td data-label="Commodity Options">₹10/crore</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                              <p className="condition"><strong>*Condition Applied:</strong> The above charges are applicable for clients registered online. Charges may vary for offline clients (who can avail of extended facilities like a higher margin and dedicated Relationship Manager/Dealer).</p>
+                           </div>
+                        </div>
+
+                        <div
+                           className={toggleState === 3 ? "content  active-content" : "content"}
                         >
                            <div className="tab-data-sec">
                               <div className="table-responsive">
@@ -143,82 +198,43 @@ function BrokerageTabs() {
                                        <tr>
                                           <td className="charges-heads">Brokerage</td>
                                           <td data-label="Currency Futures">0.02%</td>
-                                          <td data-label="Currency Options">₹ 20 per Lot</td>
+                                          <td data-label="Currency Options">₹20 per lot</td>
                                        </tr>
                                        <tr className="grey-back">
-                                          <td className="charges-heads">STT</td>
+                                          <td className="charges-heads">STT (Securities Transaction Tax)</td>
                                           <td data-label="Currency Futures">No STT</td>
                                           <td data-label="Currency Options">No STT</td>
-                                       </tr>
-                                       <tr>
-                                          <td className="charges-heads">Transaction charges</td>
-                                          <td data-label="Currency Futures">NSE Trans. Chgs.: 0.0009% Clearing charge: 0.0005%</td>
-                                          <td data-label="Currency Options">NSE Trans. Chgs.: 0.035% Clearing charge: 0.002%</td>
-                                       </tr>
-                                       <tr className="grey-back">
-                                          <td className="charges-heads">GST</td>
-                                          <td data-label="Currency Futures">18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
-                                          <td data-label="Currency Options">18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
-                                       </tr>
-                                       <tr>
-                                          <td className="charges-heads">SEBI charges</td>
-                                          <td data-label="Currency Futures">₹ 10 / crore</td>
-                                          <td data-label="Currency Options">₹ 10 / crore</td>
-                                       </tr>
-                                    </tbody>
-                                 </table>
-                              </div>
-                              <p className="condition"><strong>Condition Applied* :</strong> Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
-                           </div>
-                        </div>
-
-                        <div
-                           className={toggleState === 3 ? "content  active-content" : "content"}
-                        >
-                           <div className="tab-data-sec">
-                              <div className="table-responsive">
-                                 <table className="table table-borderless table-striped table-hover">
-                                    <thead>
-                                       <tr>
-                                          <th width="15%" className="tableheading">Our Charges</th>
-                                          <th className="tableheading">Commodity Futures</th>
-                                          <th className="tableheading">Commodity Options</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-                                       <tr>
-                                          <td className="charges-heads">Brokerage</td>
-                                          <td data-label="Currency Futures">0.02%</td>
-                                          <td data-label="Currency Options">₹ 50 per Lot.</td>
-                                       </tr>
-                                       <tr className="grey-back">
-                                          <td className="charges-heads">CTT</td>
-                                          <td data-label="Currency Futures">0.02%</td>
-                                          <td data-label="Currency Options">0.01% on sell side</td>
                                           
                                        </tr>
                                        <tr>
-                                          <td className="charges-heads">Transaction charges</td>
-                                          <td data-label="Currency Futures">0.02%</td>
-                                          <td data-label="Currency Options">0.02%</td>
+                                          <td className="charges-heads">Transaction Charges</td>
+                                          <td data-label="Currency Futures">- NSE Txn. charge: 0.0009% 
+- Clearing charge: 0.0005%
+</td>
+                                          <td data-label="Currency Options">- NSE Txn. charge: 0.035% 
+- Clearing charge: 0.002%
+</td>
                                        </tr>
                                        <tr className="grey-back">
-                                          <td className="charges-heads">GST</td>
-                                          <td data-label="Currency Futures">0.02%</td>
-                                          <td data-label="Currency Options">18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
+                                          <td className="charges-heads">G.S.T.</td>
+                                          <td data-label="Currency Futures">18% 
+(on brokerage + transaction charges + clearing charges)
+</td>
+                                          <td data-label="Currency Options">18% 
+(on brokerage + transaction charges + clearing charges)
+</td>
                                          
                                        </tr>
                                        <tr>
-                                          <td className="charges-heads">SEBI charges</td>
-                                          <td data-label="Currency Futures">0.02%</td>
-                                          <td data-label="Currency Options">₹ 10 / crore</td>
+                                          <td className="charges-heads">SEBI Charges</td>
+                                          <td data-label="Currency Futures">₹10/crore</td>
+                                          <td data-label="Currency Options">₹10/crore</td>
                                           
                                        </tr>
                                     </tbody>
                                  </table>
                               </div>
-                              <p className="condition">Condition Applied* : Above charges are applicable for clients who have registered online. These charges will vary for our offline clients
-                                 (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
+                              <p className="condition"><strong>*Condition Applied:</strong> The above charges are applicable for clients registered online. Charges may vary for offline clients (who can avail of extended facilities like a higher margin and dedicated Relationship Manager/Dealer).</p>
                            </div>
                         </div>
                      </div>

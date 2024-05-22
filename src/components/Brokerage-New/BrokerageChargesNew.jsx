@@ -80,10 +80,10 @@ function BrokerageCharges() {
         <BrokerageTabs />
         <BrokerageCosts />
         <Applicablecharges />
-        <NewFormSection sections={sections} />
+        <NewFormSection sections={sections}  addIsBrokerageClass={false}/>
         <BrokerageFaq />
         <BrokeragSegments />
-        <NewFormSection sections={data2} />
+        <NewFormSection sections={data2}  addIsBrokerageClass={true}/>
       </div>
     </>
   );

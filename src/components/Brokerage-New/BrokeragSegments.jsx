@@ -14,7 +14,7 @@ function BrokeragSegments() {
                     <div className="row justify-content-center">
                         <div className="col-xl-10 col-md-12">
                             <div className="caption">
-                                <h2 className="title-secnd">Access all Market Segments with <span className="caption-dark"> Our All-in-One Account</span></h2>
+                                <h2 className="title-secnd">Access all Market Segments with<span className="caption-dark"> Our All-in-One Account</span></h2>
                             </div>
                         </div>
                     </div>
