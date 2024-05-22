@@ -101,10 +101,10 @@ function Applicablecharges() {
                                           <li>₹3,000/- Full Refundable AMC (full amount will be refunded on account closure)</li>
                                        </ol>
                                     </ul>
-                                     <p>
+                                     <p className="note-para">
                                      *Note:
-                                       <p>- In case you don’t select a scheme, a default AMC as per the annual plan will be charged at the end of the first year. </p>
-                                       <p>- For a Corporate account, the AMC charges applicable from the first year are ₹1,000/- + GST per annum plan. </p>
+                                       <p className="note-para">- In case you don’t select a scheme, a default AMC as per the annual plan will be charged at the end of the first year. </p>
+                                       <p className="note-para">- For a Corporate account, the AMC charges applicable from the first year are ₹1,000/- + GST per annum plan. </p>
                                      </p>
                                  </div>
                               </div>
