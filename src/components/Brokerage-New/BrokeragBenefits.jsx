@@ -14,7 +14,7 @@ function BrokeragBenefits() {
     arrows: false,
     slidesToShow: 4,
     autoplay: true,
-    margin: 15,
+    // margin: 15,
     dots: true,
     autoplaySpeed: 1000,
     slidesToScroll: 1,
@@ -23,8 +23,9 @@ function BrokeragBenefits() {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          adaptiveHeight: true,
+          slidesToScroll: 1,
+        //   adaptiveHeight: true,
+          autoplay:true
         },
       },
       {
