@@ -648,7 +648,7 @@ const meta_tags = {
     ` },
 
   "open-brokerage-account": {
-    'title': "Open Zero Brokerage Account in India", 'lang': "en", "content": "Open a free brokerage account online with Choice. Best brokerage account in India with free AMC for the first year, low DP charges, free research advisory & hasselfree account opening process.",
+    'title': "Open Zero Brokerage Account in India - Choice", 'lang': "en", "content": "Open a free brokerage account online with Choice. Best brokerage account in India with free AMC for the first year, low DP charges, free research advisory & hasselfree account opening process.",
     "link": 'https://choiceindia.com/open-brokerage-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
