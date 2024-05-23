@@ -22,7 +22,7 @@ const DematAccountOpeningProcess = () => {
 
 
                                 <div className="headtext">
-                                    <h3 className="mb-0">Open a <span>Paperless</span> Brokerage Account For Free</h3>
+                                    <h3 className="mb-0">Open a <span>Paperless</span> Brokerage Account in India</h3>
                                 </div>
 
                                 <div className="text-right text-sm-center">
@@ -33,7 +33,7 @@ const DematAccountOpeningProcess = () => {
                         </div>
 
                     </div>
-                    <h2 className="sect-title">Brokerage Account Opening Process</h2>
+                    <h2 className="sect-title">How to open a Brokerage Account for free</h2>
 
 
 
