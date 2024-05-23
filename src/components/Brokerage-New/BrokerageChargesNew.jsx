@@ -17,6 +17,7 @@ import Advanced from "../../assets/images/Brokerage-New/Advanced-tools-with-lowe
 import expert from "../../assets/images/Brokerage-New/Expert_Research.svg";
 import "../Common-features/common-demat-suppotive.scss";
 import BrokeragBenefits from "./BrokeragBenefits";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function BrokerageCharges() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -80,9 +81,14 @@ function BrokerageCharges() {
         <BrokerageTabs />
         <BrokerageCosts />
         <Applicablecharges />
+        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
         <NewFormSection sections={sections}  />
+        </GoogleReCaptchaProvider>
+        
         <BrokerageFaq />
+        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
         <NewFormSection sections={data2}  />
+        </GoogleReCaptchaProvider>
         <BrokeragSegments />
       </div>
     </>

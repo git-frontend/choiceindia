@@ -11,15 +11,15 @@ import icon4 from '../../assets/images/Brokerage-New/Low-brokerage-and-Rs.-0-cal
 function Banner() {
     const [ischeck, setIscheck] = useState(false);
     const settings1 = {
-        infinite: true,
+        infinite: false,
         speed: 1500,
         slidesToShow: 4,
         arrows: false,
         autoplay: false,
         dots: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 1000,
         slidesToScroll: 1,
-        swipeToSlide: true,
+        // swipeToSlide: true,
         responsive: [
 
             {
@@ -38,8 +38,8 @@ function Banner() {
                     slidesToScroll: 1,
                     dots: true,
                     autoplay: false,
-                    speed: 2500,
-                    autoplaySpeed: 3000,
+                    speed: 1500,
+                    autoplaySpeed: 2500,
                 }
             }
 

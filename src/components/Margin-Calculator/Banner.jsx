@@ -11,6 +11,7 @@ import FreeAmc from "../../assets/images/brokerage-calculator/Free_AMC_for_First
 import LowDP from "../../assets/images/brokerage-calculator/Low_DP_charges.svg";
 import  NoAutoSquare from "../../assets/images/brokerage-calculator/No-Auto-Square.svg";
 import FreeResearch from "../../assets/images/brokerage-calculator/Free_Research_Advisory.svg";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function Banner() {
     const [toggleState, setToggleState] = useState(1);
     const toggleTab = (index) => {
@@ -951,7 +952,9 @@ function Banner() {
                     </div>
                 </div>
             </section>
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
             <NewFormSection sections={sections} />
+            </GoogleReCaptchaProvider>
             {/* <OpenFreeDematAccount /> */}
             <section className='more-content'>
                 <div className='container'>

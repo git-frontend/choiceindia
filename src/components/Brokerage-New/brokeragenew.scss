@@ -55,11 +55,7 @@
                  }
             }
             .carditem-option-tab {
-                .slick-list{
-                    @media (max-width: $sm) {
-                        margin-right: -13%;
-                    }
-                }
+                
                 .slick-track {
                     display: flex;
                     padding: 10px 0;
