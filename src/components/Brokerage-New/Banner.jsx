@@ -10,6 +10,16 @@ import icon3 from '../../assets/images/Brokerage-New/0-auto-square-off-with-lowe
 import icon4 from '../../assets/images/Brokerage-New/Low-brokerage-and-Rs.-0-call-&-trade.svg';
 function Banner() {
     const [ischeck, setIscheck] = useState(false);
+    function chapterScroll2(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
     const settings1 = {
         infinite: false,
         speed: 1500,
@@ -72,7 +82,7 @@ function Banner() {
                             </div>
                           
                                     <div className="col-xl-5 col-md-6">
-                                        <div className="d-flex justify-content-center justify-content-lg-end" id="campaignForm">
+                                        <div className="d-flex justify-content-center justify-content-lg-end" id="dematform">
                                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                                 <NewDematAccountForm />
                                             </GoogleReCaptchaProvider>
