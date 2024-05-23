@@ -43,7 +43,7 @@ const CurrencyTradingOpeningProcess = () => {
                         </div>
 
                     </div>
-                    <h2 className="sect-title">Currency Account Opening Online Process</h2>
+                    <h2 className="sect-title">Open a Currency Trading Account in Few Steps</h2>
 
 
 
@@ -59,7 +59,7 @@ const CurrencyTradingOpeningProcess = () => {
                                     {/* <img src={Image21}  width={"17"} height={"93"} alt="Step One" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info respspace">
-                                    <h5>A trusted name </h5>
+                                    <h5>Register at Choice </h5>
                                     <p>Fill in the required details and upload the relevant documents along with a passport size photograph.
                                     </p>
                                 </div>
