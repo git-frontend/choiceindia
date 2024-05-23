@@ -111,6 +111,13 @@ function MFFaq() {
 
                                     </Accordion.Body>
                                 </Accordion.Item>
+
+                                <Accordion.Item eventKey="12" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>Which mutual fund investment is best?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    The best mutual fund investment depends on your financial goals, risk tolerance, investment horizon, and market conditions. There are various types of mutual fund options as mentioned above. You can choose one according to your needs.
+                                    </Accordion.Body>
+                                </Accordion.Item>
                             </Accordion>
                             
                         </div>
