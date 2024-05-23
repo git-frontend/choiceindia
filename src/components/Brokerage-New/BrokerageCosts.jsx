@@ -1,6 +1,6 @@
 import LazyLoader from '../Common-features/LazyLoader';
 import React from "react";
-import brokeragecalculator from '../../assets/images/Brokerage-New/brokerage-calculator.svg';
+import brokeragecalculator from '../../assets/images/Brokerage-New/know-applicable-brokerage-charges.svg';
 function BrokerageCosts() {
    return (
       <div>
@@ -21,7 +21,7 @@ function BrokerageCosts() {
                               brokerage with every trade.</p>
                            <div className="list-itm-btn">
                               <a className='nav-link' href="/brokerage-calculator">Calculate now</a>
-                              <LazyLoader src={brokeragecalculator} alt={""} className={"img-fluid"} width={"168"} height={"146"} />
+                              <LazyLoader src={brokeragecalculator} alt={"know applicable brokerage charges"} className={"img-fluid"} width={"168"} height={"146"} />
                            </div>
                         </div>
                         <div className="list-itm">
@@ -30,7 +30,7 @@ function BrokerageCosts() {
                            F&O, Commodity, & Currency trade.</p>
                               <div className="list-itm-btn">
                               <a className='nav-link' href="/margin-calculator">Calculate now</a>
-                              <LazyLoader src={brokeragecalculator} alt={""} className={"img-fluid"} width={"168"} height={"146"} />
+                              <LazyLoader src={brokeragecalculator} alt={"know applicable margin charges"} className={"img-fluid"} width={"168"} height={"146"} />
                            </div>
                         </div>
                      </div>

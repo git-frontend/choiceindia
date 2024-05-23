@@ -4,10 +4,10 @@ import LazyLoader from '../Common-features/LazyLoader';
 import NewDematAccountForm from '../Common-features/NewDematAccountForm';
 import Slider from 'react-slick';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import icon1 from '../../assets/images/Brokerage-New/Group 99790.svg';
-import icon2 from '../../assets/images/Brokerage-New/Group 99794.svg';
-import icon3 from '../../assets/images/Brokerage-New/Group 99795.svg';
-import icon4 from '../../assets/images/Brokerage-New/Group 99796.svg';
+import icon1 from '../../assets/images/Brokerage-New/Free-Account-with-Low-Brokerage-Charges.svg';
+import icon2 from '../../assets/images/Brokerage-New/Low-Brokerage-with-Zero-AMC.svg';
+import icon3 from '../../assets/images/Brokerage-New/0-auto-square-off-with-lowest-brokerage.svg';
+import icon4 from '../../assets/images/Brokerage-New/Low-brokerage-and-Rs.-0-call-&-trade.svg';
 function Banner() {
     const [ischeck, setIscheck] = useState(false);
     const settings1 = {
@@ -56,16 +56,16 @@ function Banner() {
                                 <p className="para">Choice makes investing in the stock market simple and accessible, offering you the best Demat account with the lowest brokerage.</p>
                                 <Slider {...settings1} className="carditem-option-tab">
                                     <div className="carditem-option">
-                                        <span className="carditem-option-img"><LazyLoader src={icon1} alt={""} className={"img-fluid"} width={"202"} height={"157"} /></span>
+                                        <span className="carditem-option-img"><LazyLoader src={icon1} alt={"Free Account with Low Brokerage Charges"} className={"img-fluid"} width={"202"} height={"157"} /></span>
                                     </div>
                                     <div className="carditem-option">
-                                        <span className="carditem-option-img"><LazyLoader src={icon2} alt={""} className={"img-fluid"} width={"202"} height={"157"} /></span>
+                                        <span className="carditem-option-img"><LazyLoader src={icon2} alt={"Low Brokerage with Zero AMC"} className={"img-fluid"} width={"202"} height={"157"} /></span>
                                     </div>
                                     <div className="carditem-option">
-                                        <span className="carditem-option-img"><LazyLoader src={icon3} alt={""} className={"img-fluid"} width={"202"} height={"157"} /></span>
+                                        <span className="carditem-option-img"><LazyLoader src={icon3} alt={"0 auto square off with lowest brokerage"} className={"img-fluid"} width={"202"} height={"157"} /></span>
                                     </div>
                                     <div className="carditem-option">
-                                        <span className="carditem-option-img"><LazyLoader src={icon4} alt={""} className={"img-fluid"} width={"202"} height={"157"} /></span>
+                                        <span className="carditem-option-img"><LazyLoader src={icon4} alt={"Low brokerage and Rs. 0 call & trade"} className={"img-fluid"} width={"202"} height={"157"} /></span>
                                     </div>
                                 </Slider>
                                 {/* </div> */}

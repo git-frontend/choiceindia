@@ -1,10 +1,10 @@
 
 import React from "react";
-import advice from '../../assets/images/Brokerage-New/advice.svg';
-import search from '../../assets/images/Brokerage-New/search.svg';
-import conveniece from '../../assets/images/Brokerage-New/conveniece.svg';
-import service from '../../assets/images/Brokerage-New/service.svg';
-import learning from '../../assets/images/Brokerage-New/learning.svg';
+import advice from '../../assets/images/Brokerage-New/Low-Brokerage-Charges-with-Professional-Advice.svg';
+import search from '../../assets/images/Brokerage-New/Low-Brokerage-Charges-with-Expert-Research.svg';
+import conveniece from '../../assets/images/Brokerage-New/Invest-Conveniently-at-low-brokerage.svg';
+import service from '../../assets/images/Brokerage-New/Best-brokerage-charges-with-superior-service.svg';
+import learning from '../../assets/images/Brokerage-New/Learning-resources-at-low-brokerage-charges.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from "react-slick";
 function BrokeragBenefits() {
@@ -54,7 +54,7 @@ function BrokeragBenefits() {
                                   <Slider {...settings} className="team-list-slider">
                                       <div className="team-item ">
                                           <span className="img-itm">
-                                              <LazyLoader src={advice} className={"img-fluid"} width={"72"} height={"72"} alt={"Commitment"} />
+                                              <LazyLoader src={advice} className={"img-fluid"} width={"72"} height={"72"} alt={"Low Brokerage Charges with Professional Advice"} />
                                           </span>
                                           <div className="namedesg">
                                               <h4 className="title">Professional Advice</h4>
@@ -64,7 +64,7 @@ function BrokeragBenefits() {
                                       </div>
                                       <div className="team-item ">
                                           <span className="img-itm">
-                                              <LazyLoader src={search} className={"img-fluid"} width={"72"} height={"72"} alt={"Honesty"} />
+                                              <LazyLoader src={search} className={"img-fluid"} width={"72"} height={"72"} alt={"Low Brokerage Charges with Expert Research"} />
                                           </span>
                                           <div className="namedesg">
                                               <h4 className="title">Research & Analysis</h4>
@@ -76,7 +76,7 @@ function BrokeragBenefits() {
                                       </div>
                                       <div className="team-item ">
                                           <span className="img-itm">
-                                              <LazyLoader src={conveniece} className={"img-fluid"} width={"72"} height={"72"} alt={"Optimism"} />
+                                              <LazyLoader src={conveniece} className={"img-fluid"} width={"72"} height={"72"} alt={"Invest Conveniently at low brokerage"} />
                                           </span>
                                           <div className="namedesg">
                                               <h4 className="title">Convenience</h4>
@@ -86,7 +86,7 @@ function BrokeragBenefits() {
                                       </div>
                                       <div className="team-item ">
                                           <span className="img-itm">
-                                              <LazyLoader src={service} className={"img-fluid"} width={"72"} height={"72"} alt={"Innovation"} />
+                                              <LazyLoader src={service} className={"img-fluid"} width={"72"} height={"72"} alt={"Best brokerage charges with superior service"} />
                                           </span>
                                           <div className="namedesg">
                                               <h4 className="title">Superior Service</h4>
@@ -95,7 +95,7 @@ function BrokeragBenefits() {
                                       </div>
                                       <div className="team-item ">
                                           <span className="img-itm">
-                                              <LazyLoader src={learning} className={"img-fluid"} width={"72"} height={"72"} alt={"Consistency"} />
+                                              <LazyLoader src={learning} className={"img-fluid"} width={"72"} height={"72"} alt={"Learning resources at low brokerage charges"} />
                                           </span>
                                           <div className="namedesg">
                                               <h4 className="title">Financial Learning</h4>

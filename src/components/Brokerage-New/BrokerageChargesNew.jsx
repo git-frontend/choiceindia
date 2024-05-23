@@ -12,9 +12,9 @@ import BrokeragSegments from "./BrokeragSegments";
 import "./brokeragenew.scss"
 import '../Corporate-Demat-Account/corporatedemat.scss';
 import NewFormSection from '../Common-features/NewFormSection';
-import comp from "../../assets/images/Brokerage-New/comp.svg";
-import Advanced from "../../assets/images/Brokerage-New/Advanced.svg";
-import expert from "../../assets/images/Brokerage-New/expert.svg";
+import comp from "../../assets/images/Brokerage-New/Best-brokerage-fees.svg";
+import Advanced from "../../assets/images/Brokerage-New/Advanced-tools-with-lowest-charges.svg";
+import expert from "../../assets/images/Brokerage-New/Expert_Research.svg";
 import "../Common-features/common-demat-suppotive.scss";
 import BrokeragBenefits from "./BrokeragBenefits";
 function BrokerageCharges() {
@@ -52,11 +52,11 @@ function BrokerageCharges() {
   const sections = [
     {
       title: [
-        'Traders & Investors Choose Us'
+        'Why Traders & Investors Choose Us'
       ],
       images: [comp, Advanced, expert],
       subtitle: ['Competitive Pricing & Charges', 'Advanced Trading Platform', 'Expert Research & Analysis'],
-      alt: ['Open Demat Account with Choice', 'Stock Research by Choice', 'DP Charges after Demat Account Opening', 'AMC Charges at Choice']
+      alt: ['Best brokerage fees', 'Advanced tools with lowest charges', 'Stock Research by Choice']
     },
 
   ];
