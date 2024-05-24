@@ -190,6 +190,11 @@
                             }
                         }
                     }
+                    .slick-dots{
+                        @media (max-width:$sm) {
+                            margin-bottom: 2rem !important;
+                         }
+                    }
                     .team-item {
                         border: 2px solid #0C71B940;
                         border-radius: 22px;
