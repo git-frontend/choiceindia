@@ -83,9 +83,9 @@ function Banner() {
                           
                                     <div className="col-xl-5 col-md-6">
                                         <div className="d-flex justify-content-center justify-content-lg-end" id="dematform">
-                                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                            {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz"> */}
                                                 <NewDematAccountForm />
-                                            </GoogleReCaptchaProvider>
+                                            {/* </GoogleReCaptchaProvider> */}
                                         </div>
                                     </div> 
                         </div>

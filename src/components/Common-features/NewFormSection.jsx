@@ -48,11 +48,13 @@ const NewFormSection = ({ sections  }) => {
                                 </div>
                                 <div className="col-md-4">
 
-                                    {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" > */}
+                                
                                         <div id="dematformsticky">
+                                        {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" > */}
                                             <OpenDemateAccountStickyFooter />
+                                            {/* </GoogleReCaptchaProvider> */}
                                         </div>
-                                    {/* </GoogleReCaptchaProvider> */}
+                                  
                                
                                 </div>
                             </div>

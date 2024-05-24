@@ -106,10 +106,16 @@
                             }
                         }
                     }
+                    
     
                     @media (max-width:$md) {
-                        margin-bottom: 2rem;
+                        margin-bottom: 1rem;
                     }
+                }
+                .slick-dots{
+                    @media (max-width:$sm) {
+                        margin-bottom: 2rem !important;
+                     }
                 }
             }
         }

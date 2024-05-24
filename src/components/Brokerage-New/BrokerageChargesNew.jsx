@@ -74,6 +74,7 @@ function BrokerageCharges() {
   ];
   return (
     <>
+    <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
       <div className="brokerage-charges-new Corporate-main">
         <Banner />
         <CorporateCount data={data} />
@@ -81,16 +82,17 @@ function BrokerageCharges() {
         <BrokerageTabs />
         <BrokerageCosts />
         <Applicablecharges />
-        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
+        {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" > */}
         <NewFormSection sections={sections}  />
-        </GoogleReCaptchaProvider>
+        {/* </GoogleReCaptchaProvider> */}
         
         <BrokerageFaq />
-        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
+        {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" > */}
         <NewFormSection sections={data2}  />
-        </GoogleReCaptchaProvider>
+        {/* </GoogleReCaptchaProvider> */}
         <BrokeragSegments />
       </div>
+      </GoogleReCaptchaProvider>
     </>
   );
 }

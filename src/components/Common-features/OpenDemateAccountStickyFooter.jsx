@@ -58,8 +58,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     var otpLeadID = useRef('');
     var referLink = useRef('');
     const [captchaToken, setCaptchaToken] = useState('');
-    const { executeRecaptcha } = useGoogleReCaptcha();
-
+  
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '' });
 
@@ -285,6 +284,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     useEffect(() => {
         fetchQueryParams();
     }, []);
+
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     // Create an event handler so you can call the verification on button click event or form submit
     const handleReCaptchaVerify = useCallback(async () => {
