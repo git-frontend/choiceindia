@@ -28,6 +28,14 @@ function Fabdetailsbanner(props) {
     const [popUp, setPopUp] = useState(false);
     const [formMobile, setFormMobile] = useState('form-mobile');
 
+   //Creating a state variable for new demat lead form
+   const [newLeadForm,setNewLeadForm]=useState(false);
+    
+    function newDematForm(blogForm){
+    // console.log("New Lead Form "+blogForm);
+    setNewLeadForm(blogForm);
+    }
+
     function blogPop(isPopUp) {
         //console.log("Flag " + isPopUp);
         if (isPopUp) {
@@ -309,7 +317,7 @@ function Fabdetailsbanner(props) {
                                         {
                                             blogpageUrl ?
                                                 <div className="col-md-4" id="open-account-wrap"><GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                    <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={false} />
+                                                    <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={false} newDematForm={newDematForm}/>
                                                 </GoogleReCaptchaProvider>
                                                     <div className="stickyform formwrap d-flex justify-content-end ">
 
@@ -327,7 +335,7 @@ function Fabdetailsbanner(props) {
                                                             <div className={name2}>
                                                                 <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')} ref={mobileForm}>
                                                                     <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop} highlight={highlightForm} modifyHighLight={modifyHighLight} formName={props.formName} mobileForm={mobileForm}/>
+                                                                        <NewDematAccountForm setIsActive={setIsActive} isActive={isActive} openAccount={openAccountMobile} blogPop={blogPop} highlight={highlightForm} modifyHighLight={modifyHighLight} formName={props.formName} mobileForm={mobileForm} newDematForm={newDematForm}/>
                                                                     </GoogleReCaptchaProvider>
 
                                                                     <div className="stickyform formwrap d-flex justify-content-end ">
@@ -341,7 +349,7 @@ function Fabdetailsbanner(props) {
                                                             <div className="col-md-4" id="open-account-wrap">
                                                                 <div className={name2}>
                                                                         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                                            <MutualSubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
+                                                                            <MutualSubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} newDematForm={newDematForm}/>
                                                                         </GoogleReCaptchaProvider>
                                                                     </div>
                                                                
@@ -355,7 +363,7 @@ function Fabdetailsbanner(props) {
                                                                 
                                                                 <div className={name2}>
                                                                     <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                                        <SubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
+                                                                        <SubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} newDematForm={newDematForm}/>
                                                                     </GoogleReCaptchaProvider>
                                                                 </div>
                                                                 <div className="franchise-form justify-content-end d-flex">
@@ -369,8 +377,7 @@ function Fabdetailsbanner(props) {
 
 
                                         <div className={name}>
-                                            {(!window.location.pathname.includes('sub-broker') &&
-                                                !window.location.pathname.includes('mutual-fund-distributor')) &&
+                                            {(newLeadForm) && 
                                                 <div className="btn-fixed" ref={openAccountMobile}>
                                                     <div className="open-account-mob" onClick={handleClick}>
                                                         {

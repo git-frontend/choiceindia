@@ -30,10 +30,11 @@ function BrokerageCharges() {
         document.getElementById('link1').remove();
       document.getElementById('link2').remove();
       document.getElementById('link3').remove();
+      if(document.getElementById('link4')!==null){
       document.getElementById('link4').remove();
       document.getElementById('link5').remove();
       document.getElementById('link6').remove();
-      
+      }
       }
     }
   }, [rendercount])
