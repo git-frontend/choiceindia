@@ -1708,6 +1708,35 @@ width:100%;
 		}
 	
 	}
+	.brokerage-lead-form{
+		@media (max-width:$md) {
+			background: $bg-sky;
+		}
+		.heading{
+			@media (max-width:$md) {
+				margin-bottom: 1rem;
+				display: block;
+            }
+			}
+			.close-btn-mdl{
+				display: none;
+				@media (max-width:$md) {
+					display: block;
+					font-size: 2.25rem;
+					position: absolute;
+					right: 0.8rem;
+					text-decoration: none;
+					top: 0;
+				}
+
+			}
+	}
+
+	.brokerage-form-otp{
+		
+	}
+	.brokerage-thanku-popup{
+	}
 }
 
 

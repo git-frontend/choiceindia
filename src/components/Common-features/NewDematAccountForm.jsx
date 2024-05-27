@@ -183,13 +183,19 @@ function NewDematAccountForm(props) {
 
         if(window.location.pathname.includes("brokerage-charges") && window.innerWidth<=992){
         setBrokerageForm("brokerage-lead-form");
+        setblogForm('blog-lead-form');
         setBrokerageFormOtp("brokerage-form-otp");
+        setBlogFormOtp("blog-form-otp");
         setBrokerageThankuPopup("brokerage-thanku-popup");
+        setBlogThankuPopup('blog-thanku-popup');
         }
         else{
         setBrokerageForm("");
+        setblogForm("");
         setBrokerageFormOtp("");
         setBrokerageThankuPopup("");
+        setBlogFormOtp('');
+        setBlogThankuPopup('');
         }
 
         if (!isMobile.current && props.isPopupVisible) {
