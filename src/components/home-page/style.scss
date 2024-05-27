@@ -1691,3 +1691,16 @@
 .width-unset {
     width: unset !important;
 }
+.investor-popup-model{
+   .btn-bg-popup{
+    border: 0 !important;
+    border-radius: 10px !important;
+    display: inline-block;
+    font-family:$font-family-poppins-semibold;
+    font-size: 1.2rem !important;
+    min-width: 7rem;
+    outline: none !important;
+    padding: 1rem 1rem !important;
+    text-align: center;
+    }
+}
