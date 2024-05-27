@@ -191,11 +191,8 @@ function NewDematAccountForm(props) {
         }
         else{
         setBrokerageForm("");
-        setblogForm("");
         setBrokerageFormOtp("");
         setBrokerageThankuPopup("");
-        setBlogFormOtp('');
-        setBlogThankuPopup('');
         }
 
         if (!isMobile.current && props.isPopupVisible) {
