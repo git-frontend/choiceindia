@@ -54,7 +54,11 @@ function NewDematAccountForm(props) {
     const [blogThankuPopup, setBlogThankuPopup] = useState("");
     const [blogPopUpForm, setBlogPopUpForm] = useState("");
     const otpVerify = useRef("");
-    
+
+    //Adding dynamic classes for brokerage-charges demat lead form
+    const [brokerageForm,setBrokerageForm]=useState("");
+    const [brokerageFormOtp,setBrokerageFormOtp] = useState("");
+    const [BrokerageThankuPopup, setBrokerageThankuPopup] = useState("");
 
     /** state to show thankyou popup (add-lead) */
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
@@ -176,6 +180,18 @@ function NewDematAccountForm(props) {
             setBlogFormOtp('');
             setBlogThankuPopup('');
         }
+
+        if(window.location.pathname.includes("brokerage-charges") && window.innerWidth<=992){
+        setBrokerageForm("brokerage-lead-form");
+        setBrokerageFormOtp("brokerage-form-otp");
+        setBrokerageThankuPopup("brokerage-thanku-popup");
+        }
+        else{
+        setBrokerageForm("");
+        setBrokerageFormOtp("");
+        setBrokerageThankuPopup("");
+        }
+
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
                 showOpenAccountAdPopup();
@@ -645,7 +661,7 @@ function NewDematAccountForm(props) {
             {
                 !showOTP && !showThanku.showModal && (
                 <div className={`${blogPopUpForm}`}>
-                     <div className={`demat-account-form demat-account-form-new ${blogForm}`} id="dematform">
+                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${brokerageForm}`} id="dematform">
 
                        {
                        
@@ -911,7 +927,7 @@ function NewDematAccountForm(props) {
                  window.location.pathname.includes("corporate-demat-account") ||
                  window.location.pathname.includes("demat-account")
                  || window.location.pathname.includes("mutual-funds-investment")) && 'demat-form-wrapper'}`}>
-                   <div className={`demat-account-form demat-account-form-new ${blogThankuPopup}`}>
+                   <div className={`demat-account-form demat-account-form-new ${blogThankuPopup} ${BrokerageThankuPopup}`}>
                         <div className="thank-you-msg">
                             <div className="thank-logo">
                                 <div className="blog-thnu-circle">
@@ -934,7 +950,7 @@ function NewDematAccountForm(props) {
             {
                 showOTP && !showThanku.showModal && (
                     <div className={`${blogPopUpForm}`}>
-                      <div className={`demat-account-form demat-account-form-new ${blogFormOtp}`}>
+                      <div className={`demat-account-form demat-account-form-new ${blogFormOtp} ${brokerageFormOtp}`}>
                         <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} setIsActive={props.setIsActive} openAccount={props.openAccount} setBlogPopUpForm={setBlogPopUpForm} blogPop={props.blogPop} isPopUp={isPopUp}  updateType={updateType} ></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
