@@ -835,6 +835,20 @@ function NewDematAccountForm(props) {
                        }}>&times;</span>} 
                           
                       </div>)}
+
+                      {
+                      (window.location.pathname.includes('brokerage-charges') &&
+                    window.innerWidth<=992) &&
+                      <span className="close-btn-mdl" onClick={() => {
+                        props.setIsActive(false);
+                        // props.openAccount.current.style.zIndex = 9999999999;
+                        // setBlogPopUpForm('');
+                        // setIsPopUp(false);
+                        // props.blogPop(false);  
+                        // setHighlightForm(false);
+                        // props.modifyHighLight(false);
+                }}>&times;</span>
+                      }
                         <Form>
                             <Form.Group className= "mb-3 formgrp formgrp-new">
                                 <Form.Label>Mobile Number*</Form.Label>
