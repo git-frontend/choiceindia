@@ -11,6 +11,7 @@ import CommonModal from "./CommonModal";
 import { useState } from "react";
 import { useEffect } from "react";
 import Marquee from 'react-fast-marquee';
+import investorcharter from "../../assets/images/INVESTOR CHARTER.pdf";
 function Footer() {
   const [check, setCheck] = useState(false);
   let toggleModal = (val) => {
@@ -165,6 +166,9 @@ function Footer() {
                             </li>
                             <li>
                               <Link to="/track-record-page" className="generic-id-footer">Track Record</Link>
+                            </li>
+                            <li>
+                              <div onClick={() => { window.open(investorcharter) }} className="generic-id-footer pdffooter">Investor Charter</div>
                             </li>
                             <li>
                               <a href="https://finx.choiceindia.com/auth/login?redirectUrl=https://accounts.choiceindia.com/modification" className="generic-id-footer" target="_blank">Online KYC Updation</a>

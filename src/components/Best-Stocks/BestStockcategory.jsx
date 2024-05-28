@@ -885,7 +885,9 @@ function BestStockcategory() {
                 </div>
               </div>
             </section>
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
             <NewFormSection sections={sections} />
+            </GoogleReCaptchaProvider>
             <section className="readmoresection readmorecontent">
               <div className="container">
 
