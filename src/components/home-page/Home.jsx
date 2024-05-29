@@ -65,12 +65,12 @@ function Home() {
         setShowTermsCondition(false);
     }
 	useEffect(() => {
-		setTrigger(true)
-		if (trigger === true) {
+		// setTrigger(true)
+		// if (trigger === true) {
 			handleTermsConditionShow()
-		}
+		// }
   
-	 }, [trigger])
+	 }, [])
 	return (
 		<div className="Home">
 
@@ -155,7 +155,7 @@ function Home() {
 
 						<p>Important Announcement: Beware of Fraudulent Entities Claiming to be Choice or its associates</p>
 
-						<p><strong>This is to inform you all that our official website is <Link to="/">www.choiceindia.com</Link>.</strong></p>
+						<p><strong>This is to inform you all that our official website is <a href="/">www.choiceindia.com</a>.</strong></p>
 
 						<p>Please be advised that any person or business claiming to be "Choice" or using a similar name/logo without our official website domain is not associated with us.</p>
 
