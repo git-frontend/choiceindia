@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
 import NewDematAccountForm from '../Common-features/NewDematAccountForm';
@@ -10,6 +10,8 @@ import icon3 from '../../assets/images/Brokerage-New/0-auto-square-off-with-lowe
 import icon4 from '../../assets/images/Brokerage-New/Low-brokerage-and-Rs.-0-call-&-trade.svg';
 function Banner() {
     const [ischeck, setIscheck] = useState(false);
+    const [formMobile, setFormMobile] = useState('');
+    const [isActive,setIsActive]=useState(false);
     function chapterScroll2(id) {
         var element = document.getElementById(id);
         var headerOffset = 140;
@@ -20,6 +22,16 @@ function Banner() {
             behavior: "smooth"
         });
     }
+
+    useEffect(()=>{
+    if(window.innerWidth<=992){
+    setFormMobile('form-mobile')
+    }
+    else{
+    setFormMobile('')
+    }
+    },[])
+
     const settings1 = {
         infinite: false,
         speed: 1500,
@@ -83,15 +95,17 @@ function Banner() {
                           
                                     <div className="col-xl-5 col-md-6">
                                         <div className="d-flex justify-content-center justify-content-lg-end" id="dematform">
-                                            {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz"> */}
-                                                <NewDematAccountForm />
+                                        <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')}>
+                                         {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz"> */}
+                                         <NewDematAccountForm setIsActive={setIsActive}/>
                                             {/* </GoogleReCaptchaProvider> */}
+                                        </div>
                                         </div>
                                     </div> 
                         </div>
                         <div className={name}>
                             <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={() => { chapterScroll2('dematform') }}>Open Free Account</button>
+                                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={() => {setIsActive(true);}}>Open Free Account</button>
                             </div>
                         </div>
                     </div>
