@@ -32,7 +32,7 @@ const ReferFaqs=()=>{
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title-first text-center pb-4">Mutual Fund Distributor FAQ's</h2>
+                            <h2 className="title-first text-center pb-4">Refer & Earn FAQ's</h2>
                         </div>
 
                     </div>
@@ -40,33 +40,43 @@ const ReferFaqs=()=>{
                         <div className="col-md-12">
                             <Accordion defaultActiveKey="0" activeKey={activeKey} flush className='open-demat-faqs-accordion'>
                                 <Accordion.Item eventKey="0" className='faq-item'>
-                                    <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("0")}>Is it necessary to clear the NISM exam to become a mutual fund distributor in India?</Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("0")}>How do I earn money by referring a Demat account?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        To become a mutual fund distributor, one must gain knowledge about the products and intricacies of mutual funds. Hence, obtaining an AMFI certification is necessary.
+                                    By participating in the Choice Demat Account Refer and Earn program, you can earn attractive rewards for successful referrals. As an existing Choice customer, you'll generate a unique referral link to share with friends and family.
+                                    <br/><br/>
+                                    When someone uses your link to open a new Demat account with Choice and completes their first trade, you'll receive a ₹500* brokerage reversal. It's a win-win – your friends enjoy our seamless trading experience, and you earn a reward for introducing them to Choice.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>
-                                    <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("1")}>What are the career prospects of being a mutual fund distributor?</Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("1")}>What rewards do my friends and I get for referring a Demat account?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        The future prospects of mutual funds in India are promising due to the growing MF industry and investors, the increase in demand for mutual funds, and the number of available mutual fund distributors in India. Opting for this career has many advantages such as being your own boss, earning passive income, etc. Also, one has the flexibility to earn income as per his/her goals as the payment is subjective to selling maximum schemes.
+                                    The Refer and Earn program benefits both parties:
+                                    <ul>
+                                    <li>For you (the referrer): You'll receive a brokerage reversal of ₹500* for every successful referral.</li>
+                                    <li>For your friend (the referee): They get to experience Choice's exceptional trading platform and services.</li>
+                                    </ul>
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="2" className='faq-item'>
-                                    <Accordion.Header as="h3" className='faq-header'onClick={() => toggleAccordion("2")}>What is the process for senior citizens to become a mutual fund distributor?</Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'onClick={() => toggleAccordion("2")}>Is there a limit on the number of referral Demat accounts?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        Mutual Funds provide senior citizens with the opportunity to channel their energies into creating a source of income. For this, senior citizens are individuals who qualify under the criteria stipulated by SEBI vide its Circular No. CIR/ MFD/DF/5/2010 dated June 24, 2010, i.e., a person who has attained the age of 50 years as of May 31, 2010, OR a person who has at least 10 years experience in the securities market as of May 31, 2010.
+                                    No, there's no limit on the number of referrals you can make. The more friends and family you introduce to Choice, the more you can potentially earn through brokerage reversals. However, share your referral link responsibly, only with those genuinely interested in opening a Demat account.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="3" className='faq-item'>
-                                    <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("3")}>How to become a mutual fund distributor?</Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("3")}>What are the requirements for the referral Demat account program?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        Anyone holding an AMFI certificate is eligible to become a Mutual Fund distributor. In order to become a mutual fund distributor with Choice, one can fill in the registration details. An expert team shall assist them via <a href="mailto:customercare@investica.com">customercare@investica.com</a> or +91 8080808875, once the details have been verified and approved.<br />Note: Investica is a part of Choice Wealth Pvt Ltd. and registered under the ARN Code: 78908
+                                    To participate, you must be an existing client of Choice Equity Broking Limited. Additionally:
+                                    <ul>
+                                    <li>Your referral must use your unique link to open a new Demat account.</li>
+                                    <li>Your referral must complete their first trade for you to receive the reward.</li>
+                                    </ul>
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="4" className='faq-item' id="Faqid">
-                                    <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("4")}>In what form do mutual fund distributors earn revenue?</Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("4")}>How do I track my Demat account referral status?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        Mutual fund distributors earn revenue in the form of commissions. These commissions are a percentage of the investment made by the clients they bring in. The more clients they have and the more those clients invest, the higher their earnings.
+                                    Tracking referrals is easy with Choice's FinX mobile app or trading platform. Once your referral opens an account using your link and completes their first trade, the referral reward will be credited to your account ledger.
                                     </Accordion.Body>
                                 </Accordion.Item>
 
@@ -77,41 +87,34 @@ const ReferFaqs=()=>{
                                 view ?
                                     <Accordion defaultActiveKey=" " activeKey={activeKey} flush className='open-demat-faqs-accordion'>
                                         <Accordion.Item eventKey="5" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("5")}> Is the mutual fund distribution business profitable?</Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("5")}>How long does it take to receive my Demat referral reward?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                                Yes, the mutual fund distribution business can be highly profitable. The profitability depends on the individual's ability to sell and the number of clients they can acquire. The more you sell, the more you earn.
+                                            Referral rewards are processed at the end of each month. After your referral completes account opening and their first trade, you'll receive the ₹500* brokerage reversal in your account ledger during the next monthly cycle.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="6" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("6")}>With which agency are mutual fund distributors registered?</Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("6")}>Can I refer friends outside of India?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                                Mutual fund distributors are registered with the Association of Mutual Funds in India (AMFI) and must hold a valid ARN (AMFI Registration Number) issued by the National Institute of Securities Markets (NISM).
+                                            No, the Choice Demat Account Refer and Earn program is currently available for Indian residents only, as per regulatory guidelines.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="7" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("7")}>How much does a mutual fund distributor earn?</Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("7")}>Can I use social media to share my Demat referral link?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                                The earning potential of a mutual fund distributor is not capped and depends entirely on the individual's ability to sell. The more mutual fund units you sell, the higher your earnings.
+                                            Yes, you can share your referral link on social media platforms. However, exercise caution and avoid unsolicited promotions or spamming. Only share with individuals who have expressed interest in opening a Demat account.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="8" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("8")}>When will I get the commission on the investment? </Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("8")}>How do I generate my referral link? </Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                                Commissions are released on a monthly basis at Choice. You can track the status of your clients' payments with the CRM access provided to you once you are registered with Choice.
+                                            Generating your unique referral link is simple.  Log in to your Choice trading account or FinX mobile app, navigate to the Refer and Earn section, and follow the prompts to create your personalized referral link. Once generated, share it via social media, messaging apps, or email.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="9" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("9")}>What is the minimum and maximum age to apply for ARN?
+                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("9")}>What happens if my referral closes their Demat account?
                                             </Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                                The minimum age to apply for an ARN and become a Mutual Fund distributor is 18 years. There is no maximum age limit.
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                        <Accordion.Item eventKey="10" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header' onClick={() => toggleAccordion("10")}>Why is the ARN Code Necessary?
-                                            </Accordion.Header>
-                                            <Accordion.Body className='open-demat-faq-body'>
-                                                The ARN Code is mandated by regulators for every mutual fund distributor. It ensures that all distributors are qualified and authorized to sell mutual fund units.
+                                            If a referral closes their account after you've received the reward, the referral reward will remain credited to your account. However, ensure your referrals have a genuine interest in maintaining their accounts and engaging in trading activities long-term.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {
