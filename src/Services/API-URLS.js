@@ -327,7 +327,7 @@ export class API_URLS {
   schemeTopSectors = "Scheme/topsectors";
   schemeMarketCap = "Scheme/marketcap";
   schemeTopHoldings = "Scheme/topholdings";
-
+  investorcharterdata="items/Investor_Charter_Grievances";
   /* For Solar Lead Form URL */
   solarLead="api/newLeadDetail";
  /* For generate sso token*/
@@ -1047,4 +1047,7 @@ export class API_URLS {
   getSSOTokenURL(){
     return this.ssoRegisterServerURL+this.ssoRegisterTokenGet;
    }
+   getinvestorcharterdataURL() {
+    return this.CMSURL + this.investorcharterdata;
+  }
 }
