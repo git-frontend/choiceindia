@@ -10,6 +10,7 @@ import FreeAmc from "../../assets/images/brokerage-calculator/Free_AMC_for_First
 import LowDP from "../../assets/images/brokerage-calculator/Low_DP_charges.svg";
 import  NoAutoSquare from "../../assets/images/brokerage-calculator/No-Auto-Square.svg";
 import FreeResearch from "../../assets/images/brokerage-calculator/Free_Research_Advisory.svg";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function BrokerageCalculator() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -47,7 +48,10 @@ function BrokerageCalculator() {
     <div>
         <Banner />
         {/* <OpenFreeDematAccount/> */}
+        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
+       
         <NewFormSection sections={sections} />
+        </GoogleReCaptchaProvider>
         <MoreContent/>
     </div>
   );

@@ -19,6 +19,7 @@ import FreeAmc from "../../assets/images/share-market-holidays/Free-Account-Open
 import LowDP from "../../assets/images/share-market-holidays/Free-Expert-Research.svg";
 import NoAutoSquare from "../../assets/images/share-market-holidays/Low-DP-charges.svg";
 import FreeResearch from "../../assets/images/share-market-holidays/Zero-Auto-Square.svg";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function Holidayscategory() {
 
 
@@ -628,7 +629,9 @@ function Holidayscategory() {
                 </div>
               </div>
             </section>
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
             <NewFormSection sections={sections} />
+            </GoogleReCaptchaProvider>
             <section className="readmoresection holiday-readmore">
               <div className="container">
 
