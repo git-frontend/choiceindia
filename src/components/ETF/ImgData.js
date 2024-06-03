@@ -151,7 +151,7 @@ const img_data = [
 
     {
         "id": "address-img-3",
-        "img": `<a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a>  <img src=${image26} class="img-fluid pl10" />`
+        "img": `<a href="mailto:care@choiceindia.com">care@choiceindia.com</a>  <img src=${image26} class="img-fluid pl10" />`
     },
 
     {

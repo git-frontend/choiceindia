@@ -12,6 +12,7 @@ import Readymade_Baskets from '../../assets/images/sip-calculator/Readymade_Bask
 import Goal_Based_Investment from '../../assets/images/sip-calculator/Goal_Based_Investment.svg';
 import Choice_Rated_Schemes from '../../assets/images/sip-calculator/Choice_Rated_Schemes.svg';
 import NewFormSection from '../Common-features/NewFormSection';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function MutualFundCalculator() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -49,7 +50,9 @@ function MutualFundCalculator() {
     <div>
         <Banner />
         {/* <OpenFreeDematAccount/> */}
+        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
         <NewFormSection sections={sections} />
+        </GoogleReCaptchaProvider>
         <MoreContent/>
         <MutualFaq/>
     </div>

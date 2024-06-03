@@ -57,7 +57,7 @@ function Footer() {
                       <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024
                       | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
-                      For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> | Online Dispute Resolution Link: <a href="https://smartodr.in/login" target="_blank">https://smartodr.in/login</a></p>
+                      For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:care@choiceindia.com">care@choiceindia.com</a> | Online Dispute Resolution Link: <a href="https://smartodr.in/login" target="_blank">https://smartodr.in/login</a></p>
 
                     <p>Cautionary Message :
                       <ol style={{ marginleft: "-1rem" }} className="ol-p0">

@@ -30,7 +30,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     const [otpSessionID, setOTPSessionID] = useState(null)
     var source = useRef('');
     // var otpSessionID = useRef('');
-    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1) || (window.location.pathname.indexOf('/corporate-demat-account') > -1)||(window.location.pathname.indexOf('sip-calculator') > -1)||(window.location.pathname.indexOf('mutual-fund-calculator') > -1)||(window.location.pathname.indexOf('margin-calculator') > -1)||(window.location.pathname.indexOf('brokerage-calculator') > -1)||(window.location.pathname.indexOf('futures-and-options-margin-calculator') > -1)||(window.location.pathname.indexOf('commodity-margin-calculator') > -1)||(window.location.pathname.indexOf('forex-margin-calculator') > -1)) ? 'Best-Stock' : "Blog";
+    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) ||(window.location.pathname.indexOf('brokerage-charges') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1) || (window.location.pathname.indexOf('/corporate-demat-account') > -1)||(window.location.pathname.indexOf('sip-calculator') > -1)||(window.location.pathname.indexOf('mutual-fund-calculator') > -1)||(window.location.pathname.indexOf('margin-calculator') > -1)||(window.location.pathname.indexOf('brokerage-calculator') > -1)||(window.location.pathname.indexOf('futures-and-options-margin-calculator') > -1)||(window.location.pathname.indexOf('commodity-margin-calculator') > -1)||(window.location.pathname.indexOf('forex-margin-calculator') > -1)) ? 'Best-Stock' : "Blog";
 
     const UnlistBlog = (window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'yes' : "";
 
@@ -49,6 +49,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         window.location.pathname.includes('brokerage-calculator') ||
         window.location.pathname.includes('futures-and-options-margin-calculator') ||
         window.location.pathname.includes('commodity-margin-calculator') ||
+        window.location.pathname.includes('brokerage-charges') ||
         window.location.pathname.includes('forex-margin-calculator')
     ) ? 'New_form_main' : '';
     
@@ -57,8 +58,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     var otpLeadID = useRef('');
     var referLink = useRef('');
     const [captchaToken, setCaptchaToken] = useState('');
-    const { executeRecaptcha } = useGoogleReCaptcha();
-
+  
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '' });
 
@@ -284,6 +284,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     useEffect(() => {
         fetchQueryParams();
     }, []);
+
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     // Create an event handler so you can call the verification on button click event or form submit
     const handleReCaptchaVerify = useCallback(async () => {
