@@ -101,7 +101,7 @@ function InvestorCharterGrievances() {
             <div className="container">
               <div className="row">
                 <div className="col-md-12">
-                  <h1 className='text-center mt-5 mb-4 big-ttl'>Investor Charter Grievances</h1>
+                  <h1 className='text-center mt-5 mb-4 big-ttl'>Investor Grievances</h1>
                   <p class="subtext text-center"> (Choice Capital Advisors Pvt Ltd, a SEBI Registered Category 1 Merchant Banker with license number: INM000011872 is a wholly owned subsidiary of Choice International Limited.)</p>
                 </div>
                 

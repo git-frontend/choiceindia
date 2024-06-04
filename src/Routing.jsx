@@ -1091,7 +1091,7 @@ function Routing() {
                                 < LazyBrokerageChargesNew />
                             </React.Suspense>
                         } />
-                        <Route exact path='/investor-charter-grievances' element={
+                        <Route exact path='/investor-grievances' element={
                             <React.Suspense>
                                 < LazyInvestorCharterGrievances />
                             </React.Suspense>
