@@ -17,7 +17,7 @@ function WhyChoiceIPO() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-first text-center">Why Choice for Investment?</h2>
+              <h2 className="title-first text-center">Investing in Mutual Funds got Easier with Choice</h2>
             </div>
           </div>
           <div className="row justify-content-center">
