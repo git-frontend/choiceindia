@@ -46,7 +46,7 @@ function LowBrokerageCurrencyTrading() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="text-center">
-                                <h2 className="secttitle">Open a Low Brokerage Forex Trading Account</h2>
+                                <h2 className="secttitle">Currency Trading at Minimal Charges</h2>
                                 <p>Brokerage is charged on a percentage basis for Intraday, Delivery and Futures while the brokerage for Options is calculated on the basis of a flat fee.</p>
                             </div>
                         </div>

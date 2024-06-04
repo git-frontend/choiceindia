@@ -68,7 +68,8 @@ const CurrencyTradingBanner = () => {
                         <div>
                             <span className="banner-title2">All in 1 Account</span>
                             <h1 className="banner-title" >
-                            <div className="desktop">Open a  Currency Trading <br />  Account <span className="yellow">Online For Free</span></div>
+                            <div className="desktop">Open Forex Trading
+                             Account <br /> <span className="yellow">Online For Free</span></div>
                             </h1>
                         </div>
                        
