@@ -275,7 +275,7 @@ function OurTrackRecordSaysAll() {
     setRenderCount(true)
     if (rendercount === true) {
       
-      generateSessionId()
+      FandOstocks()
     }
   }, [rendercount])
 
