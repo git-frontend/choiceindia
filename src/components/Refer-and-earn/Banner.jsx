@@ -123,7 +123,7 @@ function Banner() {
           <div className="row align-items-center">
             <div className="col-xl-6 col-md-7">
               <div className="sec-banner-left">
-                <h1>Join the Best Demat Account Refer and Earn Program</h1>
+                <h1>Join the Best Refer and Earn Demat Account Program</h1>
                 <div className="banner-box">
                   <p>
                   Invite your friends and get <span>₹500*</span> brokerage reversal per referral.

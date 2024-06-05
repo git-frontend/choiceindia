@@ -204,6 +204,7 @@ const LazyLeadForm =React.lazy(()=> import('./components/Lead-Form/LeadForm'));
 const LazyBugBountyProgram =React.lazy(()=> import('./components/Bug-bounty-program/BugBountyProgram'));
 const LazyUnder25 =React.lazy(()=> import('./components/Under-25/Under25'));
 const LazyBrokerageChargesNew = React.lazy(() => import('./components/Brokerage-New/BrokerageChargesNew'));
+const LazyInvestorCharterGrievances = React.lazy(() => import('./components/Investor-Charter-Grievances/InvestorCharterGrievances'));
 function Routing() {
 
     
@@ -1088,6 +1089,11 @@ function Routing() {
                         <Route exact path='/brokerage-charges' element={
                             <React.Suspense>
                                 < LazyBrokerageChargesNew />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/investor-grievances' element={
+                            <React.Suspense>
+                                < LazyInvestorCharterGrievances />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
