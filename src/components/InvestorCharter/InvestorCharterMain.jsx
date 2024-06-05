@@ -14,43 +14,43 @@ function InvestorCharterMain() {
     let values;
     let AllFilesValue = {};
 
-    function loadcebplStock2() {
-        cmsService.InvestorCharter().
-            then(
-                res => {
-                    if (res && res.data && res.data.data) {
-                        setisloading(false)
-                        values = res.data.data;
-                        
-                        values.forEach(ele => {
+    // function loadcebplStock2() {
+    //     cmsService.InvestorCharter().
+    //         then(
+    //             res => {
+    //                 if (res && res.data && res.data.data) {
+    //                     setisloading(false)
+    //                     values = res.data.data;
+    //                     console.log("Data is ",values);
+    //                     values.forEach(ele => {
 
-                            if (!AllFilesValue[ele.heading]) {
-                                AllFilesValue[ele.heading] = [];
-                                AllFilesValue[ele.heading].push(ele)
-                            } else {
-                                AllFilesValue[ele.heading].push(ele)
+    //                         if (!AllFilesValue[ele.heading]) {
+    //                             AllFilesValue[ele.heading] = [];
+    //                             AllFilesValue[ele.heading].push(ele)
+    //                         } else {
+    //                             AllFilesValue[ele.heading].push(ele)
 
-                            }
-                        })
-                        setDatalist(AllFilesValue);
-                        // console.log("data",AllFilesValue)
-                    } else {
-                        setisloading(false)
-                        setDatalist([]);
+    //                         }
+    //                     })
+    //                     setDatalist(AllFilesValue);
+    //                     console.log("data",AllFilesValue)
+    //                 } else {
+    //                     setisloading(false)
+    //                     setDatalist([]);
 
-                    }
+    //                 }
 
-                }
-            ).catch((error) => {
-                setisloading(false)
-                setDatalist([]);
-            });
+    //             }
+    //         ).catch((error) => {
+    //             setisloading(false)
+    //             setDatalist([]);
+    //         });
 
-    }
+    // }
     useEffect(() => {
         setTrigger(true)
         if (trigger === true) {        
-            loadcebplStock2()
+            cmsService.cmsAPIcall(cmsService.InvestorCharter,setisloading,setDatalist,"investor-charter");
         }
 
     }, [trigger])

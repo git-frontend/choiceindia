@@ -13,26 +13,26 @@ function CFPLPoliciesMain() {
     const [trigger, setTrigger] = useState(false);
     const [isloading, setisloading] = useState(true);
 
-    function loadcfplPolicy() {
-        cmsService.CfplPolicy().then(
-            res => {
-                if (res) {
-                    setisloading(false)
-                    setData(res.data.data);
+    // function loadcfplPolicy() {
+    //     cmsService.CfplPolicy().then(
+    //         res => {
+    //             if (res) {
+    //                 setisloading(false)
+    //                 setData(res.data.data);
 
 
-                } else {
-                    setisloading(false)
-                    setData([]);
+    //             } else {
+    //                 setisloading(false)
+    //                 setData([]);
 
-                }
+    //             }
 
-            }
-        ).catch((error) => {
-            setisloading(false)
-            setData([]);
-        });
-    }
+    //         }
+    //     ).catch((error) => {
+    //         setisloading(false)
+    //         setData([]);
+    //     });
+    // }
 
 
 
@@ -41,7 +41,7 @@ function CFPLPoliciesMain() {
         setTrigger(true)
 
         if (trigger === true) {
-            loadcfplPolicy()
+            cmsService.cmsAPIcall(cmsService.CfplPolicy,setisloading,setData);
 
         }
 

@@ -13,26 +13,26 @@ function CEBPLPoliciesMain() {
     const [trigger, setTrigger] = useState(false);
     const [isloading, setisloading] = useState(true);
 
-    function loadcebplPolicy() {
-        cmsService.CebplPolicy().then(
-            res => {
-                if (res) {
-                    setisloading(false)
-                    setData(res.data.data);
+    // function loadcebplPolicy() {
+    //     cmsService.CebplPolicy().then(
+    //         res => {
+    //             if (res) {
+    //                 setisloading(false)
+    //                 setData(res.data.data);
 
 
-                } else {
-                    setisloading(false)
-                    setData([]);
+    //             } else {
+    //                 setisloading(false)
+    //                 setData([]);
 
-                }
+    //             }
 
-            }
-        ).catch((error) => {
-            setisloading(false)
-            setData([]);
-        });
-    }
+    //         }
+    //     ).catch((error) => {
+    //         setisloading(false)
+    //         setData([]);
+    //     });
+    // }
 
 
 
@@ -41,8 +41,7 @@ function CEBPLPoliciesMain() {
         setTrigger(true)
 
         if (trigger === true) {
-            loadcebplPolicy()
-
+            cmsService.cmsAPIcall(cmsService.CebplPolicy,setisloading,setData)
         }
 
     }, [trigger])

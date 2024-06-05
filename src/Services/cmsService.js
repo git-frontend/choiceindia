@@ -68,6 +68,41 @@ insightService: function () {
 })
 },
 
+/** Created a common function for CMS API */
+cmsAPIcall:function(value,setisloading,setData,tag){
+value().then((res)=>{
+if(res){
+    setisloading(false);
+
+    if(tag==="investor-charter"){
+    const values=res.data.data;
+    const AllFilesValue = {};
+    //seperating data headings wise
+    values.forEach(ele => {
+
+        if (!AllFilesValue[ele.heading]) {
+            AllFilesValue[ele.heading] = [];
+            AllFilesValue[ele.heading].push(ele)
+        } else {
+            AllFilesValue[ele.heading].push(ele)
+
+        }
+    })
+    setData(AllFilesValue);
+    return;
+    }
+    setData(res.data.data);
+}
+else{
+    setisloading(false)
+    setData([]);
+}
+}).catch((err)=>{
+   setisloading(false);
+   setData([]);
+});
+},
+
 /** for CEBPL Polices page */
 CebplPolicy: function () {
 

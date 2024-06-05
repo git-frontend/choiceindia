@@ -11,26 +11,26 @@ function InvestorAwarenessMain() {
     const [trigger, setTrigger] = useState(false);
     const [isloading, setisloading] = useState(true);
 
-    function loadinvestorAware() {
-        cmsService.InvestorAware().then(
-            res => {
-                if (res) {
-                    setisloading(false)
-                    setData(res.data.data);
+    // function loadinvestorAware() {
+    //     cmsService.InvestorAware().then(
+    //         res => {
+    //             if (res) {
+    //                 setisloading(false)
+    //                 setData(res.data.data);
 
 
-                } else {
-                    setisloading(false)
-                    setData([]);
+    //             } else {
+    //                 setisloading(false)
+    //                 setData([]);
 
-                }
+    //             }
 
-            }
-        ).catch((error) => {
-            setisloading(false)
-            setData([]);
-        });
-    }
+    //         }
+    //     ).catch((error) => {
+    //         setisloading(false)
+    //         setData([]);
+    //     });
+    // }
 
 
 
@@ -39,8 +39,7 @@ function InvestorAwarenessMain() {
         setTrigger(true)
 
         if (trigger === true) {
-            loadinvestorAware()
-
+            cmsService.cmsAPIcall(cmsService.InvestorAware,setisloading,setData);
         }
 
     }, [trigger])
