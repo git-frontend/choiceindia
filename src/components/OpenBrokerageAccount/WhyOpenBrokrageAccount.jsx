@@ -52,7 +52,7 @@ function WhyOpenFreeDematAccount() {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="sectext">
-                                <h2>Why Open A Free Brokerage Account Online With Us?</h2>
+                                <h2 className="sectext-heading">Benefits of Opening Brokerage Account with Choice</h2>
                             </div>
                         </div>
                         <div className="col-md-8">

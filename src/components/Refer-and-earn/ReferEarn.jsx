@@ -6,6 +6,9 @@ import TermCondition from './TermCondition';
 import EarnUp from './EarnUp';
 import Template3 from '../Common-features/Template3';
 import {useState, useEffect} from 'react';
+import ReferTestimonial from "./ReferTestimonial";
+import "../OnlineTradingApp/online-trading-app.scss";
+import ReferFaqs from "./ReferFaqs";
 import {
   useLocation,
 } from 'react-router-dom';
@@ -52,6 +55,8 @@ function ReferEarn() {
             <HowChoice />
             <TermCondition />
             <EarnUp />
+            {/* <ReferTestimonial/> */}
+            <ReferFaqs/>
           </div>
       }
     </>
