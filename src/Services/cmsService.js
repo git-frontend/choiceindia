@@ -78,13 +78,13 @@ if(res){
     const values=res.data.data;
     const AllFilesValue = {};
     //seperating data headings wise
-    values.forEach(ele => {
+    values.forEach(element => {
 
-        if (!AllFilesValue[ele.heading]) {
-            AllFilesValue[ele.heading] = [];
-            AllFilesValue[ele.heading].push(ele)
+        if (!AllFilesValue[element.heading]) {
+            AllFilesValue[element.heading] = [];
+            AllFilesValue[element.heading].push(element)
         } else {
-            AllFilesValue[ele.heading].push(ele)
+            AllFilesValue[element.heading].push(element)
 
         }
     })
