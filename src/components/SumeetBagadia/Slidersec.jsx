@@ -11,6 +11,7 @@ import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function Slidersec() {
 
     const [research, setResearch] = useState([]);
+    const [render,setRender]=useState(false);
     const [isloading,setisloading ] = useState(true);
 
     const settings = {
@@ -123,9 +124,12 @@ function Slidersec() {
     }
 
     useEffect(() => {
-        fetchExpertResearchReport();
+       setRender(true);
+       if(render==true){
+       fetchExpertResearchReport();
+       }
        // console.log('RRR',research.length);
-    }, []);
+    }, [render]);
 
     return (
         <div>
