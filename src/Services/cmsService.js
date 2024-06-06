@@ -87,30 +87,27 @@ else{
 
 /** Created CMS common function for seperating data based on category */
 loadCmsData:function(func,setisloading,setDatalist,category){
-const AllFilesValue={};
-func().then((res)=>{
-if(res){
-setisloading(false);
-let values=res.data.data;
-values.forEach((element)=>{
-if(!AllFilesValue[element[category]]){
-AllFilesValue[element[category]]=[];
-AllFilesValue[element[category]].push(element);
-} 
-else{
-AllFilesValue[element[category]].push(element);
-}
-})
-setDatalist(AllFilesValue);
-}
-else{
-setisloading(false);
-setDatalist([]);
-}
-}).catch((err)=>{
- setisloading(false);
- setDatalist([]);
-})
+const AllFilesValue = {};
+func()
+  .then((res) => {
+    if (res) {
+      let values = res.data.data;
+      values.forEach((element) => {
+        if (!AllFilesValue[element[category]]) {
+          AllFilesValue[element[category]] = [];
+        }
+        AllFilesValue[element[category]].push(element);
+      });
+      setDatalist(AllFilesValue);
+    } else {
+        setDatalist([]);
+    }
+    setisloading(false);
+  })
+  .catch((err) => {
+    setisloading(false);
+    setDatalist([]);
+  });
 },   
 /** for CEBPL Polices page */
 CebplPolicy: function () {
