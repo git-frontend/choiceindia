@@ -171,6 +171,9 @@ function Footer() {
                               <div onClick={() => { window.open(investorcharter) }} className="generic-id-footer pdffooter">Investor Charter</div>
                             </li>
                             <li>
+                              <Link to="/investor-grievances" className="generic-id-footer">Investor Grievances</Link>
+                            </li>
+                            <li>
                               <a href="https://finx.choiceindia.com/auth/login?redirectUrl=https://accounts.choiceindia.com/modification" className="generic-id-footer" target="_blank">Online KYC Updation</a>
                             </li>
                           </ul>
