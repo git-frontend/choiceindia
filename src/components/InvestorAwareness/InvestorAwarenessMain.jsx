@@ -167,6 +167,8 @@ function InvestorAwarenessMain() {
                                 }
                             </div>
                     }
+    
+    <h4>Monitoring of Collateral:</h4>
 
     <p className="pt-3">In order to provide visibility of client-wise collateral at all levels, viz., TM, CM and Clearing Corporation (CC) as 
     prescribed by SEBI vide circular no.SEBI/HO/MRD2_DCAP/CIR/2021/0598 dated July 20, 2021, ICCL has provided a web 
