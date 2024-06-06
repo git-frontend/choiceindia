@@ -69,28 +69,10 @@ insightService: function () {
 },
 
 /** Created a common function for CMS API */
-cmsAPIcall:function(value,setisloading,setData,tag){
+cmsAPIcall:function(value,setisloading,setData){
 value().then((res)=>{
 if(res){
     setisloading(false);
-
-    if(tag==="investor-charter"){
-    const values=res.data.data;
-    const AllFilesValue = {};
-    //seperating data headings wise
-    values.forEach(element => {
-
-        if (!AllFilesValue[element.heading]) {
-            AllFilesValue[element.heading] = [];
-            AllFilesValue[element.heading].push(element)
-        } else {
-            AllFilesValue[element.heading].push(element)
-
-        }
-    })
-    setData(AllFilesValue);
-    return;
-    }
     setData(res.data.data);
 }
 else{
@@ -103,6 +85,33 @@ else{
 });
 },
 
+/** Created CMS common function for seperating data based on category */
+loadCmsData:function(func,setisloading,setDatalist,category){
+const AllFilesValue={};
+func().then((res)=>{
+if(res){
+setisloading(false);
+let values=res.data.data;
+values.forEach((element)=>{
+if(!AllFilesValue[element[category]]){
+AllFilesValue[element[category]]=[];
+AllFilesValue[element[category]].push(element);
+} 
+else{
+AllFilesValue[element[category]].push(element);
+}
+})
+setDatalist(AllFilesValue);
+}
+else{
+setisloading(false);
+setDatalist([]);
+}
+}).catch((err)=>{
+ setisloading(false);
+ setDatalist([]);
+})
+},   
 /** for CEBPL Polices page */
 CebplPolicy: function () {
 

@@ -13,45 +13,46 @@ function OfferDocumentMenu() {
     let values;
     let AllFilesValue = {};
 
-    function loadFileDownload() {
-        cmsService.documentList().
-            then(
-                res => {
-                    if (res && res.data && res.data.data ) {
-                        setisloading(false)
-                        // console.log("dddee",res.data.data)
-                        values = res.data.data;
-                        // console.log("ddd",values)
-                        values.forEach(ele => {
+    // function loadFileDownload() {
+    //     cmsService.documentList().
+    //         then(
+    //             res => {
+    //                 if (res && res.data && res.data.data ) {
+    //                     setisloading(false)
+    //                     // console.log("dddee",res.data.data)
+    //                     values = res.data.data;
+    //                     console.log("ddd",values)
+    //                     values.forEach(ele => {
 
-                            if (!AllFilesValue[ele.title]) {
-                                AllFilesValue[ele.title] = [];
-                                AllFilesValue[ele.title].push(ele)
-                            } else {
-                                AllFilesValue[ele.title].push(ele)
+    //                         if (!AllFilesValue[ele.title]) {
+    //                             AllFilesValue[ele.title] = [];
+    //                             AllFilesValue[ele.title].push(ele)
+    //                         } else {
+    //                             AllFilesValue[ele.title].push(ele)
 
-                            }
-                        })
-                        setDatalist(AllFilesValue);
-                        // console.log("check",AllFilesValue)
-                    } else {
-                        setisloading(false)
-                        setDatalist([]);
+    //                         }
+    //                     })
+    //                     setDatalist(AllFilesValue);
+    //                     console.log("check",AllFilesValue)
+    //                 } else {
+    //                     setisloading(false)
+    //                     setDatalist([]);
 
-                    }
+    //                 }
 
-                }
-            ).catch((error) => {
-                setisloading(false)
-                setDatalist([]);
-            });
-    }
+    //             }
+    //         ).catch((error) => {
+    //             setisloading(false)
+    //             setDatalist([]);
+    //         });
+    // }
 
     useEffect(() => {
         setTrigger(true)
 
         if (trigger === true) {
-            loadFileDownload()
+            //loadFileDownload()
+            cmsService.loadCmsData(cmsService.documentList,setisloading,setDatalist,"title");
         }
 
     }, [trigger])

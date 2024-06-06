@@ -50,7 +50,7 @@ function InvestorCharterMain() {
     useEffect(() => {
         setTrigger(true)
         if (trigger === true) {        
-            cmsService.cmsAPIcall(cmsService.InvestorCharter,setisloading,setDatalist,"investor-charter");
+            cmsService.loadCmsData(cmsService.InvestorCharter,setisloading,setDatalist,"heading");
         }
 
     }, [trigger])
