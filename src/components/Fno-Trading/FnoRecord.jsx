@@ -108,85 +108,84 @@ function FnoRecord() {
             "timeline_enabled": 1,
             "category_id": 2
         }
-        rest.expertReportData(request).then(
 
-            res => {
+        rest.fetchReportData(request,setShowLoader,setlist,Data1);
 
-                if (res) {
-                    // console.log("checkdd",res.response.research);
-                    storefile = res.response.research;
-                    // setlist(res.response.research);
+        // rest.expertReportData(request).then(
 
-                    res.response.research.forEach(ele => {
+        //     res => {
 
-                        tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+        //         if (res) {
+        //             // console.log("checkdd",res.response.research);
+        //             storefile = res.response.research;
+        //             // setlist(res.response.research);
 
-                        ele['LTP'] = ele['LTP'] / 100
-                    });
+        //             res.response.research.forEach(ele => {
 
-                    setlist(res.response.research);
-                    let unique = []
-                    for (let i = 0; i < tokenList.length; i++) {
-                        unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-                    }
-                    unique.forEach(element => {
-                        if (!tokens.includes(element)) {
-                            tokens += element
-                        }
-                    });
-                    // console.log("SegmentId",tokens);
-                    // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-                    const payload = {
-                        'UserId': 'guest',
-                        'SessionId': Data1,
-                        'MultipleTokens': tokens
-                    }
+        //                 tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
 
-                    rest.multipleTokensURLData(payload).then(
-                        res => {
-                            if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+        //                 ele['LTP'] = ele['LTP'] / 100
+        //             });
 
-                                res.Response.lMT.forEach((ele, index) => {
-                                    // console.log("ele", ele)
-                                    ele['LTP'] = ele['LTP'] / 100;
-                                    ele.PrevClose = ele.PC / 100;
-                                    ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-                                    ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-                                    // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-                                    for (let i = 0; i < storefile.length; i++) {
+        //             setlist(res.response.research);
+        //             let unique = []
+        //             for (let i = 0; i < tokenList.length; i++) {
+        //                 unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
+        //             }
+        //             unique.forEach(element => {
+        //                 if (!tokens.includes(element)) {
+        //                     tokens += element
+        //                 }
+        //             });
+        //             // console.log("SegmentId",tokens);
+        //             // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+        //             const payload = {
+        //                 'UserId': 'guest',
+        //                 'SessionId': Data1,
+        //                 'MultipleTokens': tokens
+        //             }
 
-                                        if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
-                                            AllFilesValue = Object.assign(storefile[i], ele);
-                                            multiValue.push(AllFilesValue)
-                                            setShowLoader(false)
-                                        } else {
+        //             rest.multipleTokensURLData(payload).then(
+        //                 res => {
+        //                     if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
 
+        //                         res.Response.lMT.forEach((ele, index) => {
+        //                             // console.log("ele", ele)
+        //                             ele['LTP'] = ele['LTP'] / 100;
+        //                             ele.PrevClose = ele.PC / 100;
+        //                             ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+        //                             ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+        //                             // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+        //                             for (let i = 0; i < storefile.length; i++) {
 
+        //                                 if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
+        //                                     AllFilesValue = Object.assign(storefile[i], ele);
+        //                                     multiValue.push(AllFilesValue)
+        //                                     setShowLoader(false)
+        //                                 }
+        //                             }
+        //                         })
 
-                                        }
-                                    }
-                                })
+        //                         setlist(multiValue);
 
-                                setlist(multiValue);
+        //                     }
+        //                     else{
+        //                         setShowLoader(false)
+        //                     }
+        //                 }).catch((error) => {
 
-                            }
-                            else{
-                                setShowLoader(false)
-                            }
-                        }).catch((error) => {
-
-                            setShowLoader(false)
+        //                     setShowLoader(false)
               
                             
               
-                          });
-                }
-            })
+        //                   });
+        //         }
+        //     })
 
-            .catch((error) => {
-                setShowLoader(false)
-                setlist([]);
-            });
+        //     .catch((error) => {
+        //         setShowLoader(false)
+        //         setlist([]);
+        //     });
     }
 
 
