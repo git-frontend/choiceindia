@@ -33,7 +33,7 @@ function FnoRecord() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            generateSessionId()
+            rest.generateSession(setData1);
             FandORecords()
         }
     }, [rendercount])

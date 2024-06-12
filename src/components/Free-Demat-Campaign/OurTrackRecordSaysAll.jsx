@@ -60,24 +60,26 @@ function OurTrackRecordSaysAll() {
 
   //for session Id 
   function generateSessionId() {
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        if (res.Status == 'Success') {
-          IntraStocks(res.Response);
-          setData1(res.Response);
-        } else {
-          IntraStocks([])
-        }
-      }, err => {
-        IntraStocks([])
-      })
+    setToggleState(1);
+    rest.generateSession(setData1,setlist,setShowLoader);
+    // let api = new API_URLS()
+    // fetch(api.getSessionUrl())
+    //   .then(response => {
+    //     return response.json();
+    //   })
+    //   .then(res => {
+    //     if (res.Status == 'Success') {
+    //       IntraStocks(res.Response);
+    //       setData1(res.Response);
+    //     } else {
+    //       IntraStocks([])
+    //     }
+    //   }, err => {
+    //     IntraStocks([])
+    //   })
   }
   //for Intra day
-  function IntraStocks(session) {
+  /* function IntraStocks(session) {
     setToggleState(1)
     setlist([]);
     tokens = '';
@@ -171,7 +173,7 @@ function OurTrackRecordSaysAll() {
         setShowLoader(false)
         
       });
-  }
+  } */
   //for F and O
   function FandOstocks() {
     setToggleState(2)

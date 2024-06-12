@@ -3,6 +3,7 @@ import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 import { subscribeOnStream, unsubscribeFromStream,subscribeMultitouchline,unSubscribeMultitouchline } from './../../Services/socketData.js';
 import React, { useEffect, useState } from "react";
 import { API_URLS } from "../../Services/API-URLS";
+import rest from "../../Services/rest.js";
 function ChoiceLTP() {
 
  // const [ b5Data, setB5Data] = useState({});
@@ -17,7 +18,7 @@ function ChoiceLTP() {
     setTrigger(true)
     if (trigger === true) {
       //console.log("use effect called")
-      generateSessionId()
+      rest.generateSessionId(getKeyInfo);
     }
     return () => {
       unsubscribeFromStream({})
@@ -36,21 +37,21 @@ function ChoiceLTP() {
   /**
    * Generate Session Id
    */
-  function generateSessionId() {
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        //  console.log("res",res)
-        if (res.Status == 'Success') {
-          getKeyInfo(res.Response, [{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }])//{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }
-        }
+  // function generateSessionId() {
+  //   let api = new API_URLS()
+  //   fetch(api.getSessionUrl())
+  //     .then(response => {
+  //       return response.json();
+  //     })
+  //     .then(res => {
+  //       //  console.log("res",res)
+  //       if (res.Status == 'Success') {
+  //         getKeyInfo(res.Response, [{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }])//{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }
+  //       }
 
-      })
+  //     })
 
-  }
+  // }
 
 
   /**

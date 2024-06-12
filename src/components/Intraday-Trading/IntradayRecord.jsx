@@ -31,8 +31,7 @@ function IntradayRecord() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            generateSessionId()
-            IntraStocks()
+            rest.generateSession(setData1,setlist,setShowLoader);
         }
     }, [rendercount])
     const settings = {

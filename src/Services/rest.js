@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API_URLS } from "./API-URLS";
+import utils from "./utils";
 
 const rest = {
 
@@ -26,8 +27,199 @@ const rest = {
     // console.log("url",url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       // console.log("datas",data)
-      return data
-    })
+      return data;
+    });
+  },
+
+  //Common function for generating session ID of research-listing and investors page
+
+  generateSessionId:function(func,setShowLoader){
+    if(!window.location.pathname.includes('/investors')){
+    setShowLoader(true);
+    } 
+    let api = new API_URLS()
+    fetch(api.getSessionUrl())
+        .then(response => {
+            return response.json();
+        })
+        .then(res => {
+            if (res.Status == 'Success') {
+                if(window.location.pathname.includes('/investors')){
+                func(res.Response,[{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }]);
+                return;
+                }
+                func(res.Response)
+            } else {
+              if(!window.location.pathname.includes('/investors')){
+                func()
+              } 
+            }
+
+        }, err => {
+          if(!window.location.pathname.includes('/investors')){
+            func()
+          } 
+        })
+  },
+  
+   //Created common function for generating session ID
+
+  generateSession: function (setData1, setlist, setShowLoader, ...args) {
+    let api = new API_URLS();
+    fetch(api.getSessionUrl())
+      .then((response) => {
+        return response.json();
+      })
+      .then(
+        (res) => {
+          if (res.Status == "Success") {
+            if (args.length > 0) {
+              if (args[0] === "intraday") {
+                this.IntraStocks(res.Response, setlist, setShowLoader);
+              } else if (args[0] == "short-term") {
+                args[1]();
+              } else if (args[0] == "all-stock") {
+                args[2]();
+              } else if (args[0] == "long-term") {
+                args[3]();
+              }
+              return;
+            }
+            this.IntraStocks(res.Response, setlist, setShowLoader);
+            setData1(res.Response);
+          } else {
+            this.IntraStocks([], setlist, setShowLoader);
+          }
+        },
+        (err) => {
+          this.IntraStocks([], setlist, setShowLoader);
+        }
+      );
+  },
+
+  //Created common function for fetching Intra Stocks Data
+
+  IntraStocks: function (session, setlist, setShowLoader) {
+    setlist([]);
+    let tokens = "";
+    let tokenList = [];
+    let storefile = "";
+    setShowLoader(true);
+    let request = {
+      Count: 10,
+      endDate: utils.formatDate(new Date(), "dd-MM-yyyy"),
+      SessionId: session,
+      Start: 0,
+      startDate: utils.formatDate(
+        new Date(new Date().setFullYear(new Date().getFullYear() - 1)),
+        "dd-MM-yyyy"
+      ),
+      status: "Book Profit",
+      type: "EQ",
+      UserId: "guest",
+      search: "",
+    };
+
+    this.signalReportData(request)
+      .then((res) => {
+        if (res) {
+          storefile = res.Response.Data;
+          // console.log("storefile",storefile)
+
+          res.Response.Data.forEach((ele) => {
+            setShowLoader(false);
+            tokenList.push({ SegmentId: ele.Seg, Token: ele.Tok });
+            let dateData = ele.TATime;
+            if (dateData) {
+              let len = dateData.split(" ");
+              if (len.length) {
+                ele.date = len[0];
+              }
+            }
+            ele.published_date = utils.formatDate(
+              new Date(
+                ele.date.split("-")[2],
+                ele.date.split("-")[1] - 1,
+                ele.date.split("-")[0]
+              ),
+              "dd MMMM'yy"
+            );
+            ele.call_type = ele.HLType
+              ? ele.HLType == "High"
+                ? "BUY"
+                : ele.HLType == "sell" || ele.HLType == "Low"
+                ? "SELL"
+                : ""
+              : ele.Side
+              ? ["B", "BUY", "Buy"].indexOf(ele.Side) > -1
+                ? "BUY"
+                : ["S", "SELL", "Sell"].indexOf(ele.Side) > -1
+                ? "SELL"
+                : ""
+              : "";
+            ele["LTP"] = ele["LTP"] / 100;
+          });
+          setlist(res.Response.Data);
+          let unique = [];
+          for (let i = 0; i < tokenList.length; i++) {
+            unique.push(
+              tokenList[i].SegmentId + "@" + tokenList[i].Token + ","
+            );
+          }
+          unique.forEach((element) => {
+            if (!tokens.includes(element)) {
+              tokens += element;
+            }
+          });
+          // console.log("SegmentId",tokens);
+
+          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+          const payload = {
+            UserId: "guest",
+            SessionId: session,
+            MultipleTokens: tokens,
+          };
+
+          rest
+            .multipleTokensURLData(payload)
+            .then((res) => {
+              if (
+                res &&
+                res.Response &&
+                res.Response.lMT &&
+                res.Response.lMT.length
+              ) {
+                res.Response.lMT.forEach((ele, index) => {
+                  ele["LTP"] = ele["LTP"] / 100;
+                  ele.PrevClose = ele.PC / 100;
+                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+                  for (let i = 0; i < storefile.length; i++) {
+                    if (
+                      storefile[i].Tok == ele.Tok &&
+                      storefile[i].Seg == ele.Seg
+                    ) {
+                      setShowLoader(false);
+                      AllFilesValue = Object.assign(storefile[i], ele);
+                      multiValue.push(AllFilesValue);
+                    }
+                  }
+                });
+
+                setlist(multiValue);
+              } else {
+                setShowLoader(false);
+              }
+            })
+            .catch((error) => {
+              setShowLoader(false);
+            });
+        }
+      })
+      .catch((error) => {
+        setShowLoader(false);
+      });
   },
 
   //Created a common function for fetching the report data

@@ -30,8 +30,7 @@ function SBDesk() {
     useEffect(() => {
         setTrigger(true)
         if (trigger === true) {
-            generateSessionId()
-            
+            rest.generateSessionId(getExpertResearch,setShowLoader);   
         }
         return () => {
             let tokenList = []
@@ -49,25 +48,25 @@ function SBDesk() {
     /**
      * Generate Session Id
      */
-    function generateSessionId() {
-        setShowLoader(true)
-        let api = new API_URLS()
-        fetch(api.getSessionUrl())
-            .then(response => {
-                return response.json();
-            })
-            .then(res => {
-                if (res.Status == 'Success') {
-                    getExpertResearch(res.Response)
-                } else {
-                    getExpertResearch()
-                }
+    // function generateSessionId() {
+    //     setShowLoader(true)
+    //     let api = new API_URLS()
+    //     fetch(api.getSessionUrl())
+    //         .then(response => {
+    //             return response.json();
+    //         })
+    //         .then(res => {
+    //             if (res.Status == 'Success') {
+    //                 getExpertResearch(res.Response)
+    //             } else {
+    //                 getExpertResearch()
+    //             }
 
-            }, err => {
-                getExpertResearch()
-            })
+    //         }, err => {
+    //             getExpertResearch()
+    //         })
 
-    }
+    // }
     /**
      * Convert ResponseTring to  Object
      * @param {Response String} data 
