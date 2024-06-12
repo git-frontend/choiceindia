@@ -27,13 +27,13 @@ const rest = {
     // console.log("url",url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
       // console.log("datas",data)
-      return data;
-    });
+      return data
+    })
   },
 
-  //Common function for generating session ID of research-listing and investors page
+   //Common function for generating session ID of research-listing and investors page
 
-  generateSessionId:function(func,setShowLoader){
+   generateSessionId:function(func,setShowLoader){
     if(!window.location.pathname.includes('/investors')){
     setShowLoader(true);
     } 
@@ -221,6 +221,7 @@ const rest = {
         setShowLoader(false);
       });
   },
+
 
   //Created a common function for fetching the report data
   fetchReportData: function (request, setShowLoader, setlist, Data1, session) {
