@@ -138,17 +138,17 @@ function OurPerformance() {
 
 
 
-  useEffect(() => {
-    setTrigger(true)
-    if (trigger === true) {
-      loadsuccess(successSdate);
-      loadperformance(fivedate);
+  // useEffect(() => {
+  //   setTrigger(true)
+  //   if (trigger === true) {
+  //     loadsuccess(successSdate);
+  //     loadperformance(fivedate);
 
 
 
-    }
+  //   }
 
-  }, [trigger])
+  // }, [trigger])
 
 
 

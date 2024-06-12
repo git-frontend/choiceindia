@@ -31,16 +31,7 @@ const rest = {
   },
 
 
-  // signalReportData: function (postdata) {
-
-  //   let api = new API_URLS()
-  //   let url = api.fetchSignalReportURL()
-  //   //  console.log("url",url)
-  //   return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-  //     //   console.log("datas",data)
-  //     return data
-  //   })
-  // },
+ 
   multipleTokensURLData: function (postdata) {
 
     let api = new API_URLS()

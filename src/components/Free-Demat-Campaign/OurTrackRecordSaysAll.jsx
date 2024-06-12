@@ -371,7 +371,7 @@ function OurTrackRecordSaysAll() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      generateSessionId()
+      // generateSessionId()
       FandOstocks()
     }
   }, [rendercount])
