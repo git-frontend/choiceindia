@@ -16,6 +16,7 @@ import SubbrokerpopupForm from "../Common-features/Subbrokerpopupform";
 import SubbrokerStickyFooter from "../Common-features/SubbrokerStickyFooter";
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import openAccountService from "../../Services/openAccountService";
+import utils from "../../Services/utils";
 
 function SubBrokerForm(props) {
     // words: /^([A-z-\s\'\.]*)*$/g,
@@ -747,6 +748,11 @@ function getOTPOnCall(){
                 hideLoader('verifyLoader');
                 // console.log(res, "verifyOTPN");
                 if (res && res.data && res.data.status != 'error') {
+                    utils.pushDataLayerEvent({
+                        'event': 'sub_broker_leads',
+                        'page_path': window.location.pathname,
+                        'page_url': window.location.href
+                    })
                     fetchQueryParams();
                     /**added these 3 methods which were in addnewlead */
                     handleOTPPopupClose();
