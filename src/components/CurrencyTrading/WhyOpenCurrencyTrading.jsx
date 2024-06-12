@@ -54,7 +54,7 @@ function WhyOpenCurrencyTrading() {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="sectext">
-                                <h2>Why Open A Currency Trading Account Online With Us?</h2>
+                                <h2>Perks of Opening a Currency Trading Account Online With Us?</h2>
                             </div>
                         </div>
                         <div className="col-md-8">

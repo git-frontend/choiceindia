@@ -167,9 +167,15 @@ function InvestorAwarenessMain() {
                                 }
                             </div>
                     }
+    
+    <h4>Monitoring of Collateral:</h4>
 
-
-                </div>
+    <p className="pt-3">In order to provide visibility of client-wise collateral at all levels, viz., TM, CM and Clearing Corporation (CC) as 
+    prescribed by SEBI vide circular no.SEBI/HO/MRD2_DCAP/CIR/2021/0598 dated July 20, 2021, ICCL has provided a web 
+    portal facility to allow clients to view their disaggregated collateral placed with Member and as reported by their
+    registered Trading Member /Clearing Member. You may click on the link given below to check Client Collateral
+    Details: <a href="https://bseplus.bseindia.com" target="_blank">https://bseplus.bseindia.com</a> Investors are requested to register on the portal to avail this facility.</p>
+    </div>
             </section>
         </div>
     );

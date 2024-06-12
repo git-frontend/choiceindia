@@ -68,7 +68,7 @@ function Contactdetail() {
                         </div>
                         <div className="text-center support-itm">
                            <FontAwesomeIcon icon={faEnvelope} />
-                           <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a></p>
+                           <p><a href="mailto:care@choiceindia.com" target="_blank">care@choiceindia.com</a></p>
                         </div>
                      </div>
 
@@ -108,7 +108,7 @@ function Contactdetail() {
                                           <td>Shwetha S. Gupta</td>
                                           <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
                                           <td className="text-left">022-69092489</td>
-                                          <td className="text-left">customercare@choiceindia.com</td>
+                                          <td className="text-left">care@choiceindia.com</td>
                                        </tr>
                                        <tr>
                                           <td>Head of Customer care</td>

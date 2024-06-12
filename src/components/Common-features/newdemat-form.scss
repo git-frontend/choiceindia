@@ -1708,6 +1708,99 @@ width:100%;
 		}
 	
 	}
+	.brokerage-lead-form{
+		@media (max-width:$md) {
+			background: $bg-sky;
+		}
+		
+		.heading{
+			@media (max-width:$md) {
+				margin-bottom: 1rem;
+				display: block;
+				font-size: 1.7rem;
+				text-align: left;
+			}
+			@media (max-width:$sm) {
+				font-size: 1.357rem;
+				line-height: 1.5;
+				width: 60%;
+			}
+		}
+			.close-btn-mdl{
+				display: none;
+				@media (max-width:$md) {
+					display: block;
+					font-size: 2.25rem;
+					position: absolute;
+					right: 0.8rem;
+					text-decoration: none;
+					top: 0;
+				}
+
+			}
+			.formgrp-new{
+				background: $bg-sky;
+				margin-bottom: 0 !important;
+			}
+	}
+
+	.brokerage-form-otp{
+		background: $bg-sky;
+		.exit-intent-sleekbox-popup{
+			.popup-sub-row{
+				.popup-sub-right{
+					.heading{
+						@media (max-width:$md) {
+							color: $primary;
+						}
+					}
+					.otpform-new{
+						.otp-mdl-input-chk{
+							.time{
+								color: $primary;
+								margin: 0;
+								span{
+									color: $blueColortext;
+								}
+							}
+						}
+						.subheading{
+							color: $primary;
+						}
+						.changenumbtn{
+							color: $blueColortext;
+							font-weight: 600;
+						}
+						.resend{
+							color: $secondary;
+							.bluetxt{
+								color: $blueColortext;
+							}
+						}
+						.ortext{
+							color: $secondary;
+							font-weight: 600;
+						}
+					}
+				}
+			}
+		}
+	}
+	.brokerage-thanku-popup{
+		background: $bg-sky;
+		.thank-content{
+			.subheading{
+				@media (max-width:$md) {
+					color: $primary;
+				}
+			}
+			.thankyou-title{
+				@media (max-width:$md) {
+					color: $primary;
+				}
+			}
+		}
+	}
 }
 
 

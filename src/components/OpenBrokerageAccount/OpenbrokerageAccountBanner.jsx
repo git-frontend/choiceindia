@@ -64,7 +64,7 @@ const OpenFreeAccountBanner = () => {
                             <div>
                                 <span className="banner-title2">All in 1 Account</span>
                                 <h1 className="banner-title" >
-                                    <div className="desktop">Open a Brokerage Account <br /> <span className="yellow">Online For Free</span></div>
+                                    <div className="desktop">Open Free Brokerage Account -  <br /> <span className="yellow">Online Brokerage Account in India</span></div>
                                 </h1>
                             </div>
                             <div className="banner-txt">

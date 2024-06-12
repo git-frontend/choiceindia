@@ -98,7 +98,7 @@ function Contactdetail() {
                         </div>
                         <div className=" support-itm">
                            <FontAwesomeIcon icon={faEnvelope} />
-                           <p className="subtitle"><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a></p>
+                           <p className="subtitle"><a href="mailto:care@choiceindia.com" target="_blank">care@choiceindia.com</a></p>
                         </div>
                      </div>
 

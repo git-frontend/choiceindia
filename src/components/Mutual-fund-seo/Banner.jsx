@@ -24,7 +24,7 @@ function Banner() {
                     <div className="row gx-5">
                         <div className="col-md-6 lft-sec">
                             <span class="banner-title2 mf-ttl">All in 1 Account</span>
-                            <h1 className="big-ttl">invest in <span>mutual funds</span> online with choice</h1>
+                            <h1 className="big-ttl">Start <span>mutual funds</span> Investment with Choice</h1>
                         </div>
                         <div className="col-md-6">
                         {

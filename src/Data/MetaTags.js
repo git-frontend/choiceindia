@@ -1421,7 +1421,7 @@ Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter 
   "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice", 'lang': "en", "content": "Choice FinX Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.", "link": 'https://choiceindia.com/baskets', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "share-market-app": {
-    'title': "Share Market App in India - Download Choice FinX now!", 'lang': "en", "content": "Explore choice finX, the best share market app in India. Invest in mulltiple instruments with our share market advanced application online.", "link": "https://choiceindia.com/share-market-app", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    'title': "Share Market App in India - Download Choice FinX now!", 'lang': "en", "content": "Explore choice finX, the best share market app in India. Invest in multiple instruments with our share market advanced application online.", "link": "https://choiceindia.com/share-market-app", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
     "faqcript": `<script type="application/ld+json">
      {
       "@context": "https://schema.org",

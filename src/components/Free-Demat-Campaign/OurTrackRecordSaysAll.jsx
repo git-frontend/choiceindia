@@ -372,7 +372,7 @@ function OurTrackRecordSaysAll() {
     setRenderCount(true)
     if (rendercount === true) {
       
-      IntradayNew()
+      FandOstocks()
     }
   }, [rendercount])
 

@@ -277,7 +277,7 @@ function Contactbanner() {
                         </div>
                         <div className="form-data">
                           <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "} width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
-                          <div className="form-data-right"><p className="form-right-text">{(dept || [])[2] || 'customercare@choiceindia.com'}</p></div>
+                          <div className="form-data-right"><p className="form-right-text">{(dept || [])[2] || 'care@choiceindia.com'}</p></div>
                         </div>
                         <div className="form-data">
                           <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
@@ -298,7 +298,7 @@ function Contactbanner() {
                       </div>
                       <div className="form-data">
                         <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "} width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
-                        <div className="form-data-right"><p className="form-right-text">customercare@choiceindia.com</p></div>
+                        <div className="form-data-right"><p className="form-right-text">care@choiceindia.com</p></div>
                       </div>
                       <div className="form-data">
                         <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>

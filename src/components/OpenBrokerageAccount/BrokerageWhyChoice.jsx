@@ -14,7 +14,7 @@ const WhyChoice = () => {
                         <div className='col-md-12'>
                             <div className="wrap">
                                 <div className="leftsect">
-                                    <h2 className="secttile">Why Choice?</h2>
+                                    <h2 className="secttile">Best Services with Free Brokerage Account</h2>
                                     <div className="img">
                                         <img src={Image16} alt={"Choice Free Demat Account Opening"} width={"365"} height={"788"} className="img-fluid" />
                                     </div>
