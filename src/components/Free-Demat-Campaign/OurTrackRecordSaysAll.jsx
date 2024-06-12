@@ -449,7 +449,7 @@ function OurTrackRecordSaysAll() {
                                                 <h6 className="top-text">Stop Loss</h6>
                                                 {
                                                   toggleState == 1 ?
-                                                    <div><h6 className="top-date">{(response?.published_date)}</h6></div>
+                                                    <div><h6 className="top-date">{utils.formatDate(new Date(response?.updated_datetime), "dd MMMM , yyyy")}</h6></div>
                                                     :
                                                     <div><h6 className="top-date">{(response?.updated_datetime)}</h6></div>
                                                 }
@@ -467,8 +467,8 @@ function OurTrackRecordSaysAll() {
                                               <div className="middle-left">
                                                 {
                                                   toggleState == 1 ?
-                                                    <div><h4 className="big-text">{response?.Sym}</h4>
-                                                      <span className="small-text">{response?.Name}</span></div>
+                                                    <div><h4 className="big-text">{response?.scrip_symbol}</h4>
+                                                      <span className="small-text">{response?.scrip_name}</span></div>
                                                     :
                                                     <div> <h4 className="big-text">{(response?.scrip_name).replace(/(\|\d{2}[A-Z]{3}\d{2})/, '')}</h4>
                                                       <span className="small-text">{response?.scrip_s_expiry}</span></div>
@@ -483,26 +483,26 @@ function OurTrackRecordSaysAll() {
                                             {
                                               toggleState == 1 ?
                                                 <div className="bottom-section">
-                                                  <div className="bottom">
-                                                    <h6 className="bottom_small_text">Stop Loss</h6>
-                                                    <h4 className="bottom_big_text">{((response?.SL / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                  </div>
-                                                  <div className="bottom">
-                                                    <h6 className="bottom_small_text">Entry Price</h6>
-                                                    <h4 className="bottom_big_text" >{((response?.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                  </div>
-                                                  <div className="bottom">
-                                                    <h6 className="bottom_small_text">Target Price</h6>
-                                                    <h4 className="bottom_big_text">{((response?.TP1 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                  </div>
-                                                  <div className="bottom">
+                                                   <div className="bottom">
+                                                        <h6 className="bottom_small_text">Stop Loss</h6>
+                                                        <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value))}</h4>
+                                                      </div>
+                                                      <div className="bottom">
+                                                        <h6 className="bottom_small_text">Entry Price</h6>
+                                                        <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints || [])[0].value))}</h4>
+                                                      </div>
+                                                      <div className="bottom">
+                                                        <h6 className="bottom_small_text">Target Price</h6>
+                                                        <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value))}</h4>
+                                                      </div>
+                                                  {/* <div className="bottom">
                                                     <h6 className="bottom_small_text">2nd Target Price</h6>
                                                     <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                   </div>
                                                   <div className="bottom">
                                                     <h6 className="bottom_small_text">3rd Target Price</h6>
                                                     <h4 className="bottom_big_text">-</h4>
-                                                  </div>
+                                                  </div> */}
                                                 </div>
                                                 :
                                                 <div className="bottom-section">
@@ -566,11 +566,11 @@ function OurTrackRecordSaysAll() {
                                                     <h6 className="top-text">Stop Loss</h6>
                                                     {
                                                       toggleState == 1 ?
-                                                        <div><h6 className="top-date">{(response?.published_date)}</h6></div>
+                                                        <div><h6 className="top-date">{utils.formatDate(new Date(response?.updated_datetime), "dd MMMM , yyyy")}</h6></div>
                                                         :
                                                         <div><h6 className="top-date">{(response?.updated_datetime)}</h6></div>
                                                     }
-                                                  </div>
+                                                  </div> 
 
                                                   {
                                                     toggleState == 1 ?
@@ -583,8 +583,8 @@ function OurTrackRecordSaysAll() {
                                                   <div className="middle-left">
                                                     {
                                                       toggleState == 1 ?
-                                                        <div><h4 className="big-text">{response?.Sym}</h4>
-                                                          <span className="small-text">{response?.Name}</span></div>
+                                                        <div><h4 className="big-text">{response?.scrip_symbol}</h4>
+                                                          <span className="small-text">{response?.scrip_name}</span></div>
                                                         :
                                                         <div> <h4 className="big-text">{(response?.scrip_name).replace(/(\|\d{2}[A-Z]{3}\d{2})/, '')}</h4>
                                                           <span className="small-text">{response?.scrip_s_expiry}</span></div>
@@ -601,24 +601,24 @@ function OurTrackRecordSaysAll() {
                                                     <div className="bottom-section">
                                                       <div className="bottom">
                                                         <h6 className="bottom_small_text">Stop Loss</h6>
-                                                        <h4 className="bottom_big_text">{((response?.SL / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                        <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value))}</h4>
                                                       </div>
                                                       <div className="bottom">
                                                         <h6 className="bottom_small_text">Entry Price</h6>
-                                                        <h4 className="bottom_big_text" >{((response?.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                        <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints || [])[0].value))}</h4>
                                                       </div>
                                                       <div className="bottom">
                                                         <h6 className="bottom_small_text">Target Price</h6>
-                                                        <h4 className="bottom_big_text">{((response?.TP1 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                        <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value))}</h4>
                                                       </div>
-                                                      <div className="bottom">
+                                                      {/* <div className="bottom">
                                                         <h6 className="bottom_small_text">2nd Target Price</h6>
                                                         <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                       </div>
                                                       <div className="bottom">
                                                         <h6 className="bottom_small_text">3rd Target Price</h6>
                                                         <h4 className="bottom_big_text">-</h4>
-                                                      </div>
+                                                      </div> */}
                                                     </div>
                                                     :
                                                     <div className="bottom-section">
@@ -650,138 +650,7 @@ function OurTrackRecordSaysAll() {
                                           )
                                         })
                                       }
-                                      {/* <div className="col-xl-6">
-                                <div className="main-left">
-                                  <div className="top-section">
-                                    <div className="top-left">
-                                      <h6 className="top-text">Stop Loss</h6>
-                                      <h6 className="top-date">17 March’23</h6>
-                                    </div>
-                                    <div className="top-right"><button className="btn-buy sellbtn">Sell</button></div>
-                                  </div>
-                                  <div className="middle-section">
-                                    <div className="middle-left">
-                                      <h4 className="big-text">NAVINFLOUR</h4>
-                                      <span className="small-text">NAVIN FLOURINE INT. LTD.</span>
-                                    </div>
-                                    <div className="middle-right">
-                                      <span className="right-big-text">715.65</span>
-                                      <h6 className="right-small-text">19.25(2.76%)</h6>
-                                    </div>
-                                  </div>
-
-                                  <div className="bottom-section">
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Stop Loss</h6>
-                                      <h4 className="bottom_big_text">697.40</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Entry Price</h6>
-                                      <h4 className="bottom_big_text" >704.00</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Target Price</h6>
-                                      <h4 className="bottom_big_text">713.90</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">2nd Target Price</h6>
-                                      <h4 className="bottom_big_text">720.55</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">3rd Target Price</h6>
-                                      <h4 className="bottom_big_text">--</h4>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-xl-6">
-                                <div className="main-left">
-                                  <div className="top-section">
-                                    <div className="top-left">
-                                      <h6 className="top-text">Stop Loss</h6>
-                                      <h6 className="top-date">17 March’23</h6>
-                                    </div>
-                                    <div className="top-right"><button className="btn-buy  sellbtn">Sell</button></div>
-                                  </div>
-                                  <div className="middle-section">
-                                    <div className="middle-left">
-                                      <h4 className="big-text">NAVINFLOUR</h4>
-                                      <span className="small-text">NAVIN FLOURINE INT. LTD.</span>
-                                    </div>
-                                    <div className="middle-right">
-                                      <span className="right-big-text">715.65</span>
-                                      <h6 className="right-small-text">19.25(2.76%)</h6>
-                                    </div>
-                                  </div>
-
-                                  <div className="bottom-section">
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Stop Loss</h6>
-                                      <h4 className="bottom_big_text">697.40</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Entry Price</h6>
-                                      <h4 className="bottom_big_text" >704.00</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Target Price</h6>
-                                      <h4 className="bottom_big_text">713.90</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">2nd Target Price</h6>
-                                      <h4 className="bottom_big_text">720.55</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">3rd Target Price</h6>
-                                      <h4 className="bottom_big_text">--</h4>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-xl-6">
-                                <div className="main-left">
-                                  <div className="top-section">
-                                    <div className="top-left">
-                                      <h6 className="top-text">Stop Loss</h6>
-                                      <h6 className="top-date">17 March’23</h6>
-                                    </div>
-                                    <div className="top-right"><button className="btn-buy">buy</button></div>
-                                  </div>
-                                  <div className="middle-section">
-                                    <div className="middle-left">
-                                      <h4 className="big-text">JUPL</h4>
-                                      <span className="small-text">UPL LIMITED</span>
-                                    </div>
-                                    <div className="middle-right">
-                                      <span className="right-big-text">715.65</span>
-                                      <h6 className="right-small-text text_color">19.25(2.76%)</h6>
-                                    </div>
-                                  </div>
-
-                                  <div className="bottom-section">
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Stop Loss</h6>
-                                      <h4 className="bottom_big_text">697.40</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Entry Price</h6>
-                                      <h4 className="bottom_big_text" >704.00</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Target Price</h6>
-                                      <h4 className="bottom_big_text">713.90</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">2nd Target Price</h6>
-                                      <h4 className="bottom_big_text">720.55</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">3rd Target Price</h6>
-                                      <h4 className="bottom_big_text">--</h4>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div> */}
+                                  
                                     </div>
                                     :
                                     <div className="text-center">
@@ -793,563 +662,11 @@ function OurTrackRecordSaysAll() {
 
                           </div>}
 
-                      {/* : */}
-                      {/* // <div className="row gx-5">
-                              //   <div className="col-xl-6">
-                              //     <div className="main-left">
-                              //       <div className="top-section">
-                              //         <div className="top-left">
-                              //           <h6 className="top-text">Stop Loss</h6>
-                              //           <h6 className="top-date">17 March’23</h6>
-                              //         </div>
-                              //         <div className="top-right"><button className="btn-buy">buy</button></div>
-                              //       </div>
-                              //       <div className="middle-section">
-                              //         <div className="middle-left">
-                              //           <h4 className="big-text">JUPL</h4>
-                              //           <span className="small-text">UPL LIMITED</span>
-                              //         </div>
-                              //         <div className="middle-right">
-                              //           <span className="right-big-text">715.65</span>
-                              //           <h6 className="right-small-text text_color">19.25(2.76%)</h6>
-                              //         </div>
-                              //       </div>
-
-                              //       <div className="bottom-section">
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Stop Loss</h6>
-                              //             <h4 className="bottom_big_text">697.40</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Entry Price</h6>
-                              //             <h4 className="bottom_big_text" >704.00</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Target Price</h6>
-                              //             <h4 className="bottom_big_text">713.90</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">2nd Target Price</h6>
-                              //             <h4 className="bottom_big_text">720.55</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">3rd Target Price</h6>
-                              //             <h4 className="bottom_big_text">--</h4>
-                              //           </div>
-                              //       </div>
-                              //     </div>
-                              //   </div>
-                              //   <div className="col-xl-6">
-                              //     <div className="main-left">
-                              //       <div className="top-section">
-                              //         <div className="top-left">
-                              //           <h6 className="top-text">Stop Loss</h6>
-                              //           <h6 className="top-date">17 March’23</h6>
-                              //         </div>
-                              //         <div className="top-right"><button className="btn-buy sellbtn">Sell</button></div>
-                              //       </div>
-                              //       <div className="middle-section">
-                              //         <div className="middle-left">
-                              //           <h4 className="big-text">NAVINFLOUR</h4>
-                              //           <span className="small-text">NAVIN FLOURINE INT. LTD.</span>
-                              //         </div>
-                              //         <div className="middle-right">
-                              //           <span className="right-big-text">715.65</span>
-                              //           <h6 className="right-small-text">19.25(2.76%)</h6>
-                              //         </div>
-                              //       </div>
-
-                              //       <div className="bottom-section">
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Stop Loss</h6>
-                              //             <h4 className="bottom_big_text">697.40</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Entry Price</h6>
-                              //             <h4 className="bottom_big_text" >704.00</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Target Price</h6>
-                              //             <h4 className="bottom_big_text">713.90</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">2nd Target Price</h6>
-                              //             <h4 className="bottom_big_text">720.55</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">3rd Target Price</h6>
-                              //             <h4 className="bottom_big_text">--</h4>
-                              //           </div>
-                              //       </div>
-                              //     </div>
-                              //   </div>
-                              //   <div className="col-xl-6">
-                              //     <div className="main-left">
-                              //       <div className="top-section">
-                              //         <div className="top-left">
-                              //           <h6 className="top-text">Stop Loss</h6>
-                              //           <h6 className="top-date">17 March’23</h6>
-                              //         </div>
-                              //         <div className="top-right"><button className="btn-buy  sellbtn">Sell</button></div>
-                              //       </div>
-                              //       <div className="middle-section">
-                              //         <div className="middle-left">
-                              //           <h4 className="big-text">NAVINFLOUR</h4>
-                              //           <span className="small-text">NAVIN FLOURINE INT. LTD.</span>
-                              //         </div>
-                              //         <div className="middle-right">
-                              //           <span className="right-big-text">715.65</span>
-                              //           <h6 className="right-small-text">19.25(2.76%)</h6>
-                              //         </div>
-                              //       </div>
-
-                              //       <div className="bottom-section">
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Stop Loss</h6>
-                              //             <h4 className="bottom_big_text">697.40</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Entry Price</h6>
-                              //             <h4 className="bottom_big_text" >704.00</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Target Price</h6>
-                              //             <h4 className="bottom_big_text">713.90</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">2nd Target Price</h6>
-                              //             <h4 className="bottom_big_text">720.55</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">3rd Target Price</h6>
-                              //             <h4 className="bottom_big_text">--</h4>
-                              //           </div>
-                              //       </div>
-                              //     </div>
-                              //   </div>
-                              //   <div className="col-xl-6">
-                              //     <div className="main-left">
-                              //       <div className="top-section">
-                              //         <div className="top-left">
-                              //           <h6 className="top-text">Stop Loss</h6>
-                              //           <h6 className="top-date">17 March’23</h6>
-                              //         </div>
-                              //         <div className="top-right"><button className="btn-buy">buy</button></div>
-                              //       </div>
-                              //       <div className="middle-section">
-                              //         <div className="middle-left">
-                              //           <h4 className="big-text">JUPL</h4>
-                              //           <span className="small-text">UPL LIMITED</span>
-                              //         </div>
-                              //         <div className="middle-right">
-                              //           <span className="right-big-text">715.65</span>
-                              //           <h6 className="right-small-text text_color">19.25(2.76%)</h6>
-                              //         </div>
-                              //       </div>
-
-                              //       <div className="bottom-section">
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Stop Loss</h6>
-                              //             <h4 className="bottom_big_text">697.40</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Entry Price</h6>
-                              //             <h4 className="bottom_big_text" >704.00</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">Target Price</h6>
-                              //             <h4 className="bottom_big_text">713.90</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">2nd Target Price</h6>
-                              //             <h4 className="bottom_big_text">720.55</h4>
-                              //           </div>
-                              //           <div className="bottom">
-                              //             <h6 className="bottom_small_text">3rd Target Price</h6>
-                              //             <h4 className="bottom_big_text">--</h4>
-                              //           </div>
-                              //       </div>
-                              //     </div>
-                              //   </div>
-                              // </div> */}
-                      {/* } */}
                     </div>
                   </div>
 
                 </div>
-                {/* <div
-                  className={toggleState === 2 ? "content  active-content" : "content"}
-                >
-                  <div className="row d-flex justify-content-center">
-                    <div className="col-md-12">
-
-                      {
-                            view && !view.matches ?
-
-                              <Slider {...settings} className='awarded-card'>
-                                <div className="col-xl-6">
-                                  <div className="main-left">
-                                    <div className="top-section">
-                                      <div className="top-left">
-                                        <h6 className="top-text">Stop Loss</h6>
-                                        <h6 className="top-date">17 March’23</h6>
-                                      </div>
-                                      <div className="top-right"><button className="btn-buy">buy</button></div>
-                                    </div>
-                                    <div className="middle-section">
-                                      <div className="middle-left">
-                                        <h4 className="big-text">JUPL</h4>
-                                        <span className="small-text">UPL LIMITED</span>
-                                      </div>
-                                      <div className="middle-right">
-                                        <span className="right-big-text">715.65</span>
-                                        <h6 className="right-small-text text_color">19.25(2.76%)</h6>
-                                      </div>
-                                    </div>
-
-                                    <div className="bottom-section">
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Stop Loss</h6>
-                                          <h4 className="bottom_big_text">697.40</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Entry Price</h6>
-                                          <h4 className="bottom_big_text" >704.00</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Target Price</h6>
-                                          <h4 className="bottom_big_text">713.90</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">2nd Target Price</h6>
-                                          <h4 className="bottom_big_text">720.55</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">3rd Target Price</h6>
-                                          <h4 className="bottom_big_text">--</h4>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-6">
-                                  <div className="main-left">
-                                    <div className="top-section">
-                                      <div className="top-left">
-                                        <h6 className="top-text">Stop Loss</h6>
-                                        <h6 className="top-date">17 March’23</h6>
-                                      </div>
-                                      <div className="top-right"><button className="btn-buy sellbtn">Sell</button></div>
-                                    </div>
-                                    <div className="middle-section">
-                                      <div className="middle-left">
-                                        <h4 className="big-text">NAVINFLOUR</h4>
-                                        <span className="small-text">NAVIN FLOURINE INT. LTD.</span>
-                                      </div>
-                                      <div className="middle-right">
-                                        <span className="right-big-text">715.65</span>
-                                        <h6 className="right-small-text">19.25(2.76%)</h6>
-                                      </div>
-                                    </div>
-
-                                    <div className="bottom-section">
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Stop Loss</h6>
-                                          <h4 className="bottom_big_text">697.40</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Entry Price</h6>
-                                          <h4 className="bottom_big_text" >704.00</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Target Price</h6>
-                                          <h4 className="bottom_big_text">713.90</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">2nd Target Price</h6>
-                                          <h4 className="bottom_big_text">720.55</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">3rd Target Price</h6>
-                                          <h4 className="bottom_big_text">--</h4>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-6">
-                                  <div className="main-left">
-                                    <div className="top-section">
-                                      <div className="top-left">
-                                        <h6 className="top-text">Stop Loss</h6>
-                                        <h6 className="top-date">17 March’23</h6>
-                                      </div>
-                                      <div className="top-right"><button className="btn-buy  sellbtn">Sell</button></div>
-                                    </div>
-                                    <div className="middle-section">
-                                      <div className="middle-left">
-                                        <h4 className="big-text">NAVINFLOUR</h4>
-                                        <span className="small-text">NAVIN FLOURINE INT. LTD.</span>
-                                      </div>
-                                      <div className="middle-right">
-                                        <span className="right-big-text">715.65</span>
-                                        <h6 className="right-small-text">19.25(2.76%)</h6>
-                                      </div>
-                                    </div>
-
-                                    <div className="bottom-section">
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Stop Loss</h6>
-                                          <h4 className="bottom_big_text">697.40</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Entry Price</h6>
-                                          <h4 className="bottom_big_text" >704.00</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Target Price</h6>
-                                          <h4 className="bottom_big_text">713.90</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">2nd Target Price</h6>
-                                          <h4 className="bottom_big_text">720.55</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">3rd Target Price</h6>
-                                          <h4 className="bottom_big_text">--</h4>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-6">
-                                  <div className="main-left">
-                                    <div className="top-section">
-                                      <div className="top-left">
-                                        <h6 className="top-text">Stop Loss</h6>
-                                        <h6 className="top-date">17 March’23</h6>
-                                      </div>
-                                      <div className="top-right"><button className="btn-buy">buy</button></div>
-                                    </div>
-                                    <div className="middle-section">
-                                      <div className="middle-left">
-                                        <h4 className="big-text">JUPL</h4>
-                                        <span className="small-text">UPL LIMITED</span>
-                                      </div>
-                                      <div className="middle-right">
-                                        <span className="right-big-text">715.65</span>
-                                        <h6 className="right-small-text text_color">19.25(2.76%)</h6>
-                                      </div>
-                                    </div>
-
-                                    <div className="bottom-section">
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Stop Loss</h6>
-                                          <h4 className="bottom_big_text">697.40</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Entry Price</h6>
-                                          <h4 className="bottom_big_text" >704.00</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Target Price</h6>
-                                          <h4 className="bottom_big_text">713.90</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">2nd Target Price</h6>
-                                          <h4 className="bottom_big_text">720.55</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">3rd Target Price</h6>
-                                          <h4 className="bottom_big_text">--</h4>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </Slider>
-
-
-                              : */}
-                {/* <div className="row gx-5">
-                        <div className="col-xl-6">
-                          <div className="main-left">
-                            <div className="top-section">
-                              <div className="top-left">
-                                <h6 className="top-text">Stop Loss</h6>
-                                <h6 className="top-date">17 March’23</h6>
-                              </div>
-                              <div className="top-right"><button className="btn-buy">buy</button></div>
-                            </div>
-                            <div className="middle-section">
-                              <div className="middle-left">
-                                <h4 className="big-text">JUPL</h4>
-                                <span className="small-text">UPL LIMITED</span>
-                              </div>
-                              <div className="middle-right">
-                                <span className="right-big-text">715.65</span>
-                                <h6 className="right-small-text text_color">19.25(2.76%)</h6>
-                              </div>
-                            </div>
-
-                            <div className="bottom-section">
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Stop Loss</h6>
-                                <h4 className="bottom_big_text">697.40</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Entry Price</h6>
-                                <h4 className="bottom_big_text" >704.00</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Target Price</h6>
-                                <h4 className="bottom_big_text">713.90</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">2nd Target Price</h6>
-                                <h4 className="bottom_big_text">720.55</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">3rd Target Price</h6>
-                                <h4 className="bottom_big_text">--</h4>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-xl-6">
-                          <div className="main-left">
-                            <div className="top-section">
-                              <div className="top-left">
-                                <h6 className="top-text">Stop Loss</h6>
-                                <h6 className="top-date">17 March’23</h6>
-                              </div>
-                              <div className="top-right"><button className="btn-buy sellbtn">Sell</button></div>
-                            </div>
-                            <div className="middle-section">
-                              <div className="middle-left">
-                                <h4 className="big-text">NAVINFLOUR</h4>
-                                <span className="small-text">NAVIN FLOURINE INT. LTD.</span>
-                              </div>
-                              <div className="middle-right">
-                                <span className="right-big-text">715.65</span>
-                                <h6 className="right-small-text">19.25(2.76%)</h6>
-                              </div>
-                            </div>
-
-                            <div className="bottom-section">
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Stop Loss</h6>
-                                <h4 className="bottom_big_text">697.40</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Entry Price</h6>
-                                <h4 className="bottom_big_text" >704.00</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Target Price</h6>
-                                <h4 className="bottom_big_text">713.90</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">2nd Target Price</h6>
-                                <h4 className="bottom_big_text">720.55</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">3rd Target Price</h6>
-                                <h4 className="bottom_big_text">--</h4>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-xl-6">
-                          <div className="main-left">
-                            <div className="top-section">
-                              <div className="top-left">
-                                <h6 className="top-text">Stop Loss</h6>
-                                <h6 className="top-date">17 March’23</h6>
-                              </div>
-                              <div className="top-right"><button className="btn-buy  sellbtn">Sell</button></div>
-                            </div>
-                            <div className="middle-section">
-                              <div className="middle-left">
-                                <h4 className="big-text">NAVINFLOUR</h4>
-                                <span className="small-text">NAVIN FLOURINE INT. LTD.</span>
-                              </div>
-                              <div className="middle-right">
-                                <span className="right-big-text">715.65</span>
-                                <h6 className="right-small-text">19.25(2.76%)</h6>
-                              </div>
-                            </div>
-
-                            <div className="bottom-section">
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Stop Loss</h6>
-                                <h4 className="bottom_big_text">697.40</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Entry Price</h6>
-                                <h4 className="bottom_big_text" >704.00</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Target Price</h6>
-                                <h4 className="bottom_big_text">713.90</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">2nd Target Price</h6>
-                                <h4 className="bottom_big_text">720.55</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">3rd Target Price</h6>
-                                <h4 className="bottom_big_text">--</h4>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-xl-6">
-                          <div className="main-left">
-                            <div className="top-section">
-                              <div className="top-left">
-                                <h6 className="top-text">Stop Loss</h6>
-                                <h6 className="top-date">17 March’23</h6>
-                              </div>
-                              <div className="top-right"><button className="btn-buy">buy</button></div>
-                            </div>
-                            <div className="middle-section">
-                              <div className="middle-left">
-                                <h4 className="big-text">JUPL</h4>
-                                <span className="small-text">UPL LIMITED</span>
-                              </div>
-                              <div className="middle-right">
-                                <span className="right-big-text">715.65</span>
-                                <h6 className="right-small-text text_color">19.25(2.76%)</h6>
-                              </div>
-                            </div>
-
-                            <div className="bottom-section">
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Stop Loss</h6>
-                                <h4 className="bottom_big_text">697.40</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Entry Price</h6>
-                                <h4 className="bottom_big_text" >704.00</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">Target Price</h6>
-                                <h4 className="bottom_big_text">713.90</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">2nd Target Price</h6>
-                                <h4 className="bottom_big_text">720.55</h4>
-                              </div>
-                              <div className="bottom">
-                                <h6 className="bottom_small_text">3rd Target Price</h6>
-                                <h4 className="bottom_big_text">--</h4>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div> */}
-                {/* } */}
-                {/* </div> */}
-                {/* </div> */}
-
-                {/* </div> */}
+        
 
               </div>
             </div>
