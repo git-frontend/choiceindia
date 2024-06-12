@@ -126,7 +126,7 @@ export class API_URLS {
   /** NACH Base URL */
   nachBaseURL = "";
   /** PV breakout API data URL */
-  pvBreakoutURL = "api/techanalysis/v3/GetMessages";
+  // pvBreakoutURL = "api/techanalysis/v3/GetMessages";
   /**Market Insights , fabal URL */
 
   addMarketInsiteURL = "content/posts/?key=280c55197998a010569e5d612a";
@@ -529,9 +529,9 @@ export class API_URLS {
     return this.newResearchReportURL + this.fetchResearchReport;
   }
 
-  fetchSignalReportURL() {
-    return this.jiffyServerURL + this.pvBreakoutURL;
-  }
+  // fetchSignalReportURL() {
+  //   return this.jiffyServerURL + this.pvBreakoutURL;
+  // }
 
   /** Get Market Insite and fabal List URL */
 

@@ -67,13 +67,13 @@ function OurTrackRecordSaysAll() {
       })
       .then(res => {
         if (res.Status == 'Success') {
-          IntraStocks(res.Response);
+          IntradayNew(res.Response);
           setData1(res.Response);
         } else {
-          IntraStocks([])
+          IntradayNew([])
         }
       }, err => {
-        IntraStocks([])
+        IntradayNew([])
       })
   }
   //for Intra day
@@ -371,7 +371,7 @@ function OurTrackRecordSaysAll() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      
+      generateSessionId()
       FandOstocks()
     }
   }, [rendercount])
@@ -417,7 +417,7 @@ function OurTrackRecordSaysAll() {
               <div className="col-xl-4 col-md-6">
                 <ul className="list-group list_group1">
                   <li className={toggleState === 1 ? "list-group-item list listsec" : "list-group-item list"}
-                    onClick={IntradayNew}> Intraday</li>
+                    onClick={generateSessionId}> Intraday</li>
                   <li className={toggleState === 2 ? "list-group-item list listsec" : "list-group-item list"}
                     onClick={FandOstocks}>F&O </li>
                 </ul>
