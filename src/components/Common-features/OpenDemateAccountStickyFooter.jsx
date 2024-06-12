@@ -245,15 +245,15 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
             hideLoader('sendOTPLoader');
             // console.log("res",res)
             if (res && res.StatusCode === 200 ) {
-                // utils.pushDataLayerEvent({
-                //     'event': 'ci_onboard_lead_initiated',
-                //     'page_path': window.location.pathname,
-                //     'page_url': window.location.href,
-                //     'lead_source': 'choiceindia',
-                //     // 'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                //     'leadId': res.data.Body.leadid,
-                //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                // })
+                utils.pushDataLayerEvent({
+                    'event': 'ci_onboard_lead_initiated',
+                    'page_path': window.location.pathname,
+                    'page_url': window.location.href,
+                    'lead_source': 'choiceindia',
+                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                    'leadId': res.data.Body.leadid,
+                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
                 setOTPSessionID( res.Body.otp_session_id)
                 // setForm('sent-otp')
                 // setformdata()
