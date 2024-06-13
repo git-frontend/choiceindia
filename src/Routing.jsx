@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, Link } from 'react-router-dom';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
@@ -16,7 +16,6 @@ import { useLocation } from 'react-router-dom';
 
 const Remo=()=>{
     const location = useLocation();
-  
     return (
       <>
         {(location.pathname.match(/.*\/$/) && location.pathname.length > 1 && location.pathname.indexOf('blog') < 0)  ? (
@@ -206,7 +205,10 @@ const LazyUnder25 =React.lazy(()=> import('./components/Under-25/Under25'));
 const LazyBrokerageChargesNew = React.lazy(() => import('./components/Brokerage-New/BrokerageChargesNew'));
 const LazyInvestorCharterGrievances = React.lazy(() => import('./components/Investor-Charter-Grievances/InvestorCharterGrievances'));
 function Routing() {
-
+    var isMobile = useRef(isMobileDevice());
+    function isMobileDevice() {
+        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+      }
     
 
     return (
