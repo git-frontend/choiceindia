@@ -130,7 +130,7 @@ function BestStockcategory() {
 
     }
 
-    rest.fetchReportData(request,setShowLoader,setlist,Data1);
+    rest.fetchReportData(request,setShowLoader,setlist,Data1,session);
 
     // rest.expertReportData(request).then(
     //   res => {
@@ -433,100 +433,100 @@ function BestStockcategory() {
     //   });
   }
 
-  function IntraStocks(session) {
-    setToggleState(1)
-    setlist([]);
-    tokens = '';
-    tokenList = [];
-    storefile = '';
-    setShowLoader(true)
-    let request = {
-      "Count": 10,
-      "endDate": utils.formatDate(new Date(), "dd-MM-yyyy"),
-      "SessionId": session,
-      "Start": 0,
-      "startDate": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
-      "status": "T1",
-      "type": "EQ",
-      "UserId": "guest",
-      "search": ""
-    }
-    rest.signalReportData(request).then(
-      res => {
+  // function IntraStocks(session) {
+  //   setToggleState(1)
+  //   setlist([]);
+  //   tokens = '';
+  //   tokenList = [];
+  //   storefile = '';
+  //   setShowLoader(true)
+  //   let request = {
+  //     "Count": 10,
+  //     "endDate": utils.formatDate(new Date(), "dd-MM-yyyy"),
+  //     "SessionId": session,
+  //     "Start": 0,
+  //     "startDate": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
+  //     "status": "T1",
+  //     "type": "EQ",
+  //     "UserId": "guest",
+  //     "search": ""
+  //   }
+  //   rest.signalReportData(request).then(
+  //     res => {
 
-        if (res) {
-          storefile = res.Response.Data
+  //       if (res) {
+  //         storefile = res.Response.Data
 
-          res.Response.Data.forEach(ele => {
-            setShowLoader(false)
-            tokenList.push({ 'SegmentId': ele.Seg, 'Token': ele.Tok })
-            let dateData = ele.TATime;
-            if (dateData) {
-              let len = dateData.split(" ")
-              if (len.length) {
-                ele.date = len[0];
+  //         res.Response.Data.forEach(ele => {
+  //           setShowLoader(false)
+  //           tokenList.push({ 'SegmentId': ele.Seg, 'Token': ele.Tok })
+  //           let dateData = ele.TATime;
+  //           if (dateData) {
+  //             let len = dateData.split(" ")
+  //             if (len.length) {
+  //               ele.date = len[0];
 
-              }
-            }
-            ele.published_date = utils.formatDate(new Date(ele.date.split('-')[2], (ele.date.split('-')[1] - 1), ele.date.split('-')[0]), "dd MMMM'yy")
-            ele.call_type = ele.HLType ? (ele.HLType == 'High' ? 'BUY' : (ele.HLType == 'sell' || ele.HLType == 'Low') ? 'SELL' : '') : (ele.Side ? ((['B', 'BUY', 'Buy'].indexOf(ele.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(ele.Side) > -1 ? 'SELL' : '') : '')
-            ele['LTP'] = ele['LTP'] / 100;
-          });
-          setlist(res.Response.Data);
-          let unique = []
-          for (let i = 0; i < tokenList.length; i++) {
-            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-          }
-          unique.forEach(element => {
-            if (!tokens.includes(element)) {
-              tokens += element
-            }
-          });
-          // console.log("SegmentId",tokens);
+  //             }
+  //           }
+  //           ele.published_date = utils.formatDate(new Date(ele.date.split('-')[2], (ele.date.split('-')[1] - 1), ele.date.split('-')[0]), "dd MMMM'yy")
+  //           ele.call_type = ele.HLType ? (ele.HLType == 'High' ? 'BUY' : (ele.HLType == 'sell' || ele.HLType == 'Low') ? 'SELL' : '') : (ele.Side ? ((['B', 'BUY', 'Buy'].indexOf(ele.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(ele.Side) > -1 ? 'SELL' : '') : '')
+  //           ele['LTP'] = ele['LTP'] / 100;
+  //         });
+  //         setlist(res.Response.Data);
+  //         let unique = []
+  //         for (let i = 0; i < tokenList.length; i++) {
+  //           unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
+  //         }
+  //         unique.forEach(element => {
+  //           if (!tokens.includes(element)) {
+  //             tokens += element
+  //           }
+  //         });
+  //         // console.log("SegmentId",tokens);
 
-          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-          const payload = {
-            'UserId': 'guest',
-            'SessionId': session,
-            'MultipleTokens': tokens
-          }
+  //         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+  //         const payload = {
+  //           'UserId': 'guest',
+  //           'SessionId': session,
+  //           'MultipleTokens': tokens
+  //         }
 
-          rest.multipleTokensURLData(payload).then(
-            res => {
+  //         rest.multipleTokensURLData(payload).then(
+  //           res => {
 
-              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-                res.Response.lMT.forEach((ele, index) => {
+  //             if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+  //               res.Response.lMT.forEach((ele, index) => {
 
-                  ele['LTP'] = ele['LTP'] / 100;
-                  ele.PrevClose = ele.PC / 100;
-                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-                  for (let i = 0; i < storefile.length; i++) {
+  //                 ele['LTP'] = ele['LTP'] / 100;
+  //                 ele.PrevClose = ele.PC / 100;
+  //                 ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+  //                 ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+  //                 // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+  //                 for (let i = 0; i < storefile.length; i++) {
 
-                    if (storefile[i].Tok == ele.Tok && storefile[i].Seg == ele.Seg) {
-                      setShowLoader(false)
-                      AllFilesValue = Object.assign(storefile[i], ele);
-                      multiValue.push(AllFilesValue)
-                    } 
-                  }
-                })
+  //                   if (storefile[i].Tok == ele.Tok && storefile[i].Seg == ele.Seg) {
+  //                     setShowLoader(false)
+  //                     AllFilesValue = Object.assign(storefile[i], ele);
+  //                     multiValue.push(AllFilesValue)
+  //                   } 
+  //                 }
+  //               })
 
-                setlist(multiValue);
+  //               setlist(multiValue);
 
-              } else {
-                setShowLoader(false)
-              }
-            }).catch((error) => {
-              setShowLoader(false)
+  //             } else {
+  //               setShowLoader(false)
+  //             }
+  //           }).catch((error) => {
+  //             setShowLoader(false)
               
-            });
-        }
-      }).catch((error) => {
-        setShowLoader(false)
+  //           });
+  //       }
+  //     }).catch((error) => {
+  //       setShowLoader(false)
         
-      });
-  }
+  //     });
+  // }
 
 
 
