@@ -205,11 +205,6 @@ const LazyUnder25 =React.lazy(()=> import('./components/Under-25/Under25'));
 const LazyBrokerageChargesNew = React.lazy(() => import('./components/Brokerage-New/BrokerageChargesNew'));
 const LazyInvestorCharterGrievances = React.lazy(() => import('./components/Investor-Charter-Grievances/InvestorCharterGrievances'));
 function Routing() {
-    var isMobile = useRef(isMobileDevice());
-    function isMobileDevice() {
-        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-      }
-    
 
     return (
         <>
@@ -217,7 +212,7 @@ function Routing() {
                 <Remo></Remo>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 &&   window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") && window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1   && window.location.pathname.indexOf("/campaign/fno-trading") === -1 && window.location.pathname.indexOf("/campaign/intraday-trading") === -1) && (window.location.pathname.indexOf('open-free-demat-account') > -1 && window.location.search.indexOf('refercode') > -1 && !isMobile.current) ? <Header /> : <CampaignHeader />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 &&   window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") && window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1   && window.location.pathname.indexOf("/campaign/fno-trading") === -1 && window.location.pathname.indexOf("/campaign/intraday-trading") === -1) ? <Header /> : <CampaignHeader />}
 {/*                
                 {window.location.pathname.indexOf("/campaign/sub-broker") === -1 &&
                     window.location.pathname.indexOf("/campaign/trading-strategies") === -1 &&
