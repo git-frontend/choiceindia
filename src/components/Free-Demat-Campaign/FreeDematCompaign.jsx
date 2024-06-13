@@ -18,12 +18,14 @@ import WhyChoiceOpenDematAccount from "./WhyChoiceOpenDematAccount";
 import BChargesMoreContent from "./BChargesMoreContent";
 import Faq from "./Faqs";
 import OpenAccountEasySteps from "./OpenAccountEasySteps";
-
+import { useSearchParams } from "react-router-dom";
 
 function FreeDematCompaign() {
   const [ischeck, setIscheck] = useState(false);
   const [rendercount, setRenderCount] = useState(() => false);
   const myRef1 = useRef(null);
+  const [searchParams, setSearchParams] = useSearchParams(window.location.search);
+  var isMobile = useRef(isMobileDevice());
   const getPositionnew = () => {
     const element = document.getElementById("branch1");
     
@@ -103,6 +105,22 @@ function FreeDematCompaign() {
       
     }
   }, [rendercount])
+
+  useEffect(() => {
+    // console.log('slkdjflkd',isMobile.current)
+    if(searchParams.get('refercode') && isMobile.current){
+      let redirectUrl = `https://finx.choiceindia.com/open.html${location.search.replace('refercode','ref')}`
+      // console.log('TESSS',redirectUrl)
+      window.open(redirectUrl,'_self')
+      // searchParams.forEach((key,value) => {
+      //   console.log(key + ":"+ value)
+      // })
+    } 
+  },[])
+
+  function isMobileDevice() {
+    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+}
 
   return (
     <div>
