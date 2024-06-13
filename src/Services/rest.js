@@ -44,19 +44,20 @@ const rest = {
         })
         .then(res => {
             if (res.Status == 'Success') {
-                if(window.location.pathname.includes('/investors')){
-                func(res.Response,[{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }]);
+                if(window.location.pathname.includes('/research-listing')){
+                func(res.Response)
                 return;
                 }
-                func(res.Response)
+                func(res.Response,[{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }]);
+                
             } else {
-              if(!window.location.pathname.includes('/investors')){
+              if(window.location.pathname.includes('/research-listing')){
                 func()
               } 
             }
 
         }, err => {
-          if(!window.location.pathname.includes('/investors')){
+          if(window.location.pathname.includes('/research-listing')){
             func()
           } 
         })
