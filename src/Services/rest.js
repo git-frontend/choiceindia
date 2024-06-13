@@ -269,6 +269,8 @@ const rest = {
                 res.Response.lMT &&
                 res.Response.lMT.length
               ) {
+                let multiValue = [];
+                let AllFilesValue = {};
                 res.Response.lMT.forEach((ele, index) => {
                   // console.log("ele", ele)
                   ele["LTP"] = ele["LTP"] / 100;
