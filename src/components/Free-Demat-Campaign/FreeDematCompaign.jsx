@@ -1,6 +1,6 @@
 
 import React from "react";
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import meta_tags from "../../Data/MetaTags";
 import "./free-demat-compaign.scss";
 import "./../OpenDematAccount/DematPage.scss";
@@ -28,7 +28,7 @@ function FreeDematCompaign() {
   var isMobile = useRef(isMobileDevice());
   const getPositionnew = () => {
     const element = document.getElementById("branch1");
-    
+
     if (element) {
       const rect = element.getBoundingClientRect();
       // console.log("checkmate", rect.top.toFixed())
@@ -42,35 +42,35 @@ function FreeDematCompaign() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-        let parser = new DOMParser();
-        let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
-        document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? document.getElementsByTagName('script')[0]||[]: '' );
-        document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
+      let parser = new DOMParser();
+      let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
+      document.body.appendChild(doc.getElementsByTagName('script')[0] || [] ? document.getElementsByTagName('script')[0] || [] : '');
+      document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
-      if(document.getElementById('link1')==null){
-      
-      //   document.getElementById('link1').remove();
-      // document.getElementById('link2').remove();
-      // document.getElementById('link3').remove();
-      // document.getElementById('link4').remove();
-      // document.getElementById('link5').remove();
-      // document.getElementById('link6').remove();
-    
+      if (document.getElementById('link1') == null) {
+
+        //   document.getElementById('link1').remove();
+        // document.getElementById('link2').remove();
+        // document.getElementById('link3').remove();
+        // document.getElementById('link4').remove();
+        // document.getElementById('link5').remove();
+        // document.getElementById('link6').remove();
+
         const sitemap1 = document.createElement('link');
         sitemap1.rel = "alternate";
         sitemap1.id = "link1";
-        sitemap1.href = meta_tags[location.pathname.replace('/', "")].link1||'';
-        sitemap1.hreflang = meta_tags[location.pathname.replace('/', "")].href1||'';
+        sitemap1.href = meta_tags[location.pathname.replace('/', "")].link1 || '';
+        sitemap1.hreflang = meta_tags[location.pathname.replace('/', "")].href1 || '';
         document.head.appendChild(sitemap1);
 
         const sitemap2 = document.createElement('link');
         sitemap2.rel = "alternate";
         sitemap2.id = "link2";
-        sitemap2.href = meta_tags[location.pathname.replace('/', "")].link2||'';
-        sitemap2.hreflang = meta_tags[location.pathname.replace('/', "")].href2||'';
+        sitemap2.href = meta_tags[location.pathname.replace('/', "")].link2 || '';
+        sitemap2.hreflang = meta_tags[location.pathname.replace('/', "")].href2 || '';
         document.head.appendChild(sitemap2);
 
         const sitemap3 = document.createElement('link');
@@ -100,51 +100,58 @@ function FreeDematCompaign() {
         sitemap6.href = meta_tags[location.pathname.replace('/', "")].link6 || '';
         sitemap6.hreflang = meta_tags[location.pathname.replace('/', "")].href6 || '';
         document.head.appendChild(sitemap6);
-        
-    }
-      
+
+      }
+
     }
   }, [rendercount])
 
   useEffect(() => {
     // console.log('slkdjflkd',isMobile.current)
-    if(searchParams.get('refercode') && isMobile.current){
-      let redirectUrl = `https://finx.choiceindia.com/open.html${location.search.replace('refercode','ref')}`
+    if (searchParams.get('refercode') && isMobile.current) {
+      let redirectUrl = `https://finx.choiceindia.com/open.html${location.search.replace('refercode', 'ref')}`
       // console.log('TESSS',redirectUrl)
-      window.open(redirectUrl,'_self')
+      window.open(redirectUrl, '_self')
       // searchParams.forEach((key,value) => {
       //   console.log(key + ":"+ value)
       // })
-    } 
-  },[])
+    }
+  }, [])
 
   function isMobileDevice() {
     return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-}
+  }
 
   return (
-    <div>
+    <>
+      {
+        (searchParams && searchParams.get('refercode') && isMobile.current) ?
+          <>
+          </> :
+          <>
+            <div>
 
-              <Banner/>
-        {/* <CreateBacktestStrategies/> */}
-              <OpenAccountEasySteps/>
+              <Banner />
+              {/* <CreateBacktestStrategies/> */}
+              <OpenAccountEasySteps />
               <DocumentsRequiredDematAccountOpeningOnline />
               <WhyOpenFreeDematAccount />
               <OneAccountFinancialNeeds />
               <GetFreeResearchCall />
               <OurTrackRecordSaysAll />
               <WhyChoiceOpenDematAccount />
-              <Faq/>
-              
-  
-              {/* <DematAccountOnlineSteps /> */}
-              
-              
-              
-              <BChargesMoreContent/>
-      </div>
+              <Faq />
 
-  
+
+              {/* <DematAccountOnlineSteps /> */}
+
+
+
+              <BChargesMoreContent />
+            </div>
+          </>
+      }
+    </>
   );
 }
 
