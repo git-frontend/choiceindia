@@ -34,7 +34,7 @@ const rest = {
    //Common function for generating session ID of research-listing and investors page
 
    generateSessionId:function(func,setShowLoader){
-    if(!window.location.pathname.includes('/investors')){
+    if(setShowLoader){
     setShowLoader(true);
     } 
     let api = new API_URLS()
