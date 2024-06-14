@@ -30,16 +30,16 @@ function ContactHeader() {
   }, []);
 
   function isMobileDevice() {
-    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    return (/Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
   }
 
   return (
     <>
-      {/* {
+      {
         (searchParams && searchParams.get('refercode') && isMobile.current) ?
           <>
 
-          </> : */}
+          </> :
           <>
             <div className="Header">
               <header className={`${isUnder25 ? 'main-header main-header-new' : 'main-header'} ${isScrolled ? 'header-scroll' : ''}`}>
@@ -47,7 +47,7 @@ function ContactHeader() {
               </header>
             </div>
           </>
-      {/* } */}
+      } 
     </>
   );
 }

@@ -106,28 +106,28 @@ function FreeDematCompaign() {
     }
   }, [rendercount])
 
-  // useEffect(() => {
-  //   // console.log('slkdjflkd',isMobile.current)
-  //   if (searchParams.get('refercode') && isMobile.current) {
-  //     let redirectUrl = `https://finx.choiceindia.com/open.html${location.search.replace('refercode', 'ref')}`
-  //     // console.log('TESSS',redirectUrl)
-  //     window.open(redirectUrl, '_self')
-  //     // searchParams.forEach((key,value) => {
-  //     //   console.log(key + ":"+ value)
-  //     // })
-  //   }
-  // }, [])
+  useEffect(() => {
+    // console.log('slkdjflkd',isMobile.current)
+    if (searchParams.get('refercode') && isMobile.current) {
+      let redirectUrl = `https://finx.choiceindia.com/open.html${location.search.replace('refercode', 'ref')}`
+      // console.log('TESSS',redirectUrl)
+      window.open(redirectUrl, '_self')
+      // searchParams.forEach((key,value) => {
+      //   console.log(key + ":"+ value)
+      // })
+    }
+  }, [])
 
   function isMobileDevice() {
-    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    return (/Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
   }
 
   return (
     <>
-      {/* {
-        (searchParams && searchParams.get('refercode') && isMobile.current) ? */}
-          {/* <>
-          </> : */}
+      {
+        (searchParams && searchParams.get('refercode') && isMobile.current) ?
+          <>
+          </> :
           <>
             <div>
 
@@ -150,7 +150,7 @@ function FreeDematCompaign() {
               <BChargesMoreContent />
             </div>
           </>
-      {/* } */}
+      }
     </>
   );
 }
