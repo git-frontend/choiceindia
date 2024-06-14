@@ -23,7 +23,6 @@ import {
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
-import LongTermResearch from "../Research/LongTermResearch";
 
 
 function BestStockcategory() {
@@ -60,47 +59,47 @@ function BestStockcategory() {
     const queryParam = window.location.search;
     const utmvalue = new URLSearchParams(queryParam);
     const activeurl = utmvalue.get('active');
-    ((activeurl == "-to-buy") ? AllStocks() : (activeurl == "-intraday-stocks-to-buy") ? rest.generateSession(setData1,setlist,setShowLoader) : (activeurl == "-term-stocks-to-buy") ? ShortTermStocks() : (activeurl == "-for-long-term-investment") ? LongTermStocks() : "");
+    ((activeurl == "-to-buy") ? AllStocks() : (activeurl == "-intraday-stocks-to-buy") ? generateSessionId() : (activeurl == "-term-stocks-to-buy") ? ShortTermStocks() : (activeurl == "-for-long-term-investment") ? LongTermStocks() : "");
   }
 
 
   /**
    * Generate Session Id
    */
-  // function generateSessionId() {
+  function generateSessionId() {
 
 
-  //   let api = new API_URLS()
-  //   fetch(api.getSessionUrl())
-  //     .then(response => {
-  //       return response.json();
-  //     })
-  //     .then(res => {
-  //       if (res.Status == 'Success') {
-  //         if(checkurl == 'intraday'){
-  //         IntraStocks(res.Response);
+    let api = new API_URLS()
+    fetch(api.getSessionUrl())
+      .then(response => {
+        return response.json();
+      })
+      .then(res => {
+        if (res.Status == 'Success') {
+          if (checkurl == 'intraday') {
+            IntradayNew(res.Response);
 
-  //         }else if(checkurl == 'all-stock'){
-  //           AllStocks(res.Response)
-  //         }
-  //         else if(checkurl == 'short-term'){
-  //           ShortTermStocks(res.Response)
-  //         }
-  //         else if(checkurl == 'long-term'){
-  //           LongTermStocks(res.Response)
-  //         }
-  //         setData1(res.Response);
+          } else if (checkurl == 'all-stock') {
+            AllStocks(res.Response)
+          }
+          else if (checkurl == 'short-term') {
+            ShortTermStocks(res.Response)
+          }
+          else if (checkurl == 'long-term') {
+            LongTermStocks(res.Response)
+          }
+          setData1(res.Response);
 
 
-  //       } else {
-  //         IntraStocks([])
-  //       }
+        } else {
+          IntradayNew([])
+        }
 
-  //     }, err => {
-  //       IntraStocks([])
-  //     })
+      }, err => {
+        IntradayNew([])
+      })
 
-  // }
+  }
 
   function AllStocks(session) {
     setToggleState(0)
@@ -129,85 +128,82 @@ function BestStockcategory() {
 
 
     }
+    rest.expertReportData(request).then(
+      res => {
+        if (res) {
 
-    rest.fetchReportData(request,setShowLoader,setlist,Data1,session);
+          storefile = res.response.research;
+          // setlist(res.response.research);
 
-    // rest.expertReportData(request).then(
-    //   res => {
-    //     if (res) {
+          res.response.research.forEach(ele => {
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+            ele['LTP'] = ele['LTP'] / 100;
+          });
 
-    //       storefile = res.response.research;
-    //       // setlist(res.response.research);
+          setlist(res.response.research);
+          let unique = []
+          for (let i = 0; i < tokenList.length; i++) {
+            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
+          }
+          unique.forEach(element => {
+            if (!tokens.includes(element)) {
+              tokens += element
+            }
+          });
+          // console.log("SegmentId",tokens);
+          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': session ? session : Data1,
+            'MultipleTokens': tokens
+          }
 
-    //       res.response.research.forEach(ele => {
-    //         tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-    //         ele['LTP'] = ele['LTP'] / 100;
-    //       });
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+                res.Response.lMT.forEach((ele, index) => {
 
-    //       setlist(res.response.research);
-    //       let unique = []
-    //       for (let i = 0; i < tokenList.length; i++) {
-    //         unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-    //       }
-    //       unique.forEach(element => {
-    //         if (!tokens.includes(element)) {
-    //           tokens += element
-    //         }
-    //       });
-    //       // console.log("SegmentId",tokens);
-    //       // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-    //       const payload = {
-    //         'UserId': 'guest',
-    //         'SessionId': session ? session:Data1 ,
-    //         'MultipleTokens': tokens
-    //       }
+                  ele['LTP'] = ele['LTP'] / 100;
+                  ele.PrevClose = ele.PC / 100;
+                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+                  for (let i = 0; i < storefile.length; i++) {
 
-    //       rest.multipleTokensURLData(payload).then(
-    //         res => {
-    //           if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-    //             res.Response.lMT.forEach((ele, index) => {
-
-    //               ele['LTP'] = ele['LTP'] / 100;
-    //               ele.PrevClose = ele.PC / 100;
-    //               ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-    //               ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-    //               // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-    //               for (let i = 0; i < storefile.length; i++) {
-
-    //                 if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
-    //                   AllFilesValue = Object.assign(storefile[i], ele);
-    //                   multiValue.push(AllFilesValue);
-    //                   setShowLoader(false)
-    //                 } else {
+                    if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
+                      AllFilesValue = Object.assign(storefile[i], ele);
+                      multiValue.push(AllFilesValue);
+                      setShowLoader(false)
+                    } else {
 
 
 
-    //                 }
-    //               }
+                    }
+                  }
 
-    //             })
-    //             setlist(multiValue);
+                })
+                setlist(multiValue);
 
-    //           }
-    //           else {
+              }
+              else {
 
-    //             setShowLoader(false)
+                setShowLoader(false)
 
-    //           }
+              }
 
-    //         }).catch((error) => {
+            }).catch((error) => {
 
-    //           setShowLoader(false)
+              setShowLoader(false)
 
-              
 
-    //         });
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     setShowLoader(false)
-    //     setlist([]);
-    //   });
+
+            });
+        }
+      })
+      .catch((error) => {
+        setShowLoader(false)
+        setlist([]);
+      });
   }
 
 
@@ -238,88 +234,85 @@ function BestStockcategory() {
 
 
     }
+    rest.expertReportData(request).then(
+      res => {
+        if (res) {
 
-    rest.fetchReportData(request,setShowLoader,setlist,Data1,session);
+          storefile = res.response.research;
+          // setlist(res.response.research);
 
-    // rest.expertReportData(request).then(
-    //   res => {
-    //     if (res) {
+          res.response.research.forEach(ele => {
 
-    //       storefile = res.response.research;
-    //       // setlist(res.response.research);
-
-    //       res.response.research.forEach(ele => {
-
-    //         tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-    //         ele['LTP'] = ele['LTP'] / 100;
-    //       });
-    //       setlist(res.response.research)
-    //       let unique = []
-    //       for (let i = 0; i < tokenList.length; i++) {
-    //         unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-    //       }
-    //       unique.forEach(element => {
-    //         if (!tokens.includes(element)) {
-    //           tokens += element
-    //         }
-    //       });
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+            ele['LTP'] = ele['LTP'] / 100;
+          });
+          setlist(res.response.research)
+          let unique = []
+          for (let i = 0; i < tokenList.length; i++) {
+            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
+          }
+          unique.forEach(element => {
+            if (!tokens.includes(element)) {
+              tokens += element
+            }
+          });
 
 
-    //       // console.log("SegmentId",tokens);
-    //       // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-    //       const payload = {
-    //         'UserId': 'guest',
-    //         'SessionId': session ? session:Data1,
-    //         'MultipleTokens': tokens
-    //       }
+          // console.log("SegmentId",tokens);
+          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': session ? session : Data1,
+            'MultipleTokens': tokens
+          }
 
-    //       rest.multipleTokensURLData(payload).then(
-    //         res => {
-    //           if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-    //             res.Response.lMT.forEach((ele, index) => {
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+                res.Response.lMT.forEach((ele, index) => {
 
-    //               ele['LTP'] = ele['LTP'] / 100;
-    //               ele.PrevClose = ele.PC / 100;
-    //               ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-    //               ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-    //               // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-    //               for (let i = 0; i < storefile.length; i++) {
+                  ele['LTP'] = ele['LTP'] / 100;
+                  ele.PrevClose = ele.PC / 100;
+                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+                  for (let i = 0; i < storefile.length; i++) {
 
-    //                 if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
-    //                   setShowLoader(false)
-    //                   AllFilesValue = Object.assign(storefile[i], ele);
-    //                   multiValue.push(AllFilesValue)
-    //                 } else {
+                    if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
+                      setShowLoader(false)
+                      AllFilesValue = Object.assign(storefile[i], ele);
+                      multiValue.push(AllFilesValue)
+                    } else {
 
 
 
-    //                 }
-    //               }
+                    }
+                  }
 
-    //             })
-    //             setlist(multiValue);
+                })
+                setlist(multiValue);
 
-    //           }
-    //           else {
+              }
+              else {
 
-    //             setShowLoader(false)
+                setShowLoader(false)
 
-    //           }
+              }
 
-    //         }).catch((error) => {
+            }).catch((error) => {
 
-    //           setShowLoader(false)
+              setShowLoader(false)
 
-              
 
-    //         });
-    //     }
-    //   })
 
-    //   .catch((error) => {
-    //     setShowLoader(false)
-    //     setlist([]);
-    //   });
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        setlist([]);
+      });
   }
 
   function ShortTermStocks(session) {
@@ -347,93 +340,90 @@ function BestStockcategory() {
       "timeline_enabled": 1,
       "category_id": 2
     }
+    rest.expertReportData(request).then(
 
-    rest.fetchReportData(request,setShowLoader,setlist,Data1,session);
+      res => {
 
-    // rest.expertReportData(request).then(
+        if (res) {
+          // console.log("checkdd",res.response.research);
+          storefile = res.response.research;
+          // setlist(res.response.research);
 
-    //   res => {
+          res.response.research.forEach(ele => {
 
-    //     if (res) {
-    //       // console.log("checkdd",res.response.research);
-    //       storefile = res.response.research;
-    //       // setlist(res.response.research);
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+            ele['LTP'] = ele['LTP'] / 100;
+          });
 
-    //       res.response.research.forEach(ele => {
+          setlist(res.response.research);
+          let unique = []
+          for (let i = 0; i < tokenList.length; i++) {
+            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
+          }
+          unique.forEach(element => {
+            if (!tokens.includes(element)) {
+              tokens += element
+            }
+          });
+          // console.log("SegmentId",tokens);
+          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': session ? session : Data1,
+            'MultipleTokens': tokens
+          }
 
-    //         tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-    //         ele['LTP'] = ele['LTP'] / 100;
-    //       });
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
 
-    //       setlist(res.response.research);
-    //       let unique = []
-    //       for (let i = 0; i < tokenList.length; i++) {
-    //         unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-    //       }
-    //       unique.forEach(element => {
-    //         if (!tokens.includes(element)) {
-    //           tokens += element
-    //         }
-    //       });
-    //       // console.log("SegmentId",tokens);
-    //       // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-    //       const payload = {
-    //         'UserId': 'guest',
-    //         'SessionId': session ? session:Data1,
-    //         'MultipleTokens': tokens
-    //       }
+                res.Response.lMT.forEach((ele, index) => {
 
-    //       rest.multipleTokensURLData(payload).then(
-    //         res => {
-    //           if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+                  ele['LTP'] = ele['LTP'] / 100;
+                  ele.PrevClose = ele.PC / 100;
+                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+                  for (let i = 0; i < storefile.length; i++) {
 
-    //             res.Response.lMT.forEach((ele, index) => {
-
-    //               ele['LTP'] = ele['LTP'] / 100;
-    //               ele.PrevClose = ele.PC / 100;
-    //               ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-    //               ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-    //               // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-    //               for (let i = 0; i < storefile.length; i++) {
-
-    //                 if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
-    //                   AllFilesValue = Object.assign(storefile[i], ele);
-    //                   multiValue.push(AllFilesValue)
-    //                   setShowLoader(false)
-    //                 } else {
+                    if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
+                      AllFilesValue = Object.assign(storefile[i], ele);
+                      multiValue.push(AllFilesValue)
+                      setShowLoader(false)
+                    } else {
 
 
 
-    //                 }
-    //               }
-    //             })
+                    }
+                  }
+                })
 
-    //             setlist(multiValue);
+                setlist(multiValue);
 
-    //           }
-    //           else {
+              }
+              else {
 
-    //             setShowLoader(false)
+                setShowLoader(false)
 
-    //           }
+              }
 
-    //         }).catch((error) => {
+            }).catch((error) => {
 
-    //           setShowLoader(false)
+              setShowLoader(false)
 
-              
 
-    //         });
-    //     }
-    //   })
 
-    //   .catch((error) => {
-    //     setShowLoader(false)
-    //     setlist([]);
-    //   });
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        setlist([]);
+      });
   }
 
-  // function IntraStocks(session) {
+  // function IntraStocks() {
   //   setToggleState(1)
   //   setlist([]);
   //   tokens = '';
@@ -441,17 +431,22 @@ function BestStockcategory() {
   //   storefile = '';
   //   setShowLoader(true)
   //   let request = {
-  //     "Count": 10,
-  //     "endDate": utils.formatDate(new Date(), "dd-MM-yyyy"),
-  //     "SessionId": session,
-  //     "Start": 0,
-  //     "startDate": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
-  //     "status": "T1",
-  //     "type": "EQ",
-  //     "UserId": "guest",
-  //     "search": ""
+  //     "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
+  //     "is_expert": 1,
+  //     "research_type": "intra_day",
+  //     "limit": 10,
+  //     "offset": 0,
+  //     "segment": "",
+  //     "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
+  //     "status": "Target Achieved",
+  //     "subcategory_id": "",
+  //     "search": "",
+  //     "id": "",
+  //     "user_id": "",
+  //     "timeline_enabled": 1,
+  //     "category_id": 2
   //   }
-  //   rest.signalReportData(request).then(
+  //   rest.expertReportData(request).then(
   //     res => {
 
   //       if (res) {
@@ -519,16 +514,110 @@ function BestStockcategory() {
   //             }
   //           }).catch((error) => {
   //             setShowLoader(false)
-              
+
   //           });
   //       }
   //     }).catch((error) => {
   //       setShowLoader(false)
-        
+
   //     });
   // }
 
+  function IntradayNew() {
+    setToggleState(1)
+    setlist([]);
+    tokens = '';
+    tokenList = [];
+    storefile = '';
+    setShowLoader(true)
+    let request = {
+      "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
+      "is_expert": 1,
+      "research_type": "intra_day",
+      "limit": 10,
+      "offset": 0,
+      "segment": "",
+      "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
+      "status": "Target Achieved",
+      "subcategory_id": "",
+      "search": "",
+      "id": "",
+      "user_id": "",
+      "timeline_enabled": 1,
+      "category_id": 2
+    }
+    rest.expertReportData(request).then(
 
+      res => {
+
+        if (res) {
+          // console.log("checkdd",res.response.research);
+          storefile = res.response.research;
+          // setlist(res.response.research);
+
+          res.response.research.forEach(ele => {
+
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+            ele['LTP'] = ele['LTP'] / 100;
+          });
+
+          setlist(res.response.research);
+          let unique = []
+          for (let i = 0; i < tokenList.length; i++) {
+            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
+          }
+          unique.forEach(element => {
+            if (!tokens.includes(element)) {
+              tokens += element
+            }
+          });
+          // console.log("SegmentId",tokens);
+          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': Data1,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+
+                res.Response.lMT.forEach((ele, index) => {
+                  // console.log("ele", ele)
+                  ele['LTP'] = ele['LTP'] / 100;
+                  ele.PrevClose = ele.PC / 100;
+                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+                  for (let i = 0; i < storefile.length; i++) {
+
+                    if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
+                      AllFilesValue = Object.assign(storefile[i], ele);
+                      multiValue.push(AllFilesValue)
+                      setShowLoader(false)
+                    }
+                  }
+                })
+
+                setlist(multiValue);
+
+              }
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+
+      });
+  }
 
 
 
@@ -541,9 +630,9 @@ function BestStockcategory() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      rest.generateSession(setData1,setlist,setShowLoader,checkurl,ShortTermStocks,AllStocks,LongTermResearch);
+      generateSessionId()
 
-      checkurl == 'intraday' ? rest.generateSession(setData1, setlist, setShowLoader) :
+      checkurl == 'intraday' ? generateSessionId() :
         checkurl == 'short-term' ? ShortTermStocks() :
           checkurl == 'all-stock' ? AllStocks() :
             checkurl == 'long-term' ? LongTermStocks() : "";
@@ -578,13 +667,13 @@ function BestStockcategory() {
   const generateSections = () => {
     const titles = [
       ['Maximize potential with\n ', <span className="bold_text"> expert-picked best stocks</span>],
-      ['Handpicked',<span className="bold_text"> Intraday Stocks</span>, '\n by Research Experts'],
-      ['Optimize portfolio with\n',<span className="bold_text"> best short term stocks</span>],
-      ['Get ', <span className="bold_text">finely researched</span>,'\n Long-Term Stocks Now!']
+      ['Handpicked', <span className="bold_text"> Intraday Stocks</span>, '\n by Research Experts'],
+      ['Optimize portfolio with\n', <span className="bold_text"> best short term stocks</span>],
+      ['Get ', <span className="bold_text">finely researched</span>, '\n Long-Term Stocks Now!']
     ];
 
     const commonData = {
-      images: [expert_reserch, trade_paisa,  low_broke,zero_auto],
+      images: [expert_reserch, trade_paisa, low_broke, zero_auto],
       subtitle: ['Expert \n Research', 'Trade\n @2 Paisa', 'Low Brokerage Charges', 'Zero Auto Square Off Charges'],
       alt: ['Stock Research by Choice', 'Choice Trading Charges', 'Choice Brokerage Charges', 'Choice Auto Square off Charges']
     };
@@ -639,8 +728,7 @@ function BestStockcategory() {
                   <div className="col-xl-8 col-md-12" id="best-stock">
                     <ul className="list-group list_group1">
                       <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} > <Link className="urllinks1" to="/best-stocks-to-buy" onClick={() => AllStocks()} > All Stocks</Link></li>
-                      <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/best-intraday-stocks-to-buy" onClick={() =>{ setToggleState(1)
-                        rest.generateSession(setData1,setlist,setShowLoader)}}>Intraday </Link></li>
+                      <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/best-intraday-stocks-to-buy" onClick={() => generateSessionId()}>Intraday </Link></li>
                       <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-short-term-stocks-to-buy" onClick={() => ShortTermStocks()}>Short Term </Link></li>
                       <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-stocks-for-long-term-investment" onClick={() => LongTermStocks()}>Long Term </Link></li>
                     </ul>
@@ -683,7 +771,7 @@ function BestStockcategory() {
                                                 {
                                                   toggleState == 1 ?
                                                     <div>
-                                                      <h6 className="top-date">{(response?.published_date)}</h6>
+                                                      <h6 className="top-date">{utils.formatDate(new Date(response?.updated_datetime), "dd MMMM , yyyy")}</h6>
                                                     </div> :
                                                     toggleState == 2 ?
                                                       <div>
@@ -708,8 +796,8 @@ function BestStockcategory() {
                                                 {
                                                   toggleState == 1 ?
                                                     <div>
-                                                      <h4 className="big-text">{response?.Sym}</h4>
-                                                      <span className="small-text">{response?.Name}</span>
+                                                      <h4 className="big-text">{response?.scrip_symbol}</h4>
+                                                      <span className="small-text">{response?.scrip_name}</span>
                                                     </div> :
                                                     <div> <h4 className="big-text">{response?.scrip_name}</h4>
                                                       <span className="small-text">{response?.scrip_sec_desc}</span></div>
@@ -719,7 +807,7 @@ function BestStockcategory() {
 
                                               </div>
                                               <div className="middle-right">
-                                                <span className="right-big-text">{response?.LTP ?((response?.LTP).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ","):0.00.toFixed(2)}</span>
+                                                <span className="right-big-text">{response?.LTP ? ((response?.LTP).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0.00.toFixed(2)}</span>
                                                 <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{Math.abs((response.Change || 0)).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
                                               </div>
                                             </div>
@@ -729,24 +817,15 @@ function BestStockcategory() {
                                                   <div className="d-flex justify-content-between pt-3">
                                                     <div className="bottom">
                                                       <h6 className="bottom_small_text">Stop Loss</h6>
-                                                      <h4 className="bottom_big_text">{((response?.SL / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                      <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value))}</h4>
                                                     </div>
                                                     <div className="bottom">
                                                       <h6 className="bottom_small_text">Entry Price</h6>
-                                                      <h4 className="bottom_big_text">{((response?.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                      {/* <h4 className="bottom_big_text">{(response.EP/100).toFixed(2)}</h4> */}
+                                                      <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints || [])[0].value))}</h4>
                                                     </div>
                                                     <div className="bottom">
-                                                      <h6 className="bottom_small_text"> Target Price </h6>
-                                                      <h4 className="bottom_big_text" >{((response?.TP1 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                    </div>
-                                                    <div className="bottom">
-                                                      <h6 className="bottom_small_text">2nd Target</h6>
-                                                      <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                    </div>
-                                                    <div className="bottom">
-                                                      <h6 className="bottom_small_text">3rd Target</h6>
-                                                      <h4 className="bottom_big_text">-</h4>
+                                                      <h6 className="bottom_small_text">Target Price</h6>
+                                                      <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value))}</h4>
                                                     </div>
                                                   </div>
                                                 </div> :
@@ -897,7 +976,7 @@ function BestStockcategory() {
               </div>
             </section>
             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
-            <NewFormSection sections={sections} />
+              <NewFormSection sections={sections} />
             </GoogleReCaptchaProvider>
             <section className="readmoresection readmorecontent">
               <div className="container">

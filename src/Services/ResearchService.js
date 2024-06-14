@@ -26,14 +26,7 @@ const Research = {
         })
     },
 
-    performanceratio: function (postdata) {
-        let api = new API_URLS()
-        let url = api.getperformanceURL()
-        return axios.post(url,postdata,this.headerConfig1).then(({ data }) => {
-            return data
-        })
-        
-    },
+    
 
     successratio: function (postdata) {
         let api = new API_URLS()

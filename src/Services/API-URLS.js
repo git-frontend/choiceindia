@@ -126,7 +126,7 @@ export class API_URLS {
   /** NACH Base URL */
   nachBaseURL = "";
   /** PV breakout API data URL */
-  pvBreakoutURL = "api/techanalysis/v3/GetMessages";
+ 
   /**Market Insights , fabal URL */
 
   addMarketInsiteURL = "content/posts/?key=280c55197998a010569e5d612a";
@@ -189,9 +189,7 @@ export class API_URLS {
   /**Keep Alive Request */
   keepAliveRequest = "63=FT3.0|64=1000|65=34|66=$currentDate|4=$sessionId";
 
-  /** Performance */
 
-  performancefontURL = "techanalysis/getcounters";
 
   // multiple tokens url
 
@@ -529,10 +527,7 @@ export class API_URLS {
     return this.newResearchReportURL + this.fetchResearchReport;
   }
 
-  fetchSignalReportURL() {
-    return this.jiffyServerURL + this.pvBreakoutURL;
-  }
-
+ 
   /** Get Market Insite and fabal List URL */
 
   getMarketinsiteURL() {
@@ -727,9 +722,7 @@ export class API_URLS {
     return this.researchURL + "api/ipo?offset=0";
   }
 
-  getperformanceURL() {
-    return this.performanceURL + this.performancefontURL;
-  }
+ 
   getMultipletokens() {
     return this.performanceURL + this.multipletokensURL;
   }

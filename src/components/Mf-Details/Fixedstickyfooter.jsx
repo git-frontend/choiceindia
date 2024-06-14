@@ -239,7 +239,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
                     'page_url': window.location.href,
                     'lead_source': 'choiceindia',
                     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                    'leadId': res.data.Body.leadid,
+                    'leadId': res.Body.leadid,
                     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
                 otpSessionID.current = res.data.Body.otp_session_id;
