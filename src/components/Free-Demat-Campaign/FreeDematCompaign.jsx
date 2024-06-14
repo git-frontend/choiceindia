@@ -124,10 +124,10 @@ function FreeDematCompaign() {
 
   return (
     <>
-      {/* {
-        (searchParams && searchParams.get('refercode') && isMobile.current) ? */}
-          {/* <>
-          </> : */}
+      {
+        (searchParams && searchParams.get('refercode') && isMobile.current) ?
+          <>
+          </> :
           <>
             <div>
 
@@ -150,7 +150,7 @@ function FreeDematCompaign() {
               <BChargesMoreContent />
             </div>
           </>
-      {/* } */}
+      }
     </>
   );
 }

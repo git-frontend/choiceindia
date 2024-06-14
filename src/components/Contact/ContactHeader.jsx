@@ -35,11 +35,11 @@ function ContactHeader() {
 
   return (
     <>
-      {/* {
+      {
         (searchParams && searchParams.get('refercode') && isMobile.current) ?
           <>
 
-          </> : */}
+          </> :
           <>
             <div className="Header">
               <header className={`${isUnder25 ? 'main-header main-header-new' : 'main-header'} ${isScrolled ? 'header-scroll' : ''}`}>
@@ -47,7 +47,7 @@ function ContactHeader() {
               </header>
             </div>
           </>
-      {/* } */}
+      } 
     </>
   );
 }
