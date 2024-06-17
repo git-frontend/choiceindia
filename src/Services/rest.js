@@ -101,126 +101,82 @@ const rest = {
 
   //Created common function for fetching Intra Stocks Data
 
-  IntraStocks: function (session, setlist, setShowLoader) {
-    setlist([]);
-    let tokens = "";
+  IntraStocks: function (Data1, setlist, setShowLoader,request) {
+    let tokens = '';
     let tokenList = [];
-    let storefile = "";
-    setShowLoader(true);
-    let request = {
-      Count: 10,
-      endDate: utils.formatDate(new Date(), "dd-MM-yyyy"),
-      SessionId: session,
-      Start: 0,
-      startDate: utils.formatDate(
-        new Date(new Date().setFullYear(new Date().getFullYear() - 1)),
-        "dd-MM-yyyy"
-      ),
-      status: "Book Profit",
-      type: "EQ",
-      UserId: "guest",
-      search: "",
-    };
+    let storefile = '';
+    this.expertReportData(request).then(
 
-    this.signalReportData(request)
-      .then((res) => {
+      res => {
+
         if (res) {
-          storefile = res.Response.Data;
-          // console.log("storefile",storefile)
+          // console.log("checkdd",res.response.research);
+          storefile = res.response.research;
+          // setlist(res.response.research);
 
-          res.Response.Data.forEach((ele) => {
-            setShowLoader(false);
-            tokenList.push({ SegmentId: ele.Seg, Token: ele.Tok });
-            let dateData = ele.TATime;
-            if (dateData) {
-              let len = dateData.split(" ");
-              if (len.length) {
-                ele.date = len[0];
-              }
-            }
-            ele.published_date = utils.formatDate(
-              new Date(
-                ele.date.split("-")[2],
-                ele.date.split("-")[1] - 1,
-                ele.date.split("-")[0]
-              ),
-              "dd MMMM'yy"
-            );
-            ele.call_type = ele.HLType
-              ? ele.HLType == "High"
-                ? "BUY"
-                : ele.HLType == "sell" || ele.HLType == "Low"
-                ? "SELL"
-                : ""
-              : ele.Side
-              ? ["B", "BUY", "Buy"].indexOf(ele.Side) > -1
-                ? "BUY"
-                : ["S", "SELL", "Sell"].indexOf(ele.Side) > -1
-                ? "SELL"
-                : ""
-              : "";
-            ele["LTP"] = ele["LTP"] / 100;
+          res.response.research.forEach(ele => {
+
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+            ele['LTP'] = ele['LTP'] / 100;
           });
-          setlist(res.Response.Data);
-          let unique = [];
+
+          setlist(res.response.research);
+          let unique = []
           for (let i = 0; i < tokenList.length; i++) {
-            unique.push(
-              tokenList[i].SegmentId + "@" + tokenList[i].Token + ","
-            );
+            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
           }
-          unique.forEach((element) => {
+          unique.forEach(element => {
             if (!tokens.includes(element)) {
-              tokens += element;
+              tokens += element
             }
           });
           // console.log("SegmentId",tokens);
-
           // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
           const payload = {
-            UserId: "guest",
-            SessionId: session,
-            MultipleTokens: tokens,
-          };
+            'UserId': 'guest',
+            'SessionId': Data1,
+            'MultipleTokens': tokens
+          }
 
-          rest
-            .multipleTokensURLData(payload)
-            .then((res) => {
-              if (
-                res &&
-                res.Response &&
-                res.Response.lMT &&
-                res.Response.lMT.length
-              ) {
+          this.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+                let AllFilesValue={};
+                let multiValue=[];
+
                 res.Response.lMT.forEach((ele, index) => {
-                  ele["LTP"] = ele["LTP"] / 100;
+                  // console.log("ele", ele)
+                  ele['LTP'] = ele['LTP'] / 100;
                   ele.PrevClose = ele.PC / 100;
                   ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
                   ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
                   // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
                   for (let i = 0; i < storefile.length; i++) {
-                    if (
-                      storefile[i].Tok == ele.Tok &&
-                      storefile[i].Seg == ele.Seg
-                    ) {
-                      setShowLoader(false);
+
+                    if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
                       AllFilesValue = Object.assign(storefile[i], ele);
-                      multiValue.push(AllFilesValue);
-                    }
+                      multiValue.push(AllFilesValue)
+                      setShowLoader(false)
+                    } 
                   }
-                });
+                })
 
                 setlist(multiValue);
-              } else {
-                setShowLoader(false);
+
               }
-            })
-            .catch((error) => {
-              setShowLoader(false);
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+              
             });
         }
       })
+
       .catch((error) => {
-        setShowLoader(false);
+        setShowLoader(false)
+        
       });
   },
 
