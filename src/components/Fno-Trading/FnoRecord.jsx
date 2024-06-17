@@ -33,7 +33,7 @@ function FnoRecord() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            rest.generateSession(setData1);
+            // rest.generateSession(setData1);
             FandORecords()
         }
     }, [rendercount])
@@ -67,23 +67,23 @@ function FnoRecord() {
             },
         ],
     };
-    function generateSessionId() {
-        let api = new API_URLS()
-        fetch(api.getSessionUrl())
-            .then(response => {
-                return response.json();
-            })
-            .then(res => {
-                if (res.Status == 'Success') {
-                    IntraStocks(res.Response);
-                    setData1(res.Response);
-                } else {
-                    IntraStocks([])
-                }
-            }, err => {
-                IntraStocks([])
-            })
-    }
+    // function generateSessionId() {
+    //     let api = new API_URLS()
+    //     fetch(api.getSessionUrl())
+    //         .then(response => {
+    //             return response.json();
+    //         })
+    //         .then(res => {
+    //             if (res.Status == 'Success') {
+    //                 IntraStocks(res.Response);
+    //                 setData1(res.Response);
+    //             } else {
+    //                 IntraStocks([])
+    //             }
+    //         }, err => {
+    //             IntraStocks([])
+    //         })
+    // }
     function FandORecords() {
 
         setlist([]);

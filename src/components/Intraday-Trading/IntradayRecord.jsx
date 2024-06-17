@@ -31,7 +31,7 @@ function IntradayRecord() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            generateSessionId()
+            rest.generateSession(IntradayNew,setData1);
             IntradayNew()
           
             // IntraStocks()
@@ -67,23 +67,23 @@ function IntradayRecord() {
             },
         ],
     };
-    function generateSessionId() {
-        let api = new API_URLS()
-        fetch(api.getSessionUrl())
-            .then(response => {
-                return response.json();
-            })
-            .then(res => {
-                if (res.Status == 'Success') {
-                    IntradayNew(res.Response);
-                    setData1(res.Response);
-                } else {
-                    IntradayNew([])
-                }
-            }, err => {
-                IntradayNew([])
-            })
-    }
+    // function generateSessionId() {
+    //     let api = new API_URLS()
+    //     fetch(api.getSessionUrl())
+    //         .then(response => {
+    //             return response.json();
+    //         })
+    //         .then(res => {
+    //             if (res.Status == 'Success') {
+    //                 IntradayNew(res.Response);
+    //                 setData1(res.Response);
+    //             } else {
+    //                 IntradayNew([])
+    //             }
+    //         }, err => {
+    //             IntradayNew([])
+    //         })
+    // }
     function IntradayNew() {
         setlist([]);
         tokens = '';

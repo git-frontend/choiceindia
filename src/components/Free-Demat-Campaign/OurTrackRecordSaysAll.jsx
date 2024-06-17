@@ -59,23 +59,23 @@ function OurTrackRecordSaysAll() {
 
 
   //for session Id 
-  function generateSessionId() {
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        if (res.Status == 'Success') {
-          IntradayNew(res.Response);
-          setData1(res.Response);
-        } else {
-          IntradayNew([])
-        }
-      }, err => {
-        IntradayNew([])
-      })
-  }
+  // function generateSessionId() {
+  //   let api = new API_URLS()
+  //   fetch(api.getSessionUrl())
+  //     .then(response => {
+  //       return response.json();
+  //     })
+  //     .then(res => {
+  //       if (res.Status == 'Success') {
+  //         IntradayNew(res.Response);
+  //         setData1(res.Response);
+  //       } else {
+  //         IntradayNew([])
+  //       }
+  //     }, err => {
+  //       IntradayNew([])
+  //     })
+  // }
   //for Intra day
   /* function IntraStocks(session) {
     setToggleState(1)
@@ -419,7 +419,9 @@ function OurTrackRecordSaysAll() {
               <div className="col-xl-4 col-md-6">
                 <ul className="list-group list_group1">
                   <li className={toggleState === 1 ? "list-group-item list listsec" : "list-group-item list"}
-                    onClick={generateSessionId}> Intraday</li>
+                    onClick={()=>{
+                    rest.generateSession(IntradayNew,setData1);
+                    }}> Intraday</li>
                   <li className={toggleState === 2 ? "list-group-item list listsec" : "list-group-item list"}
                     onClick={FandOstocks}>F&O </li>
                 </ul>

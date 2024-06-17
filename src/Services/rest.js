@@ -65,37 +65,38 @@ const rest = {
   
    //Created common function for generating session ID
 
-  generateSession: function (setData1, setlist, setShowLoader, ...args) {
-    let api = new API_URLS();
+  generateSession:function(IntradayNew,setData1,checkurl,AllStocks,ShortTermStocks,LongTermStocks){
+    let api = new API_URLS()
     fetch(api.getSessionUrl())
-      .then((response) => {
+      .then(response => {
         return response.json();
       })
-      .then(
-        (res) => {
-          if (res.Status == "Success") {
-            if (args.length > 0) {
-              if (args[0] === "intraday") {
-                this.IntraStocks(res.Response, setlist, setShowLoader);
-              } else if (args[0] == "short-term") {
-                args[1]();
-              } else if (args[0] == "all-stock") {
-                args[2]();
-              } else if (args[0] == "long-term") {
-                args[3]();
-              }
-              return;
+      .then(res => {
+        if (res.Status == 'Success') {
+          if(checkurl){
+            if (checkurl == 'intraday') {
+              IntradayNew(res.Response);
+  
+            } else if (checkurl == 'all-stock') {
+              AllStocks(res.Response);
             }
-            this.IntraStocks(res.Response, setlist, setShowLoader);
-            setData1(res.Response);
-          } else {
-            this.IntraStocks([], setlist, setShowLoader);
+            else if (checkurl == 'short-term') {
+              ShortTermStocks(res.Response);
+            }
+            else if (checkurl == 'long-term') {
+              LongTermStocks(res.Response);
+            }
           }
-        },
-        (err) => {
-          this.IntraStocks([], setlist, setShowLoader);
+          else{
+          IntradayNew(res.Response);
+          }
+          setData1(res.Response);
+        } else {
+          IntradayNew([])
         }
-      );
+      }, err => {
+        IntradayNew([])
+      })
   },
 
   //Created common function for fetching Intra Stocks Data
