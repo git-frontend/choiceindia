@@ -35,10 +35,7 @@ const rest = {
     let api = new API_URLS()
     let url = api.getExpertResearchreportURL()
     // console.log("url",url)
-    return axios.post(url, postdata, {}).then(({ data }) => {
-      // console.log("datas",data)
-      return data
-    })
+    return axios.post(url, postdata, {})
 
   },
 
