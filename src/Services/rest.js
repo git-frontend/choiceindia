@@ -31,6 +31,17 @@ const rest = {
     })
   },
 
+  getExpertResearch:function(postdata){
+    let api = new API_URLS()
+    let url = api.getExpertResearchreportURL()
+    // console.log("url",url)
+    return axios.post(url, postdata, {}).then(({ data }) => {
+      // console.log("datas",data)
+      return data
+    })
+
+  },
+
    //Common function for generating session ID of research-listing and investors page
 
    generateSessionId:function(func,setShowLoader){

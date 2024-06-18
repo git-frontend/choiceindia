@@ -3,8 +3,7 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import axios from "axios";
-import { API_URLS } from "../../Services/API-URLS";
+import rest from "../../Services/rest";
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
@@ -59,10 +58,10 @@ function Slidersec() {
         ]
     };
 
-    function getExpertResearch(request) {
-        let url = new API_URLS().getExpertResearchreportURL();
-        return axios.post(url, request, {});
-    }
+    // function getExpertResearch(request) {
+    //     let url = new API_URLS().getExpertResearchreportURL();
+    //     return axios.post(url, request, {});
+    // }
 
     function fetchExpertResearchReport() {
         let startDate;
@@ -97,7 +96,7 @@ function Slidersec() {
             "timeline_enabled": 1,
             "category_id": 2
         };
-        getExpertResearch(request).then((res) => {
+        rest.getExpertResearch(request).then((res) => {
            // console.log(res, "RES");
             if (res && res.status === 200 && res.data.status_code === 200 && res.data.response) {
                 setisloading(false);
