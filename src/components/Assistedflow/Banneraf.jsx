@@ -610,7 +610,7 @@ function Banneraf() {
           setLoaders({ ...loaders, SendOtpLoader: false });
         }
         setErrors(() =>
-          error.message ? error.message : "Something Went Wrong"
+          error.response.data.Message ? error.response.data.Message : "Something Went Wrong"
         );
       });
   }
