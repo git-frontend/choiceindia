@@ -205,8 +205,6 @@ function SBDesk() {
      * @param {Session Id} session 
      */
     let getExpertResearch = (session) => {
-        setShowLoader(true)
-        
         ResearchService.getExpertResearch(session,setShowLoader,setResearchReport,subscribeMultitouchline,onRealtimeCallback);
     }
 
