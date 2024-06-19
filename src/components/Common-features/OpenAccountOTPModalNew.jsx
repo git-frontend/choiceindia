@@ -226,16 +226,8 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                 hideLoader('verifyLoader');
                 if (res && res.data.StatusCode === 200 && res.data.Body) {
                     let verifyResponse = res.data.Body;
-                    utils.pushDataLayerEvent({
-                        'event': 'ci_onboard_lead_generated',
-                        'page_path': window.location.pathname,
-                        'page_url': window.location.href,
-                        'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-                        'leadId': res.data.Body.leadid,
-                        'lead_source':'choiceindia',
-                        'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                    })
+                    // console.log("verifyResponse", verifyResponse);
+
                     if (verifyResponse.is_onboard_flag === "C") {
                         onClose("https://finx.choiceindia.com/auth/login",verifyResponse.message);
                     } else if (verifyResponse.is_onboard_flag === 'N' || verifyResponse.is_onboard_flag === '' || verifyResponse.is_onboard_flag === 'NI') {
