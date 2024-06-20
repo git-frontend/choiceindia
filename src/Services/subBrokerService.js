@@ -119,6 +119,39 @@ const subBrokerService = {
     });
   },
 
+  //Created a common function for getOTPOnCallService
+
+  getOTPOnCallService:function(showLoader,brokerMobileNumber,otpSessionID,openAccountService,hideLoader,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors){
+      // console.log("check")
+    showLoader('callOtpLoader2');
+    // console.log("old_session_id",otpSessionID.current)
+    let request = {
+        "mobile_no": brokerMobileNumber,
+        "request_source":"CHOICEINDIA",
+        "session_id":  otpSessionID.current? otpSessionID.current : null   
+    };
+    openAccountService.OTPOnCall(request).then((res)=>{
+        // console.log("OTPOnCall",res)
+        hideLoader('callOtpLoader2');
+        if(res && res.data && res.data.Body && res.data.Body.session_id){
+            otpSessionID.current = res.data.Body.session_id;
+            // console.log("call  OTP otpSessionID",otpSessionID.current)
+            resetOTPPopup();
+            handleOTPResendSuccessToaster('call');
+        }else{
+                setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+        }
+    }).catch((error) => {
+        hideLoader('callOtpLoader2');
+                // setCount(30);
+                if (error && error.response && error.response.data && error.response.data.Message) {
+                    setOTPErrors(error.response.data.Message);
+                } else {
+                    setOTPErrors("Something went wrong, please try again later!");
+                }
+    })
+  },
+
   verifyOTPN: function (request) {
     let url = apiURL.getSubBrokerVerifyOtpUrl();
     return axios.post(url, request, { headers: OnbHeaders2 });
