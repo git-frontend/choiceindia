@@ -222,47 +222,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                 session_id: otpSessionID
             };
 
-            openAccountService.verifyOTP(request, captchaToken).then((res) => {
-                hideLoader('verifyLoader');
-                if (res && res.data.StatusCode === 200 && res.data.Body) {
-                    let verifyResponse = res.data.Body;
-                    // console.log("verifyResponse", verifyResponse);
-
-                    if (verifyResponse.is_onboard_flag === "C") {
-                        onClose("https://finx.choiceindia.com/auth/login",verifyResponse.message);
-                    } else if (verifyResponse.is_onboard_flag === 'N' || verifyResponse.is_onboard_flag === '' || verifyResponse.is_onboard_flag === 'NI') {
-
-                        let authCode = verifyResponse.auth_code;
-                        let request = {
-                            "grant_type": "authorization_code",
-                            "code": authCode
-                        };
-                        openAccountService.getSSOToken(request).then((res) => {
-                            if (res && res.data.StatusCode == 200) {
-                                localStorage.setItem('access_token', res.data.Body.access_token);
-                                // console.log("verifyResponse in sso",res)
-                                let url = verifyResponse.url + "&accessToken=" + localStorage.getItem('access_token');
-                                // console.log("new url", url);
-                                // openInfoPopup(res.data.Message);
-                                onClose(url,verifyResponse.message);
-                            } else {
-                                openInfoPopup(res.data.Message);
-                                onClose();
-                            }
-                        })
-
-                    }
-                } else {
-                    setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
-                }
-            }).catch((error) => {
-                hideLoader('verifyLoader');
-                if (error && error.response && error.response.data && error.response.data.Message) {
-                    setOTPErrors(error.response.data.Message);
-                } else {
-                    setOTPErrors(OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
-                }
-            });
+            openAccountService.verifyOTPService(request,captchaToken,hideLoader,onClose,openInfoPopup,setOTPErrors)
         }
     }
     
