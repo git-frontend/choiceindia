@@ -708,36 +708,36 @@ function SubBrokerForm(props) {
     //     });
     // }
 //to get otp on call
-function getOTPOnCall(){
-    // console.log("check")
-    showLoader('callOtpLoader2');
-    // console.log("old_session_id",otpSessionID.current)
-    let request = {
-        "mobile_no": brokerMobileNumber,
-        "request_source":"CHOICEINDIA",
-        "session_id":  otpSessionID.current? otpSessionID.current : null   
-    };
-    openAccountService.OTPOnCall(request).then((res)=>{
-        // console.log("OTPOnCall",res)
-        hideLoader('callOtpLoader2');
-        if(res && res.data && res.data.Body && res.data.Body.session_id){
-            otpSessionID.current = res.data.Body.session_id;
-            // console.log("call  OTP otpSessionID",otpSessionID.current)
-            resetOTPPopup();
-            handleOTPResendSuccessToaster('call');
-        }else{
-                setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-        }
-    }).catch((error) => {
-        hideLoader('callOtpLoader2');
-                // setCount(30);
-                if (error && error.response && error.response.data && error.response.data.Message) {
-                    setOTPErrors(error.response.data.Message);
-                } else {
-                    setOTPErrors("Something went wrong, please try again later!");
-                }
-    })
-}
+// function getOTPOnCall(){
+//     // console.log("check")
+//     showLoader('callOtpLoader2');
+//     // console.log("old_session_id",otpSessionID.current)
+//     let request = {
+//         "mobile_no": brokerMobileNumber,
+//         "request_source":"CHOICEINDIA",
+//         "session_id":  otpSessionID.current? otpSessionID.current : null   
+//     };
+//     openAccountService.OTPOnCall(request).then((res)=>{
+//         // console.log("OTPOnCall",res)
+//         hideLoader('callOtpLoader2');
+//         if(res && res.data && res.data.Body && res.data.Body.session_id){
+//             otpSessionID.current = res.data.Body.session_id;
+//             // console.log("call  OTP otpSessionID",otpSessionID.current)
+//             resetOTPPopup();
+//             handleOTPResendSuccessToaster('call');
+//         }else{
+//                 setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+//         }
+//     }).catch((error) => {
+//         hideLoader('callOtpLoader2');
+//                 // setCount(30);
+//                 if (error && error.response && error.response.data && error.response.data.Message) {
+//                     setOTPErrors(error.response.data.Message);
+//                 } else {
+//                     setOTPErrors("Something went wrong, please try again later!");
+//                 }
+//     })
+// }
     function verifyOTP() {
         if (!otp.length) {
             setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
@@ -1096,7 +1096,7 @@ function getOTPOnCall(){
                                                         <div className="d-flex align-items-center justify-content-center">
                                                             <button className="resend" onClick={() =>subBrokerService.resendOTPService(true,showLoader,hideLoader,otpSessionID,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors,SubBrokerLanguageContent,props,brokerMobileNumber)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button>
                                                             <span className="ortext">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'OR')}</span>
-                                                            <button className="resend" onClick={getOTPOnCall}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otponcall', 'Get OTP on Call')}</button>
+                                                            <button className="resend" onClick={()=>{subBrokerService.getOTPOnCallService(showLoader,brokerMobileNumber,otpSessionID,openAccountService,hideLoader,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors)}}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otponcall', 'Get OTP on Call')}</button>
                                                         </div>
                                                        : ''
                                                         
