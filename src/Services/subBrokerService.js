@@ -85,6 +85,39 @@ const subBrokerService = {
     }
 });
   },
+  
+  //Created a common function for resendOTP
+  resendOTPService:function(isResend,showLoader,hideLoader,otpSessionID,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors,SubBrokerLanguageContent,props,brokerMobileNumber){
+    showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+    let request = {
+        "mobile_no": brokerMobileNumber,
+        "old_session_id": otpSessionID.current ? otpSessionID.current : null
+    };
+
+    this.resendOTPNew(request).then((res) => {
+
+        hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+        if (res && res.data && res.data.Body && res.data.Body.session_id) {
+
+            otpSessionID.current = res.data.Body.session_id;
+            resetOTPPopup();
+            if (isResend)
+                handleOTPResendSuccessToaster('otp');
+        } else {
+            if (isResend) {
+                setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+            }
+        }
+    }).catch((error) => {
+
+        hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+        if (error && error.response && error.response.data && error.response.data.Message) {
+            setOTPErrors(error.response.data.Message);
+        } else {
+            setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+        }
+    });
+  },
 
   verifyOTPN: function (request) {
     let url = apiURL.getSubBrokerVerifyOtpUrl();
