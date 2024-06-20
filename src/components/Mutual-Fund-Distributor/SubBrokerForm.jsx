@@ -544,78 +544,79 @@ function SubBrokerForm(props) {
             "captchaResp": captchaToken
         };
         // console.log("new request",request)
-        subBrokerService.sendOTPNew(request).then((res) => {
-            // console.log(res, "sendOTP");
-            hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-            if (res && res.data && res.data.Body && res.data.Body.session_id) {
+        subBrokerService.sendOTPService(request,hideLoader,otpSessionID,resetOTPPopup,handleOTPPopupShow,handleOTPResendSuccessToaster,setOTPErrors,setAPIError,showAPIErrorToaster,isResend);
+        // subBrokerService.sendOTPNew(request).then((res) => {
+        //     // console.log(res, "sendOTP");
+        //     hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+        //     if (res && res.data && res.data.Body && res.data.Body.session_id) {
 
-                otpSessionID.current = res.data.Body.session_id;
-                // console.log("otpSessionID.current",otpSessionID.current)
-                // if (!isResend)
-                resetOTPPopup();
-                if (!isResend)
-                    handleOTPPopupShow();
-                if (isResend)
-                    handleOTPResendSuccessToaster();
-            } else {
-                if (isResend) {
-                    setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                } else {
-                    setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
-                    showAPIErrorToaster();
-                }
-            }
-        }).catch((error) => {
-            // console.log(error, "sendOTP error");
-            hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-            if (isResend) {
-                if (error && error.response && error.response.data && error.response.data.message) {
-                    setOTPErrors(error.response.data.message);
-                } else {
-                    setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                }
-            } else {
-                if (error && error.response && error.response.data && error.response.data.message) {
-                    setAPIError(error.response.data.message);
-                } else {
-                    setAPIError("Something went wrong, please try again later!");
-                }
-                showAPIErrorToaster();
-            }
-        });
+        //         otpSessionID.current = res.data.Body.session_id;
+        //         // console.log("otpSessionID.current",otpSessionID.current)
+        //         // if (!isResend)
+        //         resetOTPPopup();
+        //         if (!isResend)
+        //             handleOTPPopupShow();
+        //         if (isResend)
+        //             handleOTPResendSuccessToaster();
+        //     } else {
+        //         if (isResend) {
+        //             setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+        //         } else {
+        //             setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+        //             showAPIErrorToaster();
+        //         }
+        //     }
+        // }).catch((error) => {
+        //     // console.log(error, "sendOTP error");
+        //     hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+        //     if (isResend) {
+        //         if (error && error.response && error.response.data && error.response.data.message) {
+        //             setOTPErrors(error.response.data.message);
+        //         } else {
+        //             setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+        //         }
+        //     } else {
+        //         if (error && error.response && error.response.data && error.response.data.message) {
+        //             setAPIError(error.response.data.message);
+        //         } else {
+        //             setAPIError("Something went wrong, please try again later!");
+        //         }
+        //         showAPIErrorToaster();
+        //     }
+        // });
     }
     // for resend OTP
-    function resendOTP(isResend) {
-        showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-        let request = {
-            "mobile_no": brokerMobileNumber,
-            "old_session_id": otpSessionID.current ? otpSessionID.current : null
-        };
+    // function resendOTP(isResend) {
+    //     showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+    //     let request = {
+    //         "mobile_no": brokerMobileNumber,
+    //         "old_session_id": otpSessionID.current ? otpSessionID.current : null
+    //     };
 
-        subBrokerService.resendOTPNew(request).then((res) => {
+    //     subBrokerService.resendOTPNew(request).then((res) => {
 
-            hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-            if (res && res.data && res.data.Body && res.data.Body.session_id) {
+    //         hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+    //         if (res && res.data && res.data.Body && res.data.Body.session_id) {
 
-                otpSessionID.current = res.data.Body.session_id;
-                resetOTPPopup();
-                if (isResend)
-                    handleOTPResendSuccessToaster('otp');
-            } else {
-                if (isResend) {
-                    setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                }
-            }
-        }).catch((error) => {
+    //             otpSessionID.current = res.data.Body.session_id;
+    //             resetOTPPopup();
+    //             if (isResend)
+    //                 handleOTPResendSuccessToaster('otp');
+    //         } else {
+    //             if (isResend) {
+    //                 setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+    //             }
+    //         }
+    //     }).catch((error) => {
 
-            hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-            if (error && error.response && error.response.data && error.response.data.Message) {
-                setOTPErrors(error.response.data.Message);
-            } else {
-                setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-            }
-        });
-    }
+    //         hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+    //         if (error && error.response && error.response.data && error.response.data.Message) {
+    //             setOTPErrors(error.response.data.Message);
+    //         } else {
+    //             setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+    //         }
+    //     });
+    // }
 
     //To verify OTP on call
     function getOTPOnCall() {
@@ -990,7 +991,7 @@ return (
                                                 !count ?
 
                                                     <div className="d-flex align-items-center justify-content-center">
-                                                        <button className="resend" onClick={() => resendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button>
+                                                        <button className="resend" onClick={() => subBrokerService.resendOTPService(true,showLoader,hideLoader,otpSessionID,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors,SubBrokerLanguageContent,props,brokerMobileNumber)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button>
                                                         <span className="ortext">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'OR')}</span>
                                                         <button className="resend" onClick={getOTPOnCall}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otponcall', 'Get OTP on Call')}</button>
                                                     </div> : ''
