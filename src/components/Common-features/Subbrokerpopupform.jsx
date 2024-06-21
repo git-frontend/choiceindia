@@ -454,62 +454,6 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
         }
     }
 
-    // function sendOTP(isResend) {
-    //     showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-    //     let request = {
-    //         "name": brokerName,
-    //         "mobile_number": brokerMobileNumber,
-    //         "email": brokerEmail,
-    //         "city": brokerCityBranch,
-    //         "source": "CHOICEINDIA",
-    //         "messgae": '',
-    //         "referredId": refercode.current || null,
-    //         "service_code": "CBAEF",
-    //         "utm_source": UTMSource.current || null,
-    //         "utm_medium": UTMMedium.current || null,
-    //         "utm_campaign": UTMCampaign.current || null,
-    //         "utm_term": UTMTerm.current || null,
-    //         "utm_custom": UTMCustom.current || null,
-    //         "utm_content": UTMContent.current || null
-    //     };
-    //     subBrokerService.sendOTP(request).then((res) => {
-    //         // console.log(res, "sendOTP");
-    //         hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-    //         if (res && res.data && res.data.status != 'error') {
-    //             otpSessionID.current = res.data.session_id;
-    //             // if (!isResend)
-    //             resetOTPPopup();
-    //             if (!isResend)
-    //                 handleOTPPopupShow();
-    //             if (isResend)
-    //                 handleOTPResendSuccessToaster();
-    //         } else {
-    //             if (isResend) {
-    //                 setOTPErrors((res.data && res.data.message) ? res.data.message :"Something went wrong, please try again later!");
-    //             } else {
-    //                 setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
-    //                 showAPIErrorToaster();
-    //             }
-    //         }
-    //     }).catch((error) => {
-    //         // console.log(error, "sendOTP error");
-    //         hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-    //         if (isResend) {
-    //             if (error && error.response && error.response.data && error.response.data.message) {
-    //                 setOTPErrors(error.response.data.message);
-    //             } else {
-    //                 setOTPErrors("Something went wrong, please try again later!");
-    //             }
-    //         } else {
-    //             if (error && error.response && error.response.data && error.response.data.message) {
-    //                 setAPIError(error.response.data.message);
-    //             } else {
-    //                 setAPIError("Something went wrong, please try again later!");
-    //             }
-    //             showAPIErrorToaster();
-    //         }
-    //     });
-    // }
     function sendOTP(isResend) {
         showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
         let request = {
@@ -534,143 +478,6 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
         };
 
         subBrokerService.sendOTPService(request,hideLoader,otpSessionID,resetOTPPopup,handleOTPPopupShow,handleOTPResendSuccessToaster,setOTPErrors,setAPIError,showAPIErrorToaster,isResend);
-        // console.log("sendOTP",request)
-        // subBrokerService.sendOTPNew(request).then((res) => {
-        //     // console.log(res, "sendOTP");
-        //     // console.log('SUBCP',res)
-        //     hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-        //     if (res && res.data && res.data.Body && res.data.Body.session_id) {
-        //         otpSessionID.current = res.data.Body.session_id;
-        //         // if (!isResend)
-        //         resetOTPPopup();
-        //         if (!isResend)
-        //             handleOTPPopupShow();
-        //         if (isResend)
-        //             handleOTPResendSuccessToaster();
-        //     } else {
-        //         if (isResend) {
-        //             setOTPErrors((res.data && res.data.Message) ? res.data.Message : "Something went wrong, please try again later!");
-        //         } else {
-        //             setAPIError((res.data && res.data.Message) ? res.data.Message : "Something went wrong, please try again later!");
-        //             showAPIErrorToaster();
-        //         }
-        //     }
-        // }).catch((error) => {
-        //     // console.log(error, "sendOTP error");
-        //     hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-        //     if (isResend) {
-        //         if (error && error.response && error.response.data && error.response.data.Message) {
-        //             setOTPErrors(error.response.data.Message);
-        //         } else {
-        //             setOTPErrors("Something went wrong, please try again later!");
-        //         }
-        //     } else {
-        //         if (error && error.response && error.response.data && error.response.data.Message) {
-        //             setAPIError(error.response.data.Message);
-        //         } else {
-        //             setAPIError("Something went wrong, please try again later!");
-        //         }
-        //         showAPIErrorToaster();
-        //     }
-        // });
-    }
-        /**method to execute when resend OTP clicked */
-        // function resendOTP(isResend) {
-        //     showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-        //     let request = {
-        //         "mobile_no": brokerMobileNumber,
-        //         "old_session_id":  otpSessionID.current? otpSessionID.current : null       
-        //     };
-    
-        //     subBrokerService.resendOTPNew(request).then((res) => {
-    
-        //         hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-        //         if(res && res.data && res.data.Body && res.data.Body.session_id){
-    
-        //             otpSessionID.current = res.data.Body.session_id;
-        //             resetOTPPopup();
-        //             if (isResend)
-        //             handleOTPResendSuccessToaster('otp');
-        //         }else{
-        //             if (isResend) {
-        //                 setOTPErrors((res.data && res.data.Message) ? res.data.Message : "Something went wrong, please try again later!");
-        //             }
-        //         }
-        //     }).catch((error) => {
-    
-        //         hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-        //         if (error && error.response && error.response.data && error.response.data.Message) {
-        //             setOTPErrors(error.response.data.Message);
-        //         } else {
-        //             setOTPErrors("Something went wrong, please try again later!");
-        //         }
-        //     });
-        // }
-    //to get otp on call
-    // function getOTPOnCall(){
-    //     // console.log("check")
-    //     showLoader('callOtpLoader2');
-    //     // console.log("old_session_id",otpSessionID.current)
-    //     let request = {
-    //         "mobile_no": brokerMobileNumber,
-    //         "request_source":"CHOICEINDIA",
-    //         "session_id":  otpSessionID.current? otpSessionID.current : null   
-    //     };
-    //     openAccountService.OTPOnCall(request).then((res)=>{
-    //         // console.log("OTPOnCall",res)
-    //         hideLoader('callOtpLoader2');
-    //         if(res && res.data && res.data.Body && res.data.Body.session_id){
-    
-    //             otpSessionID.current = res.data.Body.session_id;
-    //             resetOTPPopup();
-               
-    //             handleOTPResendSuccessToaster('call');
-    //         }else{
-               
-    //                 setOTPErrors((res.data && res.data.Message) ? res.data.Message : "Something went wrong, please try again later!");
-                
-    //         }
-    //     }).catch((error) => {
-    //         hideLoader('callOtpLoader2');
-    //                 // setCount(30);
-    //                 if (error && error.response && error.response.data && error.response.data.Message) {
-    //                     setOTPErrors(error.response.data.Message);
-    //                 } else {
-    //                     setOTPErrors("Something went wrong, please try again later!");
-    //                 }
-    //     })
-    // }
-
-    function verifyOTP() {
-        if (!otp.length) {
-            setOTPErrors('OTP is required');
-        } else {
-            showLoader('verifyLoader');
-            let request = {
-                session_id: otpSessionID.current,
-                otp: otp
-            }
-            subBrokerService.verifyOTPNew(request).then((res) => {
-                hideLoader('verifyLoader');
-                // console.log(res, "verifyOTPN");
-                if (res && res.data && res.data.status != 'error') {
-                    fetchQueryParams();
-                    // addNewLead();
-                    handleOTPPopupClose();
-                    handleBrokerCreatedSuccessShow();
-                    resetBrokerForm();
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: true,resText: res.data.Message? res.data.Message: 'Lead added successfully', closeMd: closeModal }
-                    });
-                } else {
-                    setOTPErrors((res.data && res.data.message) ? res.data.message :  "Something went wrong, please try again later!");
-                }
-            }).catch((error) => {
-                hideLoader('verifyLoader');
-                // console.log(error, "verifyOTPN error");
-                setOTPErrors((error.data && error.data.message) ? error.data.message : "Something went wrong, please try again later!");
-            });
-        }
     }
 
     function addNewLead() {
@@ -971,7 +778,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                     </div>
 
                                     <div className="btnwrap">
-                                        <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : 'Verify' }</button>
+                                        <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={()=>{subBrokerService.verifyOTP1(otp,setOTPErrors,showLoader,hideLoader,fetchQueryParams,handleOTPPopupClose,handleBrokerCreatedSuccessShow,resetBrokerForm,setShowThanku,otpSessionID,closeModal)}}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : 'Verify' }</button>
                                     </div>
                                     <div className="">
 

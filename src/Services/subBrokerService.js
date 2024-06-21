@@ -1,5 +1,7 @@
 import axios from "axios";
 import { API_URLS } from "./API-URLS";
+import utils from "./utils";
+
 const apiURL = new API_URLS()
 const LMSHeaders = {
   "x-api-key": "IU7YtVUazZxVmxrcjZqajdNZFJTZE5IQlZnMVZYa1I6Y2VESVluYWJqbE4xa0JOMFBkb3hoWHUzb09rUTJKSFc="
@@ -150,6 +152,78 @@ const subBrokerService = {
                     setOTPErrors("Something went wrong, please try again later!");
                 }
     })
+  },
+ 
+  //Created verify OTP function for mutual-fund-distributor form
+  verifyOTP1:function(otp,setOTPErrors,showLoader,hideLoader,fetchQueryParams,handleOTPPopupClose,handleBrokerCreatedSuccessShow,resetBrokerForm,setShowThanku,otpSessionID,closeModal){
+    if (!otp.length) {
+      setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
+  } else {
+      showLoader('verifyLoader');
+      let request = {
+          session_id: otpSessionID.current,
+          otp: otp
+      }
+      subBrokerService.verifyOTPNew(request).then((res) => {
+          hideLoader('verifyLoader');
+          // console.log(res, "verifyOTPN");
+          if (res && res.data && res.data.status != 'error') {
+              fetchQueryParams();
+              // addNewLead();
+              handleOTPPopupClose();
+              handleBrokerCreatedSuccessShow();
+              resetBrokerForm();
+              setShowThanku(prevState => {
+                  return { ...prevState, showModal: true, resText: res.data.Message ? res.data.Message : 'Lead added successfully', closeMd: closeModal }
+              });
+          } else {
+              setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+          }
+      }).catch((error) => {
+          hideLoader('verifyLoader');
+          // console.log(error, "verifyOTPN error");
+          setOTPErrors((error.data && error.data.message) ? error.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+      });
+  }
+  },
+
+  //Created verify OTP function for sub-broker-franchise form
+
+  verifyOTP2:function(otp,setOTPErrors,showLoader,hideLoader,fetchQueryParams,handleOTPPopupClose,handleBrokerCreatedSuccessShow,resetBrokerForm,setShowThanku,otpSessionID,closeModal){
+    if (!otp.length) {
+      setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
+  } else {
+      showLoader('verifyLoader');
+      let request = {
+          session_id: otpSessionID.current,
+          otp: otp
+      }
+      subBrokerService.verifyOTPNew(request).then((res) => {
+          hideLoader('verifyLoader');
+          // console.log(res, "verifyOTPN");
+          if (res && res.data && res.data.status != 'error') {
+              utils.pushDataLayerEvent({
+                  'event': 'sub_broker_leads',
+                  'page_path': window.location.pathname,
+                  'page_url': window.location.href
+              })
+              fetchQueryParams();
+              /**added these 3 methods which were in addnewlead */
+              handleOTPPopupClose();
+              handleBrokerCreatedSuccessShow();
+              resetBrokerForm();
+              setShowThanku(prevState => {
+                  return { ...prevState, showModal: true,resText: res.data.Message? res.data.Message: 'Lead added successfully', closeMd: closeModal }
+              });
+              // addNewLead();
+          } else {
+              setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+          }
+      }).catch((error) => {
+          hideLoader('verifyLoader');
+          setOTPErrors((error.response.data && error.response.data.Message) ? error.response.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+      });
+  }
   },
 
   verifyOTPN: function (request) {

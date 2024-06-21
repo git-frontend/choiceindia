@@ -632,43 +632,6 @@ function SubBrokerForm(props) {
 
         subBrokerService.sendOTPService(request,hideLoader,otpSessionID,resetOTPPopup,handleOTPPopupShow,handleOTPResendSuccessToaster,setOTPErrors,setAPIError,showAPIErrorToaster,isResend);
     }
-    
-    function verifyOTP() {
-        if (!otp.length) {
-            setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
-        } else {
-            showLoader('verifyLoader');
-            let request = {
-                session_id: otpSessionID.current,
-                otp: otp
-            }
-            subBrokerService.verifyOTPNew(request).then((res) => {
-                hideLoader('verifyLoader');
-                // console.log(res, "verifyOTPN");
-                if (res && res.data && res.data.status != 'error') {
-                    utils.pushDataLayerEvent({
-                        'event': 'sub_broker_leads',
-                        'page_path': window.location.pathname,
-                        'page_url': window.location.href
-                    })
-                    fetchQueryParams();
-                    /**added these 3 methods which were in addnewlead */
-                    handleOTPPopupClose();
-                    handleBrokerCreatedSuccessShow();
-                    resetBrokerForm();
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: true,resText: res.data.Message? res.data.Message: 'Lead added successfully', closeMd: closeModal }
-                    });
-                    // addNewLead();
-                } else {
-                    setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                }
-            }).catch((error) => {
-                hideLoader('verifyLoader');
-                setOTPErrors((error.response.data && error.response.data.Message) ? error.response.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-            });
-        }
-    }
 
     function addNewLead() {
         let request = {
@@ -982,7 +945,7 @@ function SubBrokerForm(props) {
                                             </div>
 
                                             <div className="btnwrap">
-                                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'Verify')}</button>
+                                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={()=>{subBrokerService.verifyOTP2(otp,setOTPErrors,showLoader,hideLoader,fetchQueryParams,handleOTPPopupClose,handleBrokerCreatedSuccessShow,resetBrokerForm,setShowThanku,otpSessionID,closeModal)}}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'Verify')}</button>
                                             </div>
                                             <div className="">
 
