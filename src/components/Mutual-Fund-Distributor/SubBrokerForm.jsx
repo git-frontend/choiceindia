@@ -847,7 +847,7 @@ return (
                                         </div>
 
                                         <div className="btnwrap">
-                                            <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={()=>{subBrokerService.verifyOTP1(otp,setOTPErrors,showLoader,hideLoader,fetchQueryParams,handleOTPPopupClose,handleBrokerCreatedSuccessShow,resetBrokerForm,setShowThanku,otpSessionID,closeModal)}}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'Verify')}</button>
+                                            <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={()=>{subBrokerService.verifyOTP1(otp,setOTPErrors,showLoader,hideLoader,fetchQueryParams,handleOTPPopupClose,handleBrokerCreatedSuccessShow,resetBrokerForm,setShowThanku,otpSessionID,closeModal,props)}}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'Verify')}</button>
                                         </div>
                                         <div className="">
 

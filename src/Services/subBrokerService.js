@@ -1,6 +1,7 @@
 import axios from "axios";
 import { API_URLS } from "./API-URLS";
 import utils from "./utils";
+import SubBrokerLanguageContent from "./SubBrokerLanguageContent";
 
 const apiURL = new API_URLS()
 const LMSHeaders = {
@@ -155,7 +156,7 @@ const subBrokerService = {
   },
  
   //Created verify OTP function for mutual-fund-distributor form
-  verifyOTP1:function(otp,setOTPErrors,showLoader,hideLoader,fetchQueryParams,handleOTPPopupClose,handleBrokerCreatedSuccessShow,resetBrokerForm,setShowThanku,otpSessionID,closeModal){
+  verifyOTP1:function(otp,setOTPErrors,showLoader,hideLoader,fetchQueryParams,handleOTPPopupClose,handleBrokerCreatedSuccessShow,resetBrokerForm,setShowThanku,otpSessionID,closeModal,props){
     if (!otp.length) {
       setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
   } else {
@@ -189,7 +190,7 @@ const subBrokerService = {
 
   //Created verify OTP function for sub-broker-franchise form
 
-  verifyOTP2:function(otp,setOTPErrors,showLoader,hideLoader,fetchQueryParams,handleOTPPopupClose,handleBrokerCreatedSuccessShow,resetBrokerForm,setShowThanku,otpSessionID,closeModal){
+  verifyOTP2:function(otp,setOTPErrors,showLoader,hideLoader,fetchQueryParams,handleOTPPopupClose,handleBrokerCreatedSuccessShow,resetBrokerForm,setShowThanku,otpSessionID,closeModal,props){
     if (!otp.length) {
       setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
   } else {
