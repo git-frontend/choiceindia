@@ -10,6 +10,9 @@ import MoreContent from "./MoreContent";
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
 import { useState,useEffect} from "react";
+import TradingBanner from "../Trading-Pages/TradingBanner";
+import CommodityTradingData from "./CommodityTradingData";
+import TradingSubBanner from "../Trading-Pages/TradingSubBanner";
 
 function Commodity() {
   const [rendercount, setRenderCount] = useState(() => false);
@@ -41,7 +44,8 @@ function Commodity() {
     
      
           <div className="demat-page-parent">
-            <CommodityBanner />
+            {/* <CommodityBanner /> */}
+            <TradingBanner data={CommodityTradingData.BannerData}  />
             <WhyOpenFreeCommodity />
             <WhyChoiceCommodity />
             <LowBrokerageCommodity />
