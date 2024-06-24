@@ -4,12 +4,6 @@ import LazyLoader from '../Common-features/LazyLoader';
 import { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import stockBrokerCityService from '../../Services/StockBrokerCityContent'
-import Bangalore from '../../assets/images/stock-broker-mumbai/stock-broker-in-bangalore.svg';
-import Chennai from '../../assets/images/stock-broker-mumbai/stock-broker-in-chennai.svg';
-import Hydrabad from '../../assets/images/stock-broker-mumbai/stock-broker-in-hyderabad.svg';
-import Jaipur from '../../assets/images/stock-broker-mumbai/stock-broker-in-jaipur.svg';
-import Delhi from '../../assets/images/stock-broker-mumbai/stock-broker-in-delhi.svg';
-import Pune from '../../assets/images/stock-broker-mumbai/stock-broker-in-pune.svg';
 import { Link } from "react-router-dom";
 
 function Branches() {
@@ -92,7 +86,6 @@ function Branches() {
 			},
 		],
 	};
-  // console.log("check",Object. keys(content). length)
   return (
     <div>
       <section className="branch" >

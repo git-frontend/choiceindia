@@ -1,10 +1,8 @@
 import React from "react";
 import { useState } from "react";
-// import "./best-stock.scss";
 import "../Best-Stocks/best-stock.scss"
 import "../Share-Market-Holidays/share-marlet-holiday.scss";
 import Template5 from '../Common-features/Template5';
-
 import "../Remisier/Remisier.scss";
 import Holidayscategory from "./Holidayscategory";
 import { useEffect } from "react";
@@ -12,7 +10,6 @@ import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-
 function Sharemarketholidays(holiday) {
   const [toggleState, setToggleState] = useState(1);
   const toggleTab = (index) => {
@@ -66,8 +63,7 @@ function Sharemarketholidays(holiday) {
           <div className="sub-broker-skeleton-parent">
 
             <Holidayscategory  />
-            {/* <BestStockOpenDematAccount /> */}
-            {/* <BestStockreadMore /> */}
+           
           </div>
       }
     </div>

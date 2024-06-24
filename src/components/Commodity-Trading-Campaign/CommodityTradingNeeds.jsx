@@ -1,5 +1,3 @@
-
-// import React from 'react';
 import React from "react";
 import { useState } from 'react';
 import Slider from 'react-slick';
@@ -7,7 +5,6 @@ import Commoditytradingdata from '../../Data/CommodityTradingCampaign';
 import LazyLoader from '../Common-features/LazyLoader';
 function CommodityTradingNeeds() {
   const [isShown2, setIsShown2] = useState(0);
-  // const [isShown3, setIsShown3] = useState(1);
   const settings1 = {
     infinite: true,
     speed: 1000,

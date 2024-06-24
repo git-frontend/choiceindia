@@ -1,12 +1,10 @@
 import React from "react";
-import icon1 from '../../assets/images/ipo-landing/bajaj-energy.svg'
 import LazyLoader from '../Common-features/LazyLoader';
 import { useState, useEffect, useRef } from 'react';
 import cmsService from "../../Services/cmsService";
 import utils from "../../Services/utils";
 import { Accordion } from "react-bootstrap";
 import Slider from 'react-slick';
-import img8 from '../../assets/images/ipo-landing/arrow-right.svg';
 import { useNavigate } from 'react-router-dom'
 import NewDematAccountForm from "../Common-features/NewDematAccountForm";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
@@ -90,9 +88,6 @@ function Banner() {
     cmsService.companyIpoService().then(
       res => {
         if (res) {
-
-          // setApiData(res.data.data);
-
           values = res.data.data;
           values.forEach(ele => {
             if (!AllFilesValue[ele.slug_url]) {
@@ -175,7 +170,6 @@ function Banner() {
 
   const openAccountMobile = useRef("");
   const handleClick = (event) => {
-    // setIsActive(current => !current);
     if (popUp) {
       return;
     }
@@ -189,52 +183,7 @@ function Banner() {
 }
   return (
     <>
-      {/* form section */}
-      {/* <div className={name}>
-        <div className="container d-flex justify-content-end">
-          {
-            apiData?.map((res) => {
-              return (
-                <div className="sticy-card-sub">
-                  <div className="sticy-card-sub-new">
-                    <h3 className="title-secnd">{res.form_title} <br /> {res.form_title2} </h3>
-                    <ul>
-                      <li>
-                        <span className="bx-icon">
-                          <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.form_image_1}`} alt={res.form_image_1_alt} className={"img-fluid svg-fill"} width={"37"} height={"36"} />
-                        </span>
-                        <span className="bx-text">{res.form_sub_title_F}</span>
-                      </li>
-                      <li>
-                        <span className="bx-icon">
-                          <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.form_image_2}`} alt={res.form_image_2_alt} className={"img-fluid svg-fill"} width={"37"} height={"38"} />
-
-                        </span>
-                        <span className="bx-text">{res.form_sub_titleS}</span>
-                      </li>
-                      <li>
-                        <span className="bx-icon">
-                          <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.form_image_3}`} alt={res.form_image_3_alt} className={"img-fluid svg-fill"} width={"36"} height={"36"} />
-
-                        </span>
-                        <span className="bx-text">{res.form_subtitle_Third}</span>
-                      </li>
-                    </ul>
-                    <div className="btn-open">
-                      <button className="btn-bg btn-bg-dark" id={outCome == 'A'? 'ipo-invest-now' : 'ipo-open-now'} onClick={() => window.open(res.form_submit_desktop_link || '')}>{
-                        outCome == 'A'? 'Invest Now' : 'Open Now'
-                      }</button>
-                    </div>
-                  </div>
-
-                </div>
-
-              )
-            })
-          }
-
-        </div>
-      </div> */}
+    
       <div className={`${name2}`+ ' card-sticky visibleCard'}>
         <div className="container d-flex justify-content-end">
           <div className="sticky-new" >

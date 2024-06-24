@@ -13,39 +13,7 @@ function OfferDocumentMenu() {
     let values;
     let AllFilesValue = {};
 
-    // function loadFileDownload() {
-    //     cmsService.documentList().
-    //         then(
-    //             res => {
-    //                 if (res && res.data && res.data.data ) {
-    //                     setisloading(false)
-    //                     // console.log("dddee",res.data.data)
-    //                     values = res.data.data;
-    //                     console.log("ddd",values)
-    //                     values.forEach(ele => {
-
-    //                         if (!AllFilesValue[ele.title]) {
-    //                             AllFilesValue[ele.title] = [];
-    //                             AllFilesValue[ele.title].push(ele)
-    //                         } else {
-    //                             AllFilesValue[ele.title].push(ele)
-
-    //                         }
-    //                     })
-    //                     setDatalist(AllFilesValue);
-    //                     console.log("check",AllFilesValue)
-    //                 } else {
-    //                     setisloading(false)
-    //                     setDatalist([]);
-
-    //                 }
-
-    //             }
-    //         ).catch((error) => {
-    //             setisloading(false)
-    //             setDatalist([]);
-    //         });
-    // }
+   
 
     useEffect(() => {
         setTrigger(true)
@@ -68,7 +36,6 @@ function OfferDocumentMenu() {
                             isloading ?
                                 <div className="text-center">
                                     <div>
-                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
                                         <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                          </div>
                                 </div>

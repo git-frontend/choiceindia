@@ -4,7 +4,6 @@ import React from "react";
 import Slider from "react-slick";
 import StarImg from '../../assets/images/starrating.svg';
 
-import LazyLoader from '../Common-features/LazyLoader';
 
 
 function MFTestimonials() {
@@ -53,48 +52,28 @@ function MFTestimonials() {
                     <div className="mf-testimonial-slider">
                         <Slider {...settings} className="testi-slider">
                           <div className="sl-item">
-                                {/* <span className="img-testi">
-                                  <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"100"} height={"100"} />
-                                </span> */}
-                                {/* <span className="name-font">
-                                    S
-                                </span> */}
+                                
                                 <h3>संचिता रॉय</h3>
                                 <img src={StarImg} alt="" width={"152"} height={"23"} className="img-fluid img-star" />
                                 <p>यह एक उपयोगकर्ता के अनुकूल होने के साथ-साथ इंटरेक्टिव ऐप है जो आपको हाल के बाजार के रुझानों के बारे में जानने में मदद करता है जो आपको वेरिएंट प्रदान करते हैं। यह शुरुआती लोगों के लिए भी उपयुक्त है। यह आपके लिए सही निवेश चुनने के आपके कठिन काम को आसान बनाता है। साथ ही, ग्राहक सहायता बहुत समर्पित है। धन्यवाद इन्वेस्टिका</p>
                                 
                             </div>
                             <div className="sl-item">
-                                {/* <span className="img-testi">
-                                  <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"100"} height={"100"} />
-                                </span> */}
-                                {/* <span className="name-font">
-                                    A
-                                </span> */}
+                                
                                 <h3>अभिषेक गुप्ता</h3>
                                 <img src={StarImg} alt="" width={"152"} height={"23"} className="img-fluid img-star" />
                                 <p>अच्छा ऐप अगर आप म्यूचुअल फंड के साथ जाना चाहते हैं। उपयोगकर्ता के अनुकूल इंटरफेस और निवेश के लिए और जानने की जरूरत नहीं है। बस अपना सर्वश्रेष्ठ चुनें और इन्वेस्टिका को सौंप दें।</p>
                                 
                             </div>
                             <div className="sl-item">
-                                {/* <span className="img-testi">
-                                  <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"100"} height={"100"} />
-                                </span> */}
-                                {/* <span className="name-font">
-                                    M
-                                </span> */}
+                               
                                 <h3>महेंद्र परिहार</h3>
                                 <img src={StarImg} alt="" width={"152"} height={"23"} className="img-fluid img-star" />
                                 <p>मैं इस ऐप के माध्यम से म्यूचुअल फंड में 2 साल से अधिक समय से निवेश कर रहा हूं। चीजें जो मुझे ऐप के बारे में पसंद हैं: 1. यूजर इंटरफेस। आपकी जोखिम प्रोफ़ाइल के अनुरूप पैकेज के साथ अत्यधिक उपयोगकर्ता के अनुकूल। 2. ऐप आपको अपनी पसंद के फंड चुनने की अनुमति देता है और समय पर बाजार के मुकाबले आपके फोलियो के प्रदर्शन का विश्लेषण भी करता है। 3. ग्राहक सहायता त्रुटिहीन है। बिना समय बर्बाद किए त्वरित प्रतिक्रियाएं और प्रभाव प्राप्त होते हैं। अत्यधिक अनुशंसित, विशेष रूप से पहली बार उपयोगकर्ताओं के लिए।</p>
                                 
                             </div>
                             <div className="sl-item">
-                                {/* <span className="img-testi">
-                                  <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"100"} height={"100"} />
-                                </span> */}
-                                {/* <span className="name-font">
-                                    S
-                                </span> */}
+                               
                                 <h3>सुमित सरोज</h3>
                                 <img src={StarImg} alt="" width={"152"} height={"23"} className="img-fluid img-star" />
                                 <p>उपयोगकर्ता के अनुकूल ऐप और कुछ भी एक्सेस करने में आसान गैर-ज्ञानी व्यक्ति भी अपने लक्ष्यों के अनुसार निवेश कर सकते हैं। जैसा कि उनके अन्य ऐप समान हैं, लेकिन आपके निवेश या किसी भी प्रश्न से संबंधित सेवा के मामले में, इन्वेस्टिका टीम मेरा अनुभव सबसे अच्छा है, इसे मिनटों में हल किया गया था, वे अपने ग्राहकों की परवाह करते हैं और एक महान सेवा प्रदान करते हैं। धन्यवाद इन्वेस्टिका टीम</p>

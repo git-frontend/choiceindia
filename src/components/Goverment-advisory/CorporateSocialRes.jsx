@@ -96,11 +96,7 @@ function CorporateSocialRes() {
                         <LazyLoader src={rajasthanvidyarthi} className={"img-fluid"} width={'197'} height={'197'}   alt={""} />
                         </div>
                       </div>
-                      {/* <div className="social-item">
-                        <div className="img-item">
-                          <LazyLoader src={lionsclubinternational} className={"img-fluid"}  width={'182'} height={'169'} alt={"loading"} />
-                        </div>
-                      </div> */}
+                      
                     </Slider>
                   </div>
               </div>

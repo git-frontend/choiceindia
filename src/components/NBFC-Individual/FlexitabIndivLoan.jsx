@@ -86,7 +86,6 @@ function chapterScroll3(id) {
                         <Slider {...settings1}>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                {/* <LazyLoader src={time} alt={"Quick Flexi Loan Approval"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
                                 <img src={time} alt="Individual Loan Sanctioned in 10 Minutes" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">10 Mins</h3>
@@ -94,7 +93,6 @@ function chapterScroll3(id) {
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                {/* <LazyLoader src={disburse} alt={"Flexi Loan Disbursed in 48 Hours"} className={"img-fluid img"} width={"50"} height={"70"} /> */}
                                 <img src={disburse} alt="Get Individual Loan Disbursed in 48 Hours" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">48 Hours</h3>
@@ -102,7 +100,6 @@ function chapterScroll3(id) {
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                {/* <LazyLoader src={paperwork} alt={"Minimum Paper Work for Flexi Business Loan"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
                                 <img src={paperwork} alt="Minimum Paperwork" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">Minimum</h3>
@@ -110,7 +107,6 @@ function chapterScroll3(id) {
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                {/* <LazyLoader src={fee} alt={"Low Flexi Loan Processing Fee"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
                                 <img src={fee} alt="Low Loan Processing Fee" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">Low</h3>

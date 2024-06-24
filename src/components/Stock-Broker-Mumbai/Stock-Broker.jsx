@@ -4,11 +4,7 @@ import LazyLoader from '../Common-features/LazyLoader';
 import Banner from '../Stock-Broker-Mumbai/Banner';
 import FinancialServices from '../Stock-Broker-Mumbai/FinancialServices';
 import Openaccount from '../Stock-Broker-Mumbai/Openaccount';
-
-import BestInMumbai from '../Stock-Broker-Mumbai/BestInMumbai';
-
-import "./stock-broker-mumbai.scss"
-
+import "./stock-broker-mumbai.scss";
 import { useLocation, } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import Navigation from '../../assets/images/stock-broker-mumbai/stock-broker-google-map-location.svg';
@@ -117,11 +113,7 @@ function StockBroker() {
 	}
 
 
-	// if(ischeck && rendercount === true){
-	// 	stockBrokerContent();
-	// 		stockBrokerContent2();
-
-	// }
+	
 
 
 
@@ -129,14 +121,9 @@ function StockBroker() {
 		setRenderCount(true)
 		if (rendercount === true) {
 
-			// locationDetect();
 			stockBrokerContent();
 			stockBrokerContent2();
-			// let parser = new DOMParser();
-			// let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-			// document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
 			document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-			// document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
 			document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
 			document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
 			document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -388,11 +375,7 @@ function StockBroker() {
 																</div>
 	
 															</div>
-															{/* <div className="col-md-6 d-flex align-items-center justify-content-center">
-				  <div className="right-sec  best-mumbai-img">
-				  <LazyLoader src={BestMumbai} alt={"Best Stock Broker in Mumbai"} className={"img img-fluid"} width={"258"} height={"238"}/>
-				  </div>
-				</div> */}
+															
 	
 														</div>
 													</div>

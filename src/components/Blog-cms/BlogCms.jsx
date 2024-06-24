@@ -1,8 +1,4 @@
 import "./blogcms.scss";
-import sipimg from '../../assets/images/fabledetails/img-sip.webp';
-import appimg from '../../assets/images/fabledetails/app-login.webp';
-import author from '../../assets/images/fabledetails/auth.png';
-import logoBanner from '../../assets/images/fabledetails/finx-banner.png';
 import { useState, useEffect } from 'react';
 import cmsService from "../../Services/cmsService";
 import utils from "../../Services/utils";
@@ -178,10 +174,7 @@ function BlogCms() {
 
                                             </div>
                                         </div>
-                                        {/* <div className="pr-sec high-note">
-                                    <h5>IMPORTANT NOTE</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed convallis elit. Cras et convallis felis, sit amet vehicula sapien. Fusce auctor auctor odio id porttitor. Fusce in justo et augu. <a href="#" className="link-sub sublink1">Visit Now</a> </p>
-                                </div> */}
+                                        
                                         <div className="pr-sec">
                                             <h2>{res.opening_time_title}</h2>
                                             <div dangerouslySetInnerHTML={{ __html: res.opening_time_paragraph }}>
@@ -215,13 +208,7 @@ function BlogCms() {
                                                 ""
                                         }
 
-                                        {/* <div className="pr-sec img-bl">
-                                    <img src={appimg} className="img-fluid" />
-                                </div>
-                                <div className="link-tag">
-                                    <h4>Our New Super App Choice FinX Is Here! </h4>
-                                    <a href="#" className="btn-bg btn-bg-dark">Download Now</a>
-                                </div> */}
+                                      
                                         <div className="pr-sec">
                                             <h2><a href={res.commodity_market_link} className="link-sub">{res.commodity_exchange_title}</a></h2>
                                             <div dangerouslySetInnerHTML={{ __html: res.commodity_market_paragraph }}>
@@ -229,11 +216,7 @@ function BlogCms() {
                                             </div>
 
                                         </div>
-                                        {/* <div className="app-promo-banner">
-                                    <img src={logoBanner} alt="" />
-                                    <h2 className="ttlm">Searching Trading App? Check Out Now
-                                    <a href="#" className="link-sub">Our New Super App Choice FinX Is Here!</a></h2>
-                                </div>   */}
+                                       
                                         <div className="pr-sec">
                                             <h2>{res.type_commodity_market_title}</h2>
                                             <div  >

@@ -1,5 +1,3 @@
-
-// import React from 'react';
 import React, { useState, useEffect } from "react";
 import './emi-calculator.scss';
 import meta_tags from '../../Data/MetaTags';
@@ -33,9 +31,7 @@ function EmiCalculator() {
         if (interestRate < 10 || interestRate > 36) {
           errors.interestRate = 'Please Enter Valid Interest Rate';
         }
-        // if (!/^\d{1,2}(\.\d)?|3[0-6](\.\d)?$/.test(interestRate)) {
-        //     errors.interestRate = 'Please Enter Valid Interest Rate';
-        //   }
+        
       
         if (tenure < 12 || tenure > 120) {
           errors.tenure = 'Please Enter Valid Tenure In month';
@@ -113,7 +109,6 @@ function EmiCalculator() {
                                         <p className='para'>Check out our calculator to calculate the amount of EMI for different loans and tenures</p>
                                     </div>
                                     <div className='cal-opt mrg-top'>
-                                        {/* <p>Loan Amount</p> */}
                                         <div className='value-card'>
                                             <div><p>Loan Amount</p></div>
                                             <input type="tel"  className="form-ctr" maxLength={7}  min="50000" max="5000000"  value={loanAmount} onChange={handleLoanAmountChange}/>
@@ -129,7 +124,6 @@ function EmiCalculator() {
                                         <div className="slidecontainer">
                                             <div className="middle">
                                                 <div className="slider-container">
-                                                    {/* <span className="bar"><span style={fillStyle}></span></span> */}
                                                     <input type="range" className="slider" step="1000" min="50000" max="5000000" value={loanAmount} 
                                                         onChange={handleLoanAmountChange} style={fillStyle}
                                                     />
@@ -139,7 +133,6 @@ function EmiCalculator() {
                                         </div>
                                     </div>
                                     <div className='cal-opt'>
-                                        {/* <p>Interest Rate (per annum)</p> */}
                                         <div className='value-card'>
                                             <div><p>Interest Rate (per annum)</p></div>
                                             <div><input type="number" className="form-ctr" min="10" max="36"   value={interestRate}  
@@ -158,7 +151,6 @@ function EmiCalculator() {
                                         <div className="slidecontainer">
                                             <div className="middle">
                                                 <div className="slider-container">
-                                                    {/* <span className="bar"><span className="" style={{ width: `${interestRate}%` }}></span></span> */}
                                                     <input type="range" className="slider" id="myRange"  min="10" max="36" value={interestRate} 
                                                         onChange={handleInterestRateChange}  style={fillStyle1}
                                                     />
@@ -168,7 +160,6 @@ function EmiCalculator() {
                                         </div>
                                     </div>
                                     <div className='cal-opt'>
-                                        {/* <p>Tenure (in months)</p> */}
                                         <div className='value-card'>
                                             <div><p>Tenure (in months)</p></div>
                                             <input type="tel"  className="form-ctr" value={tenure} maxLength={3} min="12" max="120"  onChange={handleLoanTenureChange} />
@@ -184,7 +175,6 @@ function EmiCalculator() {
                                         <div className="slidecontainer">
                                             <div className="middle">
                                                 <div className="slider-container">
-                                                    {/* <span className="bar"><span className="" style={{ width: `(${value} - 12) / (120 - 12) * 100` }}></span></span> */}
                                                     <input type="range" className="slider" id="myRange" min="12" max="120" value={tenure} onChange={handleLoanTenureChange} style={fillStyle2} />
                                                     {errorMessages.tenure && <span className="text-danger">{errorMessages.tenure}</span>}
                                                 </div>
