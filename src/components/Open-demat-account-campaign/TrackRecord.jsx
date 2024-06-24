@@ -84,14 +84,12 @@ function fetchExpertResearchReport() {
             setResearch([]);
         }
     }).catch((error) => {
-       // console.log(error, "error");
         setResearch([]);
     });
 }
 
 useEffect(() => {
   fetchExpertResearchReport();
- // console.log('RRR',research.length);
 }, []);
   return (
     <div>

@@ -63,7 +63,7 @@ function WhyOpenFreeCommodity() {
                                 <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 <LazyLoader src={Image7} className={"img-fluid"} width={"40"} height={"41"} alt={"Free Commodity Trading Account in India with Low Brokerage Charges"}  />
-                                                {/* <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt="Low Brokerage" /> */}
+                                                
                                             </div>
                                             <div className="card-block">
 
@@ -74,7 +74,7 @@ function WhyOpenFreeCommodity() {
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                             <LazyLoader src={Image8} className={"img-fluid lazyload"} width={"40"} height={"41"} alt={"Commodity Trading Account Opening with Free Call for Trade Facility"}  />
-                                                {/* <img src={Image8} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
+                                               
                                             </div>
                                             <div className="card-block">
 
@@ -85,7 +85,7 @@ function WhyOpenFreeCommodity() {
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                             <LazyLoader src={Image9} width={"40"} height={"41"} alt={"Paperless Commodity Trading Account in India"} className={"img-fluid lazyload"} />
-                                                {/* <img src={Image9} width={"40"} height={"41"} alt="Paperless Account Opening" className="img-fluid lazyload" /> */}
+                                               
                                             </div>
                                             <div className="card-block">
 
@@ -98,7 +98,7 @@ function WhyOpenFreeCommodity() {
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                             <img src={Image10} width={"50"} height={"50"} alt={"Commodity Trading with Advance Trading Platform"} className={"img-fluid lazyload"} />
-                                                {/* <img src={Image10} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
+                                              
                                             </div>
                                             <div className="card-block">
 
@@ -111,7 +111,7 @@ function WhyOpenFreeCommodity() {
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                             <img src={Image11} width={"40"} height={"41"} alt={"Open Commodity Trading Account and earn more from referrals"} className={"img-fluid lazyload"} />
-                                                {/* <img src={Image11} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
+                                               
                                             </div>
                                             <div className="card-block">
 
