@@ -2,7 +2,6 @@ import {useState} from 'react';
 import NewDematAccountForm from '../Common-features/NewDematAccountForm';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function Banner() {
-  const [isCheck, setIsCheck] = useState(false)
   return (
     <>
         <section className='banner-sec' id='section-under25'>

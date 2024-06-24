@@ -1,12 +1,8 @@
 
 import React, { useState, useEffect } from "react";
-
 import { Accordion } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 function Faqs() {
-    const [view, setview] = useState(false);
-    const [show, setshow] = useState(false);
     return (
         <>
             <section className="Dematfaq mf-faq">

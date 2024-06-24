@@ -1,7 +1,5 @@
-// import React, { useState, useEffect } from "react";
 import appbanner from "../../assets/images/bug-bounty/app-banner.png"
 import LazyLoader from "../Common-features/LazyLoader";
-import { Accordion } from "react-bootstrap";
 function BugBountyBanner() {
 
 
@@ -20,7 +18,6 @@ function BugBountyBanner() {
                     <div className="col-md-5 d-none d-sm-block">
                         <div className="rightsec">
                             <LazyLoader src={appbanner} alt={"Choice Bug Bounty Program"} className={"img-fluid"} width={"609"} height={"476"} />
-                            {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img> */}
                         </div>
                     </div>
                 </div>

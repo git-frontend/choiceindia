@@ -1,11 +1,7 @@
 
 import React from "react";
 import { useState } from "react";
-import Accordion from 'react-bootstrap/Accordion';
-import Equity from '../../assets/images/brokerage-charges/equity.svg';
-import Currency from '../../assets/images/brokerage-charges/currency.svg';
-import Commodity from '../../assets/images/brokerage-charges/commodity.svg';
-import LazyLoader from "../Common-features/LazyLoader";
+
 
 function BrokerageTabs() {
    const [toggleState, setToggleState] = useState(1);

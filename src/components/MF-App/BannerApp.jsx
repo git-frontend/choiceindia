@@ -11,39 +11,7 @@ function BannerCareer() {
   const  queryParam = window.location.search;
  const utmvalue= new URLSearchParams(queryParam);
  const param1 = utmvalue.get('utm_source');
-  // console.log("setshow",param1);
-  // var self = window.location.toString();
-  //       var querystring = self.split("?");
-  //       if (querystring.length > 1) {
-  //         var utmdata = querystring[1].split("&");
-  //       }
-
   
-    
-
-    // useEffect(() => {
-    //   setRenderCount(true)
-    //   if (rendercount === true) {
-    //     if(querystring.length > 1){
-    //     for(let i=0 ;i<=utmdata.length||1;i++)
-    //     {
-          
-    //       if(utmdata[i]||0=='utm_source=alphabee'){
-            
-    //         // console.log("setshow",show);
-    //         setshow(true)
-            
-    //       }
-             
-         
-    
-          
-    //     }
-    //   }
-       
-    //   }
-    // }, [rendercount])
-    
   return (
     <>
       <section className="banner-app" onMouseOver={() => setIscheck(true)}>
@@ -61,7 +29,6 @@ function BannerCareer() {
                       <span className='blackcolor'>Google Play</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
-                    {/* <img src={appstore} className="" alt={"App Store"} width="27" height="24" /> */}
                     <LazyLoader src={appstore} className={"img-fluid"} alt={"App Store"} width={"27"} height={"24"}/>
 
                       <span className='blackcolor'>App Store</span>

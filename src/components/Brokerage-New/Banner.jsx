@@ -90,15 +90,13 @@ function Banner() {
                                         <span className="carditem-option-img"><LazyLoader src={icon4} alt={"Low brokerage and Rs. 0 call & trade"} className={"img-fluid"} width={"202"} height={"157"} /></span>
                                     </div>
                                 </Slider>
-                                {/* </div> */}
+                                
                             </div>
                           
                                     <div className="col-xl-5 col-md-6">
                                         <div className="d-flex justify-content-center justify-content-lg-end" id="dematform">
                                         <div className={`${formMobile} ` + (isActive ? 'p-hide' : 'p-show')}>
-                                         {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz"> */}
                                          <NewDematAccountForm setIsActive={setIsActive}/>
-                                            {/* </GoogleReCaptchaProvider> */}
                                         </div>
                                         </div>
                                     </div> 

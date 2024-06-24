@@ -73,10 +73,7 @@ function FinxTools() {
                                     <Slider {...settings1}
                                     asNavFor={nav1}
                                     ref={slider => setslider1(slider)}
-                                    //   afterChange={(ev) => {
-                                    //     setIsShown3(ev)
-                                    //     console.log("check",ev);
-                                    //   }}
+                                    
                                     >
                                     {
                                         Finxtoolsimg?.map((response, index) => {

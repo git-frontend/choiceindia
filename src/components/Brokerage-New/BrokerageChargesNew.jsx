@@ -24,10 +24,7 @@ function BrokerageCharges() {
     setRenderCount(true)
     if (rendercount === true) {
       let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -82,14 +79,9 @@ function BrokerageCharges() {
         <BrokerageTabs />
         <BrokerageCosts />
         <Applicablecharges />
-        {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" > */}
         <NewFormSection sections={sections}  />
-        {/* </GoogleReCaptchaProvider> */}
-        
         <BrokerageFaq />
-        {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" > */}
         <NewFormSection sections={data2}  />
-        {/* </GoogleReCaptchaProvider> */}
         <BrokeragSegments />
       </div>
       </GoogleReCaptchaProvider>

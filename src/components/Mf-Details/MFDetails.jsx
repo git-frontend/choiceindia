@@ -118,7 +118,6 @@ function MFTopFunds() {
         rest.getSchemeData(request).then(
             res => {
                 if (res && res.Response) {
-                    // console.log("res.Responsec", res.Response)
                     setSchemedata([res.Response])
                     document.title = res.Response.SchemeBasic.SchemeMainName? res.Response.SchemeBasic.SchemeMainName +" NAV & SIP Returns": '';
                     document.getElementById('meta-tags').content = res.Response.SchemeBasic.SchemeMainName? " Invest in " +res.Response.SchemeBasic.SchemeMainName +" scheme with Choice. Check the " +res.Response.SchemeBasic.SchemeMainName +" NAV, SIP returns & performance" : '';
@@ -193,7 +192,6 @@ function MFTopFunds() {
         rest.getPerformancePeerComparisonData(request).then(
             res => {
                 if (res.Response != null && res.Response.PeerComparison) {
-                    // console.log("API Response:", res.Response);
 
                     // Check if Performance data is present
                     if (res.Response.Performance && res.Response.Performance.length > 0) {
@@ -206,7 +204,6 @@ function MFTopFunds() {
                         ];
 
                         let a = res.Response.Performance;
-                        // console.log("Performance Data:", a);
 
                         list.forEach((obj) => {
                             let result = { label: obj.label };
@@ -224,7 +221,6 @@ function MFTopFunds() {
                             performanceResponseObject.push(result);
                         });
 
-                        // console.log("Updated Performance Response:", performanceResponseObject);
 
                         setPerformanceResponseObject([...performanceResponseObject]);
                     }
@@ -258,7 +254,7 @@ function MFTopFunds() {
                     finalR = finalR.concat(positiveK).concat(zeroK).concat(negativeK);
                     setPeerComparisonResponseObject(finalR);
                 }
-                //   sipLumpsumCalc()
+                
 
             }).catch((error) => {
                 // Handle errors
@@ -270,16 +266,6 @@ function MFTopFunds() {
         let tempstore;
         const urlIdentity = window.location.pathname.split('/scheme/')[1];
         const arr = urlIdentity.split('-').slice(-2);
-
-        // if (switchChange !== undefined) {
-        //     setTypeOfCalc(!typeOfCalc);
-        // }
-        // if (switchChange) {
-        //     setTypeOfCalc(true);
-        // } else {
-        //     setTypeOfCalc(false);
-        // }
-
         if (minInvested < 1) {
             setErrorMsg('Enter a valid amount');
             return false;
@@ -298,13 +284,7 @@ function MFTopFunds() {
             tempstore = effectiveNoOfMonths / 12;
             setMonthsLabel(`${tempstore} Year${tempstore > 1 ? 's' : ''}`);
         }
-        // if (effectiveNoOfMonths <= 6) {
-        //     tempstore = effectiveNoOfMonths;
-        //     setMonthsLabel(`${tempstore} Month${tempstore > 1 ? 's' : ''}`);
-        // } else {
-        //     tempstore = effectiveNoOfMonths / 12;
-        //     setMonthsLabel(`${tempstore} Year${tempstore > 1 ? 's' : ''}`);
-        // }
+        
 
         let request = {
             SchemeCode: arr[0],
@@ -314,7 +294,6 @@ function MFTopFunds() {
             TypeOfCalc: typeOfCalc ? 'SIP' : 'Lumpsum',
         };
 
-        // console.log('sip request', request);
 
         rest.sipLumpsumCalc(request)
             .then((res) => {
@@ -385,7 +364,6 @@ function MFTopFunds() {
         }
         setSensexOrBankFD(type);
         setDuration(duration);
-        // console.log("dhgjhdgfj", type, duration)
         if (!returnsGraphData[duration]) {
             getReturnsData(duration, (count) => {
                 if (count === 3) {
@@ -422,7 +400,6 @@ function MFTopFunds() {
         rest.getNavReturnGraph(payload).then((res) => {
             if (res.Response && res.Status === 'Success') {
                 const returnData = getGraphDataFromString(res.Response.GraphData);
-                // console.log("returnData",returnData)
                 if (returnData) {
                     setReturnsGraphData((prevReturnsGraphData) => ({
                         ...prevReturnsGraphData,
@@ -451,7 +428,6 @@ function MFTopFunds() {
 
                     rest.getbankFDReturnGraphdata(duration).then((res) => {
                         if (res.Response && res.Status === 'Success') {
-                            // console.log("getbankFDReturnGraphdata", res.Response)
                             let BankData = Number(res.Response).toFixed(2);
                             BankData = duration === 'FiveYearly'
                                 ? (Number(BankData) / 5).toFixed(2)
@@ -474,9 +450,7 @@ function MFTopFunds() {
                     });
                     rest.getsensexReturnGraphdata(duration).then((res) => {
                         if (res.Response && res.Status === 'Success') {
-                            // console.log("getsensexReturnGraphdata", res.Response)
                             let sensexData = getGraphDataFromString(res.Response);
-                            // console.log("sensexData", sensexData)
                             setSensexReturnsData((prevSensexReturnsData) => ({
                                 ...prevSensexReturnsData,
                                 [duration]: {
@@ -611,7 +585,6 @@ function MFTopFunds() {
                 }
             })
             .catch((error) => {
-                // Handle error if needed
                 console.error('Error fetching scheme distribution data:', error);
             });
     }
@@ -625,9 +598,6 @@ function MFTopFunds() {
                 return prevValue;
             }
 
-            // if (value === '1' || value === '2' || value === '3') {
-            //     getSchemeTopSectors(value);
-            // }
             if (value === '1') {
                 setSelectedDropDownValue("Sector")
                 setTopSectorsResponseObject([])
@@ -690,8 +660,6 @@ function MFTopFunds() {
             },
         ],
     });
-    // console.log("datas2", datas2.labels, datas2.datasets)
-
 
     const getSchemeTopSectors = (value) => {
         setTopSectorsResponseObject([]);
@@ -702,10 +670,8 @@ function MFTopFunds() {
             "SchemePlanCode": arr[1],
             "Type": value || selectedDistributionValue
         }
-        // console.log("mrktSectorCompanyRequestObject req", mrktSectorCompanyRequestObject)
         rest.getschemeTopSectors(mrktSectorCompanyRequestObject).then((res) => {
             if (res.Response !== null) {
-                // console.log("getschemeTopSectors ", res.Response)
                 let topSectorsResponse = res.Response;
                 setTopSectorsResponseObject(res.Response)
                 if (topSectorsResponse.Sector === "" || topSectorsResponse.Sector === "Others") {
@@ -783,13 +749,11 @@ function MFTopFunds() {
             "SchemePlanCode": arr[1],
             "Type": value || selectedDistributionValue
         }
-        // console.log("getSchemeTopHoldings", mrktSectorCompanyRequestObject)
 
         rest.getschemeTopHoldings(mrktSectorCompanyRequestObject)
             .then((res) => {
                 if (res.Response !== null) {
                     setTopHoldingsResponseObject(res.Response);
-                    // console.log("res.Response", res.Response)
                 } else {
                     setTopHoldingsResponseObject([]);
                 }
@@ -802,8 +766,6 @@ function MFTopFunds() {
     const showHideDropDown = (value) => {
         setShowDropdownLoader(true);
         setDropdownVisible(!isDropdownVisible);
-        // console.log("showHideDropDown", value)
-
         if (value === '1') {
             setSelectedDropDownValue('Market Cap');
             setShowHideDropdownValues({ marketcap: true });
@@ -962,7 +924,6 @@ function MFTopFunds() {
                                                         id="exchangeToggle"
                                                         name="exchangeToggle"
                                                         checked={typeOfReturn}
-                                                        // onChange={(e) => setTypeOfReturn(e.target.checked)}
                                                         onChange={(e) => {
                                                             setTypeOfReturn(e.target.checked);
                                                             reloadGraphData(e.target.checked ? 'Sensex' : 'Bank FD', duration, true);
@@ -1122,7 +1083,6 @@ function MFTopFunds() {
                                             <div className='list-tabs-number'>
                                                 <button
                                                     className={toggleState === 1 ? "tabs  active-tabs" : "tabs"}
-                                                    // onClick={() => toggleTab(1)}
                                                     onClick={() => { getDistributionData('1', true); toggleTab(1); }}
                                                     disabled={!schemeDistributionResponse?.Equity || schemeDistributionResponse?.Equity?.NetAssetPercent === 0}
                                                 >
@@ -1131,7 +1091,6 @@ function MFTopFunds() {
                                                 </button>
                                                 <button
                                                     className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-                                                    // onClick={() => toggleTab(2)}
                                                     onClick={() => { getDistributionData('2', true); toggleTab(2); }}
                                                     disabled={!schemeDistributionResponse?.Debt || schemeDistributionResponse?.Debt?.NetAssetPercent === 0}
                                                 >
@@ -1154,7 +1113,6 @@ function MFTopFunds() {
                                                 >
                                                     <div className="equity-tab-cont">
                                                         <div className='lft-chart'>
-                                                            {/* <img src={Image1} className="img-fluid" alt="" /> */}
                                                             <Doughnut data={datas} options={charteroption} />
                                                         </div>
                                                         {
@@ -1315,7 +1273,6 @@ function MFTopFunds() {
                                                 ) : (
                                                     <div className="accordion" style={{ display: topHoldingsResponseObject.length === 0 && !showDropdownLoader ? 'block' : 'none' }}>
                                                         <div className="col-md-4 col-9 m-auto">
-                                                            {/* <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" /> */}
                                                         </div>
                                                     </div>
                                                 )}
@@ -1353,7 +1310,6 @@ function MFTopFunds() {
                                                 <div className="col-md-6 col-9 m-auto">
                                                     <p>Data Not Found</p>
                                                     <div className="col-md-4 col-9 m-auto">
-                                                        {/* <img src="/assets/images/error_data_not_found.svg" className="img-fluid mt-4" alt="Error Data Not Found" /> */}
                                                     </div>
                                                 </div>
                                             </div>
@@ -1386,7 +1342,6 @@ function MFTopFunds() {
                                                         <div className='scheme-list' key={i}>
                                                             <div className='scheme-list-itm '>
                                                                 <div className='list-itm-lft'>
-                                                                    {/* <h4>Quant Tax Plan Growth</h4> */}
                                                                     <h4><a href={`/scheme/${optimezeString(res.SchemeName)}-${res.SchemeCode}-${res.SchemePlanCode}`}>
                                                                         {res.SchemeName}
                                                                     </a></h4>
@@ -1457,7 +1412,6 @@ function MFTopFunds() {
                                                 <tbody >
                                                     {
                                                         performanceResponseObject.map((res, i) => {
-                                                            // console.log("performanceResponseObject", res)
                                                             return (
                                                                 <tr key={i}>
                                                                     <td>{res.label}</td>
@@ -1600,11 +1554,7 @@ function MFTopFunds() {
                             </div>
                         </div>
                     </div>
-                    {/* <div className={name}>
-                        <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                            <a className="primary-orange-btn scroll-top-account openbtn" href='/open-free-demat-account'>Open Free Account</a>
-                        </div>
-                    </div> */}
+                    
                 </div>
             </section>
 
@@ -1635,7 +1585,6 @@ function MFTopFunds() {
                     </button>
                     <div className={name}>
                         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                            {/* <FixedForm /> */}
                             <Fixedstickyfooter />
                         </GoogleReCaptchaProvider>
                     </div>

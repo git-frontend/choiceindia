@@ -50,7 +50,6 @@ function Banner() {
     }
     const initializeData = () => {
         let urlIdentity = window.location.pathname.split('/top-funds/')[1];
-        // console.log("urlIdentity", urlIdentity);
         getCategoryData(urlIdentity);
     };
     const getCategoryData = (urlIdentity) => {
@@ -70,7 +69,7 @@ function Banner() {
                 if (err && err.message && (err.message.indexOf('404') > -1)) {
                     navigate(`/404`, { replace: true });
                 }
-                // console.log("ERROR", err);
+               
             }
         );
     };
@@ -117,12 +116,10 @@ function Banner() {
     }
     const FilterByReturns = (e) => {
         const selectedReturns = e.target.value;
-        // console.log("selectedReturns", selectedReturns)
         setReturnsFilter(selectedReturns);
         let filteredResults = filteredCategoryData;
         if (selectedReturns) {
             filteredResults = filteredCategoryData.filter((fund) => {
-                // console.log('fund', fund);
                 switch (selectedReturns) {
                     case '1 Month':
                         return fund.SchemeReturns.OneMonthReturn !== null;
@@ -141,7 +138,6 @@ function Banner() {
                 }
             });
         }
-        // console.log('filteredResults', filteredResults);
         setFilteredCategoryData(filteredResults);
     };
 
