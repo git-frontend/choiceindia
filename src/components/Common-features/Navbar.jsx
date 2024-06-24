@@ -40,7 +40,6 @@ function Navbar() {
         </nav>
 
         <div className={(check === 'show') ? " menu visible check-menu-main" : menu_class}>
-          {/* <h3 className="text-center"> <Link to="/investors" className="menu-itm-link-header ">Disclosures under regulation 46 of the LODR</Link></h3> */}
           <div className="d-flex investor-menu-wrap">
             <ul className="investor-info-menu-list">
               <li className="menu-itm">

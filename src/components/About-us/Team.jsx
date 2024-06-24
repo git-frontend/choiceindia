@@ -120,7 +120,6 @@ useEffect(() => {
                    <div className="team-item">
                       <span className="img-itm">
                       <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.image}`} className={"img-fluid"} width={"224"} height={"349"} alt={res.title} />
-                        {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
                       </span>
                       <div className="namedesg">
                         <h5>{res.title}</h5>

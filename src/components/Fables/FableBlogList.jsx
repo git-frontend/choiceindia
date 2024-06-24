@@ -15,7 +15,6 @@ function FableBlogList() {
     const [isloading,setisloading ] = useState(true);
     const [loadedCount, setLoadedCount] = useState(3);
     const demo_ref = useRef(null)
-    // const demo_ref2 = useRef(null);
 
     function loadfablecategory() {
         FablesTrending.fabalcategory().then(
@@ -89,7 +88,6 @@ function FableBlogList() {
                                         data.map((res,i) => {
         
                                             let classNameNm = "link-txt" + ((i === count) ? ' link-active' : "")
-                                            //("precheck",count)
                                             return (
                                                 
                                                 <li onClick={()=>{getfableFolder(res.fable_linkage)
@@ -126,16 +124,11 @@ function FableBlogList() {
                                           
                                         <Link  to={`/blog/${res.slug}`} className="tab-blog-item mb-5" key={res.id}>
                                     <div className="blog-item-img">
-                                        {/**<LazyLoader src={res.feature_image} className={''} width={'402'} height={'300'} alt={'loading'} />*/}
                                         <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"}/>
                                     </div>
                                     <div className="blog-item-des" id="res-des-scrlls">
                                         <h4>{res.title}</h4>
                                         <p>{res.meta_description}</p>
-                                       {/** <div className="d-flex justify-content-between">
-                                            <span className="sm-text">21 Aug 2021</span>
-                                            <span className="sm-text">@SachinChadda</span>
-                                    </div> */}
                                     </div>
                                 
                                 </Link>

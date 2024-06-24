@@ -11,7 +11,6 @@ import AppOTradeTestimonial from './AppOTradeTestimonial';
 import AppOTDownloadJiffy from './AppOTDownloadJiffy';
 import "./online-trading-app.scss";
 import Template3  from '../Common-features/Template3';
-// import AppHeader from './AppHeader.jsx';
 import {
   useLocation,
 } from 'react-router-dom';
@@ -33,20 +32,9 @@ function TradingHindiApp() {
       let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
       document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
-      // if(!(document.getElementById('link1')==null)){
-      //   document.getElementById('link1').remove();
-      // document.getElementById('link2').remove();
-      // document.getElementById('link3').remove();
-      // document.getElementById('link4').remove();
-      // document.getElementById('link5').remove();
-      // document.getElementById('link6').remove();
-      
-      // }
-
         if (document.getElementById('link1') == null) {
         let sitemap1 = document.createElement('link');
         sitemap1.rel = "alternate";

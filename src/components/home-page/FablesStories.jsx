@@ -124,7 +124,6 @@ function FablesStories() {
 						{
 							isloading ?
 								<div className="text-center">
-									{/* <img src={loaderimg2} className="img-fluid" alt='No Data Found' height={250} width={250} /> */}
 									<video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
 								</div>
 								:
@@ -144,13 +143,11 @@ function FablesStories() {
 																		<div id="stories-timeout">
 																			<Link to={`/blog/${fslider[sliderimag].slug}/`}>
 																				<LazyLoader src={fslider[sliderimag]?.feature_image} width={"521"} height={"450"} alt={fslider[sliderimag]?.meta_title} />
-																			</Link>
-																			{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
+																			</Link>																			
 																		</div>
 																		:
 																		<div>
-																			<LazyLoader src={fableData[0].feature_image} alt={fslider[sliderimag]?.meta_title} />
-																			{/* <img src={fableData[0].feature_image} alt="Loading" /> */}
+																			<LazyLoader src={fableData[0].feature_image} alt={fslider[sliderimag]?.meta_title} />													
 																		</div>
 																}
 
@@ -178,9 +175,7 @@ function FablesStories() {
 
 															<div className="sec-slider-cont">
 																<Slider {...settings1}
-																	slidesToShow={3}
-																	// swipeToSlide={true}
-																	// focusOnSelect={true}
+																	slidesToShow={3}														
 
 
 																	beforeChange={(ev1, ev2) => {
