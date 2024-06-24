@@ -10,7 +10,6 @@ import { useState ,useEffect} from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-// import Lazy from 'yup/lib/Lazy';
 
 function MFDistributorBenifits() {
 
@@ -75,7 +74,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                             <LazyLoader src={Manager} alt={"Sales and Marketing Assistance"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
-                                            {/* <img src={Manager} alt="Sales and Marketing Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Sales &amp; Marketing <br/> Assistance</h4>
                                     </div>
@@ -84,7 +82,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Software} alt={"Research and Reccommendations Support"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Software} alt="Research and Reccommendations Support" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Research &amp; Recommendations Support</h4>
                                     </div>
@@ -93,7 +90,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Sales} alt={"Trading App"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Sales} alt="Trading App" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Cutting-edge Platforms (App &amp; Web)</h4>
                                     </div>
@@ -102,7 +98,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Channels} alt={"Custom Portfolio Analysis for HNI Clients"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Channels} alt="Custom Portfolio Analysis for HNI Clients" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Custom Portfolio Analysis for HNI Clients</h4>
                                     </div>
@@ -111,7 +106,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                             <LazyLoader src={Training} alt={"Dedicated Relationship Manager"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Training} alt="Dedicated Relationship Manager" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Dedicated Relationship Manager</h4>
                                     </div>
@@ -120,7 +114,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                             <LazyLoader src={Trading} alt={"Multiple Fianancial Products"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Trading} alt="Multiple Fianancial Products" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Multiple <br/>Products on Offer</h4>
                                     </div>
@@ -129,7 +122,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                             <LazyLoader src={Transport} alt={"Complete Online Process"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Transport} alt="Complete Online Process" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Complete <br/>Online Procedure</h4>
                                     </div>
@@ -142,7 +134,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                             <LazyLoader src={Manager} alt={"Sales and Marketing Assistance"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
-                                            {/* <img src={Manager} alt="Sales and Marketing Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Sales &amp; Marketing Assistance</h4>
                                     </div>
@@ -151,7 +142,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Software} alt={"Research and Reccommendations Support"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Software} alt="Research and Reccommendations Support" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Research &amp; Recommendations Support</h4>
                                     </div>
@@ -160,7 +150,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Sales} alt={"Trading App"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Sales} alt="Trading App" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Cutting-edge Platforms (App &amp; Web)</h4>
                                     </div>
@@ -169,7 +158,6 @@ function MFDistributorBenifits() {
                                 <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Channels} alt={"Custom Portfolio Analysis for HNI Clients"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Channels} alt="Custom Portfolio Analysis for HNI Clients" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Custom Portfolio Analysis for HNI Clients</h4>
                                     </div>
@@ -178,7 +166,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                             <LazyLoader src={Training} alt={"Dedicated Relationship Manager"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Training} alt="Dedicated Relationship Manager" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Dedicated Relationship Manager</h4>
                                     </div>
@@ -187,7 +174,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                             <LazyLoader src={Trading} alt={"Multiple Fianancial Products"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Trading} alt="Multiple Fianancial Products" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Multiple <br/>Products on Offer</h4>
                                     </div>
@@ -196,7 +182,6 @@ function MFDistributorBenifits() {
                                     <div className="benifits-item">
                                         <span>
                                             <LazyLoader src={Transport} alt={"Complete Online Process"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Transport} alt="Complete Online Process" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>Complete <br/>Online Procedure</h4>
                                     </div>
