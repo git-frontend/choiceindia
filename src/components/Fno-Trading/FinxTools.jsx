@@ -81,9 +81,7 @@ function FinxTools() {
                                     focusOnSelect={true}
                                     asNavFor={nav1}
                                     ref={slider => setslider1(slider)}
-                                    //   afterChange={(ev) => {
-                                    //     setIsShown3(ev)
-                                    //   }}
+                                    
                                     >
                                     {
                                         Finxtoolsimg?.map((response, index) => {

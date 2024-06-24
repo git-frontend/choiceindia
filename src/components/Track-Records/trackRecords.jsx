@@ -35,11 +35,7 @@ function trackRecords() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -66,12 +62,10 @@ function trackRecords() {
         res => {
           if (res && res.data && res.data.data) {
             setisloading(false)
-            // console.log("dddee", res.data.data)
             values = res.data.data;
             setMainboard(values?.filter(e => e.select_ipo === "mainboard IPO"))
             setSme(values?.filter(e => e.select_ipo === "sme IPO"))
             setDatalist(values);
-            // console.log("check", values)
           } else {
             setisloading(false)
             setDatalist([]);

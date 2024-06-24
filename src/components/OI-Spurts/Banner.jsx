@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import rest from "../../Services/rest";
-import Dropdown from 'react-bootstrap/Dropdown';
 import NoData from "../../assets/images/brokerage-calculator/no-data.webp";
 import LazyLoader from '../Common-features/LazyLoader';
 function Banner() {
@@ -11,7 +10,6 @@ function Banner() {
         setToggleState(index);
     }
     const [oiSpurtsData, setOiSpurtsData] = useState([]);
-    // console.log("oiSpurtsData", oiSpurtsData)
     const [currentPage, setCurrentPage] = useState(1);
     const rowsPerPage = 10
     const startIndex = (currentPage - 1) * rowsPerPage;
@@ -73,17 +71,13 @@ function Banner() {
 
     };
 
-    // const onToggleChange = () => {
-    //     setExchangeToggle(!exchangeToggle);
-    // };
     const onToggleChange = () => {
         setExchangeToggle(!exchangeToggle);
         setSelectedConfig((prevConfig) => ({
             ...prevConfig,
             segmentId: exchangeToggle ? 5 : 7,
             ProductType: 0,
-            // DerivativeDataType: dropDownData[selectedConfig.segmentId][0].DerivativeDataType,
-            // DerivativeType: dropDownData[selectedConfig.segmentId][0].DerivativeType,
+            
             DerivativeDataType: dropDownData[exchangeToggle ? 5 : 7][0].DerivativeDataType, 
             DerivativeType: dropDownData[exchangeToggle ? 5 : 7][0].DerivativeType,
         }));
@@ -97,7 +91,7 @@ function Banner() {
             OISpurtsType: selectedConfig.OISpurtsType,
             SegmentId: selectedConfig.segmentId,
         };
-        // console.log("Fetching data with request:", request);
+        
         rest.getOISpurtsData(request).then(
             res => {
                 if (res.Status === 'Success' && res.Response) {
@@ -117,7 +111,6 @@ function Banner() {
                         };
                     });
                     setOiSpurtsData(updatedData);
-                    // console.log("updatedData", updatedData)
                 } else {
                     setOiSpurtsData([]);
                 }
@@ -127,18 +120,15 @@ function Banner() {
             });
     }
     useEffect(() => {
-        // console.log("Updated config after change:", selectedConfig);
         fetchOISpurts();
         setCurrentPage(1)
     }, [selectedConfig]);
 
     const onSpurtsTypeChange = (spurtsType) => {
-        // console.log("Selected spurtsType:", spurtsType);
         setSelectedConfig((prevConfig) => ({
             ...prevConfig,
             OISpurtsType: spurtsType,
         }));
-        // console.log("Updated config after changessss:", selectedConfig);
     };
 
     //for convert currency
@@ -287,87 +277,7 @@ function Banner() {
                                                                         <td className='text-end'>{formatNumber(row.TurnOver)}</td>
                                                                     </tr>
                                                                 ))}
-                                                                {/* <tr>
-                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                    <td className='text-end'>9.10</td>
-                                                                    <td className='text-end profit'>8.38</td>
-                                                                    <td className='text-end'>4,082.00</td>
-                                                                    <td className='text-end profit'>37.12</td>
-                                                                    <td className='text-end'>8,703.00</td>
-                                                                    <td className='text-end'>78,567.91</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                    <td className='text-end'>9.10</td>
-                                                                    <td className='text-end profit'>8.38</td>
-                                                                    <td className='text-end'>4,082.00</td>
-                                                                    <td className='text-end profit'>37.12</td>
-                                                                    <td className='text-end'>8,703.00</td>
-                                                                    <td className='text-end'>78,567.91</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                    <td className='text-end'>9.10</td>
-                                                                    <td className='text-end profit'>8.38</td>
-                                                                    <td className='text-end'>4,082.00</td>
-                                                                    <td className='text-end profit'>37.12</td>
-                                                                    <td className='text-end'>8,703.00</td>
-                                                                    <td className='text-end'>78,567.91</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                    <td className='text-end'>9.10</td>
-                                                                    <td className='text-end loss'>-8.38</td>
-                                                                    <td className='text-end'>4,082.00</td>
-                                                                    <td className='text-end loss'>-37.12</td>
-                                                                    <td className='text-end'>8,703.00</td>
-                                                                    <td className='text-end'>78,567.91</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                    <td className='text-end'>9.10</td>
-                                                                    <td className='text-end profit'>8.38</td>
-                                                                    <td className='text-end'>4,082.00</td>
-                                                                    <td className='text-end profit'>37.12</td>
-                                                                    <td className='text-end'>8,703.00</td>
-                                                                    <td className='text-end'>78,567.91</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                    <td className='text-end'>9.10</td>
-                                                                    <td className='text-end profit'>8.38</td>
-                                                                    <td className='text-end'>4,082.00</td>
-                                                                    <td className='text-end profit'>37.12</td>
-                                                                    <td className='text-end'>8,703.00</td>
-                                                                    <td className='text-end'>78,567.91</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                    <td className='text-end'>9.10</td>
-                                                                    <td className='text-end loss'>-8.38</td>
-                                                                    <td className='text-end'>4,082.00</td>
-                                                                    <td className='text-end loss'>-37.12</td>
-                                                                    <td className='text-end'>8,703.00</td>
-                                                                    <td className='text-end'>78,567.91</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                    <td className='text-end'>9.10</td>
-                                                                    <td className='text-end profit'>8.38</td>
-                                                                    <td className='text-end'>4,082.00</td>
-                                                                    <td className='text-end profit'>37.12</td>
-                                                                    <td className='text-end'>8,703.00</td>
-                                                                    <td className='text-end'>78,567.91</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className='text-start'>NATURALGAS|23MAY23 PE 170.00</td>
-                                                                    <td className='text-end'>9.10</td>
-                                                                    <td className='text-end'>8.38</td>
-                                                                    <td className='text-end'>4,082.00</td>
-                                                                    <td className='text-end'>37.12</td>
-                                                                    <td className='text-end'>8,703.00</td>
-                                                                    <td className='text-end'>78,567.91</td>
-                                                                </tr> */}
+                                                                
                                                             </tbody>
                                                         </table>
                                                     ) : (
@@ -379,27 +289,7 @@ function Banner() {
                                                 </div>
                                                 <div className='pagination-sec'>
                                                     <div className='paginations'>
-                                                        {/* <div className='rows-page'>
-                                                            <span className='text-rows'>Rows per page:</span>
-                                                            <Dropdown>
-                                                                <Dropdown.Toggle variant="success" id="dropdown-basic" className='pagination-dropdwn'>
-                                                                    01
-                                                                </Dropdown.Toggle>
-                                                                <Dropdown.Menu>
-                                                                    <Dropdown.Item href="#" className='drop-items'>01</Dropdown.Item>
-                                                                    <Dropdown.Item href="#" className='drop-items'>02</Dropdown.Item>
-                                                                    <Dropdown.Item href="#" className='drop-items'>03</Dropdown.Item>
-                                                                </Dropdown.Menu>
-                                                            </Dropdown>
-                                                            <Dropdown.Toggle variant="success" id="dropdown-basic" className='pagination-dropdwn'>
-                                                                {currentPage}
-                                                            </Dropdown.Toggle>
-                                                            <Dropdown.Menu>
-                                                                <Dropdown.Item href="#" className='drop-items' onClick={() => updateCurrentPage()}>{currentPage}</Dropdown.Item>
-                                                                <Dropdown.Item href="#" className='drop-items' onClick={() => updateCurrentPage()}>{currentPage}</Dropdown.Item>
-                                                                <Dropdown.Item href="#" className='drop-items' onClick={() => updateCurrentPage()}>{currentPage}</Dropdown.Item>
-                                                            </Dropdown.Menu>
-                                                        </div> */}
+                                                        
                                                         <div className='entries'>
                                                             <span>{`${startIndex + 1}-${endIndex} of ${oiSpurtsData.length}`}</span>
                                                         </div>
