@@ -16,11 +16,7 @@ function NRIDemateAccount() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-          // let parser = new DOMParser();
-          // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-          // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
           document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-          // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
           document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
           document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -52,9 +48,7 @@ function NRIDemateAccount() {
                         </div>
                         <div className="col-md-12">
                             <div className="para">
-                                {/* <input type="checkbox" className="read-more-state" id="post-1" /> */}
                                 <span className="read-more-wrap "> Simply put, NRIs are the Indians who are currently residing abroad (outside of India). With Choice India, NRIs (Non Resident Indians) who want to invest in Indian Equity Markets can open a <Link to="/demat-account"><strong>Demat Account</strong></Link> for NRI. By following our simple account opening procedure the NRIs can venture into shares, bonds, debentures of various Indian companies.
-                                    {/* <span className="read-more-target"> */}
 
                                      The most accurate definition of NRI is given by FEMA (Foreign Exchange Management Act): NRI is referred to as an individual who is -<br/><br />
                                         <ul>
@@ -147,7 +141,6 @@ function NRIDemateAccount() {
                                             </ul>
                                       
                                     </span>
-                                    {/* </span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label> */}
                             </div>
                         </div>
                     </div>

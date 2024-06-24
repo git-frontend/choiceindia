@@ -42,11 +42,8 @@ const HindiTradingAccountOpeningProcess = () => {
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
                                 <LazyLoader src={Image19} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"नि:शुल्क डीमैट खाता खोलने के लिए रजिस्टर करें"} />
-                                    {/* <img src={Image19}  width={"93"} height={"93"} alt="Step One" className="img-fluid lazyload image" /> */}
                                     <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step One"} />
-                                    {/* <img src={Image20}  width={"127"} height={"23"} alt="Step One" className="img-fluid lazyload image deskimg" /> */}
                                     <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step One"} />
-                                    {/* <img src={Image21}  width={"17"} height={"93"} alt="Step One" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info respspace">
                                     <h5>ऑनलाइन पंजीकरण करें </h5>
@@ -59,11 +56,8 @@ const HindiTradingAccountOpeningProcess = () => {
                             <div className="demat-steps">
                                 <div className="imgwrap">
                                 <LazyLoader src={Image22} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"मुफ़्त डीमैट खाता खोलने के लिए पूरा आईपीवी करें"} />
-                                    {/* <img src={Image22}  width={"93"} height={"93"} alt="Step Two" className="img-fluid lazyload image" /> */}
                                     <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step Two"} />
-                                    {/* <img src={Image20}  width={"127"} height={"23"} alt="Step Two" className="img-fluid lazyload image deskimg" /> */}
                                     <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step Two"} />
-                                    {/* <img src={Image21}  width={"17"} height={"93"} alt="Step Two" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info">
                                     <h5>व्यक्तिगत सत्यापन</h5>
@@ -76,10 +70,7 @@ const HindiTradingAccountOpeningProcess = () => {
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
                                 <LazyLoader src={Image23} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"निःशुल्क डीमैट खाता  के लिए रजिस्ट्रेशन करें"} />
-                                    {/* <img src={Image23}  width={"93"} height={"93"} alt="Step Three" className="img-fluid lazyload image" /> */}
                                     <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step Three"} />
-                                    {/* <img src={Image20} width={"127"} height={"23"} alt="Step Three" className="img-fluid lazyload image deskimg" /> */}
-                                    {/* <img src={Image21} width={"17"} height={"93"}  alt="Step Three" className="img-fluid lazyload respimag" /> */}
                                     <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step Three"} />
                                 </div>
                                 <div className="info" >
@@ -94,7 +85,6 @@ const HindiTradingAccountOpeningProcess = () => {
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
                                 <LazyLoader src={Image24} className={'img-fluid lazyload'} width={"93"} height={"93"} alt={"आपके मुफ्त डीमैट खाता को सक्रिय करने के लिए कूरियर पीओए करें"} />
-                                    {/* <img src={Image24}  width={"93"} height={"93"}  alt="Step Four" className="img-fluid lazyload" /> */}
                                 </div>
                                 <div className="info" >
                                     <h5>कूरियर पीओए</h5>

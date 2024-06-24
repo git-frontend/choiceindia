@@ -80,17 +80,8 @@ function CQuant() {
             } else {
                 if (item.miniTarget != null && item.miniTarget > 0.0) {
                     matched_price = item.miniTarget
-                    /*  vd.tvStatus.text =
-                         "${activity.resources.getString(item.signalTypeEnum.signalTypeObj.name)} @ $
-                         {
-                             item.scripInfo?.cf(
-                                 item.miniTarget
-                             )
-                         } */
                 } else {
                     matched_price = ""
-                    /*  vd.tvStatus.text =
-                         activity.resources.getString(item.signalTypeEnum.signalTypeObj.name) */
                 }
             }
         }
@@ -144,17 +135,6 @@ function CQuant() {
      * Go to Jiffy Signal Report
      */
     let exploreSec = () => {
-        // if (/Android|webOS|windows phone|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
-
-        //  window.open("https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy")
-
-        // } else if (/iPod|iPhone|iPad/i.test(navigator.userAgent)) {
-
-        //   window.open("https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261")
-        // }else{
-        //     window.open("https://jiffy.choiceindia.com/research-report/research/signals/EQ")
-        // }
-
         //Deeplinking
 
         window.open("https://finx.choiceindia.com/research-report/research/signals/EQ")
@@ -258,7 +238,6 @@ function CQuant() {
         }
         data.matched_price = element.MP||0
         data.bookedProfitPriceInPaise = (element.MT || 0)
-       // data.profitPercentage = ((data.call_type ? getProfitPercentage(data.call_type == 'buy', data.iStatusType, ((element.TACode == 5 || element.TACode == 35) ? (element.TP3 || element.TP2 || element.TP1) : ([3, 13, 23, 33].indexOf(element.TACode) > -1) ? (element.TP2 || element.TP1) : element.TP1), element.SL, element.ExitP, data.bookedProfitPriceInPaise, element.EP, data.calculatedQty, element.Sym, element.TP0) : 0)||0).toFixed(2)
        data.profitPercentage =  getProfitPercentage(data.call_type == 'buy',  element.EP, element.MP)  
        if (element.Sym == 'LTI') {
         }
@@ -300,7 +279,6 @@ function CQuant() {
             if (res.Status == "SUCCESS") {
 
                 let response = []
-                // response = res.Response.Data;
                 console.log("all response",response)
                 res.Response.Data.forEach(ele => {
                     if ((ele.TACode == 2)||(ele.TACode == 3)||(ele.TACode == 5)||(ele.TACode == 12)||(ele.TACode == 13)||(ele.TACode == 22)||(ele.TACode == 23)||(ele.TACode == 32)||(ele.TACode == 33)||(ele.TACode == 35)||(ele.TACode == 52) ) {
@@ -328,11 +306,9 @@ function CQuant() {
     
     
                          //FUTURE REFERENCE
-                        // tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
                         return ele
                     })
                     //FUTURE REFERENCE
-                    // subscribeMultitouchline(tokenList,onRealtimeCallback,session);
                     setResearchReport(response)
                 
    
@@ -360,19 +336,11 @@ function CQuant() {
             </div>
 
 
-            {/* {!showLoader && (!researchReport || researchReport?.length == 0) ? <div>
-                <div className="text-center">
-                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                </div>
-            </div> : ''} */}
-
-
            
             {
             showLoader ? 
             <div className="text-center">
             <div>
-                {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
 
                 <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                  </div>
@@ -390,7 +358,6 @@ function CQuant() {
                                     <div className="d-flex align-self-end">
                                         <h3 className="ttl-mn">{report?.scrip_name} <small>{report?.segmentName}</small></h3>
                                         <h3 className={"ttl-sm " + (report?.statusClass)}>{report?.status}</h3>
-                                        {/* <h4 className="ttl-sm-nw grn-txt">Active</h4> */}
                                     </div>
                                     <h5 className="date-publish">Published at {report?.published_date}</h5>
                                 </div>
@@ -428,160 +395,3 @@ function CQuant() {
 }
 
 export default CQuant;
-
-
-
-//Future Reference
-
-    //   let pipeToObject=(data)=> {
-    //     let name;
-    //     let object = {};
-    //     if (data) {
-    //       data.substring(1, data.length - 1).split(/\||=/).forEach((item, index) => {
-    //         index % 2 ? (object[name] = item) : (name = item);
-    //       });
-    //     }
-    //     return [object];
-    //   }
-    //   let onRealtimeCallback=(data)=>{
-    //     console.log("onRealtimeCallback: ",data)
-    //     processB5String(data.responseString,null)
-    //   }
-    //   let processB5String=(b5String,newB5)=>{
-    //     b5String = b5String.replace(/\$/g, "|");
-    //     let splitData = pipeToObject(b5String);
-
-    //  // console.log(newB5," datata ",b5Data)
-    //   let bestData=newB5||{} //||b5Data
-    //     let indicesData={}
-    //         indicesData['PrevClose'] = bestData.PrevClose||0;
-    //     indicesData["LTP"] = (splitData[0]["8"] == 0) ? (bestData.PrevClose) : (splitData[0]["8"] / splitData[0]["399"]) || 0; // if LTP == 0 then show prevClose (10/05/2021)
-    //     indicesData["LTP_DATA"] = ((splitData[0]["8"] == 0) ? (bestData.PrevClose) : (splitData[0]["8"] / splitData[0]["399"]) || 0).toFixed(2); // if LTP == 0 then show prevClose (10/05/2021)
-    //     indicesData["Token"] = (splitData[0]["7"])
-    //     indicesData["diff"] = indicesData["LTP"] - (indicesData['PrevClose'] / splitData[0]["399"]);
-    //     indicesData["percentage"] = (((indicesData["diff"]) / ((indicesData["LTP"]) - indicesData["diff"])) * 100) || 0;
-    //     indicesData["change"] = indicesData['PrevClose']==0?0:Math.abs(indicesData["diff"]).toFixed(2);
-    //     indicesData["changePercent"] = indicesData['PrevClose']==0?0:Math.abs(indicesData["percentage"]).toFixed(2);
-    //     if (indicesData["diff"] < 0) {
-    //         indicesData["color"] = "red";
-    //         indicesData["arrow"] = "icon-long-arrow-down"
-    //     }
-    //     else if (indicesData["diff"] === 0) {
-    //         indicesData["color"] = "";
-    //         indicesData["arrow"] = ""
-    //     }
-    //     else if (indicesData["diff"] > 0) {
-    //         indicesData["color"] = "green";
-    //         indicesData["arrow"] = "icon-long-arrow-up"
-    //     }
-
-    //     indicesData["open"] = splitData[0]["75"] / splitData[0]["399"];
-    //     indicesData["close"] = (splitData[0]["76"] / splitData[0]["399"]);
-    //     indicesData["wKHigh"] = (splitData[0]["93"] / splitData[0]["399"]);
-    //     indicesData["WkLow"] = (splitData[0]["94"] / splitData[0]["399"]);
-    //     indicesData["volume"] = parseInt(splitData[0]["79"]);
-    //     indicesData["high"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["77"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in high (24/05/2021)
-    //     indicesData["low"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["78"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in low (24/05/2021)
-    //    // setCompanyData(indicesData)
-
-    //     console.log("onRealtimeCallback processed CQUANT",indicesData)
-
-    //     if(researchReport&& researchReport.length)
-    //     { let data=researchReport
-    //      data.forEach(ele=>{
-
-
-    //         // console.log("compare",ele,indicesData)
-    //         if(ele.token==indicesData.Token){
-    //             ele.LTP=indicesData.LTP
-    //         }
-    //      })
-
-    //      console.log("datadatadata",data)
-    //      setResearchReport(data)}
-    // }
-
-
-
-                        {/*     <div className="cquant-tab-itm">
-                <div className="tab-itm-top">
-                    <div className="itm-top-ttl">
-                       <div className="d-flex align-self-end">
-                            <h3 className="ttl-mn">POLYPLEX <small>NSE</small></h3> 
-                            <h4 className="ttl-sm">Short Term</h4>
-                       </div>
-                       <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" className="post-read">View More</a>
-                    </div>
-                    <div className="itm-date-btn">
-                        <a href="/" className="btn-sm grn-btn">BUY</a>
-                        <h5 className="ltp-percent grn-txt">Upside (6.26 %)</h5>
-                    </div>
-                </div>
-                
-            </div> */}
-                    {/*             <div className="cquant-tab-itm">
-                <div className="tab-itm-top">
-                    <div className="itm-top-ttl">
-                       <div className="d-flex align-self-end">
-                            <h3 className="ttl-mn">POLYPLEX <small>NSE</small></h3> 
-                            <h4 className="ttl-sm">Short Term</h4>
-                       </div>
-                       <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" className="post-read">View More</a>
-                    </div>
-                    <div className="itm-date-btn">
-                        <a href="/" className="btn-sm red-btn">SELL</a>
-                        <h5 className="ltp-percent red-txt">Upside (6.26 %)</h5>
-                    </div>
-                </div>
-            </div>
-            <div className="cquant-tab-itm">
-                <div className="tab-itm-top">
-                    <div className="itm-top-ttl">
-                       <div className="d-flex align-self-end">
-                            <h3 className="ttl-mn">POLYPLEX <small>NSE</small></h3> 
-                            <h4 className="ttl-sm">Short Term</h4>
-                       </div>
-                       <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" className="post-read">View More</a>
-                    </div>
-                    <div className="itm-date-btn">
-                        <a href="/" className="btn-sm red-btn">SELL</a>
-                        <h5 className="ltp-percent red-txt">Upside (6.26 %)</h5>
-                    </div>
-                </div>
-            </div>
-            <div className="cquant-tab-itm">
-                <div className="tab-itm-top">
-                    <div className="itm-top-ttl">
-                       <div className="d-flex align-self-end">
-                            <h3 className="ttl-mn">POLYPLEX <small>NSE</small></h3> 
-                            <h4 className="ttl-sm">Short Term</h4>
-                       </div>
-                       <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" className="post-read">View More</a>
-                    </div>
-                    <div className="itm-date-btn">
-                        <a href="/" className="btn-sm grn-btn">BUY</a>
-                        <h5 className="ltp-percent grn-txt">Upside (6.26 %)</h5>
-                    </div>
-                </div>
-            </div>
-            <div className="cquant-tab-itm">
-                <div className="tab-itm-top">
-                    <div className="itm-top-ttl">
-                       <div className="d-flex align-self-end">
-                            <h3 className="ttl-mn">POLYPLEX <small>NSE</small></h3> 
-                            <h4 className="ttl-sm">Short Term</h4>
-                       </div>
-                       <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" className="post-read">View More</a>
-                    </div>
-                    <div className="itm-date-btn">
-                        <a href="/" className="btn-sm grn-btn">BUY</a>
-                        <h5 className="ltp-percent grn-txt">Upside (6.26 %)</h5>
-                    </div>
-                </div>
-            </div> */}
-

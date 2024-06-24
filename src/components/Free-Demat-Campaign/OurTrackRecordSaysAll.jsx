@@ -54,132 +54,10 @@ function OurTrackRecordSaysAll() {
 
   };
 
-
- 
-
-
-  //for session Id 
-  // function generateSessionId() {
-  //   let api = new API_URLS()
-  //   fetch(api.getSessionUrl())
-  //     .then(response => {
-  //       return response.json();
-  //     })
-  //     .then(res => {
-  //       if (res.Status == 'Success') {
-  //         IntradayNew(res.Response);
-  //         setData1(res.Response);
-  //       } else {
-  //         IntradayNew([])
-  //       }
-  //     }, err => {
-  //       IntradayNew([])
-  //     })
-  // }
-  //for Intra day
-  /* function IntraStocks(session) {
-    setToggleState(1)
-    setlist([]);
-    tokens = '';
-    tokenList = [];
-    storefile = '';
-    setShowLoader(true)
-    let request = {
-      "Count": 10,
-      "endDate": utils.formatDate(new Date(), "dd-MM-yyyy"),
-      "SessionId": session,
-      "Start": 0,
-      "startDate": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
-      "status": "Book Profit",
-      "type": "EQ",
-      "UserId": "guest",
-      "search": ""
-    }
-    rest.signalReportData(request).then(
-      res => {
-
-        if (res) {
-          storefile = res.Response.Data;
-          // console.log("storefile",storefile)
-
-          res.Response.Data.forEach(ele => {
-            setShowLoader(false)
-            tokenList.push({ 'SegmentId': ele.Seg, 'Token': ele.Tok })
-            let dateData = ele.TATime;
-            if (dateData) {
-              let len = dateData.split(" ")
-              if (len.length) {
-                ele.date = len[0];
-
-              }
-            }
-            ele.published_date = utils.formatDate(new Date(ele.date.split('-')[2], (ele.date.split('-')[1] - 1), ele.date.split('-')[0]), "dd MMMM'yy")
-            ele.call_type = ele.HLType ? (ele.HLType == 'High' ? 'BUY' : (ele.HLType == 'sell' || ele.HLType == 'Low') ? 'SELL' : '') : (ele.Side ? ((['B', 'BUY', 'Buy'].indexOf(ele.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(ele.Side) > -1 ? 'SELL' : '') : '')
-            ele['LTP'] = ele['LTP'] / 100;
-          });
-          setlist(res.Response.Data);
-          let unique = []
-          for (let i = 0; i < tokenList.length; i++) {
-            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-          }
-          unique.forEach(element => {
-            if (!tokens.includes(element)) {
-              tokens += element
-            }
-          });
-          // console.log("SegmentId",tokens);
-
-          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-          const payload = {
-            'UserId': 'guest',
-            'SessionId': session,
-            'MultipleTokens': tokens
-          }
-
-          rest.multipleTokensURLData(payload).then(
-            res => {
-
-              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-                res.Response.lMT.forEach((ele, index) => {
-
-                  ele['LTP'] = ele['LTP'] / 100;
-                  ele.PrevClose = ele.PC / 100;
-                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-                  for (let i = 0; i < storefile.length; i++) {
-
-                    if (storefile[i].Tok == ele.Tok && storefile[i].Seg == ele.Seg) {
-                      setShowLoader(false)
-                      AllFilesValue = Object.assign(storefile[i], ele);
-                      multiValue.push(AllFilesValue)
-                    } 
-                  }
-                })
-
-                setlist(multiValue);
-
-              } else {
-                setShowLoader(false)
-              }
-            }).catch((error) => {
-              setShowLoader(false)
-              
-            });
-        }
-      }).catch((error) => {
-        setShowLoader(false)
-        
-      });
-  } */
   //for F and O
   function FandOstocks() {
     setToggleState(2)
-    // console.log("change",toggleState)
     setlist([]);
-    // tokens = '';
-    // tokenList = [];
-    // storefile = '';
     setShowLoader(true)
     let request = {
 
@@ -200,82 +78,10 @@ function OurTrackRecordSaysAll() {
     }
 
     rest.fetchReportData(request,setShowLoader,setlist,Data1);
-    // rest.expertReportData(request).then(
-
-    //   res => {
-
-    //     if (res) {
-    //       console.log("checkdd",res.response.research);
-    //       storefile = res.response.research;
-    //       // setlist(res.response.research);
-
-    //       res.response.research.forEach(ele => {
-
-    //         tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-    //         ele['LTP'] = ele['LTP'] / 100;
-    //       });
-
-    //       setlist(res.response.research);
-    //       let unique = []
-    //       for (let i = 0; i < tokenList.length; i++) {
-    //         unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-    //       }
-    //       unique.forEach(element => {
-    //         if (!tokens.includes(element)) {
-    //           tokens += element
-    //         }
-    //       });
-    //       // console.log("SegmentId",tokens);
-    //       // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-    //       const payload = {
-    //         'UserId': 'guest',
-    //         'SessionId': Data1,
-    //         'MultipleTokens': tokens
-    //       }
-
-    //       rest.multipleTokensURLData(payload).then(
-    //         res => {
-    //           if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-
-    //             res.Response.lMT.forEach((ele, index) => {
-    //                console.log("ele", ele)
-    //               ele['LTP'] = ele['LTP'] / 100;
-    //               ele.PrevClose = ele.PC / 100;
-    //               ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-    //               ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-    //               // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-    //               for (let i = 0; i < storefile.length; i++) {
-
-    //                 if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
-    //                   AllFilesValue = Object.assign(storefile[i], ele);
-    //                   multiValue.push(AllFilesValue)
-    //                   setShowLoader(false)
-    //                 } 
-    //               }
-    //             })
-
-    //             setlist(multiValue);
-    //              console.log("Multivalue ",multiValue);
-    //           }
-    //           else {
-    //             setShowLoader(false)
-    //           }
-    //         }).catch((error) => {
-    //           setShowLoader(false)
-              
-    //         });
-    //     }
-    //   })
-
-    //   .catch((error) => {
-    //     setShowLoader(false)
-        
-    //   });
   }
   //New 
   function IntradayNew() {
     setToggleState(1)
-    // console.log("change",toggleState)
     setlist([]);
     
     setShowLoader(true)
@@ -297,83 +103,11 @@ function OurTrackRecordSaysAll() {
     }
 
     rest.IntraStocks(Data1,setlist,setShowLoader,request);
-    // rest.expertReportData(request).then(
-
-    //   res => {
-
-    //     if (res) {
-    //       // console.log("checkdd",res.response.research);
-    //       storefile = res.response.research;
-    //       // setlist(res.response.research);
-
-    //       res.response.research.forEach(ele => {
-
-    //         tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-    //         ele['LTP'] = ele['LTP'] / 100;
-    //       });
-
-    //       setlist(res.response.research);
-    //       let unique = []
-    //       for (let i = 0; i < tokenList.length; i++) {
-    //         unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-    //       }
-    //       unique.forEach(element => {
-    //         if (!tokens.includes(element)) {
-    //           tokens += element
-    //         }
-    //       });
-    //       // console.log("SegmentId",tokens);
-    //       // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-    //       const payload = {
-    //         'UserId': 'guest',
-    //         'SessionId': Data1,
-    //         'MultipleTokens': tokens
-    //       }
-
-    //       rest.multipleTokensURLData(payload).then(
-    //         res => {
-    //           if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-
-    //             res.Response.lMT.forEach((ele, index) => {
-    //               // console.log("ele", ele)
-    //               ele['LTP'] = ele['LTP'] / 100;
-    //               ele.PrevClose = ele.PC / 100;
-    //               ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-    //               ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-    //               // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-    //               for (let i = 0; i < storefile.length; i++) {
-
-    //                 if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
-    //                   AllFilesValue = Object.assign(storefile[i], ele);
-    //                   multiValue.push(AllFilesValue)
-    //                   setShowLoader(false)
-    //                 } 
-    //               }
-    //             })
-
-    //             setlist(multiValue);
-
-    //           }
-    //           else {
-    //             setShowLoader(false)
-    //           }
-    //         }).catch((error) => {
-    //           setShowLoader(false)
-              
-    //         });
-    //     }
-    //   })
-
-    //   .catch((error) => {
-    //     setShowLoader(false)
-        
-    //   });
   }
 
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // generateSessionId()
       FandOstocks()
     }
   }, [rendercount])
@@ -499,14 +233,6 @@ function OurTrackRecordSaysAll() {
                                                         <h6 className="bottom_small_text">Target Price</h6>
                                                         <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value))}</h4>
                                                       </div>
-                                                  {/* <div className="bottom">
-                                                    <h6 className="bottom_small_text">2nd Target Price</h6>
-                                                    <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                  </div>
-                                                  <div className="bottom">
-                                                    <h6 className="bottom_small_text">3rd Target Price</h6>
-                                                    <h4 className="bottom_big_text">-</h4>
-                                                  </div> */}
                                                 </div>
                                                 :
                                                 <div className="bottom-section">
@@ -522,14 +248,6 @@ function OurTrackRecordSaysAll() {
                                                     <h6 className="bottom_small_text">Target Price</h6>
                                                     <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                   </div>
-                                                  {/* <div className="bottom">
-                                              <h6 className="bottom_small_text">2nd Target Price</h6>
-                                              <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                            </div>
-                                            <div className="bottom">
-                                              <h6 className="bottom_small_text">3rd Target Price</h6>
-                                              <h4 className="bottom_big_text">-</h4>
-                                            </div> */}
                                                 </div>
                                             }
 
@@ -550,7 +268,6 @@ function OurTrackRecordSaysAll() {
 
                               <div className="text-center">
                                 <div>
-                                  {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                                   <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
                                 </div>
                               </div> :
@@ -615,14 +332,6 @@ function OurTrackRecordSaysAll() {
                                                         <h6 className="bottom_small_text">Target Price</h6>
                                                         <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value))}</h4>
                                                       </div>
-                                                      {/* <div className="bottom">
-                                                        <h6 className="bottom_small_text">2nd Target Price</h6>
-                                                        <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                      </div>
-                                                      <div className="bottom">
-                                                        <h6 className="bottom_small_text">3rd Target Price</h6>
-                                                        <h4 className="bottom_big_text">-</h4>
-                                                      </div> */}
                                                     </div>
                                                     :
                                                     <div className="bottom-section">
@@ -638,14 +347,6 @@ function OurTrackRecordSaysAll() {
                                                         <h6 className="bottom_small_text">Target Price</h6>
                                                         <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                       </div>
-                                                      {/* <div className="bottom">
-                                                <h6 className="bottom_small_text">2nd Target Price</h6>
-                                                <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                              </div>
-                                              <div className="bottom">
-                                                <h6 className="bottom_small_text">3rd Target Price</h6>
-                                                <h4 className="bottom_big_text">-</h4>
-                                              </div> */}
                                                     </div>
                                                 }
 

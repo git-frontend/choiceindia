@@ -18,7 +18,6 @@ const RemisierMoreContent = () => {
         <input type="checkbox" className="read-more-state" id="post-1" />
         <span className="read-more-wrap "> The Securities and Exchanges Board of India (SEBI) incorporated the concept of an authorised person in the stock market in 2009. This was when the idea of capital markets was relatively new, and retail investors required assistance to access the trading platform of popular exchanges like the Bombay Stock Exchange (BSE) or the National Stock Exchange (NSE).
 
-          {/* <span className="read-more-target"> */}
         <p>Over the years, the responsibilities of an authorised person have primarily remained the same. However, an increase in the number of Demat accounts has impacted these professionals' commissions and general earnings.</p>
         <p>But before diving deep into the nuances of the role, it is crucial to delve into the standard definition of an authorised person and understand why stockbrokers are constantly looking to employ them.</p>
         <br/>
@@ -98,7 +97,6 @@ const RemisierMoreContent = () => {
           <p>Once the agreement is completed and verified, the individual is officially recognised as an authorised person for the stockbroker.</p>
           <p>So, if you plan to become a stockbroker, study the financial markets extensively. Once you acquire the relevant knowledge and understand the working of different segments, you can register as an authorised person with a reputed stockbroker like <Link to="/">Choice India</Link> and earn significant commissions!</p>
           </span>
-          {/* </span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label> */}
       </div>
     </div>
   </div>

@@ -40,22 +40,6 @@ function Faqs() {
                                     Yes. You can open a demat account online very easily. You just have to follow the few easy steps mentioned above.
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                {/* <Accordion.Item eventKey="2" className='faq-item'>
-                                    <Accordion.Header as="h3" className='faq-header'>What is the Power of Attorney (PoA) and why is it needed?</Accordion.Header>
-                                    <Accordion.Body className='open-demat-faq-body'>
-                                        The Power of Attorney is a document that gives us the authorization to debit your shares from your Demat Account whenever you sell them. However, till the time you do not submit a POA, you can avail the eDIS facility to sell your holdings. This will require you to authorise your holdings once daily before doing any holding's sell transactions. It is recommended to send a signed copy of your POA since it enables you to sell your holdings seamlessly without the need to authorise online all the time.
-                                        A copy of the POA gets emailed to you on your registered email ID, which needs to be physically signed and couriered to us. You can send us the signed POA to our head-office address mentioned on our website - <a href="https://choiceindia.com">https://choiceindia.com</a>
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                                <Accordion.Item eventKey="3" className='faq-item'>
-                                    <Accordion.Header as="h3" className='faq-header'>Where should I courier the Power of Attorney?</Accordion.Header>
-                                    <Accordion.Body className='open-demat-faq-body'>
-                                        You can courier the signed copy of the POA to our Head Office address mentioned below.<br />
-                                        Choice International Limited,<br />
-                                        Sunil Patodia Tower,<br />
-                                        J B Nagar, Andheri (East), Mumbai 400099.
-                                    </Accordion.Body>
-                                </Accordion.Item> */}
                                 <Accordion.Item eventKey="4" className='faq-item' id="faqid">
                                     <Accordion.Header as="h3" className='faq-header'>Are there any charges for Demat Account opening with Choice?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
@@ -142,25 +126,6 @@ You can opt for manual or online transfer of shares.
                                             Yes you can use the same Demat or Trading Account for <a href="https://choiceindia.com/equity-stock-trading">Equity Trading</a>, <a href="https://choiceindia.com/currency-forex-trading">Currency Trading</a>, <a href="https://choiceindia.com/derivatives-trading">Derivative Trading</a> and <a href="https://choiceindia.com/commodity-trading">Commodity Trading</a>. 
                                             </Accordion.Body>
                                         </Accordion.Item>
-                                        {/* <Accordion.Item eventKey="15" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header'>How much Demat Account Opening Fee charged by Choice?
-
-                                            </Accordion.Header>
-                                            <Accordion.Body className='open-demat-faq-body'>
-                                            It's free. There is no Demat account opening fee charged by Choice.
-                                            <br/><br/>
-                                            What are the eligibility criteria for opening an online Demat & Trading Account?
-As far as age is concerned, there is no minimum age criterion i.e., under 18 can also have Demat & Trading accounts opened. The parents or guardians will be in-charge of the account until the minor comes of age.<br/>
-Below are the common requirements,<br/><br/>
-<ul>
-    <li>Must be Indian Citizen residing in India</li>
-    <li>Must be 18 years of age</li>
-    <li>Have valid Pan Card</li>
-    <li>Valid Address Proof (Aadhar, Voter ID, Passport, Driving License)</li>
-</ul>
-You will be required to provide recent photos along with proof of Identity, Address and Income (ITR) to open a Demat account in India.
-                                            </Accordion.Body>
-                                        </Accordion.Item> */}
                                         <Accordion.Item eventKey="16" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>What are the eligibility criteria for opening an online Demat &amp; Trading Account? </Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
@@ -176,13 +141,7 @@ You will be required to provide recent photos along with proof of Identity, Addr
                                             </ul>
                                             You will be required to provide recent photos along with proof of Identity, Address and Income (ITR) to open a Demat account in India.
                                             </Accordion.Body>
-                                        </Accordion.Item>
-                                        {/* <Accordion.Item eventKey="17" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header'>How long will it take for the Demat account to be activated?</Accordion.Header>
-                                            <Accordion.Body className='open-demat-faq-body'>
-                                            If the documents are in order, the Demat account will be activated in 24 – 48 working hours.
-                                            </Accordion.Body>
-                                        </Accordion.Item> */}
+                                        </Accordion.Item>                           
                                         <Accordion.Item eventKey="18" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>What is Paperless Demat account opening?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>

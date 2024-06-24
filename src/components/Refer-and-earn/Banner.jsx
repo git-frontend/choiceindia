@@ -42,8 +42,6 @@ function Banner() {
     let valueearn = document.getElementById("referalid");
     valueearn.value = referal;
 
-    //console.log("value",valueearn);
-    //console.log("value2",referal);
   }
 
   function loadrefer() {
@@ -68,7 +66,6 @@ function Banner() {
           setreferal1(res.Reason);
           setIserror(true);
 
-          //console.log("show",res.Status)
         }
       })
       .catch((error) => {
@@ -78,7 +75,6 @@ function Banner() {
   }
 
   function shareLink(key) {
-    //console.log("0f",key)
     let mapper = {
       facebook: {
         url: `https://www.facebook.com/sharer/sharer.php?u=${referal}`,
@@ -103,7 +99,6 @@ function Banner() {
     };
     let linkObject = mapper[key];
     window.open(linkObject.url);
-    //console.log("linkObject",linkObject)
   }
 
   const { register, formState: reset } = useForm({
