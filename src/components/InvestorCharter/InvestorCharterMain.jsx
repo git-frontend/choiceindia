@@ -14,39 +14,6 @@ function InvestorCharterMain() {
     let values;
     let AllFilesValue = {};
 
-    // function loadcebplStock2() {
-    //     cmsService.InvestorCharter().
-    //         then(
-    //             res => {
-    //                 if (res && res.data && res.data.data) {
-    //                     setisloading(false)
-    //                     values = res.data.data;
-    //                     console.log("Data is ",values);
-    //                     values.forEach(ele => {
-
-    //                         if (!AllFilesValue[ele.heading]) {
-    //                             AllFilesValue[ele.heading] = [];
-    //                             AllFilesValue[ele.heading].push(ele)
-    //                         } else {
-    //                             AllFilesValue[ele.heading].push(ele)
-
-    //                         }
-    //                     })
-    //                     setDatalist(AllFilesValue);
-    //                     console.log("data",AllFilesValue)
-    //                 } else {
-    //                     setisloading(false)
-    //                     setDatalist([]);
-
-    //                 }
-
-    //             }
-    //         ).catch((error) => {
-    //             setisloading(false)
-    //             setDatalist([]);
-    //         });
-
-    // }
     useEffect(() => {
         setTrigger(true)
         if (trigger === true) {        
@@ -70,7 +37,6 @@ function InvestorCharterMain() {
                         isloading ?
                         <div className="text-center">
                                     <div>
-                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
                                         <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                          </div>
                                 </div>

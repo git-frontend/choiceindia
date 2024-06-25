@@ -11,27 +11,6 @@ function InvestorAwarenessMain() {
     const [trigger, setTrigger] = useState(false);
     const [isloading, setisloading] = useState(true);
 
-    // function loadinvestorAware() {
-    //     cmsService.InvestorAware().then(
-    //         res => {
-    //             if (res) {
-    //                 setisloading(false)
-    //                 setData(res.data.data);
-
-
-    //             } else {
-    //                 setisloading(false)
-    //                 setData([]);
-
-    //             }
-
-    //         }
-    //     ).catch((error) => {
-    //         setisloading(false)
-    //         setData([]);
-    //     });
-    // }
-
 
 
 
@@ -119,7 +98,6 @@ function InvestorAwarenessMain() {
                         isloading ?
                             <div className="text-center">
                                 <div>
-                                    {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                                     <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                     </div>
                             </div>

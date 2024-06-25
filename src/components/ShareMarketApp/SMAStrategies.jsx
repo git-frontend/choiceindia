@@ -105,9 +105,6 @@ function SMAStrategies() {
 
 <div className="trade-easy-images-div">
     <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"557"} height={"662"}/>
-    {/* <img src={imageData[isShown3].image}
-
-        className="single-trade-easy-images" alt='Loading'></img> */}
 </div>
 
 
