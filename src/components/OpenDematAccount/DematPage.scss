@@ -93,7 +93,12 @@
 			margin-bottom: 3rem;
 		}
 	}
-
+	.mbrespflex{
+		row-gap: 2.5rem;
+		@media (max-width:$sm) {
+			row-gap: 1.5rem;
+		}
+	}
 	.bannerbox {
 		padding: 1.563rem;
 		border: 1px solid $bgcolor-blue;

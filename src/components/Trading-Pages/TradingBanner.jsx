@@ -9,6 +9,7 @@ import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import TradingSubBanner from './TradingSubBanner';
+import CommodityTradingData from '../CommoditytTrading/CommodityTradingData';
 
 function TradingBanner({data}) {
     const[ischeck,setIscheck]=useState(false);
@@ -57,7 +58,7 @@ function TradingBanner({data}) {
                             <div className="desktop" dangerouslySetInnerHTML={{ __html: data[0].title }}></div>
                             </h1>
                         </div>
-                            <TradingSubBanner />
+                            <TradingSubBanner data={CommodityTradingData.SubBannerData} />
                         </div>
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
                             {
@@ -75,7 +76,7 @@ function TradingBanner({data}) {
                     </div>
                     <div  className={name}>
                     <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>{data[0].bannerBtnText}</button>
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>{data[0].bannerIconText}</button>
                     </div>
                     </div>
                 </div>

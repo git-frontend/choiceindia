@@ -9,28 +9,28 @@ const CommodityTradingData = {
 
     "BannerData":[
         {
-            "title": "Prime: <span>Simplifying Invoicing</span> for Every Business",
+            "title": `Open a Commodity Trading <br> Account <span class="yellow">Online For Free</span>`,
             "bannerIconText": 'Open Free Account',
         },
     ],
     "SubBannerData":[
         {
-            "bannerIconText": "One Account for Everything",
+            "iconText": "One Account for Everything",
             "bannerIcon" : `${Image2}`,
             "bannerAlt": '',
         },
         {
-            "bannerIconText": "One Account for Everything",
+            "iconText": "Free AMC for First Year",
             "bannerIcon" : `${Image3}`,
             "bannerAlt": '',
         },
         {
-            "bannerIconText": "One Account for Everything",
+            "iconText": "Expert Research & Advisory",
             "bannerIcon" : `${Image4}`,
             "bannerAlt": '',
         },
         {
-            "bannerIconText": "One Account for Everything",
+            "iconText": "Low Brokerage Charges",
             "bannerIcon" : `${Image5}`,
             "bannerAlt": '',
         },
