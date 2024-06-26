@@ -902,6 +902,18 @@
 				display: flex;
 				flex-wrap: wrap;
 				align-items: center;
+				&.brder-bottom{
+					border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+					padding: 2rem 0;
+					&:first-child{
+						padding-top: 0;
+					}
+					&:last-child{
+						padding-bottom: 0;
+						border: 0;
+					}
+
+				}
 				.headtxt{
 					width: 35%;
 					@media (max-width:$md) {

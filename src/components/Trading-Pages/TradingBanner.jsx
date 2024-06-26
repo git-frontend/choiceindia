@@ -1,15 +1,7 @@
 import {useEffect,useState} from 'react';
 import DematAccountForm from '../Common-features/DematAccountForm';
-import Image1 from '../../assets/images/open-demat-account/zigzagline.webp';
-import Image2 from '../../assets/images/open-demat-account/lowest-dp-charges.svg';
-import Image3 from '../../assets/images/open-demat-account/low-charges.svg';
-import Image4 from '../../assets/images/open-demat-account/free-research-advisory.svg';
-import Image5 from '../../assets/images/open-demat-account/demat-account-without-annual-charges.svg';
-import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
-import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import TradingSubBanner from './TradingSubBanner';
-import CommodityTradingData from '../CommoditytTrading/CommodityTradingData';
+import LazyLoader from '../Common-features/LazyLoader';
 
 function TradingBanner({data}) {
     const[ischeck,setIscheck]=useState(false);
@@ -58,7 +50,28 @@ function TradingBanner({data}) {
                             <div className="desktop" dangerouslySetInnerHTML={{ __html: data[0].title }}></div>
                             </h1>
                         </div>
-                            <TradingSubBanner data={CommodityTradingData.SubBannerData} />
+                        <div className="banner-txt">
+                            <div className="row mbrespflex">
+                                {
+                                        data.map((response, index) =>{
+                                            return(
+                                                        <div className="col-xl-5 col-md-6">
+                                                        <div className="bannerbox" key={index}>
+                                                <div className="respgrid">
+                                                    <div className="iconwrap">
+                                                    <LazyLoader src={response.bannerIcon} className={'img-fluid'} width={"30"} height={"30"} alt={response.bannerAlt} />
+                                                    </div>
+                                                </div>
+                                                <div className="resptext">
+                                                    <p>{response.iconText}</p>
+                                                </div>
+                                            </div>
+                                                        </div>
+                                                    )
+                                        })
+                                    }
+                                </div>
+                            </div>
                         </div>
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
                             {

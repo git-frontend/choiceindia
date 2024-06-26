@@ -12,7 +12,9 @@ import meta_tags from "../../Data/MetaTags";
 import { useState,useEffect} from "react";
 import TradingBanner from "../Trading-Pages/TradingBanner";
 import CommodityTradingData from "./CommodityTradingData";
-import TradingSubBanner from "../Trading-Pages/TradingSubBanner";
+import WhyOpenTradingAccount from "../Trading-Pages/WhyOpenTradingAccount";
+import WhyChoiceCommon from "../Trading-Pages/WhyChoiceCommon";
+import OpenLowBrokerageAccount from "../Trading-Pages/OpenLowBrokerageAccount";
 
 function Commodity() {
   const [rendercount, setRenderCount] = useState(() => false);
@@ -44,11 +46,10 @@ function Commodity() {
     
      
           <div className="demat-page-parent">
-            {/* <CommodityBanner /> */}
             <TradingBanner data={CommodityTradingData.BannerData}  />
-            <WhyOpenFreeCommodity />
-            <WhyChoiceCommodity />
-            <LowBrokerageCommodity />
+            <WhyOpenTradingAccount data={CommodityTradingData.WhyOpenCommodityTAccount}/>
+            <WhyChoiceCommon  data={CommodityTradingData.WhyChoiceCommon}/>
+            <OpenLowBrokerageAccount data={CommodityTradingData.OpenLowBrokerageAccount}/>
             <CommodityOpeningProcess />
             <CommodityFaq />
             <MoreContent />
