@@ -468,11 +468,11 @@ function Routing() {
                                 < Lazyinvestorawareness />
                             </React.Suspense>
                         } />
-                        <Route exact path='/onlinetradingapp' element={
+                        {/* <Route exact path='/onlinetradingapp' element={
                             <React.Suspense>
                                 < Lazyonlinetradingapp />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route exact path='/share-market-app' element={
                             <React.Suspense>
                                 < Lazysharemarketapp />
