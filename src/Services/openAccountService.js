@@ -78,22 +78,22 @@ const openAccountService = {
   });
   },
   //common verify OTP function for demat account
-  verifyOTPService:function(request,captchaToken,hideLoader,onClose,openInfoPopup,setOTPErrors){
+  verifyOTPService:function(mobileNumber,request,captchaToken,hideLoader,onClose,openInfoPopup,setOTPErrors){
     this.verifyOTP(request, captchaToken).then((res) => {
       hideLoader('verifyLoader');
       if (res && res.data.StatusCode === 200 && res.data.Body) {
           let verifyResponse = res.data.Body;
           // console.log("verifyResponse", verifyResponse);
-        //   utils.pushDataLayerEvent({
-        //     'event': 'ci_onboard_lead_generated',
-        //     'page_path': window.location.pathname,
-        //     'page_url': window.location.href,
-        //     'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-        //     'leadId': res.data.Body.leadid,
-        //     'lead_source':'choiceindia',
-        //     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-        //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-        // })
+          utils.pushDataLayerEvent({
+            'event': 'ci_onboard_lead_generated',
+            'page_path': window.location.pathname,
+            'page_url': window.location.href,
+            'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+            'leadId': res.data.Body.leadid,
+            'lead_source':'choiceindia',
+            'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+            'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+        })
 
           if (verifyResponse.is_onboard_flag === "C") {
               onClose("https://finx.choiceindia.com/auth/login",verifyResponse.message);

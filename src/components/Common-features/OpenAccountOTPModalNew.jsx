@@ -127,7 +127,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                 session_id: otpSessionID
             };
 
-            openAccountService.verifyOTPService(request,captchaToken,hideLoader,onClose,openInfoPopup,setOTPErrors)
+            openAccountService.verifyOTPService(mobileNumber,request,captchaToken,hideLoader,onClose,openInfoPopup,setOTPErrors)
         }
     }
     
