@@ -74,7 +74,6 @@ function ServiceTabs() {
 	  if (location.hash) {
 		const element = document.getElementById(location.hash.slice(1));
 		if (element) {
-		//   element.scrollIntoView();
 		  var headerOffset = 140;
 		  var elementPosition = element.getBoundingClientRect().top;
 		  var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -94,13 +93,11 @@ function ServiceTabs() {
 
 					<div className="row">
 						<div className="col-md-12 ">
-							{/* <div className="same-list-bx-list"> */}
 							<Slider {...settings} className="same-list-bx-list">
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('equitybroking') }}>
 										<span className="cont-img">
 											<LazyLoader src={EquityBroking} className={"mn-img"} alt={"Equity Broking"} width={"65"} height={"65"} />
-											{/* <img src={EquityBroking} className="" alt="Equity Broking" width={"65"} height={"65"} /> */}
 										</span>
 
 										<h4 className='title-fourth'>Equity Broking</h4>
@@ -110,7 +107,6 @@ function ServiceTabs() {
 									<div className="bx-item-cont" onClick={() => { chapterScroll('Wealth-Management') }}>
 										<span className="cont-img">
 											<LazyLoader src={WealthManagement} className={"mn-img"} alt={"Wealth Management"} width={"65"} height={"65"} />
-											{/* <img src={WealthManagement} className="" alt="Wealth Management" width={"65"} height={"65"} /> */}
 										</span>
 										<h4 className='title-fourth'>Wealth Management</h4>
 									</div>
@@ -119,7 +115,6 @@ function ServiceTabs() {
 									<div className="bx-item-cont" onClick={() => { chapterScroll('Insurance') }}>
 										<span className="cont-img">
 											<LazyLoader src={Insurance} className={"mn-img"} alt={"Insurance"} width={"65"} height={"65"} />
-											{/* <img src={Insurance} className="" alt="Insurance" width={"65"} height={"65"} /> */}
 										</span>
 										<h4 className='title-fourth'>Insurance</h4>
 									</div>
@@ -128,7 +123,6 @@ function ServiceTabs() {
 									<div className="bx-item-cont" onClick={() => { chapterScroll('loan') }}>
 										<span className="cont-img">
 											<LazyLoader src={Loans} className={"mn-img"} alt={"Loans"} width={"65"} height={"65"} />
-											{/* <img src={Loans} className="" alt="Loans" width={"65"} height={"65"} /> */}
 										</span>
 
 										<h4 className='title-fourth'>Loans</h4>
@@ -138,7 +132,6 @@ function ServiceTabs() {
 									<div className="bx-item-cont" onClick={() => { chapterScroll('Capital-Advisory') }}>
 										<span className="cont-img">
 											<LazyLoader src={CapitalAdvisory} className={"mn-img"} alt={"capital advisory"} width={"65"} height={"65"} />
-											{/* <img src={CapitalAdvisory} className="" alt="Capital Advisory" width={"65"} height={"65"} /> */}
 										</span>
 
 										<h4 className='title-fourth'>Capital Advisory</h4>
@@ -148,7 +141,6 @@ function ServiceTabs() {
 									<div className="bx-item-cont" onClick={() => { chapterScroll('Management-Consultancy') }}>
 										<span className="cont-img">
 											<LazyLoader src={ManagementConsultancy} className={"mn-img"} alt={"management-consultancy"} width={"65"} height={"65"} />
-											{/* <img src={ManagementConsultancy} className="" alt="Management Consultancy" width={"65"} height={"65"} /> */}
 										</span>
 										<h4 className='title-fourth'>Management Consultancy</h4>
 									</div>
@@ -157,7 +149,6 @@ function ServiceTabs() {
 									<div className="bx-item-cont" onClick={() => { chapterScroll('goverment') }}>
 										<span className="cont-img">
 											<LazyLoader src={GovernmentAdvisory} className={"mn-img"} alt={"government advisory"} width={"65"} height={"65"} />
-											{/* <img src={GovernmentAdvisory} className="" alt="Government Advisory" width={"65"} height={"65"} /> */}
 										</span>
 										<h4 className='title-fourth'>Government Advisory</h4>
 									</div>
@@ -166,7 +157,6 @@ function ServiceTabs() {
 									<div className="bx-item-cont" onClick={() => { chapterScroll('Tax-Advisory)') }}>
 										<span className="cont-img">
 											<LazyLoader src={TaxAdvisory} className={"mn-img"} alt={"Tax Advisory"} width={"65"} height={"65"} />
-											{/* <img src={TaxAdvisory} className="" alt="Tax Advisory" width={"65"} height={"65"} /> */}
 										</span>
 										<h4 className='title-fourth'>Tax Advisory</h4>
 									</div>

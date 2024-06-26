@@ -58,76 +58,12 @@ function Slidersec() {
         ]
     };
 
-    // function getExpertResearch(request) {
-    //     let url = new API_URLS().getExpertResearchreportURL();
-    //     return axios.post(url, request, {});
-    // }
-
-    // function fetchExpertResearchReport() {
-    //     let startDate;
-    //     let dateDiff = new Date().getDate() - 7;
-    //     if (new Date().getMonth() === 0 && dateDiff < 0) {
-    //         let lastMonthDate = new Date(new Date().getFullYear() - 1, 12, 0);
-    //         startDate = new Date(lastMonthDate.getFullYear(), lastMonthDate.getMonth(), lastMonthDate.getDate() - (dateDiff - 1));
-    //     } else if (new Date().getMonth() === 0 && dateDiff === 0) {
-    //         startDate = new Date(new Date().getFullYear() - 1, 12, 0);
-    //     } else if (dateDiff < 0) {
-    //         let lastMonthDate = new Date(new Date().getFullYear(), new Date().getMonth(), 0);
-    //         startDate = new Date(lastMonthDate.getFullYear(), lastMonthDate.getMonth(), lastMonthDate.getDate() - (dateDiff - 1));
-    //     } else if (dateDiff === 0) {
-    //         startDate = new Date(new Date().getFullYear(), new Date().getMonth(), 0);
-    //     } else {
-    //         startDate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 6);
-    //     }
-
-    //     let request = {
-    //         "end_date": "",
-    //         "is_expert": 1,
-    //         "research_type": "",
-    //         "limit": 10,
-    //         "offset": 0,
-    //         "segment": "EQ",
-    //         "start_date": "",
-    //         "status": "target_achieved",
-    //         "subcategory_id": "",
-    //         "search": "",
-    //         "id": "",
-    //         "user_id": "",
-    //         "timeline_enabled": 1,
-    //         "category_id": 2
-    //     };
-    //     rest.getExpertResearch(request).then((res) => {
-    //        // console.log(res, "RES");
-    //         if (res && res.status === 200 && res.data.status_code === 200 && res.data.response) {
-    //             setisloading(false);
-    //             let list = res.data.response.research.map((item, i) => {
-    //                 if (item.datapoints && item.datapoints.length) {
-    //                     item.priceData = {}
-    //                     item.datapoints.forEach(sub => {
-    //                         sub.key = (sub.key == 'cmp') ? 'entry_price' : sub.key;
-    //                         item.priceData[sub.key] = sub
-    //                     });
-    //                 }
-    //                 return item;
-    //             });
-    //             setResearch(list);
-    //         } else {
-    //             setisloading(false);
-    //             setResearch([]);
-    //         }
-    //     }).catch((error) => {
-    //        // console.log(error, "error");
-    //        setisloading(false);
-    //         setResearch([]);
-    //     });
-    // }
 
     useEffect(() => {
        setRender(true);
        if(render==true){
        rest.fetchExpertResearchReport(setisloading,setResearch);
        }
-       // console.log('RRR',research.length);
     }, [render]);
 
     return (
@@ -146,7 +82,6 @@ function Slidersec() {
                             isloading ?
                             <div className="text-center">
                             <div>
-                                {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                                 <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                 </div>
                         </div>
@@ -196,41 +131,10 @@ function Slidersec() {
                                         })
                                     }
 
-                                    {/* <div className="service-item">
-                                        <div className="item-slider">
-                                            <h4>SBIN</h4>
-                                            <ul>
-                                                <li>
-                                                    <h4>Entry Price</h4>
-                                                    <h3>441</h3>
-                                                </li>
-                                                <li>
-                                                    <h4>Target Price</h4>
-                                                    <h3>535</h3>
-                                                </li>
-                                            </ul>
-                                            <h4 className="md-profit">
-                                                Profit: 21.36 %
-                                            </h4>
-                                            <h4 className="trg-achv">Target Achieved: 150 Days</h4>
-                                        </div>
-                                    </div> */}
-
-
                                 </Slider>
 
                             </div>
                             <div className="sm-slider-thumb">
-                            {/* <ul className="reset">
-                                <li className="active" data-slide="1">
-                                </li>
-                                <li className="" data-slide="2">
-                                </li>
-                                <li className="" data-slide="3">
-                                </li>
-                                <li className="" data-slide="4">
-                                </li>
-                            </ul> */}
                         </div>
                     </div>
                             : 

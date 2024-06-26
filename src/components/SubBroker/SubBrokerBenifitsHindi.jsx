@@ -10,7 +10,6 @@ import { useState,useEffect } from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-// import Lazy from 'yup/lib/Lazy';
 
 function SubBrokerBenifitsHindi() {
 
@@ -73,7 +72,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                             <LazyLoader src={Manager} alt={"Local Relationship Manager Assistance"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Manager} alt="Local Relationship Manager Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>स्थानीय संबंध प्रबंधक सहायता</h4>
                                     </div>
@@ -82,7 +80,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Software} alt={"Advanced Software to Manage Business"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Software} alt="Advanced Software to Manage Business" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>व्यवसाय को प्रबंधित करने के लिए उन्नत सॉफ़्टवेयर</h4>
                                     </div>
@@ -91,7 +88,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Sales} alt={"Marketing &amp; Sales Support"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Sales} alt="Marketing &amp; Sales Support" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>मार्केटिंग और बिक्री सहायता</h4>
                                     </div>
@@ -100,7 +96,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Channels} alt={"Dedicated WhatsApp &amp; Telegram Channels"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Channels} alt="Dedicated WhatsApp &amp; Telegram Channels" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>समर्पित व्हाट्सएप और टेलीग्राम चैनल</h4>
                                     </div>
@@ -109,7 +104,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Training} alt={"Sub Broker Training through Webinars &amp; Conferences"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Training} alt="Training through Webinars &amp; Conferences" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>वेबिनार और सम्मेनों के माध्यम से प्रशिक्षण</h4>
                                     </div>
@@ -118,7 +112,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Trading} alt={"Cutting Edge Trading Platforms (App &amp Web)"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Trading} alt="Cutting-edge Trading Platforms (App &amp; Web)" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>अत्याधुनिक ट्रेडिंग प्लेटफॉर्म (ऐप और वेब)</h4>
                                     </div>
@@ -127,7 +120,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Transport} alt={"Transparent &amp; Growth Oriented Business Model"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Transport} alt="Transparent &amp; Growth-oriented Business Model" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>पारदर्शी और विकासोन्मुखी बिजनेस मॉडल</h4>
                                     </div>
@@ -140,7 +132,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                             <LazyLoader src={Manager} alt={"Local Relationship Manager Assistance"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Manager} alt="Local Relationship Manager Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>स्थानीय संबंध प्रबंधक सहायता</h4>
                                     </div>
@@ -149,7 +140,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Software} alt={"Advanced software to manage stock broking franchise business"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Software} alt="Advanced Software to Manage Business" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>व्यवसाय को प्रबंधित करने के लिए उन्नत सॉफ़्टवेयर</h4>
                                     </div>
@@ -158,7 +148,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Sales} alt={"Marketing &amp; Sales Support"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Sales} alt="Marketing &amp; Sales Support" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>मार्केटिंग और बिक्री सहायता</h4>
                                     </div>
@@ -167,7 +156,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                         <LazyLoader src={Channels} alt={"Dedicated WhatsApp &amp; Telegram Channels"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Channels} alt="Dedicated WhatsApp &amp; Telegram Channels" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>समर्पित व्हाट्सएप और टेलीग्राम चैनल</h4>
                                     </div>
@@ -176,7 +164,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Training} alt={"Sub Broker Training through Webinars &amp; Conferences"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Training} alt="Training through Webinars &amp; Conferences" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>वेबिनार और सम्मेनों के माध्यम से प्रशिक्षण</h4>
                                     </div>
@@ -185,7 +172,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Trading} alt={"Cutting Edge Trading Platforms (App &amp Web)"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Trading} alt="Cutting-edge Trading Platforms (App &amp; Web)" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>अत्याधुनिक ट्रेडिंग प्लेटफॉर्म (ऐप और वेब)</h4>
                                     </div>
@@ -194,7 +180,6 @@ function SubBrokerBenifitsHindi() {
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Transport} alt={"Transparent Growth Oriented Business Model"} className={"img-fluid"} width={"74"} height={"73"} />
-                                            {/* <img src={Transport} alt="Transparent &amp; Growth-oriented Business Model" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>पारदर्शी और विकासोन्मुखी बिजनेस मॉडल</h4>
                                     </div>

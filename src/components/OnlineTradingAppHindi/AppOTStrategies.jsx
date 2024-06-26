@@ -58,9 +58,6 @@ function AppOTStrategies() {
 
                                     <div className="trade-easy-images-div">
                                         <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"399"} height={"660"}/>
-                                        {/* <img src={imageData[isShown3].image}
-
-                                            className="single-trade-easy-images" alt='Loading'></img> */}
                                     </div>
 
 

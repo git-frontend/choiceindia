@@ -70,10 +70,6 @@ function CollectionSlider() {
                               <Slider {...settings1}
                               asNavFor={nav1}
                               ref={slider => setslider1(slider)}
-                            //   afterChange={(ev) => {
-                            //     setIsShown3(ev)
-                            //     console.log("check",ev);
-                            //   }}
                             >
                                 {
                                     Researchimg?.map((response, index) => {

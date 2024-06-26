@@ -15,9 +15,6 @@ function MarketInsights() {
     const [isloading,setisloading ] = useState(true);
 
     const [fabal, setFabal] = useState([]);
-    // const [view, setView] = useState({
-    //     matches: window.innerWidth < 770 ? false : true,
-    // });
     const [tempid, setTempId] = useState({ 'name': 'economic-analysis' });
 
     const settings = {
@@ -37,25 +34,12 @@ function MarketInsights() {
     function loadMarketinsite() {
 
         let payload = {
-            // "end_date": "",
-            // "is_expert": 0,
-            // "research_type": "Medium To Long Term",
             "limit": 4,
             "offset": 0,
-            // "segment": "EQ",
-            // "start_date": "",
-            // "status": "target_achieved",
-            // "subcategory_id": "",
-            // "search": "",
-            // "id": "",
-            // "user_id": "",
-            // "timeline_enabled": 1,
-            // "category_id": 1
         };
         homeServices.marketInsiteNew(payload).then(
             res => {
                
-                // setFabal(res.data.posts);
                 if (res && res.status === 200 && res.data && res.data.response && res.data.status_code === 200 && res.data.response.data) {
                     setisloading(false)
                     setFabal(res.data.response.data);
@@ -65,7 +49,6 @@ function MarketInsights() {
                     setFabal([])
 
                 }
-                // console.log(res, "Research Report");
             }
         ).catch((error) => {
             setisloading(false);
@@ -75,10 +58,6 @@ function MarketInsights() {
     const navigate = useNavigate();
 
     function marketinsightDetail(id, id2) {
-        // navigate({
-        //   pathname: `/research-report/${id}`,
-        // //   search: `?id=${id2}`
-        // })
         if (id2 === 'f890363a-512e-4797-91fd-4d40732844a3') {
             navigate(`/research-report/${id}-share-price-target`);
           } else if (id2 === '0') {
@@ -102,10 +81,6 @@ function MarketInsights() {
 
         if (trigger === true) {
             loadMarketinsite();
-            // let mediaQuery = window.matchMedia("(min-width: 770px)");
-            // mediaQuery.addListener(setView);
-            // // this is the cleanup function to remove the listener
-            // return () => mediaQuery.removeListener(setView);
         }
 
     }, [trigger])
@@ -126,7 +101,6 @@ function MarketInsights() {
                         {
                             isloading?
                             <div className="text-center">
-                                    {/* <img src={loaderimg2} className="img-fluid" alt='No Data Found' height={250} width={250} /> */}
                                     <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                 </div>
                                 :
@@ -137,34 +111,6 @@ function MarketInsights() {
                                 {
                                     fabal.length?
                                             <div className="col-md-12">
-                                                {/* {
-                                        view && !view.matches ?
-                                            <Slider {...settings} className="market-insights-list market-insights">
-            
-                                                {
-                                                    fabal.slice(0, 4).map((response, index) => {
-                                                        let classNameNm = "insights-list-item insights-list " + ((index === selectedId) ? 'insights-list-active' : '')
-            
-                                                        return (
-            
-                                                            <div key={response.uuid} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
-                                                                <div className="insights-item-cont">
-                                                                    <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} /> */}
-                                                {/* <img src={response.feature_image} alt="" /> */}
-                                                {/* <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
-                                                                </div>
-                                                                <div className="item-cont-descr"> */}
-                                                {/* <p>{response.report_subtype_name}</p> */}
-                                                {/* <p>{response.plain_description}</p>
-                                                                </div>
-                                                            </div>
-            
-                                                        )
-            
-                                                    })
-                                                }
-                                            </Slider>
-                                            : */}
                                                 <div className="market-insights-list">
             
             
@@ -179,11 +125,9 @@ function MarketInsights() {
                                                                     ) }} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                                     <div className="insights-item-cont cursor-pointer generic-id-footer">
                                                                         <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
-                                                                        {/* <img src={response.feature_image} alt="" /> */}
                                                                         <span className="ttl-sm" >{response.tag || '-'}</span>
                                                                     </div>
                                                                     <div className="item-cont-descr">
-                                                                        {/* <p>{response.report_subtype_name}</p> */}
                                                                         <p>{response.plain_description}</p>
                                                                     </div>
                                                                 </div>
@@ -193,7 +137,6 @@ function MarketInsights() {
                                                         })
                                                     }
                                                 </div>
-                                                {/* } */}
             
                                             </div> :
                                             <div className="text-center">

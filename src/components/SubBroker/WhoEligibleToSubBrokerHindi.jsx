@@ -67,23 +67,19 @@ function WhoEligibleToSubBrokerHindi() {
                                 <Slider {...settings} className="slider-eligb">
                                     <div className="">
                                         <LazyLoader src={ImageSub13} alt={"Sub Broker Eligibility"} className={"img-fluid"} width={"74"} height={"74"} />
-                                        {/* <img src={ImageSub13} alt="Individual must be 18+ years of age" className="img-fluid" width="74" height="74" /> */}
                                         <h4>व्यक्ति की आयु 18 वर्ष होनी चाहिए</h4>
                                     </div>
                                     <div className="">
                                         <LazyLoader src={ImageSub14} alt={"Sell Financial Services"} className={"img-fluid"} width={"74"} height={"74"} />
-                                        {/* <img src={ImageSub14} alt="A knack to sell products effortlessly" className="img-fluid" width="74" height="74" /> */}
                                         <h4>आसानी से उत्पादों को बेचने की आदत।</h4>
                                     </div>
                                     <div className="">
                                         <LazyLoader src={ImageSub15} alt={"A desire to be your own boss"} className={"img-fluid"} width={"74"} height={"74"} />
-                                        {/* <img src={ImageSub15} alt="A desire to be your own boss" className="img-fluid" width="74" height="74" /> */}
                                         <h4>खुद मालिक बनने की इच्छा।</h4>
                                     </div>
                                 </Slider>
                                 <div className="eligb-img-sec">
                                     <LazyLoader src={ImageSub16} alt={"Become a Sub Broker &amp; Currency Broking"} className={"img-fluid"} width={"384"} height={"384"} />
-                                    {/* <img src={ImageSub16} alt="Become a Sub Broker &amp; Currency Broking" className="img-fluid" width="384" height="384" /> */}
                                 </div>
                             </div>
                         </div>

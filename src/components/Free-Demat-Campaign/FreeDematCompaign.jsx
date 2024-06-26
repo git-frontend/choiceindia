@@ -28,10 +28,8 @@ function FreeDematCompaign() {
 
     if (element) {
       const rect = element.getBoundingClientRect();
-      // console.log("checkmate", rect.top.toFixed())
       if (rect.top.toFixed() < 350) {
         setIscheck(true);
-        // console.log('inside name', name);
       }
 
     }

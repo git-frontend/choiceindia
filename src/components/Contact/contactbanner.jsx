@@ -45,14 +45,12 @@ function Contactbanner() {
  
   const [searchParams, setSearchParams] = useSearchParams();
   active.current = searchParams.get('active') || '';
-  // console.log("check",active.current)
 
   const schema = yup.object().shape({
     firstName: yup.string().required("First Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
     lastName: yup.string().required("Last Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
     mobile: yup.string().required("Phone Number is required").matches(phoneRegExp, "Invalid number").matches(/^\d+$/, 'The field should have digits only'),
     email: yup.string().email(" Invalid Email ").required("Email Id is required"),
-    // purpose: yup.string().required("Need to choose purpose"),
     question: yup.string().max(200).required("Need to fill your question")
 
   })
@@ -164,7 +162,6 @@ function Contactbanner() {
     <div>
       <div className="banner-parent">
         <section className="banner-contact">
-          {/* <img src={Bannerimage} className="ban-img" alt="Loading" width={"1519"} height={"915"} /> */}
           <div className='banner-caption'>
             <div className='container'>
               <div className='row'>
@@ -183,12 +180,6 @@ function Contactbanner() {
                             <option value="Select here" selected >Select here</option>
                           }
                             
-                        
-                          {/* <option value="Select here" selected>Select here</option>	
-                          <option className="option">Compliance & Complaint.</option>	
-                        <option className="option">Partner related</option>	
-                        <option className="option">Broking & Distribution</option>	
-                        <option className="option">Wealth planning</option> */}
                           {
                             list?.map((res, i) => {
                               return (
@@ -198,21 +189,6 @@ function Contactbanner() {
                               )
                             })
                           }
-                          {/* <Select }	
-                            placeholder="select department" className="formcontrol formpadding"  options={citiesDropdown}  onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />	
-                          {	
-                            errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''	
-                          } */}
-                          {/* <option className="option">Feedback</option>	
-                        <option className="option">Compliance & Complaint.</option>	
-                        <option className="option">Partner related</option>	
-                        <option className="option">Broking & Distribution</option>	
-                        <option className="option">Wealth planning</option>	
-                        <option className="option">Insurance related query</option>	
-                        <option className="option">NBFC related query</option>	
-                        <option className="option">Government Advisory</option>	
-                        <option className="option">Enquiry</option>	
-                        <option className="option">Others</option> */}
                         </Form.Select>
                         {
                           subListid ? '' : <span className="text-danger">Need to choose Department </span>
@@ -343,20 +319,6 @@ function Contactbanner() {
                       </div>
 
 
-                      {/* <Form.Group className="mb-3">
-                <Form.Label className="formlabel mt-3" >Purpose</Form.Label>
-                <div className='cust-dropdown'>
-                  <div className="downar"></div>
-                  <Form.Select variant="Info" id="dropdown-basic" className="dropdowntoggle" {...register('purpose')}>
-                    <option className="option">Feedback</option>
-                    <option className="option">View</option>
-                    <option className="option">Review</option>
-
-                  </Form.Select>
-                </div>
-              </Form.Group> */}
-
-
 
                       <label className="formlabel mt-5"> Your Question <span className="warning">*</span></label>
                       <div className=" messagefield">
@@ -403,7 +365,6 @@ function Contactbanner() {
                       <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => { setNbfc(false) }} />
                       <div className="clearfix"></div>
                       <h4 className="text-center text-uppercase mt-5 mb-5"><strong>CUSTOMER GRIEVANCE REDRESSAL MECHANISM</strong></h4>
-                      {/* <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4> */}
 
                     </ModalHeader>
 

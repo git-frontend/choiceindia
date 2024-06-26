@@ -22,7 +22,6 @@ function BannerTop() {
                 </div>
                 <div className="page2-banner-img">
                                   <LazyLoader src={Image1} alt={"Sumeet Bagadia"} width={"512"} height={"508"} className={"img-fluid"} />
-                  {/* <img src={Image1} alt="Sumeet Bagadia" width="512" height="508" className="img-fluid" /> */}
                 </div>
               </div>
             </div>

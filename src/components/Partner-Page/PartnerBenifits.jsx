@@ -7,7 +7,6 @@ import ZeroRupees from '../../assets/images/partner/zero-rupees.svg';
 import CashFlow from '../../assets/images/partner/cash-flow.svg';
 import Clock from '../../assets/images/partner/clock.svg';
 import LazyLoader from "../Common-features/LazyLoader";
-// import Lazy from "yup/lib/Lazy";
 
 
 
@@ -32,14 +31,12 @@ function PartnerBenifits() {
           <div className="row align-items-center">
             <div className="col-md-6 d-none d-sm-block">
             <LazyLoader src={BenefitsBanner} alt={"Benefits of Partnering with Us"} className={"img-fluid"} width={"642"} height={"671"} />
-              {/* <img src={BenefitsBanner} alt="Benefits of Partnering with Us" className={"img-fluid"} width={"642"} height={"671"} /> */}
             </div>
             <div className="col-md-6">
               <div className="partnering-list">
                 <div className="partnering-list-itm">
                   <div className="list-itm-img">
                   <LazyLoader src={NoCash} alt={""} className={"img-fluid"} width={"41"} height={"41"} />
-                    {/* <img src={NoCash} alt="" className="img-fluid" width={"41"} height={"41"} /> */}
                   </div>
                   <div className="list-itm-descr">
                     <h5>No Registration Charges</h5>
@@ -49,7 +46,6 @@ function PartnerBenifits() {
                 <div className="partnering-list-itm">
                   <div className="list-itm-img">
                   <LazyLoader src={Service} alt={""} className={"img-fluid"} width={"41"} height={"41"} />
-                    {/* <img src={Service} alt="" className="img-fluid" width={"41"} height={"41"} /> */}
                   </div>
                   <div className="list-itm-descr">
                     <h5>One Platform - Multiple Services</h5>
@@ -59,7 +55,6 @@ function PartnerBenifits() {
                 <div className="partnering-list-itm">
                   <div className="list-itm-img">
                   <LazyLoader src={ZeroRupees} alt={""} className={"img-fluid"} width={"41"} height={"41"} />
-                    {/* <img src={ZeroRupees} alt="" className="img-fluid" width={"41"} height={"41"} /> */}
                   </div>
                   <div className="list-itm-descr">
                     <h5>Zero Investment Required</h5>
@@ -69,7 +64,6 @@ function PartnerBenifits() {
                 <div className="partnering-list-itm">
                   <div className="list-itm-img">
                   <LazyLoader src={CashFlow} alt={""} className={"img-fluid"} width={"41"} height={"41"} />
-                    {/* <img src={CashFlow} alt="" className="img-fluid" width={"41"} height={"41"} /> */}
                   </div>
                   <div className="list-itm-descr">
                     <h5>Earn for a Lifetime</h5>
@@ -79,7 +73,6 @@ function PartnerBenifits() {
                 <div className="partnering-list-itm">
                   <div className="list-itm-img">
                   <img src={Clock} alt={""} className={"img-fluid"} width={"41"} height={"41"} />
-                    {/* <img src={Clock} alt="" className="img-fluid" width={"41"} height={"41"} /> */}
                   </div>
                   <div className="list-itm-descr">
                     <h5>Work Anytime, Anywhere</h5>

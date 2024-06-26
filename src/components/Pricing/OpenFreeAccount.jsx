@@ -37,7 +37,6 @@ function OpenFreeAccount() {
                                     </div>
                                 </div>
                                 <LazyLoader src={pricingimage1} alt={"Become a Stock Market Agent"} className={"img-fluid img-demat-arrow"} width={"449"} height={"164"}/>
-                                {/* <img src={pricingimage1} alt="Become a Stock Market Agent" className="img-fluid img-demat-arrow" width="449" height="164"/> */}
                             </div>
                             
                         </div>

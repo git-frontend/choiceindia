@@ -50,7 +50,6 @@ function BannerSection() {
 								{
 									isloading?
 									<div>
-										{/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
 										<video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
 										</div>:
 									<div>
@@ -65,16 +64,13 @@ function BannerSection() {
 											return (
 												<div key={response.id}>
 													<Link to={`/blog/${response.slug}`} className="trending-itm">
-														{/**<a href="/" className="trending-itm">*/}
 														<div className="trending-itm-img">
 															<img src={response.feature_image} className={"img-blog"} alt={"Loading"} width={"138"} height={"100"} />
-															{/* <img src={response.feature_image} alt="loading" className="img-blog"/> */}
 														</div>
 														<div className="trending-itm-des">
 															<p>{response.meta_title}</p>
 														</div>
 													</Link>
-													{/**</a>*/}
 
 
 												</div>
@@ -85,30 +81,6 @@ function BannerSection() {
 									}
 
 
-									{/**<a href="/" className="trending-itm">
-										<div className="trending-itm-img">
-											<img src={Blog1} alt="loading" className="img-blog"/>
-										</div>
-										<div className="trending-itm-des">
-											<p>RBL Bank Management Upheaval &amp; The Chaos Around It</p>
-										</div>
-									</a>
-									<a href="/" className="trending-itm">
-										<div className="trending-itm-img">
-											<img src={Blog1} alt="loading" className="img-blog"/>
-										</div>
-										<div className="trending-itm-des">
-											<p>Amazon-Reliance Territorial Fight In The Indian Retail Jungle</p>
-										</div>
-									</a>
-									<a href="/" className="trending-itm">
-										<div className="trending-itm-img">
-											<img src={Blog1} alt="loading" className="img-blog"/>
-										</div>
-										<div className="trending-itm-des">
-											<p>What will be the future of Cryptocurrencies in India?</p>
-										</div>
-							</a>*/}
 								</div>:
 								 <div className="text-center">
                                 <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>

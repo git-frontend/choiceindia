@@ -134,7 +134,6 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     }
 
     function handleOTPClose(link, msg, onboardFlag, actionType, leadID) {
-        //   console.log('CCMMM', link, msg);
         setShowOTP(false);
         if (actionType != 'popup_and_no_update') {
             if (link) {
@@ -207,7 +206,6 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
 
     }
     const [type, setType] = useState('send');
-    // console.log("type",type)
     const updateType = (newType) => {
         setType(newType);
         handleReCaptchaVerify()
@@ -246,44 +244,6 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
             // "captcha": "1"
         }
         openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster)
-        // openAccountService.sendOTP(request,captchaToken ).then((res) => {
-        //     hideLoader('sendOTPLoader');
-        //     // console.log("res",res)
-        //     if (res && res.StatusCode === 200 ) {
-        //         utils.pushDataLayerEvent({
-        //             'event': 'ci_onboard_lead_initiated',
-        //             'page_path': window.location.pathname,
-        //             'page_url': window.location.href,
-        //             'lead_source': 'choiceindia',
-        //             'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-        //             'leadId': res.Body.leadid,
-        //             'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-        //         })
-        //         setOTPSessionID( res.Body.otp_session_id)
-        //         // setForm('sent-otp')
-        //         // setformdata()
-        //         setShowThanku(prevState => {
-        //             return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.Body.new_lead ? res.Body.new_lead : false }
-        //         });
-        //         fetchQueryParams();
-        //         // resetOTPPopup();
-        //         handleOTPShow();
-
-
-        //     } else {
-        //         setAPIError("Something went wrong, please try again later!");
-        //         showAPIErrorToaster();
-        //     }
-        // }).catch((error) => {
-        //     hideLoader('sendOTPLoader');
-        //     if (error && error.response && error.response.data && error.response.data.Message) {
-        //         setAPIError(error.response.data.Message); 
-        //         showAPIErrorToaster();
-        //     } else {
-        //         setAPIError("Something went wrong, please try again later!");
-        //         showAPIErrorToaster();
-        //     }
-        // });
     }
 
     useEffect(() => {
@@ -388,7 +348,6 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         <>
             {
                 webcheck == "Best-Stock" ?
-                    // <section className="sendopt  beststockres holidayOTP">
                     <section className={`sendopt  beststockres holidayOTP ${additionalClass}`}>
                         <div className="container">
                             <div className="form_main">
@@ -418,14 +377,12 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                         ?
                                         <div className="  Mobile_text">
                                             <input type="text" className="form-textbox" id="mobile_no" name="mobile_no" placeholder='Mobile Number' autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
-                                            {/* <label htmlFor="form-email" className="form-label" >Mobile Number</label> */}
                                             <div>
                                                 <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
                                             </div>
                                         </div>
                                         : <div className="  Mobile_text">
                                             <input type="text" className="form-textbox" id="mobile_no" name="mobile_no" placeholder='Mobile Number' autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
-                                            {/* <label htmlFor="form-email" className="form-label" >Mobile Number</label> */}
                                             <div>
                                                 <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
                                             </div>
@@ -449,10 +406,6 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                     <button type="submit" className="form-btn  btn-bg-dark btn-bg" onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
                                     <div><small id="API_error" className="errormsg text-danger api-text-danger">{APIError || ''}</small></div>
                                 </div>
-                                {/* <button type="submit" className=" OPt_item sub_group btnsub"><span className="send_OPT_btn" >Send OTP</span></button> */}
-
-
-                                {/* <div className=" OPt_item sub_group"><a href="/" ><span className="send_OPT_btn" >Send OTP</span></a></div> */}
                             </div>
                         </div>
                     </section>
@@ -468,13 +421,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                             <div>
                                 <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
                                     <div></div>
-                                    {/* { */}
-                                    {/* window.location.pathname.indexOf("demat-account") > -1 */}
-                                    {/* ? */}
-                                    {/* <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={()=>{chapterScroll1  ('dematform')}}>Open Free Account</button> */}
-                                    {/* : */}
                                     <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={() => {openDemateAccountPopup; pushCustomEvents()}}>Open Free Account</button>
-                                    {/* } */}
                                 </div>
                                 <section className="stickybottom">
                                     <div className="container mx-auto">
@@ -514,24 +461,12 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                 showOTP ?
                     <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID} otpLeadID={otpLeadID.current} onClose={handleOTPClose} openInfoPopup={(msg) => openInfoPopup(msg)} updateType={updateType}></OpenAccountOTPModal> : ''
             }
-            {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
-                keyboard={false} centered>
-                <Modal.Header closeButton>
-                    <Modal.Title>Enter OTP</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current}></OpenAccountOTPModal>
-                </Modal.Body>
-            </Modal> */}
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Attention</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>We are capturing this data for communication and account opening (Demat and Mutual Fund) purpose and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override &amp; will not be termed as violation of DND <Link to="/terms-conditions" target="_blank" className="term_link">Read Here.</Link></Modal.Body>
-                {/* <Modal.Footer>
-                    <button type="button" className="btn btn-primary btn-primary-terms" onClick={handleTermsConditionClose}>Okay</button>
-                </Modal.Footer> */}
             </Modal>
 
             {

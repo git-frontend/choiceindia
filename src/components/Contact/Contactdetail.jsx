@@ -32,7 +32,6 @@ function Contactdetail() {
    function cityList() {
       contactService.contactCity().then(res => {
          if (res && res.data && res.data.data) {
-            // console.log(res.data.data);
 
             res.data.data.forEach(ele => {
 
@@ -123,7 +122,6 @@ function Contactdetail() {
                               <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => { setShow(false) }} />
                               <div className="clearfix"></div>
                               <h4 className="text-center text-uppercase mt-5 mb-5"><strong>Investor Grievance Redressal Mechanism</strong></h4>
-                              {/* <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4> */}
                               <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Annexure A</strong></h4>
 
                            </ModalHeader>
@@ -132,7 +130,6 @@ function Contactdetail() {
                            <Modal.Body>
                               {
                                  isloading ?
-                                    // <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> 
                                     <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} /> :
 
 
@@ -190,17 +187,6 @@ function Contactdetail() {
 
                               </div>
                            </Modal.Body>
-                           {/* <Modal.Footer className="subtxtcontent " >
-                               <p>In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at <br />
-                              https://scores.gov.in/scores/Welcome.html <br /><br /> or Exchange /DP at: <br /><br />
-                              BSE:  https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx |<br /> NSE:  https://investorhelpline.nseindia.com/NICEPLUS/ <br />
-                              MCX: https://www.mcxindia.com/Investor-Services |<br /> NCDEX:https://ncdex.com/investor_complaint  <br />
-                              CDSL:https://www.cdslindia.com/Footer/grievances.aspx  |<br /> NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br /><br />
-                              (Working hours of each escalation level- <strong>Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)</strong>
-                              <br /><br />
-                              Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
-
-                        </Modal.Footer> */}
                         </div>
 
 
@@ -219,13 +205,11 @@ function Contactdetail() {
                   <div className="contactoffice">
                      <div className="officedeatil">
                         <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'40'} height={'40'} />
-                        {/* <img src={pin} alt="Loading" /> */}
                         <p className="mt-4 maintitle">Corporate office </p>
                         <p className="subtext">Choice International Limited,<br /> Sunil Patodia Tower, J.B. Nagar,<br /> Andheri (East), Mumbai 400099</p>
                      </div>
                      <div className="officedeatil">
                         <LazyLoader src={clock} className={"img-fluid"} alt={"Business Hours"} width={'40'} height={'40'} />
-                        {/* <img src={clock} alt="Loading" /> */}
                         <p className="mt-4 maintitle">Business Hours</p>
                         <p className="subtext">Monday-Friday: 8:30 am - 7:00 pm </p>
                         <p className="subtext">
@@ -235,7 +219,6 @@ function Contactdetail() {
                   <div className="contactcyber">
                      <div >
                         <LazyLoader src={Image2} className={"img-fluid"} alt={"Business Hours"} width={'40'} height={'40'} />
-                        {/* <img src={clock} alt="Loading" /> */}
                         <p className="mt-4 maintitle">Cyber Security</p>
                         <p className="subtext"><a href="tel:8824242424">+(91) 88 2424 2424 ( IVR Option 5 )</a></p>
                         <p className="subtext"><a href="mailto:security.support@choiceindia.com" target="_blank">security.support@choiceindia.com</a></p>
@@ -279,7 +262,6 @@ function Contactdetail() {
 
                            <div className="text-right address" >
                               <p className="maintitle">{address && address[city] && address[city][0] && address[city][0].address_title}</p>
-                              {/* <p className="subtext cursor-pointer"><a href="mailto:`${address && address[city] && address[city][0] && address[city][0].email}`" target="_blank">{address && address[city] && address[city][0] && address[city][0].email}</a></p> */}
                               <p className="subtext">{address && address[city] && address[city][0] && address[city][0].branch_address}</p>
                            </div>
 

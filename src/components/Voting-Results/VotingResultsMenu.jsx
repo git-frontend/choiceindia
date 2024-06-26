@@ -64,7 +64,6 @@ function VotingResultsMenu() {
 
                     <div className="text-center">
                                     <div>
-                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                                         <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                         </div>
                                 </div>
@@ -98,23 +97,6 @@ function VotingResultsMenu() {
                                                 )
                                             })
                                         }
-
-                                        {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>September 30, 2020 </div>
-                                   <div>Voting Result</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>September 27, 2019 </div>
-                                   <div>Voting Result</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>September 27, 2018</div>
-                                   <div>Voting Result</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div> */}
 
 
                                     </div>

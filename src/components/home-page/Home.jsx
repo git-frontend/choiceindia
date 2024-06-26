@@ -7,7 +7,6 @@ import HomeFeatures from './HomeFeatures.jsx'
 import FablesStories from './FablesStories.jsx'
 import HomeTestimonial from './HomeTestimonial.jsx'
 import SecurityPrivacy from './SecurityPrivacy.jsx'
-// import  HomeHeader from './home-page/HomeHeader.jsx'
 import "./style.scss"
 import videoBg from '../../assets/vedio/videoBg.webm'
 import Template1 from '../Common-features/Template1';
@@ -21,18 +20,10 @@ import { Link } from 'react-router-dom';
 function Home() {
 
 
-	// const [skeleton, setSkeleton] = useState(() => true);
 	const [rendercount, setRenderCount] = useState(() => false);
 	const [showTermsCondition, setShowTermsCondition] = useState(false);
 	const [trigger, setTrigger] = useState(false);
 	const location = useLocation();
-	// const myTimeout = setTimeout(myGreeting, 1500);
-	// function myGreeting() {
-	//   setSkeleton(() => false);
-	// }
-	// setTimeout(() => {
-	// 	setSkeleton(() => false);
-	// }, 200)
 
 	useEffect(() => {
 		setRenderCount(true)
@@ -41,7 +32,6 @@ function Home() {
 			let doc = parser.parseFromString(meta_tags['https://choiceindia.com/'].faqscript, 'text/html');
 			document.body.appendChild(doc.getElementsByTagName('script')[0] ? doc.getElementsByTagName('script')[0] : '');
 			document.title = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].title : '';
-			// document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
 			document.getElementById('meta-tags').content = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].content : '';
 			document.getElementById('canonical-link').href = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].link : '';
 			document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : 'en';
@@ -65,32 +55,14 @@ function Home() {
         setShowTermsCondition(false);
     }
 	useEffect(() => {
-		// setTrigger(true)
-		// if (trigger === true) {
 			handleTermsConditionShow()
-		// }
   
 	 }, [])
 	return (
 		<div className="Home">
 
-			{/* {
-				skeleton ? <Template1 /> : */}
 			<main className='home-main'>
 
-				{/* <div className='home-banner-ved'>
-							<div className="overlay"></div>
-							<video src={videoBg} autoPlay loop muted className='banner-ved' />
-							<div className='banner-ved-des'>
-								<div className='container'>
-									<div className='banner-caption' >
-										<h1>Experience<br />
-										The Joy of<br />
-										Earning</h1>
-									</div>
-								</div>
-							</div>
-						</div> */}
 
 				<HomePageBanner />
 
@@ -168,7 +140,6 @@ function Home() {
 				</Modal>
 
 			</main>
-			{/* } */}
 
 
 

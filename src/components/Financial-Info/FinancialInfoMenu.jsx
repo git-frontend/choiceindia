@@ -10,7 +10,6 @@ import cmsService from "../../Services/cmsService";
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import { Accordion } from "react-bootstrap";
-// import download1 from '../../assets/images/file-download/export.webp';
 import viewicon from '../../assets/images/bi_eye-fill.svg';
 function FinancialInfoMenu() {
     const [data, setData] = useState();
@@ -22,7 +21,6 @@ function FinancialInfoMenu() {
             res => {
                 if (res) {
                     setisloading(false);
-                    // setData(res.data.data);
                     let yearFormat = {};
                     res.data.data.forEach(ele => {
 
@@ -79,7 +77,6 @@ function FinancialInfoMenu() {
                         isloading ?
                             <div className="text-center">
                                 <div>
-                                    {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                                     <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                     </div>
                             </div>

@@ -17,10 +17,6 @@ import {useState, useEffect} from "react";
 
 function SubBrokerHindi() {
   const [skeleton, setSkeleton] = useState(() => true);
-  // const myTimeout = setTimeout(myGreeting, 900);
-  // function myGreeting() {
-  //   setSkeleton(() => false);
-  // }
   const [rendercount, setRenderCount] = useState(() => false);
 
   setTimeout(() => {
@@ -29,14 +25,6 @@ function SubBrokerHindi() {
 
   const location = useLocation();
 
-  // let parser = new DOMParser();
-  // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-
-  // useEffect(() => {
-  //   let parser = new DOMParser();
-  //   let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-  //   document.body.appendChild(doc.getElementsByTagName('script')[0]);
-  // }, [])
 
   useEffect(() => {
     setRenderCount(true)
@@ -44,7 +32,6 @@ function SubBrokerHindi() {
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
-      // document.getElementById('canonical-link').hreflang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
       if((document.getElementById('link1')==null)){
         let sitemap = document.createElement('link');

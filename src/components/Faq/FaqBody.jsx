@@ -17,7 +17,6 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useCallback } from "react";
 
-// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 export default function FaqBody() {
   const [list, setList] = useState([]);
@@ -40,7 +39,6 @@ export default function FaqBody() {
   const [searchParams, setSearchParams] = useSearchParams();
   active.current = searchParams.get("active") || "";
   const { executeRecaptcha } = useGoogleReCaptcha();
-  // console.log("check",active.current)
 
   /** yup validation search text */
   const schema = yup.object().shape({
@@ -357,7 +355,6 @@ export default function FaqBody() {
                   {iscategory ? (
                     <div className="text-center">
                       <div>
-                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                         <video
                           src={loaderimg2}
                           autoPlay
@@ -382,37 +379,6 @@ export default function FaqBody() {
                           />
                         </div>
                       ) : (
-                        // <div className="same-list-bx-list">
-
-                        //   {
-                        //     list.map((response, i) => {
-
-                        //       let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
-
-                        //       return (
-                        //         <div key={response.id} className={classNameNm2} onClick={() => {
-
-                        //           loadfaqFolder(response.category_linkage);
-                        //           setList2(response.category_name);
-                        //           setSelectedId(0);
-                        //           setSelected(i);
-                        //           setIsarticle(false);
-                        //           // scrollToElement();
-                        //         }}>
-                        //           <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section'); categoryClick() }}  >
-                        //             <span className='cont-img'>
-                        //               <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon || 'No data'}`} className="sl-img" alt="" width={"50"} height={"50"} />
-                        //             </span>
-                        //             <h4>{response.category_name || 'No data'}</h4>
-                        //             {/* <p>{response.category_description || 'No data'}</p> */}
-                        //           </div>
-                        //         </div>
-                        //       )
-                        //     }
-                        //     )
-                        //   }
-
-                        // </div>
                         <Slider
                           {...settings}
                           className="same-list-bx-list same-list-faq"
@@ -435,7 +401,6 @@ export default function FaqBody() {
                                   setSelectedId(0);
                                   setSelected(i);
                                   setIsarticle(false);
-                                  // scrollToElement();
                                 }}
                               >
                                 <div
@@ -457,7 +422,6 @@ export default function FaqBody() {
                                     />
                                   </span>
                                   <h4>{response.category_name || "No data"}</h4>
-                                  {/* <p>{response.category_description || 'No data'}</p> */}
                                 </div>
                               </div>
                             );
@@ -480,7 +444,6 @@ export default function FaqBody() {
                 {isloading ? (
                   <div className="text-center">
                     <div>
-                      {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
                       <video
                         src={loaderimg2}
                         autoPlay
@@ -529,15 +492,12 @@ export default function FaqBody() {
                                     <Accordion.Header>
                                       {res.title || "Loading"}
                                     </Accordion.Header>
-                                    {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
                                     <Accordion.Body
                                       dangerouslySetInnerHTML={{
                                         __html: res.description,
                                       }}
                                     >
-                                      {/* {res.description_text  || 'Loading'} */}
                                     </Accordion.Body>
-                                    {/**</div>*/}
                                   </Accordion.Item>
                                 </div>
                               );
@@ -567,7 +527,6 @@ export default function FaqBody() {
                   {isloading ? (
                     <div className="text-center">
                       <div>
-                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                         <video
                           src={loaderimg2}
                           autoPlay
@@ -577,9 +536,6 @@ export default function FaqBody() {
                           height={250}
                           width={250}
                         />
-                        {/* <video className='img-fluid d-block mx-auto' autoPlay loop muted height={250} width={250}>
-                      <source src={loaderimg2}  type='video/mp4' />
-                    </video> */}
                       </div>
                     </div>
                   ) : (
@@ -593,15 +549,12 @@ export default function FaqBody() {
                                   <Accordion.Header>
                                     {res.title || "Loading"}
                                   </Accordion.Header>
-                                  {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
                                   <Accordion.Body
                                     dangerouslySetInnerHTML={{
                                       __html: res.description,
                                     }}
                                   >
-                                    {/* {res.description_text || 'Loading'} */}
                                   </Accordion.Body>
-                                  {/**</div>*/}
                                 </Accordion.Item>
                               </div>
                             );

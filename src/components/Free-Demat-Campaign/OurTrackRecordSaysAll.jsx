@@ -88,7 +88,6 @@ function OurTrackRecordSaysAll() {
   //New 
   function IntradayNew() {
     setToggleState(1)
-    // console.log("change",toggleState)
     setlist([]);
     
     setShowLoader(true)
@@ -116,7 +115,6 @@ function OurTrackRecordSaysAll() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // generateSessionId()
       FandOstocks()
     }
   }, [rendercount])

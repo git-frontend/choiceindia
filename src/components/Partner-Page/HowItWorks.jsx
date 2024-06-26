@@ -33,35 +33,30 @@ function HowItWorks() {
                 <div className="work-steps-itm">
                   <span>
                   <LazyLoader src={RegisterCBA} className={'img-fluid'} width={"61"} height={"61"} alt={""} />
-                    {/* <img src={RegisterCBA} alt="" width={"61"} height={"61"} /> */}
                   </span>
                   <h5>Register as a CBA</h5>
                 </div>
                 <div className="work-steps-itm">
                   <span>
                   <LazyLoader src={QuickApproval} className={'img-fluid'} width={"61"} height={"61"} alt={""} />
-                    {/* <img src={QuickApproval} alt="" width={"61"} height={"61"} /> */}
                   </span>
                   <h5>Quick Approval</h5>
                 </div>
                 <div className="work-steps-itm">
                   <span>
                   <LazyLoader src={GetClients} className={'img-fluid'} width={"60"} height={"61"} alt={""} />
-                    {/* <img src={GetClients} alt="" width={"60"} height={"61"} /> */}
                   </span>
                   <h5>Get Clients</h5>
                 </div>
                 <div className="work-steps-itm">
                   <span>
                   <LazyLoader src={TrackStatus} className={'img-fluid'} width={"61"} height={"61"} alt={""} />
-                    {/* <img src={TrackStatus} alt="" width={"61"} height={"61"} /> */}
                   </span>
                   <h5>Track Status</h5>
                 </div>
                 <div className="work-steps-itm">
                   <span>
                   <LazyLoader src={ReceiveEarnings} className={'img-fluid'} width={"61"} height={"61"} alt={""} />
-                    {/* <img src={ReceiveEarnings} alt="" width={"62"} height={"61"} /> */}
                   </span>
                   <h5>Receive Earnings</h5>
                 </div>

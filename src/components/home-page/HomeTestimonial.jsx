@@ -1,4 +1,3 @@
-// import ImageSub23 from '../../assets/images/homeimg-small3.png';
 import ImageTesti1 from '../../assets/images/udit-goyal.webp';
 import ImageTesti2 from '../../assets/images/monish-chug.webp';
 import ImageTesti3 from '../../assets/images/aparajitha-aiyer.webp';
@@ -19,52 +18,6 @@ import { useState, useRef } from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function HomeTestimonial() {
-
-	// const settings2 = {
-	// 	infinite: false,
-	// 	speed: 1500,
-	// 	fade: true,
-	// 	arrows: true,
-	// 	slidesToShow: 1,
-	// 	autoplay: false,
-	// 	dots: false,
-	// 	autoplaySpeed: 1000,
-	// 	slidesToScroll: 1,
-	// };
-
-	 // const breakPoints = [
-    //     { width: 1, itemsToShow: 1 },
-    //     { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-    //     { width: 768, itemsToShow: 3 },
-    //     { width: 1200, itemsToShow: 3 }
-    // ];
-
-    // const dataObj = [
-    //     {
-    //         "img": ImageSub25, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
-    //         "des": "They will never share your private data without your consent. They are market leader for right reasons." +
-    //             "They are the best brokers in town and provide the best services to their clients."
-    //     },
-
-    //     {
-    //         "img": ImageSub23, "name": "Elon Musk", "tag": "@ElonMusk", "date": "15 Nov 2005", "likes": "100",
-    //         "des": "Do more with buttons. Control button states or create groups " +
-    //             " of buttons for more components like toolbars."
-    //     },
-
-    //     {
-    //         "img": ImageSub24, "name": "Leo Messi", "tag": "@LeoMessi", "date": "25 Jun 2015", "likes": "57",
-    //         "des": "<a>s don’t support the disabled attribute, so you must add the" +
-    //             ".disabled className to make it visually appear disabled."
-    //     },
-
-
-    //     {
-    //         "img": ImageSub22, "name": "Kovac", "tag": "@Slokovia", "date": "10 May 2010", "likes": "84",
-    //         "des": " If you create a new HTML document and test this example out by pasting all of" +
-    //             "the above code and markup into it, you'll see."
-    //     }
-    // ]
 
     const [valRight, setValRight] = useState(() => 0);
 
@@ -112,7 +65,6 @@ function HomeTestimonial() {
     const counter = useRef(0);
     function toggleForward() {
 
-		// console.log('DDDD',counterRight);
 		if(counterRight === 0 ){
 			setdisableLeft(true);
 			setdisableRight(false);
@@ -133,16 +85,11 @@ function HomeTestimonial() {
         } else {
             setValRight(prevCount => prevCount + 1);
             let temp;
-            //  temp = setdataObj((oldArray) => [...oldArray,oldArray.shift()])
             temp = dataObj.shift();
-            //  setdataObj((oldArray) => [...oldArray,oldArray.push(temp)])
             dataObj.push(temp);
-            // setdataObj((oldArray) => [...oldArray, oldArray.pop()])
         }
 
     }
-    // console.log('counter', counter);
-    // console.log('data', dataObj);
     function toggleBackward() {
 
 		if(counterRight === 3){
@@ -164,10 +111,8 @@ function HomeTestimonial() {
         } else {
             setValRight(prevCount => prevCount - 1);
             let temp = dataObj.pop();
-            // console.log('temp', temp)
-            // console.log(dataObj);
             dataObj.unshift(temp);
-            // console.log('after left', dataObj)
+
         }
     }
 
@@ -196,32 +141,26 @@ function HomeTestimonial() {
 						</div>
 							<div className="testimonial-slider">
 								<div className='imgsub22'>
-									<LazyLoader src={dataObj[1].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"60"} height={"59"} alt={""}/>
-									{/* <img src={dataObj[1].img} alt="Loading" /> */}
+									<LazyLoader src={dataObj[1].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"60"} height={"59"} alt={""}/>									
 								</div>
 
 								<div className='imgsub21'>
-									<LazyLoader src={dataObj[2].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"100"} height={"99"} alt={""}/>
-									{/* <img src={dataObj[2].img} alt="Loading" /> */}
+									<LazyLoader src={dataObj[2].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"100"} height={"99"} alt={""}/>									
 								</div>
 
 								<div className='imgsub23'>
-									<LazyLoader src={dataObj[3].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"80"} height={"79"} alt={""}/>
-									{/* <img src={dataObj[3].img} alt="Loading" /> */}
+									<LazyLoader src={dataObj[3].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"80"} height={"79"} alt={""}/>								
 								</div>
 								<div className="slider-item">
 									<div className="slider-item-img">
-										<LazyLoader src={dataObj[0].img} threshold={[0, 0.5, 1]} className={"img-fluid main-img-slide"} width={"397"} height={"393"} alt={""}/>
-										{/* <img src={dataObj[0].img} alt="Loading" className="main-img-slide" /> */}
+										<LazyLoader src={dataObj[0].img} threshold={[0, 0.5, 1]} className={"img-fluid main-img-slide"} width={"397"} height={"393"} alt={""}/>								
 									</div>
 									<div className="slider-item-des">
 										<div className="item-des-name-value d-flex align-items-start justify-content-between">
-											<div className='d-flex flex-wrap w-75 align-items-center'>
-												{/* <FontAwesomeIcon icon={faTwitter} /> */}
+											<div className='d-flex flex-wrap w-75 align-items-center'>											
 												
 												<span className='tag-letter'><LazyLoader src={ImagePlay} className={'img-fluid'} width={"36"} height={"41"} alt={""}/></span>
-												<h4>{dataObj[0].name}</h4>
-												{/* <h6 className='w-75'>{dataObj[0].tag}</h6> */}
+												<h4>{dataObj[0].name}</h4>											
 											</div>
 											<h6 className='rght-txt'>{dataObj[0].date}</h6>
 										</div>
