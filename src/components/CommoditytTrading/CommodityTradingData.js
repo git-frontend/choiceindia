@@ -15,6 +15,12 @@ import Image15 from '../../assets/images/open-demat-account/ios.svg';
 import Image16 from '../../assets/images/open-demat-account/commodity-brokerage-charges.svg';
 import Image17 from '../../assets/images/open-demat-account/currency-brokerage-charges.svg';
 import Image18 from '../../assets/images/open-demat-account/equity-brokerage-charges.svg';
+import Image19 from '../../assets/images/open-demat-account/register-online.webp';
+import Image20 from '../../assets/images/open-demat-account/steparrow.svg';
+import Image21 from '../../assets/images/open-demat-account/downarrow.png';
+import Image22 from '../../assets/images/open-demat-account/in-person-verification.webp';
+import Image23 from '../../assets/images/open-demat-account/registration-complete.webp';
+import Image24 from '../../assets/images/open-demat-account/courier-poa.webp';
 const CommodityTradingData = {
 
     "BannerData":[
@@ -137,7 +143,42 @@ const CommodityTradingData = {
             "cardAlt": 'Equity Charges to Open Commodity Trading',
         },
     ],
-
+    "AccountOpeningProcess":[
+        {
+            "title": `Open a <span>Paperless </span>  Commodity Trading Account Online For Free`,
+            "pageLink" : "/commodity-trading",
+            "processH": "A trusted name",
+            "processT": `Fill in the required details and upload the relevant documents along with a passport size photograph.`,
+            "processImg1" : `${Image19}`,
+            "processImg2" : `${Image20}`,
+            "processImg3" : `${Image21}`,
+            "processAlt": 'Register to Open Commodity Trading Account in India',
+        },
+        {
+            "processH": "In-Person Verification",
+            "processT": `Complete the In-person verification (IPV).`,
+            "processImg1" : `${Image22}`,
+            "processImg2" : `${Image20}`,
+            "processImg3" : `${Image21}`,
+            "processAlt": 'Complete IPV to open Commodity Trading Account',
+        },
+        {
+            "processH": "Registration Complete",
+            "processT": `Your Demat Account opening is successful with Choice.`,
+            "processImg1" : `${Image23}`,
+            "processImg2" : `${Image20}`,
+            "processImg3" : `${Image21}`,
+            "processAlt": 'Complete registration for Online Commodity Trading',
+        },
+        {
+            "processH": "Courier POA",
+            "processT": `Courier us the signed copy of the Power of Attorney (POA) sent on your registered Email ID.`,
+            "processImg1" : `${Image24}`,
+            "processImg2" : ``,
+            "processImg3" : ``,
+            "processAlt": 'Courier POA to active your Commodity Trading in India',
+        },
+    ],
 
 }
 export default CommodityTradingData;

@@ -53,7 +53,7 @@ const CommodityOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
-                                <LazyLoader src={Image19} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"Register to Open Commodity Trading Account in India"} />
+                                    <LazyLoader src={Image19} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"Register to Open Commodity Trading Account in India"} />
                                     <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step One"} />
                                     <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step One"} />
                                 </div>
