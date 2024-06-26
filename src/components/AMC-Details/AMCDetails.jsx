@@ -1,8 +1,6 @@
 import React from 'react'
 import "./amc-details.scss";
 import Banner from './Banner';
-import SerachAMCDetails from './SerachAMCDetails';
-import MoreContent from './MoreContent';
 import {
   useLocation,
 } from 'react-router-dom';
@@ -24,8 +22,6 @@ function AMCDetails() {
   return (
     <div>
         <Banner/>
-        {/* <SerachAMCDetails/> */}
-        {/* <MoreContent/> */}
     </div>
   )
 }

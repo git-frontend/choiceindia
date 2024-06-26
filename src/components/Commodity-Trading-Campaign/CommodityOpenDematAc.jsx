@@ -1,4 +1,3 @@
-// import React from 'react';
 import React from "react";
 import Slider from 'react-slick';
 import LazyLoader from "../Common-features/LazyLoader";

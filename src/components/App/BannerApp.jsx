@@ -10,38 +10,8 @@ function BannerCareer() {
   const  queryParam = window.location.search;
  const utmvalue= new URLSearchParams(queryParam);
  const param1 = utmvalue.get('utm_source');
-  // console.log("setshow",param1);
-  // var self = window.location.toString();
-  //       var querystring = self.split("?");
-  //       if (querystring.length > 1) {
-  //         var utmdata = querystring[1].split("&");
-  //       }
 
   
-    
-
-    // useEffect(() => {
-    //   setRenderCount(true)
-    //   if (rendercount === true) {
-    //     if(querystring.length > 1){
-    //     for(let i=0 ;i<=utmdata.length||1;i++)
-    //     {
-          
-    //       if(utmdata[i]||0=='utm_source=alphabee'){
-            
-    //         // console.log("setshow",show);
-    //         setshow(true)
-            
-    //       }
-             
-         
-    
-          
-    //     }
-    //   }
-       
-    //   }
-    // }, [rendercount])
     
   return (
     <div className='App-main'>
@@ -49,7 +19,6 @@ function BannerCareer() {
 
       <section className="banner-app" onMouseOver={() => setIscheck(true)}>
       <LazyLoader src={AppImage0} className={"img-fluid ban-img"} alt={"Investment App"} width={"1728"} height={"1119"}/>
-        {/* <img src={AppImage0} className="ban-img" alt='Loading' width="1728" height="1119" /> */}
         <div className='app-banner-caption'>
           <div className='container'>
             <div className='row'>
@@ -76,7 +45,6 @@ function BannerCareer() {
                       <span className='blackcolor'>Google Play</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
-                    {/* <img src={appstore} className="" alt={"App Store"} width="27" height="24" /> */}
                     <LazyLoader src={appstore} className={"img-fluid"} alt={"App Store"} width={"27"} height={"24"}/>
 
                       <span className='blackcolor'>App Store</span>

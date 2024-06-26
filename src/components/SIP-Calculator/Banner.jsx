@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut, Arc, Tooltip } from 'react-chartjs-2';
 import { Chart, ArcElement } from 'chart.js/auto';
-// import DonutChart from 'react-donut-chart';
 Chart.register(ArcElement)
 function Banner() {
 
@@ -94,9 +93,7 @@ function Banner() {
             const rate = interestRate / 100;
             const totalYears = tenure;
             const futureValue = monthlyinvest * (Math.pow(1 + rate, totalYears));
-            // console.log("ff", futureValue)
             setLumpsumtotalvalue(futureValue.toFixed(2));
-            // const investAmount = monthlyinvest * totalYears;
             setLumpsumamount(monthlyinvest);
             const expectReturn = futureValue - monthlyinvest;
             setLumpsumestReturns(expectReturn);
@@ -238,7 +235,6 @@ const charteroption={
                                         <div className='form-section'>
                                             <div className='leftsec'>
                                                 <div className='cal-opt mrg-top'>
-                                                    {/* <p>Loan Amount</p> */}
                                                     <div className='value-card'>
                                                         <div><p>Monthly Investment</p></div>
                                                         <div className="input-sec">
@@ -251,7 +247,6 @@ const charteroption={
                                                     <div className="slidecontainer">
                                                         <div className="middle">
                                                             <div className="slider-container">
-                                                                {/* <span className="bar"><span style={fillStyle}></span></span> */}
                                                                 <input type="range" className="slider" step="500" min="500" max="500000" value={monthlyinvest}
                                                                     onChange={HandleMonthlyInvest} style={fillStyle}
                                                                 />
@@ -261,7 +256,6 @@ const charteroption={
                                                     </div>
                                                 </div>
                                                 <div className='cal-opt'>
-                                                    {/* <p>Interest Rate (per annum)</p> */}
                                                     <div className='value-card'>
                                                         <div><p>Expected Return Rate (p.a.)</p></div>
                                                         <div className="input-sec">
@@ -275,7 +269,6 @@ const charteroption={
                                                     <div className="slidecontainer">
                                                         <div className="middle">
                                                             <div className="slider-container">
-                                                                {/* <span className="bar"><span className="" style={{ width: `${interestRate}%` }}></span></span> */}
                                                                 <input type="range" className="slider" id="myRange" min="5" max="25" value={interestRate}
                                                                     onChange={handleInterestRateChange} style={fillStyle1}
                                                                 />
@@ -285,7 +278,6 @@ const charteroption={
                                                     </div>
                                                 </div>
                                                 <div className='cal-opt'>
-                                                    {/* <p>Tenure (in months)</p> */}
                                                     <div className='value-card'>
                                                         <div><p>Investment Period (years)</p></div>
                                                         <div className="input-sec">
@@ -298,7 +290,6 @@ const charteroption={
                                                     <div className="slidecontainer">
                                                         <div className="middle">
                                                             <div className="slider-container">
-                                                                {/* <span className="bar"><span className="" style={{ width: `(${value} - 12) / (120 - 12) * 100` }}></span></span> */}
                                                                 <input type="range" className="slider" id="myRange" min="3" max="40" value={tenure} onChange={handleLoanTenureChange} style={fillStyle2} />
                                                                 {errorMessages.tenure && <span className="text-danger">{errorMessages.tenure}</span>}
                                                             </div>
@@ -355,7 +346,6 @@ const charteroption={
                                         <div className='form-section'>
                                             <div className='leftsec'>
                                                 <div className='cal-opt mrg-top'>
-                                                    {/* <p>Loan Amount</p> */}
                                                     <div className='value-card'>
                                                         <div><p>Lumpsum Investment</p></div>
                                                         <div className="input-sec">
@@ -368,7 +358,6 @@ const charteroption={
                                                     <div className="slidecontainer">
                                                         <div className="middle">
                                                             <div className="slider-container">
-                                                                {/* <span className="bar"><span style={fillStyle}></span></span> */}
                                                                 <input type="range" className="slider" step="500" min="500" max="500000" value={monthlyinvest}
                                                                     onChange={HandleMonthlyInvest} style={fillStyle}
                                                                 />
@@ -378,7 +367,6 @@ const charteroption={
                                                     </div>
                                                 </div>
                                                 <div className='cal-opt'>
-                                                    {/* <p>Interest Rate (per annum)</p> */}
                                                     <div className='value-card'>
                                                         <div><p>Expected Return Rate (p.a.)</p></div>
                                                         <div className="input-sec">
@@ -392,7 +380,6 @@ const charteroption={
                                                     <div className="slidecontainer">
                                                         <div className="middle">
                                                             <div className="slider-container">
-                                                                {/* <span className="bar"><span className="" style={{ width: `${interestRate}%` }}></span></span> */}
                                                                 <input type="range" className="slider" id="myRange" min="5" max="25" value={interestRate}
                                                                     onChange={handleInterestRateChange} style={fillStyle1}
                                                                 />
@@ -402,7 +389,6 @@ const charteroption={
                                                     </div>
                                                 </div>
                                                 <div className='cal-opt'>
-                                                    {/* <p>Tenure (in months)</p> */}
                                                     <div className='value-card'>
                                                         <div><p>Investment Period (years)</p></div>
                                                         <div className="input-sec">
@@ -415,7 +401,6 @@ const charteroption={
                                                     <div className="slidecontainer">
                                                         <div className="middle">
                                                             <div className="slider-container">
-                                                                {/* <span className="bar"><span className="" style={{ width: `(${value} - 12) / (120 - 12) * 100` }}></span></span> */}
                                                                 <input type="range" className="slider" id="myRange" min="3" max="40" value={tenure} onChange={handleLoanTenureChange} style={fillStyle2} />
                                                                 {errorMessages.tenure && <span className="text-danger">{errorMessages.tenure}</span>}
                                                             </div>

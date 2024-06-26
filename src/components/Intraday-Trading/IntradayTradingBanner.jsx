@@ -1,8 +1,6 @@
 
 // import React from 'react';
 import React from "react";
-import Bannerimage from '../../assets/images/fno-trading/hero-bg-1.png';
-import LazyLoader from '../Common-features/LazyLoader';
 function IntradayTradingBanner() {
     function scrollToId(id) {
         var element = document.getElementById(id);

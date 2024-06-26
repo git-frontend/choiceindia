@@ -7,14 +7,9 @@ import CareerImage6 from '../../assets/images/choice-emitra/Shares-jo-guna-ho-Sa
 import CareerImage7 from '../../assets/images/choice-emitra/Pdf-Icon-01.webp';
 import CareerImage9 from '../../assets/images/choice-emitra/youtube.webp';
 import CareerImage8 from '../../assets/images/choice-emitra/Pdf-Icon-01.webp';
-
-// import mutual from '../../assets/images/choice-emitra/Choice-MutualFundAccountOpeningFlow.pdf';
-// import demat from '../../assets/images/choice-emitra/Choice-DematAccountOpeningFlow.pdf';
-
 import mutual from '../../assets/images/choice-emitra/mutual-fund-new.pdf';
 import demat from '../../assets/images/choice-emitra/demat-account-new.pdf';
 import accountOpening from '../../assets/images/choice-emitra/Account-Opening.pdf';
-
 import whatsapp from '../../assets/images/choice-emitra/whatsapp.svg';
 import instagram from '../../assets/images/choice-emitra/instagram.svg';
 import download from '../../assets/images/choice-emitra/download.svg';
@@ -28,8 +23,6 @@ import LazyLoader from '../Common-features/LazyLoader';
 function PartnerAssests() {
   const [rendercount, setRenderCount] = useState(() => false);
   let downloadFile = (fn, file, name) => {
-
-    //let id=document.getElementById(file)
     if (fn) {
       var a = document.createElement('a');
       a.href = fn;
@@ -37,8 +30,6 @@ function PartnerAssests() {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      // window.open(id.src,'_blank')
-      // console.log(id.src,"FILEE")
     } else {
       window.open(fn, '_blank')
     }
@@ -46,14 +37,7 @@ function PartnerAssests() {
 
 
   let shareLink = (fn, key, file, url) => {
-    // if(file=='CareerImage7' ){
-    //   window.open(mutual)
-    // }else if(file=='CareerImage' ){
-    //   window.open(demat)
-    // }else{
-
-      // http://localhost:3000/static/media/power-of-Investing-early-MFChoice.b912a1fe5451b80b7c8f.webp
-    //console.log("0f",key)
+   
     let id = document.getElementById(file)
 
     if (fn) {
@@ -70,7 +54,7 @@ function PartnerAssests() {
     //}
 
 
-    //console.log("linkObject",linkObject)
+    
 
   }
 
@@ -92,11 +76,7 @@ function PartnerAssests() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : ''; 
      document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
      document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -115,20 +95,7 @@ function PartnerAssests() {
   return (
     <>
       <div>
-        {/* <section className="bannersec">
-				<div className="container">
-					<div className="row">
-						<div className="col-md-12">
-							<div className="imgwrap">
-							<img src={bannerimg} className={"img-fluid"} alt={"Loading"} width={"500"} height={"370"}/>
-							</div>
-							
-						</div>
-					</div>
-					
-				</div>
-			</section> */}
-
+        
 
 
         <div className="container p-5">
@@ -158,7 +125,7 @@ function PartnerAssests() {
                       <div><img src={download} className="" alt={"Download"} onClick={() => { downloadFile(CareerImage6, 'CareerImage6', 'शेयर जो 10 गुना हो सकते है!') }} width="22" height="22" /></div>
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(CareerImage6, 'whatsapp', 'CareerImage6', 'शेयर जो 10 गुना हो सकते है!') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(CareerImage6, 'facebook', 'CareerImage6', 'शेयर जो 10 गुना हो सकते है!') }} width="22" height="22" /></div>
-                      {/*  <div><img src={instagram} className="" alt={"Instagram"} onClick={()=>{shareLink(CareerImage6,'insta','CareerImage6','शेयर जो 10 गुना हो सकते है!')}} width="22" height="22" /></div> */}
+                     
                     </div>
                   </div>
                 </div>
@@ -178,7 +145,7 @@ function PartnerAssests() {
                       <div><img src={download} className="" alt={"Download"} onClick={() => { downloadFile(CareerImage5, 'CareerImage5', ' जल्दी निवेश करने के फायदे') }} width="22" height="22" /></div>
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(CareerImage5, 'whatsapp', 'CareerImage5', ' जल्दी निवेश करने के फायदे') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(CareerImage5, 'facebook', 'CareerImage5', ' जल्दी निवेश करने के फायदे') }} width="22" height="22" /></div>
-                      {/*   <div><img src={instagram} className="" alt={"Instagram"}  onClick={()=>{shareLink(CareerImage5,'insta','CareerImage5',' जल्दी निवेश करने के फायदे')}}  width="22" height="22" /></div> */}
+                      
                     </div>
                   </div>
                 </div>
@@ -198,7 +165,7 @@ function PartnerAssests() {
                       <div><img src={download} className="" alt={"Download"} onClick={() => { downloadFile(CareerImage4, 'CareerImage4', 'मेहंगाई से कैसे बचे?') }} width="22" height="22" /></div>
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(CareerImage4, 'whatsapp', 'CareerImage4', 'मेहंगाई से कैसे बचे?') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(CareerImage4, 'facebook', 'CareerImage4', 'मेहंगाई से कैसे बचे?') }} width="22" height="22" /></div>
-                      {/*        <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage4,'insta','CareerImage4','मेहंगाई से कैसे बचे?')}} width="22" height="22" /></div> */}
+                      
                     </div>
                   </div>
                 </div>
@@ -222,7 +189,7 @@ function PartnerAssests() {
                       <div><img src={download} className="" alt={"Download"} onClick={() => { downloadFile(CareerImage3, 'CareerImage3', 'फिक्स्ड डिपॉजिट Vs स्टॉक इन्व्हेस्टमेंट') }} width="22" height="22" /></div>
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(CareerImage3, 'whatsapp', 'CareerImage3', 'फिक्स्ड डिपॉजिट Vs स्टॉक इन्व्हेस्टमेंट') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(CareerImage3, 'facebook', 'CareerImage3', 'फिक्स्ड डिपॉजिट Vs स्टॉक इन्व्हेस्टमेंट') }} width="22" height="22" /></div>
-                      {/*     <div><img src={instagram} className="" alt={"Instagram"} onClick={()=>{shareLink(CareerImage3,'insta','CareerImage3','फिक्स्ड डिपॉजिट Vs स्टॉक इन्व्हेस्टमेंट')} }  width="22" height="22" /></div> */}
+                     
                     </div>
                   </div>
                 </div>
@@ -242,7 +209,7 @@ function PartnerAssests() {
                       <div><img src={download} className="" alt={"Download"} onClick={() => { downloadFile(mutual, 'CareerImage7', ' चॉइस के साथ म्यूचुअल फंड खाता कैसे खोले?') }} width="22" height="22" /></div>
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(mutual, 'whatsapp', 'CareerImage7', ' चॉइस के साथ म्यूचुअल फंड खाता कैसे खोले?') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(mutual, 'facebook', 'CareerImage7', ' चॉइस के साथ म्यूचुअल फंड खाता कैसे खोले?') }} width="22" height="22" /></div>
-                      {/*      <div><img src={instagram} className="" alt={"Instagram"}  onClick={()=>{shareLink(mutual,'insta','CareerImage7',' चॉइस के साथ म्यूचुअल फंड खाता कैसे खोले?')}} width="22" height="22" /></div> */}
+                     
                     </div>
                   </div>
                 </div>
@@ -262,8 +229,7 @@ function PartnerAssests() {
                       <div><img src={download} className="" alt={"Download"} onClick={() => { downloadFile(demat, 'CareerImage8', 'चॉइस के साथ डीमैट खाता कैसे खोले?') }} width="22" height="22" /></div>
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(demat, 'whatsapp', 'CareerImage8', 'चॉइस के साथ डीमैट खाता कैसे खोले?') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(demat, 'facebook', 'CareerImage8', 'चॉइस के साथ डीमैट खाता कैसे खोले?') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}  onClick={()=>{shareLink(demat,'insta','CareerImage8','चॉइस के साथ डीमैट खाता कैसे खोले?')}} width="22" height="22" /></div>
- */}                  </div>
+                        </div>
                   </div>
                 </div>
               </div>
@@ -288,8 +254,7 @@ function PartnerAssests() {
                       <div><img src={download} className="" alt={"Download"} onClick={() => { downloadFile(NewsImage0, 'NewsImage0', 'बाइक ख़रीदने का एसआईपी प्लान') }} width="22" height="22" /></div>
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(NewsImage0, 'whatsapp', 'NewsImage0', 'बाइक ख़रीदने का एसआईपी प्लान') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(NewsImage0, 'facebook', 'NewsImage0', 'बाइक ख़रीदने का एसआईपी प्लान') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}  onClick={()=>{shareLink(NewsImage0,'insta','NewsImage0','बाइक ख़रीदने का एसआईपी प्लान')}} width="22" height="22" /></div>
- */}                  </div>
+                                 </div>
                   </div>
                 </div>
               </div>
@@ -308,8 +273,7 @@ function PartnerAssests() {
                       <div><img src={download} className="" alt={"Download"} onClick={() => { downloadFile(CareerImage2, 'CareerImage2', '1 करोड़ कैसे कमाए?') }} width="22" height="22" /></div>
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(CareerImage2, 'whatsapp', 'CareerImage2', '1 करोड़ कैसे कमाए?') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(CareerImage2, 'facebook', 'CareerImage2', '1 करोड़ कैसे कमाए?') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
- */}                  </div>
+                          </div>
                   </div>
                 </div>
               </div>
@@ -328,8 +292,7 @@ function PartnerAssests() {
                      
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=BAOW84XZCHQ','whatsapp') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=BAOW84XZCHQ','facebook') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
- */}                  </div>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -354,8 +317,7 @@ function PartnerAssests() {
                       
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=a3eqTZyayOk','whatsapp') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=a3eqTZyayOk','facebook') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
- */}                  </div>
+                       </div>
                   </div>
                 </div>
               </div>
@@ -376,8 +338,7 @@ function PartnerAssests() {
                       
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=EgT-G-RtqR8&list=PLYR1jiScjAL5Zih3GAwpribEBuQvgII2c','whatsapp') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=EgT-G-RtqR8&list=PLYR1jiScjAL5Zih3GAwpribEBuQvgII2c','facebook') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
- */}                  </div>
+                        </div>
                   </div>
                 </div>
               </div>
@@ -397,7 +358,7 @@ function PartnerAssests() {
                       <div><img src={download} className="" alt={"Download"} onClick={() => { downloadFile(accountOpening, 'CareerImage7', ' अकाउंट ओपनिंग डॉक्युमेंट्स कि चेकलिस्ट') }} width="22" height="22" /></div>
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(accountOpening, 'whatsapp', 'CareerImage7', ' अकाउंट ओपनिंग डॉक्युमेंट्स कि चेकलिस्ट') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(accountOpening, 'facebook', 'CareerImage7', ' अकाउंट ओपनिंग डॉक्युमेंट्स कि चेकलिस्ट') }} width="22" height="22" /></div>
-                      {/*      <div><img src={instagram} className="" alt={"Instagram"}  onClick={()=>{shareLink(mutual,'insta','CareerImage7',' चॉइस के साथ म्यूचुअल फंड खाता कैसे खोले?')}} width="22" height="22" /></div> */}
+                     
                     </div>
                   </div>
                 </div>
@@ -421,8 +382,7 @@ function PartnerAssests() {
                       
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://youtu.be/p6qwmXP1aws','whatsapp') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://youtu.be/p6qwmXP1aws','facebook') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
- */}                  </div>
+                        </div>
                   </div>
                 </div>
               </div>
@@ -443,8 +403,7 @@ function PartnerAssests() {
                       
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://youtu.be/bJU9UA1EoaE','whatsapp') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://youtu.be/bJU9UA1EoaE','facebook') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
- */}                  </div>
+                        </div>
                   </div>
                 </div>
               </div>
@@ -463,8 +422,7 @@ function PartnerAssests() {
                       
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://youtu.be/Qbv5FmT0TLc','whatsapp') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://youtu.be/Qbv5FmT0TLc','facebook') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
- */}                  </div>
+                        </div>
                   </div>
                 </div>
               </div>
@@ -487,8 +445,7 @@ function PartnerAssests() {
                       
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://youtu.be/2KMRYPZPod0','whatsapp') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://youtu.be/2KMRYPZPod0','facebook') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
- */}                  </div>
+                        </div>
                   </div>
                 </div>
               </div>
@@ -509,8 +466,7 @@ function PartnerAssests() {
                       
                       <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://youtu.be/nl5W7nH66d8','whatsapp') }} width="22" height="22" /></div>
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://youtu.be/nl5W7nH66d8','facebook') }} width="22" height="22" /></div>
-                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
- */}                  </div>
+                        </div>
                   </div>
                 </div>
               </div>

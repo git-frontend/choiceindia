@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import LazyLoader from '../Common-features/LazyLoader';
-// import { Link } from 'react-router-dom';
 
 function EligibleToMFDistributor() {
 
@@ -69,23 +68,19 @@ function EligibleToMFDistributor() {
                                 <Slider {...settings} className="slider-eligb">
                                     <div className="">
                                         <LazyLoader src={ImageSub13} alt={"म्यूचुअल फंड डिस्ट्रीब्यूटर बनने की पात्रता"} className={"img-fluid"} width={"74"} height={"74"} />
-                                        {/* <img src={ImageSub13} alt="Individual must be 18+ years of age" className="img-fluid" width="74" height="74" /> */}
                                         <h4>व्यक्ति की आयु 18+ वर्ष होनी चाहिए</h4>
                                     </div>
                                     <div className="">
                                         <LazyLoader src={ImageSub14} alt={"म्यूचुअल फंड वितरक बनें और कई वित्तीय उत्पाद बेचें"} className={"img-fluid"} width={"74"} height={"74"} />
-                                        {/* <img src={ImageSub14} alt="A knack to sell products effortlessly" className="img-fluid" width="74" height="74" /> */}
                                         <h4>उत्पादों को सहजता से बेचने की आदत</h4>
                                     </div>
                                     <div className="">
                                         <LazyLoader src={ImageSub15} alt={"म्यूचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"74"} />
-                                        {/* <img src={ImageSub15} alt="A desire to be your own boss" className="img-fluid" width="74" height="74" /> */}
                                         <h4>अपना खुद का मालिक बनने की इच्छा</h4>
                                     </div>
                                 </Slider>
                                 <div className="eligb-img-sec">
                                     <LazyLoader src={ImageSub16} alt={"म्यूचुअल फंड वितरक पात्रता"} className={"img-fluid"} width={"384"} height={"384"} />
-                                    {/* <img src={ImageSub16} alt="Mutual Fund Distributor Eligibility " className="img-fluid" width="384" height="384" /> */}
                                 </div>
                                 <div className='d-flex justify-content-center'>
                                 <div  className="btn-bg btn-bg-dark show-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span> अभी शुरू करें</span> </div>
@@ -96,18 +91,6 @@ function EligibleToMFDistributor() {
                 </div>
             </section>
 
-            {/* <section className="box-mid-blue">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="mid-blue-cont">
-                                <h4>Growth is certain when you partner with us.</h4>
-                                <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
         </div>
 
     );

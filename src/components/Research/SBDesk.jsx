@@ -42,32 +42,6 @@ function SBDesk() {
         }
     }, [trigger])
 
-
-    // useEffect(() => {
-    //     window.open("https://finx.choiceindia.com/research-report/research/experts/EQ");
-    // },[])
-    /**
-     * Generate Session Id
-     */
-    // function generateSessionId() {
-    //     setShowLoader(true)
-    //     let api = new API_URLS()
-    //     fetch(api.getSessionUrl())
-    //         .then(response => {
-    //             return response.json();
-    //         })
-    //         .then(res => {
-    //             if (res.Status == 'Success') {
-    //                 getExpertResearch(res.Response)
-    //             } else {
-    //                 getExpertResearch()
-    //             }
-
-    //         }, err => {
-    //             getExpertResearch()
-    //         })
-
-    // }
     /**
      * Convert ResponseTring to  Object
      * @param {Response String} data 
@@ -123,15 +97,6 @@ function SBDesk() {
             indicesData["color"] = "green";
             indicesData["arrow"] = "icon-long-arrow-up"
         }
-        //Future Reference
-        // indicesData["open"] = splitData[0]["75"] / splitData[0]["399"];
-        // indicesData["close"] = (splitData[0]["76"] / splitData[0]["399"]);
-        // indicesData["wKHigh"] = (splitData[0]["93"] / splitData[0]["399"]);
-        // indicesData["WkLow"] = (splitData[0]["94"] / splitData[0]["399"]);
-        // indicesData["volume"] = parseInt(splitData[0]["79"]);
-        // indicesData["high"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["77"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in high (24/05/2021)
-        // indicesData["low"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["78"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in low (24/05/2021)
-        // setCompanyData(indicesData)
          
 
         if ((researchReport && researchReport.length) || (resData && resData.length)) {
@@ -156,8 +121,6 @@ function SBDesk() {
                         }
                         
                    
-                        // ele.priceData['part_profit_percentage'] =  ((Number(res.matched_price) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
-                        // console.log("llll",res.matched_price)
 
                     
                        
@@ -182,16 +145,6 @@ function SBDesk() {
      * Explore
      */
     let exploreSec = () => {
-        // if (/Android|webOS|windows phone|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
-
-        //  window.open("https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy")
-
-        // } else if (/iPod|iPhone|iPad/i.test(navigator.userAgent)) {
-
-        //   window.open("https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261")
-        // }else{
-        //     window.open("https://jiffy.choiceindia.com/research-report/research/experts/EQ")
-        // }
         //Deeplonking
         
     let api = new API_URLS()
@@ -231,17 +184,9 @@ function SBDesk() {
                 </div>
             </div>
     
-          {/*   <Template6></Template6> */}
-            {/* {!showLoader && (!researchReport || researchReport?.length == 0) ? 
-            <div>
-                <div className="text-center">
-                    <img src={noDataimg} className="img-fluid" alt='loading' height={250} width={250} />
-                </div>
-            </div> : ''} */}
             {showLoader ? 
               <div className="text-center">
               <div>
-                {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
                 <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                  </div>
           </div>

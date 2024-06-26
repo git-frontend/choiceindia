@@ -3,15 +3,11 @@ import React from "react";
 import "../../components/Brokerage-Calculator/brokerage-calculator.scss";
 import "./margin-calculator.scss";
 import Banner from "./Banner";
-import { useState,useEffect} from "react";
 
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-// import OpenFreeDematAccount from "./OpenFreeDematAccount";
-// import MoreContent from "./MoreContent";
-// import MarginFaq from "./MarginFaq";
 
 function MarginCalculator() {
   const location = useLocation();
@@ -30,9 +26,7 @@ function MarginCalculator() {
   return (
     <div>
         <Banner />
-        {/* <OpenFreeDematAccount/> */}
-        {/* <MoreContent/> */}
-        {/* <MarginFaq/> */}
+        
     </div>
   );
 }

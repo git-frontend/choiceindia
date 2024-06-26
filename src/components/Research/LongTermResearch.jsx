@@ -30,11 +30,6 @@ function LongTermResearch() {
     matches: window.innerWidth < 767 ? false : true,
   });
 
-  // console.log("check",window.location);
-
-
-
-  // const demo_ref = useRef(null)
 
   const settings = {
     infinite: true,
@@ -51,9 +46,6 @@ function LongTermResearch() {
   const queryParam = window.location.search;
   const utmvalue = new URLSearchParams(queryParam);
   const activeurl = utmvalue.get('active');
-  // console.log('activeurl',activeurl);
-
-  // const [tempid, setTempId] = useState('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
   const [tempid, setTempId] = useState({ 'name': activeurl? activeurl: 'company-fundamentals', 'id': 'f890363a-512e-4797-91fd-4d40732844a3' });
   const [scrptname,setScriptname]=useState()
   const navigate = useNavigate();
@@ -111,10 +103,6 @@ function LongTermResearch() {
   };
 
   function getSingleDetail(id) {
-    // console.log("goto signal", id)
-    // console.log("tempid.id",tempid.id)
-    // console.log('IIIII',id);
-    // navigate(`/research-new/${id}/${tempid}`);
     if (tempid.id === 'f890363a-512e-4797-91fd-4d40732844a3') {
       navigate(`/research-report/${id}-share-price-target`);
     } else if (tempid.id === '0') {
@@ -146,8 +134,6 @@ function LongTermResearch() {
   }
 
   function goToScroll() {
-    // console.log('GGG');
-    // demo_ref.current.scrollIntoView({behavior: 'smooth'})
     var element = document.getElementById('lt-search');
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
@@ -172,7 +158,6 @@ function LongTermResearch() {
 
     setTrigger(true)
     if (trigger === true) {
-      // console.log("test", urlid);
       (activeurl == "economic-analysis") ? (loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'), setcount(4)) : (activeurl == "industry-analysis") ? (loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4'), setcount(3)) : (activeurl == "ipo-nfo-analysis") ? (lpoSearch(), setcount(2)) : (loadResearch('f890363a-512e-4797-91fd-4d40732844a3'), setcount(1));
 
       let mediaQuery = window.matchMedia("(min-width: 770px)");
@@ -304,8 +289,7 @@ function LongTermResearch() {
                                           <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                                         </div>
                                         <div className="tab-itm-des">
-                                          <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.redirect_slug) }}>{count === 4 ? res.scrip_name || "" : res.title.split('(NSE)'||'BSE')[0] || ""}</h5>
-                                          {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                                          <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.redirect_slug) }}>{count === 4 ? res.scrip_name || "" : res.title.split('(NSE)'||'BSE')[0] || ""}</h5>              
                                           <div className="itm-des-text">
                                             <p dangerouslySetInnerHTML={{ __html: res.description }}></p>
                                           </div>
@@ -314,7 +298,6 @@ function LongTermResearch() {
                                           {count === 1 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage || 0}%</span></h4> : ""}
                                           <div className="itm-des-sub">
                                             <span className="date-post">{utils.formatDate(new Date(res.publish_date), "dd MMMM , yyyy")}</span>
-                                            {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
                                             {count === 2 ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : count === 1 ? <a className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.redirect_slug) }} className="post-read">Read More</a>}
 
                                           </div>
@@ -341,7 +324,6 @@ function LongTermResearch() {
                                         </div>
                                         <div className="tab-itm-des">
                                           <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.redirect_slug) }}>{count === 4 ? res.scrip_name || "" : res.title.split('(NSE)'||'BSE')[0] || ""}</h5>
-                                          {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
                                           <div className="itm-des-text">
                                             <p dangerouslySetInnerHTML={{ __html: res.description }}></p>
                                           </div>
@@ -350,7 +332,6 @@ function LongTermResearch() {
                                           {count === 1 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage || 0}%</span></h4> : ""}
                                           <div className="itm-des-sub">
                                             <span className="date-post">{utils.formatDate(new Date(res.publish_date), "dd MMMM , yyyy")}</span>
-                                            {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
                                             {count === 2 ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : count === 1 ? <a className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.redirect_slug) }} className="post-read">Read More</a>}
 
                                           </div>
@@ -421,7 +402,6 @@ function LongTermResearch() {
                                         </div>
                                         <div className="tab-itm-des">
                                           <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.redirect_slug) }}>{ res.title }</h5>
-                                          {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
                                           <div className="itm-des-text">
                                             <p dangerouslySetInnerHTML={{ __html: res.description }}></p>
                                           </div>
@@ -430,7 +410,6 @@ function LongTermResearch() {
                                           {count === 1 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage || 0}%</span></h4> : ""}
                                           <div className="itm-des-sub">
                                             <span className="date-post">{utils.formatDate(new Date(res.publish_date), "dd MMMM , yyyy")}</span>
-                                            {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
                                             {count === 2 ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : count === 1 ? <a className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.redirect_slug) }} className="post-read">Read More</a>}
 
                                           </div>

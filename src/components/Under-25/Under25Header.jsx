@@ -7,7 +7,6 @@ import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import "../../assets/css/header.scss";
-// import "../../components/Under-25/under-25.scss";
 export default function Under25Header() {
     const [scrolling, setScrolling] = useState(false);
     const [show, setShow] = useState(true)

@@ -17,7 +17,6 @@ function AppTradeBenefits() {
 
   function getBrowserDetails() {
 
-    // console.log('TRR',navigator.userAgent)
    
     if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
     {
@@ -54,7 +53,6 @@ function AppTradeBenefits() {
   function getDeviceDetails() {
     var platform = ["Windows", "Android", "iOS"];
 
-    // console.log('DD',navigator.userAgentData.platform)
     for (var i = 0; i < platform.length; i++) {
 
         if (navigator.userAgentData.platform.indexOf(platform[i]) >- 1) {
@@ -69,7 +67,6 @@ function AppTradeBenefits() {
       getBrowserDetails();
       getDeviceDetails();
     }
-    // console.log('BROW',checkBrowser);
   },[])
 
   return (
@@ -102,7 +99,6 @@ function AppTradeBenefits() {
                   <div className="sec-list-itm">
                     <div className="list-itm-lft">
                       <LazyLoader src={Vector1} className={"img-fluid sm-img"} alt={"Signal"} width={"33"} height={"30"} />
-                      {/* <img src={Vector1} className="sm-img" alt="Signal" width="33" height="30" /> */}
                       <h5>Signal</h5>
                     </div>
                     <div className="list-itm-rht">
@@ -112,7 +108,6 @@ function AppTradeBenefits() {
                   <div className="sec-list-itm">
                     <div className="list-itm-lft">
                       <LazyLoader src={Vector2} className={"img-fluid sm-img"} alt={"Stratezy"} width={"31"} height={"31"} />
-                      {/* <img src={Vector2} className="sm-img" alt="Stratezy" width="31" height="31" /> */}
                       <h5>Stratezy</h5>
                     </div>
                     <div className="list-itm-rht">
@@ -167,7 +162,6 @@ function AppTradeBenefits() {
                 <span className='whitecolor'>Google Play</span>
               </a>
               <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl black'>
-              {/* <img src={appstorelight} className="" alt={"App Store"} width="" height="" /> */}
               <LazyLoader src={appstorelight} className={"img-fluid"} alt={"App Store"} width={"27"} height={"24"}/>
 
                 <span className='whitecolor'>App Store</span>

@@ -5,13 +5,10 @@ import meta_tags from "../../Data/MetaTags";
 import "./free-demat-compaign.scss";
 import "./../OpenDematAccount/DematPage.scss";
 import Banner from './Banner';
-import CreateBacktestStrategies from "./CreateBacktestStrategies";
 import GetFreeResearchCall from "./GetFreeResearchCall";
 import OurTrackRecordSaysAll from "./OurTrackRecordSaysAll";
 import WhyOpenFreeDematAccount from "./WhyOpenFreeDematAccount";
 import OneAccountFinancialNeeds from "./OneAccountFinancialNeeds";
-import OpenLowBrokerageDematAccount from "./OpenLowBrokerageDematAccount";
-import DematAccountOnlineSteps from "./OpenDematAccountOnlineSteps";
 import DocumentsRequiredDematAccountOpeningOnline from "./DocumentsRequiredDematAccountOpeningOnline";
 import WhyChoiceOpenDematAccount from "./WhyChoiceOpenDematAccount";
 
@@ -31,10 +28,8 @@ function FreeDematCompaign() {
 
     if (element) {
       const rect = element.getBoundingClientRect();
-      // console.log("checkmate", rect.top.toFixed())
       if (rect.top.toFixed() < 350) {
         setIscheck(true);
-        // console.log('inside name', name);
       }
 
     }
@@ -46,18 +41,11 @@ function FreeDematCompaign() {
       let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
       document.body.appendChild(doc.getElementsByTagName('script')[0] || [] ? document.getElementsByTagName('script')[0] || [] : '');
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
       if (document.getElementById('link1') == null) {
 
-        //   document.getElementById('link1').remove();
-        // document.getElementById('link2').remove();
-        // document.getElementById('link3').remove();
-        // document.getElementById('link4').remove();
-        // document.getElementById('link5').remove();
-        // document.getElementById('link6').remove();
 
         const sitemap1 = document.createElement('link');
         sitemap1.rel = "alternate";
@@ -107,14 +95,10 @@ function FreeDematCompaign() {
   }, [rendercount])
 
   useEffect(() => {
-    // console.log('slkdjflkd',isMobile.current)
     if (searchParams.get('refercode') && isMobile.current) {
       let redirectUrl = `https://finx.choiceindia.com/open.html${location.search.replace('refercode', 'ref')}`
-      // console.log('TESSS',redirectUrl)
       window.open(redirectUrl, '_self')
-      // searchParams.forEach((key,value) => {
-      //   console.log(key + ":"+ value)
-      // })
+      
     }
   }, [])
 
@@ -132,7 +116,6 @@ function FreeDematCompaign() {
             <div>
 
               <Banner />
-              {/* <CreateBacktestStrategies/> */}
               <OpenAccountEasySteps />
               <DocumentsRequiredDematAccountOpeningOnline />
               <WhyOpenFreeDematAccount />
@@ -141,12 +124,6 @@ function FreeDematCompaign() {
               <OurTrackRecordSaysAll />
               <WhyChoiceOpenDematAccount />
               <Faq />
-
-
-              {/* <DematAccountOnlineSteps /> */}
-
-
-
               <BChargesMoreContent />
             </div>
           </>

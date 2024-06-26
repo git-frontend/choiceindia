@@ -47,40 +47,7 @@ function Banner() {
   }, [])
 
 
-  // For script search
-  // function onKeyChange(event) {
-  //   const input = event.target.value;
-  //   // console.log("input", input);
-  //   setBrokerageObj(prevState => ({
-  //     ...prevState,
-  //     tableValue: [],
-  //     searchInput: input
-  //   }));
-
-  //   const request = {
-  //     strScripName: input,
-  //     StartPos: brokerageObj.startPos,
-  //     NoOfRecords: brokerageObj.limit,
-  //   };
-
-  //   rest.getSearchData(request)
-  //     .then(res => {
-  //       if (res.Status === "Success" && res.Response) {
-  //         // console.log("res", res.Response);
-  //         setBrokerageObj(prevState => ({
-  //           ...prevState,
-  //           datalength: res.Response.length,
-  //           tableValue: res.Response,
-  //         }));
-  //       } else {
-  //         setBrokerageObj(prevState => ({
-  //           ...prevState,
-  //           tableValue: [],
-  //         }));
-  //       }
-  //     });
-  // }
-
+  
   const onKeyChange = () => {
   
     setBrokerageObj(prevState => ({
@@ -111,7 +78,6 @@ function Banner() {
     rest.getSearchData(request)
       .then(res => {
         if (res.Status === "Success" && res.Response) {
-          // console.log("res", res.Response);
           setBrokerageObj(prevState => ({
             ...prevState,
             datalength: res.Response.length,
@@ -139,7 +105,6 @@ function Banner() {
       rest.getScripDetails(payload).then(res => {
         if (res.Status === "Success" && res.Response) {
           setScripDetail(res.Response);
-          // onSelectionScrip(data);
           onSelectionScrip(data, res.Response)
         } else {
           // Handle error
@@ -173,7 +138,6 @@ function Banner() {
       selectedScrip: item,
       searchInput: ((item.SegmentId === 1 || item.SegmentId === 3) ? item.SecDesc : item.SecName) + ' ' + item.ExchangeSegment,
       brokerageRate: getDefaultBrokerageRate(item),
-      // scripDetail: scripDetail
     }));
 
     let payload = {
@@ -184,7 +148,6 @@ function Banner() {
 
     rest.multipleTokensURLData(payload).then((res) => {
       if (res.Status === "Success" && res.Response && res.Response.lMT && res.Response.lMT.length) {
-        // console.log(brokerageObj, "setBrokerageObj2 res.Response", res.Response)
 
         let data = {
           buyPrice: decimalConversion(item.SegmentId, (res.Response.lMT[0].BBP || res.Response.lMT[0].LTP) / 100),
@@ -198,10 +161,8 @@ function Banner() {
           data.buyValue = (brokerageObj.quantity * Number(data.buyPrice) * (res.Response.lMT[0].ML || 1)) * data.normalizingFactor,
           data.turnOver = data.sellValue + data.buyValue
         data.brokerage = data.turnOver * getDefaultBrokerageRate(item) / 100
-        // console.log(" data.brokerage", data.brokerage)
         data = Object.assign(brokerageObj, data)
         setBrokerageObj(data)
-        // console.log("setBrokerageObj2", brokerageObj)
         setTimeout(() => {
           getBrokerage()
         }, 1000);
@@ -243,7 +204,6 @@ function Banner() {
     let qty = Math.floor(turnover / 10000000);
     // console.log("qty", qty)
     brokerageObj.sebi = qty * 15;
-    // let selectedState = stateArray.filter((obj) => obj.value === brokerageObj.state)[0];
     let brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / (brokerageObj.selectedScrip.isPrice ? 1 : 100);
     switch (scrip.SegmentId) {
       case 1: // NSE
@@ -338,12 +298,9 @@ function Banner() {
     }
     rest.getScripBrokerageURL(payload).then(res => {
       const newBrokerageObj = JSON.parse(JSON.stringify(brokerageObj));
-      // console.log('newBrokerageObj', newBrokerageObj);
       if (res.Status === 'Success' && res.Response) {
         let buyBrokerage = res.Response.buyBrokerage;
         let sellBrokerage = res.Response.sellBrokerage;
-        // console.log("buyBrokerage", buyBrokerage, newBrokerageObj, brokerageObj)
-        // console.log("sellBrokerage", sellBrokerage)
         newBrokerageObj.stt = 0;
         newBrokerageObj.transactionCharge = 0;
         newBrokerageObj.clearance = 0;
@@ -428,16 +385,7 @@ function Banner() {
     }));
   }
 
-  // Calculate and update change in brokerage rate
-  // function onBrokerageRateChange(e) {
-
-  //   setBrokerageObj((prevState) => ({
-  //     ...prevState,
-  //     brokerageRate: e.target.value,
-  //   }));
-  //   brokerageObj.brokerage = brokerageObj.turnOver * e.target.value / 100
-  //   brokerageObj.GST = (18 * (brokerageObj.brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
-  // }
+  
   function onBrokerageRateChange(e) {
     const inputValue = e.target.value;
     // Check if the input is a valid number with decimal point using a regular expression
@@ -599,7 +547,6 @@ function Banner() {
                         <div className='mobile-view'>
                           <div className="row row-sec width-resp">
                             <div className="col-xl-7 col-md-12">
-                              {/* <p className='frm-label'>Quantity</p> */}
                               {brokerageObj.selectedScrip.SegmentId === 2 || brokerageObj.selectedScrip.SegmentId === 5 || brokerageObj.selectedScrip.SegmentId === 7 ||
                                 brokerageObj.selectedScrip.SegmentId === 13 || brokerageObj.selectedScrip?.MarketLot > 1 ? 'Lot(s)' : 'Quantity'}
                             </div>
@@ -672,7 +619,6 @@ function Banner() {
                                   className="form-control input-form input-3"
                                   placeholder="0.03"
                                   value={brokerageObj.brokerageRate}
-                                  // onChange={(e) => setBrokerageObj({ ...brokerageObj, brokerageRate: e.target.value })}
                                   onChange={onBrokerageRateChange}
                                   maxLength={10}
                                 />
@@ -818,7 +764,7 @@ function Banner() {
                                   ).toFixed(2) :
                                   "0.00"}
                               </span>
-                              {/* <span className='text-bold'>{(newBrokerageObj?.brokerage) + (newBrokerageObj?.stt) + (newBrokerageObj?.transactionCharge) + (newBrokerageObj?.clearance) + (newBrokerageObj?.GST) + (newBrokerageObj?.sebi)}</span> */}
+                              
                             </div>
                           </div>
                           <div className='card-flex'>

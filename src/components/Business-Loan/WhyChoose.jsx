@@ -66,7 +66,6 @@ function WhyChoose() {
                   
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      {/* <LazyLoader src={Available} alt={"Loan for All Type of Commercial Vehicles"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
                       <img src={Available} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"50"} height={"50"}></img> 
                     </span>
                     <h3 className="card-ttl">Available</h3>
@@ -82,7 +81,6 @@ function WhyChoose() {
                   </div>
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      {/* <LazyLoader src={Structured} alt={"Structured Commercial Vehicle Loan Payment Methods"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
                       <img src={Structured} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"50"} height={"50"}></img> 
                     </span>
                     <h3 className="card-ttl">Structured</h3>

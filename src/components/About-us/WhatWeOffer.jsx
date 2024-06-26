@@ -61,7 +61,6 @@ function WhatWeOffer() {
                   <div className="card ">
                     <div className="img-itm">
                       <LazyLoader src={EquityBroking} className={"img-fluid"} alt={"Equity Broking"} width={"50"} height={"50"} />
-                      {/* <img src={EquityBroking} className="img-fluid"  alt="Loading" /> */}
                     </div>
                     <div className="namedesg">
                       <h4 className="title">Equity Broking</h4>
@@ -73,7 +72,6 @@ function WhatWeOffer() {
                   <div className="card ">
                     <span className="img-itm">
                       <LazyLoader src={WealthManagement} className={"img-fluid"} alt={"Wealth Management"} width={"50"} height={"50"} />
-                      {/* <img src={WealthManagement} className="img-fluid" alt='Loading' /> */}
                     </span>
                     <div className="namedesg">
                       <h4 className="title">Wealth Management</h4>
@@ -85,7 +83,6 @@ function WhatWeOffer() {
                   <div className="card ">
                     <div className="img-itm">
                       <LazyLoader src={Insurance} className={"img-fluid"} alt={"Insurance Service"} width={"46"} height={"46"} />
-                      {/* <img src={Insurance} className="img-fluid" alt='Loading' /> */}
                     </div>
                     <div className="namedesg">
                       <h4 className="title">Insurance</h4>
@@ -97,7 +94,6 @@ function WhatWeOffer() {
                   <div className="card ">
                     <div className="img-itm">
                       <LazyLoader src={Loans} className={"img-fluid"} alt={"Loans"} width={"50"} height={"51"} />
-                      {/* <img src={Loans} className="img-fluid" alt='Loading'/> */}
                     </div>
                     <div className="namedesg">
                       <h4 className="title">Loans</h4>
@@ -109,7 +105,6 @@ function WhatWeOffer() {
                   <div className="card">
                     <div className="img-itm">
                       <LazyLoader src={CapitalAdvisory} className={"img-fluid"} alt={"Capital Advisory"} width={"50"} height={"50"} />
-                      {/* <img src={CapitalAdvisory} className="img-fluid" alt='Loading' /> */}
                     </div>
                     <div className="namedesg">
                       <h4 className="title">Capital Advisory</h4>
@@ -121,7 +116,6 @@ function WhatWeOffer() {
                   <div className="card">
                     <div className="img-itm">
                       <LazyLoader src={ManagementConsult} className={"img-fluid"} alt={"Management Consultancy"} width={"50"} height={"50"} />
-                      {/* <img src={ManagementConsult} className="img-fluid" alt='Loading' /> */}
                     </div>
                     <div className="namedesg">
                       <h4 className="title">Management Consultancy</h4>
@@ -133,7 +127,6 @@ function WhatWeOffer() {
                   <div className="card">
                     <div className="img-itm">
                       <LazyLoader src={GovernmentAdvisory} className={"img-fluid"} alt={"Government Advisory"} width={"50"} height={"50"} />
-                      {/* <img src={GovernmentAdvisory} className="img-fluid" alt='Loading'/> */}
                     </div>
                     <div className="namedesg">
                       <h4 className="title">Government Advisory</h4>
@@ -145,7 +138,6 @@ function WhatWeOffer() {
                   <div className="card">
                     <div className="img-itm">
                       <LazyLoader src={TaxAdvisory} className={"img-fluid"} alt={"Tax Advisory"} width={"50"} height={"50"} />
-                      {/* <img src={TaxAdvisory} className="img-fluid" alt='Loading'/> */}
                     </div>
                     <div className="namedesg">
                       <h4 className="title">Tax Advisory</h4>

@@ -17,7 +17,6 @@ function FableBlog() {
         fableServices.fableListingTopFive().then(res => {
             setLoader(false);
             setisloading(false);
-            //  console.log(res, "RESS");
             if (res && res.status === 200 && res.data && res.data.posts) {
                 setData(res.data.posts);
             } else {
@@ -57,7 +56,6 @@ function FableBlog() {
                                                 <div className="heading-sec">
                                             <h3 className="title-secnd">Interested in a Good Read Check Our Latest Blog </h3>
                                         </div>
-                                                {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
                                                 <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                                 </div>
                                                 :
@@ -76,8 +74,6 @@ function FableBlog() {
                                                         <div className="single-blog-des">
                                                             <h3>{data[0]?.title}</h3>
                                                             <h6 className="tag-act">Published at: {(data[0]?.published_at) ? new Date(data[0].published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
-                                                            {/* str.substring(0, str.length - 1);
-                                                    {(data[0].meta_description) ? data[0].meta_description.substring(0, 25) : ''} */}
                                                             <p className="des-cont mt-3">{(data[0]?.meta_description) ? data[0].meta_description.substring(0, 100) : ''}... <Link to={`/blog/${data[0]?.slug}`} className="fw-bold">Read More</Link></p>
                                                         </div>
                                                     </div>:
@@ -113,7 +109,6 @@ function FableBlog() {
                                                                         <Link to={`/blog/${item.slug}`} className="blog-itm">
                                                                             <div className="blog-itm-des">
                                                                                 <p className="itm-des-cont">{item.title}</p>
-                                                                                {/* <h6 className="tag-act">Published at: 14th July, 2022</h6> */}
                                                                                 <h6 className="tag-act">Published at: {(item.published_at) ? new Date(item.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
                                                                             </div>
                                                                             <div className="blog-itm-img">

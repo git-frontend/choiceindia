@@ -13,14 +13,7 @@ import {toast} from 'react-toastify';
 import rest from '../../Services/rest';
 function LeadForm() {
 
-  // const options = [
-  //   {label: "Individual", value: 1},
-  //   {label: "Proprietorship", value: 2},
-  //   {label: "Partnership", value: 3},
-  //   {label: "LLP", value: 4},
-  //   {label: "HUF", value: 5},
-  //   {label: "Company", value: 6}
-  // ]
+  
   const [options, setOptions] = useState([
     {label: "Individual", value: 1},
     {label: "Proprietorship", value: 2},

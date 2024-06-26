@@ -52,20 +52,7 @@ const DerivativeTradingBanner = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
-                        {/* {
-                                view && !view.matches ?
-                                <div>
-                           
-                            </div>
-                            :
-                            <div>
-                                 <span className="banner-title2">All in 1 Account</span>
-                            <h1 className="banner-title" >
-                            <div className="desktop">Open a  Derivatives <br />  Trading Account <br /> </div>
-                            </h1>
-                            </div>
-
-                        } */}
+                       
 
                             <div>
                                  <span className="banner-title2">All in 1 Account</span>
@@ -74,8 +61,7 @@ const DerivativeTradingBanner = () => {
                                 </h1>
                             </div>
                      
-                            {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} alt="zigzagline" /> */}
-                            {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
+                           
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
@@ -83,7 +69,7 @@ const DerivativeTradingBanner = () => {
                                             <div className="respgrid">
                                                 <div className="iconwrap">
                                                 <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt={"Open Derivatives Trading Account with Low DP Charges"} />
-                                                    {/* <img src={Image2} width={"30"} height={"30"} alt="Zero Account Opening Fee" className="img-fluid " /> */}
+                                                   
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -97,7 +83,7 @@ const DerivativeTradingBanner = () => {
                                             <div className="respgrid">
                                                 <div className="iconwrap">
                                                     <LazyLoader src={Image3} className={'img-fluid'} width={"28"} height={"24"} alt={"Open Low Brokerage Derivatives Trading Account"} />
-                                                    {/* <img src={Image3} width={"28"} height={"24"} alt="No Square Off Charges" className="img-fluid " /> */}
+                                                    
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -124,7 +110,7 @@ const DerivativeTradingBanner = () => {
                                             <div className="respgrid">
                                                 <div className="iconwrap">
                                                 <LazyLoader src={Image5} className={'img-fluid'} width={"32"} height={"20"} alt={"Open Derivatives Trading Account with No Annual Charges"} />
-                                                    {/* <img src={Image5} width={"32"} height={"20"} alt="Free Call For Trade Facility" className="img-fluid" /> */}
+                                                  
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -137,32 +123,18 @@ const DerivativeTradingBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                        {/* {
-                                view && !view.matches ?
-                                <div>
-                                  <span className="banner-title2 mobile">All in 1 Account</span>
-                        <h1 className="banner-title mbtitle" >
-                            <div className="mobile">Open a  Derivatives <br />  Trading Account <br /> </div>
-                            </h1>
-                            </div>
-                            :
-                            <div>
-                            </div>
-                        } */}
-
+                        
                         
 {
                                 ischeck ?
                             <div className="formwrap d-flex justify-content-end ">
-                                {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
-                                {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
-                                {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
+                               
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
                             </div>:
                              <div className="formwrap d-flex justify-content-end">
-                             {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
+                            
                                 <DematAccountForm />
                             </div>
                          }

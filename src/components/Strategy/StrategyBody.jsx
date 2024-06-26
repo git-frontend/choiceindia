@@ -34,7 +34,6 @@ function StrategyBody() {
                         <div className="col-md-8">
                             <div className="headingsec">
                                 <h2 className="title">Features</h2>
-                                {/**<p className="para">Our research team has created thematic baskets to make investing easier that could be aligned with your financial goals.</p>*/}
                             </div>
                         </div>
                     </div>
@@ -47,7 +46,6 @@ function StrategyBody() {
                                 </div>
                                 <div className="imgwrap">
                                     <LazyLoader src={image1} className={"img-fluid feature-img"} width={'137'} height={'173'} alt={"Readymade Trading Strategies"} />
-                                    {/* <img src={image1} className="img-fluid feature-img" alt="Readymade Trading Strategies" /> */}
 
                                 </div>
                             </div>
@@ -60,7 +58,6 @@ function StrategyBody() {
                                 </div>
                                 <div className="imgwrap">
                                     <LazyLoader src={image2} className={"img-fluid feature-img"} width={'114'} height={'152'} alt={"Unlimited Backtests"} />
-                                    {/* <img src={image2} className="img-fluid feature-img" alt="Unlimited Backtests" /> */}
 
                                 </div>
                             </div>
@@ -75,7 +72,6 @@ function StrategyBody() {
                                 </div>
                                 <div className="imgwrap">
                                     <LazyLoader src={image3} className={"img-fluid feature-img"} width={'122'} height={'141'} alt={"Alerts on Virtual &amp; Live Trades"} />
-                                    {/* <img src={image3} className="img-fluid feature-img" alt="Alerts on Virtual &amp; Live Trades" /> */}
                                 </div>
                             </div>
                         </div>
@@ -87,7 +83,6 @@ function StrategyBody() {
                                 </div>
                                 <div className="imgwrap">
                                     <LazyLoader src={image4} className={"img-fluid feature-img"} width={'168'} height={'158'} alt={"In Built Charting Tool"} />
-                                    {/* <img src={image4} className="img-fluid feature-img" alt="In Built Charting Tool" /> */}
 
                                 </div>
                             </div>
@@ -105,39 +100,6 @@ function StrategyBody() {
                 <div className='container'>
                     <div className="row justify-content-center">
                         <div className="wrapper">
-                            {/* <div className="col-md-8">
-                                <div className="headingsec">
-                                    <h2 className="title">How to start algorithmic strategy?</h2>
-                                </div>
-                            </div>
-                            <div className="col-md-10">
-                                <div className='algo' id="strategy-video">
-
-                                    {!videoVisibility && <div className="youtube-container">
-                                        <img className="youtube-container-img" src={youtubeimg} width="1085" height="610" alt="Loading" onClick={() => {
-
-                                            setVideoVisibility(true)
-                                            loadstrategy()
-                                        }}></img>
-
-                                        <div className="ytubeBg" title="Click to play" onClick={() => {
-
-                                            setVideoVisibility(true)
-                                            loadstrategy()
-                                        }}>
-                                            <svg className="play" xmlns="http://www.w3.org/2000/svg" viewBox="-7 0 50 55">
-                                                <path className="path" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z" />
-                                            </svg>
-                                        </div>
-                                    </div>}
-
-                                    {videoVisibility && <iframe width="100%" height="500" o title="YouTube video player" id="strategy-youtube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
-
-
-
-
-                                </div>
-                            </div> */}
                             <div className="col-md-10">
 
                                 <div className="d-flex justify-content-between wrap respflex">

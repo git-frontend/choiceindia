@@ -2,7 +2,6 @@
 import React from "react";
 import Kycimage from '../../assets/images/invoice-financing/kyc-documents-invoice-financing.svg';
 import IncomeProofimage from '../../assets/images/invoice-financing/income-proof-documents-for-invoice-financing-application.svg';
-import BusinessProofimage from '../../assets/images/invoice-financing/business-proof-documents-for-invoice-financing-application.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function Documents() {

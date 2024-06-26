@@ -85,11 +85,8 @@ function chapterScroll(id) {
                                 <h1 className="big-ttl"> Apply for Business Flexi<br /> Credit in India </h1>
                                 <p>  Our Flexi-Credit gives you the freedom to withdraw or deposit money multiple times from your loan account and only pay interest on the utilized amount with our efficient business loan facility.</p>
                                 <p>Get a Flexi business loan up to Rs. 25 lakhs online. <br />
-
-          
-                                    {/* <a href="#"> */}
                                         <span className="aply-btn">Apply Now!</span>
-                                    {/* </a> */}
+                                   
                                     </p>
                             </div>
                         </div>
@@ -106,7 +103,6 @@ function chapterScroll(id) {
                         <Slider {...settings1} className="inv-banner-slider">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                {/* <LazyLoader src={time} alt={"Quick Flexi Loan Approval"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
                                 <img src={time} alt="Quick Flexi Loan Approval" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">10 Mins</h3>
@@ -114,7 +110,6 @@ function chapterScroll(id) {
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                {/* <LazyLoader src={disburse} alt={"Flexi Loan Disbursed in 48 Hours"} className={"img-fluid img"} width={"45"} height={"50"} /> */}
                                 <img src={disburse} alt="Flexi Loan Disbursed in 48 Hours" className="img-fluid img"  width={"45"} height={"50"}></img> 
                             </span>
                                 <h3 className="card-ttl">48 Hours</h3>
@@ -122,7 +117,6 @@ function chapterScroll(id) {
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                {/* <LazyLoader src={paperwork} alt={"Minimum Paper Work for Flexi Business Loan"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
                                 <img src={paperwork} alt="Minimum Paper Work for Flexi Business Loan" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">Minimum</h3>
@@ -130,7 +124,6 @@ function chapterScroll(id) {
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                {/* <LazyLoader src={fee} alt={"Low Flexi Loan Processing Fee"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
                                 <img src={fee} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">Low</h3>

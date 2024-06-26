@@ -35,8 +35,6 @@ function ResearchCalls() {
     });
   }
   function FandOstocks() {
-    // setToggleState(2)
-    // console.log("change",toggleState)
     setlist([]);
     tokens = '';
     tokenList = [];
@@ -63,100 +61,9 @@ function ResearchCalls() {
     
     rest.fetchReportData(request,setShowLoader,setlist,Data1);
     
-    // rest.expertReportData(request).then(
-
-    //   res => {
-
-    //     if (res) {
-    //       // console.log("checkdd",res.response.research);
-    //       storefile = res.response.research;
-    //       // setlist(res.response.research);
-    //       // console.log("storefile", storefile)
-    //       res.response.research.forEach(ele => {
-
-    //         tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-
-    //         ele['LTP'] = ele['LTP'] / 100;
-    //       });
-
-    //       setlist(res.response.research)
-    //       let unique = []
-    //       for (let i = 0; i < tokenList.length; i++) {
-    //         unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-    //       }
-    //       unique.forEach(element => {
-    //         if (!tokens.includes(element)) {
-    //           tokens += element
-    //         }
-    //       });
-    //       // console.log("SegmentId",tokens);
-    //       // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-    //       const payload = {
-    //         'UserId': 'guest',
-    //         'SessionId': Data1,
-    //         'MultipleTokens': tokens
-    //       }
-
-    //       rest.multipleTokensURLData(payload).then(
-    //         res => {
-    //           if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-
-    //             res.Response.lMT.forEach((ele, index) => {
-    //               // console.log("ele", ele)
-    //               ele['LTP'] = ele['LTP'] / 100;
-    //               ele.PrevClose = ele.PC / 100;
-    //               ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-    //               ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-    //               // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-    //               for (let i = 0; i < storefile.length; i++) {
-    //                 if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
-    //                   AllFilesValue = Object.assign(storefile[i], ele);
-    //                   multiValue.push(AllFilesValue)
-    //                   setShowLoader(false)
-    //                 } 
-    //               }
-    //             })
-
-    //             setlist(multiValue);
-
-    //           }
-    //           else {
-
-    //             setShowLoader(false)
-
-    //           }
-
-    //         }).catch((error) => {
-
-    //           setShowLoader(false)
-
-             
-    //         });
-    //     }
-    //   })
-
-    //   .catch((error) => {
-    //     setShowLoader(false)
-    //     setlist([]);
-    //   });
+   
   }
-  function generateSessionId() {
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        if (res.Status == 'Success') {
-          // IntraStocks(res.Response);
-          setData1(res.Response);
-        } else {
-          // IntraStocks([])
-        }
-      }, err => {
-        // IntraStocks([])
-      })
-  }
+  
   useEffect(() => {
 
     setTrigger(true)
@@ -284,7 +191,6 @@ useEffect(() => {
                   {showLoader ?
                     <div className="text-center">
                       <div>
-                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                         <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
                       </div>
                     </div>

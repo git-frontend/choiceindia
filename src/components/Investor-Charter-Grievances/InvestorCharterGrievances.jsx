@@ -4,20 +4,17 @@ import cmsService from "../../Services/cmsService";
 import noDataimg from '../../assets/images/no-data.webp';
 import { useState, useEffect } from 'react';
 import download from '../../assets/images/file-download/export.webp';
-
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import '../Track-Records/trackRecords.scss';
 
-
 function InvestorCharterGrievances() {
   const [datalist, setDatalist] = useState([]);
   const [trigger, setTrigger] = useState(false);
   const [isloading, setisloading] = useState(true);
   let values;
-  let AllFilesValue = {};
   const [toggleState, setToggleState] = useState(1);
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
@@ -35,11 +32,7 @@ function InvestorCharterGrievances() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -66,16 +59,13 @@ function InvestorCharterGrievances() {
         res => {
           if (res && res.data && res.data.data) {
             setisloading(false)
-            // console.log("dddee", res.data.data)
             values = res.data.data;
             setMainboard(values?.filter(e => e.select_section === "Quarterly"))
             setSme(values?.filter(e => e.select_section === "monthly"))
             setDatalist(values);
-            // console.log("check", values)
           } else {
             setisloading(false)
             setDatalist([]);
-
           }
 
         }

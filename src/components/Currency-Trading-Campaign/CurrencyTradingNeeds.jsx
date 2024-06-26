@@ -1,5 +1,3 @@
-
-// import React from 'react';
 import React from "react";
 import { useState } from 'react';
 import Slider from 'react-slick';
@@ -8,7 +6,6 @@ import LazyLoader from '../Common-features/LazyLoader';
 
 function CurrencyTradingNeeds() {
   const [isShown2, setIsShown2] = useState(0);
-  // const [isShown3, setIsShown3] = useState(1);
   const settings1 = {
     infinite: true,
     speed: 1500,

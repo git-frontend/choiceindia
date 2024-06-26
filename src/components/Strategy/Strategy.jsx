@@ -20,11 +20,7 @@ function Strategy() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -50,27 +46,11 @@ function Strategy() {
 
       <div>
 
-        {/* <header className="camp-header">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <a href="https://choiceindia.com/" className="camp-logo">
-                 
-                  <LazyLoader src={"images/stratezy-page/logo.webp"} alt={"Banner Images"} width={"125"} height={"48"} className={"img-fluid"} />
-                  
-                </a>
-              </div>
-            </div>
-          </div>
-        </header> */}
         <main>
           <StrategyBanner></StrategyBanner>
           <WhyStrategy></WhyStrategy>
           <StrategyBody></StrategyBody>
 
-          {/* {
-            isFaq? <div className="stratezy-faq-temp"></div>: <FaqAccordion></FaqAccordion> 
-          } */}
         
 
         </main>

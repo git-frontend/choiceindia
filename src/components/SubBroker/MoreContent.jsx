@@ -54,7 +54,6 @@ function MoreContent() {
                                     <p className="sml-para-dv">A sub broker’s primary role is to help investors achieve favourable returns by introducing them to various investment products and the broker’s investment opportunities. Sub-brokers operate based on the agreement between them and the broker.</p>
                                     <ul className="terms-list sml-para-dv">
                                         <li>A sub-broker works on behalf of a stockbroker and connects clients to the stockbroker's services. They assist clients with paperwork, payments, and investment decisions.</li>
-                                        {/* <li>Approximately INR 2100 incentive per account</li> */}
                                         <li>Operates under the registration of the stockbroker they are affiliated with.</li>
                                         <li>Acts as a bridge between clients and the stockbroker, assisting clients and directing queries to the stockbroker when necessary.</li>
                                     </ul>

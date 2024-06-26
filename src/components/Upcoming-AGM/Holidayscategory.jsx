@@ -4,7 +4,6 @@ import rest from "../../Services/rest";
 import { useParams } from 'react-router-dom';
 import utils from "../../Services/utils";
 import Template5 from '../Common-features/Template5';
-import { Link } from "react-router-dom";
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import {
@@ -18,8 +17,7 @@ import Sharemarketholidays from "./UpcomingAGM";
 
 
 function Holidayscategory() {
-  // let checkurl = (window.location.pathname.indexOf('upcoming-board-meeting') > -1) ? "stock-market-holidays" : (window.location.pathname == "/nse-holidays") ? "nse-holidays" : (window.location.pathname == "/bse-holidays") ? "bse-holidays" : (window.location.pathname == "/mcx-ncdex-holidays") ? "mcx-ncdex-holidays" : "";
-
+ 
 
 
   const [toggleState, setToggleState] = useState(0);
@@ -92,8 +90,7 @@ function Holidayscategory() {
   
   useEffect(() => {
     config.activeTab.key =(window.location.pathname.indexOf('upcoming-board-meeting') > -1) ? config.activeTab[0].key:(window.location.pathname.indexOf('upcoming-agm') > -1)? "lAGMEGM":(window.location.pathname.indexOf('upcoming-bonus-shares') > -1)?"lBonus":(window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1)?"lDividend":(window.location.pathname.indexOf('upcoming-rights-issue') > -1)?"lRights":(window.location.pathname.indexOf('upcoming-stock-splits') > -1)?"lSplits":"";
-    // config.activeTab.key=config.activeTab[0].key
-    // console.log("config.activeTab.key",config.activeTab.key)
+   
   }, []);
 
 
@@ -146,7 +143,6 @@ function Holidayscategory() {
     return categories;
   };
   const activateSegment = (item, isForce) => {
-    // const item = config.eventCategories.find((event) => event.slug === slug);
     if (item && (item.key !== config.activeTab.key || isForce)) {
       setConfig({ ...config, activeTab: item });
       filterCalendar(config.activeFilter.name, isForce);
@@ -235,8 +231,7 @@ function Holidayscategory() {
                           <div>
                             <h1 className=" title-secnd1">Upcoming AGM</h1>
                             <p className="title_para res_para ">Following are the complete Upcoming AGM 2024 list.</p>
-                            {/* <h1 className=" title-secnd1">Upcoming Bonus Shares</h1>
-                            <p className="title_para res_para ">Get the list of upcoming bonus shares in 2024.</p> */}
+                            
                           </div> :
                           config?.activeTab?.key == 'lBonus' ?
                             <div>
@@ -295,7 +290,6 @@ function Holidayscategory() {
 
                           <div className="text-center">
                             <div>
-                              {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                               <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
                             </div>
                           </div> :
@@ -337,10 +331,8 @@ function Holidayscategory() {
                                                     events.lBoardMeetings.data && (events.lBoardMeetings.data).length ?
                                                       <tbody>
                                                         {events.lBoardMeetings.data.map((row, index) => {
-                                                          // console.log("rr", row);
                                                           return (
                                                             <tr key={index}>
-                                                              {/* <td className="charges-heads">{index + 1}</td> */}
                                                               <td><a >{row.SecName || row.SecDesc}</a></td>
                                                               <td>{utils.formatDate(new Date(row.EndDate), 'dd-MMM-yyyy')}</td>
                                                               <td>{row.Agenda}</td>
@@ -394,10 +386,8 @@ function Holidayscategory() {
                                                         <tbody>
 
                                                           {events.lAGMEGM.data.map((row, index) => {
-                                                            // console.log("lAGMEGM",events.lAGMEGM.data)
                                                             return (
                                                               <tr key={index}>
-                                                                {/* <td className="charges-heads">{i + 1}</td> */}
                                                                 <td>{row.SecName || row.SecDesc}</td>
                                                                 <td>{utils.formatDate(new Date(row.Date), 'dd-MMM-yyyy')}</td>
                                                                 <td>{row.Agenda + '(' + row.Purpose + ')'}</td>
@@ -428,7 +418,6 @@ function Holidayscategory() {
                                                         <tr>
                                                           <th width="35%">Company Name</th>
                                                           <th>Bonus Date</th>
-                                                          {/* <th width="35%">Split Date</th> */}
                                                           <th className="holidaydropdown">
 
                                                             <Dropdown className="drop_list" >
@@ -455,7 +444,6 @@ function Holidayscategory() {
                                                           <tbody>
                                                             {
                                                               events.lBonus.data.map((row, index) => {
-                                                                // console.log("lBonus",row)
                                                                 return (
                                                                   <tr key={index}>
                                                                     <td>{row.SecName || row.SecDesc}</td>

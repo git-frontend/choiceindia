@@ -6,7 +6,6 @@ import { API_URLS } from "../../Services/API-URLS";
 
 function Banner(props) {
 
-  // console.log('Banner',props.data);
 
   let api = new API_URLS();
 
@@ -49,10 +48,8 @@ function Banner(props) {
   return capitalizedWords.join(' ');
   }
   function redirectTo(id){
-    // console.log('TTT',id);
     let url = api.getExpertDetailURL(id);
     window.open(url);
-    // console.log('TTTURL',url);
   }
 
   return (
@@ -66,7 +63,6 @@ function Banner(props) {
                 <a href={props?.data?.file_url? props?.data?.file_url : '' } target="_blank" className="ico-pdf"><img src={thumb2} className='img-fluid' width="50" height="50"></img></a>
               </div>
               <div className="bnr-left">
-                {/* <h1 className="title">Equity Research Report : <span>WINDLAS ( BSE )</span></h1> */}
                 {
                   image? 
                   <h1 className="title"> <span>{props?.data?.scrip_sec_desc? convertString( props?.data?.scrip_sec_desc ): '' }</span> Share Price Target</h1>:
@@ -78,28 +74,6 @@ function Banner(props) {
                 }
                 
                 <div className="api-cont-des" dangerouslySetInnerHTML={{__html: props?.data?.description? props?.data?.description : ''}}>
-                  {/* <p>With a revenue market share of 1.5%, Windlas Biotech Ltd. (WBL) is among the top-five contract development &amp; manufacturing organization (CDMO) in the domestic pharma sector. It serves seven out of top-10 pharma formulation companies in India. The company focuses on therapeutic areas like cardiovascular, anti-diabetics, neurology, gastrointestinal, vitamins, minerals, nutrients etc. WBL operated in three verticals, namely, the CDMO services & products, the Domestic trade generics & OTC brands and the Exports segment. In FY22, these verticals generated 82.3%, 13.2% and 4.5%, respectively, to the total business from the sales of products.
-                  </p>
-                  <h4>Investment rationale:</h4>
-                  <ul>
-                    <li>Structural tailwind for the CDMO companies</li>
-                    <li>Consistent focus on high-margin chronic therapeutic areas to aids business sustainability</li>
-                    <li>CDMO vertical business to fall back in the growth trajectory</li>
-                    <li>Other business verticals offers huge growth potential with superior profitability</li>
-                    <li>Synergy across the business verticals</li>
-                    <li>Anticipating an operating margin expansion by 2ppts over FY22-24E</li>
-                  </ul>
-                  <h4>Risk and concerns:</h4>
-                  <ul>
-                    <li>Unfavorable government policies and regulations</li>
-                    <li>Continued subdued capacity utilization</li>
-                    <li>Difficulty in adding new customers and brands</li>
-                    <li>Lower than expected growth across the verticals</li>
-                    <li>Competition</li>
-                  </ul>
-                  <h4>Valuation:</h4>
-                  <p>WBL came out with an IPO (in Aug. 2021) and demanded a P/E valuation of 26.6x (to its restated FY21 EPS of Rs. 17.3). The issue was fully priced and since its listing, the share price is in a downward trend.</p>
-                  <p>At CMP of Rs. 222.4, WBL’s share is trading at a TTM P/E multiple of 12x (to its TTM EPS of Rs. 17.5), which seems to be attractive considering the growth outlook and return profile. Thus, we assign a “BUY” rating on the stock with a target price of Rs. 289.4 per share.</p> */}
                 </div>
               </div>
             </div>
@@ -111,7 +85,6 @@ function Banner(props) {
               <div className="col-md-12">
                   <div className="mid-box-value">
                         <div className="mid-box-left">
-                            {/* <h2 className="ttl-mn">{props?.data?.title? props?.data?.title : ''} <span>Published at 4th Apr’22 09:45:32 AM</span></h2> */}
                             <h2 className="ttl-mn">{props?.data?.scrip_sec_name? convertString(props?.data?.scrip_sec_name) : ''}  Share Price Target <span>Published at {utils.formatDate(new Date(props?.data?.publish_date? props?.data?.publish_date: ''), "dd MMMM'yy hh:mm:ss TT")}</span></h2>
                             <div className="value-list">
                                 <div className="vl-list-itm">

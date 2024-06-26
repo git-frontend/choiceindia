@@ -33,7 +33,7 @@ const MFDistributorSellMore = () => {
                                         <h2 className="title-secnd">Sell More. Earn More!</h2>
                                         <p className="sml-para-dv">With Choice, one can increase his prospects by offering clients a variety of financial instruments in addition to mutual funds, increasing revenue.</p>
                                         <div className="btn-bg btn-bg-dark hide-mob cursor-pointer" onClick={() => scrollToId('sub-broker-form')}><span>Start Now</span> </div>
-                                        {/* <Link to="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </Link> */}
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -43,28 +43,24 @@ const MFDistributorSellMore = () => {
                                 <div className="more-list-item">
                                     <span>
                                         <LazyLoader src={Commodity} alt={"Open Stock Market Account"} className={'img-fluid'} width={"60"} height={"60"} />
-                                        {/* <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
                                     <h3 className="itm-ttl">Stock Market</h3>
                                 </div>
                                 <div className="more-list-item">
                                     <span>
                                         <LazyLoader src={MF} alt={"Become a sub broker & earn through Mutual Funds"} className={'img-fluid'} width={"60"} height={"60"} />
-                                        {/* <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
                                     <h3 className="itm-ttl">Mutual Funds</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
                                         <LazyLoader src={Insurance} alt={"Sell Insurance"} className={'img-fluid'} width={"60"} height={"60"} />
-                                        {/* <img src={Insurance} alt="Equity, Commodity &amp; Currency Broking"  className='img-fluid' width="45" height="45"/> */}
                                     </span>
                                     <h3 className="itm-ttl">Insurance</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
                                     <LazyLoader src={Retail} alt={"Become a sub broker & earn through retail loans"} className={'img-fluid'} width={"60"} height={"60"} />
-                                        {/* <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
                                     <h3 className="itm-ttl">Retail Loans</h3>
                                 </div>
@@ -72,7 +68,6 @@ const MFDistributorSellMore = () => {
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
                                     <LazyLoader src={Bonds} alt={"Become a sub broker & earn through Bonds"} className={'img-fluid'} width={"60"} height={"60"} />
-                                        {/*<img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />*/}
                                     </span>
                                     <h3 className="itm-ttl">Bonds</h3>
                                 </div>
@@ -80,7 +75,6 @@ const MFDistributorSellMore = () => {
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
                                         <LazyLoader src={CorporatePd} alt={"Become a sub broker & earn through Corporate FDs"} className={'img-fluid'} width={"60"} height={"60"} />
-                                        {/*<img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />*/}
                                     </span>
                                     <h3 className="itm-ttl">Corporate FDs</h3>
                                 </div>

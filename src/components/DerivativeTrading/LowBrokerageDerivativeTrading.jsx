@@ -59,7 +59,6 @@ function LowBrokerageDerivativeTrading() {
                                             <div className="card adv-card">
                                                 <div className="icon-wrap">
                                                 <LazyLoader src={Image7} className={'img-fluid'} width={"83"} height={"83"} alt={"Equity Brokerage Charges to Open Derivatives Trading in India"} />
-                                                    {/* <img src={Image7}  width={"28"} height={"26"} className="img-fluid" alt="Low Brokerage" /> */}
                                                 </div>
 
                                                 <div className="card-block">
@@ -87,7 +86,6 @@ function LowBrokerageDerivativeTrading() {
                                             <div className="card adv-card">
                                                 <div className="icon-wrap">
                                                 <LazyLoader src={Image9} className={'img-fluid lazyload'} width={"83"} height={"64"} alt={"Commodity Brokerage Charge to Open Derivatives Trading Account"} />
-                                                    {/* <img src={Image8}  width={"28"} height={"28"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
                                                 </div>
                                                 <div className="card-block">
 
@@ -110,7 +108,6 @@ function LowBrokerageDerivativeTrading() {
                                             <div className="card adv-card">
                                                 <div className="icon-wrap">
                                                 <LazyLoader src={Image8} className={'img-fluid lazyload'} width={"84"} height={"83"} alt={"Currency Charges to Open Derivatives Trading Online"} />
-                                                    {/* <img src={Image9}  width={"28"} height={"28"} alt="Paperless Account Opening" className="img-fluid lazyload" /> */}
                                                 </div>
                                                 <div className="card-block">
 

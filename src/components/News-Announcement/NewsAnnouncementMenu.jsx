@@ -6,7 +6,6 @@ import Navbar from "../Common-features/Navbar";
 import utils from "../../Services/utils";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
-// import "../CodeConduct/code-conduct.scss";
 import "./news-announcement.scss";
 function NewsAnnouncement() {
     const [data, setData] = useState();
@@ -20,7 +19,6 @@ function NewsAnnouncement() {
                 if(res){
                     setisloading(false)
                     setData(res.data.data);
-                    // console.log("check",res.data.data)
         
                 }else{
                     setisloading(false)
@@ -60,7 +58,6 @@ function NewsAnnouncement() {
                         isloading ?
                         <div className="text-center">
                                     <div>
-                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
                                         <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                          </div>
                                 </div>
@@ -105,49 +102,6 @@ function NewsAnnouncement() {
                                                     })
                                                 }
                                               
-        
-                                                {/* <tr>
-                                                    <td> 24-08-2022</td>
-        
-                                                    <td className="w-50">Notice Of 29Th Annual General Meeting Of The Company</td>
-                                                    <td className=" text-end"><FontAwesomeIcon icon={faEye} onClick={() => { window.open(pdf2) }} className="cursor-pointer" /></td>
-                                                </tr>
-        
-        
-                                                <tr>
-                                                    <td> 24-08-2022</td>
-                                                    <td className="w-50">Reg. 34 (1) Annual Report.</td>
-                                                    <td className=" text-end"><FontAwesomeIcon icon={faEye} onClick={() => { window.open(pdf3) }} className="cursor-pointer" /></td>
-                                                </tr>
-        
-        
-                                                <tr>
-                                                    <td> 23-08-2022</td>
-        
-                                                    <td className="w-50">Shareholder Meeting / Postal Ballot-Scrutinizer''s Report</td>
-                                                    <td className=" text-end"><FontAwesomeIcon icon={faEye} onClick={() => { window.open(pdf4) }} className="cursor-pointer" /></td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td> 23-08-2022</td>
-        
-                                                    <td className="w-50">Disclosure of Voting results of Postal Ballot (Regulation 44(3) of SEBI (LODR) Regulations, 2015)</td>
-                                                    <td className=" text-end"><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td> 22-08-2022</td>
-        
-                                                    <td className="w-50">Shareholder Meeting / Postal Ballot-Scrutinizer''s Report</td>
-                                                    <td className=" text-end"><FontAwesomeIcon icon={faEye} onClick={() => { window.open(pdf6) }} className="cursor-pointer" /></td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>05-08-2022</td>
-        
-                                                    <td className="w-50">Announcement under Regulation 30 (LODR)-Newspaper Publication</td>
-                                                    <td className=" text-end"><FontAwesomeIcon icon={faEye} onClick={() => { window.open(pdf7) }} className="cursor-pointer" /></td>
-                                                </tr> */}
         
                                             </tbody>
                                         </table>

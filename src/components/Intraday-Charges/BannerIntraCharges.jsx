@@ -80,7 +80,6 @@ function BannerIntraCharges() {
                                         <LazyLoader src={img2} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"39"} height={"28"}/>
                                     </span>
                                     <LazyLoader src={SubBannerimage} alt={"Intraday Charges"} className={"img-fluid"} width={"432"} height={"500"}/>
-                                    {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>
                         </div>

@@ -18,7 +18,6 @@ const RemisierMoreContent = () => {
         <input type="checkbox" className="read-more-state" id="post-1" />
         <span className="read-more-wrap "> The stock market is one of the most popular investment avenues, inviting curiosity from several individuals looking to diversify their portfolios. Branching out from fixed deposits or standard bank savings with low-interest rates also helps investors achieve a significant increase in their initial investment, albeit with risks.
 
-          {/* <span className="read-more-target"> */}
         <p>However, trading in the stock market mandates specific prerequisites, one of which is creating a Demat account with a registered stockbroker. Given the number of online stockbrokers in the market, it can take time for investors to figure out the ideal fit for their investment aspirations. Additionally, stockbrokers are not allowed to advertise directly to investors either. </p>
         <p>How do stockbrokers familiarise investors with their services, then?</p>
         <p>Most stockbrokers rely on the services of a middleman, like an <Link to="/authorised-person">authorised person</Link>, <Link to="/sub-broker-franchise">sub broker</Link> or remisier. While the former two are subject to some stringent rules, it is relatively easier to become a remisier in stock market.</p>
@@ -72,7 +71,6 @@ const RemisierMoreContent = () => {
         <p>The lack of significant initial investment also makes the role of a remisier an attractive option. You can set your business hours and scale your commissions by reaching out to more clients in a day.</p>
         <p>So, analyse and assess the advantages and disadvantages of a role and become a remisier with <Link to="/">Choice India</Link> now!</p>
           </span>
-          {/* </span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label> */}
       </div>
     </div>
   </div>

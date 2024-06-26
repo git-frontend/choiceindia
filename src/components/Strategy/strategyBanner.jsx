@@ -41,19 +41,15 @@ function StrategyBanner() {
                             <div className="rightsection">
 
                                 <LazyLoader src={bannerimage} alt={"Free Trading Strategy Builder"} width={'555'} height={'326'} className={"img-fluid img"} />
-                                {/* <img src={bannerimage} alt="Free Trading Strategy Builder" className="img-fluid img" /> */}
                                 <div className="wrap">
-                                    {/* <LazyLoader src={bannericon1} className={"img-fluid banner-icon"} width={'22'} height={'26'} alt={"create stratezy"} /> */}
                                     <img src={bannericon1} className="banner-icon img-fluid" width="26" height="31" alt="create stratezy" />
                                     <p>Create Strategy</p>
                                 </div>
                                 <div className="wrapone">
-                                    {/* <LazyLoader src={bannericon3} className={"img-fluid banner-icon"} width={'22'} height={'20'} alt={"Run Backtest"} /> */}
                                     <img src={bannericon3} className="banner-icon img-fluid" width="26" height="24" alt="Run Backtest" />
                                     <p>Run Optimise</p>
                                 </div>
                                 <div className="wraptwo">
-                                    {/* <LazyLoader src={bannericon2} className={"img-fluid banner-icon"} width={'22'} height={'34'} alt={"Virtual/Live Trade"} /> */}
                                     <img src={bannericon2} className="banner-icon img-fluid" width="26" height="41" alt="Virtual/Live Trade" />
                                     <p>Live Trade</p>
                                 </div>

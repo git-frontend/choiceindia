@@ -3,10 +3,6 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import Slider from "react-slick";
-// import Image7 from '../../assets/images/open-demat-account/equity-brokerage-charges.svg';
-// import Image8 from '../../assets/images/open-demat-account/currency-brokerage-charges.svg';
-// import Image9 from '../../assets/images/open-demat-account/commodity-brokerage-charges.svg';
-import LazyLoader from '../Common-features/LazyLoader';
 
 
 function OpenLowBrokerageDematAccount() {

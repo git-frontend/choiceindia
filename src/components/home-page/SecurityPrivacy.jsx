@@ -26,8 +26,7 @@ function SecurityPrivacy() {
 
 									<div className="bx-item-cont">
 										<span className='cont-img'>
-											<LazyLoader src={Image1} threshold={[0, 0.5, 1]} className={"sl-img"} alt={"Regulated by SEBI"} width={"71"} height={"71"} />
-											{/* <img src={Image1} className="" alt="" /> */}
+											<LazyLoader src={Image1} threshold={[0, 0.5, 1]} className={"sl-img"} alt={"Regulated by SEBI"} width={"71"} height={"71"} />											
 										</span>
 										
 										<h4>Regulated</h4>
@@ -37,8 +36,7 @@ function SecurityPrivacy() {
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont">
 									<span className='cont-img'>
-										<LazyLoader src={Image2} threshold={[0, 0.5, 1]} className={"sl-img"} width={"71"} height={"71"} alt={"Security"} />
-										{/* <img src={Image2} className="" alt="" />*/}
+										<LazyLoader src={Image2} threshold={[0, 0.5, 1]} className={"sl-img"} width={"71"} height={"71"} alt={"Security"} />								
 									</span>
 										
 										<h4>Security</h4>
@@ -49,7 +47,6 @@ function SecurityPrivacy() {
 									<div className="bx-item-cont">
 									<span className='cont-img'>
 										<LazyLoader src={Image3} threshold={[0, 0.5, 1]} className={"sl-img"} width={"71"} height={"71"} alt={"Privacy"} />
-										{/* <img src={Image3} className="" alt="" /> */}
 									</span>
 										
 										<h4>Privacy</h4>

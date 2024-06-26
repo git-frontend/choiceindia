@@ -1,49 +1,7 @@
 
 import React from "react";
-import LazyLoader from '../Common-features/LazyLoader';
-import { useState } from 'react';
-// import basketStrategie from '../../Data/basketStrategie';
-import Slider from 'react-slick';
 function CreateBacktestStrategies() {
-  // const [isShown2, setIsShown2] = useState(0);
-  // const settings1 = {
-  //   infinite: true,
-  //   speed: 1000,
-  //   vertical: true,
-  //   focusOnSelect: true,
-  //   touchMove: true,
-  //   arrows: false,
-  //   slidesToShow: 5,
-  //   autoplay: false,
-  //   dots: false,
-  //   autoplaySpeed: 2000,
-  //   slidesToScroll: 1,
-  //   swipeToSlide: true,
-  //   responsive: [
-  //     {
-  //       breakpoint: 768,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //         vertical: false,
-  //         autoplaySpeed: 3000,
-  //       }
-  //     }
-      
-  //   ]
-   
-  // };
 
-  // function chapterScroll3(id) {
-  //   var element = document.getElementById(id);
-  //   var headerOffset = 140;
-  //   var elementPosition = element.getBoundingClientRect().top;
-  //   var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  //   window.scrollTo({
-  //     top: offsetPosition,
-  //     behavior: "smooth"
-  //   });
-  // }
   return (
     <div>
     <section className="create-backtest-sec" id="showForm">
@@ -72,29 +30,7 @@ function CreateBacktestStrategies() {
                         <h4 className="single-ttl">Connect with TradingView</h4>
                         </div>
                   </div>
-                    {/* <Slider {...settings1}
-                          afterChange={(ev) => {
-                            setIsShown2(ev)
-                          }}
-                          className="create-backtest-list"
-                        >
-
-                          {
-                            basketStrategie?.map((response, index) => {
-                              let classNm = "backtest-item " + ((index === isShown2) ? "backtest-item-active" : "")
-
-                              return (
-
-                                <div key={response.id} className={classNm} onMouseOver={() => setIsShown2(index)} >
-                                  <h4 className="single-ttl">{response.title}</h4>
-                                  
-                                </div>
-                              )
-
-
-                            })
-                          }
-                        </Slider> */}
+                    
                     </div>
                     <div className="col-xl-7 col-md-6">
                       <div className="video-height">

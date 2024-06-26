@@ -84,9 +84,7 @@ function chapterScroll(id) {
                                 <p>Choice is offering loans to the anchor’s ecosystem against selling or purchasing invoices. Borrower as Anchor “or” spoke may be decided as per the deal structure and mutual agreement.</p>
                                 <p>Apply for invoice financing
                                     In India up to 50 crores.<br />
-                                    {/* <a href="#"> */}
                                         <span className="aply-btn">Apply Now!</span>
-                                    {/* </a> */}
                                         </p>
                             </div>
                         </div>
@@ -103,21 +101,21 @@ function chapterScroll(id) {
                             <Slider {...settings1} className="inv-banner-slider">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            {/* <LazyLoader src={zerocollateral} alt={"Zero Collateral for Invoice Finnacing"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
+                                           
                                             <img src={zerocollateral} alt="Zero Collateral for Invoice Finnacing" className="img-fluid img"  width={"50"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Zero <br/>Collateral</h3>
                                     </div>
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            {/* <LazyLoader src={documentation} alt={"Simple Invoice Financing Documentation"} className={"img-fluid img"} width={"60"} height={"50"} /> */}
+                                            
                                             <img src={documentation} alt="Simple Invoice Financing Documentation" className="img-fluid img"  width={"60"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Simplified <br/>Documentation</h3>
                                     </div>
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            {/* <LazyLoader src={liquidity} alt={"Enhance Invoice Financing Liquidity"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
+                                            
                                             <img src={liquidity} alt="Enhance Invoice Financing Liquidity" className="img-fluid img"  width={"50"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Enhance <br/> Liquidity</h3>
