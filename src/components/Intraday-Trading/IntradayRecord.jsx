@@ -31,7 +31,6 @@ function IntradayRecord() {
         setRenderCount(true)
         if (rendercount === true) {
             rest.generateSession(IntradayNew,setData1);
-            IntradayNew()
           
             // IntraStocks()
         }
@@ -67,7 +66,7 @@ function IntradayRecord() {
         ],
     };
   
-    function IntradayNew() {
+    function IntradayNew(Data1) {
         setlist([]);
         setShowLoader(true)
         let request = {

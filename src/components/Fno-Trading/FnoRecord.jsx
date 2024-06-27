@@ -33,8 +33,7 @@ function FnoRecord() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            // rest.generateSession(setData1);
-            FandORecords()
+            rest.generateSession(FandORecords,setData1);
         }
     }, [rendercount])
     const settings = {
@@ -68,7 +67,7 @@ function FnoRecord() {
         ],
     };
     
-    function FandORecords() {
+    function FandORecords(Data1) {
 
         setlist([]);
         tokens = '';

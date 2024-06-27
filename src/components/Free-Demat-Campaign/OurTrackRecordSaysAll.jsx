@@ -58,7 +58,7 @@ function OurTrackRecordSaysAll() {
 
 
   //for F and O
-  function FandOstocks() {
+  function FandOstocks(Data1) {
     setToggleState(2)
    
     setlist([]);
@@ -86,7 +86,7 @@ function OurTrackRecordSaysAll() {
     
   }
   //New 
-  function IntradayNew() {
+  function IntradayNew(Data1) {
     setToggleState(1)
     setlist([]);
     
@@ -115,7 +115,7 @@ function OurTrackRecordSaysAll() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      FandOstocks()
+      rest.generateSession(FandOstocks,setData1);
     }
   }, [rendercount])
 
@@ -164,7 +164,9 @@ function OurTrackRecordSaysAll() {
                     rest.generateSession(IntradayNew,setData1);
                     }}> Intraday</li>
                   <li className={toggleState === 2 ? "list-group-item list listsec" : "list-group-item list"}
-                    onClick={FandOstocks}>F&O </li>
+                    onClick={()=>{
+                    FandOstocks(Data1)
+                    }}>F&O </li>
                 </ul>
               </div>
             </div>

@@ -32,7 +32,7 @@ function ResearchCalls() {
       behavior: "smooth"
     });
   }
-  function FandOstocks() {
+  function FandOstocks(Data1) {
     
     setlist([]);
     tokens = '';
@@ -67,7 +67,7 @@ function ResearchCalls() {
     setTrigger(true)
 
     if (trigger === true) {
-      FandOstocks();
+      rest.generateSession(FandOstocks,setData1);
     }
     if (/Android|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
 
