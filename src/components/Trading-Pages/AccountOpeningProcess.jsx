@@ -30,17 +30,15 @@ function AccountOpeningProcess({data}) {
                             </div>
                         </div>
                     </div>
-                    <h2 className="sect-title">Commodity Account Opening Online Process</h2>
+                    <h2 className="sect-title" dangerouslySetInnerHTML={{ __html: data[0].subtitle }}></h2>
                     <div className="row">
                         {
                             data.map((response, index) =>{
                                 return(
-                                    <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-md-4" key={index}>
+                                    <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-md-4 steps-number-prnt" key={index}>
                                         <div className="demat-steps">
-                                            <div className="imgwrap width66">
-                                                <LazyLoader src={response.processImg1} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={response.processAlt} />
-                                                <LazyLoader src={response.processImg2} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step One"} />
-                                                <LazyLoader src={response.processImg3} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step One"} />
+                                            <div className="num-wrap">
+                                               <h4 className='steps-number'>{response.stepsNum}</h4>
                                             </div>
                                             <div className="info respspace">
                                                 <h5>{response.processH}</h5>

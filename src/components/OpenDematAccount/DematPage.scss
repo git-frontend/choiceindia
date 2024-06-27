@@ -486,15 +486,66 @@
 	padding: 1rem 0 9rem ;
 	position: relative;
 	margin-top: 6rem;
+	.steps-number-prnt{
+		&:last-child{
+			.num-wrap{
+				&::after{
+					display: none !important;
+				}
+			}
+		}
+		
+	}
 
 	.demat-steps {
 		@media (max-width:$sm) {
 			display: flex;
+			min-height: 170px;
+		}
+		.num-wrap{
+			position: relative;
+			@media (max-width:$sm) {
+				width: 71px;
+			}
+			.steps-number{
+				color: $yellowColor;
+				font-size: 6rem;
+				font-family: $font-family-poppins-semibold;
+				font-weight: 700;
+				margin: 0;
+				@media (max-width:$sm) {
+				font-size: 4.5rem;
+				}
+			}
+			&::after{
+				content: '';
+				position: absolute;
+				right: 40px;
+				background: url(../../assets/images/open-demat-account/steparrow.svg) no-repeat;
+				background-size: contain;
+				width: 127px;
+				top: 50%;
+				height: 23px;
+				transform: translateY(-50%);
+				@media (max-width:$md) {
+					display: none;
+				}
+				@media (max-width:$sm) {
+					transform: rotate(90deg);
+					height: 17px;
+					width: 93px;
+					left: -10px;
+					top: 70%;
+					display: block;
+				}
+			}
+
 		}
 	}
 
 	@media (max-width:$sm) {
 		margin-top: 11rem;
+		padding:1rem 0 6rem;
 	}
 
 	.sect-title {
