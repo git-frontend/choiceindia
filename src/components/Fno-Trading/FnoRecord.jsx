@@ -33,9 +33,25 @@ function FnoRecord() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            rest.generateSession(FandORecords,setData1);
+            generateSessionId(FandORecords);
         }
     }, [rendercount])
+
+    function generateSessionId(func){
+        rest.generateSession()
+        .then((res)=>{
+           if(res.Status == "Success"){
+              setData1(res.Response);
+              func(res.Response);
+           }
+           else{
+              func([]);
+           }
+        })
+        .catch((err)=>{
+            func([]);
+        });
+      }
     const settings = {
         infinite: true,
         speed: 2000,

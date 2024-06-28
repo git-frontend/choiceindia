@@ -59,7 +59,7 @@ function BestStockcategory() {
     const queryParam = window.location.search;
     const utmvalue = new URLSearchParams(queryParam);
     const activeurl = utmvalue.get('active');
-    ((activeurl == "-to-buy") ? AllStocks() : (activeurl == "-intraday-stocks-to-buy") ? rest.generateSession(IntradayNew,setData1,checkurl,AllStocks,ShortTermStocks,LongTermStocks) : (activeurl == "-term-stocks-to-buy") ? ShortTermStocks() : (activeurl == "-for-long-term-investment") ? LongTermStocks() : "");
+    ((activeurl == "-to-buy") ? AllStocks() : (activeurl == "-intraday-stocks-to-buy") ? generateSessionId() : (activeurl == "-term-stocks-to-buy") ? ShortTermStocks() : (activeurl == "-for-long-term-investment") ? LongTermStocks() : "");
   }
 
 
@@ -157,7 +157,7 @@ function BestStockcategory() {
 
   
 
-  function IntradayNew() {
+  function IntradayNew(Data1) {
     setToggleState(1)
     setlist([]);
     setShowLoader(true)
@@ -193,9 +193,9 @@ function BestStockcategory() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      rest.generateSession(IntradayNew,setData1,checkurl,AllStocks,ShortTermStocks,LongTermStocks);
+      generateSessionId();
 
-      checkurl == 'intraday' ? rest.generateSession(IntradayNew,setData1,checkurl,AllStocks,ShortTermStocks,LongTermStocks):
+      checkurl == 'intraday' ? generateSessionId() :
         checkurl == 'short-term' ? ShortTermStocks() :
           checkurl == 'all-stock' ? AllStocks() :
             checkurl == 'long-term' ? LongTermStocks() : "";
@@ -217,7 +217,32 @@ function BestStockcategory() {
     }
   }, [rendercount])
 
+  function generateSessionId(){
+     rest.generateSession()
+     .then(res => {
+       if (res.Status == 'Success') {
+        if(checkurl == 'intraday'){
+          IntradayNew(res.Response);
 
+          }else if(checkurl == 'all-stock'){
+            AllStocks(res.Response)
+          }
+          else if(checkurl == 'short-term'){
+            ShortTermStocks(res.Response)
+          }
+          else if(checkurl == 'long-term'){
+            LongTermStocks(res.Response)
+          }
+          setData1(res.Response);
+        }
+        else{
+          IntradayNew([])
+        }
+      })
+      .catch((err)=>{
+        IntradayNew([]);
+      })
+  }
   // function redirectLink() {
   //   window.open("https://finx.choiceindia.com/auth/login");
   // }
@@ -291,7 +316,7 @@ function BestStockcategory() {
                   <div className="col-xl-8 col-md-12" id="best-stock">
                     <ul className="list-group list_group1">
                       <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} > <Link className="urllinks1" to="/best-stocks-to-buy" onClick={() => AllStocks()} > All Stocks</Link></li>
-                      <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/best-intraday-stocks-to-buy" onClick={() => rest.generateSession(IntradayNew,setData1,checkurl,AllStocks,ShortTermStocks,LongTermStocks)}>Intraday </Link></li>
+                      <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/best-intraday-stocks-to-buy" onClick={() => IntradayNew(Data1)}>Intraday </Link></li>
                       <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-short-term-stocks-to-buy" onClick={() => ShortTermStocks()}>Short Term </Link></li>
                       <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-stocks-for-long-term-investment" onClick={() => LongTermStocks()}>Long Term </Link></li>
                     </ul>
