@@ -38,73 +38,13 @@ const rest = {
     return axios.post(url, postdata, {})
 
   },
-
-   //Common function for generating session ID of research-listing and investors page
-
-   generateSessionId:function(func,setShowLoader){
-    if(setShowLoader){
-    setShowLoader(true);
-    } 
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-        .then(response => {
-            return response.json();
-        })
-        .then(res => {
-            if (res.Status == 'Success') {
-                if(window.location.pathname.includes('/research-listing')){
-                func(res.Response)
-                return;
-                }
-                func(res.Response,[{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }]);
-                
-            } else {
-              if(window.location.pathname.includes('/research-listing')){
-                func()
-              } 
-            }
-
-        }, err => {
-          if(window.location.pathname.includes('/research-listing')){
-            func()
-          } 
-        })
-  },
   
    //Created common function for generating session ID
 
-  generateSession:function(func,setData1,checkurl,AllStocks,ShortTermStocks,LongTermStocks){
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        if (res.Status == 'Success') {
-          if(checkurl){
-            if (checkurl == 'intraday') {
-              func(res.Response);
-  
-            } else if (checkurl == 'all-stock') {
-              AllStocks(res.Response);
-            }
-            else if (checkurl == 'short-term') {
-              ShortTermStocks(res.Response);
-            }
-            else if (checkurl == 'long-term') {
-              LongTermStocks(res.Response);
-            }
-          }
-          else if(func){
-          func(res.Response);
-          }
-          setData1(res.Response);
-        } else {
-          func([])
-        }
-      }, err => {
-        func([])
-      })
+  generateSession:function(){
+    let api=new API_URLS();
+    return axios.get(api.getSessionUrl())
+    .then(res=>res.data);
   },
 
   //Created common function for fetching Intra Stocks Data

@@ -31,7 +31,7 @@ function SBDesk() {
     useEffect(() => {
         setTrigger(true)
         if (trigger === true) {
-            rest.generateSessionId(getExpertResearch,setShowLoader);   
+            generateSessionId();
         }
         return () => {
             let tokenList = []
@@ -41,6 +41,22 @@ function SBDesk() {
             unSubscribeMultitouchline(tokenList)
         }
     }, [trigger])
+
+    function generateSessionId(){
+        rest.generateSession()
+        .then((res)=>{
+            if(res.Status == "Success"){
+               getExpertResearch(res.Response);
+            }
+            else{
+               getExpertResearch();
+            }
+        })
+        .catch((err)=>{
+             getExpertResearch();
+        })
+
+    }
 
     /**
      * Convert ResponseTring to  Object
