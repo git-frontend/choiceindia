@@ -1,12 +1,6 @@
-// import "./Commodity.scss";
+import "./Commodity.scss";
 import "../OpenDematAccount/DematPage";
-import CommodityBanner from "./CommodityBanner";
-import WhyOpenFreeCommodity from "./WhyOpenFreeCommodity";
-import CommodityOpeningProcess from "./CommodityOpeningProcess";
-import LowBrokerageCommodity from "./LowBrokerageCommodity";
-import WhyChoiceCommodity from "./WhyChoiceCommodity";
 import CommodityFaq from "./CommodityFaq";
-import MoreContent from "./MoreContent";
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
 import { useState,useEffect} from "react";
@@ -16,6 +10,7 @@ import WhyOpenTradingAccount from "../Trading-Pages/WhyOpenTradingAccount";
 import WhyChoiceCommon from "../Trading-Pages/WhyChoiceCommon";
 import OpenLowBrokerageAccount from "../Trading-Pages/OpenLowBrokerageAccount";
 import AccountOpeningProcess from "../Trading-Pages/AccountOpeningProcess";
+import MoreContentCommon from "../Trading-Pages/MoreContentCommon";
 
 function Commodity() {
   const [rendercount, setRenderCount] = useState(() => false);
@@ -49,9 +44,8 @@ function Commodity() {
             <WhyChoiceCommon  data={CommodityTradingData.WhyChoiceCommon}/>
             <OpenLowBrokerageAccount data={CommodityTradingData.OpenLowBrokerageAccount}/>
             <AccountOpeningProcess data={CommodityTradingData.AccountOpeningProcess}/>
-            {/* <CommodityOpeningProcess /> */}
             <CommodityFaq />
-            <MoreContent />
+            <MoreContentCommon data={CommodityTradingData.MoreContentCommon}/>
           </div>
     
   );
