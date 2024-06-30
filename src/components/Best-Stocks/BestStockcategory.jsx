@@ -27,7 +27,7 @@ import { useEffect } from "react";
 
 function BestStockcategory() {
 
-  let tokenList = [{}]
+  let tokenList = [];
   let multiValue = [];
   let AllFilesValue = {};
   let tokens = "";
@@ -91,7 +91,46 @@ function BestStockcategory() {
 
     }
 
-    rest.fetchReportData(request,setShowLoader,setlist,Data1,session);
+    rest.expertReportData(request).then(
+
+      res => {
+
+        if (res) {
+          storefile = res.response.research;
+
+          tokens=utils.expertReportDataProcessing(storefile,tokenList);
+
+          setlist(res.response.research);
+
+          const payload = {
+            'UserId': 'guest',
+            'SessionId':session?session:Data1,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+
+                multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
+
+                setlist(multiValue);
+
+              }
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+              
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        
+      });
    
   }
 
@@ -121,7 +160,46 @@ function BestStockcategory() {
 
     }
 
-    rest.fetchReportData(request,setShowLoader,setlist,Data1,session);
+    rest.expertReportData(request).then(
+
+      res => {
+
+        if (res) {
+          storefile = res.response.research;
+
+          tokens=utils.expertReportDataProcessing(storefile,tokenList);
+
+          setlist(res.response.research);
+         
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': session? session: Data1,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+
+                multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
+
+                setlist(multiValue);
+
+              }
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+              
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        
+      });
    
   }
 
@@ -151,7 +229,43 @@ function BestStockcategory() {
       "category_id": 2
     }
 
-    rest.fetchReportData(request,setShowLoader,setlist,Data1,session);
+    rest.expertReportData(request).then(
+
+      res => {
+
+        if (res) {
+          storefile = res.response.research;
+
+          tokens=utils.expertReportDataProcessing(storefile,tokenList);
+
+          setlist(res.response.research);
+         
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': session? session: Data1,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {      
+                multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
+                setlist(multiValue);
+              }
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+              
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        
+      });
    
   }
 
@@ -178,7 +292,46 @@ function BestStockcategory() {
       "category_id": 2
     }
 
-    rest.IntraStocks(Data1,setlist,setShowLoader,request);
+    rest.expertReportData(request).then(
+
+      res => {
+
+        if (res) {
+          storefile = res.response.research;
+         
+          tokens=utils.expertReportDataProcessing(storefile,tokenList);
+
+          setlist(res.response.research);
+
+
+          const payload = {
+            'UserId': 'guest',
+            'SessionId':Data1,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+                multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
+
+                setlist(multiValue);
+
+              }
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+              
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        
+      });
     
   }
 
@@ -195,10 +348,10 @@ function BestStockcategory() {
     if (rendercount === true) {
       generateSessionId();
 
-      checkurl == 'intraday' ? generateSessionId() :
-        checkurl == 'short-term' ? ShortTermStocks() :
-          checkurl == 'all-stock' ? AllStocks() :
-            checkurl == 'long-term' ? LongTermStocks() : "";
+      // checkurl == 'intraday' ? generateSessionId() :
+      //   checkurl == 'short-term' ? ShortTermStocks() :
+      //     checkurl == 'all-stock' ? AllStocks() :
+      //       checkurl == 'long-term' ? LongTermStocks() : "";
     }
     if (/Android|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
 

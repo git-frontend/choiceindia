@@ -59,7 +59,46 @@ function ResearchCalls() {
     }
 
     
-    rest.fetchReportData(request,setShowLoader,setlist,Data1);
+    rest.expertReportData(request).then(
+
+      res => {
+
+        if (res) {
+          storefile = res.response.research;
+          
+          tokens=utils.expertReportDataProcessing(storefile,tokenList);
+
+          setlist(res.response.research);
+    
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': Data1,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+
+                multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
+
+                setlist(multiValue);
+
+              }
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+              
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        
+      });
     
    
   }
