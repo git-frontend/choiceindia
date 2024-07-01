@@ -10,7 +10,18 @@ const CMSData = {
         {
             "title": "CEBPL Policies"
         },
-    ]
+    ],
+    "InvestorCharterData":[
+        {
+            "title": "Investor Charter"
+        },
+    ],
+    "CFPLData":[
+        {
+            "title": "CFPL Disclosures"
+        },
+    ],
+   
   
 } 
 

@@ -5,8 +5,8 @@ import download from '../../assets/images/file-download/export.webp';
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import "../FilesDownload/Filedownload.scss";
-function CommonCMS({data, methodName} ) {
-    console.log(data,"jdgf",methodName)
+function CommonCMS({ data, methodName }) {
+    console.log(data, "jdgf", methodName)
     const [datalist, setDatalist] = useState({});
     const [trigger, setTrigger] = useState(false);
     const [isloading, setisloading] = useState(true);
@@ -30,6 +30,21 @@ function CommonCMS({data, methodName} ) {
                     } else if (methodName === "CebplPolicy") {
                         setDatalist({ "CEBPL Policies": res.data.data });
                     }
+                    else if (methodName === "CfplPolicy") {
+                        setDatalist({ "Description": res.data.data });
+                    }
+                    else if (methodName === "InvestorCharter") {
+                        const values = res.data.data;
+                        const AllFilesValue = {};
+
+                        values.forEach(ele => {
+                            if (!AllFilesValue[ele.heading]) {
+                                AllFilesValue[ele.heading] = [];
+                            }
+                            AllFilesValue[ele.heading].push(ele);
+                        });
+                        setDatalist(AllFilesValue);
+                    }
                 } else {
                     setDatalist({});
                 }
@@ -42,7 +57,7 @@ function CommonCMS({data, methodName} ) {
     }
 
     useEffect(() => {
-            loadFileDownload()
+        loadFileDownload()
     }, [])
 
     return (
@@ -53,9 +68,9 @@ function CommonCMS({data, methodName} ) {
                         <div className="col-md-12">
                             <h1 className='text-center mt-5 mb-5 title-first'>{data[0].title}</h1>
                             {
-                                data[0].banneText ? <p className="text">{data[0].banneText}</p>:""
+                                data[0].banneText ? <p className="text">{data[0].banneText}</p> : ""
                             }
-                            
+
                         </div>
                         {
                             isloading ?
@@ -84,10 +99,10 @@ function CommonCMS({data, methodName} ) {
                                                                                     return (
 
                                                                                         <li key={index} className="border-bottom pb-3 pt-3">
-                                                                                            <div className="text">{res.sub_title || res.title }</div>
+                                                                                            <div className="text">{res.sub_title || res.title}</div>
                                                                                             {
-                                                                                                (res.pdf || res.link || res.file) ?
-                                                                                                    <div className="cursor-pointer" onClick={() => { res.pdf || res.file ? window.open(`https://cmsapi.choiceindia.com/assets/${res.pdf || res.file}`) : window.open(res.link ||res.file ) }} ><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span className="downloadtext">Download</span></div> :
+                                                                                                (res.pdf || res.link || res.file || res.files) ?
+                                                                                                    <div className="cursor-pointer" onClick={() => { res.pdf || res.file || res.files ? window.open(`https://cmsapi.choiceindia.com/assets/${res.pdf || res.file || res.files}`) : window.open(res.link || res.file || res.files) }} ><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span className="downloadtext">Download</span></div> :
                                                                                                     <div></div>
                                                                                             }
 

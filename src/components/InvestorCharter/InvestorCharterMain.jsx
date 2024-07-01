@@ -5,7 +5,8 @@ import cmsService from "../../Services/cmsService";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import "../CEBPLPolicies/CEBPL-Policies.scss";
 import noDataimg from '../../assets/images/no-data.webp';
-
+import CommonCMS from '../Common-CMS/CommonCMS';
+import CMSData from "../Common-CMS/CMSData";
 function InvestorCharterMain() {
     const [data2, setData2] = useState({});
     const [trigger, setTrigger] = useState(false);
@@ -25,7 +26,8 @@ function InvestorCharterMain() {
 
     return (
         <div>
-            <section className="mainwrapquick">
+            <CommonCMS data={CMSData.InvestorCharterData} methodName="InvestorCharter"/>
+            {/* <section className="mainwrapquick">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
@@ -95,7 +97,7 @@ function InvestorCharterMain() {
                     }
 
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 }
