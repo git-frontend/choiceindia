@@ -15,7 +15,7 @@ function CommonCMS({ data, methodName }) {
     function loadFileDownload() {
         cmsService[methodName]()
             .then(res => {
-                if (res && res.data && res.data.data) {
+                if (res && res.data) {
                     if (methodName === "documentList") {
                         const values = res.data.data;
                         const AllFilesValue = {};
@@ -45,6 +45,18 @@ function CommonCMS({ data, methodName }) {
                         });
                         setDatalist(AllFilesValue);
                     }
+                    else if (methodName === "MarginDay") {
+                        const values = res.data.response;
+                        const AllFilesValue = {};
+
+                        values.forEach(ele => {
+                            if (!AllFilesValue[ele.download_title]) {
+                                AllFilesValue[ele.download_title] = [];
+                            }
+                            AllFilesValue[ele.download_title].push(ele);
+                        });
+                        setDatalist(AllFilesValue);
+                    }
                 } else {
                     setDatalist({});
                 }
@@ -66,7 +78,10 @@ function CommonCMS({ data, methodName }) {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h1 className='text-center mt-5 mb-5 title-first'>{data[0].title}</h1>
+                            {
+                                data[0].title ? <h1 className='text-center mt-5 mb-5 title-first'>{data[0].title}</h1>:""
+                            }
+                           
                             {
                                 data[0].banneText ? <p className="text">{data[0].banneText}</p> : ""
                             }
@@ -99,10 +114,12 @@ function CommonCMS({ data, methodName }) {
                                                                                     return (
 
                                                                                         <li key={index} className="border-bottom pb-3 pt-3">
-                                                                                            <div className="text">{res.sub_title || res.title}</div>
+                                                                                            <div className="text">{res.sub_title || res.title ||res.download_subtitle}</div>
                                                                                             {
-                                                                                                (res.pdf || res.link || res.file || res.files) ?
-                                                                                                    <div className="cursor-pointer" onClick={() => { res.pdf || res.file || res.files ? window.open(`https://cmsapi.choiceindia.com/assets/${res.pdf || res.file || res.files}`) : window.open(res.link || res.file || res.files) }} ><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span className="downloadtext">Download</span></div> :
+                                                                                                (res.pdf || res.link || res.file || res.files ) ?
+                                                                                                    <div className="cursor-pointer" onClick={() => { res.pdf || res.file || res.files ? window.open(`https://cmsapi.choiceindia.com/assets/${res.pdf || res.file || res.files }`) : window.open(res.link || res.file || res.files) }} ><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span className="downloadtext">Download</span></div> :
+                                                                                                    (res.download_pdf ) ?
+                                                                                                    <div className="cursor-pointer" onClick={() => { res.download_pdf? window.open(`${res.download_pdf}`) : "" }} ><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span className="downloadtext">Download</span></div>:
                                                                                                     <div></div>
                                                                                             }
 
