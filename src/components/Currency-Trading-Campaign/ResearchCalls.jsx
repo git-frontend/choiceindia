@@ -34,7 +34,7 @@ function ResearchCalls() {
       behavior: "smooth"
     });
   }
-  function FandOstocks() {
+  function FandOstocks(Data1) {
     setlist([]);
     tokens = '';
     tokenList = [];
@@ -69,7 +69,7 @@ function ResearchCalls() {
     setTrigger(true)
 
     if (trigger === true) {
-      FandOstocks();
+      generateSessionId(FandOstocks);
     }
     if (/Android|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
 
@@ -87,6 +87,22 @@ function ResearchCalls() {
 
     }
   }, [trigger])
+
+  function generateSessionId(func){
+    rest.generateSession()
+    .then((res)=>{
+       if(res.Status == "Success"){
+          setData1(res.Response);
+          func(res.Response);
+       }
+       else{
+          func([]);
+       }
+    })
+    .catch((err)=>{
+        func([]);
+    });
+  }
   const settings = {
     infinite: true,
     speed: 1500,

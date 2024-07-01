@@ -55,7 +55,7 @@ function Banner() {
       .then((res) => {
         setIsloader(false);
         setList(res);
-        if (res.Status === "Success") {
+        if (res.Status === "Success" && res.Response.response_code === 200) {
           setreferal(res.Response.referral_link);
           setShow("Copy Link");
           let valueearn = document.getElementById("referalid");
@@ -63,7 +63,7 @@ function Banner() {
           setIsShow(true);
           setIserror(false);
         } else {
-          setreferal1(res.Reason);
+          setreferal1(res.Response.error.description);
           setIserror(true);
 
         }

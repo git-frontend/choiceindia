@@ -38,117 +38,13 @@ const rest = {
     return axios.post(url, postdata, {})
 
   },
-
-
-  fetchExpertResearchReport:function(setisloading,setResearch){
-    let request = {
-      "end_date": "",
-      "is_expert": 1,
-      "research_type": "",
-      "limit": 10,
-      "offset": 0,
-      "segment": "EQ",
-      "start_date": "",
-      "status": "target_achieved",
-      "subcategory_id": "",
-      "search": "",
-      "id": "",
-      "user_id": "",
-      "timeline_enabled": 1,
-      "category_id": 2
-  };
-  this.getExpertResearch(request).then((res) => {
-     // console.log(res, "RES");
-      if (res && res.status === 200 && res.data.status_code === 200 && res.data.response) {
-          setisloading(false);
-          let list = res.data.response.research.map((item, i) => {
-              if (item.datapoints && item.datapoints.length) {
-                  item.priceData = {}
-                  item.datapoints.forEach(sub => {
-                      sub.key = (sub.key == 'cmp') ? 'entry_price' : sub.key;
-                      item.priceData[sub.key] = sub
-                  });
-              }
-              return item;
-          });
-          setResearch(list);
-      } else {
-          setisloading(false);
-          setResearch([]);
-      }
-  }).catch((error) => {
-     // console.log(error, "error");
-     setisloading(false);
-      setResearch([]);
-  });
-  },
-
-   //Common function for generating session ID of research-listing and investors page
-
-   generateSessionId:function(func,setShowLoader){
-    if(setShowLoader){
-    setShowLoader(true);
-    } 
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-        .then(response => {
-            return response.json();
-        })
-        .then(res => {
-            if (res.Status == 'Success') {
-                if(window.location.pathname.includes('/research-listing')){
-                func(res.Response)
-                return;
-                }
-                func(res.Response,[{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }]);
-                
-            } else {
-              if(window.location.pathname.includes('/research-listing')){
-                func()
-              } 
-            }
-
-        }, err => {
-          if(window.location.pathname.includes('/research-listing')){
-            func()
-          } 
-        })
-  },
   
    //Created common function for generating session ID
 
-  generateSession:function(IntradayNew,setData1,checkurl,AllStocks,ShortTermStocks,LongTermStocks){
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        if (res.Status == 'Success') {
-          if(checkurl){
-            if (checkurl == 'intraday') {
-              IntradayNew(res.Response);
-  
-            } else if (checkurl == 'all-stock') {
-              AllStocks(res.Response);
-            }
-            else if (checkurl == 'short-term') {
-              ShortTermStocks(res.Response);
-            }
-            else if (checkurl == 'long-term') {
-              LongTermStocks(res.Response);
-            }
-          }
-          else{
-          IntradayNew(res.Response);
-          }
-          setData1(res.Response);
-        } else {
-          IntradayNew([])
-        }
-      }, err => {
-        IntradayNew([])
-      })
+  generateSession:function(){
+    let api=new API_URLS();
+    return axios.get(api.getSessionUrl())
+    .then(res=>res.data);
   },
 
   //Created common function for fetching Intra Stocks Data

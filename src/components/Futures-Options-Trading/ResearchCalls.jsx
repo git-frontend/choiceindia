@@ -68,7 +68,7 @@ function ResearchCalls() {
     ]
 
   };
-  function FandOstocks() {
+  function FandOstocks(Data1) {
     // setToggleState(2)
     // console.log("change",toggleState)
     setlist([]);
@@ -98,29 +98,13 @@ function ResearchCalls() {
     
    
   }
-  function generateSessionId() {
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        if (res.Status == 'Success') {
-          // IntraStocks(res.Response);
-          setData1(res.Response);
-        } else {
-          // IntraStocks([])
-        }
-      }, err => {
-        // IntraStocks([])
-      })
-  }
+
   useEffect(() => {
     
     setTrigger(true)
 
         if (trigger === true) {
-          FandOstocks();
+          generateSessionId(FandOstocks)
         }
     if (/Android|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
 
@@ -138,6 +122,22 @@ function ResearchCalls() {
 
     }
   }, [trigger])
+
+  function generateSessionId(func){
+    rest.generateSession()
+    .then((res)=>{
+       if(res.Status == "Success"){
+          setData1(res.Response);
+          func(res.Response);
+       }
+       else{
+          func([]);
+       }
+    })
+    .catch((err)=>{
+        func([]);
+    });
+  }
   useEffect(() => {
     let mediaQuery = window.matchMedia("(min-width: 767px)");
     mediaQuery.addListener(setView);

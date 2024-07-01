@@ -30,12 +30,28 @@ function IntradayRecord() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            rest.generateSession(IntradayNew,setData1);
-            IntradayNew()
+            generateSessionId(IntradayNew)
           
             // IntraStocks()
         }
     }, [rendercount])
+
+    function generateSessionId(func){
+        rest.generateSession()
+        .then((res)=>{
+           if(res.Status == "Success"){
+              setData1(res.Response);
+              func(res.Response);
+           }
+           else{
+              func([]);
+           }
+        })
+        .catch((err)=>{
+            func([]);
+        });
+      }
+
     const settings = {
         infinite: false,
         speed: 2000,
@@ -67,7 +83,7 @@ function IntradayRecord() {
         ],
     };
   
-    function IntradayNew() {
+    function IntradayNew(Data1) {
         setlist([]);
         setShowLoader(true)
         let request = {
