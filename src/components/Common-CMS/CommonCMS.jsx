@@ -1,44 +1,65 @@
-
 import React, { useState, useEffect } from "react";
 import { Accordion } from "react-bootstrap";
 import cmsService from "../../Services/cmsService";
 import download from '../../assets/images/file-download/export.webp';
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
-import CommonCMS from '../Common-CMS/CommonCMS';
-import CMSData from "../Common-CMS/CMSData";
-function OfferDocumentMenu() {
+import "../FilesDownload/Filedownload.scss";
+function CommonCMS({data, methodName} ) {
+    console.log(data,"jdgf",methodName)
     const [datalist, setDatalist] = useState({});
     const [trigger, setTrigger] = useState(false);
     const [isloading, setisloading] = useState(true);
     let values;
     let AllFilesValue = {};
+    function loadFileDownload() {
+        cmsService[methodName]()
+            .then(res => {
+                if (res && res.data && res.data.data) {
+                    if (methodName === "documentList") {
+                        const values = res.data.data;
+                        const AllFilesValue = {};
 
-   
+                        values.forEach(ele => {
+                            if (!AllFilesValue[ele.title]) {
+                                AllFilesValue[ele.title] = [];
+                            }
+                            AllFilesValue[ele.title].push(ele);
+                        });
+                        setDatalist(AllFilesValue);
+                    } else if (methodName === "CebplPolicy") {
+                        setDatalist({ "CEBPL Policies": res.data.data });
+                    }
+                } else {
+                    setDatalist({});
+                }
+                setisloading(false);
+            })
+            .catch((error) => {
+                setDatalist({});
+                setisloading(false);
+            });
+    }
 
-    // useEffect(() => {
-    //     setTrigger(true)
-
-    //     if (trigger === true) {
-    //         //loadFileDownload()
-    //         cmsService.loadCmsData(cmsService.documentList,setisloading,setDatalist,"title");
-    //     }
-
-    // }, [trigger])
+    useEffect(() => {
+            loadFileDownload()
+    }, [])
 
     return (
-        <div>
-            <CommonCMS data={CMSData.OfferDocumentData} methodName="documentList"/>
-            {/* <section className="filedownloadfaq">
+        <>
+            <section className="filedownloadfaq filedownloadfaq-CMS">
                 <div className="container">
-
                     <div className="row">
+                        <div className="col-md-12">
+                            <h1 className='text-center mt-5 mb-5 title-first'>{data[0].title}</h1>
+                            <p className="text">{data[0].banneText}</p>
+                        </div>
                         {
                             isloading ?
                                 <div className="text-center">
                                     <div>
                                         <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
-                                         </div>
+                                    </div>
                                 </div>
                                 :
 
@@ -50,7 +71,7 @@ function OfferDocumentMenu() {
 
                                                     Object.keys(datalist)?.map((key, i) => {
                                                         return (
-                                                            <Accordion.Item eventKey={i+""} key={i} className='faq-item' >
+                                                            <Accordion.Item eventKey={i + ""} key={i} className='faq-item' >
                                                                 <Accordion.Header> <h4 className='faq-header'>{key}</h4></Accordion.Header>
                                                                 <Accordion.Body className='faq-body'>
                                                                     <div className="listing">
@@ -59,11 +80,11 @@ function OfferDocumentMenu() {
                                                                                 datalist[key]?.map((res, index) => {
                                                                                     return (
 
-                                                                                        <li key={index}>
-                                                                                            <div className="text">{res.sub_title}</div>
+                                                                                        <li key={index} className="border-bottom pb-3 pt-3">
+                                                                                            <div className="text">{res.sub_title || res.title }</div>
                                                                                             {
-                                                                                                (res.pdf|| res.link) ?
-                                                                                                    <div className="cursor-pointer" onClick={() => { res.pdf ? window.open(`https://cmsapi.choiceindia.com/assets/${res.pdf}`) : window.open(res.link)}} ><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span className="downloadtext">Download</span></div> :
+                                                                                                (res.pdf || res.link || res.file) ?
+                                                                                                    <div className="cursor-pointer" onClick={() => { res.pdf || res.file ? window.open(`https://cmsapi.choiceindia.com/assets/${res.pdf || res.file}`) : window.open(res.link ||res.file ) }} ><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span className="downloadtext">Download</span></div> :
                                                                                                     <div></div>
                                                                                             }
 
@@ -82,7 +103,7 @@ function OfferDocumentMenu() {
 
                                                 }
 
-                                     
+
                                             </Accordion> :
                                             <div className="text-center">
                                                 <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
@@ -94,13 +115,9 @@ function OfferDocumentMenu() {
 
                     </div>
                 </div>
-            </section> */}
-        </div>
+            </section>
+        </>
 
     )
 }
-
-export default OfferDocumentMenu;
-
-
-
+export default CommonCMS;
