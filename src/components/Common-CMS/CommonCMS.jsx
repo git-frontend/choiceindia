@@ -52,7 +52,10 @@ function CommonCMS({data, methodName} ) {
                     <div className="row">
                         <div className="col-md-12">
                             <h1 className='text-center mt-5 mb-5 title-first'>{data[0].title}</h1>
-                            <p className="text">{data[0].banneText}</p>
+                            {
+                                data[0].banneText ? <p className="text">{data[0].banneText}</p>:""
+                            }
+                            
                         </div>
                         {
                             isloading ?

@@ -8,8 +8,7 @@ const CMSData = {
     ],
     "CEBPLData":[
         {
-            "title": "CEBPL Policies",
-            "banneText": '',
+            "title": "CEBPL Policies"
         },
     ]
   

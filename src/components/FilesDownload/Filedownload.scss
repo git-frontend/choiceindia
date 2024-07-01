@@ -162,15 +162,20 @@
 	&.filedownloadfaq-CMS{
 		padding: 0rem;
 		.accordion-flush{
-			padding:3rem 1rem 0rem 1rem;;
+			padding: 1.5rem;
 			border: 1px solid #c2c2c2;
 			border-radius: 20px;
-			margin-bottom: 3rem;
+			margin: 3rem 0rem;
 		}
 		.listing{
 			.border-bottom {
 				&:last-child {
 					border-bottom: none !important;
+				}
+			}
+			ul{
+				li{
+					font-size: 1.4rem;
 				}
 			}
 		}
