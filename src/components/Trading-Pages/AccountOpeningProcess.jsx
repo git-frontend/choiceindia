@@ -1,5 +1,4 @@
 import React from 'react'
-import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from 'react-router-dom';
 
 function AccountOpeningProcess({data}) {
@@ -25,7 +24,7 @@ function AccountOpeningProcess({data}) {
                                     <h3 className="mb-0" dangerouslySetInnerHTML={{ __html: data[0].title }}></h3>
                                 </div>
                                 <div className="text-right text-sm-center">
-                                    <Link to={data[0].pageLink} ><span className="btn-bg btn-bg-dark "  onClick={() => { scrollToId('open-account-wrap') }}>Open Now</span> </Link>
+                                    <Link to={data[0].pageLink}><span className="btn-bg btn-bg-dark "  onClick={() => { scrollToId('open-account-wrap') }}>Open Now</span> </Link>
                                 </div>
                             </div>
                         </div>

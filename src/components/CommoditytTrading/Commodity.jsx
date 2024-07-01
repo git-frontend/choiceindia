@@ -11,6 +11,7 @@ import WhyChoiceCommon from "../Trading-Pages/WhyChoiceCommon";
 import OpenLowBrokerageAccount from "../Trading-Pages/OpenLowBrokerageAccount";
 import AccountOpeningProcess from "../Trading-Pages/AccountOpeningProcess";
 import MoreContentCommon from "../Trading-Pages/MoreContentCommon";
+import CommonFaq from "../Trading-Pages/CommonFaq";
 
 function Commodity() {
   const [rendercount, setRenderCount] = useState(() => false);
@@ -39,13 +40,14 @@ function Commodity() {
   return (
   
           <div className="demat-page-parent">
-            <TradingBanner data={CommodityTradingData.BannerData}  />
+            <TradingBanner data={CommodityTradingData.BannerData}/>
             <WhyOpenTradingAccount data={CommodityTradingData.WhyOpenCommodityTAccount}/>
             <WhyChoiceCommon  data={CommodityTradingData.WhyChoiceCommon}/>
             <OpenLowBrokerageAccount data={CommodityTradingData.OpenLowBrokerageAccount}/>
             <AccountOpeningProcess data={CommodityTradingData.AccountOpeningProcess}/>
-            <CommodityFaq />
+            <CommonFaq data={CommodityTradingData.CommonFaq}/>
             <MoreContentCommon data={CommodityTradingData.MoreContentCommon}/>
+           
           </div>
     
   );

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Image19 from '../../assets/images/open-demat-account/register-online.webp';
 import Image20 from '../../assets/images/open-demat-account/steparrow.svg';
 import Image21 from '../../assets/images/open-demat-account/downarrow.png';

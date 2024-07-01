@@ -264,5 +264,57 @@ const CommodityTradingData = {
                 </div>
   </section> `}
     ],
+    "CommonFaq":[
+        {
+            eventKey: "0",
+            header: "How much time does it take to complete the registration of a commodity trading account?",
+            body: "It takes about 48 hours for a commodity account in the online process and for the offline process it may take 4 days to 10 days."
+        },
+        {
+            eventKey: "1",
+            header: "What are the documents required to open a commodity trading account?",
+            body: `
+                To open a commodity trading account, you need to submit the following documents:
+                <ul>
+                    <li>Proof of Identity (PAN Card, Aadhar card, ID card, etc)</li>
+                    <li>Proof of Address (Aadhar card, utility bills, etc)</li>
+                    <li>Photographs</li>
+                    <li>Proof of Income (ITR slip, Salary Slip, Bank Statement)</li>
+                    <li>Bank details</li>
+                    <li>Signature</li>
+                </ul>
+            `
+        },
+        {
+            eventKey: "2",
+            header: "Is it necessary to provide power of Attorney (POA) while opening a commodity trading account?",
+            body: "Yes. The Power of Attorney is important for executing trades in a commodity account. Hence, one has to provide the same as per the regulators."
+        },
+        {
+            eventKey: "3",
+            header: "Are any charges applicable while opening a commodity trading account with Choice?",
+            body: "No. There are no account opening charges with Choice. However, one should take into account the brokerage charges associated."
+        },
+        {
+            eventKey: "4",
+            header: "Can I use the same commodity trading account for all segments?",
+            body: "Yes. Once you open an account with Choice, you have the authority to trade with equity, commodity, currency and derivatives. The procedure for all of them is constant."
+        },
+        {
+            eventKey: "5",
+            header: "How long will it take for the commodity trading account to be activated?",
+            body: "A commodity trading account takes 4 hours to be activated through an online process after providing the documents."
+        },
+        {
+            eventKey: "6",
+            header: "Are NRIs able to open a commodity trading account in India?",
+            body: "Yes. An NRI can start a trading account with Choice with the same procedure of any citizen residing in India."
+        },
+        {
+            eventKey: "7",
+            header: "Can I trade in multiple types of commodities through a commodity account?",
+            body: "Yes. With choice, you have the privilege to trade in multiple types of commodities."
+        }
+    ]
 }
 export default CommodityTradingData;
