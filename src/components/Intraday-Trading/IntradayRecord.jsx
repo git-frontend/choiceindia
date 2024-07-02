@@ -44,11 +44,11 @@ function IntradayRecord() {
               func(res.Response);
            }
            else{
-              func([]);
+              setShowLoader(false);
            }
         })
         .catch((err)=>{
-            func([]);
+            setShowLoader(false);
         });
       }
 

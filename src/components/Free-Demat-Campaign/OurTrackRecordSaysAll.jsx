@@ -60,7 +60,9 @@ function OurTrackRecordSaysAll() {
   //for F and O
   function FandOstocks(Data1) {
     setToggleState(2)
-   
+    if(!Data1){
+    return;
+    }
     setlist([]);
    
     setShowLoader(true)
@@ -208,11 +210,11 @@ function OurTrackRecordSaysAll() {
           func(res.Response);
        }
        else{
-          func([]);
+         setShowLoader(false);
        }
     })
     .catch((err)=>{
-        func([]);
+        setShowLoader(false)
     });
   }
 

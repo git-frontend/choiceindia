@@ -374,26 +374,18 @@ function BestStockcategory() {
      rest.generateSession()
      .then(res => {
        if (res.Status == 'Success') {
-        if(checkurl == 'intraday'){
-          IntradayNew(res.Response);
-
-          }else if(checkurl == 'all-stock'){
-            AllStocks(res.Response)
-          }
-          else if(checkurl == 'short-term'){
-            ShortTermStocks(res.Response)
-          }
-          else if(checkurl == 'long-term'){
-            LongTermStocks(res.Response)
-          }
+        checkurl == 'intraday' ? IntradayNew(res.Response) :
+        checkurl == 'short-term' ? ShortTermStocks(res.Response) :
+          checkurl == 'all-stock' ? AllStocks(res.Response) :
+            checkurl == 'long-term' ? LongTermStocks(res.Response) : "";
           setData1(res.Response);
         }
         else{
-          IntradayNew([])
+          setShowLoader(false);
         }
       })
       .catch((err)=>{
-        IntradayNew([]);
+        setShowLoader(false);
       })
   }
   // function redirectLink() {
