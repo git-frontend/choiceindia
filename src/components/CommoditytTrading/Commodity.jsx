@@ -47,7 +47,6 @@ function Commodity() {
             <AccountOpeningProcess data={CommodityTradingData.AccountOpeningProcess}/>
             <CommonFaq data={CommodityTradingData.CommonFaq}/>
             <MoreContentCommon data={CommodityTradingData.MoreContentCommon}/>
-           
           </div>
     
   );
