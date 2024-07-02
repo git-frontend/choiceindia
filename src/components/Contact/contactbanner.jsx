@@ -99,7 +99,7 @@ function Contactbanner() {
     if (trigger == true) {
       loadDepartmentList()
       if(active.current =='NBFC'){
-        departmentlist={0:"5",1:"NBFC",2:"customercare.finserv@choiceindia.com",3:"1800-203-5193 ( Toll No. )",4:"Choice Finserv Pvt Ltd, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099",5:"Between 9:30 AM to 6:30 PM Monday to Saturday",6:"Mr. Arun Rathor (Grievances Redressal Officer), 1 St Floor, Plot No. 25, Sunder Nagar, Girdhar Marg Malviya Nagar, Jaipur – 302017, Grievances@choiceindia.com, 1800 203 5193."}
+        departmentlist={0:"5",1:"NBFC",2:"customercare.finserv@choiceindia.com",3:"1800-203-5193 ( Toll No. )",4:"Choice Finserv Pvt Ltd,<br /> Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099",5:"Between 9:30 AM to 6:30 PM Monday to Saturday",6:"Mr. Arun Rathor (Grievances Redressal Officer), 1 St Floor, Plot No. 25, Sunder Nagar, Girdhar Marg Malviya Nagar, Jaipur – 302017, Grievances@choiceindia.com, 1800 203 5193."}
          loadSubDepartmentList('5');
          setdept(departmentlist);
        
@@ -265,7 +265,7 @@ function Contactbanner() {
                         
                         <div className="form-data">
                           <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
-                          <div className="form-data-right"><p className="form-right-text" >{(dept || [])[4] || 'Choice Finserv Pvt Ltd, Sunil Patodia Tower,J.B. Nagar, Andheri (East),Mumbai 400099'}</p> </div>
+                          <div className="form-data-right"><p className="form-right-text" >{(dept || [])[4] || 'Choice Finserv Pvt Ltd,<br /> Sunil Patodia Tower,J.B. Nagar, Andheri (East),Mumbai 400099'}</p> </div>
                         </div>
                       </div>
                      :
@@ -287,7 +287,7 @@ function Contactbanner() {
                       
                       <div className="form-data">
                         <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
-                        <div className="form-data-right"><p className="form-right-text" >Choice Finserv Pvt Ltd, Sunil Patodia Tower,
+                        <div className="form-data-right"><p className="form-right-text" >Choice Finserv Pvt Ltd,<br /> Sunil Patodia Tower,
                           J.B. Nagar, Andheri (East),
                           Mumbai 400099</p> </div>
                       </div>
