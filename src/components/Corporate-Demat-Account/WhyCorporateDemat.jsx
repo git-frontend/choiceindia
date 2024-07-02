@@ -6,6 +6,7 @@ import shieldcheck from '../../assets/images/Corporate-Demat-Account/corporate-d
 import transaction from '../../assets/images/Corporate-Demat-Account/corporate-demat-account-with-effortless-transactions.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
+import utils from "../../Services/utils";
 
 function WhyCorporateDemat() {
 
@@ -182,7 +183,15 @@ function WhyCorporateDemat() {
             </div>
 
             <div className="col-md-12 d-flex justify-content-center">
-              <a href="javascript:void(0)" className="btn-bg btn-new corporate-btn" onClick={() => scrollToId('dematformsticky')}>Get Started</a>
+              <a href="javascript:void(0)" className="btn-bg btn-new corporate-btn" onClick={() => {scrollToId('dematformsticky'); 
+                 utils.pushDataLayerEvent({
+                              'event': 'get_started_btn',
+                              'page_path': window.location.pathname,
+                              'page_url': window.location.href,
+                              'lead_source': 'choiceindia',
+                              'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                          })
+              }}>Get Started</a>
             </div>
           </div>
         </div>

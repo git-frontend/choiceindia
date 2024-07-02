@@ -79,9 +79,9 @@ function BrokerageCharges() {
         <BrokerageTabs />
         <BrokerageCosts />
         <Applicablecharges />
-        <NewFormSection sections={sections}  />
+        <NewFormSection sections={sections} dataLayerValues={'offer_section_1_lead_initiated'}  />
         <BrokerageFaq />
-        <NewFormSection sections={data2}  />
+        <NewFormSection sections={data2} dataLayerValues={'offer_section_2_lead_initiated'}  />
         <BrokeragSegments />
       </div>
       </GoogleReCaptchaProvider>
