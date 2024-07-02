@@ -64,25 +64,10 @@ function ResearchCalls() {
         if (res) {
           storefile = res.response.research;
 
-          res.response.research.forEach(ele => {
-
-            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-            ele['LTP'] = ele['LTP'] / 100;
-          });
-
-
+          tokens=utils.expertReportDataProcessing(storefile,tokenList);
+      
           setlist(res.response.research);
-          let unique = []
-          for (let i = 0; i < tokenList.length; i++) {
-            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-          }
-          unique.forEach(element => {
-            if (!tokens.includes(element)) {
-              tokens += element
-            }
-          });
-          // console.log("SegmentId",tokens);
-          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+
           const payload = {
             'UserId': 'guest',
             'SessionId': Data1,
@@ -93,22 +78,7 @@ function ResearchCalls() {
             res => {
               if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
 
-                res.Response.lMT.forEach((ele, index) => {
-                  // console.log("ele", ele)
-                  ele['LTP'] = ele['LTP'] / 100;
-                  ele.PrevClose = ele.PC / 100;
-                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-                  for (let i = 0; i < storefile.length; i++) {
-
-                    if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
-                      AllFilesValue = Object.assign(storefile[i], ele);
-                      multiValue.push(AllFilesValue)
-                      setShowLoader(false)
-                    } 
-                  }
-                })
+                multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
 
                 setlist(multiValue);
 
