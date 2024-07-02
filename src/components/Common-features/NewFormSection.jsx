@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import "../Common-features/common-demat-suppotive.scss";
-const NewFormSection = ({ sections  }) => {
+const NewFormSection = ({sections,dataLayerValues}) => {
     return (
 
         <>
@@ -51,7 +51,7 @@ const NewFormSection = ({ sections  }) => {
                                 
                                         <div id="dematformsticky">
                                         {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" > */}
-                                            <OpenDemateAccountStickyFooter />
+                                            <OpenDemateAccountStickyFooter dataLayerValues={dataLayerValues || ""}/>
                                             {/* </GoogleReCaptchaProvider> */}
                                         </div>
                                   

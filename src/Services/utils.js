@@ -178,7 +178,10 @@ const utils ={
         let config = { keySize: 128, iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 };
         let encPassword = CryptoJS.AES.encrypt(plainText, key, config);
         return encPassword.ciphertext.toString(CryptoJS.enc.Base64);
-      }
+      },
+    isMobileDevice() {
+        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    }
 
 }
 

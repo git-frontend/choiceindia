@@ -37,12 +37,97 @@ const tokenheader={
 
 const openAccountService = {
   //common sentOTP function for demat account
-  sentOTPService:function(request,captchaToken,hideLoader,setLeadId ,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster){
+  sentOTPService:function(request,captchaToken,hideLoader,setLeadId ,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster,dataLayerValues,isActive,isPopupOpen){
     this.sendOTP(request,captchaToken).then((res) => {
       hideLoader('sendOTPLoader');
       if (res && res.StatusCode === 200 ) {
           setLeadId(res.Body.leadid);
-          utils.pushDataLayerEvent({
+        const locationURL = window.location.pathname; 
+
+        if(locationURL.includes('ipo')){
+          if(utils.isMobileDevice() && !isActive){
+            utils.pushDataLayerEvent({
+              'event': 'sticky_lead_initiated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': 'mobileweb'
+            })
+          }
+
+          if(utils.isMobileDevice() && isActive){
+            utils.pushDataLayerEvent({
+              'event': 'popup_lead_initiated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': 'mobileweb'
+            })
+          }
+        }else if(locationURL.includes('blog')){
+          if(!isPopupOpen){
+            utils.pushDataLayerEvent({
+              'event': 'blog_lead_initiated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+            })
+          }
+          if(isPopupOpen){
+            utils.pushDataLayerEvent({
+              'event': 'popup_lead_initiated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+            })
+          }
+          if(!isPopupOpen && isActive){
+            utils.pushDataLayerEvent({
+              'event': 'sticky_lead_initiated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+            })
+          }
+        }else{
+          switch (locationURL) {
+
+            case '/brokerage-charges' : 
+            if(utils.isMobileDevice && dataLayerValues){
+              utils.pushDataLayerEvent({
+                'event': dataLayerValues || 'offer_section_lead_initiated',
+                'page_path': window.location.pathname,
+                'page_url': window.location.href,
+                'platform': 'mobileweb'
+              })
+            }else if(utils.isMobileDevice && !dataLayerValues){
+              utils.pushDataLayerEvent({
+                'event': 'sticky_lead_initiated',
+                'page_path': window.location.pathname,
+                'page_url': window.location.href,
+                'platform': 'mobileweb'
+              })
+            }
+            break;
+            
+            case '/mutual-funds-investment' : 
+            utils.pushDataLayerEvent({
+              'event': 'mf_lead_initiated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+            })
+            break;
+  
+            case '/corporate-demat-account' : 
+            utils.pushDataLayerEvent({
+              'event': 'corporate_offer_lead_initiated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+            })
+            break;
+  
+            default: 
+            utils.pushDataLayerEvent({
               'event': 'ci_onboard_lead_initiated',
               'page_path': window.location.pathname,
               'page_url': window.location.href,
@@ -50,7 +135,10 @@ const openAccountService = {
               'userId': utils.generateSHA256Hash(request.mobile_number.toString()),
               'leadId': res.Body.leadid,
               'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-          })
+            })
+            break;
+          }
+        }
           setOTPSessionID((type1 == 'MF') ? res.Body.session_id : res.Body.otp_session_id)
           // setForm('sent-otp')
           // setformdata()
@@ -84,16 +172,34 @@ const openAccountService = {
       if (res && res.data.StatusCode === 200 && res.data.Body) {
           let verifyResponse = res.data.Body;
           // console.log("verifyResponse", verifyResponse);
-          utils.pushDataLayerEvent({
-            'event': 'ci_onboard_lead_generated',
-            'page_path': window.location.pathname,
-            'page_url': window.location.href,
-            'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-            'leadId': res.data.Body.leadid,
-            'lead_source':'choiceindia',
-            'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-            'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-        })
+
+          switch(window.location.pathname){
+            case '/mutual-funds-investment' : 
+              utils.pushDataLayerEvent({
+                'event': 'mf_lead_generated',
+                'page_path': window.location.pathname,
+                'page_url': window.location.href,
+                'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+                'leadId': res.data.Body.leadid,
+                'lead_source': 'choiceindia',
+                'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+              })
+            break;
+
+            default :
+              utils.pushDataLayerEvent({
+                'event': 'ci_onboard_lead_generated',
+                'page_path': window.location.pathname,
+                'page_url': window.location.href,
+                'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+                'leadId': res.data.Body.leadid,
+                'lead_source': 'choiceindia',
+                'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+              })
+              break; 
+          }
 
           if (verifyResponse.is_onboard_flag === "C") {
               onClose("https://finx.choiceindia.com/auth/login",verifyResponse.message);
