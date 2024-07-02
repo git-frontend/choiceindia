@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect,useRef } from "react";
 import Bannerimage from '../../assets/images/contact/contact-us-new.webp';
 import dotsimage from '../../assets/images/contact/dots.webp';
@@ -100,7 +99,7 @@ function Contactbanner() {
     if (trigger == true) {
       loadDepartmentList()
       if(active.current =='NBFC'){
-        departmentlist={0:"5",1:"NBFC",2:"choicefinserv@choiceindia.com ( For Queries ),  customercare.finserv@choiceindia.com ( For Feedback )",3:"1800-203-5193 ( Toll No. )",4:"Choice International Limited, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099",5:"Between 9:30 AM to 6:30 PM Monday to Saturday"}
+        departmentlist={0:"5",1:"NBFC",2:"customercare.finserv@choiceindia.com",3:"1800-203-5193 ( Toll No. )",4:"Choice Finserv Pvt Ltd, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099",5:"Between 9:30 AM to 6:30 PM Monday to Saturday",6:"Mr. Arun Rathor (Grievances Redressal Officer), 1 St Floor, Plot No. 25, Sunder Nagar, Girdhar Marg Malviya Nagar, Jaipur – 302017, Grievances@choiceindia.com, 1800 203 5193."}
          loadSubDepartmentList('5');
          setdept(departmentlist);
        
@@ -255,9 +254,18 @@ function Contactbanner() {
                           <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "} width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
                           <div className="form-data-right"><p className="form-right-text">{(dept || [])[2] || 'care@choiceindia.com'}</p></div>
                         </div>
+                        {
+                          (dept || [])[1] == "NBFC" ?
+                          <div className="form-data">
+                          <div className="form-data-left"><LazyLoader src={""} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Officer </span></div>
+                          <div className="form-data-right"><p className="form-right-text" >{(dept || [])[6] || 'Mr. Arun Rathor (Grievances Redressal Officer), 1 St Floor, Plot No. 25, Sunder Nagar, Girdhar Marg Malviya Nagar, Jaipur – 302017, Grievances@choiceindia.com, 1800 203 5193.'}</p> </div>
+                        </div>:""
+
+                        }
+                        
                         <div className="form-data">
                           <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
-                          <div className="form-data-right"><p className="form-right-text" >{(dept || [])[4] || 'Choice International Limited, Sunil Patodia Tower,J.B. Nagar, Andheri (East),Mumbai 400099'}</p> </div>
+                          <div className="form-data-right"><p className="form-right-text" >{(dept || [])[4] || 'Choice Finserv Pvt Ltd, Sunil Patodia Tower,J.B. Nagar, Andheri (East),Mumbai 400099'}</p> </div>
                         </div>
                       </div>
                      :
@@ -276,9 +284,10 @@ function Contactbanner() {
                         <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "} width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
                         <div className="form-data-right"><p className="form-right-text">care@choiceindia.com</p></div>
                       </div>
+                      
                       <div className="form-data">
                         <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
-                        <div className="form-data-right"><p className="form-right-text" >Choice International Limited, Sunil Patodia Tower,
+                        <div className="form-data-right"><p className="form-right-text" >Choice Finserv Pvt Ltd, Sunil Patodia Tower,
                           J.B. Nagar, Andheri (East),
                           Mumbai 400099</p> </div>
                       </div>
@@ -383,13 +392,22 @@ function Contactbanner() {
                               <th>Level 2 - Grievance & Redressal Officer</th>
                             </tr>
                             <tr>
-                              <td className="pb-5">If you are not satisfied with the resolution provided to you, you may please reach to Customer Grievances Redressal Officer on <a href="mailto:Grievances@choiceindia.com" target="_blank" className="mail-a">Grievances@choiceindia.com</a></td>
+                              <td className="pb-5">If you are not satisfied with the resolution provided to you,<br/>
+                               you may please reach to:<br/>Grievances Redressal Officer: Mr. Arun Rathor<br/>
+                              Address: Choice Finserv Private Limited, 1 St Floor, Plot No. 25, Sunder Nagar, Girdhar Marg Malviya Nagar, Jaipur – 302017.<br/>
+                              Email: <a href="mailto:Grievances@choiceindia.com" target="_blank" className="mail-a">Grievances@choiceindia.com</a><br/>
+                              Phone: <strong>1800 203 5193</strong>
+                              </td>
                             </tr>
                             <tr>
                               <th>Level 3 - Customer Principal Nodal Officer</th>
                             </tr>
                             <tr>
-                              <td className="pb-5">If you are still not satisfied with the resolution provided by the Officials on above mentioned Levels, we request you to kindly reach to our Principal Nodal Officer on <a href="mailto:principalnodalofficer@choiceindia.com" target="_blank" className="mail-a">principalnodalofficer@choiceindia.com</a></td>
+                              <td className="pb-5">If you are still not satisfied with the resolution provided by the Officials on above mentioned Levels, we request you to kindly reach to our:<br />
+                              Principal Nodal Officer: Mr. Vijendra Singh Shekhawat <br />
+                              Email: <a href="mailto:pno@choiceindia.com" target="_blank" className="mail-a">pno@choiceindia.com</a><br />
+                              Phone: <strong>1800 203 5193</strong>
+                              </td>
                             </tr>
                             <tr>
                               <th>Level 4 - Centralised Receipt and Processing Centre </th>
