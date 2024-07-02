@@ -58,7 +58,7 @@ function OurTrackRecordSaysAll() {
 
 
   //for F and O
-  function FandOstocks() {
+  function FandOstocks(Data1) {
     setToggleState(2)
    
     setlist([]);
@@ -86,7 +86,7 @@ function OurTrackRecordSaysAll() {
     
   }
   //New 
-  function IntradayNew() {
+  function IntradayNew(Data1) {
     setToggleState(1)
     setlist([]);
     
@@ -115,9 +115,27 @@ function OurTrackRecordSaysAll() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      FandOstocks()
+      generateSessionId(FandOstocks);
     }
   }, [rendercount])
+
+
+
+  function generateSessionId(func){
+    rest.generateSession()
+    .then((res)=>{
+       if(res.Status == "Success"){
+          setData1(res.Response);
+          func(res.Response);
+       }
+       else{
+          func([]);
+       }
+    })
+    .catch((err)=>{
+        func([]);
+    });
+  }
 
 
 
@@ -161,10 +179,12 @@ function OurTrackRecordSaysAll() {
                 <ul className="list-group list_group1">
                   <li className={toggleState === 1 ? "list-group-item list listsec" : "list-group-item list"}
                     onClick={()=>{
-                    rest.generateSession(IntradayNew,setData1);
+                    generateSessionId(IntradayNew);
                     }}> Intraday</li>
                   <li className={toggleState === 2 ? "list-group-item list listsec" : "list-group-item list"}
-                    onClick={FandOstocks}>F&O </li>
+                    onClick={()=>{
+                    FandOstocks(Data1)
+                    }}>F&O </li>
                 </ul>
               </div>
             </div>

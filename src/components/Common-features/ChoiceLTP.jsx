@@ -16,7 +16,7 @@ function ChoiceLTP() {
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
-      rest.generateSessionId(getKeyInfo);
+      generateSessionId();
     }
     return () => {
       unsubscribeFromStream({})
@@ -33,6 +33,15 @@ function ChoiceLTP() {
   /**
  * Generate Session Id
  */
+ function generateSessionId(){
+    rest.generateSession()
+    .then(res => {
+      if (res.Status == 'Success') {
+        getKeyInfo(res.Response, [{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }])//{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }
+      }
+    })
+ }
+
   function getKeyInfo(session, scrips) {
     scrips.forEach(ele => {
       let keyInfoPayload = { "UserId": 'guest', "SessionId": session || '', "Token": ele.Token, "SegmentId": ele.SegmentId };

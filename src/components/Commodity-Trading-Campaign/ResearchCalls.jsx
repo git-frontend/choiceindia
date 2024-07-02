@@ -32,7 +32,7 @@ function ResearchCalls() {
       behavior: "smooth"
     });
   }
-  function FandOstocks() {
+  function FandOstocks(Data1) {
     
     setlist([]);
     tokens = '';
@@ -67,7 +67,7 @@ function ResearchCalls() {
     setTrigger(true)
 
     if (trigger === true) {
-      FandOstocks();
+      generateSessionId(FandOstocks);
     }
     if (/Android|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
 
@@ -85,12 +85,28 @@ function ResearchCalls() {
 
     }
   }, [trigger])
+
+  function generateSessionId(func){
+    rest.generateSession()
+    .then((res)=>{
+       if(res.Status == "Success"){
+          setData1(res.Response);
+          func(res.Response);
+       }
+       else{
+          func([]);
+       }
+    })
+    .catch((err)=>{
+        func([]);
+    });
+  }
   const settings = {
     infinite: true,
     speed: 1500,
     slidesToShow: 2,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     dots: false,
     autoplaySpeed: 3000,
     slidesToScroll: 1,
@@ -101,6 +117,7 @@ function ResearchCalls() {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
+          autoplay:true,
           dots: false,
           slidesToScroll: 1,
         }
@@ -110,6 +127,7 @@ function ResearchCalls() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          autoplay:true,
           dots: true,
         }
       }
@@ -129,8 +147,7 @@ function ResearchCalls() {
         <div className="container">
           <h2 className="title-first research-title">Our Recent Research Calls</h2>
           <div className="col-md-12">
-            {
-              view && !view.matches ?
+           
                 <div>
                   {
                     list && list.length ?
@@ -139,7 +156,7 @@ function ResearchCalls() {
                           (list || []).slice(0, 2).map((response, index) => {
                             return (
                               
-                              <div className="calls-tab-item col-xl-6" key={index}>
+                              <div className="calls-tab-item col-xl-6" key={response.id}>
                                     <div className="main-left">
                                       <div className="top-section">
                                         <div className="top-left">
@@ -185,75 +202,8 @@ function ResearchCalls() {
                       : <div className="text-center">
                         <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                       </div>}
-                </div> :
-                <div>
-                  {showLoader ?
-                    <div className="text-center">
-                      <div>
-                        <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
-                      </div>
-                    </div>
-                    :
-                    <div>
-                      {
-                        list && list.length ?
-                          <div className="row gx-5">
-                            {
-                              (list || []).slice(0, 2).map((response, index) => {
-                                return (
-                                  <div className="calls-tab-item col-xl-6" key={index}>
-                                    <div className="main-left">
-                                      <div className="top-section">
-                                        <div className="top-left">
-                                          <h6 className="top-text">Reco Date</h6>
-                                          <h6 className="top-date">{response?.updated_datetime}</h6>
-                                        </div>
-                                        <div className="top-right"><button onClick={()=>{chapterScroll3('dematform')}} className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > {response?.call_type}</button></div>
-                                      </div>
-                                      <div className="middle-section">
-                                        <div className="middle-left">
-                                          <h4 className="big-text">{(response?.scrip_name).replace("|", " ")}</h4>
-                                          <span className="small-text">{response?.scrip_sec_desc}</span>
-                                        </div>
-                                        <div className="middle-right">
-                                          <span className="right-big-text">{response?.LTP?(parseFloat(response.LTP).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ","):0.00.toFixed(2)}</span>
-                                          <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>
-                                          {`${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response.Change || 0).toFixed(2)} (${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response?.ChangePer || 0).toFixed(2)}%)`}</h6>
-                                        </div>
-                                      </div>
-
-                                      <div className="bottom-section">
-                                        <div className="d-flex justify-content-between pt-3">
-                                          <div className="bottom fandores">
-                                            <h6 className="bottom_small_text">Stop Loss</h6>
-                                            <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                          </div>
-                                          <div className="bottom fandores">
-                                            <h6 className="bottom_small_text">Entry Price</h6>
-                                            <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints || [])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                          </div>
-                                          <div className="bottom fandores">
-                                            <h6 className="bottom_small_text">Target Price</h6>
-                                            <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                )
-                              })
-                            }
-                          </div>
-                          :
-                          <div className="text-center">
-                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                          </div>
-                      }
-                    </div>
-
-                  }
-                </div>
-            }
+                </div> 
+                
           </div>
         </div>
       </section>
