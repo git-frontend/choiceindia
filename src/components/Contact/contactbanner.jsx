@@ -5,6 +5,7 @@ import phoneicon from '../../assets/images/contact/phone-icon.svg';
 import openicon from '../../assets/images/contact/open-icon.svg';
 import emailicon from '../../assets/images/contact/email-icon.svg';
 import officeicon from '../../assets/images/contact/office-icon.svg';
+import officericon from '../../assets/images/contact/officer-icon.svg';
 import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -257,7 +258,7 @@ function Contactbanner() {
                         {
                           (dept || [])[1] == "NBFC" ?
                           <div className="form-data">
-                          <div className="form-data-left"><LazyLoader src={""} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Officer </span></div>
+                          <div className="form-data-left"><LazyLoader src={officericon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Officer </span></div>
                           <div className="form-data-right"><p className="form-right-text" >{(dept || [])[6] || 'Mr. Arun Rathor (Grievances Redressal Officer), 1 St Floor, Plot No. 25, Sunder Nagar, Girdhar Marg Malviya Nagar, Jaipur – 302017, Grievances@choiceindia.com, 1800 203 5193.'}</p> </div>
                         </div>:""
 
