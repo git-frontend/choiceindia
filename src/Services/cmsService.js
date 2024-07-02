@@ -68,47 +68,7 @@ insightService: function () {
 })
 },
 
-/** Created a common function for CMS API */
-cmsAPIcall:function(value,setisloading,setData){
-value().then((res)=>{
-if(res){
-    setisloading(false);
-    setData(res.data.data);
-}
-else{
-    setisloading(false)
-    setData([]);
-}
-}).catch((err)=>{
-   setisloading(false);
-   setData([]);
-});
-},
-
-/** Created CMS common function for seperating data based on category */
-loadCmsData:function(func,setisloading,setDatalist,category){
-const AllFilesValue = {};
-func()
-  .then((res) => {
-    if (res) {
-      let values = res.data.data;
-      values.forEach((element) => {
-        if (!AllFilesValue[element[category]]) {
-          AllFilesValue[element[category]] = [];
-        }
-        AllFilesValue[element[category]].push(element);
-      });
-      setDatalist(AllFilesValue);
-    } else {
-        setDatalist([]);
-    }
-    setisloading(false);
-  })
-  .catch((err) => {
-    setisloading(false);
-    setDatalist([]);
-  });
-},   
+  
 /** for CEBPL Polices page */
 CebplPolicy: function () {
 

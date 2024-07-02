@@ -15,13 +15,13 @@ function InvestorCharterMain() {
     let values;
     let AllFilesValue = {};
 
-    useEffect(() => {
-        setTrigger(true)
-        if (trigger === true) {        
-            cmsService.loadCmsData(cmsService.InvestorCharter,setisloading,setDatalist,"heading");
-        }
+    // useEffect(() => {
+    //     setTrigger(true)
+    //     if (trigger === true) {        
+    //         cmsService.loadCmsData(cmsService.InvestorCharter,setisloading,setDatalist,"heading");
+    //     }
 
-    }, [trigger])
+    // }, [trigger])
 
 
     return (

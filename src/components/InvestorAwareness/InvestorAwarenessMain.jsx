@@ -14,14 +14,40 @@ function InvestorAwarenessMain() {
 
 
 
+    function loadinvestorAware() {
+        cmsService.InvestorAware().then(
+            res => {
+                if (res) {
+                    setisloading(false)
+                    setData(res.data.data);
+
+
+                } else {
+                    setisloading(false)
+                    setData([]);
+
+                }
+
+            }
+        ).catch((error) => {
+            setisloading(false)
+            setData([]);
+        });
+    }
+
+
+
+
     useEffect(() => {
         setTrigger(true)
 
         if (trigger === true) {
-            cmsService.cmsAPIcall(cmsService.InvestorAware,setisloading,setData);
+            loadinvestorAware()
+
         }
 
     }, [trigger])
+
 
 
 
