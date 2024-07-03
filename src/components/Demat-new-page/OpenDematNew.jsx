@@ -33,8 +33,10 @@ import { InView } from 'react-intersection-observer';
 import "./new-demat-page.scss";
 import NewDematAccountForm from '../Common-features/NewDematAccountForm';
 import { useRef } from "react";
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { faTwitter,faLinkedinIn,faFacebookF,faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 
 function OpenDematNew() {
     const [VideoVisibility, setVideoVisibility] = useState(false);
@@ -146,6 +148,42 @@ function OpenDematNew() {
             <section className="demat-cms-description">
                 <div className="container">
                     <div className="wrap-main">
+                    <div className="lft-navigation">
+                            <div className="">
+                                <h3>Table of Contents</h3>
+                                <div className="arrow-sh" onClick={handleClick2}>
+                                    <span className={isActive2 ? 'ar-up' : 'ar-down'}>
+                                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 7L7 1L1 7" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div className={isActive2 ? 'list-hide' : 'list-show'} >
+                                    <ul className="list-links" id="style-sroll">
+                                        <li><a className={isActive4=='id0' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id0') }}>What is a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id1' ? " active": " " } onClick={()=>{ scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id1'); }}>What is Dematerialization?</a></li>
+                                        <li><a className={isActive4=='id2' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id2')}}>Features and Benefits of Demat Account</a></li>
+                                        <li><a className={isActive4=='id3' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id3')}}>Types of Demat Accounts in India</a></li>
+                                        <li><a className={isActive4=='id4' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id4')}}>How Does a Demat Account Work?</a></li>
+                                        <li><a className={isActive4=='id5' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id5')}}>Documents Required for Demat Account Opening</a></li>
+                                        <li><a className={isActive4=='id6' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id6')}}>Demat Account Charges</a></li>
+                                        <li><a className={isActive4=='id7' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id7')}}>How to Open a Demat Account?</a></li>
+                                        <li><a className={isActive4=='id8' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id8')}}>Demat Account - Frequently Asked Questions</a></li>
+                                        <li><a className={isActive4=='id9' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id9')}}>Demat Glossary</a></li>
+                                    </ul>
+                                </div>
+                               
+
+                                <h3 className="mrgn-top">Share this article</h3>
+                                <ul className="socials">
+                                    <li><a href="#" target="_blank"><FontAwesomeIcon icon={faWhatsapp} /></a></li>
+                                    <li><a href="#" target="_blank"><FontAwesomeIcon icon={faFacebookF} /></a></li>
+                                    <li><a href="#" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} /></a></li>
+                                    <li><a href="#" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div className="sub-description">
                             <div className="pr-sec">
                                 <p>Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.<br /><br />
@@ -157,6 +195,9 @@ function OpenDematNew() {
                                 <br /><br />
                                 You can assume it as a bank account but here instead of cash, your demat account holds your shares and other securities safely and you can effortlessly add or withdraw your assets as per your need.
                                </p>
+                            </InView>
+
+                            <InView as="div" className="pr-sec" onChange={(e) => { initialize && !scrollConfig.current.isTriggered && e === true && setIsActive4('id1') }} id="id1">
                                 <h3>What is Dematerialization?</h3>
                                 <p>In today's digital age, you can <a href="/open-free-demat-account">open a Demat account</a> within minutes. This was not the case earlier where shares were traded in the form of physical paper certificates. This process had many limitations and hence the process of dematerialization was introduced.
                                 <br/><br/>
@@ -187,7 +228,7 @@ function OpenDematNew() {
                                 </a>
                             </InView>
                            
-                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id5')} id="id5">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id2')} id="id2">
                                 <h2>Features and Benefits of Demat Account</h2>
                                 <p>Demat accounts come packed with features and benefits to simplify your investment journey. Here are some of the key highlights:</p>
                                 <ol className="drk-bld">
@@ -244,7 +285,7 @@ function OpenDematNew() {
                                 
                             </InView>
 
-                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id2')} id="id2">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id3')} id="id3">
                                 <h2>Types of Demat Accounts in India</h2>
                                 <p>In India, there are several <a href="/blog/demat-account-types/">types of Demat accounts</a> to cater to various investor profiles. Here is a quick look:</p>
                                 <ol className="drk-bld">
@@ -270,7 +311,7 @@ function OpenDematNew() {
                                 </ol>
 
                             </InView>
-                            <InView as="div" className="pr-sec" onChange={(e) => { initialize && !scrollConfig.current.isTriggered && e === true && setIsActive4('id1') }} id="id1">
+                            <InView as="div" className="pr-sec" onChange={(e) => { initialize && !scrollConfig.current.isTriggered && e === true && setIsActive4('id4') }} id="id4">
                                 <h2><a href="/blog/how-demat-account-works/">How Does a Demat Account Work?</a></h2>
                                 <p>A Demat account functions as the digital vault for your securities. It allows you to buy, hold, and sell shares with ease, regardless of your location. However, it doesn't operate in isolation. Here's how it collaborates with other elements to offer seamless transactions:</p>
                                 <p><strong>Account opening -</strong>  Stock brokers help you open a Demat account and in return they charge some fees in order to maintain the same. <br /><br />
@@ -306,7 +347,7 @@ function OpenDematNew() {
                                     Remember, without a trading account, you cannot utilize your Demat account for investments. A trading account handles the monetary transactions associated with buying and selling shares.
                                 </p>
                             </InView>
-                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id7')} id="id7">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id5')} id="id5">
                                 <h2><a href="/blog/documents-required-for-demat-account-opening/">Documents Required for Demat Account Opening</a></h2>
                                 <p>Proper documentation is crucial when opening a Demat account. Here's a list of the essential documents:</p>
                                 <ol className="none-para drk-bld">
@@ -335,7 +376,7 @@ function OpenDematNew() {
                                 <p>Ensure that all documents are self-attested copies, and keep the original documents handy for verification purposes during the <a href="/blog/demat-account-opening-process/">demat account opening process</a>.</p>
                                 <span className="bl-box">For certain segments, such as derivatives, income proofs may be necessary.</span>
                             </InView>
-                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id8')} id="id8">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id6')} id="id6">
                                 <h2><a href="/blog/demat-account-charges/">Demat Account Charges</a></h2>
                                 <p>Opening a Demat account is often free or even if it's charged, it usually requires a nominal fee. Other than the opening fees, there are various fees and charges associated with maintaining and using it. Some common Demat account charges include</p>
                                 <ol className="">
@@ -375,7 +416,7 @@ function OpenDematNew() {
                                 </ol>
                                 <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat account</a>, making it cost-effective for investors.</p>
                             </InView>
-                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id6')} id="id6">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id7')} id="id7">
                                 <h2><a href="/blog/how-to-open-demat-account/">How to Open a Demat Account?</a></h2>
                                 <p>Opening a Demat Account has been a lot easier today, thanks to digitalization. You have two primary options: online and offline account opening.</p>
                                 <h3><a href="/blog/demat-account-opening-online/">Online Demat Account Opening</a></h3>
@@ -422,7 +463,7 @@ function OpenDematNew() {
                                 <span className="bl-box">Choice completes the verification process in under 4 hours. Our team will assist you if you encounter any issues during the Demat account opening process.</span>
                             </InView>
 
-                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id17')} id="id17">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id8')} id="id8">
                                 <h2>Demat Account - Frequently Asked Questions</h2>
                                 <p>Got questions? Explore our FAQs for answers to common questions and concerns related to Demat account. If you need further assistance or personalized guidance, feel free to contact us.</p>
                                 <ul>
@@ -450,7 +491,7 @@ function OpenDematNew() {
                                 </ul>
                             </InView>
                        
-                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id19')} id="id19">
+                            <InView as="div" className="pr-sec" onChange={(e) => !scrollConfig.current.isTriggered && e === true && setIsActive4('id9')} id="id9">
                                 <h2>Demat Glossary</h2>
                                 <p>A glossary of key terms and phrases related to Demat accounts to help you better understand the world of electronic securities and investments:</p>
                                 <ol className="none-para">
