@@ -521,7 +521,16 @@ function Banner() {
                     <div className='left-sec'>
                       <h2 className='title-first'><span className='yello-txt'>Don’t Miss</span> the Investment <span className='yello-txt'>Opportunity</span> in {res.banner_title}?</h2>
                       <div className='btn-open'>
-                        <button className="btn-bg btn-bg-dark" onClick={() => window.open(res.open_free_account_link || '')}>Open Free Account</button>
+                        <button className="btn-bg btn-bg-dark" onClick={() => {
+                          utils.pushDataLayerEvent({
+                            'event': 'open_free_account_btn',
+                            'page_path': window.location.pathname,
+                            'page_url': window.location.href,
+                            'lead_source': 'choiceindia',
+                            'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                          })
+                          window.open(res.open_free_account_link || '')
+                        }}>Open Free Account</button>
                       </div>
                     </div>
                   </div>

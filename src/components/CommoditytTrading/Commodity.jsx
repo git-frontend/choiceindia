@@ -1,15 +1,17 @@
-// import "./Commodity.scss";
+import "./Commodity.scss";
 import "../OpenDematAccount/DematPage";
-import CommodityBanner from "./CommodityBanner";
-import WhyOpenFreeCommodity from "./WhyOpenFreeCommodity";
-import CommodityOpeningProcess from "./CommodityOpeningProcess";
-import LowBrokerageCommodity from "./LowBrokerageCommodity";
-import WhyChoiceCommodity from "./WhyChoiceCommodity";
 import CommodityFaq from "./CommodityFaq";
-import MoreContent from "./MoreContent";
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
 import { useState,useEffect} from "react";
+import TradingBanner from "../Trading-Pages/TradingBanner";
+import CommodityTradingData from "./CommodityTradingData";
+import WhyOpenTradingAccount from "../Trading-Pages/WhyOpenTradingAccount";
+import WhyChoiceCommon from "../Trading-Pages/WhyChoiceCommon";
+import OpenLowBrokerageAccount from "../Trading-Pages/OpenLowBrokerageAccount";
+import AccountOpeningProcess from "../Trading-Pages/AccountOpeningProcess";
+import MoreContentCommon from "../Trading-Pages/MoreContentCommon";
+import CommonFaq from "../Trading-Pages/CommonFaq";
 
 function Commodity() {
   const [rendercount, setRenderCount] = useState(() => false);
@@ -37,17 +39,14 @@ function Commodity() {
   }, [rendercount])
   return (
   
-    
-     
           <div className="demat-page-parent">
-            <CommodityBanner />
-            <WhyOpenFreeCommodity />
-            <WhyChoiceCommodity />
-            <LowBrokerageCommodity />
-            <CommodityOpeningProcess />
-            <CommodityFaq />
-            <MoreContent />
-           
+            <TradingBanner data={CommodityTradingData.BannerData}/>
+            <WhyOpenTradingAccount data={CommodityTradingData.WhyOpenCommodityTAccount}/>
+            <WhyChoiceCommon  data={CommodityTradingData.WhyChoiceCommon}/>
+            <OpenLowBrokerageAccount data={CommodityTradingData.OpenLowBrokerageAccount}/>
+            <AccountOpeningProcess data={CommodityTradingData.AccountOpeningProcess}/>
+            <CommonFaq data={CommodityTradingData.CommonFaq}/>
+            <MoreContentCommon data={CommodityTradingData.MoreContentCommon}/>
           </div>
     
   );
