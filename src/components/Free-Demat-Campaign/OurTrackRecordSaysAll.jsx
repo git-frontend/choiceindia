@@ -11,7 +11,7 @@ function OurTrackRecordSaysAll() {
 
   const [toggleState, setToggleState] = useState(1);
   const [showLoader, setShowLoader] = useState(false);
-  const [Data1, setData1] = useState();
+  const [session, setSession] = useState();
   const [checkdevice, setcheckdevice] = useState();
   const [rendercount, setRenderCount] = useState(() => false);
   const [data, setData] = useState(0);
@@ -58,9 +58,9 @@ function OurTrackRecordSaysAll() {
 
 
   //for F and O
-  function FandOstocks(Data1) {
+  function FandOstocks(sessionId) {
     setToggleState(2)
-    if(!Data1){
+    if(!sessionId){
     return;
     }
     setlist([]);
@@ -97,7 +97,7 @@ function OurTrackRecordSaysAll() {
     
           const payload = {
             'UserId': 'guest',
-            'SessionId': Data1,
+            'SessionId': sessionId,
             'MultipleTokens': tokens
           }
 
@@ -128,7 +128,7 @@ function OurTrackRecordSaysAll() {
     
   }
   //New 
-  function IntradayNew(Data1) {
+  function IntradayNew(sessionId) {
     setToggleState(1)
     setlist([]);
     
@@ -164,7 +164,7 @@ function OurTrackRecordSaysAll() {
 
           const payload = {
             'UserId': 'guest',
-            'SessionId':Data1,
+            'SessionId':sessionId,
             'MultipleTokens': tokens
           }
 
@@ -206,7 +206,7 @@ function OurTrackRecordSaysAll() {
     rest.generateSession()
     .then((res)=>{
        if(res.Status == "Success"){
-          setData1(res.Response);
+          setSession(res.Response);
           func(res.Response);
        }
        else{
@@ -264,7 +264,7 @@ function OurTrackRecordSaysAll() {
                     }}> Intraday</li>
                   <li className={toggleState === 2 ? "list-group-item list listsec" : "list-group-item list"}
                     onClick={()=>{
-                    FandOstocks(Data1)
+                    FandOstocks(session)
                     }}>F&O </li>
                 </ul>
               </div>

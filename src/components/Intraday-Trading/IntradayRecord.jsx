@@ -8,7 +8,7 @@ import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
 function IntradayRecord() {
     const [list, setlist] = useState();
-    const [Data1, setData1] = useState();
+    const [session, setSession] = useState();
     const [showLoader, setShowLoader] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
 
@@ -40,7 +40,7 @@ function IntradayRecord() {
         rest.generateSession()
         .then((res)=>{
            if(res.Status == "Success"){
-              setData1(res.Response);
+              setSession(res.Response);
               func(res.Response);
            }
            else{
@@ -83,7 +83,7 @@ function IntradayRecord() {
         ],
     };
   
-    function IntradayNew(Data1) {
+    function IntradayNew(SessionId) {
         setlist([]);
         setShowLoader(true)
         let request = {
@@ -117,7 +117,7 @@ function IntradayRecord() {
       
                 const payload = {
                   'UserId': 'guest',
-                  'SessionId':Data1,
+                  'SessionId':SessionId,
                   'MultipleTokens': tokens
                 }
       

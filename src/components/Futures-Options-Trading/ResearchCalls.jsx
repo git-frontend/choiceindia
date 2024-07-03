@@ -14,7 +14,7 @@ function ResearchCalls() {
   const [showLoader, setShowLoader] = useState(false);
   const [trigger, setTrigger] = useState(false);
   
-  const [Data1, setData1] = useState();
+  const [session, setSession] = useState();
   const [checkdevice, setcheckdevice] = useState();
   const [view, setView] = useState({
     matches: window.innerWidth < 767 ? false : true,
@@ -68,7 +68,7 @@ function ResearchCalls() {
     ]
 
   };
-  function FandOstocks(Data1) {
+  function FandOstocks(SessionId) {
     setlist([]);
     tokens = '';
     tokenList = [];
@@ -105,7 +105,7 @@ function ResearchCalls() {
     
           const payload = {
             'UserId': 'guest',
-            'SessionId': Data1,
+            'SessionId': SessionId,
             'MultipleTokens': tokens
           }
 
@@ -164,7 +164,7 @@ function ResearchCalls() {
     rest.generateSession()
     .then((res)=>{
        if(res.Status == "Success"){
-          setData1(res.Response);
+          setSession(res.Response);
           func(res.Response);
        }
        else{

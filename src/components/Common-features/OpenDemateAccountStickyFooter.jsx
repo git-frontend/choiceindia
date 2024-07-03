@@ -9,7 +9,7 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import '../Common-features/demat-form.scss'
 import utils from '../../Services/utils';
 
-function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }) {
+function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup, dataLayerValues }) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
     const [mobileNumber, setMobileNumber] = useState('');
@@ -243,7 +243,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
             "account_type": "all"
             // "captcha": "1"
         }
-        openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster)
+        openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster,dataLayerValues)
     }
 
     useEffect(() => {
@@ -290,8 +290,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
             is_consent: consent ? consent : null,
             lid: otpLeadID.current ? otpLeadID.current : null
         };
-
-        openAccountService.verifyOTP(request, "JF").then((res) => {
+        openAccountService.verifyOTP(request, "JF",dataLayerValues).then((res) => {
             if (res && res.status === 200 && res.data && res.data.Body) {
                 utils.pushDataLayerEvent({
                     'event': 'ci_onboard_lead_generated',

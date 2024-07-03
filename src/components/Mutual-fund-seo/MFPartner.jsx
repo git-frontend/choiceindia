@@ -9,6 +9,7 @@ import img4 from '../../assets/images/mutual-funds-investment/birla-sun-life-mut
 import img5 from '../../assets/images/mutual-funds-investment/kotak-mutual-fund.webp'
 import { Link } from "react-router-dom";
 import LazyLoader from '../Common-features/LazyLoader';
+import utils from "../../Services/utils";
 
 function MFPartner() {
 
@@ -69,7 +70,15 @@ function MFPartner() {
                 </Slider>
               </div>
               <div className="mf-partner-explore-btn">
-                <Link to="/amc"><span className="btn-bg btn-bg-dark">Explore more</span></Link>
+                <Link to="/amc" onClick={() => {
+                utils.pushDataLayerEvent({
+                  'event': 'mf_explore_more_amc_btn',
+                  'page_path': window.location.pathname,
+                  'page_url': window.location.href,
+                  'lead_source': 'choiceindia',
+                  'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+              })
+              }}><span className="btn-bg btn-bg-dark">Explore more</span></Link>
               </div>
             </div>
           </div>

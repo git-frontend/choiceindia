@@ -10,7 +10,7 @@ import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function FnoRecord() {
     const [list, setlist] = useState();
-    const [Data1, setData1] = useState();
+    const [session, setSession] = useState();
     const [showLoader, setShowLoader] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
 
@@ -41,7 +41,7 @@ function FnoRecord() {
         rest.generateSession()
         .then((res)=>{
            if(res.Status == "Success"){
-              setData1(res.Response);
+              setSession(res.Response);
               func(res.Response);
            }
            else{
@@ -83,7 +83,7 @@ function FnoRecord() {
         ],
     };
     
-    function FandORecords(Data1) {
+    function FandORecords(SessionId) {
 
         setlist([]);
         tokens = '';
@@ -121,7 +121,7 @@ function FnoRecord() {
           
                 const payload = {
                   'UserId': 'guest',
-                  'SessionId': Data1,
+                  'SessionId': SessionId,
                   'MultipleTokens': tokens
                 }
       
