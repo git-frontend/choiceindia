@@ -38,7 +38,7 @@ const EquityStockTradingData = {
             "bannerAlt": 'Open Low Brokerage Commodity Trading Account',
         },
     ],
-    "WhyOpenCommodityTAccount":[
+    "WhyOpenETAccount":[
         {
             "title": "Why Open an Equity Trading Account Online With Us?",
             "cardHeading": "Low Brokerage",
