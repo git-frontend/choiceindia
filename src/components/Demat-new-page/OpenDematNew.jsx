@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect } from 'react';
+import CommonDematTrading from "../Common-demat-and-trading/CommonDematTrading";
+import pagesData from "../Common-demat-and-trading/CommonDematTradingData";
 import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import evolution from '../../assets/images/demat-images/new-demat/evolution-of-share-ownership.webp';
@@ -132,8 +134,8 @@ function OpenDematNew() {
 
     return (
         <div>
-
-            <section className="demat-cms-banner" onMouseOver={() => setIsCheck(true)}>
+            <CommonDematTrading data={pagesData.dematData} />
+            {/* <section className="demat-cms-banner" onMouseOver={() => setIsCheck(true)}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -143,8 +145,8 @@ function OpenDematNew() {
                         </div>
                     </div>
                 </div>
-            </section>
-
+            </section> */}
+{/* 
             <section className="demat-cms-description">
                 <div className="container">
                     <div className="wrap-main">
@@ -561,14 +563,14 @@ function OpenDematNew() {
                                         <div className="">
                                             <div className="d-flex justify-content-end" id="campaignForm">
                                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                    {/* <DematAccountForm /> */}
+                                                    
                                                     <NewDematAccountForm />
                                                 </GoogleReCaptchaProvider>
                                             </div>
                                         </div> :
                                         <div className="">
                                             <div className="d-flex justify-content-end" id="campaignForm">
-                                                {/* <DematAccountForm /> */}
+                                                
                                                 <NewDematAccountForm />
                                             </div>
                                         </div>
@@ -583,7 +585,7 @@ function OpenDematNew() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
 
 
         </div>
