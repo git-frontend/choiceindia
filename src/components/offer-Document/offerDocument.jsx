@@ -50,7 +50,7 @@ function offerDocument() {
         skeleton ? <Template2 /> :
           <div>
             
-            <div className="container">
+            {/* <div className="container">
             <div className="row">
 						<div className="col-md-12">
               
@@ -59,7 +59,7 @@ function offerDocument() {
                   
 						</div>
 					  </div>
-            </div>
+            </div> */}
             <OfferDocumentMenu />
           
           </div>

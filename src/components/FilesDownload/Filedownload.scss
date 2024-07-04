@@ -159,4 +159,40 @@
 			}
 		}
 	}
+	&.filedownloadfaq-CMS{
+		padding: 0rem;
+
+		.accordion-flush{
+			padding: 1.5rem;
+			border: 1px solid #c2c2c2;
+			border-radius: 20px;
+			margin: 3rem 0rem;
+			.accordion-item{
+				margin-bottom: 25px;
+				.accordion-header{
+					margin-bottom: 0px;
+					
+					h4{
+						font-size: 1.5rem;
+					}
+					
+				}
+				
+			}
+		}
+		.listing{
+			.border-bottom {
+				&:last-child {
+					border-bottom: none !important;
+				}
+			}
+			ul{
+				margin-top: 0;
+				margin-bottom: 0;
+				li{
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
 }
