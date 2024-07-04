@@ -11,7 +11,7 @@ function WhyChoiceCommon({data}) {
                         <div className='col-md-12'>
                             <div className="wrap">
                                 <div className="leftsect">
-                                    <h2 className="secttile">Why Choice?</h2>
+                                    <h2 className="secttile" dangerouslySetInnerHTML={{ __html: data[0].title }}></h2>
                                     <div className="img">
                                         <img src={Image16} alt={"Choice Free Demat Account OpeningFree Commodity Trading Account Opening with Choice"} width={"365"} height={"788"} className="img-fluid" />
                                     </div>
