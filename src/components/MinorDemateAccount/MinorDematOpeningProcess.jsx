@@ -25,7 +25,15 @@ const MinorDematOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <div className="btn-bg btn-bg-dark cursor-pointer" onClick={() => { utils.scrollToId('open-account-wrap') }} >Get Started </div>
+                                    <div className="btn-bg btn-bg-dark cursor-pointer" onClick={() => { utils.scrollToId('open-account-wrap');
+                                         utils.pushDataLayerEvent({
+                                            'event': 'get_started_btn',
+                                            'page_path': window.location.pathname,
+                                            'page_url': window.location.href,
+                                            'lead_source': 'choiceindia',
+                                            'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                                        })
+                                     }} >Get Started </div>
                                 </div>
 
                             </div>

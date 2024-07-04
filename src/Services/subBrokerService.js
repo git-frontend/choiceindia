@@ -52,7 +52,13 @@ const subBrokerService = {
       // console.log(res, "sendOTP");
       hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
       if (res && res.data && res.data.Body && res.data.Body.session_id) {
-
+        utils.pushDataLayerEvent({
+            'event': 'mff_lead_initiated',
+            'page_path': window.location.pathname,
+            'page_url': window.location.href,
+            'lead_source': 'choiceindia',
+            'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+        })
           otpSessionID.current = res.data.Body.session_id;
           // console.log("otpSessionID.current",otpSessionID.current)
           // if (!isResend)
@@ -101,7 +107,13 @@ const subBrokerService = {
 
         hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
         if (res && res.data && res.data.Body && res.data.Body.session_id) {
-
+            utils.pushDataLayerEvent({
+                'event': 'mff_lead_initiated',
+                'page_path': window.location.pathname,
+                'page_url': window.location.href,
+                'lead_source': 'choiceindia',
+                'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+            })
             otpSessionID.current = res.data.Body.session_id;
             resetOTPPopup();
             if (isResend)
@@ -169,6 +181,13 @@ const subBrokerService = {
           hideLoader('verifyLoader');
           // console.log(res, "verifyOTPN");
           if (res && res.data && res.data.status != 'error') {
+            utils.pushDataLayerEvent({
+                'event': 'mff_lead_generated',
+                'page_path': window.location.pathname,
+                'page_url': window.location.href,
+                'lead_source': 'choiceindia',
+                'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+            })
               fetchQueryParams();
               // addNewLead();
               handleOTPPopupClose();
