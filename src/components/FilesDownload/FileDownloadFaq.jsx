@@ -5,7 +5,8 @@ import cmsService from "../../Services/cmsService";
 import download from '../../assets/images/file-download/export.webp';
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
-
+import CommonCMS from '../Common-CMS/CommonCMS';
+import CMSData from "../Common-CMS/CMSData";
 function FileDownloadFaq() {
     const [datalist, setDatalist] = useState({});
     const [trigger, setTrigger] = useState(false);
@@ -13,50 +14,50 @@ function FileDownloadFaq() {
     let values;
     let AllFilesValue = {};
 
-    function loadFileDownload() {
-        cmsService.MarginDay().
-            then(
-                res => {
-                    if (res && res.data && res.data.response) {
-                        setisloading(false)
-                        values = res.data.response;
-                        values.forEach(ele => {
+    // function loadFileDownload() {
+    //     cmsService.MarginDay().
+    //         then(
+    //             res => {
+    //                 if (res && res.data && res.data.response) {
+    //                     setisloading(false)
+    //                     values = res.data.response;
+    //                     values.forEach(ele => {
 
-                            if (!AllFilesValue[ele.download_title]) {
-                                AllFilesValue[ele.download_title] = [];
-                                AllFilesValue[ele.download_title].push(ele)
-                            } else {
-                                AllFilesValue[ele.download_title].push(ele)
+    //                         if (!AllFilesValue[ele.download_title]) {
+    //                             AllFilesValue[ele.download_title] = [];
+    //                             AllFilesValue[ele.download_title].push(ele)
+    //                         } else {
+    //                             AllFilesValue[ele.download_title].push(ele)
 
-                            }
-                        })
-                        setDatalist(AllFilesValue);
-                    } else {
-                        setisloading(false)
-                        setDatalist([]);
+    //                         }
+    //                     })
+    //                     setDatalist(AllFilesValue);
+    //                 } else {
+    //                     setisloading(false)
+    //                     setDatalist([]);
 
-                    }
+    //                 }
 
-                }
-            ).catch((error) => {
-                setisloading(false)
-                setDatalist([]);
-            });
-    }
+    //             }
+    //         ).catch((error) => {
+    //             setisloading(false)
+    //             setDatalist([]);
+    //         });
+    // }
 
-    useEffect(() => {
-        setTrigger(true)
+    // useEffect(() => {
+    //     setTrigger(true)
 
-        if (trigger === true) {
-            loadFileDownload()
-        }
+    //     if (trigger === true) {
+    //         loadFileDownload()
+    //     }
 
-    }, [trigger])
+    // }, [trigger])
 
     return (
         <div>
-
-            <section className="filedownloadfaq">
+            <CommonCMS data={CMSData.FileDownloadData} methodName="MarginDay"/>
+            {/* <section className="filedownloadfaq">
                 <div className="container">
 
                     <div className="row">
@@ -121,7 +122,7 @@ function FileDownloadFaq() {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
 
     )

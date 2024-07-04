@@ -5,7 +5,8 @@ import cmsService from "../../Services/cmsService";
 import download from '../../assets/images/file-download/export.webp';
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
-
+import CommonCMS from '../Common-CMS/CommonCMS';
+import CMSData from "../Common-CMS/CMSData";
 function OfferDocumentMenu() {
     const [datalist, setDatalist] = useState({});
     const [trigger, setTrigger] = useState(false);
@@ -15,20 +16,20 @@ function OfferDocumentMenu() {
 
    
 
-    useEffect(() => {
-        setTrigger(true)
+    // useEffect(() => {
+    //     setTrigger(true)
 
-        if (trigger === true) {
-            //loadFileDownload()
-            cmsService.loadCmsData(cmsService.documentList,setisloading,setDatalist,"title");
-        }
+    //     if (trigger === true) {
+    //         //loadFileDownload()
+    //         cmsService.loadCmsData(cmsService.documentList,setisloading,setDatalist,"title");
+    //     }
 
-    }, [trigger])
+    // }, [trigger])
 
     return (
         <div>
-
-            <section className="filedownloadfaq">
+            <CommonCMS data={CMSData.OfferDocumentData} methodName="documentList"/>
+            {/* <section className="filedownloadfaq">
                 <div className="container">
 
                     <div className="row">
@@ -93,7 +94,7 @@ function OfferDocumentMenu() {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
 
     )

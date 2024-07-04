@@ -18,15 +18,15 @@ function CFPLPoliciesMain() {
 
 
 
-    useEffect(() => {
-        setTrigger(true)
+    // useEffect(() => {
+    //     setTrigger(true)
 
-        if (trigger === true) {
-            cmsService.cmsAPIcall(cmsService.CfplPolicy,setisloading,setData);
+    //     if (trigger === true) {
+    //         cmsService.cmsAPIcall(cmsService.CfplPolicy,setisloading,setData);
 
-        }
+    //     }
 
-    }, [trigger])
+    // }, [trigger])
 
 
     return (

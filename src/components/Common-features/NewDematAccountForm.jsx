@@ -142,7 +142,7 @@ function NewDematAccountForm(props) {
     }
 
     useEffect(() => {
-        if (window.location.pathname.includes('blog') === true || window.location.pathname.includes('ipo') === true) {
+        if (window.location.pathname.indexOf('blog') === 1 || window.location.pathname.indexOf('ipo') === 1) {
             setblogForm('blog-lead-form');
             if(!window.location.pathname.includes('ipo')){
             props.newDematForm(true);
@@ -525,7 +525,7 @@ function NewDematAccountForm(props) {
                         <h2 className="heading">Open Trading Account</h2>:
                         <h2 className="heading">Open Demat Account</h2>
                       }
-                      {(window.location.pathname.includes("blog") || window.location.pathname.includes("ipo"))&& 
+                      {(window.location.pathname.indexOf("blog")===1 || window.location.pathname.indexOf("ipo")===1) ? 
                       (mfForm?
                         <div className="sticy-card-blog-new sub-new-small">
                         <h3 className="title-secnd">Start Investing in Mutual Funds Now !</h3>
@@ -654,7 +654,7 @@ function NewDematAccountForm(props) {
                                props.modifyHighLight(false);
                        }}>&times;</span>} 
                           
-                      </div>)}
+                      </div>) : ""}
 
                       {
                       (window.location.pathname.includes('brokerage-charges') &&
