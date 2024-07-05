@@ -200,23 +200,8 @@ function CommonDematTrading({ data }) {
                                     id={section.id}>
                                     <h2  dangerouslySetInnerHTML={{ __html: section.title }}></h2>
                                     <p dangerouslySetInnerHTML={{ __html: section.content }}></p>
+                                    
                                     {section.id === "id1" ?
-                                       
-                                       <iframe className="cust-video"  src="https://www.youtube.com/embed/3u0VZAHMwO0?si=SeeL4dSf4wZ0LAyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                            
-                                       
-                                        :
-                                        section.id === "id2" ?
-                                           
-                                                    <iframe className="cust-video"
-                                                        src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=kXmV-bHdsV_leXv"
-                                                        title="YouTube video player"
-                                                        frameBorder="0"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                        allowFullScreen></iframe>
-                                          
-                                            :""}
-                                    {/* {section.id === "id1" ?
                                         <a onClick={handletClick} className={"open-vid " + (VideoVisibility ? "active" : "")}>
                                             {VideoVisibility ? (
                                                 <iframe className="cust-video"
@@ -251,7 +236,7 @@ function CommonDematTrading({ data }) {
                                                     />
                                                 )}
                                             </a> :
-                                            ""} */}
+                                            ""}
                                              {section.id === 'id2' && section.images && (
                         <div className="d-flex justify-content-between col-11">
                             {section.images.map((image, idx) => (

@@ -18,7 +18,7 @@ export const pagesData = {
                 id: "id1",
                 title: "What is Dematerialization?",
                 content: `In today's digital age, you can <a href="/open-free-demat-account">open a Demat account</a> within minutes. This was not the case earlier where shares were traded in the form of physical paper certificates. This process had many limitations and hence the process of dematerialization was introduced.
-                        <br/><br/>
+                       <br/></br/>
                         <a href="/blog/dematerialisation/">Dematerialization</a> refers to the process of <a href="/blog/physical-shares-to-demat/">converting physical share certificates</a> into electronic form.This transformation enabled easy access to your shares from anywhere in the world. 
                         The introduction of a Demat account ensured seamless tracking and monitoring of investors holdings.
                         <br /><br />`
@@ -27,7 +27,7 @@ export const pagesData = {
                 id: "id2",
                 title: "Features and Benefits of Demat Account",
                 content: `Demat accounts come packed with features and benefits to simplify your investment journey. Here are some of the key highlights:<br /><br />
-                        <ol className="drk-bld">
+                        <ol class="drk-bld">
                                     <li>
                                         <h3>Easily Accessible</h3>
                                         <p>With internet connectivity, you can access your Demat account 24/7 to monitor holdings and execute transactions from anywhere.</p>
@@ -49,9 +49,9 @@ export const pagesData = {
                                         <p>In the unfortunate event of a Demat account holder's demise, assets can be seamlessly transferred to the next of kin. This ensures a hassle-free process compared to physical certificates.</p>
                                     </li>
                                 </ol>
-                                <div className="d-flex justify-content-between col-11">
-                                    <span><LazyLoader src=${features} className="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
-                                    <span><LazyLoader src=${benefits} className="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
+                                <div class="d-flex justify-content-between col-11">
+                                    <span><LazyLoader src=${features} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
+                                    <span><LazyLoader src=${benefits} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
                                 </div>
                                 Other than the above mentioned benefits, there are many other <a href="/blog/benefits-of-a-demat-account/">benefits of a demat account</a> like regular and automatic updates about Corporate actions like dividends, bonuses, or split, integration with trading account, loan against securities, faster and smoother settlements, reduction in errors
                                 
@@ -65,7 +65,7 @@ export const pagesData = {
                 id: "id3",
                 title: "Types of Demat Accounts in India",
                 content: `In India, there are several <a href="/blog/demat-account-types/">types of Demat accounts</a> to cater to various investor profiles. Here is a quick look:</p>
-                                <ol className="drk-bld">
+                                <ol class="drk-bld">
                                     <li>
                                         <h3>Regular Demat Account</h3>
                                         <p>Ideal for Indian residents, this account is managed by depository participants, and regulated by two depositories. It offers swift transactions, allowing you to buy or sell shares within minutes. Regular Demat accounts could be categorized into: <br /><br />
@@ -107,7 +107,7 @@ export const pagesData = {
                 title: `<a href="/blog/documents-required-for-demat-account-opening/">Documents Required for Demat Account Opening</a>`,
                 content: `Proper documentation is crucial when opening a Demat account. Here's a list of the essential documents:
                 <br/><br/>
-                                <ol className="none-para drk-bld">
+                                <ol class="none-para drk-bld">
                                     <li><strong>Proof of Identity:</strong>
                                         <ol>
                                             <li>Aadhar Card</li>
@@ -131,13 +131,13 @@ export const pagesData = {
                                     <li><strong>Passport-Size Photographs:</strong> Typically, you need 2-3 recent passport-sized photographs if you opt for the offline process. For the online process, it will be e-KYC authentication.</li>
                                 </ol>
                                 <p>Ensure that all documents are self-attested copies, and keep the original documents handy for verification purposes during the <a href="/blog/demat-account-opening-process/">demat account opening process</a>.</p>
-                                <span className="bl-box-text">For certain segments, such as derivatives, income proofs may be necessary.</span>`
+                                <span class="bl-box-text">For certain segments, such as derivatives, income proofs may be necessary.</span>`
             },
             {
                 id: "id6",
                 title:  `<a href="/blog/demat-account-charges/">Demat Account Charges</a>`,
                 content: `<p>Opening a Demat account is often free or even if it's charged, it usually requires a nominal fee. Other than the opening fees, there are various fees and charges associated with maintaining and using it. Some common Demat account charges include</p>
-                                <ol className="">
+                                <ol class="">
                                     <li>
                                         <p>Annual Maintenance Charges (AMC)</p>
                                     </li>
@@ -173,6 +173,113 @@ export const pagesData = {
                                     </li>
                                 </ol>
                                 <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat account</a>, making it cost-effective for investors.</p>`
+            },
+            {
+                id: "id7",
+                title: `<a href="/blog/how-to-open-demat-account/">How to Open a Demat Account?</a>`,
+                content: ` <p>Opening a Demat Account has been a lot easier today, thanks to digitalization. You have two primary options: online and offline account opening.</p>
+                                <h3><a href="/blog/demat-account-opening-online/">Online Demat Account Opening</a></h3>
+                                <p>Most brokerage firms offer online account opening, allowing you to complete the process from the comfort of your home. It's quick, convenient, and paperless.</p>
+                                <p>An online demat account opening process involves:</p>
+                                <ol class="none-para">
+                                    <li>Visiting the preferred broking company’s official website</li>
+                                    <li>Click on the 'Open Demat Account' button</li>
+                                    <li>Enter your details, including name, phone number, and city</li>
+                                    <li>Provide your date of birth and PAN card details</li>
+                                    <li>Input your mobile number and email ID to receive OTP for verification</li>
+                                    <li>Verify your account with the OTP, and you'll be redirected to a new window</li>
+                                    <li>Fill in your basic details and select an AMC (Annual Maintenance Charges) plan</li>
+                                    <li>Upload all necessary documents and proceed to the NSDL website for e-signature</li>
+                                    <li>Enter your Aadhar details (ensure your phone number is linked to your Aadhar card) and receive an OTP</li>
+                                    <li>After successful verification, your Demat account will be opened and activated</li>
+                                </ol>
+                                <span class="bl-box">Choice completes the verification process in under 4 hours. Our team will assist you if you encounter any issues during the Demat account opening process.</span>`
+            },
+            {
+                id: "id8",
+                title: "Demat Account - Frequently Asked Questions",
+                content: ` <p>Got questions? Explore our FAQs for answers to common questions and concerns related to Demat account. If you need further assistance or personalized guidance, feel free to contact us.</p>
+                                <ul>
+                                    <li>
+                                        <h3>What is the eligibility to have a demat account?</h3>
+                                        <p>A Demat account can be opened by Indian residents, non-resident Indians (NRIs), and foreign investors through registered depository participants (DPs).</p>
+                                    </li>
+                                    <li>
+                                        <h3>Is Demat account safe?</h3>
+                                        <p>Demat being a digitalised account is regulated by SEBI, and registered under NSDL and CDSL. However being associated with a reputed broker like choice ensures safety.</p>
+                                    </li>
+                                    <li>
+                                        <h3>Can I have multiple Demat accounts?</h3>
+                                        <p>Yes, you can have multiple Demat accounts, but there are regulatory restrictions. Each account must have a different purpose or ownership structure.</p>
+                                    </li>
+                                    <li>
+                                        <h3>What is the eligibility to open a demat account?</h3>
+                                        <p><strong>Age -</strong> There is no minimum age criteria. Individuals above 18 yers are eligible for a regular demat account while the ones below 18 can open a minor demat account. Their parents or guardians will be in-charge of the account until the minor comes to age.
+                                        <br/><br/>
+                                        <strong>Citizenship -</strong> Must be Indian Citizen residing in India
+                                        <br/><br/>
+                                        <strong>Other requirements -</strong> Have valid pan card & a valid address proof (Aadhar, Voter ID, Passport, Driving License)
+                                        </p>
+                                    </li>
+                                </ul>`
+            },
+            {
+                id: "id9",
+                title: "Demat Glossary",
+                content: `<p>A glossary of key terms and phrases related to Demat accounts to help you better understand the world of electronic securities and investments:</p>
+                                <ol class="none-para">
+                                    <li><strong>Account Closure:</strong> The process of permanently closing a Demat account when it is no longer needed.</li>
+                                    <li><strong>Account Opening Fee:</strong> A one-time charge for opening a Demat account, which varies between Depository Participants (DPs).</li>
+                                    <li><strong>Aadhar Card:</strong> A government-issued identity document in India. While not mandatory, it can be used for identity verification when opening a Demat account.</li>
+                                    <li><strong>Annual Maintenance Charges (AMC):</strong> Yearly fees for maintaining a Demat account, typically varying based on the DP and account type.</li>
+                                    <li><strong>Asset Allocation:</strong> The distribution of investments across different asset classes to manage risk and optimize returns.</li>
+                                    <li><strong>Bonus Shares:</strong> Additional shares issued to existing shareholders by a company as a reward.</li>
+                                    <li><strong>Capital Gains Tax:</strong> Tax applied to the profit earned from selling securities, depending on the holding period.</li>
+                                    <li><strong>Centralized Recordkeeping:</strong> All investments electronically recorded in one place for convenient management.</li>
+                                    <li><strong>Client ID:</strong> A unique identification number assigned to each Demat account holder by their DP.</li>
+                                    <li><strong>Consolidated Asset Storage:</strong> A Demat account serving as a single repository for all financial assets, simplifying asset management and tax filing.</li>
+                                    <li><strong>Corporate Actions:</strong> Actions taken by a company that may affect shareholders, such as dividends, bonuses, or splits.</li>
+                                    <li><strong>Custodian Fee:</strong> Fees related to the custody of certain securities, often foreign ones.</li>
+                                    <li><strong>Debit Transaction Charges:</strong> Fees applied when selling or transferring securities from a Demat account.</li>
+                                    <li><strong>Dematerialization (Demat):</strong> The process of converting physical share certificates into electronic form.</li>
+                                    <li><strong>Depository:</strong> An organization or institution responsible for holding and safeguarding financial securities in electronic form.</li>
+                                    <li><strong>Depository Participant (DP):</strong> An intermediary or agent authorized by the depository to offer Demat account services to investors.</li>
+                                    <li><strong>Diversification:</strong> Spreading investments across different asset classes and sectors to manage risk.</li>
+                                    <li><strong>Dividends:</strong> Payments made by companies to their shareholders from profits.</li>
+                                    <li><strong>Documentation:</strong> All paperwork and records related to a Demat account, including account opening forms, transaction statements, and KYC documents.</li>
+                                    <li><strong>Electronic Agreement:</strong> A digital agreement required during the Demat account opening process.</li>
+                                    <li><strong>ETFs (Exchange-Traded Funds):</strong> Investment funds traded on stock exchanges, holding various assets like stocks, bonds, or commodities.</li>
+                                    <li><strong>Income Tax Implications:</strong> The tax implications of income generated from investments held in a Demat account.</li>
+                                    <li><strong>Integration with Trading Account:</strong> The seamless link between a Demat account and a trading account for smoother trading.</li>
+                                    <li><strong>KYC (Know Your Customer):</strong> The process of verifying the identity of customers during account opening.</li>
+                                    <li><strong>Legal Rights:</strong> The rights and responsibilities of Demat account holders, including the right to information, privacy, and grievance redressal.</li>
+                                    <li><strong>Limit Orders:</strong> Orders specifying a specific price at which to buy or sell securities.</li>
+                                    <li><strong>Loan Against Securities:</strong> Using Demat account holdings as collateral for loans.</li>
+                                    <li><strong>Market Orders:</strong> Orders to buy or sell securities at the current market price.</li>
+                                    <li><strong>Multi-Layer Security Measures:</strong> Several security protocols to safeguard digital assets in a Demat account.</li>
+                                    <li><strong>Nominee:</strong> An individual nominated to inherit assets held in a Demat account in case of the account holder's demise.</li>
+                                    <li><strong>Off-Market Transfer:</strong> The process of transferring shares from one Demat account to another.</li>
+                                    <li><strong>Online Access:</strong> 24/7 access to a Demat account via the internet for monitoring and transactions.</li>
+                                    <li><strong>PAN Card:</strong> A mandatory document for all Demat account holders in India, serving as a tax identification number.</li>
+                                    <li><strong>Pledge Charges:</strong> Fees incurred when pledging securities as collateral for margin trading or loans.</li>
+                                    <li><strong>Portfolio:</strong> A collection of investments held in a Demat account, including stocks, bonds, and mutual funds.</li>
+                                    <li><strong>Proof of Address:</strong> Documents used to verify an individual's residential address during account opening.</li>
+                                    <li><strong>Proof of Identity:</strong> Documents used to verify an individual's identity during account opening.</li>
+                                    <li><strong>Rebalancing:</strong> Adjusting the composition of a portfolio to maintain the desired asset allocation.</li>
+                                    <li><strong>Rematerialization (Remat):</strong> The process of converting electronic shares back into physical certificates.</li>
+                                    <li><strong>SEBI (Securities and Exchange Board of India):</strong> The regulatory authority overseeing Demat accounts and the securities market in India.</li>
+                                    <li><strong>Securities:</strong> Financial instruments such as stocks, bonds, mutual funds, and exchange-traded funds (ETFs) that are held in a Demat account.</li>
+                                    <li><strong>Single Point of Access:</strong> Managing multiple investments from one Demat account.</li>
+                                    <li><strong>Stamp Duty:</strong> State-specific charges applied when selling securities.</li>
+                                    <li><strong>Stock Quotes:</strong> Real-time or delayed price information of securities.</li>
+                                    <li><strong>Stop-Loss Order:</strong> Orders automatically selling shares when reaching a predetermined price to limit losses.</li>
+                                    <li><strong>Tax-Efficient Trading:</strong> Strategies to minimize tax liabilities on trading activities.</li>
+                                    <li><strong>Transaction Charges:</strong> Fees applied each time securities are bought or sold.</li>
+                                    <li><strong>Verification Process:</strong> Checks to validate the information provided during Demat account opening.</li>
+                                    <li><strong>Wealth Creation:</strong> The process of increasing wealth through investments in a Demat account.</li>
+                                </ol>
+                                <p>If you have any further questions or need clarification on any of these terms, please refer to our comprehensive guide or reach out to us for assistance.</p>
+                                <p>Thank you for choosing our comprehensive guide to learn about Demat accounts.</p>`
             },
            
         ],
