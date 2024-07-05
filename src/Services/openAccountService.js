@@ -88,6 +88,13 @@ const openAccountService = {
               'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
             })
           }
+        }else if(locationURL.includes('top-funds') || locationURL.includes('amc')){
+          utils.pushDataLayerEvent({
+            'event': 'mf_lead_initiated',
+            'page_path': window.location.pathname,
+            'page_url': window.location.href,
+            'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+          })
         }else{
           switch (locationURL) {
 
@@ -134,23 +141,7 @@ const openAccountService = {
                 'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
               })
             }
-            break;
-            
-            case '/top-funds' : 
-            utils.pushDataLayerEvent({
-              'event': 'mf_lead_initiated',
-              'page_path': window.location.pathname,
-              'page_url': window.location.href,
-              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
-            })
-
-            case '/amc' : 
-            utils.pushDataLayerEvent({
-              'event': 'mf_lead_initiated',
-              'page_path': window.location.pathname,
-              'page_url': window.location.href,
-              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
-            })
+            break; 
 
             default: 
             utils.pushDataLayerEvent({
@@ -197,50 +188,42 @@ const openAccountService = {
       hideLoader('verifyLoader');
       if (res && res.data.StatusCode === 200 && res.data.Body) {
           let verifyResponse = res.data.Body;
-          // console.log("verifyResponse", verifyResponse);
-
-          switch(window.location.pathname){
-            case '/mutual-funds-investment' : 
-              utils.pushDataLayerEvent({
-                'event': 'mf_lead_generated',
-                'page_path': window.location.pathname,
-                'page_url': window.location.href,
-                'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-                'leadId': res.data.Body.leadid,
-                'lead_source': 'choiceindia',
-                'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-              })
-            break;
-
-            case '/top-funds' : 
+          const locationURL = window.location.pathname; 
+          if(locationURL.includes('top-funds') || locationURL.includes('amc')){
             utils.pushDataLayerEvent({
               'event': 'mf_lead_generated',
               'page_path': window.location.pathname,
               'page_url': window.location.href,
               'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
             })
-
-            case '/amc' : 
-            utils.pushDataLayerEvent({
-              'event': 'mf_lead_generated',
-              'page_path': window.location.pathname,
-              'page_url': window.location.href,
-              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
-            })
-
-            default :
-              utils.pushDataLayerEvent({
-                'event': 'ci_onboard_lead_generated',
-                'page_path': window.location.pathname,
-                'page_url': window.location.href,
-                'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-                'leadId': res.data.Body.leadid,
-                'lead_source': 'choiceindia',
-                'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-              })
-              break; 
+          }else{
+            switch(window.location.pathname){
+              case '/mutual-funds-investment' : 
+                utils.pushDataLayerEvent({
+                  'event': 'mf_lead_generated',
+                  'page_path': window.location.pathname,
+                  'page_url': window.location.href,
+                  'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+                  'leadId': res.data.Body.leadid,
+                  'lead_source': 'choiceindia',
+                  'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                  'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
+              break;
+  
+              default :
+                utils.pushDataLayerEvent({
+                  'event': 'ci_onboard_lead_generated',
+                  'page_path': window.location.pathname,
+                  'page_url': window.location.href,
+                  'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+                  'leadId': res.data.Body.leadid,
+                  'lead_source': 'choiceindia',
+                  'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                  'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
+                break; 
+            }
           }
 
           if (verifyResponse.is_onboard_flag === "C") {
