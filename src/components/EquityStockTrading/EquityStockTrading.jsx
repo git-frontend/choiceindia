@@ -1,11 +1,12 @@
 // import "./EquityStockTrading.scss";
 import "../OpenDematAccount/DematPage";
-import EquityStockTradingBanner from "./EquityStockTradingBanner";
-import WhyOpenEquityStockTrading from "./WhyOpenEquityStockTrading";
-import EquityStockTradingOpeningProcess from "./EquityStockTradingOpeningProcess";
-import LowBrokerageEquityStockTrading from "./LowBrokerageEquityStockTrading";
-import WhyEquityStockTrading from "./WhyEquityStockTrading";
-import MoreContent from './MoreContent';
+import TradingBanner from "../Trading-Pages/TradingBanner";
+import EquityStockTradingData from "./EquityStockTradingData";
+import WhyOpenTradingAccount from "../Trading-Pages/WhyOpenTradingAccount";
+import WhyChoiceCommon from "../Trading-Pages/WhyChoiceCommon";
+import OpenLowBrokerageAccount from "../Trading-Pages/OpenLowBrokerageAccount";
+import AccountOpeningProcess from "../Trading-Pages/AccountOpeningProcess";
+import MoreContentCommon from "../Trading-Pages/MoreContentCommon";
 import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
@@ -32,18 +33,15 @@ function EquityStockTrading() {
     }
   }, [rendercount])
   return (
-  
-    
+
           <div className="demat-page-parent">
-            <EquityStockTradingBanner />
-            <WhyOpenEquityStockTrading />
-            <WhyEquityStockTrading />
-            <LowBrokerageEquityStockTrading />
-            <EquityStockTradingOpeningProcess />
-            <MoreContent />
-            
+            <TradingBanner data={EquityStockTradingData.BannerData}/>
+            <WhyOpenTradingAccount data={EquityStockTradingData.WhyOpenETAccount}/>
+            <WhyChoiceCommon  data={EquityStockTradingData.WhyChoiceCommon}/>
+            <OpenLowBrokerageAccount data={EquityStockTradingData.OpenLowBrokerageAccount}/>
+            <AccountOpeningProcess data={EquityStockTradingData.AccountOpeningProcess}/>
+            <MoreContentCommon data={EquityStockTradingData.MoreContentCommon}/>
           </div>
-    
   );
 }
 

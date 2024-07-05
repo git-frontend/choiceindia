@@ -1,12 +1,12 @@
 // import "./CurrencyTrading.scss";
 import "../OpenDematAccount/DematPage";
-import CurrencyTradingBanner from "./CurrencyTradingBanner";
-import WhyOpenCurrencyTrading from "./WhyOpenCurrencyTrading";
-import CurrencyTradingOpeningProcess from "./CurrencyTradingOpeningProcess";
-import LowBrokerageCurrencyTrading from "./LowBrokerageCurrencyTrading";
-import WhyCurrencyTrading from "./WhyCurrencyTrading";
-import MoreContent from './MoreContent';
-import CurrencyTradingFaq from "./CurrencyTradingFaq";
+import TradingBanner from "../Trading-Pages/TradingBanner";
+import CurrencyTradingData from "./CurrencyTradingData";
+import WhyOpenTradingAccount from "../Trading-Pages/WhyOpenTradingAccount";
+import WhyChoiceCommon from "../Trading-Pages/WhyChoiceCommon";
+import OpenLowBrokerageAccount from "../Trading-Pages/OpenLowBrokerageAccount";
+import AccountOpeningProcess from "../Trading-Pages/AccountOpeningProcess";
+import MoreContentCommon from "../Trading-Pages/MoreContentCommon";
 import { Link } from "react-router-dom";
 import { useState,useEffect} from "react";
 import meta_tags from "../../Data/MetaTags";
@@ -34,14 +34,12 @@ function CurrencyTrading() {
   return (
   
           <div className="demat-page-parent">
-            
-            <CurrencyTradingBanner />
-            <WhyOpenCurrencyTrading />
-            <WhyCurrencyTrading />
-            <LowBrokerageCurrencyTrading />
-            <CurrencyTradingOpeningProcess />
-            <MoreContent />
-            
+            <TradingBanner data={CurrencyTradingData.BannerData}/>
+            <WhyOpenTradingAccount data={CurrencyTradingData.WhyOpenETAccount}/>
+            <WhyChoiceCommon  data={CurrencyTradingData.WhyChoiceCommon}/>
+            <OpenLowBrokerageAccount data={CurrencyTradingData.OpenLowBrokerageAccount}/>
+            <AccountOpeningProcess data={CurrencyTradingData.AccountOpeningProcess}/>
+            <MoreContentCommon data={CurrencyTradingData.MoreContentCommon}/>
           </div>
     
   );
