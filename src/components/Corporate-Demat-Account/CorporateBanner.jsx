@@ -32,7 +32,7 @@ function CorporateBanner() {
                          ischeck ?
                         <div className="rightsec d-flex justify-content-end" id="mutualid">
                          <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                            <NewDematAccountForm />
+                                            <NewDematAccountForm dataLayerValues={'corporate_lead_initiated'}/>
                                         </GoogleReCaptchaProvider>
                         </div>:
                             <div className="rightsec d-flex justify-content-end" id="mutualid">

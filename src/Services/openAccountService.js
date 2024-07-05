@@ -45,21 +45,22 @@ const openAccountService = {
         const locationURL = window.location.pathname; 
 
         if(locationURL.includes('ipo')){
-          if(utils.isMobileDevice() && !isActive){
+          if(!isPopupOpen && isActive){
             utils.pushDataLayerEvent({
               'event': 'sticky_lead_initiated',
               'page_path': window.location.pathname,
               'page_url': window.location.href,
               'platform': 'mobileweb'
             })
-          }
-
-          if(utils.isMobileDevice() && isActive){
+          }else{
             utils.pushDataLayerEvent({
-              'event': 'popup_lead_initiated',
+              'event': 'ci_onboard_lead_initiated',
               'page_path': window.location.pathname,
               'page_url': window.location.href,
-              'platform': 'mobileweb'
+              'lead_source': 'choiceindia',
+              'userId': utils.generateSHA256Hash(request.mobile_number.toString()),
+              'leadId': res.Body.leadid,
+              'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
             })
           }
         }else if(locationURL.includes('blog')){
@@ -118,14 +119,39 @@ const openAccountService = {
             break;
   
             case '/corporate-demat-account' : 
+            if(dataLayerValues){
+              utils.pushDataLayerEvent({
+                'event': 'corporate_lead_initiated',
+                'page_path': window.location.pathname,
+                'page_url': window.location.href,
+                'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+              })
+            }else{
+              utils.pushDataLayerEvent({
+                'event': 'corporate_offer_lead_initiated',
+                'page_path': window.location.pathname,
+                'page_url': window.location.href,
+                'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+              })
+            }
+            break;
+            
+            case '/top-funds' : 
             utils.pushDataLayerEvent({
-              'event': 'corporate_offer_lead_initiated',
+              'event': 'mf_lead_initiated',
               'page_path': window.location.pathname,
               'page_url': window.location.href,
               'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
             })
-            break;
-  
+
+            case '/amc' : 
+            utils.pushDataLayerEvent({
+              'event': 'mf_lead_initiated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+            })
+
             default: 
             utils.pushDataLayerEvent({
               'event': 'ci_onboard_lead_initiated',
@@ -186,6 +212,22 @@ const openAccountService = {
                 'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
               })
             break;
+
+            case '/top-funds' : 
+            utils.pushDataLayerEvent({
+              'event': 'mf_lead_generated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+            })
+
+            case '/amc' : 
+            utils.pushDataLayerEvent({
+              'event': 'mf_lead_generated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+            })
 
             default :
               utils.pushDataLayerEvent({
