@@ -20,7 +20,7 @@ function AccountOpeningProcess({data}) {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="get-started-sect">
-                                <div className="headtext">
+                                <div className="headtext col-md-9">
                                     <h3 className="mb-0" dangerouslySetInnerHTML={{ __html: data[0].title }}></h3>
                                 </div>
                                 <div className="text-right text-sm-center">

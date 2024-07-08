@@ -20,25 +20,25 @@ const EquityStockTradingData = {
             "bannerIconText": 'Open Free Account',
             "iconText": "One Account for Everything",
             "bannerIcon" : `${Image2}`,
-            "bannerAlt": 'Open Commodity Trading Account with Low DP Charges',
+            "bannerAlt": 'Open Equity Trading with Low DP Charges',
         },
         {
             "iconText": "Free AMC for First Year",
             "bannerIcon" : `${Image3}`,
-            "bannerAlt": 'Online Commodity Trading Account with No Annual Charges',
+            "bannerAlt": 'Open Low Brokerage Equity Trading Account',
         },
         {
             "iconText": "Expert Research & Advisory",
             "bannerIcon" : `${Image4}`,
-            "bannerAlt": 'Open a Commodity Trading Account with Expert Research Advisory',
+            "bannerAlt": 'Free Equity Trading Account with Expert Research Advisory',
         },
         {
             "iconText": "Low Brokerage Charges",
             "bannerIcon" : `${Image5}`,
-            "bannerAlt": 'Open Low Brokerage Commodity Trading Account',
+            "bannerAlt": 'Equity Trading Account with No Annual Charges',
         },
     ],
-    "WhyOpenCommodityTAccount":[
+    "WhyOpenETAccount":[
         {
             "title": "Why Open an Equity Trading Account Online With Us?",
             "cardHeading": "Low Brokerage",
@@ -117,21 +117,21 @@ const EquityStockTradingData = {
             "cardDetails3": `Futures <span>0.02%</span>`,
             "cardDetails4": `Options <span>₹25 per Lot</span>`,
             "cardIcon" : `${Image18}`,
-            "cardAlt": 'Equity Charges to Open Commodity Trading',
+            "cardAlt": 'Equity Brokerage Charges to Open Trading Account Online',
         },
         {
             "cardHeading": "Commodity",
             "cardDetails1": `Futures <span>0.02%</span>`,
             "cardDetails2": `Options  <span>₹50 per Lot</span>`,
             "cardIcon" : `${Image16}`,
-            "cardAlt": 'Commodity Brokerage Charges for Opening Trading Account Online',
+            "cardAlt": 'Commodity Charges for Opening Equity Trading Account',
         },
         {
             "cardHeading": "Currency",
             "cardDetails1": `Futures <span>0.02%</span>`,
             "cardDetails2": ` Options <span>₹20 per Lot</span>`,
             "cardIcon" : `${Image17}`,
-            "cardAlt": 'Currency Brokerage Charges for Commodity Trading Account in India',
+            "cardAlt": 'Currency Brokerage to Open Equity Trading',
         },
     ],
     "AccountOpeningProcess":[
@@ -142,7 +142,6 @@ const EquityStockTradingData = {
             "processH": "A trusted name",
             "processT": `Fill in the required details and upload the relevant documents along with a passport size photograph.`,
             "stepsNum":"01",
-            "processAlt": 'Register to Open Commodity Trading Account in India',
         },
         {
             "processH": "In-Person Verification",

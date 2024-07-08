@@ -179,6 +179,54 @@ const utils ={
         let encPassword = CryptoJS.AES.encrypt(plainText, key, config);
         return encPassword.ciphertext.toString(CryptoJS.enc.Base64);
       },
+
+      //Created common function for processing expertReportData API data
+
+      expertReportDataProcessing:function(storefile,tokenList){
+         storefile.forEach(ele => {
+
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+            ele['LTP'] = ele['LTP'] / 100;
+          })
+
+          let unique = []
+          for (let i = 0; i < tokenList.length; i++) {
+            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
+          }
+          let tokens="";
+          unique.forEach(element => {
+            if (!tokens.includes(element)) {
+              tokens += element
+            }
+          });
+
+          return tokens;
+      },
+      
+      //Created common function for processing multipleTokensURI response Data
+      multipleTokensProcessing(lmtData,storefile,setShowLoader){
+        let multiValue=[];
+        let AllFilesValue={};
+        lmtData.forEach((ele, index) => {
+            // console.log("ele", ele)
+            ele['LTP'] = ele['LTP'] / 100;
+            ele.PrevClose = ele.PC / 100;
+            ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+            ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+            // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+            for (let i = 0; i < storefile.length; i++) {
+
+              if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
+                AllFilesValue = Object.assign(storefile[i], ele);
+                multiValue.push(AllFilesValue);
+              } 
+            }
+          })
+
+          setShowLoader(false);
+
+          return multiValue;
+      },
     isMobileDevice() {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
     }

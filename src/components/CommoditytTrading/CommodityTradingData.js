@@ -142,7 +142,6 @@ const CommodityTradingData = {
             "processH": "A trusted name",
             "processT": `Fill in the required details and upload the relevant documents along with a passport size photograph.`,
             "stepsNum":"01",
-            "processAlt": 'Register to Open Commodity Trading Account in India',
         },
         {
             "processH": "In-Person Verification",

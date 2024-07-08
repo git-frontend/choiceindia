@@ -36,7 +36,7 @@ function EquityStockTrading() {
 
           <div className="demat-page-parent">
             <TradingBanner data={EquityStockTradingData.BannerData}/>
-            <WhyOpenTradingAccount data={EquityStockTradingData.WhyOpenCommodityTAccount}/>
+            <WhyOpenTradingAccount data={EquityStockTradingData.WhyOpenETAccount}/>
             <WhyChoiceCommon  data={EquityStockTradingData.WhyChoiceCommon}/>
             <OpenLowBrokerageAccount data={EquityStockTradingData.OpenLowBrokerageAccount}/>
             <AccountOpeningProcess data={EquityStockTradingData.AccountOpeningProcess}/>

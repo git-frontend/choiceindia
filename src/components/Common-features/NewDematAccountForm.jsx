@@ -364,7 +364,7 @@ function NewDematAccountForm(props) {
             "utm_term": UTMTerm.current || null,
             "account_type": type1 == 'MF' ? "" : "all",
         };
-        openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster,null,props.isActive,isPopUp)
+        openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster,props.dataLayerValues|| null,props.isActive,isPopUp)
        
     }
 
