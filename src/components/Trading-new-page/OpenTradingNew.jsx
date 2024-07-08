@@ -1,4 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
+import { useState, useEffect } from 'react';
+import CommonDematTrading from "../Common-demat-and-trading/CommonDematTrading";
+import pagesData from "../Common-demat-and-trading/CommonDematTradingData";
 import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import evolution from '../../assets/images/demat-images/new-demat/evolution-of-share-ownership.webp';
@@ -28,13 +31,16 @@ import closureDemat from '../../assets/images/demat-images/new-demat/demat-accou
 import feature1 from '../../assets/images/demat-images/new-demat/feature1.webp';
 import meta_tags from "../../Data/MetaTags";
 import { InView } from 'react-intersection-observer';
+
+import "./new-demat-page.scss";
 import NewDematAccountForm from '../Common-features/NewDematAccountForm';
+import { useRef } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaWhatsapp } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
-import { faTwitter, faLinkedinIn, faFacebookF, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-function CommonDematTrading({ data }) {
-    console.log("data", data)
+import { faTwitter,faLinkedinIn,faFacebookF,faWhatsapp} from '@fortawesome/free-brands-svg-icons'
+
+function OpenTradingNew() {
     const [VideoVisibility, setVideoVisibility] = useState(false);
     const handletClick = () => {
         setVideoVisibility(true);
@@ -48,7 +54,7 @@ function CommonDematTrading({ data }) {
         isTriggered: false
     });
 
-    const [isActive2, setIsActive2] = useState(false); ``
+    const [isActive2, setIsActive2] = useState(false);``
 
     const handleClick = (event) => {
         setIsActive(current => !current);
@@ -112,47 +118,49 @@ function CommonDematTrading({ data }) {
             // document.body.appendChild(doc.getElementsByTagName('script1')[0] || [] ? doc1.getElementsByTagName('script')[0] || [] : '');
             // document.body.appendChild(doc.getElementsByTagName('script2')[0] || [] ? doc2.getElementsByTagName('script')[0] || [] : '');
             document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-            document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
-            document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
-            document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
-            if (!(document.getElementById('link1') == null)) {
-
-                document.getElementById('link1').remove();
-                document.getElementById('link2').remove();
-                document.getElementById('link3').remove();
-
-            }
-
+          document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+          document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+          document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+          if(!(document.getElementById('link1')==null)){
+          
+          document.getElementById('link1').remove();
+          document.getElementById('link2').remove();
+          document.getElementById('link3').remove();
+          
+        }
+          
         }
     }, [rendercount])
+
     return (
-        <>
-            <section className="demat-cms-banner" onMouseOver={() => setIsCheck(true)}>
+        <div>
+            <CommonDematTrading data={pagesData.tradingdata} />
+            {/* <section className="demat-cms-banner" onMouseOver={() => setIsCheck(true)}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
                             <div className="ban-caption text-center">
-                                <h1 className="title-secnd">{data.content[0].maintitle}</h1>
+                                <h1 className="title-secnd">Demat Account</h1>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
+            </section> */}
+{/* 
             <section className="demat-cms-description">
                 <div className="container">
                     <div className="wrap-main">
-                        <div className="lft-navigation">
+                    <div className="lft-navigation">
                             <div className="">
                                 <h3>Table of Contents</h3>
                                 <div className="arrow-sh" onClick={handleClick2}>
                                     <span className={isActive2 ? 'ar-up' : 'ar-down'}>
                                         <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M13 7L7 1L1 7" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M13 7L7 1L1 7" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </span>
                                 </div>
-                                {/* <div className={isActive2 ? 'list-hide' : 'list-show'} >
+                                <div className={isActive2 ? 'list-hide' : 'list-show'} >
                                     <ul className="list-links" id="style-sroll">
                                         <li><a className={isActive4=='id0' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id0') }}>What is a Demat Account?</a></li>
                                         <li><a className={isActive4=='id1' ? " active": " " } onClick={()=>{ scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id1'); }}>What is Dematerialization?</a></li>
@@ -165,20 +173,8 @@ function CommonDematTrading({ data }) {
                                         <li><a className={isActive4=='id8' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id8')}}>Demat Account - Frequently Asked Questions</a></li>
                                         <li><a className={isActive4=='id9' ? " active": " " } onClick={()=>{scrollConfig.current = {...scrollConfig.current, isTriggered: true}; chapterScroll2('id9')}}>Demat Glossary</a></li>
                                     </ul>
-                                </div> */}
-                                <div className={isActive2 ? 'list-hide' : 'list-show'}>
-                                    <ul className="list-links" id="style-sroll">
-                                        {data.tableOfContents.map((item, index) => (
-                                            <li key={index}>
-                                                <a className={isActive4 === item.id ? "active" : ""}
-                                                    onClick={() => { scrollConfig.current = { ...scrollConfig.current, isTriggered: true }; chapterScroll2(item.id) }}>
-                                                    {item.title}
-                                                </a>
-                                            </li>
-                                        ))}
-                                    </ul>
                                 </div>
-
+                               
 
                                 <h3 className="mrgn-top">Share this article</h3>
                                 <ul className="socials">
@@ -189,68 +185,8 @@ function CommonDematTrading({ data }) {
                                 </ul>
                             </div>
                         </div>
-                        <div className="sub-description">
-                            <div className="pr-sec">
-                                <p>Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.<br /><br />
-                                    Explore topics related to Demat accounts, how they work, the different types available, and more. Gain insight into their significance and how they play a pivotal role in your investment journey.</p>
-                            </div>
-                            {data.content.map((section, index) => (
-                                <InView as="div" className="pr-sec" key={index}
-                                    onChange={(e) => { initialize && !scrollConfig.current.isTriggered && e === true && setIsActive4(section.id) }}
-                                    id={section.id}>
-                                    <h2  dangerouslySetInnerHTML={{ __html: section.title }}></h2>
-                                    <p dangerouslySetInnerHTML={{ __html: section.content }}></p>
-                                    
-                                    {section.id === "id1" ?
-                                        <a onClick={handletClick} className={"open-vid " + (VideoVisibility ? "active" : "")}>
-                                            {VideoVisibility ? (
-                                                <iframe className="cust-video"
-                                                    src="https://www.youtube.com/embed/3u0VZAHMwO0?si=sqbJJfBthND0ReKo"
-                                                    title="YouTube video player"
-                                                    frameBorder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                    allowFullScreen></iframe>
-                                            ) : (
-                                                <LazyLoader
-                                                    src="https://img.youtube.com/vi/3u0VZAHMwO0/maxresdefault.jpg"
-                                                    alt="Thumbnail"
-                                                    className="img-fluid"
-                                                />
-                                            )}
-                                        </a>
-                                        :
-                                        section.id === "id2" ?
-                                            <a onClick={handletClick} className={"open-vid " + (VideoVisibility ? "active" : "")}>
-                                                {VideoVisibility ? (
-                                                    <iframe className="cust-video"
-                                                        src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=kXmV-bHdsV_leXv"
-                                                        title="YouTube video player"
-                                                        frameBorder="0"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                        allowFullScreen></iframe>
-                                                ) : (
-                                                    <LazyLoader
-                                                        src="https://img.youtube.com/vi/Qmm7rrwyDzc/maxresdefault.jpg"
-                                                        alt="Thumbnail"
-                                                        className="img-fluid"
-                                                    />
-                                                )}
-                                            </a> :
-                                            ""}
-                                             {section.id === 'id2' && section.images && (
-                        <div className="d-flex justify-content-between col-11">
-                            {section.images.map((image, idx) => (
-                                <span key={idx}>
-                                    <LazyLoader src={image.src} className="img-fluid" alt={image.alt} width="356" height="485" />
-                                </span>
-                            ))}
-                        </div>
-                    )}
-                                </InView>
-                            ))}
-                        </div>
 
-                        {/* <div className="sub-description">
+                        <div className="sub-description">
                             <div className="pr-sec">
                                 <p>Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.<br /><br />
                                     Explore topics related to Demat accounts, how they work, the different types available, and more. Gain insight into their significance and how they play a pivotal role in your investment journey.</p>
@@ -614,7 +550,7 @@ function CommonDematTrading({ data }) {
                                 <p>If you have any further questions or need clarification on any of these terms, please refer to our comprehensive guide or reach out to us for assistance.</p>
                                 <p>Thank you for choosing our comprehensive guide to learn about Demat accounts.</p>
                             </InView>
-                        </div> */}
+                        </div>
                         <div className={"right-form-main " + (isActive ? 'shadow' : 'none-shadow')}>
                             <div className={"form-mobile " + (isActive ? 'p-hide' : 'p-show')}>
                                 <button className="close-arrow-mb" onClick={handleClick}>
@@ -627,14 +563,14 @@ function CommonDematTrading({ data }) {
                                         <div className="">
                                             <div className="d-flex justify-content-end" id="campaignForm">
                                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-
+                                                    
                                                     <NewDematAccountForm />
                                                 </GoogleReCaptchaProvider>
                                             </div>
                                         </div> :
                                         <div className="">
                                             <div className="d-flex justify-content-end" id="campaignForm">
-
+                                                
                                                 <NewDematAccountForm />
                                             </div>
                                         </div>
@@ -649,9 +585,11 @@ function CommonDematTrading({ data }) {
                     </div>
 
                 </div>
-            </section>
-        </>
-    )
+            </section> */}
 
+
+        </div>
+    );
 }
-export default CommonDematTrading;
+
+export default OpenTradingNew;
