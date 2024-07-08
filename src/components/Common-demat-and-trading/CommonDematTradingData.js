@@ -3,13 +3,15 @@ import features from '../../assets/images/demat-images/new-demat/feature1.webp';
 
 export const pagesData = {
     dematData: {
+        
+        startpara:[`Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.
+        <br/><br/>
+        Explore topics related to Demat accounts, how they work, the different types available, and more. Gain insight into their significance and how they play a pivotal role in your investment journey.`
+        ],
         content: [
             {
                 maintitle: "Demat Account",
-                startpara:`Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.
-                <br/><br/>
-                Explore topics related to Demat accounts, how they work, the different types available, and more. Gain insight into their significance and how they play a pivotal role in your investment journey.`
-            },
+               },
             {
                 id: "id0",
                 title: "What is Demat Account?",
@@ -52,17 +54,14 @@ export const pagesData = {
                                         <p>In the unfortunate event of a Demat account holder's demise, assets can be seamlessly transferred to the next of kin. This ensures a hassle-free process compared to physical certificates.</p>
                                     </li>
                                 </ol>
-                                <div class="d-flex justify-content-between col-11">
-                                    <span><LazyLoader src=${features} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
-                                    <span><LazyLoader src=${benefits} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
-                                </div>
+                                
+                                    <LazyLoader src=${features} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} />
+                                    <LazyLoader src=${benefits} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} />
+                               
                                 Other than the above mentioned benefits, there are many other <a href="/blog/benefits-of-a-demat-account/">benefits of a demat account</a> like regular and automatic updates about Corporate actions like dividends, bonuses, or split, integration with trading account, loan against securities, faster and smoother settlements, reduction in errors
                                 
                                 `,
-                images: [
-                    { src: features, alt: "Benefits of Demat Account" },
-                    { src: benefits, alt: "Benefits of Demat Account" }
-                ]
+                
             },
             {
                 id: "id3",
