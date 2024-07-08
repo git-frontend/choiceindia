@@ -14,14 +14,50 @@ function NoticesMenu() {
   const [trigger, setTrigger] = useState(false);
   const [isloading, setisloading] = useState(true);
   const [datalist,setDatalist ] =useState();
-  
+  let values;
+  let AllFilesValue = {};
+  function loadnewspdf() {
+    cmsService
+      .Notices()
+      .then(
+        res => {
+            if (res && res.data && res.data.data) {
+                setisloading(false)
+                values = res.data.data;
+                
+                values.forEach(ele => {
+
+                    if (!AllFilesValue[ele.type]) {
+                        AllFilesValue[ele.type] = [];
+                        AllFilesValue[ele.type].push(ele)
+                    } else {
+                        AllFilesValue[ele.type].push(ele)
+
+                    }
+                })
+                setDatalist(AllFilesValue);
+            } else {
+                setisloading(false)
+                setData([]);
+
+            }
+
+        })
+      .catch((error) => {
+        setisloading(false);
+        setData([]);
+      });
+  }
+
   useEffect(() => {
     setTrigger(true);
 
     if (trigger === true) {
-      cmsService.loadCmsData(cmsService.Notices,setisloading,setDatalist,"type");
+      loadnewspdf();
+    //   loadnewsRpdf();
     }
   }, [trigger]);
+
 
   return (
     <div>
