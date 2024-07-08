@@ -26,7 +26,9 @@ export const pagesData = {
                        <br/></br/>
                         <a href="/blog/dematerialisation/">Dematerialization</a> refers to the process of <a href="/blog/physical-shares-to-demat/">converting physical share certificates</a> into electronic form.This transformation enabled easy access to your shares from anywhere in the world. 
                         The introduction of a Demat account ensured seamless tracking and monitoring of investors holdings.
-                        <br /><br />`
+                        <br /><br /> 
+                        <iframe className="cust-video" src="https://www.youtube.com/embed/3u0VZAHMwO0?si=A1jjjLq-Qu5XE1p7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        `
             },
             {
                 id: "id2",
@@ -54,10 +56,10 @@ export const pagesData = {
                                         <p>In the unfortunate event of a Demat account holder's demise, assets can be seamlessly transferred to the next of kin. This ensures a hassle-free process compared to physical certificates.</p>
                                     </li>
                                 </ol>
-                                
-                                    <LazyLoader src=${features} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} />
-                                    <LazyLoader src=${benefits} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} />
-                               
+                                <div class="d-flex justify-content-between col-12">
+                                    <span><img src=${features} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
+                                    <span><img src=${benefits} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
+                                </div>
                                 Other than the above mentioned benefits, there are many other <a href="/blog/benefits-of-a-demat-account/">benefits of a demat account</a> like regular and automatic updates about Corporate actions like dividends, bonuses, or split, integration with trading account, loan against securities, faster and smoother settlements, reduction in errors
                                 
                                 `,
