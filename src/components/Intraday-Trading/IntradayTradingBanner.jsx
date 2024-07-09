@@ -31,15 +31,15 @@ function IntradayTradingBanner() {
                         <div className="col-xl-8 col-md-12">
                             <div className="inner-count">
                                 <div className="count-itm">
-                                    <h3><span className="hvr-txt"><span>25</span></span><small>+</small></h3>
+                                    <h3><span className="hvr-txt"><span>30</span></span><small>+</small></h3>
                                     <h5>Year of Expertise</h5>
                                 </div>
                                 <div className="count-itm">
-                                    <h3><span className="hvr-txt"><span>104</span></span><small>+</small></h3>
+                                    <h3><span className="hvr-txt"><span>110</span></span><small>+</small></h3>
                                     <h5>Local Branches</h5>
                                 </div>
                                 <div className="count-itm">
-                                    <h3><span className="hvr-txt"><span>850K</span></span><small>+</small></h3>
+                                    <h3><span className="hvr-txt"><span>975K</span></span><small>+</small></h3>
                                     <h5>Happy Clients</h5>
                                 </div>
                             </div>
