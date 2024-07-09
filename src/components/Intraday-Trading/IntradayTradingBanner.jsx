@@ -19,7 +19,7 @@ function IntradayTradingBanner() {
                 <div className="container">
                     <div className="row gx-5 align-items-start">
                         <div className="col-xl-6 col-md-9">
-                            <div className="ban-caption">
+                            <div className="ban-caption intraday-ban-caption">
                                 <h5>Choice: Preferred by Intraday Traders</h5>
                                 <h1 className="title">Supercharge Your <br/> <span>Intraday</span> Trading</h1>
                                 <p className="para">Maximize your intraday profits with advanced tools and personalized services.</p>
