@@ -339,7 +339,7 @@ export const pagesData = {
             },
             {
                 id: "id1",
-                title: "Need and Purpose of Trading Account",
+                title: "Need and Purpose of Trading Account:",
                 content: `A trading account serves several crucial purposes that make it an important tool for anyone looking to invest in the stock market:
                 <br/><br/>
                  <ul>
@@ -376,13 +376,13 @@ export const pagesData = {
                 content: `A trading account typically offers a range of features to facilitate efficient and convenient trading. Some key features include:
                 <br/><br/>
                                             <ul>
-                                            <li><strong>Online Trading Platform:</strong>Most brokers provide user-friendly online platforms that allow you to place orders, monitor your portfolio, and access real-time market data from anywhere, at any time.</li>
+                                            <li><strong>Online Trading Platform:</strong> Most brokers provide user-friendly online platforms that allow you to place orders, monitor your portfolio, and access real-time market data from anywhere, at any time.</li>
 <br/>
                             <li><strong>Mobile App:</strong> Complementing the online platform, many brokers offer <a href="/online-trading-app">mobile trading applications </a> that enable you to trade and manage your account on-the-go, ensuring you never miss an opportunity.</li>
 <br/>
                             <li><strong>Research and Analysis Tools:</strong> Top brokers like Choice provide access to in-depth research reports, market analysis, and investment recommendations to help you make informed decisions.</li>
 <br/>
-                            <li><strong>Portfolio Tracking:</strong>Trading accounts often include powerful tools that allow you to track your portfolio's performance, monitor your investment returns, and analyse your risk exposure.</li>
+                            <li><strong>Portfolio Tracking:</strong> Trading accounts often include powerful tools that allow you to track your portfolio's performance, monitor your investment returns, and analyse your risk exposure.</li>
 <br/>
                             <li><strong>Margin Trading:</strong> Some trading accounts offer the ability to trade on margin, allowing you to leverage your investment capital for potentially higher returns (while also increasing risk).</li>
 <br/>
@@ -427,7 +427,7 @@ export const pagesData = {
                                  <li><strong>Bonds:</strong> Debt securities issued by corporations, municipalities, or government entities.
                               </li>
                              <br/>
-                                 <li><strong>Mutual Funds:</strong> Professionally managed investment funds that pool money from multiple investors and invest in a diverse portfolio of securities.<a href="/mutual-funds-investment">Mutual fund investments</a>  are most commonly used investment instruments now-a-days.
+                                 <li><strong>Mutual Funds:</strong> Professionally managed investment funds that pool money from multiple investors and invest in a diverse portfolio of securities.<a href="/mutual-funds-investment"> Mutual fund investments</a>  are most commonly used investment instruments now-a-days.
                                 </li>
                             <br/>
                                  <li><strong><a href="/etf-exchange-traded-funds">Exchange-Traded Funds (ETFs)</a> :</strong> Investment funds that track specific indices, sectors, or commodities, and are traded on stock exchanges like stocks.
@@ -550,7 +550,7 @@ export const pagesData = {
             },
             {
                 id: "id9",
-                title: "How to Find the Best Trading Account in India",
+                title: "How to Find the Best Trading Account in India:",
                 content: `Choosing the right stockbroker is crucial for a successful trading experience. Here are some factors to consider:
                 <br/><br/>
                  <ul>
@@ -579,18 +579,22 @@ export const pagesData = {
                                         <h3>Complete the Online Account Opening Process</h3>
                                         Choose a broker and fill out the online account opening form. Submit the required documents, such as identity proof, address proof, and bank account details. You may need to complete a Know Your Customer (KYC) process to comply with regulatory requirements.
                                     </li>
+                                    <br/>
                                     <li>
                                         <h3>Activate Your Demat Account</h3>
                                         <a href="/open-free-demat-account">Open a Demat account</a>, which will be linked to your trading account. This account will hold your securities in an electronic form, facilitating seamless trading activities.
                                     </li>
+                                    <br/>
                                     <li>
                                         <h3>Fund Your Account</h3>
                                         Once your application is approved, you'll receive your account details. Deposit the initial funds into your trading account through various payment methods, such as online banking, cheque, or demand draft.
                                     </li>
+                                    <br/>
                                     <li>
                                         <h3>Access the Trading Platform</h3>
                                         <a href="https://finx.choiceindia.com/auth/login">Log in to the trading platform</a> provided by your stockbroker and familiarize yourself with its features and functionalities.
                                     </li>
+                                    <br/>
                                     <li>
                                         <h3>Start Investing</h3>
                                         With your trading account set up and funded, you can now start researching investment opportunities and executing trades based on your investment strategy and risk appetite.

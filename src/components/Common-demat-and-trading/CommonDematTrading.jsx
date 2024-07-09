@@ -249,7 +249,6 @@ function CommonDematTrading({ data }) {
                                         <div className="">
                                             <div className="" id="campaignForm">
                                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-
                                                     <NewDematAccountForm />
                                                 </GoogleReCaptchaProvider>
                                             </div>
