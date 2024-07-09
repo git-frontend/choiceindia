@@ -2567,6 +2567,12 @@ Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter 
     "lang":"en",
     "content": "Check out Choice India's government advisory services that provide end to end project management solutions to the government.",
     "link":"https://choiceindia.com/government-advisory"
+  },
+  "trading-account": {
+    "title": "Trading Account - Meaning, Definition, Features, Benefits, Types",
+    "lang":"en",
+    "content": "A Trading account is a must for trading in the securities market. Know what is trading account, it’s purpose, types, benefits, charges, how it works and ways to earn with trading account.",
+    "link":"https://choiceindia.com/trading-account"
   }
 
 }

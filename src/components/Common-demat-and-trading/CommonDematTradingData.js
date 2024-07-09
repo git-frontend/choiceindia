@@ -378,7 +378,7 @@ export const pagesData = {
                                             <ul>
                                             <li><strong>Online Trading Platform:</strong>Most brokers provide user-friendly online platforms that allow you to place orders, monitor your portfolio, and access real-time market data from anywhere, at any time.</li>
 <br/>
-                            <li><strong>Mobile App:</strong> Complementing the online platform, many brokers offer mobile applications that enable you to trade and manage your account on-the-go, ensuring you never miss an opportunity.</li>
+                            <li><strong>Mobile App:</strong> Complementing the online platform, many brokers offer <a href="/online-trading-app">mobile trading applications </a> that enable you to trade and manage your account on-the-go, ensuring you never miss an opportunity.</li>
 <br/>
                             <li><strong>Research and Analysis Tools:</strong> Top brokers like Choice provide access to in-depth research reports, market analysis, and investment recommendations to help you make informed decisions.</li>
 <br/>
@@ -427,10 +427,10 @@ export const pagesData = {
                                  <li><strong>Bonds:</strong> Debt securities issued by corporations, municipalities, or government entities.
                               </li>
                              <br/>
-                                 <li><strong>Mutual Funds:</strong> Professionally managed investment funds that pool money from multiple investors and invest in a diverse portfolio of securities.
+                                 <li><strong>Mutual Funds:</strong> Professionally managed investment funds that pool money from multiple investors and invest in a diverse portfolio of securities.<a href="/mutual-funds-investment">Mutual fund investments</a>  are most commonly used investment instruments now-a-days.
                                 </li>
                             <br/>
-                                 <li><strong>Exchange-Traded Funds (ETFs):</strong> Investment funds that track specific indices, sectors, or commodities, and are traded on stock exchanges like stocks.
+                                 <li><strong><a href="/etf-exchange-traded-funds">Exchange-Traded Funds (ETFs)</a> :</strong> Investment funds that track specific indices, sectors, or commodities, and are traded on stock exchanges like stocks.
                                 </li>
                                 <br/>
                                  <li><strong>Derivatives:</strong> Financial contracts whose value is derived from underlying assets, such as stocks, bonds, currencies, or commodities. This includes futures, options, and swaps.
@@ -455,10 +455,10 @@ export const pagesData = {
                                 <li><strong>Equity Trading Account:</strong> This type of account allows you to buy and sell equity shares of companies listed on the stock exchange.
                                 </li>
                                 <br/>
-                                 <li><strong>Derivative Trading Account:</strong> This account enables you to trade in financial derivatives such as futures and options.
+                                 <li><strong>Derivative Trading Account:</strong> This account enables you to <a href="/derivatives-trading">trade in financial derivatives</a> such as futures and options.
                               </li>
                               <br/>
-                              <li><strong>Commodity Trading Account:</strong> With this account, you can trade in commodities like gold, silver, agricultural products, and more.
+                              <li><strong>Commodity Trading Account:</strong> With this account, you can <a href="/commodity-trading">trade in commodities</a> like gold, silver, agricultural products, and more.
                               </li>
                               <br/>
                               <li><strong>Forex Trading Account:</strong> This account type allows you to trade in foreign currency pairs, speculating on exchange rate fluctuations.
@@ -481,7 +481,7 @@ export const pagesData = {
                               </ul>
                             Each type of trading account has its own features and benefits, and the choice of account depends on your trading needs and investment goals.
                             <br/><br/>
-                            For example, a beginner might prefer a full-service trading account for additional support and advisory services, while an experienced trader might opt for a discount trading account to save on brokerage fees.
+                            For example, a beginner might prefer a <a href="/">full-service broker</a> for additional support and advisory services, while an experienced trader might opt for a discount trading account to save on brokerage fees.
                               `
             },
             {
@@ -566,13 +566,13 @@ export const pagesData = {
                         <li><strong>Customer Support:</strong> Evaluate the broker's customer service, availability (business hours), channels of support (phone, email, live chat, etc.), and the quality of their responses.
                        </li>
                         </ul>
-                        Choice is a reputable full-service broker in India known for its competitive fees, robust trading platforms, comprehensive research resources, and prompt customer service.
+                        Choice is a reputable full-service broker in India known for its competitive <a href="/brokerage-charges">brokerage charges</a> , robust trading platforms, comprehensive research resources, and prompt customer service.
                         `
             },
             {
                 id: "id10",
                 title: "How to Open a Trading Account",
-                content: `Follow this simple step-by-step guide to open your trading account online:
+                content: `Follow this simple step-by-step guide to <a href="/open-trading-account">open your trading account online</a>:
                 <br/><br/>
                         <ol class="drk-bld">
                                     <li>
@@ -581,7 +581,7 @@ export const pagesData = {
                                     </li>
                                     <li>
                                         <h3>Activate Your Demat Account</h3>
-                                        Open a Demat account, which will be linked to your trading account. This account will hold your securities in an electronic form, facilitating seamless trading activities.
+                                        <a href="/open-free-demat-account">Open a Demat account</a>, which will be linked to your trading account. This account will hold your securities in an electronic form, facilitating seamless trading activities.
                                     </li>
                                     <li>
                                         <h3>Fund Your Account</h3>
@@ -589,7 +589,7 @@ export const pagesData = {
                                     </li>
                                     <li>
                                         <h3>Access the Trading Platform</h3>
-                                        Log in to the trading platform provided by your stockbroker and familiarize yourself with its features and functionalities.
+                                        <a href="https://finx.choiceindia.com/auth/login">Log in to the trading platform</a> provided by your stockbroker and familiarize yourself with its features and functionalities.
                                     </li>
                                     <li>
                                         <h3>Start Investing</h3>
@@ -624,7 +624,8 @@ export const pagesData = {
 <br/><br/>
                 <h3>Can Minors have a Trading Account</h3>
 
-                Minors cannot directly open or operate a trading account. However, a parent or legal guardian can open an account and designate the minor as the beneficiary, or the account can be converted to the minor's name upon attaining the age of majority.
+               A parent or legal guardian can <a href="/minor-demat-account">open a demat account for minor</a> and designate the minor as the beneficiary, or the account can be converted to the minor's name upon attaining the age of majority.
+
 <br/><br/>
                 <h3>What Instruments could be Traded Using a Trading Account?</h3>
 
@@ -640,7 +641,7 @@ export const pagesData = {
 <br/><br/>
                 <h3>Can we Apply for an IPO Using a Trading Account</h3>
 
-                Yes, you can use your trading account to apply for an Initial Public Offering (IPO) by completing the application process and blocking funds in your account for the IPO application.
+                Yes, you can use your trading account to <a href="/ipo-investment-account">apply for an Initial Public Offering (IPO)</a> by completing the application process and blocking funds in your account for the IPO application.
 <br/><br/>
                 <h2>Latest News Regarding Trading Account</h2>
 Eg. Investors will soon be able to block their trading account to stop suspicious activity
