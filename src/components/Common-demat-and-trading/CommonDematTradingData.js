@@ -1,6 +1,6 @@
 import benefits from '../../assets/images/demat-images/new-demat/feature2.webp';
 import features from '../../assets/images/demat-images/new-demat/feature1.webp';
-
+import openingprocess from '../../assets/images/demat-images/new-demat/demat-account-opening-process.webp';
 export const pagesData = {
     dematData: {
         
@@ -27,7 +27,7 @@ export const pagesData = {
                         <a href="/blog/dematerialisation/">Dematerialization</a> refers to the process of <a href="/blog/physical-shares-to-demat/">converting physical share certificates</a> into electronic form.This transformation enabled easy access to your shares from anywhere in the world. 
                         The introduction of a Demat account ensured seamless tracking and monitoring of investors holdings.
                         <br /><br /> 
-                        <iframe className="cust-video" src="https://www.youtube.com/embed/3u0VZAHMwO0?si=A1jjjLq-Qu5XE1p7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe class="cust-video" src="https://www.youtube.com/embed/3u0VZAHMwO0?si=A1jjjLq-Qu5XE1p7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                         `
             },
             {
@@ -56,12 +56,13 @@ export const pagesData = {
                                         <p>In the unfortunate event of a Demat account holder's demise, assets can be seamlessly transferred to the next of kin. This ensures a hassle-free process compared to physical certificates.</p>
                                     </li>
                                 </ol>
+                                <iframe class="cust-video" src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=YR-BgGwX4bzXitGx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                 <br /><br />
+                                Other than the above mentioned benefits, there are many other <a href="/blog/benefits-of-a-demat-account/">benefits of a demat account</a> like regular and automatic updates about Corporate actions like dividends, bonuses, or split, integration with trading account, loan against securities, faster and smoother settlements, reduction in errors
                                 <div class="d-flex justify-content-between col-12">
                                     <span><img src=${features} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
                                     <span><img src=${benefits} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
                                 </div>
-                                Other than the above mentioned benefits, there are many other <a href="/blog/benefits-of-a-demat-account/">benefits of a demat account</a> like regular and automatic updates about Corporate actions like dividends, bonuses, or split, integration with trading account, loan against securities, faster and smoother settlements, reduction in errors
-                                
                                 `,
                 
             },
@@ -102,6 +103,8 @@ export const pagesData = {
                                 <br/><br/>
                                 <strong>Settlement -</strong> Once your buy order matches with a corresponding sell order, the stock exchange sends it to a clearinghouse for settlement. At the end of the trading day, the shares you've bought are credited to your Demat account. Similarly, the seller's Demat account is debited for the sold shares.
                                 <br/><br/>
+                                <iframe class="cust-video" src="https://www.youtube.com/embed/at5pItTsJJE?si=Qj1h3-4i6wvGT9tg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <br/><br/>
                                     Remember, without a trading account, you cannot utilize your Demat account for investments. A trading account handles the monetary transactions associated with buying and selling shares.
                                 
                                 `
@@ -135,7 +138,7 @@ export const pagesData = {
                                     <li><strong>Passport-Size Photographs:</strong> Typically, you need 2-3 recent passport-sized photographs if you opt for the offline process. For the online process, it will be e-KYC authentication.</li>
                                 </ol>
                                 <p>Ensure that all documents are self-attested copies, and keep the original documents handy for verification purposes during the <a href="/blog/demat-account-opening-process/">demat account opening process</a>.</p>
-                                <span class="bl-box-text">For certain segments, such as derivatives, income proofs may be necessary.</span>`
+                                <span class="bl-box">For certain segments, such as derivatives, income proofs may be necessary.</span>`
             },
             {
                 id: "id6",
@@ -184,6 +187,8 @@ export const pagesData = {
                 content: ` <p>Opening a Demat Account has been a lot easier today, thanks to digitalization. You have two primary options: online and offline account opening.</p>
                                 <h3><a href="/blog/demat-account-opening-online/">Online Demat Account Opening</a></h3>
                                 <p>Most brokerage firms offer online account opening, allowing you to complete the process from the comfort of your home. It's quick, convenient, and paperless.</p>
+                                <iframe class="cust-video" src="https://www.youtube.com/embed/dbtHtNsWZkI?si=_ZUWNvQEt-u0iSjf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <br/><br/>
                                 <p>An online demat account opening process involves:</p>
                                 <ol class="none-para">
                                     <li>Visiting the preferred broking company’s official website</li>
@@ -197,6 +202,8 @@ export const pagesData = {
                                     <li>Enter your Aadhar details (ensure your phone number is linked to your Aadhar card) and receive an OTP</li>
                                     <li>After successful verification, your Demat account will be opened and activated</li>
                                 </ol>
+                                <img src=${openingprocess} class="img-fluid" alt={"Benefits of Demat Account"} width={"670"} height={"1029"} />
+                                <br/><br/>
                                 <span class="bl-box">Choice completes the verification process in under 4 hours. Our team will assist you if you encounter any issues during the Demat account opening process.</span>`
             },
             {
@@ -312,19 +319,21 @@ export const pagesData = {
                 content: `A Trading Account is a type of investment account that allows you to buy and sell various types of securities such as stocks, bonds, mutual funds, and ETFs. It acts as an interface between your bank account and your Demat account, facilitating the buying and selling of securities.
                 <br/><br/>
                 This powerful account serves as your gateway to the dynamic world of trading and investing. It's a secure place where you deposit funds and hold your investments, giving you access to execute trades seamlessly, monitor your portfolio performance, and manage your investment activities efficiently.
-                <br/><br/><h3>Key components of a trading account include:<h3/>
-                 <ol class="drk-bld">
-                                    <li>
-                                        <h3>Demat Account</h3>
-                                        <p> A <a href="/demat-account">Demat account</a> is where your purchased securities are held. It's like a bank account for your securities.</p>
+                <br/><br/>
+                <h3>Key components of a trading account include:</h3>
+                 <ol><li>
+                                        <strong>Demat Account </strong>
+                                       A <a href="/demat-account">Demat account</a> is where your purchased securities are held. It's like a bank account for your securities.
                                     </li>
+                                    <br/>
                                     <li>
-                                        <h3>Trading Account Number</h3>
-                                        <p>A unique identification number is assigned by your stockbroker. It serves as your trading identity and is required for executing transactions in the stock market.</p>
+                                        <strong>Trading Account Number </strong>
+                                        A unique identification number is assigned by your stockbroker. It serves as your trading identity and is required for executing transactions in the stock market.
                                     </li>
+                                    <br/>
                                     <li>
-                                        <h3>Trading Platform</h3>
-                                        <p>This is the software provided by your broker that allows you to place trades. It could be a web-based platform, a desktop application, or a mobile app.</p>
+                                        <strong>Trading Platform </strong>
+                                       This is the software provided by your broker that allows you to place trades. It could be a web-based platform, a desktop application, or a mobile app.
                                     </li>
                                 </ol>`
             },
@@ -335,25 +344,28 @@ export const pagesData = {
                 <br/><br/>
                  <ul>
                     <li>
-                        <h4>Access to Securities</h4>
-                        <p>It allows you to buy and sell different financial instruments such as stocks, bonds, mutual funds, and ETFs that enable you to build and manage your investment portfolio seamlessly.</p>
+                        <strong>Access to Securities</strong>
+                        It allows you to buy and sell different financial instruments such as stocks, bonds, mutual funds, and ETFs that enable you to build and manage your investment portfolio seamlessly.
                     </li>
+                    <br/>
                     <li>
-                        <h4>Market Participation</h4>
-                        <p>By opening a trading account, you gain the ability to participate in the stock market and potentially benefit from its growth and opportunities.</p>
+                        <strong>Market Participation</strong>
+                        By opening a trading account, you gain the ability to participate in the stock market and potentially benefit from its growth and opportunities.
                     </li>
+                    <br/>
                     <li>
-                        <h4>Efficient Trading</h4>
-                        <p>With a trading account, you can execute trades quickly and conveniently, either through an online platform or with the assistance of a broker. Such efficiency is vital in today's fast-paced markets.</p>
+                        <strong>Efficient Trading</strong>
+                        With a trading account, you can execute trades quickly and conveniently, either through an online platform or with the assistance of a broker. Such efficiency is vital in today's fast-paced markets.
                     </li>
-
+<br/>
                     <li>
-                        <h4>Leverage Investment Strategies</h4>
-                        <p> Certain types of trading accounts, such as margin accounts, enable you to leverage your investment capital, potentially amplifying your returns (while also increasing risk).</p>
+                        <strong>Leverage Investment Strategies</strong>
+                       Certain types of trading accounts, such as margin accounts, enable you to leverage your investment capital, potentially amplifying your returns (while also increasing risk).
                     </li>
+                    <br/>
                     <li>
-                        <h4>Portfolio Management</h4>
-                        <p>A trading account provides a centralized location to monitor your holdings, track your investments, and make informed decisions based on your financial goals and risk tolerance.</p>
+                        <strong>Portfolio Management</strong>
+                        A trading account provides a centralized location to monitor your holdings, track your investments, and make informed decisions based on your financial goals and risk tolerance.
                     </li>
                 </ul> 
                 `
@@ -364,19 +376,19 @@ export const pagesData = {
                 content: `A trading account typically offers a range of features to facilitate efficient and convenient trading. Some key features include:
                 <br/><br/>
                                             <ul>
-                                            <li><h4>Online Trading Platform:</h4>Most brokers provide user-friendly online platforms that allow you to place orders, monitor your portfolio, and access real-time market data from anywhere, at any time.</li>
-
-                            <li><h4>Mobile App:</h4> Complementing the online platform, many brokers offer mobile applications that enable you to trade and manage your account on-the-go, ensuring you never miss an opportunity.</li>
-
-                            <li><h4>Research and Analysis Tools:</h4> Top brokers like Choice provide access to in-depth research reports, market analysis, and investment recommendations to help you make informed decisions.</li>
-
-                            <li><h4>Portfolio Tracking:</h4> Trading accounts often include powerful tools that allow you to track your portfolio's performance, monitor your investment returns, and analyse your risk exposure.</li>
-
-                            <li><h4>Margin Trading:</h4> Some trading accounts offer the ability to trade on margin, allowing you to leverage your investment capital for potentially higher returns (while also increasing risk).</li>
-
-                            <li><h4>Integrated Banking:</h4> Many brokers provide seamless integration between your trading account and your linked bank account, facilitating easy fund transfers for trading activities.</li>
-
-                            <li><h4>Tax Reporting:</h4> Trading accounts may provide detailed tax reports and statements, simplifying the process of tracking your capital gains and losses for tax purposes.</li>
+                                            <li><strong>Online Trading Platform:</strong>Most brokers provide user-friendly online platforms that allow you to place orders, monitor your portfolio, and access real-time market data from anywhere, at any time.</li>
+<br/>
+                            <li><strong>Mobile App:</strong> Complementing the online platform, many brokers offer mobile applications that enable you to trade and manage your account on-the-go, ensuring you never miss an opportunity.</li>
+<br/>
+                            <li><strong>Research and Analysis Tools:</strong> Top brokers like Choice provide access to in-depth research reports, market analysis, and investment recommendations to help you make informed decisions.</li>
+<br/>
+                            <li><strong>Portfolio Tracking:</strong>Trading accounts often include powerful tools that allow you to track your portfolio's performance, monitor your investment returns, and analyse your risk exposure.</li>
+<br/>
+                            <li><strong>Margin Trading:</strong> Some trading accounts offer the ability to trade on margin, allowing you to leverage your investment capital for potentially higher returns (while also increasing risk).</li>
+<br/>
+                            <li><strong>Integrated Banking:</strong> Many brokers provide seamless integration between your trading account and your linked bank account, facilitating easy fund transfers for trading activities.</li>
+<br/>
+                            <li><strong>Tax Reporting:</strong> Trading accounts may provide detailed tax reports and statements, simplifying the process of tracking your capital gains and losses for tax purposes.</li>
                             </ul>
                 `
             },
@@ -385,19 +397,19 @@ export const pagesData = {
                 title: "Benefits of Trading Account",
                 content: `Having a trading account offers several benefits:
                 <br/><br/> <ul>
-                                <li><h4>Access to Investment Opportunities:</h4>
+                                <li><strong>Access to Investment Opportunities:</strong>
                                 A trading account gives you access to a wide range of investment opportunities, including stocks, bonds, mutual funds, and ETFs traded on NSE and BSE.</li>
-                               
-                                 <li><h4>Tax Advantages:</h4>
+                               <br/>
+                                 <li><strong>Tax Advantages:</strong>
                                Investing through a trading account offers significant tax benefits like lower taxes on long-term capital gains from equity and deductions for instruments like ELSS.</li>
-                             
-                                 <li><h4>Convenience and Accessibility:</h4>
+                             <br/>
+                                 <li><strong>Convenience and Accessibility:</strong>
                                 Online trading accounts allow you to access your account from anywhere, anytime, and execute trades with just a few clicks, making investing a seamless experience. Possible via online platforms and mobile apps.</li>
-                            
-                                 <li><h4>Professional Guidance:</h4>
+                            <br/>
+                                 <li><strong>Professional Guidance:</strong>
                                 Certain brokerage firms offer research reports and advisory services to their trading account holders. This guidance can be invaluable for those new to investing or seeking expert insights into market trends and investment strategies.</li>
-                            
-                                 <li><h4>Regulatory Oversight: </h4>
+                            <br/>
+                                 <li><strong>Regulatory Oversight: </strong>
                                 Trading accounts in India are regulated by the Securities and Exchange Board of India (SEBI), ensuring transparency and fairness. This measure provides a safety net for investors.</li>
                                 
                             </ul>
@@ -411,19 +423,22 @@ export const pagesData = {
                 <ul>
                                 <li><strong>Stocks:</strong> Equity shares of publicly listed companies on stock exchanges like the NSE and BSE.
                                 </li>
+                                <br/>
                                  <li><strong>Bonds:</strong> Debt securities issued by corporations, municipalities, or government entities.
                               </li>
-                             
+                             <br/>
                                  <li><strong>Mutual Funds:</strong> Professionally managed investment funds that pool money from multiple investors and invest in a diverse portfolio of securities.
                                 </li>
-                            
+                            <br/>
                                  <li><strong>Exchange-Traded Funds (ETFs):</strong> Investment funds that track specific indices, sectors, or commodities, and are traded on stock exchanges like stocks.
                                 </li>
+                                <br/>
                                  <li><strong>Derivatives:</strong> Financial contracts whose value is derived from underlying assets, such as stocks, bonds, currencies, or commodities. This includes futures, options, and swaps.
-
                                 </li>
+                                <br/>
                                  <li><strong>Commodities: </strong> Physical goods like precious metals (gold, silver), agricultural products (wheat, coffee), and energy resources (crude oil, natural gas).
                                 </li>
+                                <br/>
                                  <li><strong>Currencies: </strong> Trading accounts may allow you to speculate on foreign currency exchange rates through forex trading.
                                 </li>
                             </ul>
@@ -439,10 +454,13 @@ export const pagesData = {
                      <ul>
                                 <li><strong>Equity Trading Account:</strong> This type of account allows you to buy and sell equity shares of companies listed on the stock exchange.
                                 </li>
+                                <br/>
                                  <li><strong>Derivative Trading Account:</strong> This account enables you to trade in financial derivatives such as futures and options.
                               </li>
+                              <br/>
                               <li><strong>Commodity Trading Account:</strong> With this account, you can trade in commodities like gold, silver, agricultural products, and more.
                               </li>
+                              <br/>
                               <li><strong>Forex Trading Account:</strong> This account type allows you to trade in foreign currency pairs, speculating on exchange rate fluctuations.
                               </li>
                               </ul>
@@ -451,10 +469,13 @@ export const pagesData = {
                                <ul>
                                 <li><strong>Cash Trading Account:</strong> With this account, you can only trade with the available cash balance, without any borrowing or margin trading facility.
                                 </li>
+                                <br/>
                                  <li><strong>Margin Trading Account:</strong> This account enables trading on margin by borrowing funds from the broker, amplifying buying power but also increasing risk.
                                 </li>
+                                <br/>
                                  <li><strong>2-in-1 and 3-in-1 Accounts:</strong> A 2-in-1 account combines a Demat and a trading account, while a 3-in-1 account additionally includes a linked bank account for seamless fund transfers.
                                 </li>
+                                <br/>
                                  <li><strong>Discount and Full-Service Trading Accounts:</strong> Discount brokers offer low brokerage fees but provide limited services, while full-service brokers offer a wide range of services including research and advisory, but at higher brokerage fees.
                                 </li>
                               </ul>
@@ -481,18 +502,25 @@ export const pagesData = {
                   <ul>
                         <li><strong>Capital Appreciation:</strong> One of the primary ways to earn is through capital appreciation, where you buy securities at a lower price and sell them at a higher price, profiting from the price difference.
                        </li>
+                       <br/>
                         <li><strong>Dividends:</strong>  Companies tend to distribute certain portions of their profits to shareholders in the form of dividends. By holding dividend-paying stocks or mutual funds in your trading account, you can earn regular income.
                        </li>
+                       <br/>
                         <li><strong>Interest Income: </strong> Certain fixed-income securities like bonds and debentures generate periodic interest payments, providing a steady stream of income.
                        </li>
+                       <br/>
                         <li><strong>Margin Trading: </strong>  Some trading accounts allow you to leverage your capital through margin trading, potentially amplifying your returns (while also increasing risk).
                        </li>
+                       <br/>
                         <li><strong>Short-Selling:</strong> Advanced traders may engage in short-selling, where they borrow securities, sell them, and then buy them back at a lower price, profiting from the price decline.
                        </li>
+                       <br/>
                         <li><strong>Options Trading:</strong> Trading options contracts can provide opportunities for speculative gains or hedging strategies to manage risk in your portfolio.
                        </li>
+                       <br/>
                      <li><strong>Currency Trading:</strong>  If your trading account permits forex trading, you can potentially profit from fluctuations in currency exchange rates.
                        </li>
+                       <br/>
                      <li><strong>Arbitrage:</strong> Skilled traders may identify and exploit price inefficiencies across different markets or securities, earning profits through arbitrage strategies.
                        </li>
                   </ul>
@@ -507,11 +535,13 @@ export const pagesData = {
                 <ul>
                         <li><strong>Brokerage Fees:</strong> This is the commission that brokers charge for executing buy/sell orders, typically a percentage of trade value.
                        </li>
+                       <br/>
                         <li><strong>Demat Account Charges:</strong> These are the fees for holding securities in and maintaining your Demat account.
                        </li>
+                       <br/>
                         <li><strong>Transaction Fees:</strong> These are the fees charged by the stock exchange for each trade. They include GST charges, clearing charges, SEBI turnover fees, etc.
-
                        </li>
+                       <br/>
                         <li><strong>Securities Transaction Tax (STT): </strong> This is a tax charged by the government on every buy or sell of securities in the stock market. It varies by asset class.
                        </li>
                         </ul>
@@ -526,10 +556,13 @@ export const pagesData = {
                  <ul>
                         <li><strong>Fees</strong> Compare the brokerage fees, annual maintenance charges, and other costs associated with the trading account.
                        </li>
+                       <br/>
                         <li><strong>Platforms:</strong> Check the ease of use, features, and reliability of the trading platforms offered by the broker.
                        </li>
+                       <br/>
                         <li><strong>Research Resources:</strong>  Look for brokers that provide quality research reports and trading recommendations.
                        </li>
+                       <br/>
                         <li><strong>Customer Support:</strong> Evaluate the broker's customer service, availability (business hours), channels of support (phone, email, live chat, etc.), and the quality of their responses.
                        </li>
                         </ul>
