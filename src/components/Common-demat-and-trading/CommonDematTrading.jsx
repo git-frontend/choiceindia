@@ -34,7 +34,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { faTwitter, faLinkedinIn, faFacebookF, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 function CommonDematTrading({ data }) {
-    console.log("data", data)
+    // console.log("data", data)
     const [VideoVisibility, setVideoVisibility] = useState(false);
     const handletClick = () => {
         setVideoVisibility(true);
@@ -245,23 +245,15 @@ function CommonDematTrading({ data }) {
                                         <path d="M10.3164 1.82026e-06C4.63799 -0.00329398 0.0319564 4.46942 0.0285663 9.99011C0.0251763 15.5108 4.62569 19.9889 10.3041 19.9922C13.0322 19.9965 15.6496 18.944 17.5774 17.0674C19.506 15.194 20.5903 12.6526 20.592 10.0021C20.5953 4.48139 15.9948 0.00329772 10.3164 1.82026e-06ZM10.3167 18.9922C5.20633 18.9955 1.06078 14.9706 1.05726 10.0022C1.05381 5.03382 5.19377 1.00336 10.3041 1C12.7594 0.995729 15.1152 1.94287 16.8502 3.63184C18.5859 5.31769 19.5619 7.60468 19.5635 9.98999C19.567 14.9584 15.4271 18.9888 10.3167 18.9922ZM11.0313 9.9961L14.3038 6.81446C14.4998 6.62006 14.4998 6.30896 14.3038 6.11456C14.1051 5.91736 13.7795 5.91419 13.5767 6.10742L10.3041 9.28906L7.03157 6.10748C6.83161 5.91699 6.51163 5.91699 6.31168 6.10748C6.10884 6.30072 6.10558 6.61725 6.30433 6.81446L9.57688 9.9961L6.30433 13.1777C6.2079 13.2715 6.15379 13.3986 6.15373 13.5312C6.15373 13.8073 6.38394 14.0312 6.66795 14.0313C6.80437 14.0314 6.93526 13.9787 7.03157 13.8848L10.3041 10.7031L13.5767 13.8848C13.673 13.9787 13.8039 14.0314 13.9403 14.0313C14.0766 14.0312 14.2073 13.9786 14.3038 13.8849C14.5047 13.6896 14.5047 13.373 14.3038 13.1777L11.0313 9.9961Z" fill="#676767" />
                                     </svg>
                                 </button>
-                                {
-                                    isCheck ?
+                               
                                         <div className="">
-                                            <div className="d-flex justify-content-end" id="campaignForm">
+                                            <div className="" id="campaignForm">
                                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
 
                                                     <NewDematAccountForm />
                                                 </GoogleReCaptchaProvider>
                                             </div>
-                                        </div> :
-                                        <div className="">
-                                            <div className="d-flex justify-content-end" id="campaignForm">
-
-                                                <NewDematAccountForm />
-                                            </div>
-                                        </div>
-                                }
+                                        </div> 
                             </div>
                             <div className={name}>
                                 <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">

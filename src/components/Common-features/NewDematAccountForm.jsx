@@ -34,7 +34,7 @@ function NewDematAccountForm(props) {
     const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     const [referID, setReferID] = useState('');
-    const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1) || (window.location.pathname.indexOf('/under25') > -1) ||(window.location.pathname.indexOf('/brokerage-charges') > -1) ? 'demat-web' : " ")
+    const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1)||(window.location.pathname.indexOf('/trading-account') > -1) || (window.location.pathname.indexOf('/under25') > -1) ||(window.location.pathname.indexOf('/brokerage-charges') > -1) ? 'demat-web' : " ")
  
     const [view,setView]=useState({
 		matches: window.innerWidth < 767 ? false : true ,
