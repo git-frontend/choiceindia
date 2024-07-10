@@ -106,6 +106,12 @@ overflow-x:hidden;
             text-align: center;
         }
     }
+
+    .intraday-ban-caption{
+     &::after{
+      background-image: url('');
+     }  
+    }
 }
 
 .count-fno-members{

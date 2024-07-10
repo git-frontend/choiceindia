@@ -80,90 +80,90 @@ function WhyChooseIntraday() {
                           <Slider {...settings2} className="list-section">
                               <div className="list-itm">
                                   <span>
+                                    <img src={zero4} alt={"Advance Option Chain"}/>
+                                  </span>
+                                  <h4>Advance Option <br/> Chain</h4>
+                                  <h5>Analyse options and strike <br/> prices effortlessly.</h5>
+                              </div>
+                              <div className="list-itm">
+                                  <span>
                                     <img src={zero1} alt={"Intraday Research Calls"}/>
                                   </span>
-                                  <h4>Intraday Research <br/> Calls</h4>
-                                  <h5>Expert advice for <br/> informed trading.</h5>
+                                  <h4>Research Intraday <br/> Calls</h4>
+                                  <h5>Receive expert intraday <br/> recommendations.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero2} alt={"Technical Charts & Indicators for Day Traders"}/>
+                                    <img src={zero6} alt={"Instant Order Execution"}/>
                                   </span>
-                                  <h4>Technical Charts <br/> & Indicators</h4>
-                                  <h5>Comprehensive tools <br/> for market analysis.</h5>
-                              </div>
-                              <div className="list-itm">
-                                  <span>
-                                    <img src={zero3} alt={"One-Click Square-Off all Positions"}/>
-                                  </span>
-                                  <h4>One-Click Square-Off all Positions</h4>
+                                  <h4>Instant Order Execution</h4>
                                   <h5>Efficient trade <br/> management.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero4} alt={"Intraday Trading with Advanced Stock Screeners"} />
+                                    <img src={zero5} alt={"Up to 4X Leverage*"} />
                                   </span>
-                                  <h4>Advanced <br/> Screeners</h4>
-                                  <h5>Filter stocks to <br/> suit your criteria.</h5>
+                                  <h4>Up to 4X Leverage*</h4>
+                                  <h5>Leverage capital for larger positions</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero5} alt={"Intraday Trading with MTF Facility"}/>
+                                    <img src={zero2} alt={"Trade Directly from Charts"}/>
                                   </span>
-                                  <h4>MTF <br/> Facility</h4>
-                                  <h5>Leverage your <br/> positions easily.</h5>
+                                  <h4>Trade Directly from Charts</h4>
+                                  <h5>Execute trades smoothly during volatile sessions</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero6} alt={"Day Trading with Auto Trade via TradingView"}/>
+                                    <img src={zero3} alt={"Zero Auto Square-Off Charges"}/>
                                   </span>
-                                  <h4>Auto Trade via <br/> TradingView</h4>
-                                  <h5>Simplify your <br/> trading activities</h5>
+                                  <h4>Zero Auto Square-Off <br/>Charges</h4>
+                                  <h5>Avoid additional fees for auto <br/> square-off</h5>
                               </div>
                           </Slider>
                           :
                           <div className="list-section">
                           <div className="list-itm">
                                   <span>
+                                    <img src={zero4} alt={"Advance Option Chain"}/>
+                                  </span>
+                                  <h4>Advance Option <br/> Chain</h4>
+                                  <h5>Analyse options and strike <br/> prices effortlessly.</h5>
+                              </div>
+                              <div className="list-itm">
+                                  <span>
                                     <img src={zero1} alt={"Intraday Research Calls"}/>
                                   </span>
-                                  <h4>Intraday Research <br/> Calls</h4>
-                                  <h5>Expert advice for <br/> informed trading.</h5>
+                                  <h4>Research Intraday <br/> Calls</h4>
+                                  <h5>Receive expert intraday<br/> recommendations.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero2} alt={"Technical Charts & Indicators for Day Traders"}/>
+                                    <img src={zero6} alt={"Instant Order Execution"}/>
                                   </span>
-                                  <h4>Technical Charts <br/> & Indicators</h4>
-                                  <h5>Comprehensive tools <br/> for market analysis.</h5>
+                                  <h4>Instant Order Execution </h4>
+                                  <h5>Execute orders immediately <br/> at market price.</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero3} alt={"One-Click Square-Off all Positions"}/>
+                                  <img src={zero5} alt={"Up to 4X Leverage*"} />
                                   </span>
-                                  <h4>One-Click Square-Off <br/> all Positions</h4>
-                                  <h5>Efficient trade <br/> management.</h5>
+                                  <h4>Up to 4X Leverage*</h4>
+                                  <h5>Leverage capital for larger positions</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                  <img src={zero4} alt={"Intraday Trading with Advanced Stock Screeners"} />
+                                    <img src={zero2} alt={"Trade Directly from Charts"} />
                                   </span>
-                                  <h4>Advanced <br/> Screeners</h4>
-                                  <h5>Filter stocks to <br/> suit your criteria.</h5>
+                                  <h4>Trade Directly from Charts</h4>
+                                  <h5>Execute trades smoothly during volatile sessions</h5>
                               </div>
                               <div className="list-itm">
                                   <span>
-                                    <img src={zero5} />
+                                  <img src={zero3} alt={"Zero Auto Square-Off Charges"}/>
                                   </span>
-                                  <h4>MTF <br/> Facility</h4>
-                                  <h5>Leverage your <br/> positions easily.</h5>
-                              </div>
-                              <div className="list-itm">
-                                  <span>
-                                  <img src={zero6} alt={"Day Trading with Auto Trade via TradingView"}/>
-                                  </span>
-                                  <h4>Auto Trade via <br/> TradingView</h4>
-                                  <h5>Simplify your <br/> trading activities</h5>
+                                  <h4>Zero Auto Square-Off <br/>Charges</h4>
+                                  <h5>Avoid additional fees for auto <br/> square-off</h5>
                               </div>
                           </div>
                         }

@@ -149,8 +149,8 @@ function scrollToId(id) {
                                   <span>
                                     <img src={zero1} alt={"Start Option Trading with Free Demat Account"} />
                                   </span>
-                                  <h4>Zero</h4>
-                                  <h5>Account <span>Opening Fee</span></h5>
+                                  <h4>Paperless</h4>
+                                  <h5>Online <span>Account Opening</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
@@ -185,7 +185,9 @@ function scrollToId(id) {
               <div className="container">
                   <div className="row">
                       <div className="col-md-12">
-                          <p className="etc-fno-cont">At Choice, we make trading simple for everyone. Whether you’re an experienced trader or a beginner, we’re dedicated to empowering you at every step of your trading journey. Begin mastering the art of trading by opening your Choice Demat account today.</p>
+                          <p className="etc-fno-cont">At Choice, we believe in simplifying trading for everyone. Whether you're a seasoned trader or just starting, we are committed to empowering you at every step. 
+                          Start your journey to master the art of trading today by opening your Demat account with Choice.
+                          </p>
                       </div>
                   </div>
               </div>
