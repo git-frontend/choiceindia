@@ -320,51 +320,51 @@ export const pagesData = {
                 <br/><br/>
                 This powerful account serves as your gateway to the dynamic world of trading and investing. It's a secure place where you deposit funds and hold your investments, giving you access to execute trades seamlessly, monitor your portfolio performance, and manage your investment activities efficiently.
                 <br/><br/>
-                <h3>Key components of a trading account include:</h3>
+                <h3>Key components of a trading account include</h3>
                  <ol><li>
-                                        <strong>Demat Account </strong>
+                                        <strong>Demat Account:</strong>
                                        A <a href="/demat-account">Demat account</a> is where your purchased securities are held. It's like a bank account for your securities.
                                     </li>
                                     <br/>
                                     <li>
-                                        <strong>Trading Account Number </strong>
+                                        <strong>Trading Account Number: </strong>
                                         A unique identification number is assigned by your stockbroker. It serves as your trading identity and is required for executing transactions in the stock market.
                                     </li>
                                     <br/>
                                     <li>
-                                        <strong>Trading Platform </strong>
+                                        <strong>Trading Platform: </strong>
                                        This is the software provided by your broker that allows you to place trades. It could be a web-based platform, a desktop application, or a mobile app.
                                     </li>
                                 </ol>`
             },
             {
                 id: "id1",
-                title: "Need and Purpose of Trading Account:",
+                title: "Need and Purpose of Trading Account",
                 content: `A trading account serves several crucial purposes that make it an important tool for anyone looking to invest in the stock market:
                 <br/><br/>
                  <ul>
                     <li>
-                        <strong>Access to Securities</strong>
+                        <strong>Access to Securities:</strong>
                         It allows you to buy and sell different financial instruments such as stocks, bonds, mutual funds, and ETFs that enable you to build and manage your investment portfolio seamlessly.
                     </li>
                     <br/>
                     <li>
-                        <strong>Market Participation</strong>
+                        <strong>Market Participation:</strong>
                         By opening a trading account, you gain the ability to participate in the stock market and potentially benefit from its growth and opportunities.
                     </li>
                     <br/>
                     <li>
-                        <strong>Efficient Trading</strong>
+                        <strong>Efficient Trading:</strong>
                         With a trading account, you can execute trades quickly and conveniently, either through an online platform or with the assistance of a broker. Such efficiency is vital in today's fast-paced markets.
                     </li>
 <br/>
                     <li>
-                        <strong>Leverage Investment Strategies</strong>
+                        <strong>Leverage Investment Strategies:</strong>
                        Certain types of trading accounts, such as margin accounts, enable you to leverage your investment capital, potentially amplifying your returns (while also increasing risk).
                     </li>
                     <br/>
                     <li>
-                        <strong>Portfolio Management</strong>
+                        <strong>Portfolio Management:</strong>
                         A trading account provides a centralized location to monitor your holdings, track your investments, and make informed decisions based on your financial goals and risk tolerance.
                     </li>
                 </ul> 
@@ -550,11 +550,11 @@ export const pagesData = {
             },
             {
                 id: "id9",
-                title: "How to Find the Best Trading Account in India:",
+                title: "How to Find the Best Trading Account in India",
                 content: `Choosing the right stockbroker is crucial for a successful trading experience. Here are some factors to consider:
                 <br/><br/>
                  <ul>
-                        <li><strong>Fees</strong> Compare the brokerage fees, annual maintenance charges, and other costs associated with the trading account.
+                        <li><strong>Fees:</strong> Compare the brokerage fees, annual maintenance charges, and other costs associated with the trading account.
                        </li>
                        <br/>
                         <li><strong>Platforms:</strong> Check the ease of use, features, and reliability of the trading platforms offered by the broker.
