@@ -26,8 +26,11 @@ function Home() {
 	const location = useLocation();
 
 	useEffect(() => {
-		setRenderCount(true)
-		if (rendercount === true) {
+		
+		if (sessionStorage.getItem('termsConditionSeen') !== 'true') {
+            setShowTermsCondition(true);
+        }
+		
 			let parser = new DOMParser();
 			let doc = parser.parseFromString(meta_tags['https://choiceindia.com/'].faqscript, 'text/html');
 			document.body.appendChild(doc.getElementsByTagName('script')[0] ? doc.getElementsByTagName('script')[0] : '');
@@ -43,21 +46,13 @@ function Home() {
 				document.getElementById('link5').remove();
 				document.getElementById('link6').remove();
 
-			}
+			
 		}
-	}, [rendercount])
-
-	function handleTermsConditionShow() {
-        setShowTermsCondition(true);
-    }
-
-    function handleTermsConditionClose() {
+	}, [location])
+	function handleTermsConditionClose() {
         setShowTermsCondition(false);
+        sessionStorage.setItem('termsConditionSeen', 'true');
     }
-	useEffect(() => {
-			handleTermsConditionShow()
-  
-	 }, [])
 	return (
 		<div className="Home">
 
