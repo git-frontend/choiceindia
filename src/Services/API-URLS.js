@@ -858,15 +858,15 @@ export class API_URLS {
   }
 
   getSubBrokerNewSendOtpUrl() {
-    return this.SSOServerURL + this.subBrokerSendOtpURLNew;
+    return this.NEWSSOServerURL + this.subBrokerSendOtpURLNew;
   }
 
   getSubBrokerNewResendOtpURL() {
-    return this.SSOServerURL + this.subBrokerResendOtpURLNew;
+    return this.NEWSSOServerURL + this.subBrokerResendOtpURLNew;
   }
 
   getSubBrokerNewVerifyOtpURL() {
-    return this.SSOServerURL + this.subBrokerVerifyOtpURLNew;
+    return this.NEWSSOServerURL + this.subBrokerVerifyOtpURLNew;
   }
   getSubBrokerURL(location) {
     return (
