@@ -68,6 +68,7 @@ insightService: function () {
 })
 },
 
+  
 /** for CEBPL Polices page */
 CebplPolicy: function () {
 
@@ -265,7 +266,14 @@ trackdocumentList: function () {
         return data
     })
 },
+investorCharterData: function () {
 
+    let api = new API_URLS()
+    let url = api.getinvestorcharterdataURL()
+    return axios.get(url).then((data) => {
+        return data
+    })
+},
 
 }
 export default cmsService;

@@ -15,7 +15,7 @@ function OneAcFinancialNeeds() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById('your-section-id'); // Change 'your-section-id' to the ID of your target section
+      const section = document.getElementById('your-section-id'); 
       if (!section) return;
 
       const sectionTop = section.offsetTop;

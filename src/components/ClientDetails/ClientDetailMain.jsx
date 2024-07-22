@@ -28,7 +28,6 @@ function ClientDetailMain() {
                                     <Form.Group className="mb-4  formgrp" controlId="formBasicEmail">
                                         <Form.Label className="formlabel">Client ID</Form.Label>
                                         <Form.Control type="text" name="firstName" placeholder="Enter your Client ID" className="formcontrol" />
-                                        {/* <span className="text-danger">error message</span> */}
                                     </Form.Group>
 
 
@@ -40,14 +39,12 @@ function ClientDetailMain() {
                                         <Form.Group className="mb-4 formgrp width95" controlId="formBasicPassword">
                                             <Form.Label className="formlabel">Old Email ID </Form.Label>
                                             <Form.Control type="text" placeholder="Enter your Old Email Id " className="formcontrol " />
-                                            {/* <span className="text-danger">error message</span> */}
                                         </Form.Group>
                                     </div>
                                     <div className="col-md-6">
                                         <Form.Group className="mb-4 smt-3 formgrp width95 float-right" controlId="formBasicEmail">
                                             <Form.Label className="formlabel">New Email ID </Form.Label>
                                             <Form.Control type="text" placeholder="Enter your New Email Id " className="formcontrol " />
-                                            {/* <span className="text-danger"> error message </span> */}
                                         </Form.Group>
                                     </div>
                                 </div>
@@ -56,14 +53,12 @@ function ClientDetailMain() {
                                         <Form.Group className="mb-4 formgrp width95" controlId="formBasicPassword">
                                             <Form.Label className="formlabel">Old Phone Number  </Form.Label>
                                             <Form.Control type="text" placeholder="Enter your Old Phone Number " maxLength={10} className="formcontrol " />
-                                            {/* <span className="text-danger">error message </span> */}
                                         </Form.Group>
                                     </div>
                                     <div className="col-md-6">
                                         <Form.Group className="mb-4 formgrp smt-3 width95 float-right" controlId="formBasicPassword">
                                             <Form.Label className="formlabel"> New Phone Number </Form.Label>
                                             <Form.Control type="text" placeholder="Enter your New Phone Number" maxLength={10} className="formcontrol " />
-                                            {/* <span className="text-danger">error message </span> */}
                                         </Form.Group>
                                     </div>
                                 </div>
@@ -75,7 +70,6 @@ function ClientDetailMain() {
 
 
                                 <div className="uploadbtn mt5 d-flex align-items-center justify-content-center">
-                                    {/* <div style={{color:"green"}} className="feel-msg">message</div> */}
                                     <Button variant="primary" type="submit" className="btn-bg btn-bg-dark ">
                                         Submit
                                     </Button>

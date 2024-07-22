@@ -50,21 +50,10 @@ const OpenFreeAccountBanner = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
-                        {/* {
-                            view && !view.matches ?
-                            <div></div>
-                            :
                             <div>
                                 <span className="banner-title2">All in 1 Account</span>
                                 <h1 className="banner-title" >
-                                    <div className="desktop">Open a Brokerage Account <br /> <span className="yellow">Online For Free</span></div>
-                                </h1>
-                            </div>
-                        } */}
-                            <div>
-                                <span className="banner-title2">All in 1 Account</span>
-                                <h1 className="banner-title" >
-                                    <div className="desktop">Open a Brokerage Account <br /> <span className="yellow">Online For Free</span></div>
+                                    <div className="desktop">Open Free Brokerage Account -  <br /> <span className="yellow">Online Brokerage Account in India</span></div>
                                 </h1>
                             </div>
                             <div className="banner-txt">
@@ -125,28 +114,14 @@ const OpenFreeAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                        {/* {
-                                view && !view.matches ?
-                                <div>
-                                <span className="banner-title2 mobile">All in 1 Account</span>
-                                <h1 className="banner-title mbtitle" >
-                                    <div className="mobile">Open a Brokerage Account <br /> <span>Online For Free</span></div>
-                                </h1>
-                            </div>
-                            :
-                            <div></div>
-
-                        } */}
                         {
                                 ischeck ?
                             <div className="formwrap d-flex justify-content-end ">
-                                {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
                             </div>:
                             <div className="formwrap d-flex justify-content-end">
-                            {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
                                 <DematAccountForm />
                         </div>
                         }

@@ -226,7 +226,7 @@
             }
         }
         .sub-description{
-            width: 67%;
+            width: 48%;
             padding:0 0 5rem 0;
             .radius-img{
                 border-radius: 16px;
@@ -236,6 +236,14 @@
                 text-decoration: none;
             }
             .pr-sec{
+                p{
+                    .bl-box-text{
+                        display: block;
+                        padding: 1.5rem;
+                        background: #cfe2f3;
+                        margin-bottom: 2rem
+                    }
+                }
                 img{
                     max-width: 100%;
                     width: 100%;
@@ -271,6 +279,7 @@
                     margin-bottom: 2rem;
                     font-size: 1.4rem;
                     line-height: 2.3rem;
+                    
                 }
                 h2{
                     font-family: $font-family-poppins-bold;
@@ -372,6 +381,7 @@
                         }
                     }
                 }
+               
             }
             .img-bl{
                 display: flex;
@@ -724,3 +734,8 @@
         }
     }
 }
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }

@@ -20,7 +20,6 @@ function SerachTopFunds() {
                     setisloading(false);
                     setData(res.Response);
                     setFilteredData(res.Response)
-                    // console.log("res", res.Response)
                 }
                 else {
                     setisloading(false);
@@ -30,7 +29,6 @@ function SerachTopFunds() {
             }
         )
             .catch((error) => {
-                // console.log(error, "error cities");
                 setisloading(false);
                 setData([]);
                 setFilteredData([])

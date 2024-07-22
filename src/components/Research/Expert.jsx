@@ -60,27 +60,6 @@ function Expert() {
                        
                         
                       </div>
-                      {/* <div className="expert-item">
-                        <span className="img-itm">
-                                          <img src={image2} width="224" height="349" className="img-fluid" alt="loading" />
-                        </span>
-                        <div className="namedesg">
-                            <h5>Mr. Sundar Sanmukhani</h5>
-                            <p className="designation">Head Fundamental Reserach</p>
-                        </div>
-                       
-                        
-                      </div> */}
-                      {/* <div className="expert-item">
-                        <span className="img-itm">
-                                          <img src={image3} width="224" height="349" className="img-fluid" alt="loading"/>
-                        </span>
-                        <div className="namedesg">
-                            <h5>Mr. Rochan Pattnayak</h5>
-                            <p className="designation">Head-Institutional Equities &amp; Markets</p>
-                        </div>
-                      </div> */}
-                     
                     </Slider>
                   </div>
                 </div>

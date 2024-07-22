@@ -7,15 +7,7 @@ function CFPLDetails() {
     <div>
 
       <section className='cfpl-details'>
-        {/* <div className='container'>
-            <div className='row'>
-                <div className='col-md-12'>
-                <div className="cfpl-products-menu">
-                <NBFCMenu />
-              </div>
-                </div>
-            </div>
-          </div> */}
+        
         <div className="container">
           <div className='row'>
             <div className='col-md-12'>

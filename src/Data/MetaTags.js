@@ -67,13 +67,13 @@ const meta_tags = {
 
   "sub-broker-franchise": { 'title': "Sub Broker Franchise with Low Deposit - Become a Choice Sub Broker", 'lang': "en", 'content': "Start a sub broker franchise with minimum deposit. Become a stock market sub broker & start your own stock broking franchise business in India with Choice.", 'link': "https://choiceindia.com/sub-broker-franchise", 'link1': "https://choiceindia.com/sub-broker-franchise", 'link2': "https://choiceindia.com/hindi/sub-broker-franchise", 'link3': "https://choiceindia.com/gujarati/sub-broker-franchise", "link4": "https://choiceindia.com/telugu/sub-broker-franchise", "link5": "https://choiceindia.com/marathi/sub-broker-franchise", "link6": "https://choiceindia.com/sub-broker-franchise", "href1": "en-in", "href2": "hi-in", "href3": "gu-in", "href4": "te-in", "href5": "mr-in", "href6": "x-default" },
 
-  "refer-and-earn": { 'title': " Best Refer and Earn Demat Account - Earn upto Rs. 100 Per Referral", 'lang': "en", 'content': "Refer and earn upto ₹100 incentive by refering Choice Demat Account. Join the referal programme and start earning referral income with Choice.", 'link': "https://choiceindia.com/refer-and-earn", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "refer-and-earn": { 'title': "Refer and Earn Demat Account - Get ₹500* brokerage reversal per referral.", 'lang': "en", 'content': "Earn high referral rewards with the Best Refer and Earn Demat Account - Refer your friends and family now and get ₹500* brokerage reversal per referral.", 'link': "https://choiceindia.com/refer-and-earn", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "sumeet-bagadia": { 'title': "Sumeet Bagadia - Get Trading Tips, Daily Investment Calls & More", 'lang': "en", 'content': "Sumeet Bagadia is an Executive Director & Head of Technical Research at Choice Broking. Be connected for trading tips, daily intraday & investment calls, weekly market updates & more.", 'link': 'https://choiceindia.com/sumeet-bagadia', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "ipo-investment-account": { 'title': "IPO Investment: Invest In IPO Online With Choice", 'lang': "en", "content": "IPO Investment - Now investing in IPO is smooth and simple with Choice. Open a Demat account and avail benefits such as listing gains, & short-term profit.", 'link': 'https://choiceindia.com/ipo-investment-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
-  "mutual-funds-investment": { 'title': "Invest in Mutual Funds Online in India with Choice", 'lang': "en", 'content': "Simplify your investment journey by opting to invest in mutual funds. Pick your way of investing and explore a diverse range of mutual funds & fund houses.", 'link': "https://choiceindia.com/mutual-funds-investment", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
+  "mutual-funds-investment": { 'title': "Start mutual fund investment now! Invest in Mutual Funds with Choice", 'lang': "en", 'content': "Mutual fund investment got easier with Choice. Invest in mutual funds online, check the plans and know how to invest with best platform for mutual funds.", 'link': "https://choiceindia.com/mutual-funds-investment", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
 
   "investment-app": { 'title': "Best Investment App for Stocks, Mutual Funds, ETF and IPO", 'lang': "en", 'content': "Start your investment journey with the top investment app in India. The Choice app allows you to invest in several types of securities, including bonds, ETFs, mutual funds, and derivatives.", 'link': "https://choiceindia.com/investment-app", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
@@ -254,7 +254,7 @@ const meta_tags = {
     ` },
 
   "open-free-demat-account": {
-    'title': "Open Demat Account - Free Demat Account Opening Online (No AMC*)", 'lang': "en", 'content': "Follow simple steps to Open your Free Demat Account Online at Choice. Enjoy No AMC* for First Year, Low DP Charges & Trade @ 2 Paisa.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3':"https://choiceindia.com/marathi/open-demat-account", 'link4':"https://choiceindia.com/open-free-demat-account",'link5':"https://choiceindia.com/marathi/open-demat-account",'link6':"https://choiceindia.com/marathi/open-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default", "href5": "", "href6": "",
+    'title': "Open Free Demat Account. Online Account Opening - Choice", 'lang': "en", 'content': "Open a demat account with Choice - Online free Demat account opening in few steps. Trade @2 paisa, low DP & brokerage charges and avail 0 AMC*. Invest/trade in equity, fno, mutual funds & more.", 'link': 'https://choiceindia.com/open-free-demat-account', 'link1': "https://choiceindia.com/open-free-demat-account", 'link2': "https://choiceindia.com/hindi/open-demat-trading-account", 'link3':"https://choiceindia.com/marathi/open-demat-account", 'link4':"https://choiceindia.com/open-free-demat-account",'link5':"https://choiceindia.com/marathi/open-demat-account",'link6':"https://choiceindia.com/marathi/open-demat-account", "href1": "en-in", "href2": "hi-in", "href3": "mr-in", "href4": "x-default", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -563,7 +563,7 @@ const meta_tags = {
     ` },
 
   "open-trading-account": {
-    'title': "Open Trading Account Online for Free without AMC Charges - Choice", 'lang': "en", "content": "Open a trading account online for free without AMC charges at Choice. Enjoy low DP charges, the lowest intraday charges, and a zero account opening fee.",
+    'title': "Open Trading Account in Few Steps! Trade Effortless Earn Limitless", 'lang': "en", "content": "Open a trading account online with Choice. Follow simple steps for free trading account opening & trade at low DP charges, lowest intraday charges with expert research calls for seamless trading.",
     "link": "https://choiceindia.com/open-trading-account", 'link1': "https://choiceindia.com/open-trading-account", 'link2': "https://choiceindia.com/hindi/trading-account", 'link3': "https://choiceindia.com/open-trading-account", "link4": "", "link5": "", "link6": "", "href1": "en-in", "href2": "hi-in", "href3": "x-default", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
@@ -648,7 +648,7 @@ const meta_tags = {
     ` },
 
   "open-brokerage-account": {
-    'title': "Open Brokerage Account Online for Free with Choice", 'lang': "en", "content": "Open a free brokerage account online with Choice. Get a brokerage account with free AMC for the first year, low DP charges, free research advisory, and more.",
+    'title': "Open Zero Brokerage Account in India - Choice", 'lang': "en", "content": "Open a free brokerage account online with Choice. Best brokerage account in India with free AMC for the first year, low DP charges, free research advisory & hasselfree account opening process.",
     "link": 'https://choiceindia.com/open-brokerage-account', 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
     "faqscript": `<script type="application/ld+json">
     {
@@ -1421,7 +1421,7 @@ Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter 
   "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice", 'lang': "en", "content": "Choice FinX Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.", "link": 'https://choiceindia.com/baskets', "faqscript": ``, 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "" },
 
   "share-market-app": {
-    'title': "Best Share Market App in India - Download Choice FinX Trading App", 'lang': "en", "content": "Choice FinX is the best share market in India to invest in stocks, commodities, derivatives, currencies, and IPOs.Download Choice FinX Stock Market App now.", "link": "https://choiceindia.com/share-market-app", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
+    'title': "Share Market App in India - Download Choice FinX now!", 'lang': "en", "content": "Explore choice finX, the best share market app in India. Invest in multiple instruments with our share market advanced application online.", "link": "https://choiceindia.com/share-market-app", 'link1': "", 'link2': "", 'link3': "", "link4": "", "link5": "", "link6": "", "href1": "", "href2": "", "href3": "", "href4": "", "href5": "", "href6": "",
     "faqcript": `<script type="application/ld+json">
      {
       "@context": "https://schema.org",
@@ -2114,7 +2114,7 @@ Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter 
   },
 
   "best-stocks-to-buy": {
-    'title': "Best Stocks to Buy Today in India - Choice", 'lang': "en", "content": "Looking for the best stocks to buy today in India? Check our stock picks for the best stocks to invest today among a diverse range of stocks.",
+    'title': "Best Stocks to Buy Today in India - Choice", 'lang': "en", "content": "Know the best stocks to buy today in India. Get the latest list of shares to buy today in India recommended by experts at Choice.",
     "link": "https://choiceindia.com/best-stocks-to-buy"
   },
   "best-intraday-stocks-to-buy": {
@@ -2260,9 +2260,9 @@ Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter 
     "link": "https://choiceindia.com/loan/privacy-policy"
   },
   "upcoming-agm": {
-    "title": "Upcoming AGM - List of Upcoming AGM Dates & Companies in 2024",
+    "title": "List of Upcoming AGM Dates of Companies. AGM Calendar 2024",
     'lang': "en",
-    'content': "Find the list of upcoming AGM/EGM on Choice. Get updated with upcoming Annual General Meeting/Extraordinary General Meeting along with it's dates & companies.",
+    'content': "Get the list of upcoming AGM/EGM dates of companies at Choice. Be updated with upcoming AGM Meeting dates of listed companies, its benefits & how to use them.",
     "link": "https://choiceindia.com/upcoming-agm"
   },
   "upcoming-board-meeting": {
@@ -2389,9 +2389,9 @@ Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter 
     "link": "https://choiceindia.com/commodity-margin-calculator"
   },
   "forex-margin-calculator": {
-    "title": "Forex Margin Calculator - Calculate Margin for Currency Trades",
+    "title": "Forex Margin Calculator - Calculate your leverage for Currency Trades",
     'lang': "en",
-    'content': "Choice Forex margin calculator is a free tool which helps you to calculate the margin needed for your open and hold positions. ",
+    'content': "Calculate your leverage with our Forex margin calculator. Make use of the currency margin calculator to make fx trading easier and fast.",
     "link": "https://choiceindia.com/forex-margin-calculator"
   },
   "option-chain": {
@@ -2511,7 +2511,7 @@ Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter 
   "corporate-demat-account": {
     "title": "Open a Corporate Demat Account Online with Choice",
     'lang': "en",
-    'content': "Open a Corporate Demat account with Choice today! Accelerate your business investments with a secure corporate demat account at minimal charges.",
+    'content': "Open a Corporate Demat account with Choice now! Manage business investments by exploring corporate demat account, its benefits, types, opening process, documents needed & more",
     "link": "https://choiceindia.com/corporate-demat-account"
   },
   "nach-cancellation": {
@@ -2567,6 +2567,12 @@ Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter 
     "lang":"en",
     "content": "Check out Choice India's government advisory services that provide end to end project management solutions to the government.",
     "link":"https://choiceindia.com/government-advisory"
+  },
+  "what-is-trading-account": {
+    "title": "Trading Account - Meaning, Definition, Features, Benefits, Types",
+    "lang":"en",
+    "content": "A Trading account is a must for trading in the securities market. Know what is trading account, it’s purpose, types, benefits, charges, how it works and ways to earn with trading account.",
+    "link":"https://choiceindia.com/what-is-trading-account"
   }
 
 }

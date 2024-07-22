@@ -109,21 +109,7 @@ function Banneraf() {
   let retryPaymentCounter = 0;
   const [isResendCheck, setisResendCheck] = useState(false);
 
-  /**Query Params Data */
-  // const userDetails = { uniqueId: new URLSearchParams(search).get('order_unique_id').replaceAll(' ', '+').toString(), bucketId: new URLSearchParams(search).get('bucketId').replaceAll(' ', '+').toString(), clientId: new URLSearchParams(search).get('clientId').replaceAll(' ', '+').toString(), rmId: new URLSearchParams(search).get('rm_id') ? new URLSearchParams(search).get('rm_id').replaceAll(' ', '+').toString() : null, subjectId: new URLSearchParams(search).get('subid') ? new URLSearchParams(search).get('subid').replaceAll(' ', '+').toString() : null, };
-  // "mavamqy25Fjjpt2au4MwtZJlk8LfNSC3GZvT9OTPMeUzCLGX5AOV8KUll/7yQy6A&exp=MTY5NTA0NTg0MA=="
-  // const detail2 = new URLSearchParams(search).get("oid");
-  // const details = new URLSearchParams(search).get("oid")
-  //   ? JSON.parse(
-  //     JSON.stringify(
-  //       utils.decryptText(
-  //         new URLSearchParams(search).get("eid").replaceAll(" ", "+")
-  //       )
-  //     )
-  //   )
-  //   : {};
-
-  // const details = new URLSearchParams(search).get("oid")? setUrlOid(URLSearchParams(search).get("oid")): {};
+ 
   const [userDetails, setUserDetails] = useState(null);
 
   /**to check callback status from bse */
@@ -212,9 +198,7 @@ function Banneraf() {
     handleReCaptchaVerify();
   }, [handleReCaptchaVerify]);
 
-  // useEffect(() => {
-  //   console.log(OrderPayload, 'oRRRPP')
-  // }, [OrderPayload])
+  
 
   useEffect(() => {
     if (captchaToken && (captchaCount.current == 1)) {
@@ -391,13 +375,8 @@ function Banneraf() {
                     tempObj['Orders'].push(obj)
                   } else {
                     const today = new moment();
-                    // const today = new Date();
-                    // const yyyy = today.getFullYear();
-                    // let mm = today.getMonth() + 1;
-                    // assumedNextSipDate = date.toString() + '/' + mm.toString() + "/" + yyyy.toString();
                     assumedNextSipDate = date.toString() + ' ' + today.format('MMMM').substring(0, 3) + ', ' + today.format('YYYY')
                     nextDate = assumedNextSipDate;
-                    // orderDates.push(date.toString() + '/' + today.format('MM')+ '/' + today.format('YYYY'))
                     setOrderDates(nextOrderDate => [date.toString() + '/' + today.format('MM') + '/' + today.format('YYYY'), ...nextOrderDate])
                     setNextSipDate(nextSipDate => [nextDate, ...nextSipDate]);
                     let obj = {
@@ -501,8 +480,7 @@ function Banneraf() {
             serverDownMessage: response.data.Response.ServerDownMessage,
           });
           increment = parseInt(response.data.Response.RefNumber);
-          // setIsRefNo(() => parseInt(response.data.Response.RefNumber))
-          // setIsRefNo(RefNo + 1)
+         
           if (isOrder) {
             if (bucketType != "SIP") {
               placeLumpSumOrder(increment);
@@ -555,18 +533,9 @@ function Banneraf() {
     }
 
     let payload = {
-      // ClientID: userDetails.clientId
-      //   ? utils.decryptText(userDetails.clientId)
-      //   : "",
+      
       Source: "connect",
-      // DeviceOs: "Web",
-      // AppSignature: "",
-      // BasketId: userDetails.bucketId
-      //   ? utils.decryptText(userDetails.bucketId)
-      //   : "",
-      // SubID: "", // investica subscriptionId
-      // SubType: "Basket",
-      // Token: token ? token : new Date().getTime(),
+     
       is_resend: isResendCheck ? "Y" : "N",
       subject_id: subId,
       order_unique_id: uniID,
@@ -593,15 +562,9 @@ function Banneraf() {
         let pattern = /[0-9]{8,10}/i;
         let pattern2 = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/i;
         let index;
-        // mobileNo = response.data.Response.toString();
-        // mobileNo = (mobileNo.match(pattern) && mobileNo.match(pattern).length > 0) ? mobileNo.match(pattern)[0].toString() : '';
-        // emailId = (response.data.Response.match(pattern2) && response.data.Response.match(pattern2).length > 0) ? response.data.Response.match(pattern2)[0].toString() : '';
-        // index = emailId.indexOf('@');
-        // mobileNo = (mobileNo.length > 0) ? (mobileNo.charAt(0) + mobileNo.charAt(1) + '******' + mobileNo.charAt(8) + mobileNo.charAt(9)) : '';
-
-        // emailId2 = (emailId && emailId.length > 0) ? (emailId.charAt(0) + emailId.charAt(1) + '*****' + emailId.charAt(index - 2) + emailId.charAt(index - 1) + emailId.substring(index)) : '';
+        
         setMobileNumber(() => (response.data.Message));
-        // setEmail(() => emailId2 ? emailId2 : null);
+        
       })
       .catch((error) => {
         if (isResend) {
@@ -610,7 +573,7 @@ function Banneraf() {
           setLoaders({ ...loaders, SendOtpLoader: false });
         }
         setErrors(() =>
-          error.message ? error.message : "Something Went Wrong"
+          error.response.data.Message ? error.response.data.Message : "Something Went Wrong"
         );
       });
   }
@@ -621,66 +584,23 @@ function Banneraf() {
     setLoaders({ ...loaders, verifyLoader: true, SendOtpLoader: false, reSendOtpLoader: false });
     setCount(0);
     let payload = {
-      // ClientId: BasketData.client_id
-      //   ? BasketData.client_id
-      //   : "",
+      
       OTP: OtpValue ? OtpValue : "",
-      // Source: "connect",
-      // DeviceOs: "Web",
-      // BasketId: userDetails.bucketId
-      //   ? utils.decryptText(userDetails.bucketId)
-      //   : "",
-      // SubID: "",
-      // SubType: "Basket",
-      // Token: token ? token : new Date().getTime(),
-      // SubjectId: userDetails.subId ? utils.decryptText(userDetails.subId) : "",
-      // OrderUniqueID: userDetails.orderUniqueId
-      //   ? utils.decryptText(userDetails.orderUniqueId)
-      //   : "",
+      
       session_id: otpResponse.Body.otp_session_id
     };
 
     AssistedFlowService.VerifyOTP(payload)
       .then((response) => {
-        // console.log('Verifyresponse', response);
-        // setVerifyLoader(() => false);
+        
         if (response && response.data && (response.data.StatusCode == 200)) {
-          // refCallAPI(BasketData.order_type, true);
-
+         
           if (BasketData.order_type != "SIP") {
             placeLumpSumOrder(increment);
           } else {
             placeSIPOrder(increment);
           }
-          // if (BasketData.BucketType && BasketData.BucketType != 'SIP') {
-
-          //     // let refNo = parseInt(OrderMetaData.refNo);
-          //     // BasketData.list_fund_data.forEach((element, index) => {
-
-          //         // if (index == BasketData.list_fund_data.length - 1 && !errors) {
-          //         //     refNo = refNo + 1;
-          //             placeLumpSumOrder();
-          //         // } else if(!errors) {
-          //         //     refNo = refNo + 1;
-          //         //     placeLumpSumOrder(element, false,refNo);
-          //         // }
-
-          //     // });
-          // } else {
-          //     // console.log('data',BasketData.list_fund_data)
-          //     // let refNo = parseInt(OrderMetaData.refNo);
-          //     // BasketData.list_fund_data.forEach((element, index) => {
-
-          //         // if (index == BasketData.list_fund_data.length - 1) {
-          //             // refNo = refNo + 1;
-          //             placeSIPOrder();
-          //         // } else if(!errors){
-          //         //     refNo = refNo + 1;
-          //         //     placeSIPOrder();
-          //         // }
-
-          //     // })
-          // }
+          
         } else {
           setLoaders({ ...loaders, verifyLoader: false });
           setErrors(() =>
@@ -699,12 +619,7 @@ function Banneraf() {
 
   /**to place LumpSumOrder */
   function placeLumpSumOrder(refNo) {
-    // console.log('funddata', fundData);
-    // increment = ("0000" + (parseInt(refNo) + 1)).slice(-5);
-    // increment = parseInt(refNo + 1);
-    // let clientId = BasketData.client_id
-    //   ? BasketData.client_id
-    //   : "";
+   
     let payload = {
       // TransCode: "NEW",
       // TransNo: "",
@@ -791,16 +706,7 @@ function Banneraf() {
           }
         }
 
-        /**api call for generate payment link */
-        // else if (
-        //   response &&
-        //   response.data &&
-        //   response.data.OrderStatus &&
-        //   response.data.OrderStatus == "SUCCESS" &&
-        //   isLast >= BasketData.scheme_data.length - 1
-        // ) {
-        //   generatePaymentLink();
-        // }
+       
         else {
           setLoaders({ ...loaders, verifyLoader: false });
           setErrors(() =>
@@ -832,11 +738,7 @@ function Banneraf() {
     // const formattedToday = (day[day.length -1]).toString() + "/" + mm + "/" + yyyy;
     const formattedToday = BasketData.scheme_data[isLast].scheme_selected_date.toString() + "/" + mm + "/" + yyyy;
 
-    // let refNo = parseInt(OrderMetaData.refNo);
-    // refNo = refNo + 1;
-    //  setIsRefNo(RefNo + 1);
-    // increment = ("0000" + (parseInt(refNo) + 1)).slice(-5);
-    // increment = parseInt(refNo + 1);
+    
     let clientId = BasketData.client_id
       ? BasketData.client_id
       : "";
@@ -894,11 +796,6 @@ function Banneraf() {
           response.data.Status == "Success"
           // isLast < BasketData.scheme_data.length - 1
         ) {
-          // isLast = isLast + 1;
-          // setIsLast(() => isLast + 1);
-          // placeSIPOrder(increment);
-          // generatePaymentLink();
-          /**for RM if subId is present in URL */
           setSchemeDetails(response.data.Response.Orders);
           let flag;
           let filteredData = response.data.Response.Orders.filter((item) => item.FinalStatus == "CONFIRMED")
@@ -950,25 +847,7 @@ function Banneraf() {
             }
           }
         }
-        // else {
-        //   setVerifyLoader(() => false);
-        //   setErrors(() =>
-        //     response && response.data && response.data.Reason
-        //       ? response.data.Reason
-        //       : "Something Went Wrong"
-        //   );
-        // }
-
-        /**api call for generate payment link */
-        // else if (
-        //   response &&
-        //   response.data &&
-        //   response.data.OrderStatus &&
-        //   response.data.OrderStatus == "SUCCESS" &&
-        //   isLast >= BasketData.scheme_data.length - 1
-        // ) {
-        //   generatePaymentLink();
-        // } 
+        
         else {
           setLoaders({ ...loaders, verifyLoader: false });
           setErrors(() =>
@@ -1217,10 +1096,7 @@ function Banneraf() {
       });
   }
 
-  // useEffect(() => {
-  //   console.log('SCHEHEHE', schemeDetails);
-  // }, [schemeDetails])
-
+ 
   /**api call for orderstatus2 */
   function UpdateOrderStatus2(paymntLink) {
     let payload = {
@@ -1241,15 +1117,12 @@ function Banneraf() {
         setLoaders({ ...loaders, DirectFlowLoader: false });
         if (response && response.data && response.data.StatusCode == 200) {
           if (!subId) {
-            // setShowSecondDiv(false);
-            // setShowThirdDiv(true);
-
+            
             if (BasketData.is_first_order == "No") {
               setDirectErrors(() => null);
-              // setShowSecondDiv(() => false);
-              // setShowFirstButton(() => true);
+              
               setisModalClose(() => false)
-              // setShowThirdDiv(false);
+              
               setshowStatus(() => false);
               setShowPopUp(() => "RMFlow");
             } else {
@@ -1471,33 +1344,12 @@ function Banneraf() {
                                 {
                                   subId ?
                                     <p className="subtext">
-                                      {/* Code sent to client’s registered
-                                      {
-                                        mobileNumber ? <><span> mobile number +91 <span className="temp-text"> {mobileNumber} </span></span></> : ''
-                                      }
-
-                                      {
-                                        (email && !mobileNumber) ? <><span>Email ID</span> <span className="temp-text">{email}</span></> : ''
-                                      }
-
-                                      {
-                                        (email && mobileNumber) ? <><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
-                                      } */}
+                                     
                                       {mobileNumber ? mobileNumber : "NA"}
                                     </p>
                                     :
                                     <p className="subtext">
-                                      {/* Code sent to your registered
-                                      {
-                                        mobileNumber ? <><span> mobile number +91 <span className="temp-text"> {mobileNumber} </span></span></> : ''
-                                      }
-                                      {
-                                        (email && !mobileNumber) ? <><span>Email ID</span> <span className="temp-text">{email}</span></> : ''
-                                      }
-
-                                      {
-                                        (email && mobileNumber) ? <><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
-                                      } */}
+                                      
                                       {mobileNumber ? mobileNumber : "NA"}
                                     </p>
                                 }
@@ -1533,7 +1385,7 @@ function Banneraf() {
                                 </p>
                               )}
 
-                              {/* <div className="mb-4"><a href="#" className=" resend">Resend OTP</a></div> */}
+                             
                             </div>
                             <Button
                               className={
@@ -1619,22 +1471,7 @@ function Banneraf() {
                 )}
               </>
             )}
-            {/* 
-                    {
-                        showPopUp == 'RMFlow' ?
-                            <div className="order-register">
-
-                                <p className="sucesstext">Order Registered!</p>
-                                <p className="subtext">Copy &amp; Share link with client to complete the payment.</p>
-                                {
-                                    showToast?
-                                    <span>Link Copied</span> : ''
-                                }
-                                <div className="rightbtn">
-                                    <Button className="btn-bg btn-bg-dark copybtn" onClick={copyToClipboard} ><span>Copy Link</span> </Button>
-                                </div>
-                            </div> : ''
-                    } */}
+            
             {/* Modal for RM flow */}
             <Modal
               className="ordermodal"
@@ -1697,16 +1534,7 @@ function Banneraf() {
               </Modal.Body>
             </Modal>
 
-            {/* {
-                        userStatus && userStatus == 'success' ?
-                        <div className="successful">
-                            <LazyLoader src={ThumbUp} alt={""} className={"img-fluid redirectimg"} width={"74"} height={"74"} />
-                            <p className="sucesstext">Your order is successful!</p>
-                            <div className="rightbtn">
-                                <Link to="/" className="btn-bg btn-bg-dark awesomebtn" onClick=""><span>Awesome!</span> </Link>
-                            </div>
-                        </div> : '' 
-                    } */}
+
 
             <Modal
               className="successfulmodal"
@@ -1838,12 +1666,7 @@ function Banneraf() {
                             }
                           </td>
                           <td>{order.FinalStatus || order.OrderStatus}
-                          {/* {
-                            ((order.FinalStatus || order.OrderStatus) === "FAILED") ?
-                            <span className="status-txt" data-bs-toggle="tooltip" data-bs-placement="top" title={order.Reason || ""}>
-                            <FontAwesomeIcon icon={faCircleInfo} />
-                            </span> : ""
-                          } */}
+                         
                           </td>
                         </tr>
                       ))

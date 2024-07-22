@@ -11,6 +11,7 @@ import CommonModal from "./CommonModal";
 import { useState } from "react";
 import { useEffect } from "react";
 import Marquee from 'react-fast-marquee';
+import investorcharter from "../../assets/images/INVESTOR CHARTER.pdf";
 function Footer() {
   const [check, setCheck] = useState(false);
   let toggleModal = (val) => {
@@ -167,6 +168,12 @@ function Footer() {
                               <Link to="/track-record-page" className="generic-id-footer">Track Record</Link>
                             </li>
                             <li>
+                              <div onClick={() => { window.open(investorcharter) }} className="generic-id-footer pdffooter">Investor Charter</div>
+                            </li>
+                            <li>
+                              <Link to="/investor-grievances" className="generic-id-footer">Investor Grievances</Link>
+                            </li>
+                            <li>
                               <a href="https://finx.choiceindia.com/auth/login?redirectUrl=https://accounts.choiceindia.com/modification" className="generic-id-footer" target="_blank">Online KYC Updation</a>
                             </li>
                           </ul>
@@ -178,7 +185,7 @@ function Footer() {
                           <p>Monday - Friday : 08:30 am - 7:00 pm <br />
                             Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
                           <p><a href="tel:8824242424" target="_blank">+91-88-2424-2424</a>  <FontAwesomeIcon icon={faPhone} /> </p>
-                          <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
+                          <p><a href="mailto:care@choiceindia.com" target="_blank">care@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
                         </div>
 
                       </div>
@@ -271,7 +278,7 @@ function Footer() {
                       <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024
                       | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
-                      For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> | Online Dispute Resolution Link: <a href="https://smartodr.in/login" target="_blank">https://smartodr.in/login</a></p>
+                      For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:care@choiceindia.com">care@choiceindia.com</a> | Online Dispute Resolution Link: <a href="https://smartodr.in/login" target="_blank">https://smartodr.in/login</a></p>
 
                     <p>Cautionary Message :
                       <ol style={{ marginleft: "-1rem" }} className="ol-p0">
@@ -353,7 +360,7 @@ function Footer() {
               </li>
 
               <li>
-                <Link to="/cfpl-policies">CFPL Disclosures</Link>
+                <Link to="/cfpl-policies">CFPL Policies & Disclosures</Link>
               </li>
               <li>
                 <a href="https://sachet.rbi.org.in/" target="_blank">Sachet Portal</a>

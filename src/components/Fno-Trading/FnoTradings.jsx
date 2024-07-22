@@ -40,7 +40,6 @@ function FnoTradings() {
 
 
 useEffect(() => {
-  // window.addEventListener('scroll', getPositionnew);
   window.addEventListener('scroll', getPosition);
 }, []);
 
@@ -78,11 +77,7 @@ useEffect(() => {
 useEffect(() => {
   setRenderCount(true)
   if (rendercount === true) {
-    // let parser = new DOMParser();
-    // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-    // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
     document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-    // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
     document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
     document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
     document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -154,8 +149,8 @@ function scrollToId(id) {
                                   <span>
                                     <img src={zero1} alt={"Start Option Trading with Free Demat Account"} />
                                   </span>
-                                  <h4>Zero</h4>
-                                  <h5>Account <span>Opening Fee</span></h5>
+                                  <h4>Paperless</h4>
+                                  <h5>Online <span>Account Opening</span></h5>
                               </div>
                               <div className="list-itm">
                                   <span>
@@ -181,7 +176,7 @@ function scrollToId(id) {
                           </Slider>
                       </div>
                       <div className="col-md-12 d-flex justify-content-center">
-                            <a href="javascript:void(0)" onClick={() => scrollToId('campaignForm')} className="btn-bg btn-new">Open Demat Account</a>
+                            <a href="javascript:void(0)" onClick={() => scrollToId('demat-form-section')} className="btn-bg btn-new">Open Demat Account</a>
                         </div>
                   </div>
                 </div>
@@ -190,7 +185,9 @@ function scrollToId(id) {
               <div className="container">
                   <div className="row">
                       <div className="col-md-12">
-                          <p className="etc-fno-cont">At Choice, we make trading simple for everyone. Whether you’re an experienced trader or a beginner, we’re dedicated to empowering you at every step of your trading journey. Begin mastering the art of trading by opening your Choice Demat account today.</p>
+                          <p className="etc-fno-cont">At Choice, we believe in simplifying trading for everyone. Whether you're a seasoned trader or just starting, we are committed to empowering you at every step. 
+                          Start your journey to master the art of trading today by opening your Demat account with Choice.
+                          </p>
                       </div>
                   </div>
               </div>

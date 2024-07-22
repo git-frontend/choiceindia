@@ -69,9 +69,6 @@ function AppOTBannerBottom() {
 
 <div className="trade-easy-images-div" >
 <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"557"} height={"662"} alt={"Loading"} />
-  {/* <img src={imageData[isShown2].image}
-
-    className="single-trade-easy-images" alt="loading"></img> */}
 </div>
 
 

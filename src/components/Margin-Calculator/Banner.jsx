@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import rest from "../../Services/rest";
 import NewFormSection from '../Common-features/NewFormSection';
-import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import { Accordion } from "react-bootstrap";
 import { Link, useLocation } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
@@ -11,6 +10,7 @@ import FreeAmc from "../../assets/images/brokerage-calculator/Free_AMC_for_First
 import LowDP from "../../assets/images/brokerage-calculator/Low_DP_charges.svg";
 import  NoAutoSquare from "../../assets/images/brokerage-calculator/No-Auto-Square.svg";
 import FreeResearch from "../../assets/images/brokerage-calculator/Free_Research_Advisory.svg";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function Banner() {
     const [toggleState, setToggleState] = useState(1);
     const toggleTab = (index) => {
@@ -141,17 +141,14 @@ function Banner() {
             "StartPos": marginConfig.startPos,
             "NoOfRecords": marginConfig.limit,
             "strSegment": marginConfig.exchange,
-            // "strSegment":marginConfig.activeTab === 1 ? 'FO|COM|CD' : exchange
         };
 
         rest.getSearchData(data)
             .then((res) => {
                 if (res.Status === "Success" && res.Response && res.Response.length) {
                     let searchedData = [...marginConfig.searchedData];
-                    // searchedData = res.Response;
                     if (marginConfig.activeTab === 1) {
                         searchedData = res.Response.filter(item => item.SegmentId !== 1 && item.SegmentId !== 3);
-                        // console.log("searchedData", searchedData)
                     } else {
                         searchedData = res.Response;
                     }
@@ -228,7 +225,6 @@ function Banner() {
     }
 
     const addResetContract = (isAdd) => {
-        // console.log("ff", marginConfig.qty)
         if (!marginConfig.qty || marginConfig.qty === '0') return;
 
         if (isAdd) {
@@ -265,7 +261,6 @@ function Banner() {
                 isCheck ||
                 !marginConfig.searchInput
             ) {
-                // console.log('You have already added this contract. Please select different scrip" : "Please select scrip"')
                 return false;
             }
 
@@ -366,11 +361,7 @@ function Banner() {
 
                     setMarginConfig(prevState => ({
                         ...prevState,
-                        // totalSpan: prevState.totalSpan + res.Response.Span_Summary.Span,
-                        // totalExposure: prevState.totalExposure + res.Response.Span_Summary.ExpMgn,
-                        // marginBenefit: prevState.marginBenefit + res.Response.Span_Summary.MgnBenefit,
-                        // premium: prevState.premium + res.Response.Span_Summary.OptionPremium,
-                        // totalMargin: prevState.totalMargin + res.Response.Span_Summary.TotalMgn,
+                        
                         totalSpan: res.Response.Span_Summary.Span,
                         totalExposure: res.Response.Span_Summary.ExpMgn,
                         marginBenefit: res.Response.Span_Summary.MgnBenefit,
@@ -448,13 +439,7 @@ function Banner() {
         }));
     };
 
-    // const createTokenQtyString = (scripArray) => {
-    //     let tokenQty = "";
-    //     scripArray.forEach((element, index) => {
-    //         tokenQty += `${element.Token}%7C${element.action ? '-' : ''}${element.qty}${index < scripArray.length - 1 ? '~' : ''}`;
-    //     });
-    //     return tokenQty;
-    // };
+    
     const createTokenQtyString = (scripArray) => {
         let tokenQty = '';
         scripArray.forEach((element, index) => {
@@ -470,35 +455,7 @@ function Banner() {
         });
         return optionScrip;
     };
-    // fina one 
-    // const deleteContract = (index) => {
-    //     const updatedContracts = [...marginConfig.contracts];
-    //     updatedContracts.splice(index, 1);
-
-    //     setMarginConfig(prevState => ({
-    //         ...prevState,
-    //         contracts: updatedContracts,
-    //     }));
-
-    //     if (updatedContracts.length === 0) {
-    //         setMarginConfig(prevState => ({
-    //             ...prevState,
-    //             totalSpan: 0,
-    //             totalExposure: 0,
-    //             totalMargin: 0,
-    //             marginBenefit: 0,
-    //             premium: 0,
-    //             isOptionScrip: false,
-    //             isShowNA: false,
-    //         }));
-    //     } else {
-    //         const hasSellableOptionScrip = getSellableOptionScrip(updatedContracts).length > 0;
-    //         setMarginConfig(prevState => ({
-    //             ...prevState,
-    //             isOptionScrip: hasSellableOptionScrip,
-    //         }));
-    //     }
-    // };
+    
     const deleteContract = (index) => {
         let isDeletedDataOption = false;
         if (marginConfig.contracts.length < 2) {
@@ -555,7 +512,6 @@ function Banner() {
                     isOptionScrip: hasSellableOptionScrip,
                 }));
             }
-            // callMargin(true);
         }
     };
 
@@ -606,33 +562,7 @@ function Banner() {
                             <div className='tabs-btn'>
                                 <div className='row justify-content-center'>
                                     <div className='col-xl-8 col-md-12'>
-                                        {/* <ul className='list_group1'>
-                                            <li className={toggleState === 1 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/margin-calculator" onClick={() => { activateTab(1, ''); setToggleState(1) }}>All</Link>
-                                            </li>
-                                            <li className={toggleState === 2 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/futures-and-options-margin-calculator" onClick={() => { activateTab(2, 'FO'); setToggleState(2) }}>F&O</Link>
-                                            </li>
-                                            <li className={toggleState === 3 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/commodity-margin-calculator" onClick={() => { activateTab(3, 'COM'); setToggleState(3) }}>Commodity</Link></li>
-                                            <li className={toggleState === 4 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/forex-margin-calculator" onClick={() => { activateTab(4, 'CD'); setToggleState(4) }}>Forex</Link>
-                                            </li>
-                                        </ul> */}
-                                        {/* <ul className='list_group1'>
-                                            <li className={activeTab === 1 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/margin-calculator" onClick={() => handleTabChange(1)}>All</Link>
-                                            </li>
-                                            <li className={activeTab === 2 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/futures-and-options-margin-calculator" onClick={() => handleTabChange(2)}>F&O</Link>
-                                            </li>
-                                            <li className={activeTab === 3 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/commodity-margin-calculator" onClick={() => handleTabChange(3)}>Commodity</Link>
-                                            </li>
-                                            <li className={activeTab === 4 ? "list-group-item tabs active" : "list-group-item"}>
-                                                <Link className='urllinks' to="/forex-margin-calculator" onClick={() => handleTabChange(4)}>Forex</Link>
-                                            </li>
-                                        </ul> */}
+                                        
                                         <ul className='list_group1'>
                                             <li className={activeTab === 1 ? "list-group-item tabs active" : "list-group-item"}>
                                                 <Link className='urllinks' to="/margin-calculator">All</Link>
@@ -876,57 +806,7 @@ function Banner() {
                                                                 </td>
                                                             </tr>
                                                         ))}
-                                                        {/* <tr>
-                                                            <td className='text-start'>MRF 27JUL23</td>
-                                                            <td className='text-end'>10</td>
-                                                            <td className='text-end'>SELL</td>
-                                                            <td className='text-end'>NA</td>
-                                                            <td className='text-end'>139,298.00</td>
-                                                            <td className='text-end'>34,181.86</td>
-                                                            <td className='text-end'>173,479.86</td>
-                                                            <td className='text-center'>
-                                                                <div className="tooltip2">
-                                                                    <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                                                        <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                                    </svg>
-                                                                    <span className="tooltiptext">Delete</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td className='text-start'>TATAMOTORS 29JUN23</td>
-                                                            <td className='text-end'>1425</td>
-                                                            <td className='text-end'>BUY</td>
-                                                            <td className='text-end'>NA</td>
-                                                            <td className='text-end'>140,990.00</td>
-                                                            <td className='text-end'>25,855.20</td>
-                                                            <td className='text-end'>166,845.20</td>
-                                                            <td className='text-center'>
-                                                                <div className="tooltip2">
-                                                                    <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                                                        <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                                    </svg>
-                                                                    <span className="tooltiptext">Delete</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td className='text-start'>TATAMOTORS 29JUN23 CE 245.00</td>
-                                                            <td className='text-end'>1425</td>
-                                                            <td className='text-end'>SELL</td>
-                                                            <td className='text-end'>245</td>
-                                                            <td className='text-end'>546,202.50</td>
-                                                            <td className='text-end'>25,855.20</td>
-                                                            <td className='text-end'>572,032.77</td>
-                                                            <td className='text-center'>
-                                                                <div className="tooltip2">
-                                                                    <svg className="delete-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                                                        <path d="M6 4C6 2.34315 7.3431 1 9 1C10.6569 1 12 2.34315 12 4M6 4H12M6 4H3M12 4H15M3 4H1M3 4V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V4M15 4H17" stroke="#221F20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                                    </svg>
-                                                                    <span className="tooltiptext">Delete</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr> */}
+                                                       
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -935,15 +815,7 @@ function Banner() {
                                             <p>Note: On non-trading hours, margin value displayed may vary with actual margin required for trade.</p>
                                         </div>
                                     </div>
-                                    {/* <div className={toggleState === 2 ? "content  active-content" : "content"}>
-                                    2
-                                </div> */}
-                                    {/* <div className={toggleState === 3 ? "content  active-content" : "content"}>
-                                    3
-                                </div> */}
-                                    {/* <div className={toggleState === 4 ? "content  active-content" : "content"}>
-                                   4
-                                </div> */}
+                                   
                                 </div>
                             </div>
 
@@ -951,8 +823,9 @@ function Banner() {
                     </div>
                 </div>
             </section>
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
             <NewFormSection sections={sections} />
-            {/* <OpenFreeDematAccount /> */}
+            </GoogleReCaptchaProvider>
             <section className='more-content'>
                 <div className='container'>
                     {

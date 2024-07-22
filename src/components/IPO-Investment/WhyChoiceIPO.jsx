@@ -68,19 +68,7 @@ function WhyChoiceIPO() {
         </div>  
       </section>
 
-      {/* <section className="get-start get-start-scnd">
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12">
-                    <div className="get-start-sub">
-                        <h3>Open a Free Account to Invest in IPO with Choice</h3>
-                        <div onClick={() => { chapterScroll('ipoForm')}} className="btn-bg btn-bg-dark cursor-pointer">Get Started</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> */}
+     
 
     </div>
   );

@@ -86,12 +86,10 @@ function Banner() {
     };
     const FilterByReturns = (e) => {
         const selectedReturns = e.target.value;
-        // console.log("selectedReturns", selectedReturns)
         setReturnsFilter(selectedReturns);
         let filteredResults = filteredCategoryData;
         if (selectedReturns) {
             filteredResults = filteredCategoryData.filter((amc) => {
-                // console.log('amc', amc);
                 switch (selectedReturns) {
                     case '1 Month':
                         return amc.Returns.OneMonthReturn !== null;
@@ -110,7 +108,6 @@ function Banner() {
                 }
             });
         }
-        // console.log('filteredResults', filteredResults);
         setFilteredCategoryData(filteredResults);
     };
     const handleSortChange = (e) => {
@@ -181,7 +178,6 @@ function Banner() {
             );
         });
         setFilteredCategoryData(filteredResults);
-        // console.log("filteredResults", filteredResults)
     }
     const renderPageNumbers = () => {
         const displayRange = 3;

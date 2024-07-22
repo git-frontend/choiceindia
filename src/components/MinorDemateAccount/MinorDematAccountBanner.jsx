@@ -50,21 +50,6 @@ const MinorDematAccountBanner = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
-                        {/* {
-                                view && !view.matches ?
-                                <div>
-                           
-                            </div>
-                            :
-                            <div>
-                                <span className="banner-title2">All in 1 Account</span>
-                                <h1 className="banner-title" >
-                                    <div className="desktop">Open a Minor Demat Account <br /> <span className="yellow">Online For Free</span></div>
-                                    
-                                </h1>
-                            </div>
-
-                        } */}
 
                         <div>
                             <span className="banner-title2">All in 1 Account</span>
@@ -74,8 +59,6 @@ const MinorDematAccountBanner = () => {
                             </h1>
                         </div>
                       
-                            {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
-                            {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} /> */}
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
@@ -134,33 +117,16 @@ const MinorDematAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                        {/* {
-                                view && !view.matches ?
-                                <div>
-                            <span className="banner-title2 mobile">All in 1 Account</span>
-                        <h1 className="banner-title mbtitle">
-                                <div className="mobile">Open a Minor Demat Account <br /> <span className="yellow">Online For Free</span></div>
-                                
-                            </h1>
-                            </div>
-                            :
-                            <div>
-                            </div>
-
-                        } */}
                         
                         {
                                 ischeck ?
                        
                             <div className="formwrap d-flex justify-content-end ">
-                                {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
-                                {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
                             </div>:
                                 <div className="formwrap d-flex justify-content-end">
-                                {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
                                     <DematAccountForm />
                                 </div>
                             }

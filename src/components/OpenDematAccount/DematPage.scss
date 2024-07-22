@@ -93,7 +93,12 @@
 			margin-bottom: 3rem;
 		}
 	}
-
+	.mbrespflex{
+		row-gap: 2.5rem;
+		@media (max-width:$sm) {
+			row-gap: 1.5rem;
+		}
+	}
 	.bannerbox {
 		padding: 1.563rem;
 		border: 1px solid $bgcolor-blue;
@@ -189,6 +194,23 @@
 
 			}
 		}
+
+		.sectext-heading{
+		font-size:3.10rem;
+		@media (max-width:$sm) {
+			font-size: 2rem;
+		}
+
+		@media (min-width:$sm) and (max-width:768px) {
+			font-size: 2rem;
+		}
+
+		@media (min-width:769px) and (max-width:1024px) {
+			font-size: 2rem;
+		}
+
+		}
+
 		@media (max-width:$sm) {
 			padding-right: 0;
 		}
@@ -464,15 +486,66 @@
 	padding: 1rem 0 9rem ;
 	position: relative;
 	margin-top: 6rem;
+	.steps-number-prnt{
+		&:last-child{
+			.num-wrap{
+				&::after{
+					display: none !important;
+				}
+			}
+		}
+		
+	}
 
 	.demat-steps {
 		@media (max-width:$sm) {
 			display: flex;
+			min-height: 170px;
+		}
+		.num-wrap{
+			position: relative;
+			@media (max-width:$sm) {
+				width: 71px;
+			}
+			.steps-number{
+				color: $yellowColor;
+				font-size: 6rem;
+				font-family: $font-family-poppins-semibold;
+				font-weight: 700;
+				margin: 0;
+				@media (max-width:$sm) {
+				font-size: 4.5rem;
+				}
+			}
+			&::after{
+				content: '';
+				position: absolute;
+				right: 40px;
+				background: url(../../assets/images/open-demat-account/steparrow.svg) no-repeat;
+				background-size: contain;
+				width: 127px;
+				top: 50%;
+				height: 23px;
+				transform: translateY(-50%);
+				@media (max-width:$md) {
+					display: none;
+				}
+				@media (max-width:$sm) {
+					transform: rotate(90deg);
+					height: 17px;
+					width: 93px;
+					left: -10px;
+					top: 70%;
+					display: block;
+				}
+			}
+
 		}
 	}
 
 	@media (max-width:$sm) {
 		margin-top: 11rem;
+		padding:1rem 0 6rem;
 	}
 
 	.sect-title {
@@ -880,6 +953,18 @@
 				display: flex;
 				flex-wrap: wrap;
 				align-items: center;
+				&.brder-bottom{
+					border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+					padding: 2rem 0;
+					&:first-child{
+						padding-top: 0;
+					}
+					&:last-child{
+						padding-bottom: 0;
+						border: 0;
+					}
+
+				}
 				.headtxt{
 					width: 35%;
 					@media (max-width:$md) {

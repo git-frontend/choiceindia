@@ -1,5 +1,3 @@
-// import "./opentradingaccounthindi.scss";
-// import DematAccountForm from '../Common-features/DematAccountForm';
 import "../OpenDematAccount/DematPage"
 import HindiOpenFreeAccountBanner from "./HindiOpentradingAccountBanner";
 import HindiWhyOpenFreeDematAccount from "./HindiWhyOpenTradingAccount";
@@ -23,7 +21,6 @@ function OpenTradingAccountHindi() {
           let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
           document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
           document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-          // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
           document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
           document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -54,18 +51,6 @@ function OpenTradingAccountHindi() {
            sitemap3.href = meta_tags[location.pathname.replace('/', "")].link4||'';
            sitemap3.hreflang = meta_tags[location.pathname.replace('/', "")].href4||'';
             document.head.appendChild(sitemap3);
-        //     let sitemap4 = document.createElement('link');
-        //     sitemap4.rel = 'alternate';
-        //     sitemap4.id = 'link5';
-        //    sitemap4.href = meta_tags[location.pathname.replace('/', "")].link5||'';
-        //    sitemap4.hreflang = meta_tags[location.pathname.replace('/', "")].href5||'';
-        //     document.head.appendChild(sitemap4);
-        //     let sitemap5 = document.createElement('link');
-        //     sitemap5.rel = 'alternate';
-        //     sitemap5.id = 'link6';
-        //    sitemap5.href = meta_tags[location.pathname.replace('/', "")].link6||'';
-        //    sitemap5.hreflang = meta_tags[location.pathname.replace('/', "")].href6||'';
-        //     document.head.appendChild(sitemap5);
             }
 
         }

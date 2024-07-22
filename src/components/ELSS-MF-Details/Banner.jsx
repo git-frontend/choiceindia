@@ -51,7 +51,6 @@ function Banner() {
     }
     const initializeData = () => {
         let urlIdentity = window.location.pathname.split('/top-funds/')[1];
-        // console.log("urlIdentity", urlIdentity);
         getCategoryData(urlIdentity);
     };
     const getCategoryData = (urlIdentity) => {
@@ -71,7 +70,7 @@ function Banner() {
                 if (err && err.message && (err.message.indexOf('404') > -1)) {
                     navigate(`/404`, { replace: true });
                 }
-                // console.log("ERROR", err);
+               
             }
         );
     };
@@ -114,16 +113,17 @@ function Banner() {
         setFilteredCategoryData(filteredResults);
     };
     function addClassNameToTable(htmlContent, classNameToAdd) {
-        return htmlContent.replace(/<table/, `<table class="${classNameToAdd}"`);
+        if (htmlContent.includes('<table')) {
+            return htmlContent.replace(/<table/g, `<div class="table_scroll"><table class="${classNameToAdd}"`).replace(/<\/table>/g, '</table></div>');
+        }
+        return htmlContent;
     }
     const FilterByReturns = (e) => {
         const selectedReturns = e.target.value;
-        // console.log("selectedReturns", selectedReturns)
         setReturnsFilter(selectedReturns);
         let filteredResults = filteredCategoryData;
         if (selectedReturns) {
             filteredResults = filteredCategoryData.filter((fund) => {
-                // console.log('fund', fund);
                 switch (selectedReturns) {
                     case '1 Month':
                         return fund.SchemeReturns.OneMonthReturn !== null;
@@ -142,7 +142,6 @@ function Banner() {
                 }
             });
         }
-        // console.log('filteredResults', filteredResults);
         setFilteredCategoryData(filteredResults);
     };
 

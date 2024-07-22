@@ -8,7 +8,6 @@ import Team from '../../assets/images/partner/team.svg';
 import Smartphone from '../../assets/images/partner/smartphone.svg';
 import partnerConnect from '../../Data/Partner';
 import LazyLoader from "../Common-features/LazyLoader";
-// import Lazy from "yup/lib/Lazy";
 
 
 
@@ -17,7 +16,6 @@ function WhyChoiceConnect() {
 
   const [data, setData] = useState(() => 0);
   const [defaultOption, setdefaultOption] = useState(() => 'work-list-itm-active');
-  // let txt = 'work-list-itm-active';
 
 
   return (
@@ -43,7 +41,7 @@ function WhyChoiceConnect() {
                   <div className="bx-item-cont" onMouseOver={() => { setData(() => 0) }}>
                   <span className="cont-img">
                   <LazyLoader src={Rating} alt={""} className={'img-fluid'} width={"72"} height={"71"} />
-                    {/* <img src={Rating} alt="" width={"72"} height={"71"} /> */}
+
                   </span>
                   
                     <h4>Lineage</h4>
@@ -57,7 +55,6 @@ function WhyChoiceConnect() {
                   }}>
                     <span className="cont-img">
                     <LazyLoader src={Cogwheel} className={'img-fluid'} alt={""} width={"70"} height={"71"} />
-                    {/* <img src={Cogwheel} alt="" width={"70"} height={"71"} /> */}
                     </span>
                     
                     <h4>Multifaceted</h4>
@@ -71,7 +68,6 @@ function WhyChoiceConnect() {
                   }}>
                     <span className="cont-img">
                     <LazyLoader src={Network} className={'img-fluid'} alt={""} width={"72"} height={"71"} />
-                    {/* <img src={Network} alt="" width={"72"} height={"71"} /> */}
                     </span>
                      
                     <h4>Network</h4>
@@ -85,7 +81,6 @@ function WhyChoiceConnect() {
                   }}>
                     <span className="cont-img">
                     <LazyLoader src={Billfold} className={'img-fluid'} alt={""} width={"72"} height={"71"} />
-                    {/* <img src={Billfold} alt="" width={"72"} height={"71"} /> */}
                     </span>
                     
                     <h4>Security</h4>
@@ -99,7 +94,6 @@ function WhyChoiceConnect() {
                   }}>
                     <span className="cont-img">
                     <LazyLoader src={Team} className={'img-fluid'} alt={""} width={"70"} height={"71"} />
-                    {/* <img src={Team} alt="" width={"70"} height={"71"} /> */}
                     </span>
                     
                     <h4>Infrastructure</h4>
@@ -113,7 +107,6 @@ function WhyChoiceConnect() {
                   }}>
                     <span className="cont-img">
                     <img src={Smartphone} className={'img-fluid'} alt={""} width={"70"} height={"71"} />
-                    {/* <img src={Smartphone} alt="" width={"70"} height={"71"} /> */}
                     </span>
                      
                     <h4>Flexibility</h4>

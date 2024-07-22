@@ -21,6 +21,8 @@ function trackRecords() {
   const [toggleState, setToggleState] = useState(1);
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
+  const [mainboard,setMainboard] = useState([])
+  const [sme,setSme] = useState([])
   const toggleTab = (index) => {
     setToggleState(index);
   };
@@ -33,11 +35,7 @@ function trackRecords() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -64,21 +62,10 @@ function trackRecords() {
         res => {
           if (res && res.data && res.data.data) {
             setisloading(false)
-            // console.log("dddee", res.data.data)
             values = res.data.data;
-            // console.log("ddd", values)
-            // values.forEach(ele => {
-
-            //   if (!AllFilesValue[ele.title]) {
-            //     AllFilesValue[ele.title] = [];
-            //     AllFilesValue[ele.title].push(ele)
-            //   } else {
-            //     AllFilesValue[ele.title].push(ele)
-
-            //   }
-            // })
+            setMainboard(values?.filter(e => e.select_ipo === "mainboard IPO"))
+            setSme(values?.filter(e => e.select_ipo === "sme IPO"))
             setDatalist(values);
-            // console.log("check", values)
           } else {
             setisloading(false)
             setDatalist([]);
@@ -116,13 +103,13 @@ function trackRecords() {
                   <div className="track-record-tabs  text-center">
                     <button
                       className={toggleState === 1 ? "trackbtn tabs active" : "trackbtn"}
-                      onClick={() => { toggleTab(1); }}
+                      onClick={() => { toggleTab(1),loadFileDownload() }}
                     >
                       Mainboard IPO
                     </button>
                     <button
                       className={toggleState === 2 ? "trackbtn tabs active" : "trackbtn"}
-                      onClick={() => { toggleTab(2) }}
+                      onClick={() => { toggleTab(2),loadFileDownload() }}
                     >
                       SME IPO
                     </button>
@@ -152,9 +139,9 @@ function trackRecords() {
                     <p className="mainboard-txt">Click on the following links to download :</p>
                     <div className="listing">
                       {
-                        datalist.length > 0 ? (
+                        mainboard.length > 0 ? (
                           <ul>
-                            {datalist.map((res, index) => {
+                            {mainboard.map((res, index) => {
 
                               return (
                                 <li key={index} className="border-bottom d-flex justify-content-between pb-3 pt-3">
@@ -200,15 +187,60 @@ function trackRecords() {
                     </div>
                   </div> :
                   toggleState == 2 ?
-                  <div className="text-center">
-                  <img
-                    src={noDataimg}
-                    className="img-fluid"
-                    alt="No Data Found"
-                    height={250}
-                    width={250}
-                  />
-                </div> : ""}
+                  <div>
+                  <h2 className="title text-center">SME IPO</h2>
+                  <div className="quicklinkswrap">
+
+                  <p className="mainboard-txt">Click on the following links to download :</p>
+                  <div className="listing">
+                    {
+                      sme.length > 0 ? (
+                        <ul>
+                          {sme.map((res, index) => {
+
+                            return (
+                              <li key={index} className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                <div className="text">{res.title}</div>
+                                {res.track_file ? (
+                                  <div
+                                    className="cursor-pointer"
+                                    onClick={() => {
+                                      window.open(`https://cmsapi.choiceindia.com/assets/${res.track_file}`)
+                                    }}
+                                  >
+                                    <img
+                                      src={download}
+                                      className={"img-fluid"}
+                                      alt={"Loading"}
+                                      width={""}
+
+
+                                      height={""}
+                                    />
+                                    <span className="downloadtext">Download</span>
+                                  </div>
+                                ) : (
+                                  <div></div>
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      ) : (
+                        <div className="text-center">
+                          <img
+                            src={noDataimg}
+                            className="img-fluid"
+                            alt="No Data Found"
+                            height={250}
+                            width={250}
+                          />
+                        </div>
+                      )
+                    }
+                  </div>
+                  </div>
+                </div>  : ""}
             </div>
           </div>
         </div>

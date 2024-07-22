@@ -32,12 +32,8 @@ function ResearchDetailed() {
     const hasIPOReview = window.location.pathname.includes('-ipo-review');
     const hasINdReview = window.location.pathname.includes('-industry-analysis');
     const haseco = window.location.pathname.includes('');
-    // console.log("c",hasINdReview)
-    
     let id2;
 
-    // let id2 = id.split('-share-price-target')[0]
-    // console.log(id2,"iddddddddddddddddd");
 
     
     if (hasSharePriceTarget) {
@@ -54,18 +50,14 @@ function ResearchDetailed() {
     else {
       return; 
     }
-    // console.log("id",id2)
 
     ResearchService.getSingleResearchDetail(id2, checkIPO).then(
       res => {
-        // console.log("checkIPO",checkIPO)
         if (res) {
           if (res.response.data) {
             setList(res.response.data);
           }
         }
-        // setList(res.response.data);
-        // console.log('Detail',res);
       }
     )
   }
@@ -76,7 +68,6 @@ function ResearchDetailed() {
     } else {
       setCheckIPO('fundamental');
     }
-    // console.log('Called',checkIPO)
     if (id && checkIPO) {
       getSingleResearchDetail(id ? id : '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
     }

@@ -21,8 +21,7 @@ function ShareHoldingMenu() {
         cmsService.ShareHolding().then(
             res => {
                 if (res) {
-                    setisloading(false);
-                    // setData(res.data.data);
+                    setisloading(false);                  
                     let yearFormat = {};
                     res.data.data.forEach(ele => {
 
@@ -78,7 +77,6 @@ function ShareHoldingMenu() {
                         isloading ?
                         <div className="text-center">
                         <div>
-                            {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                             <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                             </div>
                     </div>

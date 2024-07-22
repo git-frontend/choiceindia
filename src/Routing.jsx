@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, Link } from 'react-router-dom';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
@@ -16,7 +16,6 @@ import { useLocation } from 'react-router-dom';
 
 const Remo=()=>{
     const location = useLocation();
-  
     return (
       <>
         {(location.pathname.match(/.*\/$/) && location.pathname.length > 1 && location.pathname.indexOf('blog') < 0)  ? (
@@ -203,10 +202,10 @@ const LazyCorporateDematAc =React.lazy(()=> import('./components/Corporate-Demat
 const LazyLeadForm =React.lazy(()=> import('./components/Lead-Form/LeadForm'));
 const LazyBugBountyProgram =React.lazy(()=> import('./components/Bug-bounty-program/BugBountyProgram'));
 const LazyUnder25 =React.lazy(()=> import('./components/Under-25/Under25'));
-
+const LazyBrokerageChargesNew = React.lazy(() => import('./components/Brokerage-New/BrokerageChargesNew'));
+const LazyInvestorCharterGrievances = React.lazy(() => import('./components/Investor-Charter-Grievances/InvestorCharterGrievances'));
+const LazyTradingDemat = React.lazy(() => import('./components/Trading-new-page/OpenTradingNew'));
 function Routing() {
-
-    
 
     return (
         <>
@@ -214,7 +213,7 @@ function Routing() {
                 <Remo></Remo>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 &&   window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") && window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1   && window.location.pathname.indexOf("/campaign/fno-trading") === -1 && window.location.pathname.indexOf("/campaign/intraday-trading") === -1)  ? <Header /> : <CampaignHeader />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 &&   window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") && window.location.pathname.indexOf("/campaign/intraday-tradingp") === -1   && window.location.pathname.indexOf("/campaign/fno-trading") === -1 && window.location.pathname.indexOf("/campaign/intraday-trading") === -1) ? <Header /> : <CampaignHeader />}
 {/*                
                 {window.location.pathname.indexOf("/campaign/sub-broker") === -1 &&
                     window.location.pathname.indexOf("/campaign/trading-strategies") === -1 &&
@@ -470,11 +469,11 @@ function Routing() {
                                 < Lazyinvestorawareness />
                             </React.Suspense>
                         } />
-                        <Route exact path='/onlinetradingapp' element={
+                        {/* <Route exact path='/onlinetradingapp' element={
                             <React.Suspense>
                                 < Lazyonlinetradingapp />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route exact path='/share-market-app' element={
                             <React.Suspense>
                                 < Lazysharemarketapp />
@@ -554,11 +553,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/brokerage-charges' element={
+                        {/* <Route exact path='/brokerage-charges' element={
                             <React.Suspense>
                                 < LazyBrokerageCharges />
                             </React.Suspense>
-                        } />
+                        } /> */}
 
                         {/* <Route exact path='/choice-insurance' element={
                             <React.Suspense>
@@ -1083,6 +1082,21 @@ function Routing() {
                          <Route exact path='/under25' element={
                             <React.Suspense>
                                  < LazyUnder25 />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/brokerage-charges' element={
+                            <React.Suspense>
+                                < LazyBrokerageChargesNew />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/investor-grievances' element={
+                            <React.Suspense>
+                                < LazyInvestorCharterGrievances />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/what-is-trading-account' element={
+                            <React.Suspense>
+                                < LazyTradingDemat />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />

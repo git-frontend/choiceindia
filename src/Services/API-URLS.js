@@ -126,7 +126,7 @@ export class API_URLS {
   /** NACH Base URL */
   nachBaseURL = "";
   /** PV breakout API data URL */
-  pvBreakoutURL = "api/techanalysis/v3/GetMessages";
+ 
   /**Market Insights , fabal URL */
 
   addMarketInsiteURL = "content/posts/?key=280c55197998a010569e5d612a";
@@ -189,9 +189,7 @@ export class API_URLS {
   /**Keep Alive Request */
   keepAliveRequest = "63=FT3.0|64=1000|65=34|66=$currentDate|4=$sessionId";
 
-  /** Performance */
 
-  performancefontURL = "techanalysis/getcounters";
 
   // multiple tokens url
 
@@ -327,11 +325,14 @@ export class API_URLS {
   schemeTopSectors = "Scheme/topsectors";
   schemeMarketCap = "Scheme/marketcap";
   schemeTopHoldings = "Scheme/topholdings";
-
+  investorcharterdata="items/Investor_Charter_Grievances";
   /* For Solar Lead Form URL */
   solarLead="api/newLeadDetail";
  /* For generate sso token*/
  ssoRegisterTokenGet="api/connect/token";
+
+ /*For KeyInfo */
+ keyInfo="cm/ProfileMkt/KeyInfo/";
   constructor() {
     this.setConfig(environment ? "live" : "UAT");
   }
@@ -529,10 +530,7 @@ export class API_URLS {
     return this.newResearchReportURL + this.fetchResearchReport;
   }
 
-  fetchSignalReportURL() {
-    return this.jiffyServerURL + this.pvBreakoutURL;
-  }
-
+ 
   /** Get Market Insite and fabal List URL */
 
   getMarketinsiteURL() {
@@ -727,9 +725,7 @@ export class API_URLS {
     return this.researchURL + "api/ipo?offset=0";
   }
 
-  getperformanceURL() {
-    return this.performanceURL + this.performancefontURL;
-  }
+ 
   getMultipletokens() {
     return this.performanceURL + this.multipletokensURL;
   }
@@ -862,15 +858,15 @@ export class API_URLS {
   }
 
   getSubBrokerNewSendOtpUrl() {
-    return this.SSOServerURL + this.subBrokerSendOtpURLNew;
+    return this.NEWSSOServerURL + this.subBrokerSendOtpURLNew;
   }
 
   getSubBrokerNewResendOtpURL() {
-    return this.SSOServerURL + this.subBrokerResendOtpURLNew;
+    return this.NEWSSOServerURL + this.subBrokerResendOtpURLNew;
   }
 
   getSubBrokerNewVerifyOtpURL() {
-    return this.SSOServerURL + this.subBrokerVerifyOtpURLNew;
+    return this.NEWSSOServerURL + this.subBrokerVerifyOtpURLNew;
   }
   getSubBrokerURL(location) {
     return (
@@ -1047,4 +1043,12 @@ export class API_URLS {
   getSSOTokenURL(){
     return this.ssoRegisterServerURL+this.ssoRegisterTokenGet;
    }
+   getinvestorcharterdataURL() {
+    return this.CMSURL + this.investorcharterdata;
+  }
+
+  //KeyInfo url
+  getKeyInfoURL(){
+    return this.performanceURL+this.keyInfo;
+  }
 }

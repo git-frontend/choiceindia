@@ -10,7 +10,7 @@ import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function FnoRecord() {
     const [list, setlist] = useState();
-    const [Data1, setData1] = useState();
+    const [session, setSession] = useState();
     const [showLoader, setShowLoader] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
 
@@ -33,10 +33,25 @@ function FnoRecord() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            generateSessionId()
-            FandORecords()
+            generateSessionId(FandORecords);
         }
     }, [rendercount])
+
+    function generateSessionId(func){
+        rest.generateSession()
+        .then((res)=>{
+           if(res.Status == "Success"){
+              setSession(res.Response);
+              func(res.Response);
+           }
+           else{
+              setShowLoader(false);
+           }
+        })
+        .catch((err)=>{
+             setShowLoader(false);
+        });
+      }
     const settings = {
         infinite: true,
         speed: 2000,
@@ -67,24 +82,8 @@ function FnoRecord() {
             },
         ],
     };
-    function generateSessionId() {
-        let api = new API_URLS()
-        fetch(api.getSessionUrl())
-            .then(response => {
-                return response.json();
-            })
-            .then(res => {
-                if (res.Status == 'Success') {
-                    IntraStocks(res.Response);
-                    setData1(res.Response);
-                } else {
-                    IntraStocks([])
-                }
-            }, err => {
-                IntraStocks([])
-            })
-    }
-    function FandORecords() {
+    
+    function FandORecords(SessionId) {
 
         setlist([]);
         tokens = '';
@@ -108,85 +107,49 @@ function FnoRecord() {
             "timeline_enabled": 1,
             "category_id": 2
         }
+
         rest.expertReportData(request).then(
 
             res => {
-
-                if (res) {
-                    // console.log("checkdd",res.response.research);
-                    storefile = res.response.research;
-                    // setlist(res.response.research);
-
-                    res.response.research.forEach(ele => {
-
-                        tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-
-                        ele['LTP'] = ele['LTP'] / 100
-                    });
-
-                    setlist(res.response.research);
-                    let unique = []
-                    for (let i = 0; i < tokenList.length; i++) {
-                        unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-                    }
-                    unique.forEach(element => {
-                        if (!tokens.includes(element)) {
-                            tokens += element
-                        }
-                    });
-                    // console.log("SegmentId",tokens);
-                    // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-                    const payload = {
-                        'UserId': 'guest',
-                        'SessionId': Data1,
-                        'MultipleTokens': tokens
-                    }
-
-                    rest.multipleTokensURLData(payload).then(
-                        res => {
-                            if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-
-                                res.Response.lMT.forEach((ele, index) => {
-                                    // console.log("ele", ele)
-                                    ele['LTP'] = ele['LTP'] / 100;
-                                    ele.PrevClose = ele.PC / 100;
-                                    ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-                                    ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-                                    // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-                                    for (let i = 0; i < storefile.length; i++) {
-
-                                        if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
-                                            AllFilesValue = Object.assign(storefile[i], ele);
-                                            multiValue.push(AllFilesValue)
-                                            setShowLoader(false)
-                                        } else {
-
-
-
-                                        }
-                                    }
-                                })
-
-                                setlist(multiValue);
-
-                            }
-                            else{
-                                setShowLoader(false)
-                            }
-                        }).catch((error) => {
-
-                            setShowLoader(false)
-              
-                            
-              
-                          });
+      
+              if (res) {
+                storefile = res.response.research;
+                
+                tokens=utils.expertReportDataProcessing(storefile,tokenList);
+      
+                setlist(res.response.research);
+          
+                const payload = {
+                  'UserId': 'guest',
+                  'SessionId': SessionId,
+                  'MultipleTokens': tokens
                 }
+      
+                rest.multipleTokensURLData(payload).then(
+                  res => {
+                    if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+      
+                      multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
+      
+                      setlist(multiValue);
+      
+                    }
+                    else {
+                      setShowLoader(false)
+                    }
+                  }).catch((error) => {
+                    setShowLoader(false)
+                    
+                  });
+              }
             })
-
+      
             .catch((error) => {
-                setShowLoader(false)
-                setlist([]);
+              setShowLoader(false)
+              
             });
+
+       
     }
 
 
@@ -229,7 +192,6 @@ function FnoRecord() {
                                                                             </div>
                                                                         </div>
                                                                         <div className="top-right">
-                                                                            {/* <button className="btn-buy  buybtn"> sell</button> */}
                                                                             <button onClick={() => { chapterScroll3('dematform') }} className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > {response?.call_type}</button>
                                                                         </div>
                                                                     </div>
@@ -260,10 +222,7 @@ function FnoRecord() {
                                                                                 <h6 className="bottom_small_text">Target Price</h6>
                                                                                 <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                                             </div>
-                                                                            {/* <div className="bottom">
-                                                                                <h6 className="bottom_small_text">2nd Target Price</h6>
-                                                                                <h4 className="bottom_big_text">2,105.05</h4>
-                                                                            </div> */}
+                                                                            
                                                                         </div>
                                                                     </div>
                                                                 </div>

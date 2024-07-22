@@ -12,9 +12,7 @@ import etfindeximage from "../../assets/images/index-fund-vs-etf.webp";
 import invesrtetf from "../../assets/images/how-to-invest-in-etf-online.webp";
 import Slider from 'react-slick';
 function ETF() {
-  // const[ischeck,setIscheck]=useState(false);
   function chapterScroll(id) {
-    // console.log("check",id);
     var element = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
@@ -58,11 +56,7 @@ function ETF() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -160,7 +154,6 @@ function ETF() {
                     <div className="col-md-7">
                       <h1 className="title text-center">ETF – A Beginner's Guide</h1>
 
-                      {/* <p className="para">A Beginner's Guide</p> */}
                       <hr />
 
                       <div className="bannertext">
@@ -197,7 +190,6 @@ function ETF() {
                               <span id="chapter-one-img">
 
                               </span>
-                              {/* <img src='./images/demat-account-meaning.svg' className="" alt="Meaning of Demat Account" /> */}
                               <h4>Chapter 1</h4>
                               <p>What is an ETF?</p>
                             </div>
@@ -207,7 +199,6 @@ function ETF() {
                               <span id="chapter-two-img">
 
                               </span>
-                              {/* <img src='./images/how-does-demat-account-works.svg' className="" alt="How Demat Account Works" /> */}
                               <h4>Chapter 2</h4>
                               <p>Types of ETFs in India</p>
                             </div>
@@ -217,7 +208,6 @@ function ETF() {
                               <span id="chapter-three-img">
 
                               </span>
-                              {/* <img src='./images/demat-account-types.svg' className="" alt="Types of Demat Account" /> */}
                               <h4>Chapter 3</h4>
                               <p>ETF vs Stock</p>
                             </div>
@@ -227,7 +217,6 @@ function ETF() {
                               <span id="chapter-four-img">
 
                               </span>
-                              {/* <img src='./images/demat-account-benefits.svg' className="" alt="Advantages of Demat Account" /> */}
                               <h4>Chapter 4</h4>
                               <p>ETF vs Mutual Fund</p>
                             </div>
@@ -237,7 +226,6 @@ function ETF() {
                               <span id="chapter-five-img">
 
                               </span>
-                              {/* <img src='./images/features-of-demat-account.svg' className="" alt="Demat Account Featues" /> */}
                               <h4>Chapter 5</h4>
                               <p>ETF vs Index Fund</p>
                             </div>
@@ -247,7 +235,6 @@ function ETF() {
                               <span id="chapter-six-img">
 
                               </span>
-                              {/* <img src='./images/how-to-open-a-demat-account.svg' className="" alt="How to Open Demat Account" /> */}
                               <h4>Chapter 6</h4>
                               <p>How to Invest in an ETF in India?</p>
                             </div>
@@ -257,7 +244,6 @@ function ETF() {
                               <span id="chapter-seven-img">
 
                               </span>
-                              {/* <img src='./images/best-demat-account.svg' className="" alt="How to Choose Best Demat Account" /> */}
                               <h4>Chapter 7</h4>
                               <p>How to Select an ETF</p>
                             </div>
@@ -267,7 +253,6 @@ function ETF() {
                               <span id="chapter-eight-img">
 
                               </span>
-                              {/* <img src='./images/demat-account-uses.svg' className="" alt="Uses of Demat Account" /> */}
                               <h4>Chapter 8</h4>
                               <p>Best ETF to Invest in India</p>
                             </div>
@@ -280,7 +265,6 @@ function ETF() {
                                 <span id="chapter-one-img">
 
                                 </span>
-                                {/* <img src='./images/demat-account-meaning.svg' className="" alt="Meaning of Demat Account" /> */}
                                 <h4>Chapter 1</h4>
                                 <p>What is an ETF?</p>
                               </div>
@@ -290,7 +274,6 @@ function ETF() {
                                 <span id="chapter-two-img">
 
                                 </span>
-                                {/* <img src='./images/how-does-demat-account-works.svg' className="" alt="How Demat Account Works" /> */}
                                 <h4>Chapter 2</h4>
                                 <p>Types of ETFs in India</p>
                               </div>
@@ -300,7 +283,6 @@ function ETF() {
                                 <span id="chapter-three-img">
 
                                 </span>
-                                {/* <img src='./images/demat-account-types.svg' className="" alt="Types of Demat Account" /> */}
                                 <h4>Chapter 3</h4>
                                 <p>ETF vs Stock</p>
                               </div>
@@ -310,7 +292,6 @@ function ETF() {
                                 <span id="chapter-four-img">
 
                                 </span>
-                                {/* <img src='./images/demat-account-benefits.svg' className="" alt="Advantages of Demat Account" /> */}
                                 <h4>Chapter 4</h4>
                                 <p>ETF vs Mutual Fund</p>
                               </div>
@@ -320,7 +301,6 @@ function ETF() {
                                 <span id="chapter-five-img">
 
                                 </span>
-                                {/* <img src='./images/features-of-demat-account.svg' className="" alt="Demat Account Featues" /> */}
                                 <h4>Chapter 5</h4>
                                 <p>ETF vs Index Fund</p>
                               </div>
@@ -330,7 +310,6 @@ function ETF() {
                                 <span id="chapter-six-img">
 
                                 </span>
-                                {/* <img src='./images/how-to-open-a-demat-account.svg' className="" alt="How to Open Demat Account" /> */}
                                 <h4>Chapter 6</h4>
                                 <p>How to Invest in an ETF in India?</p>
                               </div>
@@ -340,7 +319,6 @@ function ETF() {
                                 <span id="chapter-seven-img">
 
                                 </span>
-                                {/* <img src='./images/best-demat-account.svg' className="" alt="How to Choose Best Demat Account" /> */}
                                 <h4>Chapter 7</h4>
                                 <p>How to Select an ETF</p>
                               </div>
@@ -350,7 +328,6 @@ function ETF() {
                                 <span id="chapter-eight-img">
 
                                 </span>
-                                {/* <img src='./images/demat-account-uses.svg' className="" alt="Uses of Demat Account" /> */}
                                 <h4>Chapter 8</h4>
                                 <p>Best ETF to Invest in India</p>
                               </div>
@@ -370,7 +347,6 @@ function ETF() {
                       <h2 className="title">What is an ETF?</h2>
                       <div className='row  pb52'>
                         <div className='col-md-6' id="best-demat-img">
-                          {/*   <img src='./images/best-demat-account.webp' className="img-fluid" alt="Demat Account Meaning" /> */}
                         </div>
                         <div className='col-md-6'>
                           <p className='subtext'>The first question that pops up in your mind is, "what is ETF in stock market?"</p>
@@ -407,8 +383,6 @@ function ETF() {
                       <h2 className="title">Types of ETFs in India</h2>
                       <div className='row pb52'>
                         <div className='col-md-6' id="how-does-img">
-                          {/* <img src='./images/how-does-demat-account-works.webp' className="img-fluid"
-                      alt="How Does Demat Account Works" /> */}
                         </div>
                         <div className='col-md-6'>
                           <p className='subtext'>The types of ETF in India include equity, gold, and ETF Fund of Funds. Let's delve into each!</p>
@@ -456,7 +430,6 @@ function ETF() {
                       <h2 className="title">ETF vs Stock</h2>
                       <div className='row pb25'>
                         <div className='col-md-6' id="account-type-img">
-                          {/* <img src='./images/demat-account-types.webp' className="img-fluid" alt="Demat Account Types" /> */}
                         </div>
                         <div className='col-md-6'>
                           <p className='subtext'>When investing in ETFs, you might want to understand how it's better than market stocks.</p>
@@ -495,7 +468,6 @@ function ETF() {
                       <h2 className="title">ETF vs Mutual Fund</h2>
                       <div className='row'>
                         <div className='col-md-6' id="account-benefits-img">
-                          {/* <img src='./images/demat-account-benefits.webp' className="img-fluid" alt="Demat Account Benefits" /> */}
                         </div>
                         <div className='col-md-6'>
                           <p className='subtext'>The main difference between an ETF and mutual funds is how they are purchased and sold. You can easily buy or sell ETFs on the stock exchange. However, you can only buy a mutual fund unit from an asset management company or a fund house.</p>
@@ -539,7 +511,6 @@ function ETF() {
                       <h2 className="title">ETF vs Index Fund</h2>
                       <div className='row pb25'>
                         <div className='col-md-6' id="demat-features-img">
-                          {/* <img src="./images/features-of-dematr-account.webp" className="img-fluid" alt=" Featues of Demat Account" /> */}
                         </div>
                         <div className='col-md-6'>
                           <p className='subtext'>ETFs and index funds are investment strategies where your fund manager can make investment decisions on your behalf. But, to understand <strong>ETFs vs index funds</strong>, you need to delve into the details of index funds.</p>
@@ -574,8 +545,6 @@ function ETF() {
                       <h2 className="title">How to Invest in an ETF in India?</h2>
                       <div className='row pb52'>
                         <div className='col-md-6' id="how-to-open-demat-img">
-                          {/* <img src='./images/how-to-open-a-demat-account.webp' className="img-fluid"
-                      alt=" How to Open a Demat Account" /> */}
                         </div>
                         <div className='col-md-6'>
                           <p className='subtext'>If you're searching online for "<strong>How to Invest In ETF in India?</strong>" The steps are similar to purchasing/selling shares on the stock market. You can either do it yourself online or hire an experienced stockbroker to make the decisions for you.</p>
@@ -640,7 +609,6 @@ function ETF() {
                       <h2 className="title">How to Select an ETF</h2>
                       <div className='row pb52'>
                         <div className='col-md-6' id="best-demat-img-seven" >
-                          {/* <img src='./images/best-demat-account.webp' className="img-fluid" alt="Best Demat Account" /> */}
                         </div>
                         <div className='col-md-6'>
                           <p className='subtext'>By now, you would have understood the initial processes of <a href="https://choiceindia.com/open-brokerage-account" className="linking">opening a brokerage account</a> and making investments. Subsequently, the next most important step you need to understand is how to select an ETF.</p>
@@ -687,7 +655,6 @@ function ETF() {
                       <h2 className="title">Best ETF to Invest in India</h2>
                       <div className='row pb52'>
                         <div className='col-md-6' id="how-to-use-demat-img">
-                          {/* <img src='./images/demat-account-uses.webp' className="img-fluid" alt="Uses of Demat Account" /> */}
                         </div>
                         <div className='col-md-6'>
                           <p className='subtext'>After understanding the basics of selecting ETFs for investment, you might feel well-prepared. But, hold on, as you still have to check out the best ETF to invest in India. They are as follows:</p>

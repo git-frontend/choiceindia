@@ -1,7 +1,6 @@
 
 import React from "react";
 import Slider from 'react-slick';
-import { API_URLS } from "../../Services/API-URLS";
 import { useState, useEffect } from 'react';
 import utils from "../../Services/utils";
 import rest from "../../Services/rest";
@@ -9,7 +8,7 @@ import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
 function IntradayRecord() {
     const [list, setlist] = useState();
-    const [Data1, setData1] = useState();
+    const [session, setSession] = useState();
     const [showLoader, setShowLoader] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
 
@@ -31,12 +30,30 @@ function IntradayRecord() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            generateSessionId()
-            IntraStocks()
+            generateSessionId(IntradayNew)
+          
+            // IntraStocks()
         }
     }, [rendercount])
+
+    function generateSessionId(func){
+        rest.generateSession()
+        .then((res)=>{
+           if(res.Status == "Success"){
+              setSession(res.Response);
+              func(res.Response);
+           }
+           else{
+              setShowLoader(false);
+           }
+        })
+        .catch((err)=>{
+            setShowLoader(false);
+        });
+      }
+
     const settings = {
-        infinite: true,
+        infinite: false,
         speed: 2000,
         arrows: false,
         slidesToShow: 4,
@@ -65,124 +82,69 @@ function IntradayRecord() {
             },
         ],
     };
-    function generateSessionId() {
-        let api = new API_URLS()
-        fetch(api.getSessionUrl())
-            .then(response => {
-                return response.json();
-            })
-            .then(res => {
-                if (res.Status == 'Success') {
-                    IntraStocks(res.Response);
-                    setData1(res.Response);
-                } else {
-                    IntraStocks([])
-                }
-            }, err => {
-                IntraStocks([])
-            })
-    }
-    function IntraStocks(session) {
-
+  
+    function IntradayNew(SessionId) {
         setlist([]);
-        tokens = '';
-        tokenList = [];
-        storefile = '';
         setShowLoader(true)
         let request = {
-            "Count": 10,
-            "endDate": utils.formatDate(new Date(), "dd-MM-yyyy"),
-            "SessionId": session,
-            "Start": 0,
-            "startDate": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
-            "status": "Book Profit",
-            "type": "EQ",
-            "UserId": "guest",
-            "search": ""
+          "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
+          "is_expert": 1,
+          "research_type": "intra_day",
+          "limit": 10,
+          "offset": 0,
+          "segment": "",
+          "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
+          "status": "Target Achieved",
+          "subcategory_id": "",
+          "search": "",
+          "id": "",
+          "user_id": "",
+          "timeline_enabled": 1,
+          "category_id": 2
         }
-        rest.signalReportData(request).then(
+        
+        rest.expertReportData(request).then(
+
             res => {
-
-                if (res) {
-                    storefile = res.Response.Data;
-                    // console.log("storefile",storefile)
-
-                    res.Response.Data.forEach(ele => {
-                        setShowLoader(false)
-                        tokenList.push({ 'SegmentId': ele.Seg, 'Token': ele.Tok })
-                        let dateData = ele.TATime;
-                        if (dateData) {
-                            let len = dateData.split(" ")
-                            if (len.length) {
-                                ele.date = len[0];
-
-                            }
-                        }
-                        ele.published_date = utils.formatDate(new Date(ele.date.split('-')[2], (ele.date.split('-')[1] - 1), ele.date.split('-')[0]), "dd MMMM'yy")
-                        ele.call_type = ele.HLType ? (ele.HLType == 'High' ? 'BUY' : (ele.HLType == 'sell' || ele.HLType == 'Low') ? 'SELL' : '') : (ele.Side ? ((['B', 'BUY', 'Buy'].indexOf(ele.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(ele.Side) > -1 ? 'SELL' : '') : '')
-                        
-                        ele['LTP'] = ele['LTP'] / 100;
-                    });
-                    setlist(res.Response.Data)
-                    let unique = []
-                    for (let i = 0; i < tokenList.length; i++) {
-                        unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-                    }
-                    unique.forEach(element => {
-                        if (!tokens.includes(element)) {
-                            tokens += element
-                        }
-                    });
-                    // console.log("SegmentId",tokens);
-
-                    // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
-                    const payload = {
-                        'UserId': 'guest',
-                        'SessionId': session,
-                        'MultipleTokens': tokens
-                    }
-
-                    rest.multipleTokensURLData(payload).then(
-                        res => {
-
-                            if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-                                res.Response.lMT.forEach((ele, index) => {
-
-                                    ele['LTP'] = ele['LTP'] / 100;
-                                    ele.PrevClose = ele.PC / 100;
-                                    ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-                                    ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-                                    // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-                                    for (let i = 0; i < storefile.length; i++) {
-
-                                        if (storefile[i].Tok == ele.Tok && storefile[i].Seg == ele.Seg) {
-                                            setShowLoader(false)
-                                            AllFilesValue = Object.assign(storefile[i], ele);
-                                            multiValue.push(AllFilesValue)
-                                        } else {
-
-
-
-                                        }
-                                    }
-                                })
-
-                                setlist(multiValue);
-
-                            } else {
-                                setShowLoader(false)
-                            }
-                        }).catch((error)=>{
-                            setShowLoader(false)
-                        });
+      
+              if (res) {
+                storefile = res.response.research;
+               
+                tokens=utils.expertReportDataProcessing(storefile,tokenList);
+      
+                setlist(res.response.research);
+      
+      
+                const payload = {
+                  'UserId': 'guest',
+                  'SessionId':SessionId,
+                  'MultipleTokens': tokens
                 }
+      
+                rest.multipleTokensURLData(payload).then(
+                  res => {
+                    if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+                      multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
+      
+                      setlist(multiValue);
+      
+                    }
+                    else {
+                      setShowLoader(false)
+                    }
+                  }).catch((error) => {
+                    setShowLoader(false)
+                    
+                  });
+              }
             })
-            // )
+      
             .catch((error) => {
-                setShowLoader(false)
-                
+              setShowLoader(false)
+              
             });
-    }
+    
+      }
     return (
         <>
             <section className="fno-records head-new-pr">
@@ -218,7 +180,7 @@ function IntradayRecord() {
                                                                         <div className="top-left">
                                                                             <h6 className="top-text">Stop Loss</h6>
                                                                             <div>
-                                                                                <h6 className="top-date">{(response?.published_date)}</h6>
+                                                                                <h6 className="top-date">{utils.formatDate(new Date(response?.updated_datetime), "dd MMMM , yyyy")}</h6>
                                                                             </div>
                                                                         </div>
                                                                         <div className="top-right">
@@ -227,10 +189,9 @@ function IntradayRecord() {
                                                                     </div>
                                                                     <div className="middle-section">
                                                                         <div className="middle-left">
-                                                                            <div>
-                                                                                <h4 className="big-text">{response?.Sym}</h4>
-                                                                                <span className="small-text">{response?.Name}</span>
-                                                                            </div>
+                                                                        <div>
+                                                                            <h4 className="big-text">{response?.scrip_symbol}</h4>
+                                                      <span className="small-text">{response?.scrip_name}</span></div>
                                                                         </div>
                                                                         <div className="middle-right">
                                                                             <span className="right-big-text">{response?.LTP ?((response?.LTP).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ","):0.00.toFixed(2)}</span>
@@ -242,19 +203,15 @@ function IntradayRecord() {
                                                                         <div className="d-flex justify-content-between pt-3">
                                                                             <div className="bottom">
                                                                                 <h6 className="bottom_small_text">Stop Loss</h6>
-                                                                                <h4 className="bottom_big_text">{((response?.SL / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                                                <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value))}</h4>
                                                                             </div>
                                                                             <div className="bottom">
                                                                                 <h6 className="bottom_small_text">Entry Price</h6>
-                                                                                <h4 className="bottom_big_text">{((response?.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                                                <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints || [])[0].value))}</h4>
                                                                             </div>
                                                                             <div className="bottom">
                                                                                 <h6 className="bottom_small_text">Target Price</h6>
-                                                                                <h4 className="bottom_big_text">{((response?.TP1 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                                            </div>
-                                                                            <div className="bottom">
-                                                                                <h6 className="bottom_small_text">2nd Target Price</h6>
-                                                                                <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                                                <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value))}</h4>
                                                                             </div>
                                                                         </div>
                                                                     </div>

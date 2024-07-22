@@ -111,6 +111,35 @@ function MFFaq() {
 
                                     </Accordion.Body>
                                 </Accordion.Item>
+
+                                <Accordion.Item eventKey="12" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>Which mutual fund investment is best?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    The best mutual fund investment depends on your financial goals, risk tolerance, investment horizon, and market conditions. There are various types of mutual fund options as mentioned above. You can choose one according to your needs.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+                                <Accordion.Item eventKey="13" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>Are mutual funds a good investment?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    Mutual funds provides many benefits especially for those who can't afford to take a lot of risk and find it difficult to invest in individual securities. Mutual fund provides diversification, Professional Management, Liquidity, Accessibility and Flexibility.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+                                <Accordion.Item eventKey="14" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>Which SIP is best for 5 years</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    Its always a better option to diversify your investment. As your investment term is 5 years we would suggest that you consider investing in combination of Large-Cap Equity Funds, Multi-Cap Funds and Hybrid Funds.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+                                <Accordion.Item eventKey="15" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>Can I invest 1000 ₹ per month in SIP?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    Yes, you can invest ₹1000 per month in a SIP. There are many mutual funds that even have a SIP plan as low as ₹500. Log in to Choice to check out different SIP plans.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
                             </Accordion>
                             
                         </div>

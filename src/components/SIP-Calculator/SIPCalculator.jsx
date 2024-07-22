@@ -5,22 +5,18 @@ import "../../components/Brokerage-Calculator/brokerage-calculator.scss";
 import Banner from "./Banner";
 import { useState, useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
-import OpenFreeDematAccount from "./OpenFreeDematAccount";
 import MoreContent from "./MoreContent";
 import Readymade_Baskets from '../../assets/images/sip-calculator/Readymade_Baskets.svg';
 import Goal_Based_Investment from '../../assets/images/sip-calculator/Goal_Based_Investment.svg';
 import Choice_Rated_Schemes from '../../assets/images/sip-calculator/Choice_Rated_Schemes.svg';
 import NewFormSection from '../Common-features/NewFormSection';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function SIPCalculator() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -47,8 +43,9 @@ function SIPCalculator() {
   return (
     <div>
       <Banner />
-      {/* <OpenFreeDematAccount/> */}
+      <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
       <NewFormSection sections={sections} />
+      </GoogleReCaptchaProvider>
       <MoreContent />
     </div>
   );

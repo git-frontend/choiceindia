@@ -1,5 +1,3 @@
-// import "./opentradingaccounthindi.scss";
-// import DematAccountForm from '../Common-features/DematAccountForm';
 import "../OpenDematAccount/DematPage"
 import HindiOpenFreeAccountBanner from "./HindiOpentradingAccountBanner";
 import HindiWhyOpenFreeDematAccount from "./HindiWhyOpenTradingAccount";
@@ -19,19 +17,9 @@ function TradingAccountHindi() {
       let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
       document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
-    //   if(!(document.getElementById('link1')==null)){
-    //     document.getElementById('link1').remove();
-    //   document.getElementById('link2').remove();
-    //   document.getElementById('link3').remove();
-    //   document.getElementById('link4').remove();
-    //   document.getElementById('link5').remove();
-    //   document.getElementById('link6').remove();
-      
-        //   }
         
         if (document.getElementById('link1') == null) {
         let sitemap1 = document.createElement('link');

@@ -14,7 +14,7 @@ function ResearchCalls() {
   const [showLoader, setShowLoader] = useState(false);
   const [trigger, setTrigger] = useState(false);
   
-  const [Data1, setData1] = useState();
+  const [session, setSession] = useState();
   const [checkdevice, setcheckdevice] = useState();
   const [view, setView] = useState({
     matches: window.innerWidth < 767 ? false : true,
@@ -68,9 +68,7 @@ function ResearchCalls() {
     ]
 
   };
-  function FandOstocks() {
-    // setToggleState(2)
-    // console.log("change",toggleState)
+  function FandOstocks(SessionId) {
     setlist([]);
     tokens = '';
     tokenList = [];
@@ -93,37 +91,21 @@ function ResearchCalls() {
       "timeline_enabled": 1,
       "category_id": 2
     }
+
     rest.expertReportData(request).then(
 
       res => {
 
         if (res) {
-          // console.log("checkdd",res.response.research);
           storefile = res.response.research;
-          // setlist(res.response.research);
-          // console.log("storefile", storefile)
-          res.response.research.forEach(ele => {
-
-            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-
-            ele['LTP'] = ele['LTP'] / 100;
-          });
+          
+          tokens=utils.expertReportDataProcessing(storefile,tokenList);
 
           setlist(res.response.research);
-          let unique = []
-          for (let i = 0; i < tokenList.length; i++) {
-            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
-          }
-          unique.forEach(element => {
-            if (!tokens.includes(element)) {
-              tokens += element
-            }
-          });
-          // console.log("SegmentId",tokens);
-          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+    
           const payload = {
             'UserId': 'guest',
-            'SessionId': Data1,
+            'SessionId': SessionId,
             'MultipleTokens': tokens
           }
 
@@ -131,67 +113,35 @@ function ResearchCalls() {
             res => {
               if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
 
-                res.Response.lMT.forEach((ele, index) => {
-                  // console.log("ele", ele)
-                  ele['LTP'] = ele['LTP'] / 100;
-                  ele.PrevClose = ele.PC / 100;
-                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
-                  for (let i = 0; i < storefile.length; i++) {
-
-                    if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
-                      AllFilesValue = Object.assign(storefile[i], ele);
-                      multiValue.push(AllFilesValue)
-                      setShowLoader(false)
-                    } else {
-
-
-
-                    }
-                  }
-                })
+                multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
 
                 setlist(multiValue);
 
               }
-              else{
+              else {
                 setShowLoader(false)
               }
-            }).catch((error)=>{
+            }).catch((error) => {
               setShowLoader(false)
+              
             });
         }
       })
 
       .catch((error) => {
         setShowLoader(false)
-        setlist([]);
+        
       });
+    
+   
   }
-  function generateSessionId() {
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        if (res.Status == 'Success') {
-          // IntraStocks(res.Response);
-          setData1(res.Response);
-        } else {
-          // IntraStocks([])
-        }
-      }, err => {
-        // IntraStocks([])
-      })
-  }
+
   useEffect(() => {
     
     setTrigger(true)
 
         if (trigger === true) {
-          FandOstocks();
+          generateSessionId(FandOstocks)
         }
     if (/Android|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
 
@@ -209,6 +159,22 @@ function ResearchCalls() {
 
     }
   }, [trigger])
+
+  function generateSessionId(func){
+    rest.generateSession()
+    .then((res)=>{
+       if(res.Status == "Success"){
+          setSession(res.Response);
+          func(res.Response);
+       }
+       else{
+          setShowLoader(false);
+       }
+    })
+    .catch((err)=>{
+         setShowLoader(false);
+    });
+  }
   useEffect(() => {
     let mediaQuery = window.matchMedia("(min-width: 767px)");
     mediaQuery.addListener(setView);
@@ -281,7 +247,6 @@ function ResearchCalls() {
                   {showLoader ?
                     <div className="text-center">
                       <div>
-                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                         <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
                       </div>
                     </div>
@@ -347,117 +312,7 @@ function ResearchCalls() {
                 </div>
             }
           </div>
-          {/* <div>
-            {
-              showLoader ?
-                <div className="text-center">
-                  <div>
-                    <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
-                  </div>
-                </div> :
-                <div>
-                  {
-                    list && list.length ?
-                      <div className="row gx-5">
-                        {
-                          (list || []).slice(0, 2).map((response, index) => {
-                          
-                            return (
-                              <div className="calls-tab-item col-xl-6" key={index}>
-                                <div className="main-left" >
-                                  <div className="top-section">
-                                    <div className="top-left">
-                                      <h6 className="top-text">Reco Date</h6>
-                                      <h6 className="top-date">{(response?.updated_datetime)}</h6>
-                                    </div>
-                                    <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : "buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
-                                  </div>
-                                  <div className="middle-section">
-                                    <div className="middle-left">
-                                      <h4 className="big-text">{(response?.scrip_name).replace(/(\|\d{2}[A-Z]{3}\d{2})/, '')}</h4>
-                                      <span className="small-text">{response?.scrip_s_expiry}</span>
-                                    </div>
-                                    <div className="middle-right">
-                                      <span className="right-big-text">{(response?.LTP).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
-                                      <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{Math.abs((response.Change || 0)).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
-                                    </div>
-                                  </div>
-
-                                  <div className="bottom-section">
-                                    <div className="d-flex justify-content-between pt-3">
-                                      <div className="bottom fandores">
-                                        <h6 className="bottom_small_text">Stop Loss</h6>
-                                        <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                      </div>
-                                      <div className="bottom fandores">
-                                        <h6 className="bottom_small_text">Entry Price</h6>
-                                        <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints || [])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                      </div>
-                                      <div className="bottom fandores">
-                                        <h6 className="bottom_small_text">Target Price</h6>
-                                        <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                            )
-                          })
-                        }
-                      </div>
-                      : <div className="text-center">
-                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                      </div>
-                  }
-                </div>
-            }
-
-            {/* <Slider {...settings} className="research-calls-tab"> */}
-
-
-
-            {/* <div className="calls-tab-item">
-                            <div className="main-left">
-                              <div className="top-section">
-                                <div className="top-left">
-                                  <h6 className="top-text">Reco Date</h6>
-                                  <h6 className="top-date">17 March’23</h6>
-                                </div>
-                                <div className="top-right"><button className="btn-buy">BUY</button></div>
-                              </div>
-                              <div className="middle-section">
-                                <div className="middle-left">
-                                  <h4 className="big-text">SIGACHI</h4>
-                                  <span className="small-text">SIGACHI INDUSTRIES LIMITE</span>
-                                </div>
-                                <div className="middle-right">
-                                  <span className="right-big-text">291</span>
-                                  <h6 className="right-small-text">22.70(7.24%)</h6>
-                                </div>
-                              </div>
-
-                              <div className="bottom-section">
-                                <div className="d-flex justify-content-between pt-3">
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Entry Price</h6>
-                                    <h4 className="bottom_big_text">242.40</h4>
-                                  </div>
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Potential Price</h6>
-                                    <h4 className="bottom_big_text" >324.82</h4>
-                                  </div>
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Exp. Returns</h6>
-                                    <h4 className="bottom_big_text">23 Jun ,2023</h4>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div> */}
-            {/* </Slider> */}
-
-          {/* </div> */} 
+         
 
         </div>
       </section>

@@ -13,39 +13,17 @@ function CEBPLPoliciesMain() {
     const [trigger, setTrigger] = useState(false);
     const [isloading, setisloading] = useState(true);
 
-    function loadcebplPolicy() {
-        cmsService.CebplPolicy().then(
-            res => {
-                if (res) {
-                    setisloading(false)
-                    setData(res.data.data);
-
-
-                } else {
-                    setisloading(false)
-                    setData([]);
-
-                }
-
-            }
-        ).catch((error) => {
-            setisloading(false)
-            setData([]);
-        });
-    }
 
 
 
+    // useEffect(() => {
+    //     setTrigger(true)
 
-    useEffect(() => {
-        setTrigger(true)
+    //     if (trigger === true) {
+    //         cmsService.cmsAPIcall(cmsService.CebplPolicy,setisloading,setData)
+    //     }
 
-        if (trigger === true) {
-            loadcebplPolicy()
-
-        }
-
-    }, [trigger])
+    // }, [trigger])
 
 
     return (
@@ -60,7 +38,6 @@ function CEBPLPoliciesMain() {
                     </div>
                     {
                         isloading ?
-                            // <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> 
                             <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />:
                         <div>
                             {
@@ -82,33 +59,6 @@ function CEBPLPoliciesMain() {
                                          )
                                      })
                                  }
- 
- 
-                                 {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                     <div>Unauthentic News Circulation</div>
-                                     <div><a onClick={() => { window.open(Unauthentic) }} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></a></div>
-                                 </div>
- 
-                                 <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                     <div>Error Account Policy</div>
-                                     <div><a onClick={() => { window.open(ErrorAccount) }} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></a></div>
-                                 </div>
-                                 <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                     <div>Dormant Account Policy</div>
-                                     <div><a onClick={() => { window.open(DormantAccount) }} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></a></div>
-                                 </div>
-                                 <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                     <div>Code of Conduct Conflict of Interest</div>
-                                     <div><a onClick={() => { window.open(CodeConduct) }} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></a></div>
-                                 </div>
-                                 <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                     <div>PMLA Policy 1.8</div>
-                                     <div><a onClick={() => { window.open(PMLAPolicy) }} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></a></div>
-                                 </div>
-                                 <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                     <div>Pre Funded Instrument Policy</div>
-                                     <div><a onClick={() => { window.open(PreFunded) }} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></a></div>
-                                 </div> */}
  
  
                              </div>

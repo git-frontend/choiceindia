@@ -37,6 +37,9 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
     /** state to show thankyou popup default */
     // const [showAdPopUp, setshowAdPopUp] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'' });
     const [otpSessionID, setOTPSessionID] = useState(null)
+    const [showErrorToaster, setShowErrorToaster] = useState(false);
+    const [leadId, setLeadId] = useState();
+    const type1="";
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
         setMobileNumber(value);
@@ -140,6 +143,9 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
         handleReCaptchaVerify()
          // Call sendOTP with the updated type
     };
+    function showAPIErrorToaster() {
+        setShowErrorToaster(true);
+    }
     function sendOTP() {
         showLoader('sendOTPLoader');
         const encodedMobileNumber = btoa(mobileNumber);
@@ -171,45 +177,45 @@ function OpenDemateAccountPopup({ hideComponent, openInfoPopup }) {
 
         };
         // console.log("hghg", request)
+        openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster)
+        // openAccountService.sendOTP(request,captchaToken ).then((res) => {
+        //     hideLoader('sendOTPLoader');
+        //     // console.log("res",res)
+        //     if (res && res.StatusCode === 200 ) {
+        //         utils.pushDataLayerEvent({
+        //             'event': 'ci_onboard_lead_initiated',
+        //             'page_path': window.location.pathname,
+        //             'page_url': window.location.href,
+        //             'lead_source': 'choiceindia',
+        //             'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+        //             'leadId': res.Body.leadid,
+        //             'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+        //         })
+        //         setOTPSessionID((type1 == 'MF') ? res.Body.session_id : res.Body.otp_session_id)
+        //         // setForm('sent-otp')
+        //         // setformdata()
+        //         setShowThanku(prevState => {
+        //             return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.Body.new_lead ? res.Body.new_lead : false }
+        //         });
+        //         fetchQueryParams();
+        //         // resetOTPPopup();
+        //         handleOTPShow();
 
-        openAccountService.sendOTP(request,captchaToken ).then((res) => {
-            hideLoader('sendOTPLoader');
-            // console.log("res",res)
-            if (res && res.StatusCode === 200 ) {
-                // utils.pushDataLayerEvent({
-                //     'event': 'ci_onboard_lead_initiated',
-                //     'page_path': window.location.pathname,
-                //     'page_url': window.location.href,
-                //     'lead_source': 'choiceindia',
-                //     // 'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                //     'leadId': res.data.Body.leadid,
-                //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                // })
-                setOTPSessionID((type1 == 'MF') ? res.Body.session_id : res.Body.otp_session_id)
-                // setForm('sent-otp')
-                // setformdata()
-                setShowThanku(prevState => {
-                    return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.Body.new_lead ? res.Body.new_lead : false }
-                });
-                fetchQueryParams();
-                // resetOTPPopup();
-                handleOTPShow();
 
-
-            } else {
-                setAPIError("Something went wrong, please try again later!");
-                showAPIErrorToaster();
-            }
-        }).catch((error) => {
-            hideLoader('sendOTPLoader');
-            if (error && error.response && error.response.data && error.response.data.Message) {
-                setAPIError(error.response.data.Message); 
-                showAPIErrorToaster();
-            } else {
-                setAPIError("Something went wrong, please try again later!");
-                showAPIErrorToaster();
-            }
-        });
+        //     } else {
+        //         setAPIError("Something went wrong, please try again later!");
+        //         showAPIErrorToaster();
+        //     }
+        // }).catch((error) => {
+        //     hideLoader('sendOTPLoader');
+        //     if (error && error.response && error.response.data && error.response.data.Message) {
+        //         setAPIError(error.response.data.Message); 
+        //         showAPIErrorToaster();
+        //     } else {
+        //         setAPIError("Something went wrong, please try again later!");
+        //         showAPIErrorToaster();
+        //     }
+        // });
     }
 
     useEffect(() => {

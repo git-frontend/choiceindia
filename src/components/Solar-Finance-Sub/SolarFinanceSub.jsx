@@ -1,8 +1,7 @@
 
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import NBFCMenu from '../Common-features/NBFCMenu';
 import "../Invoice-Financing/nbfc-common.scss";
 import "../Solar-Finance-Sub/solar-fin-sub.scss";

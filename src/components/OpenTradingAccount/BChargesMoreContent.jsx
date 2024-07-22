@@ -14,12 +14,9 @@ function BChargesMoreContent() {
                         </div>
                         <div className="col-md-12">
                             <div className="para">
-                                {/* <input type="checkbox" className="read-more-state" id="post-1" /> */}
                                 <div className="read-more-wrap "> 
                                 <p className="seo-para">If you want to increase your income, you can’t live from paycheck to paycheck. You have to invest your money to build wealth over time. So, you can start by investing in the stock market.
                                 <br/> The first thing you’ll need is a trading account. It is an essential financial instrument that makes the process of investing and earning convenient. Moreover, it makes the transactions secure.</p>
-                                {/* {!show ? <span onClick={()=>{setshow(true);}}><em className="btn-read moreless-button">Read more</em></span>:""}
-                                {show ? */}
                                 <div>
                                     <div className="read-more-target">
                                 <p className="seo-para">Curious to know more about these accounts? <br/>
@@ -126,9 +123,7 @@ function BChargesMoreContent() {
                                   <p className="seo-para">The free AMC charges for the first year make the process even more convenient. Additionally, you get affordable rates while trading equities, currencies, or commodities.</p>
                                   <p className="seo-para">Lastly, the Choice platform is also completely safe to conduct your trade transactions. So, you can begin online trading by opening an account here worry-free!</p>
                                     </div> 
-                                    {/* <span onClick={()=>{setshow(false);}}>&nbsp;<em className="btn-read moreless-button">Read less</em></span> */}
                                     </div>
-                                    {/* :""} */}
                                     </div>
                             </div>
                         </div>

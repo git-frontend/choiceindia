@@ -25,7 +25,15 @@ const MinorDematOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <div className="btn-bg btn-bg-dark cursor-pointer" onClick={() => { utils.scrollToId('open-account-wrap') }} >Get Started </div>
+                                    <div className="btn-bg btn-bg-dark cursor-pointer" onClick={() => { utils.scrollToId('open-account-wrap');
+                                         utils.pushDataLayerEvent({
+                                            'event': 'get_started_btn',
+                                            'page_path': window.location.pathname,
+                                            'page_url': window.location.href,
+                                            'lead_source': 'choiceindia',
+                                            'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                                        })
+                                     }} >Get Started </div>
                                 </div>
 
                             </div>
@@ -41,11 +49,8 @@ const MinorDematOpeningProcess = () => {
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
                                 <LazyLoader src={Image19} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"Register Online"} />
-                                    {/* <img src={Image19}  width={"93"} height={"93"} alt="Step One" className="img-fluid lazyload image" /> */}
                                     <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step One"} />
-                                    {/* <img src={Image20}  width={"127"} height={"23"} alt="Step One" className="img-fluid lazyload image deskimg" /> */}
                                     <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step One"} />
-                                    {/* <img src={Image21}  width={"17"} height={"93"} alt="Step One" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info respspace">
                                     <h5>A trusted name </h5>
@@ -58,11 +63,8 @@ const MinorDematOpeningProcess = () => {
                             <div className="demat-steps">
                                 <div className="imgwrap">
                                 <LazyLoader src={Image22} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"In Person Verification"} />
-                                    {/* <img src={Image22}  width={"93"} height={"93"} alt="Step Two" className="img-fluid lazyload image" /> */}
                                     <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step Two"} />
-                                    {/* <img src={Image20}  width={"127"} height={"23"} alt="Step Two" className="img-fluid lazyload image deskimg" /> */}
                                     <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step Two"} />
-                                    {/* <img src={Image21}  width={"17"} height={"93"} alt="Step Two" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info">
                                     <h5>In-Person Verification</h5>
@@ -75,10 +77,7 @@ const MinorDematOpeningProcess = () => {
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
                                 <LazyLoader src={Image23} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"Registration Complete"} />
-                                    {/* <img src={Image23}  width={"93"} height={"93"} alt="Step Three" className="img-fluid lazyload image" /> */}
                                     <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step Three"} />
-                                    {/* <img src={Image20} width={"127"} height={"23"} alt="Step Three" className="img-fluid lazyload image deskimg" /> */}
-                                    {/* <img src={Image21} width={"17"} height={"93"}  alt="Step Three" className="img-fluid lazyload respimag" /> */}
                                     <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step Three"} />
                                 </div>
                                 <div className="info" >
@@ -93,7 +92,6 @@ const MinorDematOpeningProcess = () => {
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
                                 <LazyLoader src={Image24} className={'img-fluid lazyload'} width={"93"} height={"93"} alt={"Courier POA"} />
-                                    {/* <img src={Image24}  width={"93"} height={"93"}  alt="Step Four" className="img-fluid lazyload" /> */}
                                 </div>
                                 <div className="info" >
                                     <h5>Courier POA</h5>

@@ -27,24 +27,27 @@ function FinxTools() {
       pauseOnHover: false,
       pauseOnFocus: false,
       draggable:false,
+      responsive: [
+        {
+          breakpoint:767,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            vertical: false,
+            autoplaySpeed: 3000,
+            adaptiveHeight: false,
+            dots: true,
+          }
+        }
+        
+      ]
     };
 
 
     const settings12 = {
-        infinite: true,
-        slidesToShow: 1,
-        autoplay: true,
-        arrows:false,
-        dots: false,
-        fade:true,
-        autoplaySpeed: 5000,
-        slidesToScroll: 1,
-        swipeToSlide: false,
-        pauseOnHover: false,
-        pauseOnFocus: false,
-        draggable:false,
-        speed: 1000,
+        arrows:false
       };
+      
       useEffect(() => {
         setTrigger(true)
         if (trigger === true) {
@@ -75,12 +78,10 @@ function FinxTools() {
                             <div className="finx-tools-data">
                                 <div className="collection-slider">
                                     <Slider {...settings11}
+                                    focusOnSelect={true}
                                     asNavFor={nav1}
                                     ref={slider => setslider1(slider)}
-                                    //   afterChange={(ev) => {
-                                    //     setIsShown3(ev)
-                                    //     console.log("check",ev);
-                                    //   }}
+                                    
                                     >
                                     {
                                         Finxtoolsimg?.map((response, index) => {
@@ -88,7 +89,7 @@ function FinxTools() {
                                             let classNm = "slider-item " + ((index === isShown3) ? "active" : "")
                                             return(
 
-                                                <div key={response.id} className={classNm} onChange={() => setIsShown3(response.id)} >
+                                                <div key={response.id} className={classNm} >
                                                
                                                 <img src={response.imageico} alt={response.alt} className="icon-img"></img>
                                                 <h3 className="subtext">{response.title}</h3>

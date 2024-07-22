@@ -7,6 +7,7 @@ import StartTrading from '../../assets/images/Corporate-Demat-Account/start-trad
 import AcChecklist from '../../assets/images/Corporate-Demat-Account/account-checklist.svg';
 import { Accordion } from "react-bootstrap";
 import LazyLoader from '../Common-features/LazyLoader';
+import utils from "../../Services/utils";
 function HowOpenDematAc() {
     const [view, setView] = useState({
         matches: window.innerWidth < 767 ? false : true,
@@ -283,7 +284,15 @@ function HowOpenDematAc() {
                                 </div>
                            </div>
                            <div className="col-md-12 d-flex justify-content-center">
-                                <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => chapterScroll('dematformsticky')}>Open Free Account</a>
+                                <a href="javascript:void(0)" className="btn-bg btn-new" onClick={() => {chapterScroll('dematformsticky');
+                                     utils.pushDataLayerEvent({
+                                        'event': 'open_free_account_btn',
+                                        'page_path': window.location.pathname,
+                                        'page_url': window.location.href,
+                                        'lead_source': 'choiceindia',
+                                        'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                                    })
+                                }}>Open Free Account</a>
                             </div>
                         </div>
                     </div>

@@ -49,21 +49,6 @@ function NoticesMenu() {
       });
   }
 
-//   function loadnewsRpdf() {
-//     cmsService
-//       .Notices()
-//       .then((res) => {
-//         if (res) {
-//           setList(res.data.data);
-//         } else {
-//           setList([]);
-//         }
-//       })
-//       .catch((error) => {
-//         setList([]);
-//       });
-//   }
-
   useEffect(() => {
     setTrigger(true);
 
@@ -72,6 +57,7 @@ function NoticesMenu() {
     //   loadnewsRpdf();
     }
   }, [trigger]);
+
 
   return (
     <div>
@@ -87,7 +73,6 @@ function NoticesMenu() {
           isloading ? (
             <div className="text-center">
               <div>
-                {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                 <video
                   src={loaderimg2}
                   autoPlay

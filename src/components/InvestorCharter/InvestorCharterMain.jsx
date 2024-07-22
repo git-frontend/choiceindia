@@ -5,7 +5,8 @@ import cmsService from "../../Services/cmsService";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import "../CEBPLPolicies/CEBPL-Policies.scss";
 import noDataimg from '../../assets/images/no-data.webp';
-
+import CommonCMS from '../Common-CMS/CommonCMS';
+import CMSData from "../Common-CMS/CMSData";
 function InvestorCharterMain() {
     const [data2, setData2] = useState({});
     const [trigger, setTrigger] = useState(false);
@@ -14,51 +15,19 @@ function InvestorCharterMain() {
     let values;
     let AllFilesValue = {};
 
-    function loadcebplStock2() {
-        cmsService.InvestorCharter().
-            then(
-                res => {
-                    if (res && res.data && res.data.data) {
-                        setisloading(false)
-                        values = res.data.data;
-                        
-                        values.forEach(ele => {
+    // useEffect(() => {
+    //     setTrigger(true)
+    //     if (trigger === true) {        
+    //         cmsService.loadCmsData(cmsService.InvestorCharter,setisloading,setDatalist,"heading");
+    //     }
 
-                            if (!AllFilesValue[ele.heading]) {
-                                AllFilesValue[ele.heading] = [];
-                                AllFilesValue[ele.heading].push(ele)
-                            } else {
-                                AllFilesValue[ele.heading].push(ele)
-
-                            }
-                        })
-                        setDatalist(AllFilesValue);
-                        // console.log("data",AllFilesValue)
-                    } else {
-                        setisloading(false)
-                        setDatalist([]);
-
-                    }
-
-                }
-            ).catch((error) => {
-                setisloading(false)
-                setDatalist([]);
-            });
-
-    }
-    useEffect(() => {
-        setTrigger(true)
-        if (trigger === true) {        
-            loadcebplStock2()
-        }
-
-    }, [trigger])
+    // }, [trigger])
 
 
     return (
         <div>
-            <section className="mainwrapquick">
+            <CommonCMS data={CMSData.InvestorCharterData} methodName="InvestorCharter"/>
+            {/* <section className="mainwrapquick">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
@@ -70,7 +39,6 @@ function InvestorCharterMain() {
                         isloading ?
                         <div className="text-center">
                                     <div>
-                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
                                         <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                          </div>
                                 </div>
@@ -129,7 +97,7 @@ function InvestorCharterMain() {
                     }
 
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 }

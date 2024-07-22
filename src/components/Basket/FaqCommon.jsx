@@ -41,25 +41,6 @@ function FaqCommon() {
                     </div>
                     <div className="row">
                         <div className="col-md-12">
-                            {/* <div className="accordion-container" id="accordionExample">
-                                {
-                                    data.map((res, i) => {
-                                        return (
-
-                                            <div className="ac accordion-item" key={i} onClick={() => activeAccordion(false)}>
-                                                <button className="ac-q acc" data-bs-toggle="collapse" data-bs-target={"#collapseone" + res.id} aria-expanded="true" aria-controls={"collapseOne" + res.id} >
-                                                    {res.title}
-                                                </button>
-                                                <div className={"ac-a accordion-collapse collapse" + ((activeAcc && i == -1) ? "show" : "")} id={"collapseone" + res.id} data-bs-parent="#accordionExample">
-                                                    <div><p>{res.description_text}</p></div>
-                                                </div>
-                                            </div>
-
-
-                                        )
-                                    })
-                                }
-                            </div> */}
 
                             {
                                 data.length?

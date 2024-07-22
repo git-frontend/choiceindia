@@ -33,7 +33,6 @@ function TimelineStepsSlider() {
 
             if(rect.top.toFixed() > 140 && rect.top.toFixed() <350){
                 setName('steps-itm-active');
-                // console.log('inside name', name);
             }else{
                 setName('');
             }
@@ -49,23 +48,11 @@ function TimelineStepsSlider() {
             }
         }
         
-        // setState( rect.top.toFixed());
-
-        // console.log('top',rect2.top.toFixed());
-
-        // console.log('RRR',myRef1.current?.offsetLeft,'RRR2',myRef1.current?.offsetTop);
-        // const x = myRef1.current?.offsetLeft;
-        // setX(x);
-
-        // const y = myRef1.current?.offsetTop;
-        // setY(y);
+        
 
     };
 
-    // Get the position of the red box in the beginning
-    // useEffect(() => {
-    //     getPosition();
-    // }, []);
+   
 
     // Re-calculate X and Y of the red box when the window is resized by the user
     useEffect(() => {

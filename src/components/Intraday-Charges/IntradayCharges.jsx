@@ -60,13 +60,7 @@ function IntradayCharges() {
             <SmartTrader />
             <IntraChargesBenifits />
             <IntraWhyChoice />
-            {/* <MFDistributorBenifits />
-            <MFDistributorSellMore />
-            <WhyMFDistributor />
-            <EligibleToMFDistributor />
-            <MFDistributorOffers />
-            <MFDistributorFaqs />
-            <MoreContent /> */}
+            
             
           </div>
       }

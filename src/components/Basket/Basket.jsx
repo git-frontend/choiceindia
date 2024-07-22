@@ -43,10 +43,6 @@ function Basket() {
         });
     }
 
-    // setTimeout(() => {
-    //     let iframe = document.getElementById("my-deferred-iframe");
-    //     iframe.src = 'https://www.youtube.com/embed/WrL6Ihbg8LU';
-    // }, 3000);
 
     useEffect(() => {
         setRenderCount(true)
@@ -63,11 +59,7 @@ function Basket() {
                 setcheckdevice('https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy')
         
               }
-          // let parser = new DOMParser();
-          // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-          // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
           document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-          // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
           document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
           document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';}
@@ -93,11 +85,6 @@ function Basket() {
                                     <div className="col-md-12">
                                         <Link to="/" className="camp-logo" id="camp-logo">
                                             <LazyLoader src={Image1} className={'img-fluid basket-banner-img'} width={'193'} height={'48'} alt={'loading'} />
-                                            {/* <img src={Image1} className="img-fluid " style={{
-                                                'width': "193px",
-                                                'height': '48px',
-                                                'aspect-ratio': 'auto 193 / 48'
-                                            }} alt="loading" loading="lazy" /> */}
                                         </Link>
                                     </div>
                                 </div>
@@ -144,7 +131,6 @@ function Basket() {
                                                 <div className="investing-list-itm">
                                                     <div className="list-itm-box">
                                                         <LazyLoader src={Image3} className={"img-fluid img-icon"} width={'65'} height={'76'} alt={"Loading"} />
-                                                        {/* <img src={Image3} className="img-icon" alt="Loading" loading="lazy" /> */}
                                                         <h3>Passive Income Source</h3>
                                                         <div><p>To achieve your financial goals, invest in thematic baskets to create a passive income source.
                                                         </p></div>
@@ -153,7 +139,6 @@ function Basket() {
                                                 <div className="investing-list-itm">
                                                     <div className="list-itm-box">
                                                         <LazyLoader src={Image4} className={"img-fluid img-icon"} width={'72'} height={'76'} alt={"Loading"} />
-                                                        {/* <img src={Image4} className="img-icon" alt="Loading" loading="lazy" /> */}
                                                         <h3>Quantitative Portfolio Optimisation</h3>
                                                         <div><p>A quantitative optimised process that has been back-tested for the past 10 years and aims to
                                                             reduce portfolio volatility in contrast to the benchmark.</p></div>
@@ -162,7 +147,6 @@ function Basket() {
                                                 <div className="investing-list-itm">
                                                     <div className="list-itm-box">
                                                         <LazyLoader src={Image5} className={"img-fluid img-icon"} width={'76'} height={'76'} alt={"Loading"} />
-                                                        {/* <img src={Image5} className="img-icon" alt="Loading" loading="lazy" /> */}
                                                         <h3>Quarterly Rebalancing</h3>
                                                         <div><p>Our skilled research team evaluates the performance of the baskets on a quarterly basis in order
                                                             to rebalance your portfolio and achieve the highest CAGR possible.</p></div>
@@ -171,7 +155,6 @@ function Basket() {
                                                 <div className="investing-list-itm">
                                                     <div className="list-itm-box">
                                                         <LazyLoader src={Image6} className={"img-fluid img-icon"} width={'77'} height={'77'} alt={"Loading"} />
-                                                        {/* <img src={Image6} className="img-icon" alt="Loading" loading="lazy" /> */}
                                                         <h3>Minimum Investment</h3>
                                                         <div><p>With a minimum investment of Rs. 6000, you can begin investing in baskets.</p></div>
                                                     </div>
@@ -179,7 +162,6 @@ function Basket() {
                                                 <div className="investing-list-itm">
                                                     <div className="list-itm-box">
                                                         <LazyLoader src={Image7} className={"img-fluid img-icon"} width={'66'} height={'76'} alt={"Loading"} />
-                                                        {/* <img src={Image7} className="img-icon" alt="Loading" loading="lazy" /> */}
                                                         <h3>No Extra Cost</h3>
                                                         <div><p>Investing in Baskets is absolutely free, with the exception of the brokerage fee charged when the
                                                             order is placed.</p></div>
@@ -231,7 +213,6 @@ function Basket() {
                                     <div className="row align-items-center">
                                         <div className="col-md-6">
                                             <div className="imgwrap">
-                                                {/*  */}
                                                 {!videoVisibility && <div className="youtube-container">
                                                     <img className="youtube-container-img" src={Image8} alt="Loading" onClick={() => {
 

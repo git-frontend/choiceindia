@@ -1,6 +1,5 @@
 
 import React,{useState,useEffect} from "react";
-// import videoBg from '../../assets/images/insurance/insuringShield.mp4'
 import icon1 from '../../assets/images/ipo/ipo-account/ipo-analysis-by-experts.svg'
 import icon2 from '../../assets/images/ipo/ipo-account/ipo-report-to-take-decision.svg'
 import icon3 from '../../assets/images/ipo/ipo-account/free-ipo-investment-account.svg'
@@ -8,11 +7,9 @@ import LazyLoader from '../Common-features/LazyLoader';
 import Equity from "../../Data/Equity";
 import DematAccountForm from '../Common-features/DematAccountForm'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-// import { useEffect } from "react";
 
 function Banner() {
     const [selected, setSelected] = useState(0);
-    // const[showCaptcha, setshowCaptcha ] = useState(false);
 	const [ischeck, setIscheck] = useState(false);
     const [view, setView] = useState({
 		matches: window.innerWidth < 767 ? false : true,

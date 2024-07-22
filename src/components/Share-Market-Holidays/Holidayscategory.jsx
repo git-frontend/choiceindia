@@ -19,6 +19,7 @@ import FreeAmc from "../../assets/images/share-market-holidays/Free-Account-Open
 import LowDP from "../../assets/images/share-market-holidays/Free-Expert-Research.svg";
 import NoAutoSquare from "../../assets/images/share-market-holidays/Low-DP-charges.svg";
 import FreeResearch from "../../assets/images/share-market-holidays/Zero-Auto-Square.svg";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function Holidayscategory() {
 
 
@@ -50,9 +51,6 @@ function Holidayscategory() {
     setToggleState(index);
   };
 
-
-
-  // console.log("fgh", holidaylist)
 
   setTimeout(() => {
     setSkeleton(() => false);
@@ -96,7 +94,6 @@ function Holidayscategory() {
 
   function OtherHolidays() {
     holidaylist.forEach((data) => {
-      // console.log("for nse",data)
       if (!nsebsevalue[data.title]) {
         nsebsevalue[data.title] = [];
         nsebsevalue[data.title].push(data)
@@ -110,8 +107,6 @@ function Holidayscategory() {
 
 
     setNselist(nsebsevalue.nsebse);
-    // console.log("new r3w",nsebsevalue)
-
     nsebsevalue.nsebse.forEach((ele) => {
       if (!nseMonthvalue[ele.month]) {
         nseMonthvalue[ele.month] = [];
@@ -125,7 +120,6 @@ function Holidayscategory() {
     setnsefilter(nseMonthvalue)
 
 
-    // console.log("month a", nseMonthvalue)
 
 
   }
@@ -133,7 +127,6 @@ function Holidayscategory() {
 
   function FilterMonth() {
     holidaylist.forEach((res) => {
-      // console.log(res)
       if (!AllmonthValue[res.month]) {
         AllmonthValue[res.month] = [];
         AllmonthValue[res.month].push(res)
@@ -147,10 +140,8 @@ function Holidayscategory() {
 
     setDatalist(AllmonthValue);
   }
-  // console.log("toggleafter",toggleState)
   function monthFliter(id, value) {
     value ? setToggleState( ()=>value) : ""
-    // console.log (toggleState,"toggle3")
     setmonth(id)
     setShowdata(() => false);
     if (value == 3 && nselist && nselist[0]?.id !=1) {
@@ -173,14 +164,11 @@ function Holidayscategory() {
       id == "All" ? setfilterlist(holidaylist) : setfilterlist(datalist[id])
     }
 
-    // console.log("acsdncj", filterlist)
-    // setIsActive(current => !current);
 
 
   }
 
-  // console.log("month value",isActive)
-
+ 
 
 
   const sections = [
@@ -243,16 +231,7 @@ function Holidayscategory() {
                     </ul>
 
                   </div>
-                  {/* <div>
-                    {
-                      showdata ?
-                        <p className="title_para title_para-second">Trading Holidays in 2024</p> :
-                        <p className="title_para title_para-second">Stock Market Holidays in {month} 2024</p>
-                    }
-
-
-
-                  </div> */}
+                  
                 </div>
               </div>
             </section>
@@ -268,7 +247,6 @@ function Holidayscategory() {
 
                           <div className="text-center">
                             <div>
-                              {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                               <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
                             </div>
                           </div> :
@@ -628,7 +606,9 @@ function Holidayscategory() {
                 </div>
               </div>
             </section>
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
             <NewFormSection sections={sections} />
+            </GoogleReCaptchaProvider>
             <section className="readmoresection holiday-readmore">
               <div className="container">
 
@@ -880,10 +860,7 @@ function Holidayscategory() {
                                   <strong>Date – 17th March, Wednesday</strong>
                                   <br /><br />
                                   Ram Navami is next on the list of BSE stock market holidays. It is a celebration of the body of Ram, as an avatar of Vishnu.
-                                  {/* <h4 className="fourth-heading-para">5. Mahavir Jayanti</h4>
-                              <strong>Date –</strong> 4th April, Tuesday
-                              <br /><br />
-                              Mahavir Jayanti is the most important festival of the Jain community. It celebrates the birth of the last Tirthankara, Mahavir. */}
+                                 
                                   <h4 className="fourth-heading-para"><strong>5. Good Friday</strong></h4>
                                   <strong>Date – 29th March, Friday</strong>
                                   <br /><br />
@@ -966,10 +943,7 @@ function Holidayscategory() {
                                     <strong>Status:</strong> Closed all day.
                                     <br /><br />
                                     2024 will mark the 74th republic day for India. Every year, the 26th of January is marked as a national holiday for drafting the Indian Constitution on the same date in the year 1950. The commodity trading exchange will remain shut to honour this day.
-                                    {/* <h4 className="fourth-heading-para">25th March 2024 - Holi</h4>
-                              <strong>Status:</strong> The morning session will remain closed.
-                              <br /><br />
-                              The festival of colours is celebrated with pomp and celebration around the country. Since the primary celebrations of Holi occur during the early morning hours and extend up to the afternoon, MCX has decided to close off the morning session and strictly limit the operational hours to the evening session. */}
+                                    
 
                                     <h4 className="fourth-heading-para"><strong>25th March 2024 - Holi</strong></h4>
                                     <strong>Status:</strong> The commodity market is shut for the entire day.

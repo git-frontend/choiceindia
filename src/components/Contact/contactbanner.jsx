@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect,useRef } from "react";
 import Bannerimage from '../../assets/images/contact/contact-us-new.webp';
 import dotsimage from '../../assets/images/contact/dots.webp';
@@ -6,6 +5,7 @@ import phoneicon from '../../assets/images/contact/phone-icon.svg';
 import openicon from '../../assets/images/contact/open-icon.svg';
 import emailicon from '../../assets/images/contact/email-icon.svg';
 import officeicon from '../../assets/images/contact/office-icon.svg';
+import officericon from '../../assets/images/contact/officer-icon.svg';
 import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -45,14 +45,12 @@ function Contactbanner() {
  
   const [searchParams, setSearchParams] = useSearchParams();
   active.current = searchParams.get('active') || '';
-  // console.log("check",active.current)
 
   const schema = yup.object().shape({
     firstName: yup.string().required("First Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
     lastName: yup.string().required("Last Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
     mobile: yup.string().required("Phone Number is required").matches(phoneRegExp, "Invalid number").matches(/^\d+$/, 'The field should have digits only'),
     email: yup.string().email(" Invalid Email ").required("Email Id is required"),
-    // purpose: yup.string().required("Need to choose purpose"),
     question: yup.string().max(200).required("Need to fill your question")
 
   })
@@ -102,7 +100,7 @@ function Contactbanner() {
     if (trigger == true) {
       loadDepartmentList()
       if(active.current =='NBFC'){
-        departmentlist={0:"5",1:"NBFC",2:"choicefinserv@choiceindia.com ( For Queries ),  customercare.finserv@choiceindia.com ( For Feedback )",3:"1800-203-5193 ( Toll No. )",4:"Choice International Limited, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099",5:"Between 9:30 AM to 6:30 PM Monday to Saturday"}
+        departmentlist={0:"5",1:"NBFC",2:"customercare.finserv@choiceindia.com",3:"1800-203-5193 ( Toll No. )",4:"Choice Finserv Private Limited, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099",5:"Between 9:30 AM to 6:30 PM Monday to Saturday",6:"Mr. Arun Rathor (Grievances Redressal Officer), 1 St Floor, Plot No. 25, Sunder Nagar, Girdhar Marg Malviya Nagar, Jaipur – 302017, Grievances@choiceindia.com, 1800 203 5193."}
          loadSubDepartmentList('5');
          setdept(departmentlist);
        
@@ -164,7 +162,6 @@ function Contactbanner() {
     <div>
       <div className="banner-parent">
         <section className="banner-contact">
-          {/* <img src={Bannerimage} className="ban-img" alt="Loading" width={"1519"} height={"915"} /> */}
           <div className='banner-caption'>
             <div className='container'>
               <div className='row'>
@@ -183,12 +180,6 @@ function Contactbanner() {
                             <option value="Select here" selected >Select here</option>
                           }
                             
-                        
-                          {/* <option value="Select here" selected>Select here</option>	
-                          <option className="option">Compliance & Complaint.</option>	
-                        <option className="option">Partner related</option>	
-                        <option className="option">Broking & Distribution</option>	
-                        <option className="option">Wealth planning</option> */}
                           {
                             list?.map((res, i) => {
                               return (
@@ -198,21 +189,6 @@ function Contactbanner() {
                               )
                             })
                           }
-                          {/* <Select }	
-                            placeholder="select department" className="formcontrol formpadding"  options={citiesDropdown}  onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />	
-                          {	
-                            errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''	
-                          } */}
-                          {/* <option className="option">Feedback</option>	
-                        <option className="option">Compliance & Complaint.</option>	
-                        <option className="option">Partner related</option>	
-                        <option className="option">Broking & Distribution</option>	
-                        <option className="option">Wealth planning</option>	
-                        <option className="option">Insurance related query</option>	
-                        <option className="option">NBFC related query</option>	
-                        <option className="option">Government Advisory</option>	
-                        <option className="option">Enquiry</option>	
-                        <option className="option">Others</option> */}
                         </Form.Select>
                         {
                           subListid ? '' : <span className="text-danger">Need to choose Department </span>
@@ -277,11 +253,20 @@ function Contactbanner() {
                         </div>
                         <div className="form-data">
                           <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "} width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
-                          <div className="form-data-right"><p className="form-right-text">{(dept || [])[2] || 'customercare@choiceindia.com'}</p></div>
+                          <div className="form-data-right"><p className="form-right-text">{(dept || [])[2] || 'care@choiceindia.com'}</p></div>
                         </div>
+                        {
+                          (dept || [])[1] == "NBFC" ?
+                          <div className="form-data">
+                          <div className="form-data-left"><LazyLoader src={officericon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Officer </span></div>
+                          <div className="form-data-right"><p className="form-right-text" >{(dept || [])[6] || 'Mr. Arun Rathor (Grievances Redressal Officer), 1 St Floor, Plot No. 25, Sunder Nagar, Girdhar Marg Malviya Nagar, Jaipur – 302017, Grievances@choiceindia.com, 1800 203 5193.'}</p> </div>
+                        </div>:""
+
+                        }
+                        
                         <div className="form-data">
                           <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
-                          <div className="form-data-right"><p className="form-right-text" >{(dept || [])[4] || 'Choice International Limited, Sunil Patodia Tower,J.B. Nagar, Andheri (East),Mumbai 400099'}</p> </div>
+                          <div className="form-data-right"><p className="form-right-text" >{(dept || [])[4] || 'Choice International Limited, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099'}</p> </div>
                         </div>
                       </div>
                      :
@@ -298,13 +283,12 @@ function Contactbanner() {
                       </div>
                       <div className="form-data">
                         <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "} width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
-                        <div className="form-data-right"><p className="form-right-text">customercare@choiceindia.com</p></div>
+                        <div className="form-data-right"><p className="form-right-text">care@choiceindia.com</p></div>
                       </div>
+                      
                       <div className="form-data">
                         <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
-                        <div className="form-data-right"><p className="form-right-text" >Choice International Limited, Sunil Patodia Tower,
-                          J.B. Nagar, Andheri (East),
-                          Mumbai 400099</p> </div>
+                        <div className="form-data-right"><p className="form-right-text" >Choice International Limited,<br /> Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099'</p> </div>
                       </div>
                     </div>
 
@@ -341,20 +325,6 @@ function Contactbanner() {
                           <span className="text-danger"> {errors?.mobile?.message} </span>
                         </Form.Group>
                       </div>
-
-
-                      {/* <Form.Group className="mb-3">
-                <Form.Label className="formlabel mt-3" >Purpose</Form.Label>
-                <div className='cust-dropdown'>
-                  <div className="downar"></div>
-                  <Form.Select variant="Info" id="dropdown-basic" className="dropdowntoggle" {...register('purpose')}>
-                    <option className="option">Feedback</option>
-                    <option className="option">View</option>
-                    <option className="option">Review</option>
-
-                  </Form.Select>
-                </div>
-              </Form.Group> */}
 
 
 
@@ -403,7 +373,6 @@ function Contactbanner() {
                       <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => { setNbfc(false) }} />
                       <div className="clearfix"></div>
                       <h4 className="text-center text-uppercase mt-5 mb-5"><strong>CUSTOMER GRIEVANCE REDRESSAL MECHANISM</strong></h4>
-                      {/* <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4> */}
 
                     </ModalHeader>
 
@@ -422,13 +391,22 @@ function Contactbanner() {
                               <th>Level 2 - Grievance & Redressal Officer</th>
                             </tr>
                             <tr>
-                              <td className="pb-5">If you are not satisfied with the resolution provided to you, you may please reach to Customer Grievances Redressal Officer on <a href="mailto:Grievances@choiceindia.com" target="_blank" className="mail-a">Grievances@choiceindia.com</a></td>
+                              <td className="pb-5">If you are not satisfied with the resolution provided to you,<br/>
+                               you may please reach to:<br/>Grievances Redressal Officer: Mr. Arun Rathor<br/>
+                              Address: Choice Finserv Private Limited, 1 St Floor, Plot No. 25, Sunder Nagar, Girdhar Marg Malviya Nagar, Jaipur – 302017.<br/>
+                              Email: <a href="mailto:Grievances@choiceindia.com" target="_blank" className="mail-a">Grievances@choiceindia.com</a><br/>
+                              Phone: <strong>1800 203 5193</strong>
+                              </td>
                             </tr>
                             <tr>
                               <th>Level 3 - Customer Principal Nodal Officer</th>
                             </tr>
                             <tr>
-                              <td className="pb-5">If you are still not satisfied with the resolution provided by the Officials on above mentioned Levels, we request you to kindly reach to our Principal Nodal Officer on <a href="mailto:principalnodalofficer@choiceindia.com" target="_blank" className="mail-a">principalnodalofficer@choiceindia.com</a></td>
+                              <td className="pb-5">If you are still not satisfied with the resolution provided by the Officials on above mentioned Levels, we request you to kindly reach to our:<br />
+                              Principal Nodal Officer: Mr. Vijendra Singh Shekhawat <br />
+                              Email: <a href="mailto:pno@choiceindia.com" target="_blank" className="mail-a">pno@choiceindia.com</a><br />
+                              Phone: <strong>1800 203 5193</strong>
+                              </td>
                             </tr>
                             <tr>
                               <th>Level 4 - Centralised Receipt and Processing Centre </th>

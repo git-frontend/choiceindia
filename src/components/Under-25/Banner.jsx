@@ -2,7 +2,6 @@ import {useState} from 'react';
 import NewDematAccountForm from '../Common-features/NewDematAccountForm';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function Banner() {
-  const [isCheck, setIsCheck] = useState(false)
   return (
     <>
         <section className='banner-sec' id='section-under25'>
@@ -18,17 +17,12 @@ function Banner() {
                           </div>
                           <div className='right-sect'>
                             <div className='form-demat'>
-                            {
-                            isCheck ?
+                           
                                     <div id="campaignForm">
                                         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                             <NewDematAccountForm />
                                         </GoogleReCaptchaProvider>
-                                </div> :
-                                    <div id="campaignForm">
-                                        <NewDematAccountForm />
                                 </div>
-                            }
                             </div>
                           </div>
                        </div>

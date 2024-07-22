@@ -81,7 +81,6 @@ function PartnerBannerTab() {
                     <SingleTemplatePartner /> :
                     <div className="tab-cont-right d-none d-sm-block">
                       <LazyLoader src={partnerBanner[store].image} className={'img-fluid'} width={"521"} height={"453"} alt="Loading" />
-                      {/* <img src={StckImage} alt="Become a Stock Market Agent" width={"521"} height={"453"} /> */}
                     </div>
                 }
 
@@ -90,65 +89,7 @@ function PartnerBannerTab() {
 
           </div>
 
-          {/* <div
-              className={toggleState === 2 ? "content  active-content" : "content"}
-            >
-              <div className="banner-tab-cont">
-                <div className="tab-cont-left">
-                  <div className="heading-sec">
-                    <h3 className="title-secnd">Become a Mutual Fund Advisort</h3>
-                    <p>Help people to achieve financial freedom by selling mutual funds through us.</p>
-                  </div>
-                  <a href="https://choiceconnect.in/register" className="btn-bg">Register</a>
-                </div>
-                <div className="tab-cont-right">
-                  <LazyLoader src={MutualFundsImage} className={'img-fluid'} width={"521"} height={"453"} alt="Become a Stock Market Agent" />
-               
-                </div>
-              </div>
-            </div>
 
-            <div
-              className={toggleState === 3 ? "content  active-content" : "content"}
-            >
-              <div className="banner-tab-cont">
-                <div className="tab-cont-left">
-                  <div className="heading-sec">
-                    <h3 className="title-secnd">Become an Insurance Agent</h3>
-                    <p>Assist customers to buy the best insurance which suits all their needs. </p>
-                  </div>
-                  <a href="https://choiceconnect.in/register" className="btn-bg">Register</a>
-                </div>
-                <div className="tab-cont-right">
-                  <LazyLoader src={InsuranceImage} className={'img-fluid'} width={"61"} height={"61"} alt="Become a Stock Market Agent" />
-               
-                </div>
-              </div>
-            </div>
-
-            <div
-              className={toggleState === 4 ? "content  active-content" : "content"}
-            >
-              <div className="banner-tab-cont">
-                <div className="tab-cont-left">
-                  <div className="heading-sec">
-                    <h3 className="title-secnd">Become a Loan Agent</h3>
-                    <p>Disburse the loan of different companies at the lowest interest rate &amp; earn a good commission.</p>
-                  </div>
-                  <a href="https://choiceconnect.in/register" className="btn-bg">Register</a>
-                </div>
-                <div className="tab-cont-right">
-                  <LazyLoader src={LoansImage} className={'img-fluid'} width={"521"} height={"453"} alt="Become a Stock Market Agent" />
-                 
-                </div>
-              </div>
-            </div>
-          </div> 
-          className={count === 1 ? "tabs active-tabs" : "tabs"}
-              onClick={() => setCount(1)}
-          */}
-
-          {/* <div className="bloc-tabs"> */}
             <Slider {...settings}
               className="bloc-tabs d-none d-sm-block"
               afterChange={(ev) => {
@@ -168,7 +109,6 @@ function PartnerBannerTab() {
                       onClick={() => { setstore(index) ;setCount(index)}}>
                         <span className="tb-ico">
                           <LazyLoader src={res.icon} className={'img-fluid'} width={"70"} height={"71"} alt="Stocks" />
-                          {/* <img src={ImageSub2} alt="Stocks" width={"70"} height={"71"} /> */}
                         </span>
                       
                       <h4>{res.button}</h4>
@@ -182,35 +122,7 @@ function PartnerBannerTab() {
 
               }
 
-              {/* <button
-              className={count === 2 ? "tabs active-tabs" : "tabs"}
-              onClick={() => setCount(2)}
-            >
-              <LazyLoader src={ImageSub3} className={'img-fluid'} width={"71"} height={"71"} alt={"Mutual Funds"} />
-              
-              <h4>Mutual Funds</h4>
-
-            </button>
-            <button
-              className={count === 3 ? "tabs active-tabs" : "tabs"}
-              onClick={() => setCount(3)}
-            >
-              <LazyLoader src={ImageSub4} className={'img-fluid'} width={"70"} height={"70"} alt={"Insurance"} />
-              
-              <h4>Insurance</h4>
-
-            </button>
-            <button
-              className={count === 4 ? "tabs active-tabs" : "tabs"}
-              onClick={() => setCount(4)}
-            >
-              <LazyLoader src={ImageSub5} className={'img-fluid'} width={"70"} height={"71"} alt="Loans" />
-              
-              <h4>Loans</h4>
-
-            </button> */}
             </Slider>
-          {/* </div> */}
         </div>
       </section>
 

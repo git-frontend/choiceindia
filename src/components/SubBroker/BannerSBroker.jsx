@@ -44,7 +44,6 @@ function BannerSBroker() {
                                 </div>
                                 <div className="right-sec">
                                     <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"400"} height={"391"}/>
-                                    {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>
                             <div className="caption-blue-bar">
@@ -69,15 +68,13 @@ function BannerSBroker() {
                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                 <SubBrokerForm />
                             </GoogleReCaptchaProvider>
-                                {/* <SubBrokerForm /> */}
                             </div>
                         </div>:
                          <div className="col-md-6 col-lg-4">
                          <div className="franchise-form justify-content-end d-flex" id="form-banner">
                          
                              <SubBrokerForm />
-                         
-                             {/* <SubBrokerForm /> */}
+                             
                          </div>
                      </div>
 

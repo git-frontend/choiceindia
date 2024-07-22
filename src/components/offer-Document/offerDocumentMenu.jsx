@@ -5,7 +5,8 @@ import cmsService from "../../Services/cmsService";
 import download from '../../assets/images/file-download/export.webp';
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
-
+import CommonCMS from '../Common-CMS/CommonCMS';
+import CMSData from "../Common-CMS/CMSData";
 function OfferDocumentMenu() {
     const [datalist, setDatalist] = useState({});
     const [trigger, setTrigger] = useState(false);
@@ -13,53 +14,22 @@ function OfferDocumentMenu() {
     let values;
     let AllFilesValue = {};
 
-    function loadFileDownload() {
-        cmsService.documentList().
-            then(
-                res => {
-                    if (res && res.data && res.data.data ) {
-                        setisloading(false)
-                        // console.log("dddee",res.data.data)
-                        values = res.data.data;
-                        // console.log("ddd",values)
-                        values.forEach(ele => {
+   
 
-                            if (!AllFilesValue[ele.title]) {
-                                AllFilesValue[ele.title] = [];
-                                AllFilesValue[ele.title].push(ele)
-                            } else {
-                                AllFilesValue[ele.title].push(ele)
+    // useEffect(() => {
+    //     setTrigger(true)
 
-                            }
-                        })
-                        setDatalist(AllFilesValue);
-                        // console.log("check",AllFilesValue)
-                    } else {
-                        setisloading(false)
-                        setDatalist([]);
+    //     if (trigger === true) {
+    //         //loadFileDownload()
+    //         cmsService.loadCmsData(cmsService.documentList,setisloading,setDatalist,"title");
+    //     }
 
-                    }
-
-                }
-            ).catch((error) => {
-                setisloading(false)
-                setDatalist([]);
-            });
-    }
-
-    useEffect(() => {
-        setTrigger(true)
-
-        if (trigger === true) {
-            loadFileDownload()
-        }
-
-    }, [trigger])
+    // }, [trigger])
 
     return (
         <div>
-
-            <section className="filedownloadfaq">
+            <CommonCMS data={CMSData.OfferDocumentData} methodName="documentList"/>
+            {/* <section className="filedownloadfaq">
                 <div className="container">
 
                     <div className="row">
@@ -67,7 +37,6 @@ function OfferDocumentMenu() {
                             isloading ?
                                 <div className="text-center">
                                     <div>
-                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
                                         <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                          </div>
                                 </div>
@@ -125,7 +94,7 @@ function OfferDocumentMenu() {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
 
     )

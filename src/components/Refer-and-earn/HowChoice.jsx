@@ -15,7 +15,7 @@ function HowChoice() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 text-center">
-                            <h2 className="title-first">How Choice Demat Account <br/> Refer and Earn Program Works?</h2>
+                            <h2 className="title-first">How a Demat Refer and <br/>Earn Program Works </h2>
                         </div>
                     </div>
                     <div className="row">

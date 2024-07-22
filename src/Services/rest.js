@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API_URLS } from "./API-URLS";
+import utils from "./utils";
 
 const rest = {
 
@@ -30,17 +31,23 @@ const rest = {
     })
   },
 
-
-  signalReportData: function (postdata) {
-
+  getExpertResearch:function(postdata){
     let api = new API_URLS()
-    let url = api.fetchSignalReportURL()
-    //  console.log("url",url)
-    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-      //   console.log("datas",data)
-      return data
-    })
+    let url = api.getExpertResearchreportURL()
+    // console.log("url",url)
+    return axios.post(url, postdata, {})
+
   },
+  
+   //Created common function for generating session ID
+
+  generateSession:function(){
+    let api=new API_URLS();
+    return axios.get(api.getSessionUrl())
+    .then(res=>res.data);
+  },
+
+ 
   multipleTokensURLData: function (postdata) {
 
     let api = new API_URLS()

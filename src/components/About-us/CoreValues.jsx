@@ -60,8 +60,7 @@ function CoreValues() {
 
                     <div className="team-item pr-5">
                       <span className="img-itm">
-                        <LazyLoader src={Commitment} className={"img-fluid"} width={"70"} height={"70"} alt={"Commitment"} />
-                        {/* <img src={Commitment} className="img-fluid" alt="Loading"  /> */}
+                        <LazyLoader src={Commitment} className={"img-fluid"} width={"70"} height={"70"} alt={"Commitment"} />                       
                       </span>
                       <div className="namedesg">
                         <h4 className="title">Commitment</h4>
@@ -73,7 +72,6 @@ function CoreValues() {
                     <div className="team-item pr-5">
                       <span className="img-itm">
                         <LazyLoader src={Honesty} className={"img-fluid"} width={"70"} height={"70"} alt={"Honesty"} />
-                        {/* <img src={Honesty} className="img-fluid" alt="Loading"  /> */}
                       </span>
                       <div className="namedesg">
                         <h4 className="title">Honesty</h4>
@@ -85,7 +83,6 @@ function CoreValues() {
                     <div className="team-item pr-5">
                       <span className="img-itm">
                         <LazyLoader src={Optimism} className={"img-fluid"} width={"70"} height={"70"} alt={"Optimism"} />
-                        {/* <img src={Optimism} className="img-fluid" alt="Loading" /> */}
                       </span>
                       <div className="namedesg">
                         <h4 className="title">Optimism</h4>
@@ -95,7 +92,6 @@ function CoreValues() {
                     <div className="team-item pr-5">
                       <span className="img-itm">
                         <LazyLoader src={Innovation} className={"img-fluid"} width={"70"} height={"70"} alt={"Innovation"} />
-                        {/* <img src={Innovation} className="img-fluid" alt="Loading" /> */}
                       </span>
                       <div className="namedesg">
                         <h4 className="title">Innovation</h4>
@@ -107,7 +103,6 @@ function CoreValues() {
                     <div className="team-item pr-5">
                       <span className="img-itm">
                         <LazyLoader src={Consistency} className={"img-fluid"} width={"70"} height={"70"} alt={"Consistency"} />
-                        {/* <img src={Consistency} className="img-fluid" alt="Loading" /> */}
                       </span>
                       <div className="namedesg">
                         <h4 className="title">Consistency</h4>
@@ -119,7 +114,6 @@ function CoreValues() {
                     <div className="team-item pr-5">
                       <span className="img-itm">
                         <LazyLoader src={Empowerment} className={"img-fluid"} width={"70"} height={"70"} alt={"Empowerment"} />
-                        {/* <img src={Empowerment} className="img-fluid" alt="Loading"  /> */}
                       </span>
                       <div className="namedesg">
                         <h4 className="title">Empowerment</h4>

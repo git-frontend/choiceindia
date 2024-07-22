@@ -42,8 +42,6 @@ function Banner() {
     let valueearn = document.getElementById("referalid");
     valueearn.value = referal;
 
-    //console.log("value",valueearn);
-    //console.log("value2",referal);
   }
 
   function loadrefer() {
@@ -57,7 +55,7 @@ function Banner() {
       .then((res) => {
         setIsloader(false);
         setList(res);
-        if (res.Status === "Success") {
+        if (res.Status === "Success" && res.Response.response_code === 200) {
           setreferal(res.Response.referral_link);
           setShow("Copy Link");
           let valueearn = document.getElementById("referalid");
@@ -65,10 +63,9 @@ function Banner() {
           setIsShow(true);
           setIserror(false);
         } else {
-          setreferal1(res.Reason);
+          setreferal1(res.Response.error.description);
           setIserror(true);
 
-          //console.log("show",res.Status)
         }
       })
       .catch((error) => {
@@ -78,7 +75,6 @@ function Banner() {
   }
 
   function shareLink(key) {
-    //console.log("0f",key)
     let mapper = {
       facebook: {
         url: `https://www.facebook.com/sharer/sharer.php?u=${referal}`,
@@ -103,7 +99,6 @@ function Banner() {
     };
     let linkObject = mapper[key];
     window.open(linkObject.url);
-    //console.log("linkObject",linkObject)
   }
 
   const { register, formState: reset } = useForm({
@@ -123,7 +118,7 @@ function Banner() {
           <div className="row align-items-center">
             <div className="col-xl-6 col-md-7">
               <div className="sec-banner-left">
-                <h1>Join the Best Demat Account Refer and Earn Program</h1>
+                <h1>Join the Best Refer and Earn Demat Account Program</h1>
                 <div className="banner-box">
                   <p>
                   Invite your friends and get <span>₹500*</span> brokerage reversal per referral.

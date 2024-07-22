@@ -1,5 +1,3 @@
-
-// import React from 'react';
 import React from "react";
 import { useState, useEffect, useRef } from 'react';
 import meta_tags from '../../Data/MetaTags';
@@ -37,10 +35,8 @@ function futuresOptionsTradingBanner() {
         const element = document.getElementById("branch1");
         if (element) {
             const rect = element.getBoundingClientRect();
-            // console.log("checkmate", rect.top.toFixed())
             if (rect.top.toFixed() < 350) {
                 setIsCheck(true);
-                // console.log('inside name', name);
             }
 
         }
@@ -114,11 +110,7 @@ function futuresOptionsTradingBanner() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            // let parser = new DOMParser();
-            // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-            // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
             document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-            // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
             document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
             document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
             document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -133,7 +125,6 @@ function futuresOptionsTradingBanner() {
                             <div className="col-md-7 fandoleft">
                                 <h1 className="big-ttl">Don’t Miss <span> F&amp;O </span><br />
                                     Trading Opportunities!</h1>
-                                {/* <div className="carditem-option-tab"> */}
                                 <Slider {...settings1} className="carditem-option-tab">
                                     <div className="carditem-option">
                                         <span className="carditem-option-img"><LazyLoader src={icon1} alt={"Demat Account with Daily F&O Calls from Experts"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
@@ -187,7 +178,6 @@ function futuresOptionsTradingBanner() {
                                         <div className="signup-text">
                                             <div className="signup-left"><h3 className="signup-ttl">Sign up  to check out more research calls.</h3></div>
                                             <div className="signup-right">
-                                                {/* <Link to="/campaign/open-demat-account"> <span className="btn-bg btn-bg-dark signup-btn">Get Started</span></Link> */}
                                                 <Link onClick={() => scrollToId('campaignForm')}> <span className="btn-bg btn-bg-dark fando-btn ">Get Started</span></Link>
                                             </div>
                                         </div>

@@ -6,6 +6,9 @@ import TermCondition from './TermCondition';
 import EarnUp from './EarnUp';
 import Template3 from '../Common-features/Template3';
 import {useState, useEffect} from 'react';
+import ReferTestimonial from "./ReferTestimonial";
+import "../OnlineTradingApp/online-trading-app.scss";
+import ReferFaqs from "./ReferFaqs";
 import {
   useLocation,
 } from 'react-router-dom';
@@ -23,11 +26,7 @@ function ReferEarn() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
@@ -52,6 +51,8 @@ function ReferEarn() {
             <HowChoice />
             <TermCondition />
             <EarnUp />
+            {/* <ReferTestimonial/> */}
+            <ReferFaqs/>
           </div>
       }
     </>

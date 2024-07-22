@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import "./demat-form.scss"
@@ -10,14 +9,11 @@ import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import OpenDemateAccountPopup from './OpenDemateAccountPopup.jsx';
 import OpenDemateAccountStickyFooter from './OpenDemateAccountStickyFooter.jsx';
 import OpenAccountLanguageContent from '../../Services/OpenAccountLanguageContent';
-import check from '../Add-lead/check-small.jpg';
-import cross from '../Add-lead/red cross.jpg';
 import Thankyoupopup from './Thanku-popup.jsx';
 import infoimg from '../../assets/images/Info.svg';
 import failureimg from '../../assets/images/failure.svg';
 import './Thankyoupopup.scss';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import backIcon from '../../assets/images/backspace.svg';
 import utils from "../../Services/utils";
 
 function DematAccountForm(props) {
@@ -47,9 +43,6 @@ function DematAccountForm(props) {
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: null });
 
     const [ischeck, setIsCheck] = useState(false);
-    // const [count, setCount] = useState(0);
-    // const [otp, setOtp] = useState('');
-    // const [OTPErrors, setOTPErrors] = useState('');
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     const [otpSessionID, setOTPSessionID] = useState(null)
     var UTMCampaign = useRef('');
@@ -124,16 +117,7 @@ function DematAccountForm(props) {
                     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
                     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
                 })
-                // utils.pushDataLayerEvent({
-                //     'event': 'open_account_lead_submit',
-                //     'page_path': window.location.pathname,
-                //     'page_url': window.location.href,
-                //     'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-                //     'leadId': leadId,
-                //     'lead_source':'choiceindia',
-                //     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                // })
+                
                 setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
                 // console.log('Success', res);
                 if (consent == "yes") {
@@ -156,9 +140,6 @@ function DematAccountForm(props) {
         });
     }
 
-    // useEffect(() => {
-    //     console.log('PRR',props.language)
-    // },[])
 
     function isMobileDevice() {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
@@ -198,6 +179,9 @@ function DematAccountForm(props) {
     }
 
     useEffect(() => {
+        if(window.location.pathname.includes('blog') === true){
+        props.newDematForm(false);
+        }
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
                 showOpenAccountAdPopup();
@@ -208,29 +192,13 @@ function DematAccountForm(props) {
 
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
-        // if (value) {
-        //     setMobileNumber(value);
-        //     setErrors({});
-        // } else {
-        //     setMobileNumber(value);
-        //     setErrors({});
-        // }
         setMobileNumber(value);
         setErrors({});
     }
 
     function handleReferID(e) {
         let value = e.target.value.replace(/([^\w]+|\s+)/g, "");
-        // if (value) {
-        //     setMobileNumber(value);
-        //     setErrors({});
-        // } else {
-        //     setMobileNumber(value);
-        //     setErrors({});
-        // }
         setReferID(value);
-        // console.log('RID',referID);
-        // console.log('RID2',refercode.current)
         setErrors({});
     }
 
@@ -330,17 +298,6 @@ function DematAccountForm(props) {
         setShowErrorToaster(false);
     }
 
-    // function resetOTPPopup() {
-    //     setOtp('');
-    //     setOTPErrors('');
-    //     setCount(30);
-    // }
-
-    // function closeLeadModal(){
-    //     setMobileNumber(() => '')
-    //     setShowLead(() => false);
-    // }
-
     function closeModal(link) {
         setShowLead(prevState => {
             return { ...prevState, showModal: false }
@@ -369,10 +326,6 @@ function DematAccountForm(props) {
             "utm_content": UTMContent.current || null
         };
 
-
-        // setTimeout(() => {
-        //     hideLoader('sendOTPLoader');
-        // }, 4000);
         openAccountService.addNewLead(request).then((res) => {
 
             if (res && res.status === 200) {
@@ -388,9 +341,6 @@ function DematAccountForm(props) {
         setShowLead(true);
         hideLoader('sendOTPLoader');
 
-        // setShowLead(prevState => {
-        //     return { ...prevState, showModal: true, isFailure: true, titleText: 'Success', msgText: 'Oops', closeMd: closeModal }
-        // });
     }
     const [type, setType] = useState('send');
     // console.log("type",type)
@@ -404,71 +354,21 @@ function DematAccountForm(props) {
         const encodedMobileNumber = btoa(mobileNumber);
         let request = {
             "whatsapp_consent": true,
-            // "service_code": type1 == 'MF' ? "MF" : "JF",
             "mobile_number": encodedMobileNumber,
             "type":type,
-            // "product": type1 == 'MF' ? "INVESTICA" : "FINX",
-            // "request_source": "CHOICEINDIA",
-            // "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1 == 'MF' ? "true" : "1",
             "referred_id": refercode.current || referID || null,
             "sub_ref": subrefercode.current || null,
-            /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
-            // 'seo_demat_leads'
             "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current ? UTMCampaign.current : (window.location.pathname.indexOf("/minor-demat-account") > -1) ? 'DL_Minor' : (window.location.pathname.indexOf("/nri-demat-account") > -1) ? 'DL_NRI' : (window.location.pathname.indexOf("/blog/unlisted-shares-price-list/") > -1) ? 'choice_blog_leads' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : null,
             "utm_content": (window.location.pathname.indexOf("/blog/unlisted-shares-price-list/") > -1) ? 'desktop_sticky_cta' : UTMContent.current || null,
             "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/', ''),
-            // 'sidebar_seo_leads'
             "utm_medium": isBlog == "yes" ? UTMMedium.current || 'choice_blog' : (window.location.pathname.indexOf("/blog/unlisted-shares-price-list/") > -1) ? 'choice_blog' : UTMMedium.current || null,
-            // 'blog_leads'
             "utm_source": (window.location.pathname.indexOf("/unlisted-shares-price-list/") > -1) ? 'ul_leads' : isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' : isMF == "yes" ? UTMSource.current || 'choice-mf-web' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
-            // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
-            // "captchaResp": captchaToken,
             "account_type": type1 == 'MF' ? "" : "all",
-            // "captcha": "1"
-           
-
         };
-        // console.log("request", request)
-        openAccountService.sendOTP(request,captchaToken ).then((res) => {
-            hideLoader('sendOTPLoader');
-            if (res && res.StatusCode === 200 ) {
-                setLeadId(res.Body.leadid);
-                // utils.pushDataLayerEvent({
-                //     'event': 'ci_onboard_lead_initiated',
-                //     'page_path': window.location.pathname,
-                //     'page_url': window.location.href,
-                //     'lead_source': 'choiceindia',
-                //     'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                //     'leadId': res.data.Body.leadid,
-                //     'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                // })
-                setOTPSessionID((type1 == 'MF') ? res.Body.session_id : res.Body.otp_session_id)
-                // setForm('sent-otp')
-                // setformdata()
-                setShowThanku(prevState => {
-                    return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.Body.new_lead ? res.Body.new_lead : false }
-                });
-                fetchQueryParams();
-                // resetOTPPopup();
-                handleOTPShow();
-
-
-            } else {
-                setAPIError("Something went wrong, please try again later!");
-                showAPIErrorToaster();
-            }
-        }).catch((error) => {
-            hideLoader('sendOTPLoader');
-            if (error && error.response && error.response.data && error.response.data.Message) {
-                setAPIError(error.response.data.Message); 
-                showAPIErrorToaster();
-            } else {
-                setAPIError("Something went wrong, please try again later!");
-                showAPIErrorToaster();
-            }
-        });
+        openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster)
+        
     }
 
 
@@ -486,19 +386,8 @@ function DematAccountForm(props) {
         subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
         source.current = (searchParams.get('source')) ? window.atob(searchParams.get('source')) : '';
         subrefercodeInv.current = (searchParams.get('subref')) || '';
-
-        // setReferID(() => ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '')
     }
 
-    // function handleOTP(e) {
-    //     let value = e.target.value.replace(/\D/g, "");
-    //     setOtp(value);
-    //     if (!value.length) {
-    //         setOTPErrors('OTP is required');
-    //     } else {
-    //         setOTPErrors('');
-    //     }
-    // }
 
     useEffect(() => {
         fetchQueryParams();
@@ -512,138 +401,6 @@ function DematAccountForm(props) {
         setReferID(() => '');
         setShowReferInput(() => false);
     }
-
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         if (!count) {
-    //             return () => clearInterval(interval);
-    //         }
-    //         setCount(seconds => seconds - 1);
-    //     }, 1000);
-    //     return () => clearInterval(interval);
-    // }, [count]);
-
-    // useEffect(() => {
-    //     if ('OTPCredential' in window) {
-    //         const input = document.getElementById('openAccountOTP');
-    //         if (!input) return;
-    //         const ac = new AbortController();
-    //         navigator.credentials.get({
-    //             otp: { transport: ['sms'] },
-    //             signal: ac.signal
-    //         }).then(otp => {
-    //             setOtp(otp.code);
-    //             verifyOTP();
-    //         }).catch(err => {
-    //             console.log(err);
-    //         });
-    //     }
-    // }, []);
-
-    // to verify the OTP 
-    //   function verifyOTP() {
-    //     if (!otp.length) {
-    //         setOTPErrors('OTP is required');
-    //     } else {
-    //         showLoader('verifyLoader');
-    //       let request = {
-    //         otp: otp,
-    //         session_id: otpSessionID.current
-    //       };
-
-    //       openAccountService.verifyOTP(request).then((res) => {
-    //           hideLoader('verifyLoader');
-    //           if (res && res.status === 200 && res.data && res.data.Body) {
-    //               if (res.data.Body.url) {
-    //                   window.location.href = res.data.Body.url;
-    //               } else {
-    //                 window.location.href = "https://jiffy.choiceindia.com/auth/login"
-    //               }
-    //           } else {
-    //               setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
-    //           }
-    //       }).catch((error) => {
-    //         hideLoader('verifyLoader');
-    //         if (error && error.response && error.response.data && error.response.data.Message) {
-    //             setOTPErrors(error.response.data.Message);
-    //         } else {
-    //             setOTPErrors("Something went wrong, please try again later!");
-    //         }
-    //       });
-    //     }
-    //   }
-
-    //     //resend OTP ON SMS
-    //     function resendOTP() {
-    //         if (!loaders.resendOTPLoader && !loaders.OTPOnCallLoader) {
-    //             showLoader('resendOTPLoader');
-    //             setOtp('');
-    //             setOTPErrors('');
-    //             let request = {
-    //                 "mobile_no": mobileNumber,
-    //                 "old_session_id": otpSessionID.current,
-    //                 "request_source": "CHOICEINDIA"
-    //             }
-
-    //             openAccountService.resendOTPAgain(request).then((res) => {
-    //                 hideLoader('resendOTPLoader');
-    //                 setCount(30);
-    //                 if (res && res.status === 200 && res.data && res.data.Body) {
-    //                     otpSessionID.current = res.data.Body.session_id;
-    //                     handleOTPResendSuccessToaster('otp');
-    //                 } else {
-    //                     setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
-    //                 }
-    //             }).catch((error) => {
-    //                 hideLoader('resendOTPLoader');
-    //                 setCount(30);
-    //                 if (error && error.response && error.response.data && error.response.data.Message) {
-    //                     setOTPErrors(error.response.data.Message);
-    //                 } else {
-    //                     setOTPErrors("Something went wrong, please try again later!");
-    //                 }
-    //             });
-    //         }
-    //     }
-
-    //     //to get OTP ON CALL
-    //     function getOTPOnCall() {
-    //         if (!loaders.resendOTPLoader && !loaders.OTPOnCallLoader) {
-    //             showLoader('OTPOnCallLoader');
-    //             setOtp('');
-    //             setOTPErrors('');
-    //             let request = {
-    //                 "mobile_no": mobileNumber,
-    //                 "request_source": "CHOICEINDIA",
-    //                 "session_id": otpSessionID.current,
-    //             }
-    //             openAccountService.OTPOnCall(request).then((res) => {
-    //                 hideLoader('OTPOnCallLoader');
-    //                 setCount(30);
-    //                 if (res && res.status === 200 && res.data && res.data.Body) {
-    //                     otpSessionID.current = res.data.Body.session_id;
-    //                     handleOTPResendSuccessToaster('call');
-    //                 } else {
-    //                     setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
-    //                 }
-    //             }).catch((error) => {
-    //                 hideLoader('OTPOnCallLoader');
-    //                 setCount(30);
-    //                 if (error && error.response && error.response.data && error.response.data.Message) {
-    //                     setOTPErrors(error.response.data.Message);
-    //                 } else {
-    //                     setOTPErrors("Something went wrong, please try again later!");
-    //                 }
-    //             });
-    //         }
-    //     }
-
-    // function handleOTPResendSuccessToaster(type){
-    //     setOTPSendSuccessToaster({[type]: true});
-    //     setTimeout(()=>{
-    //         setOTPSendSuccessToaster({[type]: false});
-    //     },2000)
-    // }
 
     useEffect(() => {
         if (props.isFromFableDetails) {
@@ -742,29 +499,17 @@ function DematAccountForm(props) {
 
                         </div>
 
-                        {/* {
-    refercode.current? '':
-    <span className="referal-link" onClick={showReferBlock}>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referId')}</span>
-} */}
-
-
-                        {/* { */}
-                        {/* (showReferInput)? */}
                         {
                             webcheck == "campaign" ?
                                 ""
                                 :
                                 <div className="sub-formgrp">
                                     <Form.Control pattern="[a-zA-Z0-9]*" name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
-                                    {/* {
-                            refercode.current? '': 
-                            <span className="cross-refer-img" onClick={showReferBlock2}><img src={backIcon}/></span>
-                        } */}
+                                   
 
                                 </div>
                         }
-                        {/* : '' */}
-                        {/* } */}
+                      
 
 
                         <div key="inline-checkbox" className="sub-formgrp cust-checkbox">
@@ -780,7 +525,7 @@ function DematAccountForm(props) {
                                 }
 
                             </Form.Check>
-                            {/* <label className="lbl">I agree that I have read &amp; accept the <a className="link-tc">Terms &amp; Conditions</a></label> */}
+                           
                         </div>
 
                         <div className="sub-formgrp mt-5 mb-0">
@@ -806,69 +551,8 @@ function DematAccountForm(props) {
                     <Modal.Title>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsheader')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')} <Link to="/terms-conditions" target="_blank" className="term_link">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termlink')}</Link> </Modal.Body>
-                {/* <Modal.Footer>
-                    <Button variant="warning" onClick={handleTermsConditionClose}>
-                    {OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn')}
-                    </Button>
-                </Modal.Footer> */}
+               
             </Modal>
-
-            {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
-                keyboard={false} centered>
-                <Modal.Header closeButton>
-                    <Modal.Title>Enter OTP</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <div id="opt-box-id">
-                        <div className="modal-body opt-body">
-                            A OTP has been sent to {'******' + mobileNumber.slice(6, 10)}
-                            <Form.Control className="w-50 form-control form-control-lg mx-auto text-center" type="text" id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)}/>
-                            {
-                                OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
-                            }
-                            <div className="modal-footer otp-modal-footer">
-                                <button className="btn btn-primary verify-btn" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : 'Verify'}</button>
-                            </div>
-                            <div className="modal-otp-links">
-                                {
-                                    count ?
-                                        <p className="didnt-text">Didn't receive the OTP?<small className="timer-text">Resend in {count} seconds</small></p> :
-                                        <div className="btm-div">
-                                            <p className="resend-text" onClick={resendOTP}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Get OTP SMS'}</p>
-                                            <p className="or-text">OR</p>
-                                            <p className="resend-text" onClick={getOTPOnCall}>{loaders.OTPOnCallLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Get OTP on Call'}</p>
-                                        </div>
-                                }
-                                
-                                
-                            </div>
-                            {
-                                (OTPSendSuccessToaster.otp || OTPSendSuccessToaster.call) ?
-                                    <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster({})} dismissible>
-                                        {
-                                            (OTPSendSuccessToaster.call) ? 'You will soon receive an automated call on given Mobile Number' : 'OTP has been resent on given Mobile Number'
-                                        }
-                                    </Alert> : ''
-                            }
-                        </div>
-                    </div>
-
-                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current}></OpenAccountOTPModal>
-                </Modal.Body>
-            </Modal> */}
-
-            {/* <Modal show={showErrorToaster} onHide={hideAPIErrorToaster} backdrop="static"
-                keyboard={false} centered>
-                <Modal.Header>
-                    <Modal.Title>Error</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>{APIError}</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="warning" onClick={hideAPIErrorToaster}>
-                        Okay
-                    </Button>
-                </Modal.Footer>
-            </Modal> */}
 
             <Modal className='common-modal-css common-modal-thankyou'
                 show={showErrorToaster}
@@ -906,28 +590,11 @@ function DematAccountForm(props) {
                     <Button variant="warning" onClick={hideOTPInfoPopup}>Okay</Button>
                 </Modal.Footer>
             </Modal>
-            {/* <Modal show={showlead} centered>
-                <Modal.Header className="ad-ld-mdl-head">
-                    <Modal.Title></Modal.Title>
-                </Modal.Header>
-                <Modal.Body className="ad-ld-mdl-bdy">
-                    <div>
-                        <img src={ischeck? check: cross} alt='alt-icon'/>
-                        <p>{ischeck? 'Success': 'Oops'}</p>
-                        <p>{ischeck? 'Lead Added Successfully': 'Something Went Wrong!'}</p>
-                    </div>
-                </Modal.Body>
-                <Modal.Footer className="ad-ld-mdl-ftr">
-                    <Button className="ad-ld-mdl-btn" onClick={closeLeadModal} >
-                        OK
-                    </Button>
-                </Modal.Footer>
-            </Modal> */}
-
+            
             {
                 showlead.showModal ? <Thankyoupopup isShow={showlead} /> : ''
             }
-            {/* <Thankyoupopup isShow={showlead} /> */}
+           
 
             {
                 showThanku.showModal ? <Thankyoupopup isShow={showThanku} /> : ''

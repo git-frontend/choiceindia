@@ -37,14 +37,13 @@ function OpenFreeAccount() {
                                     </div>
                                 </div>
                                 <LazyLoader src={pricingimage1} alt={"Become a Stock Market Agent"} className={"img-fluid img-demat-arrow"} width={"449"} height={"164"}/>
-                                {/* <img src={pricingimage1} alt="Become a Stock Market Agent" className="img-fluid img-demat-arrow" width="449" height="164"/> */}
                             </div>
                             
                         </div>
                         <div className="col-xl-6 col-md-5 d-flex justify-content-end">
                         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
-                                </GoogleReCaptchaProvider>
+                        </GoogleReCaptchaProvider>
                         </div>
                     </div>
                 </div>

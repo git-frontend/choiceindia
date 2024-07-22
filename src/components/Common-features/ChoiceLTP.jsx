@@ -3,9 +3,10 @@ import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 import { subscribeOnStream, unsubscribeFromStream,subscribeMultitouchline,unSubscribeMultitouchline } from './../../Services/socketData.js';
 import React, { useEffect, useState } from "react";
 import { API_URLS } from "../../Services/API-URLS";
+import rest from "../../Services/rest.js";
+import ResearchService from "../../Services/ResearchService.js"
 function ChoiceLTP() {
 
- // const [ b5Data, setB5Data] = useState({});
   const [companyData, setCompanyData] = useState({ 8866: { change: 0, changePercent: 0, color: 'green', LTP_DATA: 0 }, 531358: { change: 0, changePercent: 0, color: 'green', LTP_DATA: 0 } });
   /**To Execute one timeonly */
   const [trigger, setTrigger] = useState(false)
@@ -16,8 +17,7 @@ function ChoiceLTP() {
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
-      //console.log("use effect called")
-      generateSessionId()
+      generateSessionId();
     }
     return () => {
       unsubscribeFromStream({})
@@ -25,58 +25,30 @@ function ChoiceLTP() {
   }, [trigger])
 
 
-  /*   useEffect(()=>{
-
-    },[companyData]) */
   let onRealtimeCallback = (data) => {
-    // console.log("onRealtimeCallback: ",data)
     processB5String(data.responseString, null)
   }
 
-  /**
-   * Generate Session Id
-   */
-  function generateSessionId() {
-    let api = new API_URLS()
-    fetch(api.getSessionUrl())
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        //  console.log("res",res)
-        if (res.Status == 'Success') {
-          getKeyInfo(res.Response, [{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }])//{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }
-        }
-
-      })
-
-  }
 
 
   /**
  * Generate Session Id
  */
+ function generateSessionId(){
+    rest.generateSession()
+    .then(res => {
+      if (res.Status == 'Success') {
+        getKeyInfo(res.Response, [{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }])//{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }
+      }
+    })
+ }
+
   function getKeyInfo(session, scrips) {
     scrips.forEach(ele => {
       let keyInfoPayload = { "UserId": 'guest', "SessionId": session || '', "Token": ele.Token, "SegmentId": ele.SegmentId };
-      fetch('https://finx.choiceindia.com/api/cm/ProfileMkt/KeyInfo/', {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
-        headers: {
-          'Content-Type': 'application/json'
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify(keyInfoPayload) // body data type must match "Content-Type" header
-      })
-        .then(response => {
-          return response.json();
-        })
+      
+      ResearchService.getKeyInfoDetails(keyInfoPayload)
         .then(res => {
-
           let keyInfo = res.Response||{};
           let newB5 = {};
           newB5['MarketLot'] = keyInfo.MarketLot||0;
@@ -84,7 +56,6 @@ function ChoiceLTP() {
           newB5["MktCap"] = keyInfo.MktCap||0;
           newB5['LTP'] = (keyInfo.LTP == 0) ? (newB5['PrevClose']) : keyInfo.LTP; // if LTP == 0 then show prevClose (10/05/2021)
           let string = '|1=' + ele.SegmentId + '|74=' + 0 + '|73=' + 0 + '|7=' + ele.Token + '|8=' + keyInfo.LTP + '|9=' + keyInfo.LTQ + '|399=' + keyInfo.PriceDivisor + '|75=' + keyInfo.OpenPrice + '|76=' + keyInfo.ClosePrice + '|77=' + keyInfo.HighPrice + '|78=' + keyInfo.LowPrice + '|93=' + keyInfo.LifeTimeHigh + '|94=' + keyInfo.LifeTimeLow + '|88=' + keyInfo.OpenInterest + '|80=' + keyInfo.ATP + '|79=' + keyInfo.Volume + '|';
-         //  setB5Data(newB5)
           new6[ele.Token]=newB5
           setTimeout(() => {
             processB5String(string, newB5, ele.Token)
@@ -119,7 +90,6 @@ function ChoiceLTP() {
 
    
       let bestData = newB5 || new6[key||splitData[0]["7"]]  || {}
-     // console.log(" datata ",bestData)
       let indicesData = {}
       indicesData['PrevClose'] = bestData.PrevClose || 0;
 
@@ -150,15 +120,6 @@ function ChoiceLTP() {
       indicesData["high"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["77"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in high (24/05/2021)
       indicesData["low"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["78"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in low (24/05/2021)
 
-      // if(key=='8866'||(splitData[0]["7"])=='8866'){
-
-      // }
-
-      // if(key=='531358'||(splitData[0]["7"])=='531358'){
-      //   setCompanyData(prev=>{
-      //     return {...prev,...indicesData}
-      //   })
-      // }
       let ob = {}
       ob[key || splitData[0]["7"]] = indicesData
 
@@ -166,7 +127,6 @@ function ChoiceLTP() {
         return { ...prev, ...ob }
       })
 
-      //console.log("onRealtimeCallback processed",indicesData)
 
     }
   }
@@ -226,7 +186,6 @@ function ChoiceLTP() {
           </div>
       </div>
         </div>
-        {/* style="width: 100%; height: 1200px; margin-top:50px;" */}
       </div>
     </section>
   );

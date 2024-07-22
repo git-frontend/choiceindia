@@ -1,7 +1,5 @@
 
 import React, { useState } from "react";
-import LazyLoader from '../Common-features/LazyLoader';
-import BestMumbai from '../../assets/images/stock-broker-mumbai/best-stock-broker.webp';
 function BestInMumbai() {
 
   const [showterm, setshowterm]=useState(false);
@@ -38,11 +36,7 @@ The financial offerings are designed in a manner to simplify personal finances a
               </div>
 
             </div>
-            {/* <div className="col-md-6 d-flex align-items-center justify-content-center">
-              <div className="right-sec  best-mumbai-img">
-              <LazyLoader src={BestMumbai} alt={"Best Stock Broker in Mumbai"} className={"img img-fluid"} width={"258"} height={"238"}/>
-              </div>
-            </div> */}
+           
           
         </div>
       </div>

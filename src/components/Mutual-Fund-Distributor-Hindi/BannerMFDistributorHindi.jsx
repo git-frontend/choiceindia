@@ -31,13 +31,11 @@ function BannerMFDistributorHindi() {
                             <div className="caption-banner">
                                 <div className="left-sec">
                                     <h1 className="tlt1">
-                                        {/* <span className="tlt2">म्यूचुअल फंड वितरक बनें </span> */}
                                         म्यूचुअल फंड वितरक बनें 
                                     </h1>
                                 </div>
                                 <div className="right-sec">
                                     <LazyLoader src={SubBannerimage} alt={"म्यूचुअल फंड वितरक"} className={"img-fluid"} width={"562"} height={"562"}/>
-                                    {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>
                             <div className="caption-blue-bar">

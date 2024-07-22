@@ -12,6 +12,7 @@ import img10 from '../../assets/images/mutual-funds-investment/sip-investment.sv
 
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
+import utils from "../../Services/utils";
 
 function ExploreBestMF() {
 /** scroll id view */
@@ -34,9 +35,17 @@ function chapterScroll(id) {
         <div className="container">
           <div className="row">
             <div className="col-md-4 best-mf-cont">
-              <h2 className="title-first">explore the best mutual funds</h2>
+              <h2 className="title-first">Variety of Mutual Funds to Invest</h2>
               <p className="mb-5">Experience the convenience and ease in investing with a platform that offers funds across all categories at one place </p>
-              <Link to="/top-funds"><span className="btn-bg btn-bg-dark">Explore more</span></Link>
+              <Link to="/top-funds" onClick={() => {
+                utils.pushDataLayerEvent({
+                  'event': 'mf_explore_more_funds_btn',
+                  'page_path': window.location.pathname,
+                  'page_url': window.location.href,
+                  'lead_source': 'choiceindia',
+                  'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+              })
+              }}><span className="btn-bg btn-bg-dark">Explore more</span></Link>
             </div>
             <div className="col-md-8">
                 <div className="best-mf-list">

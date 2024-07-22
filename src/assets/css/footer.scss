@@ -43,6 +43,16 @@
                             font-size: 1.1rem;
                            }
                        }
+                       .pdffooter{
+                        color: $lightColor;
+                           font-size: 1.2rem;
+                           text-decoration: none;
+                           font-family: $font-family-poppins-regular, sans-serif;
+                           cursor: pointer;
+                           &:hover{
+                            color: $bgcolor-yellow;
+                        }
+                       }
                    }
                    @media (max-width: $sm-x){
                     padding: 1rem;

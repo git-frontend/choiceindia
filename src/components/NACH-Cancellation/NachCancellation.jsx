@@ -156,17 +156,12 @@ function hideLoader(type) {
     }
 }
 
-  // function sendOTP(isResend) {
-  //   isResend? nachResend(true) :nachsendOtp(false)
-
-  // }
   function handleOTPResendSuccessToaster() {
     setOTPSendSuccessToaster(true);
     setTimeout(() => {
       setOTPSendSuccessToaster(false);
     }, 2000)
   }
-  // console.log("check", showOTPPopup)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -194,10 +189,7 @@ function hideLoader(type) {
     setShowErrorToaster(false);
   }
 
-  // function sendOTP(isResend) {
-  //     isResend? nachResend(true) :nachsendOtp(false)
-
-  // }
+ 
   useEffect(() => {
     checkWebOTP();
     
@@ -274,7 +266,6 @@ useEffect(() => {
       }).catch((error) => {
 
         hideLoader('verifyLoader');
-        // console.log(error.response.data.Message, "verifyOTPN error");
         setOTPErrors((error && error.response && error.response.data && error.response.data.Message) ? error.response.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
       });
     }
@@ -475,13 +466,9 @@ useEffect(() => {
                       <Form.Control as="textarea" rows={6} name="remarks" className="formcontrol" placeholder="Remarks" {...register('remarks')} />
                       <span className="text-danger"> {errors?.remarks?.message} </span>
                     </Form.Group>
-                    {/* <div className="formgrp messagefield">
-                      <textarea className="formcontrol messagearea" placeholder="Remarks" />
-                    </div> */}
+                    
                     <div className="button-filed">
-                      {/* onClick={() => { setShow(true) }} */}
                       <Button type="submit" className="btn-bg">{(loaders.verifyLoader || loaders.sendOTPLoader) ? <Spinner animation="border" /> : "Submit"}</Button>
-                      {/* <Button className="btn-bg btn-back">Back</Button> */}
                     </div>
                   </Form>
                 </div>
@@ -496,9 +483,7 @@ useEffect(() => {
               <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
                 <div className="exit-intent-sleekbox-popup">
                   <div className="popup-sub-row">
-                    {/* <div className="close">
-                                            <a href="javascript:void(0)" onClick={handleOTPPopupClose} className="closebtn" >&times;</a>
-                                        </div> */}
+                    
                     <div className="popup-sub-right">
 
                       <div>
@@ -560,7 +545,6 @@ useEffect(() => {
 
 
       <Modal show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" className="nach-modal" centered>
-        {/* <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => { handleClose() }} /> */}
         <div className="nach-modal-cont">
           {
             isError ?

@@ -13,7 +13,6 @@ import homeServices from '../../Services/homeServices';
 import Template1 from "../Common-features/Template1";
 import { Link, useNavigate } from "react-router-dom";
 function Fablesdetails() {
- // console.log('FablesDetails');
  let navigate = useNavigate();
   const [single_detail, setSingle_Detail] = useState(() => null);
   const [allFabalData, setAllFabalData] = useState(() => { });
@@ -21,14 +20,9 @@ function Fablesdetails() {
   const [IsDetail, setIsDetail] = useState(() => false);
   const [trigger, setTrigger] = useState();
   const { id } = useParams();
-  // let data = [];
-// const [skeleton, setSkeleton] = useState(() => true);
 const [showForm, setShowForm] = useState(false);
 var formName = useRef('');
 
-  // setTimeout(() => {
-  //   setSkeleton(() => false);
-  // }, 200)
 
     /** to call single fabal detail */
     function getSingleFablesDetail() {
@@ -50,7 +44,6 @@ var formName = useRef('');
           if(err&&err.message&&(err.message.indexOf('404')>-1)){
             navigate(`/404`, { replace: true });
           }
-          // console.log("ERROR",err)
         }
       )
     }
@@ -59,13 +52,9 @@ var formName = useRef('');
   function loadFabalList() {
     homeServices.fabalStory().then(
       res => {
-      //  console.log('res1',res)
-      //  console.log('IDDD',single_detail);
-        // setAllFabalData(res.data.posts);
         setAllFabalData(() => res.data.posts.filter((e) => {
           return e.slug !== id
         }))
-        // console.log('SSS',single_detail)
       }
     )
   }
@@ -80,19 +69,14 @@ setTrigger(true)
 
   }, [id, trigger])
 
-  // useEffect(() => {
-  //   data = allFabalData;
-  // },[allFabalData])
 
   function checkWhetherToShowForm(details) {
     setShowForm(false);
     if (details[0].tags) {
-      console.log("details[0].tags",details[0].tags)
       details[0].tags.forEach((item, i) => {
         if (item.slug === 'form-demat' || item.slug === 'form-equity-subbroker' || item.slug === 'form-mutual-fund-distributor' || item.slug==='mf-form') {
           setShowForm(true);
           formName.current = item.slug;
-          console.log("item",item)
         }
 
       })
@@ -101,21 +85,10 @@ setTrigger(true)
 
   return (
     <div>
-{/* 
-      {
-        skeleton ? <Template1 /> : */}
           <div className="fables-details-parent">
             <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} showForm={showForm || false} formName={formName.current}/>
             <Recommendation name={allFabalData} Id={id} single_data={single_detail} />
           </div>
-      {/* } */}
-      
-     {/* {
-        showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
-      } */}
-      {/* {
-        fablesDetailTitleId ? '' : <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup}></OpenDemateAccountStickyFooter>
-      } */}
 
 
     </div>
