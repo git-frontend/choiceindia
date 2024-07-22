@@ -9,7 +9,7 @@ import clubdiaries from '../../assets/images/Digital-Lending-Partners/clubdiarie
 import walkfin from '../../assets/images/Digital-Lending-Partners/walkfin.svg';
 import rapipay from '../../assets/images/Digital-Lending-Partners/rapipay.svg';
 import LazyLoader from '../Common-features/LazyLoader';
-import RapipayPdf from "../../assets/images/Digital-Lending-Partners/pdf/rapipay-doc.pdf";
+import RapipayPdf from "../../assets/images/Digital-Lending-Partners/pdf/Rapipay_Doc.pdf";
 import GrievancesRedressalPolicy from "../../assets/images/Digital-Lending-Partners/pdf/grievances-redressal-policy.pdf";
 import PrivacyPolicy from "../../assets/images/Digital-Lending-Partners/pdf/cfpl-privacy-policy.pdf";
 import NBFCMenu from '../Common-features/NBFCMenu';
