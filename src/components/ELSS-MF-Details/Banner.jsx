@@ -112,7 +112,10 @@ function Banner() {
         setFilteredCategoryData(filteredResults);
     };
     function addClassNameToTable(htmlContent, classNameToAdd) {
-        return htmlContent.replace(/<table/, `<table class="${classNameToAdd}"`);
+        if (htmlContent.includes('<table')) {
+            return htmlContent.replace(/<table/g, `<div class="table_scroll"><table class="${classNameToAdd}"`).replace(/<\/table>/g, '</table></div>');
+        }
+        return htmlContent;
     }
     const FilterByReturns = (e) => {
         const selectedReturns = e.target.value;

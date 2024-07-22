@@ -40,6 +40,9 @@
         br{
             display: none !important;
         }
+        .table_scroll{
+            overflow: auto;
+      
         .table {
             background-color: $bgcolor-blue-light;
             >:not(caption)>*>* {
@@ -80,7 +83,7 @@
                 }
             }
         }
-
+    }
     }
 
     .title-secnd {
