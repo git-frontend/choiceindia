@@ -28,7 +28,7 @@ const CurrencyTradingData = {
             "bannerAlt": 'Low Brokerage Currency Trading Account',
         },
         {
-            "iconText": "Expert Research & Advisory",
+            "iconText": "Expert Research",
             "bannerIcon" : `${Image4}`,
             "bannerAlt": 'Free Currency Trading in India with Expert Research Advisory',
         },
@@ -74,7 +74,7 @@ const CurrencyTradingData = {
     "WhyChoiceCommon":[
         {
             "title": "Trade forex with best broker in India",
-            "headtxt": `RESEARCH &amp;<br /> ADVISORY SERVICES`,
+            "headtxt": `RESEARCH SERVICES`,
             "subtxt": "A dedicated research team that provides Technical and Fundamental Research on the currency market at no extra cost",
         },
         {

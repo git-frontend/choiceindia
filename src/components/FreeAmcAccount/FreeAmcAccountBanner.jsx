@@ -92,11 +92,11 @@ const FreeAmcAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt={"Zero AMC Demat Account with Expert Research Advisory"} className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt={"Zero AMC Demat Account with Expert Research"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Free </span>  Research Advisory</p>
+                                                <p><span className="fontbold" >Free </span>  Research</p>
                                             </div>
                                         </div>
                                     </div>

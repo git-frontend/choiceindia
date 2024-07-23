@@ -21,7 +21,7 @@ const imageData =
         "image":`${ImageSub1}`,
         "id": 4,
         "title":'Choice FinX Signal',
-        "description":'Automated Research Engine that provides research advisory with customised strategies.'
+        "description":'Automated Research Engine that provides research with customised strategies.'
         
         
     }

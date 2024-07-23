@@ -21,7 +21,7 @@ const WhyChoice = () => {
                                 </div>
                                 <div className="rightsect">
                                     <div className="rightsect-sub">
-                                        <p className="headtxt">Research &amp; <br /> Advisory Services</p>
+                                        <p className="headtxt">Research Services</p>
                                         <p className="subtxt">A dedicated research team that provides Technical and Fundamental Research at no extra cost.</p>
                                     </div>
                                     <hr></hr>

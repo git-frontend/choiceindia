@@ -28,7 +28,7 @@ const EquityStockTradingData = {
             "bannerAlt": 'Open Low Brokerage Equity Trading Account',
         },
         {
-            "iconText": "Expert Research & Advisory",
+            "iconText": "Expert Research",
             "bannerIcon" : `${Image4}`,
             "bannerAlt": 'Free Equity Trading Account with Expert Research Advisory',
         },
@@ -74,7 +74,7 @@ const EquityStockTradingData = {
     "WhyChoiceCommon":[
         {
             "title": "Why Choice?",
-            "headtxt": `RESEARCH &amp;<br /> ADVISORY SERVICES`,
+            "headtxt": `RESEARCH SERVICES`,
             "subtxt": "A dedicated research team that provides Technical and Fundamental Research on the equity market at no extra cost.",
         },
         {
