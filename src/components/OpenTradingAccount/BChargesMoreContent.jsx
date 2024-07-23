@@ -53,7 +53,7 @@ function BChargesMoreContent() {
                                       <p className="seo-para">Choice offers excellent customer support through their dedicated team, who are always at your service. You can reach them 24/7 via their official email address or phone number.</p>
                                       <p className="seo-para">Additionally, they have over 48 branches across the country, so you'll receive prompt assistance whenever you need it.</p>
                                       <p className="seo-para">That’s not all!</p>
-                                      <p className="seo-para">Choice has an expert research team that provides you with technical assistance and advisory services. So, you can move ahead with your trading transactions without any hassle.</p>
+                                      <p className="seo-para">Choice has an expert research team that provides you with technical assistance. So, you can move ahead with your trading transactions without any hassle.</p>
                                   </div>
                                   <h3 className="seo-h3">Trading Account Features</h3>
                                     <p className="seo-para">It's important to understand the features of a trading account to operate it well. Instead of visiting the stock exchange, online trading accounts allow you to conduct trades from any location conveniently.</p>
