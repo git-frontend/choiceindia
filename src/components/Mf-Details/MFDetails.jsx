@@ -19,6 +19,7 @@ import utils from "../../Services/utils";
 import Form from 'react-bootstrap/Form';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import {  useNavigate } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 function MFTopFunds() {
     const navigate = useNavigate();
     const [name, setName] = useState('hideform');
@@ -79,9 +80,10 @@ function MFTopFunds() {
     };
 
     useEffect(() => {
+        
+        window.addEventListener('scroll', getPosition2);
         setRenderCount(true)
         if (rendercount === true) {
-            window.addEventListener('scroll', getPosition2);
             initializeschemeData()
             FundManagerDetails();
             getPerformancePeerComparisonData()
@@ -888,9 +890,9 @@ function MFTopFunds() {
                                                                         <h4>{parseFloat(res.SchemePerformance.ThreeYrNavper).toFixed(2)} &nbsp;<FontAwesomeIcon icon={faArrowUp} className='fill' /></h4>
                                                                         <p>3 Year Return (%)</p>
                                                                     </div>
-                                                                    <div className='inv-btn' onClick={() => setName2(!name2)}>
-                                                                        <span className='btn-bg'>Invest Now</span>
-                                                                    </div>
+                                                                    <Button className='btn-bg inv-btn' onClick={() => setName2(!name2)}>
+                                                                        <span>Invest Now</span>
+                                                                    </Button>
                                                                 </div>
                                                             </div>
 
@@ -906,7 +908,7 @@ function MFTopFunds() {
                                 }
 
                             </div>
-                            <div className='card-mn box-shadow graph-show' id='showForm'>
+                            <div className='card-mn box-shadow graph-show' >
                                 <div className='row'>
                                     <div className='col-xl-5 col-md-12'>
                                         <div className='mn-graph'>
@@ -1038,7 +1040,7 @@ function MFTopFunds() {
                                 </div>
                             </div>
 
-                            <div className='card-mn box-shadow analysis-portfolio'>
+                            <div className='card-mn box-shadow analysis-portfolio' id='showForm'>
                                 <div className='row align-items-center'>
                                     <div className='col-md-6'>
                                         <h2 className='title-secnd'>Scheme's Portfolio <span>Analysis</span></h2>
