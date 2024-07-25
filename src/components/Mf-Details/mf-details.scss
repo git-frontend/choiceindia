@@ -1420,11 +1420,15 @@
 }
 
 .hideform2 {
+    @media (min-width: $md) {
     display: none !important;
+    }
 }
 
 .visibleform2 {
+    @media (min-width: $md) {
     display: block !important;
+    }
 }
 .form-mobile{
     @media (max-width: $md) {
@@ -1465,7 +1469,4 @@
             border-radius: 10px 10px 0 0;
         }
     }
-}
-.hideform {
-    display: none;
 }
