@@ -846,6 +846,12 @@ function MFTopFunds() {
                 console.error('Error fetching market cap data:', error);
             });
     };
+    const handleInvestNowClick = () => {
+        setName2(!name2);
+        if (window.innerWidth <= 992) {
+            setIsActive(true);
+        }
+    };
 
     return (
         <div>
@@ -890,7 +896,7 @@ function MFTopFunds() {
                                                                         <h4>{parseFloat(res.SchemePerformance.ThreeYrNavper).toFixed(2)} &nbsp;<FontAwesomeIcon icon={faArrowUp} className='fill' /></h4>
                                                                         <p>3 Year Return (%)</p>
                                                                     </div>
-                                                                    <Button className='btn-bg inv-btn' onClick={() =>{setName2(!name2)}}>
+                                                                    <Button className='btn-bg inv-btn' onClick={handleInvestNowClick}>
                                                                         <span>Invest Now</span>
                                                                     </Button>
                                                                 </div>
