@@ -19,7 +19,7 @@ import openAccountService from "../../Services/openAccountService";
 import utils from "../../Services/utils";
 
 function SubBrokerForm(props) {
-    console.log("props",props)
+    // console.log("props",props)
     /**Regex for Name*/
     const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -555,6 +555,7 @@ function SubBrokerForm(props) {
         setShowThanku(prevState => {
             return { ...prevState, showModal: false}
         });
+        setHighlightForm(false)
     }
 
     function handleOTPResendSuccessToaster(type) {
