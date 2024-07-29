@@ -616,15 +616,15 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                 }
         
         <div  className={`exit-intent-sleekbox-overlay sleekbox-popup-active subbrokerpopup show-res ${showThanku.showModal?'dont-show':''}`}>
-            <div class="exit-intent-sleekbox-popup">
+            <div className="exit-intent-sleekbox-popup">
             
-                <div class="popup-sub-row-box">
+                <div className="popup-sub-row-box">
                     <div className="close">
-                        <a  onClick={hideComponent} class="closebtn" >&times;</a>
+                        <a  onClick={hideComponent} className="closebtn" >&times;</a>
                         </div> 
-                    <div class="popup-sub-right">
+                    <div className="popup-sub-right">
                        
-                        <div class="signal-form subbroker-signal-form" id="form-banner">
+                        <div className="signal-form subbroker-signal-form" id="form-banner">
                         <h4>Start a  <span>Sub Broker</span><br/> <span>Franchise</span> with Low Deposit</h4>
                         <Form>
                             <Form.Group className="mb-3 formgrp">

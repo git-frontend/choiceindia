@@ -19,6 +19,7 @@ import openAccountService from "../../Services/openAccountService";
 import utils from "../../Services/utils";
 
 function SubBrokerForm(props) {
+    console.log("props",props)
     /**Regex for Name*/
     const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -67,8 +68,7 @@ function SubBrokerForm(props) {
     const { executeRecaptcha } = useGoogleReCaptcha();
     const noDataLabel ="City not found. Select 'Other'";
     const onlyblog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
-
-
+    const [highlightForm, setHighlightForm] = useState(false);
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
 
@@ -591,6 +591,17 @@ function SubBrokerForm(props) {
         }
        
     }, []);
+
+
+    useEffect(() => {
+        setHighlightForm(props.highlight);
+        if(props.highlight && window.innerWidth > 992){
+            document.getElementById("brokerName").focus();
+        }
+        else if (props.highlight && window.innerWidth <=992) {
+            showOpenAccountAdPopup()
+        }
+    }, [props.highlight]);
     return (
         <>
          {
@@ -601,7 +612,7 @@ function SubBrokerForm(props) {
             }
              {
              (! props.isFromFableDetails  || window.innerWidth >= 992) && (
-            <div className="demat-account-form" id="sub-broker-form">
+            <div id="sub-broker-form" className={`demat-account-form ${highlightForm ? 'newhighlight' : ''}`}>
 
 
                 {
