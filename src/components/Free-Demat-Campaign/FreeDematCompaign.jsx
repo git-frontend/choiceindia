@@ -47,6 +47,11 @@ function FreeDematCompaign() {
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+      document.getElementById('meta-url').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+      document.getElementById('meta-descr').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+      document.getElementById('meta-title').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';;
+      document.getElementById('meta-image').content = `https://choiceindia.com/logo192.png` ;
+
       if((document.getElementById('link1')==null)){
         let sitemap = document.createElement('link');
         sitemap.rel = 'alternate';
