@@ -55,25 +55,13 @@ function Home() {
     }
 	return (
 		<div className="Home">
-
 			<main className='home-main'>
-
-
 				<HomePageBanner />
-
-
 				<EverydayFinance />
-
 				<ChoiceFinx />
-
 				<MarketInsights />
-
-
-
 				<HomeFeatures />
-
 				<FablesStories />
-
 				<section className="count-value-section">
 					<div className="container">
 						<div className="row">
@@ -106,12 +94,8 @@ function Home() {
 						</div>
 					</div>
 				</section>
-
 				<HomeTestimonial />
-
 				<SecurityPrivacy />
-
-
 				<Modal show={showTermsCondition} size="lg" onHide={handleTermsConditionClose} backdrop="static"
 					keyboard={false} centered  className="investor-popup-model">
 					<Modal.Header closeButton>
@@ -133,7 +117,6 @@ function Home() {
                     <Button variant="warning" className='btn-bg-popup btn-bg-dark' onClick={handleTermsConditionClose}>Okay</Button>
                 </Modal.Footer>
 				</Modal>
-
 			</main>
 
 
