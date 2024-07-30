@@ -13,7 +13,7 @@ function EverydayFinance() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     dots: true,
     autoplaySpeed: 3000,
     slidesToScroll: 3,
@@ -23,7 +23,6 @@ function EverydayFinance() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          // adaptiveHeight: true,
         },
       },
       {
