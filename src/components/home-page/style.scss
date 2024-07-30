@@ -104,6 +104,7 @@
             }
             .service-item-list{
                 position: relative;
+                
                 .service-item {
                     position: relative;
                     background: $whiteColor;
@@ -117,6 +118,7 @@
                     margin: 0 auto;
                     // height: 100%;
                     min-height: 24rem;
+                    text-decoration: none;
                     .img-itm {
                         display: inline-block;
                         margin-bottom: 1rem;
@@ -130,6 +132,7 @@
                         font-family: $font-family-poppins-semibold;
                         text-transform: capitalize;
                         margin-bottom: 1rem;
+                        color: $bgcolordark;
                     }
     
                     p {
@@ -137,6 +140,7 @@
                         font-size: 1.5rem;
                         line-height: 2.25rem;
                         margin-bottom: 0;
+                        color: $bgcolordark;
                     }
     
                     a {
