@@ -64,6 +64,7 @@ function MFTopFunds() {
     };
     const toggleTab = (index) => {
         setToggleState(index);
+        console.log("index",index)
     };
 
     // const getPosition = () => {
@@ -616,11 +617,11 @@ function MFTopFunds() {
             getSchemeTopSectors(value);
     
             if (value === '1' && (!schemeDistributionResponse?.Equity || schemeDistributionResponse?.Equity?.NetAssetPercent === 0)) {
-                toggleTab(2);
-            } else if (value === '2' && (!schemeDistributionResponse?.Debt || schemeDistributionResponse?.Debt?.NetAssetPercent === 0)) {
-                toggleTab(3);
-            } else if (value === '3' && (!schemeDistributionResponse?.Others || schemeDistributionResponse?.Others?.NetAssetPercent === 0)) {
                 toggleTab(1);
+            } else if (value === '2' && (!schemeDistributionResponse?.Debt || schemeDistributionResponse?.Debt?.NetAssetPercent === 0)) {
+                toggleTab(2);
+            } else if (value === '3' && (!schemeDistributionResponse?.Others || schemeDistributionResponse?.Others?.NetAssetPercent === 0)) {
+                toggleTab(3);
             }
     
             return value;
