@@ -144,7 +144,7 @@ function NewDematAccountForm(props) {
     useEffect(() => {
         if (window.location.pathname.indexOf('blog') === 1 || window.location.pathname.indexOf('ipo') === 1) {
             setblogForm('blog-lead-form');
-            if(!window.location.pathname.includes('ipo')){
+            if(window.location.pathname.indexOf('ipo')!==1){
             props.newDematForm(true);
             }
             setBlogFormOtp('blog-form-otp');

@@ -96,7 +96,7 @@ const MinorDematAccountBanner = () => {
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Free </span>  Research Advisory</p>
+                                                <p><span className="fontbold" >Free </span>  Research</p>
                                             </div>
                                         </div>
                                     </div>

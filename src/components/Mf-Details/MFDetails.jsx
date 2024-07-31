@@ -394,7 +394,7 @@ function MFTopFunds() {
     };
     const getReturnsData = (duration, callback) => {
         const urlIdentity = window.location.pathname.split('/scheme/')[1];
-        const arr = urlIdentity.split('-').slice(-2)
+        const arr = urlIdentity.split('-').slice(-2);
         let count = 0;
         const payload = {
             SchemeCode: arr[0],
@@ -415,9 +415,9 @@ function MFTopFunds() {
                                 : '',
                         },
                     }));
-
+    
                     callback(++count);
-
+    
                     if (returnsGraphData['FiveYearly']) {
                         setReturnsGraphData((prevReturnsGraphData) => ({
                             ...prevReturnsGraphData,
@@ -429,7 +429,7 @@ function MFTopFunds() {
                             },
                         }));
                     }
-
+    
                     rest.getbankFDReturnGraphdata(duration).then((res) => {
                         if (res.Response && res.Status === 'Success') {
                             let BankData = Number(res.Response).toFixed(2);
@@ -438,41 +438,46 @@ function MFTopFunds() {
                                 : duration === 'ThreeYearly'
                                     ? (Number(BankData) / 3).toFixed(2)
                                     : BankData.toString();
-
-                            setBankFDReturnsData((prevBankFDReturnsData) => ({
-                                ...prevBankFDReturnsData,
-                                [duration]: {
-                                    values: [
-                                        [returnData[0][0], 0],
-                                        [returnData[returnData.length - 1][0], BankData],
-                                    ],
-                                    lossGainPercent: BankData,
-                                },
-                            }));
-                            callback(++count);
+    
+                            if (returnData && returnData.length > 0) {
+                                setBankFDReturnsData((prevBankFDReturnsData) => ({
+                                    ...prevBankFDReturnsData,
+                                    [duration]: {
+                                        values: [
+                                            [returnData[0][0], 0],
+                                            [returnData[returnData.length - 1][0], BankData],
+                                        ],
+                                        lossGainPercent: BankData,
+                                    },
+                                }));
+                                callback(++count);
+                            }
                         }
                     });
                     rest.getsensexReturnGraphdata(duration).then((res) => {
                         if (res.Response && res.Status === 'Success') {
                             let sensexData = getGraphDataFromString(res.Response);
-                            setSensexReturnsData((prevSensexReturnsData) => ({
-                                ...prevSensexReturnsData,
-                                [duration]: {
-                                    values: sensexData,
-                                    lossGainPercent: duration === 'FiveYearly'
-                                        ? (Number(sensexData[sensexData.length - 1][1]) / 5).toFixed(2)
-                                        : duration === 'ThreeYearly'
+                            if (sensexData && sensexData.length > 0) {
+                                setSensexReturnsData((prevSensexReturnsData) => ({
+                                    ...prevSensexReturnsData,
+                                    [duration]: {
+                                        values: sensexData,
+                                        lossGainPercent: duration === 'FiveYearly'
                                             ? (Number(sensexData[sensexData.length - 1][1]) / 5).toFixed(2)
-                                            : sensexData[sensexData.length - 1][1],
-                                },
-                            }), console.log("prevSensexReturnsData", duration));
-                            callback(++count);
+                                            : duration === 'ThreeYearly'
+                                                ? (Number(sensexData[sensexData.length - 1][1]) / 5).toFixed(2)
+                                                : sensexData[sensexData.length - 1][1],
+                                    },
+                                }), console.log("prevSensexReturnsData", duration));
+                                callback(++count);
+                            }
                         }
                     });
                 }
             }
         });
     };
+    
 
     const loadGraph = (type, duration, clicked, loadBankFD) => {
         let updatedChartData = [];
