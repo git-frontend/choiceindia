@@ -27,7 +27,7 @@ export const pagesData = {
                         <a href="/blog/dematerialisation/">Dematerialization</a> refers to the process of <a href="/blog/physical-shares-to-demat/">converting physical share certificates</a> into electronic form.This transformation enabled easy access to your shares from anywhere in the world. 
                         The introduction of a Demat account ensured seamless tracking and monitoring of investors holdings.
                         <br /><br /> 
-                        <iframe class="cust-video" src="https://www.youtube.com/embed/3u0VZAHMwO0?si=A1jjjLq-Qu5XE1p7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe class="cust-video" src="https://www.youtube.com/embed/3u0VZAHMwO0?si=A1jjjLq-Qu5XE1p7"></iframe>
                                         `
             },
             {
@@ -56,7 +56,7 @@ export const pagesData = {
                                         <p>In the unfortunate event of a Demat account holder's demise, assets can be seamlessly transferred to the next of kin. This ensures a hassle-free process compared to physical certificates.</p>
                                     </li>
                                 </ol>
-                                <iframe class="cust-video" src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=YR-BgGwX4bzXitGx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <iframe class="cust-video" src="https://www.youtube.com/embed/Qmm7rrwyDzc?si=YR-BgGwX4bzXitGx"></iframe>
                                  <br /><br />
                                 Other than the above mentioned benefits, there are many other <a href="/blog/benefits-of-a-demat-account/">benefits of a demat account</a> like regular and automatic updates about Corporate actions like dividends, bonuses, or split, integration with trading account, loan against securities, faster and smoother settlements, reduction in errors
                                 <div class="d-flex justify-content-between col-12">
@@ -103,7 +103,7 @@ export const pagesData = {
                                 <br/><br/>
                                 <strong>Settlement -</strong> Once your buy order matches with a corresponding sell order, the stock exchange sends it to a clearinghouse for settlement. At the end of the trading day, the shares you've bought are credited to your Demat account. Similarly, the seller's Demat account is debited for the sold shares.
                                 <br/><br/>
-                                <iframe class="cust-video" src="https://www.youtube.com/embed/at5pItTsJJE?si=Qj1h3-4i6wvGT9tg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <iframe class="cust-video" src="https://www.youtube.com/embed/at5pItTsJJE?si=Qj1h3-4i6wvGT9tg"></iframe>
                                 <br/><br/>
                                     Remember, without a trading account, you cannot utilize your Demat account for investments. A trading account handles the monetary transactions associated with buying and selling shares.
                                 
@@ -187,7 +187,7 @@ export const pagesData = {
                 content: ` <p>Opening a Demat Account has been a lot easier today, thanks to digitalization. You have two primary options: online and offline account opening.</p>
                                 <h3><a href="/blog/demat-account-opening-online/">Online Demat Account Opening</a></h3>
                                 <p>Most brokerage firms offer online account opening, allowing you to complete the process from the comfort of your home. It's quick, convenient, and paperless.</p>
-                                <iframe class="cust-video" src="https://www.youtube.com/embed/dbtHtNsWZkI?si=_ZUWNvQEt-u0iSjf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <iframe class="cust-video" src="https://www.youtube.com/embed/dbtHtNsWZkI?si=_ZUWNvQEt-u0iSjf" ></iframe>
                                 <br/><br/>
                                 <p>An online demat account opening process involves:</p>
                                 <ol class="none-para">
