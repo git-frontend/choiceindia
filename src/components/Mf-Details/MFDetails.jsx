@@ -566,66 +566,55 @@ function MFTopFunds() {
 
     const getSchemeDistributionData = () => {
         const urlIdentity = window.location.pathname.split('/scheme/')[1];
-        const arr = urlIdentity.split('-').slice(-2)
+        const arr = urlIdentity.split('-').slice(-2);
         const request = {
             "SchemeCode": arr[0],
             "SchemePlanCode": arr[1]
-        }
+        };
+    
         rest.getSchemeDistributionData(request)
             .then((res) => {
-                if (res.Response !== null) {
+                if (res.Response) {
                     setSchemeDistributionAsOnDate(res.Response.HoldingDate);
                     const updatedSchemeDistributionResponse = {};
-                    res.Response.lstTopSectors.forEach((obj, index) => {
+                    res.Response.lstTopSectors.forEach((obj) => {
                         updatedSchemeDistributionResponse[obj.Company] = obj;
                     });
                     setSchemeDistributionResponse(updatedSchemeDistributionResponse);
+    
+                    let initialDistributionValue = "1"; // Default to "1" for Equity
                     if (updatedSchemeDistributionResponse["Equity"] && updatedSchemeDistributionResponse["Equity"]['NetAssetPercent'] !== 0) {
-                        setSelectedDistributionValue("1");
+                        initialDistributionValue = "1";
                     } else if (updatedSchemeDistributionResponse["Debt"] && updatedSchemeDistributionResponse["Debt"]['NetAssetPercent'] !== 0) {
-                        setSelectedDistributionValue("2");
-                    } else if (!updatedSchemeDistributionResponse["Others"] && updatedSchemeDistributionResponse["Others"]['NetAssetPercent'] !== 0) {
-                        setSelectedDistributionValue("3");
+                        initialDistributionValue = "2";
+                    } else if (updatedSchemeDistributionResponse["Others"] && updatedSchemeDistributionResponse["Others"]['NetAssetPercent'] !== 0) {
+                        initialDistributionValue = "3";
                     }
-                    getDistributionData(selectedDistributionValue);
+                    setSelectedDistributionValue(initialDistributionValue);
+                    getDistributionData(initialDistributionValue); // Ensure initial value is set
                 } else {
-                    // setSchemeDistributionAsOnDate("");
                     setShowDropdownLoader(false);
                 }
             })
             .catch((error) => {
                 console.error('Error fetching scheme distribution data:', error);
             });
-    }
-
+    };
+    
     const getDistributionData = (value, isClicked = false) => {
         setShowDropdownLoader(true);
-
         setSelectedDistributionValue((prevValue) => {
             if (prevValue === value && isClicked) {
                 setShowDropdownLoader(false);
                 return prevValue;
             }
-
-            if (value === '1') {
-                setSelectedDropDownValue("Sector")
-                setTopSectorsResponseObject([])
-                setShowHideDropdownValues({ marketcap: true })
-                getSchemeTopSectors(value)
-            }
-            else if (value === '2') {
-                setSelectedDropDownValue("Sector")
-                setShowHideDropdownValues({ marketcap: false });
-                setTopSectorsResponseObject([])
-                getSchemeTopSectors(value)
-            }
-            else if (value === '3') {
-                setSelectedDropDownValue("Sector")
-                setShowHideDropdownValues({ marketcap: false });
-                setTopSectorsResponseObject([])
-                getSchemeTopSectors(value)
-            }
-
+    
+            setSelectedDropDownValue("Sector");
+            setTopSectorsResponseObject([]);
+            setShowHideDropdownValues({ marketcap: value === '1' });
+    
+            getSchemeTopSectors(value);
+    
             if (value === '1' && (!schemeDistributionResponse?.Equity || schemeDistributionResponse?.Equity?.NetAssetPercent === 0)) {
                 toggleTab(2);
             } else if (value === '2' && (!schemeDistributionResponse?.Debt || schemeDistributionResponse?.Debt?.NetAssetPercent === 0)) {
@@ -633,8 +622,7 @@ function MFTopFunds() {
             } else if (value === '3' && (!schemeDistributionResponse?.Others || schemeDistributionResponse?.Others?.NetAssetPercent === 0)) {
                 toggleTab(1);
             }
-
-
+    
             return value;
         });
     };
