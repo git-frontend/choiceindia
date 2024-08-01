@@ -176,12 +176,15 @@ function Fabdetailsbanner(props) {
 
     useEffect(() => {
         const handleCTAClick = (event) => {
-            if (props.formName == "form-demat" && (event.target.tagName === 'A' && event.target.closest('.blog-cta'))) {
+            if ((props.formName == "form-demat" || props.formName == "form-equity-subbroker" ||props.formName == "form-mutual-fund-distributor") && (event.target.tagName === 'A' && event.target.closest('.blog-cta'))) {
                 event.preventDefault();
                 setHighlightForm(true);
             }
+            else{
+                window.innerWidth <=992 ? setHighlightForm(false):""
+            }
         };
-        if (props.formName == "form-demat") {
+        if (props.formName == "form-demat" || props.formName == "form-equity-subbroker" || props.formName == "form-mutual-fund-distributor" ) {
             document.addEventListener('click', handleCTAClick);
             return () => {
                 document.removeEventListener('click', handleCTAClick);
@@ -349,7 +352,7 @@ function Fabdetailsbanner(props) {
                                                             <div className="col-md-4" id="open-account-wrap">
                                                                 <div className={name2}>
                                                                         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                                            <MutualSubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} newDematForm={newDematForm}/>
+                                                                            <MutualSubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} newDematForm={newDematForm} modifyHighLight={modifyHighLight} highlight={highlightForm}/>
                                                                         </GoogleReCaptchaProvider>
                                                                     </div>
                                                                
@@ -363,7 +366,7 @@ function Fabdetailsbanner(props) {
                                                                 
                                                                 <div className={name2}>
                                                                     <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                                                        <SubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} newDematForm={newDematForm}/>
+                                                                        <SubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} newDematForm={newDematForm}  modifyHighLight={modifyHighLight} highlight={highlightForm}/>
                                                                     </GoogleReCaptchaProvider>
                                                                 </div>
                                                                 <div className="franchise-form justify-content-end d-flex">

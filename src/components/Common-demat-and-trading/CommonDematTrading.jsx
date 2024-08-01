@@ -35,7 +35,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { faTwitter, faLinkedinIn, faFacebookF, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 function CommonDematTrading({ data }) {
     // console.log("data", data)
-    const [VideoVisibility, setVideoVisibility] = useState(false);
+    const [videoVisibility, setVideoVisibility] = useState({});
     const handletClick = () => {
         setVideoVisibility(true);
     };
@@ -54,9 +54,9 @@ function CommonDematTrading({ data }) {
         setIsActive(current => !current);
     };
 
-    const handleClick2 = (event) => {
-        setIsActive2(current => !current);
-    };
+    const handleClick2 = () => setIsActive(current => !current);
+    const showVideo = (videoId) => setVideoVisibility(prevState => ({ ...prevState, [videoId]: true }));
+
 
     const [name, setName] = useState('hideform');
     const [isCheck, setIsCheck] = useState(false);
@@ -125,6 +125,41 @@ function CommonDematTrading({ data }) {
 
         }
     }, [rendercount])
+
+
+    const renderContent = (content) => {
+        if (!content) {
+            return null;
+        }
+        const parts = content.split(/(https:\/\/www\.youtube\.com\/embed\/[^\s]+)/);
+        return parts.map((part, index) => {
+            if (part.match(/https:\/\/www\.youtube\.com\/embed\/[^\s]+/)) {
+                const videoId = part.split('/embed/')[1].split('?')[0]; // Correctly extracting the video ID
+                const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                const videoIdKey = `video${index}`;
+                return (
+                    <div onClick={() => showVideo(videoIdKey)} style={{ cursor: 'pointer' }} key={index}>
+                        {videoVisibility[videoIdKey] ? (
+                            <iframe
+                                className="cust-video"
+                                src={part}
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                allowFullScreen
+                            ></iframe>
+                        ) : (
+                            <img src={thumbnailUrl} alt="Video thumbnail" />
+                        )}
+                    </div>
+                );
+            } else {
+                return <span key={index} dangerouslySetInnerHTML={{ __html: part }} />;
+            }
+        });
+    };
+    
     return (
         <>
             <section className="demat-cms-banner" onMouseOver={() => setIsCheck(true)}>
@@ -186,7 +221,7 @@ function CommonDematTrading({ data }) {
 
 
                                     <h2 dangerouslySetInnerHTML={{ __html: section.title }}></h2>
-                                    <div dangerouslySetInnerHTML={{ __html: section.content }}></div>
+                                    {/* <div dangerouslySetInnerHTML={{ __html: section.content }}></div> */}
 
                                     {/* {section.id === "id1" ?
                                         <a onClick={handletClick} className={"open-vid " + (VideoVisibility ? "active" : "")}>
@@ -233,6 +268,7 @@ function CommonDematTrading({ data }) {
                                             ))}
                                         </div>
                                     )} */}
+                                    <div>{renderContent(section.content)}</div>
                                 </InView>
                             ))}
                         </div>
