@@ -47,39 +47,47 @@ function FreeDematCompaign() {
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
-      document.getElementById('meta-url').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
-      document.getElementById('meta-descr').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
-      document.getElementById('meta-title').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';;
-      document.getElementById('meta-image').content = `https://choiceindia.com/logo192.png` ;
-
-      if((document.getElementById('link1')==null)){
-        let sitemap = document.createElement('link');
-        sitemap.rel = 'alternate';
-        sitemap.id = 'link1';
-       sitemap.href = meta_tags[location.pathname.replace('/', "")].link1||'';
-       sitemap.hreflang = meta_tags[location.pathname.replace('/', "")].href1||'';
-        document.head.appendChild(sitemap);
+      // document.getElementById('meta-url').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+      // document.getElementById('meta-descr').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+      // document.getElementById('meta-title').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';;
+      // document.getElementById('meta-image').content = `https://choiceindia.com/logo192.png` ;
+      if(!(document.getElementById('link1')==null)){
+        document.getElementById('link1').remove();
+      document.getElementById('link2').remove();
+      document.getElementById('link3').remove();
+      document.getElementById('link4').remove();
+      document.getElementById('link5').remove();
+      document.getElementById('link6').remove();
+      
+      }
+      // if((document.getElementById('link1')==null)){
+      //   let sitemap = document.createElement('link');
+      //   sitemap.rel = 'alternate';
+      //   sitemap.id = 'link1';
+      //  sitemap.href = meta_tags[location.pathname.replace('/', "")].link1||'';
+      //  sitemap.hreflang = meta_tags[location.pathname.replace('/', "")].href1||'';
+      //   document.head.appendChild(sitemap);
   
-        let sitemap1 = document.createElement('link');
-        sitemap1.rel = 'alternate';
-        sitemap1.id = 'link2';
-        sitemap1.href = meta_tags[location.pathname.replace('/', "")].link2||'';
-        sitemap1.hreflang = meta_tags[location.pathname.replace('/', "")].href2||'';
-        document.head.appendChild(sitemap1);
+      //   let sitemap1 = document.createElement('link');
+      //   sitemap1.rel = 'alternate';
+      //   sitemap1.id = 'link2';
+      //   sitemap1.href = meta_tags[location.pathname.replace('/', "")].link2||'';
+      //   sitemap1.hreflang = meta_tags[location.pathname.replace('/', "")].href2||'';
+      //   document.head.appendChild(sitemap1);
   
-        let sitemap2 = document.createElement('link');
-        sitemap2.rel = 'alternate';
-        sitemap2.id = 'link3';
-       sitemap2.href = meta_tags[location.pathname.replace('/', "")].link3||'';
-       sitemap2.hreflang = meta_tags[location.pathname.replace('/', "")].href3||'';
-        document.head.appendChild(sitemap2);
-        let sitemap3 = document.createElement('link');
-        sitemap3.rel = 'alternate';
-        sitemap3.id = 'link4';
-       sitemap3.href = meta_tags[location.pathname.replace('/', "")].link4||'';
-        sitemap3.hreflang = meta_tags[location.pathname.replace('/', "")].href4 || '';
-        document.head.appendChild(sitemap3);
-        }
+      //   let sitemap2 = document.createElement('link');
+      //   sitemap2.rel = 'alternate';
+      //   sitemap2.id = 'link3';
+      //  sitemap2.href = meta_tags[location.pathname.replace('/', "")].link3||'';
+      //  sitemap2.hreflang = meta_tags[location.pathname.replace('/', "")].href3||'';
+      //   document.head.appendChild(sitemap2);
+      //   let sitemap3 = document.createElement('link');
+      //   sitemap3.rel = 'alternate';
+      //   sitemap3.id = 'link4';
+      //  sitemap3.href = meta_tags[location.pathname.replace('/', "")].link4||'';
+      //   sitemap3.hreflang = meta_tags[location.pathname.replace('/', "")].href4 || '';
+      //   document.head.appendChild(sitemap3);
+      //   }
 
     }
   }, [rendercount])
