@@ -18,7 +18,10 @@ import noDataimg from '../../assets/images/no-data.webp';
 import utils from "../../Services/utils";
 import Form from 'react-bootstrap/Form';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import {  useNavigate } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 function MFTopFunds() {
+    const navigate = useNavigate();
     const [name, setName] = useState('hideform');
     const [value, onChange] = useState(0);
     const [name2, setName2] = useState('hideform2');
@@ -61,25 +64,27 @@ function MFTopFunds() {
     };
     const toggleTab = (index) => {
         setToggleState(index);
+        console.log("index",index)
     };
 
-    const getPosition = () => {
-        const element = document.getElementById("showForm");
-        if (element) {
-            const rect = element.getBoundingClientRect();
+    // const getPosition = () => {
+    //     const element = document.getElementById("showForm");
+    //     if (element) {
+    //         const rect = element.getBoundingClientRect();
 
-            if (rect.top.toFixed() < 259) {
-                setName('visibleform');
-            } else {
-                setName('hideform');
-            }
-        }
-    };
+    //         if (rect.top.toFixed() < 259) {
+    //             setName('visibleform');
+    //         } else {
+    //             setName('hideform');
+    //         }
+    //     }
+    // };
 
     useEffect(() => {
+        
+        window.addEventListener('scroll', getPosition2);
         setRenderCount(true)
         if (rendercount === true) {
-            window.addEventListener('scroll', getPosition2);
             initializeschemeData()
             FundManagerDetails();
             getPerformancePeerComparisonData()
@@ -562,75 +567,63 @@ function MFTopFunds() {
 
     const getSchemeDistributionData = () => {
         const urlIdentity = window.location.pathname.split('/scheme/')[1];
-        const arr = urlIdentity.split('-').slice(-2)
+        const arr = urlIdentity.split('-').slice(-2);
         const request = {
             "SchemeCode": arr[0],
             "SchemePlanCode": arr[1]
-        }
+        };
+    
         rest.getSchemeDistributionData(request)
             .then((res) => {
-                if (res.Response !== null) {
+                if (res.Response) {
                     setSchemeDistributionAsOnDate(res.Response.HoldingDate);
                     const updatedSchemeDistributionResponse = {};
-                    res.Response.lstTopSectors.forEach((obj, index) => {
+                    res.Response.lstTopSectors.forEach((obj) => {
                         updatedSchemeDistributionResponse[obj.Company] = obj;
                     });
                     setSchemeDistributionResponse(updatedSchemeDistributionResponse);
+    
+                    let initialDistributionValue = "1"; // Default to "1" for Equity
                     if (updatedSchemeDistributionResponse["Equity"] && updatedSchemeDistributionResponse["Equity"]['NetAssetPercent'] !== 0) {
-                        setSelectedDistributionValue("1");
+                        initialDistributionValue = "1";
                     } else if (updatedSchemeDistributionResponse["Debt"] && updatedSchemeDistributionResponse["Debt"]['NetAssetPercent'] !== 0) {
-                        setSelectedDistributionValue("2");
-                    } else if (!updatedSchemeDistributionResponse["Others"] && updatedSchemeDistributionResponse["Others"]['NetAssetPercent'] !== 0) {
-                        setSelectedDistributionValue("3");
+                        initialDistributionValue = "2";
+                    } else if (updatedSchemeDistributionResponse["Others"] && updatedSchemeDistributionResponse["Others"]['NetAssetPercent'] !== 0) {
+                        initialDistributionValue = "3";
                     }
-                    getDistributionData(selectedDistributionValue);
+                    setSelectedDistributionValue(initialDistributionValue);
+                    getDistributionData(initialDistributionValue); // Ensure initial value is set
                 } else {
-                    // setSchemeDistributionAsOnDate("");
                     setShowDropdownLoader(false);
                 }
             })
             .catch((error) => {
                 console.error('Error fetching scheme distribution data:', error);
             });
-    }
-
+    };
+    
     const getDistributionData = (value, isClicked = false) => {
         setShowDropdownLoader(true);
-
         setSelectedDistributionValue((prevValue) => {
             if (prevValue === value && isClicked) {
                 setShowDropdownLoader(false);
                 return prevValue;
             }
-
-            if (value === '1') {
-                setSelectedDropDownValue("Sector")
-                setTopSectorsResponseObject([])
-                setShowHideDropdownValues({ marketcap: true })
-                getSchemeTopSectors(value)
-            }
-            else if (value === '2') {
-                setSelectedDropDownValue("Sector")
-                setShowHideDropdownValues({ marketcap: false });
-                setTopSectorsResponseObject([])
-                getSchemeTopSectors(value)
-            }
-            else if (value === '3') {
-                setSelectedDropDownValue("Sector")
-                setShowHideDropdownValues({ marketcap: false });
-                setTopSectorsResponseObject([])
-                getSchemeTopSectors(value)
-            }
-
+    
+            setSelectedDropDownValue("Sector");
+            setTopSectorsResponseObject([]);
+            setShowHideDropdownValues({ marketcap: value === '1' });
+    
+            getSchemeTopSectors(value);
+    
             if (value === '1' && (!schemeDistributionResponse?.Equity || schemeDistributionResponse?.Equity?.NetAssetPercent === 0)) {
-                toggleTab(2);
-            } else if (value === '2' && (!schemeDistributionResponse?.Debt || schemeDistributionResponse?.Debt?.NetAssetPercent === 0)) {
-                toggleTab(3);
-            } else if (value === '3' && (!schemeDistributionResponse?.Others || schemeDistributionResponse?.Others?.NetAssetPercent === 0)) {
                 toggleTab(1);
+            } else if (value === '2' && (!schemeDistributionResponse?.Debt || schemeDistributionResponse?.Debt?.NetAssetPercent === 0)) {
+                toggleTab(2);
+            } else if (value === '3' && (!schemeDistributionResponse?.Others || schemeDistributionResponse?.Others?.NetAssetPercent === 0)) {
+                toggleTab(3);
             }
-
-
+    
             return value;
         });
     };
@@ -847,6 +840,12 @@ function MFTopFunds() {
                 console.error('Error fetching market cap data:', error);
             });
     };
+    const handleInvestNowClick = () => {
+        setName2(!name2);
+        if (window.innerWidth <= 992) {
+            setIsActive(true);
+        }
+    };
 
     return (
         <div>
@@ -891,9 +890,9 @@ function MFTopFunds() {
                                                                         <h4>{parseFloat(res.SchemePerformance.ThreeYrNavper).toFixed(2)} &nbsp;<FontAwesomeIcon icon={faArrowUp} className='fill' /></h4>
                                                                         <p>3 Year Return (%)</p>
                                                                     </div>
-                                                                    <div className='inv-btn' onClick={() => setName2(!name2)}>
-                                                                        <span className='btn-bg'>Invest Now</span>
-                                                                    </div>
+                                                                    <Button className='btn-bg inv-btn' onClick={handleInvestNowClick}>
+                                                                        <span>Invest Now</span>
+                                                                    </Button>
                                                                 </div>
                                                             </div>
 
@@ -909,7 +908,7 @@ function MFTopFunds() {
                                 }
 
                             </div>
-                            <div className='card-mn box-shadow graph-show' id='showForm'>
+                            <div className='card-mn box-shadow graph-show' >
                                 <div className='row'>
                                     <div className='col-xl-5 col-md-12'>
                                         <div className='mn-graph'>
@@ -1041,7 +1040,7 @@ function MFTopFunds() {
                                 </div>
                             </div>
 
-                            <div className='card-mn box-shadow analysis-portfolio'>
+                            <div className='card-mn box-shadow analysis-portfolio' id='showForm'>
                                 <div className='row align-items-center'>
                                     <div className='col-md-6'>
                                         <h2 className='title-secnd'>Scheme's Portfolio <span>Analysis</span></h2>
@@ -1588,7 +1587,7 @@ function MFTopFunds() {
                             <path d="M10.3164 1.82026e-06C4.63799 -0.00329398 0.0319564 4.46942 0.0285663 9.99011C0.0251763 15.5108 4.62569 19.9889 10.3041 19.9922C13.0322 19.9965 15.6496 18.944 17.5774 17.0674C19.506 15.194 20.5903 12.6526 20.592 10.0021C20.5953 4.48139 15.9948 0.00329772 10.3164 1.82026e-06ZM10.3167 18.9922C5.20633 18.9955 1.06078 14.9706 1.05726 10.0022C1.05381 5.03382 5.19377 1.00336 10.3041 1C12.7594 0.995729 15.1152 1.94287 16.8502 3.63184C18.5859 5.31769 19.5619 7.60468 19.5635 9.98999C19.567 14.9584 15.4271 18.9888 10.3167 18.9922ZM11.0313 9.9961L14.3038 6.81446C14.4998 6.62006 14.4998 6.30896 14.3038 6.11456C14.1051 5.91736 13.7795 5.91419 13.5767 6.10742L10.3041 9.28906L7.03157 6.10748C6.83161 5.91699 6.51163 5.91699 6.31168 6.10748C6.10884 6.30072 6.10558 6.61725 6.30433 6.81446L9.57688 9.9961L6.30433 13.1777C6.2079 13.2715 6.15379 13.3986 6.15373 13.5312C6.15373 13.8073 6.38394 14.0312 6.66795 14.0313C6.80437 14.0314 6.93526 13.9787 7.03157 13.8848L10.3041 10.7031L13.5767 13.8848C13.673 13.9787 13.8039 14.0314 13.9403 14.0313C14.0766 14.0312 14.2073 13.9786 14.3038 13.8849C14.5047 13.6896 14.5047 13.373 14.3038 13.1777L11.0313 9.9961Z" fill="#676767" />
                         </svg>
                     </button>
-                    <div className={name}>
+                    <div className={name2}>
                         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                             <Fixedstickyfooter />
                         </GoogleReCaptchaProvider>

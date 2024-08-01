@@ -1420,11 +1420,15 @@
 }
 
 .hideform2 {
+    @media (min-width: $md) {
     display: none !important;
+    }
 }
 
 .visibleform2 {
+    @media (min-width: $md) {
     display: block !important;
+    }
 }
 .form-mobile{
     @media (max-width: $md) {
@@ -1450,7 +1454,7 @@
         position: fixed !important;
         top: inherit !important;
         bottom: 0;
-        z-index: 9999999;
+        z-index: 999999999;
         width: 100%;
         left: 0;
         // background: #4d4d4d80;
