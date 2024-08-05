@@ -13,7 +13,45 @@ import CampaignFooter from './components/Common-features/CampaignFooter';
 import AboutUs from './components/About-us/AboutUs';
 import { NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-
+import meta_tags from './Data/MetaTags';
+const setMetaTag = (name, content) => {
+    let element = document.querySelector(`meta[property="${name}"]`);
+    if (element) {
+      element.setAttribute('content', content);
+    } else {
+      element = document.createElement('meta');
+      element.setAttribute('property', name);
+      element.setAttribute('content', content);
+      document.head.appendChild(element);
+    }
+  };
+  const updateMetaTags = (pathname) => {
+    if (pathname === "/open-free-demat-account") {
+      setMetaTag('og:url', meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '');
+      setMetaTag('og:title', meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '');
+      setMetaTag('og:description', meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '');
+      setMetaTag('og:image', 'https://choiceindia.com/logo192.png');
+      setMetaTag('og:type', 'website');
+    } else {
+      setMetaTag('og:url', '');
+      setMetaTag('og:title', '');
+      setMetaTag('og:description', '');
+      setMetaTag('og:image', '');
+      setMetaTag('og:type', '');
+    }
+  };
+  
+  const MetaTagUpdater = () => {
+    const location = useLocation();
+  
+    useEffect(() => {
+      updateMetaTags(location.pathname);
+    }, [location.pathname]);
+  
+    return null;
+  };
+  
+  
 const Remo=()=>{
     const location = useLocation();
     return (
@@ -210,6 +248,7 @@ function Routing() {
     return (
         <>
             <Router>
+            <MetaTagUpdater />
                 <Remo></Remo>
                 <ScrolltoTop />
                 <OpentoTop />
