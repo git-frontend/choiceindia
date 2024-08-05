@@ -1,39 +1,39 @@
-import benefits from '../../assets/images/demat-images/new-demat/feature2.webp';
-import features from '../../assets/images/demat-images/new-demat/feature1.webp';
-import openingprocess from '../../assets/images/demat-images/new-demat/demat-account-opening-process.webp';
+import benefits from "../../assets/images/demat-images/new-demat/feature2.webp";
+import features from "../../assets/images/demat-images/new-demat/feature1.webp";
+import openingprocess from "../../assets/images/demat-images/new-demat/demat-account-opening-process.webp";
 export const pagesData = {
-    dematData: {
-        
-        startpara:[`Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.
+  dematData: {
+    startpara: [
+      `Welcome to the ultimate guide for beginners who aspire to invest or trade in securities including stocks, mutual funds, bonds, and more. This comprehensive guide will provide you with a detailed understanding of Demat accounts.
         <br/><br/>
-        Explore topics related to Demat accounts, how they work, the different types available, and more. Gain insight into their significance and how they play a pivotal role in your investment journey.`
-        ],
-        content: [
-            {
-                maintitle: "Demat Account",
-               },
-            {
-                id: "id0",
-                title: "What is Demat Account?",
-                content: `A Demat account or in-short a dematerialized account is an account that securely holds an investor's securities like stocks, bonds, mutual funds and more. It acts as an intermediary between the investors and the stock market to ensure smooth and paperless transactions between them. 
+        Explore topics related to Demat accounts, how they work, the different types available, and more. Gain insight into their significance and how they play a pivotal role in your investment journey.`,
+    ],
+    content: [
+      {
+        maintitle: "Demat Account",
+      },
+      {
+        id: "id0",
+        title: "What is Demat Account?",
+        content: `A Demat account or in-short a dematerialized account is an account that securely holds an investor's securities like stocks, bonds, mutual funds and more. It acts as an intermediary between the investors and the stock market to ensure smooth and paperless transactions between them. 
                         <br /><br />
-                        You can assume it as a bank account but here instead of cash, your demat account holds your shares and other securities safely and you can effortlessly add or withdraw your assets as per your need.`
-            },
-            {
-                id: "id1",
-                title: "What is Dematerialization?",
-                content: `In today's digital age, you can <a href="/open-free-demat-account">open a Demat account</a> within minutes. This was not the case earlier where shares were traded in the form of physical paper certificates. This process had many limitations and hence the process of dematerialization was introduced.
+                        You can assume it as a bank account but here instead of cash, your demat account holds your shares and other securities safely and you can effortlessly add or withdraw your assets as per your need.`,
+      },
+      {
+        id: "id1",
+        title: "What is Dematerialization?",
+        content: `In today's digital age, you can <a href="/open-free-demat-account">open a Demat account</a> within minutes. This was not the case earlier where shares were traded in the form of physical paper certificates. This process had many limitations and hence the process of dematerialization was introduced.
                        <br/></br/>
                         <a href="/blog/dematerialisation/">Dematerialization</a> refers to the process of <a href="/blog/physical-shares-to-demat/">converting physical share certificates</a> into electronic form.This transformation enabled easy access to your shares from anywhere in the world. 
                         The introduction of a Demat account ensured seamless tracking and monitoring of investors holdings.
                         <br /><br /> 
                         <iframe class="cust-video" src="https://www.youtube.com/embed/3u0VZAHMwO0?si=A1jjjLq-Qu5XE1p7"></iframe>
-                                        `
-            },
-            {
-                id: "id2",
-                title: "Features and Benefits of Demat Account",
-                content: `Demat accounts come packed with features and benefits to simplify your investment journey. Here are some of the key highlights:<br /><br />
+                                        `,
+      },
+      {
+        id: "id2",
+        title: "Features and Benefits of Demat Account",
+        content: `Demat accounts come packed with features and benefits to simplify your investment journey. Here are some of the key highlights:<br /><br />
                         <ol class="drk-bld">
                                     <li>
                                         <h3>Easily Accessible</h3>
@@ -64,12 +64,11 @@ export const pagesData = {
                                     <span><img src=${benefits} class="img-fluid" alt={"Benefits of Demat Account"} width={"356"} height={"485"} /></span>
                                 </div>
                                 `,
-                
-            },
-            {
-                id: "id3",
-                title: "Types of Demat Accounts in India",
-                content: `In India, there are several <a href="/blog/demat-account-types/">types of Demat accounts</a> to cater to various investor profiles. Here is a quick look:</p>
+      },
+      {
+        id: "id3",
+        title: "Types of Demat Accounts in India",
+        content: `In India, there are several <a href="/blog/demat-account-types/">types of Demat accounts</a> to cater to various investor profiles. Here is a quick look:</p>
                                 <ol class="drk-bld">
                                     <li>
                                         <h3>Regular Demat Account</h3>
@@ -90,12 +89,12 @@ export const pagesData = {
                                         <h3>Basic Services Demat Account</h3>
                                         <p>Designed to promote financial inclusion, the Basic Services Demat Account caters to individuals from economically disadvantaged backgrounds. Offering a simplified and cost-effective way to participate in the Indian securities market. This type of account is subject to certain restrictions and limitations, making it an accessible entry point for new investors with limited resources.</p>
                                     </li>
-                                </ol>`
-            },
-            {
-                id: "id4",
-                title: `<a href="/blog/how-demat-account-works/">How Does a Demat Account Work?</a>`,
-                content: `A Demat account functions as the digital vault for your securities. It allows you to buy, hold, and sell shares with ease, regardless of your location. However, it doesn't operate in isolation. Here's how it collaborates with other elements to offer seamless transactions:</p>
+                                </ol>`,
+      },
+      {
+        id: "id4",
+        title: `<a href="/blog/how-demat-account-works/">How Does a Demat Account Work?</a>`,
+        content: `A Demat account functions as the digital vault for your securities. It allows you to buy, hold, and sell shares with ease, regardless of your location. However, it doesn't operate in isolation. Here's how it collaborates with other elements to offer seamless transactions:</p>
                                 <p><strong>Account opening -</strong>  Stock brokers help you open a Demat account and in return they charge some fees in order to maintain the same. <br /><br />
                                 <strong>Link it with a trading account -</strong> In order to carry out your trading activities, you need to link your demat account with a trading account. Now-a-days opening a trading account doesn’t require any individual process as brokers open it alongside while one opens a demat account and hence they are already linked to each other.
                                 <br /><br />
@@ -107,12 +106,12 @@ export const pagesData = {
                                 <br/><br/>
                                     Remember, without a trading account, you cannot utilize your Demat account for investments. A trading account handles the monetary transactions associated with buying and selling shares.
                                 
-                                `
-            },
-            {
-                id: "id5",
-                title: `<a href="/blog/documents-required-for-demat-account-opening/">Documents Required for Demat Account Opening</a>`,
-                content: `Proper documentation is crucial when opening a Demat account. Here's a list of the essential documents:
+                                `,
+      },
+      {
+        id: "id5",
+        title: `<a href="/blog/documents-required-for-demat-account-opening/">Documents Required for Demat Account Opening</a>`,
+        content: `Proper documentation is crucial when opening a Demat account. Here's a list of the essential documents:
                 <br/><br/>
                                 <ol class="none-para drk-bld">
                                     <li><strong>Proof of Identity:</strong>
@@ -138,12 +137,12 @@ export const pagesData = {
                                     <li><strong>Passport-Size Photographs:</strong> Typically, you need 2-3 recent passport-sized photographs if you opt for the offline process. For the online process, it will be e-KYC authentication.</li>
                                 </ol>
                                 <p>Ensure that all documents are self-attested copies, and keep the original documents handy for verification purposes during the <a href="/blog/demat-account-opening-process/">demat account opening process</a>.</p>
-                                <span class="bl-box">For certain segments, such as derivatives, income proofs may be necessary.</span>`
-            },
-            {
-                id: "id6",
-                title: `<a href="/blog/demat-account-charges/">Demat Account Charges</a>`,
-                content: `<p>Opening a Demat account is often free or even if it's charged, it usually requires a nominal fee. Other than the opening fees, there are various fees and charges associated with maintaining and using it. Some common Demat account charges include</p>
+                                <span class="bl-box">For certain segments, such as derivatives, income proofs may be necessary.</span>`,
+      },
+      {
+        id: "id6",
+        title: `<a href="/blog/demat-account-charges/">Demat Account Charges</a>`,
+        content: `<p>Opening a Demat account is often free or even if it's charged, it usually requires a nominal fee. Other than the opening fees, there are various fees and charges associated with maintaining and using it. Some common Demat account charges include</p>
                                 <ol class="">
                                     <li>
                                         <p>Annual Maintenance Charges (AMC)</p>
@@ -179,12 +178,12 @@ export const pagesData = {
                                         <p>Stamp Duty</p>
                                     </li>
                                 </ol>
-                                <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat account</a>, making it cost-effective for investors.</p>`
-            },
-            {
-                id: "id7",
-                title: `<a href="/blog/how-to-open-demat-account/">How to Open a Demat Account?</a>`,
-                content: ` <p>Opening a Demat Account has been a lot easier today, thanks to digitalization. You have two primary options: online and offline account opening.</p>
+                                <p>It's crucial to understand the fee structure of your chosen DP and Demat account to avoid any surprises. Some brokers offer <a href="/campaign/free-amc-demat-account">zero AMC Demat account</a>, making it cost-effective for investors.</p>`,
+      },
+      {
+        id: "id7",
+        title: `<a href="/blog/how-to-open-demat-account/">How to Open a Demat Account?</a>`,
+        content: ` <p>Opening a Demat Account has been a lot easier today, thanks to digitalization. You have two primary options: online and offline account opening.</p>
                                 <h3><a href="/blog/demat-account-opening-online/">Online Demat Account Opening</a></h3>
                                 <p>Most brokerage firms offer online account opening, allowing you to complete the process from the comfort of your home. It's quick, convenient, and paperless.</p>
                                 <iframe class="cust-video" src="https://www.youtube.com/embed/dbtHtNsWZkI?si=_ZUWNvQEt-u0iSjf" ></iframe>
@@ -204,12 +203,12 @@ export const pagesData = {
                                 </ol>
                                 <img src=${openingprocess} class="img-fluid" alt={"Benefits of Demat Account"} width={"670"} height={"1029"} />
                                 <br/><br/>
-                                <span class="bl-box">Choice completes the verification process in under 4 hours. Our team will assist you if you encounter any issues during the Demat account opening process.</span>`
-            },
-            {
-                id: "id8",
-                title: "Demat Account - Frequently Asked Questions",
-                content: ` <p>Got questions? Explore our FAQs for answers to common questions and concerns related to Demat account. If you need further assistance or personalized guidance, feel free to contact us.</p>
+                                <span class="bl-box">Choice completes the verification process in under 4 hours. Our team will assist you if you encounter any issues during the Demat account opening process.</span>`,
+      },
+      {
+        id: "id8",
+        title: "Demat Account - Frequently Asked Questions",
+        content: ` <p>Got questions? Explore our FAQs for answers to common questions and concerns related to Demat account. If you need further assistance or personalized guidance, feel free to contact us.</p>
                                 <ul>
                                     <li>
                                         <h3>What is the eligibility to have a demat account?</h3>
@@ -232,12 +231,12 @@ export const pagesData = {
                                         <strong>Other requirements -</strong> Have valid pan card & a valid address proof (Aadhar, Voter ID, Passport, Driving License)
                                         </p>
                                     </li>
-                                </ul>`
-            },
-            {
-                id: "id9",
-                title: "Demat Glossary",
-                content: `<p>A glossary of key terms and phrases related to Demat accounts to help you better understand the world of electronic securities and investments:</p>
+                                </ul>`,
+      },
+      {
+        id: "id9",
+        title: "Demat Glossary",
+        content: `<p>A glossary of key terms and phrases related to Demat accounts to help you better understand the world of electronic securities and investments:</p>
                                 <ol class="none-para">
                                     <li><strong>Account Closure:</strong> The process of permanently closing a Demat account when it is no longer needed.</li>
                                     <li><strong>Account Opening Fee:</strong> A one-time charge for opening a Demat account, which varies between Depository Participants (DPs).</li>
@@ -290,33 +289,31 @@ export const pagesData = {
                                     <li><strong>Wealth Creation:</strong> The process of increasing wealth through investments in a Demat account.</li>
                                 </ol>
                                 <p>If you have any further questions or need clarification on any of these terms, please refer to our comprehensive guide or reach out to us for assistance.</p>
-                                <p>Thank you for choosing our comprehensive guide to learn about Demat accounts.</p>`
-            },
-
-        ],
-        tableOfContents: [
-            { id: 'id0', title: 'What is Demat Account?' },
-            { id: 'id1', title: 'What is Dematerialization?' },
-            { id: 'id2', title: 'Features and Benefits of Demat Account' },
-            { id: 'id3', title: 'Types of Demat Accounts in India' },
-            { id: 'id4', title: 'How Does a Demat Account Work?' },
-            { id: 'id5', title: 'Documents Required for Demat Account Opening' },
-            { id: 'id6', title: 'Demat Account Charges' },
-            { id: 'id7', title: 'How to Open a Demat Account?' },
-            { id: 'id8', title: 'Demat Account - Frequently Asked Questions' },
-            { id: 'id9', title: 'Demat Glossary' },
-        ]
-    },
-    tradingdata: {
-
-        content: [
-            {
-                maintitle: "Trading Account"
-            },
-            {
-                id: "id0",
-                title: "What is Trading Account?",
-                content: `A Trading Account is a type of investment account that allows you to buy and sell various types of securities such as stocks, bonds, mutual funds, and ETFs. It acts as an interface between your bank account and your Demat account, facilitating the buying and selling of securities.
+                                <p>Thank you for choosing our comprehensive guide to learn about Demat accounts.</p>`,
+      },
+    ],
+    tableOfContents: [
+      { id: "id0", title: "What is Demat Account?" },
+      { id: "id1", title: "What is Dematerialization?" },
+      { id: "id2", title: "Features and Benefits of Demat Account" },
+      { id: "id3", title: "Types of Demat Accounts in India" },
+      { id: "id4", title: "How Does a Demat Account Work?" },
+      { id: "id5", title: "Documents Required for Demat Account Opening" },
+      { id: "id6", title: "Demat Account Charges" },
+      { id: "id7", title: "How to Open a Demat Account?" },
+      { id: "id8", title: "Demat Account - Frequently Asked Questions" },
+      { id: "id9", title: "Demat Glossary" },
+    ],
+  },
+  tradingdata: {
+    content: [
+      {
+        maintitle: "Trading Account",
+      },
+      {
+        id: "id0",
+        title: "What is Trading Account?",
+        content: `A Trading Account is a type of investment account that allows you to buy and sell various types of securities such as stocks, bonds, mutual funds, and ETFs. It acts as an interface between your bank account and your Demat account, facilitating the buying and selling of securities.
                 <br/><br/>
                 This powerful account serves as your gateway to the dynamic world of trading and investing. It's a secure place where you deposit funds and hold your investments, giving you access to execute trades seamlessly, monitor your portfolio performance, and manage your investment activities efficiently.
                 <br/><br/>
@@ -335,12 +332,12 @@ export const pagesData = {
                                         <strong>Trading Platform: </strong>
                                        This is the software provided by your broker that allows you to place trades. It could be a web-based platform, a desktop application, or a mobile app.
                                     </li>
-                                </ol>`
-            },
-            {
-                id: "id1",
-                title: "Need and Purpose of Trading Account",
-                content: `A trading account serves several crucial purposes that make it an important tool for anyone looking to invest in the stock market:
+                                </ol>`,
+      },
+      {
+        id: "id1",
+        title: "Need and Purpose of Trading Account",
+        content: `A trading account serves several crucial purposes that make it an important tool for anyone looking to invest in the stock market:
                 <br/><br/>
                  <ul>
                     <li>
@@ -368,12 +365,12 @@ export const pagesData = {
                         A trading account provides a centralized location to monitor your holdings, track your investments, and make informed decisions based on your financial goals and risk tolerance.
                     </li>
                 </ul> 
-                `
-            },
-            {
-                id: "id2",
-                title: "Features of Trading Account",
-                content: `A trading account typically offers a range of features to facilitate efficient and convenient trading. Some key features include:
+                `,
+      },
+      {
+        id: "id2",
+        title: "Features of Trading Account",
+        content: `A trading account typically offers a range of features to facilitate efficient and convenient trading. Some key features include:
                 <br/><br/>
                                             <ul>
                                             <li><strong>Online Trading Platform:</strong> Most brokers provide user-friendly online platforms that allow you to place orders, monitor your portfolio, and access real-time market data from anywhere, at any time.</li>
@@ -390,12 +387,12 @@ export const pagesData = {
 <br/>
                             <li><strong>Tax Reporting:</strong> Trading accounts may provide detailed tax reports and statements, simplifying the process of tracking your capital gains and losses for tax purposes.</li>
                             </ul>
-                `
-            },
-            {
-                id: "id3",
-                title: "Benefits of Trading Account",
-                content: `Having a trading account offers several benefits:
+                `,
+      },
+      {
+        id: "id3",
+        title: "Benefits of Trading Account",
+        content: `Having a trading account offers several benefits:
                 <br/><br/> <ul>
                                 <li><strong>Access to Investment Opportunities:</strong>
                                 A trading account gives you access to a wide range of investment opportunities, including stocks, bonds, mutual funds, and ETFs traded on NSE and BSE.</li>
@@ -413,12 +410,12 @@ export const pagesData = {
                                 Trading accounts in India are regulated by the Securities and Exchange Board of India (SEBI), ensuring transparency and fairness. This measure provides a safety net for investors.</li>
                                 
                             </ul>
-`
-            },
-            {
-                id: "id4",
-                title: "What are Trading Account Assets",
-                content: `Trading account assets refer to the various financial instruments and securities that can be held and traded within a trading account. These assets can include:
+`,
+      },
+      {
+        id: "id4",
+        title: "What are Trading Account Assets",
+        content: `Trading account assets refer to the various financial instruments and securities that can be held and traded within a trading account. These assets can include:
                 <br/><br/>
                 <ul>
                                 <li><strong>Stocks:</strong> Equity shares of publicly listed companies on stock exchanges like the NSE and BSE.
@@ -444,12 +441,12 @@ export const pagesData = {
                             </ul>
                             
                             The specific assets available for trading can vary depending on the type of trading account (equity, derivative, commodity, etc.) and the broker's offerings.
-                `
-            },
-            {
-                id: "id5",
-                title: "Types of Trading Account",
-                content: `In India, there are several types of trading accounts based on the financial instruments they deal with, the mode of operation, and the services they offer. Here are some of the common types:
+                `,
+      },
+      {
+        id: "id5",
+        title: "Types of Trading Account",
+        content: `In India, there are several types of trading accounts based on the financial instruments they deal with, the mode of operation, and the services they offer. Here are some of the common types:
                 <br/><br/>
                      <ul>
                                 <li><strong>Equity Trading Account:</strong> This type of account allows you to buy and sell equity shares of companies listed on the stock exchange.
@@ -482,22 +479,22 @@ export const pagesData = {
                             Each type of trading account has its own features and benefits, and the choice of account depends on your trading needs and investment goals.
                             <br/><br/>
                             For example, a beginner might prefer a <a href="/">full-service broker</a> for additional support and advisory services, while an experienced trader might opt for a discount trading account to save on brokerage fees.
-                              `
-            },
-            {
-                id: "id6",
-                title: "How Does Trading Account Work",
-                content: `A Trading Account is an investor’s or trader’s account with a brokerage firm that allows you to buy and sell securities. It acts as an intermediary between the investor’s bank account, where funds are held, and the Demat account, where securities are held in electronic form.
+                              `,
+      },
+      {
+        id: "id6",
+        title: "How Does Trading Account Work",
+        content: `A Trading Account is an investor’s or trader’s account with a brokerage firm that allows you to buy and sell securities. It acts as an intermediary between the investor’s bank account, where funds are held, and the Demat account, where securities are held in electronic form.
                 <br/><br/>
                 When you place a trade, the trading account communicates with the stock exchange to execute the transaction. If you’re buying securities, the required funds are debited from your trading account, and the securities are credited to your Demat account.
                 <br/><br/>
                 Conversely, if you’re selling securities, the securities are debited from your Demat account, and the proceeds from the sale are credited to your trading account.
-                `
-            },
-            {
-                id: "id7",
-                title: "Ways to Earn Through a Trading Account",
-                content: `A trading account offers multiple avenues to generate returns on your investments. Here are some ways to earn through a trading account:
+                `,
+      },
+      {
+        id: "id7",
+        title: "Ways to Earn Through a Trading Account",
+        content: `A trading account offers multiple avenues to generate returns on your investments. Here are some ways to earn through a trading account:
                 <br/><br/>
                   <ul>
                         <li><strong>Capital Appreciation:</strong> One of the primary ways to earn is through capital appreciation, where you buy securities at a lower price and sell them at a higher price, profiting from the price difference.
@@ -525,12 +522,12 @@ export const pagesData = {
                        </li>
                   </ul>
                   It's important to note that trading carries inherent risks, and the potential for losses exists alongside the potential for gains. Proper risk management and a well-informed trading strategy are crucial for long-term success.
-`
-            },
-            {
-                id: "id8",
-                title: "<h2>Trading Account Charges<h2/>",
-                content: `Be informed about the various charges associated with trading accounts as they can impact your overall investment returns. Here are some common ones:
+`,
+      },
+      {
+        id: "id8",
+        title: "<h2>Trading Account Charges<h2/>",
+        content: `Be informed about the various charges associated with trading accounts as they can impact your overall investment returns. Here are some common ones:
                 <br/><br/>
                 <ul>
                         <li><strong>Brokerage Fees:</strong> This is the commission that brokers charge for executing buy/sell orders, typically a percentage of trade value.
@@ -546,12 +543,12 @@ export const pagesData = {
                        </li>
                         </ul>
                         <strong>Tip:</strong> Review the full fee schedule and do a cost-benefit analysis before selecting a broker.
-                `
-            },
-            {
-                id: "id9",
-                title: "How to Find the Best Trading Account in India",
-                content: `Choosing the right stockbroker is crucial for a successful trading experience. Here are some factors to consider:
+                `,
+      },
+      {
+        id: "id9",
+        title: "How to Find the Best Trading Account in India",
+        content: `Choosing the right stockbroker is crucial for a successful trading experience. Here are some factors to consider:
                 <br/><br/>
                  <ul>
                         <li><strong>Fees:</strong> Compare the brokerage fees, annual maintenance charges, and other costs associated with the trading account.
@@ -567,12 +564,12 @@ export const pagesData = {
                        </li>
                         </ul>
                         Choice is a reputable full-service broker in India known for its competitive <a href="/brokerage-charges">brokerage charges</a> , robust trading platforms, comprehensive research resources, and prompt customer service.
-                        `
-            },
-            {
-                id: "id10",
-                title: "How to Open a Trading Account",
-                content: `Follow this simple step-by-step guide to <a href="/open-trading-account">open your trading account online</a>:
+                        `,
+      },
+      {
+        id: "id10",
+        title: "How to Open a Trading Account",
+        content: `Follow this simple step-by-step guide to <a href="/open-trading-account">open your trading account online</a>:
                 <br/><br/>
                         <ol class="drk-bld">
                                     <li>
@@ -602,12 +599,12 @@ export const pagesData = {
                                     </li>
 
                         </ol>
-`
-            },
-            {
-                id: "id11",
-                title: "Faq's About Trading Account",
-                content: ` <h3>What is Basic Trading Account?</h3>
+`,
+      },
+      {
+        id: "id11",
+        title: "Faq's About Trading Account",
+        content: ` <h3>What is Basic Trading Account?</h3>
                 A basic trading account allows you to buy and sell securities like stocks, bonds, and mutual funds. It offers essential trading features without advanced capabilities like margin trading.
                 <br/><br/>
                 <h3>Who Needs a Trading Account?</h3>
@@ -646,34 +643,23 @@ export const pagesData = {
                 <h3>Can we Apply for an IPO Using a Trading Account</h3>
 
                 Yes, you can use your trading account to <a href="/ipo-investment-account">apply for an Initial Public Offering (IPO)</a> by completing the application process and blocking funds in your account for the IPO application.
-<br/><br/>
-                <h2>Latest News Regarding Trading Account</h2>
-Eg. Investors will soon be able to block their trading account to stop suspicious activity
-
-
-
- `
-            }
-
-
-
-
-        ],
-        tableOfContents: [
-            { id: 'id0', title: 'What is Trading Account' },
-            { id: 'id1', title: 'Need and Purpose of Trading Account' },
-            { id: 'id2', title: 'Features of Trading Account' },
-            { id: 'id3', title: 'Benefits of Trading Account' },
-            { id: 'id4', title: 'What are Trading Account Assets' },
-            { id: 'id5', title: 'Types of Trading Account' },
-            { id: 'id6', title: 'How Does Trading Account Work' },
-            { id: 'id7', title: 'Ways to Earn Through a Trading Account' },
-            { id: 'id8', title: 'Trading Account Charges' },
-            { id: 'id9', title: 'How to Find the Best Trading Account in India' },
-            { id: 'id10', title: 'How to Open a Trading Account' },
-            { id: 'id11', title: 'Faqs About Trading Account' },
-
-        ]
-    }
+ `,
+      },
+    ],
+    tableOfContents: [
+      { id: "id0", title: "What is Trading Account" },
+      { id: "id1", title: "Need and Purpose of Trading Account" },
+      { id: "id2", title: "Features of Trading Account" },
+      { id: "id3", title: "Benefits of Trading Account" },
+      { id: "id4", title: "What are Trading Account Assets" },
+      { id: "id5", title: "Types of Trading Account" },
+      { id: "id6", title: "How Does Trading Account Work" },
+      { id: "id7", title: "Ways to Earn Through a Trading Account" },
+      { id: "id8", title: "Trading Account Charges" },
+      { id: "id9", title: "How to Find the Best Trading Account in India" },
+      { id: "id10", title: "How to Open a Trading Account" },
+      { id: "id11", title: "Faqs About Trading Account" },
+    ],
+  },
 };
 export default pagesData;
