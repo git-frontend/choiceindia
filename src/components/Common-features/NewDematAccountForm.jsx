@@ -32,7 +32,7 @@ function NewDematAccountForm(props) {
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
     const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
-    const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
+    const isBlog = (window.location.pathname.indexOf('blog')===1) ? 'yes' : '';
     const [referID, setReferID] = useState('');
     const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1)||(window.location.pathname.indexOf('/what-is-trading-account') > -1) || (window.location.pathname.indexOf('/under25') > -1) ||(window.location.pathname.indexOf('/brokerage-charges') > -1) ? 'demat-web' : " ")
  
@@ -75,6 +75,8 @@ function NewDematAccountForm(props) {
     var subrefercodeInv = useRef('');
     // var otpSessionID = useRef('');
     var isMobile = useRef(isMobileDevice());
+    //Creating a ref variable for blog pop up
+    var blogPopUp=useRef('');
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
     const [OTPInfoPopup, setOTPInfoPopup] = useState(false);
@@ -357,7 +359,7 @@ function NewDematAccountForm(props) {
             "referred_id": refercode.current || referID || null,
             "sub_ref": subrefercode.current || null,
             "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' :(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate': UTMCampaign.current || null,
-            "utm_content": isBlog == "yes" ? (view && !view.matches) ? UTMContent.current || 'mobile_sticky_cta' : UTMContent.current || 'desktop_sticky_cta' : UTMContent.current || null,
+            "utm_content": isBlog == "yes" ? (view && !view.matches) ? (blogPopUp?.current?.classList?.contains("blog-pop-up-form"))? UTMContent.current || 'in_content_cta' :  UTMContent.current || 'mobile_sticky_cta' : UTMContent.current || 'desktop_sticky_cta' : UTMContent.current || null,
             "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             "utm_medium": isBlog == "yes" ? UTMMedium.current || 'blog_leads' : UTMMedium.current || null,
             "utm_source": isBlog == "yes" ?(mfForm) ? UTMSource.current||"mf_lead_generation" : UTMSource.current || 'demat_lead_generation':(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' :(window.location.pathname.indexOf("/mutual-funds-investment") > -1) ? 'choice-mf-web': UTMSource.current || null,
@@ -508,7 +510,7 @@ function NewDematAccountForm(props) {
             }
             {
                 !showOTP && !showThanku.showModal && (
-                <div className={`${blogPopUpForm}`}>
+                <div className={`${blogPopUpForm}`} ref={blogPopUp}>
                      <div className={`demat-account-form demat-account-form-new ${blogForm} ${brokerageForm}`} id="dematform">
 
                        {
