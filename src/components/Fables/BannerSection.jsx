@@ -39,8 +39,8 @@ function BannerSection() {
 						<div className="col-md-12 d-flex justify-content-between flex-wrap">
 							<div className="fables-caption-left">
 								<h1 className="big-ttl">
-									Fables
-									<span>Stories that Matter</span>
+								Choice Blog
+									<span className="sm-ttl">Learn to Earn</span>
 								</h1>
 							</div>
 							<div className="fables-caption-right">

@@ -33,6 +33,12 @@
                 font-family: $font-family-poppins-regular;
                 display: block;
             }
+
+            .sm-ttl{
+                font-size:2rem;
+                position: absolute;
+                left: 8px;
+            }
         }
 
         &::before {
