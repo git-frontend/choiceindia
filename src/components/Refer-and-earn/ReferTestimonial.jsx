@@ -42,7 +42,7 @@ const ReferTestimonial=()=>{
                 <div className="row">
                   <div className="col-md-12">
                   <div className="heading-sec">
-                    <h2 className="title-secnd text-center">What Traders Are Saying About Our Trading App?</h2>
+                    <h2 className="title-secnd text-center">Hear From Our Happy Referrers</h2>
                   </div>
                     
                   </div>
