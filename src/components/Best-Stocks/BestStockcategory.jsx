@@ -16,6 +16,7 @@ import expert_reserch from '../../assets/images/Best_Stocks/Expert_Research.svg'
 import zero_auto from '../../assets/images/Best_Stocks/Zero_Auto_Square_Off_Charges.svg';
 import trade_paisa from '../../assets/images/Best_Stocks/Trade_@2_Paisa.svg';
 import low_broke from '../../assets/images/Best_Stocks/Low_Brokerage_Charges.svg';
+import { bestStocks } from "./bestStocks";
 
 import { useRef } from 'react';
 import {
@@ -23,6 +24,7 @@ import {
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
+import Faqs from "./Faqs";
 
 
 function BestStockcategory() {
@@ -628,6 +630,15 @@ function BestStockcategory() {
             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
               <NewFormSection sections={sections} />
             </GoogleReCaptchaProvider>
+            
+             {/* FAQS Section */}
+
+             {toggleState === 2 ?
+             <Faqs title={"Frequently asked Questions"} data={bestStocks.ShortTerm}/>:
+              toggleState === 3 ?
+              <Faqs title={"Frequently asked Questions"} data={bestStocks.LongTerm}/>:""}
+
+             
             <section className="readmoresection readmorecontent">
               <div className="container">
 
