@@ -40,7 +40,7 @@ function BannerSection() {
 							<div className="fables-caption-left">
 								<h1 className="big-ttl">
 								Choice Blog
-									<span className="sm-ttl">Learn to Earn</span>
+									<span className="sm-ttl">Master Your Finances</span>
 								</h1>
 							</div>
 							<div className="fables-caption-right">
