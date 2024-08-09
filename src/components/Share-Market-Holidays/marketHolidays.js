@@ -7,8 +7,9 @@ export const marketHolidays = {
     },
     {
       question: "What are the regular trading hours in BSE?",
-      answer: `Overall regular trading hours at BSE can be demonstrated as 
+      answer: `Overall regular trading hours at BSE can be demonstrated as: 
  <ul>
+ <br/>
  <li>Pre-opening Session: <strong>09:00 a.m. to 09:15 a.m.</strong></li>
  <li>Normal Session: <strong>09:15 a.m. to 03:30 p.m.</strong></li>
  <li>Closing Session: <strong>03:30 p.m. to 04:00 p.m.</strong></li>
@@ -83,6 +84,7 @@ export const marketHolidays = {
       question: "What are the regular trading hours in NSE?",
       answer: `The normal trading sessions at NSE are:
      <ul>
+     <br/>
      <li>9:15 am to 3:30 pm for Equity and Equity Derivatives</li>
      <li>9:00 am to 5:00 pm for Currency Derivatives</li>
      <li>10:00 am to 11:30 pm for Commodity Derivatives</li>

@@ -37,6 +37,7 @@ const BrokerageFaq = () => {
                                         <Accordion.Body className='open-demat-faq-body'>
                                         Brokerage fees are typically calculated as a percentage of the trade value or a flat fee per executed order. The exact calculation depends on many factors including:
                                         <ul>
+                                        <br/>
                                         <li>Market segment (equity, derivatives, etc.) </li>
                                         <li>Trade type (intraday, delivery) </li>
                                         <li>Order value, and </li>

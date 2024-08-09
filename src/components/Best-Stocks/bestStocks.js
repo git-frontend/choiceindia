@@ -13,10 +13,11 @@ export const bestStocks = {
     {
       question:
         "What is the difference between short-term and long-term stocks?",
-      answer: `Two major differences between short-term and long-term stocks are 
+      answer: `Two major differences between short-term and long-term stocks are:
       <ul type="none">
-      <li><strong>Objective:</strong>Short-term stocks focus on capitalising on short-term price movements, whereas long-term stocks aim for sustained growth and dividends.</li><br/>
-      <li><strong>Time Horizon:</strong>Short-term stocks are held for a shorter period of time (weeks or months), while long-term stocks are held for years.</li>
+      <br/>
+      <li><strong>Objective: </strong>Short-term stocks focus on capitalising on short-term price movements, whereas long-term stocks aim for sustained growth and dividends.</li>
+      <li><strong>Time Horizon: </strong>Short-term stocks are held for a shorter period of time (weeks or months), while long-term stocks are held for years.</li>
       </ul>`,
     },
     {
@@ -39,10 +40,10 @@ export const bestStocks = {
       answer: `Before buying short-term stocks, consider the following factors:
       <ul>
       <br/>
-      <li><strong>Market Trends:</strong> Understand current market trends and sentiments.</li><br/>
-      <li><strong>Company Fundamentals:</strong>Analyse financial health, earning reports, and management.</li><br/>
-      <li><strong>Technical Analysis:</strong> Study price charts, trends, and indicators.</li><br/>
-      <li><strong>New and Events:</strong>Stay updated on relevant news and events affecting the stock.</li>
+      <li><strong>Market Trends:</strong> Understand current market trends and sentiments.</li>
+      <li><strong>Company Fundamentals:</strong> Analyse financial health, earning reports, and management.</li>
+      <li><strong>Technical Analysis:</strong> Study price charts, trends, and indicators.</li>
+      <li><strong>New and Events:</strong> Stay updated on relevant news and events affecting the stock.</li>
       </ul>`,
     },
     {
@@ -51,8 +52,8 @@ export const bestStocks = {
       answer: `You can use the following tools to identify the best short-term stocks to buy:
      <ul>
       <br/>
-      <li><strong>Stock Screeners:</strong> You can filter stocks using Stock Screeners based on criteria like price, volume, and technical indicators.</li><br/>
-      <li><strong>Financial News Platform:</strong>Using Financial News Platforms, you can monitor news relevant to specific stocks or sectors.</li><br/>
+      <li><strong>Stock Screeners:</strong> You can filter stocks using Stock Screeners based on criteria like price, volume, and technical indicators.</li>
+      <li><strong>Financial News Platform:</strong> Using Financial News Platforms, you can monitor news relevant to specific stocks or sectors.</li>
       <li><strong>Technical Analysis Tools:</strong> With the help of technical analysis tools, you can use charts and indicators to identify potential price movements.</li>
       </ul>`,
     },
@@ -74,10 +75,10 @@ export const bestStocks = {
       answer: `Following are the factors that you should consider while investing in long-term stocks:
      <ul>
      <br/>
-     <li><strong>Company Fundamentals:</strong>Look at revenue growth, profit margins, debt levels, and management quality.</li><br/>
-     <li><strong>Industry Outlook:</strong>Consider the sector’s growth potential and its resilience to economic cycles.</li><br/>
-     <li><strong>Competitive Position:</strong>Asses the company’s market share, innovation, and competitive advantages.</li><br/>
-     <li><strong>Valuation:</strong>Ensure the stock is reasonably priced relative to its earning growth (P/E ratio, PEG Ratio).</li><br/>
+     <li><strong>Company Fundamentals:</strong>Look at revenue growth, profit margins, debt levels, and management quality.</li>
+     <li><strong>Industry Outlook:</strong>Consider the sector’s growth potential and its resilience to economic cycles.</li>
+     <li><strong>Competitive Position:</strong>Asses the company’s market share, innovation, and competitive advantages.</li>
+     <li><strong>Valuation:</strong>Ensure the stock is reasonably priced relative to its earning growth (P/E ratio, PEG Ratio).</li>
      <li><strong>Dividends:</strong>If income is a goal, look for companies with a history of stable or growing dividends.</li>
      </ul>`,
     },
@@ -101,9 +102,9 @@ export const bestStocks = {
       answer: `You can practice the following steps to manage risks while investing in long-term stocks:
      <ul>
      <br/>
-     <li><strong>Diversification:</strong>Spread investments across different sectors and asset classes.</li><br/>
-     <li><strong>Research:</strong>Thoroughly research companies and sectors before investing.</li><br/>
-     <li><strong>Monitor:</strong>Keep an eye on the portfolio regularly and adjust as necessary.</li><br/>
+     <li><strong>Diversification:</strong>Spread investments across different sectors and asset classes.</li>
+     <li><strong>Research:</strong>Thoroughly research companies and sectors before investing.</li>
+     <li><strong>Monitor:</strong>Keep an eye on the portfolio regularly and adjust as necessary.</li>
      <li><strong>Patience:</strong>Stick to the long-term investment plan despite short-term market fluctuations.</li>
      </ul>`,
     },
@@ -113,9 +114,9 @@ export const bestStocks = {
       answer: `Following are the tools you can use to identify the best long-term stocks:
        <ul>
        <br/>
-       <li><strong>Stock Screening Tools - </strong>Filter stocks based on financial criteria.</li><br/>
-       <li><strong>Financial News Portals - </strong>Provide stock analysis and market news.</li><br/>
-       <li><strong>Investment Analysis Platforms - </strong>Offer insights and detailed reports on stocks.</li><br/>
+       <li><strong>Stock Screening Tools - </strong>Filter stocks based on financial criteria.</li>
+       <li><strong>Financial News Portals - </strong>Provide stock analysis and market news.</li>
+       <li><strong>Investment Analysis Platforms - </strong>Offer insights and detailed reports on stocks.</li>
        <li><strong>Finance Apps - </strong>Access to comprehensive market data and tools for analysis.</li>
        </ul>`,
     },
