@@ -75,11 +75,11 @@ export const bestStocks = {
       answer: `Following are the factors that you should consider while investing in long-term stocks:
      <ul>
      <br/>
-     <li><strong>Company Fundamentals:</strong>Look at revenue growth, profit margins, debt levels, and management quality.</li>
-     <li><strong>Industry Outlook:</strong>Consider the sector’s growth potential and its resilience to economic cycles.</li>
-     <li><strong>Competitive Position:</strong>Asses the company’s market share, innovation, and competitive advantages.</li>
-     <li><strong>Valuation:</strong>Ensure the stock is reasonably priced relative to its earning growth (P/E ratio, PEG Ratio).</li>
-     <li><strong>Dividends:</strong>If income is a goal, look for companies with a history of stable or growing dividends.</li>
+     <li><strong>Company Fundamentals: </strong>Look at revenue growth, profit margins, debt levels, and management quality.</li>
+     <li><strong>Industry Outlook: </strong>Consider the sector’s growth potential and its resilience to economic cycles.</li>
+     <li><strong>Competitive Position: </strong>Asses the company’s market share, innovation, and competitive advantages.</li>
+     <li><strong>Valuation: </strong>Ensure the stock is reasonably priced relative to its earning growth (P/E ratio, PEG Ratio).</li>
+     <li><strong>Dividends: </strong>If income is a goal, look for companies with a history of stable or growing dividends.</li>
      </ul>`,
     },
     {
@@ -102,10 +102,10 @@ export const bestStocks = {
       answer: `You can practice the following steps to manage risks while investing in long-term stocks:
      <ul>
      <br/>
-     <li><strong>Diversification:</strong>Spread investments across different sectors and asset classes.</li>
-     <li><strong>Research:</strong>Thoroughly research companies and sectors before investing.</li>
-     <li><strong>Monitor:</strong>Keep an eye on the portfolio regularly and adjust as necessary.</li>
-     <li><strong>Patience:</strong>Stick to the long-term investment plan despite short-term market fluctuations.</li>
+     <li><strong>Diversification: </strong>Spread investments across different sectors and asset classes.</li>
+     <li><strong>Research: </strong>Thoroughly research companies and sectors before investing.</li>
+     <li><strong>Monitor: </strong>Keep an eye on the portfolio regularly and adjust as necessary.</li>
+     <li><strong>Patience: </strong>Stick to the long-term investment plan despite short-term market fluctuations.</li>
      </ul>`,
     },
     {
