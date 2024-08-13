@@ -225,8 +225,8 @@ const openAccountService = {
                 break; 
             }
           }
-
-          if (verifyResponse.is_onboard_flag === "C") {
+          if(verifyResponse.action_type != 'popup_and_no_update'){
+            if (verifyResponse.is_onboard_flag === "C") {
               onClose("https://finx.choiceindia.com/auth/login",verifyResponse.message);
           } else if (verifyResponse.is_onboard_flag === 'N' || verifyResponse.is_onboard_flag === '' || verifyResponse.is_onboard_flag === 'NI') {
 
@@ -250,6 +250,11 @@ const openAccountService = {
               })
 
           }
+          } else{
+            // handleOTPClose(link, msg, info, actionType, leadID)
+            onClose(verifyResponse?.url, verifyResponse.message,verifyResponse.message,verifyResponse.action_type,verifyResponse.leadid   )
+          }
+         
       } else {
           setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
       }
