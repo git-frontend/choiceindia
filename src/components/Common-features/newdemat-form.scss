@@ -1811,3 +1811,55 @@ width:100%;
 	background:$bgcolor-blue-light !important ;
 	
 }
+.invest-zero-ac{
+	position: fixed;
+	bottom: 0;
+	z-index: 9999999999;
+    right: 20px;
+	.demat-account-form-new{
+		transition: .5s ease-in-out;
+	}
+}
+.invest-zero-fees {
+    background: $primary;
+    border-top: 8px solid $yellowColor;
+    border-radius: 8px;
+    width: 30rem;
+	padding: 1.5rem;
+	.zero-fees-form{
+		display: flex;
+		align-items: center;
+		.form-ttl{
+			font-size: 1.5rem;
+			color: $whiteColor;
+			font-family: $font-family-poppins-semibold;
+			line-height: 1.5;
+		}
+		.btn-up-down{
+			background-color: rgba(255, 255, 255, 0.1);
+			border-radius: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 30px;
+			height: 30px;
+			border: 0;
+			svg{
+				color: $whiteColor;
+			}
+		}
+	}
+	.form-para{
+		color: $whiteColor;
+		font-size: 13px;
+		font-family: $font-family-poppins-regular;
+		line-height: 20px;
+	}
+}
+
+.form-hide{
+	display: none;
+}
+.form-show{
+	display: block;
+}

@@ -17,6 +17,8 @@ import './Thankyoupopup.scss';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import thumbsup from '../../assets/images/demat-images/thumbsup.gif';
 import LazyLoader from "../Common-features/LazyLoader";
+import { faAngleUp,faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function NewDematAccountForm(props) {
     //console.log("props",props)
@@ -86,9 +88,11 @@ function NewDematAccountForm(props) {
     const [isPopUp, setIsPopUp] = useState(false);
     const [otpSessionID, setOTPSessionID] = useState(null)
     const [leadId, setLeadId] = useState();
-    
+    const [isToggle, setIsToggle] = useState(false);
     const { executeRecaptcha } = useGoogleReCaptcha();
-
+    const toggleClass = () => {
+        setIsToggle(!isToggle);
+      };
     const handleButtonClick = () => {
         setShowOTP(false);
       };
@@ -508,8 +512,15 @@ function NewDematAccountForm(props) {
             }
             {
                 !showOTP && !showThanku.showModal && (
-                <div className={`${blogPopUpForm}`}>
-                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${brokerageForm}`} id="dematform">
+                <div className={`invest-zero-ac ${blogPopUpForm}`}>
+                    <div className="invest-zero-fees">
+                    <div className="zero-fees-form">
+                        <h3 className="form-ttl">Open Choice Demat Account Invest with ZERO Fees</h3>
+                        <button className="btn-up-down" onClick={toggleClass}><FontAwesomeIcon icon={isToggle ? faAngleDown : faAngleUp} /></button>
+                    </div>
+                    <p className="form-para">NO Account Opening Fee, AMC for 1st Year, Zero Square-off Charges + Free Call & Trade.</p>
+                    </div>
+                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${brokerageForm} ${isToggle ? "form-hide":""}`} id="dematform">
 
                        {
                        
