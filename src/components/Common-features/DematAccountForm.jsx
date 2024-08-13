@@ -625,7 +625,7 @@ function DematAccountForm(props) {
                                                     <div className="loaderB mx-auto"></div> : <span>No, Cancel Onboarding and Connect RM</span>
                                             }
                                         </button>
-                                        <button className="btn-bg referral-btn" onClick={() => { consentLoaders.consentYesLoader ? null : submitConsent('yes') }} disabled={consentLoaders.consentNoLoader}>
+                                        <button className="btn-bg referral-btn" onClick={() => { consentLoaders.consentYesLoader ? null : submitConsent('yes') ,setShowConsent(() => false);}} disabled={consentLoaders.consentNoLoader}>
                                             {
                                                 consentLoaders.consentYesLoader ?
                                                     <div className="loaderB mx-auto"></div> : <span>Yes, continue with Existing Referral Code</span>

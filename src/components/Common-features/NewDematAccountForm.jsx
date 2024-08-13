@@ -64,7 +64,8 @@ function NewDematAccountForm(props) {
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
-
+    var referLink = useRef('');
+    var otpLeadID = useRef('');
     var UTMContent = useRef('');
     var UTMCustom = useRef('');
     var UTMTerm = useRef('');
@@ -116,15 +117,21 @@ function NewDematAccountForm(props) {
 
     /**function executes to close the ad popup */
     function hideOpenAccountAdPopup(showAdValues) {
-        if (showAdValues.link) {
-            setShowThanku(prevState => {
-                return { ...prevState, showModal: true, redirectionLink: showAdValues?.link, resText: showAdValues?.msg, isOnboarding: showAdValues?.info, closeMd: closeModal }
-            });
-        }
-        setShowOpenAccountPopup(false);
-        callOpenAccountAdPopupAgain();
-    }
 
+        if (showAdValues.actionType != 'popup_and_no_update') {
+            if (showAdValues.link) {
+                setShowThanku(prevState => {
+                    return { ...prevState, showModal: true, redirectionLink: showAdValues?.link, resText: showAdValues?.msg, isOnboarding: showAdValues?.info, closeMd: closeModal }
+                });
+            }
+            setShowOpenAccountPopup(false);
+            callOpenAccountAdPopupAgain();
+        } else {
+            referLink.current = showAdValues.link ? showAdValues.link : null;
+            otpLeadID.current = showAdValues.leadId ? showAdValues.leadId : null;
+            setShowConsent(() => true)
+        }
+    }
     function callOpenAccountAdPopupAgain() {
         //after 15min
         setTimeout(() => {
@@ -518,9 +525,8 @@ function NewDematAccountForm(props) {
 
 
             if (consent == 'yes') {
-                setShowConsent(() => false);
-                // handleOTPClose(responseLink)
-                setConsentLoaders({ ...consentLoaders, consentYesLoader: true, consentNoLoader: false });
+                handleOTPClose(responseLink)
+                // setConsentLoaders({ ...consentLoaders, consentYesLoader: true, consentNoLoader: false });
             } else {
                 setShowConsent(() => false);
                 setMobileNumber("");
@@ -572,16 +578,16 @@ function NewDematAccountForm(props) {
             // });
         }
 
-    useEffect(() => {
-        if(consent && consent === 'yes'){
-            setShowConsent(false);
-                handleOTPClose(responseLink)
-        }else{
-            setShowConsent(() => false);
-            setMobileNumber("");
-            setReferID("")
-        }
-    },[consent])
+    // useEffect(() => {
+    //     if(consent && consent === 'yes'){
+    //         setShowConsent(false);
+    //             handleOTPClose(responseLink,null,null,null,null)
+    //     }else{
+    //         setShowConsent(() => false);
+    //         setMobileNumber("");
+    //         setReferID("")
+    //     }
+    // },[consent])
     
     return (
         <>
@@ -918,7 +924,7 @@ function NewDematAccountForm(props) {
                                                     <div className="loaderB mx-auto"></div> : <span>No, Cancel Onboarding and Connect RM</span>
                                             }
                                         </button>
-                                        <button className="btn-bg referral-btn" onClick={() => { consentLoaders.consentYesLoader ? null : submitConsent('yes') }} disabled={consentLoaders.consentNoLoader}>
+                                        <button className="btn-bg referral-btn" onClick={() => { consentLoaders.consentYesLoader ? null : submitConsent('yes') ,setShowConsent(() => false);}} disabled={consentLoaders.consentNoLoader}>
                                             {
                                                 consentLoaders.consentYesLoader ?
                                                     <div className="loaderB mx-auto"></div> : <span>Yes, continue with Existing Referral Code</span>
