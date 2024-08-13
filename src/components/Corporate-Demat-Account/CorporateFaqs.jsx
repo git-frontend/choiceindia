@@ -105,9 +105,9 @@ function CorporateFaqs() {
                                     Holding securities in a demat account makes it easier to track investments, calculate, and report capital gains and losses for tax purposes.</li>
                                     <li><strong>3.&nbsp;&nbsp;Dividend Tax Efficiency: </strong>
                                     Companies can receive dividends directly into their demat accounts, streamlining tax reporting and compliance.</li>
-                                    <li><strong>4.&nbsp;&nbsp;Compliance with Regulatory Requirements:</strong>
+                                    <li><strong>4.&nbsp;&nbsp;Compliance with Regulatory Requirements: </strong>
                                     Maintaining a corporate demat account demonstrates compliance with regulatory norms, potentially avoiding penalties or legal issues related to securities transactions.</li>
-                                    <li><strong>5.&nbsp;&nbsp;Potential Tax Deductions:</strong>
+                                    <li><strong>5.&nbsp;&nbsp;Potential Tax Deductions: </strong>
                                     Certain expenses related to maintaining a corporate demat account, such as account maintenance fees or brokerage charges, may be tax-deductible for the company, subject to applicable tax laws and regulations.</li>
                                     </ul>
                                     </Accordion.Body>
@@ -121,21 +121,21 @@ function CorporateFaqs() {
                                     While the core functionality of corporate demat accounts remains consistent across brokers, Choice offers several notable features tailored for corporate clients:
                                     <ul type="none">
                                         <br/>
-                                        <li><strong>1.&nbsp;&nbsp;Dedicated Relationship Managers:</strong>
+                                        <li><strong>1.&nbsp;&nbsp;Dedicated Relationship Managers: </strong>
                                         Choice provides dedicated relationship managers who offer personalised support and guidance, ensuring corporate clients' unique needs are addressed efficiently.</li>
-                                        <li><strong>2.&nbsp;&nbsp;Best-in-Class Trading Platforms:</strong>
+                                        <li><strong>2.&nbsp;&nbsp;Best-in-Class Trading Platforms: </strong>
                                         Companies can access Choice's state-of-the-art trading platforms, featuring advanced tools, real-time market data, and advanced charting capabilities for informed decision-making.</li>
-                                        <li><strong>3.&nbsp;&nbsp;Comprehensive Reporting and Analytics:</strong>
+                                        <li><strong>3.&nbsp;&nbsp;Comprehensive Reporting and Analytics: </strong>
                                         Choice offers end-to-end reporting and analytical tools, enabling companies to monitor their portfolios, track performance, and generate customised reports for better investment management.</li>
-                                        <li><strong>4.&nbsp;&nbsp;Seamless Corporate Action Processing:</strong>
+                                        <li><strong>4.&nbsp;&nbsp;Seamless Corporate Action Processing: </strong>
                                         Choice simplifies the execution of corporate actions, such as stock splits, mergers, acquisitions, and dividend distributions, ensuring seamless and timely processing.</li>
                                         <li><strong>5.&nbsp;&nbsp;Integrated Banking Services: </strong>
                                         Choice provides integrated banking services, allowing companies to seamlessly transfer funds and manage their investments from a single platform.</li>
-                                        <li><strong>6.&nbsp;&nbsp;Competitive Pricing and Brokerage Rates:</strong>
+                                        <li><strong>6.&nbsp;&nbsp;Competitive Pricing and Brokerage Rates: </strong>
                                         Choice offers competitive brokerage rates and pricing structures tailored specifically for corporate clients, considering their higher trading volumes and transaction values.</li>
-                                        <li><strong>7.&nbsp;&nbsp;Robust Security and Compliance:</strong>
+                                        <li><strong>7.&nbsp;&nbsp;Robust Security and Compliance: </strong>
                                         Choice adheres to robust security protocols and compliance measures, ensuring the safety and integrity of corporate clients' transactions and data.</li>
-                                        <li><strong>8.&nbsp;&nbsp;Customisable Solutions:</strong>
+                                        <li><strong>8.&nbsp;&nbsp;Customisable Solutions: </strong>
                                         Choice offers customisable solutions to cater to the specific requirements of corporate clients, providing flexibility and scalability as their needs evolve.</li>
                                     </ul>
                                   These features, combined with Choice's 30+ years of reputation for excellence and expertise in the financial services industry, make their corporate demat account offering a compelling choice for companies seeking efficient securities management and value-added services.
