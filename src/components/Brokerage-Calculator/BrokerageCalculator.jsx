@@ -11,6 +11,8 @@ import LowDP from "../../assets/images/brokerage-calculator/Low_DP_charges.svg";
 import  NoAutoSquare from "../../assets/images/brokerage-calculator/No-Auto-Square.svg";
 import FreeResearch from "../../assets/images/brokerage-calculator/Free_Research_Advisory.svg";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import BrokerageFaq from "./BrokerageFaq";
+import "../OnlineTradingApp/online-trading-app.scss";
 function BrokerageCalculator() {
   const [rendercount, setRenderCount] = useState(() => false);
   useEffect(() => {
@@ -52,6 +54,7 @@ function BrokerageCalculator() {
        
         <NewFormSection sections={sections} />
         </GoogleReCaptchaProvider>
+        <BrokerageFaq/>
         <MoreContent/>
     </div>
   );

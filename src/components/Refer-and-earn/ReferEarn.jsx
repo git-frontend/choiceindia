@@ -51,7 +51,7 @@ function ReferEarn() {
             <HowChoice />
             <TermCondition />
             <EarnUp />
-            {/* <ReferTestimonial/> */}
+            <ReferTestimonial/>
             <ReferFaqs/>
           </div>
       }
