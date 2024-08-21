@@ -513,14 +513,14 @@ function NewDematAccountForm(props) {
             {
                 !showOTP && !showThanku.showModal && (
                 <div className={`invest-zero-ac ${blogPopUpForm}`}>
-                    <div className="invest-zero-fees">
+                    <div className={`invest-zero-fees ${isToggle ? "form-header":""}`}>
                     <div className="zero-fees-form">
-                        <h3 className="form-ttl">Open Choice Demat Account Invest with ZERO Fees</h3>
+                        <h3 className="form-ttl"><span className={`${isToggle ? "":"text-none"}`}>Open Choice Demat Account</span> Invest with ZERO Fees</h3>
                         <button className="btn-up-down" onClick={toggleClass}><FontAwesomeIcon icon={isToggle ? faAngleDown : faAngleUp} /></button>
                     </div>
-                    <p className="form-para">NO Account Opening Fee, AMC for 1st Year, Zero Square-off Charges + Free Call & Trade.</p>
+                    <p className={`form-para ${isToggle ? "text-none":""}`}>NO Account Opening Fee, AMC for 1st Year, Zero Square-off Charges + Free Call & Trade.</p>
                     </div>
-                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${brokerageForm} ${isToggle ? "form-hide":""}`} id="dematform">
+                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${brokerageForm} ${isToggle ? "form-hide":"form-show"}`} id="dematform">
 
                        {
                        
@@ -728,20 +728,22 @@ function NewDematAccountForm(props) {
                             </Form.Group>
                         </Form>
                         <div className="slider-btns">
-                        <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
+                        <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}></Button>
                         <Button variant="primary" type="submit" className={showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}></Button>
                         </div>
                     </div>
                 </div>
                 )
             }
-            {
-                showThanku.showModal && (
+            {/* {
+                showThanku.showModal && ( */}
+               
                 <div className={`${blogPopUpForm} ${(window.location.pathname.includes("open-free-demat-account") ||
                  window.location.pathname.includes("corporate-demat-account") ||
                  window.location.pathname.includes("demat-account")
                  || window.location.pathname.includes("mutual-funds-investment")) && 'demat-form-wrapper'}`}>
-                   <div className={`demat-account-form demat-account-form-new ${blogThankuPopup} ${BrokerageThankuPopup}`}>
+                  <div className={`invest-zero-ac`}>
+                   <div className={`demat-account-form demat-account-form-new custom-th-popup ${blogThankuPopup} ${BrokerageThankuPopup}`}>
                         <div className="thank-you-msg">
                             <div className="thank-logo">
                                 <div className="blog-thnu-circle">
@@ -754,17 +756,24 @@ function NewDematAccountForm(props) {
                                 <p className="subheading">{showThanku.resText? showThanku.resText: "You are being redirected to onboarding page!"}</p>
                         </div>
                         </div>
-                        
+                        </div> 
                     </div>       
                 </div>
-                )
+                {/* )
 
-            }
+            } */}
 
             {
                 showOTP && !showThanku.showModal && (
+                    <div className={`invest-zero-ac`}>
+                        <div className={`invest-zero-fees ${isToggle ? "form-header":""}`}>
+                        <div className="zero-fees-form">
+                            <h3 className="form-ttl">OTP Verification</h3>
+                            <button className="btn-up-down" onClick={toggleClass}><FontAwesomeIcon icon={isToggle ? faAngleDown : faAngleUp} /></button>
+                        </div>
+                        </div>
                     <div className={`${blogPopUpForm}`}>
-                      <div className={`demat-account-form demat-account-form-new ${blogFormOtp} ${brokerageFormOtp}`}>
+                      <div className={`demat-account-form demat-account-form-new ${blogFormOtp} ${brokerageFormOtp}${isToggle ? "form-hide":"form-show"}`}>
                         <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} setIsActive={props.setIsActive} openAccount={props.openAccount} setBlogPopUpForm={setBlogPopUpForm} blogPop={props.blogPop} isPopUp={isPopUp}  updateType={updateType} ></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
@@ -772,7 +781,7 @@ function NewDematAccountForm(props) {
                         </div>
                     </div>
                     </div>
-                  
+                    </div>
                 )}
 
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"

@@ -1813,53 +1813,129 @@ width:100%;
 }
 .invest-zero-ac{
 	position: fixed;
-	bottom: 0;
+	bottom: 5%;
 	z-index: 9999999999;
     right: 20px;
+	@media (max-width:$sm) {
+		position: inherit;
+		z-index: inherit;
+	}
 	.demat-account-form-new{
 		transition: .5s ease-in-out;
-	}
-}
-.invest-zero-fees {
-    background: $primary;
-    border-top: 8px solid $yellowColor;
-    border-radius: 8px;
-    width: 30rem;
-	padding: 1.5rem;
-	.zero-fees-form{
-		display: flex;
-		align-items: center;
-		.form-ttl{
-			font-size: 1.5rem;
-			color: $whiteColor;
-			font-family: $font-family-poppins-semibold;
-			line-height: 1.5;
+		padding: 0;
+		background-color: $whiteColor;
+		border-radius: 0 0 1rem 1rem;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+		@media (max-width:$sm) {
+			margin: 0;
 		}
-		.btn-up-down{
-			background-color: rgba(255, 255, 255, 0.1);
-			border-radius: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 30px;
-			height: 30px;
-			border: 0;
-			svg{
-				color: $whiteColor;
+		&.custom-th-popup{
+			background-color: $bgcolor-blue-light;
+			border-radius: 1rem;
+			border-top: 8px solid $yellowColor;
+			.thank-you-msg{
+				min-height: 26rem;
+				padding: 1rem;
 			}
 		}
+		.formgrp-new{
+			border-radius: 0 0 1rem 1rem;
+			padding:1rem 2rem 2rem ;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+			margin: 0 !important;
+			.form-label{
+				display: none;
+			}
+		}
+		h2{
+			display: none;
+		}
+		.slider-btns{
+			display: none;
+		}
+		.exit-intent-sleekbox-popup{
+			.popup-sub-row{
+				display: inherit;
+				padding: 0;
+				.otp-ttl{
+					display: none;
+				}
+				.otpform-new{
+					.time{
+						margin-bottom: 0;
+					}
+				}
+			}
+			
+		}
+		.cust-checkbox{
+			margin-bottom: 0 !important;
+		}
+		.send-otp-btn{
+			margin-top: 1.5rem !important;
+		}
 	}
-	.form-para{
-		color: $whiteColor;
-		font-size: 13px;
-		font-family: $font-family-poppins-regular;
-		line-height: 20px;
+	.invest-zero-fees {
+		background: $primary;
+		border-top: 8px solid $yellowColor;
+		border-radius: 8px 8px 0px 0px;
+		width: 30rem;
+		padding: 1.5rem;
+		&.form-header{
+			border-radius: 8px;
+			transition: .5s ease-in-out;
+		}
+		.zero-fees-form{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			.form-ttl{
+				font-size: 1.5rem;
+				color: $whiteColor;
+				font-family: $font-family-poppins-semibold;
+				line-height: 1.5;
+			}
+			.btn-up-down{
+				background-color: rgba(255, 255, 255, 0.1);
+				border-radius: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 30px;
+				height: 30px;
+				border: 0;
+				@media (max-width:$sm) {
+					display: none;
+				}
+				svg{
+					color: $whiteColor;
+				}
+			}
+		}
+		.form-para{
+			color: $whiteColor;
+			font-size: 13px;
+			font-family: $font-family-poppins-regular;
+			line-height: 20px;
+			margin: 0;
+		}
 	}
 }
 
-.form-hide{
+.text-none{
 	display: none;
+	transition: .5s ease-in-out;
+	@media (max-width:$sm) {
+		display: block;
+	}
+}
+.form-hide{
+	max-height: 0;
+	overflow: hidden;
+	transition: .5s ease-in-out;
 }
 .form-show{
-	display: block;
+	max-height: 390px;
+	overflow: auto;
 }
