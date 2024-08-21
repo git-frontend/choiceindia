@@ -150,7 +150,7 @@ function Footer() {
                               <NavLink to="/research-listing" className="generic-id-footer" onClick={() => { chapterScroll('shortterm-scroll') }}>Technical</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/blog" className="generic-id-footer">Fables</NavLink>
+                              <NavLink to="/blog" className="generic-id-footer">Blog</NavLink>
                             </li>
                             <li>
                               <NavLink to="/brokerage-charges" className="generic-id-footer">Pricing</NavLink>

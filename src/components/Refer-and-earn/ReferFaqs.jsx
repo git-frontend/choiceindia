@@ -44,7 +44,7 @@ const ReferFaqs=()=>{
                                     <Accordion.Body className='open-demat-faq-body'>
                                     By participating in the Choice Demat Account Refer and Earn program, you can earn attractive rewards for successful referrals. As an existing Choice customer, you'll generate a unique referral link to share with friends and family.
                                     <br/><br/>
-                                    When someone uses your link to open a new Demat account with Choice and completes their first trade, you'll receive a ₹500* brokerage reversal. It's a win-win – your friends enjoy our seamless trading experience, and you earn a reward for introducing them to Choice.
+                                    When someone uses your link to open a new Demat account with Choice and completes their first trade, you'll receive a ₹500* brokerage reversal. It's a win-win situation for both. Your friends enjoy our seamless trading experience, and you earn a reward for introducing them to Choice.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>
