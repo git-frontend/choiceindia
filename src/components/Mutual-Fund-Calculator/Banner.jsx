@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut, Arc, Tooltip } from 'react-chartjs-2';
 import { Chart, ArcElement } from 'chart.js/auto';
+import utils from "../../Services/utils";
 Chart.register(ArcElement)
-function Banner() {
+function Banner({inputRef}) {
 
 
     const [toggleState, setToggleState] = useState(1);
@@ -340,7 +341,9 @@ const charteroption={
 
                                                     </div>
                                                     <div className="card-footer">
-                                                    <a type="submit" href="https://choiceindia.com/open-free-demat-account" target="" className="btn-bg">Invest Now</a>
+                                                    <a type="submit" onClick={()=>{utils.scrollToId('form-section')
+                                                     inputRef.current.focus()
+                                                    }} target="" className="btn-bg">Invest Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -451,7 +454,9 @@ const charteroption={
 
                                                     </div>
                                                     <div className="card-footer">
-                                                    <a type="submit" href="https://choiceindia.com/open-free-demat-account" target="" className="btn-bg">Invest Now</a>
+                                                    <a type="submit" onClick={()=>{utils.scrollToId('form-section')
+                                                    inputRef.current.focus()
+                                                    }} target="" className="btn-bg">Invest Now</a>
                                                     </div>
                                                 </div>
                                             </div>
