@@ -1816,9 +1816,10 @@ width:100%;
 	bottom: 5%;
 	z-index: 9999999999;
     right: 20px;
-	@media (max-width:$sm) {
+	@media (max-width:$md) {
 		position: inherit;
 		z-index: inherit;
+		width: 100%;
 	}
 	.demat-account-form-new{
 		transition: .5s ease-in-out;
@@ -1826,7 +1827,7 @@ width:100%;
 		background-color: $whiteColor;
 		border-radius: 0 0 1rem 1rem;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
-		@media (max-width:$sm) {
+		@media (max-width:$md) {
 			margin: 0;
 		}
 		&.custom-th-popup{
@@ -1854,6 +1855,9 @@ width:100%;
 			display: none;
 		}
 		.exit-intent-sleekbox-popup{
+			@media (max-width:$md) {
+				padding: 0;
+			}
 			.popup-sub-row{
 				display: inherit;
 				padding: 0;
@@ -1881,6 +1885,9 @@ width:100%;
 		border-radius: 8px 8px 0px 0px;
 		width: 30rem;
 		padding: 1.5rem;
+		@media (max-width:$md) {
+			width: inherit;
+		}
 		&.form-header{
 			border-radius: 8px;
 			transition: .5s ease-in-out;
@@ -1905,7 +1912,7 @@ width:100%;
 				width: 30px;
 				height: 30px;
 				border: 0;
-				@media (max-width:$sm) {
+				@media (max-width:$md) {
 					display: none;
 				}
 				svg{
@@ -1919,6 +1926,9 @@ width:100%;
 			font-family: $font-family-poppins-regular;
 			line-height: 20px;
 			margin: 0;
+			@media (max-width:$md) {
+				display: none;
+			}
 		}
 	}
 }
@@ -1926,9 +1936,9 @@ width:100%;
 .text-none{
 	display: none;
 	transition: .5s ease-in-out;
-	@media (max-width:$sm) {
-		display: block;
-	}
+	// @media (max-width:$md) {
+	// 	display: block;
+	// }
 }
 .form-hide{
 	max-height: 0;
