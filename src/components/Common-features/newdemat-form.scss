@@ -1816,10 +1816,8 @@ width:100%;
 	bottom: 5%;
 	z-index: 9999999999;
     right: 20px;
-	@media (max-width:$md) {
-		position: inherit;
-		z-index: inherit;
-		width: 100%;
+	@media (max-width:$sm) {
+		bottom: 2%;
 	}
 	.demat-account-form-new{
 		transition: .5s ease-in-out;
@@ -1834,6 +1832,12 @@ width:100%;
 			background-color: $bgcolor-blue-light;
 			border-radius: 1rem;
 			border-top: 8px solid $yellowColor;
+			@media (max-width:$md) {
+				max-width: 30rem;
+			}
+			@media (max-width:$sm) {
+				max-width: 28rem;
+			}
 			.thank-you-msg{
 				min-height: 26rem;
 				padding: 1rem;
@@ -1856,6 +1860,7 @@ width:100%;
 		}
 		.exit-intent-sleekbox-popup{
 			@media (max-width:$md) {
+				max-width: inherit;
 				padding: 0;
 			}
 			.popup-sub-row{
@@ -1885,8 +1890,9 @@ width:100%;
 		border-radius: 8px 8px 0px 0px;
 		width: 30rem;
 		padding: 1.5rem;
-		@media (max-width:$md) {
-			width: inherit;
+		@media (max-width:$sm) {
+			max-width: 100%;
+			width: 28rem;
 		}
 		&.form-header{
 			border-radius: 8px;
@@ -1912,9 +1918,9 @@ width:100%;
 				width: 30px;
 				height: 30px;
 				border: 0;
-				@media (max-width:$md) {
-					display: none;
-				}
+				// @media (max-width:$md) {
+				// 	display: none;
+				// }
 				svg{
 					color: $whiteColor;
 				}
@@ -1926,7 +1932,7 @@ width:100%;
 			font-family: $font-family-poppins-regular;
 			line-height: 20px;
 			margin: 0;
-			@media (max-width:$md) {
+			@media (max-width:$sm) {
 				display: none;
 			}
 		}
