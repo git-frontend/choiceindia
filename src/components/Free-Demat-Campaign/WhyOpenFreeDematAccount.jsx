@@ -23,7 +23,7 @@ function WhyOpenFreeDematAccount() {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-first text-center">Why Open a <span>Free Demat Account </span><br/>with Choice?</h2>
+                   <h2 className="title-first text-center">Free Demat with <span>Low Trading Costs</span></h2>
                   <div className="row justify-content-center row-pd">
                       <div className="col-md-3 col-sm-12">
                        <div className="benefit-list">

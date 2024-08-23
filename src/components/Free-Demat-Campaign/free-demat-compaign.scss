@@ -566,10 +566,15 @@
                 }
             }
     }
+
+    .services-link{
+        text-decoration: none;
+      }
     .carditem-nbfc {
         background: $bg-sky4;
         border: 1px solid $bg-lightgreen;
         min-height: 15rem;
+
        .cardimg {
             background: $bg-lightgreen;
             padding: 1rem;
