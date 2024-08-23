@@ -5,6 +5,7 @@ import LowDPCharges from '../../assets/images/free-demat-compaign/free-demat-acc
 import PaisaBrokerage from '../../assets/images/free-demat-compaign/open-low-brokerage-demat-account.svg';
 import ZeroAutoSquare from '../../assets/images/free-demat-compaign/free-demat-account-with-zero-auto-square-off-charges.svg';
 import FreeCall from '../../assets/images/free-demat-compaign/open-demat-account-with-free-call-for-trade-facility.svg';
+import {Link} from "react-router-dom";
 
 function WhyOpenFreeDematAccount() {
   function chapterScroll(id) {
@@ -65,6 +66,9 @@ function WhyOpenFreeDematAccount() {
                             </div>
                         </div>
                       </div>
+                  </div>
+                  <div className="text-center view-charges-link mb-5">
+                   <Link to="/brokerage-charges" className="cursor-pointer text-decoration-none view-charges-color">View all charges</Link>
                   </div>
                   <div className="text-center">
                     <a onClick={()=>{chapterScroll('dematform')}} className="cursor-pointer"><span className="btn-bg btn-bg-dark">Open Now</span></a>
