@@ -33,11 +33,11 @@ const setMetaTag = (name, content) => {
       setMetaTag('og:image', 'https://choiceindia.com/logo192.png');
       setMetaTag('og:type', 'website');
     } else {
-    //   setMetaTag('og:url', '');
-    //   setMetaTag('og:title', '');
-    //   setMetaTag('og:description', '');
-    //   setMetaTag('og:image', '');
-    //   setMetaTag('og:type', '');
+      setMetaTag('og:url', '');
+      setMetaTag('og:title', '');
+      setMetaTag('og:description', '');
+      setMetaTag('og:image', '');
+      setMetaTag('og:type', '');
     }
   };
   
