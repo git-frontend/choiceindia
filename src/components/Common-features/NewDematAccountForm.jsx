@@ -64,7 +64,8 @@ function NewDematAccountForm(props) {
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
-
+    var referLink = useRef('');
+    var otpLeadID = useRef('');
     var UTMContent = useRef('');
     var UTMCustom = useRef('');
     var UTMTerm = useRef('');
@@ -88,7 +89,16 @@ function NewDematAccountForm(props) {
     const [isPopUp, setIsPopUp] = useState(false);
     const [otpSessionID, setOTPSessionID] = useState(null)
     const [leadId, setLeadId] = useState();
+    const [consent, setShowConsent] = useState(false);
+    const [showRefMsg, setShowRefMsg] = useState();
+    const [consentLoaders, setConsentLoaders] = useState({
+        consentYesLoader: false,
+        consentNoLoader: false
+    });
     
+    const [responseLink,setResponseLink]=useState();
+      /**Error variable for consent */
+      const [consentError, setConsentErrors] = useState();
     const { executeRecaptcha } = useGoogleReCaptcha();
 
     const handleButtonClick = () => {
@@ -109,15 +119,21 @@ function NewDematAccountForm(props) {
 
     /**function executes to close the ad popup */
     function hideOpenAccountAdPopup(showAdValues) {
-        if (showAdValues.link) {
-            setShowThanku(prevState => {
-                return { ...prevState, showModal: true, redirectionLink: showAdValues?.link, resText: showAdValues?.msg, isOnboarding: showAdValues?.info, closeMd: closeModal }
-            });
-        }
-        setShowOpenAccountPopup(false);
-        callOpenAccountAdPopupAgain();
-    }
 
+        if (showAdValues.actionType != 'popup_and_no_update') {
+            if (showAdValues.link) {
+                setShowThanku(prevState => {
+                    return { ...prevState, showModal: true, redirectionLink: showAdValues?.link, resText: showAdValues?.msg, isOnboarding: showAdValues?.info, closeMd: closeModal }
+                });
+            }
+            setShowOpenAccountPopup(false);
+            callOpenAccountAdPopupAgain();
+        } else {
+            referLink.current = showAdValues.link ? showAdValues.link : null;
+            otpLeadID.current = showAdValues.leadId ? showAdValues.leadId : null;
+            setShowConsent(() => true)
+        }
+    }
     function callOpenAccountAdPopupAgain() {
         //after 15min
         setTimeout(() => {
@@ -216,34 +232,40 @@ function NewDematAccountForm(props) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link, msg, info) {
+    function handleOTPClose(link, msg, info, actionType, leadID) {
         setShowOTP(false);
+        setResponseLink(link || "")
+        if (actionType != 'popup_and_no_update') {
+            if (link) {
 
-        if (link) {
-
-            let result = link.match("respond-issue");
-            if (result && result.length && result[0] === 'respond-issue') {
-                setIsIssue(() => link);
+                let result = link.match("respond-issue");
+                if (result && result.length && result[0] === 'respond-issue') {
+                    setIsIssue(() => link);
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
+                    });
+                } else {
+                    if (link._reactName) {
+                        setShowThanku(prevState => {
+                            return { ...prevState, showModal: false, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
+                        });
+                    } else {
+                        setShowThanku(prevState => {
+                            return { ...prevState, showModal: true, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
+                        });
+                    }
+                }
+            } else {
                 setShowThanku(prevState => {
                     return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
                 });
-            } else {
-                if (link._reactName) {
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: false, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
-                    });
-                } else {
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: true, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
-                    });
-                }
             }
         } else {
-            setShowThanku(prevState => {
-                return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
-            });
+            referLink.current = link ? link : null;
+            otpLeadID.current = leadID ? leadID : null;
+            setShowRefMsg(() => msg ? msg : '');
+            setShowConsent(() => true)
         }
-
         // closeModal(link);
     }
 
@@ -500,6 +522,75 @@ function NewDematAccountForm(props) {
             }
             
         }, [props.highlight]);
+         /**on click no consent */
+         function submitConsent(consent) {
+
+
+            if (consent == 'yes') {
+                handleOTPClose(responseLink)
+                // setConsentLoaders({ ...consentLoaders, consentYesLoader: true, consentNoLoader: false });
+            } else {
+                setShowConsent(() => false);
+                setMobileNumber("");
+                setReferID("")
+                // setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: true });
+    
+            }
+    
+            // let request = {
+            //     "mobile_number": null,
+            //     otp: null,
+            //     session_id: otpSessionID,
+            //     is_consent: consent ? consent : null,
+            //     lid: otpLeadID.current ? otpLeadID.current : null
+            // };
+            // openAccountService.verifyOTPService(mobileNumber,request,captchaToken,hideLoader,handleOTPClose ,openOTPInfoPopup,setErrors)
+            // openAccountService.verifyOTP(request, "JF").then((res) => {
+            //     if (res && res.status === 200 && res.data && res.data.Body) {
+            //         utils.pushDataLayerEvent({
+            //             'event': 'ci_onboard_lead_generated',
+            //             'page_path': window.location.pathname,
+            //             'page_url': window.location.href,
+            //             'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+            //             'leadId': leadId,
+            //             'lead_source':'choiceindia',
+            //             'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+            //             'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+            //         })
+                    
+            //         setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+            //         // console.log('Success', res);
+            //         if (consent == "yes") {
+            //             window.location.href = referLink.current ? referLink.current : null;
+            //         } else {
+            //             setShowConsent(() => false);
+            //         }
+            //         // }
+            //     } else {
+            //         setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+            //         setConsentErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something Went Wrong');
+            //     }
+            // }).catch((error) => {
+            //     setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+            //     if (error && error.response && error.response.data && error.response.data.Message) {
+            //         setConsentErrors(error.response.data.Message);
+            //     } else {
+            //         setConsentErrors('Something Went Wrong.');
+            //     }
+            // });
+        }
+
+    // useEffect(() => {
+    //     if(consent && consent === 'yes'){
+    //         setShowConsent(false);
+    //             handleOTPClose(responseLink,null,null,null,null)
+    //     }else{
+    //         setShowConsent(() => false);
+    //         setMobileNumber("");
+    //         setReferID("")
+    //     }
+    // },[consent])
+    
     return (
         <>
             {
@@ -815,6 +906,42 @@ function NewDematAccountForm(props) {
 
                 showlead.showModal ? <Thankyoupopup isShow={showlead} /> : ''
             }
+            {/* for referral code */}
+            <Modal className="bt-strap-mdl otp-main-modal Referral-code-model" show={consent} onHide={() => { setShowConsent(false) }} backdrop='static' keyboard={false}>
+                <Modal.Header className="border-0" closeButton>
+                </Modal.Header>
+                <Modal.Body className="border-0">
+                    <div className="exit-intent-sleekbox-overlay sleekbox-popup-active referral-overlay">
+                        <div className="exit-intent-sleekbox-popup">
+                            <div className="popup-sub-row">
+                                <div className="popup-sub-right">
+                                    <div>
+                                        <p className="heading">Dear Investor</p>
+                                        <p className="subheading mb-3 mb-sm-0">{showRefMsg ? showRefMsg : 'Your mobile number is already associated with another refercode. To proceed with your onboarding, please select one of the following options:'}</p>
+                                    </div>
+                                    <div className="btnwrap">
+                                        <button className="btn-bg btn-bg-dark sendbtn btn btn-primary referral-btn referral-btn-hover" onClick={() => { consentLoaders.consentNoLoader ? null : submitConsent('no') }} disabled={consentLoaders.consentYesLoader}>
+                                            {
+                                                consentLoaders.consentNoLoader ?
+                                                    <div className="loaderB mx-auto"></div> : <span>No, Cancel Onboarding and Connect RM</span>
+                                            }
+                                        </button>
+                                        <button className="btn-bg referral-btn" onClick={() => { consentLoaders.consentYesLoader ? null : submitConsent('yes') ,setShowConsent(() => false);}} disabled={consentLoaders.consentNoLoader}>
+                                            {
+                                                consentLoaders.consentYesLoader ?
+                                                    <div className="loaderB mx-auto"></div> : <span>Yes, continue with Existing Referral Code</span>
+                                            } </button>
+                                    </div>
+                                    {
+                                        consentError ?
+                                            <span class="text-danger">{consentError}</span> : ''
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
            
         </>
     );
