@@ -106,7 +106,7 @@ function Home() {
 
 						<p>Important Announcement: Beware of Fraudulent Entities Claiming to be Choice or its associates</p>
 
-						<p><strong>This is to inform you all that our official website is <a href="/">www.choiceindia.com</a>.</strong></p>
+						<p><strong>This is to inform you all that our official website is <a href="/">choiceindia.com</a>.</strong></p>
 
 						<p>Please be advised that any person or business claiming to be "Choice" or using a similar name/logo without our official website domain is not associated with us.</p>
 
