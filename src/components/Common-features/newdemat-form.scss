@@ -386,7 +386,22 @@ width:100%;
 .demat-account-form-new {
 	background-color: $bgcolor-blue-light;
 	box-shadow: none;
-
+	.heading {
+		color: $primary;
+		font-size: 24px;
+		line-height: 42px;
+		font-weight: 700;
+		margin-bottom: 2rem;
+		text-align: center;
+		// margin: 30px 0 15px;
+		font-family: $font-family-poppins-bold;
+		padding-bottom: 0;
+	
+		@media only screen and (max-width: $sm) {
+			font-size: 24px;
+			line-height: 33px;
+		}
+	}
 	.formgrp-new {
 		background-color: $whiteColor;
 		border-radius: 1rem;
@@ -1075,22 +1090,7 @@ width:100%;
 
 
 
-.heading {
-	color: $primary;
-	font-size: 24px;
-	line-height: 42px;
-	font-weight: 700;
-	margin-bottom: 2rem;
-	text-align: center;
-	// margin: 30px 0 15px;
-	font-family: $font-family-poppins-bold;
-	padding-bottom: 0;
 
-	@media only screen and (max-width: $sm) {
-		font-size: 24px;
-		line-height: 33px;
-	}
-}
 
 //Blog Lead form 
 

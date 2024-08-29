@@ -1,11 +1,12 @@
+import "./demat-form.scss";
+import "./newdemat-form.scss";
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import openAccountService from '../../Services/openAccountService';
 import { Link, useSearchParams } from "react-router-dom";
-import "./demat-form.scss";
-import "./newdemat-form.scss";
+
 import OpenAccountOTPModalNew from './OpenAccountOTPModalNew.jsx';
 import OpenDemateAccountPopup from './OpenDemateAccountPopup.jsx';
 import OpenDemateAccountStickyFooter from './OpenDemateAccountStickyFooter.jsx';
@@ -19,8 +20,12 @@ import thumbsup from '../../assets/images/demat-images/thumbsup.gif';
 import LazyLoader from "../Common-features/LazyLoader";
 import { faAngleUp,faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import {
+    useLocation,
+  } from 'react-router-dom';
 function NewDematAccountForm(props) {
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
     //console.log("props",props)
     const [highlightForm, setHighlightForm] = useState(false);
     const inputRef = useRef(null);
@@ -606,7 +611,10 @@ function NewDematAccountForm(props) {
             }
             {
                 !showOTP && !showThanku.showModal && (
-                <div className={`invest-zero-ac ${blogPopUpForm}`}>
+                    <div className={isHomePage ?`invest-zero-ac ${blogPopUpForm}`:`${blogPopUpForm}`} ref={blogPopUp}>
+                        {
+                          isHomePage ?
+                       
                     <div className={`invest-zero-fees ${isToggle ? "form-header":""}`}>
                     <div className="zero-fees-form">
                         <h3 className="form-ttl"><span className={`${isToggle ? "":"text-none"}`}>Open Choice Demat Account</span> Invest with ZERO Fees</h3>
@@ -614,7 +622,9 @@ function NewDematAccountForm(props) {
                     </div>
                     <p className={`form-para ${isToggle ? "text-none":""}`}>NO Account Opening Fee, AMC for 1st Year, Zero Square-off Charges + Free Call & Trade.</p>
                     </div>
-                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${brokerageForm} ${isToggle ? "form-hide":"form-show"}`} id="dematform">
+                    :""
+                     }
+                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${brokerageForm} ${isHomePage ? (isToggle ? 'form-hide' : 'form-show') : ''}`} id="dematform">
 
                        {
                        
