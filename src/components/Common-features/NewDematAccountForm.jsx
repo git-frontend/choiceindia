@@ -826,7 +826,7 @@ function NewDematAccountForm(props) {
                                     {
                                         <Button variant="primary"
                                             type="submit" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
-                                            {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'otpbtn',window.location.pathname.includes('blog'))}</Button>
+                                            {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'otpbtn',window.location.pathname.includes('blog'), isHomePage)}</Button>
                                     }
                                 </div>
                             </Form.Group>
@@ -846,7 +846,7 @@ function NewDematAccountForm(props) {
                  window.location.pathname.includes("corporate-demat-account") ||
                  window.location.pathname.includes("demat-account")
                  || window.location.pathname.includes("mutual-funds-investment")) && 'demat-form-wrapper'}`}>
-                  <div className={`invest-zero-ac`}>
+                  <div className={isHomePage ?`invest-zero-ac`:""}>
                    <div className={`demat-account-form demat-account-form-new custom-th-popup ${blogThankuPopup} ${BrokerageThankuPopup}`}>
                         <div className="thank-you-msg">
                             <div className="thank-logo">
@@ -869,15 +869,18 @@ function NewDematAccountForm(props) {
 
             {
                 showOTP && !showThanku.showModal && (
-                    <div className={`invest-zero-ac`}>
+                    <div className={isHomePage ? `invest-zero-ac`:""}>
                         <div className={`invest-zero-fees ${isToggle ? "form-header":""}`}>
+                            {
+                                isHomePage ?
                         <div className="zero-fees-form">
                             <h3 className="form-ttl">OTP Verification</h3>
                             <button className="btn-up-down" onClick={toggleClass}><FontAwesomeIcon icon={isToggle ? faAngleDown : faAngleUp} /></button>
                         </div>
+                        :"" }
                         </div>
                     <div className={`${blogPopUpForm}`}>
-                      <div className={`demat-account-form demat-account-form-new ${blogFormOtp} ${brokerageFormOtp}${isToggle ? "form-hide":"form-show"}`}>
+                      <div className={`demat-account-form demat-account-form-new ${blogFormOtp} ${brokerageFormOtp} ${isHomePage ? (isToggle ? 'form-hide' : 'form-show') : ''}`}>
                         <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} setIsActive={props.setIsActive} openAccount={props.openAccount} setBlogPopUpForm={setBlogPopUpForm} blogPop={props.blogPop} isPopUp={isPopUp}  updateType={updateType} ></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
