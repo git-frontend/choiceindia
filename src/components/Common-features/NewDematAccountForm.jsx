@@ -399,7 +399,7 @@ function NewDematAccountForm(props) {
             "account_type": type1 == 'MF' ? "" : "all",
             "source": source.current ? source.current : "CHOICEINDIA"
         };
-        console.log("request",request)
+        // console.log("request",request)
         openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster,props.dataLayerValues|| null,props.isActive,isPopUp)
        
     }
