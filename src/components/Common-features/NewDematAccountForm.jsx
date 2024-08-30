@@ -24,8 +24,8 @@ import {
     useLocation,
   } from 'react-router-dom';
 function NewDematAccountForm(props) {
-    const location = useLocation();
-    const isHomePage = location.pathname === '/';
+    // const location = useLocation();
+    const isHomePage = window.location.pathname == "/";
     //console.log("props",props)
     const [highlightForm, setHighlightForm] = useState(false);
     const inputRef = useRef(null);
