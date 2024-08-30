@@ -397,7 +397,9 @@ function NewDematAccountForm(props) {
             "utm_source": isBlog == "yes" ?(mfForm) ? UTMSource.current||"mf_lead_generation" : UTMSource.current || 'demat_lead_generation':(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' :(window.location.pathname.indexOf("/mutual-funds-investment") > -1) ? 'choice-mf-web': UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             "account_type": type1 == 'MF' ? "" : "all",
+            "source": source.current ? source.current : "CHOICEINDIA"
         };
+        console.log("request",request)
         openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster,props.dataLayerValues|| null,props.isActive,isPopUp)
        
     }
