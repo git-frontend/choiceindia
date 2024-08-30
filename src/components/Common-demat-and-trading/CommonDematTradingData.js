@@ -113,7 +113,7 @@ export const pagesData = {
         title: `<a href="/blog/how-demat-account-works/" target="_blank">How Does a Demat Account Work?</a>`,
         content: `A Demat account functions as the digital vault for your securities. It allows you to buy, hold, and sell shares with ease, regardless of your location. However, it doesn't operate in isolation. Here's how it collaborates with other elements to offer seamless transactions:</p>
                                 <p><strong>Account opening -</strong>  Stock brokers help you open a Demat account and in return they charge some fees in order to maintain the same. <br /><br />
-                                <strong>Link it with a trading account -</strong> In order to carry out your trading activities, you need to link your demat account with a trading account. Now-a-days <a href="/open-trading-account" target="_blank">opening a trading account</a> doesn’t require any individual process as brokers open it alongside while one opens a demat account and hence they are already linked to each other.
+                                <strong>Link it with a trading account -</strong> In order to carry out your trading activities, you need to link your demat account with a <a href="/what-is-trading-account" target="_blank">trading account</a>. Now-a-days <a href="/open-trading-account" target="_blank">opening a trading account</a> doesn’t require any individual process as brokers open it alongside while one opens a demat account and hence they are already linked to each other.
                                 <br /><br />
                                 <strong>Order placement -</strong>  Your Depository Participant (DP) forwards your buy orders to the stock exchange when you make purchases via a trading platform.
                                 <br/><br/>
@@ -246,9 +246,9 @@ export const pagesData = {
                                 <ul>
                                     <li>
                                         <h3>What is the eligibility to have a demat account?</h3>
-                                        <p>Age - There is no minimum age criteria. Individuals above 18 years are eligible for a regular demat account while the ones below 18 can open a minor demat account. Their parents or guardians will be in-charge of the account until the minor comes to age.
-                                         <br/> Citizenship - Must be Indian Citizen residing in India. Indians not residing in India can open a NRI Demat Account.
-                                         Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter ID, Passport, Driving License) </p>
+                                        <p><strong>Age -</strong> There is no minimum age criteria. Individuals above 18 years are eligible for a regular demat account while the ones below 18 can open a minor demat account. Their parents or guardians will be in-charge of the account until the minor comes to age.
+                                         <br/> <br/><strong>Citizenship -</strong> Must be Indian Citizen residing in India. Indians not residing in India can open a NRI Demat Account.<br/> <br/>
+                                         <strong>Other requirements -</strong> Have valid pan card & a valid address proof (Aadhar, Voter ID, Passport, Driving License) </p>
                                     </li>
                                     <li>
                                         <h3>Is Demat account safe?</h3>
