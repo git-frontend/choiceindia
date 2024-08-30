@@ -215,7 +215,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
             "type":type,
             "product": "FINX",
             "request_source": "CHOICEINDIA",
-            "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
+            // "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || referID || null,
             "sub_ref": subrefercode.current || null,
