@@ -155,9 +155,9 @@ function NewDematAccountForm(props) {
     if (window.innerWidth <= 992) {
         if(props.mobileForm.current.classList.contains('p-show')){
         setBlogPopUpForm('blog-pop-up-form'); 
-        props.blogPop(true);
+        props.blogPop(false);
         setIsPopUp(true);
-        }
+        } 
         else{
         setBlogPopUpForm('');
         props.blogPop(false);
