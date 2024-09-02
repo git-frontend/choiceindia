@@ -215,7 +215,7 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
             "type":type,
             "product": "FINX",
             "request_source": "CHOICEINDIA",
-            "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
+            // "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || referID || null,
             "sub_ref": subrefercode.current || null,
@@ -231,8 +231,9 @@ function Fixedstickyfooter({ openDemateAccountPopup, openInfoPopup }) {
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
-            "account_type": "all"
+            "account_type": "all",
             // "captcha": "1"
+            "source": source.current ? source.current : "CHOICEINDIA"
         }
         openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster)
         // openAccountService.sendOTP(request).then((res) => {
