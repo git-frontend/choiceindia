@@ -9,7 +9,7 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import '../Common-features/demat-form.scss'
 import utils from '../../Services/utils';
 
-function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup, dataLayerValues }) {
+function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup, dataLayerValues,mobileRef}) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
     const [mobileNumber, setMobileNumber] = useState('');
@@ -18,6 +18,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup, 
     const [showTermsCondition, setShowTermsCondition] = useState(false);
     const [loaders, setLoaders] = useState({});
     const [showOTP, setShowOTP] = useState(false);
+    //created a ref variable for mobile number input field
+    let numberRef=useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
@@ -33,6 +35,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup, 
     const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1) || (window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) || (window.location.pathname.indexOf('nse-holidays') > -1) || (window.location.pathname.indexOf('bse-holidays') > -1) || (window.location.pathname.indexOf('mcx-ncdex-holidays') > -1) || (window.location.pathname.indexOf('stock-market-holidays') > -1) ||(window.location.pathname.indexOf('brokerage-charges') > -1) || (window.location.pathname.indexOf('upcoming-agm') > -1) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) || (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) || (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) || (window.location.pathname.indexOf('upcoming-stock-splits') > -1) || (window.location.pathname.indexOf('upcoming-rights-issue') > -1) || (window.location.pathname.indexOf('/corporate-demat-account') > -1)||(window.location.pathname.indexOf('sip-calculator') > -1)||(window.location.pathname.indexOf('mutual-fund-calculator') > -1)||(window.location.pathname.indexOf('margin-calculator') > -1)||(window.location.pathname.indexOf('brokerage-calculator') > -1)||(window.location.pathname.indexOf('futures-and-options-margin-calculator') > -1)||(window.location.pathname.indexOf('commodity-margin-calculator') > -1)||(window.location.pathname.indexOf('forex-margin-calculator') > -1)) ? 'Best-Stock' : "Blog";
 
     const UnlistBlog = (window.location.pathname.indexOf('/blog/unlisted-shares-price-list/') > -1) ? 'yes' : "";
+
+    
 
     const additionalClass = (
         window.location.pathname.includes('stock-market-holidays') ||
@@ -248,6 +252,9 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup, 
 
     useEffect(() => {
         fetchQueryParams();
+        if(window.location.pathname.indexOf('sip-calculator')===1|| window.location.pathname.indexOf('mutual-fund-calculator')===1){
+            mobileRef(numberRef);
+            }
     }, []);
 
     const { executeRecaptcha } = useGoogleReCaptcha();
@@ -381,7 +388,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup, 
                                             </div>
                                         </div>
                                         : <div className="  Mobile_text">
-                                            <input type="text" className="form-textbox" id="mobile_no" name="mobile_no" placeholder='Mobile Number' autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
+                                            <input type="text" className="form-textbox" id="mobile_no" name="mobile_no" placeholder='Mobile Number' autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} ref={numberRef}/>
                                             <div>
                                                 <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
                                             </div>

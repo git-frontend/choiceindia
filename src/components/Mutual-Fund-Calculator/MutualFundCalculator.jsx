@@ -15,6 +15,7 @@ import NewFormSection from '../Common-features/NewFormSection';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function MutualFundCalculator() {
   const [rendercount, setRenderCount] = useState(() => false);
+  const [inputRef,setInputRef]=useState('');
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -33,6 +34,11 @@ function MutualFundCalculator() {
       }
     }
   }, [rendercount])
+
+  function mobileField(numberRef){
+    setInputRef(numberRef)
+  }
+
   const sections = [
     {
       title:['Start investing in \n', <span className="bold_text">Mutual Funds</span>, ' Now!'],
@@ -44,9 +50,9 @@ function MutualFundCalculator() {
   ];
   return (
     <div>
-        <Banner />
+        <Banner inputRef={inputRef}/>
         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
-        <NewFormSection sections={sections} />
+        <NewFormSection sections={sections} mobileField={mobileField} />
         </GoogleReCaptchaProvider>
         <MoreContent/>
         <MutualFaq/>
