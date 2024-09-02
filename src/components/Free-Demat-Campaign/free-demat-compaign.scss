@@ -419,6 +419,12 @@
             // width: 100%;
         }
     }
+
+      
+      .view-charges-color{
+        color:#00EFD1;
+      }
+
     .title-first{
         color: $whiteColor;
         span{
@@ -497,27 +503,27 @@
     .main-services-list{
         padding: 5rem 0;
         position: relative;
-        &::before{
-            content: 'ALL IN ONE';
-            display: block;
-            position: absolute;
-            font-size: 14rem;
-            font-family: $font-family-poppins-bold;
-            text-transform: capitalize;
-            color:$whiteColor;
-            text-shadow: -1px 1px 0 $text-shadow, -1px -1px 0 $text-shadow, 1px -1px 0 $text-shadow,-1px 1px 0 $text-shadow, 1px 1px 0 $text-shadow;
-            right: 0;
-            left: 0;
-            text-align: center;
-            line-height: 336px;
-            top: 30%;
-            @media (max-width:$md) {
-                font-size: 10rem;
-            }
-            @media (max-width:$sm) {
-                display: none;
-            }
-        }
+        // &::before{
+        //     content: 'ALL IN ONE';
+        //     display: block;
+        //     position: absolute;
+        //     font-size: 14rem;
+        //     font-family: $font-family-poppins-bold;
+        //     text-transform: capitalize;
+        //     color:$whiteColor;
+        //     text-shadow: -1px 1px 0 $text-shadow, -1px -1px 0 $text-shadow, 1px -1px 0 $text-shadow,-1px 1px 0 $text-shadow, 1px 1px 0 $text-shadow;
+        //     right: 0;
+        //     left: 0;
+        //     text-align: center;
+        //     line-height: 336px;
+        //     top: 30%;
+        //     @media (max-width:$md) {
+        //         font-size: 10rem;
+        //     }
+        //     @media (max-width:$sm) {
+        //         display: none;
+        //     }
+        // }
     .slick-slider{
         .slick-list{
             @media (max-width:$sm) {
@@ -566,10 +572,15 @@
                 }
             }
     }
+
+    .services-link{
+        text-decoration: none;
+      }
     .carditem-nbfc {
         background: $bg-sky4;
         border: 1px solid $bg-lightgreen;
         min-height: 15rem;
+
        .cardimg {
             background: $bg-lightgreen;
             padding: 1rem;
@@ -970,46 +981,46 @@
                     .doc-caption{
                         padding-left: 2rem;
                         width: 80%;
-                        .count{
-                            &::before{
-                                content: "01";
-                                display: block;
-                                position: absolute;
-                                font-size: 4rem;
-                                font-family: $font-family-poppins-semibold;
-                                text-transform: capitalize;
-                                color: $whiteColor;
-                                text-shadow: -1px 1px 0 rgba(34, 31, 32, 0.1607843137), -1px -1px 0 rgba(34, 31, 32, 0.1607843137), 1px -1px 0 rgba(34, 31, 32, 0.1607843137), -1px 1px 0 rgba(34, 31, 32, 0.1607843137), 1px 1px 0 rgba(34, 31, 32, 0.1607843137);
-                                left: 0;
-                                text-align: center;
-                                line-height: 22px;
-                                top: 20%;
-                                z-index: -1;
-                                @media (max-width:$sm) {
-                                    display: none;
-                                }
-                            }
-                            &.count-2{
-                                &::before{
-                                content: "02";
-                             }
-                            }
-                            &.count-3{
-                                &::before{
-                                    content: "03";
-                                 }
-                            }
-                            &.count-4{
-                                &::before{
-                                    content: "04";
-                                 }
-                            }
-                            &.count-5{
-                                &::before{
-                                    content: "05";
-                                 }
-                            }
-                        }
+                        // .count{
+                        //     &::before{
+                        //         content: "01";
+                        //         display: block;
+                        //         position: absolute;
+                        //         font-size: 4rem;
+                        //         font-family: $font-family-poppins-semibold;
+                        //         text-transform: capitalize;
+                        //         color: $whiteColor;
+                        //         text-shadow: -1px 1px 0 rgba(34, 31, 32, 0.1607843137), -1px -1px 0 rgba(34, 31, 32, 0.1607843137), 1px -1px 0 rgba(34, 31, 32, 0.1607843137), -1px 1px 0 rgba(34, 31, 32, 0.1607843137), 1px 1px 0 rgba(34, 31, 32, 0.1607843137);
+                        //         left: 0;
+                        //         text-align: center;
+                        //         line-height: 22px;
+                        //         top: 20%;
+                        //         z-index: -1;
+                        //         @media (max-width:$sm) {
+                        //             display: none;
+                        //         }
+                        //     }
+                        //     &.count-2{
+                        //         &::before{
+                        //         content: "02";
+                        //      }
+                        //     }
+                        //     &.count-3{
+                        //         &::before{
+                        //             content: "03";
+                        //          }
+                        //     }
+                        //     &.count-4{
+                        //         &::before{
+                        //             content: "04";
+                        //          }
+                        //     }
+                        //     &.count-5{
+                        //         &::before{
+                        //             content: "05";
+                        //          }
+                        //     }
+                        // }
                         h3{
                             position: relative;
                             font-size: 1.8rem;
@@ -1052,7 +1063,7 @@
             padding-top: 2rem;
          }
         &::before{
-            content: "CHOICE";
+            // content: "CHOICE";
             display: block;
             position: absolute;
             font-size: 19rem;
