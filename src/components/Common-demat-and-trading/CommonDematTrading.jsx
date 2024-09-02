@@ -54,7 +54,7 @@ function CommonDematTrading({ data }) {
         setIsActive(current => !current);
     };
 
-    const handleClick2 = () => setIsActive(current => !current);
+    const handleClick2 = () => setIsActive2(current => !current);
     const showVideo = (videoId) => setVideoVisibility(prevState => ({ ...prevState, [videoId]: true }));
 
 

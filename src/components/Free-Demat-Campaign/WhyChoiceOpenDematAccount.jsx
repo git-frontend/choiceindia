@@ -76,7 +76,7 @@ const settings1 = {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-first text-center"><span>Why Choice</span> to Open a Demat Account?</h2>
+                   <h2 className="title-first text-center">Open Demat account with the <span>fastest growing Brand</span></h2>
                 </div>
             </div>
             <div className="row">
