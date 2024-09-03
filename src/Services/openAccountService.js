@@ -152,7 +152,8 @@ const openAccountService = {
               'lead_source': 'choiceindia',
               'userId': utils.generateSHA256Hash(request.mobile_number.toString()),
               'leadId': res.Body.leadid,
-              'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+              'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb',
+              'home_sticky_form':window.location.pathname =='/' ? "sticky_form" : ""
             })
             break;
           }
