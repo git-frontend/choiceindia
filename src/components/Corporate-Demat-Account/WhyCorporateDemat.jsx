@@ -72,9 +72,8 @@ function WhyCorporateDemat() {
             <div className="col-md-12">
               <div className="why-corporate-heading text-center">
                 <h2 className="title-secnd">Why Open a Corporate Demat Account</h2>
-                <p className="why-corporate-para1">Tailored for businesses, our Corporate Demat account enables stock market investments,<br />
-                  including mutual funds and stocks. It allows businesses to manage their assets or securities efficiently.</p>
-                <p className="why-corporate-para1 para2">Here’s how our account can elevate your corporate trading experience:</p>
+                <p className="why-corporate-para1">Designed specifically for businesses, our Corporate Demat Account offers a streamlined way to manage and grow your company's investments. From stocks to mutual funds, we provide the tools and support to optimize your financial portfolio.</p>
+                <p className="why-corporate-para1 para2">Here's how a dedicated corporate account can drive your business forward.</p>
               </div>
             </div>
           </div>

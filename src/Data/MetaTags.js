@@ -2505,7 +2505,7 @@ Other requirements - Have valid pan card & a valid address proof (Aadhar, Voter 
   "corporate-demat-account": {
     "title": "Open a Corporate Demat Account Online with Choice",
     'lang': "en",
-    'content': "Open a Corporate Demat account with Choice now! Manage business investments by exploring corporate demat account, its benefits, types, opening process, documents needed & more",
+    'content': "Best corporate demat account in India. Avail 0 amc*, 0 square off charges, free corporate demat account opening for private limited companies. Open now!",
     "link": "https://choiceindia.com/corporate-demat-account"
   },
   "nach-cancellation": {

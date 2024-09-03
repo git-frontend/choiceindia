@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import "../Common-features/common-demat-suppotive.scss";
-const NewFormSection = ({sections,dataLayerValues}) => {
+const NewFormSection = ({sections,dataLayerValues,mobileField}) => {
+    function mobileRef(numberRef){
+    mobileField(numberRef);
+    }
     return (
 
         <>
-            <section className="form-section-all">
+            <section className="form-section-all" id="form-section">
                 <div className="container">
                     <div className="best-stock-Newform">
                         {sections.map((section, index) => (
@@ -51,7 +54,7 @@ const NewFormSection = ({sections,dataLayerValues}) => {
                                 
                                         <div id="dematformsticky">
                                         {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" > */}
-                                            <OpenDemateAccountStickyFooter dataLayerValues={dataLayerValues || ""}/>
+                                            <OpenDemateAccountStickyFooter dataLayerValues={dataLayerValues || ""} mobileRef={mobileRef}/>
                                             {/* </GoogleReCaptchaProvider> */}
                                         </div>
                                   

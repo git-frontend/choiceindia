@@ -5,6 +5,7 @@ import LowDPCharges from '../../assets/images/free-demat-compaign/free-demat-acc
 import PaisaBrokerage from '../../assets/images/free-demat-compaign/open-low-brokerage-demat-account.svg';
 import ZeroAutoSquare from '../../assets/images/free-demat-compaign/free-demat-account-with-zero-auto-square-off-charges.svg';
 import FreeCall from '../../assets/images/free-demat-compaign/open-demat-account-with-free-call-for-trade-facility.svg';
+import {Link} from "react-router-dom";
 
 function WhyOpenFreeDematAccount() {
   function chapterScroll(id) {
@@ -23,7 +24,7 @@ function WhyOpenFreeDematAccount() {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-first text-center">Why Open a <span>Free Demat Account </span><br/>with Choice?</h2>
+                   <h2 className="title-first text-center">Free Demat with <span>Low Trading Costs</span></h2>
                   <div className="row justify-content-center row-pd">
                       <div className="col-md-3 col-sm-12">
                        <div className="benefit-list">
@@ -65,6 +66,9 @@ function WhyOpenFreeDematAccount() {
                             </div>
                         </div>
                       </div>
+                  </div>
+                  <div className="text-center view-charges-link mb-5">
+                   <Link to="/brokerage-charges" className="cursor-pointer text-decoration-none view-charges-color">View all charges</Link>
                   </div>
                   <div className="text-center">
                     <a onClick={()=>{chapterScroll('dematform')}} className="cursor-pointer"><span className="btn-bg btn-bg-dark">Open Now</span></a>
