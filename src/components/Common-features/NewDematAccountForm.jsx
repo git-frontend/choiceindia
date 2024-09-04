@@ -103,6 +103,7 @@ function NewDematAccountForm(props) {
         consentYesLoader: false,
         consentNoLoader: false
     });
+    const [isOnboardFlag, setIsOnboardFlag] = useState();
     
     const [responseLink,setResponseLink]=useState();
       /**Error variable for consent */
@@ -210,6 +211,10 @@ function NewDematAccountForm(props) {
    
 
     useEffect(() => {
+
+        // if(searchParams.get('source') && atob(searchParams.get('source')) === 'DIGIFOX'){
+        //     sessionStorage.setItem('digifoxId',searchParams.get('digifoxId') || "")
+        // }
         let mediaQuery = window.matchMedia("(min-width: 767px)");
         mediaQuery.addListener(setView);
         // this is the cleanup function to remove the listener
@@ -242,9 +247,12 @@ function NewDematAccountForm(props) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link, msg, info, actionType, leadID) {
+    function handleOTPClose(link, msg, info, actionType, leadID,is_onboard_flag) {
         setShowOTP(false);
         setResponseLink(link || "")
+        if(is_onboard_flag){
+            setIsOnboardFlag(is_onboard_flag);
+        }
         if (actionType != 'popup_and_no_update') {
             if (link) {
 
@@ -332,8 +340,13 @@ function NewDematAccountForm(props) {
             return { ...prevState, showModal: false }
         });
 
-        if (link) {
-            window.location.href = link;
+        if(link && link.includes('onboard-info') && atob(searchParams.get('source')) === 'DIGIFOX' && searchParams.get('digifoxId') && isOnboardFlag !== 'C'){
+            const redirectionLink = link +'&digifoxId='+ searchParams.get('digifoxId');
+            window.location.href = redirectionLink;
+        }else{
+            if (link) {
+                window.location.href = link;
+            }
         }
     }
 
