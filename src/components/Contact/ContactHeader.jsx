@@ -36,7 +36,7 @@ function ContactHeader() {
   return (
     <>
       {
-        (searchParams && searchParams.get('refercode') && (atob(searchParams.get('source')) !== 'INDIVEST') && isMobile.current) ?
+        (searchParams && searchParams.get('refercode') && (atob(searchParams.get('source')) !== 'INDIVEST') && (atob(searchParams.get('source')) !== 'DIGIFOX') && isMobile.current) ?
           <>
 
           </> :
