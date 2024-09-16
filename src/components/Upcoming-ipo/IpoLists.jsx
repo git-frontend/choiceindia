@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import pdfIco from "../../assets/images/upcoming-ipo/pdf-icon.svg";
 import cmsService from "../../Services/cmsService";
 import utils from "../../Services/utils";
+import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function IpoLists() {
     const [apiData, setApiData] = useState([]);
     console.log("apiData", apiData)
     const [toggleState, setToggleState] = useState(1);
-
+    const [isloading, setisloading] = useState(true);
     const toggleTab = (index) => {
         setToggleState(index);
     };
@@ -18,15 +20,19 @@ function IpoLists() {
         cmsService.companyIpoService()
             .then(res => {
                 if (res && res.data && res.data.data) {
-                    const values = res.data.data.filter(item => item.status === "published"); 
+                    setisloading(false);
+                    const values = res.data.data.filter(item => item.status === "published");
                     setApiData(values);
                     console.log("values", values);
                 } else {
+                    setisloading(false);
                     setApiData([]);
                 }
             })
             .catch((error) => {
                 console.error("Error fetching IPO data:", error);
+                setisloading(false);
+                setApiData([]);
             });
     }
 
@@ -116,40 +122,58 @@ function IpoLists() {
                                             <div className='table'>
                                                 <table className='table-list'>
                                                     <thead>
-                                                    <tr className='hide-mb'>
-                                                        <th>IPO Name</th>
-                                                        <th>Issue Date</th>
-                                                        <th>Price Range</th>
-                                                        <th>Lot Size</th>
-                                                        <th>IPO Document</th>
-                                                    </tr>
+                                                        <tr className='hide-mb'>
+                                                            <th>IPO Name</th>
+                                                            <th>Issue Date</th>
+                                                            <th>Price Range</th>
+                                                            <th>Lot Size</th>
+                                                            <th>IPO Document</th>
+                                                        </tr>
                                                     </thead>
-                                                   
-                                                    <tbody>
                                                     {
-                                                        // apiData?.map((res) => {
-                                                            (apiData || [])
-                                                            .sort((a, b) => new Date(b.open_date) - new Date(a.open_date))
-                                                            .map((res, index) => {
-                                                            return (
-                                                                    <tr key={index}>
-                                                                    <td className='ipo-name'>{res.banner_title}</td>
-                                                                    <td data-label="Issue Date" className='txt-right'>{res.open_date ? utils.formatDate(new Date(res.open_date), "dd MMMM , yyyy") : 'To be announced'}</td>
-                                                                    <td data-label="Price Range">{res.price_band_value || 'To be announced'}</td>
-                                                                    <td data-label="Lot Size" className='txt-right'>{res.lot_size_value || 'To be announced'}</td>
-                                                                    <td className='actin-btns'>
-                                                                        <a href='#' className='btn-bg'>Pre-Apply</a>
-                                                                        {/* <a href='#' className='' target='_blank'>
+                                                        isloading ?
+                                                            <div className="text-center">
+                                                                <div>
+                                                                    <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                                                </div>
+                                                            </div>
+                                                            :
+                                                            <>
+                                                                {
+                                                                    apiData && apiData.length ?
+
+                                                                        <tbody>
+                                                                            {
+                                                                                // apiData?.map((res) => {
+                                                                                (apiData || [])
+                                                                                    .sort((a, b) => new Date(b.open_date) - new Date(a.open_date))
+                                                                                    .map((res, index) => {
+                                                                                        return (
+                                                                                            <tr key={index}>
+                                                                                                <td className='ipo-name'>{res.banner_title}</td>
+                                                                                                <td data-label="Issue Date" className='txt-right'>{res.open_date ? utils.formatDate(new Date(res.open_date), "dd MMMM , yyyy") : 'To be announced'}</td>
+                                                                                                <td data-label="Price Range">{res.price_band_value || 'To be announced'}</td>
+                                                                                                <td data-label="Lot Size" className='txt-right'>{res.lot_size_value || 'To be announced'}</td>
+                                                                                                <td className='actin-btns'>
+                                                                                                    <a href='https://finx.choiceindia.com/next/market/upcoming-ipo-list?utm_source=demat_lead_genera[…]dium=choiceindia_upcoming_ipo&utm_campaign=reffering_pages' className='btn-bg'>Pre-Apply</a>
+                                                                                                    {/* <a href='#' className='' target='_blank'>
                                                                             <img src={pdfIco} className='' />
                                                                         </a> */}
-                                                                    </td>
-                                                                     </tr>
-                                                                     
-                                                               
-                                                            )
-                                                        }
-                                                        )}
-                                                         </tbody>
+                                                                                                </td>
+                                                                                            </tr>
+
+
+                                                                                        )
+                                                                                    }
+                                                                                    )}
+                                                                        </tbody>
+                                                                        :
+                                                                        <div className="text-center">
+                                                                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                                                        </div>
+                                                                }
+                                                            </>
+                                                    }
                                                 </table>
                                             </div>
                                         </div>
