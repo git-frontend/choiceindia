@@ -86,58 +86,63 @@ function DematAccountForm(props) {
 
     const [showRefMsg, setShowRefMsg] = useState();
     const [leadId, setLeadId] = useState();
-
+    const [responseLink,setResponseLink]=useState();
     /**on click no consent */
     function submitConsent(consent) {
 
 
         if (consent == 'yes') {
-            setConsentLoaders({ ...consentLoaders, consentYesLoader: true, consentNoLoader: false });
+            handleOTPClose(responseLink)
+            // setConsentLoaders({ ...consentLoaders, consentYesLoader: true, consentNoLoader: false });
         } else {
-            setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: true });
+            setShowConsent(() => false);
+            setMobileNumber("");
+            setReferID("")
+            // setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: true });
+
         }
 
-        let request = {
-            "mobile_number": null,
-            otp: null,
-            session_id: null,
-            is_consent: consent ? consent : null,
-            lid: otpLeadID.current ? otpLeadID.current : null
-        };
-
-        openAccountService.verifyOTP(request, "JF").then((res) => {
-            if (res && res.status === 200 && res.data && res.data.Body) {
-                utils.pushDataLayerEvent({
-                    'event': 'ci_onboard_lead_generated',
-                    'page_path': window.location.pathname,
-                    'page_url': window.location.href,
-                    'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-                    'leadId': leadId,
-                    'lead_source':'choiceindia',
-                    'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                    'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-                })
+        // let request = {
+        //     "mobile_number": null,
+        //     otp: null,
+        //     session_id: otpSessionID,
+        //     is_consent: consent ? consent : null,
+        //     lid: otpLeadID.current ? otpLeadID.current : null
+        // };
+        // openAccountService.verifyOTPService(mobileNumber,request,captchaToken,hideLoader,handleOTPClose ,openOTPInfoPopup,setErrors)
+        // openAccountService.verifyOTP(request, "JF").then((res) => {
+        //     if (res && res.status === 200 && res.data && res.data.Body) {
+        //         utils.pushDataLayerEvent({
+        //             'event': 'ci_onboard_lead_generated',
+        //             'page_path': window.location.pathname,
+        //             'page_url': window.location.href,
+        //             'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+        //             'leadId': leadId,
+        //             'lead_source':'choiceindia',
+        //             'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+        //             'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+        //         })
                 
-                setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
-                // console.log('Success', res);
-                if (consent == "yes") {
-                    window.location.href = referLink.current ? referLink.current : null;
-                } else {
-                    setShowConsent(() => false);
-                }
-                // }
-            } else {
-                setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
-                setConsentErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something Went Wrong');
-            }
-        }).catch((error) => {
-            setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
-            if (error && error.response && error.response.data && error.response.data.Message) {
-                setConsentErrors(error.response.data.Message);
-            } else {
-                setConsentErrors('Something Went Wrong.');
-            }
-        });
+        //         setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+        //         // console.log('Success', res);
+        //         if (consent == "yes") {
+        //             window.location.href = referLink.current ? referLink.current : null;
+        //         } else {
+        //             setShowConsent(() => false);
+        //         }
+        //         // }
+        //     } else {
+        //         setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+        //         setConsentErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something Went Wrong');
+        //     }
+        // }).catch((error) => {
+        //     setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+        //     if (error && error.response && error.response.data && error.response.data.Message) {
+        //         setConsentErrors(error.response.data.Message);
+        //     } else {
+        //         setConsentErrors('Something Went Wrong.');
+        //     }
+        // });
     }
 
 
@@ -216,7 +221,7 @@ function DematAccountForm(props) {
 
     function handleOTPClose(link, msg, info, actionType, leadID) {
         setShowOTP(false);
-
+        setResponseLink(link || "")
         if (actionType != 'popup_and_no_update') {
             if (link) {
 
@@ -366,7 +371,9 @@ function DematAccountForm(props) {
             "utm_source": (window.location.pathname.indexOf("/unlisted-shares-price-list/") > -1) ? 'ul_leads' : isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' : isMF == "yes" ? UTMSource.current || 'choice-mf-web' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             "account_type": type1 == 'MF' ? "" : "all",
+            "source": source.current ? source.current : "CHOICEINDIA"
         };
+        // console.log("request",request)
         openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster)
         
     }
@@ -620,7 +627,7 @@ function DematAccountForm(props) {
                                                     <div className="loaderB mx-auto"></div> : <span>No, Cancel Onboarding and Connect RM</span>
                                             }
                                         </button>
-                                        <button className="btn-bg referral-btn" onClick={() => { consentLoaders.consentYesLoader ? null : submitConsent('yes') }} disabled={consentLoaders.consentNoLoader}>
+                                        <button className="btn-bg referral-btn" onClick={() => { consentLoaders.consentYesLoader ? null : submitConsent('yes') ,setShowConsent(() => false);}} disabled={consentLoaders.consentNoLoader}>
                                             {
                                                 consentLoaders.consentYesLoader ?
                                                     <div className="loaderB mx-auto"></div> : <span>Yes, continue with Existing Referral Code</span>

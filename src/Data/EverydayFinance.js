@@ -15,6 +15,7 @@ const EveryFinance =
         title:"Stocks",
         description:"Facilitating trade on equities, commodities & currencies with ease",
         "alt":"stock-market-investing",
+        link:"/equity-stock-trading"
 
     },
     {
@@ -23,6 +24,7 @@ const EveryFinance =
         title:"Mutual Funds",
         description:"Buy and sell all kinds of mutual funds at one place with comfort",
         "alt":"Mutual Fund Investment",
+        link:"/mutual-funds-investment"
 
     },
     {
@@ -31,6 +33,7 @@ const EveryFinance =
         title:"Insurance",
         description:"Get insured as per your need for everything right here",
         "alt":"Insurance",
+        link:"https://choiceinsurance.in/"
 
 
     },
@@ -41,6 +44,7 @@ const EveryFinance =
         title:"Loans",
         description:"Hassle free Personal loans with minimum documentation",
         "alt":"Loan",
+        link:"/loan"
 
 
     },

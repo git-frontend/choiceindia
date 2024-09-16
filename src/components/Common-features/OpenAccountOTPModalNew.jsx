@@ -200,7 +200,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                 </div>
                                 }
                                
-                                <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
+                                <p className="heading otp-ttl">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
                                     <div className="otpform-new" >
                                     
                                        <div className="d-flex otp-sent">

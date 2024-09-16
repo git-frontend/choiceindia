@@ -1,168 +1,182 @@
-import Image2 from '../../assets/images/open-demat-account/lowest-dp-charges.svg';
-import Image3 from '../../assets/images/open-demat-account/low-charges.svg';
-import Image4 from '../../assets/images/open-demat-account/free-research-advisory.svg';
-import Image5 from '../../assets/images/open-demat-account/demat-account-without-annual-charges.svg';
-import Image7 from '../../assets/images/open-demat-account/low-brokerage-demat-account.svg';
-import Image8 from '../../assets/images/open-demat-account/free-call-for-trade-facility.svg';
-import Image9 from '../../assets/images/open-demat-account/free-paperless-demat-account-opening.svg';
-import Image10 from '../../assets/images/open-demat-account/advanced-trading-app-platform.svg';
-import Image11 from '../../assets/images/open-demat-account/refer-and-earn-demat-account.svg';
-import Image13 from '../../assets/images/open-demat-account/web.svg';
-import Image14 from '../../assets/images/open-demat-account/android.svg';
-import Image15 from '../../assets/images/open-demat-account/ios.svg';
-import Image16 from '../../assets/images/open-demat-account/commodity-brokerage-charges.svg';
-import Image17 from '../../assets/images/open-demat-account/currency-brokerage-charges.svg';
-import Image18 from '../../assets/images/open-demat-account/equity-brokerage-charges.svg';
+import Image2 from "../../assets/images/open-demat-account/lowest-dp-charges.svg";
+import Image3 from "../../assets/images/open-demat-account/low-charges.svg";
+import Image4 from "../../assets/images/open-demat-account/free-research-advisory.svg";
+import Image5 from "../../assets/images/open-demat-account/demat-account-without-annual-charges.svg";
+import Image7 from "../../assets/images/open-demat-account/low-brokerage-demat-account.svg";
+import Image8 from "../../assets/images/open-demat-account/free-call-for-trade-facility.svg";
+import Image9 from "../../assets/images/open-demat-account/free-paperless-demat-account-opening.svg";
+import Image10 from "../../assets/images/open-demat-account/advanced-trading-app-platform.svg";
+import Image11 from "../../assets/images/open-demat-account/refer-and-earn-demat-account.svg";
+import Image13 from "../../assets/images/open-demat-account/web.svg";
+import Image14 from "../../assets/images/open-demat-account/android.svg";
+import Image15 from "../../assets/images/open-demat-account/ios.svg";
+import Image16 from "../../assets/images/open-demat-account/commodity-brokerage-charges.svg";
+import Image17 from "../../assets/images/open-demat-account/currency-brokerage-charges.svg";
+import Image18 from "../../assets/images/open-demat-account/equity-brokerage-charges.svg";
 const CommodityTradingData = {
-    "BannerData":[
-        {
-            "title": `Open a Commodity Trading <br> Account <span class="yellow">Online For Free</span>`,
-            "bannerIconText": 'Open Free Account',
-            "iconText": "One Account for Everything",
-            "bannerIcon" : `${Image2}`,
-            "bannerAlt": 'Open Commodity Trading Account with Low DP Charges',
-        },
-        {
-            "iconText": "Free AMC for First Year",
-            "bannerIcon" : `${Image3}`,
-            "bannerAlt": 'Online Commodity Trading Account with No Annual Charges',
-        },
-        {
-            "iconText": "Expert Research & Advisory",
-            "bannerIcon" : `${Image4}`,
-            "bannerAlt": 'Open a Commodity Trading Account with Expert Research Advisory',
-        },
-        {
-            "iconText": "Low Brokerage Charges",
-            "bannerIcon" : `${Image5}`,
-            "bannerAlt": 'Open Low Brokerage Commodity Trading Account',
-        },
-    ],
-    "WhyOpenCommodityTAccount":[
-        {
-            "title": "Why Open A Commodity Trading Account Online With Us?",
-            "cardHeading": "Low Brokerage",
-            "cardText": "Low brokerage charges; as less as 0.02%.",
-            "cardIcon" : `${Image7}`,
-            "cardAlt": 'Free Commodity Trading Account in India with Low Brokerage Charges',
-        },
-        {
-            "cardHeading": "Free Call for Trade Facility",
-            "cardText": "Our customers can opt to execute commodity trades over the phone free of cost.",
-            "cardIcon" : `${Image8}`,
-            "cardAlt": 'Commodity Trading Account Opening with Free Call for Trade Facility',
-        },
-        {
-            "cardHeading": "Paperless Account Opening",
-            "cardText": "Instantly open a paperless commodity trading account online within 5 minutes.",
-            "cardIcon" : `${Image9}`,
-            "cardAlt": 'Paperless Commodity Trading Account in India',
-        },
-        {
-            "cardHeading": "Technologically Advanced Platform",
-            "cardText": "Trade into the commodities via the website or Android and iOS App with state-of-the-art features.",
-            "cardIcon" : `${Image10}`,
-            "cardAlt": 'Commodity Trading with Advance Trading Platform',
-        },
-        {
-            "cardHeading": "Earn More from Referrals",
-            "cardText": "A rewarding referral program that can contribute to a lifetime source of earning.",
-            "cardIcon" : `${Image11}`,
-            "cardAlt": 'Open Commodity Trading Account and earn more from referrals',
-        },
-    ],
-    "WhyChoiceCommon":[
-        {
-            "title": "Why Choice?",
-            "headtxt": `RESEARCH &amp;<br />ADVISORY SERVICES`,
-            "subtxt": "A dedicated research team that provides Technical and Fundamental Research on commodities at no extra cost.",
-        },
-        {
-            "headtxt": `CUSTOMER <br />SUPPORT`,
-            "subtxt": "An excellent support team that guides you at every step available via phone and emails and branch offices.",
-        },
-        {
-            "headtxt": `LOCAL <br />OFFICES`,
-            "subtxt": "We have 95+ local offices available across the country at your service.",
-        },
-        {
-            "headtxt": `25+ YEARS OF  <br />EXPERIENCE`,
-            "subtxt": "A trusted name in the broking industry backed by 25+ years of experience in the finance domain.",
-        },
-    ],
-    "availbleOn":[
-        {
-            "availbleHead": "Web",
-            "availbleIcon" : `${Image13}`,
-            "availbleLink" : "https://finx.choiceindia.com/",
-        },
-        {
-            "availbleHead": "Android",
-            "availbleIcon" : `${Image14}`,
-            "availbleLink" : "https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy",
-        },
-        {
-            "availbleHead": "iOS",
-            "availbleIcon" : `${Image15}`,
-            "availbleLink" : "https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261",
-        },
-    ],
-    "OpenLowBrokerageAccount":[
-        {
-            "title": "Open a Low Brokerage Commodity Account",
-            "titleDetails": "Brokerage is charged on a percentage basis for Intraday, Delivery and Futures while the brokerage for Options is calculated on the basis of a flat fee.",
-            "cardHeading": "Commodity",
-            "cardDetails1": `Futures <span>0.02%</span>`,
-            "cardDetails2": `Options  <span>₹ 50 per Lot</span>`,
-            "cardIcon" : `${Image16}`,
-            "cardAlt": 'Commodity Brokerage Charges for Opening Trading Account Online',
-        },
-        {
-            "cardHeading": "Currency",
-            "cardDetails1": `Futures <span>0.02%</span>`,
-            "cardDetails2": ` Options <span>₹ 20 per Lot</span>`,
-            "cardIcon" : `${Image17}`,
-            "cardAlt": 'Currency Brokerage Charges for Commodity Trading Account in India',
-        },
-        {
-            "cardHeading": "Equity",
-            "cardDetails1": `Delivery <span>0.20%</span>`,
-            "cardDetails2": `Intraday <span>0.02%</span>`,
-            "cardDetails3": `Futures <span>0.02%</span>`,
-            "cardDetails4": `Options <span>₹25 per Lot</span>`,
-            "cardIcon" : `${Image18}`,
-            "cardAlt": 'Equity Charges to Open Commodity Trading',
-        },
-    ],
-    "AccountOpeningProcess":[
-        {
-            "title": `Open a <span>Paperless </span>  Commodity Trading Account Online For Free`,
-            "subtitle": "Commodity Account Opening Online Process",
-            "pageLink" : "/commodity-trading",
-            "processH": "A trusted name",
-            "processT": `Fill in the required details and upload the relevant documents along with a passport size photograph.`,
-            "stepsNum":"01",
-            "processAlt": 'Register to Open Commodity Trading Account in India',
-        },
-        {
-            "processH": "In-Person Verification",
-            "processT": `Complete the In-person verification (IPV).`,
-            "stepsNum":"02",
-        },
-        {
-            "processH": "Registration Complete",
-            "processT": `Your Demat Account opening is successful with Choice.`,
-            "stepsNum":"03",
-        },
-        {
-            "processH": "Courier POA",
-            "processT": `Courier us the signed copy of the Power of Attorney (POA) sent on your registered Email ID.`,
-            "stepsNum":"04",
-        },
-    ],
-    "MoreContentCommon":[
-        {
-            "moreContentDetails": `<section class="ref-sec-terms">
+  BannerData: [
+    {
+      title: `Open a Commodity Trading <br> Account <span class="yellow">Online For Free</span>`,
+      bannerIconText: "Open Free Account",
+      iconText: "One Account for Everything",
+      bannerIcon: `${Image2}`,
+      bannerAlt: "Open Commodity Trading Account with Low DP Charges",
+    },
+    {
+      iconText: "Free AMC for First Year",
+      bannerIcon: `${Image3}`,
+      bannerAlt: "Online Commodity Trading Account with No Annual Charges",
+    },
+    {
+      iconText: "Expert Research",
+      bannerIcon: `${Image4}`,
+      bannerAlt:
+        "Open a Commodity Trading Account with Expert Research Advisory",
+    },
+    {
+      iconText: "Low Brokerage Charges",
+      bannerIcon: `${Image5}`,
+      bannerAlt: "Open Low Brokerage Commodity Trading Account",
+    },
+  ],
+  WhyOpenCommodityTAccount: [
+    {
+      title: "Why Open A Commodity Trading Account Online With Us?",
+      cardHeading: "Low Brokerage",
+      cardText: "Low brokerage charges; as less as 0.02%.",
+      cardIcon: `${Image7}`,
+      cardAlt:
+        "Free Commodity Trading Account in India with Low Brokerage Charges",
+    },
+    {
+      cardHeading: "Free Call for Trade Facility",
+      cardText:
+        "Our customers can opt to execute commodity trades over the phone free of cost.",
+      cardIcon: `${Image8}`,
+      cardAlt:
+        "Commodity Trading Account Opening with Free Call for Trade Facility",
+    },
+    {
+      cardHeading: "Paperless Account Opening",
+      cardText:
+        "Instantly open a paperless commodity trading account online within 5 minutes.",
+      cardIcon: `${Image9}`,
+      cardAlt: "Paperless Commodity Trading Account in India",
+    },
+    {
+      cardHeading: "Technologically Advanced Platform",
+      cardText:
+        "Trade into the commodities via the website or Android and iOS App with state-of-the-art features.",
+      cardIcon: `${Image10}`,
+      cardAlt: "Commodity Trading with Advance Trading Platform",
+    },
+    {
+      cardHeading: "Earn More from Referrals",
+      cardText:
+        "A rewarding referral program that can contribute to a lifetime source of earning.",
+      cardIcon: `${Image11}`,
+      cardAlt: "Open Commodity Trading Account and earn more from referrals",
+    },
+  ],
+  WhyChoiceCommon: [
+    {
+      title: "Why Choice?",
+      headtxt: `RESEARCH SERVICES`,
+      subtxt:
+        "A dedicated research team that provides Technical and Fundamental Research on commodities at no extra cost.",
+    },
+    {
+      headtxt: `CUSTOMER <br />SUPPORT`,
+      subtxt:
+        "An excellent support team that guides you at every step available via phone and emails and branch offices.",
+    },
+    {
+      headtxt: `LOCAL <br />OFFICES`,
+      subtxt:
+        "We have 95+ local offices available across the country at your service.",
+    },
+    {
+      headtxt: `25+ YEARS OF  <br />EXPERIENCE`,
+      subtxt:
+        "A trusted name in the broking industry backed by 25+ years of experience in the finance domain.",
+    },
+  ],
+  availbleOn: [
+    {
+      availbleHead: "Web",
+      availbleIcon: `${Image13}`,
+      availbleLink: "https://finx.choiceindia.com/",
+    },
+    {
+      availbleHead: "Android",
+      availbleIcon: `${Image14}`,
+      availbleLink:
+        "https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy",
+    },
+    {
+      availbleHead: "iOS",
+      availbleIcon: `${Image15}`,
+      availbleLink:
+        "https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261",
+    },
+  ],
+  OpenLowBrokerageAccount: [
+    {
+      title: "Open a Low Brokerage Commodity Account",
+      titleDetails:
+        "Brokerage is charged on a percentage basis for Intraday, Delivery and Futures while the brokerage for Options is calculated on the basis of a flat fee.",
+      cardHeading: "Commodity",
+      cardDetails1: `Futures <span>0.02%</span>`,
+      cardDetails2: `Options  <span>₹ 50 per Lot</span>`,
+      cardIcon: `${Image16}`,
+      cardAlt: "Commodity Brokerage Charges for Opening Trading Account Online",
+    },
+    {
+      cardHeading: "Currency",
+      cardDetails1: `Futures <span>0.02%</span>`,
+      cardDetails2: ` Options <span>₹ 20 per Lot</span>`,
+      cardIcon: `${Image17}`,
+      cardAlt:
+        "Currency Brokerage Charges for Commodity Trading Account in India",
+    },
+    {
+      cardHeading: "Equity",
+      cardDetails1: `Delivery <span>0.20%</span>`,
+      cardDetails2: `Intraday <span>0.02%</span>`,
+      cardDetails3: `Futures <span>0.02%</span>`,
+      cardDetails4: `Options <span>₹25 per Lot</span>`,
+      cardIcon: `${Image18}`,
+      cardAlt: "Equity Charges to Open Commodity Trading",
+    },
+  ],
+  AccountOpeningProcess: [
+    {
+      title: `Open a <span>Paperless </span>  Commodity Trading Account Online For Free`,
+      subtitle: "Commodity Account Opening Online Process",
+      pageLink: "/commodity-trading",
+      processH: "A trusted name",
+      processT: `Fill in the required details and upload the relevant documents along with a passport size photograph.`,
+      stepsNum: "01",
+    },
+    {
+      processH: "In-Person Verification",
+      processT: `Complete the In-person verification (IPV).`,
+      stepsNum: "02",
+    },
+    {
+      processH: "Registration Complete",
+      processT: `Your Demat Account opening is successful with Choice.`,
+      stepsNum: "03",
+    },
+    {
+      processH: "Courier POA",
+      processT: `Courier us the signed copy of the Power of Attorney (POA) sent on your registered Email ID.`,
+      stepsNum: "04",
+    },
+  ],
+  MoreContentCommon: [
+    {
+      moreContentDetails: `<section class="ref-sec-terms">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
@@ -170,7 +184,7 @@ const CommodityTradingData = {
                    </div>
                         <div class="col-md-12">
                             <div class="terms-cont" id="style-1">
-                                  <p class="sml-para-dv">Commodity trades can only be performed only if you open a commodity trading account with a trusted source like Choice. Avail of several benefits like low brokerage on commodity trading and free commodity trading advisory to investing in the commodities suited for your goal, long-term or short-term.</p>
+                                  <p class="sml-para-dv">Commodity trades can only be performed only if you open a commodity trading account with a trusted source like Choice. Avail of several benefits like low brokerage on commodity trading and free commodity trading to investing in the commodities suited for your goal, long-term or short-term.</p>
                                   <p class="sml-para-dv">If you are familiar with the nuances of the commodity market, <a href="https://choiceindia.com/open-free-demat-account">open a free demat account</a> with us and break free from significant annual charges. Minimal DP charges of Rs 10 add to the appeal of our platform and make investing economical and accessible for everyone.</p>
                                   <p class="sml-para-dv">However, if you are new to commodities in general, make investment decisions after extensive research. To make learning more accessible, we have compiled the fundamentals of commodities and the associated commodity trading account to ease your transition into an investor.</p>
                                   <br />
@@ -262,18 +276,21 @@ const CommodityTradingData = {
                         </div>
                     </div>
                 </div>
-  </section> `}
-    ],
-    "CommonFaq":[
-        {
-            eventKey: "0",
-            header: "How much time does it take to complete the registration of a commodity trading account?",
-            body: "It takes about 48 hours for a commodity account in the online process and for the offline process it may take 4 days to 10 days."
-        },
-        {
-            eventKey: "1",
-            header: "What are the documents required to open a commodity trading account?",
-            body: `
+  </section> `,
+    },
+  ],
+  CommonFaq: [
+    {
+      eventKey: "0",
+      header:
+        "How much time does it take to complete the registration of a commodity trading account?",
+      body: "It takes about 48 hours for a commodity account in the online process and for the offline process it may take 4 days to 10 days.",
+    },
+    {
+      eventKey: "1",
+      header:
+        "What are the documents required to open a commodity trading account?",
+      body: `
                 To open a commodity trading account, you need to submit the following documents:
                 <ul>
                     <li>Proof of Identity (PAN Card, Aadhar card, ID card, etc)</li>
@@ -283,38 +300,42 @@ const CommodityTradingData = {
                     <li>Bank details</li>
                     <li>Signature</li>
                 </ul>
-            `
-        },
-        {
-            eventKey: "2",
-            header: "Is it necessary to provide power of Attorney (POA) while opening a commodity trading account?",
-            body: "Yes. The Power of Attorney is important for executing trades in a commodity account. Hence, one has to provide the same as per the regulators."
-        },
-        {
-            eventKey: "3",
-            header: "Are any charges applicable while opening a commodity trading account with Choice?",
-            body: "No. There are no account opening charges with Choice. However, one should take into account the brokerage charges associated."
-        },
-        {
-            eventKey: "4",
-            header: "Can I use the same commodity trading account for all segments?",
-            body: "Yes. Once you open an account with Choice, you have the authority to trade with equity, commodity, currency and derivatives. The procedure for all of them is constant."
-        },
-        {
-            eventKey: "5",
-            header: "How long will it take for the commodity trading account to be activated?",
-            body: "A commodity trading account takes 4 hours to be activated through an online process after providing the documents."
-        },
-        {
-            eventKey: "6",
-            header: "Are NRIs able to open a commodity trading account in India?",
-            body: "Yes. An NRI can start a trading account with Choice with the same procedure of any citizen residing in India."
-        },
-        {
-            eventKey: "7",
-            header: "Can I trade in multiple types of commodities through a commodity account?",
-            body: "Yes. With choice, you have the privilege to trade in multiple types of commodities."
-        }
-    ]
-}
+            `,
+    },
+    {
+      eventKey: "2",
+      header:
+        "Is it necessary to provide power of Attorney (POA) while opening a commodity trading account?",
+      body: "Yes. The Power of Attorney is important for executing trades in a commodity account. Hence, one has to provide the same as per the regulators.",
+    },
+    {
+      eventKey: "3",
+      header:
+        "Are any charges applicable while opening a commodity trading account with Choice?",
+      body: "No. There are no account opening charges with Choice. However, one should take into account the brokerage charges associated.",
+    },
+    {
+      eventKey: "4",
+      header: "Can I use the same commodity trading account for all segments?",
+      body: "Yes. Once you open an account with Choice, you have the authority to trade with equity, commodity, currency and derivatives. The procedure for all of them is constant.",
+    },
+    {
+      eventKey: "5",
+      header:
+        "How long will it take for the commodity trading account to be activated?",
+      body: "A commodity trading account takes 4 hours to be activated through an online process after providing the documents.",
+    },
+    {
+      eventKey: "6",
+      header: "Are NRIs able to open a commodity trading account in India?",
+      body: "Yes. An NRI can start a trading account with Choice with the same procedure of any citizen residing in India.",
+    },
+    {
+      eventKey: "7",
+      header:
+        "Can I trade in multiple types of commodities through a commodity account?",
+      body: "Yes. With choice, you have the privilege to trade in multiple types of commodities.",
+    },
+  ],
+};
 export default CommodityTradingData;

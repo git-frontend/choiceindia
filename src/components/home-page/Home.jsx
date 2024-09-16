@@ -17,6 +17,8 @@ import meta_tags from "../../Data/MetaTags";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import NewDematAccountForm from '../Common-features/NewDematAccountForm';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function Home() {
 
 
@@ -24,61 +26,57 @@ function Home() {
 	const [showTermsCondition, setShowTermsCondition] = useState(false);
 	const [trigger, setTrigger] = useState(false);
 	const location = useLocation();
+	const [outCome, setOutCome] = useState();
+	function generateRandomNumber() {
+		const random = Math.random(); // Generate a random number between 0 and 1
 
-	useEffect(() => {
-		setRenderCount(true)
-		if (rendercount === true) {
-			let parser = new DOMParser();
-			let doc = parser.parseFromString(meta_tags['https://choiceindia.com/'].faqscript, 'text/html');
-			document.body.appendChild(doc.getElementsByTagName('script')[0] ? doc.getElementsByTagName('script')[0] : '');
-			document.title = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].title : '';
-			document.getElementById('meta-tags').content = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].content : '';
-			document.getElementById('canonical-link').href = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].link : '';
-			document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : 'en';
-			if (!(document.getElementById('link1') == null)) {
-				document.getElementById('link1').remove();
-				document.getElementById('link2').remove();
-				document.getElementById('link3').remove();
-				document.getElementById('link4').remove();
-				document.getElementById('link5').remove();
-				document.getElementById('link6').remove();
-
-			}
+		if (random < 0.5) {
+			setOutCome('A'); // Set outcome to 'A' for 50% of the users
+		} else {
+			setOutCome('B'); // Set outcome to 'B' for the remaining 50%
 		}
-	}, [rendercount])
+	}
 
-	function handleTermsConditionShow() {
-        setShowTermsCondition(true);
-    }
-
-    function handleTermsConditionClose() {
-        setShowTermsCondition(false);
-    }
 	useEffect(() => {
-			handleTermsConditionShow()
-  
-	 }, [])
+		generateRandomNumber(); // Call the function to set outcome when the component mounts
+	}, []);
+	useEffect(() => {
+
+		if (sessionStorage.getItem('termsConditionSeen') !== 'true') {
+			setShowTermsCondition(true);
+		}
+
+		let parser = new DOMParser();
+		let doc = parser.parseFromString(meta_tags['https://choiceindia.com/'].faqscript, 'text/html');
+		document.body.appendChild(doc.getElementsByTagName('script')[0] ? doc.getElementsByTagName('script')[0] : '');
+		document.title = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].title : '';
+		document.getElementById('meta-tags').content = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].content : '';
+		document.getElementById('canonical-link').href = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].link : '';
+		document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : 'en';
+		if (!(document.getElementById('link1') == null)) {
+			document.getElementById('link1').remove();
+			document.getElementById('link2').remove();
+			document.getElementById('link3').remove();
+			document.getElementById('link4').remove();
+			document.getElementById('link5').remove();
+			document.getElementById('link6').remove();
+
+
+		}
+	}, [location])
+	function handleTermsConditionClose() {
+		setShowTermsCondition(false);
+		sessionStorage.setItem('termsConditionSeen', 'true');
+	}
 	return (
 		<div className="Home">
-
 			<main className='home-main'>
-
-
 				<HomePageBanner />
-
-
 				<EverydayFinance />
-
 				<ChoiceFinx />
-
 				<MarketInsights />
-
-
-
 				<HomeFeatures />
-
 				<FablesStories />
-
 				<section className="count-value-section">
 					<div className="container">
 						<div className="row">
@@ -111,14 +109,10 @@ function Home() {
 						</div>
 					</div>
 				</section>
-
 				<HomeTestimonial />
-
 				<SecurityPrivacy />
-
-
 				<Modal show={showTermsCondition} size="lg" onHide={handleTermsConditionClose} backdrop="static"
-					keyboard={false} centered  className="investor-popup-model">
+					keyboard={false} centered className="investor-popup-model">
 					<Modal.Header closeButton>
 						<Modal.Title></Modal.Title>
 					</Modal.Header>
@@ -127,21 +121,30 @@ function Home() {
 
 						<p>Important Announcement: Beware of Fraudulent Entities Claiming to be Choice or its associates</p>
 
-						<p><strong>This is to inform you all that our official website is <a href="/">www.choiceindia.com</a>.</strong></p>
+						<p><strong>This is to inform you all that our official website is <a href="/">choiceindia.com</a>.</strong></p>
 
 						<p>Please be advised that any person or business claiming to be "Choice" or using a similar name/logo without our official website domain is not associated with us.</p>
 
 						<p>Do not make payment to any third person bank account. <strong> Payments for our services should be made only if bank account is in the name of Choice Equity Broking Private Limited </strong>and you can verify the bank details from our official website as above.</p>
 
 						<p>We are committed to maintain the highest standards of integrity and transparency, and we urge our customers and the public at large to exercise caution and verify the authenticity of any entity claiming to be associated with Choice and do not fall prey to such fraudulent entities.</p></Modal.Body>
-						<Modal.Footer>
-                    <Button variant="warning" className='btn-bg-popup btn-bg-dark' onClick={handleTermsConditionClose}>Okay</Button>
-                </Modal.Footer>
+					<Modal.Footer>
+						<Button variant="warning" className='btn-bg-popup btn-bg-dark' onClick={handleTermsConditionClose}>Okay</Button>
+					</Modal.Footer>
 				</Modal>
-
 			</main>
-
-
+			{/* <div className="d-flex justify-content-end" id="campaignForm">
+			<GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                            <NewDematAccountForm />
+                                        </GoogleReCaptchaProvider>
+										</div> */}
+			{outCome === 'A' && ( 
+				<div className="d-flex justify-content-end" id="campaignForm">
+					<GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+						<NewDematAccountForm />
+					</GoogleReCaptchaProvider>
+				</div>
+			)}
 
 
 		</div>

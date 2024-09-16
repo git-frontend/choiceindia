@@ -1,14 +1,14 @@
 // import "./DerivativeTrading.scss";
 import "../OpenDematAccount/DematPage";
-import DerivativeTradingBanner from "./DerivativeTradingBanner";
-import WhyOpenDerivativeTrading from "./WhyOpenDerivativeTrading";
-import DerivativeTradingOpeningProcess from "./DerivativeTradingOpeningProcess";
-import LowBrokerageDerivativeTrading from "./LowBrokerageDerivativeTrading";
-import WhyDerivativeTrading from "./WhyDerivativeTrading";
-import DerivativeTradingFaq from "./DerivativeTradingFaq";
+import TradingBanner from "../Trading-Pages/TradingBanner";
+import DerivativeTradingData from "./DerivativeTradingData";
+import WhyOpenTradingAccount from "../Trading-Pages/WhyOpenTradingAccount";
+import WhyChoiceCommon from "../Trading-Pages/WhyChoiceCommon";
+import OpenLowBrokerageAccount from "../Trading-Pages/OpenLowBrokerageAccount";
+import AccountOpeningProcess from "../Trading-Pages/AccountOpeningProcess";
+import MoreContentCommon from "../Trading-Pages/MoreContentCommon";
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
-import MoreContent from './MoreContent';
 import { useState,useEffect} from "react";
 
 function DerivativeTrading() {
@@ -34,12 +34,12 @@ function DerivativeTrading() {
   return (
   
           <div className="demat-page-parent">
-            <DerivativeTradingBanner />
-            <WhyOpenDerivativeTrading />
-            <WhyDerivativeTrading />
-            <LowBrokerageDerivativeTrading />
-            <DerivativeTradingOpeningProcess />
-            <MoreContent />
+            <TradingBanner data={DerivativeTradingData.BannerData}/>
+            <WhyOpenTradingAccount data={DerivativeTradingData.WhyOpenDTAccount}/>
+            <WhyChoiceCommon  data={DerivativeTradingData.WhyChoiceCommon}/>
+            <OpenLowBrokerageAccount data={DerivativeTradingData.OpenLowBrokerageAccount}/>
+            <AccountOpeningProcess data={DerivativeTradingData.AccountOpeningProcess}/>
+            <MoreContentCommon data={DerivativeTradingData.MoreContentCommon}/>
             
           </div>
     

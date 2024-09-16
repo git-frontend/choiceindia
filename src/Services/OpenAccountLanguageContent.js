@@ -27,7 +27,8 @@ const language = {
         termsbtn: 'Okay',
         otpresendsuccess1: 'You will soon receive an automated call on given Mobile Number',
         otpresendsuccess2: 'OTP has been resent on given Mobile Number',
-        otplblnew:'OTP sent on'
+        otplblnew:'OTP sent on',
+        otpbtnnew:'Open Your Free Account'
     },
     hindi: {
         title: 'मुफ़्त ट्रेडिंग खाता खोलें',
@@ -111,10 +112,13 @@ const language = {
 };
 
 const OpenAccountLanguageContent = {
-    getContent: function (lang, field, isBlog) {
+    getContent: function (lang, field, isBlog ,isHomePage) {
         // console.log("Blog "+isBlog);
         if ((window.innerWidth > 990 && isBlog)) {
             return language[lang]['blogField'];
+        }
+        else if(isHomePage){
+            return language[lang]['otpbtnnew'];
         }
         else {
             return language[lang][field];

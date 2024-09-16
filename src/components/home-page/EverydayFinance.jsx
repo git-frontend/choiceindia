@@ -13,7 +13,7 @@ function EverydayFinance() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: true,
+    autoplay: false,
     dots: true,
     autoplaySpeed: 3000,
     slidesToScroll: 3,
@@ -23,7 +23,6 @@ function EverydayFinance() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          adaptiveHeight: true,
         },
       },
       {
@@ -54,13 +53,16 @@ function EverydayFinance() {
 
 
                       return (
-                        <div key={response.id} className="service-item">
+                        <div key={response.id} className='service-item-list'>
+                        <a className="service-item" href={response.link}>
                           <span className="img-itm">
-                            <LazyLoader src={response.image} className={"img-fluid"} alt={response.alt} width={"70"} height={"70"} />
+                            <LazyLoader src={response.image} className={"img-fluid sl-img"} alt={response.alt} width={"70"} height={"70"} />
                           </span>
                           <h3 className="ss-ttl">{response.title || '-'}</h3>
                           <p>{response.description || '-'}</p>
+                        </a>
                         </div>
+                       
 
                       )
                     })

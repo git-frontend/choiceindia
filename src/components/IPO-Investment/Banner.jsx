@@ -73,7 +73,7 @@ function Banner() {
                                     <span className="">
                                     <LazyLoader src={icon3} alt={"Free IPO investment account"} className={"img-fluid"} width={"126"} height={"126"} />
                                     </span>
-                                    <h4>Free IPO <br/>Investmnets Account</h4>
+                                    <h4>Free IPO <br/>Investment Account</h4>
                                 </li>
                             </ul>
                         </div>

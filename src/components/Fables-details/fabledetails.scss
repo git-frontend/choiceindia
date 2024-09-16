@@ -5,6 +5,7 @@
     a {color: $bgcolor-blue;
         font-weight:400;
         text-decoration:none !important;
+        word-wrap: break-word;
         }
    
     .detailbanner {
@@ -711,7 +712,7 @@
 }
 .detailbanner{
 .btn-fixed{
-    z-index: 9999999999;
+    z-index: 999999999;
     .open-account-mob{
         display: flex;
         background: $pricolor;

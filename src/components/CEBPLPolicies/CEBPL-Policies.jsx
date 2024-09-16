@@ -5,7 +5,8 @@ import { useState, useEffect } from 'react';
 import{ useLocation
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-
+import CommonCMS from '../Common-CMS/CommonCMS';
+import CMSData from "../Common-CMS/CMSData";
 
 function CEBPLPolicies() {
 
@@ -37,13 +38,14 @@ function CEBPLPolicies() {
 
   return (
     <div>
-
+      <CommonCMS data={CMSData.CEBPLData} methodName="CebplPolicy"/>
+{/* 
           <div className="code-conduct-parent investor-info-parent">
             <div className="mainwrapper">
               <CEBPLPoliciesMain />
             </div>
           </div>
- 
+  */}
     </div>
   );
 }

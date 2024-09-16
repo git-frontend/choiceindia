@@ -99,59 +99,123 @@
 
         .services-list-slider {
             padding-bottom: 3rem;
-
-            .service-item {
-                padding: 0 3.5rem;
-                text-align: center;
-
-                .img-itm {
-                    display: inline-block;
-                    margin-bottom: 1rem;
-
-                    @media (max-width: $sm) {
-                        display: inline-block;
-                    }
-                }
-
-                .ss-ttl {
-                    font-size: 2rem;
-                    font-family: $font-family-poppins-semibold;
-                    text-transform: capitalize;
-                    margin-bottom: 1rem;
-                }
-
-                p {
-                    font-family: $font-family-poppins-regular;
-                    font-size: 1.5rem;
-                    line-height: 2.25rem;
-                }
-
-                a {
-                    font-family: $font-family-poppins-medium;
-                    color: $primary;
+            .slick-list{
+                padding: 1rem 0;
+            }
+            .service-item-list{
+                position: relative;
+                
+                .service-item {
+                    position: relative;
+                    background: $whiteColor;
+                    padding:2rem;
+                    border: 3px solid transparent;
+                    box-shadow: 0px 0px 8px #F0F0F0;
+                    border-radius: 20px;
+                    z-index: 9;
+                    width: 90%;
+                    display: block;
+                    margin: 0 auto;
+                    // height: 100%;
+                    min-height: 24rem;
                     text-decoration: none;
-                    font-size: 1.375rem;
-                    display: flex;
-                    align-items: center;
-
-                    .arrow-img {
-                        position: relative;
-                        margin-left: 1rem;
-
-                        img {
-                            max-width: 100%;
+                    .img-itm {
+                        display: inline-block;
+                        margin-bottom: 1rem;
+                        overflow: hidden;
+                        @media (max-width: $sm) {
+                            display: inline-block;
                         }
                     }
-
+                    .ss-ttl {
+                        font-size: 2rem;
+                        font-family: $font-family-poppins-semibold;
+                        text-transform: capitalize;
+                        margin-bottom: 1rem;
+                        color: $bgcolordark;
+                    }
+    
+                    p {
+                        font-family: $font-family-poppins-regular;
+                        font-size: 1.5rem;
+                        line-height: 2.25rem;
+                        margin-bottom: 0;
+                        color: $bgcolordark;
+                    }
+    
+                    a {
+                        font-family: $font-family-poppins-medium;
+                        color: $primary;
+                        text-decoration: none;
+                        font-size: 1.375rem;
+                        display: flex;
+                        align-items: center;
+    
+                        .arrow-img {
+                            position: relative;
+                            margin-left: 1rem;
+    
+                            img {
+                                max-width: 100%;
+                            }
+                        }
+    
+                        @media (max-width: $sm) {
+                            justify-content: center;
+                        }
+                    }
+    
                     @media (max-width: $sm) {
-                        justify-content: center;
+                        padding-right: 0;
+                        text-align: center;
+                        padding: 1rem;
                     }
                 }
-
-                @media (max-width: $sm) {
-                    padding-right: 0;
-                    text-align: center;
-                    padding: 1rem;
+                &::before {
+                    content: '';
+                    background: $yellowColor;
+                    width: 90%;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    border-radius: 20px;
+                    transition: 0.70s;
+                    -webkit-transition: 0.70s;
+                    -moz-transition: 0.70s;
+                    -ms-transition: 0.70s;
+                    -o-transition: 0.70s;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+    
+                &:hover {
+                    .service-item {
+                        border: 3px solid $yellowColor;
+                        box-shadow: none;
+    
+                        .sl-img {
+                            -webkit-animation: toTopFromBottom 0.5s forwards;
+                            -moz-animation: toTopFromBottom 0.5s forwards;
+                            animation: toTopFromBottom 0.5s forwards;
+                        }
+    
+                        .mn-img {
+                            -webkit-animation: toTopFromBottom 0.5s forwards;
+                            -moz-animation: toTopFromBottom 0.5s forwards;
+                            animation: toTopFromBottom 0.5s forwards;
+                        }
+                    }
+    
+                    &::before {
+                        transform: rotate(4deg);
+                        opacity: 1;
+                        visibility: visible;
+                    }
+    
                 }
             }
 

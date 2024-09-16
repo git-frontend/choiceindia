@@ -20,6 +20,9 @@ import LowDP from "../../assets/images/share-market-holidays/Free-Expert-Researc
 import NoAutoSquare from "../../assets/images/share-market-holidays/Low-DP-charges.svg";
 import FreeResearch from "../../assets/images/share-market-holidays/Zero-Auto-Square.svg";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import BseFaqs from "./HolidayFaqs.jsx";
+import {marketHolidays} from "./marketHolidays.js";
+import HolidaysFaqs from "./HolidayFaqs.jsx";
 function Holidayscategory() {
 
 
@@ -609,6 +612,17 @@ function Holidayscategory() {
             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" >
             <NewFormSection sections={sections} />
             </GoogleReCaptchaProvider>
+
+            {/* FAQS Section */}
+
+            {
+            toggleState == 0 ?" ":
+            toggleState == 1 ?<HolidaysFaqs title={"Frequently asked Questions"} data={marketHolidays.NSE}/>:
+            toggleState == 2 ?<HolidaysFaqs title={"FAQs about BSE Holidays"} data={marketHolidays.BSE}/>:
+            toggleState == 3 ?<HolidaysFaqs title={"FAQs about MCX/NCDEX Holidays"} data={marketHolidays.MCX}/>:
+            ""
+            }
+            
             <section className="readmoresection holiday-readmore">
               <div className="container">
 

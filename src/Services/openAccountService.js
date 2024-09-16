@@ -45,21 +45,23 @@ const openAccountService = {
         const locationURL = window.location.pathname; 
 
         if(locationURL.includes('ipo')){
-          if(utils.isMobileDevice() && !isActive){
+          if(!isPopupOpen && isActive){
             utils.pushDataLayerEvent({
               'event': 'sticky_lead_initiated',
               'page_path': window.location.pathname,
               'page_url': window.location.href,
               'platform': 'mobileweb'
             })
-          }
-
-          if(utils.isMobileDevice() && isActive){
+          }else{
             utils.pushDataLayerEvent({
-              'event': 'popup_lead_initiated',
+              'event': 'ci_onboard_lead_initiated',
               'page_path': window.location.pathname,
               'page_url': window.location.href,
-              'platform': 'mobileweb'
+              'lead_source': 'choiceindia',
+              'userId': utils.generateSHA256Hash(request.mobile_number.toString()),
+              'leadId': res.Body.leadid,
+              'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb',
+              'home_sticky_form':window.location.pathname =='/' ? "sticky_form" : "non_sticky_form"
             })
           }
         }else if(locationURL.includes('blog')){
@@ -87,6 +89,13 @@ const openAccountService = {
               'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
             })
           }
+        }else if(locationURL.includes('top-funds') || locationURL.includes('amc')){
+          utils.pushDataLayerEvent({
+            'event': 'mf_lead_initiated',
+            'page_path': window.location.pathname,
+            'page_url': window.location.href,
+            'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+          })
         }else{
           switch (locationURL) {
 
@@ -118,14 +127,23 @@ const openAccountService = {
             break;
   
             case '/corporate-demat-account' : 
-            utils.pushDataLayerEvent({
-              'event': 'corporate_offer_lead_initiated',
-              'page_path': window.location.pathname,
-              'page_url': window.location.href,
-              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
-            })
-            break;
-  
+            if(dataLayerValues){
+              utils.pushDataLayerEvent({
+                'event': 'corporate_lead_initiated',
+                'page_path': window.location.pathname,
+                'page_url': window.location.href,
+                'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+              })
+            }else{
+              utils.pushDataLayerEvent({
+                'event': 'corporate_offer_lead_initiated',
+                'page_path': window.location.pathname,
+                'page_url': window.location.href,
+                'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+              })
+            }
+            break; 
+
             default: 
             utils.pushDataLayerEvent({
               'event': 'ci_onboard_lead_initiated',
@@ -134,7 +152,8 @@ const openAccountService = {
               'lead_source': 'choiceindia',
               'userId': utils.generateSHA256Hash(request.mobile_number.toString()),
               'leadId': res.Body.leadid,
-              'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+              'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb',
+              'home_sticky_form':window.location.pathname =='/' ? "sticky_form" : "non_sticky_form"
             })
             break;
           }
@@ -171,60 +190,98 @@ const openAccountService = {
       hideLoader('verifyLoader');
       if (res && res.data.StatusCode === 200 && res.data.Body) {
           let verifyResponse = res.data.Body;
-          // console.log("verifyResponse", verifyResponse);
-
-          switch(window.location.pathname){
-            case '/mutual-funds-investment' : 
-              utils.pushDataLayerEvent({
-                'event': 'mf_lead_generated',
-                'page_path': window.location.pathname,
-                'page_url': window.location.href,
-                'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-                'leadId': res.data.Body.leadid,
-                'lead_source': 'choiceindia',
-                'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-              })
-            break;
-
-            default :
-              utils.pushDataLayerEvent({
-                'event': 'ci_onboard_lead_generated',
-                'page_path': window.location.pathname,
-                'page_url': window.location.href,
-                'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
-                'leadId': res.data.Body.leadid,
-                'lead_source': 'choiceindia',
-                'userId': utils.generateSHA256Hash(mobileNumber.toString()),
-                'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
-              })
-              break; 
+          const locationURL = window.location.pathname; 
+          if(locationURL.includes('top-funds') || locationURL.includes('amc')){
+            utils.pushDataLayerEvent({
+              'event': 'mf_lead_generated',
+              'page_path': window.location.pathname,
+              'page_url': window.location.href,
+              'platform': utils.isMobileDevice() ? 'mobileweb' : 'desktopweb'
+            })
+          }else{
+            switch(window.location.pathname){
+              case '/mutual-funds-investment' : 
+                utils.pushDataLayerEvent({
+                  'event': 'mf_lead_generated',
+                  'page_path': window.location.pathname,
+                  'page_url': window.location.href,
+                  'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+                  'leadId': res.data.Body.leadid,
+                  'lead_source': 'choiceindia',
+                  'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                  'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+                })
+              break;
+  
+              default :
+                utils.pushDataLayerEvent({
+                  'event': 'ci_onboard_lead_generated',
+                  'page_path': window.location.pathname,
+                  'page_url': window.location.href,
+                  'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+                  'leadId': res.data.Body.leadid,
+                  'lead_source': 'choiceindia',
+                  'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+                  'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb',
+                  'home_sticky_form':window.location.pathname =='/' ? "sticky_form" : "non_sticky_form"
+                })
+                break; 
+            }
           }
-
-          if (verifyResponse.is_onboard_flag === "C") {
-              onClose("https://finx.choiceindia.com/auth/login",verifyResponse.message);
-          } else if (verifyResponse.is_onboard_flag === 'N' || verifyResponse.is_onboard_flag === '' || verifyResponse.is_onboard_flag === 'NI') {
+          if(verifyResponse.action_type != 'popup_and_no_update'){
+            if (verifyResponse.is_onboard_flag === "C") {
+              onClose("https://finx.choiceindia.com/auth/login", verifyResponse.message);
+            } else if (verifyResponse.is_onboard_flag === 'N' || verifyResponse.is_onboard_flag === '' || verifyResponse.is_onboard_flag === 'NI') {
 
               let authCode = verifyResponse.auth_code;
               let request = {
-                  "grant_type": "authorization_code",
-                  "code": authCode
+                "grant_type": "authorization_code",
+                "code": authCode
               };
               this.getSSOToken(request).then((res) => {
-                  if (res && res.data.StatusCode == 200) {
-                      localStorage.setItem('access_token', res.data.Body.access_token);
-                      // console.log("verifyResponse in sso",res)
-                      let url = verifyResponse.url + "&accessToken=" + localStorage.getItem('access_token');
-                      // console.log("new url", url);
-                      // openInfoPopup(res.data.Message);
-                      onClose(url,verifyResponse.message);
-                  } else {
-                      openInfoPopup(res.data.Message);
-                      onClose();
-                  }
+                if (res && res.data.StatusCode == 200) {
+                  localStorage.setItem('access_token', res.data.Body.access_token);
+                  // console.log("verifyResponse in sso",res)
+                  let url = verifyResponse.url + "&accessToken=" + localStorage.getItem('access_token');
+                  // console.log("new url", url);
+                  // openInfoPopup(res.data.Message);
+                  onClose(url, verifyResponse.message,verifyResponse.message,verifyResponse.action_type,verifyResponse.leadid,verifyResponse?.is_onboard_flag);
+                } else {
+                  openInfoPopup(res.data.Message);
+                  onClose();
+                }
               })
 
+            }
+          } else{
+            if(verifyResponse.is_onboard_flag === 'N' || verifyResponse.is_onboard_flag === '' || verifyResponse.is_onboard_flag === 'NI'){
+              let authCode = verifyResponse.auth_code;
+              let request = {
+                "grant_type": "authorization_code",
+                "code": authCode
+              };
+              this.getSSOToken(request).then((res) => {
+                if (res && res.data.StatusCode == 200) {
+                  localStorage.setItem('access_token', res.data.Body.access_token);
+                  // console.log("verifyResponse in sso",res)
+                  let url = verifyResponse.url + "&accessToken=" + localStorage.getItem('access_token');
+                  // console.log("new url", url);
+                  // openInfoPopup(res.data.Message);
+                  // onClose(url, verifyResponse.message);
+                  onClose(url, verifyResponse.message,verifyResponse.message,verifyResponse.action_type,verifyResponse.leadid,verifyResponse?.is_onboard_flag)
+                } else {
+                  openInfoPopup(res.data.Message);
+                  onClose();
+                }
+              })
+            }else if(verifyResponse.is_onboard_flag === "C"){
+              // onClose(verifyResponse?.url, verifyResponse.message,verifyResponse.message,verifyResponse.action_type,verifyResponse.leadid,verifyResponse?.is_onboard_flag)
+              onClose("https://finx.choiceindia.com/auth/login", verifyResponse.message);
+            }
+            // handleOTPClose(link, msg, info, actionType, leadID)
+           
           }
+         
       } else {
           setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
       }

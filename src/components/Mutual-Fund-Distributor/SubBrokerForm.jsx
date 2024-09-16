@@ -64,6 +64,7 @@ function SubBrokerForm(props) {
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(false);
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const onlyblog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
+    const [highlightForm, setHighlightForm] = useState(false);
     useEffect(() => {
         if(window.location.pathname.includes('blog') === true){
             props.newDematForm(false);
@@ -601,6 +602,7 @@ function SubBrokerForm(props) {
         setShowThanku(prevState => {
             return { ...prevState, showModal: false }
         });
+        setHighlightForm(false)
     }
     //OTP resend success toaster
     function handleOTPResendSuccessToaster(type) {
@@ -623,7 +625,15 @@ function SubBrokerForm(props) {
         setOtp('');
         setOTPErrors('');
     }
-    
+    useEffect(() => {
+        setHighlightForm(props.highlight);
+        if(props.highlight && window.innerWidth > 992){
+            document.getElementById("brokerName").focus();
+        }
+        else if (props.highlight && window.innerWidth <=992) {
+            showOpenAccountAdPopup()
+        }
+    }, [props.highlight]);
 
 return (
     <>
@@ -636,7 +646,8 @@ return (
         {
              (! props.isFromFableDetails  || window.innerWidth >= 992) && (
                
-        <div className="demat-account-form" id="sub-broker-form">
+       
+            <div id="sub-broker-form" className={`demat-account-form ${highlightForm ? 'newhighlight' : ''}`}>
 
 
             {

@@ -11,7 +11,7 @@ import NextSingleArrow from '../../assets/images/amc-details/next-arrow-single.s
 import NextDobbleArrow from '../../assets/images/amc-details/next-arrow-dobble.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function Banner() {
 
@@ -26,6 +26,7 @@ function Banner() {
     const [returnsFilter, setReturnsFilter] = useState('');
     const [sortFilter, setSortFilter] = useState('');
     const [isloading, setisloading] = useState(true);
+    const navigate = useNavigate();
     const getPosition = () => {
         const element = document.getElementById("showForm");
         if (element) {
@@ -112,7 +113,10 @@ function Banner() {
         setFilteredCategoryData(filteredResults);
     };
     function addClassNameToTable(htmlContent, classNameToAdd) {
-        return htmlContent.replace(/<table/, `<table class="${classNameToAdd}"`);
+        if (htmlContent.includes('<table')) {
+            return htmlContent.replace(/<table/g, `<div class="table_scroll"><table class="${classNameToAdd}"`).replace(/<\/table>/g, '</table></div>');
+        }
+        return htmlContent;
     }
     const FilterByReturns = (e) => {
         const selectedReturns = e.target.value;

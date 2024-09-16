@@ -1,11 +1,12 @@
+import "./demat-form.scss";
+import "./newdemat-form.scss";
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import openAccountService from '../../Services/openAccountService';
 import { Link, useSearchParams } from "react-router-dom";
-import "./demat-form.scss";
-import "./newdemat-form.scss";
+
 import OpenAccountOTPModalNew from './OpenAccountOTPModalNew.jsx';
 import OpenDemateAccountPopup from './OpenDemateAccountPopup.jsx';
 import OpenDemateAccountStickyFooter from './OpenDemateAccountStickyFooter.jsx';
@@ -17,8 +18,14 @@ import './Thankyoupopup.scss';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import thumbsup from '../../assets/images/demat-images/thumbsup.gif';
 import LazyLoader from "../Common-features/LazyLoader";
-
+import { faAngleUp,faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+    useLocation,
+  } from 'react-router-dom';
 function NewDematAccountForm(props) {
+    // const location = useLocation();
+    const isHomePage = window.location.pathname == "/";
     //console.log("props",props)
     const [highlightForm, setHighlightForm] = useState(false);
     const inputRef = useRef(null);
@@ -32,9 +39,9 @@ function NewDematAccountForm(props) {
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
     const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
-    const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
+    const isBlog = (window.location.pathname.indexOf('blog')===1) ? 'yes' : '';
     const [referID, setReferID] = useState('');
-    const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1) || (window.location.pathname.indexOf('/under25') > -1) ||(window.location.pathname.indexOf('/brokerage-charges') > -1) ? 'demat-web' : " ")
+    const webcheck = ((window.location.pathname.indexOf('/demat-account') > -1)||(window.location.pathname.indexOf('/what-is-trading-account') > -1) || (window.location.pathname.indexOf('/under25') > -1) ||(window.location.pathname.indexOf('/brokerage-charges') > -1) ? 'demat-web' : " ")
  
     const [view,setView]=useState({
 		matches: window.innerWidth < 767 ? false : true ,
@@ -64,7 +71,8 @@ function NewDematAccountForm(props) {
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
-
+    var referLink = useRef('');
+    var otpLeadID = useRef('');
     var UTMContent = useRef('');
     var UTMCustom = useRef('');
     var UTMTerm = useRef('');
@@ -75,6 +83,8 @@ function NewDematAccountForm(props) {
     var subrefercodeInv = useRef('');
     // var otpSessionID = useRef('');
     var isMobile = useRef(isMobileDevice());
+    //Creating a ref variable for blog pop up
+    var blogPopUp=useRef('');
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
     const [OTPInfoPopup, setOTPInfoPopup] = useState(false);
@@ -86,9 +96,22 @@ function NewDematAccountForm(props) {
     const [isPopUp, setIsPopUp] = useState(false);
     const [otpSessionID, setOTPSessionID] = useState(null)
     const [leadId, setLeadId] = useState();
+    const [isToggle, setIsToggle] = useState(false);
+    const [consent, setShowConsent] = useState(false);
+    const [showRefMsg, setShowRefMsg] = useState();
+    const [consentLoaders, setConsentLoaders] = useState({
+        consentYesLoader: false,
+        consentNoLoader: false
+    });
+    const [isOnboardFlag, setIsOnboardFlag] = useState();
     
+    const [responseLink,setResponseLink]=useState();
+      /**Error variable for consent */
+      const [consentError, setConsentErrors] = useState();
     const { executeRecaptcha } = useGoogleReCaptcha();
-
+    const toggleClass = () => {
+        setIsToggle(!isToggle);
+      };
     const handleButtonClick = () => {
         setShowOTP(false);
       };
@@ -107,15 +130,21 @@ function NewDematAccountForm(props) {
 
     /**function executes to close the ad popup */
     function hideOpenAccountAdPopup(showAdValues) {
-        if (showAdValues.link) {
-            setShowThanku(prevState => {
-                return { ...prevState, showModal: true, redirectionLink: showAdValues?.link, resText: showAdValues?.msg, isOnboarding: showAdValues?.info, closeMd: closeModal }
-            });
-        }
-        setShowOpenAccountPopup(false);
-        callOpenAccountAdPopupAgain();
-    }
 
+        if (showAdValues.actionType != 'popup_and_no_update') {
+            if (showAdValues.link) {
+                setShowThanku(prevState => {
+                    return { ...prevState, showModal: true, redirectionLink: showAdValues?.link, resText: showAdValues?.msg, isOnboarding: showAdValues?.info, closeMd: closeModal }
+                });
+            }
+            setShowOpenAccountPopup(false);
+            callOpenAccountAdPopupAgain();
+        } else {
+            referLink.current = showAdValues.link ? showAdValues.link : null;
+            otpLeadID.current = showAdValues.leadId ? showAdValues.leadId : null;
+            setShowConsent(() => true)
+        }
+    }
     function callOpenAccountAdPopupAgain() {
         //after 15min
         setTimeout(() => {
@@ -127,9 +156,9 @@ function NewDematAccountForm(props) {
     if (window.innerWidth <= 992) {
         if(props.mobileForm.current.classList.contains('p-show')){
         setBlogPopUpForm('blog-pop-up-form'); 
-        props.blogPop(true);
+        props.blogPop(false);
         setIsPopUp(true);
-        }
+        } 
         else{
         setBlogPopUpForm('');
         props.blogPop(false);
@@ -144,7 +173,7 @@ function NewDematAccountForm(props) {
     useEffect(() => {
         if (window.location.pathname.indexOf('blog') === 1 || window.location.pathname.indexOf('ipo') === 1) {
             setblogForm('blog-lead-form');
-            if(!window.location.pathname.includes('ipo')){
+            if(window.location.pathname.indexOf('ipo')!==1){
             props.newDematForm(true);
             }
             setBlogFormOtp('blog-form-otp');
@@ -182,6 +211,10 @@ function NewDematAccountForm(props) {
    
 
     useEffect(() => {
+
+        // if(searchParams.get('source') && atob(searchParams.get('source')) === 'DIGIFOX'){
+        //     sessionStorage.setItem('digifoxId',searchParams.get('digifoxId') || "")
+        // }
         let mediaQuery = window.matchMedia("(min-width: 767px)");
         mediaQuery.addListener(setView);
         // this is the cleanup function to remove the listener
@@ -214,34 +247,43 @@ function NewDematAccountForm(props) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link, msg, info) {
+    function handleOTPClose(link, msg, info, actionType, leadID,is_onboard_flag) {
         setShowOTP(false);
+        setResponseLink(link || "")
+        if(is_onboard_flag){
+            setIsOnboardFlag(is_onboard_flag);
+        }
+        if (actionType != 'popup_and_no_update') {
+            if (link) {
 
-        if (link) {
-
-            let result = link.match("respond-issue");
-            if (result && result.length && result[0] === 'respond-issue') {
-                setIsIssue(() => link);
+                let result = link.match("respond-issue");
+                if (result && result.length && result[0] === 'respond-issue') {
+                    setIsIssue(() => link);
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
+                    });
+                } else {
+                    if (link._reactName) {
+                        setShowThanku(prevState => {
+                            return { ...prevState, showModal: false, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
+                        });
+                    } else {
+                        setShowThanku(prevState => {
+                            return { ...prevState, showModal: true, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
+                        });
+                    }
+                }
+            } else {
                 setShowThanku(prevState => {
                     return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
                 });
-            } else {
-                if (link._reactName) {
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: false, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
-                    });
-                } else {
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: true, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
-                    });
-                }
             }
         } else {
-            setShowThanku(prevState => {
-                return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
-            });
+            referLink.current = link ? link : null;
+            otpLeadID.current = leadID ? leadID : null;
+            setShowRefMsg(() => msg ? msg : '');
+            setShowConsent(() => true)
         }
-
         // closeModal(link);
     }
 
@@ -298,8 +340,13 @@ function NewDematAccountForm(props) {
             return { ...prevState, showModal: false }
         });
 
-        if (link) {
-            window.location.href = link;
+        if(link && link.includes('onboard-info') && atob(searchParams.get('source')) === 'DIGIFOX' && searchParams.get('digifoxId') && isOnboardFlag !== 'C'){
+            const redirectionLink = link +'&digifoxId='+ searchParams.get('digifoxId');
+            window.location.href = redirectionLink;
+        }else{
+            if (link) {
+                window.location.href = link;
+            }
         }
     }
 
@@ -357,14 +404,16 @@ function NewDematAccountForm(props) {
             "referred_id": refercode.current || referID || null,
             "sub_ref": subrefercode.current || null,
             "utm_campaign": isBlog == "yes" ? UTMCampaign.current || 'choice_blog_leads' :(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate': UTMCampaign.current || null,
-            "utm_content": isBlog == "yes" ? (view && !view.matches) ? UTMContent.current || 'mobile_sticky_cta' : UTMContent.current || 'desktop_sticky_cta' : UTMContent.current || null,
+            "utm_content": isBlog == "yes" ? (view && !view.matches) ? (blogPopUp?.current?.classList?.contains("blog-pop-up-form"))? UTMContent.current || 'in_content_cta' :  UTMContent.current || 'mobile_sticky_cta' : UTMContent.current || 'desktop_sticky_cta' : UTMContent.current || null,
             "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             "utm_medium": isBlog == "yes" ? UTMMedium.current || 'blog_leads' : UTMMedium.current || null,
             "utm_source": isBlog == "yes" ?(mfForm) ? UTMSource.current||"mf_lead_generation" : UTMSource.current || 'demat_lead_generation':(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' :(window.location.pathname.indexOf("/mutual-funds-investment") > -1) ? 'choice-mf-web': UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             "account_type": type1 == 'MF' ? "" : "all",
+            "source": source.current ? source.current : "CHOICEINDIA"
         };
-        openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster,null,props.isActive,isPopUp)
+        // console.log("request",request)
+        openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster,props.dataLayerValues|| null,props.isActive,isPopUp)
        
     }
 
@@ -498,6 +547,75 @@ function NewDematAccountForm(props) {
             }
             
         }, [props.highlight]);
+         /**on click no consent */
+         function submitConsent(consent) {
+
+
+            if (consent == 'yes') {
+                handleOTPClose(responseLink)
+                // setConsentLoaders({ ...consentLoaders, consentYesLoader: true, consentNoLoader: false });
+            } else {
+                setShowConsent(() => false);
+                setMobileNumber("");
+                setReferID("")
+                // setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: true });
+    
+            }
+    
+            // let request = {
+            //     "mobile_number": null,
+            //     otp: null,
+            //     session_id: otpSessionID,
+            //     is_consent: consent ? consent : null,
+            //     lid: otpLeadID.current ? otpLeadID.current : null
+            // };
+            // openAccountService.verifyOTPService(mobileNumber,request,captchaToken,hideLoader,handleOTPClose ,openOTPInfoPopup,setErrors)
+            // openAccountService.verifyOTP(request, "JF").then((res) => {
+            //     if (res && res.status === 200 && res.data && res.data.Body) {
+            //         utils.pushDataLayerEvent({
+            //             'event': 'ci_onboard_lead_generated',
+            //             'page_path': window.location.pathname,
+            //             'page_url': window.location.href,
+            //             'mobileNoEnc': utils.generateSHA256Hash(mobileNumber.toString()),
+            //             'leadId': leadId,
+            //             'lead_source':'choiceindia',
+            //             'userId': utils.generateSHA256Hash(mobileNumber.toString()),
+            //             'platform': window.innerWidth < 767 ? 'mobileweb' : 'desktopweb'
+            //         })
+                    
+            //         setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+            //         // console.log('Success', res);
+            //         if (consent == "yes") {
+            //             window.location.href = referLink.current ? referLink.current : null;
+            //         } else {
+            //             setShowConsent(() => false);
+            //         }
+            //         // }
+            //     } else {
+            //         setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+            //         setConsentErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something Went Wrong');
+            //     }
+            // }).catch((error) => {
+            //     setConsentLoaders({ ...consentLoaders, consentYesLoader: false, consentNoLoader: false });
+            //     if (error && error.response && error.response.data && error.response.data.Message) {
+            //         setConsentErrors(error.response.data.Message);
+            //     } else {
+            //         setConsentErrors('Something Went Wrong.');
+            //     }
+            // });
+        }
+
+    // useEffect(() => {
+    //     if(consent && consent === 'yes'){
+    //         setShowConsent(false);
+    //             handleOTPClose(responseLink,null,null,null,null)
+    //     }else{
+    //         setShowConsent(() => false);
+    //         setMobileNumber("");
+    //         setReferID("")
+    //     }
+    // },[consent])
+    
     return (
         <>
             {
@@ -508,8 +626,20 @@ function NewDematAccountForm(props) {
             }
             {
                 !showOTP && !showThanku.showModal && (
-                <div className={`${blogPopUpForm}`}>
-                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${brokerageForm}`} id="dematform">
+                    <div className={isHomePage ?`invest-zero-ac ${blogPopUpForm}`:`${blogPopUpForm}`} ref={blogPopUp}>
+                        {
+                          isHomePage ?
+                       
+                    <div className={`invest-zero-fees ${isToggle ? "form-header":""}`}>
+                    <div className="zero-fees-form">
+                        <h3 className="form-ttl"><span className={`${isToggle ? "":"text-none"}`}>Open Choice Demat Account</span> Invest with ZERO Fees</h3>
+                        <button className="btn-up-down" onClick={toggleClass}><FontAwesomeIcon icon={isToggle ? faAngleDown : faAngleUp} /></button>
+                    </div>
+                    <p className={`form-para ${isToggle ? "text-none":""}`}>NO Account Opening Fee, AMC for 1st Year, Zero Square-off Charges + Free Call & Trade.</p>
+                    </div>
+                    :""
+                     }
+                     <div className={`demat-account-form demat-account-form-new ${blogForm} ${brokerageForm} ${isHomePage ? (isToggle ? 'form-hide' : 'form-show') : ''}`} id="dematform">
 
                        {
                        
@@ -520,7 +650,11 @@ function NewDematAccountForm(props) {
                             <h2 className="heading">Open your free trading account</h2>
                             <p>Take Control of Your Finances</p>
                         </div>
-                        :
+                        :(window.location.pathname.indexOf("/what-is-trading-account") > -1) ?
+                           
+                        <h2 className="heading">Open Trading Account</h2>
+                       
+                    :
                         (window.location.pathname.indexOf("open-trading-account")>-1)?
                         <h2 className="heading">Open Trading Account</h2>:
                         <h2 className="heading">Open Demat Account</h2>
@@ -707,13 +841,13 @@ function NewDematAccountForm(props) {
                                     {
                                         <Button variant="primary"
                                             type="submit" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
-                                            {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'otpbtn',window.location.pathname.includes('blog'))}</Button>
+                                            {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'otpbtn',window.location.pathname.includes('blog'), isHomePage)}</Button>
                                     }
                                 </div>
                             </Form.Group>
                         </Form>
                         <div className="slider-btns">
-                        <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
+                        <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}></Button>
                         <Button variant="primary" type="submit" className={showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}></Button>
                         </div>
                     </div>
@@ -722,11 +856,13 @@ function NewDematAccountForm(props) {
             }
             {
                 showThanku.showModal && (
+               
                 <div className={`${blogPopUpForm} ${(window.location.pathname.includes("open-free-demat-account") ||
                  window.location.pathname.includes("corporate-demat-account") ||
                  window.location.pathname.includes("demat-account")
                  || window.location.pathname.includes("mutual-funds-investment")) && 'demat-form-wrapper'}`}>
-                   <div className={`demat-account-form demat-account-form-new ${blogThankuPopup} ${BrokerageThankuPopup}`}>
+                  <div className={isHomePage ?`invest-zero-ac`:""}>
+                   <div className={`demat-account-form demat-account-form-new custom-th-popup ${blogThankuPopup} ${BrokerageThankuPopup}`}>
                         <div className="thank-you-msg">
                             <div className="thank-logo">
                                 <div className="blog-thnu-circle">
@@ -739,7 +875,7 @@ function NewDematAccountForm(props) {
                                 <p className="subheading">{showThanku.resText? showThanku.resText: "You are being redirected to onboarding page!"}</p>
                         </div>
                         </div>
-                        
+                        </div> 
                     </div>       
                 </div>
                 )
@@ -748,8 +884,18 @@ function NewDematAccountForm(props) {
 
             {
                 showOTP && !showThanku.showModal && (
+                    <div className={isHomePage ? `invest-zero-ac`:""}>
+                        <div className={`invest-zero-fees ${isToggle ? "form-header":""}`}>
+                            {
+                                isHomePage ?
+                        <div className="zero-fees-form">
+                            <h3 className="form-ttl">OTP Verification</h3>
+                            <button className="btn-up-down" onClick={toggleClass}><FontAwesomeIcon icon={isToggle ? faAngleDown : faAngleUp} /></button>
+                        </div>
+                        :"" }
+                        </div>
                     <div className={`${blogPopUpForm}`}>
-                      <div className={`demat-account-form demat-account-form-new ${blogFormOtp} ${brokerageFormOtp}`}>
+                      <div className={`demat-account-form demat-account-form-new ${blogFormOtp} ${brokerageFormOtp} ${isHomePage ? (isToggle ? 'form-hide' : 'form-show') : ''}`}>
                         <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} setIsActive={props.setIsActive} openAccount={props.openAccount} setBlogPopUpForm={setBlogPopUpForm} blogPop={props.blogPop} isPopUp={isPopUp}  updateType={updateType} ></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
@@ -757,7 +903,7 @@ function NewDematAccountForm(props) {
                         </div>
                     </div>
                     </div>
-                  
+                    </div>
                 )}
 
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
@@ -809,6 +955,42 @@ function NewDematAccountForm(props) {
 
                 showlead.showModal ? <Thankyoupopup isShow={showlead} /> : ''
             }
+            {/* for referral code */}
+            <Modal className="bt-strap-mdl otp-main-modal Referral-code-model" show={consent} onHide={() => { setShowConsent(false) }} backdrop='static' keyboard={false}>
+                <Modal.Header className="border-0" closeButton>
+                </Modal.Header>
+                <Modal.Body className="border-0">
+                    <div className="exit-intent-sleekbox-overlay sleekbox-popup-active referral-overlay">
+                        <div className="exit-intent-sleekbox-popup">
+                            <div className="popup-sub-row">
+                                <div className="popup-sub-right">
+                                    <div>
+                                        <p className="heading">Dear Investor</p>
+                                        <p className="subheading mb-3 mb-sm-0">{showRefMsg ? showRefMsg : 'Your mobile number is already associated with another refercode. To proceed with your onboarding, please select one of the following options:'}</p>
+                                    </div>
+                                    <div className="btnwrap">
+                                        <button className="btn-bg btn-bg-dark sendbtn btn btn-primary referral-btn referral-btn-hover" onClick={() => { consentLoaders.consentNoLoader ? null : submitConsent('no') }} disabled={consentLoaders.consentYesLoader}>
+                                            {
+                                                consentLoaders.consentNoLoader ?
+                                                    <div className="loaderB mx-auto"></div> : <span>No, Cancel Onboarding and Connect RM</span>
+                                            }
+                                        </button>
+                                        <button className="btn-bg referral-btn" onClick={() => { consentLoaders.consentYesLoader ? null : submitConsent('yes') ,setShowConsent(() => false);}} disabled={consentLoaders.consentNoLoader}>
+                                            {
+                                                consentLoaders.consentYesLoader ?
+                                                    <div className="loaderB mx-auto"></div> : <span>Yes, continue with Existing Referral Code</span>
+                                            } </button>
+                                    </div>
+                                    {
+                                        consentError ?
+                                            <span class="text-danger">{consentError}</span> : ''
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
            
         </>
     );

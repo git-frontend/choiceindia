@@ -11,12 +11,12 @@ function OurTrackRecordSaysAll() {
 
   const [toggleState, setToggleState] = useState(1);
   const [showLoader, setShowLoader] = useState(false);
-  const [Data1, setData1] = useState();
+  const [session, setSession] = useState();
   const [checkdevice, setcheckdevice] = useState();
   const [rendercount, setRenderCount] = useState(() => false);
   const [data, setData] = useState(0);
   const [list, setlist] = useState();
-  let tokenList = [{}]
+  let tokenList = [];
   let multiValue = [];
   let AllFilesValue = {};
   let tokens = "";
@@ -58,9 +58,11 @@ function OurTrackRecordSaysAll() {
 
 
   //for F and O
-  function FandOstocks(Data1) {
+  function FandOstocks(sessionId) {
     setToggleState(2)
-   
+    if(!sessionId){
+    return;
+    }
     setlist([]);
    
     setShowLoader(true)
@@ -82,11 +84,51 @@ function OurTrackRecordSaysAll() {
       "category_id": 2
     }
 
-    rest.fetchReportData(request,setShowLoader,setlist,Data1);
+    rest.expertReportData(request).then(
+
+      res => {
+
+        if (res) {
+          storefile = res.response.research;
+          
+          tokens=utils.expertReportDataProcessing(storefile,tokenList);
+
+          setlist(res.response.research);
+    
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': sessionId,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+
+                multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
+
+                setlist(multiValue);
+
+              }
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+              
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        
+      });
+
     
   }
   //New 
-  function IntradayNew(Data1) {
+  function IntradayNew(sessionId) {
     setToggleState(1)
     setlist([]);
     
@@ -108,7 +150,46 @@ function OurTrackRecordSaysAll() {
       "category_id": 2
     }
 
-    rest.IntraStocks(Data1,setlist,setShowLoader,request);
+    rest.expertReportData(request).then(
+
+      res => {
+
+        if (res) {
+          storefile = res.response.research;
+         
+          tokens=utils.expertReportDataProcessing(storefile,tokenList);
+
+          setlist(res.response.research);
+
+
+          const payload = {
+            'UserId': 'guest',
+            'SessionId':sessionId,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+                multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
+
+                setlist(multiValue);
+
+              }
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+              
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        
+      });
    
   }
 
@@ -125,15 +206,15 @@ function OurTrackRecordSaysAll() {
     rest.generateSession()
     .then((res)=>{
        if(res.Status == "Success"){
-          setData1(res.Response);
+          setSession(res.Response);
           func(res.Response);
        }
        else{
-          func([]);
+         setShowLoader(false);
        }
     })
     .catch((err)=>{
-        func([]);
+        setShowLoader(false)
     });
   }
 
@@ -183,7 +264,7 @@ function OurTrackRecordSaysAll() {
                     }}> Intraday</li>
                   <li className={toggleState === 2 ? "list-group-item list listsec" : "list-group-item list"}
                     onClick={()=>{
-                    FandOstocks(Data1)
+                    FandOstocks(session)
                     }}>F&O </li>
                 </ul>
               </div>

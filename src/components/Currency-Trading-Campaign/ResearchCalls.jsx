@@ -14,7 +14,7 @@ function ResearchCalls() {
   const [showLoader, setShowLoader] = useState(false);
   const [trigger, setTrigger] = useState(false);
 
-  const [Data1, setData1] = useState();
+  const [session, setSession] = useState();
   const [checkdevice, setcheckdevice] = useState();
   let tokenList = [{}]
   let multiValue = [];
@@ -34,7 +34,7 @@ function ResearchCalls() {
       behavior: "smooth"
     });
   }
-  function FandOstocks(Data1) {
+  function FandOstocks(SessionId) {
     setlist([]);
     tokens = '';
     tokenList = [];
@@ -59,7 +59,46 @@ function ResearchCalls() {
     }
 
     
-    rest.fetchReportData(request,setShowLoader,setlist,Data1);
+    rest.expertReportData(request).then(
+
+      res => {
+
+        if (res) {
+          storefile = res.response.research;
+          
+          tokens=utils.expertReportDataProcessing(storefile,tokenList);
+
+          setlist(res.response.research);
+    
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': SessionId,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+
+                multiValue=utils.multipleTokensProcessing(res.Response.lMT,storefile,setShowLoader);
+
+                setlist(multiValue);
+
+              }
+              else {
+                setShowLoader(false)
+              }
+            }).catch((error) => {
+              setShowLoader(false)
+              
+            });
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        
+      });
     
    
   }
@@ -92,15 +131,15 @@ function ResearchCalls() {
     rest.generateSession()
     .then((res)=>{
        if(res.Status == "Success"){
-          setData1(res.Response);
+          setSession(res.Response);
           func(res.Response);
        }
        else{
-          func([]);
+          setShowLoader(false);
        }
     })
     .catch((err)=>{
-        func([]);
+        setShowLoader(false);
     });
   }
   const settings = {

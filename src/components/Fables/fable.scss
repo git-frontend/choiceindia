@@ -33,6 +33,12 @@
                 font-family: $font-family-poppins-regular;
                 display: block;
             }
+
+            .sm-ttl{
+                font-size:1.6rem;
+                position: absolute;
+                left: 8px;
+            }
         }
 
         &::before {
@@ -357,7 +363,7 @@
             justify-content: space-between;
 
             >li {
-                margin: 0 2rem;
+                margin: 0 1rem;
 
                 .link-txt {
                     color: #221F20BF;

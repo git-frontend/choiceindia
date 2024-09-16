@@ -120,48 +120,48 @@ function WhyChooseFno() {
     const optionsTraders=[
     {
     image:img1,
-    alt:"Pre-built Option Strategies",
+    alt:"Research Recommendations",
     photo:option1,
-    heading:"Pre-built Option Strategies",
-    content:"Gain access to a library of proven strategies."
+    heading:"Research Recommendations",
+    content:"Access expert analysis for informed trading"
     },
     {
     image:icon2,
     alt:"Advanced Option Chain",
     photo:option2,
     heading:"Advanced Option Chain",
-    content:"Navigate the market with precision."
+    content:"Explore available options and strike prices easily"
     },
     {
     image:icon3,
-    alt:"Real-Time Pay-off Charts",
+    alt:"Advanced Technical Charts/Indicators",
     photo:img4,
-    heading:"Real-Time Pay-off Charts",
-    content:"Visualize your potential gains instantly."
+    heading:"Advanced Technical Charts/Indicators",
+    content:"Visualise price patterns, trends, & key indicators"
     }
     ]
 
     const ExpiryTraders=[
     {
     image:icon6,
-    alt:"Option Chain",
-    photo:img2,
-    heading:"Options Back testing",
-    content:"Analyze market movements effortlessly."
+    alt:"OI Spurts (Short & Long Built Up)",
+    photo:img5,
+    heading:"OI Spurts (Short & Long Built Up)",
+    content:"Spot momentum shifts in open interest"
     },
     {
     image:icon4,
-    alt:"Technical Charts",
-    photo:img4,
-    heading:"Technical Charts",
-    content:"Make informed decisions with advanced charts."
+    alt:"Trade Directly from Option Chain",
+    photo:img3,
+    heading:"Trade Directly from Option Chain",
+    content:"Execute trades smoothly during volatile sessions"
     },
     {
     image:icon5,
-    alt:"OI Spurts",
-    photo:img5,
-    heading:"OI Spurts",
-    content:"Stay ahead with open-interest insights."
+    alt:"Future Heatmaps",
+    photo:img4,
+    heading:"Future Heatmaps",
+    content:"Spot price movement across futures contracts"
     }
     ]
     return (
@@ -183,7 +183,7 @@ the uncertainties of options trading</p>
                         <div className="col-md-12">
                             <div className="head-sec">
                                 <h3>Benefits for Options Traders</h3>
-                                <p>Get the power of real-time data, pre-built strategies, advanced technical charts, and more at your fingertips.</p>
+                                <p>Get the power of real-time data, pre-built option strategies, daily F&O calls, and more at your fingertips.</p>
                             </div>
                             <div className="list-main-prnt">
                                 <div className="list-fno-featu">

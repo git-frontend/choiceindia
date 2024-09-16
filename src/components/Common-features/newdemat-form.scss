@@ -386,7 +386,22 @@ width:100%;
 .demat-account-form-new {
 	background-color: $bgcolor-blue-light;
 	box-shadow: none;
-
+	.heading {
+		color: $primary;
+		font-size: 24px;
+		line-height: 42px;
+		font-weight: 700;
+		margin-bottom: 2rem;
+		text-align: center;
+		// margin: 30px 0 15px;
+		font-family: $font-family-poppins-bold;
+		padding-bottom: 0;
+	
+		@media only screen and (max-width: $sm) {
+			font-size: 24px;
+			line-height: 33px;
+		}
+	}
 	.formgrp-new {
 		background-color: $whiteColor;
 		border-radius: 1rem;
@@ -1075,22 +1090,7 @@ width:100%;
 
 
 
-.heading {
-	color: $primary;
-	font-size: 24px;
-	line-height: 42px;
-	font-weight: 700;
-	margin-bottom: 2rem;
-	text-align: center;
-	// margin: 30px 0 15px;
-	font-family: $font-family-poppins-bold;
-	padding-bottom: 0;
 
-	@media only screen and (max-width: $sm) {
-		font-size: 24px;
-		line-height: 33px;
-	}
-}
 
 //Blog Lead form 
 
@@ -1391,16 +1391,19 @@ width:100%;
         }
     }
     &.p-hide{
-        display: block !important;
-        position: fixed !important;
-        top: inherit !important;
-        bottom: 0;
-        z-index: 9999999999;
-        width: 100%;
-        left: 0;
-        // background: #4d4d4d80;
-        height: auto;
-        overflow: hidden;
+		@media (max-width: $md) {
+			display: block !important;
+			position: fixed !important;
+			top: inherit !important;
+			bottom: 0;
+			z-index: 9999999999;
+			width: 100%;
+			left: 0;
+			// background: #4d4d4d80;
+			height: auto;
+			overflow: hidden;
+        }
+       
 
     }
     .demat-account-form{
@@ -1806,4 +1809,155 @@ width:100%;
 
 .highlight{
 	box-shadow: 0 0 10px #cbb5b5 !important
+}
+.newhighlight{
+	background:$bgcolor-blue-light !important ;
+	
+}
+.invest-zero-ac{
+	position: fixed;
+	bottom: 0%;
+	z-index: 9999999999;
+    right: 20px;
+	@media (max-width:$sm) {
+		bottom: 0%;
+		right: 0%;
+		width: 100%;
+	}
+	.demat-account-form-new{
+		transition: .5s ease-in-out;
+		padding: 0;
+		background-color: $whiteColor;
+		border-radius: 0 0 1rem 1rem;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+		@media (max-width:$md) {
+			margin: 0;
+		}
+		&.custom-th-popup{
+			background-color: $bgcolor-blue-light;
+			border-radius: 1rem;
+			border-top: 8px solid $yellowColor;
+			@media (max-width:$md) {
+				max-width: 30rem;
+			}
+			@media (max-width:$sm) {
+				max-width: 32rem;
+			}
+			.thank-you-msg{
+				min-height: 26rem;
+				padding: 1rem;
+			}
+		}
+		.formgrp-new{
+			border-radius: 0 0 1rem 1rem;
+			padding:1rem 2rem 2rem ;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+			margin: 0 !important;
+			.form-label{
+				display: none;
+			}
+		}
+		h2{
+			display: none;
+		}
+		.slider-btns{
+			display: none;
+		}
+		.exit-intent-sleekbox-popup{
+			@media (max-width:$md) {
+				max-width: inherit;
+				padding: 0;
+			}
+			.popup-sub-row{
+				display: inherit;
+				padding: 0;
+				.otp-ttl{
+					display: none;
+				}
+				.otpform-new{
+					.time{
+						margin-bottom: 0;
+					}
+				}
+			}
+			
+		}
+		.cust-checkbox{
+			margin-bottom: 0 !important;
+		}
+		.send-otp-btn{
+			margin-top: 1.5rem !important;
+		}
+	}
+	.invest-zero-fees {
+		background: $primary;
+		border-top: 8px solid $yellowColor;
+		border-radius: 8px 8px 0px 0px;
+		width: 30rem;
+		padding: 1.5rem;
+		@media (max-width:$sm) {
+			max-width: 100%;
+			width: 38rem;
+			padding: 1rem;
+		}
+		&.form-header{
+			border-radius: 8px;
+			transition: .5s ease-in-out;
+		}
+		.zero-fees-form{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			.form-ttl{
+				font-size: 1.5rem;
+				color: $whiteColor;
+				font-family: $font-family-poppins-semibold;
+				line-height: 1.5;
+			}
+			.btn-up-down{
+				background-color: rgba(255, 255, 255, 0.1);
+				border-radius: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 30px;
+				height: 30px;
+				border: 0;
+				// @media (max-width:$md) {
+				// 	display: none;
+				// }
+				svg{
+					color: $whiteColor;
+				}
+			}
+		}
+		.form-para{
+			color: $whiteColor;
+			font-size: 13px;
+			font-family: $font-family-poppins-regular;
+			line-height: 20px;
+			margin: 0;
+			@media (max-width:$sm) {
+				display: none;
+			}
+		}
+	}
+}
+
+.text-none{
+	display: none;
+	transition: .5s ease-in-out;
+	// @media (max-width:$md) {
+	// 	display: block;
+	// }
+}
+.form-hide{
+	max-height: 0;
+	overflow: hidden;
+	transition: .5s ease-in-out;
+}
+.form-show{
+	max-height: 390px;
+	overflow: auto;
 }

@@ -4,6 +4,7 @@ import { subscribeOnStream, unsubscribeFromStream,subscribeMultitouchline,unSubs
 import React, { useEffect, useState } from "react";
 import { API_URLS } from "../../Services/API-URLS";
 import rest from "../../Services/rest.js";
+import ResearchService from "../../Services/ResearchService.js"
 function ChoiceLTP() {
 
   const [companyData, setCompanyData] = useState({ 8866: { change: 0, changePercent: 0, color: 'green', LTP_DATA: 0 }, 531358: { change: 0, changePercent: 0, color: 'green', LTP_DATA: 0 } });
@@ -45,24 +46,9 @@ function ChoiceLTP() {
   function getKeyInfo(session, scrips) {
     scrips.forEach(ele => {
       let keyInfoPayload = { "UserId": 'guest', "SessionId": session || '', "Token": ele.Token, "SegmentId": ele.SegmentId };
-      fetch('https://finx.choiceindia.com/api/cm/ProfileMkt/KeyInfo/', {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
-        headers: {
-          'Content-Type': 'application/json'
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify(keyInfoPayload) // body data type must match "Content-Type" header
-      })
-        .then(response => {
-          return response.json();
-        })
+      
+      ResearchService.getKeyInfoDetails(keyInfoPayload)
         .then(res => {
-
           let keyInfo = res.Response||{};
           let newB5 = {};
           newB5['MarketLot'] = keyInfo.MarketLot||0;

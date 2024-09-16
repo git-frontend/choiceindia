@@ -330,6 +330,9 @@ export class API_URLS {
   solarLead="api/newLeadDetail";
  /* For generate sso token*/
  ssoRegisterTokenGet="api/connect/token";
+
+ /*For KeyInfo */
+ keyInfo="cm/ProfileMkt/KeyInfo/";
   constructor() {
     this.setConfig(environment ? "live" : "UAT");
   }
@@ -855,15 +858,15 @@ export class API_URLS {
   }
 
   getSubBrokerNewSendOtpUrl() {
-    return this.SSOServerURL + this.subBrokerSendOtpURLNew;
+    return this.NEWSSOServerURL + this.subBrokerSendOtpURLNew;
   }
 
   getSubBrokerNewResendOtpURL() {
-    return this.SSOServerURL + this.subBrokerResendOtpURLNew;
+    return this.NEWSSOServerURL + this.subBrokerResendOtpURLNew;
   }
 
   getSubBrokerNewVerifyOtpURL() {
-    return this.SSOServerURL + this.subBrokerVerifyOtpURLNew;
+    return this.NEWSSOServerURL + this.subBrokerVerifyOtpURLNew;
   }
   getSubBrokerURL(location) {
     return (
@@ -1042,5 +1045,10 @@ export class API_URLS {
    }
    getinvestorcharterdataURL() {
     return this.CMSURL + this.investorcharterdata;
+  }
+
+  //KeyInfo url
+  getKeyInfoURL(){
+    return this.performanceURL+this.keyInfo;
   }
 }
