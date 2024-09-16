@@ -129,7 +129,7 @@ function HowToApplyIpo() {
                                   </div>
                             </div>
                             <div className="btn-flex">
-                                  <a href="#" className="btn-bg btn-light">How to Video</a>
+                                  <a target="_blank" href="https://www.youtube.com/watch?v=mU_ngDGLfe8" className="btn-bg btn-light">How to Video</a>
                                   <a href="#" className="btn-bg btn-bg-dark">Open Demat Account</a>
                             </div>
                       </div>

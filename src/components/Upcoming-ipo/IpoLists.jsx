@@ -146,11 +146,11 @@ function IpoLists() {
                                                                             {
                                                                                 // apiData?.map((res) => {
                                                                                 (apiData || [])
-                                                                                    .sort((a, b) => new Date(b.open_date) - new Date(a.open_date))
+                                                                                    .sort((a, b) => new Date(b.date_updated) - new Date(a.date_updated))
                                                                                     .map((res, index) => {
                                                                                         return (
                                                                                             <tr key={index}>
-                                                                                                <td className='ipo-name'>{res.banner_title}</td>
+                                                                                                <td  className='ipo-name ipo-desk-name'>{res.banner_title}</td>
                                                                                                 <td data-label="Issue Date" className='txt-right'>{res.open_date ? utils.formatDate(new Date(res.open_date), "dd MMMM , yyyy") : 'To be announced'}</td>
                                                                                                 <td data-label="Price Range">{res.price_band_value || 'To be announced'}</td>
                                                                                                 <td data-label="Lot Size" className='txt-right'>{res.lot_size_value || 'To be announced'}</td>
