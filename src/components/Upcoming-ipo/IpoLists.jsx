@@ -1,26 +1,48 @@
-import {useState} from 'react';
-import pdfIco from "../../assets/images/upcoming-ipo/pdf-icon.svg"
+import { useState, useEffect } from 'react';
+import pdfIco from "../../assets/images/upcoming-ipo/pdf-icon.svg";
+import cmsService from "../../Services/cmsService";
+import utils from "../../Services/utils";
 function IpoLists() {
+    const [apiData, setApiData] = useState([]);
+    console.log("apiData", apiData)
+    const [toggleState, setToggleState] = useState(1);
 
-  const [toggleState, setToggleState] = useState(1);
+    const toggleTab = (index) => {
+        setToggleState(index);
+    };
+    useEffect(() => {
+        CompanyIPO();
+    }, []);
 
-   const toggleTab = (index) => {
-      setToggleState(index);
-   };
+    function CompanyIPO() {
+        cmsService.companyIpoService()
+            .then(res => {
+                if (res && res.data && res.data.data) {
+                    const values = res.data.data.filter(item => item.status === "published"); 
+                    setApiData(values);
+                    console.log("values", values);
+                } else {
+                    setApiData([]);
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching IPO data:", error);
+            });
+    }
 
 
-  return (
-    <>
-        <section className='ipo-list-data'>
-              <div className='container'>
-                  <div className='row'>
-                    <div className='col-md-12'>
-                       <div className='head-ttl'>
-                          <h2 className='title-secnd'>Access Upcoming IPOs with Choice</h2>
-                          <p>Get detailed data and analysis on the most anticipated upcoming IPOs in India in 2024.</p>
-                       </div>
-                       <div className='ipo-tabs'>
-                            <div className='tabs-menus'>
+    return (
+        <>
+            <section className='ipo-list-data'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-12'>
+                            <div className='head-ttl'>
+                                <h2 className='title-secnd'>Access Upcoming IPOs with Choice</h2>
+                                <p>Get detailed data and analysis on the most anticipated upcoming IPOs in India in 2024.</p>
+                            </div>
+                            <div className='ipo-tabs'>
+                                {/* <div className='tabs-menus'>
                                 <ul>
                                   <li>
                                       <button href='#' className={toggleState === 1 ? "tabs  active" : "tabs"}
@@ -35,9 +57,9 @@ function IpoLists() {
                            onClick={() => toggleTab(3)}>Closed IPOs</button>
                                   </li>
                                 </ul>
-                            </div>
-                            <div className='ipo-tabs-content'>
-                                <div className={toggleState === 1 ? "content  active-content" : "content"}>
+                            </div> */}
+                                <div className='ipo-tabs-content'>
+                                    {/* <div className={toggleState === 1 ? "content  active-content" : "content"}>
                                     <div className='list-data-cont'>
                                         <div className='head-cont'>
                                             <h3>Subscribe Open IPOs</h3>
@@ -84,38 +106,56 @@ function IpoLists() {
                                             </table>
                                         </div>
                                     </div>
-                                </div>
-                                <div className={toggleState === 2 ? "content  active-content" : "content"}>
-                                <div className='list-data-cont'>
-                                        <div className='head-cont'>
-                                            <h3>Upcoming IPOs List</h3>
+                                </div> */}
+                                    <div className="content active-content">
+
+                                        <div className='list-data-cont'>
+                                            <div className='head-cont'>
+                                                <h3>Upcoming IPOs List</h3>
+                                            </div>
+                                            <div className='table'>
+                                                <table className='table-list'>
+                                                    <thead>
+                                                    <tr className='hide-mb'>
+                                                        <th>IPO Name</th>
+                                                        <th>Issue Date</th>
+                                                        <th>Price Range</th>
+                                                        <th>Lot Size</th>
+                                                        <th>IPO Document</th>
+                                                    </tr>
+                                                    </thead>
+                                                   
+                                                    <tbody>
+                                                    {
+                                                        // apiData?.map((res) => {
+                                                            (apiData || [])
+                                                            .sort((a, b) => new Date(b.open_date) - new Date(a.open_date))
+                                                            .map((res, index) => {
+                                                            return (
+                                                                    <tr key={index}>
+                                                                    <td className='ipo-name'>{res.banner_title}</td>
+                                                                    <td data-label="Issue Date" className='txt-right'>{res.open_date ? utils.formatDate(new Date(res.open_date), "dd MMMM , yyyy") : 'To be announced'}</td>
+                                                                    <td data-label="Price Range">{res.price_band_value || 'To be announced'}</td>
+                                                                    <td data-label="Lot Size" className='txt-right'>{res.lot_size_value || 'To be announced'}</td>
+                                                                    <td className='actin-btns'>
+                                                                        <a href='#' className='btn-bg'>Pre-Apply</a>
+                                                                        {/* <a href='#' className='' target='_blank'>
+                                                                            <img src={pdfIco} className='' />
+                                                                        </a> */}
+                                                                    </td>
+                                                                     </tr>
+                                                                     
+                                                               
+                                                            )
+                                                        }
+                                                        )}
+                                                         </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                        <div className='table'>
-                                            <table className='table-list'>
-                                                <tr className='hide-mb'>
-                                                  <th>IPO Name</th>
-                                                  <th>Issue Date</th>
-                                                  <th>Price Range</th>
-                                                  <th>Lot Size</th>
-                                                  <th>IPO Document</th>
-                                                </tr>
-                                                <tr>
-                                                    <td className='ipo-name'>Storage Technologies and Automation Ltd IPO</td>
-                                                    <td data-label="Issue Date" className='txt-right'>7 Jun 2024</td>
-                                                    <td data-label="Price Range">₹ 120 - ₹ 140</td>
-                                                    <td data-label="Lot Size" className='txt-right'>2000 Shares</td>
-                                                    <td className='actin-btns'>
-                                                        <a href='#' className='btn-bg'>Pre-Apply</a>
-                                                        <a href='#' className='' target='_blank'>
-                                                          <img src={pdfIco} className='' />
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
+
                                     </div>
-                                </div>
-                                <div className={toggleState === 3 ? "content  active-content" : "content"}>
+                                    {/* <div className={toggleState === 3 ? "content  active-content" : "content"}>
                                 <div className='list-data-cont'>
                                         <div className='head-cont'>
                                             <h3>Recently Closed IPOs</h3>
@@ -143,15 +183,15 @@ function IpoLists() {
                                             </table>
                                         </div>
                                     </div>
+                                </div> */}
                                 </div>
                             </div>
-                       </div>
+                        </div>
                     </div>
-              </div>
-            </div>
-        </section>
-    </>
-  )
+                </div>
+            </section>
+        </>
+    )
 }
 
 export default IpoLists

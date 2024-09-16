@@ -250,11 +250,37 @@
                             }
                         }
                     }
+                    .table{
+                        height: 700px;
+                        overflow: auto;
+                    
+               
                     .table-list{
                         width: 100%;
                         background: #ffffff;
                         column-gap: 4%;
                         row-gap: 1rem;
+                        position: relative;
+                        thead{
+                          background-color:rgba(51,51,51,.039) ;  
+                          .hide-mb{
+                            
+                            border: 0;
+                            @media (max-width: $md){
+                                display: none;
+                            }
+                        }
+                        }
+                        tbody{
+                            @media (max-width: $md){
+                                display: flex;
+                                flex-wrap: wrap;
+                                padding: 1.333rem;
+                                column-gap: 4%;
+                                row-gap: 1rem;
+                                width: 100%;
+                            }
+                       
                         tr{
                             border: 0;
                             @media (max-width: $md){
@@ -300,15 +326,12 @@
                             @media (max-width: $sm){
                                 width: 100%;
                             }
-                            &.hide-mb{
-                                @media (max-width: $md){
-                                    display: none;
-                                }
-                            }
+                            
                             
                         }
+                    }
                         th{
-                            background: #3333330A;
+                            background: #efefef;
                             border: 0;
                             font-size: 1.385rem;
                             white-space: nowrap;
@@ -316,6 +339,9 @@
                             color: $tcolor;
                             font-family: $font-family-poppins-semibold;
                             text-align: center;
+                            position: sticky;
+                            top: 0px;
+                            z-index: 99;
                             @media (max-width: $md){
                                 white-space: initial;
                             }
@@ -355,6 +381,7 @@
                             padding: 1.333rem;
                         }
                     }
+                }
                 }
             }
         }
@@ -1034,4 +1061,7 @@
 			display: none !important;
 		}
 	}
+}
+.list-data-cont{
+
 }
