@@ -6,7 +6,6 @@ import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function IpoLists() {
     const [apiData, setApiData] = useState([]);
-    console.log("apiData", apiData)
     const [toggleState, setToggleState] = useState(1);
     const [isloading, setisloading] = useState(true);
     const toggleTab = (index) => {
@@ -21,9 +20,15 @@ function IpoLists() {
             .then(res => {
                 if (res && res.data && res.data.data) {
                     setisloading(false);
-                    const values = res.data.data.filter(item => item.status === "published");
+                    const currentDate = new Date();
+             
+                    // Filter IPOs with status "published" and future close_date
+                const values = res.data.data.filter(item => 
+                    item.status === "published" && 
+                    (!item.close_date || new Date(item.close_date) > currentDate)
+                );
                     setApiData(values);
-                    console.log("values", values);
+                    // console.log("values", values);
                 } else {
                     setisloading(false);
                     setApiData([]);
