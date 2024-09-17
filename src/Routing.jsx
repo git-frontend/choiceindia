@@ -242,6 +242,7 @@ const LazyBugBountyProgram =React.lazy(()=> import('./components/Bug-bounty-prog
 const LazyUnder25 =React.lazy(()=> import('./components/Under-25/Under25'));
 const LazyBrokerageChargesNew = React.lazy(() => import('./components/Brokerage-New/BrokerageChargesNew'));
 const LazyInvestorCharterGrievances = React.lazy(() => import('./components/Investor-Charter-Grievances/InvestorCharterGrievances'));
+const LazyUpcomingIpo = React.lazy(() => import('./components/Upcoming-ipo/UpcomingIpo'));
 const LazyTradingDemat = React.lazy(() => import('./components/Trading-new-page/OpenTradingNew'));
 function Routing() {
 
@@ -1132,6 +1133,12 @@ function Routing() {
                             <React.Suspense>
                                 < LazyInvestorCharterGrievances />
                             </React.Suspense>
+                        } />
+
+                        <Route exact path='/upcoming-ipo' element={
+                            <React.Suspense>
+                                < LazyUpcomingIpo />
+                                </React.Suspense>
                         } />
                          <Route exact path='/what-is-trading-account' element={
                             <React.Suspense>

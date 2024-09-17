@@ -121,7 +121,7 @@ function Fabdetailsbanner(props) {
         setIsActive(true);
 
     };
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(true);
     const [name, setName] = useState('hideform');
     const [isCheck, setIsCheck] = useState(false);
 
@@ -179,6 +179,10 @@ function Fabdetailsbanner(props) {
             if ((props.formName == "form-demat" || props.formName == "form-equity-subbroker" ||props.formName == "form-mutual-fund-distributor") && (event.target.tagName === 'A' && event.target.closest('.blog-cta'))) {
                 event.preventDefault();
                 setHighlightForm(true);
+              
+                openAccountMobile.current.style.zIndex = 0;
+                setIsActive(true);
+           
             }
             else{
                 window.innerWidth <=992 ? setHighlightForm(false):""

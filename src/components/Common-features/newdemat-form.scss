@@ -1391,16 +1391,19 @@ width:100%;
         }
     }
     &.p-hide{
-        display: block !important;
-        position: fixed !important;
-        top: inherit !important;
-        bottom: 0;
-        z-index: 9999999999;
-        width: 100%;
-        left: 0;
-        // background: #4d4d4d80;
-        height: auto;
-        overflow: hidden;
+		@media (max-width: $md) {
+			display: block !important;
+			position: fixed !important;
+			top: inherit !important;
+			bottom: 0;
+			z-index: 9999999999;
+			width: 100%;
+			left: 0;
+			// background: #4d4d4d80;
+			height: auto;
+			overflow: hidden;
+        }
+       
 
     }
     .demat-account-form{

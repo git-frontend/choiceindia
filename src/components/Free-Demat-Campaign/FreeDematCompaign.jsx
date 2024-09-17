@@ -93,7 +93,7 @@ function FreeDematCompaign() {
   }, [rendercount])
 
   useEffect(() => {
-    if (searchParams.get('refercode') && isMobile.current) {
+    if (searchParams.get('refercode') && (atob(searchParams.get('source')) !== 'INDIVEST') && (atob(searchParams.get('source')) !== 'DIGIFOX') && isMobile.current) {
       let redirectUrl = `https://finx.choiceindia.com/open.html${location.search.replace('refercode', 'ref')}`
       window.open(redirectUrl, '_self')
       
@@ -107,7 +107,7 @@ function FreeDematCompaign() {
   return (
     <>
       {
-        (searchParams && searchParams.get('refercode') && isMobile.current) ?
+        (searchParams && searchParams.get('refercode') && (atob(searchParams.get('source')) !== 'INDIVEST') && (atob(searchParams.get('source')) !== 'DIGIFOX') && isMobile.current) ?
           <>
           </> :
           <>

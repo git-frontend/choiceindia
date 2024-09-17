@@ -2,6 +2,7 @@
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 
@@ -60,6 +61,7 @@ function OneAccountFinancialNeeds() {
                 <div className="col-md-12">
                   <div className="main-services-list">
                     <Slider {...settings} className="services-list-slider">
+                    <Link to="/equity-stock-trading" className="services-link">
                       <div className="carditem-nbfc">
                         <span className="cardimg">
                         <svg className="fill-w" width="48" height="41" viewBox="0 0 49 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,6 +74,9 @@ function OneAccountFinancialNeeds() {
                         </span>
                         <h5 className="card-ttl">Stocks</h5>
                       </div>
+                      </Link>
+
+                      <Link to="/mutual-funds-investment" className="services-link">
                       <div className="carditem-nbfc">
                         <span className="cardimg">
                         <svg className="fill-w" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,6 +86,9 @@ function OneAccountFinancialNeeds() {
                         </span>
                         <h5 className="card-ttl">Mutual Funds</h5>
                       </div>
+                      </Link>
+
+                      <Link to="/ipo-investment-account" className="services-link">
                       <div className="carditem-nbfc">
                         <span className="cardimg">
                         <svg className="fill-w" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,6 +103,9 @@ function OneAccountFinancialNeeds() {
                         </span>
                         <h5 className="card-ttl">IPO</h5>
                       </div>
+                      </Link>
+
+                      <a href="https://choiceinsurance.in/" className="services-link">
                       <div className="carditem-nbfc">
                         <span className="cardimg">
                         <svg className="fill-w" width="48" height="48" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,6 +114,9 @@ function OneAccountFinancialNeeds() {
                         </span>
                         <h5 className="card-ttl">Insurance</h5>
                       </div>
+                      </a>
+
+                      <Link to="/loan" className="services-link">
                       <div className="carditem-nbfc">
                         <span className="cardimg">
                         <svg className="fill-w" width="48" height="48" viewBox="0 0 52 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,6 +130,9 @@ function OneAccountFinancialNeeds() {
                         </span>
                         <h3 className="card-ttl">Loan</h3>
                       </div>
+                      </Link>
+
+                      
                       <div className="carditem-nbfc">
                         <span className="cardimg">
                           <svg className="fill-w" width="48" height="48" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">

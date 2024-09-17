@@ -103,6 +103,7 @@ function NewDematAccountForm(props) {
         consentYesLoader: false,
         consentNoLoader: false
     });
+    const [isOnboardFlag, setIsOnboardFlag] = useState();
     
     const [responseLink,setResponseLink]=useState();
       /**Error variable for consent */
@@ -155,9 +156,9 @@ function NewDematAccountForm(props) {
     if (window.innerWidth <= 992) {
         if(props.mobileForm.current.classList.contains('p-show')){
         setBlogPopUpForm('blog-pop-up-form'); 
-        props.blogPop(true);
+        props.blogPop(false);
         setIsPopUp(true);
-        }
+        } 
         else{
         setBlogPopUpForm('');
         props.blogPop(false);
@@ -210,6 +211,10 @@ function NewDematAccountForm(props) {
    
 
     useEffect(() => {
+
+        // if(searchParams.get('source') && atob(searchParams.get('source')) === 'DIGIFOX'){
+        //     sessionStorage.setItem('digifoxId',searchParams.get('digifoxId') || "")
+        // }
         let mediaQuery = window.matchMedia("(min-width: 767px)");
         mediaQuery.addListener(setView);
         // this is the cleanup function to remove the listener
@@ -242,9 +247,12 @@ function NewDematAccountForm(props) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link, msg, info, actionType, leadID) {
+    function handleOTPClose(link, msg, info, actionType, leadID,is_onboard_flag) {
         setShowOTP(false);
         setResponseLink(link || "")
+        if(is_onboard_flag){
+            setIsOnboardFlag(is_onboard_flag);
+        }
         if (actionType != 'popup_and_no_update') {
             if (link) {
 
@@ -332,8 +340,13 @@ function NewDematAccountForm(props) {
             return { ...prevState, showModal: false }
         });
 
-        if (link) {
-            window.location.href = link;
+        if(link && link.includes('onboard-info') && atob(searchParams.get('source')) === 'DIGIFOX' && searchParams.get('digifoxId') && isOnboardFlag !== 'C'){
+            const redirectionLink = link +'&digifoxId='+ searchParams.get('digifoxId');
+            window.location.href = redirectionLink;
+        }else{
+            if (link) {
+                window.location.href = link;
+            }
         }
     }
 
@@ -397,7 +410,9 @@ function NewDematAccountForm(props) {
             "utm_source": isBlog == "yes" ?(mfForm) ? UTMSource.current||"mf_lead_generation" : UTMSource.current || 'demat_lead_generation':(window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' :(window.location.pathname.indexOf("/mutual-funds-investment") > -1) ? 'choice-mf-web': UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             "account_type": type1 == 'MF' ? "" : "all",
+            "source": source.current ? source.current : "CHOICEINDIA"
         };
+        // console.log("request",request)
         openAccountService.sentOTPService(request,captchaToken,hideLoader,setLeadId,type1,setOTPSessionID,setShowThanku,fetchQueryParams,handleOTPShow,setAPIError,showAPIErrorToaster,props.dataLayerValues|| null,props.isActive,isPopUp)
        
     }
