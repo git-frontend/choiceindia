@@ -1825,7 +1825,7 @@ width:100%;
 		transition: .5s ease-in-out;
 		padding: 0;
 		background-color: $whiteColor;
-		border-radius: 0 0 1rem 1rem;
+		border-radius: 0;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
 		@media (max-width:$md) {
 			margin: 0;
@@ -1846,7 +1846,7 @@ width:100%;
 			}
 		}
 		.formgrp-new{
-			border-radius: 0 0 1rem 1rem;
+			border-radius: 0;
 			padding:1rem 2rem 2rem ;
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
 			margin: 0 !important;
@@ -1898,7 +1898,6 @@ width:100%;
 			padding: 1rem;
 		}
 		&.form-header{
-			border-radius: 8px;
 			transition: .5s ease-in-out;
 		}
 		.zero-fees-form{

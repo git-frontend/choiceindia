@@ -618,7 +618,7 @@ function NewDematAccountForm(props) {
                     <div className={`invest-zero-fees ${isToggle ? "form-header":""}`}>
                     <div className="zero-fees-form">
                         <h3 className="form-ttl"><span className={`${isToggle ? "":"text-none"}`}>Open Choice Demat Account</span> Invest with ZERO Fees</h3>
-                        <button className="btn-up-down" onClick={toggleClass}><FontAwesomeIcon icon={isToggle ? faAngleDown : faAngleUp} /></button>
+                        <button className="btn-up-down" onClick={toggleClass}><FontAwesomeIcon icon={isToggle ? faAngleUp : faAngleDown} /></button>
                     </div>
                     <p className={`form-para ${isToggle ? "text-none":""}`}>NO Account Opening Fee, AMC for 1st Year, Zero Square-off Charges + Free Call & Trade.</p>
                     </div>
@@ -875,7 +875,7 @@ function NewDematAccountForm(props) {
                                 isHomePage ?
                         <div className="zero-fees-form">
                             <h3 className="form-ttl">OTP Verification</h3>
-                            <button className="btn-up-down" onClick={toggleClass}><FontAwesomeIcon icon={isToggle ? faAngleDown : faAngleUp} /></button>
+                            <button className="btn-up-down" onClick={toggleClass}><FontAwesomeIcon icon={isToggle ? faAngleUp :faAngleDown} /></button>
                         </div>
                         :"" }
                         </div>
