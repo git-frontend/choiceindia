@@ -867,8 +867,8 @@ return (
 
                                                     <div className="d-flex align-items-center justify-content-center">
                                                         <button className="resend" onClick={() => subBrokerService.resendOTPService(true,showLoader,hideLoader,otpSessionID,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors,SubBrokerLanguageContent,props,brokerMobileNumber)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button>
-                                                        <span className="ortext">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'OR')}</span>
-                                                        <button className="resend" onClick={()=>{subBrokerService.getOTPOnCallService(showLoader,brokerMobileNumber,otpSessionID,openAccountService,hideLoader,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors)}}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otponcall', 'Get OTP on Call')}</button>
+                                                        {/* <span className="ortext">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'OR')}</span>
+                                                        <button className="resend" onClick={()=>{subBrokerService.getOTPOnCallService(showLoader,brokerMobileNumber,otpSessionID,openAccountService,hideLoader,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors)}}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otponcall', 'Get OTP on Call')}</button> */}
                                                     </div> : ''
                                             }
 

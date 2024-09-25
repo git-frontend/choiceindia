@@ -899,8 +899,8 @@ return (
                                         // <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Resend OTP'}</button> : ''
                                         <div className="d-flex align-items-center justify-content-center">
                                                             <button className="resend" onClick={() => resendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Resend OTP'}</button>
-                                                            <span className="ortext">{'OR'}</span>
-                                                            <button className="resend" onClick={getOTPOnCall}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> :  'Get OTP on Call'}</button>
+                                                            {/* <span className="ortext">{'OR'}</span>
+                                                            <button className="resend" onClick={getOTPOnCall}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> :  'Get OTP on Call'}</button> */}
                                                         </div>:''
                                 }
 

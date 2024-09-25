@@ -786,8 +786,8 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                             !count ?
                                             <div className="d-flex align-items-center justify-content-center">
                                             <button className="resend" onClick={() => subBrokerService.resendOTPService(true,showLoader,hideLoader,otpSessionID,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors,SubBrokerLanguageContent,props,brokerMobileNumber)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> :  'Resend OTP'}</button>
-                                            <span className="ortext">{ 'OR'}</span>
-                                            <button className="resend" onClick={()=>{subBrokerService.getOTPOnCallService(showLoader,brokerMobileNumber,otpSessionID,openAccountService,hideLoader,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors)}}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Get OTP on Call'}</button>
+                                            {/* <span className="ortext">{ 'OR'}</span>
+                                            <button className="resend" onClick={()=>{subBrokerService.getOTPOnCallService(showLoader,brokerMobileNumber,otpSessionID,openAccountService,hideLoader,resetOTPPopup,handleOTPResendSuccessToaster,setOTPErrors)}}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Get OTP on Call'}</button> */}
                                         </div>
                                        : ''
                                         }
