@@ -30,11 +30,11 @@ function Home() {
 	function generateRandomNumber() {
 		const random = Math.random(); // Generate a random number between 0 and 1
 
-		if (random < 0.5) {
-			setOutCome('A'); // Set outcome to 'A' for 50% of the users
-		} else {
+		// if (random < 0.5) {
+		// 	setOutCome('A'); // Set outcome to 'A' for 50% of the users
+		// } else {
 			setOutCome('B'); // Set outcome to 'B' for the remaining 50%
-		}
+		// }
 	}
 
 	useEffect(() => {
