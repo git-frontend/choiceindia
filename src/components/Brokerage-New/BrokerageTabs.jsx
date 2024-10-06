@@ -83,7 +83,7 @@ function BrokerageTabs() {
                                           <td className="charges-heads">STT (Securities Transaction Tax)</td>
                                           <td data-label="Equity Intraday">0.025% sell</td>
                                           <td data-label="Equity Delivery">0.1% Buy | Sell</td>
-                                          <td data-label="Equity Futures">0.2% Sell</td>
+                                          <td data-label="Equity Futures">0.02% Sell</td>
                                           <td data-label="Equity Options">0.1% (on premium) Sell In case of Options Exercise 0.125% (on Settlement Price* Quantity) to be paid by the Buyer</td>
                                        </tr>
                                        <tr>
