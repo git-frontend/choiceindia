@@ -83,15 +83,15 @@ function BrokerageTabs() {
                                           <td className="charges-heads">STT (Securities Transaction Tax)</td>
                                           <td data-label="Equity Intraday">0.025% sell</td>
                                           <td data-label="Equity Delivery">0.1% Buy | Sell</td>
-                                          <td data-label="Equity Futures">0.0125% Sell</td>
-                                          <td data-label="Equity Options">0.0625% (on premium) Sell In case of Options Exercise 0.125% (on Settlement Price* Quantity) to be paid by the Buyer</td>
+                                          <td data-label="Equity Futures">0.2% Sell</td>
+                                          <td data-label="Equity Options">0.1% (on premium) Sell In case of Options Exercise 0.125% (on Settlement Price* Quantity) to be paid by the Buyer</td>
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">Transaction charges</td>
-                                          <td data-label="Equity Intraday">NSE/BSE: 0.00325%</td>
-                                          <td data-label="Equity Delivery">NSE/BSE: 0.00325%</td>
-                                          <td data-label="Equity Futures">(NSE)- Exchange transaction charge: 0.0019% - Clearing charge: 0.0005%</td>
-                                          <td data-label="Equity Options">(NSE)- Exchange transaction charge: 0.05% - Clearing charge: 0.002%</td>
+                                          <td data-label="Equity Intraday">NSE/BSE: 0.00297%</td>
+                                          <td data-label="Equity Delivery">NSE/BSE: 0.00297%</td>
+                                          <td data-label="Equity Futures">(NSE)- Exchange transaction charge: 0.00173% - Clearing charge: 0.0005%</td>
+                                          <td data-label="Equity Options">(NSE)- Exchange transaction charge: 03503% - Clearing charge: 0.002%</td>
                                        </tr>
                                        <tr className="grey-back">
                                           <td className="charges-heads">GST</td>
@@ -144,15 +144,15 @@ function BrokerageTabs() {
                                        <tr className="grey-back">
                                           <td className="charges-heads">CTT (Commodities Transaction Tax)</td>
                                           <td data-label="Commodity Futures">0.01% Sell</td>
-                                          <td data-label="Commodity Options">0.05% Sell In case of Options Exercise: 0.125% (on Settlement Price* Quantity) to be paid by the Buyer</td>
+                                          <td data-label="Commodity Options">0.0418% Sell In case of Options Exercise: 0.125% (on Settlement Price* Quantity) to be paid by the Buyer</td>
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">Transaction Charges</td>
-                                          <td data-label="Commodity Futures">- Exchange Txn. charge: 0.0026% 
+                                          <td data-label="Commodity Futures">- Exchange Txn. charge: 0.0021% 
 - Clearing charge: 0.003% 
 - RMS charge: 0.005% (only NCDEX)
 </td>
-                                          <td data-label="Commodity Options">- Exchange Txn. charge: 0.05% 
+                                          <td data-label="Commodity Options">- Exchange Txn. charge: 0.0418% 
 - Clearing charge: 0.002% 
 </td>
                                        </tr>
@@ -204,10 +204,10 @@ function BrokerageTabs() {
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">Transaction Charges</td>
-                                          <td data-label="Currency Futures">- NSE Txn. charge: 0.0009% 
+                                          <td data-label="Currency Futures">- NSE Txn. charge: 0.00035% 
 - Clearing charge: 0.0005%
 </td>
-                                          <td data-label="Currency Options">- NSE Txn. charge: 0.035% 
+                                          <td data-label="Currency Options">- NSE Txn. charge: 0.0311% 
 - Clearing charge: 0.002%
 </td>
                                        </tr>

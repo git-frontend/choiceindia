@@ -209,14 +209,14 @@ function Banner() {
       case 1: // NSE
         brokerage = brokerageObj.orderType ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
         brokerageObj.stt = (brokerageObj.orderType ? (0.1 * turnover) : (0.025 * brokerageObj.sellValue)) / 100;
-        brokerageObj.transactionCharge = (0.00325 * turnover) / 100;
+        brokerageObj.transactionCharge = (0.00297 * turnover) / 100;
         brokerageObj.clearance = 0.01;
         // brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.cashDelivery * brokerageObj.buyValue) : (selectedState.cashIntraday * brokerageObj.buyValue)) / 100;
         break;
       case 3: // BSE
         brokerage = brokerageObj.orderType ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
         brokerageObj.stt = (brokerageObj.orderType ? (0.1 * turnover) : (0.025 * brokerageObj.sellValue)) / 100;
-        brokerageObj.transactionCharge = (0.00325 * turnover) / 100;
+        brokerageObj.transactionCharge = (0.00297 * turnover) / 100;
         brokerageObj.clearance = 0.01;
         // brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.cashDelivery * brokerageObj.buyValue) : (selectedState.cashIntraday * brokerageObj.buyValue)) / 100;
         break;
@@ -224,7 +224,7 @@ function Banner() {
         if (scrip.OptionType === 'XX') {
           brokerage = brokerageChargeFactor * turnover;
           brokerageObj.stt = (0.01 * brokerageObj.sellValue) / 100;
-          brokerageObj.transactionCharge = (0.0019 * turnover) / 100;
+          brokerageObj.transactionCharge = (0.00173 * turnover) / 100;
           brokerageObj.clearance = (0.0005 * turnover) / 100;
           //   brokerageObj.stateStampDuty = (brokerageObj.orderType ? (selectedState.fut * brokerageObj.buyValue) : (selectedState.fut * brokerageObj.buyValue)) / 100;
         } else if (scrip.OptionType === 'CE' || scrip.OptionType === 'PE') {
