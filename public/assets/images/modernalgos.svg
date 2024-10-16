@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="50.6" height="32" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50.6 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-654.1" y1="399" x2="-654.2" y2="398.8" gradientTransform="translate(144994.6 82368.2) scale(221.6 -206.4)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#23b24d"/>
+      <stop offset="1" stop-color="#79c740"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-654.8" y1="398" x2="-654.7" y2="397.9" gradientTransform="translate(175549.1 46132.4) scale(268 -115.8)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0d5292"/>
+      <stop offset="1" stop-color="#004884"/>
+    </linearGradient>
+  </defs>
+  <path id="Path_32725" data-name="Path 32725" class="cls-2" d="M5.3,24.8L24.6,0l9.6,12.2S7.2,26.1,0,31.9C0,31.9,21.1,12.4,26.5,11.2l-1.7-2.5S7.1,22.9,5.3,24.8Z"/>
+  <path id="Path_32726" data-name="Path 32726" class="cls-1" d="M8.7,27.8s22.8-13.3,27-13.8l14.5,17.9s-12.1-9.3-33.2-6.1c0,0,7.6-4.6,17.7-4.2l-2.1-2.7s-21.5,7.1-23.9,8.9Z"/>
+</svg>

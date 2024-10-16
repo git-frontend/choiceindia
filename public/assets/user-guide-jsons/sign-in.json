@@ -1,0 +1,46 @@
+{
+  "content": "<h3>Sign In</h3> <p>For user convenience Sign In we have increased your investment security by adding FINGERPRINT (Android App) or FACE ID LOGIN (IOS App) for Choice FinX. </p> <p>It is easier than memorizing a password and more secure since the physical features of an individual are unique and cannot be misused in any way.</p> <hr> <h4 class='login-first-time'>Login - First Time</h4> <ol type='a'> <li>On the Login Page, enter your Client ID, copy paste the system-generated password and click on the Next Button </li> <li>On the Change Password Page, copy paste the system-generated password in Received Password field</li> <li>Create a New Password that is Alphanumeric (between 6-12 characters) and contains one of the following special characters !@#$%^&*</li> <li>Confirm your New Password and click on the Change Password Button</li> <li>On the Set A New PIN Page, you will have to create a new PIN, which should be between 4 – 6 digits (numbers) </li> <li>You can then proceed to your account by clicking on the Next Button</li> </ol> <hr> <h4 class='login-as-existing-user'>Login - Existing User</h4> <p>Once you have logged in successfully for the first time and changed the Password and PIN according to your preference, you can simply login the next time by entering your Client ID, Password and PIN.</p> <ol type='1'> <li> <h5 class='activate-fingerprint'>Activate Fingerprint/Face ID</h5> <ol type='a'> <li>After entering your Client ID and Password, the user will be required to enter the PIN.</li> <li>Following this, the user will be asked to Enable FIngerprint/Face ID authentication, to which the user can select Yes or No. This option is shown only if the user is using Fingerprint Unlocking (Android Device) /Face ID (IOS device) for the device. Default device fingerprint will be only considered here for signing in Choice FinX App.</li> <li>When you sign in the next time, instead of entering your PIN, the user can Log In using fingerprint/face ID.</li> </ol> <img src='assets\\images\\guide-images\\activate-fingerprint.gif' /> </li> <li> <h5 class='forgot-password'>Forgot Password</h5> <ol type='a'> <li>On the Login Page, click on the ‘Forgot Password’</li> <li>You will be asked for your Client ID or PAN, enter either your Client ID or PAN and click on the Submit Button</li> <li>You will receive a system-generated password on your registered Email Id or Mobile Number</li> <li>On the Change Password Page, use this system-generated password in the Received Password field</li> <li>Create a New Password that is Alphanumeric (between 6-12 characters) and contains one of the following special characters !@#$%^&*</li> <li>Confirm your New Password and click on the Change Password Button</li> </ol> <img src='assets\\images\\guide-images\\forget-password.gif' /> </li> <li> <h5 class='forgot-pin'>Forgot Pin</h5> <ol type='a'> <li>On the Login Page, enter your Client ID and Password and click on the Next Button</li> <li>Click on the Forgot PIN Link</li> <li>You will receive a system-generated PIN on your registered email id or mobile number</li> <li>On the Change PIN Page, use this system-generated PIN in the Received PIN Field</li> <li>Create a new PIN (4-6 digits) and Click on the Change PIN Button</li> </ol> <img src='assets\\images\\guide-images\\forget-pin.gif' /> </li> <li> <h5 class='change-password'>Change Password</h5> <ol type='a'> <li>Go to Menu and click on My Profile</li> <li>Click on the Settings Icon on the top right and select the Change Password Option</li> <li>Enter Current Password, create a New Password and confirm New Password</li> <li>Click on Change Password Button</li> </ol> <img src='assets\\images\\guide-images\\change-password.gif' /> </li> <li> <h5 class='change-pin'>Change Pin</h5> <ol type='a'> <li>Go to Menu and click on My Profile</li> <li>Click on the Settings Icon on the top right and select the Change PIN Option</li> <li>Enter your current PIN and create a new PIN (4-6 digits)</li> <li>Click on the Change PIN Button</li> </ol> <img src='assets\\images\\guide-images\\change-pin.gif' /> </li> <li> <h5 class='account-locked'>Account Locked Due to Incorrect Password</h5> <p>Your account will be locked if the wrong password is entered 3 times successively. To unlock your account follow the below steps,</p> <ol type='a'> <li>Tap Forgot Password on the login page</li> <li>Enter your Client ID or PAN</li> <li>You will receive a system-generated password on your registered email address</li> <li>You can then set a new password using the password sent to you</li> </ol> </li> </ol>",
+  "subtopics": [
+    {
+      "title": "Login - First Time",
+      "url": "login-first-time",
+      "sub-headings": []
+    },
+    {
+      "title": "Login - Existing User",
+      "url": "login-as-existing-user",
+      "sub-headings": [
+        {
+          "title": "Activate Fingerprint - Face ID",
+          "url": "activate-fingerprint"
+        },
+        {
+          "title": "Forgot Password",
+          "url": "forgot-password"
+        },
+        {
+          "title": "Forgot PIN",
+          "url": "forgot-pin"
+        },
+        {
+          "title": "Change Password",
+          "url": "change-password"
+        },
+        {
+          "title": "Change PIN",
+          "url": "change-pin"
+        },
+        {
+          "title": "Account Locked Due to Incorrect Password",
+          "url": "account-locked"
+        }
+      ]
+    }
+  ],
+  "actions": {
+    "prev": "Activate Your Choice FinX Account",
+    "next": "Scrip Search",
+    "prev-url": "/user-guide/app/activate-account",
+    "next-url": "/user-guide/app/scrip-search"
+  }
+}

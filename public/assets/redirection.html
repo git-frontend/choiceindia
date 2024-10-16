@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<title>Redirecting to URL</title>
+
+<head>
+
+</head>
+
+<body style="text-align: center;">
+  <!-- <img src="./images/loading_gear.svg" style="width: 200px; height: 200px;"> -->
+  <h3 style="color:#aaa;">Please wait while you are getting redirected.</h3>
+
+  <script>
+    setTimeout(function () {
+      var urlToBeRedirected = decodeURIComponent((location.search || "").replace('?', '').replace('=', ''));
+      if (urlToBeRedirected.indexOf('jiffy.in') > -1 || urlToBeRedirected.indexOf('choicebroking.in') > -1 || urlToBeRedirected.indexOf('choiceindia.com') > -1) {
+        window.location = urlToBeRedirected;
+      }
+    }, 1000)
+  </script>
+</body>
+
+</html>

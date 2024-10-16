@@ -1,0 +1,10 @@
+{
+  "content": "<h3>ADVANCED CHARTING</h3>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p><span style='color: #000000;'>You can go to charts from two different places - WatchList and Company Page. <br /></span></p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p>\r\n</p>\r\n<p><img src='assets\\images\\guide-images\\Chart  - Watchlist - Part 1 - 500X294.gif' /></p>\r\n<p>\r\n</p>\r\n<ol style='list-style-type: lower-roman;'>\r\n\r\n\r\n\r\n<li>\r\n\r\n\r\n\r\n<p><span style='color: #000000;'>You can access Charts from the WatchList, by tapping on a scrip and clicking on the Charts option. </span></p>\r\n\r\n\r\n\r\n\r\n<p>\r\n\r\n</p>\r\n\r\n</li>\r\n</ol>\r\n<p><img src='assets\\images\\guide-images\\Chart  - Company Page - Part 1 - 500X294.gif' /></p>\r\n<p>\r\n\r\n\r\n\r\n\r\n</p>\r\n<ol style='list-style-type: lower-roman;' start='2'>\r\n<li>\r\n\r\n\r\n \r\n\r\n<p><span style='color: #000000;'>Or, you can search for a scrip and on the Company page and click on the Enlarge View Icon <i class='icon-expand'></i>to go to charts.</span></p>\r\n\r\n\r\n \r\n\r\n</li>\r\n</ol>\r\n<p><img src='assets\\images\\guide-images\\Chart  - Company Page - Part 2 - 270X500.gif' /></p>\r\n<ol style='list-style-type: lower-roman;' start='3'>\r\n\r\n\r\n\r\n\r\n\r\n<li>\r\n\r\n\r\n \r\n\r\n<p><span style='color: #000000;'>You can choose from 13 different chart types.</span></p>\r\n\r\n\r\n \r\n\r\n</li>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<li>\r\n\r\n\r\n\r\n<p><span style='color: #000000;'>To check intraday and historical data you can select the duration/interval. </span></p>\r\n\r\n\r\n\r\n</li>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<li>\r\n\r\n\r\n\r\n<p><span style='color: #000000;'>Click on the Crosshair Icon </span><span style='color: #000000;'> to check the Tick Data.</span></p>\r\n\r\n\r\n\r\n</li>\r\n\r\n\r\n\r\n</ol>\r\n<p>\r\n</p>\r\n<p>\r\n</p> ",
+  "subtopics": [],
+  "actions": {
+    "prev": "Scrip Overview",
+    "next": "Order Placement",
+    "prev-url": "/user-guide/app/scrip-overview",
+    "next-url": "/user-guide/app/order-placement"
+  }
+}

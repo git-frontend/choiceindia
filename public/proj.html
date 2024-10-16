@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      window.prerenderReady = false;
+    </script>
+    <meta charset="utf-8"/>
+    <!-- <link rel="manifest" href="/manifest.json" /> -->
+    <link rel="manifest" href="/firebase-manifest.json"/>
+    <meta name="google-site-verification" content="FotS9BK-s5QTH5ltE2XsAelcDR0-NAg7U-WdNlUPlWQ"/>
+    <title>Choice FinX</title>
+    <meta name="fragment" content="!"/>
+    <meta name="description" content="Choice FinX Trading App"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+    <meta x-content-type-options:="" nosniff="" x-frame-options:="" deny,="" x-xss-protection:="" 1;="" mode="block"/>
+    <base href="/"/>
+    <!-- <meta http-equiv="Cache-control" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" /> -->
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <link rel="preconnect" href="https://jsonip.com"/>
+    <link id="canonical-link" rel="canonical" href=""/>
+    <link rel="manifest" href="manifest.json"/>
+    <link rel="apple-touch-icon" href="assets/icons/192x192.png"/>
+    <meta name="theme-color" content="#1976d2"/>
+    <!-- Google Tag Manager -->
+    <script>
+      if (
+        location.hostname.indexOf("finx.choiceindia.com") > -1 &&
+        location.hostname.indexOf("betafinx.choiceindia.com") == -1 &&
+        location.hostname.indexOf("devfinx.choiceindia.com") == -1
+      ) {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+          j.async = true;
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-PK7DKDT");
+      }
+    </script>
+    <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="datepicker.css"><link rel="stylesheet" href="nouislider.css"></head>
+  <script src="assets/libs/socket.io.js"></script>
+ <!--  <style>
+    .loader-wrapper-min-2 {
+      display: flex;
+      flex: 1 0 auto;
+      justify-content: center;
+      align-items: center;
+      top: -75px;
+      position: relative;
+      height: 100vh;
+      display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    align-items: center;
+    top: -75px;
+    position: relative;
+    height: 100vh;
+    position: absolute;
+    left: 50%;
+    top: 6vw;
+    }
+
+    @-webkit-keyframes load-one {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes load-one {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes load-two {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+    @keyframes load-two {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    .loader-wrapper-min-2 .circle {
+      border-top: solid 4px #004393;
+      border-bottom: solid 4px yellow;
+      border-left: solid 4px transparent;
+      border-right: solid 4px transparent;
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      -webkit-animation: load-one 3s linear infinite;
+      animation: load-one 3s linear infinite;
+    }
+
+    .loader-wrapper-min-2 .circle-min {
+      border-top: solid 4px rgb(238, 255, 0);
+      border-bottom: solid 4px rgb(238, 255, 0);
+      border-top: solid 4px transparent;
+      border-bottom: solid 4px transparent;
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      margin: 0;
+      padding: 0;
+      -webkit-animation: load-two 1.5s linear infinite;
+      animation: load-two 1.5s linear infinite;
+    }
+  </style> -->
+
+  <script async="">
+    setTimeout(() => {
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      var analyticsID =
+        location.hostname.indexOf("finx.choiceindia.com") > -1 &&
+        location.hostname.indexOf("betafinx.choiceindia.com") == -1 &&
+        location.hostname.indexOf("devfinx.choiceindia.com") == -1
+          ? "UA-80424325-7"
+          : "UA-80424325-8";
+      ga("create", analyticsID, "auto");
+    }, 1000);
+  </script>
+
+  <script onerror="this.src='assets/libs/esm-fingerprint.js'" src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3.4.2/dist/fp.min.js"></script>
+
+  <body class="mat-typography" oncontextmenu="return false" id="section-body-data">
+    <!-- Google Tag Manager (noscript) -->
+    <!-- Will be executed when script is not allowed in browser -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PK7DKDT"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- <iframe name="angular-oauth-oidc-check-session-iframe"></iframe> -->
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- theme="custom-dark" -->
+    
+
+    <brokerage-calculator-widget sessionid="0x019C4F521A584B01E4FAA3BEFF4AEA" userid="X015100" usercode="AKBRM" accesstoken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJZCI6OTA5MDkwLCJ1c2VyaWQiOjkwOTA5MCwidGVuYW50aWQiOjkwOTA5MCwibWVtYmVySW5mbyI6eyJ0ZW5hbnRJZCI6IjExNjEiLCJncm91cElkIjoiSE8iLCJ1c2VySWQiOiJYMDE1MTAwIiwidGVtcGxhdGVJZCI6IkhUVFBORVcxMjMiLCJ1ZElkIjoiIiwib2NUb2tlbiI6IjB4MDE5QzRGNTIxQTU4NEIwMUU0RkFBM0JFRkY0QUVBIiwidXNlckNvZGUiOiJBS0JSTSIsImdyb3VwQ29kZSI6IkFBQUFBIiwiYXBpa2V5RGF0YSI6eyJDdXN0b21lcklkIjoiMTE2MSIsIlN1YlRlbmFudElkIjoiIiwiUHJvZHVjdFNvdXJjZSI6IldFQkFQSSIsImV4cCI6MTgyMjM4MTg2MCwiaWF0IjoxNjkyNzgxOTEwfSwic291cmNlIjoiV0VCQVBJIn0sImV4cCI6MTcyODkzMDU5OSwiaWF0IjoxNzI4OTA2Nzc0fQ.t808AKjO0YO20lFc_YW0lbYpa9S53rJG2YGSnAPBCNw" segmentallowed="1,3" mtfenable="false"></brokerage-calculator-widget>
+   <!--  <div class="loader-wrapper-min-2" id="loading-wrapper-index">
+      <div class="circle">
+        <div class="circle-min"></div>
+      </div>
+    </div> -->
+  <script src="runtime.js" type="module"></script><script src="polyfills.js" type="module"></script><script src="scripts.js" defer></script><script src="io.js" defer></script><script src="main.js" type="module"></script></body>
+  <link href="/assets/fonts/fonts.css" rel="stylesheet"/>
+  <script src="/assets/static/javascript/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 50) {
+        $(".rrp-new-top-sub").addClass("newSticky");
+      } else {
+        $(".rrp-new-top-sub").removeClass("newSticky");
+      }
+
+      if ($(this).scrollTop() > 150) {
+        $("#filter-srch-bar").addClass("newSticky");
+      } else {
+        $("#filter-srch-bar").removeClass("newSticky");
+      }
+    });
+
+    $(document).ready(function () {
+      $(".filter_btn1").click(function () {
+        $(this).toggleClass("open");
+      });
+
+      window.onload = function () {
+        var totalProgress, progress;
+        const circles = document.querySelectorAll(".progress-n");
+        for (var i = 0; i < circles.length; i++) {
+          totalProgress = circles[i]
+            .querySelector("circle")
+            .getAttribute("stroke-dasharray");
+          progress = circles[i].parentElement.getAttribute("data-percent");
+          if (circles && circles[i] && circles[i].querySelector(".bar"))
+            circles[i].querySelector(".bar").style["stroke-dashoffset"] =
+              (totalProgress * progress) / 100;
+        }
+      };
+
+      $(".moreless-button").click(function () {
+        $(".moretext").slideToggle();
+        if ($(".moreless-button").text() == "Read more") {
+          $(this).text("Read less");
+        } else {
+          $(this).text("Read more");
+        }
+      });
+
+      $(".toggle-menu-new").click(function () {
+        $(this).toggleClass("open");
+        $(".left-menu").toggleClass("show-sidenav");
+      });
+
+      $(".left-menu-element").click(function () {
+        $(".toggle-menu-new").removeClass("open");
+        $(".left-menu").removeClass("show-sidenav");
+      });
+    });
+  </script>
+  <script type="text/javascript" async="">
+    setTimeout(() => {
+      (function (i, s, o, g, r, a, m, n) {
+        i.moengage_object = r;
+        t = {};
+        q = function (f) {
+          return function () {
+            (i.moengage_q = i.moengage_q || []).push({ f: f, a: arguments });
+          };
+        };
+        (f = [
+          "track_event",
+          "add_user_attribute",
+          "add_first_name",
+          "add_last_name",
+          "add_email",
+          "add_mobile",
+          "add_user_name",
+          "add_gender",
+          "add_birthday",
+          "destroy_session",
+          "add_unique_user_id",
+          "update_unique_user_id",
+          "moe_events",
+          "call_web_push",
+          "track",
+          "location_type_attribute",
+        ]),
+          (h = { onsite: ["getData", "registerCallback"] });
+        for (k in f) {
+          t[f[k]] = q(f[k]);
+        }
+        for (k in h)
+          for (l in h[k]) {
+            null == t[k] && (t[k] = {}), (t[k][h[k][l]] = q(k + "." + h[k][l]));
+          }
+        a = s.createElement(o);
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+        i.moe =
+          i.moe ||
+          function () {
+            n = arguments[0];
+            return t;
+          };
+        a.onload = function () {
+          if (n) {
+            i[r] = moe(n);
+          }
+        };
+      })(
+        window,
+        document,
+        "script",
+        "https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js",
+        "Moengage"
+      );
+
+      Moengage = moe({
+        app_id:
+          location.hostname.indexOf("finx.choiceindia.com") > -1 &&
+          location.hostname !== "devfinx.choiceindia.com"
+            ? "3E9D12CRE9W9EJ8DRIBNIOJ9"
+            : "3E9D12CRE9W9EJ8DRIBNIOJ9_DEBUG",
+        debug_logs:
+          location.hostname.indexOf("finx.choiceindia.com") > -1 &&
+          location.hostname !== "devfinx.choiceindia.com"
+            ? 0
+            : 1,
+        swPath: "/firebase-messaging-sw.js",
+      });
+    }, 1000);
+  </script>
+
+  <script>
+    window.prerenderReady = true;
+  </script>
+<script type="text/javascript">
+  let appID =
+      location.hostname.indexOf("finx.choiceindia.com") > -1 &&
+      location.hostname.indexOf("betafinx.choiceindia.com") == -1 &&
+      location.hostname.indexOf("devfinx.choiceindia.com") == -1
+        ? "1103323063"
+        : "1103323066";
+  (function(n,e,w,r,i,c,t){n[n['NewRelicObject']=r]=n[r]||function(){
+  (n[r].q=n[r].q||[]).push(arguments)},n[r].l=1*new Date();i=e.createElement(w),
+  c=e.getElementsByTagName(w)[0];i.async=1;i.src='//js-agent.newrelic.com/nr-1118.min.js';
+  c.parentNode.insertBefore(i,c)})(window,document,'script','NREUM');
+  NREUM.info={
+    "beacon":"bam.nr-data.net",
+    "licenseKey":"NRJS-ad6b03759794aa19540",
+    "applicationID":appID,
+    "transactionName":"YOUR_TRANSACTION_NAME",
+    "queueTime":0,
+    "applicationTime":0,
+    "atts":"",
+    "errorBeacon":"bam.nr-data.net",
+    "agent":"https://js-agent.newrelic.com/"
+  }
+</script>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authorize NSDL</title>
+    <style type="text/css">
+      body {
+        text-align: center;
+      }
+      .loader {
+        height: 50px;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="frmDIS" method="post" action="">
+      <input type="hidden" name="transactionType" value="" />
+      <input type="hidden" name="requestor" value="" />
+      <input type="hidden" name="requestorId" value="" />
+      <input type="hidden" name="requestReference" value="" />
+      <input type="hidden" name="channel" value="" />
+      <input type="hidden" name="requestTime" value="" />
+      <input type="hidden" name="orderReqDtls" value="" />
+      <input type="hidden" name="digitalSignature" value="" />
+      <input type="submit" style="display: none" />
+    </form>
+    <img class="loader" src="/assets/images/loader.gif" />
+    <p>Please do not Refresh or close the browser</p>
+  </body>
+</html>
+
+<script>
+  var match,
+    pl = /\+/g, // Regex for replacing addition symbol with a space
+    search = /([^&=]+)=?([^&]*)/g,
+    query = window.location.search.substring(1);
+
+  urlParams = {};
+  while ((match = search.exec(query)))
+    urlParams[decodeURIComponent(match[1].replace(pl, " "))] =
+      decodeURIComponent(match[2]);
+
+  if (Object.keys(urlParams).length) {
+    updateValues(
+      "frmDIS",
+      "action",
+      urlParams.ActionURL || urlParams.ActionUrl || ""
+    );
+    updateValues("transactionType", "value", urlParams.transactionType || "");
+    updateValues("requestor", "value", urlParams.requestor || "");
+    updateValues("requestorId", "value", urlParams.requestorId || "");
+    updateValues("requestReference", "value", urlParams.requestReference || "");
+    updateValues("channel", "value", urlParams.channel || "");
+    updateValues("requestTime", "value", urlParams.requestTime || "");
+    updateValues("orderReqDtls", "value", urlParams.orderReqDtls || "");
+    updateValues("digitalSignature", "value", urlParams.digitalSignature || "");
+    setTimeout(function () {
+      document.getElementsByName("frmDIS")[0].submit();
+    }, 500);
+  }
+
+  function updateValues(elementName, attributeName, value) {
+    if (document.getElementsByName(elementName).length) {
+      document
+        .getElementsByName(elementName)[0]
+        .setAttribute(attributeName, value);
+    }
+  }
+</script>

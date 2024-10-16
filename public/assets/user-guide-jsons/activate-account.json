@@ -1,0 +1,26 @@
+{
+  "content": "<h3>Activate your Account</h3><p>Once you have successfully completed your onboarding, you will receive a Unique Client ID (trading code). However, based on whether you are KYC verified or not, the time it will take for you to start trading will vary. </p><table border='1' cellspacing='0' cellpadding='1'> <tbody> <tr> <td height='19'> <p><span><strong>KYC Verified</strong></span></p></td><td> <p><span><strong>Account Status</strong></span></p></td></tr><tr> <td> <p><span>Yes</span></p></td><td> <ul> <li> <p><span>You will be required to verify, download, print, sign and courier the copies of all the pre-filled forms sent on your registered email address.</span></p></li><li> <p><span>Your account will be active in </span><span><strong>T+7 working hours</strong></span><span> on the receipt of your documents documents. (T=The time we receive the above-mentioned documents)</span><span><strong>.</strong></span></p></li></ul> </td></tr><tr> <td> <p><span>No</span></p></td><td> <ul> <li> <p><span>You will be required to verify, download, print, sign and courier the copies of all the pre-filled forms sent on your registered email address.</span></p></li><li> <p><span>Your account will be active in </span><span><strong>T+7 working days</strong></span><span> on the receipt of your documents documents.(T=The time we receive the above-mentioned documents)</span><span><strong>.</strong></span></p></li></ul> </td></tr></tbody></table><p><em>All your emails will be delivered to your registered email address. </em></p><hr><h4 class='pending-documents-email'>1. Pending Documents Email</h4><p>You will receive the Pending Documents Email, which will inform you of the documents that are required to be couriered to us and how much time will it take you to start trading (based on the above mentioned criteria).</p><hr><h4 class='login-credentials-email'>2. Login Credential Email</h4><p>You will receive a Login Credential Email containing your Client ID and a system-generated password if all your documents are in order. You will be required to use the Client ID and system-generated password mentioned in this mail to login to Choice FinX for the first time.</p><hr><h4 class='welcome-email'>3. Welcome Email </h4><p>You will receive a Welcome Email that will contain all the important information such as Client ID as well as relevant documents pertaining to your trading account. Further, your back office login and password will also be provided in the same. </p><p><em>Please note: if you do not receive above-mentioned emails, you can drop us a mail at <a href='mailto:support@jiffy.in'>support@jiffy.in</a> or give us a call at </em><span><em>(+91) 88-2424-2424</em></span></p>",
+  "subtopics": [
+    {
+      "title": "Pending Documents Email",
+      "url": "pending-documents-email",
+      "sub-headings": []
+    },
+    {
+      "title": "Login Credentilas Email",
+      "url": "login-credentials-email",
+      "sub-headings": []
+    },
+    {
+      "title": "Welcome Email",
+      "url": "welcome-email",
+      "sub-headings": []
+    }
+  ],
+  "actions": {
+    "prev": "Register On The App ",
+    "prev-url": "/user-guide/app/register-on-app",
+    "next-url": "/user-guide/app/sign-in",
+    "next": "Sign In"
+  }
+}

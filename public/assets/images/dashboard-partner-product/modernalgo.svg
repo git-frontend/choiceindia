@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_5228" data-name="Rectangle 5228" width="60" height="60" transform="translate(-7164 -3015)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Path_116988" data-name="Path 116988" d="M103.933,0,80.863,29.56c2.213-2.243,23.231-19.146,23.231-19.146l2.083,2.964C99.77,14.826,74.454,38.131,74.454,38.131c8.671-6.948,40.934-23.551,40.934-23.551Z" transform="translate(-74.454)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.177" y1="0.964" x2="0.178" y2="0.964" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#23b24d"/>
+      <stop offset="1" stop-color="#79c740"/>
+    </linearGradient>
+    <clipPath id="clip-path-3">
+      <path id="Path_116990" data-name="Path 116990" d="M215.809,243.025l.827-.479a6.383,6.383,0,0,0-.827.479m.827-.479c5.221-2.646,27.691-10.1,27.691-10.1l2.483,3.2a42.134,42.134,0,0,0-21.148,5.047c25.2-3.863,39.653,7.29,39.653,7.29l-17.3-21.388c-4.481.513-26.788,13.292-31.376,15.943" transform="translate(-215.809 -226.603)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="0.013" y1="1.228" x2="0.014" y2="1.228" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0d5292"/>
+      <stop offset="1" stop-color="#004884"/>
+    </linearGradient>
+  </defs>
+  <g id="Mask_Group_271" data-name="Mask Group 271" transform="translate(7164 3015)" clip-path="url(#clip-path)">
+    <g id="Group_102348" data-name="Group 102348" transform="translate(-7164 -3004.105)">
+      <g id="Group_102345" data-name="Group 102345" transform="translate(0 0)">
+        <g id="Group_102344" data-name="Group 102344" clip-path="url(#clip-path-2)">
+          <path id="Path_116987" data-name="Path 116987" d="M-156.966-248.15l-34.973,42.4,45.515,32.578,34.973-42.4Z" transform="translate(172.162 229.727)" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+      <g id="Group_102347" data-name="Group 102347" transform="translate(10.494 16.823)">
+        <g id="Group_102346" data-name="Group 102346" clip-path="url(#clip-path-3)">
+          <path id="Path_116989" data-name="Path 116989" d="M-14.554,137.43l23.96,25.814,59.75-10.351L45.2,127.079Z" transform="translate(-2.547 -134.467)" fill="url(#linear-gradient-2)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<!-- <meta http-equiv="refresh" content="2;URL='http://localhost:4200/client/funds/payin/response'" /> -->
+	<style type="text/css">
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body onload="postMessage()">
+	Please do not Refresh or close the browser.
+</body>
+
+</html>
+<script>
+	function postMessage() {
+		window.opener.postMessage("processEnded", "*");
+	}
+</script>

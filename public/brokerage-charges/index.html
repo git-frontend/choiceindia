@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .fa-exclamation {
+            font: message-box;
+        }
+
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            position: relative;
+            /* width: 100%; */
+            margin: auto;
+            top: -90px;
+        }
+
+        .Toaster {
+            min-width: 100px;
+            width: max-content;
+            height: 80px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .Toaster:not(:last-of-type) {
+            margin-bottom: 30px;
+        }
+
+        .Toaster-iconContainer {
+            position: relative;
+            display: inline-block;
+            width: 80px;
+            height: 100%;
+        }
+
+        .Toaster-icon {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        .Toaster-icon>i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+
+        .Toaster-icon.Toaster-icon--success {
+            background: #9fd5c8;
+        }
+
+        .Toaster-icon.Toaster-icon--error {
+            background: #e38f8f;
+        }
+
+        .Toaster-icon.Toaster-icon--info {
+            background: #9ac7d1;
+        }
+
+        .Toaster-messageContainer {
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            width: 215px;
+        }
+
+        .Toaster-message {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 300;
+        }
+
+        #success-toast {
+            display: none;
+        }
+
+        #error-toast {
+            display: none;
+
+        }
+
+        #info-toast {
+            display: none;
+
+        }
+
+        .brokerage-section {
+            /* position: absolute; */
+            left: 0;
+            /* top: 0px;
+	 */
+            bottom: 0;
+            /* background: #f8fcfc; */
+            padding: 16px;
+            border-radius: 8px 0px 0px 8px;
+            display: block;
+            max-width: 371px;
+            margin: 0 auto;
+            /* height: 279px; */
+        }
+
+        .brokerage-section .brokerage-header {
+            /* border-bottom: 1px solid #e4e4e4; */
+            /* padding-bottom: 12px; */
+        }
+
+        .brokerage-section .brokerage-header .brokerage-label-header {
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .brokerage-section .brokerage-header .brokerage-label-header-sec {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .brokerage-section .brokerage-header .brokerage-label-header-sec .brokerage-label {
+            display: grid;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .brokerage-section .brokerage-header .brokerage-label-header-sec .brokerage-label .brokerage-sub-label {
+            font-size: 12px;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .brokerage-section .brokerage-header .brokerage-label-header-sec .brokerage-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #004393;
+        }
+
+        .brokerage-section .brokerage-middle {
+            /* padding-top: 12px; */
+            padding-bottom: 12px;
+        }
+
+        .brokerage-section .brokerage-middle ul {
+            padding: 0px;
+            line-height: 26px;
+            font-weight: 500;
+            margin-bottom: 0px;
+        }
+
+        .brokerage-section .brokerage-middle ul li {
+            font-size: 12px;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .brokerage-section .brokerage-middle ul li .brokerage-label {
+            color: #333;
+            font-size: 14px;
+        }
+
+        .brokerage-section .brokerage-middle ul li .brokerage-label .brokerage-sub-label {
+            font-size: 12px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .brokerage-section .brokerage-middle ul li .brokerage-value {
+            color: #333;
+            font-size: 14px;
+        }
+
+        .brokerage-section .brokerage-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: gray;
+            line-height: 20px;
+            /* font-weight: 600; */
+        }
+
+        .brokerage-section .brokerage-footer .brokerage-label {
+            color: #000;
+        }
+
+        .brokerage-section .brokerage-footer .brokerage-value {
+            color: #004393;
+        }
+
+        .bold-val {
+            font-weight: 600;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .menu {
+            float: left;
+            width: 20%;
+        }
+
+        .menuitem {
+            padding: 8px;
+            margin-top: 7px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .main {
+            /* position: absolute;
+    margin-left: auto;
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden; */
+            /* position: absolute; */
+            /* margin-left: auto; */
+            /* float: left; */
+            /* z-index: 9999999999999999; */
+            /* width: 60%; */
+            padding: 0 20px;
+            overflow: hidden;
+            margin: auto;
+            /* width: 30%; */
+            /* border: 3px solid green; */
+            padding: 10px;
+        }
+
+        .right {
+            background-color: lightblue;
+            float: left;
+            width: 20%;
+            padding: 10px 15px;
+            margin-top: 7px;
+        }
+
+        @media only screen and (max-width:800px) {
+
+            /* For tablets: */
+            .main {
+                width: 80%;
+                padding: 0;
+            }
+
+            .right {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width:500px) {
+
+            /* For mobile phones: */
+            .menu,
+            .main,
+            .right {
+                width: 100%;
+            }
+        }
+
+        @-webkit-keyframes enter {
+            0% {
+                opacity: 0;
+                top: -10px;
+            }
+
+            5% {
+                opacity: 1;
+                top: 0px;
+            }
+
+            50.9% {
+                opacity: 1;
+                top: 0px;
+            }
+
+            55.9% {
+                opacity: 0;
+                top: 10px;
+            }
+        }
+
+        @keyframes enter {
+            0% {
+                opacity: 0;
+                top: -10px;
+            }
+
+            5% {
+                opacity: 1;
+                top: 0px;
+            }
+
+            50.9% {
+                opacity: 1;
+                top: 0px;
+            }
+
+            55.9% {
+                opacity: 0;
+                top: 10px;
+            }
+        }
+
+        @-moz-keyframes enter {
+            0% {
+                opacity: 0;
+                top: -10px;
+            }
+
+            5% {
+                opacity: 1;
+                top: 0px;
+            }
+
+            50.9% {
+                opacity: 1;
+                top: 0px;
+            }
+
+            55.9% {
+                opacity: 0;
+                top: 10px;
+            }
+        }
+
+        .loader {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -27.5px;
+            margin-top: -27.5px;
+        }
+
+        .square {
+            background: white;
+            width: 15px;
+            height: 15px;
+            float: left;
+            top: -10px;
+            margin-right: 5px;
+            margin-top: 5px;
+            position: relative;
+            opacity: 0;
+            -webkit-animation: enter 6s infinite;
+            animation: enter 6s infinite;
+        }
+
+        .enter {
+            top: 0px;
+            opacity: 1;
+        }
+
+        .square:nth-child(1) {
+            -webkit-animation-delay: 1.8s;
+            -moz-animation-delay: 1.8s;
+            animation-delay: 1.8s;
+        }
+
+        .square:nth-child(2) {
+            -webkit-animation-delay: 2.1s;
+            -moz-animation-delay: 2.1s;
+            animation-delay: 2.1s;
+        }
+
+        .square:nth-child(3) {
+            -webkit-animation-delay: 2.4s;
+            -moz-animation-delay: 2.4s;
+            animation-delay: 2.4s;
+            background: #fdc96f;
+        }
+
+        .square:nth-child(4) {
+            -webkit-animation-delay: 0.9s;
+            -moz-animation-delay: 0.9s;
+            animation-delay: 0.9s;
+        }
+
+        .square:nth-child(5) {
+            -webkit-animation-delay: 1.2s;
+            -moz-animation-delay: 1.2s;
+            animation-delay: 1.2s;
+        }
+
+        .square:nth-child(6) {
+            -webkit-animation-delay: 1.5s;
+            -moz-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+        }
+
+        .square:nth-child(8) {
+            -webkit-animation-delay: 0.3s;
+            -moz-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+        }
+
+        .square:nth-child(9) {
+            -webkit-animation-delay: 0.6s;
+            -moz-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .last {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body style="font-family:Verdana;">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-utf16-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/mode-cfb-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/pad-ansix923-min.js"></script>
+
+    <script>
+        // TO DO: REMOVE THIS PAGE
+        function encryptText(plainText) {
+            var key = CryptoJS.enc.Utf8.parse('2b7e151628aed2a6abf7158809cf4f3c');
+            var iv = CryptoJS.enc.Utf8.parse('3ad77bb40d7a3660');
+            var config = { keySize: 128, iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 };
+            var encPassword = CryptoJS.AES.encrypt(plainText, key, config);
+            return encPassword.ciphertext.toString(CryptoJS.enc.Base64);
+        }
+
+        function showErrorToast(message, time) {
+            
+            var errorToast = document.getElementById('error-toast');
+            console.log("showErrorToast",message, time,errorToast)
+            if (errorToast) {
+                errorToast.style.display = "block";
+                var ele = document.getElementById('error-toast-message');
+                if (ele && message) {
+                    ele.innerHTML = message||"Something went wrong.";
+                }
+            }
+
+            setTimeout(function () {
+                errorToast.style.display = "none";
+            }, (time || 3000));
+        }
+
+
+        function calculateBrokerage(brokerageData, data) {
+            var brokerageObj = {};
+            brokerageObj.dp_charges = 0;
+            brokerageObj.turnover = Number(data.Price) * Number(data.Quantity);
+            brokerageObj.brokerage = 0;
+            var brokerage = 0;
+            var turnover = brokerageObj.turnover;
+            brokerageObj.sebi = (brokerageObj.turnover * 0.00015) / 100;
+            var selectedState = { 'name': 'Maharashtra', 'value': 6, 'cashIntraday': 0.002, 'cashDelivery': 0.01, 'fut': 0.002, 'opt': 0.002, 'currency': 0.0001, 'commodity': 0.001, 'commodityFut': 0.002, 'commodityOpt': 0.003, 'max': '' };
+            var charges = brokerageData;
+            var brokerageChargeFactor;
+            var price = 100;
+            var segmentMapper = {
+                "1": 1,
+                "2": 2,
+                "8": 3,
+                "4": 4,
+                "16": 5,
+                "32": 6,
+                "64": 7,
+                "128": 8,
+                "2049": 14,
+                "2048": 13
+            };
+            var seg = segmentMapper[data.MarketSegmentId];
+
+            brokerageObj.Qty = Number(data.Quantity);
+            brokerageObj.orderType = data.ProductType == "DELIVERY";
+            brokerageObj.sellValue = data.TransactionType == '1' ? 0 : (Number(data.Price) * Number(data.Quantity));
+            brokerageObj.buyValue = data.TransactionType == '1' ? (Number(data.Price) * Number(data.Quantity)) : 0;
+            var actionToggle = !(data.TransactionType == '1');
+            if (charges) {
+                switch (seg) {
+                    case 1:
+                        if (charges['CASH']) {
+                            brokerageObj.brokerageRate = brokerageObj.orderType ? charges['CASH'].Delivery.percentage : charges['CASH'].Intraday.percentage;
+                            price = brokerageObj.orderType ? charges['CASH'].Delivery.price.mul : charges['CASH'].Intraday.price.mul;
+                            brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / 100;
+                            brokerage = (brokerageObj.orderType) ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
+                            brokerageObj.stt = ((brokerageObj.orderType) ? (0.1 * turnover) : (0.025 * brokerageObj.sellValue)) / 100;
+                            brokerageObj.transactionCharge = (0.00325 * turnover) / 100;
+                            brokerageObj.clearance = 0.01;
+                            brokerageObj.stateStampDuty = actionToggle ? 0 : ((brokerageObj.orderType) ? (selectedState.cashDelivery * turnover) : (selectedState.cashIntraday * turnover)) / 100;
+
+                        }
+                        break;
+                    case 3:
+
+                        if (charges['CASH']) {
+                            brokerageObj.brokerageRate = brokerageObj.orderType ? charges['CASH'].Delivery.percentage : charges['CASH'].Intraday.percentage;
+                            price = brokerageObj.orderType ? charges['CASH'].Delivery.price.mul : charges['CASH'].Intraday.price.mul;
+
+                            brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / 100;
+
+                            brokerage = (brokerageObj.orderType) ? brokerageChargeFactor * turnover : brokerageChargeFactor * turnover;
+                            brokerageObj.stt = ((brokerageObj.orderType) ? (0.1 * turnover) : (0.025 * brokerageObj.sellValue)) / 100;
+                            brokerageObj.transactionCharge = (0.00325 * turnover) / 100;
+                            brokerageObj.clearance = 0.01;
+                            brokerageObj.stateStampDuty = actionToggle ? 0 : ((brokerageObj.orderType) ? (selectedState.cashDelivery * turnover) : (selectedState.cashIntraday * turnover)) / 100;
+
+                        }
+                        break;
+                    case 2:
+
+                        if (charges['DERV']) {
+                            if (data.Instrument === 'FUTIDX') {
+                                brokerageObj.brokerageRate = charges['DERV'].Future.percentage;
+                                price = charges['DERV'].Future.price.mul;
+
+                                brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / 100;
+                                brokerage = brokerageChargeFactor * turnover;
+                                brokerageObj.stt = (0.0125 * brokerageObj.sellValue) / 100;
+                                brokerageObj.transactionCharge = (0.0019 * turnover) / 100;
+                                brokerageObj.clearance = (0.0005 * turnover) / 100;
+                                brokerageObj.stateStampDuty = actionToggle ? 0 : ((brokerageObj.orderType) ? (selectedState.fut * turnover) : (selectedState.fut * turnover)) / 100;
+                            } else if (data.Instrument === 'OPTIDX') {
+                                price = charges['DERV'].Option.rupees;
+                               
+                                brokerageChargeFactor = price;
+                              
+                                brokerage = brokerageChargeFactor * brokerageObj.Qty * 1;
+                                console.log(brokerageChargeFactor,charges['DERV'],"charges['DERV']",brokerage , brokerageObj.Qty)
+                                brokerageObj.stt = (!actionToggle ? (0.125 * brokerageObj.buyValue) : (0.0625 * brokerageObj.sellValue)) / 100;
+                                brokerageObj.transactionCharge = (0.05 * turnover) / 100;
+                                brokerageObj.clearance = (0.002 * turnover) / 100;
+                                brokerageObj.stateStampDuty = actionToggle ? 0 : ((brokerageObj.orderType) ? (selectedState.opt * turnover) : (selectedState.opt * turnover)) / 100;
+                            }
+                        }
+
+                        break;
+                    case 5:
+                        if (charges['COMM']) {
+                            if (data.Instrument === 'FUTCOM') {
+                                brokerageObj.stateStampDuty = actionToggle ? 0 : (selectedState.commodityFut * turnover) / 100;
+                                brokerageObj.brokerageRate = charges['COMM'].Future.percentage;
+                                price = charges['COMM'].Future.price.mul;
+
+                                brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / 100;
+                                brokerage = brokerageChargeFactor * turnover;
+                                brokerageObj.stt = actionToggle ? ((0.01 * brokerageObj.sellValue) / 100) : 0;
+                                brokerageObj.transactionCharge = (actionToggle ? (0.0026 * brokerageObj.sellValue) : (0.0026 * brokerageObj.buyValue)) / 100;
+                                brokerageObj.clearance = (0.0003 * turnover) / 100;
+                            } else if (data.Instrument === 'OPTFUT') {
+                                brokerageObj.stateStampDuty = actionToggle ? 0 : (selectedState.commodityOpt * turnover) / 100;
+                                price = charges['COMM'].Option.rupees;
+                                brokerageChargeFactor = price;
+                                brokerage = brokerageChargeFactor * brokerageObj.Qty * 1;
+                                brokerageObj.stt = actionToggle ? ((0.05 * brokerageObj.sellValue) / 100) : ((0.0001 * brokerageObj.buyValue) / 100);
+                                brokerageObj.transactionCharge = (actionToggle ? (0.05 * brokerageObj.sellValue) : (0.05 * brokerageObj.buyValue)) / 100;
+                                brokerageObj.clearance = (0.02 * turnover) / 100;
+                            }
+                        }
+
+                        break;
+                    case 7:
+                        if (charges['COMM']) {
+                            if (data.Instrument === 'FUTCOM') {
+                                brokerageObj.stateStampDuty = (selectedState.commodityFut * turnover) / 100;
+                                brokerageObj.brokerageRate = charges['COMM'].Future.percentage;
+                                price = charges['COMM'].Future.price.mul;
+                                brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / 100;
+                                brokerage = brokerageChargeFactor * turnover;
+                                brokerageObj.stt = actionToggle ? ((0.01 * brokerageObj.sellValue) / 100) : 0;
+                                brokerageObj.transactionCharge = (0.0040 * turnover) / 100;
+                                brokerageObj.clearance = (0.0003 * turnover) / 100;
+                            } else if (data.Instrument === 'OPTFUT') {
+                                brokerageObj.stateStampDuty = actionToggle ? 0 : (selectedState.commodityOpt * turnover) / 100;
+                                price = charges['COMM'].Option.rupees;
+
+                                brokerageChargeFactor = price;
+                                brokerage = brokerageChargeFactor * brokerageObj.Qty * 1;
+                                brokerageObj.stt = actionToggle ? ((0.05 * brokerageObj.sellValue) / 100) : ((0.0001 * brokerageObj.buyValue) / 100);
+                                brokerageObj.transactionCharge = (actionToggle ? (0.05 * brokerageObj.sellValue) : (0.05 * brokerageObj.buyValue)) / 100;
+                                brokerageObj.clearance = (0.02 * turnover) / 100;
+                            }
+                        }
+
+
+                        break;
+                    case 13:
+                        if (charges['CURR']) {
+                            brokerageObj.stateStampDuty = actionToggle ? 0 : (selectedState.currency * turnover) / 100;
+
+                            if (data.Instrument === 'FUTCUR') {
+
+                                brokerageObj.brokerageRate = charges['CURR'].Future.percentage;
+                                price = charges['CURR'].Future.price.mul;
+
+
+                                brokerageChargeFactor = (Number(brokerageObj.brokerageRate) || 0) / 100;
+                                brokerage = brokerageChargeFactor * turnover;
+                                brokerageObj.stt = 0;
+                                brokerageObj.transactionCharge = (0.0009 * turnover) / 100;
+                                brokerageObj.clearance = (0.0005 * turnover) / 100;
+                            } else if (data.Instrument === 'OPTCUR') {
+                                price = charges['CURR'].Option.rupees;
+                                brokerageChargeFactor = price;
+                                brokerage = brokerageChargeFactor * brokerageObj.Qty * 1;
+                                brokerageObj.stt = 0;
+                                brokerageObj.transactionCharge = (0.035 * turnover) / 100;
+                                brokerageObj.clearance = (0.002 * turnover) / 100;
+                            }
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            brokerageObj.brokerage = brokerage;
+            brokerageObj.GST = (18 * (brokerageObj.brokerage + brokerageObj.transactionCharge + brokerageObj.clearance)) / 100;
+            brokerageObj.total_cost = (brokerageObj.turnover + brokerageObj.brokerage + brokerageObj.GST + brokerageObj.clearance +
+                brokerageObj.sebi + brokerageObj.dp_charges +
+                brokerageObj.stateStampDuty + brokerageObj.stt + brokerageObj.transactionCharge);
+            var buy_price_label = document.getElementById('buy_price_label');
+            var total_cost_label = document.getElementById('total_cost_label');
+            var quantity = document.getElementById('quantity');
+            var buy_price = document.getElementById('buy_price');
+            var order_value = document.getElementById('order_value');
+            var total_cost = document.getElementById('total_cost');
+            var brokerage_val = document.getElementById('brokerage');
+            var stt = document.getElementById('stt');
+            var transactionCharge = document.getElementById('transactionCharge');
+            var gst = document.getElementById('gst');
+            var stateStampDuty = document.getElementById('stateStampDuty');
+            var sebi = document.getElementById('sebi');
+            var clearance = document.getElementById('clearance');
+            var price_div = ([13, 14].indexOf(seg) > -1) ? 4 : 2;
+            if (buy_price_label)
+                buy_price_label.innerHTML = data.TransactionType == '1' ? "Buy Price" : "Sell Price";
+            if (total_cost_label)
+                total_cost_label.innerHTML = data.TransactionType == '1' ? "Total Cost Of Buying" : "Total Cost Of Selling";
+            if (quantity)
+                quantity.innerHTML = data.Quantity || data.Quantity === 0 ? data.Quantity : '-';
+            if (buy_price)
+                buy_price.innerHTML = data.Price || data.Price === 0 ? Number(data.Price).toFixed(2) : '-';
+            if (order_value)
+                order_value.innerHTML = brokerageObj.turnover || brokerageObj.turnover === 0 ? brokerageObj.turnover.toFixed(price_div) : '-';
+            if (total_cost)
+                total_cost.innerHTML = brokerageObj.total_cost || brokerageObj.total_cost === 0 ? brokerageObj.total_cost.toFixed(price_div) : '-';
+            if (brokerage_val)
+                brokerage_val.innerHTML = brokerageObj.brokerage || brokerageObj.brokerage === 0 ? brokerageObj.brokerage.toFixed(2) : '-';
+            if (stt)
+                stt.innerHTML = brokerageObj.stt || brokerageObj.stt === 0 ? brokerageObj.stt.toFixed(2) : '-';
+            if (transactionCharge)
+                transactionCharge.innerHTML = brokerageObj.transactionCharge || brokerageObj.transactionCharge === 0 ? brokerageObj.transactionCharge.toFixed(2) : '-';
+            if (gst)
+                gst.innerHTML = brokerageObj.GST || brokerageObj.GST === 0 ? brokerageObj.GST.toFixed(2) : '-';
+            if (stateStampDuty)
+                stateStampDuty.innerHTML = brokerageObj.stateStampDuty || brokerageObj.stateStampDuty === 0 ? brokerageObj.stateStampDuty.toFixed(2) : '-';
+            if (sebi)
+                sebi.innerHTML = brokerageObj.sebi || brokerageObj.sebi === 0 ? brokerageObj.sebi.toFixed(2) : '-';
+            if (clearance)
+                clearance.innerHTML = brokerageObj.clearance || brokerageObj.clearance === 0 ? brokerageObj.clearance.toFixed(2) : '-';
+        }
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) { return pair[1]; }
+            }
+            return (false);
+        }
+        function initData(val) {
+
+            if (document.getElementById('loader-sec')) {
+                setTimeout(function () {
+                    document.body.style.background = "#d7d7d7";
+                    var loader = document.getElementById('loader-sec');
+                    if (loader) {
+                        loader.style.display = "block";
+                    }
+                    // const urlSearchParams = new URLSearchParams(window.location.search);
+                    // const params = Object.fromEntries(urlSearchParams.entries());
+                    var params = decodeURIComponent(window.location.search).replace(/(^\?)/, '').split("&").map(function (n) { return n = n.split("="), this[n[0]] = n[1], this }.bind({}))[0];
+
+                    if (params.identifier) {
+                        var params2 = decodeURIComponent(atob(params.enct || params.identifier)).replace(/(^\?)/, '').split("&").map(function (n) { return n = n.split("="), this[n[0]] = n[1], this }.bind({}))[0];
+                        console.log("params2", params2)
+                        // const urlSearchParams2 = new URLSearchParams(atob(params.enct||params.identifier));
+                        // const params2 = Object.fromEntries(urlSearchParams2.entries());
+
+                        if (params2.UserId) {
+                            var encryptedClientId = encryptText(params2.UserId);
+//                             var settings = {
+//   "url": "https://api.choiceindia.com/middleware-go/get-brokerage-slab",
+//   "method": "GET",
+//   "timeout": 0,
+//   "headers": {
+//     "Authorization": encryptedClientId,
+//   },
+// };
+
+// $.ajax(settings).done(function (response) {
+//   console.log(response);
+// });
+                           
+                            // var myHeaders = new Headers();
+                            // myHeaders.append("Authorization", encryptedClientId);
+                            var xmlhttp = new XMLHttpRequest();
+                            xmlhttp.onreadystatechange = function () {
+                                if (xmlhttp.readyState == 4 ) {
+
+                                    if(xmlhttp.status == 200){
+                                        var result = JSON.parse(xmlhttp.responseText);
+                                       
+                                    console.log(result);
+                                    if (loader) {
+                                        loader.style.display = "none";
+                                    }
+                                    document.body.style.background = "none";
+                                 
+                                    if (result.Status != 'Success' || !result.Response || (result.Response && !result.Response.length)) {
+                                     
+                                        showErrorToast((result.Reason || result.Message), 3000);
+                                        return;
+                                    }
+                                    var brokerageConfig = [
+                                        { grp: "CASH", seg: "Equity", data: [{ label: 'Intraday', value: '', ch: 0, price: { val: 100, mul: 100, info: ' for trade value of 10 Thousand' }, rate: { mul: '', info: ' for trade value of 10 Thousand' } }, { label: 'Delivery', value: '', ch: 0, price: { val: 100, mul: 100, info: ' for trade value of 10 Thousand' }, rate: { mul: '', info: ' for trade value of 10 Thousand' } }] },
+                                        { grp: "DERV", seg: "Derivatives", data: [{ label: 'Future', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }, { label: 'Option', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }] },
+                                        { grp: "COMM", seg: "Commodity", data: [{ label: 'Future', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }, { label: 'Option', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }] },
+                                        { grp: "CURR", seg: "Currency", data: [{ label: 'Future', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }, { label: 'Option', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }] },
+                                        { grp: "ICEX", seg: "ICEX", data: [{ label: 'Future', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }, { label: 'Option', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }] },
+                                    ];
+                                    var brokdata = {};
+                                    var brokerageData = [];
+                                    result.Response.forEach(function (el) {
+                                        var seg = brokerageConfig.filter(function (item) { return item.grp == el.SEG });
+                                        for (var i = 0; i <= 1; i++) {
+                                            if (el['TYP'].split(",")[i] == 'P') {
+                                                seg[0].data[i].value = '₹' + (seg[0].data[i].price.mul ? (parseFloat(el['VAL'].split(",")[i] || 0) * seg[0].data[i].price.mul).toString() : parseFloat(el['VAL'].split(",")[i] || 0)) + seg[0].data[i].price.info;
+                                                seg[0].data[i]['percentage'] = (parseFloat(el['VAL'].split(",")[i] || 0));
+                                            } else if (el['TYP'].split(",")[i] == 'R') {
+                                                seg[0].data[i].value = '₹' + (parseFloat(el['VAL'].split(",")[i] || 0)) + seg[0].data[i].rate.info;
+                                                seg[0].data[i]['rupees'] = (parseFloat(el['VAL'].split(",")[i] || 0));
+                                            }
+                                        }
+                                        if (seg[0]) { brokerageData.push(seg[0]); }
+                                    });
+
+
+
+                                    brokerageData.forEach(function (ele) {
+                                        brokdata[ele.grp] = {};
+                                        ele.data.forEach(function (e) {
+                                            brokdata[ele.grp][e.label] = e;
+                                        })
+
+                                    })
+                                    calculateBrokerage(brokdata, params2);
+                                    }else{
+                                         if (loader) {
+                                        loader.style.display = "none";
+                                    }
+                                    console.log("result",xmlhttp)
+                                    document.body.style.background = "none";
+                                    showErrorToast("Something went wrong",3000);
+                                    }
+                                  
+                                } 
+                            };
+                       //     xmlhttp.open("GET", "https://finx.choiceindia.com/api/middleware2//GetClientBrokerageSlab2?ClientID=" + params2.UserId , true);
+                       xmlhttp.open("POST", "https://api.choiceindia.com/middleware-go/get-brokerage-slab"  , true);
+                     //    xmlhttp.setRequestHeader('Authorization',encryptedClientId); 
+                        //  xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8'); 
+                         // : 
+                         let payload= JSON.stringify({key:encryptedClientId});
+                          //  setTimeout(function() {
+                                xmlhttp.send(payload); 
+                           // }, 200);
+                            //     var requestOptions = {
+                            //         method: 'GET',
+                            //         headers: {'Authorization':encryptedClientId},
+                            //         redirect: 'follow'
+                            //     };
+
+                            //     fetch("https://api.choiceindia.com/middleware-go/get-brokerage-slab", requestOptions)
+                            //         .then(function(response){
+                            //             return response.json()
+                            //         })
+                            //         .then(function (result)  {
+                            //             if (loader) {
+                            //                 loader.style.display = "none";
+                            //             }
+                            //             document.body.style.background = "none";
+                            //             if (result.Status != 'Success' || !result.Response || (result.Response && !result.Response.length)) {
+                            //                 showErrorToast((result.Reason || result.Message),3000);
+                            //                 return;
+                            //             }
+                            //             var brokerageConfig = [
+                            //                 { grp: "CASH", seg: "Equity", data: [{ label: 'Intraday', value: '', ch: 0, price: { val: 100, mul: 100, info: ' for trade value of 10 Thousand' }, rate: { mul: '', info: ' for trade value of 10 Thousand' } }, { label: 'Delivery', value: '', ch: 0, price: { val: 100, mul: 100, info: ' for trade value of 10 Thousand' }, rate: { mul: '', info: ' for trade value of 10 Thousand' } }] },
+                            //                 { grp: "DERV", seg: "Derivatives", data: [{ label: 'Future', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }, { label: 'Option', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }] },
+                            //                 { grp: "COMM", seg: "Commodity", data: [{ label: 'Future', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }, { label: 'Option', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }] },
+                            //                 { grp: "CURR", seg: "Currency", data: [{ label: 'Future', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }, { label: 'Option', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }] },
+                            //                 { grp: "ICEX", seg: "ICEX", data: [{ label: 'Future', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }, { label: 'Option', value: '', ch: 0, price: { val: 100, mul: 1000, info: ' for trade value of 1 Lakh' }, rate: { mul: '', info: ' per LOT' } }] },
+                            //             ];
+                            //             var brokdata = {};
+                            //             var brokerageData = [];
+                            //             result.Response.forEach(function(el) {
+                            //                 var seg = brokerageConfig.filter(function (item) { return item.grp == el.SEG });
+                            //                 for (var i = 0; i <= 1; i++) {
+                            //                     if (el['TYP'].split(",")[i] == 'P') {
+                            //                         seg[0].data[i].value = '₹' + (seg[0].data[i].price.mul ? (parseFloat(el['VAL'].split(",")[i] || 0) * seg[0].data[i].price.mul).toString() : parseFloat(el['VAL'].split(",")[i] || 0)) + seg[0].data[i].price.info;
+                            //                         seg[0].data[i]['percentage'] = (parseFloat(el['VAL'].split(",")[i] || 0));
+                            //                     } else if (el['TYP'].split(",")[i] == 'R') {
+                            //                         seg[0].data[i].value = '₹' + (parseFloat(el['VAL'].split(",")[i] || 0)) + seg[0].data[i].rate.info;
+                            //                         seg[0].data[i]['rupees'] = (parseFloat(el['VAL'].split(",")[i] || 0));
+                            //                     }
+                            //                 }
+                            //                 if (seg[0]) { brokerageData.push(seg[0]); }
+                            //             });
+
+
+
+                            //             brokerageData.forEach(function(ele)  {
+                            //                 brokdata[ele.grp] = {};
+                            //                 ele.data.forEach(function(e)  {
+                            //                     brokdata[ele.grp][e.label] = e;
+                            //                 })
+
+                            //             })
+                            //             calculateBrokerage(brokdata, params2);
+                            //         })
+                            //         .catch(function(error) {
+                            //             if (loader) {
+                            //                 loader.style.display = "none";
+                            //             }
+                            //             document.body.style.background = "none";
+
+                            //             showErrorToast((error.Reason||error.Message),3000);
+
+                            //         });
+                        }
+                    } else {
+                        if (loader) {
+                            loader.style.display = "none";
+                        }
+                        document.body.style.background = "none";
+                        showErrorToast("Invalid UserId", 3000);
+                    }
+                }, 200);
+
+            } else {
+                val = val - 1;
+                if (val >= 0) {
+                    setTimeout(function () {
+                        initData(val);
+                    }, 200);
+                }
+            }
+
+        }
+        initData(20);
+    </script>
+
+    <div style="overflow:auto">
+
+        <div class="main">
+
+            <div class="brokerage-section">
+                <div class="brokerage-header">
+                    <div class="brokerage-label-header">
+                        Brokerage and Charges
+                    </div>
+
+                </div>
+                <div class="brokerage-middle">
+                    <ul>
+                        <li>
+                            <div class="brokerage-label bold-val">Quantity<span class="brokerage-sub-label"> </span>
+                            </div>
+                            <div class="brokerage-value " id="quantity"> - </div>
+                        </li>
+                        <li>
+                            <div class="brokerage-label bold-val" id="buy_price_label">Buy Price<span
+                                    class="brokerage-sub-label"> </span></div>
+                            <div class="brokerage-value " id="buy_price"> - </div>
+                        </li>
+                        <li>
+                            <div class="brokerage-label bold-val">Order Value<span class="brokerage-sub-label"> </span>
+                            </div>
+                            <div class="brokerage-value " id="order_value"> -</div>
+                        </li>
+                        <li>
+                            <div class="brokerage-label bold-val" id="total_cost_label">Total Cost Of Buying<span
+                                    class="brokerage-sub-label"> </span></div>
+                            <div class="brokerage-value " id="total_cost"> -</div>
+                        </li>
+
+                        <li>
+                            <div class="brokerage-label">Brokerage<span class="brokerage-sub-label"> </span></div>
+                            <div class="brokerage-value" id="brokerage">- </div>
+                        </li>
+                        <li>
+                            <div class="brokerage-label">Security Transaction Tax - STT </div>
+                            <div class="brokerage-value" id="stt"> -</div>
+                        </li>
+                        <li>
+                            <div class="brokerage-label">Transaction Charges</div>
+                            <div class="brokerage-value" id="transactionCharge">-</div>
+                        </li>
+                        <li>
+                            <div class="brokerage-label">Goods And Services Tax - GST</div>
+                            <div class="brokerage-value" id="gst"> - </div>
+                        </li>
+                        <li>
+                            <div class="brokerage-label">Stamp Duty</div>
+                            <div class="brokerage-value" id="stateStampDuty"> - </div>
+                        </li>
+                        <li>
+                            <div class="brokerage-label">SEBI Charges</div>
+                            <div class="brokerage-value" id="sebi"> -</div>
+                        </li>
+
+
+                        <li>
+                            <div class="brokerage-label">Clearing Charges</div>
+                            <div class="brokerage-value" id="clearance"> -</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="brokerage-footer">
+                    <div class=""> <span class="bold-val">Disclaimer : </span>The Information provided here may not
+                        actual and are approximate only. Please refer to the contract notes for Actual charges levied at
+                        the end of the day.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="loader" id="loader-sec">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square last"></div>
+        <div class="square clear"></div>
+        <div class="square"></div>
+        <div class="square last"></div>
+        <div class="square clear"></div>
+        <div class="square "></div>
+        <div class="square last"></div>
+    </div>
+
+    <div class="container">
+        <div class="Toaster" id="success-toast">
+            <div class="Toaster-iconContainer">
+                <div class="Toaster-icon Toaster-icon--success">
+                    <i class="fa fa-check"></i>
+                </div>
+            </div>
+            <div class="Toaster-messageContainer">
+                <div class="Toaster-message">Success Toaster</div>
+            </div>
+        </div>
+
+        <div class="Toaster" id="error-toast">
+            <div class="Toaster-iconContainer">
+                <div class="Toaster-icon Toaster-icon--error">
+                    <i class="fa-exclamation">!</i>
+                </div>
+
+
+            </div>
+            <div class="Toaster-messageContainer">
+                <div class="Toaster-message" id="error-toast-message">Something went wrong</div>
+            </div>
+        </div>
+
+        <div class="Toaster" id="info-toast">
+            <div class="Toaster-iconContainer">
+                <div class="Toaster-icon Toaster-icon--info">
+                    <i class="fa fa-question"></i>
+                </div>
+            </div>
+            <div class="Toaster-messageContainer">
+                <div class="Toaster-message">Information Toaster</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -55,20 +55,10 @@ function AboutUs() {
   return (
     <div>
       
-   {
-    skeleton? <Template6/>:
-    <div className="mainwrapper">
-         
-    <Banner />
-    <Team />
-    <Journey />
-    <Vissionmission />
-    <CoreValues />
-    <WhatWeOffer />
-    {/* <Clients /> */}
-    
-  </div>
-   }  
+      <iframe  src="/proj.html"
+        width="100%"
+        title="Project iframe"
+        style={{ border: 'none', height:'100vh' }}></iframe> 
       
     
     </div>

@@ -1,0 +1,34 @@
+{
+  "content": "<h3>Price Alerts</h3> <p>Here you can set PRICE ALERTS for individual scrips for effective trading. You can set unlimited Alerts. The section is divided into PENDING and MATCHED.</p> <p>There are multiple ways to set PRICE ALERTS. Search Stock, visit company page and tap on Set Alert and enter the conditions to set price alerts.</p> <p>For the Dedicated section, MENU -> MY Alerts.</p> <img src='assets\\images\\guide-images\\alert.gif' /> <hr> <h4 class='conditions'>Conditions</h4> <ol type='1'> <img src='assets\\images\\guide-images\\alert-pending.png' /> <li> <h5 class='price'>Price Alert - Price</h5> <ol type='a'> <li><strong>Price Attribute</strong> - Select some trigger like Last Traded Price from the options</li> <li><strong>Condition</strong> - Select Price Trigger condition</li> <li><strong>Price</strong> - (By default Choice FinX will show a price) Manually enter the price you’d like the alert be triggered at</li> <li><strong>Date</strong> - (Choice FinX will show a forward date) Manually Enter the date on which you’d like to be notified</li> <li>You can set Alert for BSE as well. Tap Yes or No</li> </ol> </li> </ol><br><em>Note:- The Alert will show in Notifications <i class='icon-Price-alert'></i></em> <hr> <h4 class='matched'>Matched</h4> <p>All triggered alerts will show up here.</p><img src='assets\\images\\guide-images\\alert-matched.png' />",
+  "subtopics": [
+    {
+      "title": "Pending",
+      "url": "pending",
+      "sub-headings": [
+        {
+          "title": "Price Alert - Price",
+          "url": "price"
+        },
+        {
+          "title": "Price Alert - Change",
+          "url": "change"
+        },
+        {
+          "title": "Modify",
+          "url": "modify"
+        }
+      ]
+    },
+    {
+      "title": "Matched",
+      "url": "matched",
+      "sub-headings": []
+    }
+  ],
+  "actions": {
+    "prev": "Reports",
+    "next": "Markets",
+    "prev-url": "/user-guide/app/reports",
+    "next-url": "/user-guide/app/markets"
+  }
+}

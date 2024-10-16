@@ -1,0 +1,100 @@
+<html>
+  <!-- Updated at : 26/11/2021 -->
+  <!-- Updated for : Sub Referral Id Implementation -->
+  <title>Referral Link</title>
+
+  <head> </head>
+
+  <body style="text-align: center">
+    <img src="assets/images/logo-new1.png" />
+    <h3 style="color: #aaa">Please wait while you are getting redirected.</h3>
+  </body>
+  <script>
+    let queryString, appQueryString;
+    if ((window.location.host || "").indexOf("investica.com") > -1) {
+      document.title = "Investica";
+    } else if (
+      (window.location.host || "").indexOf("finx.choiceindia.com") > -1
+    ) {
+      document.title = "Choice FinX";
+    }
+    var match,
+      pl = /\+/g, // Regex for replacing addition symbol with a space
+      search = /([^&=]+)=?([^&]*)/g,
+      query = window.location.search.substring(1);
+
+    urlParams = {};
+    let url = "";
+    while ((match = search.exec(query)))
+      urlParams[decodeURIComponent(match[1].replace(pl, " "))] =
+        decodeURIComponent(match[2].replace(pl, " "));
+
+    //console.log("urlParams",urlParams)
+
+    if (urlParams.hasOwnProperty("subref")) {
+      queryString = Object.keys(urlParams)
+        .map(function (key) {
+          if (urlParams[key]) return key + "=" + urlParams[key];
+        })
+        .join("&");
+
+      appQueryString = Object.keys(urlParams)
+        .map(function (key) {
+          if (urlParams[key]) return key + "=" + urlParams[key];
+        })
+        .join("&");
+
+      //  console.log("queryString",queryString)
+      //queryString = "cbaId=" + atob(refercode) + '&' + queryString;
+    } else {
+      if (urlParams.hasOwnProperty("ref")) {
+        let refercode = urlParams.ref;
+        if (refercode) {
+          delete urlParams.ref;
+          // urlParams.cbaId = atob(refercode);
+        }
+        queryString = Object.keys(urlParams)
+          .map(function (key) {
+            return key + "=" + urlParams[key];
+          })
+          .join("&");
+
+        appQueryString = Object.keys(urlParams)
+          .map(function (key) {
+            return key + "=" + urlParams[key];
+          })
+          .join("&");
+        queryString = "cbaId=" + atob(refercode) + "&" + queryString;
+        appQueryString = "cbaId=" + atob(refercode) + "&" + appQueryString;
+        console.log("Open  2", window.location.host);
+      }
+    }
+    queryString = queryString ? queryString : "";
+    appQueryString = appQueryString ? appQueryString : "";
+    if (
+      (window.location.host || "").indexOf("finx.choiceindia.com") > -1 ||
+      (window.location.host || "").indexOf("localhost") > -1
+    ) {
+      url =
+        "https://jiffychoicebroking.page.link/?link=" +
+        encodeURIComponent(
+          "https://finx.choiceindia.com/app/index.html?" + (queryString || "")
+        ) +
+        "&apn=com.choiceequitybroking.jiffy&amv=48&ibi=com.choicebroking.jiffy&isi=1327801261&afl=https://finx.choiceindia.com/app/index.html";
+    } else if ((window.location.host || "").indexOf("investica.com") > -1) {
+      url =
+        "https://releaseinvestica.page.link/?link=" +
+        encodeURIComponent(
+          "https://investica.com/app/investica/index.html?" +
+            (appQueryString || "")
+        ) +
+        "&apn=com.choicebroking.investica&amv=100&ibi=com.choicebroking.investica&isi=1227670130&afl=https://investica.com/app/investica/index.html";
+    }
+
+    console.log("url", url);
+
+    if (url) {
+      window.location = url;
+    }
+  </script>
+</html>

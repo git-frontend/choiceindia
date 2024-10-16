@@ -1,0 +1,9 @@
+<svg id="Component_10_4" data-name="Component 10 – 4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_4628" data-name="Rectangle 4628" width="24" height="24" rx="2" fill="#f4f3f8" opacity="0"/>
+  <g id="Outline" transform="translate(4.801 4)">
+    <g id="Group_51" data-name="Group 51" transform="translate(0 0)">
+      <path id="Path_2338" data-name="Path 2338" d="M15.8,3.6H15V2H13.4V3.6H7V2H5.4V3.6H4.6A1.593,1.593,0,0,0,3.008,5.2L3,16.4A1.6,1.6,0,0,0,4.6,18H15.8a1.6,1.6,0,0,0,1.6-1.6V5.2A1.6,1.6,0,0,0,15.8,3.6Zm0,12.8H4.6v-8H15.8Zm0-9.6H4.6V5.2H15.8Z" transform="translate(-3 -2)" fill="#2d77f4"/>
+      <rect id="Rectangle_30" data-name="Rectangle 30" width="4" height="4" transform="translate(7.2 8.8)" fill="#2d77f4"/>
+    </g>
+  </g>
+</svg>

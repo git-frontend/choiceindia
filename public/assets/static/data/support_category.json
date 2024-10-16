@@ -1,0 +1,80 @@
+{
+  "category": [
+    {
+      "name": "Account Opening",
+      "value": "Account opening"
+    },
+    {
+      "name": "Login",
+      "value": "login"
+    },
+    {
+      "name": "Funds",
+      "value": "funds"
+    },
+    {
+      "name": "Charges",
+      "value": "charges"
+    },
+    {
+      "name": "Orders",
+      "value": "orders"
+    },
+    {
+      "name": "Reports",
+      "value": "reports"
+    },
+    {
+      "name": "Modification",
+      "value": "Modification"
+    },
+    {
+      "name": "Mutual Fund",
+      "value": "Mutual fund"
+    },
+    {
+      "name": "General Queries",
+      "value": "General queries"
+    }
+  ],
+  "accountClosureType": [
+    {
+      "name": "Normal Account Closure (Trading +DP)",
+      "value": "normal_account"
+    },
+    {
+      "name": "Only trading closure",
+      "value": "only_trading"
+    },
+    {
+      "name": "Only DP closure",
+      "value": "only_dp"
+    }
+  ],
+  "accountClosureReason": [
+    {
+      "name": "Loss in market",
+      "value": "loss"
+    },
+    {
+      "name": "Not satisfied with services",
+      "value": "not_satisfied"
+    },
+    {
+      "name": "Have multiple demat account",
+      "value": "multiple_demat"
+    },
+    {
+      "name": "Not interested in trading",
+      "value": "not_interested"
+    },
+    {
+      "name": "High brokerage",
+      "value": "high_brokerage"
+    },
+    {
+      "name": "Others",
+      "value": "others"
+    }
+  ]
+}

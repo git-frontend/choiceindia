@@ -1,0 +1,26 @@
+{
+    "content": "<h3>EXCHANGE INFO</h3><p>This section houses all the ready reference information that a trader will need. </p><p>It is divided into MARKET TIMINGS – IMPORTANT LINKS – MEMBERSHIP DETAILS</p><p>To access the same use MENU -> Exchange Info</p><hr><h4 class='market-timings'>Market Timings</h4><p>Shows the trading periods and AMO (After Market Orders) for each individual exchange. When the Market or AMO is OPEN or CLOSE the CURRENT STATUS shows accordingly. This is for all exchanges. </p><img src='assets\\images\\guide-images\\exchange-info.png'/><hr><h4 class='important-links'>Important Links</h4><p>Main websites of the exchanges are hyperlinked here. Just tap the exchange and its website will be opened in your default browser</p><img src='assets\\images\\guide-images\\imp-links.png'/><hr><h4 class='membership-details'>Membership Details</h4><p>All your membership detail for the exchange is shown here</p><img src='assets\\images\\guide-images\\membership-details.png'/>",
+    "subtopics": [
+        {
+            "title": "Market Timings",
+            "url": "market-timings",
+            "sub-headings": []
+        },
+        {
+            "title": "Important Links",
+            "url": "important-links",
+            "sub-headings": []
+        },
+        {
+            "title": "Membership Details",
+            "url": "membership-details",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "IPO",
+        "next": "Additional Features",
+        "prev-url": "/user-guide/app/ipo",
+        "next-url": "/user-guide/app/additional-features"
+    }
+}

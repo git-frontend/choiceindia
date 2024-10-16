@@ -1,0 +1,36 @@
+{
+    "content": "<h3>Others</h3><h4 class='user-profile'>User Profile</h4><ol type='a'> <li>Soon as you access the MENU panel, right at the top is your NAME – CLIENT ID. Tap to go inside. The personal details page opens up</li><li>ACTIONS – CHANGE PASSWORD & CHANGE PIN</li><li>Top right of the page is the Gear icon (image) Tap to Reset your Password or Pin from here</li></ol><img src='assets\\images\\guide-images\\user-profile.png'/><hr><h4 class='support-feedback'>Support & Feedback</h4><p>For you to directly get in-touch with relevant teams for any issue, this is the section. Use MENU - > SUPPORT & FEEDBACK. This is sub-divided into CALL FOR TRADE – SUPPORT – SHARE APP – FEEDBACK – ABOUT US - APP WALKTHROUGH</p><ol type='a'> <li>CALL FOR TRADE – This will directly get you in-touch with our trading desk</li><li>SUPPORT – This doubles –up as Contact us and Grievance/Inquiry section. The Top half shows the Head-office address, Customer Care number (Just tap the icon to place a call) and Customer-care id – <a href='mailto:support@jiffy.in'>support@jiffy.in</a></li></ol><em>Note: The bottom half is the message section which directly comes to the customer-care team. Your name and registered email id is already entered, simply select SUBJECT from the dropdown pertaining to your issue - insert the message and Tap 'Send Message'</em><img src='assets\\images\\guide-images\\support.png'/><hr><h4 class='share-app'>Share App</h4><p>Share Choice FinX with any of your friends, relatives or anyone within your circle of influence. Using this feature shares a download link and you get the benefit of a REFERRAL!!</p><hr><h4 class='feedback'>Feedback</h4><p>Like Choice FinX? Or have a suggestion? Rate and send a message along with it. It will be posted on the relevant APP Store allowing our team to get on it immediately.</p><img src='assets\\images\\guide-images\\feedback.png'/><hr><h4 class='walkthrough'>App Walkthrough</h4><p>New to the App? Or would like to see what features the app has to offer? This feature takes you on a broad tour of the APP starting from Top Right. Tap the RED area to goto the next feature.</p>",
+    "subtopics": [
+        {
+            "title": "User Profile",
+            "url": "user-profile",
+            "sub-headings": []
+        },
+        {
+            "title": "Support & Feedback",
+            "url": "support-feedback",
+            "sub-headings": []
+        },
+        {
+            "title": "Share App",
+            "url": "share-app",
+            "sub-headings": []
+        },
+        {
+            "title": "Feedback",
+            "url": "feedback",
+            "sub-headings": []
+        },
+        {
+            "title": "App Walkthrough",
+            "url": "walkthrough",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "Additional Features",
+        "next": "Things To Remember",
+        "prev-url": "/user-guide/app/additional-features",
+        "next-url": "/user-guide/app/things-to-remember"
+    }
+}

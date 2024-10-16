@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<body>
+  <form name="pledge" method="post">
+    <input type="hidden" name="ClientId" value="92500" />
+    <input type="hidden" name="SessionId" value="070820201140312" />
+    <input type="hidden" name="ReturnUrl" value="1.0" />
+    <input type="hidden" name="IsAutomatedPledge" value="true" />
+
+    <!-- <input type="submit" /> -->
+  </form>
+</body>
+
+</html>
+
+<script>
+  var match,
+    pl = /\+/g, // Regex for replacing addition symbol with a space
+    search = /([^&=]+)=?([^&]*)/g,
+    query = window.location.search.substring(1);
+  document.pledge.action = "https://edis.choiceindia.com/mvc/Pledge/ClientDetails";
+  urlParams = {};
+  while (match = search.exec(query))
+    urlParams[decodeURIComponent(match[1].replace(pl, " "))] = decodeURIComponent(match[2]);
+  if (Object.keys(urlParams).length) {
+    updateValues('ClientId', 'value', urlParams.ClientId || '');
+    updateValues('SessionId', 'value', urlParams.SessionId || '');
+    updateValues('ReturnUrl', 'value', location.origin + '/assets/pledge-response.html');
+    updateValues('IsAutomatedPledge', 'value', true);
+    document.pledge.action = urlParams.pledgeUnPledgeUrl;
+    // debugger;
+    setTimeout(function () {
+      document.getElementsByName('pledge')[0].submit();
+    }, 500)
+
+  } else {
+    window.close();
+  }
+
+
+
+  function updateValues(elementName, attributeName, value) {
+    if (document.getElementsByName(elementName).length) {
+      document.getElementsByName(elementName)[0].setAttribute(attributeName, value);
+    }
+  }
+
+
+
+
+</script>

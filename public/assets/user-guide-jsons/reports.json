@@ -1,0 +1,50 @@
+{
+    "content": "<h3>Reports</h3> <p>This section provides detailed Reports of your trades and financial summaries from ORDER which can be accessed from the bottom tab.</p> <hr> <h4 class='orderbook'>Orderbook</h4> <p>Shows the Intraday trades and delivery orders. The Report is divided into PENDING, EXECUTED, TRADES and OTHERS</p> <ol type='1'> <li> <h5 class='pending'>Pending</h5> <p>Will show the orders that were not executed, partially executed or rejected. Tap the ORDER and it will drop down the features for you to edit the trade.</p><img src='assets\\images\\guide-images\\pending2.gif' /> </li> <li> <h5 class='executed'>Executed</h5> <p>Show the entire list of orders which were executed, with important details like INTRADAY – LTP - MARKET CLOSING PRICE – LOTS - TIME</p> <ol type='a'> <li><strong>DETAILS</strong> – shows the Trade details for that particular scrip. It also has the “VIEW TRADES” hyperlink tapping which will open up Tradebook showing all the trades undertaken by you for the particular scrip</li> </ol> </li> <li> <h5 class='trades'>Trades</h5> <ol type='a'> <li>Shows the list of trades that are executed. Most of the time, executed trades are taken in multiple trades. So, those exact trade details are shown here in Trades.</li> </ol> </li> <li> <h5 class='others'>Others</h5> <ol type='a'> <li>If the trade is rejected due to some reason then such trades are listed here along with reason and other details.</li> </ol> </li> </ol> <img src='assets\\images\\guide-images\\tradebook.gif' /> <hr> <h4 class='pnl-report'>P&L Report</h4> <p>PROFIT & LOSS report. This report shows your net P&L for trades. By default it shows all trades taken for the current accounting year with the expenses.</p> <ol type='a'> <li><strong>P&L</strong> - Bottom strip shows the Total Realized P&L and Total Unrealized P&L</li> <li><strong>FILTER</strong> - For easier reference the report can be narrowed down using 3 FILTERS provided EXCHANGE - FROM DATE – TO DATE</li> <li><strong>SEARCH</strong> - User can search the scrip detail from here.</li> <li>Download PDF or Send PDF on Mail - User can use this option to download the P&L Report as PDF or send the P&L Report on your registered email.</li> </ol><img src='assets\\images\\guide-images\\pnl.gif' /> <hr> <h4 id='r-ledger' class='ledger'>Ledger</h4> <p>This is your typical account ledger type report with Debit / Credit columns shown for the current FY year.</p> <ol type='a'> <li><strong>DEBIT</strong> - An entry recording sum owed. Shown in Red color and negative value.</li> <li><strong>CREDIT</strong> - An Entry recording sum received. Shown in Green color and positive value.</li> <li><strong>BALANCE</strong> - Bottom strip shows you the total closing balance today.</li> <li><strong>FILTER</strong> - For easier reference the report can be narrowed down using 3 FILTERS provided EXCHANGE - FROM DATE – TO DATE</li> <li><strong>SEARCH</strong> - User can search the scrip detail from here.</li> <li>Download PDF or Send PDF on Mail - User can use this option to download the P&L Report as PDF or send the P&L Report on your registered email.</li> <li><strong>DETAIL</strong> - Top right has the <i class='icon-download-pdf'></i> tapping which will open up the DETAILED REPORT. You can Share, Save or Email for future reference</li> </ol><img src='assets\\images\\guide-images\\ledger.gif' /> <hr> <h4 class='pay-in-out'>Pay In/Out Summary</h4> <p>This report shows the total amount Entered or Taken out of your Trading A/c. It is divided into 2 sections Pay-in and Pay-out</p> <ol type='a'> <li><strong>PAY-IN SUMMARY</strong> - Shows the total list of transactions with DEPOSITED details. Default transactions are shown for the current accounting year</li> <li><strong>PAY-OUT SUMMARY</strong> - Shows the total list of WITHDRAWALS with details. Default transactions are shown for the current accounting year.</li> <li><strong>FILTER</strong> - For easier reference the report can be narrowed down using 3 FILTERS provided EXCHANGE - FROM DATE – TO DATE</li> <li><strong>DETAIL</strong> - Top right has the <i class='icon-Details'></i> tapping which will open up the DETAILED REPORT. You can Share, Save or Email for future reference</li> </ol><img src='assets\\images\\guide-images\\generate-payin-out.gif' /> <hr> <h4 class='back-office'>Back Office</h4> <p>For more detailed reports, we provide a complete back end panel, where you can view each of the above reports in minute detail or extract customized reports as per your need. The login details of this panel is provided after theregistration is completed.</p>",
+    "subtopics": [
+        {
+            "title": "Orderbook",
+            "url": "orderbook",
+            "sub-headings": [
+                {
+                    "title": "Pending",
+                    "url": "pending"
+                },
+                {
+                    "title": "Executed",
+                    "url": "executed"
+                }
+            ]
+        },
+        {
+            "title": "Tradebook",
+            "url": "tradebook",
+            "sub-headings": []
+        },
+        {
+            "title": "P&L Report",
+            "url": "pnl-report",
+            "sub-headings": []
+        },
+        {
+            "title": "Ledger",
+            "url": "ledger",
+            "sub-headings": []
+        },
+        {
+            "title": "Pay In/Out Summary",
+            "url": "pay-in-out",
+            "sub-headings": []
+        },
+        {
+            "title": "Back Office",
+            "url": "back-office",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "Research",
+        "next": "Price Alerts",
+        "prev-url": "/user-guide/app/research",
+        "next-url": "/user-guide/app/stock-price-alert"
+    }
+}

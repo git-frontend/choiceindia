@@ -1,0 +1,26 @@
+{
+    "content": "<h3>Additional Features</h3><h4 class='preferences'>Preferences</h4><p>This section is where you define how you’d like to view or use key features provided in Choice FinX.</p><p>Open Account  and Tap -> My Preferences</p><ol type='1'><li> <h5 class='preference'>Preference</h5> <img src='assets\\images\\guide-images\\preference.png'/><hr><h4 class='dark-theme'>Dark Theme</h4><p>The beautiful all-new Dark Theme provided exclusively for our users. Simply click the very first option on the menu. Menu – DARK THEME. To go back to default Open Menu – Tap -> Light Theme</p><img src='assets\\images\\guide-images\\dark-theme.png'/><img src='assets\\images\\guide-images\\dark-theme2.png'/>",
+    "subtopics": [
+        {
+            "title": "Preferences",
+            "url": "preferences",
+            "sub-headings": [
+                {
+                    "title": "General",
+                    "url": "general"
+                }
+            ]
+        },
+        {
+            "title": "Dark Theme",
+            "url": "dark-theme",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "IPO",
+        "next": "Others",
+        "prev-url": "/user-guide/app/ipo",
+        "next-url": "/user-guide/app/others"
+    }
+}

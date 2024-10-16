@@ -1,0 +1,9 @@
+<svg id="Option_chain" data-name="Option chain" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+  <path id="Path_59580" data-name="Path 59580" d="M0,0H19V19H0Z" fill="none"/>
+  <path id="Path_59581" data-name="Path 59581" d="M10,12.18a2.865,2.865,0,0,0,4.093,0l3.274-3.274a2.894,2.894,0,1,0-4.093-4.093l-.409.409" transform="translate(-2.277 -0.918)" fill="none" stroke="#2d77f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <path id="Path_59582" data-name="Path 59582" d="M12.18,9.809a2.865,2.865,0,0,0-4.093,0L4.812,13.084a2.894,2.894,0,0,0,4.093,4.093l.409-.409" transform="translate(-0.903 -2.071)" fill="none" stroke="#2d77f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <line id="Line_142" data-name="Line 142" y1="1" transform="translate(12.401 15.177)" fill="none" stroke="#2d77f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <line id="Line_143" data-name="Line 143" x2="1" transform="translate(15.177 12.401)" fill="none" stroke="#2d77f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <line id="Line_144" data-name="Line 144" x2="1" transform="translate(2.823 6.599)" fill="none" stroke="#2d77f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <line id="Line_145" data-name="Line 145" y2="1" transform="translate(6.599 2.823)" fill="none" stroke="#2d77f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+</svg>

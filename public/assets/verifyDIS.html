@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form
+      name="frmDIS"
+      method="post"
+      action="https://edis.cdslindia.com/EDIS/VerifyDIS/"
+    >
+      <input type="hidden" name="DPId" value="92500" />
+      <input type="hidden" name="ReqId" value="070820201140312" />
+      <input type="hidden" name="Version" value="1.2" />
+      <input
+        type="hidden"
+        name="TransDtls"
+        value="hfijsatP4YphZX/78W8iGJ6qMQ9o+VVp9m55CYyltCGkAz5bsSQAZDjegnZqV+cTxIILxLEq1Vzx09kL7qf+hr21Bui0eqpwk8J2pozDtZ2HPZ4HcZ2eA5DdjEkii32URzcODY1Bm60IYtdl01Q6BWlkP5y/GwPnw7JImayyijH8v7baPD+TPz2kLq20EKnmF2Ai0fGR+65AoI0ZvUVWWGfXeuiqvdPs6/ZTsVKVQY7a3T6YPefDLVbqKFcVqUHsQnFX2proH7ndRZMcyF1qQ9klsWIBv5wHmpKcwDPqAVklnmGmohP8IgE5eMikqak1bujsjPeXHKfNLFYibnptqUm0bCF+gDW+ZTYqIxewLEBVcrrLk9rtAM2nxUSPUaKagYOGYGcB1qKb5kgY29f8dhNoNqcdq+OTwixv3Wj/t5+SUNrvTqvZ4wEAtqZlyvf+oWPK8rSy7NlBqZ+Gz98zRxPFOK2wCcF8xnBpp0BriMQM7Tc5+V11J977PJ01uJ5PSpktIVKNm/XCOqA/zX+rXoqTO1CGIPEUQdmwHSnCZRA="
+      />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
+
+<script>
+  var match,
+    pl = /\+/g, // Regex for replacing addition symbol with a space
+    search = /([^&=]+)=?([^&]*)/g,
+    query = window.location.search.substring(1);
+
+  urlParams = {};
+  while ((match = search.exec(query)))
+    urlParams[decodeURIComponent(match[1].replace(pl, " "))] =
+      decodeURIComponent(match[2]);
+
+  if (Object.keys(urlParams).length) {
+    updateValues(
+      "frmDIS",
+      "action",
+      urlParams.ActionURL || urlParams.ActionUrl || ""
+    );
+    updateValues("DPId", "value", urlParams.DPId || "");
+    updateValues("ReqId", "value", urlParams.ReqId || "");
+    updateValues("TransDtls", "value", urlParams.TransDtls || "");
+    setTimeout(function () {
+      document.getElementsByName("frmDIS")[0].submit();
+    }, 500);
+  }
+
+  function updateValues(elementName, attributeName, value) {
+    if (document.getElementsByName(elementName).length) {
+      document
+        .getElementsByName(elementName)[0]
+        .setAttribute(attributeName, value);
+    }
+  }
+</script>

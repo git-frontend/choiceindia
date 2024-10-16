@@ -1,0 +1,37 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "web",
+      "site": "https://finx.choiceindia.com/"
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "web",
+      "site": "https://mf.choiceindia.com/"
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.choiceequitybroking.jiffy",
+      "sha256_cert_fingerprints": [
+        "A4:6F:00:05:BF:0B:66:91:A9:F7:EB:37:C0:1D:CA:BF:EF:46:83:9C:28:B4:77:4F:C0:DD:BC:17:31:AC:24:08",
+        "AF:61:64:18:A3:F3:37:59:23:5A:E4:E3:DB:9E:AB:80:4F:75:8C:B4:2A:D8:6F:2B:1E:E3:14:B4:1D:A6:EE:13",
+        "FF:C7:E5:F9:CF:25:D1:45:A7:0E:AC:C8:DA:69:FB:61:A1:64:23:01:AB:EB:03:E5:BF:9C:CB:1A:C6:3B:64:90",
+        "AA:96:5E:30:57:D4:7B:97:A2:A9:00:5A:5C:E4:43:96:52:04:66:50:AC:89:6B:33:49:96:AA:9B:82:37:EB:67"
+      ]
+    }
+  }
+]

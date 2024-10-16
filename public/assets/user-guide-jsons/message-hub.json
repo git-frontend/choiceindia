@@ -1,0 +1,16 @@
+{
+    "content": "<h3>Message Hub</h3> <p>This section houses the various message sections. Use MENU - > Messages</p> <img src='assets\\images\\guide-images\\notification.gif' />",
+    "subtopics": [
+        {
+            "title": "Notifications",
+            "url": "notification",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "Funds",
+        "next": "IPO",
+        "prev-url": "/user-guide/app/funds",
+        "next-url": "/user-guide/app/ipo"
+    }
+}

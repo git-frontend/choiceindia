@@ -1,0 +1,36 @@
+{
+    "content": "<h3>Markets</h3> <p>This is your all-important Market overview section. </p> <p>To Access, Menu -> Tap Markets. Use the <i class='icon-market'></i> from the Dashboard or whichever section you see the <i class='icon-market'></i> Market Indices is the default landing section</p> <p>Markets Categories by :</p> <ul> <li>Top-Gainers</li> <li>Top-Losers</li> <li>Active by Value</li> <li>Active by Volume</li> <li>Top Gainers By OI%</li> <li>Top Loser By OI%</li> <li>OI Spurts</li> </ul> <p>Filters available by Exchange :</p> <ul> <li>NSE</li> <li>BSE</li> </ul> <p>Filters available by Segments :</p> <ul> <li>Equity</li> <li>Derivative</li> <li>Commodity</li> <li>Currency</li> <li>Indian Indices (Sector specific and indices specific performances)</li> <li>Global Indices</li> </ul> <hr> <h4 class='global-Indices'>Global Indices</h4> <p>This is a crucial section showing trading / investing action across all major indices across the Globe. You can get an overview of the world’s economy to make calculated decisions.</p><img src='assets\\images\\guide-images\\global-indices.gif' />",
+    "subtopics": [
+        {
+            "title": "Market Indices",
+            "url": "market-Indices",
+            "sub-headings": []
+        },
+        {
+            "title": "Top Gainer / Top Losers / Active by Value / Active by Volume",
+            "url": "top-active",
+            "sub-headings": []
+        },
+        {
+            "title": "Top Gainer by OI / Top Loser by OI",
+            "url": "top-oi",
+            "sub-headings": []
+        },
+        {
+            "title": "OI Spurts",
+            "url": "oi",
+            "sub-headings": []
+        },
+        {
+            "title": "Global Indices",
+            "url": "global-Indices",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "Price Alerts",
+        "next": "Funds",
+        "prev-url": "/user-guide/app/stock-price-alert",
+        "next-url": "/user-guide/app/funds"
+    }
+}

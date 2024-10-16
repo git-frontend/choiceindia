@@ -1,0 +1,76 @@
+{
+    "content": "<h3>IPO</h3> <p>You can now subscribe to IPOs instantly with Choice FinX using UPI. In the IPO Section you can view IPO Listings (where you can view Open, Close and Forthcoming IPOs) and IPO Transactions (where you can track the progress of your IPO bid). </p><img src='assets\\images\\guide-images\\ipo.png' /> <hr> <h4 class='listing'>IPO Listing</h4><img src='assets\\images\\guide-images\\ipo-doc.gif' /> <hr> <h4 class='open'>Open IPOs</h4> <p>You can view the latest IPOs open for subscription. On tapping the IPO card you get an option to view ‘Details’, ‘Subscribe to the IPO’ and ‘Share’. </p><img src='assets\\images\\guide-images\\ipo-open.png' /> <ol type='1'> <li> <h5 class='details'>Details</h5> <p>View all the relevant details pertaining to the IPO here. You can subscribe to the IPO by tapping on the ‘Subscribe’ button at the bottom of the screen. </p><img src='assets\\images\\guide-images\\ipo-details.png' /> <img src='assets\\images\\guide-images\\ipo-details2.png' /> </li> <li> <h5 class='subscribe'>How to apply to the IPO using UPI?</h5> <p>When you tap on ‘Apply’, it will open the Bids Screen. Here’s how you can apply for the IPO using UPI in Choice FinX.</p><img src='assets\\images\\guide-images\\ipo-subscribe.png' /> <ol type='a'> <li>Lot (Lot Size) - Enter the lots you would like to bid for.</li> <li>Cut off Price  - Select 'Yes' to bid at the default cut-off price. Select 'No' if you want to enter your own price (within the price band). </li> <li>Amount to be Blocked - Shown as per the lots requested. <ul style='margin-top:10px'> <li>For a bid amount greater than Rs. 2 Lakhs or to apply for IPO offline you can use Application Supported by Blocked Amount (ASBA) method. To read more about ASBA <a href='https://www1.nseindia.com/products/content/equities/ipos/asba_procedures.htm' target='_blank'>click here</a> </li> </ul> </li> <li>Enter your UPI ID and select the VPA code from the drop down next to @UPI and click verify.</li> <li>Tick the checkbox to confirm that you are an eligible UPI Bidder and hit ‘Subscribe’. </li> </ol> <p>Once you have submitted your IPO application you'll receive a mandate request on your UPI app (you may take a few hours to receive this message). Once you receive it, just accept the mandate. </p> <p>You will also receive an email and notification from your respective application where you will be required to approve and procced. </p><img src='assets\\images\\guide-images\\mandate1.jpg' /> </li> </ol> <hr> <h4 class='transaction'>IPO Transactions</h4> <p>If you have bid for an IPO its progress will be tracked here.</p><img src='assets\\images\\guide-images\\ipo-transaction.png' /> <ol type='1'> <li> <h5 class='payment-status'>Payment Status</h5> <ol type='a'> <li> <strong>Failed</strong>: When your payment did not go through, you will see this message. Note: In-case of Failure, the Investor will be required to re-initiate the transaction until it goes through. </li> <li> <strong>Success</strong>: You will see this message when your bid application was successful and accepted by Investor. </li> <li> <strong>Pending</strong>: If the message shows as pending then the mandate is still in the process of being approved. (Once the IPO Application is accepted, a mandate is generated which needs to be accepted by the Investor, hence it will be pending until the investor accepts the Mandate). </li> </ol> </li> <li> <h5 class='dp-verification'>DP Verification Status</h5> <ol type='a'> <li> <strong>Failed</strong>: If your DP does not match with the DP registered in your name at SEBI then you will see DP Verification Status as Failed. </li> <li> <strong>Pending</strong>: You will see this message when the verification is taking a bit more time. </li> <li> <strong>Successful</strong>: When your DP matches with the DP registered in your name at SEBI then you will see DP Verification Status as Successful. </li> </ol> </li> <li> <h5 class='application-status'>IPO Application Status </h5> <ol type='a'> <li> <strong>Subscribed</strong>: You will see this message when your IPO subscription is successful. Your application has been accepted and the Exchange verifies your DP and the payment process will be initiated for which you will have to accept the mandate from the Sponsor Bank. </li> <li> <strong>Canceled</strong>: This message will be displayed when you have cancelled the IPO Application. </li> <li> <strong>Modified</strong>: You will see this message when you have modified (Price or Quantity) the IPO application. </li> <li> <strong>Failed</strong>: You will see this message when the IPO subscription has failed. You can re-initiate the IPO application process as explained above. </li> </ol> </li> <li> <h5 class='modify-application'>Modify IPO Application</h5> <p>Modifying the IPO only begins after the bidding window is closed. You can modify your application from here. </p> <p>For IPO Application Modification, you will be routed to the bid screen. Here you can change the details and will receive a Success message of Modification. </p> <p>If the Price or Quantity is changed or you’ve canceled the order, you will receive a message from the Exchange. You will also receive a new Mandate from the Sponsor Bank. </p><em>Note: You cannot modify/cancel your application after modification window is closed.</em> </li> </ol> <hr> <h4 class='ipo-close'>Closed IPOs</h4> <p>This sub-section shows the IPO which were open for subscription.</p><em>Note: On the final closure of the Modification Window, you will not be able to modify your bid again.</em><img src='assets\\images\\guide-images\\ipo-close.png' /> <hr> <h4 class='forth-coming'>Upcoming IPOs</h4> <p>Shows all the upcoming IPO to look forward to.</p><img src='assets\\images\\guide-images\\ipo-forthcoming.png' /> <hr> <h4 class='note'>Note - IPO Allocation</h4> <ol type='1'> <li> <h5 class='successfull-ipo'>Successful IPO Allotment</h5> <ol type='a'> <li>If IPO allotment is successful; the allotted shares will be transferred to your Demat Account.</li> <li>You will receive an E-mail and SMS on your registered email address and number.</li> <li>You will also receive an SMS from the Exchange (NSE/BSE) regarding successful IPO allotment. <img src='assets\\images\\guide-images\\mandate2.jpg' /> </li> <li>The bid amount blocked by the bank will be deducted.</li> </ol> </li> <li> <h5 class='unsuccessfull-ipo'>Successful IPO Allotment</h5> <ol type='a'> <li>If IPO allotment is unsuccessful; you will receive and E-mail and SMS on your registered email address and number regarding the same.</li> <li>The bid amount blocked by the bank will be released.</li> </ol> </li> </ol>",
+    "subtopics": [
+        {
+            "title": "IPO Listing",
+            "url": "listing",
+            "sub-headings": []
+        },
+        {
+            "title": "IPO Open",
+            "url": "open",
+            "sub-headings": [
+                {
+                    "title": "Details",
+                    "url": "details"
+                },
+                {
+                    "title": "Apply",
+                    "url": "subscribe"
+                }
+            ]
+        },
+        {
+            "title": "IPO Transactions",
+            "url": "transaction",
+            "sub-headings": [
+                {
+                    "title": "Payment Status",
+                    "url": "payment-status"
+                },
+                {
+                    "title": "DP Verification Status",
+                    "url": "dp-verification"
+                },
+                {
+                    "title": "IPO Application Status",
+                    "url": "application-status"
+                },
+                {
+                    "title": "Modify IPO Application",
+                    "url": "modify-application"
+                }
+            ]
+        },
+        {
+            "title": "Closed IPO",
+            "url": "ipo-close",
+            "sub-headings": []
+        },
+        {
+            "title": "Upcoming IPO",
+            "url": "forth-coming",
+            "sub-headings": []
+        },
+        {
+            "title": "Note",
+            "url": "note",
+            "sub-headings": [
+                {
+                    "title": "Successful IPO Allotment",
+                    "url": "successfull-ipo"
+                },
+                {
+                    "title": "Successful IPO Allotment",
+                    "url": "unsuccessfull-ipo"
+                }
+            ]
+        }
+    ],
+    "actions": {
+        "prev": "Message Hub",
+        "next": "Addition Features",
+        "prev-url": "/user-guide/app/message-hub",
+        "next-url": "/user-guide/app/additional-features"
+    }
+}

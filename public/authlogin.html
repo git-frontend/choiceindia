@@ -1,0 +1,39 @@
+<html>
+<!-- Updated at : 26/11/2021 -->
+<!-- Updated for : Sub Referral Id Implementation -->
+<title>Login Smart Link</title>
+
+<head>
+</head>
+
+<body></body>
+<script>
+
+    function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window['opera'];
+        // Windows Phone must come first because its UA also contains "Android"
+        if (/windows phone/i.test(userAgent)) {
+            return "Windows Phone";
+        }
+        if (/android/i.test(userAgent)) {
+            return "Android";
+        }
+        if (/iPad|iPhone|iPod/.test(userAgent)) {
+            return "iOS";
+        }
+        // alert(userAgent);
+        return "unknown";
+    }
+
+    if (this.getMobileOperatingSystem() == "Android") {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy";
+    } else if (this.getMobileOperatingSystem() == "iOS") {
+        window.location.href =
+            "https://itunes.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1&mt=8";
+    } else {
+        window.location.href = "https://finx.choiceindia.com";
+    }
+
+</script>
+
+</html>

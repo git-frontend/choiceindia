@@ -1,0 +1,36 @@
+{
+    "content": "<h3>Watchlist</h3> <p>Watchlists are provided for you to save the stocks which you prefer. The lists help you to make faster trading / investment decisions. Access the Watchlist from the bottom tab. </p> <p>Choice FinX provides you with 5 lists which can hold 50 scrips each. Select WATCHLIST from the bottom tab</p><img src='assets\\images\\guide-images\\watchlist.png' /> <hr> <h4 class='add-to-watchlist'>Add to WatchList </h4> <ol type='a'> <li>In an empty WATCHLIST use the “Search & Add” button which will directly take you to the Scrip Search. Simply select the required scrip and use <img src='assets\\images\\guide-images\\watchlist-heart.svg' class='heartimg'/></li> </ol> <hr> <h4 class='watchlist-search'>Watchlist Search</h4> <p>Every individual Watchlist is provided with a Searchbox to easily search through the scrips added. Simply type the initials of the scrip and it will come up. Next to the Searchbox is the FILTER <i class='icon-filter'></i> with the options to choose the Exchange or Sort Alphabetically or by %</p> <ol type='1'> <li> <h5 class='filter'>Filter Attributes</h5> <ol type='a'> <li>Exchange - Choose between various exchanges like NSE, NSEFO etc</li> <li>Sort - Alphabetically - Sort in Ascending or Descending order from A - Z </li> <li>Sort - Change % - Sort as per the Change in Stock % basis in ascending or descending order</li> </ol> </li> </ol><em>NOTE: To Toggle between Watchlists press the Individual button or Swipe Left.</em><img src='assets\\images\\guide-images\\watchlist-filter.gif' /> <hr> <h4 class='arrange'>Arrange</h4> <ol type='a'> <li>To Re-order, Rename the Watchlist, long-press any individual scrip, the WatchList will enter dynamic editable mode. Enter the Name you’d like to set</li> <li>To rename, enter the name you’d like in the text box</li> <li>Press and Hold Re-order Button and Drag scrip to where you want it to be on the list, Trash icon will remove the scrip</li> <li>Press Save</li> </ol>",
+    "subtopics": [
+        {
+            "title": "Add to WatchList",
+            "url": "add-to-watchlist",
+            "sub-headings": []
+        },
+        {
+            "title": "Watchlist Search",
+            "url": "watchlist-search",
+            "sub-headings": [
+                {
+                    "title": "Filter Attributes",
+                    "url": "filter"
+                }
+            ]
+        },
+        {
+            "title": "Arrange",
+            "url": "arrange",
+            "sub-headings": []
+        },
+        {
+            "title": "Shortcuts",
+            "url": "shortcuts",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "Scrip Search",
+        "next": "Portfolio",
+        "prev-url": "/user-guide/app/scrip-search",
+        "next-url": "/user-guide/app/portfolio"
+    }
+}

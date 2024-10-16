@@ -1,0 +1,859 @@
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Montserrat Light"), local("Montserrat-Light"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_cJD3gTD_u50.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Montserrat Light"), local("Montserrat-Light"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_cJD3g3D_u50.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Montserrat Light"), local("Montserrat-Light"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_cJD3gbD_u50.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Montserrat Light"), local("Montserrat-Light"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_cJD3gfD_u50.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Montserrat Light"), local("Montserrat-Light"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_cJD3gnD_g.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Montserrat Medium"), local("Montserrat-Medium"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_ZpC3gTD_u50.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Montserrat Medium"), local("Montserrat-Medium"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_ZpC3g3D_u50.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Montserrat Medium"), local("Montserrat-Medium"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_ZpC3gbD_u50.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Montserrat Medium"), local("Montserrat-Medium"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_ZpC3gfD_u50.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Montserrat Medium"), local("Montserrat-Medium"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_ZpC3gnD_g.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_bZF3gTD_u50.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_bZF3g3D_u50.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_bZF3gbD_u50.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_bZF3gfD_u50.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_bZF3gnD_g.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_dJE3gTD_u50.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_dJE3g3D_u50.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_dJE3gbD_u50.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_dJE3gfD_u50.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face { font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url(https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face { font-display: swap;
+  font-family: icomoon;
+  src: url(icomoon.ttf?l7vd9v) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block
+}
+
+[class*=icon-],
+[class^=icon-] {
+  font-family: icomoon !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.icon-market:before {
+  content: "\e9c9"
+}
+
+.icon-crosshair:before {
+  content: "\e9c8"
+}
+
+.icon-rounded-arrow:before {
+  content: "\e900"
+}
+
+.icon-low-brokerage:before {
+  content: "\e901"
+}
+
+.icon-margin:before {
+  content: "\e902"
+}
+
+.icon-recommendation:before {
+  content: "\e903"
+}
+
+.icon-android:before {
+  content: "\e904"
+}
+
+.icon-apple:before {
+  content: "\e905"
+}
+
+.icon-courier:before {
+  content: "\e906"
+}
+
+.icon-register-online:before {
+  content: "\e907"
+}
+
+.icon-sign:before {
+  content: "\e908"
+}
+
+.icon-tick:before {
+  content: "\e909"
+}
+
+.icon-web:before {
+  content: "\e90a"
+}
+
+.icon-filter:before {
+  content: "\e90c"
+}
+
+.icon-download-pdf:before {
+  content: "\e90d"
+}
+
+.icon-seen:before {
+  content: "\e914"
+}
+
+.icon-edit:before {
+  content: "\e919"
+}
+
+.icon-checked:before {
+  content: "\e91a"
+}
+
+.icon-clock:before {
+  content: "\e91b"
+}
+
+.icon-Buy:before {
+  content: "\e91d"
+}
+
+.icon-Charts:before {
+  content: "\e91e"
+}
+
+.icon-About-Us2:before {
+  content: "\e91f"
+}
+
+.icon-Call-for-support:before {
+  content: "\e920"
+}
+
+.icon-Exchange-Messages:before {
+  content: "\e921"
+}
+
+.icon-Fund-Transfer:before {
+  content: "\e922"
+}
+
+.icon-Fund:before {
+  content: "\e923"
+}
+
+.icon-Highlight:before {
+  content: "\e924"
+}
+
+.icon-Holdings:before {
+  content: "\e925"
+}
+
+.icon-Important-Links:before {
+  content: "\e926"
+}
+
+.icon-Notifiication:before {
+  content: "\e927"
+}
+
+.icon-Ledger:before {
+  content: "\e928"
+}
+
+.icon-Margin-Statement:before {
+  content: "\e929"
+}
+
+.icon-Market-Status:before {
+  content: "\e92a"
+}
+
+.icon-Menu:before {
+  content: "\e92b"
+}
+
+.icon-News-_-Research:before {
+  content: "\e92c"
+}
+
+.icon-Net-position:before {
+  content: "\e92d"
+}
+
+.icon-Order-Messages:before {
+  content: "\e92e"
+}
+
+.icon-others:before {
+  content: "\e92f"
+}
+
+.icon-Price-alert:before {
+  content: "\e931"
+}
+
+.icon-Highlights:before {
+  content: "\e932"
+}
+
+.icon-Recommendation:before {
+  content: "\e933"
+}
+
+.icon-Log-Out:before {
+  content: "\e934"
+}
+
+.icon-Net-Position:before {
+  content: "\e935"
+}
+
+.icon-Tradebook:before {
+  content: "\e936"
+}
+
+.icon-Sell:before {
+  content: "\e937"
+}
+
+.icon-back-arrow:before {
+  content: "\e938"
+}
+
+.icon-Orderbook:before {
+  content: "\e939"
+}
+
+.icon-search:before {
+  content: "\e93a"
+}
+
+.icon-Watchlist:before {
+  content: "\e93b"
+}
+
+.icon-News-n-Research:before {
+  content: "\e93c"
+}
+
+.icon-Notification-centre:before {
+  content: "\e93d"
+}
+
+.icon-Others:before {
+  content: "\e93e"
+}
+
+.icon-Price-Alert:before {
+  content: "\e93f"
+}
+
+.icon-Rate-Us:before {
+  content: "\e940"
+}
+
+.icon-Recomendation:before {
+  content: "\e941"
+}
+
+.icon-Refer-A-Friend:before {
+  content: "\e942"
+}
+
+.icon-Reports:before {
+  content: "\e943"
+}
+
+.icon-Settings:before {
+  content: "\e944"
+}
+
+.icon-Whats-New:before {
+  content: "\e945"
+}
+
+.icon-Cancel:before {
+  content: "\e946"
+}
+
+.icon-Details:before {
+  content: "\e947"
+}
+
+.icon-Modiify:before {
+  content: "\e948"
+}
+
+.icon-calendar-3:before {
+  content: "\e949"
+}
+
+.icon-Click:before {
+  content: "\e94a"
+}
+
+.icon-Female:before {
+  content: "\e94b"
+}
+
+.icon-Male:before {
+  content: "\e94c"
+}
+
+.icon-Married:before {
+  content: "\e94d"
+}
+
+.icon-Phone:before {
+  content: "\e94e"
+}
+
+.icon-photo-1:before {
+  content: "\e94f"
+}
+
+.icon-Signature:before {
+  content: "\e950"
+}
+
+.icon-Single:before {
+  content: "\e951"
+}
+
+.icon-Upload:before {
+  content: "\e952"
+}
+
+.icon-Video:before {
+  content: "\e953"
+}
+
+.icon-feedback:before {
+  content: "\e954"
+}
+
+.icon-account-number:before {
+  content: "\e955"
+}
+
+.icon-address:before {
+  content: "\e956"
+}
+
+.icon-bank:before {
+  content: "\e957"
+}
+
+.icon-dob:before {
+  content: "\e958"
+}
+
+.icon-education:before {
+  content: "\e959"
+}
+
+.icon-email-id:before {
+  content: "\e95a"
+}
+
+.icon-gaurdian:before {
+  content: "\e95b"
+}
+
+.icon-ifsc:before {
+  content: "\e95c"
+}
+
+.icon-income:before {
+  content: "\e95d"
+}
+
+.icon-location:before {
+  content: "\e95e"
+}
+
+.icon-married:before {
+  content: "\e95f"
+}
+
+.icon-mobile:before {
+  content: "\e960"
+}
+
+.icon-mother:before {
+  content: "\e961"
+}
+
+.icon-name:before {
+  content: "\e962"
+}
+
+.icon-occupation:before {
+  content: "\e963"
+}
+
+.icon-pan-no:before {
+  content: "\e964"
+}
+
+.icon-pin-code:before {
+  content: "\e965"
+}
+
+.icon-referal-code:before {
+  content: "\e966"
+}
+
+.icon-single:before {
+  content: "\e967"
+}
+
+.icon-trading-exp:before {
+  content: "\e968"
+}
+
+.icon-bars:before {
+  content: "\e96d"
+}
+
+.icon-bars-pattern:before {
+  content: "\e96e"
+}
+
+.icon-candles:before {
+  content: "\e972"
+}
+
+.icon-expand:before {
+  content: "\e985"
+}
+
+.icon-ghost-feed:before {
+  content: "\e996"
+}
+
+.icon-hallow-candles:before {
+  content: "\e997"
+}
+
+.icon-heikin-ashi:before {
+  content: "\e999"
+}
+
+.icon-indicators:before {
+  content: "\e99c"
+}
+
+.icon-kagi:before {
+  content: "\e99e"
+}
+
+.icon-line:before {
+  content: "\e99f"
+}
+
+.icon-line-break:before {
+  content: "\e9a0"
+}
+
+.icon-uniE9A0:before {
+  content: "\e9a4"
+}
+
+.icon-uniE9A1:before {
+  content: "\e9a5"
+}
+
+.icon-point-figure:before {
+  content: "\e9a9"
+}
+
+.icon-renko:before {
+  content: "\e9b1"
+}
+
+.icon-zoom-in:before {
+  content: "\e9c1"
+}
+
+.icon-zoom-out:before {
+  content: "\e9c2"
+}
+
+.icon-minimize-arrows:before {
+  content: "\e9c3"
+}
+
+.icon-Aadhaar-Card:before {
+  content: "\e9c4"
+}
+
+.icon-Bank-Account-Details:before {
+  content: "\e9c5"
+}
+
+.icon-convert-position:before {
+  content: "\e9c6"
+}
+
+.icon-more:before {
+  content: "\e9c7"
+}
+
+.icon-Pan-Card:before {
+  content: "\e9d5"
+}
+
+.icon-share:before {
+  content: "\ea82"
+}
+
+.icon-youtube:before {
+  content: "\ea9d"
+}
+
+.icon-download:before {
+  content: "\f019"
+}
+
+.icon-repeat:before {
+  content: "\f01e"
+}
+
+.icon-lock:before {
+  content: "\f023"
+}
+
+.icon-exclamation-circle:before {
+  content: "\f06a"
+}
+
+.icon-eye:before {
+  content: "\f06e"
+}
+
+.icon-eye-slash:before {
+  content: "\f070"
+}
+
+.icon-twitter:before {
+  content: "\f099"
+}
+
+.icon-facebook:before {
+  content: "\f09a"
+}
+
+.icon-linkedin:before {
+  content: "\f0e1"
+}
+
+.icon-angle-left:before {
+  content: "\f104"
+}
+
+.icon-angle-right:before {
+  content: "\f105"
+}
+
+.icon-double-right:before {
+  content: "\f101"
+}
+
+.icon-double-left:before {
+  content: "\f100"
+}
+
+.icon-angle-up:before {
+  content: "\f106"
+}
+
+.icon-angle-down:before {
+  content: "\f107"
+}
+
+.icon-alert:before {
+  content: "\f108"
+}
+
+.icon-info:before {
+  content: "\f129"
+}
+
+.icon-check-filled:before {
+  content: "\f132"
+}
+
+.icon-long-arrow-down:before {
+  content: "\f175"
+}
+
+.icon-long-arrow-up:before {
+  content: "\f176"
+}
+
+.icon-info-fulled:before {
+  content: "\f185"
+}
+
+.icon-warning-filled:before {
+  content: "\f1e7"
+}
+
+.icon-x-filled:before {
+  content: "\f1ec"
+}
+
+.icon-x:before {
+  content: "\f1ed"
+}
+
+.icon-angle-rupeee:before {
+  content: "\f106";
+}
+
+.icon-angle-ienr:before {
+  content: "\f106";
+}
+
+@font-face { font-display: swap;
+  font-family: 'copy';
+  src: url('../fonts/copy.eot?3r48cr');
+  src: url('../fonts/copy.eot?3r48cr#iefix') format('embedded-opentype'),
+    url('../fonts/copy.ttf?3r48cr') format('truetype'),
+    url('../fonts/copy.woff?3r48cr') format('woff'),
+    url('../fonts/copy.svg?3r48cr#copy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon-copy:before {
+  content: "\e925";
+  font-family: 'copy';
+}
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500,100,300,400italic|Roboto+Condensed:400,700,300);
+@font-face{
+  font-display: swap;
+  font-family:jiffy-icon;src:url(../static/fonts/jiffy-icon.ttf?2om6mp) format("truetype"),url(../static/fonts/jiffy-icon.woff?2om6mp) format("woff"),url(../static/fonts/jiffy-icon.svg?2om6mp#icons) format("svg");font-weight:400;font-style:normal}[class*=" jiffy-icon-"],[class^=jiffy-icon-]{font-family:jiffy-icon!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;font-size:20px;display:block;text-align:center;margin:0;padding:2px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+.jiffy-icon-price-alert:before{content:"\e92b"}
+.jiffy-icon-watchlist:before{content:"\e903"}
+.jiffy-icon-back:before{content:"\e907"}
+.jiffy-icon-download:before{content:""}
+.jiffy-icon-eye:before{content:"\e929"}
+.jiffy-icon-eye-slash:before{content:"\e928"}
+.jiffy-icon-maximize:before{content:"\e910"}
+.jiffy-icon-minimize:before{content:"\e948"}

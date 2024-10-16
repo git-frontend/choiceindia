@@ -1,0 +1,21 @@
+{
+  "content": "<h3>ORDER BOOK</h3>\r\n<p>\r\n</p>\r\n<p><span style='color: #000000;'>You can check the status of the order placed in the Order Book. Go to the Order Book by selecting the Order Book Button in the footer Menu. </span></p>\r\n<p>\r\n</p>\r\n<h4 class='executed-orders'>1. Executed Orders</h4>\r\n<p><span style='color: #000000;'>All your Executed Order will be displayed under the Executed Tab. </span></p>\r\n<p>\r\n<img src='assets\\images\\guide-images\\Orderbook - Executed Order 500X294.gif' /></p>\r\n<ul>\r\n\r\n<li>\r\n\r\n<p><span style='color: #000000;'><strong>View Order Details</strong></span><span style='color: #000000;'> - You can check executed order details by tapping on a scrip and clicking on the Details Option.</span></p>\r\n\r\n</li>\r\n\r\n\r\n<li>\r\n\r\n<p><span style='color: #000000;'><strong>Repeat The Order/ Square Off</strong></span><span style='color: #000000;'> - You can choose to place an order again/square off the order by tapping on the scrip and choosing either the&nbsp;Buy or the Sell option.</span></p>\r\n\r\n</li>\r\n\r\n</ul>\r\n<h4 class='pending-orders'>2. Pending Orders</h4>\r\n<p>\r\n</p>\r\n<p><span style='color: #000000;'>Pending/Cancelled/Rejected Orders will be displayed under the Pending Tab. </span></p>\r\n<p><img src='assets\\images\\guide-images\\Orderbook - Pending Order 500X294.gif' /></p>\r\n<ul>\r\n\r\n<li>\r\n\r\n<p><span style='color: #000000;'><strong>View Order Details</strong></span><span style='color: #000000;'> (For Pending/Cancelled/Rejected)- Tap on a scrip and select the Details Option to view order details for Pending/ Cancelled/ Rejected Orders.</span></p>\r\n\r\n</li>\r\n\r\n\r\n<li>\r\n\r\n<p><span style='color: #000000;'><strong>Modify Order</strong></span><span style='color: #000000;'> (Pending) - Tap on a scrip and click on the Modify Option to modify your Pending Order.</span></p>\r\n\r\n</li>\r\n\r\n\r\n<li>\r\n\r\n<p><span style='color: #000000;'><strong>Cancel</strong></span> <span style='color: #000000;'><strong>Order </strong></span><span style='color: #000000;'>(Pending) - Tap on a scrip and click on the Cancel Option to cancel your Pending Order.</span></p>\r\n\r\n</li>\r\n\r\n\r\n<li>\r\n\r\n<p><span style='color: #000000;'><strong>Repeat the Order</strong></span><span style='color: #000000;'> (Cancelled/Rejected) - You can choose to place an order again on the Cancelled or Rejected Order by tapping on the scrip and choosing either the&nbsp;Buy or the Sell option.</span></p>\r\n\r\n</li>\r\n\r\n</ul>",
+  "subtopics": [
+    {
+      "title": "Executed Orders",
+      "url": "executed-orders",
+      "sub-headings": []
+    },
+    {
+      "title": "Pending Orders",
+      "url": "pending-orders",
+      "sub-headings": []
+    }
+  ],
+  "actions": {
+    "prev": "Funds",
+    "next": "Portfolio",
+    "prev-url": "/user-guide/app/funds",
+    "next-url": "/user-guide/app/portfolio"
+  }
+}

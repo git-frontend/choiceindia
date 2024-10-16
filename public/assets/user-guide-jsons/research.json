@@ -1,0 +1,26 @@
+{
+    "content": "<h3>Research</h3> <p>Research team is backed by some of the smartest minds in business with rich experience. To every Choice FinX patron we provide Reliable Research at no extra cost. </p> <p>This section can also be accessed via bottom tab - &gt; Research</p> <h4>Technical Research</h4> <p>Technical section analyses price trends and are ideal for short-term investors. It is based on technical analysis, which is used to study market trends and historical patterns of price and volumes, following which the future value of the security is evaluated. The Reports generated are of 5 types explained below with other features,</p> <ol type='1'> <li> <h5>Sumeet Bagadia Calls</h5> <p>Get expert calls from Sumeet Bagadia, Director, Choice Broking based on Fundamental and Technical analysis for Short Term and Long Term view.</p> </li> <li> <h5>Choice FinX Signal</h5> <p>This is an automated research engine developed to provide real-time trading ideas. Choice FinX Signal has five strategies in order to cover every aspect of stocks for traders.</p> <ol type='a'> <li><strong>Intraday Spurt Strategy (For Intraday Traders)</strong> <p>This strategy generates Intraday Research Calls for Intraday traders based on pattern breakout on a multi-time frame along with volume criteria. This strategy gives two Target where 01st Target is for Intraday while for 02nd Target is for Positional. If stock gets 01st Target then Raise SL near to Cost and if stock approaches 02nd Target then raise SL at Par for further good return (Approx. 5% - 7%).</p> </li> <li><strong>Dark Horse Strategy (For Positional Traders)</strong> <p>This strategy generates Positional Research Calls for Positional traders based on Price and Volume breakout on a different time frame along with expanding volatility. It's a strategy where one can get positional recommendation for a week for an approx. return of 5% to 10%. It's a strategy which analyses Price and Volume breakout on a different time frame along with best available resource that helps the stock to move ahead. One can follow this strategy for Positional trade same like Intra spurt strategy with Trail SL condition.</p> </li> <li><strong>Future Trade Simplifier Intraday (For Intraday Traders)</strong> <p>It's an indicator where one can get Intraday Trade Calls in the Future segment only. It's a strategy which analyses Open Interest situation during the trading session along with price movement and give best recommendation.</p> </li> <li><strong>Future Trade Simplifier Positional (For Positional Traders)</strong></p>It's an indicator where one can get Positional Trade Calls in the Future segment only.</p> </li> <li><strong>ETET Strategy (Equity)</strong> <p>It's a strategy for Traders to buy stocks today and sell tomorrow. This strategy also analyzes breakout on intraday chart during the day with above average volume.</p> </li> </ol> </li> <li> <h5>C-Quant</h5> <p>This is a thoroughly back tested and statistically validated feature by the research division of Choice for Traders. It features a curated list of the Top 200 stocks listed on NSE. This also features T+5 Strategy for short term trading. Minimum risk to reward of 2:1. Get live updates for C-Quant.</p> </li> <li> <h5>Commodities Techno Call</h5> <p>It covers MCX and NCDEX (1:2 risk rewards ratio) with a view for approximately 1 - 2 weeks and is published when the opportunity arises.</p> </li> <li> <h5>Currency Techno Call</h5> <p>It covers Domestic and Cross Currencies (following a 1:2 risk reward) with a view for approximately 1 -2 weeks and is published when the opportunity arises.</p> </li> </ol> <p><img src='assets\\images\\guide-images\\research.png' /><img src='assets\\images\\guide-images\\technical.gif' /></p> <hr /> <h4>Actions</h4> <ol type='a'> <li>Read about Categories and Sub-categories - to know more about the categories first.</li> <li><strong>BUY</strong> - tapping BUY will take you to the security&rsquo;s page.</li> <li><strong>SEARCH</strong> - Invoke (search icon) from bottom strip to search individual reports of particular scrip. Select category and exchange.</li> <li>Swipe right to goto the next report</li> <li><strong>FILTER</strong> - To filter reports, use (icon) and the filter page will open up. Select CATEGORY &ndash; SUB-CATEGORY &ndash; EXCHANGE &ndash; STATUS - ACTION and save. Your search will narrowed down for future reference as well</li> </ol> <p><em>Note:- You will receive a notification soon as a Report is released</em></p>",
+    "subtopics": [
+        {
+            "title": "Technical",
+            "url": "technical",
+            "sub-headings": [
+                {
+                    "title": "Categories",
+                    "url": "technical-categories"
+                }
+            ]
+        },
+        {
+            "title": "Actions",
+            "url": "actions",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "Portfolio",
+        "next": "Reports",
+        "prev-url": "/user-guide/app/portfolio",
+        "next-url": "/user-guide/app/reports"
+    }
+}

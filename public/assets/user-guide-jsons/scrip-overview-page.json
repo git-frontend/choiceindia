@@ -1,0 +1,41 @@
+{
+  "content": "<h3>SCRIP OVERVIEW</h3>\r\n<p><span style='color: #000000;'>You can view real-time values of a scrip across different exchange segments on one page. Easily search by typing the first 3 letter of the scrip name and select scrip; this will take you to the Scrip Overview Page. </span></p>\r\n<p><span style='color: #000000;'>You can also go to the Scrip Overview Page by clicking on the Scrip Info option when you tap on a scrip in the WatchList or Positions (Portfolio). </span></p>\r\n<h4 class='add-remove-from-watchlist'>1. Add/Remove From WatchList</h4>\r\n<p>&nbsp;<span style='color: #000000;'>Click on the WatchList Icon<i class='icon-Watchlist'></i> on the top right, to add the scrip to the WatchList. If the scrip has already been added to the WatchList earlier, you can tap on the List Icon to remove it from the WatchList.</span></p>\r\n<h4 class='set-price-alerts'>2. Set Price Alerts</h4>\r\n<p><span style='color: #000000;'>Next to the WatchList Icon is the Price Alert Icon<i class='icon-Price-alert'></i></span><span style='color: #000000;'>You can add an alert on the scrip to get notified when it crosses/reaches the specified price by clicking on the Price Alert Button, which will take you to the<a href='user-guide/app/price-alerts'> Set An Alert</a> Page. </span></p>\r\n<h4 class='detailed-overview'>3. Detailed Overview</h4>\r\n<ul>\r\n<li>\r\n<p><span style='color: #000000;'>Get the scrip Info across segments on one place - View the </span><a title='Last Traded Price - The price at which a stock is being traded at the moment. Once the market closes, it will show the last price the scrip was traded on. '>LTP</a><span style='color: #000000;'>, </span><a title=' Change &amp; Change Percentage - The value and percentage that shows the LTP variation as compared to previous day close, i.e. the price at which a scrip closed in the previous day. '>Change &amp; Change Percentage</a> to LTP<span style='color: #000000;'> of a scrip across different exchange segments on the same page by toggling between the segment cards.</span></p>\r\n</li>\r\n</ul>\r\n<ul>\r\n<li>\r\n<p><span style='color: #000000;'>Get Key Info pertaining to a scrip across Equity and F&amp;O with </span><a title='When the data was last updated'>Last Updated Time</a><span style='color: #000000;'>, </span><a title='When the scrip was last traded on '>Last Traded Time,</a> <a title='Scrip Name, Description, Price Tick, Market Lot, Circuit Range, Face Value, GSM Category and Var Margin (%)'>Security Info (Equity)</a><span style='color: #000000;'> and </span><a title='For Futures - Scrip, Description, BasePrice, Price Tick, Market Lot, Circuit Range, TER, Expiry, Max order size, Contract Start Date, Contract End Date and Maturity. For Options -  Scrip Name, Description, Base Price, Option Type, Price Tick, Market Lot, Circuit Range, TER, Expiry, Strike Price, Max Order Size, Contract Start Date, Contract End Date and Maturity. '>Contract Info (F&amp;O)</a><span style='color: #000000;'>. </span></p>\r\n</li>\r\n<li>\r\n<p><span style='color: #000000;'>For Equity, you can check </span><a title='OHLC stands for Open, High, Low, Close. Open &ndash; Open Prices is the price at which the scrip was first traded on when the market opened. High &ndash; The highest price a scrip was traded on a particular day. Low &ndash; The lowest price the scrip was traded on a particular day. Close &ndash; Close Price is the price at which a scrip was last traded on when the market closed.'>OHLC</a><span style='color: #000000;'>, </span><a title='It shows the Last traded quantity on a scrip at its Last Traded Price.'>LTQ@LTP</a><span style='color: #000000;'>, </span><a title='The highest price a scrip was executed at in 52 weeks will be shown under 52 Wk High. The lowest price a scrip was executed in 52 Weeks will be shown under 52 Wk Low. '>52 Wk High &amp; Low</a><span style='color: #000000;'>, </span><a title=' Indicates all the transactions that took place on a scrip on a particular day'>Volume</a><span style='color: #000000;'>, </span><a title=' Market capitalization (market cap) is the market value of a publicly traded company outstanding shares. It is equal to the share price multiplied by the number of shares outstanding.'>Market CAP</a><span style='color: #000000;'> and </span><a title=' The Value of a Scrip is the Trade Price of a Scrip multiplied by the Volume'>Value</a><span style='color: #000000;'>. </span></p>\r\n</li>\r\n<li>\r\n<p><span style='color: #000000;'>For F&amp;O &ndash; View OHLC, LTQ@LTP, </span><a title='OI stands for Open Interest, which shows the number of FNO contracts that are outstanding at a particular time in the market.'>OI</a>, OI% <span style='color: #000000;'>and Value. You can check the nearest Futures Contract (Futures Segment) and Options Contract by selecting the Expiry Date and Strike Price (Options Segment).</span></p>\r\n</li>\r\n</ul>\r\n<h4 class='access-charts'>4. Access Charts</h4>\r\n<p><span style='color: #000000;'>Check the price movement of a particular scrip in the real-time graph. Click on the Enlarge Icon<i class='icon-expand'></i> </span><span style='color: #000000;'> to go to the </span><span style='color: #000000;'><a href='user-guide/app/advance-charting'>Charts Page.</a></span></p>\r\n<h4 class='view-market-depth-data'>5. View Market Depth Data</h4>\r\n<p><span style='color: #000000;'>The </span><a title='Bid is the price sellers are willing to pay for the scrip. The top 5 bid prices will be shown under Prices. The number of shares available at that price will be shown in the Quantity. Offer is the price at which the sellers are offering to sell the scrip. Top 5 offer prices will be displayed under price and the number of scrips available at that price will be displayed under Quantity.'>Bids and Offers</a><span style='color: #000000;'> section, gives you a snapshot of the top five bid and offer prices on a scrip and the number of shares available at each price. </span></p>\r\n<h4 class='place-an-order'>6. Place An Order</h4>\r\n<p><span style='color: #000000;'>You can click on the Buy/Sell Button to </span><span style='color: #000000;'><a href='user-guide/app/order-placement'>place an order </a></span><span style='color: #000000;'> on the particular scrip.</span></p>",
+  "subtopics": [
+    {
+      "title": "Add/Remove From WatchList",
+      "url": "add-remove-from-watchlist",
+      "sub-headings": []
+    },
+    {
+      "title": "Set Price Alerts",
+      "url": "set-price-alerts",
+      "sub-headings": []
+    },
+    {
+      "title": "Detailed Overview ",
+      "url": "detailed-overview",
+      "sub-headings": []
+    },
+    {
+      "title": "Access Charts",
+      "url": "access-charts",
+      "sub-headings": []
+    },
+    {
+      "title": "View Market Depth Data",
+      "url": "view-market-depth-data",
+      "sub-headings": []
+    },
+    {
+      "title": "Place An Order",
+      "url": "place-an-order",
+      "sub-headings": []
+    }
+  ],
+  "actions": {
+    "prev": "WatchList",
+    "next": "Advance Charting",
+    "prev-url": "/user-guide/app/watchlist",
+    "next-url": "/user-guide/app/advance-charting"
+  }
+}

@@ -1,0 +1,36 @@
+{
+    "content": "<h3>DASHBOARD</h3><p>Dashboard Is a single screen where you can see all the important information pertaining to markets and your investments. This will be your Default Landing screen.</p><img src='assets\\images\\guide-images\\dashboard.png'/><hr><h4 class='dashboard-top'>View Markets, Check Notifications & Initiate Search</h4><p>From the top, you can go to the markets section <i class='icon-market'></i>, view notifications <i class='icon-Notifiication'></i> or search for a scrip <i class='icon-search'></i>. These icons will be default across most screens.</p><ol type='a'> <li><strong>Market</strong> – This shortcut with its <i class='icon-market'></i> shows the action happening in the Market in real-time. Tapping this will take you to the Dedicated Market Page with important Market information lists like Market Indices, Top Gainers etc. </li><li><strong>Notification</strong> – Shows the alerts with the Bell <i class='icon-Notifiication'></i> divided into ORDER and GENERAL sections </li><li><strong>Search</strong> – With its easily identifiable <i class='icon-search'></i> is the dynamic search feature</li></ol><hr><h4 class='base-indices'>Base Indices</h4><p>You can get the entire market overview here, i.e.Sensex, NIFTY etc</p><hr><h4 class='funds'>Snapshot of Funds and Portfolio</h4><ol type='a'> <li><strong>Funds</strong> - on the left you can see your balance investment amount in Equity/ Currency and Commodity. Tapping the box will take you to the Funds page. From there you can DEPOSIT or WITHDRAW amounts <a href='/client/funds'>(Funds)</a></li><li><strong>Portfolio</strong> - Next to the Funds box is your Portfolio. It shows your Positions and Holdings Summary. Tapping the box will open its dedicated page to view the page in detail <a href='/client/portfolio/net-position'>(Portfolio)</a></li></ol><hr><h4 class='research-report'>Research Reports</h4><p>Here you can view the top 4 Daily reports with Buy or Hold options</p><ol type='a'> <li>Clicking on the specific report/call will take you to the dedicated research page</li><li>Clicking on ‘View All’ will navigate you to the Overall Research Section</li></ol><hr><h4 class='summary'>SUMMARY</h4><p>This is divided into 4 tabs, Position – Holding – Recent Search – Market. SWIPE LEFT to browse through these.</p><ol type='a'> <li><strong>Position</strong> – This shows the Trade positions you have entered for Intraday. Tapping on any security will show SET ALERT - SCRIP INFO – DETAILS – BUY – SELL options</li><li><strong>Holding</strong> - This shows your Long or Investment positions. Tapping on any security will show SET ALERT - SCRIP INFO – DETAILS – BUY – SELL options</li><li><strong>Recent Search</strong> – Shows the last 5 searches with updated prices. Clicking on any search brings up the SET ALERT, SCRIP INFO, CHART, BUY, SELL shortcuts</li><li><strong>Market</strong> – Shows the TOP 20 GAINERS / LOSERS on NSE and BSE. Users can toggle between Gainer/Loser and NSE/BSE. The list shows the Scrip Name with LTP (Last Traded Price) Change % and Volume alongside. You can tap on any STOCK and it will take you to dedicated SCRIP INFO PAGE for further actions. Scrolling to the bottom brings the “VIEW ALL” shortcut which will take you to the Dedicated MARKET section</li></ol><hr><h4 class='shortcut'>Dashboard Shortcuts</h4><p>From the bottom navigation menu you can navigate to the DASHBOARD - WATCHLIST – PORTFOLIO – RESEARCH - MENU</p><em><strong>Note:</strong> <span class='text-pink'>RED</span> or <span class='text-green'>GREEN</span> – These strips on the LEFT HAND SIDE of individual boxes are for you to gauge the Market or Stocks in a flash.</em>",
+    "subtopics": [
+        {
+            "title": "Dashboard – Top",
+            "url": "dashboard-top",
+            "sub-headings": []
+        },
+        {
+            "title": "Base Indices",
+            "url": "base-indices",
+            "sub-headings": []
+        },
+        {
+            "title": "Snapshot of Funds and Portfolio",
+            "url": "funds",
+            "sub-headings": []
+        },
+        {
+            "title": "Research Reports",
+            "url": "research-report",
+            "sub-headings": []
+        },
+        {
+            "title": "Summary",
+            "url": "summary",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "Sign In",
+        "next": "Scrip Search",
+        "prev-url": "/user-guide/app/sign-in",
+        "next-url": "/user-guide/app/scrip-search"
+    }
+}

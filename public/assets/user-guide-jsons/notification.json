@@ -1,0 +1,21 @@
+{
+    "content": "<h3>NOTIFICATIONS</h3>\r\n<p>\r\n</p>\r\n<p><span style='color: #000000;'>From the Menu, you can choose to go to Broker Messages or Notifications Center.</span></p>\r\n<p><img src='assets\\images\\guide-images\\Notification 500X294.gif' /></p>\r\n<h4 class='broker-messages'>1. Broker Messages</h4>\r\n<p>\r\n</p>\r\n<p><span style='color: #000000;'>All your Broker Messages such as recommendations and updates about securities/scrips will be available here. </span></p>\r\n<p>\r\n</p>\r\n<h4 class='notificaion-center'>2. Notifications Center</h4>\r\n<p>\r\n</p>\r\n<ul>\r\n\r\n<li>\r\n\r\n<p><span style='color: #000000;'>Exchange Messages - All the messages from Exchanges will be updated here.</span></p>\r\n\r\n</li>\r\n\r\n\r\n<li>\r\n\r\n<p><span style='color: #000000;'>Order Messages - Detailed messages related to your orders, will be updated here.</span></p>\r\n\r\n</li>\r\n\r\n\r\n<li>\r\n\r\n<p><span style='color: #000000;'>Notification - </span><span style='color: #000000;'>Here, you will be notified if your order is in pending/executed or if you have modified it.</span></p>\r\n\r\n</li>\r\n\r\n</ul>",
+    "subtopics": [
+        {
+            "title": "Broker Messages",
+            "url": "broker-messages",
+            "sub-headings": []
+        },
+        {
+            "title": "Notification Center",
+            "url": "notificaion-center",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "Reports",
+        "next": "Others",
+        "prev-url": "/user-guide/app/reports",
+        "next-url": "/user-guide/app/others"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "content": "<h3>Portfolio</h3> <p>Portfolio section shows your Trading / Investment activity.</p> <p>This is your PORTFOLIO section. Select PORTFOLIO from the bottom tab. Portfolio section is divided into POSITION & HOLDINGS.</p><img src='assets\\images\\guide-images\\portfolio.gif' /> <hr> <h4 class='position'>Position</h4> <p>The current value and overall gain & loss of your positions will be displayed under the Positions Tab. You will be able to see your Positions (Futures & Options) and the cash/equity orders executed on the same day.</p> <ol type='a'> <li><strong>LIST</strong> - The top section houses the INVESTED VALUE vs CURRENT VALUE which dynamically change as per the movement of the market. Other important details available in a single glance are OVERALL P&L – BOOKED P&L (P&L - Profit & Loss) </li> <li><strong>SEARCH</strong> - Right after, is the SEARCH box wherein you can search for specific trades you Entered/Exited. You can FILTER through your trades using <i class='icon-filter'></i> options are ALL – INTRADAY – TODAY – POSITION – ALPHABETICALLY - P&L – P&L% - Quantity</li> <li><strong>CONVERT POSITION</strong> - Convert your positions from Intraday to Delivery or Delivery to Intraday by clicking Convert Position Option.</li> <li><strong>SCRIP INFO</strong> – Opens up the dedicated page of the scrip. You can also initiate further trades from here</li> <li><strong>DETAILS</strong> – shows the Trade details for that particular scrip. It also has the “VIEW TRADES” hyperlink tapping which will open up Tradebook showing all the trades undertaken by you for the particular scrip </li> <li><strong>BUY / SELL</strong> – Opens the order box for you to Enter / Exit the trade</li> </ol><img src='assets\\images\\guide-images\\position.png' /> <hr> <h4 class='holdings'>Holding</h4> <p>Your Equity - The current value and Invested Value, Day P&L and Overall P&L of your holdings will be displayed under the Holding Tabs.</p> <p>TAP any scrip that you are holding which opens the Shortcuts under that scrip, SCRIP INFO – DETAILS – BUY – SELL</p> <img src='assets\\images\\guide-images\\holdings.png' />",
+    "subtopics": [
+        {
+            "title": "Position",
+            "url": "position",
+            "sub-headings": []
+        },
+        {
+            "title": "Holding",
+            "url": "holdings",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "Watchlist",
+        "next": "Research",
+        "prev-url": "/user-guide/app/stock-watchlist",
+        "next-url": "/user-guide/app/research"
+    }
+}

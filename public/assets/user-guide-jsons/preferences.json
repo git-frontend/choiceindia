@@ -1,0 +1,36 @@
+{
+    "content": "<h3>Preferences</h3><p>This section is where you define how you’d like to view or use key features provided in Choice FinX.  5 minutes here will save you the trouble of doing it every time you access a Chart for example.</p><p>Open MENU and Tap -> My Preferences</p><p>The section is divided into 5 parts: GENERAL, ORDER, CHART, MARKET, RESEARCH</p><hr><h4 class='general'>General</h4><p>This houses your Look and Language settings</p><p>Under THEME - Tap if you’d like to select the DARK THEME as default</p><p>Under LANGUAGE – Yes, Choice FinX now comes with 4 Regional languages namely HINDI, GUJARATI, MARATHI and MALAYALAM apart from English. We plan to add more as we go. </p><p>Select the default language you’d like to browse your app in. Tap OK</p><hr><h4 class='order'>Order</h4><p>This section is for defining your trades as default. Once this is set every-time you punch in an order Choice FinX will caliber it to your pre-defined settings here. It’s your TRADE & FORGET feature.</p><p>The section is divided into all major exchanges NSE, NSEFO, BSE, MCX, NSECDS so you can define unique order executions as per your preference Equity, Commodity or Currency</p><p>Let’s say if you’d like to define orders for NSE. </p><p>Goto Order - > Order Type, Tap -> Select Order Type and these options will appear,<ul><li>MKT – Market</li><li>LMT – Limit Market Order</li><li>SL – Stop Loss</li><li>SL - M  - Stop Loss Market</li></ul></p><p>Select one and Tap OK</p><p>Under Product Type   -> Select one from INTRADAY and DELIVERY -> Tap OK</p><p>In QTY – Enter the default Quantity Number</p><p>These settings can be changed anytime you wish.</p><hr><h4 class='chart'>Chart</h4><p>Define your chart setting here.</p><p>Under CHART TYPE -> Tap -> Select Chart Type, Options are:<ul><li>Mountain</li><li>Candle</li><li>Colored line</li><li>Bar</li><li>Hollow candle</li><li>Histogram</li><li>Vol Candle</li><li>Baseline</li><li>Kagi</li><li>Line break</li><li>Renko</li><li>Range bars</li><li>Point & Figure</li></ul></p><p>Select one and Tap OK</p><p>Under DURATION -> Tap ->Select Duration, Options are:-<ul><li>1 Day</li><li>1Week</li><li>1 Month</li><li>Quarter</li><li>Half Year</li><li>1 Year</li><li>3 Years</li><li>Max</li></ul></p><p>Select one and Tap OK</p><p>Under INTERVAL -> Tap -> Select Interval, Options are:<br>1M (Minute) – 3M – 5M – 10M – 15M – 30M – H(Hour) – D(Day) – W(Week) – M(Month) – Q(Quarter) – 6M(6 Months) – Y(Year)<br>Select one and Tap OK</p><hr><h4 class='market'>Market</h4><p>This will allow you to set the list of Indices which you’d like to view as Default when you access the Market Section.</p><p>Under Marker - > Tap - > Market Indices, Options are:<ul><li>Market Indices</li><li>Top-Gainers</li><li>Top-Losers</li><li>Active by Value</li><li>Active by Volume</li><li>Top Gainers by OI%</li><li>Top Losers by OI%</li><li>OI Spurts</li><li>Global Indices</li></ul></p><p>Select one and Tap OK</p><hr><h4 class='research'>Research</h4><p>This section allows you to set the FUNDAMENTAL & TECHNICAL reports which you’d like to view as default whenever you access the RESEARCH section.</p><p>Under Fundamental - > Tap -> Select Report</p><p>Select the ones you want and Tap OK</p><p>Under Technical - > Tap -> Select Report</p><p>Select the ones you want and Tap OK</p>",
+    "subtopics": [
+        {
+            "title": "General",
+            "url": "general",
+            "sub-headings": []
+        },
+        {
+            "title": "Order",
+            "url": "order",
+            "sub-headings": []
+        },
+        {
+            "title": "Chart",
+            "url": "chart",
+            "sub-headings": []
+        },
+        {
+            "title": "Market",
+            "url": "market",
+            "sub-headings": []
+        },
+        {
+            "title": "Research",
+            "url": "research",
+            "sub-headings": []
+        }
+    ],
+    "actions": {
+        "prev": "Funds",
+        "next": "Reports",
+        "prev-url": "/user-guide/app/funds",
+        "next-url": "/user-guide/app/reports"
+    }
+}

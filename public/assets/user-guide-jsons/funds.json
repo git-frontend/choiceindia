@@ -1,0 +1,29 @@
+{
+    "content": "<h3>Funds</h3> <p>This section shows your Funds related information.</p> <p>To access it, Goto Menu - > Funds. The sections show the below information in a glance</p> <ol type='a'> <li> <strong>Ledger Balance</strong> <ul> <li>Today’s Balance</li> <li>Today’s Pay -In - Today’s deposit value</li> <li>Today’s PayOut - Today’s withdrawn value</li> <li>DP Charges - Depository Charges</li> <li>CFS (Credit for Sell)- This value is today’s Sell Holding Benefit</li> </ul> </li> <li><strong>Future Bill Cr/Dr</strong> - This value gives unsettled bill amount</li> <li> <strong>Margin Against Assets</strong> <ul> <li>Early PayIn - 80% of the Sell Holding Value of your Holding given to user on T+1 day</li> <li>Margin Against Holding - Margin received on pledging of stocks, MF, etc</li> </ul> </li> <li><strong>Margin Utilized</strong> - This value is summation of M2M, Booked Loss, Margin required for Open positions, Margin Required for pending positions</li> <li><strong>Available for Trading</strong> - This value is summation of Ledger Balance - Future Bill Dr + Margin Against Assets - Margin Utilized.</li> </ol> <img src='assets\\images\\guide-images\\funds.png' /> <hr> <h4 class='deposit-withdraw'>How to Deposit or Withdraw Funds</h4> <ol type='1'> <li> <h5 class='deposit'>Deposit</h5> <p>Tapping DEPOSIT will bring up the Pay-in page. Below information needs to be entered</p> <ol type='a'> <li><strong>AMOUNT</strong> – Enter the amount</li> <li><strong>TRANSFER MODE</strong> – Select from UPI or Net Banking</li> <li><strong>UPI ID</strong> - Enter UPI ID and Tap VERIFY</li> <li><strong>Bank Details</strong> - > Select the Bank you’d like to transfer from. Your default selected account will be shown unless you want to change it</li> <li>Tap DEPOSIT</li> </ol> <p>Process via UPI</p> <img src='assets\\images\\guide-images\\upi.gif' /> <p>Process via Net Banking</p><img src='assets\\images\\guide-images\\net-banking.gif' /> </li> <li> <h5 class='neft'>For NEFT or RTGS</h5> <p>Use the 'Do you want to opt for NEFT/RTGS?' Press 'Click Here'</p> <p>This will open up the page showing the details of Choice Broking’s bank account details for Equity / Commodity for NEFT / RTGS transfer.</p> <p>Important Note:- After you make the deposit, please the below details to b.accounts@choiceindia.com for us to track the transaction:</p> <ol type='a'> <li>Client Name & Mobile Number</li> <li>Client ID</li> <li>Segment (Equity/Commodity)</li> <li>Deposited Amount</li> <li>Deposit reference number in case of RTGS/NEFT</li> <li>Cheque Deposit slip & Cheque Copy in case of cheque deposit</li> </ol> <em>Note:- The amount will only be credited into your account once the transaction is verified</em> </li> <li> <h5 class='withdraw'>Withdraw</h5> <ol type='a'> <li>Enter the amount</li> <li>Default bank will be selected. Change from here if you’d like to send to some other account (Only applicable if you have mapped multiple banks with your Demat A/c)</li> <li>Tap WITHDRAW</li> </ol> <em>Note: You will receive an acknowledgement SMS and email from Choice FinX. It takes T+2 days for the amount to be credited into your account.</em> </li> </ol><img src='assets\\images\\guide-images\\fund-withdraw.gif' />",
+    "subtopics": [
+        {
+            "title": "How to Deposit or Withdraw Funds",
+            "url": "deposit-withdraw",
+            "sub-headings": [
+                {
+                    "title": "Deposit",
+                    "url": "deposit"
+                },
+                {
+                    "title": "For NEFT or RTGS",
+                    "url": "neft"
+                },
+                {
+                    "title": "Withdraw",
+                    "url": "withdraw"
+                }
+            ]
+        }
+    ],
+    "actions": {
+        "prev": "Markets",
+        "next": "Message Hub",
+        "prev-url": "/user-guide/app/markets",
+        "next-url": "/user-guide/app/message-hub"
+    }
+}

@@ -1,0 +1,597 @@
+/*Icon Fonts*/
+$normal-font-path: "../fonts" !default;
+$icomoon-font-path: "fonts" !default;
+
+/*Fonts   */
+@font-face { font-display: swap;
+  font-family: "Montserrat";
+  src: url("#{$normal-font-path}/Montserrat-SemiBold.ttf") format("ttf"),
+  url("#{$normal-font-path}/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face { font-display: swap;
+  font-family: 'PassengerSansBold';
+  src: url('#{$normal-font-path}/PassengerSansBold.eot');
+  src: url('#{$normal-font-path}/PassengerSansBold.eot') format('embedded-opentype'),
+  url('#{$normal-font-path}/PassengerSansBold.woff2') format('woff2'),
+  url('#{$normal-font-path}/PassengerSansBold.woff') format('woff'),
+  url('#{$normal-font-path}/PassengerSansBold.ttf') format('truetype'),
+  url('#{$normal-font-path}/PassengerSansBold.svg#PassengerSansBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face { font-display: swap;
+  font-family: 'SFProText';
+  src: url('../../assets/fonts/SFProText-Semibold.eot');
+  src: url('../../assets/fonts/SFProText-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('../../assets/fonts/com-font/SFProText-Semibold.woff2') format('woff2'),
+    url('../../assets/fonts/com-font/SFProText-Semibold.woff') format('woff'),
+    url('../../assets/fonts/SFProText-Semibold.ttf') format('truetype'),
+   /*  url('assets/fonts/SFProText-Semibold.svg#SFProText-Semibold') format('svg') */;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face { font-display: swap;
+  font-family: 'SFProText-Regular';
+  src: url('../../assets/fonts/SFProText-Regular.eot');
+  src: url('../../assets/fonts/SFProText-Regular.eot?#iefix') format('embedded-opentype'),
+ /*    url('assets/fonts/SFProText-Regular.svg#SFProText-Regular') format('svg'), */
+    url('../../assets/fonts/com-font/SFProText-Regular.ttf') format('truetype'),
+    url('../../assets/fonts/SFProText-Regular.woff') format('woff'),
+    url('../../assets/fonts/SFProText-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face { font-display: swap;
+  font-family: 'SF Pro Display';
+  src: url('#{$normal-font-path}/SFProDisplay-Regular.eot');
+  src: url('#{$normal-font-path}/SFProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+  url('#{$normal-font-path}/SFProDisplay-Regular.woff2') format('woff2'),
+  url('#{$normal-font-path}/SFProDisplay-Regular.woff') format('woff'),
+  url('#{$normal-font-path}/SFProDisplay-Regular.ttf') format('truetype'),
+  url('#{$normal-font-path}/SFProDisplay-Regular.svg#SFProDisplay-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face { font-display: swap;
+  font-family: 'SF Pro Display';
+  src: url('../../assets/fonts/SFProDisplay-Medium.eot');
+  src: url('../../assets/fonts/SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../../assets/fonts/SFProDisplay-Medium.woff2') format('woff2'),
+    url('../../assets/fonts/SFProDisplay-Medium.woff') format('woff'),
+    url('../../assets/fonts/SFProDisplay-Medium.ttf') format('truetype'),
+   /*  url('assets/fonts/SFProDisplay-Medium.svg#SFProDisplay-Medium') format('svg') */;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face { font-display: swap;
+  font-family: 'SFProText-Semibold';
+  src: url('../../assets/fonts/SFProText-Semibold.eot');
+  src: url('../../assets/fonts/SFProText-Semibold.eot?#iefix') format('embedded-opentype'),
+/*     url('assets/fonts/SFProText-Semibold.svg#SFProText-Semibold') format('svg'), */
+    url('../../assets/fonts/SFProText-Semibold.ttf') format('truetype'),
+    url('../../assets/fonts/com-font/SFProText-Semibold.woff') format('woff'),
+    url('../../assets/fonts//com-font/SFProText-Semibold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face { font-display: swap;
+  font-family: 'SFProText-Bold';
+  src: url('../../assets/fonts/SFProText-Bold.eot');
+  src: url('../../assets/fonts/SFProText-Bold.eot?#iefix') format('embedded-opentype'),
+  /*   url('assets/fonts/SFProText-Bold.svg#SFProText-Bold') format('svg'), */
+    url('../../assets/fonts/com-font/SFProText-Bold.ttf') format('truetype'),
+    url('../../assets/fonts/SFProText-Bold.woff') format('woff'),
+    url('../../assets/fonts/SFProText-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*Icon Fonts*/
+
+@font-face { font-display: swap;
+  font-family: "jiffy-icon";
+  src: url("#{$icomoon-font-path}/jiffy-icon.ttf?2om6mp") format("truetype"),
+  url("#{$icomoon-font-path}/jiffy-icon.woff?2om6mp") format("woff"),
+  url("#{$icomoon-font-path}/jiffy-icon.svg?2om6mp#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "jiffy-icon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*Fonts Class*/
+
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+
+.icon-linkedin {
+  &:before {
+    content: $icon-linkedin;
+  }
+}
+
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
+}
+
+.icon-youtube {
+  &:before {
+    content: $icon-youtube;
+  }
+}
+
+.icon-Call {
+  &:before {
+    content: $icon-Call;
+  }
+}
+
+.icon-Link {
+  &:before {
+    content: $icon-Link;
+  }
+}
+
+.icon-Jiffy-Icons_Fund-Transfer {
+  &:before {
+    content: $icon-Jiffy-Icons_Fund-Transfer;
+  }
+}
+
+.icon-watchlist {
+  &:before {
+    content: $icon-watchlist;
+  }
+}
+
+.icon-add {
+  &:before {
+    content: $icon-add;
+  }
+}
+
+.icon-setting {
+  &:before {
+    content: $icon-setting;
+  }
+}
+
+.icon-right-arrow {
+  &:before {
+    content: $icon-right-arrow;
+  }
+}
+
+.icon-left-arrow {
+  &:before {
+    content: $icon-left-arrow;
+  }
+}
+
+.icon-up-arrow {
+  &:before {
+    content: $icon-up-arrow;
+  }
+}
+
+.icon-down-arrow {
+  &:before {
+    content: $icon-down-arrow;
+  }
+}
+
+.icon-buy {
+  &:before {
+    content: $icon-buy;
+  }
+}
+
+.icon-calendar {
+  &:before {
+    content: $icon-calendar;
+  }
+}
+
+.icon-call-for-trade {
+  &:before {
+    content: $icon-call-for-trade;
+  }
+}
+
+.icon-call {
+  &:before {
+    content: $icon-call;
+  }
+}
+
+.icon-chart {
+  &:before {
+    content: $icon-chart;
+  }
+}
+
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+
+.icon-dashboard {
+  &:before {
+    content: $icon-dashboard;
+  }
+}
+
+.icon-delete {
+  &:before {
+    content: $icon-delete;
+  }
+}
+
+.icon-details {
+  &:before {
+    content: $icon-details;
+  }
+}
+
+.icon-long-down-arrow {
+  &:before {
+    content: $icon-long-down-arrow;
+  }
+}
+
+.icon-download {
+  &:before {
+    content: $icon-download;
+  }
+}
+
+.icon-drop-down {
+  &:before {
+    content: $icon-drop-down;
+  }
+}
+
+.icon-edit {
+  &:before {
+    content: $icon-edit;
+  }
+}
+
+.icon-email {
+  &:before {
+    content: $icon-email;
+  }
+}
+
+.icon-exchange-info {
+  &:before {
+    content: $icon-exchange-info;
+  }
+}
+
+.icon-exchange-timings {
+  &:before {
+    content: $icon-exchange-timings;
+  }
+}
+
+.icon-filter {
+  &:before {
+    content: $icon-filter;
+  }
+}
+
+.icon-funds {
+  &:before {
+    content: $icon-funds;
+  }
+}
+
+.icon-info {
+  &:before {
+    content: $icon-info;
+  }
+}
+
+.icon-ipo {
+  &:before {
+    content: $icon-ipo;
+  }
+}
+
+.icon-fundamental {
+  &:before {
+    content: $icon-fundamental;
+  }
+}
+
+.icon-location {
+  &:before {
+    content: $icon-location;
+  }
+}
+
+.icon-crosshair {
+  &:before {
+    content: $icon-crosshair;
+  }
+}
+
+.icon-face-id {
+  &:before {
+    content: $icon-face-id;
+  }
+}
+
+.icon-menu {
+  &:before {
+    content: $icon-menu;
+  }
+}
+
+.icon-message-hub {
+  &:before {
+    content: $icon-message-hub;
+  }
+}
+
+.icon-mutual-fund {
+  &:before {
+    content: $icon-mutual-fund;
+  }
+}
+
+.icon-theme {
+  &:before {
+    content: $icon-theme;
+  }
+}
+
+.icon-notification {
+  &:before {
+    content: $icon-notification;
+  }
+}
+
+.icon-order-book {
+  &:before {
+    content: $icon-order-book;
+  }
+}
+
+.icon-eye-slash {
+  &:before {
+    content: $icon-eye-slash;
+  }
+}
+
+.icon-eye {
+  &:before {
+    content: $icon-eye;
+  }
+}
+
+.icon-portfolio {
+  &:before {
+    content: $icon-portfolio;
+  }
+}
+
+.icon-price-alert {
+  &:before {
+    content: $icon-price-alert;
+  }
+}
+
+.icon-rate-us {
+  &:before {
+    content: $icon-rate-us;
+  }
+}
+
+.icon-re-arrange {
+  &:before {
+    content: $icon-re-arrange;
+  }
+}
+
+.icon-refresh {
+  &:before {
+    content: $icon-refresh;
+  }
+}
+
+.icon-reports {
+  &:before {
+    content: $icon-reports;
+  }
+}
+
+.icon-technical {
+  &:before {
+    content: $icon-technical;
+  }
+}
+
+.icon-research-report {
+  &:before {
+    content: $icon-research-report;
+  }
+}
+
+.icon-scrip-info {
+  &:before {
+    content: $icon-scrip-info;
+  }
+}
+
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+
+.icon-sell {
+  &:before {
+    content: $icon-sell;
+  }
+}
+
+.icon-share {
+  &:before {
+    content: $icon-share;
+  }
+}
+
+.icon-mail-support {
+  &:before {
+    content: $icon-mail-support;
+  }
+}
+
+.icon-support {
+  &:before {
+    content: $icon-support;
+  }
+}
+
+.icon-trade-details {
+  &:before {
+    content: $icon-trade-details;
+  }
+}
+
+.icon-long-up-arrow {
+  &:before {
+    content: $icon-long-up-arrow;
+  }
+}
+
+.icon-user-guide {
+  &:before {
+    content: $icon-user-guide;
+  }
+}
+
+.icon-convert {
+  &:before {
+    content: $icon-convert;
+  }
+}
+
+.icon-market {
+  &:before {
+    content: $icon-market;
+  }
+}
+
+.icon-expand {
+  &:before {
+    content: $icon-expand;
+  }
+}
+
+.icon-logout {
+  &:before {
+    content: $icon-logout;
+  }
+}
+
+.icon-userpreference {
+  &:before {
+    content: $icon-userpreference;
+  }
+}
+
+.icon-language-changer {
+  &:before {
+    content: $icon-language-changer;
+  }
+}
+
+.icon-reset {
+  &:before {
+    content: $icon-reset;
+  }
+}
+
+.icon-support-call {
+  &:before {
+    content: $icon-support-call;
+  }
+}
+
+.icon-support-mail {
+  &:before {
+    content: $icon-support-mail;
+  }
+}
+
+.icon-support-location {
+  &:before {
+    content: $icon-support-location;
+  }
+}
+
+.icon-refer-earn {
+  &:before {
+    content: $icon-refer-earn;
+  }
+}
+
+.icon-maximize {
+  &:before {
+    content: $icon-maximize;
+  }
+}
+
+.icon-download-new {
+  &:before {
+    content: $icon-download-new;
+  }
+}
+
+.icon-minimize {
+  &:before {
+    content: $icon-minimize;
+  }
+}
